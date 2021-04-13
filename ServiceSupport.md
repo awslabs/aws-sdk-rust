@@ -1,0 +1,240 @@
+
+# Service Support
+- [x] DynamoDB
+- [ ] S3
+
+- [ ] Amazon Access Analyzer
+- [ ] Amazon ACM
+- [ ] Amazon Acm-Pca
+- [ ] Amazon Alexa For Business
+- [ ] Amazon Amplify
+Amazon API Gateway
+Amazon API Gateway Management API
+Amazon API Gateway v2
+Amazon App Config
+Amazon App Flow
+Amazon Auto Scaling
+Amazon Application-Insights
+Amazon Appmesh
+Amazon Appstream
+Amazon App Sync
+Amazon Athena
+Amazon Autoscaling
+Amazon Autoscaling-Plans
+Amazon Awsmigrationhub
+Amazon Backup
+Amazon Batch
+Amazon Braket
+Amazon Budgets
+Amazon Ce
+Amazon Chime
+Amazon Cloud9
+Amazon Cloud Directory
+Amazon Cloud Formation
+Amazon Cloud Front
+Amazon Cloudhsm
+Amazon Cloudhsmv2
+Amazon Cloudsearch
+Amazon Cloudsearchdomain
+Amazon Cloud Trail
+Amazon Code Artifact
+Amazon Code Build
+Amazon Code Commit
+Amazon Code Deploy
+Amazon Code Guru Profiler
+Amazon Code Guru Reviewer
+Amazon Code Pipeline
+Amazon Codestar
+Amazon Codestar-Connections
+Amazon Codestar-Notifications
+Amazon Cognito Identity
+Amazon Cognito Identity Provider
+Amazon Cognito Sync
+Amazon Comprehend
+Amazon Comprehendmedical
+Amazon Compute-Optimizer
+Amazon Config
+Amazon Connect
+Amazon Connectparticipant
+Amazon Cur
+Amazon Databrew
+Amazon Dataexchange
+Amazon Datapipeline
+Amazon Datasync
+Amazon Dax
+Amazon Detective
+Amazon Device Farm
+Amazon Direct Connect
+Amazon Discovery
+Amazon Dlm
+Amazon DMS
+Amazon Docdb
+Amazon DS
+Amazon Dynamodb
+Amazon Ebs
+Amazon Ec2
+Amazon Ec2-Instance-Connect
+Amazon ECR
+Amazon ECS
+Amazon Eks
+Amazon Elasticache
+Amazon Elastic Beanstalk
+Amazon Elastic Filesystem
+Amazon Elastic Inference
+Amazon Elastic Load Balancing
+Amazon Elastic Load Balancing v2
+Amazon Elastic Map Reduce
+Amazon Elastic Transcoder
+Amazon Email
+Amazon Entitlement.Marketplace
+Amazon ES
+Amazon Eventbridge
+Amazon Events
+Amazon Firehose
+Amazon FMS
+Amazon Forecast
+Amazon Forecast Query
+Amazon Fraud Detector
+Amazon FSX
+Amazon Gamelift
+Amazon Glacier
+Amazon Global Accelerator
+Amazon Glue
+Amazon Greengrass
+Amazon Groundstation
+Amazon Guardduty
+Amazon Health
+Amazon Honeycode
+Amazon Identitystore
+Amazon Imagebuilder
+Amazon Inspector
+Amazon IOT
+Amazon Iot1Click-Devices
+Amazon Iot1Click-Projects
+Amazon IoT Analytics
+Amazon IoT Data
+Amazon IoT Events
+Amazon Iotevents-Data
+Amazon Iot-Jobs-Data
+Amazon Iotsecuretunneling
+Amazon Iotsitewise
+Amazon Iotthingsgraph
+Amazon Ivs
+Amazon Kafka
+Amazon Kendra
+Amazon Kinesis
+Amazon Kinesis Analytics
+Amazon Kinesis Analytics v2
+Amazon Kinesis Video
+Amazon Kinesis-Video-Archived-Media
+Amazon Kinesis-Video-Media
+Amazon Kinesis-Video-Signaling
+Amazon KMS
+Amazon Lake Formation
+Amazon Lambda
+Amazon Lex-Models
+Amazon License-Manager
+Amazon Lightsail
+Amazon Logs
+Amazon Machine Learning
+Amazon Macie
+Amazon Macie2
+Amazon Managedblockchain
+Amazon Marketplace-Catalog
+Amazon Marketplacecommerceanalytics
+Amazon Mediaconnect
+Amazon Mediaconvert
+Amazon Medialive
+Amazon Mediapackage
+Amazon Mediapackage-Vod
+Amazon Mediastore
+Amazon Mediastore-Data
+Amazon Mediatailor
+Amazon Meteringmarketplace
+Amazon Migrationhub-Config
+Amazon Mobile
+Amazon Monitoring
+Amazon Mq
+Amazon Mturk-Requester
+Amazon Neptune
+Amazon Network-Firewall
+Amazon Networkmanager
+Amazon Ops Works
+Amazon Opsworkscm
+Amazon Organizations
+Amazon Outposts
+Amazon Personalize
+Amazon Personalize-Events
+Amazon Personalize-Runtime
+Amazon Pi
+Amazon Pinpoint
+Amazon Pinpoint-Email
+Amazon Polly
+Amazon Pricing
+Amazon Qldb
+Amazon Qldb-Session
+Amazon Quicksight
+Amazon RAM
+Amazon RDS
+Amazon Rds-Data
+Amazon Redshift
+Amazon Redshift-Data
+Amazon Rekognition
+Amazon Resource-Groups
+Amazon Resourcegroupstaggingapi
+Amazon Robomaker
+Amazon Route 53
+Amazon Route53Domains
+Amazon Route53Resolver
+Amazon Runtime.Lex
+Amazon Runtime.Sagemaker
+Amazon S3
+Amazon S3Control
+Amazon S3Outposts
+Amazon Sagemaker
+Amazon Sagemaker-A2I-Runtime
+Amazon Savingsplans
+Amazon Schemas
+Amazon Secrets Manager
+Amazon Securityhub
+Amazon Serverlessrepo
+Amazon Servicecatalog
+Amazon Servicecatalog-Appregistry
+Amazon Service Discovery
+Amazon Service-Quotas
+Amazon SES v2
+Amazon Shield
+Amazon Signer
+Amazon SMS
+Amazon Sms-Voice
+Amazon Snowball
+Amazon SNS
+Amazon SQS
+Amazon SSM
+Amazon SSO
+Amazon Sso-Admin
+Amazon Sso-Oidc
+Amazon States
+Amazon Storagegateway
+Amazon Streams.Dynamodb
+Amazon Sts
+Amazon Support
+Amazon Swf
+Amazon Synthetics
+Amazon Textract
+Amazon Timestream-Query
+Amazon Timestream-Write
+Amazon Transcribe
+Amazon Transcribe-Streaming
+Amazon Transfer
+Amazon Translate
+Amazon Waf
+Amazon Waf-Regional
+Amazon Wafv2
+Amazon Workdocs
+Amazon Worklink
+Amazon Workmail
+Amazon Workmailmessageflow
+Amazon Workspaces
+Amazon Xray
+AWS IAM
