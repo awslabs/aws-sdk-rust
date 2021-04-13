@@ -13,7 +13,7 @@ The alpha SDK for Rust currently supports the checked services below. If you wan
 - [ ] Amazon API Gateway v2
 - [ ] Amazon App Config
 - [ ] Amazon App Flow
-- [ ]Amazon Auto Scaling
+- [ ] Amazon Auto Scaling
 - [ ] Amazon Application-Insights
 - [ ] Amazon Appmesh
 - [ ] Amazon Appstream
