@@ -70,7 +70,7 @@ The alpha SDK for Rust currently supports the checked services below. If you wan
 - [ ] Amazon DMS
 - [ ] Amazon Docdb
 - [ ] Amazon DS
-- [ ] Amazon Dynamodb
+- [x] Amazon Dynamodb
 - [ ] Amazon Ebs
 - [ ] Amazon Ec2
 - [ ] Amazon Ec2-Instance-Connect
