@@ -1,4 +1,4 @@
-### The new AWS SDK for Rust 
+# The new AWS SDK for Rust 
 
 ## About
 
