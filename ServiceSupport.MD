@@ -1,2 +1,2 @@
-[x] DynamoDB
-[] S3
+[ x ] DynamoDB
+[ ] S3
