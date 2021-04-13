@@ -1,0 +1,2 @@
+[x] DynamoDB
+[] S3
