@@ -10,6 +10,9 @@ The AWS Rust SDK is 100% code generated from Smithy models that represent each u
 
 Because all of the code on this repo has been code generated, **please do not submit PRs to this repo**. If you would like to make a contribution to the SDK, please submit a PR to the code gen machinery on the Smithy-RS repo.
 
+## Getting Started with the SDK
+
+
 ## Security
 
 See [CONTRIBUTING](CONTRIBUTING.md#security-issue-notifications) for more information.
