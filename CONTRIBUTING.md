@@ -8,11 +8,11 @@ information to effectively respond to your bug report or contribution.
 
 ## The AWS SDK for Rust has two code repositories
 
-1) This repository (awslabs/aws-sdk-rust) 
+1) This repository ([awslabs/aws-sdk-rust]https://github.com/awslabs/aws-sdk-rust) 
 
 If you want to contribute to the SDK by submitting feedback to our roadmap, filing a bug report, or building a high level library ontop of the SDK and sharing it with the community, you can do so using this GitHub repository. However, because this repository is 100% code generated from Smithy models using code gen machinery, **please do not submit code changing PRs to this repository.**
 
-2) Smithy code gen machinery repo (awslabs/smithy-rs)
+2) Smithy code gen machinery repo ([awslabs/smithy-rs]https://github.com/awslabs/smithy-rs)
 
 If you want to contribute by diving into the code gen machinery and helping actually develop the SDK, please navigate to the [Smithy code gen machinery repo](https://github.com/awslabs/smithy-rs).  Here you'll be able to see all the ins-and-outs of the code generator. We welcome PRs to this repository, but please make sure to review its [CONTRIBUTING.MD](https://github.com/awslabs/smithy-rs/blob/main/CONTRIBUTING.md)
 
