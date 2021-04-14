@@ -1,5 +1,8 @@
 on: [ push ]
 
+env:
+  rust_version: 1.51.0
+
 name: CI
 
 jobs:
