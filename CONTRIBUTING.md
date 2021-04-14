@@ -48,11 +48,9 @@ GitHub provides additional document on [forking a repository](https://help.githu
 [creating a pull request](https://help.github.com/articles/creating-a-pull-request/).
 
 
-## Building high level libraries
+## Building High Level Libraries
 
-
-## Finding contributions to work on
-Looking at the existing issues is a great way to find something to contribute on. As our projects, by default, use the default GitHub issue labels (enhancement/bug/duplicate/help wanted/invalid/question/wontfix), looking at any 'help wanted' issues is a great place to start.
+This is one of the best ways to contribute to the SDK. Looking for open issues is a great way to find one that we could use your help with. As our projects, by default, use the default GitHub issue labels, looking at any 'help wanted' issues is a great place to start. Please comment on the issue to communicate your interest so we can work with you in its development.
 
 
 ## Code of Conduct
