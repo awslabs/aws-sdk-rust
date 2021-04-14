@@ -1,10 +1,22 @@
 # Contributing Guidelines
 
-Thank you for your interest in contributing to our project. Whether it's a bug report, new feature, correction, or additional
+Thank you for your interest in contributing to the AWS SDK for Rust! Whether it's a bug report, new feature, correction, or additional
 documentation, we greatly value feedback and contributions from our community.
 
 Please read through this document before submitting any issues or pull requests to ensure we have all the necessary
 information to effectively respond to your bug report or contribution.
+
+## The AWS SDK for Rust has two code repositories
+
+1) This repository (awslabs/aws-sdk-rust) 
+If you This repository is 100% code generated from Smithy models using code gen machinery. We are using this repository to host the actual SDK, share our roadmap, and get feedback from customers in the form of feature requests, bug reports, RFCs, etc. Most user feedback belongs in this repo 
+
+2) Smithy-Rust code gen repo (awslabs/smithy-rs)
+If you really want to dive into the SDK, see how its built, and even contribute to its development,  . Here you'll be able to see all the ins-and-outs of the code generator. We welcome PRs to this repository
+
+## Building high level libraries
+
+T
 
 
 ## Reporting Bugs/Feature Requests
