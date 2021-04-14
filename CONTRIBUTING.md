@@ -3,29 +3,25 @@
 Thank you for your interest in contributing to the AWS SDK for Rust! Whether it's a bug report, new feature, correction, or additional
 documentation, we greatly value feedback and contributions from our community.
 
-Please read through this document before submitting any issues or pull requests to ensure we have all the necessary
+Please read through this document before submitting any feedback to ensure we have all the necessary
 information to effectively respond to your bug report or contribution.
 
 ## The AWS SDK for Rust has two code repositories
 
 1) This repository (awslabs/aws-sdk-rust) 
 
-If you This repository is 100% code generated from Smithy models using code gen machinery. We are using this repository to host the actual SDK, share our roadmap, and get feedback from customers in the form of feature requests, bug reports, RFCs, etc. Most user feedback belongs in this repo 
+If you want to contribute to the SDK by submitting feedback to our roadmap, filing a bug report, or building a high level library ontop of the SDK and sharing it with the community, please do so using this GitHub repository. However, because this repository is 100% code generated from Smithy models using code gen machinery, please do not submit code changing PRs to this repository. 
 
-2) Smithy-Rust code gen repo (awslabs/smithy-rs)
-If you really want to dive into the SDK, see how its built, and even contribute to its development,  . Here you'll be able to see all the ins-and-outs of the code generator. We welcome PRs to this repository
+2) Smithy code gen machinery repo (awslabs/smithy-rs)
 
-## Building high level libraries
-
-T
-
+If you want to contribute by diving into code gen machinery of the SDK  please navigate to the  Here you'll be able to see all the ins-and-outs of the code generator. We welcome PRs to this repository, but plea. Additionally, the code generators are written in Kotlin and Rust
 
 ## Reporting Bugs/Feature Requests
 
 We welcome you to use the GitHub issue tracker to report bugs or suggest features.
 
 When filing an issue, please check existing open, or recently closed, issues to make sure somebody else hasn't already
-reported the issue. Please try to include as much information as you can. Details like these are incredibly useful:
+reported the issue. Please try to include as much information as you can. Details like these for bug reports are incredibly useful:
 
 * A reproducible test case or series of steps
 * The version of our code being used
@@ -53,6 +49,9 @@ To send us a pull request, please:
 
 GitHub provides additional document on [forking a repository](https://help.github.com/articles/fork-a-repo/) and
 [creating a pull request](https://help.github.com/articles/creating-a-pull-request/).
+
+
+## Building high level libraries
 
 
 ## Finding contributions to work on
