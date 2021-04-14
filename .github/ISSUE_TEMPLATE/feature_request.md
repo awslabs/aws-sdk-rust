@@ -17,7 +17,6 @@ assignees: ''
 
 <!-- Thank you for keeping this note for the community -->
 
--->
 
 **Tell us about your request**
 What do you want us to build?
