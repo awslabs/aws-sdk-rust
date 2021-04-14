@@ -3,6 +3,7 @@ name = "aws-endpoint"
 version = "0.1.0"
 authors = ["Russell Cohen <rcoh@amazon.com>"]
 edition = "2018"
+license = "Apache-2.0"
 description = "AWS Endpoint Support"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html

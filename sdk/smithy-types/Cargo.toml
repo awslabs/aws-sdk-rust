@@ -3,6 +3,7 @@ name = "smithy-types"
 version = "0.0.1"
 authors = ["rcoh@amazon.com"]
 edition = "2018"
+license = "Apache-2.0"
 
 [dependencies]
 # alloc can be removed if we implement our own date formatting, TBD if this is worthwhile

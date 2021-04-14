@@ -4,6 +4,7 @@ version = "0.1.0"
 authors = ["Russell Cohen <rcoh@amazon.com>"]
 edition = "2018"
 description = "A collection of library functions to validate HTTP requests against Smithy protocol tests"
+license = "Apache-2.0"
 
 [dependencies]
 http = "0.2.1"
