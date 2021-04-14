@@ -1,0 +1,13 @@
+[package]
+name = "protocol-test-helpers"
+version = "0.1.0"
+authors = ["Russell Cohen <rcoh@amazon.com>"]
+edition = "2018"
+description = "A collection of library functions to validate HTTP requests against Smithy protocol tests"
+
+[dependencies]
+http = "0.2.1"
+thiserror = "1"
+serde_json = "1"
+# Not perfect for our needs, but good for now
+assert-json-diff = "1"

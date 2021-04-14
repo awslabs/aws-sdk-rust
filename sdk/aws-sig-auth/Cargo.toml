@@ -1,0 +1,21 @@
+[package]
+name = "aws-sig-auth"
+version = "0.1.0"
+authors = ["Russell Cohen <rcoh@amazon.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+http = "0.2.2"
+# Renaming to clearly indicate that this is not a permanent signing solution
+aws-sigv4-poc = { package = "aws-sigv4", git = "https://github.com/rcoh/sigv4", rev = "05f90abc02a868cb570ed3006d950947cc0898b0" }
+aws-auth = { path = "../aws-auth" }
+aws-types = { path = "../aws-types" }
+smithy-http = { path = "../smithy-http" }
+# Trying this out as an experiment. thiserror can be removed and replaced with hand written error
+# implementations and it is not a breaking change.
+thiserror = "1"
+
+[dev-dependencies]
+aws-endpoint = { path = "../aws-endpoint" }

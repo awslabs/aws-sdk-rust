@@ -1,0 +1,17 @@
+[package]
+name = "aws-http"
+version = "0.1.0"
+authors = ["Russell Cohen <rcoh@amazon.com>"]
+edition = "2018"
+description = "HTTP specific AWS SDK behaviors"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+aws-types = { path = "../aws-types" }
+smithy-http = { path = "../smithy-http" }
+smithy-types = { path = "../smithy-types" }
+
+http = "0.2.3"
+thiserror = "1"
+lazy_static = "1"

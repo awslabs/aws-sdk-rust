@@ -1,0 +1,16 @@
+[package]
+name = "smithy-http"
+version = "0.0.1"
+authors = ["rcoh@amazon.com"]
+edition = "2018"
+
+[dependencies]
+smithy-types = { path = "../smithy-types" }
+bytes = "1"
+http-body = "0.4.0"
+http = "0.2.3"
+thiserror = "1"
+
+[dev-dependencies]
+proptest = "0.10.1"
+base64 = "0.13.0"

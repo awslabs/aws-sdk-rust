@@ -1,0 +1,13 @@
+[package]
+name = "aws-endpoint"
+version = "0.1.0"
+authors = ["Russell Cohen <rcoh@amazon.com>"]
+edition = "2018"
+description = "AWS Endpoint Support"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+smithy-http = { path = "../smithy-http"}
+aws-types = { path = "../aws-types" }
+http = "0.2.3"
