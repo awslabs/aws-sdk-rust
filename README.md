@@ -8,7 +8,6 @@ This repo contains the new AWS SDK for Rust and its public roadmap
 
 This SDK for Rust is code generated from Smithy models that represent each underlying AWS service. To view the code gen machinery, navigate to [Smithy-Rust code generator repo](https://github.com/awslabs/smithy-rs).
 
-Because the code on this repo has been code generated, **please do not submit code changing PRs to this repo**. If you would like to make a code contribution to the SDK, please submit a PR to the code gen machinery on the [Smithy-Rust code generator repo](https://github.com/awslabs/smithy-rs).
 
 ## Getting Started with the SDK
 
@@ -21,6 +20,12 @@ Because the code on this repo has been code generated, **please do not submit co
 In order to use the SDK for Rust, you must already have Rust and Cargo installed. If you don't, these instructions will show you how to install Rust and Cargo: https://doc.rust-lang.org/book/ch01-01-installation.html
 
 ## Getting Help
+
+## Feedback and contributing
+
+Navigate to
+
+Because the code on this repo has been code generated, **please do not submit code changing PRs to this repo**. If you would like to make a code contribution to the SDK, please submit a PR to the code gen machinery on the [Smithy-Rust code generator repo](https://github.com/awslabs/smithy-rs).
 
 ## Security
 
