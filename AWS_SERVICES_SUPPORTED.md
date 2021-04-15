@@ -1,5 +1,5 @@
 
-# AWS Service's Supported
+# AWS Services Supported
 
 The alpha SDK for Rust currently supports the checked services below. If you want to see a particular service added, please add your "+1" to the GitHub issue corresponding to the service. This will help us prioritize adding new services to the SDK. 
 
