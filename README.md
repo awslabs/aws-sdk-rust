@@ -30,6 +30,12 @@ Navigate to
 
 Because the code on this repo has been code generated, **please do not submit code changing PRs to this repo**. If you would like to make a code contribution to the SDK, please submit a PR to the code gen machinery on the [Smithy-Rust code generator repo](https://github.com/awslabs/smithy-rs).
 
+## Design Docs
+
+## Services Available
+
+## Resources (code examples, docs)
+
 ## Security
 
 See [CONTRIBUTING](CONTRIBUTING.md#security-issue-notifications) for more information.
