@@ -21,8 +21,8 @@ In order to use the SDK for Rust, you must already have Rust and Cargo installed
 
 ## Getting Help
 
-*Public slack channel
-*Github discussions
+* Public slack channel
+* Github discussions
 
 ## Feedback and contributing
 
