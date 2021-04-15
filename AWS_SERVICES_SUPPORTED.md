@@ -3,12 +3,18 @@
 
 The alpha SDK for Rust currently supports the checked services below. If you want to see a particular service added, please add your "+1" to the GitHub issue corresponding to the service. This will help us prioritize adding new services to the SDK. 
 
+- [x] Amazon API Gateway
+- [x] Amazon Dynamodb
+- [x] Amazon Kinesis
+- [x] Amazon KMS
+- [x] Amazon Polly
+- [x] Amazon Secrets Manager
+
 - [ ] Amazon Access Analyzer
 - [ ] Amazon ACM
 - [ ] Amazon Acm-Pca
 - [ ] Amazon Alexa For Business
 - [ ] Amazon Amplify
-- [x] Amazon API Gateway
 - [ ] Amazon API Gateway Management API
 - [ ] Amazon API Gateway v2
 - [ ] Amazon App Config
@@ -70,7 +76,6 @@ The alpha SDK for Rust currently supports the checked services below. If you wan
 - [ ] Amazon DMS
 - [ ] Amazon Docdb
 - [ ] Amazon DS
-- [x] Amazon Dynamodb
 - [ ] Amazon Ebs
 - [ ] Amazon Ec2
 - [ ] Amazon Ec2-Instance-Connect
@@ -122,14 +127,12 @@ The alpha SDK for Rust currently supports the checked services below. If you wan
 - [ ] Amazon Ivs
 - [ ] Amazon Kafka
 - [ ] Amazon Kendra
-- [x] Amazon Kinesis
 - [ ] Amazon Kinesis Analytics
 - [ ] Amazon Kinesis Analytics v2
 - [ ] Amazon Kinesis Video
 - [ ] Amazon Kinesis-Video-Archived-Media
 - [ ] Amazon Kinesis-Video-Media
 - [ ] Amazon Kinesis-Video-Signaling
-- [x] Amazon KMS
 - [ ] Amazon Lake Formation
 - [ ] Amazon Lambda
 - [ ] Amazon Lex-Models
@@ -169,7 +172,6 @@ The alpha SDK for Rust currently supports the checked services below. If you wan
 - [ ] Amazon Pi
 - [ ] Amazon Pinpoint
 - [ ] Amazon Pinpoint-Email
-- [x] Amazon Polly
 - [ ] Amazon Pricing
 - [ ] Amazon Qldb
 - [ ] Amazon Qldb-Session
@@ -195,7 +197,6 @@ The alpha SDK for Rust currently supports the checked services below. If you wan
 - [ ] Amazon Sagemaker-A2I-Runtime
 - [ ] Amazon Savingsplans
 - [ ] Amazon Schemas
-- [x] Amazon Secrets Manager
 - [ ] Amazon Securityhub
 - [ ] Amazon Serverlessrepo
 - [ ] Amazon Servicecatalog
