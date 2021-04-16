@@ -19,7 +19,7 @@ The alpha SDK for Rust currently supports the checked services below. If you wan
 - [ ] Amazon API Gateway v2
 - [ ] Amazon App Config
 - [ ] Amazon App Flow
-- [ ] Amazon Auto Scaling
+- [ ] [Amazon Auto Scaling](https://github.com/awslabs/aws-sdk-rust/issues/33)
 - [ ] Amazon Application-Insights
 - [ ] Amazon Appmesh
 - [ ] Amazon Appstream
@@ -36,12 +36,14 @@ The alpha SDK for Rust currently supports the checked services below. If you wan
 - [ ] Amazon Chime
 - [ ] Amazon Cloud9
 - [ ] Amazon Cloud Directory
-- [ ] Amazon Cloud Formation
+- [ ] [Amazon Cloud Formation](https://github.com/awslabs/aws-sdk-rust/issues/25)
 - [ ] Amazon Cloud Front
 - [ ] Amazon Cloudhsm
 - [ ] Amazon Cloudhsmv2
 - [ ] Amazon Cloudsearch
 - [ ] Amazon Cloudsearchdomain
+- [ ] Amazon Cloudwatch
+- [ ] [Amazon Cloudwatch Logs](https://github.com/awslabs/aws-sdk-rust/issues/30)
 - [ ] Amazon Cloud Trail
 - [ ] Amazon Code Artifact
 - [ ] Amazon Code Build
@@ -59,7 +61,7 @@ The alpha SDK for Rust currently supports the checked services below. If you wan
 - [ ] Amazon Comprehend
 - [ ] Amazon Comprehendmedical
 - [ ] Amazon Compute-Optimizer
-- [ ] Amazon Config
+- [ ] [Amazon Config](https://github.com/awslabs/aws-sdk-rust/issues/31)
 - [ ] Amazon Connect
 - [ ] Amazon Connectparticipant
 - [ ] Amazon Cur
@@ -77,10 +79,10 @@ The alpha SDK for Rust currently supports the checked services below. If you wan
 - [ ] Amazon Docdb
 - [ ] Amazon DS
 - [ ] Amazon Ebs
-- [ ] Amazon Ec2
+- [ ] [Amazon Ec2](https://github.com/awslabs/aws-sdk-rust/issues/18)
 - [ ] Amazon Ec2-Instance-Connect
-- [ ] Amazon ECR
-- [ ] Amazon ECS
+- [ ] [Amazon ECR](https://github.com/awslabs/aws-sdk-rust/issues/34)
+- [ ] [Amazon ECS](https://github.com/awslabs/aws-sdk-rust/issues/28)
 - [ ] Amazon Eks
 - [ ] Amazon Elasticache
 - [ ] Amazon Elastic Beanstalk
@@ -110,6 +112,7 @@ The alpha SDK for Rust currently supports the checked services below. If you wan
 - [ ] Amazon Guardduty
 - [ ] Amazon Health
 - [ ] Amazon Honeycode
+- [ ] [Amazon IAM](https://github.com/awslabs/aws-sdk-rust/issues/21)
 - [ ] Amazon Identitystore
 - [ ] Amazon Imagebuilder
 - [ ] Amazon Inspector
@@ -177,7 +180,7 @@ The alpha SDK for Rust currently supports the checked services below. If you wan
 - [ ] Amazon Qldb-Session
 - [ ] Amazon Quicksight
 - [ ] Amazon RAM
-- [ ] Amazon RDS
+- [ ] [Amazon RDS](https://github.com/awslabs/aws-sdk-rust/issues/36)
 - [ ] Amazon Rds-Data
 - [ ] Amazon Redshift
 - [ ] Amazon Redshift-Data
@@ -185,12 +188,12 @@ The alpha SDK for Rust currently supports the checked services below. If you wan
 - [ ] Amazon Resource-Groups
 - [ ] Amazon Resourcegroupstaggingapi
 - [ ] Amazon Robomaker
-- [ ] Amazon Route 53
+- [ ] [Amazon Route 53](https://github.com/awslabs/aws-sdk-rust/issues/35)
 - [ ] Amazon Route53Domains
 - [ ] Amazon Route53Resolver
 - [ ] Amazon Runtime.Lex
 - [ ] Amazon Runtime.Sagemaker
-- [ ] Amazon S3
+- [ ] [Amazon S3](https://github.com/awslabs/aws-sdk-rust/issues/16)
 - [ ] Amazon S3Control
 - [ ] Amazon S3Outposts
 - [ ] Amazon Sagemaker
@@ -203,22 +206,22 @@ The alpha SDK for Rust currently supports the checked services below. If you wan
 - [ ] Amazon Servicecatalog-Appregistry
 - [ ] Amazon Service Discovery
 - [ ] Amazon Service-Quotas
-- [ ] Amazon SES v2
+- [ ] [Amazon SES v2](https://github.com/awslabs/aws-sdk-rust/issues/27)
 - [ ] Amazon Shield
 - [ ] Amazon Signer
 - [ ] Amazon SMS
 - [ ] Amazon Sms-Voice
 - [ ] Amazon Snowball
-- [ ] Amazon SNS
-- [ ] Amazon SQS
-- [ ] Amazon SSM
+- [ ] [Amazon SNS](https://github.com/awslabs/aws-sdk-rust/issues/26)
+- [ ] [Amazon SQS](https://github.com/awslabs/aws-sdk-rust/issues/19)
+- [ ] [Amazon SSM](https://github.com/awslabs/aws-sdk-rust/issues/22)
 - [ ] Amazon SSO
 - [ ] Amazon Sso-Admin
 - [ ] Amazon Sso-Oidc
 - [ ] Amazon States
 - [ ] Amazon Storagegateway
 - [ ] Amazon Streams.Dynamodb
-- [ ] Amazon Sts
+- [ ] [Amazon Sts](https://github.com/awslabs/aws-sdk-rust/issues/17)
 - [ ] Amazon Support
 - [ ] Amazon Swf
 - [ ] Amazon Synthetics
@@ -238,4 +241,3 @@ The alpha SDK for Rust currently supports the checked services below. If you wan
 - [ ] Amazon Workmailmessageflow
 - [ ] Amazon Workspaces
 - [ ] Amazon Xray
-- [ ] AWS IAM
