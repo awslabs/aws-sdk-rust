@@ -1,0 +1,27 @@
+on: [ push ]
+
+env:
+  rust_version: 1.51.0
+
+name: CI
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    name: Compile & Test SDK
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/cache@v2
+        name: Cargo Cache
+        with:
+          path: |
+            ~/.cargo/registry
+            ~/.cargo/git
+            sdk/target
+          key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.toml') }}
+      - uses: actions-rs/toolchain@v1
+        with:
+          toolchain: ${{ env.rust_version }}
+      - name: Cargo Test
+        run: cargo test
+        working-directory: sdk

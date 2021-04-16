@@ -1,0 +1,8 @@
+# MacOS
+.DS_Store
+
+# Rust build artifacts
+target/
+
+# Lockfiles
+Cargo.lock
