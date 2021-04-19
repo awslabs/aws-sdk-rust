@@ -64,14 +64,14 @@ In order to use the SDK for Rust, you must already have Rust and Cargo installed
 
 ## Getting Help
 
+* [GitHub discussions](https://github.com/awslabs/aws-sdk-rust/discussions) - Submit your question on discussion board
 * Public slack channel
-* Github discussions
 
 ## Feedback and Contributing
 
 ### Feedback 
 
-The alpha SDK will use GitHub Issues to track feature requests and issues with the SDK. In addition, we'll use GitHub Projects to provide users with a high level view of our roadmap and the features we're actively tracking. 
+The alpha SDK uses **GitHub Issues** to track feature requests and issues with the SDK. In addition, we use **GitHub Projects** to provide users with a high level view of our roadmap and the features we're actively working on. 
 
 You can provide feedback or report a bug  by submitting a **GitHub issue**. This is the preferred mechanism to give feedback so that other users can engage in the conversation, +1 issues, etc. Issues you open will be evaluated for our roadmap in the Developer Preview launch.
 
