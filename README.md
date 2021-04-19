@@ -19,6 +19,7 @@ This SDK for Rust is code generated from [Smithy models](https://awslabs.github.
 
 1. Create a new Rust project 
 2. Within your Cargo.toml file, add dependencies for the AWS service(s) you a planning to use, Tokio, and Hyper
+
   `[dependencies]
   aws-dynamodb = 0.1-alpha // add a dependency for each AWS service you are planning to use
   aws-hyper = 0.1-alpha
