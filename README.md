@@ -64,7 +64,7 @@ In order to use the SDK for Rust, you must already have Rust and Cargo installed
 
 ## Getting Help
 
-* [GitHub discussions](https://github.com/awslabs/aws-sdk-rust/discussions) - Submit your question on discussion board
+* [GitHub discussions](https://github.com/awslabs/aws-sdk-rust/discussions) - Submit your questions on the discussion board
 * Public slack channel
 
 ## Feedback and Contributing
