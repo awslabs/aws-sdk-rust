@@ -45,7 +45,7 @@ If you're interested, we encourage you to take a look at the design documentatio
 
 ## AWS Services Supported
 
-This alpha SDK currently does not provide support for every AWS service. You can see all the services currently by the SDK on [AWS_SERVICES_SUPPORTED](AWS_SERVICES_SUPPORTED.MD)
+This alpha SDK currently does not provide support for every AWS service. You can see all the services currently by the SDK on [AWS_SERVICES_SUPPORTED](AWS_SERVICES_SUPPORTED.md)
 
 ## Additional Resources
 
