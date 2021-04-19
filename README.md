@@ -4,6 +4,9 @@ Jump to:
 - [Getting Started](#Getting-Started-with-the-SDK)
 - [Getting Help](#Getting-Help)
 - [Feedback and contributing](#Feedback-and-contributing)
+- [Design](#Design Docs)
+- [AWS Services Supported](#AWS-Services-Supported)
+- [Additional Resources](#Additional-Resources)
 
 ## About
 
@@ -37,9 +40,9 @@ Because the code on this repo has been code generated, **please do not submit co
 
 ## Design Docs
 
-## Services Available
+## AWS Services Supported
 
-## Resources (code examples, docs)
+## Additional Resources
 
 ## Security
 
