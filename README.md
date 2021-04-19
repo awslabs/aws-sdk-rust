@@ -6,7 +6,7 @@ This repo contains the new AWS SDK for Rust and its [public roadmap](https://git
 
 **Please Note: The SDK is currently released as an alpha and is intended strictly for feedback purposes only. Do not use this SDK for production workloads.**
 
-This SDK for Rust is code generated from [Smithy models](https://awslabs.github.io/smithy/) that represent each AWS service. Code to generate the SDK can be found in [smithy-rs](https://github.com/awslabs/smithy-rs).
+This SDK for Rust is code generated from [Smithy models](https://awslabs.github.io/smithy/) that represent each AWS service. Code used to generate the SDK can be found in [smithy-rs](https://github.com/awslabs/smithy-rs).
 
 ## Getting Started with the SDK
 
@@ -86,4 +86,3 @@ See [CONTRIBUTING](CONTRIBUTING.md#security-issue-notifications) for more inform
 ## License
 
 This project is licensed under the Apache-2.0 License.
-
