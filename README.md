@@ -17,10 +17,12 @@ This SDK for Rust is code generated from [Smithy models](https://awslabs.github.
 
 ## Getting Started with the SDK
 
+The new AWS SDK for Rust is built with modularized packages for each AWS service, which means each AWS service you use will need to be added as a separate cargo dependency within your Rust project. Additionally, the alpha SDK requires you to add Hyper (https://crates.io/crates/hyper)and Tokio (https://crates.io/crates/tokio)as dependencies within your Rust project to dispatch your HTTP requests and perform I/O.
+
 The following instructions will provide you with a quick example of how to get started with the new AWS SDK for Rust and use DynamoDB to perform a simple operation.
 
 1. Create a new Rust project 
-2. Within your Cargo.toml file, add dependencies for the AWS service(s) you a planning to use, Tokio, and Hyper
+2. Within your Cargo.toml file, add dependencies for DynamoDB, Tokio, and Hyper
 
 ```
 [dependencies]
