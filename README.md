@@ -4,7 +4,6 @@ Jump to:
 - [Getting Started](#Getting-Started-with-the-SDK)
 - [Getting Help](#Getting-Help)
 - [Feedback and contributing](#Feedback-and-contributing)
-- [Design](#Design-Docs)
 - [AWS Services Supported](#AWS-Services-Supported)
 - [Additional Resources](#Additional-Resources)
 
@@ -35,15 +34,9 @@ In order to use the SDK for Rust, you must already have Rust and Cargo installed
 
 We are using GitHub Issues to track 
 
-## Contributing
+### Contributing
 
 If you are interested in contributing to the new AWS SDK for Rust, please take a look at [CONTRIBUTING](CONTRIBUTING.md)
-
-## Design Docs
-
-If you're interested in understanding the design of the SDK we encourage you to take a look at the design documentation on the [Smithy-Rust code gen machinery repo](https://github.com/awslabs/smithy-rs). You can directly access them through the links below
-- [here](https://github.com/awslabs/smithy-rs/tree/main/rust-runtime) 
-- [here](https://github.com/awslabs/smithy-rs/tree/main/aws/rust-runtime)
 
 ## AWS Services Supported
 
@@ -51,6 +44,7 @@ This alpha SDK currently does not provide support for every AWS service. You can
 
 ## Additional Resources
 
+- Design docs - If you're interested in understanding the design of the SDK we encourage you to take a look at the design documentation on the [Smithy-Rust code gen machinery repo](https://github.com/awslabs/smithy-rs). You can directly access them through the links [here](https://github.com/awslabs/smithy-rs/tree/main/rust-runtime) and [here](https://github.com/awslabs/smithy-rs/tree/main/aws/rust-runtime)
 - Code Examples
 - Our alpha launch announcement
 
