@@ -3,7 +3,7 @@
 Jump to:
 - [Getting Started](#Getting-Started-with-the-SDK)
 - [Getting Help](#Getting-Help)
-- [Feedback and contributing](#Feedback-and-contributing)
+- [Feedback and contributing](#Feedback-and-Contributing)
 - [AWS Services Supported](#AWS-Services-Supported)
 - [Additional Resources](#Additional-Resources)
 
@@ -30,7 +30,7 @@ In order to use the SDK for Rust, you must already have Rust and Cargo installed
 * Public slack channel
 * Github discussions
 
-## Providing Feedback 
+## Feedback and Contributing
 
 We are using GitHub Issues to track 
 
