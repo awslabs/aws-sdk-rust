@@ -22,7 +22,9 @@ This SDK for Rust is code generated from [Smithy models](https://awslabs.github.
 
   `[dependencies]
   aws-dynamodb = 0.1-alpha // add a dependency for each AWS service you are planning to use
+  
   aws-hyper = 0.1-alpha
+  
   tokio = "1" # or a subset if you know what you want`
 
 4. Input your AWS credentials into your terminal as environment variables
