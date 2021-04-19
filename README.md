@@ -9,7 +9,7 @@ Jump to:
 
 ## About
 
-This repo contains the new AWS SDK for Rust and its public roadmap
+This repo contains the new AWS SDK for Rust and its [public roadmap](https://github.com/awslabs/aws-sdk-rust/projects/1)
 
 **Please Note: The SDK is currently released as an alpha and is intended strictly for feedback purposes only. Do not use this SDK for production workloads.**
 
