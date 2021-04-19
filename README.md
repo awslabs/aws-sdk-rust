@@ -1,5 +1,10 @@
 # The new AWS SDK for Rust 
 
+Jump to:
+[Getting Started](#Getting Started with the SDK)
+[Getting Help](#Getting Help)
+[Feedback and contributing](#Feedback and contributing)
+
 ## About
 
 This repo contains the new AWS SDK for Rust and its public roadmap
