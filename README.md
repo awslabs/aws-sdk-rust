@@ -10,7 +10,7 @@ This SDK for Rust is code generated from [Smithy models](https://awslabs.github.
 
 ## Getting Started with the SDK
 
-The new AWS SDK for Rust is built with modular crates for each AWS service, which means each AWS service you use will need to be added as a separate cargo dependency within your Rust project. [Tokio](https://crates.io/crates/tokio) as a dependency within your Rust project to execute async code. During our public alpha, the SDK will not be pushed to crates.io and must be used via Git dependency:
+The new AWS SDK for Rust is built with modular crates for each AWS service, which means each AWS service you use will need to be added as a separate cargo dependency within your Rust project. Additionally, [Tokio]((https://crates.io/crates/tokio) must be added as a dependency within your Rust project to execute async code. During the alpha, the SDK will not be pushed to crates.io and must be used via a Git dependency:
 
 The following instructions will provide you with a quick example of how to get started with the new AWS SDK for Rust and use DynamoDB to perform a simple operation.
 
@@ -71,7 +71,7 @@ This alpha SDK currently does not provide support for every AWS service. You can
 
 ## Additional Resources
 
-- Design docs - Design documentation for the SDK lives on [smithy-rs](https://github.com/awslabs/smithy-rs/tree/main/design).
+- Design docs - Design documentation for the SDK lives in the [design folder of smithy-rs](https://github.com/awslabs/smithy-rs/tree/main/design).
 - Runtime / Handwritten code: The Rust Runtime code that underpins the SDK can be accessed [here](https://github.com/awslabs/smithy-rs/tree/main/rust-runtime) and [here](https://github.com/awslabs/smithy-rs/tree/main/aws/rust-runtime). This code is copied into this repo as part of code generation.
 - [Code Examples](https://github.com/awslabs/aws-sdk-rust/tree/main/sdk/examples)
 - API reference docs - You can generate API reference docs by calling `cargo doc --open` on your  project and navigating to the SDK crate
