@@ -50,6 +50,7 @@ This alpha SDK currently does not provide support for every AWS service. You can
 
 - Design docs - If you're interested in understanding the design of the SDK we encourage you to take a look at the design documentation on the [Smithy-Rust code gen machinery repo](https://github.com/awslabs/smithy-rs). You can directly access them through the links [here](https://github.com/awslabs/smithy-rs/tree/main/rust-runtime) and [here](https://github.com/awslabs/smithy-rs/tree/main/aws/rust-runtime)
 - [Code Examples](https://github.com/awslabs/aws-sdk-rust/tree/main/sdk/examples)
+- API reference docs
 - Our alpha launch announcement
 
 ## Security
