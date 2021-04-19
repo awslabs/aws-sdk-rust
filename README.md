@@ -37,7 +37,7 @@ We are using GitHub Issues to track
 
 ## Contributing
 
-If you are interested in contributing to the new AWS SDK for Rust, please take a look at [CONTRIBUTING](CONTRIBUTING.MD)
+If you are interested in contributing to the new AWS SDK for Rust, please take a look at [CONTRIBUTING](CONTRIBUTING.md)
 
 ## Design Docs
 
