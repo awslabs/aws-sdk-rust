@@ -10,7 +10,7 @@ information to effectively respond to your request.
 
 1) This repository ([awslabs/aws-sdk-rust](https://github.com/awslabs/aws-sdk-rust)) 
 
-If you want to contribute to the SDK by submitting feedback to our roadmap, filing a bug report, or building a high level library ontop of the SDK and sharing it with the community, you can do so using this GitHub repository. However, because this repository is 100% code generated from Smithy models using code gen machinery, **please do not submit code changing PRs to this repository.**
+If you want to contribute to the SDK by submitting feedback to our roadmap, filing a bug report, or building a high level library ontop of the SDK and sharing it with the community, you can do so using this GitHub repository. However, because this repository is code generated from Smithy models using code gen machinery, **please do not submit code changing PRs to this repository.**
 
 2) Smithy code gen machinery repo ([awslabs/smithy-rs](https://github.com/awslabs/smithy-rs))
 
