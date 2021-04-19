@@ -14,7 +14,7 @@ This repo contains the new AWS SDK for Rust and its public roadmap
 
 **Please Note: The SDK is currently released as an alpha and is intended strictly for feedback purposes only. Do not use this SDK for production workloads.**
 
-This SDK for Rust is code generated from [Smithy models](https://awslabs.github.io/smithy/) that represent each underlying AWS service. To view the code gen machinery, navigate to [Smithy-Rust code generator repo](https://github.com/awslabs/smithy-rs).
+This SDK for Rust is code generated from [Smithy models](https://awslabs.github.io/smithy/) that represent each underlying AWS service. To view the code gen machinery, navigate to [Smithy-Rust code gen machinery repo](https://github.com/awslabs/smithy-rs).
 
 ## Getting Started with the SDK
 
@@ -41,13 +41,18 @@ If you are interested in contributing to the new AWS SDK for Rust, please take a
 
 ## Design Docs
 
-If you're interested, we encourage you to take a look at the design documentation on the [Smithy-Rust code generator repo](https://github.com/awslabs/smithy-rs). You can find docs [here](https://github.com/awslabs/smithy-rs/tree/main/rust-runtime) and [here](https://github.com/awslabs/smithy-rs/tree/main/aws/rust-runtime)
+If you're interested in understanding the design of the SDK we encourage you to take a look at the design documentation on the [Smithy-Rust code gen machinery repo](https://github.com/awslabs/smithy-rs). You can directly access them through the links below
+- [here](https://github.com/awslabs/smithy-rs/tree/main/rust-runtime) 
+- [here](https://github.com/awslabs/smithy-rs/tree/main/aws/rust-runtime)
 
 ## AWS Services Supported
 
-This alpha SDK currently does not provide support for every AWS service. You can see all the services currently by the SDK on [AWS_SERVICES_SUPPORTED](AWS_SERVICES_SUPPORTED.md)
+This alpha SDK currently does not provide support for every AWS service. You can see all the services currently supported by the SDK on [AWS_SERVICES_SUPPORTED](AWS_SERVICES_SUPPORTED.md)
 
 ## Additional Resources
+
+- Code Examples
+- Our alpha launch announcement
 
 ## Security
 
