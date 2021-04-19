@@ -3,10 +3,10 @@
 Thank you for your interest in contributing to the AWS SDK for Rust! Whether it's a bug report, new feature, correction, or additional
 documentation, we greatly value feedback and contributions from our community.
 
-Please read through this document before submitting any contributions to ensure you your contribution goes through the correct repository and we have all the necessary
-information to effectively respond.
+Please read through this document before submitting any contributions to ensure your contribution goes to the correct code repository and we have all the necessary
+information to effectively respond to your request.
 
-## The AWS SDK for Rust has two GitHub repositories for contributions
+## The AWS SDK for Rust has two GitHub repositories
 
 1) This repository ([awslabs/aws-sdk-rust](https://github.com/awslabs/aws-sdk-rust)) 
 
