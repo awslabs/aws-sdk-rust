@@ -4,7 +4,7 @@ Jump to:
 - [Getting Started](#Getting-Started-with-the-SDK)
 - [Getting Help](#Getting-Help)
 - [Feedback and contributing](#Feedback-and-contributing)
-- [Design](#Design Docs)
+- [Design](#Design-Docs)
 - [AWS Services Supported](#AWS-Services-Supported)
 - [Additional Resources](#Additional-Resources)
 
