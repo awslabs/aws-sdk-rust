@@ -3,10 +3,10 @@
 Thank you for your interest in contributing to the AWS SDK for Rust! Whether it's a bug report, new feature, correction, or additional
 documentation, we greatly value feedback and contributions from our community.
 
-Please read through this document before submitting any feedback to ensure we have all the necessary
-information to effectively respond to your bug report or contribution.
+Please read through this document before submitting any contributions to ensure you your contribution goes through the correct repository and we have all the necessary
+information to effectively respond.
 
-## The AWS SDK for Rust has two code repositories
+## The AWS SDK for Rust has two GitHub repositories for contributions
 
 1) This repository ([awslabs/aws-sdk-rust](https://github.com/awslabs/aws-sdk-rust)) 
 
@@ -18,7 +18,7 @@ If you want to contribute by diving into the code gen machinery and helping actu
 
 ## Reporting Bugs/Feature Requests
 
-We welcome you to use the GitHub issue tracker to report bugs or suggest features.
+We welcome you to use the GitHub issue tracker to report bugs or suggest features to this code repository.
 
 When filing an issue, please check existing open, or recently closed, issues to make sure somebody else hasn't already
 reported the issue. Please try to include as much information as you can. Details like these for bug reports are incredibly useful:
@@ -50,7 +50,7 @@ GitHub provides additional document on [forking a repository](https://help.githu
 
 ## Building High Level Libraries
 
-This is one of the best ways to contribute to the SDK. Looking for open issues is a great way to find one that we could use your help with. As our projects, by default, use the default GitHub issue labels, looking at any 'help wanted' issues is a great place to start. Please comment on the issue to communicate your interest so we can work with you in its development.
+This is one of the best ways to contribute to the SDK. Looking for an open issue labeled 'help wanted' is a great way to find one that we could use your help with. Please comment on the issue to communicate your interest so we can work with you in its development.
 
 
 ## Code of Conduct
