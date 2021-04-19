@@ -17,6 +17,8 @@ This SDK for Rust is code generated from [Smithy models](https://awslabs.github.
 
 ## Getting Started with the SDK
 
+The following instructions will provide you with a quick example of how to get started with the new AWS SDK for Rust and use DynamoDB to perform a simple operation.
+
 1. Create a new Rust project 
 2. Within your Cargo.toml file, add dependencies for the AWS service(s) you a planning to use, Tokio, and Hyper
 
@@ -26,9 +28,33 @@ aws-dynamodb = 0.1-alpha // add a dependency for each AWS service you are planni
 aws-hyper = 0.1-alpha
 tokio = "1" # or a subset if you know what you want
 ```
+3. Input your AWS credentials into your terminal as environment variables **Note:** The alpha SDK only supports environment variable credential providers at this time. 
 
+```
+export AWS_ACCESS_KEY_ID=...
+export AWS_SECRET_ACCESS_KEY=...
+```
 
-4. Input your AWS credentials into your terminal as environment variables
+4. Make a request using DynamoDB
+
+```
+use std::error::Error;
+
+use dynamodb::{operation, Region};
+
+#[tokio::main]
+async fn main() -> Result<(), Box<dyn Error>> {
+    let config = dynamodb::Config::builder()
+        .region(Region::new("us-east-1"))
+        .build();
+    let client = aws_hyper::Client::https();
+
+    let op = operation::ListTables::builder().limit(10).build(&config);
+    let tables = client.call(op).await?;
+    println!("Current DynamoDB tables: {:?}", tables);
+    Ok(())
+}
+```
 
 ### Prerequisites
 
