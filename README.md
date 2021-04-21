@@ -20,7 +20,7 @@ The following instructions will provide you with a quick example of how to get s
 ```toml
 [dependencies]
 dynamodb = { git = "https://awslabs/aws-sdk-rust", tag = "v0.0.1-alpha", package = "aws-sdk-dynamodb" }
-tokio = { version = "1", features = ["macros", "rt-multi-thread"] }
+tokio = { version = "1", features = ["full"] }
 ```
 3. Input your AWS credentials into your terminal as environment variables **Note:** The alpha SDK only supports environment variable credential providers at this time. 
 
