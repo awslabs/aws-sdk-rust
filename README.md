@@ -8,7 +8,7 @@ This SDK for Rust is code generated from [Smithy models](https://awslabs.github.
 
 ## Getting Started with the SDK
 
-The new AWS SDK for Rust is built with crates per AWS service. [Tokio](https://crates.io/crates/tokio) must also be added as a dependency within your Rust project to execute asynchronous code. During the alpha, the SDK will not be pushed to crates.io and must be used via a Git dependency.
+The new AWS SDK for Rust is built with one crate per AWS service. [Tokio](https://crates.io/crates/tokio) must also be added as a dependency within your Rust project to execute asynchronous code. During the alpha, the SDK will not be pushed to crates.io and must be used via a Git dependency.
 
 1. Create a new Rust project: `cargo new sdk-example`
 2. Within your Cargo.toml file, add dependencies for DynamoDB and Tokio:
@@ -18,7 +18,8 @@ The new AWS SDK for Rust is built with crates per AWS service. [Tokio](https://c
 dynamodb = { git = "https://awslabs/aws-sdk-rust", tag = "v0.0.1-alpha", package = "aws-sdk-dynamodb" }
 tokio = { version = "1", features = ["full"] }
 ```
-3. Input your AWS credentials into your terminal as environment variables **Note:** The alpha SDK only supports environment variable credential providers at this time. 
+3. Provide your AWS credentials as environment variables:
+  > **Note:** The alpha SDK only supports environment variable credential providers at this time. 
 
 ```bash
 export AWS_ACCESS_KEY_ID=...
@@ -46,8 +47,8 @@ In order to use the SDK for Rust, you must already have Rust and Cargo installed
 
 ## Getting Help
 
-* [GitHub discussions](https://github.com/awslabs/aws-sdk-rust/discussions) - Submit your questions on the discussion board
-* *Public slack channel/Gitter/Discord?*
+* [GitHub discussions](https://github.com/awslabs/aws-sdk-rust/discussions) - For ideas, RFCs & general questions.
+* [GitHub issues] – For bug reports.
 
 ## Feedback and Contributing
 
