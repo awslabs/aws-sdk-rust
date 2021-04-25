@@ -15,7 +15,7 @@ The new AWS SDK for Rust is built with one crate per AWS service. [Tokio](https:
 
 ```toml
 [dependencies]
-dynamodb = { git = "https://awslabs/aws-sdk-rust", tag = "v0.0.1-alpha", package = "aws-sdk-dynamodb" }
+dynamodb = { git = "https://github.com/awslabs/aws-sdk-rust", tag = "v0.0.1-alpha", package = "aws-sdk-dynamodb" }
 tokio = { version = "1", features = ["full"] }
 ```
 3. Provide your AWS credentials as environment variables:
