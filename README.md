@@ -21,10 +21,17 @@ tokio = { version = "1", features = ["full"] }
 3. Provide your AWS credentials as environment variables:
   > **Note:** The alpha SDK only supports environment variable credential providers at this time. 
 
+**Linux/MacOS**
 ```bash
 export AWS_ACCESS_KEY_ID=...
 export AWS_SECRET_ACCESS_KEY=...
 export AWS_DEFAULT_REGION=... # eg. us-east-1
+```
+**Windows**
+```cmd
+set AWS_ACCESS_KEY_ID=...
+set AWS_SECRET_ACCESS_KEY=...
+set AWS_DEFAULT_REGION=... # eg. us-east-1
 ```
 
 4. Make a request using DynamoDB
