@@ -230,7 +230,7 @@ pub enum UserAgentStageError {
     #[error("User agent missing from property bag")]
     UserAgentMissing,
     #[error("Provided user agent header was invalid")]
-    InvalidUAHeader(#[from] InvalidHeaderValue),
+    InvalidHeader(#[from] InvalidHeaderValue),
 }
 
 lazy_static::lazy_static! {

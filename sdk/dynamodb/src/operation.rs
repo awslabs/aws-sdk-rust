@@ -4,20 +4,12 @@
 /// </p>
 #[derive(std::clone::Clone)]
 pub struct BatchExecuteStatement {
-    input: crate::input::BatchExecuteStatementInput,
+    _private: (),
 }
 impl BatchExecuteStatement {
     /// Creates a new builder-style object to manufacture [`BatchExecuteStatementInput`](crate::input::BatchExecuteStatementInput)
     pub fn builder() -> crate::input::batch_execute_statement_input::Builder {
         crate::input::batch_execute_statement_input::Builder::default()
-    }
-    pub fn build_http_request(
-        &self,
-    ) -> Result<http::request::Request<Vec<u8>>, smithy_http::operation::BuildError> {
-        Ok(crate::input::BatchExecuteStatementInput::assemble(
-            self.input.request_builder_base()?,
-            self.input.build_body(),
-        ))
     }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
@@ -69,8 +61,8 @@ impl BatchExecuteStatement {
     {
         Self::from_response(&response)
     }
-    pub fn new(input: crate::input::BatchExecuteStatementInput) -> Self {
-        Self { input }
+    pub fn new() -> Self {
+        Self { _private: () }
     }
 }
 
@@ -132,20 +124,12 @@ impl smithy_http::response::ParseStrictResponse for BatchExecuteStatement {
 /// Guide</i>.</p>
 #[derive(std::clone::Clone)]
 pub struct BatchGetItem {
-    input: crate::input::BatchGetItemInput,
+    _private: (),
 }
 impl BatchGetItem {
     /// Creates a new builder-style object to manufacture [`BatchGetItemInput`](crate::input::BatchGetItemInput)
     pub fn builder() -> crate::input::batch_get_item_input::Builder {
         crate::input::batch_get_item_input::Builder::default()
-    }
-    pub fn build_http_request(
-        &self,
-    ) -> Result<http::request::Request<Vec<u8>>, smithy_http::operation::BuildError> {
-        Ok(crate::input::BatchGetItemInput::assemble(
-            self.input.request_builder_base()?,
-            self.input.build_body(),
-        ))
     }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
@@ -217,8 +201,8 @@ impl BatchGetItem {
     ) -> Result<crate::output::BatchGetItemOutput, crate::error::BatchGetItemError> {
         Self::from_response(&response)
     }
-    pub fn new(input: crate::input::BatchGetItemInput) -> Self {
-        Self { input }
+    pub fn new() -> Self {
+        Self { _private: () }
     }
 }
 
@@ -305,20 +289,12 @@ impl smithy_http::response::ParseStrictResponse for BatchGetItem {
 /// </ul>
 #[derive(std::clone::Clone)]
 pub struct BatchWriteItem {
-    input: crate::input::BatchWriteItemInput,
+    _private: (),
 }
 impl BatchWriteItem {
     /// Creates a new builder-style object to manufacture [`BatchWriteItemInput`](crate::input::BatchWriteItemInput)
     pub fn builder() -> crate::input::batch_write_item_input::Builder {
         crate::input::batch_write_item_input::Builder::default()
-    }
-    pub fn build_http_request(
-        &self,
-    ) -> Result<http::request::Request<Vec<u8>>, smithy_http::operation::BuildError> {
-        Ok(crate::input::BatchWriteItemInput::assemble(
-            self.input.request_builder_base()?,
-            self.input.build_body(),
-        ))
     }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
@@ -376,8 +352,8 @@ impl BatchWriteItem {
     ) -> Result<crate::output::BatchWriteItemOutput, crate::error::BatchWriteItemError> {
         Self::from_response(&response)
     }
-    pub fn new(input: crate::input::BatchWriteItemInput) -> Self {
-        Self { input }
+    pub fn new() -> Self {
+        Self { _private: () }
     }
 }
 
@@ -420,20 +396,12 @@ impl smithy_http::response::ParseStrictResponse for BatchWriteItem {
 /// </ul>
 #[derive(std::clone::Clone)]
 pub struct CreateBackup {
-    input: crate::input::CreateBackupInput,
+    _private: (),
 }
 impl CreateBackup {
     /// Creates a new builder-style object to manufacture [`CreateBackupInput`](crate::input::CreateBackupInput)
     pub fn builder() -> crate::input::create_backup_input::Builder {
         crate::input::create_backup_input::Builder::default()
-    }
-    pub fn build_http_request(
-        &self,
-    ) -> Result<http::request::Request<Vec<u8>>, smithy_http::operation::BuildError> {
-        Ok(crate::input::CreateBackupInput::assemble(
-            self.input.request_builder_base()?,
-            self.input.build_body(),
-        ))
     }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
@@ -517,8 +485,8 @@ impl CreateBackup {
     ) -> Result<crate::output::CreateBackupOutput, crate::error::CreateBackupError> {
         Self::from_response(&response)
     }
-    pub fn new(input: crate::input::CreateBackupInput) -> Self {
-        Self { input }
+    pub fn new() -> Self {
+        Self { _private: () }
     }
 }
 
@@ -597,20 +565,12 @@ impl smithy_http::response::ParseStrictResponse for CreateBackup {
 /// </important>
 #[derive(std::clone::Clone)]
 pub struct CreateGlobalTable {
-    input: crate::input::CreateGlobalTableInput,
+    _private: (),
 }
 impl CreateGlobalTable {
     /// Creates a new builder-style object to manufacture [`CreateGlobalTableInput`](crate::input::CreateGlobalTableInput)
     pub fn builder() -> crate::input::create_global_table_input::Builder {
         crate::input::create_global_table_input::Builder::default()
-    }
-    pub fn build_http_request(
-        &self,
-    ) -> Result<http::request::Request<Vec<u8>>, smithy_http::operation::BuildError> {
-        Ok(crate::input::CreateGlobalTableInput::assemble(
-            self.input.request_builder_base()?,
-            self.input.build_body(),
-        ))
     }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
@@ -680,8 +640,8 @@ impl CreateGlobalTable {
     ) -> Result<crate::output::CreateGlobalTableOutput, crate::error::CreateGlobalTableError> {
         Self::from_response(&response)
     }
-    pub fn new(input: crate::input::CreateGlobalTableInput) -> Self {
-        Self { input }
+    pub fn new() -> Self {
+        Self { _private: () }
     }
 }
 
@@ -708,20 +668,12 @@ impl smithy_http::response::ParseStrictResponse for CreateGlobalTable {
 /// <p>You can use the <code>DescribeTable</code> action to check the table status.</p>
 #[derive(std::clone::Clone)]
 pub struct CreateTable {
-    input: crate::input::CreateTableInput,
+    _private: (),
 }
 impl CreateTable {
     /// Creates a new builder-style object to manufacture [`CreateTableInput`](crate::input::CreateTableInput)
     pub fn builder() -> crate::input::create_table_input::Builder {
         crate::input::create_table_input::Builder::default()
-    }
-    pub fn build_http_request(
-        &self,
-    ) -> Result<http::request::Request<Vec<u8>>, smithy_http::operation::BuildError> {
-        Ok(crate::input::CreateTableInput::assemble(
-            self.input.request_builder_base()?,
-            self.input.build_body(),
-        ))
     }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
@@ -781,8 +733,8 @@ impl CreateTable {
     ) -> Result<crate::output::CreateTableOutput, crate::error::CreateTableError> {
         Self::from_response(&response)
     }
-    pub fn new(input: crate::input::CreateTableInput) -> Self {
-        Self { input }
+    pub fn new() -> Self {
+        Self { _private: () }
     }
 }
 
@@ -797,20 +749,12 @@ impl smithy_http::response::ParseStrictResponse for CreateTable {
 /// <p>You can call <code>DeleteBackup</code> at a maximum rate of 10 times per second.</p>
 #[derive(std::clone::Clone)]
 pub struct DeleteBackup {
-    input: crate::input::DeleteBackupInput,
+    _private: (),
 }
 impl DeleteBackup {
     /// Creates a new builder-style object to manufacture [`DeleteBackupInput`](crate::input::DeleteBackupInput)
     pub fn builder() -> crate::input::delete_backup_input::Builder {
         crate::input::delete_backup_input::Builder::default()
-    }
-    pub fn build_http_request(
-        &self,
-    ) -> Result<http::request::Request<Vec<u8>>, smithy_http::operation::BuildError> {
-        Ok(crate::input::DeleteBackupInput::assemble(
-            self.input.request_builder_base()?,
-            self.input.build_body(),
-        ))
     }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
@@ -877,8 +821,8 @@ impl DeleteBackup {
     ) -> Result<crate::output::DeleteBackupOutput, crate::error::DeleteBackupError> {
         Self::from_response(&response)
     }
-    pub fn new(input: crate::input::DeleteBackupInput) -> Self {
-        Self { input }
+    pub fn new() -> Self {
+        Self { _private: () }
     }
 }
 
@@ -897,20 +841,12 @@ impl smithy_http::response::ParseStrictResponse for DeleteBackup {
 /// <p>Conditional deletes are useful for deleting items only if specific conditions are met. If those conditions are met, DynamoDB performs the delete. Otherwise, the item is not deleted.</p>
 #[derive(std::clone::Clone)]
 pub struct DeleteItem {
-    input: crate::input::DeleteItemInput,
+    _private: (),
 }
 impl DeleteItem {
     /// Creates a new builder-style object to manufacture [`DeleteItemInput`](crate::input::DeleteItemInput)
     pub fn builder() -> crate::input::delete_item_input::Builder {
         crate::input::delete_item_input::Builder::default()
-    }
-    pub fn build_http_request(
-        &self,
-    ) -> Result<http::request::Request<Vec<u8>>, smithy_http::operation::BuildError> {
-        Ok(crate::input::DeleteItemInput::assemble(
-            self.input.request_builder_base()?,
-            self.input.build_body(),
-        ))
     }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
@@ -1005,8 +941,8 @@ impl DeleteItem {
     ) -> Result<crate::output::DeleteItemOutput, crate::error::DeleteItemError> {
         Self::from_response(&response)
     }
-    pub fn new(input: crate::input::DeleteItemInput) -> Self {
-        Self { input }
+    pub fn new() -> Self {
+        Self { _private: () }
     }
 }
 
@@ -1035,20 +971,12 @@ impl smithy_http::response::ParseStrictResponse for DeleteItem {
 /// <p>Use the <code>DescribeTable</code> action to check the status of the table. </p>
 #[derive(std::clone::Clone)]
 pub struct DeleteTable {
-    input: crate::input::DeleteTableInput,
+    _private: (),
 }
 impl DeleteTable {
     /// Creates a new builder-style object to manufacture [`DeleteTableInput`](crate::input::DeleteTableInput)
     pub fn builder() -> crate::input::delete_table_input::Builder {
         crate::input::delete_table_input::Builder::default()
-    }
-    pub fn build_http_request(
-        &self,
-    ) -> Result<http::request::Request<Vec<u8>>, smithy_http::operation::BuildError> {
-        Ok(crate::input::DeleteTableInput::assemble(
-            self.input.request_builder_base()?,
-            self.input.build_body(),
-        ))
     }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
@@ -1115,8 +1043,8 @@ impl DeleteTable {
     ) -> Result<crate::output::DeleteTableOutput, crate::error::DeleteTableError> {
         Self::from_response(&response)
     }
-    pub fn new(input: crate::input::DeleteTableInput) -> Self {
-        Self { input }
+    pub fn new() -> Self {
+        Self { _private: () }
     }
 }
 
@@ -1131,20 +1059,12 @@ impl smithy_http::response::ParseStrictResponse for DeleteTable {
 /// <p>You can call <code>DescribeBackup</code> at a maximum rate of 10 times per second.</p>
 #[derive(std::clone::Clone)]
 pub struct DescribeBackup {
-    input: crate::input::DescribeBackupInput,
+    _private: (),
 }
 impl DescribeBackup {
     /// Creates a new builder-style object to manufacture [`DescribeBackupInput`](crate::input::DescribeBackupInput)
     pub fn builder() -> crate::input::describe_backup_input::Builder {
         crate::input::describe_backup_input::Builder::default()
-    }
-    pub fn build_http_request(
-        &self,
-    ) -> Result<http::request::Request<Vec<u8>>, smithy_http::operation::BuildError> {
-        Ok(crate::input::DescribeBackupInput::assemble(
-            self.input.request_builder_base()?,
-            self.input.build_body(),
-        ))
     }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
@@ -1197,8 +1117,8 @@ impl DescribeBackup {
     ) -> Result<crate::output::DescribeBackupOutput, crate::error::DescribeBackupError> {
         Self::from_response(&response)
     }
-    pub fn new(input: crate::input::DescribeBackupInput) -> Self {
-        Self { input }
+    pub fn new() -> Self {
+        Self { _private: () }
     }
 }
 
@@ -1222,20 +1142,12 @@ impl smithy_http::response::ParseStrictResponse for DescribeBackup {
 /// <p>You can call <code>DescribeContinuousBackups</code> at a maximum rate of 10 times per second.</p>
 #[derive(std::clone::Clone)]
 pub struct DescribeContinuousBackups {
-    input: crate::input::DescribeContinuousBackupsInput,
+    _private: (),
 }
 impl DescribeContinuousBackups {
     /// Creates a new builder-style object to manufacture [`DescribeContinuousBackupsInput`](crate::input::DescribeContinuousBackupsInput)
     pub fn builder() -> crate::input::describe_continuous_backups_input::Builder {
         crate::input::describe_continuous_backups_input::Builder::default()
-    }
-    pub fn build_http_request(
-        &self,
-    ) -> Result<http::request::Request<Vec<u8>>, smithy_http::operation::BuildError> {
-        Ok(crate::input::DescribeContinuousBackupsInput::assemble(
-            self.input.request_builder_base()?,
-            self.input.build_body(),
-        ))
     }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
@@ -1305,8 +1217,8 @@ impl DescribeContinuousBackups {
     > {
         Self::from_response(&response)
     }
-    pub fn new(input: crate::input::DescribeContinuousBackupsInput) -> Self {
-        Self { input }
+    pub fn new() -> Self {
+        Self { _private: () }
     }
 }
 
@@ -1323,20 +1235,12 @@ impl smithy_http::response::ParseStrictResponse for DescribeContinuousBackups {
 /// <p>Returns information about contributor insights, for a given table or global secondary index.</p>
 #[derive(std::clone::Clone)]
 pub struct DescribeContributorInsights {
-    input: crate::input::DescribeContributorInsightsInput,
+    _private: (),
 }
 impl DescribeContributorInsights {
     /// Creates a new builder-style object to manufacture [`DescribeContributorInsightsInput`](crate::input::DescribeContributorInsightsInput)
     pub fn builder() -> crate::input::describe_contributor_insights_input::Builder {
         crate::input::describe_contributor_insights_input::Builder::default()
-    }
-    pub fn build_http_request(
-        &self,
-    ) -> Result<http::request::Request<Vec<u8>>, smithy_http::operation::BuildError> {
-        Ok(crate::input::DescribeContributorInsightsInput::assemble(
-            self.input.request_builder_base()?,
-            self.input.build_body(),
-        ))
     }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
@@ -1391,8 +1295,8 @@ impl DescribeContributorInsights {
     > {
         Self::from_response(&response)
     }
-    pub fn new(input: crate::input::DescribeContributorInsightsInput) -> Self {
-        Self { input }
+    pub fn new() -> Self {
+        Self { _private: () }
     }
 }
 
@@ -1409,20 +1313,12 @@ impl smithy_http::response::ParseStrictResponse for DescribeContributorInsights 
 /// <p>Returns the regional endpoint information.</p>
 #[derive(std::clone::Clone)]
 pub struct DescribeEndpoints {
-    input: crate::input::DescribeEndpointsInput,
+    _private: (),
 }
 impl DescribeEndpoints {
     /// Creates a new builder-style object to manufacture [`DescribeEndpointsInput`](crate::input::DescribeEndpointsInput)
     pub fn builder() -> crate::input::describe_endpoints_input::Builder {
         crate::input::describe_endpoints_input::Builder::default()
-    }
-    pub fn build_http_request(
-        &self,
-    ) -> Result<http::request::Request<Vec<u8>>, smithy_http::operation::BuildError> {
-        Ok(crate::input::DescribeEndpointsInput::assemble(
-            self.input.request_builder_base()?,
-            self.input.build_body(),
-        ))
     }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
@@ -1448,8 +1344,8 @@ impl DescribeEndpoints {
     ) -> Result<crate::output::DescribeEndpointsOutput, crate::error::DescribeEndpointsError> {
         Self::from_response(&response)
     }
-    pub fn new(input: crate::input::DescribeEndpointsInput) -> Self {
-        Self { input }
+    pub fn new() -> Self {
+        Self { _private: () }
     }
 }
 
@@ -1464,20 +1360,12 @@ impl smithy_http::response::ParseStrictResponse for DescribeEndpoints {
 /// <p>Describes an existing table export.</p>
 #[derive(std::clone::Clone)]
 pub struct DescribeExport {
-    input: crate::input::DescribeExportInput,
+    _private: (),
 }
 impl DescribeExport {
     /// Creates a new builder-style object to manufacture [`DescribeExportInput`](crate::input::DescribeExportInput)
     pub fn builder() -> crate::input::describe_export_input::Builder {
         crate::input::describe_export_input::Builder::default()
-    }
-    pub fn build_http_request(
-        &self,
-    ) -> Result<http::request::Request<Vec<u8>>, smithy_http::operation::BuildError> {
-        Ok(crate::input::DescribeExportInput::assemble(
-            self.input.request_builder_base()?,
-            self.input.build_body(),
-        ))
     }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
@@ -1530,8 +1418,8 @@ impl DescribeExport {
     ) -> Result<crate::output::DescribeExportOutput, crate::error::DescribeExportError> {
         Self::from_response(&response)
     }
-    pub fn new(input: crate::input::DescribeExportInput) -> Self {
-        Self { input }
+    pub fn new() -> Self {
+        Self { _private: () }
     }
 }
 
@@ -1549,20 +1437,12 @@ impl smithy_http::response::ParseStrictResponse for DescribeExport {
 /// </note>
 #[derive(std::clone::Clone)]
 pub struct DescribeGlobalTable {
-    input: crate::input::DescribeGlobalTableInput,
+    _private: (),
 }
 impl DescribeGlobalTable {
     /// Creates a new builder-style object to manufacture [`DescribeGlobalTableInput`](crate::input::DescribeGlobalTableInput)
     pub fn builder() -> crate::input::describe_global_table_input::Builder {
         crate::input::describe_global_table_input::Builder::default()
-    }
-    pub fn build_http_request(
-        &self,
-    ) -> Result<http::request::Request<Vec<u8>>, smithy_http::operation::BuildError> {
-        Ok(crate::input::DescribeGlobalTableInput::assemble(
-            self.input.request_builder_base()?,
-            self.input.build_body(),
-        ))
     }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
@@ -1621,8 +1501,8 @@ impl DescribeGlobalTable {
     {
         Self::from_response(&response)
     }
-    pub fn new(input: crate::input::DescribeGlobalTableInput) -> Self {
-        Self { input }
+    pub fn new() -> Self {
+        Self { _private: () }
     }
 }
 
@@ -1640,20 +1520,12 @@ impl smithy_http::response::ParseStrictResponse for DescribeGlobalTable {
 /// </note>
 #[derive(std::clone::Clone)]
 pub struct DescribeGlobalTableSettings {
-    input: crate::input::DescribeGlobalTableSettingsInput,
+    _private: (),
 }
 impl DescribeGlobalTableSettings {
     /// Creates a new builder-style object to manufacture [`DescribeGlobalTableSettingsInput`](crate::input::DescribeGlobalTableSettingsInput)
     pub fn builder() -> crate::input::describe_global_table_settings_input::Builder {
         crate::input::describe_global_table_settings_input::Builder::default()
-    }
-    pub fn build_http_request(
-        &self,
-    ) -> Result<http::request::Request<Vec<u8>>, smithy_http::operation::BuildError> {
-        Ok(crate::input::DescribeGlobalTableSettingsInput::assemble(
-            self.input.request_builder_base()?,
-            self.input.build_body(),
-        ))
     }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
@@ -1708,8 +1580,8 @@ impl DescribeGlobalTableSettings {
     > {
         Self::from_response(&response)
     }
-    pub fn new(input: crate::input::DescribeGlobalTableSettingsInput) -> Self {
-        Self { input }
+    pub fn new() -> Self {
+        Self { _private: () }
     }
 }
 
@@ -1726,22 +1598,12 @@ impl smithy_http::response::ParseStrictResponse for DescribeGlobalTableSettings 
 /// <p>Returns information about the status of Kinesis streaming.</p>
 #[derive(std::clone::Clone)]
 pub struct DescribeKinesisStreamingDestination {
-    input: crate::input::DescribeKinesisStreamingDestinationInput,
+    _private: (),
 }
 impl DescribeKinesisStreamingDestination {
     /// Creates a new builder-style object to manufacture [`DescribeKinesisStreamingDestinationInput`](crate::input::DescribeKinesisStreamingDestinationInput)
     pub fn builder() -> crate::input::describe_kinesis_streaming_destination_input::Builder {
         crate::input::describe_kinesis_streaming_destination_input::Builder::default()
-    }
-    pub fn build_http_request(
-        &self,
-    ) -> Result<http::request::Request<Vec<u8>>, smithy_http::operation::BuildError> {
-        Ok(
-            crate::input::DescribeKinesisStreamingDestinationInput::assemble(
-                self.input.request_builder_base()?,
-                self.input.build_body(),
-            ),
-        )
     }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
@@ -1796,8 +1658,8 @@ impl DescribeKinesisStreamingDestination {
     > {
         Self::from_response(&response)
     }
-    pub fn new(input: crate::input::DescribeKinesisStreamingDestinationInput) -> Self {
-        Self { input }
+    pub fn new() -> Self {
+        Self { _private: () }
     }
 }
 
@@ -1873,20 +1735,12 @@ impl smithy_http::response::ParseStrictResponse for DescribeKinesisStreamingDest
 /// <p>The <code>DescribeLimits</code> Request element has no content.</p>
 #[derive(std::clone::Clone)]
 pub struct DescribeLimits {
-    input: crate::input::DescribeLimitsInput,
+    _private: (),
 }
 impl DescribeLimits {
     /// Creates a new builder-style object to manufacture [`DescribeLimitsInput`](crate::input::DescribeLimitsInput)
     pub fn builder() -> crate::input::describe_limits_input::Builder {
         crate::input::describe_limits_input::Builder::default()
-    }
-    pub fn build_http_request(
-        &self,
-    ) -> Result<http::request::Request<Vec<u8>>, smithy_http::operation::BuildError> {
-        Ok(crate::input::DescribeLimitsInput::assemble(
-            self.input.request_builder_base()?,
-            self.input.build_body(),
-        ))
     }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
@@ -1935,8 +1789,8 @@ impl DescribeLimits {
     ) -> Result<crate::output::DescribeLimitsOutput, crate::error::DescribeLimitsError> {
         Self::from_response(&response)
     }
-    pub fn new(input: crate::input::DescribeLimitsInput) -> Self {
-        Self { input }
+    pub fn new() -> Self {
+        Self { _private: () }
     }
 }
 
@@ -1956,20 +1810,12 @@ impl smithy_http::response::ParseStrictResponse for DescribeLimits {
 /// </note>
 #[derive(std::clone::Clone)]
 pub struct DescribeTable {
-    input: crate::input::DescribeTableInput,
+    _private: (),
 }
 impl DescribeTable {
     /// Creates a new builder-style object to manufacture [`DescribeTableInput`](crate::input::DescribeTableInput)
     pub fn builder() -> crate::input::describe_table_input::Builder {
         crate::input::describe_table_input::Builder::default()
-    }
-    pub fn build_http_request(
-        &self,
-    ) -> Result<http::request::Request<Vec<u8>>, smithy_http::operation::BuildError> {
-        Ok(crate::input::DescribeTableInput::assemble(
-            self.input.request_builder_base()?,
-            self.input.build_body(),
-        ))
     }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
@@ -2020,8 +1866,8 @@ impl DescribeTable {
     ) -> Result<crate::output::DescribeTableOutput, crate::error::DescribeTableError> {
         Self::from_response(&response)
     }
-    pub fn new(input: crate::input::DescribeTableInput) -> Self {
-        Self { input }
+    pub fn new() -> Self {
+        Self { _private: () }
     }
 }
 
@@ -2038,22 +1884,12 @@ impl smithy_http::response::ParseStrictResponse for DescribeTable {
 /// </note>
 #[derive(std::clone::Clone)]
 pub struct DescribeTableReplicaAutoScaling {
-    input: crate::input::DescribeTableReplicaAutoScalingInput,
+    _private: (),
 }
 impl DescribeTableReplicaAutoScaling {
     /// Creates a new builder-style object to manufacture [`DescribeTableReplicaAutoScalingInput`](crate::input::DescribeTableReplicaAutoScalingInput)
     pub fn builder() -> crate::input::describe_table_replica_auto_scaling_input::Builder {
         crate::input::describe_table_replica_auto_scaling_input::Builder::default()
-    }
-    pub fn build_http_request(
-        &self,
-    ) -> Result<http::request::Request<Vec<u8>>, smithy_http::operation::BuildError> {
-        Ok(
-            crate::input::DescribeTableReplicaAutoScalingInput::assemble(
-                self.input.request_builder_base()?,
-                self.input.build_body(),
-            ),
-        )
     }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
@@ -2103,8 +1939,8 @@ impl DescribeTableReplicaAutoScaling {
     > {
         Self::from_response(&response)
     }
-    pub fn new(input: crate::input::DescribeTableReplicaAutoScalingInput) -> Self {
-        Self { input }
+    pub fn new() -> Self {
+        Self { _private: () }
     }
 }
 
@@ -2121,20 +1957,12 @@ impl smithy_http::response::ParseStrictResponse for DescribeTableReplicaAutoScal
 /// <p>Gives a description of the Time to Live (TTL) status on the specified table. </p>
 #[derive(std::clone::Clone)]
 pub struct DescribeTimeToLive {
-    input: crate::input::DescribeTimeToLiveInput,
+    _private: (),
 }
 impl DescribeTimeToLive {
     /// Creates a new builder-style object to manufacture [`DescribeTimeToLiveInput`](crate::input::DescribeTimeToLiveInput)
     pub fn builder() -> crate::input::describe_time_to_live_input::Builder {
         crate::input::describe_time_to_live_input::Builder::default()
-    }
-    pub fn build_http_request(
-        &self,
-    ) -> Result<http::request::Request<Vec<u8>>, smithy_http::operation::BuildError> {
-        Ok(crate::input::DescribeTimeToLiveInput::assemble(
-            self.input.request_builder_base()?,
-            self.input.build_body(),
-        ))
     }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
@@ -2191,8 +2019,8 @@ impl DescribeTimeToLive {
     {
         Self::from_response(&response)
     }
-    pub fn new(input: crate::input::DescribeTimeToLiveInput) -> Self {
-        Self { input }
+    pub fn new() -> Self {
+        Self { _private: () }
     }
 }
 
@@ -2208,22 +2036,12 @@ impl smithy_http::response::ParseStrictResponse for DescribeTimeToLive {
 /// without deleting either of the resources.</p>
 #[derive(std::clone::Clone)]
 pub struct DisableKinesisStreamingDestination {
-    input: crate::input::DisableKinesisStreamingDestinationInput,
+    _private: (),
 }
 impl DisableKinesisStreamingDestination {
     /// Creates a new builder-style object to manufacture [`DisableKinesisStreamingDestinationInput`](crate::input::DisableKinesisStreamingDestinationInput)
     pub fn builder() -> crate::input::disable_kinesis_streaming_destination_input::Builder {
         crate::input::disable_kinesis_streaming_destination_input::Builder::default()
-    }
-    pub fn build_http_request(
-        &self,
-    ) -> Result<http::request::Request<Vec<u8>>, smithy_http::operation::BuildError> {
-        Ok(
-            crate::input::DisableKinesisStreamingDestinationInput::assemble(
-                self.input.request_builder_base()?,
-                self.input.build_body(),
-            ),
-        )
     }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
@@ -2287,8 +2105,8 @@ impl DisableKinesisStreamingDestination {
     > {
         Self::from_response(&response)
     }
-    pub fn new(input: crate::input::DisableKinesisStreamingDestinationInput) -> Self {
-        Self { input }
+    pub fn new() -> Self {
+        Self { _private: () }
     }
 }
 
@@ -2308,22 +2126,12 @@ impl smithy_http::response::ParseStrictResponse for DisableKinesisStreamingDesti
 /// ACTIVE.</p>
 #[derive(std::clone::Clone)]
 pub struct EnableKinesisStreamingDestination {
-    input: crate::input::EnableKinesisStreamingDestinationInput,
+    _private: (),
 }
 impl EnableKinesisStreamingDestination {
     /// Creates a new builder-style object to manufacture [`EnableKinesisStreamingDestinationInput`](crate::input::EnableKinesisStreamingDestinationInput)
     pub fn builder() -> crate::input::enable_kinesis_streaming_destination_input::Builder {
         crate::input::enable_kinesis_streaming_destination_input::Builder::default()
-    }
-    pub fn build_http_request(
-        &self,
-    ) -> Result<http::request::Request<Vec<u8>>, smithy_http::operation::BuildError> {
-        Ok(
-            crate::input::EnableKinesisStreamingDestinationInput::assemble(
-                self.input.request_builder_base()?,
-                self.input.build_body(),
-            ),
-        )
     }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
@@ -2387,8 +2195,8 @@ impl EnableKinesisStreamingDestination {
     > {
         Self::from_response(&response)
     }
-    pub fn new(input: crate::input::EnableKinesisStreamingDestinationInput) -> Self {
-        Self { input }
+    pub fn new() -> Self {
+        Self { _private: () }
     }
 }
 
@@ -2407,20 +2215,12 @@ impl smithy_http::response::ParseStrictResponse for EnableKinesisStreamingDestin
 /// </p>
 #[derive(std::clone::Clone)]
 pub struct ExecuteStatement {
-    input: crate::input::ExecuteStatementInput,
+    _private: (),
 }
 impl ExecuteStatement {
     /// Creates a new builder-style object to manufacture [`ExecuteStatementInput`](crate::input::ExecuteStatementInput)
     pub fn builder() -> crate::input::execute_statement_input::Builder {
         crate::input::execute_statement_input::Builder::default()
-    }
-    pub fn build_http_request(
-        &self,
-    ) -> Result<http::request::Request<Vec<u8>>, smithy_http::operation::BuildError> {
-        Ok(crate::input::ExecuteStatementInput::assemble(
-            self.input.request_builder_base()?,
-            self.input.build_body(),
-        ))
     }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
@@ -2485,8 +2285,8 @@ impl ExecuteStatement {
     ) -> Result<crate::output::ExecuteStatementOutput, crate::error::ExecuteStatementError> {
         Self::from_response(&response)
     }
-    pub fn new(input: crate::input::ExecuteStatementInput) -> Self {
-        Self { input }
+    pub fn new() -> Self {
+        Self { _private: () }
     }
 }
 
@@ -2503,20 +2303,12 @@ impl smithy_http::response::ParseStrictResponse for ExecuteStatement {
 /// </p>
 #[derive(std::clone::Clone)]
 pub struct ExecuteTransaction {
-    input: crate::input::ExecuteTransactionInput,
+    _private: (),
 }
 impl ExecuteTransaction {
     /// Creates a new builder-style object to manufacture [`ExecuteTransactionInput`](crate::input::ExecuteTransactionInput)
     pub fn builder() -> crate::input::execute_transaction_input::Builder {
         crate::input::execute_transaction_input::Builder::default()
-    }
-    pub fn build_http_request(
-        &self,
-    ) -> Result<http::request::Request<Vec<u8>>, smithy_http::operation::BuildError> {
-        Ok(crate::input::ExecuteTransactionInput::assemble(
-            self.input.request_builder_base()?,
-            self.input.build_body(),
-        ))
     }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
@@ -2578,8 +2370,8 @@ impl ExecuteTransaction {
     {
         Self::from_response(&response)
     }
-    pub fn new(input: crate::input::ExecuteTransactionInput) -> Self {
-        Self { input }
+    pub fn new() -> Self {
+        Self { _private: () }
     }
 }
 
@@ -2596,20 +2388,12 @@ impl smithy_http::response::ParseStrictResponse for ExecuteTransaction {
 /// window.</p>
 #[derive(std::clone::Clone)]
 pub struct ExportTableToPointInTime {
-    input: crate::input::ExportTableToPointInTimeInput,
+    _private: (),
 }
 impl ExportTableToPointInTime {
     /// Creates a new builder-style object to manufacture [`ExportTableToPointInTimeInput`](crate::input::ExportTableToPointInTimeInput)
     pub fn builder() -> crate::input::export_table_to_point_in_time_input::Builder {
         crate::input::export_table_to_point_in_time_input::Builder::default()
-    }
-    pub fn build_http_request(
-        &self,
-    ) -> Result<http::request::Request<Vec<u8>>, smithy_http::operation::BuildError> {
-        Ok(crate::input::ExportTableToPointInTimeInput::assemble(
-            self.input.request_builder_base()?,
-            self.input.build_body(),
-        ))
     }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
@@ -2675,8 +2459,8 @@ impl ExportTableToPointInTime {
     > {
         Self::from_response(&response)
     }
-    pub fn new(input: crate::input::ExportTableToPointInTimeInput) -> Self {
-        Self { input }
+    pub fn new() -> Self {
+        Self { _private: () }
     }
 }
 
@@ -2699,20 +2483,12 @@ impl smithy_http::response::ParseStrictResponse for ExportTableToPointInTime {
 /// returns the last updated value.</p>
 #[derive(std::clone::Clone)]
 pub struct GetItem {
-    input: crate::input::GetItemInput,
+    _private: (),
 }
 impl GetItem {
     /// Creates a new builder-style object to manufacture [`GetItemInput`](crate::input::GetItemInput)
     pub fn builder() -> crate::input::get_item_input::Builder {
         crate::input::get_item_input::Builder::default()
-    }
-    pub fn build_http_request(
-        &self,
-    ) -> Result<http::request::Request<Vec<u8>>, smithy_http::operation::BuildError> {
-        Ok(crate::input::GetItemInput::assemble(
-            self.input.request_builder_base()?,
-            self.input.build_body(),
-        ))
     }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
@@ -2782,8 +2558,8 @@ impl GetItem {
     ) -> Result<crate::output::GetItemOutput, crate::error::GetItemError> {
         Self::from_response(&response)
     }
-    pub fn new(input: crate::input::GetItemInput) -> Self {
-        Self { input }
+    pub fn new() -> Self {
+        Self { _private: () }
     }
 }
 
@@ -2803,20 +2579,12 @@ impl smithy_http::response::ParseStrictResponse for GetItem {
 /// <p>You can call <code>ListBackups</code> a maximum of five times per second.</p>
 #[derive(std::clone::Clone)]
 pub struct ListBackups {
-    input: crate::input::ListBackupsInput,
+    _private: (),
 }
 impl ListBackups {
     /// Creates a new builder-style object to manufacture [`ListBackupsInput`](crate::input::ListBackupsInput)
     pub fn builder() -> crate::input::list_backups_input::Builder {
         crate::input::list_backups_input::Builder::default()
-    }
-    pub fn build_http_request(
-        &self,
-    ) -> Result<http::request::Request<Vec<u8>>, smithy_http::operation::BuildError> {
-        Ok(crate::input::ListBackupsInput::assemble(
-            self.input.request_builder_base()?,
-            self.input.build_body(),
-        ))
     }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
@@ -2863,8 +2631,8 @@ impl ListBackups {
     ) -> Result<crate::output::ListBackupsOutput, crate::error::ListBackupsError> {
         Self::from_response(&response)
     }
-    pub fn new(input: crate::input::ListBackupsInput) -> Self {
-        Self { input }
+    pub fn new() -> Self {
+        Self { _private: () }
     }
 }
 
@@ -2878,20 +2646,12 @@ impl smithy_http::response::ParseStrictResponse for ListBackups {
 /// <p>Returns a list of ContributorInsightsSummary for a table and all its global secondary indexes.</p>
 #[derive(std::clone::Clone)]
 pub struct ListContributorInsights {
-    input: crate::input::ListContributorInsightsInput,
+    _private: (),
 }
 impl ListContributorInsights {
     /// Creates a new builder-style object to manufacture [`ListContributorInsightsInput`](crate::input::ListContributorInsightsInput)
     pub fn builder() -> crate::input::list_contributor_insights_input::Builder {
         crate::input::list_contributor_insights_input::Builder::default()
-    }
-    pub fn build_http_request(
-        &self,
-    ) -> Result<http::request::Request<Vec<u8>>, smithy_http::operation::BuildError> {
-        Ok(crate::input::ListContributorInsightsInput::assemble(
-            self.input.request_builder_base()?,
-            self.input.build_body(),
-        ))
     }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
@@ -2952,8 +2712,8 @@ impl ListContributorInsights {
     > {
         Self::from_response(&response)
     }
-    pub fn new(input: crate::input::ListContributorInsightsInput) -> Self {
-        Self { input }
+    pub fn new() -> Self {
+        Self { _private: () }
     }
 }
 
@@ -2970,20 +2730,12 @@ impl smithy_http::response::ParseStrictResponse for ListContributorInsights {
 /// <p>Lists completed exports within the past 90 days.</p>
 #[derive(std::clone::Clone)]
 pub struct ListExports {
-    input: crate::input::ListExportsInput,
+    _private: (),
 }
 impl ListExports {
     /// Creates a new builder-style object to manufacture [`ListExportsInput`](crate::input::ListExportsInput)
     pub fn builder() -> crate::input::list_exports_input::Builder {
         crate::input::list_exports_input::Builder::default()
-    }
-    pub fn build_http_request(
-        &self,
-    ) -> Result<http::request::Request<Vec<u8>>, smithy_http::operation::BuildError> {
-        Ok(crate::input::ListExportsInput::assemble(
-            self.input.request_builder_base()?,
-            self.input.build_body(),
-        ))
     }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
@@ -3030,8 +2782,8 @@ impl ListExports {
     ) -> Result<crate::output::ListExportsOutput, crate::error::ListExportsError> {
         Self::from_response(&response)
     }
-    pub fn new(input: crate::input::ListExportsInput) -> Self {
-        Self { input }
+    pub fn new() -> Self {
+        Self { _private: () }
     }
 }
 
@@ -3048,20 +2800,12 @@ impl smithy_http::response::ParseStrictResponse for ListExports {
 /// </note>
 #[derive(std::clone::Clone)]
 pub struct ListGlobalTables {
-    input: crate::input::ListGlobalTablesInput,
+    _private: (),
 }
 impl ListGlobalTables {
     /// Creates a new builder-style object to manufacture [`ListGlobalTablesInput`](crate::input::ListGlobalTablesInput)
     pub fn builder() -> crate::input::list_global_tables_input::Builder {
         crate::input::list_global_tables_input::Builder::default()
-    }
-    pub fn build_http_request(
-        &self,
-    ) -> Result<http::request::Request<Vec<u8>>, smithy_http::operation::BuildError> {
-        Ok(crate::input::ListGlobalTablesInput::assemble(
-            self.input.request_builder_base()?,
-            self.input.build_body(),
-        ))
     }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
@@ -3108,8 +2852,8 @@ impl ListGlobalTables {
     ) -> Result<crate::output::ListGlobalTablesOutput, crate::error::ListGlobalTablesError> {
         Self::from_response(&response)
     }
-    pub fn new(input: crate::input::ListGlobalTablesInput) -> Self {
-        Self { input }
+    pub fn new() -> Self {
+        Self { _private: () }
     }
 }
 
@@ -3126,20 +2870,12 @@ impl smithy_http::response::ParseStrictResponse for ListGlobalTables {
 /// names.</p>
 #[derive(std::clone::Clone)]
 pub struct ListTables {
-    input: crate::input::ListTablesInput,
+    _private: (),
 }
 impl ListTables {
     /// Creates a new builder-style object to manufacture [`ListTablesInput`](crate::input::ListTablesInput)
     pub fn builder() -> crate::input::list_tables_input::Builder {
         crate::input::list_tables_input::Builder::default()
-    }
-    pub fn build_http_request(
-        &self,
-    ) -> Result<http::request::Request<Vec<u8>>, smithy_http::operation::BuildError> {
-        Ok(crate::input::ListTablesInput::assemble(
-            self.input.request_builder_base()?,
-            self.input.build_body(),
-        ))
     }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
@@ -3186,8 +2922,8 @@ impl ListTables {
     ) -> Result<crate::output::ListTablesOutput, crate::error::ListTablesError> {
         Self::from_response(&response)
     }
-    pub fn new(input: crate::input::ListTablesInput) -> Self {
-        Self { input }
+    pub fn new() -> Self {
+        Self { _private: () }
     }
 }
 
@@ -3204,20 +2940,12 @@ impl smithy_http::response::ParseStrictResponse for ListTables {
 /// in the <i>Amazon DynamoDB Developer Guide</i>.</p>
 #[derive(std::clone::Clone)]
 pub struct ListTagsOfResource {
-    input: crate::input::ListTagsOfResourceInput,
+    _private: (),
 }
 impl ListTagsOfResource {
     /// Creates a new builder-style object to manufacture [`ListTagsOfResourceInput`](crate::input::ListTagsOfResourceInput)
     pub fn builder() -> crate::input::list_tags_of_resource_input::Builder {
         crate::input::list_tags_of_resource_input::Builder::default()
-    }
-    pub fn build_http_request(
-        &self,
-    ) -> Result<http::request::Request<Vec<u8>>, smithy_http::operation::BuildError> {
-        Ok(crate::input::ListTagsOfResourceInput::assemble(
-            self.input.request_builder_base()?,
-            self.input.build_body(),
-        ))
     }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
@@ -3275,8 +3003,8 @@ impl ListTagsOfResource {
     {
         Self::from_response(&response)
     }
-    pub fn new(input: crate::input::ListTagsOfResourceInput) -> Self {
-        Self { input }
+    pub fn new() -> Self {
+        Self { _private: () }
     }
 }
 
@@ -3357,20 +3085,12 @@ impl smithy_http::response::ParseStrictResponse for ListTagsOfResource {
 /// <p>For more information about <code>PutItem</code>, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithItems.html">Working with Items</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
 #[derive(std::clone::Clone)]
 pub struct PutItem {
-    input: crate::input::PutItemInput,
+    _private: (),
 }
 impl PutItem {
     /// Creates a new builder-style object to manufacture [`PutItemInput`](crate::input::PutItemInput)
     pub fn builder() -> crate::input::put_item_input::Builder {
         crate::input::put_item_input::Builder::default()
-    }
-    pub fn build_http_request(
-        &self,
-    ) -> Result<http::request::Request<Vec<u8>>, smithy_http::operation::BuildError> {
-        Ok(crate::input::PutItemInput::assemble(
-            self.input.request_builder_base()?,
-            self.input.build_body(),
-        ))
     }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
@@ -3464,8 +3184,8 @@ impl PutItem {
     ) -> Result<crate::output::PutItemOutput, crate::error::PutItemError> {
         Self::from_response(&response)
     }
-    pub fn new(input: crate::input::PutItemInput) -> Self {
-        Self { input }
+    pub fn new() -> Self {
+        Self { _private: () }
     }
 }
 
@@ -3534,20 +3254,12 @@ impl smithy_http::response::ParseStrictResponse for PutItem {
 /// secondary index.</p>
 #[derive(std::clone::Clone)]
 pub struct Query {
-    input: crate::input::QueryInput,
+    _private: (),
 }
 impl Query {
     /// Creates a new builder-style object to manufacture [`QueryInput`](crate::input::QueryInput)
     pub fn builder() -> crate::input::query_input::Builder {
         crate::input::query_input::Builder::default()
-    }
-    pub fn build_http_request(
-        &self,
-    ) -> Result<http::request::Request<Vec<u8>>, smithy_http::operation::BuildError> {
-        Ok(crate::input::QueryInput::assemble(
-            self.input.request_builder_base()?,
-            self.input.build_body(),
-        ))
     }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
@@ -3620,8 +3332,8 @@ impl Query {
     ) -> Result<crate::output::QueryOutput, crate::error::QueryError> {
         Self::from_response(&response)
     }
-    pub fn new(input: crate::input::QueryInput) -> Self {
-        Self { input }
+    pub fn new() -> Self {
+        Self { _private: () }
     }
 }
 
@@ -3659,20 +3371,12 @@ impl smithy_http::response::ParseStrictResponse for Query {
 /// </ul>
 #[derive(std::clone::Clone)]
 pub struct RestoreTableFromBackup {
-    input: crate::input::RestoreTableFromBackupInput,
+    _private: (),
 }
 impl RestoreTableFromBackup {
     /// Creates a new builder-style object to manufacture [`RestoreTableFromBackupInput`](crate::input::RestoreTableFromBackupInput)
     pub fn builder() -> crate::input::restore_table_from_backup_input::Builder {
         crate::input::restore_table_from_backup_input::Builder::default()
-    }
-    pub fn build_http_request(
-        &self,
-    ) -> Result<http::request::Request<Vec<u8>>, smithy_http::operation::BuildError> {
-        Ok(crate::input::RestoreTableFromBackupInput::assemble(
-            self.input.request_builder_base()?,
-            self.input.build_body(),
-        ))
     }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
@@ -3774,8 +3478,8 @@ impl RestoreTableFromBackup {
     > {
         Self::from_response(&response)
     }
-    pub fn new(input: crate::input::RestoreTableFromBackupInput) -> Self {
-        Self { input }
+    pub fn new() -> Self {
+        Self { _private: () }
     }
 }
 
@@ -3846,20 +3550,12 @@ impl smithy_http::response::ParseStrictResponse for RestoreTableFromBackup {
 /// </ul>
 #[derive(std::clone::Clone)]
 pub struct RestoreTableToPointInTime {
-    input: crate::input::RestoreTableToPointInTimeInput,
+    _private: (),
 }
 impl RestoreTableToPointInTime {
     /// Creates a new builder-style object to manufacture [`RestoreTableToPointInTimeInput`](crate::input::RestoreTableToPointInTimeInput)
     pub fn builder() -> crate::input::restore_table_to_point_in_time_input::Builder {
         crate::input::restore_table_to_point_in_time_input::Builder::default()
-    }
-    pub fn build_http_request(
-        &self,
-    ) -> Result<http::request::Request<Vec<u8>>, smithy_http::operation::BuildError> {
-        Ok(crate::input::RestoreTableToPointInTimeInput::assemble(
-            self.input.request_builder_base()?,
-            self.input.build_body(),
-        ))
     }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
@@ -3933,8 +3629,8 @@ impl RestoreTableToPointInTime {
     > {
         Self::from_response(&response)
     }
-    pub fn new(input: crate::input::RestoreTableToPointInTimeInput) -> Self {
-        Self { input }
+    pub fn new() -> Self {
+        Self { _private: () }
     }
 }
 
@@ -3975,20 +3671,12 @@ impl smithy_http::response::ParseStrictResponse for RestoreTableToPointInTime {
 /// parameter to <code>true</code>.</p>
 #[derive(std::clone::Clone)]
 pub struct Scan {
-    input: crate::input::ScanInput,
+    _private: (),
 }
 impl Scan {
     /// Creates a new builder-style object to manufacture [`ScanInput`](crate::input::ScanInput)
     pub fn builder() -> crate::input::scan_input::Builder {
         crate::input::scan_input::Builder::default()
-    }
-    pub fn build_http_request(
-        &self,
-    ) -> Result<http::request::Request<Vec<u8>>, smithy_http::operation::BuildError> {
-        Ok(crate::input::ScanInput::assemble(
-            self.input.request_builder_base()?,
-            self.input.build_body(),
-        ))
     }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
@@ -4059,8 +3747,8 @@ impl Scan {
     ) -> Result<crate::output::ScanOutput, crate::error::ScanError> {
         Self::from_response(&response)
     }
-    pub fn new(input: crate::input::ScanInput) -> Self {
-        Self { input }
+    pub fn new() -> Self {
+        Self { _private: () }
     }
 }
 
@@ -4080,20 +3768,12 @@ impl smithy_http::response::ParseStrictResponse for Scan {
 /// in the <i>Amazon DynamoDB Developer Guide</i>.</p>
 #[derive(std::clone::Clone)]
 pub struct TagResource {
-    input: crate::input::TagResourceInput,
+    _private: (),
 }
 impl TagResource {
     /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput)
     pub fn builder() -> crate::input::tag_resource_input::Builder {
         crate::input::tag_resource_input::Builder::default()
-    }
-    pub fn build_http_request(
-        &self,
-    ) -> Result<http::request::Request<Vec<u8>>, smithy_http::operation::BuildError> {
-        Ok(crate::input::TagResourceInput::assemble(
-            self.input.request_builder_base()?,
-            self.input.build_body(),
-        ))
     }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
@@ -4155,8 +3835,8 @@ impl TagResource {
     ) -> Result<crate::output::TagResourceOutput, crate::error::TagResourceError> {
         Self::from_response(&response)
     }
-    pub fn new(input: crate::input::TagResourceInput) -> Self {
-        Self { input }
+    pub fn new() -> Self {
+        Self { _private: () }
     }
 }
 
@@ -4195,20 +3875,12 @@ impl smithy_http::response::ParseStrictResponse for TagResource {
 /// </ul>
 #[derive(std::clone::Clone)]
 pub struct TransactGetItems {
-    input: crate::input::TransactGetItemsInput,
+    _private: (),
 }
 impl TransactGetItems {
     /// Creates a new builder-style object to manufacture [`TransactGetItemsInput`](crate::input::TransactGetItemsInput)
     pub fn builder() -> crate::input::transact_get_items_input::Builder {
         crate::input::transact_get_items_input::Builder::default()
-    }
-    pub fn build_http_request(
-        &self,
-    ) -> Result<http::request::Request<Vec<u8>>, smithy_http::operation::BuildError> {
-        Ok(crate::input::TransactGetItemsInput::assemble(
-            self.input.request_builder_base()?,
-            self.input.build_body(),
-        ))
     }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
@@ -4265,8 +3937,8 @@ impl TransactGetItems {
     ) -> Result<crate::output::TransactGetItemsOutput, crate::error::TransactGetItemsError> {
         Self::from_response(&response)
     }
-    pub fn new(input: crate::input::TransactGetItemsInput) -> Self {
-        Self { input }
+    pub fn new() -> Self {
+        Self { _private: () }
     }
 }
 
@@ -4351,20 +4023,12 @@ impl smithy_http::response::ParseStrictResponse for TransactGetItems {
 /// </ul>
 #[derive(std::clone::Clone)]
 pub struct TransactWriteItems {
-    input: crate::input::TransactWriteItemsInput,
+    _private: (),
 }
 impl TransactWriteItems {
     /// Creates a new builder-style object to manufacture [`TransactWriteItemsInput`](crate::input::TransactWriteItemsInput)
     pub fn builder() -> crate::input::transact_write_items_input::Builder {
         crate::input::transact_write_items_input::Builder::default()
-    }
-    pub fn build_http_request(
-        &self,
-    ) -> Result<http::request::Request<Vec<u8>>, smithy_http::operation::BuildError> {
-        Ok(crate::input::TransactWriteItemsInput::assemble(
-            self.input.request_builder_base()?,
-            self.input.build_body(),
-        ))
     }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
@@ -4431,8 +4095,8 @@ impl TransactWriteItems {
     {
         Self::from_response(&response)
     }
-    pub fn new(input: crate::input::TransactWriteItemsInput) -> Self {
-        Self { input }
+    pub fn new() -> Self {
+        Self { _private: () }
     }
 }
 
@@ -4451,20 +4115,12 @@ impl smithy_http::response::ParseStrictResponse for TransactWriteItems {
 /// in the <i>Amazon DynamoDB Developer Guide</i>.</p>
 #[derive(std::clone::Clone)]
 pub struct UntagResource {
-    input: crate::input::UntagResourceInput,
+    _private: (),
 }
 impl UntagResource {
     /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput)
     pub fn builder() -> crate::input::untag_resource_input::Builder {
         crate::input::untag_resource_input::Builder::default()
-    }
-    pub fn build_http_request(
-        &self,
-    ) -> Result<http::request::Request<Vec<u8>>, smithy_http::operation::BuildError> {
-        Ok(crate::input::UntagResourceInput::assemble(
-            self.input.request_builder_base()?,
-            self.input.build_body(),
-        ))
     }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
@@ -4526,8 +4182,8 @@ impl UntagResource {
     ) -> Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError> {
         Self::from_response(&response)
     }
-    pub fn new(input: crate::input::UntagResourceInput) -> Self {
-        Self { input }
+    pub fn new() -> Self {
+        Self { _private: () }
     }
 }
 
@@ -4552,20 +4208,12 @@ impl smithy_http::response::ParseStrictResponse for UntagResource {
 /// You can restore your table to any point in time during the last 35 days. </p>
 #[derive(std::clone::Clone)]
 pub struct UpdateContinuousBackups {
-    input: crate::input::UpdateContinuousBackupsInput,
+    _private: (),
 }
 impl UpdateContinuousBackups {
     /// Creates a new builder-style object to manufacture [`UpdateContinuousBackupsInput`](crate::input::UpdateContinuousBackupsInput)
     pub fn builder() -> crate::input::update_continuous_backups_input::Builder {
         crate::input::update_continuous_backups_input::Builder::default()
-    }
-    pub fn build_http_request(
-        &self,
-    ) -> Result<http::request::Request<Vec<u8>>, smithy_http::operation::BuildError> {
-        Ok(crate::input::UpdateContinuousBackupsInput::assemble(
-            self.input.request_builder_base()?,
-            self.input.build_body(),
-        ))
     }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
@@ -4623,8 +4271,8 @@ impl UpdateContinuousBackups {
     > {
         Self::from_response(&response)
     }
-    pub fn new(input: crate::input::UpdateContinuousBackupsInput) -> Self {
-        Self { input }
+    pub fn new() -> Self {
+        Self { _private: () }
     }
 }
 
@@ -4641,20 +4289,12 @@ impl smithy_http::response::ParseStrictResponse for UpdateContinuousBackups {
 /// <p>Updates the status for contributor insights for a specific table or index.</p>
 #[derive(std::clone::Clone)]
 pub struct UpdateContributorInsights {
-    input: crate::input::UpdateContributorInsightsInput,
+    _private: (),
 }
 impl UpdateContributorInsights {
     /// Creates a new builder-style object to manufacture [`UpdateContributorInsightsInput`](crate::input::UpdateContributorInsightsInput)
     pub fn builder() -> crate::input::update_contributor_insights_input::Builder {
         crate::input::update_contributor_insights_input::Builder::default()
-    }
-    pub fn build_http_request(
-        &self,
-    ) -> Result<http::request::Request<Vec<u8>>, smithy_http::operation::BuildError> {
-        Ok(crate::input::UpdateContributorInsightsInput::assemble(
-            self.input.request_builder_base()?,
-            self.input.build_body(),
-        ))
     }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
@@ -4717,8 +4357,8 @@ impl UpdateContributorInsights {
     > {
         Self::from_response(&response)
     }
-    pub fn new(input: crate::input::UpdateContributorInsightsInput) -> Self {
-        Self { input }
+    pub fn new() -> Self {
+        Self { _private: () }
     }
 }
 
@@ -4763,20 +4403,12 @@ impl smithy_http::response::ParseStrictResponse for UpdateContributorInsights {
 /// </ul>
 #[derive(std::clone::Clone)]
 pub struct UpdateGlobalTable {
-    input: crate::input::UpdateGlobalTableInput,
+    _private: (),
 }
 impl UpdateGlobalTable {
     /// Creates a new builder-style object to manufacture [`UpdateGlobalTableInput`](crate::input::UpdateGlobalTableInput)
     pub fn builder() -> crate::input::update_global_table_input::Builder {
         crate::input::update_global_table_input::Builder::default()
-    }
-    pub fn build_http_request(
-        &self,
-    ) -> Result<http::request::Request<Vec<u8>>, smithy_http::operation::BuildError> {
-        Ok(crate::input::UpdateGlobalTableInput::assemble(
-            self.input.request_builder_base()?,
-            self.input.build_body(),
-        ))
     }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
@@ -4854,8 +4486,8 @@ impl UpdateGlobalTable {
     ) -> Result<crate::output::UpdateGlobalTableOutput, crate::error::UpdateGlobalTableError> {
         Self::from_response(&response)
     }
-    pub fn new(input: crate::input::UpdateGlobalTableInput) -> Self {
-        Self { input }
+    pub fn new() -> Self {
+        Self { _private: () }
     }
 }
 
@@ -4870,20 +4502,12 @@ impl smithy_http::response::ParseStrictResponse for UpdateGlobalTable {
 /// <p>Updates settings for a global table.</p>
 #[derive(std::clone::Clone)]
 pub struct UpdateGlobalTableSettings {
-    input: crate::input::UpdateGlobalTableSettingsInput,
+    _private: (),
 }
 impl UpdateGlobalTableSettings {
     /// Creates a new builder-style object to manufacture [`UpdateGlobalTableSettingsInput`](crate::input::UpdateGlobalTableSettingsInput)
     pub fn builder() -> crate::input::update_global_table_settings_input::Builder {
         crate::input::update_global_table_settings_input::Builder::default()
-    }
-    pub fn build_http_request(
-        &self,
-    ) -> Result<http::request::Request<Vec<u8>>, smithy_http::operation::BuildError> {
-        Ok(crate::input::UpdateGlobalTableSettingsInput::assemble(
-            self.input.request_builder_base()?,
-            self.input.build_body(),
-        ))
     }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
@@ -4954,8 +4578,8 @@ impl UpdateGlobalTableSettings {
     > {
         Self::from_response(&response)
     }
-    pub fn new(input: crate::input::UpdateGlobalTableSettingsInput) -> Self {
-        Self { input }
+    pub fn new() -> Self {
+        Self { _private: () }
     }
 }
 
@@ -4974,20 +4598,12 @@ impl smithy_http::response::ParseStrictResponse for UpdateGlobalTableSettings {
 /// operation using the <code>ReturnValues</code> parameter.</p>
 #[derive(std::clone::Clone)]
 pub struct UpdateItem {
-    input: crate::input::UpdateItemInput,
+    _private: (),
 }
 impl UpdateItem {
     /// Creates a new builder-style object to manufacture [`UpdateItemInput`](crate::input::UpdateItemInput)
     pub fn builder() -> crate::input::update_item_input::Builder {
         crate::input::update_item_input::Builder::default()
-    }
-    pub fn build_http_request(
-        &self,
-    ) -> Result<http::request::Request<Vec<u8>>, smithy_http::operation::BuildError> {
-        Ok(crate::input::UpdateItemInput::assemble(
-            self.input.request_builder_base()?,
-            self.input.build_body(),
-        ))
     }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
@@ -5082,8 +4698,8 @@ impl UpdateItem {
     ) -> Result<crate::output::UpdateItemOutput, crate::error::UpdateItemError> {
         Self::from_response(&response)
     }
-    pub fn new(input: crate::input::UpdateItemInput) -> Self {
-        Self { input }
+    pub fn new() -> Self {
+        Self { _private: () }
     }
 }
 
@@ -5119,20 +4735,12 @@ impl smithy_http::response::ParseStrictResponse for UpdateItem {
 /// <code>ACTIVE</code> state, the <code>UpdateTable</code> operation is complete.</p>
 #[derive(std::clone::Clone)]
 pub struct UpdateTable {
-    input: crate::input::UpdateTableInput,
+    _private: (),
 }
 impl UpdateTable {
     /// Creates a new builder-style object to manufacture [`UpdateTableInput`](crate::input::UpdateTableInput)
     pub fn builder() -> crate::input::update_table_input::Builder {
         crate::input::update_table_input::Builder::default()
-    }
-    pub fn build_http_request(
-        &self,
-    ) -> Result<http::request::Request<Vec<u8>>, smithy_http::operation::BuildError> {
-        Ok(crate::input::UpdateTableInput::assemble(
-            self.input.request_builder_base()?,
-            self.input.build_body(),
-        ))
     }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
@@ -5199,8 +4807,8 @@ impl UpdateTable {
     ) -> Result<crate::output::UpdateTableOutput, crate::error::UpdateTableError> {
         Self::from_response(&response)
     }
-    pub fn new(input: crate::input::UpdateTableInput) -> Self {
-        Self { input }
+    pub fn new() -> Self {
+        Self { _private: () }
     }
 }
 
@@ -5217,20 +4825,12 @@ impl smithy_http::response::ParseStrictResponse for UpdateTable {
 /// </note>
 #[derive(std::clone::Clone)]
 pub struct UpdateTableReplicaAutoScaling {
-    input: crate::input::UpdateTableReplicaAutoScalingInput,
+    _private: (),
 }
 impl UpdateTableReplicaAutoScaling {
     /// Creates a new builder-style object to manufacture [`UpdateTableReplicaAutoScalingInput`](crate::input::UpdateTableReplicaAutoScalingInput)
     pub fn builder() -> crate::input::update_table_replica_auto_scaling_input::Builder {
         crate::input::update_table_replica_auto_scaling_input::Builder::default()
-    }
-    pub fn build_http_request(
-        &self,
-    ) -> Result<http::request::Request<Vec<u8>>, smithy_http::operation::BuildError> {
-        Ok(crate::input::UpdateTableReplicaAutoScalingInput::assemble(
-            self.input.request_builder_base()?,
-            self.input.build_body(),
-        ))
     }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
@@ -5288,8 +4888,8 @@ impl UpdateTableReplicaAutoScaling {
     > {
         Self::from_response(&response)
     }
-    pub fn new(input: crate::input::UpdateTableReplicaAutoScalingInput) -> Self {
-        Self { input }
+    pub fn new() -> Self {
+        Self { _private: () }
     }
 }
 
@@ -5330,20 +4930,12 @@ impl smithy_http::response::ParseStrictResponse for UpdateTableReplicaAutoScalin
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/TTL.html">Time To Live</a> in the Amazon DynamoDB Developer Guide. </p>
 #[derive(std::clone::Clone)]
 pub struct UpdateTimeToLive {
-    input: crate::input::UpdateTimeToLiveInput,
+    _private: (),
 }
 impl UpdateTimeToLive {
     /// Creates a new builder-style object to manufacture [`UpdateTimeToLiveInput`](crate::input::UpdateTimeToLiveInput)
     pub fn builder() -> crate::input::update_time_to_live_input::Builder {
         crate::input::update_time_to_live_input::Builder::default()
-    }
-    pub fn build_http_request(
-        &self,
-    ) -> Result<http::request::Request<Vec<u8>>, smithy_http::operation::BuildError> {
-        Ok(crate::input::UpdateTimeToLiveInput::assemble(
-            self.input.request_builder_base()?,
-            self.input.build_body(),
-        ))
     }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
@@ -5410,8 +5002,8 @@ impl UpdateTimeToLive {
     ) -> Result<crate::output::UpdateTimeToLiveOutput, crate::error::UpdateTimeToLiveError> {
         Self::from_response(&response)
     }
-    pub fn new(input: crate::input::UpdateTimeToLiveInput) -> Self {
-        Self { input }
+    pub fn new() -> Self {
+        Self { _private: () }
     }
 }
 

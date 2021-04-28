@@ -6,20 +6,12 @@
 /// Lexicons</a>.</p>
 #[derive(std::clone::Clone)]
 pub struct DeleteLexicon {
-    input: crate::input::DeleteLexiconInput,
+    _private: (),
 }
 impl DeleteLexicon {
     /// Creates a new builder-style object to manufacture [`DeleteLexiconInput`](crate::input::DeleteLexiconInput)
     pub fn builder() -> crate::input::delete_lexicon_input::Builder {
         crate::input::delete_lexicon_input::Builder::default()
-    }
-    pub fn build_http_request(
-        &self,
-    ) -> Result<http::request::Request<Vec<u8>>, smithy_http::operation::BuildError> {
-        Ok(crate::input::DeleteLexiconInput::assemble(
-            self.input.request_builder_base()?,
-            self.input.build_body(),
-        ))
     }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
@@ -101,8 +93,8 @@ impl DeleteLexicon {
     ) -> Result<crate::output::DeleteLexiconOutput, crate::error::DeleteLexiconError> {
         Self::from_response(&response)
     }
-    pub fn new(input: crate::input::DeleteLexiconInput) -> Self {
-        Self { input }
+    pub fn new() -> Self {
+        Self { _private: () }
     }
 }
 
@@ -129,20 +121,12 @@ impl smithy_http::response::ParseStrictResponse for DeleteLexicon {
 /// action.</p>
 #[derive(std::clone::Clone)]
 pub struct DescribeVoices {
-    input: crate::input::DescribeVoicesInput,
+    _private: (),
 }
 impl DescribeVoices {
     /// Creates a new builder-style object to manufacture [`DescribeVoicesInput`](crate::input::DescribeVoicesInput)
     pub fn builder() -> crate::input::describe_voices_input::Builder {
         crate::input::describe_voices_input::Builder::default()
-    }
-    pub fn build_http_request(
-        &self,
-    ) -> Result<http::request::Request<Vec<u8>>, smithy_http::operation::BuildError> {
-        Ok(crate::input::DescribeVoicesInput::assemble(
-            self.input.request_builder_base()?,
-            self.input.build_body(),
-        ))
     }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
@@ -241,8 +225,8 @@ impl DescribeVoices {
     ) -> Result<crate::output::DescribeVoicesOutput, crate::error::DescribeVoicesError> {
         Self::from_response(&response)
     }
-    pub fn new(input: crate::input::DescribeVoicesInput) -> Self {
-        Self { input }
+    pub fn new() -> Self {
+        Self { _private: () }
     }
 }
 
@@ -258,20 +242,12 @@ impl smithy_http::response::ParseStrictResponse for DescribeVoices {
 /// Lexicons</a>.</p>
 #[derive(std::clone::Clone)]
 pub struct GetLexicon {
-    input: crate::input::GetLexiconInput,
+    _private: (),
 }
 impl GetLexicon {
     /// Creates a new builder-style object to manufacture [`GetLexiconInput`](crate::input::GetLexiconInput)
     pub fn builder() -> crate::input::get_lexicon_input::Builder {
         crate::input::get_lexicon_input::Builder::default()
-    }
-    pub fn build_http_request(
-        &self,
-    ) -> Result<http::request::Request<Vec<u8>>, smithy_http::operation::BuildError> {
-        Ok(crate::input::GetLexiconInput::assemble(
-            self.input.request_builder_base()?,
-            self.input.build_body(),
-        ))
     }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
@@ -368,8 +344,8 @@ impl GetLexicon {
     ) -> Result<crate::output::GetLexiconOutput, crate::error::GetLexiconError> {
         Self::from_response(&response)
     }
-    pub fn new(input: crate::input::GetLexiconInput) -> Self {
-        Self { input }
+    pub fn new() -> Self {
+        Self { _private: () }
     }
 }
 
@@ -385,20 +361,12 @@ impl smithy_http::response::ParseStrictResponse for GetLexicon {
 /// link to the S3 bucket containing the output of the task.</p>
 #[derive(std::clone::Clone)]
 pub struct GetSpeechSynthesisTask {
-    input: crate::input::GetSpeechSynthesisTaskInput,
+    _private: (),
 }
 impl GetSpeechSynthesisTask {
     /// Creates a new builder-style object to manufacture [`GetSpeechSynthesisTaskInput`](crate::input::GetSpeechSynthesisTaskInput)
     pub fn builder() -> crate::input::get_speech_synthesis_task_input::Builder {
         crate::input::get_speech_synthesis_task_input::Builder::default()
-    }
-    pub fn build_http_request(
-        &self,
-    ) -> Result<http::request::Request<Vec<u8>>, smithy_http::operation::BuildError> {
-        Ok(crate::input::GetSpeechSynthesisTaskInput::assemble(
-            self.input.request_builder_base()?,
-            self.input.build_body(),
-        ))
     }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
@@ -536,8 +504,8 @@ impl GetSpeechSynthesisTask {
     > {
         Self::from_response(&response)
     }
-    pub fn new(input: crate::input::GetSpeechSynthesisTaskInput) -> Self {
-        Self { input }
+    pub fn new() -> Self {
+        Self { _private: () }
     }
 }
 
@@ -556,20 +524,12 @@ impl smithy_http::response::ParseStrictResponse for GetSpeechSynthesisTask {
 /// Lexicons</a>.</p>
 #[derive(std::clone::Clone)]
 pub struct ListLexicons {
-    input: crate::input::ListLexiconsInput,
+    _private: (),
 }
 impl ListLexicons {
     /// Creates a new builder-style object to manufacture [`ListLexiconsInput`](crate::input::ListLexiconsInput)
     pub fn builder() -> crate::input::list_lexicons_input::Builder {
         crate::input::list_lexicons_input::Builder::default()
-    }
-    pub fn build_http_request(
-        &self,
-    ) -> Result<http::request::Request<Vec<u8>>, smithy_http::operation::BuildError> {
-        Ok(crate::input::ListLexiconsInput::assemble(
-            self.input.request_builder_base()?,
-            self.input.build_body(),
-        ))
     }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
@@ -666,8 +626,8 @@ impl ListLexicons {
     ) -> Result<crate::output::ListLexiconsOutput, crate::error::ListLexiconsError> {
         Self::from_response(&response)
     }
-    pub fn new(input: crate::input::ListLexiconsInput) -> Self {
-        Self { input }
+    pub fn new() -> Self {
+        Self { _private: () }
     }
 }
 
@@ -683,20 +643,12 @@ impl smithy_http::response::ParseStrictResponse for ListLexicons {
 /// that are completed.</p>
 #[derive(std::clone::Clone)]
 pub struct ListSpeechSynthesisTasks {
-    input: crate::input::ListSpeechSynthesisTasksInput,
+    _private: (),
 }
 impl ListSpeechSynthesisTasks {
     /// Creates a new builder-style object to manufacture [`ListSpeechSynthesisTasksInput`](crate::input::ListSpeechSynthesisTasksInput)
     pub fn builder() -> crate::input::list_speech_synthesis_tasks_input::Builder {
         crate::input::list_speech_synthesis_tasks_input::Builder::default()
-    }
-    pub fn build_http_request(
-        &self,
-    ) -> Result<http::request::Request<Vec<u8>>, smithy_http::operation::BuildError> {
-        Ok(crate::input::ListSpeechSynthesisTasksInput::assemble(
-            self.input.request_builder_base()?,
-            self.input.build_body(),
-        ))
     }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
@@ -807,8 +759,8 @@ impl ListSpeechSynthesisTasks {
     > {
         Self::from_response(&response)
     }
-    pub fn new(input: crate::input::ListSpeechSynthesisTasksInput) -> Self {
-        Self { input }
+    pub fn new() -> Self {
+        Self { _private: () }
     }
 }
 
@@ -830,20 +782,12 @@ impl smithy_http::response::ParseStrictResponse for ListSpeechSynthesisTasks {
 /// Lexicons</a>.</p>
 #[derive(std::clone::Clone)]
 pub struct PutLexicon {
-    input: crate::input::PutLexiconInput,
+    _private: (),
 }
 impl PutLexicon {
     /// Creates a new builder-style object to manufacture [`PutLexiconInput`](crate::input::PutLexiconInput)
     pub fn builder() -> crate::input::put_lexicon_input::Builder {
         crate::input::put_lexicon_input::Builder::default()
-    }
-    pub fn build_http_request(
-        &self,
-    ) -> Result<http::request::Request<Vec<u8>>, smithy_http::operation::BuildError> {
-        Ok(crate::input::PutLexiconInput::assemble(
-            self.input.request_builder_base()?,
-            self.input.build_body(),
-        ))
     }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
@@ -1055,8 +999,8 @@ impl PutLexicon {
     ) -> Result<crate::output::PutLexiconOutput, crate::error::PutLexiconError> {
         Self::from_response(&response)
     }
-    pub fn new(input: crate::input::PutLexiconInput) -> Self {
-        Self { input }
+    pub fn new() -> Self {
+        Self { _private: () }
     }
 }
 
@@ -1075,20 +1019,12 @@ impl smithy_http::response::ParseStrictResponse for PutLexicon {
 /// which will include an identifier of this task as well as the current status.</p>
 #[derive(std::clone::Clone)]
 pub struct StartSpeechSynthesisTask {
-    input: crate::input::StartSpeechSynthesisTaskInput,
+    _private: (),
 }
 impl StartSpeechSynthesisTask {
     /// Creates a new builder-style object to manufacture [`StartSpeechSynthesisTaskInput`](crate::input::StartSpeechSynthesisTaskInput)
     pub fn builder() -> crate::input::start_speech_synthesis_task_input::Builder {
         crate::input::start_speech_synthesis_task_input::Builder::default()
-    }
-    pub fn build_http_request(
-        &self,
-    ) -> Result<http::request::Request<Vec<u8>>, smithy_http::operation::BuildError> {
-        Ok(crate::input::StartSpeechSynthesisTaskInput::assemble(
-            self.input.request_builder_base()?,
-            self.input.build_body(),
-        ))
     }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
@@ -1386,8 +1322,8 @@ impl StartSpeechSynthesisTask {
     > {
         Self::from_response(&response)
     }
-    pub fn new(input: crate::input::StartSpeechSynthesisTaskInput) -> Self {
-        Self { input }
+    pub fn new() -> Self {
+        Self { _private: () }
     }
 }
 
@@ -1408,20 +1344,12 @@ impl smithy_http::response::ParseStrictResponse for StartSpeechSynthesisTask {
 /// Works</a>.</p>
 #[derive(std::clone::Clone)]
 pub struct SynthesizeSpeech {
-    input: crate::input::SynthesizeSpeechInput,
+    _private: (),
 }
 impl SynthesizeSpeech {
     /// Creates a new builder-style object to manufacture [`SynthesizeSpeechInput`](crate::input::SynthesizeSpeechInput)
     pub fn builder() -> crate::input::synthesize_speech_input::Builder {
         crate::input::synthesize_speech_input::Builder::default()
-    }
-    pub fn build_http_request(
-        &self,
-    ) -> Result<http::request::Request<Vec<u8>>, smithy_http::operation::BuildError> {
-        Ok(crate::input::SynthesizeSpeechInput::assemble(
-            self.input.request_builder_base()?,
-            self.input.build_body(),
-        ))
     }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
@@ -1656,8 +1584,8 @@ impl SynthesizeSpeech {
     ) -> Result<crate::output::SynthesizeSpeechOutput, crate::error::SynthesizeSpeechError> {
         Self::from_response(&response)
     }
-    pub fn new(input: crate::input::SynthesizeSpeechInput) -> Self {
-        Self { input }
+    pub fn new() -> Self {
+        Self { _private: () }
     }
 }
 

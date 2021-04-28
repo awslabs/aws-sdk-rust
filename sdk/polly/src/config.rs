@@ -4,6 +4,12 @@ pub struct Config {
     pub(crate) region: Option<aws_types::region::Region>,
     pub(crate) credentials_provider: std::sync::Arc<dyn aws_auth::ProvideCredentials>,
 }
+impl std::fmt::Debug for Config {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut config = f.debug_struct("Config");
+        config.finish()
+    }
+}
 impl Config {
     pub fn builder() -> Builder {
         Builder::default()

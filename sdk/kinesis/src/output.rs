@@ -75,55 +75,6 @@ impl UpdateShardCountOutput {
 
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct SubscribeToShardOutput {
-    /// <p>The event stream that your consumer can use to read records from the shard.</p>
-    pub event_stream: std::option::Option<crate::model::SubscribeToShardEventStream>,
-}
-impl std::fmt::Debug for SubscribeToShardOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SubscribeToShardOutput");
-        formatter.field("event_stream", &self.event_stream);
-        formatter.finish()
-    }
-}
-/// See [`SubscribeToShardOutput`](crate::output::SubscribeToShardOutput)
-pub mod subscribe_to_shard_output {
-    /// A builder for [`SubscribeToShardOutput`](crate::output::SubscribeToShardOutput)
-    #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
-    pub struct Builder {
-        event_stream: std::option::Option<crate::model::SubscribeToShardEventStream>,
-    }
-    impl Builder {
-        /// <p>The event stream that your consumer can use to read records from the shard.</p>
-        pub fn event_stream(mut self, inp: crate::model::SubscribeToShardEventStream) -> Self {
-            self.event_stream = Some(inp);
-            self
-        }
-        pub fn set_event_stream(
-            mut self,
-            inp: std::option::Option<crate::model::SubscribeToShardEventStream>,
-        ) -> Self {
-            self.event_stream = inp;
-            self
-        }
-        /// Consumes the builder and constructs a [`SubscribeToShardOutput`](crate::output::SubscribeToShardOutput)
-        pub fn build(self) -> crate::output::SubscribeToShardOutput {
-            crate::output::SubscribeToShardOutput {
-                event_stream: self.event_stream,
-            }
-        }
-    }
-}
-impl SubscribeToShardOutput {
-    /// Creates a new builder-style object to manufacture [`SubscribeToShardOutput`](crate::output::SubscribeToShardOutput)
-    pub fn builder() -> crate::output::subscribe_to_shard_output::Builder {
-        crate::output::subscribe_to_shard_output::Builder::default()
-    }
-}
-
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopStreamEncryptionOutput {}
 impl std::fmt::Debug for StopStreamEncryptionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

@@ -8,10 +8,9 @@ use aws_sdk_dynamodb as dynamodb;
 use aws_http::AwsErrorRetryPolicy;
 use aws_hyper::test_connection::TestConnection;
 use aws_hyper::{SdkError, SdkSuccess};
+use aws_sdk_dynamodb::input::CreateTableInput;
 use dynamodb::error::DescribeTableError;
-use dynamodb::input::{
-    create_table_input, put_item_input, query_input, DescribeTableInput, PutItemInput, QueryInput,
-};
+use dynamodb::input::{DescribeTableInput, PutItemInput, QueryInput};
 use dynamodb::model::{
     AttributeDefinition, AttributeValue, KeySchemaElement, KeyType, ProvisionedThroughput,
     ScalarAttributeType, TableStatus,
@@ -30,7 +29,7 @@ use std::collections::HashMap;
 use std::time::Duration;
 use tokio::time::Instant;
 
-fn create_table(table_name: &str) -> create_table_input::Builder {
+fn create_table(table_name: &str) -> CreateTableInput {
     CreateTable::builder()
         .table_name(table_name)
         .key_schema(
@@ -63,6 +62,8 @@ fn create_table(table_name: &str) -> create_table_input::Builder {
                 .write_capacity_units(10)
                 .build(),
         )
+        .build()
+        .expect("valid operation")
 }
 
 fn value_to_item(value: Value) -> AttributeValue {
@@ -78,7 +79,7 @@ fn value_to_item(value: Value) -> AttributeValue {
     }
 }
 
-fn add_item(table_name: impl Into<String>, item: Value) -> put_item_input::Builder {
+fn add_item(table_name: impl Into<String>, item: Value) -> PutItemInput {
     let attribute_value = match value_to_item(item) {
         AttributeValue::M(map) => map,
         other => panic!("can only insert top level values, got {:?}", other),
@@ -87,9 +88,11 @@ fn add_item(table_name: impl Into<String>, item: Value) -> put_item_input::Build
     PutItemInput::builder()
         .table_name(table_name)
         .set_item(Some(attribute_value))
+        .build()
+        .expect("valid operation")
 }
 
-fn movies_in_year(table_name: &str, year: u16) -> query_input::Builder {
+fn movies_in_year(table_name: &str, year: u16) -> QueryInput {
     let mut expr_attrib_names = HashMap::new();
     expr_attrib_names.insert("#yr".to_string(), "year".to_string());
     let mut expr_attrib_values = HashMap::new();
@@ -99,6 +102,8 @@ fn movies_in_year(table_name: &str, year: u16) -> query_input::Builder {
         .key_condition_expression("#yr = :yyyy")
         .set_expression_attribute_names(Some(expr_attrib_names))
         .set_expression_attribute_values(Some(expr_attrib_values))
+        .build()
+        .expect("valid operation")
 }
 
 /// Hand-written waiter to retry every second until the table is out of `Creating` state
@@ -149,7 +154,10 @@ fn wait_for_ready_table(
 ) -> Operation<DescribeTable, WaitForReadyTable<AwsErrorRetryPolicy>> {
     let operation = DescribeTableInput::builder()
         .table_name(table_name)
-        .build(&conf).expect("valid operation");
+        .build()
+        .unwrap()
+        .make_operation(&conf)
+        .expect("valid operation");
     let waiting_policy = WaitForReadyTable {
         inner: operation.retry_policy().clone(),
     };
@@ -186,7 +194,11 @@ async fn movies_it() {
         .credentials_provider(Credentials::from_keys("AKNOTREAL", "NOT_A_SECRET", None))
         .build();
     client
-        .call(create_table(table_name).build(&conf).expect("valid request"))
+        .call(
+            create_table(table_name)
+                .make_operation(&conf)
+                .expect("valid request"),
+        )
         .await
         .expect("failed to create table");
 
@@ -205,19 +217,31 @@ async fn movies_it() {
     };
     for item in data {
         client
-            .call(add_item(table_name, item.clone()).build(&conf).expect("valid request"))
+            .call(
+                add_item(table_name, item.clone())
+                    .make_operation(&conf)
+                    .expect("valid request"),
+            )
             .await
             .expect("failed to insert item");
     }
     let films_2222 = client
-        .call(movies_in_year(table_name, 2222).build(&conf).expect("valid request"))
+        .call(
+            movies_in_year(table_name, 2222)
+                .make_operation(&conf)
+                .expect("valid request"),
+        )
         .await
         .expect("query should succeed");
     // this isn't back to the future, there are no movies from 2022
     assert_eq!(films_2222.count, 0);
 
     let films_2013 = client
-        .call(movies_in_year(table_name, 2013).build(&conf).expect("valid request"))
+        .call(
+            movies_in_year(table_name, 2013)
+                .make_operation(&conf)
+                .expect("valid request"),
+        )
         .await
         .expect("query should succeed");
     assert_eq!(films_2013.count, 2);

@@ -10,4 +10,4 @@ license = "Apache-2.0"
 chrono = { version = "0.4", default-features = false, features = ["alloc"] }
 
 [dev-dependencies]
-proptest = "0.10.1"
+proptest = "1"

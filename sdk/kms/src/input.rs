@@ -31,71 +31,79 @@ pub mod cancel_key_deletion_input {
             self.key_id = inp;
             self
         }
-        /// Consumes the builder and constructs an Operation<[`CancelKeyDeletion`](crate::operation::CancelKeyDeletion)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`CancelKeyDeletionInput`](crate::input::CancelKeyDeletionInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::CancelKeyDeletion,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op = crate::operation::CancelKeyDeletion::new(
-                    crate::input::CancelKeyDeletionInput {
-                        key_id: self.key_id,
-                    },
-                );
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
-                }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op).with_metadata(
-                    smithy_http::operation::Metadata::new("CancelKeyDeletion", "kms"),
-                );
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
+        ) -> Result<crate::input::CancelKeyDeletionInput, smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::CancelKeyDeletionInput {
+                key_id: self.key_id,
             })
         }
     }
 }
 impl CancelKeyDeletionInput {
+    /// Consumes the builder and constructs an Operation<[`CancelKeyDeletion`](crate::operation::CancelKeyDeletion)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::CancelKeyDeletion,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::CancelKeyDeletion::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "CancelKeyDeletion",
+                "kms",
+            ));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     pub fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
@@ -151,71 +159,79 @@ pub mod connect_custom_key_store_input {
             self.custom_key_store_id = inp;
             self
         }
-        /// Consumes the builder and constructs an Operation<[`ConnectCustomKeyStore`](crate::operation::ConnectCustomKeyStore)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`ConnectCustomKeyStoreInput`](crate::input::ConnectCustomKeyStoreInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::ConnectCustomKeyStore,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op = crate::operation::ConnectCustomKeyStore::new(
-                    crate::input::ConnectCustomKeyStoreInput {
-                        custom_key_store_id: self.custom_key_store_id,
-                    },
-                );
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
-                }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op).with_metadata(
-                    smithy_http::operation::Metadata::new("ConnectCustomKeyStore", "kms"),
-                );
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
+        ) -> Result<crate::input::ConnectCustomKeyStoreInput, smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::ConnectCustomKeyStoreInput {
+                custom_key_store_id: self.custom_key_store_id,
             })
         }
     }
 }
 impl ConnectCustomKeyStoreInput {
+    /// Consumes the builder and constructs an Operation<[`ConnectCustomKeyStore`](crate::operation::ConnectCustomKeyStore)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::ConnectCustomKeyStore,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::ConnectCustomKeyStore::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "ConnectCustomKeyStore",
+                "kms",
+            ));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     pub fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
@@ -299,69 +315,76 @@ pub mod create_alias_input {
             self.target_key_id = inp;
             self
         }
-        /// Consumes the builder and constructs an Operation<[`CreateAlias`](crate::operation::CreateAlias)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`CreateAliasInput`](crate::input::CreateAliasInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::CreateAlias,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op = crate::operation::CreateAlias::new(crate::input::CreateAliasInput {
-                    alias_name: self.alias_name,
-                    target_key_id: self.target_key_id,
-                });
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
-                }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op)
-                    .with_metadata(smithy_http::operation::Metadata::new("CreateAlias", "kms"));
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
+        ) -> Result<crate::input::CreateAliasInput, smithy_http::operation::BuildError> {
+            Ok(crate::input::CreateAliasInput {
+                alias_name: self.alias_name,
+                target_key_id: self.target_key_id,
             })
         }
     }
 }
 impl CreateAliasInput {
+    /// Consumes the builder and constructs an Operation<[`CreateAlias`](crate::operation::CreateAlias)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::CreateAlias,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::CreateAlias::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new("CreateAlias", "kms"));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     pub fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
@@ -466,74 +489,82 @@ pub mod create_custom_key_store_input {
             self.key_store_password = inp;
             self
         }
-        /// Consumes the builder and constructs an Operation<[`CreateCustomKeyStore`](crate::operation::CreateCustomKeyStore)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`CreateCustomKeyStoreInput`](crate::input::CreateCustomKeyStoreInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::CreateCustomKeyStore,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op = crate::operation::CreateCustomKeyStore::new(
-                    crate::input::CreateCustomKeyStoreInput {
-                        custom_key_store_name: self.custom_key_store_name,
-                        cloud_hsm_cluster_id: self.cloud_hsm_cluster_id,
-                        trust_anchor_certificate: self.trust_anchor_certificate,
-                        key_store_password: self.key_store_password,
-                    },
-                );
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
-                }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op).with_metadata(
-                    smithy_http::operation::Metadata::new("CreateCustomKeyStore", "kms"),
-                );
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
+        ) -> Result<crate::input::CreateCustomKeyStoreInput, smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::CreateCustomKeyStoreInput {
+                custom_key_store_name: self.custom_key_store_name,
+                cloud_hsm_cluster_id: self.cloud_hsm_cluster_id,
+                trust_anchor_certificate: self.trust_anchor_certificate,
+                key_store_password: self.key_store_password,
             })
         }
     }
 }
 impl CreateCustomKeyStoreInput {
+    /// Consumes the builder and constructs an Operation<[`CreateCustomKeyStore`](crate::operation::CreateCustomKeyStore)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::CreateCustomKeyStore,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::CreateCustomKeyStore::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "CreateCustomKeyStore",
+                "kms",
+            ));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     pub fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
@@ -707,74 +738,81 @@ pub mod create_grant_input {
             self.name = inp;
             self
         }
-        /// Consumes the builder and constructs an Operation<[`CreateGrant`](crate::operation::CreateGrant)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`CreateGrantInput`](crate::input::CreateGrantInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::CreateGrant,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op = crate::operation::CreateGrant::new(crate::input::CreateGrantInput {
-                    key_id: self.key_id,
-                    grantee_principal: self.grantee_principal,
-                    retiring_principal: self.retiring_principal,
-                    operations: self.operations,
-                    constraints: self.constraints,
-                    grant_tokens: self.grant_tokens,
-                    name: self.name,
-                });
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
-                }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op)
-                    .with_metadata(smithy_http::operation::Metadata::new("CreateGrant", "kms"));
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
+        ) -> Result<crate::input::CreateGrantInput, smithy_http::operation::BuildError> {
+            Ok(crate::input::CreateGrantInput {
+                key_id: self.key_id,
+                grantee_principal: self.grantee_principal,
+                retiring_principal: self.retiring_principal,
+                operations: self.operations,
+                constraints: self.constraints,
+                grant_tokens: self.grant_tokens,
+                name: self.name,
             })
         }
     }
 }
 impl CreateGrantInput {
+    /// Consumes the builder and constructs an Operation<[`CreateGrant`](crate::operation::CreateGrant)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::CreateGrant,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::CreateGrant::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new("CreateGrant", "kms"));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     pub fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
@@ -1069,77 +1107,82 @@ pub mod create_key_input {
             self.tags = inp;
             self
         }
-        /// Consumes the builder and constructs an Operation<[`CreateKey`](crate::operation::CreateKey)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`CreateKeyInput`](crate::input::CreateKeyInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::CreateKey,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op = crate::operation::CreateKey::new(crate::input::CreateKeyInput {
-                    policy: self.policy,
-                    description: self.description,
-                    key_usage: self.key_usage,
-                    customer_master_key_spec: self.customer_master_key_spec,
-                    origin: self.origin,
-                    custom_key_store_id: self.custom_key_store_id,
-                    bypass_policy_lockout_safety_check: self
-                        .bypass_policy_lockout_safety_check
-                        .unwrap_or_default(),
-                    tags: self.tags,
-                });
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
-                }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op)
-                    .with_metadata(smithy_http::operation::Metadata::new("CreateKey", "kms"));
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
+        ) -> Result<crate::input::CreateKeyInput, smithy_http::operation::BuildError> {
+            Ok(crate::input::CreateKeyInput {
+                policy: self.policy,
+                description: self.description,
+                key_usage: self.key_usage,
+                customer_master_key_spec: self.customer_master_key_spec,
+                origin: self.origin,
+                custom_key_store_id: self.custom_key_store_id,
+                bypass_policy_lockout_safety_check: self
+                    .bypass_policy_lockout_safety_check
+                    .unwrap_or_default(),
+                tags: self.tags,
             })
         }
     }
 }
 impl CreateKeyInput {
+    /// Consumes the builder and constructs an Operation<[`CreateKey`](crate::operation::CreateKey)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::CreateKey,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op =
+                smithy_http::operation::Operation::new(request, crate::operation::CreateKey::new())
+                    .with_metadata(smithy_http::operation::Metadata::new("CreateKey", "kms"));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     pub fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
@@ -1288,72 +1331,74 @@ pub mod decrypt_input {
             self.encryption_algorithm = inp;
             self
         }
-        /// Consumes the builder and constructs an Operation<[`Decrypt`](crate::operation::Decrypt)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`DecryptInput`](crate::input::DecryptInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::Decrypt,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op = crate::operation::Decrypt::new(crate::input::DecryptInput {
-                    ciphertext_blob: self.ciphertext_blob,
-                    encryption_context: self.encryption_context,
-                    grant_tokens: self.grant_tokens,
-                    key_id: self.key_id,
-                    encryption_algorithm: self.encryption_algorithm,
-                });
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
-                }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op)
-                    .with_metadata(smithy_http::operation::Metadata::new("Decrypt", "kms"));
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
+        ) -> Result<crate::input::DecryptInput, smithy_http::operation::BuildError> {
+            Ok(crate::input::DecryptInput {
+                ciphertext_blob: self.ciphertext_blob,
+                encryption_context: self.encryption_context,
+                grant_tokens: self.grant_tokens,
+                key_id: self.key_id,
+                encryption_algorithm: self.encryption_algorithm,
             })
         }
     }
 }
 impl DecryptInput {
+    /// Consumes the builder and constructs an Operation<[`Decrypt`](crate::operation::Decrypt)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<crate::operation::Decrypt, aws_http::AwsErrorRetryPolicy>,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op =
+                smithy_http::operation::Operation::new(request, crate::operation::Decrypt::new())
+                    .with_metadata(smithy_http::operation::Metadata::new("Decrypt", "kms"));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     pub fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
@@ -1410,68 +1455,75 @@ pub mod delete_alias_input {
             self.alias_name = inp;
             self
         }
-        /// Consumes the builder and constructs an Operation<[`DeleteAlias`](crate::operation::DeleteAlias)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`DeleteAliasInput`](crate::input::DeleteAliasInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::DeleteAlias,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op = crate::operation::DeleteAlias::new(crate::input::DeleteAliasInput {
-                    alias_name: self.alias_name,
-                });
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
-                }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op)
-                    .with_metadata(smithy_http::operation::Metadata::new("DeleteAlias", "kms"));
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
+        ) -> Result<crate::input::DeleteAliasInput, smithy_http::operation::BuildError> {
+            Ok(crate::input::DeleteAliasInput {
+                alias_name: self.alias_name,
             })
         }
     }
 }
 impl DeleteAliasInput {
+    /// Consumes the builder and constructs an Operation<[`DeleteAlias`](crate::operation::DeleteAlias)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::DeleteAlias,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::DeleteAlias::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new("DeleteAlias", "kms"));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     pub fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
@@ -1526,71 +1578,79 @@ pub mod delete_custom_key_store_input {
             self.custom_key_store_id = inp;
             self
         }
-        /// Consumes the builder and constructs an Operation<[`DeleteCustomKeyStore`](crate::operation::DeleteCustomKeyStore)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`DeleteCustomKeyStoreInput`](crate::input::DeleteCustomKeyStoreInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::DeleteCustomKeyStore,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op = crate::operation::DeleteCustomKeyStore::new(
-                    crate::input::DeleteCustomKeyStoreInput {
-                        custom_key_store_id: self.custom_key_store_id,
-                    },
-                );
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
-                }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op).with_metadata(
-                    smithy_http::operation::Metadata::new("DeleteCustomKeyStore", "kms"),
-                );
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
+        ) -> Result<crate::input::DeleteCustomKeyStoreInput, smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::DeleteCustomKeyStoreInput {
+                custom_key_store_id: self.custom_key_store_id,
             })
         }
     }
 }
 impl DeleteCustomKeyStoreInput {
+    /// Consumes the builder and constructs an Operation<[`DeleteCustomKeyStore`](crate::operation::DeleteCustomKeyStore)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::DeleteCustomKeyStore,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::DeleteCustomKeyStore::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "DeleteCustomKeyStore",
+                "kms",
+            ));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     pub fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
@@ -1656,71 +1716,79 @@ pub mod delete_imported_key_material_input {
             self.key_id = inp;
             self
         }
-        /// Consumes the builder and constructs an Operation<[`DeleteImportedKeyMaterial`](crate::operation::DeleteImportedKeyMaterial)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`DeleteImportedKeyMaterialInput`](crate::input::DeleteImportedKeyMaterialInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::DeleteImportedKeyMaterial,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op = crate::operation::DeleteImportedKeyMaterial::new(
-                    crate::input::DeleteImportedKeyMaterialInput {
-                        key_id: self.key_id,
-                    },
-                );
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
-                }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op).with_metadata(
-                    smithy_http::operation::Metadata::new("DeleteImportedKeyMaterial", "kms"),
-                );
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
+        ) -> Result<crate::input::DeleteImportedKeyMaterialInput, smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::DeleteImportedKeyMaterialInput {
+                key_id: self.key_id,
             })
         }
     }
 }
 impl DeleteImportedKeyMaterialInput {
+    /// Consumes the builder and constructs an Operation<[`DeleteImportedKeyMaterial`](crate::operation::DeleteImportedKeyMaterial)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::DeleteImportedKeyMaterial,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::DeleteImportedKeyMaterial::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "DeleteImportedKeyMaterial",
+                "kms",
+            ));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     pub fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
@@ -1821,74 +1889,82 @@ pub mod describe_custom_key_stores_input {
             self.marker = inp;
             self
         }
-        /// Consumes the builder and constructs an Operation<[`DescribeCustomKeyStores`](crate::operation::DescribeCustomKeyStores)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`DescribeCustomKeyStoresInput`](crate::input::DescribeCustomKeyStoresInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::DescribeCustomKeyStores,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op = crate::operation::DescribeCustomKeyStores::new(
-                    crate::input::DescribeCustomKeyStoresInput {
-                        custom_key_store_id: self.custom_key_store_id,
-                        custom_key_store_name: self.custom_key_store_name,
-                        limit: self.limit,
-                        marker: self.marker,
-                    },
-                );
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
-                }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op).with_metadata(
-                    smithy_http::operation::Metadata::new("DescribeCustomKeyStores", "kms"),
-                );
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
+        ) -> Result<crate::input::DescribeCustomKeyStoresInput, smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::DescribeCustomKeyStoresInput {
+                custom_key_store_id: self.custom_key_store_id,
+                custom_key_store_name: self.custom_key_store_name,
+                limit: self.limit,
+                marker: self.marker,
             })
         }
     }
 }
 impl DescribeCustomKeyStoresInput {
+    /// Consumes the builder and constructs an Operation<[`DescribeCustomKeyStores`](crate::operation::DescribeCustomKeyStores)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::DescribeCustomKeyStores,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::DescribeCustomKeyStores::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "DescribeCustomKeyStores",
+                "kms",
+            ));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     pub fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
@@ -1982,69 +2058,76 @@ pub mod describe_key_input {
             self.grant_tokens = inp;
             self
         }
-        /// Consumes the builder and constructs an Operation<[`DescribeKey`](crate::operation::DescribeKey)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`DescribeKeyInput`](crate::input::DescribeKeyInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::DescribeKey,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op = crate::operation::DescribeKey::new(crate::input::DescribeKeyInput {
-                    key_id: self.key_id,
-                    grant_tokens: self.grant_tokens,
-                });
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
-                }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op)
-                    .with_metadata(smithy_http::operation::Metadata::new("DescribeKey", "kms"));
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
+        ) -> Result<crate::input::DescribeKeyInput, smithy_http::operation::BuildError> {
+            Ok(crate::input::DescribeKeyInput {
+                key_id: self.key_id,
+                grant_tokens: self.grant_tokens,
             })
         }
     }
 }
 impl DescribeKeyInput {
+    /// Consumes the builder and constructs an Operation<[`DescribeKey`](crate::operation::DescribeKey)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::DescribeKey,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::DescribeKey::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new("DescribeKey", "kms"));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     pub fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
@@ -2110,68 +2193,75 @@ pub mod disable_key_input {
             self.key_id = inp;
             self
         }
-        /// Consumes the builder and constructs an Operation<[`DisableKey`](crate::operation::DisableKey)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`DisableKeyInput`](crate::input::DisableKeyInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::DisableKey,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op = crate::operation::DisableKey::new(crate::input::DisableKeyInput {
-                    key_id: self.key_id,
-                });
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
-                }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op)
-                    .with_metadata(smithy_http::operation::Metadata::new("DisableKey", "kms"));
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
+        ) -> Result<crate::input::DisableKeyInput, smithy_http::operation::BuildError> {
+            Ok(crate::input::DisableKeyInput {
+                key_id: self.key_id,
             })
         }
     }
 }
 impl DisableKeyInput {
+    /// Consumes the builder and constructs an Operation<[`DisableKey`](crate::operation::DisableKey)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::DisableKey,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::DisableKey::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new("DisableKey", "kms"));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     pub fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
@@ -2239,71 +2329,79 @@ pub mod disable_key_rotation_input {
             self.key_id = inp;
             self
         }
-        /// Consumes the builder and constructs an Operation<[`DisableKeyRotation`](crate::operation::DisableKeyRotation)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`DisableKeyRotationInput`](crate::input::DisableKeyRotationInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::DisableKeyRotation,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op = crate::operation::DisableKeyRotation::new(
-                    crate::input::DisableKeyRotationInput {
-                        key_id: self.key_id,
-                    },
-                );
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
-                }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op).with_metadata(
-                    smithy_http::operation::Metadata::new("DisableKeyRotation", "kms"),
-                );
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
+        ) -> Result<crate::input::DisableKeyRotationInput, smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::DisableKeyRotationInput {
+                key_id: self.key_id,
             })
         }
     }
 }
 impl DisableKeyRotationInput {
+    /// Consumes the builder and constructs an Operation<[`DisableKeyRotation`](crate::operation::DisableKeyRotation)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::DisableKeyRotation,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::DisableKeyRotation::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "DisableKeyRotation",
+                "kms",
+            ));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     pub fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
@@ -2358,71 +2456,79 @@ pub mod disconnect_custom_key_store_input {
             self.custom_key_store_id = inp;
             self
         }
-        /// Consumes the builder and constructs an Operation<[`DisconnectCustomKeyStore`](crate::operation::DisconnectCustomKeyStore)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`DisconnectCustomKeyStoreInput`](crate::input::DisconnectCustomKeyStoreInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::DisconnectCustomKeyStore,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op = crate::operation::DisconnectCustomKeyStore::new(
-                    crate::input::DisconnectCustomKeyStoreInput {
-                        custom_key_store_id: self.custom_key_store_id,
-                    },
-                );
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
-                }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op).with_metadata(
-                    smithy_http::operation::Metadata::new("DisconnectCustomKeyStore", "kms"),
-                );
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
+        ) -> Result<crate::input::DisconnectCustomKeyStoreInput, smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::DisconnectCustomKeyStoreInput {
+                custom_key_store_id: self.custom_key_store_id,
             })
         }
     }
 }
 impl DisconnectCustomKeyStoreInput {
+    /// Consumes the builder and constructs an Operation<[`DisconnectCustomKeyStore`](crate::operation::DisconnectCustomKeyStore)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::DisconnectCustomKeyStore,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::DisconnectCustomKeyStore::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "DisconnectCustomKeyStore",
+                "kms",
+            ));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     pub fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
@@ -2487,68 +2593,73 @@ pub mod enable_key_input {
             self.key_id = inp;
             self
         }
-        /// Consumes the builder and constructs an Operation<[`EnableKey`](crate::operation::EnableKey)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`EnableKeyInput`](crate::input::EnableKeyInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::EnableKey,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op = crate::operation::EnableKey::new(crate::input::EnableKeyInput {
-                    key_id: self.key_id,
-                });
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
-                }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op)
-                    .with_metadata(smithy_http::operation::Metadata::new("EnableKey", "kms"));
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
+        ) -> Result<crate::input::EnableKeyInput, smithy_http::operation::BuildError> {
+            Ok(crate::input::EnableKeyInput {
+                key_id: self.key_id,
             })
         }
     }
 }
 impl EnableKeyInput {
+    /// Consumes the builder and constructs an Operation<[`EnableKey`](crate::operation::EnableKey)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::EnableKey,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op =
+                smithy_http::operation::Operation::new(request, crate::operation::EnableKey::new())
+                    .with_metadata(smithy_http::operation::Metadata::new("EnableKey", "kms"));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     pub fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
@@ -2613,71 +2724,79 @@ pub mod enable_key_rotation_input {
             self.key_id = inp;
             self
         }
-        /// Consumes the builder and constructs an Operation<[`EnableKeyRotation`](crate::operation::EnableKeyRotation)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`EnableKeyRotationInput`](crate::input::EnableKeyRotationInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::EnableKeyRotation,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op = crate::operation::EnableKeyRotation::new(
-                    crate::input::EnableKeyRotationInput {
-                        key_id: self.key_id,
-                    },
-                );
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
-                }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op).with_metadata(
-                    smithy_http::operation::Metadata::new("EnableKeyRotation", "kms"),
-                );
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
+        ) -> Result<crate::input::EnableKeyRotationInput, smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::EnableKeyRotationInput {
+                key_id: self.key_id,
             })
         }
     }
 }
 impl EnableKeyRotationInput {
+    /// Consumes the builder and constructs an Operation<[`EnableKeyRotation`](crate::operation::EnableKeyRotation)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::EnableKeyRotation,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::EnableKeyRotation::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "EnableKeyRotation",
+                "kms",
+            ));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     pub fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
@@ -2813,72 +2932,74 @@ pub mod encrypt_input {
             self.encryption_algorithm = inp;
             self
         }
-        /// Consumes the builder and constructs an Operation<[`Encrypt`](crate::operation::Encrypt)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`EncryptInput`](crate::input::EncryptInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::Encrypt,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op = crate::operation::Encrypt::new(crate::input::EncryptInput {
-                    key_id: self.key_id,
-                    plaintext: self.plaintext,
-                    encryption_context: self.encryption_context,
-                    grant_tokens: self.grant_tokens,
-                    encryption_algorithm: self.encryption_algorithm,
-                });
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
-                }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op)
-                    .with_metadata(smithy_http::operation::Metadata::new("Encrypt", "kms"));
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
+        ) -> Result<crate::input::EncryptInput, smithy_http::operation::BuildError> {
+            Ok(crate::input::EncryptInput {
+                key_id: self.key_id,
+                plaintext: self.plaintext,
+                encryption_context: self.encryption_context,
+                grant_tokens: self.grant_tokens,
+                encryption_algorithm: self.encryption_algorithm,
             })
         }
     }
 }
 impl EncryptInput {
+    /// Consumes the builder and constructs an Operation<[`Encrypt`](crate::operation::Encrypt)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<crate::operation::Encrypt, aws_http::AwsErrorRetryPolicy>,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op =
+                smithy_http::operation::Operation::new(request, crate::operation::Encrypt::new())
+                    .with_metadata(smithy_http::operation::Metadata::new("Encrypt", "kms"));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     pub fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
@@ -3018,74 +3139,83 @@ pub mod generate_data_key_input {
             self.grant_tokens = inp;
             self
         }
-        /// Consumes the builder and constructs an Operation<[`GenerateDataKey`](crate::operation::GenerateDataKey)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`GenerateDataKeyInput`](crate::input::GenerateDataKeyInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::GenerateDataKey,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op =
-                    crate::operation::GenerateDataKey::new(crate::input::GenerateDataKeyInput {
-                        key_id: self.key_id,
-                        encryption_context: self.encryption_context,
-                        number_of_bytes: self.number_of_bytes,
-                        key_spec: self.key_spec,
-                        grant_tokens: self.grant_tokens,
-                    });
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
-                }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op).with_metadata(
-                    smithy_http::operation::Metadata::new("GenerateDataKey", "kms"),
-                );
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
+        ) -> Result<crate::input::GenerateDataKeyInput, smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::GenerateDataKeyInput {
+                key_id: self.key_id,
+                encryption_context: self.encryption_context,
+                number_of_bytes: self.number_of_bytes,
+                key_spec: self.key_spec,
+                grant_tokens: self.grant_tokens,
             })
         }
     }
 }
 impl GenerateDataKeyInput {
+    /// Consumes the builder and constructs an Operation<[`GenerateDataKey`](crate::operation::GenerateDataKey)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::GenerateDataKey,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::GenerateDataKey::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "GenerateDataKey",
+                "kms",
+            ));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     pub fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
@@ -3214,74 +3344,82 @@ pub mod generate_data_key_pair_input {
             self.grant_tokens = inp;
             self
         }
-        /// Consumes the builder and constructs an Operation<[`GenerateDataKeyPair`](crate::operation::GenerateDataKeyPair)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`GenerateDataKeyPairInput`](crate::input::GenerateDataKeyPairInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::GenerateDataKeyPair,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op = crate::operation::GenerateDataKeyPair::new(
-                    crate::input::GenerateDataKeyPairInput {
-                        encryption_context: self.encryption_context,
-                        key_id: self.key_id,
-                        key_pair_spec: self.key_pair_spec,
-                        grant_tokens: self.grant_tokens,
-                    },
-                );
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
-                }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op).with_metadata(
-                    smithy_http::operation::Metadata::new("GenerateDataKeyPair", "kms"),
-                );
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
+        ) -> Result<crate::input::GenerateDataKeyPairInput, smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::GenerateDataKeyPairInput {
+                encryption_context: self.encryption_context,
+                key_id: self.key_id,
+                key_pair_spec: self.key_pair_spec,
+                grant_tokens: self.grant_tokens,
             })
         }
     }
 }
 impl GenerateDataKeyPairInput {
+    /// Consumes the builder and constructs an Operation<[`GenerateDataKeyPair`](crate::operation::GenerateDataKeyPair)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::GenerateDataKeyPair,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::GenerateDataKeyPair::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "GenerateDataKeyPair",
+                "kms",
+            ));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     pub fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
@@ -3409,77 +3547,84 @@ pub mod generate_data_key_pair_without_plaintext_input {
             self.grant_tokens = inp;
             self
         }
-        /// Consumes the builder and constructs an Operation<[`GenerateDataKeyPairWithoutPlaintext`](crate::operation::GenerateDataKeyPairWithoutPlaintext)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`GenerateDataKeyPairWithoutPlaintextInput`](crate::input::GenerateDataKeyPairWithoutPlaintextInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
         ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::GenerateDataKeyPairWithoutPlaintext,
-                aws_http::AwsErrorRetryPolicy,
-            >,
+            crate::input::GenerateDataKeyPairWithoutPlaintextInput,
             smithy_http::operation::BuildError,
         > {
-            Ok({
-                let op = crate::operation::GenerateDataKeyPairWithoutPlaintext::new(
-                    crate::input::GenerateDataKeyPairWithoutPlaintextInput {
-                        encryption_context: self.encryption_context,
-                        key_id: self.key_id,
-                        key_pair_spec: self.key_pair_spec,
-                        grant_tokens: self.grant_tokens,
-                    },
-                );
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
-                }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op).with_metadata(
-                    smithy_http::operation::Metadata::new(
-                        "GenerateDataKeyPairWithoutPlaintext",
-                        "kms",
-                    ),
-                );
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
+            Ok(crate::input::GenerateDataKeyPairWithoutPlaintextInput {
+                encryption_context: self.encryption_context,
+                key_id: self.key_id,
+                key_pair_spec: self.key_pair_spec,
+                grant_tokens: self.grant_tokens,
             })
         }
     }
 }
 impl GenerateDataKeyPairWithoutPlaintextInput {
+    /// Consumes the builder and constructs an Operation<[`GenerateDataKeyPairWithoutPlaintext`](crate::operation::GenerateDataKeyPairWithoutPlaintext)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::GenerateDataKeyPairWithoutPlaintext,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::GenerateDataKeyPairWithoutPlaintext::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "GenerateDataKeyPairWithoutPlaintext",
+                "kms",
+            ));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     pub fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
@@ -3618,75 +3763,85 @@ pub mod generate_data_key_without_plaintext_input {
             self.grant_tokens = inp;
             self
         }
-        /// Consumes the builder and constructs an Operation<[`GenerateDataKeyWithoutPlaintext`](crate::operation::GenerateDataKeyWithoutPlaintext)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`GenerateDataKeyWithoutPlaintextInput`](crate::input::GenerateDataKeyWithoutPlaintextInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
         ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::GenerateDataKeyWithoutPlaintext,
-                aws_http::AwsErrorRetryPolicy,
-            >,
+            crate::input::GenerateDataKeyWithoutPlaintextInput,
             smithy_http::operation::BuildError,
         > {
-            Ok({
-                let op = crate::operation::GenerateDataKeyWithoutPlaintext::new(
-                    crate::input::GenerateDataKeyWithoutPlaintextInput {
-                        key_id: self.key_id,
-                        encryption_context: self.encryption_context,
-                        key_spec: self.key_spec,
-                        number_of_bytes: self.number_of_bytes,
-                        grant_tokens: self.grant_tokens,
-                    },
-                );
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
-                }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op).with_metadata(
-                    smithy_http::operation::Metadata::new("GenerateDataKeyWithoutPlaintext", "kms"),
-                );
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
+            Ok(crate::input::GenerateDataKeyWithoutPlaintextInput {
+                key_id: self.key_id,
+                encryption_context: self.encryption_context,
+                key_spec: self.key_spec,
+                number_of_bytes: self.number_of_bytes,
+                grant_tokens: self.grant_tokens,
             })
         }
     }
 }
 impl GenerateDataKeyWithoutPlaintextInput {
+    /// Consumes the builder and constructs an Operation<[`GenerateDataKeyWithoutPlaintext`](crate::operation::GenerateDataKeyWithoutPlaintext)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::GenerateDataKeyWithoutPlaintext,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::GenerateDataKeyWithoutPlaintext::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "GenerateDataKeyWithoutPlaintext",
+                "kms",
+            ));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     pub fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
@@ -3759,70 +3914,79 @@ pub mod generate_random_input {
             self.custom_key_store_id = inp;
             self
         }
-        /// Consumes the builder and constructs an Operation<[`GenerateRandom`](crate::operation::GenerateRandom)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`GenerateRandomInput`](crate::input::GenerateRandomInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::GenerateRandom,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op = crate::operation::GenerateRandom::new(crate::input::GenerateRandomInput {
-                    number_of_bytes: self.number_of_bytes,
-                    custom_key_store_id: self.custom_key_store_id,
-                });
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
-                }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op).with_metadata(
-                    smithy_http::operation::Metadata::new("GenerateRandom", "kms"),
-                );
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
+        ) -> Result<crate::input::GenerateRandomInput, smithy_http::operation::BuildError> {
+            Ok(crate::input::GenerateRandomInput {
+                number_of_bytes: self.number_of_bytes,
+                custom_key_store_id: self.custom_key_store_id,
             })
         }
     }
 }
 impl GenerateRandomInput {
+    /// Consumes the builder and constructs an Operation<[`GenerateRandom`](crate::operation::GenerateRandom)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::GenerateRandom,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::GenerateRandom::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "GenerateRandom",
+                "kms",
+            ));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     pub fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
@@ -3899,69 +4063,76 @@ pub mod get_key_policy_input {
             self.policy_name = inp;
             self
         }
-        /// Consumes the builder and constructs an Operation<[`GetKeyPolicy`](crate::operation::GetKeyPolicy)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`GetKeyPolicyInput`](crate::input::GetKeyPolicyInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::GetKeyPolicy,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op = crate::operation::GetKeyPolicy::new(crate::input::GetKeyPolicyInput {
-                    key_id: self.key_id,
-                    policy_name: self.policy_name,
-                });
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
-                }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op)
-                    .with_metadata(smithy_http::operation::Metadata::new("GetKeyPolicy", "kms"));
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
+        ) -> Result<crate::input::GetKeyPolicyInput, smithy_http::operation::BuildError> {
+            Ok(crate::input::GetKeyPolicyInput {
+                key_id: self.key_id,
+                policy_name: self.policy_name,
             })
         }
     }
 }
 impl GetKeyPolicyInput {
+    /// Consumes the builder and constructs an Operation<[`GetKeyPolicy`](crate::operation::GetKeyPolicy)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::GetKeyPolicy,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::GetKeyPolicy::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new("GetKeyPolicy", "kms"));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     pub fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
@@ -4028,71 +4199,79 @@ pub mod get_key_rotation_status_input {
             self.key_id = inp;
             self
         }
-        /// Consumes the builder and constructs an Operation<[`GetKeyRotationStatus`](crate::operation::GetKeyRotationStatus)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`GetKeyRotationStatusInput`](crate::input::GetKeyRotationStatusInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::GetKeyRotationStatus,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op = crate::operation::GetKeyRotationStatus::new(
-                    crate::input::GetKeyRotationStatusInput {
-                        key_id: self.key_id,
-                    },
-                );
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
-                }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op).with_metadata(
-                    smithy_http::operation::Metadata::new("GetKeyRotationStatus", "kms"),
-                );
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
+        ) -> Result<crate::input::GetKeyRotationStatusInput, smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::GetKeyRotationStatusInput {
+                key_id: self.key_id,
             })
         }
     }
 }
 impl GetKeyRotationStatusInput {
+    /// Consumes the builder and constructs an Operation<[`GetKeyRotationStatus`](crate::operation::GetKeyRotationStatus)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::GetKeyRotationStatus,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::GetKeyRotationStatus::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "GetKeyRotationStatus",
+                "kms",
+            ));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     pub fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
@@ -4186,73 +4365,81 @@ pub mod get_parameters_for_import_input {
             self.wrapping_key_spec = inp;
             self
         }
-        /// Consumes the builder and constructs an Operation<[`GetParametersForImport`](crate::operation::GetParametersForImport)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`GetParametersForImportInput`](crate::input::GetParametersForImportInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::GetParametersForImport,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op = crate::operation::GetParametersForImport::new(
-                    crate::input::GetParametersForImportInput {
-                        key_id: self.key_id,
-                        wrapping_algorithm: self.wrapping_algorithm,
-                        wrapping_key_spec: self.wrapping_key_spec,
-                    },
-                );
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
-                }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op).with_metadata(
-                    smithy_http::operation::Metadata::new("GetParametersForImport", "kms"),
-                );
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
+        ) -> Result<crate::input::GetParametersForImportInput, smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::GetParametersForImportInput {
+                key_id: self.key_id,
+                wrapping_algorithm: self.wrapping_algorithm,
+                wrapping_key_spec: self.wrapping_key_spec,
             })
         }
     }
 }
 impl GetParametersForImportInput {
+    /// Consumes the builder and constructs an Operation<[`GetParametersForImport`](crate::operation::GetParametersForImport)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::GetParametersForImport,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::GetParametersForImport::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "GetParametersForImport",
+                "kms",
+            ));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     pub fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
@@ -4341,69 +4528,76 @@ pub mod get_public_key_input {
             self.grant_tokens = inp;
             self
         }
-        /// Consumes the builder and constructs an Operation<[`GetPublicKey`](crate::operation::GetPublicKey)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`GetPublicKeyInput`](crate::input::GetPublicKeyInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::GetPublicKey,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op = crate::operation::GetPublicKey::new(crate::input::GetPublicKeyInput {
-                    key_id: self.key_id,
-                    grant_tokens: self.grant_tokens,
-                });
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
-                }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op)
-                    .with_metadata(smithy_http::operation::Metadata::new("GetPublicKey", "kms"));
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
+        ) -> Result<crate::input::GetPublicKeyInput, smithy_http::operation::BuildError> {
+            Ok(crate::input::GetPublicKeyInput {
+                key_id: self.key_id,
+                grant_tokens: self.grant_tokens,
             })
         }
     }
 }
 impl GetPublicKeyInput {
+    /// Consumes the builder and constructs an Operation<[`GetPublicKey`](crate::operation::GetPublicKey)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::GetPublicKey,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::GetPublicKey::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new("GetPublicKey", "kms"));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     pub fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
@@ -4527,75 +4721,83 @@ pub mod import_key_material_input {
             self.expiration_model = inp;
             self
         }
-        /// Consumes the builder and constructs an Operation<[`ImportKeyMaterial`](crate::operation::ImportKeyMaterial)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`ImportKeyMaterialInput`](crate::input::ImportKeyMaterialInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::ImportKeyMaterial,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op = crate::operation::ImportKeyMaterial::new(
-                    crate::input::ImportKeyMaterialInput {
-                        key_id: self.key_id,
-                        import_token: self.import_token,
-                        encrypted_key_material: self.encrypted_key_material,
-                        valid_to: self.valid_to,
-                        expiration_model: self.expiration_model,
-                    },
-                );
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
-                }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op).with_metadata(
-                    smithy_http::operation::Metadata::new("ImportKeyMaterial", "kms"),
-                );
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
+        ) -> Result<crate::input::ImportKeyMaterialInput, smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::ImportKeyMaterialInput {
+                key_id: self.key_id,
+                import_token: self.import_token,
+                encrypted_key_material: self.encrypted_key_material,
+                valid_to: self.valid_to,
+                expiration_model: self.expiration_model,
             })
         }
     }
 }
 impl ImportKeyMaterialInput {
+    /// Consumes the builder and constructs an Operation<[`ImportKeyMaterial`](crate::operation::ImportKeyMaterial)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::ImportKeyMaterial,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::ImportKeyMaterial::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "ImportKeyMaterial",
+                "kms",
+            ));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     pub fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
@@ -4693,70 +4895,77 @@ pub mod list_aliases_input {
             self.marker = inp;
             self
         }
-        /// Consumes the builder and constructs an Operation<[`ListAliases`](crate::operation::ListAliases)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`ListAliasesInput`](crate::input::ListAliasesInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::ListAliases,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op = crate::operation::ListAliases::new(crate::input::ListAliasesInput {
-                    key_id: self.key_id,
-                    limit: self.limit,
-                    marker: self.marker,
-                });
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
-                }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op)
-                    .with_metadata(smithy_http::operation::Metadata::new("ListAliases", "kms"));
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
+        ) -> Result<crate::input::ListAliasesInput, smithy_http::operation::BuildError> {
+            Ok(crate::input::ListAliasesInput {
+                key_id: self.key_id,
+                limit: self.limit,
+                marker: self.marker,
             })
         }
     }
 }
 impl ListAliasesInput {
+    /// Consumes the builder and constructs an Operation<[`ListAliases`](crate::operation::ListAliases)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::ListAliases,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::ListAliases::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new("ListAliases", "kms"));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     pub fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
@@ -4850,70 +5059,77 @@ pub mod list_grants_input {
             self.key_id = inp;
             self
         }
-        /// Consumes the builder and constructs an Operation<[`ListGrants`](crate::operation::ListGrants)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`ListGrantsInput`](crate::input::ListGrantsInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::ListGrants,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op = crate::operation::ListGrants::new(crate::input::ListGrantsInput {
-                    limit: self.limit,
-                    marker: self.marker,
-                    key_id: self.key_id,
-                });
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
-                }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op)
-                    .with_metadata(smithy_http::operation::Metadata::new("ListGrants", "kms"));
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
+        ) -> Result<crate::input::ListGrantsInput, smithy_http::operation::BuildError> {
+            Ok(crate::input::ListGrantsInput {
+                limit: self.limit,
+                marker: self.marker,
+                key_id: self.key_id,
             })
         }
     }
 }
 impl ListGrantsInput {
+    /// Consumes the builder and constructs an Operation<[`ListGrants`](crate::operation::ListGrants)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::ListGrants,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::ListGrants::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new("ListGrants", "kms"));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     pub fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
@@ -5007,72 +5223,81 @@ pub mod list_key_policies_input {
             self.marker = inp;
             self
         }
-        /// Consumes the builder and constructs an Operation<[`ListKeyPolicies`](crate::operation::ListKeyPolicies)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`ListKeyPoliciesInput`](crate::input::ListKeyPoliciesInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::ListKeyPolicies,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op =
-                    crate::operation::ListKeyPolicies::new(crate::input::ListKeyPoliciesInput {
-                        key_id: self.key_id,
-                        limit: self.limit,
-                        marker: self.marker,
-                    });
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
-                }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op).with_metadata(
-                    smithy_http::operation::Metadata::new("ListKeyPolicies", "kms"),
-                );
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
+        ) -> Result<crate::input::ListKeyPoliciesInput, smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::ListKeyPoliciesInput {
+                key_id: self.key_id,
+                limit: self.limit,
+                marker: self.marker,
             })
         }
     }
 }
 impl ListKeyPoliciesInput {
+    /// Consumes the builder and constructs an Operation<[`ListKeyPolicies`](crate::operation::ListKeyPolicies)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::ListKeyPolicies,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::ListKeyPolicies::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "ListKeyPolicies",
+                "kms",
+            ));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     pub fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
@@ -5142,69 +5367,74 @@ pub mod list_keys_input {
             self.marker = inp;
             self
         }
-        /// Consumes the builder and constructs an Operation<[`ListKeys`](crate::operation::ListKeys)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`ListKeysInput`](crate::input::ListKeysInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::ListKeys,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op = crate::operation::ListKeys::new(crate::input::ListKeysInput {
-                    limit: self.limit,
-                    marker: self.marker,
-                });
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
-                }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op)
-                    .with_metadata(smithy_http::operation::Metadata::new("ListKeys", "kms"));
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
+        ) -> Result<crate::input::ListKeysInput, smithy_http::operation::BuildError> {
+            Ok(crate::input::ListKeysInput {
+                limit: self.limit,
+                marker: self.marker,
             })
         }
     }
 }
 impl ListKeysInput {
+    /// Consumes the builder and constructs an Operation<[`ListKeys`](crate::operation::ListKeys)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::ListKeys,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op =
+                smithy_http::operation::Operation::new(request, crate::operation::ListKeys::new())
+                    .with_metadata(smithy_http::operation::Metadata::new("ListKeys", "kms"));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     pub fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
@@ -5298,72 +5528,81 @@ pub mod list_resource_tags_input {
             self.marker = inp;
             self
         }
-        /// Consumes the builder and constructs an Operation<[`ListResourceTags`](crate::operation::ListResourceTags)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`ListResourceTagsInput`](crate::input::ListResourceTagsInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::ListResourceTags,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op =
-                    crate::operation::ListResourceTags::new(crate::input::ListResourceTagsInput {
-                        key_id: self.key_id,
-                        limit: self.limit,
-                        marker: self.marker,
-                    });
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
-                }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op).with_metadata(
-                    smithy_http::operation::Metadata::new("ListResourceTags", "kms"),
-                );
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
+        ) -> Result<crate::input::ListResourceTagsInput, smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::ListResourceTagsInput {
+                key_id: self.key_id,
+                limit: self.limit,
+                marker: self.marker,
             })
         }
     }
 }
 impl ListResourceTagsInput {
+    /// Consumes the builder and constructs an Operation<[`ListResourceTags`](crate::operation::ListResourceTags)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::ListResourceTags,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::ListResourceTags::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "ListResourceTags",
+                "kms",
+            ));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     pub fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
@@ -5452,73 +5691,81 @@ pub mod list_retirable_grants_input {
             self.retiring_principal = inp;
             self
         }
-        /// Consumes the builder and constructs an Operation<[`ListRetirableGrants`](crate::operation::ListRetirableGrants)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`ListRetirableGrantsInput`](crate::input::ListRetirableGrantsInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::ListRetirableGrants,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op = crate::operation::ListRetirableGrants::new(
-                    crate::input::ListRetirableGrantsInput {
-                        limit: self.limit,
-                        marker: self.marker,
-                        retiring_principal: self.retiring_principal,
-                    },
-                );
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
-                }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op).with_metadata(
-                    smithy_http::operation::Metadata::new("ListRetirableGrants", "kms"),
-                );
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
+        ) -> Result<crate::input::ListRetirableGrantsInput, smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::ListRetirableGrantsInput {
+                limit: self.limit,
+                marker: self.marker,
+                retiring_principal: self.retiring_principal,
             })
         }
     }
 }
 impl ListRetirableGrantsInput {
+    /// Consumes the builder and constructs an Operation<[`ListRetirableGrants`](crate::operation::ListRetirableGrants)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::ListRetirableGrants,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::ListRetirableGrants::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "ListRetirableGrants",
+                "kms",
+            ));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     pub fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
@@ -5641,73 +5888,80 @@ pub mod put_key_policy_input {
             self.bypass_policy_lockout_safety_check = Some(inp);
             self
         }
-        /// Consumes the builder and constructs an Operation<[`PutKeyPolicy`](crate::operation::PutKeyPolicy)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`PutKeyPolicyInput`](crate::input::PutKeyPolicyInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::PutKeyPolicy,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op = crate::operation::PutKeyPolicy::new(crate::input::PutKeyPolicyInput {
-                    key_id: self.key_id,
-                    policy_name: self.policy_name,
-                    policy: self.policy,
-                    bypass_policy_lockout_safety_check: self
-                        .bypass_policy_lockout_safety_check
-                        .unwrap_or_default(),
-                });
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
-                }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op)
-                    .with_metadata(smithy_http::operation::Metadata::new("PutKeyPolicy", "kms"));
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
+        ) -> Result<crate::input::PutKeyPolicyInput, smithy_http::operation::BuildError> {
+            Ok(crate::input::PutKeyPolicyInput {
+                key_id: self.key_id,
+                policy_name: self.policy_name,
+                policy: self.policy,
+                bypass_policy_lockout_safety_check: self
+                    .bypass_policy_lockout_safety_check
+                    .unwrap_or_default(),
             })
         }
     }
 }
 impl PutKeyPolicyInput {
+    /// Consumes the builder and constructs an Operation<[`PutKeyPolicy`](crate::operation::PutKeyPolicy)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::PutKeyPolicy,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::PutKeyPolicy::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new("PutKeyPolicy", "kms"));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     pub fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
@@ -5936,75 +6190,80 @@ pub mod re_encrypt_input {
             self.grant_tokens = inp;
             self
         }
-        /// Consumes the builder and constructs an Operation<[`ReEncrypt`](crate::operation::ReEncrypt)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`ReEncryptInput`](crate::input::ReEncryptInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::ReEncrypt,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op = crate::operation::ReEncrypt::new(crate::input::ReEncryptInput {
-                    ciphertext_blob: self.ciphertext_blob,
-                    source_encryption_context: self.source_encryption_context,
-                    source_key_id: self.source_key_id,
-                    destination_key_id: self.destination_key_id,
-                    destination_encryption_context: self.destination_encryption_context,
-                    source_encryption_algorithm: self.source_encryption_algorithm,
-                    destination_encryption_algorithm: self.destination_encryption_algorithm,
-                    grant_tokens: self.grant_tokens,
-                });
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
-                }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op)
-                    .with_metadata(smithy_http::operation::Metadata::new("ReEncrypt", "kms"));
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
+        ) -> Result<crate::input::ReEncryptInput, smithy_http::operation::BuildError> {
+            Ok(crate::input::ReEncryptInput {
+                ciphertext_blob: self.ciphertext_blob,
+                source_encryption_context: self.source_encryption_context,
+                source_key_id: self.source_key_id,
+                destination_key_id: self.destination_key_id,
+                destination_encryption_context: self.destination_encryption_context,
+                source_encryption_algorithm: self.source_encryption_algorithm,
+                destination_encryption_algorithm: self.destination_encryption_algorithm,
+                grant_tokens: self.grant_tokens,
             })
         }
     }
 }
 impl ReEncryptInput {
+    /// Consumes the builder and constructs an Operation<[`ReEncrypt`](crate::operation::ReEncrypt)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::ReEncrypt,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op =
+                smithy_http::operation::Operation::new(request, crate::operation::ReEncrypt::new())
+                    .with_metadata(smithy_http::operation::Metadata::new("ReEncrypt", "kms"));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     pub fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
@@ -6092,70 +6351,77 @@ pub mod retire_grant_input {
             self.grant_id = inp;
             self
         }
-        /// Consumes the builder and constructs an Operation<[`RetireGrant`](crate::operation::RetireGrant)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`RetireGrantInput`](crate::input::RetireGrantInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::RetireGrant,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op = crate::operation::RetireGrant::new(crate::input::RetireGrantInput {
-                    grant_token: self.grant_token,
-                    key_id: self.key_id,
-                    grant_id: self.grant_id,
-                });
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
-                }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op)
-                    .with_metadata(smithy_http::operation::Metadata::new("RetireGrant", "kms"));
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
+        ) -> Result<crate::input::RetireGrantInput, smithy_http::operation::BuildError> {
+            Ok(crate::input::RetireGrantInput {
+                grant_token: self.grant_token,
+                key_id: self.key_id,
+                grant_id: self.grant_id,
             })
         }
     }
 }
 impl RetireGrantInput {
+    /// Consumes the builder and constructs an Operation<[`RetireGrant`](crate::operation::RetireGrant)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::RetireGrant,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::RetireGrant::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new("RetireGrant", "kms"));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     pub fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
@@ -6233,69 +6499,76 @@ pub mod revoke_grant_input {
             self.grant_id = inp;
             self
         }
-        /// Consumes the builder and constructs an Operation<[`RevokeGrant`](crate::operation::RevokeGrant)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`RevokeGrantInput`](crate::input::RevokeGrantInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::RevokeGrant,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op = crate::operation::RevokeGrant::new(crate::input::RevokeGrantInput {
-                    key_id: self.key_id,
-                    grant_id: self.grant_id,
-                });
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
-                }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op)
-                    .with_metadata(smithy_http::operation::Metadata::new("RevokeGrant", "kms"));
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
+        ) -> Result<crate::input::RevokeGrantInput, smithy_http::operation::BuildError> {
+            Ok(crate::input::RevokeGrantInput {
+                key_id: self.key_id,
+                grant_id: self.grant_id,
             })
         }
     }
 }
 impl RevokeGrantInput {
+    /// Consumes the builder and constructs an Operation<[`RevokeGrant`](crate::operation::RevokeGrant)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::RevokeGrant,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::RevokeGrant::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new("RevokeGrant", "kms"));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     pub fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
@@ -6374,72 +6647,80 @@ pub mod schedule_key_deletion_input {
             self.pending_window_in_days = inp;
             self
         }
-        /// Consumes the builder and constructs an Operation<[`ScheduleKeyDeletion`](crate::operation::ScheduleKeyDeletion)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`ScheduleKeyDeletionInput`](crate::input::ScheduleKeyDeletionInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::ScheduleKeyDeletion,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op = crate::operation::ScheduleKeyDeletion::new(
-                    crate::input::ScheduleKeyDeletionInput {
-                        key_id: self.key_id,
-                        pending_window_in_days: self.pending_window_in_days,
-                    },
-                );
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
-                }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op).with_metadata(
-                    smithy_http::operation::Metadata::new("ScheduleKeyDeletion", "kms"),
-                );
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
+        ) -> Result<crate::input::ScheduleKeyDeletionInput, smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::ScheduleKeyDeletionInput {
+                key_id: self.key_id,
+                pending_window_in_days: self.pending_window_in_days,
             })
         }
     }
 }
 impl ScheduleKeyDeletionInput {
+    /// Consumes the builder and constructs an Operation<[`ScheduleKeyDeletion`](crate::operation::ScheduleKeyDeletion)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::ScheduleKeyDeletion,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::ScheduleKeyDeletion::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "ScheduleKeyDeletion",
+                "kms",
+            ));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     pub fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
@@ -6572,72 +6853,71 @@ pub mod sign_input {
             self.signing_algorithm = inp;
             self
         }
-        /// Consumes the builder and constructs an Operation<[`Sign`](crate::operation::Sign)>
-        #[allow(clippy::let_and_return)]
-        pub fn build(
-            self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::Sign,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op = crate::operation::Sign::new(crate::input::SignInput {
-                    key_id: self.key_id,
-                    message: self.message,
-                    message_type: self.message_type,
-                    grant_tokens: self.grant_tokens,
-                    signing_algorithm: self.signing_algorithm,
-                });
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
-                }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op)
-                    .with_metadata(smithy_http::operation::Metadata::new("Sign", "kms"));
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
+        /// Consumes the builder and constructs a [`SignInput`](crate::input::SignInput)
+        pub fn build(self) -> Result<crate::input::SignInput, smithy_http::operation::BuildError> {
+            Ok(crate::input::SignInput {
+                key_id: self.key_id,
+                message: self.message,
+                message_type: self.message_type,
+                grant_tokens: self.grant_tokens,
+                signing_algorithm: self.signing_algorithm,
             })
         }
     }
 }
 impl SignInput {
+    /// Consumes the builder and constructs an Operation<[`Sign`](crate::operation::Sign)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<crate::operation::Sign, aws_http::AwsErrorRetryPolicy>,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op = smithy_http::operation::Operation::new(request, crate::operation::Sign::new())
+                .with_metadata(smithy_http::operation::Metadata::new("Sign", "kms"));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     pub fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
@@ -6720,69 +7000,76 @@ pub mod tag_resource_input {
             self.tags = inp;
             self
         }
-        /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`TagResourceInput`](crate::input::TagResourceInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::TagResource,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op = crate::operation::TagResource::new(crate::input::TagResourceInput {
-                    key_id: self.key_id,
-                    tags: self.tags,
-                });
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
-                }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op)
-                    .with_metadata(smithy_http::operation::Metadata::new("TagResource", "kms"));
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
+        ) -> Result<crate::input::TagResourceInput, smithy_http::operation::BuildError> {
+            Ok(crate::input::TagResourceInput {
+                key_id: self.key_id,
+                tags: self.tags,
             })
         }
     }
 }
 impl TagResourceInput {
+    /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::TagResource,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::TagResource::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new("TagResource", "kms"));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     pub fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
@@ -6862,70 +7149,79 @@ pub mod untag_resource_input {
             self.tag_keys = inp;
             self
         }
-        /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`UntagResourceInput`](crate::input::UntagResourceInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::UntagResource,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op = crate::operation::UntagResource::new(crate::input::UntagResourceInput {
-                    key_id: self.key_id,
-                    tag_keys: self.tag_keys,
-                });
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
-                }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op).with_metadata(
-                    smithy_http::operation::Metadata::new("UntagResource", "kms"),
-                );
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
+        ) -> Result<crate::input::UntagResourceInput, smithy_http::operation::BuildError> {
+            Ok(crate::input::UntagResourceInput {
+                key_id: self.key_id,
+                tag_keys: self.tag_keys,
             })
         }
     }
 }
 impl UntagResourceInput {
+    /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::UntagResource,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::UntagResource::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "UntagResource",
+                "kms",
+            ));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     pub fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
@@ -7009,69 +7305,76 @@ pub mod update_alias_input {
             self.target_key_id = inp;
             self
         }
-        /// Consumes the builder and constructs an Operation<[`UpdateAlias`](crate::operation::UpdateAlias)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`UpdateAliasInput`](crate::input::UpdateAliasInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::UpdateAlias,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op = crate::operation::UpdateAlias::new(crate::input::UpdateAliasInput {
-                    alias_name: self.alias_name,
-                    target_key_id: self.target_key_id,
-                });
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
-                }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op)
-                    .with_metadata(smithy_http::operation::Metadata::new("UpdateAlias", "kms"));
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
+        ) -> Result<crate::input::UpdateAliasInput, smithy_http::operation::BuildError> {
+            Ok(crate::input::UpdateAliasInput {
+                alias_name: self.alias_name,
+                target_key_id: self.target_key_id,
             })
         }
     }
 }
 impl UpdateAliasInput {
+    /// Consumes the builder and constructs an Operation<[`UpdateAlias`](crate::operation::UpdateAlias)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::UpdateAlias,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::UpdateAlias::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new("UpdateAlias", "kms"));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     pub fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
@@ -7177,74 +7480,82 @@ pub mod update_custom_key_store_input {
             self.cloud_hsm_cluster_id = inp;
             self
         }
-        /// Consumes the builder and constructs an Operation<[`UpdateCustomKeyStore`](crate::operation::UpdateCustomKeyStore)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`UpdateCustomKeyStoreInput`](crate::input::UpdateCustomKeyStoreInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::UpdateCustomKeyStore,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op = crate::operation::UpdateCustomKeyStore::new(
-                    crate::input::UpdateCustomKeyStoreInput {
-                        custom_key_store_id: self.custom_key_store_id,
-                        new_custom_key_store_name: self.new_custom_key_store_name,
-                        key_store_password: self.key_store_password,
-                        cloud_hsm_cluster_id: self.cloud_hsm_cluster_id,
-                    },
-                );
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
-                }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op).with_metadata(
-                    smithy_http::operation::Metadata::new("UpdateCustomKeyStore", "kms"),
-                );
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
+        ) -> Result<crate::input::UpdateCustomKeyStoreInput, smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::UpdateCustomKeyStoreInput {
+                custom_key_store_id: self.custom_key_store_id,
+                new_custom_key_store_name: self.new_custom_key_store_name,
+                key_store_password: self.key_store_password,
+                cloud_hsm_cluster_id: self.cloud_hsm_cluster_id,
             })
         }
     }
 }
 impl UpdateCustomKeyStoreInput {
+    /// Consumes the builder and constructs an Operation<[`UpdateCustomKeyStore`](crate::operation::UpdateCustomKeyStore)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::UpdateCustomKeyStore,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::UpdateCustomKeyStore::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "UpdateCustomKeyStore",
+                "kms",
+            ));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     pub fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
@@ -7322,72 +7633,80 @@ pub mod update_key_description_input {
             self.description = inp;
             self
         }
-        /// Consumes the builder and constructs an Operation<[`UpdateKeyDescription`](crate::operation::UpdateKeyDescription)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`UpdateKeyDescriptionInput`](crate::input::UpdateKeyDescriptionInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::UpdateKeyDescription,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op = crate::operation::UpdateKeyDescription::new(
-                    crate::input::UpdateKeyDescriptionInput {
-                        key_id: self.key_id,
-                        description: self.description,
-                    },
-                );
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
-                }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op).with_metadata(
-                    smithy_http::operation::Metadata::new("UpdateKeyDescription", "kms"),
-                );
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
+        ) -> Result<crate::input::UpdateKeyDescriptionInput, smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::UpdateKeyDescriptionInput {
+                key_id: self.key_id,
+                description: self.description,
             })
         }
     }
 }
 impl UpdateKeyDescriptionInput {
+    /// Consumes the builder and constructs an Operation<[`UpdateKeyDescription`](crate::operation::UpdateKeyDescription)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::UpdateKeyDescription,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::UpdateKeyDescription::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "UpdateKeyDescription",
+                "kms",
+            ));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     pub fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
@@ -7536,73 +7855,75 @@ pub mod verify_input {
             self.grant_tokens = inp;
             self
         }
-        /// Consumes the builder and constructs an Operation<[`Verify`](crate::operation::Verify)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`VerifyInput`](crate::input::VerifyInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::Verify,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op = crate::operation::Verify::new(crate::input::VerifyInput {
-                    key_id: self.key_id,
-                    message: self.message,
-                    message_type: self.message_type,
-                    signature: self.signature,
-                    signing_algorithm: self.signing_algorithm,
-                    grant_tokens: self.grant_tokens,
-                });
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
-                }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op)
-                    .with_metadata(smithy_http::operation::Metadata::new("Verify", "kms"));
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
+        ) -> Result<crate::input::VerifyInput, smithy_http::operation::BuildError> {
+            Ok(crate::input::VerifyInput {
+                key_id: self.key_id,
+                message: self.message,
+                message_type: self.message_type,
+                signature: self.signature,
+                signing_algorithm: self.signing_algorithm,
+                grant_tokens: self.grant_tokens,
             })
         }
     }
 }
 impl VerifyInput {
+    /// Consumes the builder and constructs an Operation<[`Verify`](crate::operation::Verify)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<crate::operation::Verify, aws_http::AwsErrorRetryPolicy>,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op =
+                smithy_http::operation::Operation::new(request, crate::operation::Verify::new())
+                    .with_metadata(smithy_http::operation::Metadata::new("Verify", "kms"));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     pub fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {

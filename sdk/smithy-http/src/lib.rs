@@ -5,6 +5,7 @@
 
 pub mod base64;
 pub mod body;
+pub mod byte_stream;
 pub mod endpoint;
 pub mod header;
 pub mod label;

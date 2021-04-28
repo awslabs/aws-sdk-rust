@@ -9,8 +9,8 @@ pub struct AddTagsToStreamError {
 #[derive(std::fmt::Debug)]
 pub enum AddTagsToStreamErrorKind {
     InvalidArgumentError(crate::error::InvalidArgumentError),
-    LimitExceededError(crate::error::LimitExceededError),
     ResourceInUseError(crate::error::ResourceInUseError),
+    LimitExceededError(crate::error::LimitExceededError),
     ResourceNotFoundError(crate::error::ResourceNotFoundError),
 
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
@@ -20,8 +20,8 @@ impl std::fmt::Display for AddTagsToStreamError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
             AddTagsToStreamErrorKind::InvalidArgumentError(_inner) => _inner.fmt(f),
-            AddTagsToStreamErrorKind::LimitExceededError(_inner) => _inner.fmt(f),
             AddTagsToStreamErrorKind::ResourceInUseError(_inner) => _inner.fmt(f),
+            AddTagsToStreamErrorKind::LimitExceededError(_inner) => _inner.fmt(f),
             AddTagsToStreamErrorKind::ResourceNotFoundError(_inner) => _inner.fmt(f),
             AddTagsToStreamErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
@@ -74,8 +74,8 @@ impl std::error::Error for AddTagsToStreamError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             AddTagsToStreamErrorKind::InvalidArgumentError(_inner) => Some(_inner),
-            AddTagsToStreamErrorKind::LimitExceededError(_inner) => Some(_inner),
             AddTagsToStreamErrorKind::ResourceInUseError(_inner) => Some(_inner),
+            AddTagsToStreamErrorKind::LimitExceededError(_inner) => Some(_inner),
             AddTagsToStreamErrorKind::ResourceNotFoundError(_inner) => Some(_inner),
             AddTagsToStreamErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
@@ -92,8 +92,8 @@ pub struct CreateStreamError {
 #[derive(std::fmt::Debug)]
 pub enum CreateStreamErrorKind {
     InvalidArgumentError(crate::error::InvalidArgumentError),
-    LimitExceededError(crate::error::LimitExceededError),
     ResourceInUseError(crate::error::ResourceInUseError),
+    LimitExceededError(crate::error::LimitExceededError),
 
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -102,8 +102,8 @@ impl std::fmt::Display for CreateStreamError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
             CreateStreamErrorKind::InvalidArgumentError(_inner) => _inner.fmt(f),
-            CreateStreamErrorKind::LimitExceededError(_inner) => _inner.fmt(f),
             CreateStreamErrorKind::ResourceInUseError(_inner) => _inner.fmt(f),
+            CreateStreamErrorKind::LimitExceededError(_inner) => _inner.fmt(f),
             CreateStreamErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -155,8 +155,8 @@ impl std::error::Error for CreateStreamError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             CreateStreamErrorKind::InvalidArgumentError(_inner) => Some(_inner),
-            CreateStreamErrorKind::LimitExceededError(_inner) => Some(_inner),
             CreateStreamErrorKind::ResourceInUseError(_inner) => Some(_inner),
+            CreateStreamErrorKind::LimitExceededError(_inner) => Some(_inner),
             CreateStreamErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -172,8 +172,8 @@ pub struct DecreaseStreamRetentionPeriodError {
 #[derive(std::fmt::Debug)]
 pub enum DecreaseStreamRetentionPeriodErrorKind {
     InvalidArgumentError(crate::error::InvalidArgumentError),
-    LimitExceededError(crate::error::LimitExceededError),
     ResourceInUseError(crate::error::ResourceInUseError),
+    LimitExceededError(crate::error::LimitExceededError),
     ResourceNotFoundError(crate::error::ResourceNotFoundError),
 
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
@@ -183,8 +183,8 @@ impl std::fmt::Display for DecreaseStreamRetentionPeriodError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
             DecreaseStreamRetentionPeriodErrorKind::InvalidArgumentError(_inner) => _inner.fmt(f),
-            DecreaseStreamRetentionPeriodErrorKind::LimitExceededError(_inner) => _inner.fmt(f),
             DecreaseStreamRetentionPeriodErrorKind::ResourceInUseError(_inner) => _inner.fmt(f),
+            DecreaseStreamRetentionPeriodErrorKind::LimitExceededError(_inner) => _inner.fmt(f),
             DecreaseStreamRetentionPeriodErrorKind::ResourceNotFoundError(_inner) => _inner.fmt(f),
             DecreaseStreamRetentionPeriodErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
@@ -237,8 +237,8 @@ impl std::error::Error for DecreaseStreamRetentionPeriodError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             DecreaseStreamRetentionPeriodErrorKind::InvalidArgumentError(_inner) => Some(_inner),
-            DecreaseStreamRetentionPeriodErrorKind::LimitExceededError(_inner) => Some(_inner),
             DecreaseStreamRetentionPeriodErrorKind::ResourceInUseError(_inner) => Some(_inner),
+            DecreaseStreamRetentionPeriodErrorKind::LimitExceededError(_inner) => Some(_inner),
             DecreaseStreamRetentionPeriodErrorKind::ResourceNotFoundError(_inner) => Some(_inner),
             DecreaseStreamRetentionPeriodErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
@@ -254,8 +254,8 @@ pub struct DeleteStreamError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteStreamErrorKind {
-    LimitExceededError(crate::error::LimitExceededError),
     ResourceInUseError(crate::error::ResourceInUseError),
+    LimitExceededError(crate::error::LimitExceededError),
     ResourceNotFoundError(crate::error::ResourceNotFoundError),
 
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
@@ -264,8 +264,8 @@ pub enum DeleteStreamErrorKind {
 impl std::fmt::Display for DeleteStreamError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteStreamErrorKind::LimitExceededError(_inner) => _inner.fmt(f),
             DeleteStreamErrorKind::ResourceInUseError(_inner) => _inner.fmt(f),
+            DeleteStreamErrorKind::LimitExceededError(_inner) => _inner.fmt(f),
             DeleteStreamErrorKind::ResourceNotFoundError(_inner) => _inner.fmt(f),
             DeleteStreamErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
@@ -317,8 +317,8 @@ impl DeleteStreamError {
 impl std::error::Error for DeleteStreamError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteStreamErrorKind::LimitExceededError(_inner) => Some(_inner),
             DeleteStreamErrorKind::ResourceInUseError(_inner) => Some(_inner),
+            DeleteStreamErrorKind::LimitExceededError(_inner) => Some(_inner),
             DeleteStreamErrorKind::ResourceNotFoundError(_inner) => Some(_inner),
             DeleteStreamErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
@@ -723,8 +723,8 @@ pub struct DisableEnhancedMonitoringError {
 #[derive(std::fmt::Debug)]
 pub enum DisableEnhancedMonitoringErrorKind {
     InvalidArgumentError(crate::error::InvalidArgumentError),
-    LimitExceededError(crate::error::LimitExceededError),
     ResourceInUseError(crate::error::ResourceInUseError),
+    LimitExceededError(crate::error::LimitExceededError),
     ResourceNotFoundError(crate::error::ResourceNotFoundError),
 
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
@@ -734,8 +734,8 @@ impl std::fmt::Display for DisableEnhancedMonitoringError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
             DisableEnhancedMonitoringErrorKind::InvalidArgumentError(_inner) => _inner.fmt(f),
-            DisableEnhancedMonitoringErrorKind::LimitExceededError(_inner) => _inner.fmt(f),
             DisableEnhancedMonitoringErrorKind::ResourceInUseError(_inner) => _inner.fmt(f),
+            DisableEnhancedMonitoringErrorKind::LimitExceededError(_inner) => _inner.fmt(f),
             DisableEnhancedMonitoringErrorKind::ResourceNotFoundError(_inner) => _inner.fmt(f),
             DisableEnhancedMonitoringErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
@@ -788,8 +788,8 @@ impl std::error::Error for DisableEnhancedMonitoringError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             DisableEnhancedMonitoringErrorKind::InvalidArgumentError(_inner) => Some(_inner),
-            DisableEnhancedMonitoringErrorKind::LimitExceededError(_inner) => Some(_inner),
             DisableEnhancedMonitoringErrorKind::ResourceInUseError(_inner) => Some(_inner),
+            DisableEnhancedMonitoringErrorKind::LimitExceededError(_inner) => Some(_inner),
             DisableEnhancedMonitoringErrorKind::ResourceNotFoundError(_inner) => Some(_inner),
             DisableEnhancedMonitoringErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
@@ -806,8 +806,8 @@ pub struct EnableEnhancedMonitoringError {
 #[derive(std::fmt::Debug)]
 pub enum EnableEnhancedMonitoringErrorKind {
     InvalidArgumentError(crate::error::InvalidArgumentError),
-    LimitExceededError(crate::error::LimitExceededError),
     ResourceInUseError(crate::error::ResourceInUseError),
+    LimitExceededError(crate::error::LimitExceededError),
     ResourceNotFoundError(crate::error::ResourceNotFoundError),
 
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
@@ -817,8 +817,8 @@ impl std::fmt::Display for EnableEnhancedMonitoringError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
             EnableEnhancedMonitoringErrorKind::InvalidArgumentError(_inner) => _inner.fmt(f),
-            EnableEnhancedMonitoringErrorKind::LimitExceededError(_inner) => _inner.fmt(f),
             EnableEnhancedMonitoringErrorKind::ResourceInUseError(_inner) => _inner.fmt(f),
+            EnableEnhancedMonitoringErrorKind::LimitExceededError(_inner) => _inner.fmt(f),
             EnableEnhancedMonitoringErrorKind::ResourceNotFoundError(_inner) => _inner.fmt(f),
             EnableEnhancedMonitoringErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
@@ -871,8 +871,8 @@ impl std::error::Error for EnableEnhancedMonitoringError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             EnableEnhancedMonitoringErrorKind::InvalidArgumentError(_inner) => Some(_inner),
-            EnableEnhancedMonitoringErrorKind::LimitExceededError(_inner) => Some(_inner),
             EnableEnhancedMonitoringErrorKind::ResourceInUseError(_inner) => Some(_inner),
+            EnableEnhancedMonitoringErrorKind::LimitExceededError(_inner) => Some(_inner),
             EnableEnhancedMonitoringErrorKind::ResourceNotFoundError(_inner) => Some(_inner),
             EnableEnhancedMonitoringErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
@@ -888,15 +888,15 @@ pub struct GetRecordsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetRecordsErrorKind {
-    ExpiredIteratorError(crate::error::ExpiredIteratorError),
-    InvalidArgumentError(crate::error::InvalidArgumentError),
     KMSAccessDeniedError(crate::error::KMSAccessDeniedError),
     KMSDisabledError(crate::error::KMSDisabledError),
-    KMSInvalidStateError(crate::error::KMSInvalidStateError),
     KMSNotFoundError(crate::error::KMSNotFoundError),
+    ExpiredIteratorError(crate::error::ExpiredIteratorError),
     KMSOptInRequired(crate::error::KMSOptInRequired),
     KMSThrottlingError(crate::error::KMSThrottlingError),
     ProvisionedThroughputExceededError(crate::error::ProvisionedThroughputExceededError),
+    InvalidArgumentError(crate::error::InvalidArgumentError),
+    KMSInvalidStateError(crate::error::KMSInvalidStateError),
     ResourceNotFoundError(crate::error::ResourceNotFoundError),
 
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
@@ -905,15 +905,15 @@ pub enum GetRecordsErrorKind {
 impl std::fmt::Display for GetRecordsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetRecordsErrorKind::ExpiredIteratorError(_inner) => _inner.fmt(f),
-            GetRecordsErrorKind::InvalidArgumentError(_inner) => _inner.fmt(f),
             GetRecordsErrorKind::KMSAccessDeniedError(_inner) => _inner.fmt(f),
             GetRecordsErrorKind::KMSDisabledError(_inner) => _inner.fmt(f),
-            GetRecordsErrorKind::KMSInvalidStateError(_inner) => _inner.fmt(f),
             GetRecordsErrorKind::KMSNotFoundError(_inner) => _inner.fmt(f),
+            GetRecordsErrorKind::ExpiredIteratorError(_inner) => _inner.fmt(f),
             GetRecordsErrorKind::KMSOptInRequired(_inner) => _inner.fmt(f),
             GetRecordsErrorKind::KMSThrottlingError(_inner) => _inner.fmt(f),
             GetRecordsErrorKind::ProvisionedThroughputExceededError(_inner) => _inner.fmt(f),
+            GetRecordsErrorKind::InvalidArgumentError(_inner) => _inner.fmt(f),
+            GetRecordsErrorKind::KMSInvalidStateError(_inner) => _inner.fmt(f),
             GetRecordsErrorKind::ResourceNotFoundError(_inner) => _inner.fmt(f),
             GetRecordsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
@@ -965,15 +965,15 @@ impl GetRecordsError {
 impl std::error::Error for GetRecordsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetRecordsErrorKind::ExpiredIteratorError(_inner) => Some(_inner),
-            GetRecordsErrorKind::InvalidArgumentError(_inner) => Some(_inner),
             GetRecordsErrorKind::KMSAccessDeniedError(_inner) => Some(_inner),
             GetRecordsErrorKind::KMSDisabledError(_inner) => Some(_inner),
-            GetRecordsErrorKind::KMSInvalidStateError(_inner) => Some(_inner),
             GetRecordsErrorKind::KMSNotFoundError(_inner) => Some(_inner),
+            GetRecordsErrorKind::ExpiredIteratorError(_inner) => Some(_inner),
             GetRecordsErrorKind::KMSOptInRequired(_inner) => Some(_inner),
             GetRecordsErrorKind::KMSThrottlingError(_inner) => Some(_inner),
             GetRecordsErrorKind::ProvisionedThroughputExceededError(_inner) => Some(_inner),
+            GetRecordsErrorKind::InvalidArgumentError(_inner) => Some(_inner),
+            GetRecordsErrorKind::KMSInvalidStateError(_inner) => Some(_inner),
             GetRecordsErrorKind::ResourceNotFoundError(_inner) => Some(_inner),
             GetRecordsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
@@ -989,8 +989,8 @@ pub struct GetShardIteratorError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetShardIteratorErrorKind {
-    InvalidArgumentError(crate::error::InvalidArgumentError),
     ProvisionedThroughputExceededError(crate::error::ProvisionedThroughputExceededError),
+    InvalidArgumentError(crate::error::InvalidArgumentError),
     ResourceNotFoundError(crate::error::ResourceNotFoundError),
 
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
@@ -999,8 +999,8 @@ pub enum GetShardIteratorErrorKind {
 impl std::fmt::Display for GetShardIteratorError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetShardIteratorErrorKind::InvalidArgumentError(_inner) => _inner.fmt(f),
             GetShardIteratorErrorKind::ProvisionedThroughputExceededError(_inner) => _inner.fmt(f),
+            GetShardIteratorErrorKind::InvalidArgumentError(_inner) => _inner.fmt(f),
             GetShardIteratorErrorKind::ResourceNotFoundError(_inner) => _inner.fmt(f),
             GetShardIteratorErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
@@ -1052,8 +1052,8 @@ impl GetShardIteratorError {
 impl std::error::Error for GetShardIteratorError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetShardIteratorErrorKind::InvalidArgumentError(_inner) => Some(_inner),
             GetShardIteratorErrorKind::ProvisionedThroughputExceededError(_inner) => Some(_inner),
+            GetShardIteratorErrorKind::InvalidArgumentError(_inner) => Some(_inner),
             GetShardIteratorErrorKind::ResourceNotFoundError(_inner) => Some(_inner),
             GetShardIteratorErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
@@ -1070,8 +1070,8 @@ pub struct IncreaseStreamRetentionPeriodError {
 #[derive(std::fmt::Debug)]
 pub enum IncreaseStreamRetentionPeriodErrorKind {
     InvalidArgumentError(crate::error::InvalidArgumentError),
-    LimitExceededError(crate::error::LimitExceededError),
     ResourceInUseError(crate::error::ResourceInUseError),
+    LimitExceededError(crate::error::LimitExceededError),
     ResourceNotFoundError(crate::error::ResourceNotFoundError),
 
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
@@ -1081,8 +1081,8 @@ impl std::fmt::Display for IncreaseStreamRetentionPeriodError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
             IncreaseStreamRetentionPeriodErrorKind::InvalidArgumentError(_inner) => _inner.fmt(f),
-            IncreaseStreamRetentionPeriodErrorKind::LimitExceededError(_inner) => _inner.fmt(f),
             IncreaseStreamRetentionPeriodErrorKind::ResourceInUseError(_inner) => _inner.fmt(f),
+            IncreaseStreamRetentionPeriodErrorKind::LimitExceededError(_inner) => _inner.fmt(f),
             IncreaseStreamRetentionPeriodErrorKind::ResourceNotFoundError(_inner) => _inner.fmt(f),
             IncreaseStreamRetentionPeriodErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
@@ -1135,8 +1135,8 @@ impl std::error::Error for IncreaseStreamRetentionPeriodError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             IncreaseStreamRetentionPeriodErrorKind::InvalidArgumentError(_inner) => Some(_inner),
-            IncreaseStreamRetentionPeriodErrorKind::LimitExceededError(_inner) => Some(_inner),
             IncreaseStreamRetentionPeriodErrorKind::ResourceInUseError(_inner) => Some(_inner),
+            IncreaseStreamRetentionPeriodErrorKind::LimitExceededError(_inner) => Some(_inner),
             IncreaseStreamRetentionPeriodErrorKind::ResourceNotFoundError(_inner) => Some(_inner),
             IncreaseStreamRetentionPeriodErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
@@ -1154,8 +1154,8 @@ pub struct ListShardsError {
 pub enum ListShardsErrorKind {
     ExpiredNextTokenError(crate::error::ExpiredNextTokenError),
     InvalidArgumentError(crate::error::InvalidArgumentError),
-    LimitExceededError(crate::error::LimitExceededError),
     ResourceInUseError(crate::error::ResourceInUseError),
+    LimitExceededError(crate::error::LimitExceededError),
     ResourceNotFoundError(crate::error::ResourceNotFoundError),
 
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
@@ -1166,8 +1166,8 @@ impl std::fmt::Display for ListShardsError {
         match &self.kind {
             ListShardsErrorKind::ExpiredNextTokenError(_inner) => _inner.fmt(f),
             ListShardsErrorKind::InvalidArgumentError(_inner) => _inner.fmt(f),
-            ListShardsErrorKind::LimitExceededError(_inner) => _inner.fmt(f),
             ListShardsErrorKind::ResourceInUseError(_inner) => _inner.fmt(f),
+            ListShardsErrorKind::LimitExceededError(_inner) => _inner.fmt(f),
             ListShardsErrorKind::ResourceNotFoundError(_inner) => _inner.fmt(f),
             ListShardsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
@@ -1221,8 +1221,8 @@ impl std::error::Error for ListShardsError {
         match &self.kind {
             ListShardsErrorKind::ExpiredNextTokenError(_inner) => Some(_inner),
             ListShardsErrorKind::InvalidArgumentError(_inner) => Some(_inner),
-            ListShardsErrorKind::LimitExceededError(_inner) => Some(_inner),
             ListShardsErrorKind::ResourceInUseError(_inner) => Some(_inner),
+            ListShardsErrorKind::LimitExceededError(_inner) => Some(_inner),
             ListShardsErrorKind::ResourceNotFoundError(_inner) => Some(_inner),
             ListShardsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
@@ -1240,8 +1240,8 @@ pub struct ListStreamConsumersError {
 pub enum ListStreamConsumersErrorKind {
     ExpiredNextTokenError(crate::error::ExpiredNextTokenError),
     InvalidArgumentError(crate::error::InvalidArgumentError),
-    LimitExceededError(crate::error::LimitExceededError),
     ResourceInUseError(crate::error::ResourceInUseError),
+    LimitExceededError(crate::error::LimitExceededError),
     ResourceNotFoundError(crate::error::ResourceNotFoundError),
 
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
@@ -1252,8 +1252,8 @@ impl std::fmt::Display for ListStreamConsumersError {
         match &self.kind {
             ListStreamConsumersErrorKind::ExpiredNextTokenError(_inner) => _inner.fmt(f),
             ListStreamConsumersErrorKind::InvalidArgumentError(_inner) => _inner.fmt(f),
-            ListStreamConsumersErrorKind::LimitExceededError(_inner) => _inner.fmt(f),
             ListStreamConsumersErrorKind::ResourceInUseError(_inner) => _inner.fmt(f),
+            ListStreamConsumersErrorKind::LimitExceededError(_inner) => _inner.fmt(f),
             ListStreamConsumersErrorKind::ResourceNotFoundError(_inner) => _inner.fmt(f),
             ListStreamConsumersErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
@@ -1307,8 +1307,8 @@ impl std::error::Error for ListStreamConsumersError {
         match &self.kind {
             ListStreamConsumersErrorKind::ExpiredNextTokenError(_inner) => Some(_inner),
             ListStreamConsumersErrorKind::InvalidArgumentError(_inner) => Some(_inner),
-            ListStreamConsumersErrorKind::LimitExceededError(_inner) => Some(_inner),
             ListStreamConsumersErrorKind::ResourceInUseError(_inner) => Some(_inner),
+            ListStreamConsumersErrorKind::LimitExceededError(_inner) => Some(_inner),
             ListStreamConsumersErrorKind::ResourceNotFoundError(_inner) => Some(_inner),
             ListStreamConsumersErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
@@ -1479,8 +1479,8 @@ pub struct MergeShardsError {
 #[derive(std::fmt::Debug)]
 pub enum MergeShardsErrorKind {
     InvalidArgumentError(crate::error::InvalidArgumentError),
-    LimitExceededError(crate::error::LimitExceededError),
     ResourceInUseError(crate::error::ResourceInUseError),
+    LimitExceededError(crate::error::LimitExceededError),
     ResourceNotFoundError(crate::error::ResourceNotFoundError),
 
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
@@ -1490,8 +1490,8 @@ impl std::fmt::Display for MergeShardsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
             MergeShardsErrorKind::InvalidArgumentError(_inner) => _inner.fmt(f),
-            MergeShardsErrorKind::LimitExceededError(_inner) => _inner.fmt(f),
             MergeShardsErrorKind::ResourceInUseError(_inner) => _inner.fmt(f),
+            MergeShardsErrorKind::LimitExceededError(_inner) => _inner.fmt(f),
             MergeShardsErrorKind::ResourceNotFoundError(_inner) => _inner.fmt(f),
             MergeShardsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
@@ -1544,8 +1544,8 @@ impl std::error::Error for MergeShardsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             MergeShardsErrorKind::InvalidArgumentError(_inner) => Some(_inner),
-            MergeShardsErrorKind::LimitExceededError(_inner) => Some(_inner),
             MergeShardsErrorKind::ResourceInUseError(_inner) => Some(_inner),
+            MergeShardsErrorKind::LimitExceededError(_inner) => Some(_inner),
             MergeShardsErrorKind::ResourceNotFoundError(_inner) => Some(_inner),
             MergeShardsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
@@ -1561,14 +1561,14 @@ pub struct PutRecordError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutRecordErrorKind {
-    InvalidArgumentError(crate::error::InvalidArgumentError),
     KMSAccessDeniedError(crate::error::KMSAccessDeniedError),
     KMSDisabledError(crate::error::KMSDisabledError),
-    KMSInvalidStateError(crate::error::KMSInvalidStateError),
     KMSNotFoundError(crate::error::KMSNotFoundError),
     KMSOptInRequired(crate::error::KMSOptInRequired),
     KMSThrottlingError(crate::error::KMSThrottlingError),
     ProvisionedThroughputExceededError(crate::error::ProvisionedThroughputExceededError),
+    InvalidArgumentError(crate::error::InvalidArgumentError),
+    KMSInvalidStateError(crate::error::KMSInvalidStateError),
     ResourceNotFoundError(crate::error::ResourceNotFoundError),
 
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
@@ -1577,14 +1577,14 @@ pub enum PutRecordErrorKind {
 impl std::fmt::Display for PutRecordError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            PutRecordErrorKind::InvalidArgumentError(_inner) => _inner.fmt(f),
             PutRecordErrorKind::KMSAccessDeniedError(_inner) => _inner.fmt(f),
             PutRecordErrorKind::KMSDisabledError(_inner) => _inner.fmt(f),
-            PutRecordErrorKind::KMSInvalidStateError(_inner) => _inner.fmt(f),
             PutRecordErrorKind::KMSNotFoundError(_inner) => _inner.fmt(f),
             PutRecordErrorKind::KMSOptInRequired(_inner) => _inner.fmt(f),
             PutRecordErrorKind::KMSThrottlingError(_inner) => _inner.fmt(f),
             PutRecordErrorKind::ProvisionedThroughputExceededError(_inner) => _inner.fmt(f),
+            PutRecordErrorKind::InvalidArgumentError(_inner) => _inner.fmt(f),
+            PutRecordErrorKind::KMSInvalidStateError(_inner) => _inner.fmt(f),
             PutRecordErrorKind::ResourceNotFoundError(_inner) => _inner.fmt(f),
             PutRecordErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
@@ -1636,14 +1636,14 @@ impl PutRecordError {
 impl std::error::Error for PutRecordError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            PutRecordErrorKind::InvalidArgumentError(_inner) => Some(_inner),
             PutRecordErrorKind::KMSAccessDeniedError(_inner) => Some(_inner),
             PutRecordErrorKind::KMSDisabledError(_inner) => Some(_inner),
-            PutRecordErrorKind::KMSInvalidStateError(_inner) => Some(_inner),
             PutRecordErrorKind::KMSNotFoundError(_inner) => Some(_inner),
             PutRecordErrorKind::KMSOptInRequired(_inner) => Some(_inner),
             PutRecordErrorKind::KMSThrottlingError(_inner) => Some(_inner),
             PutRecordErrorKind::ProvisionedThroughputExceededError(_inner) => Some(_inner),
+            PutRecordErrorKind::InvalidArgumentError(_inner) => Some(_inner),
+            PutRecordErrorKind::KMSInvalidStateError(_inner) => Some(_inner),
             PutRecordErrorKind::ResourceNotFoundError(_inner) => Some(_inner),
             PutRecordErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
@@ -1659,14 +1659,14 @@ pub struct PutRecordsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutRecordsErrorKind {
-    InvalidArgumentError(crate::error::InvalidArgumentError),
     KMSAccessDeniedError(crate::error::KMSAccessDeniedError),
     KMSDisabledError(crate::error::KMSDisabledError),
-    KMSInvalidStateError(crate::error::KMSInvalidStateError),
     KMSNotFoundError(crate::error::KMSNotFoundError),
     KMSOptInRequired(crate::error::KMSOptInRequired),
     KMSThrottlingError(crate::error::KMSThrottlingError),
     ProvisionedThroughputExceededError(crate::error::ProvisionedThroughputExceededError),
+    InvalidArgumentError(crate::error::InvalidArgumentError),
+    KMSInvalidStateError(crate::error::KMSInvalidStateError),
     ResourceNotFoundError(crate::error::ResourceNotFoundError),
 
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
@@ -1675,14 +1675,14 @@ pub enum PutRecordsErrorKind {
 impl std::fmt::Display for PutRecordsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            PutRecordsErrorKind::InvalidArgumentError(_inner) => _inner.fmt(f),
             PutRecordsErrorKind::KMSAccessDeniedError(_inner) => _inner.fmt(f),
             PutRecordsErrorKind::KMSDisabledError(_inner) => _inner.fmt(f),
-            PutRecordsErrorKind::KMSInvalidStateError(_inner) => _inner.fmt(f),
             PutRecordsErrorKind::KMSNotFoundError(_inner) => _inner.fmt(f),
             PutRecordsErrorKind::KMSOptInRequired(_inner) => _inner.fmt(f),
             PutRecordsErrorKind::KMSThrottlingError(_inner) => _inner.fmt(f),
             PutRecordsErrorKind::ProvisionedThroughputExceededError(_inner) => _inner.fmt(f),
+            PutRecordsErrorKind::InvalidArgumentError(_inner) => _inner.fmt(f),
+            PutRecordsErrorKind::KMSInvalidStateError(_inner) => _inner.fmt(f),
             PutRecordsErrorKind::ResourceNotFoundError(_inner) => _inner.fmt(f),
             PutRecordsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
@@ -1734,14 +1734,14 @@ impl PutRecordsError {
 impl std::error::Error for PutRecordsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            PutRecordsErrorKind::InvalidArgumentError(_inner) => Some(_inner),
             PutRecordsErrorKind::KMSAccessDeniedError(_inner) => Some(_inner),
             PutRecordsErrorKind::KMSDisabledError(_inner) => Some(_inner),
-            PutRecordsErrorKind::KMSInvalidStateError(_inner) => Some(_inner),
             PutRecordsErrorKind::KMSNotFoundError(_inner) => Some(_inner),
             PutRecordsErrorKind::KMSOptInRequired(_inner) => Some(_inner),
             PutRecordsErrorKind::KMSThrottlingError(_inner) => Some(_inner),
             PutRecordsErrorKind::ProvisionedThroughputExceededError(_inner) => Some(_inner),
+            PutRecordsErrorKind::InvalidArgumentError(_inner) => Some(_inner),
+            PutRecordsErrorKind::KMSInvalidStateError(_inner) => Some(_inner),
             PutRecordsErrorKind::ResourceNotFoundError(_inner) => Some(_inner),
             PutRecordsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
@@ -1758,8 +1758,8 @@ pub struct RegisterStreamConsumerError {
 #[derive(std::fmt::Debug)]
 pub enum RegisterStreamConsumerErrorKind {
     InvalidArgumentError(crate::error::InvalidArgumentError),
-    LimitExceededError(crate::error::LimitExceededError),
     ResourceInUseError(crate::error::ResourceInUseError),
+    LimitExceededError(crate::error::LimitExceededError),
     ResourceNotFoundError(crate::error::ResourceNotFoundError),
 
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
@@ -1769,8 +1769,8 @@ impl std::fmt::Display for RegisterStreamConsumerError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
             RegisterStreamConsumerErrorKind::InvalidArgumentError(_inner) => _inner.fmt(f),
-            RegisterStreamConsumerErrorKind::LimitExceededError(_inner) => _inner.fmt(f),
             RegisterStreamConsumerErrorKind::ResourceInUseError(_inner) => _inner.fmt(f),
+            RegisterStreamConsumerErrorKind::LimitExceededError(_inner) => _inner.fmt(f),
             RegisterStreamConsumerErrorKind::ResourceNotFoundError(_inner) => _inner.fmt(f),
             RegisterStreamConsumerErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
@@ -1823,8 +1823,8 @@ impl std::error::Error for RegisterStreamConsumerError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             RegisterStreamConsumerErrorKind::InvalidArgumentError(_inner) => Some(_inner),
-            RegisterStreamConsumerErrorKind::LimitExceededError(_inner) => Some(_inner),
             RegisterStreamConsumerErrorKind::ResourceInUseError(_inner) => Some(_inner),
+            RegisterStreamConsumerErrorKind::LimitExceededError(_inner) => Some(_inner),
             RegisterStreamConsumerErrorKind::ResourceNotFoundError(_inner) => Some(_inner),
             RegisterStreamConsumerErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
@@ -1841,8 +1841,8 @@ pub struct RemoveTagsFromStreamError {
 #[derive(std::fmt::Debug)]
 pub enum RemoveTagsFromStreamErrorKind {
     InvalidArgumentError(crate::error::InvalidArgumentError),
-    LimitExceededError(crate::error::LimitExceededError),
     ResourceInUseError(crate::error::ResourceInUseError),
+    LimitExceededError(crate::error::LimitExceededError),
     ResourceNotFoundError(crate::error::ResourceNotFoundError),
 
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
@@ -1852,8 +1852,8 @@ impl std::fmt::Display for RemoveTagsFromStreamError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
             RemoveTagsFromStreamErrorKind::InvalidArgumentError(_inner) => _inner.fmt(f),
-            RemoveTagsFromStreamErrorKind::LimitExceededError(_inner) => _inner.fmt(f),
             RemoveTagsFromStreamErrorKind::ResourceInUseError(_inner) => _inner.fmt(f),
+            RemoveTagsFromStreamErrorKind::LimitExceededError(_inner) => _inner.fmt(f),
             RemoveTagsFromStreamErrorKind::ResourceNotFoundError(_inner) => _inner.fmt(f),
             RemoveTagsFromStreamErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
@@ -1906,8 +1906,8 @@ impl std::error::Error for RemoveTagsFromStreamError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             RemoveTagsFromStreamErrorKind::InvalidArgumentError(_inner) => Some(_inner),
-            RemoveTagsFromStreamErrorKind::LimitExceededError(_inner) => Some(_inner),
             RemoveTagsFromStreamErrorKind::ResourceInUseError(_inner) => Some(_inner),
+            RemoveTagsFromStreamErrorKind::LimitExceededError(_inner) => Some(_inner),
             RemoveTagsFromStreamErrorKind::ResourceNotFoundError(_inner) => Some(_inner),
             RemoveTagsFromStreamErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
@@ -1924,8 +1924,8 @@ pub struct SplitShardError {
 #[derive(std::fmt::Debug)]
 pub enum SplitShardErrorKind {
     InvalidArgumentError(crate::error::InvalidArgumentError),
-    LimitExceededError(crate::error::LimitExceededError),
     ResourceInUseError(crate::error::ResourceInUseError),
+    LimitExceededError(crate::error::LimitExceededError),
     ResourceNotFoundError(crate::error::ResourceNotFoundError),
 
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
@@ -1935,8 +1935,8 @@ impl std::fmt::Display for SplitShardError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
             SplitShardErrorKind::InvalidArgumentError(_inner) => _inner.fmt(f),
-            SplitShardErrorKind::LimitExceededError(_inner) => _inner.fmt(f),
             SplitShardErrorKind::ResourceInUseError(_inner) => _inner.fmt(f),
+            SplitShardErrorKind::LimitExceededError(_inner) => _inner.fmt(f),
             SplitShardErrorKind::ResourceNotFoundError(_inner) => _inner.fmt(f),
             SplitShardErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
@@ -1989,8 +1989,8 @@ impl std::error::Error for SplitShardError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             SplitShardErrorKind::InvalidArgumentError(_inner) => Some(_inner),
-            SplitShardErrorKind::LimitExceededError(_inner) => Some(_inner),
             SplitShardErrorKind::ResourceInUseError(_inner) => Some(_inner),
+            SplitShardErrorKind::LimitExceededError(_inner) => Some(_inner),
             SplitShardErrorKind::ResourceNotFoundError(_inner) => Some(_inner),
             SplitShardErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
@@ -2006,15 +2006,15 @@ pub struct StartStreamEncryptionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum StartStreamEncryptionErrorKind {
-    InvalidArgumentError(crate::error::InvalidArgumentError),
     KMSAccessDeniedError(crate::error::KMSAccessDeniedError),
     KMSDisabledError(crate::error::KMSDisabledError),
-    KMSInvalidStateError(crate::error::KMSInvalidStateError),
     KMSNotFoundError(crate::error::KMSNotFoundError),
     KMSOptInRequired(crate::error::KMSOptInRequired),
     KMSThrottlingError(crate::error::KMSThrottlingError),
-    LimitExceededError(crate::error::LimitExceededError),
+    InvalidArgumentError(crate::error::InvalidArgumentError),
+    KMSInvalidStateError(crate::error::KMSInvalidStateError),
     ResourceInUseError(crate::error::ResourceInUseError),
+    LimitExceededError(crate::error::LimitExceededError),
     ResourceNotFoundError(crate::error::ResourceNotFoundError),
 
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
@@ -2023,15 +2023,15 @@ pub enum StartStreamEncryptionErrorKind {
 impl std::fmt::Display for StartStreamEncryptionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            StartStreamEncryptionErrorKind::InvalidArgumentError(_inner) => _inner.fmt(f),
             StartStreamEncryptionErrorKind::KMSAccessDeniedError(_inner) => _inner.fmt(f),
             StartStreamEncryptionErrorKind::KMSDisabledError(_inner) => _inner.fmt(f),
-            StartStreamEncryptionErrorKind::KMSInvalidStateError(_inner) => _inner.fmt(f),
             StartStreamEncryptionErrorKind::KMSNotFoundError(_inner) => _inner.fmt(f),
             StartStreamEncryptionErrorKind::KMSOptInRequired(_inner) => _inner.fmt(f),
             StartStreamEncryptionErrorKind::KMSThrottlingError(_inner) => _inner.fmt(f),
-            StartStreamEncryptionErrorKind::LimitExceededError(_inner) => _inner.fmt(f),
+            StartStreamEncryptionErrorKind::InvalidArgumentError(_inner) => _inner.fmt(f),
+            StartStreamEncryptionErrorKind::KMSInvalidStateError(_inner) => _inner.fmt(f),
             StartStreamEncryptionErrorKind::ResourceInUseError(_inner) => _inner.fmt(f),
+            StartStreamEncryptionErrorKind::LimitExceededError(_inner) => _inner.fmt(f),
             StartStreamEncryptionErrorKind::ResourceNotFoundError(_inner) => _inner.fmt(f),
             StartStreamEncryptionErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
@@ -2083,15 +2083,15 @@ impl StartStreamEncryptionError {
 impl std::error::Error for StartStreamEncryptionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            StartStreamEncryptionErrorKind::InvalidArgumentError(_inner) => Some(_inner),
             StartStreamEncryptionErrorKind::KMSAccessDeniedError(_inner) => Some(_inner),
             StartStreamEncryptionErrorKind::KMSDisabledError(_inner) => Some(_inner),
-            StartStreamEncryptionErrorKind::KMSInvalidStateError(_inner) => Some(_inner),
             StartStreamEncryptionErrorKind::KMSNotFoundError(_inner) => Some(_inner),
             StartStreamEncryptionErrorKind::KMSOptInRequired(_inner) => Some(_inner),
             StartStreamEncryptionErrorKind::KMSThrottlingError(_inner) => Some(_inner),
-            StartStreamEncryptionErrorKind::LimitExceededError(_inner) => Some(_inner),
+            StartStreamEncryptionErrorKind::InvalidArgumentError(_inner) => Some(_inner),
+            StartStreamEncryptionErrorKind::KMSInvalidStateError(_inner) => Some(_inner),
             StartStreamEncryptionErrorKind::ResourceInUseError(_inner) => Some(_inner),
+            StartStreamEncryptionErrorKind::LimitExceededError(_inner) => Some(_inner),
             StartStreamEncryptionErrorKind::ResourceNotFoundError(_inner) => Some(_inner),
             StartStreamEncryptionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
@@ -2108,8 +2108,8 @@ pub struct StopStreamEncryptionError {
 #[derive(std::fmt::Debug)]
 pub enum StopStreamEncryptionErrorKind {
     InvalidArgumentError(crate::error::InvalidArgumentError),
-    LimitExceededError(crate::error::LimitExceededError),
     ResourceInUseError(crate::error::ResourceInUseError),
+    LimitExceededError(crate::error::LimitExceededError),
     ResourceNotFoundError(crate::error::ResourceNotFoundError),
 
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
@@ -2119,8 +2119,8 @@ impl std::fmt::Display for StopStreamEncryptionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
             StopStreamEncryptionErrorKind::InvalidArgumentError(_inner) => _inner.fmt(f),
-            StopStreamEncryptionErrorKind::LimitExceededError(_inner) => _inner.fmt(f),
             StopStreamEncryptionErrorKind::ResourceInUseError(_inner) => _inner.fmt(f),
+            StopStreamEncryptionErrorKind::LimitExceededError(_inner) => _inner.fmt(f),
             StopStreamEncryptionErrorKind::ResourceNotFoundError(_inner) => _inner.fmt(f),
             StopStreamEncryptionErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
@@ -2173,93 +2173,10 @@ impl std::error::Error for StopStreamEncryptionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             StopStreamEncryptionErrorKind::InvalidArgumentError(_inner) => Some(_inner),
-            StopStreamEncryptionErrorKind::LimitExceededError(_inner) => Some(_inner),
             StopStreamEncryptionErrorKind::ResourceInUseError(_inner) => Some(_inner),
+            StopStreamEncryptionErrorKind::LimitExceededError(_inner) => Some(_inner),
             StopStreamEncryptionErrorKind::ResourceNotFoundError(_inner) => Some(_inner),
             StopStreamEncryptionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
-        }
-    }
-}
-
-#[non_exhaustive]
-#[derive(std::fmt::Debug)]
-pub struct SubscribeToShardError {
-    pub kind: SubscribeToShardErrorKind,
-    pub(crate) meta: smithy_types::Error,
-}
-#[non_exhaustive]
-#[derive(std::fmt::Debug)]
-pub enum SubscribeToShardErrorKind {
-    InvalidArgumentError(crate::error::InvalidArgumentError),
-    LimitExceededError(crate::error::LimitExceededError),
-    ResourceInUseError(crate::error::ResourceInUseError),
-    ResourceNotFoundError(crate::error::ResourceNotFoundError),
-
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
-}
-impl std::fmt::Display for SubscribeToShardError {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        match &self.kind {
-            SubscribeToShardErrorKind::InvalidArgumentError(_inner) => _inner.fmt(f),
-            SubscribeToShardErrorKind::LimitExceededError(_inner) => _inner.fmt(f),
-            SubscribeToShardErrorKind::ResourceInUseError(_inner) => _inner.fmt(f),
-            SubscribeToShardErrorKind::ResourceNotFoundError(_inner) => _inner.fmt(f),
-            SubscribeToShardErrorKind::Unhandled(_inner) => _inner.fmt(f),
-        }
-    }
-}
-impl smithy_types::retry::ProvideErrorKind for SubscribeToShardError {
-    fn code(&self) -> Option<&str> {
-        SubscribeToShardError::code(self)
-    }
-    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
-        None
-    }
-}
-
-impl SubscribeToShardError {
-    pub fn new(kind: SubscribeToShardErrorKind, meta: smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: SubscribeToShardErrorKind::Unhandled(err.into()),
-            meta: Default::default(),
-        }
-    }
-
-    pub fn generic(err: smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: SubscribeToShardErrorKind::Unhandled(err.into()),
-        }
-    }
-
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message.as_deref()
-    }
-
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id.as_deref()
-    }
-
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code.as_deref()
-    }
-}
-
-impl std::error::Error for SubscribeToShardError {
-    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
-        match &self.kind {
-            SubscribeToShardErrorKind::InvalidArgumentError(_inner) => Some(_inner),
-            SubscribeToShardErrorKind::LimitExceededError(_inner) => Some(_inner),
-            SubscribeToShardErrorKind::ResourceInUseError(_inner) => Some(_inner),
-            SubscribeToShardErrorKind::ResourceNotFoundError(_inner) => Some(_inner),
-            SubscribeToShardErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -2274,8 +2191,8 @@ pub struct UpdateShardCountError {
 #[derive(std::fmt::Debug)]
 pub enum UpdateShardCountErrorKind {
     InvalidArgumentError(crate::error::InvalidArgumentError),
-    LimitExceededError(crate::error::LimitExceededError),
     ResourceInUseError(crate::error::ResourceInUseError),
+    LimitExceededError(crate::error::LimitExceededError),
     ResourceNotFoundError(crate::error::ResourceNotFoundError),
 
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
@@ -2285,8 +2202,8 @@ impl std::fmt::Display for UpdateShardCountError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
             UpdateShardCountErrorKind::InvalidArgumentError(_inner) => _inner.fmt(f),
-            UpdateShardCountErrorKind::LimitExceededError(_inner) => _inner.fmt(f),
             UpdateShardCountErrorKind::ResourceInUseError(_inner) => _inner.fmt(f),
+            UpdateShardCountErrorKind::LimitExceededError(_inner) => _inner.fmt(f),
             UpdateShardCountErrorKind::ResourceNotFoundError(_inner) => _inner.fmt(f),
             UpdateShardCountErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
@@ -2339,8 +2256,8 @@ impl std::error::Error for UpdateShardCountError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             UpdateShardCountErrorKind::InvalidArgumentError(_inner) => Some(_inner),
-            UpdateShardCountErrorKind::LimitExceededError(_inner) => Some(_inner),
             UpdateShardCountErrorKind::ResourceInUseError(_inner) => Some(_inner),
+            UpdateShardCountErrorKind::LimitExceededError(_inner) => Some(_inner),
             UpdateShardCountErrorKind::ResourceNotFoundError(_inner) => Some(_inner),
             UpdateShardCountErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
@@ -2413,72 +2330,6 @@ impl ResourceNotFoundError {
     }
 }
 
-/// <p>The resource is not available for this operation. For successful operation, the
-/// resource must be in the <code>ACTIVE</code> state.</p>
-#[non_exhaustive]
-#[derive(serde::Deserialize, serde::Serialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct ResourceInUseError {
-    /// <p>A message that provides information about the error.</p>
-    #[serde(rename = "message")]
-    #[serde(skip_serializing_if = "Option::is_none")]
-    #[serde(default)]
-    pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ResourceInUseError {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceInUseError");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
-impl ResourceInUseError {
-    pub fn message(&self) -> Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for ResourceInUseError {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "ResourceInUseError [ResourceInUseException]")?;
-        if let Some(inner_2) = &self.message {
-            write!(f, ": {}", inner_2)?;
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for ResourceInUseError {}
-/// See [`ResourceInUseError`](crate::error::ResourceInUseError)
-pub mod resource_in_use_error {
-    /// A builder for [`ResourceInUseError`](crate::error::ResourceInUseError)
-    #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
-    pub struct Builder {
-        message: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        /// <p>A message that provides information about the error.</p>
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
-            self
-        }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
-            self
-        }
-        /// Consumes the builder and constructs a [`ResourceInUseError`](crate::error::ResourceInUseError)
-        pub fn build(self) -> crate::error::ResourceInUseError {
-            crate::error::ResourceInUseError {
-                message: self.message,
-            }
-        }
-    }
-}
-impl ResourceInUseError {
-    /// Creates a new builder-style object to manufacture [`ResourceInUseError`](crate::error::ResourceInUseError)
-    pub fn builder() -> crate::error::resource_in_use_error::Builder {
-        crate::error::resource_in_use_error::Builder::default()
-    }
-}
-
 /// <p>The requested resource exceeds the maximum number allowed, or the number of
 /// concurrent stream requests exceeds the maximum number allowed. </p>
 #[non_exhaustive]
@@ -2505,8 +2356,8 @@ impl LimitExceededError {
 impl std::fmt::Display for LimitExceededError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "LimitExceededError [LimitExceededException]")?;
-        if let Some(inner_3) = &self.message {
-            write!(f, ": {}", inner_3)?;
+        if let Some(inner_2) = &self.message {
+            write!(f, ": {}", inner_2)?;
         }
         Ok(())
     }
@@ -2542,6 +2393,72 @@ impl LimitExceededError {
     /// Creates a new builder-style object to manufacture [`LimitExceededError`](crate::error::LimitExceededError)
     pub fn builder() -> crate::error::limit_exceeded_error::Builder {
         crate::error::limit_exceeded_error::Builder::default()
+    }
+}
+
+/// <p>The resource is not available for this operation. For successful operation, the
+/// resource must be in the <code>ACTIVE</code> state.</p>
+#[non_exhaustive]
+#[derive(serde::Deserialize, serde::Serialize, std::clone::Clone, std::cmp::PartialEq)]
+pub struct ResourceInUseError {
+    /// <p>A message that provides information about the error.</p>
+    #[serde(rename = "message")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(default)]
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for ResourceInUseError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ResourceInUseError");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl ResourceInUseError {
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for ResourceInUseError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "ResourceInUseError [ResourceInUseException]")?;
+        if let Some(inner_3) = &self.message {
+            write!(f, ": {}", inner_3)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for ResourceInUseError {}
+/// See [`ResourceInUseError`](crate::error::ResourceInUseError)
+pub mod resource_in_use_error {
+    /// A builder for [`ResourceInUseError`](crate::error::ResourceInUseError)
+    #[non_exhaustive]
+    #[derive(Debug, Clone, Default)]
+    pub struct Builder {
+        message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>A message that provides information about the error.</p>
+        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.message = Some(inp.into());
+            self
+        }
+        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
+            self.message = inp;
+            self
+        }
+        /// Consumes the builder and constructs a [`ResourceInUseError`](crate::error::ResourceInUseError)
+        pub fn build(self) -> crate::error::ResourceInUseError {
+            crate::error::ResourceInUseError {
+                message: self.message,
+            }
+        }
+    }
+}
+impl ResourceInUseError {
+    /// Creates a new builder-style object to manufacture [`ResourceInUseError`](crate::error::ResourceInUseError)
+    pub fn builder() -> crate::error::resource_in_use_error::Builder {
+        crate::error::resource_in_use_error::Builder::default()
     }
 }
 
@@ -2611,72 +2528,6 @@ impl InvalidArgumentError {
     }
 }
 
-/// <p>The request was rejected because the specified entity or resource can't be
-/// found.</p>
-#[non_exhaustive]
-#[derive(serde::Deserialize, serde::Serialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct KMSNotFoundError {
-    /// <p>A message that provides information about the error.</p>
-    #[serde(rename = "message")]
-    #[serde(skip_serializing_if = "Option::is_none")]
-    #[serde(default)]
-    pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for KMSNotFoundError {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("KMSNotFoundError");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
-impl KMSNotFoundError {
-    pub fn message(&self) -> Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for KMSNotFoundError {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "KMSNotFoundError [KMSNotFoundException]")?;
-        if let Some(inner_5) = &self.message {
-            write!(f, ": {}", inner_5)?;
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for KMSNotFoundError {}
-/// See [`KMSNotFoundError`](crate::error::KMSNotFoundError)
-pub mod kms_not_found_error {
-    /// A builder for [`KMSNotFoundError`](crate::error::KMSNotFoundError)
-    #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
-    pub struct Builder {
-        message: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        /// <p>A message that provides information about the error.</p>
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
-            self
-        }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
-            self
-        }
-        /// Consumes the builder and constructs a [`KMSNotFoundError`](crate::error::KMSNotFoundError)
-        pub fn build(self) -> crate::error::KMSNotFoundError {
-            crate::error::KMSNotFoundError {
-                message: self.message,
-            }
-        }
-    }
-}
-impl KMSNotFoundError {
-    /// Creates a new builder-style object to manufacture [`KMSNotFoundError`](crate::error::KMSNotFoundError)
-    pub fn builder() -> crate::error::kms_not_found_error::Builder {
-        crate::error::kms_not_found_error::Builder::default()
-    }
-}
-
 /// <p>The request was rejected because the state of the specified resource isn't valid
 /// for this request. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How Key State Affects Use of a
 /// Customer Master Key</a> in the <i>AWS Key Management Service Developer
@@ -2705,8 +2556,8 @@ impl KMSInvalidStateError {
 impl std::fmt::Display for KMSInvalidStateError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "KMSInvalidStateError [KMSInvalidStateException]")?;
-        if let Some(inner_6) = &self.message {
-            write!(f, ": {}", inner_6)?;
+        if let Some(inner_5) = &self.message {
+            write!(f, ": {}", inner_5)?;
         }
         Ok(())
     }
@@ -2745,267 +2596,6 @@ impl KMSInvalidStateError {
     }
 }
 
-/// <p>The ciphertext references a key that doesn't exist or that you don't have access
-/// to.</p>
-#[non_exhaustive]
-#[derive(serde::Deserialize, serde::Serialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct KMSAccessDeniedError {
-    /// <p>A message that provides information about the error.</p>
-    #[serde(rename = "message")]
-    #[serde(skip_serializing_if = "Option::is_none")]
-    #[serde(default)]
-    pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for KMSAccessDeniedError {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("KMSAccessDeniedError");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
-impl KMSAccessDeniedError {
-    pub fn message(&self) -> Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for KMSAccessDeniedError {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "KMSAccessDeniedError [KMSAccessDeniedException]")?;
-        if let Some(inner_7) = &self.message {
-            write!(f, ": {}", inner_7)?;
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for KMSAccessDeniedError {}
-/// See [`KMSAccessDeniedError`](crate::error::KMSAccessDeniedError)
-pub mod kms_access_denied_error {
-    /// A builder for [`KMSAccessDeniedError`](crate::error::KMSAccessDeniedError)
-    #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
-    pub struct Builder {
-        message: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        /// <p>A message that provides information about the error.</p>
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
-            self
-        }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
-            self
-        }
-        /// Consumes the builder and constructs a [`KMSAccessDeniedError`](crate::error::KMSAccessDeniedError)
-        pub fn build(self) -> crate::error::KMSAccessDeniedError {
-            crate::error::KMSAccessDeniedError {
-                message: self.message,
-            }
-        }
-    }
-}
-impl KMSAccessDeniedError {
-    /// Creates a new builder-style object to manufacture [`KMSAccessDeniedError`](crate::error::KMSAccessDeniedError)
-    pub fn builder() -> crate::error::kms_access_denied_error::Builder {
-        crate::error::kms_access_denied_error::Builder::default()
-    }
-}
-
-/// <p>The request was rejected because the specified customer master key (CMK) isn't
-/// enabled.</p>
-#[non_exhaustive]
-#[derive(serde::Deserialize, serde::Serialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct KMSDisabledError {
-    /// <p>A message that provides information about the error.</p>
-    #[serde(rename = "message")]
-    #[serde(skip_serializing_if = "Option::is_none")]
-    #[serde(default)]
-    pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for KMSDisabledError {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("KMSDisabledError");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
-impl KMSDisabledError {
-    pub fn message(&self) -> Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for KMSDisabledError {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "KMSDisabledError [KMSDisabledException]")?;
-        if let Some(inner_8) = &self.message {
-            write!(f, ": {}", inner_8)?;
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for KMSDisabledError {}
-/// See [`KMSDisabledError`](crate::error::KMSDisabledError)
-pub mod kms_disabled_error {
-    /// A builder for [`KMSDisabledError`](crate::error::KMSDisabledError)
-    #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
-    pub struct Builder {
-        message: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        /// <p>A message that provides information about the error.</p>
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
-            self
-        }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
-            self
-        }
-        /// Consumes the builder and constructs a [`KMSDisabledError`](crate::error::KMSDisabledError)
-        pub fn build(self) -> crate::error::KMSDisabledError {
-            crate::error::KMSDisabledError {
-                message: self.message,
-            }
-        }
-    }
-}
-impl KMSDisabledError {
-    /// Creates a new builder-style object to manufacture [`KMSDisabledError`](crate::error::KMSDisabledError)
-    pub fn builder() -> crate::error::kms_disabled_error::Builder {
-        crate::error::kms_disabled_error::Builder::default()
-    }
-}
-
-/// <p>The AWS access key ID needs a subscription for the service.</p>
-#[non_exhaustive]
-#[derive(serde::Deserialize, serde::Serialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct KMSOptInRequired {
-    /// <p>A message that provides information about the error.</p>
-    #[serde(rename = "message")]
-    #[serde(skip_serializing_if = "Option::is_none")]
-    #[serde(default)]
-    pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for KMSOptInRequired {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("KMSOptInRequired");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
-impl KMSOptInRequired {
-    pub fn message(&self) -> Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for KMSOptInRequired {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "KMSOptInRequired")?;
-        if let Some(inner_9) = &self.message {
-            write!(f, ": {}", inner_9)?;
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for KMSOptInRequired {}
-/// See [`KMSOptInRequired`](crate::error::KMSOptInRequired)
-pub mod kms_opt_in_required {
-    /// A builder for [`KMSOptInRequired`](crate::error::KMSOptInRequired)
-    #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
-    pub struct Builder {
-        message: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        /// <p>A message that provides information about the error.</p>
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
-            self
-        }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
-            self
-        }
-        /// Consumes the builder and constructs a [`KMSOptInRequired`](crate::error::KMSOptInRequired)
-        pub fn build(self) -> crate::error::KMSOptInRequired {
-            crate::error::KMSOptInRequired {
-                message: self.message,
-            }
-        }
-    }
-}
-impl KMSOptInRequired {
-    /// Creates a new builder-style object to manufacture [`KMSOptInRequired`](crate::error::KMSOptInRequired)
-    pub fn builder() -> crate::error::kms_opt_in_required::Builder {
-        crate::error::kms_opt_in_required::Builder::default()
-    }
-}
-
-/// <p>The processing of the request failed because of an unknown error, exception, or
-/// failure.</p>
-#[non_exhaustive]
-#[derive(serde::Deserialize, serde::Serialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct InternalFailureError {
-    #[serde(rename = "message")]
-    #[serde(skip_serializing_if = "Option::is_none")]
-    #[serde(default)]
-    pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InternalFailureError {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InternalFailureError");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
-impl InternalFailureError {
-    pub fn message(&self) -> Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for InternalFailureError {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "InternalFailureError [InternalFailureException]")?;
-        if let Some(inner_10) = &self.message {
-            write!(f, ": {}", inner_10)?;
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for InternalFailureError {}
-/// See [`InternalFailureError`](crate::error::InternalFailureError)
-pub mod internal_failure_error {
-    /// A builder for [`InternalFailureError`](crate::error::InternalFailureError)
-    #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
-    pub struct Builder {
-        message: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
-            self
-        }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
-            self
-        }
-        /// Consumes the builder and constructs a [`InternalFailureError`](crate::error::InternalFailureError)
-        pub fn build(self) -> crate::error::InternalFailureError {
-            crate::error::InternalFailureError {
-                message: self.message,
-            }
-        }
-    }
-}
-impl InternalFailureError {
-    /// Creates a new builder-style object to manufacture [`InternalFailureError`](crate::error::InternalFailureError)
-    pub fn builder() -> crate::error::internal_failure_error::Builder {
-        crate::error::internal_failure_error::Builder::default()
-    }
-}
-
 /// <p>The request was denied due to request throttling. For more information about
 /// throttling, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html#requests-per-second">Limits</a> in
 /// the <i>AWS Key Management Service Developer Guide</i>.</p>
@@ -3033,8 +2623,8 @@ impl KMSThrottlingError {
 impl std::fmt::Display for KMSThrottlingError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "KMSThrottlingError [KMSThrottlingException]")?;
-        if let Some(inner_11) = &self.message {
-            write!(f, ": {}", inner_11)?;
+        if let Some(inner_6) = &self.message {
+            write!(f, ": {}", inner_6)?;
         }
         Ok(())
     }
@@ -3073,6 +2663,269 @@ impl KMSThrottlingError {
     }
 }
 
+/// <p>The AWS access key ID needs a subscription for the service.</p>
+#[non_exhaustive]
+#[derive(serde::Deserialize, serde::Serialize, std::clone::Clone, std::cmp::PartialEq)]
+pub struct KMSOptInRequired {
+    /// <p>A message that provides information about the error.</p>
+    #[serde(rename = "message")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(default)]
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for KMSOptInRequired {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("KMSOptInRequired");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl KMSOptInRequired {
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for KMSOptInRequired {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "KMSOptInRequired")?;
+        if let Some(inner_7) = &self.message {
+            write!(f, ": {}", inner_7)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for KMSOptInRequired {}
+/// See [`KMSOptInRequired`](crate::error::KMSOptInRequired)
+pub mod kms_opt_in_required {
+    /// A builder for [`KMSOptInRequired`](crate::error::KMSOptInRequired)
+    #[non_exhaustive]
+    #[derive(Debug, Clone, Default)]
+    pub struct Builder {
+        message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>A message that provides information about the error.</p>
+        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.message = Some(inp.into());
+            self
+        }
+        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
+            self.message = inp;
+            self
+        }
+        /// Consumes the builder and constructs a [`KMSOptInRequired`](crate::error::KMSOptInRequired)
+        pub fn build(self) -> crate::error::KMSOptInRequired {
+            crate::error::KMSOptInRequired {
+                message: self.message,
+            }
+        }
+    }
+}
+impl KMSOptInRequired {
+    /// Creates a new builder-style object to manufacture [`KMSOptInRequired`](crate::error::KMSOptInRequired)
+    pub fn builder() -> crate::error::kms_opt_in_required::Builder {
+        crate::error::kms_opt_in_required::Builder::default()
+    }
+}
+
+/// <p>The request was rejected because the specified entity or resource can't be
+/// found.</p>
+#[non_exhaustive]
+#[derive(serde::Deserialize, serde::Serialize, std::clone::Clone, std::cmp::PartialEq)]
+pub struct KMSNotFoundError {
+    /// <p>A message that provides information about the error.</p>
+    #[serde(rename = "message")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(default)]
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for KMSNotFoundError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("KMSNotFoundError");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl KMSNotFoundError {
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for KMSNotFoundError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "KMSNotFoundError [KMSNotFoundException]")?;
+        if let Some(inner_8) = &self.message {
+            write!(f, ": {}", inner_8)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for KMSNotFoundError {}
+/// See [`KMSNotFoundError`](crate::error::KMSNotFoundError)
+pub mod kms_not_found_error {
+    /// A builder for [`KMSNotFoundError`](crate::error::KMSNotFoundError)
+    #[non_exhaustive]
+    #[derive(Debug, Clone, Default)]
+    pub struct Builder {
+        message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>A message that provides information about the error.</p>
+        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.message = Some(inp.into());
+            self
+        }
+        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
+            self.message = inp;
+            self
+        }
+        /// Consumes the builder and constructs a [`KMSNotFoundError`](crate::error::KMSNotFoundError)
+        pub fn build(self) -> crate::error::KMSNotFoundError {
+            crate::error::KMSNotFoundError {
+                message: self.message,
+            }
+        }
+    }
+}
+impl KMSNotFoundError {
+    /// Creates a new builder-style object to manufacture [`KMSNotFoundError`](crate::error::KMSNotFoundError)
+    pub fn builder() -> crate::error::kms_not_found_error::Builder {
+        crate::error::kms_not_found_error::Builder::default()
+    }
+}
+
+/// <p>The request was rejected because the specified customer master key (CMK) isn't
+/// enabled.</p>
+#[non_exhaustive]
+#[derive(serde::Deserialize, serde::Serialize, std::clone::Clone, std::cmp::PartialEq)]
+pub struct KMSDisabledError {
+    /// <p>A message that provides information about the error.</p>
+    #[serde(rename = "message")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(default)]
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for KMSDisabledError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("KMSDisabledError");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl KMSDisabledError {
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for KMSDisabledError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "KMSDisabledError [KMSDisabledException]")?;
+        if let Some(inner_9) = &self.message {
+            write!(f, ": {}", inner_9)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for KMSDisabledError {}
+/// See [`KMSDisabledError`](crate::error::KMSDisabledError)
+pub mod kms_disabled_error {
+    /// A builder for [`KMSDisabledError`](crate::error::KMSDisabledError)
+    #[non_exhaustive]
+    #[derive(Debug, Clone, Default)]
+    pub struct Builder {
+        message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>A message that provides information about the error.</p>
+        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.message = Some(inp.into());
+            self
+        }
+        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
+            self.message = inp;
+            self
+        }
+        /// Consumes the builder and constructs a [`KMSDisabledError`](crate::error::KMSDisabledError)
+        pub fn build(self) -> crate::error::KMSDisabledError {
+            crate::error::KMSDisabledError {
+                message: self.message,
+            }
+        }
+    }
+}
+impl KMSDisabledError {
+    /// Creates a new builder-style object to manufacture [`KMSDisabledError`](crate::error::KMSDisabledError)
+    pub fn builder() -> crate::error::kms_disabled_error::Builder {
+        crate::error::kms_disabled_error::Builder::default()
+    }
+}
+
+/// <p>The ciphertext references a key that doesn't exist or that you don't have access
+/// to.</p>
+#[non_exhaustive]
+#[derive(serde::Deserialize, serde::Serialize, std::clone::Clone, std::cmp::PartialEq)]
+pub struct KMSAccessDeniedError {
+    /// <p>A message that provides information about the error.</p>
+    #[serde(rename = "message")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(default)]
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for KMSAccessDeniedError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("KMSAccessDeniedError");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl KMSAccessDeniedError {
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for KMSAccessDeniedError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "KMSAccessDeniedError [KMSAccessDeniedException]")?;
+        if let Some(inner_10) = &self.message {
+            write!(f, ": {}", inner_10)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for KMSAccessDeniedError {}
+/// See [`KMSAccessDeniedError`](crate::error::KMSAccessDeniedError)
+pub mod kms_access_denied_error {
+    /// A builder for [`KMSAccessDeniedError`](crate::error::KMSAccessDeniedError)
+    #[non_exhaustive]
+    #[derive(Debug, Clone, Default)]
+    pub struct Builder {
+        message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>A message that provides information about the error.</p>
+        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.message = Some(inp.into());
+            self
+        }
+        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
+            self.message = inp;
+            self
+        }
+        /// Consumes the builder and constructs a [`KMSAccessDeniedError`](crate::error::KMSAccessDeniedError)
+        pub fn build(self) -> crate::error::KMSAccessDeniedError {
+            crate::error::KMSAccessDeniedError {
+                message: self.message,
+            }
+        }
+    }
+}
+impl KMSAccessDeniedError {
+    /// Creates a new builder-style object to manufacture [`KMSAccessDeniedError`](crate::error::KMSAccessDeniedError)
+    pub fn builder() -> crate::error::kms_access_denied_error::Builder {
+        crate::error::kms_access_denied_error::Builder::default()
+    }
+}
+
 /// <p>The request rate for the stream is too high, or the requested data is too large for
 /// the available throughput. Reduce the frequency or size of your requests. For more
 /// information, see <a href="https://docs.aws.amazon.com/kinesis/latest/dev/service-sizes-and-limits.html">Streams Limits</a> in the
@@ -3106,8 +2959,8 @@ impl std::fmt::Display for ProvisionedThroughputExceededError {
             f,
             "ProvisionedThroughputExceededError [ProvisionedThroughputExceededException]"
         )?;
-        if let Some(inner_12) = &self.message {
-            write!(f, ": {}", inner_12)?;
+        if let Some(inner_11) = &self.message {
+            write!(f, ": {}", inner_11)?;
         }
         Ok(())
     }
@@ -3170,8 +3023,8 @@ impl ExpiredNextTokenError {
 impl std::fmt::Display for ExpiredNextTokenError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ExpiredNextTokenError [ExpiredNextTokenException]")?;
-        if let Some(inner_13) = &self.message {
-            write!(f, ": {}", inner_13)?;
+        if let Some(inner_12) = &self.message {
+            write!(f, ": {}", inner_12)?;
         }
         Ok(())
     }
@@ -3234,8 +3087,8 @@ impl ExpiredIteratorError {
 impl std::fmt::Display for ExpiredIteratorError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ExpiredIteratorError [ExpiredIteratorException]")?;
-        if let Some(inner_14) = &self.message {
-            write!(f, ": {}", inner_14)?;
+        if let Some(inner_13) = &self.message {
+            write!(f, ": {}", inner_13)?;
         }
         Ok(())
     }

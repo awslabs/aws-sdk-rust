@@ -4,6 +4,7 @@
  */
 
 use crate::SendOperationError;
+use smithy_http::body::SdkBody;
 use smithy_http::middleware::load_response;
 use smithy_http::operation;
 use smithy_http::operation::Operation;
@@ -14,7 +15,7 @@ use std::future::Future;
 use std::marker::PhantomData;
 use std::pin::Pin;
 use std::task::{Context, Poll};
-use tower::{BoxError, Layer, Service};
+use tower::{Layer, Service};
 use tracing::field::display;
 use tracing::{debug_span, field, info_span, Instrument};
 
@@ -68,13 +69,11 @@ type BoxedResultFuture<T, E> = Pin<Box<dyn Future<Output = Result<T, E>> + Send>
 /// `E`: The error path return of the response parser
 /// `B`: The HTTP Body type returned by the inner service
 /// `R`: The type of the retry policy
-impl<S, O, T, E, B, R> tower::Service<operation::Operation<O, R>> for ParseResponseService<S, O, R>
+impl<S, O, T, E, R> tower::Service<operation::Operation<O, R>> for ParseResponseService<S, O, R>
 where
-    S: Service<operation::Request, Response = http::Response<B>, Error = SendOperationError>,
+    S: Service<operation::Request, Response = http::Response<SdkBody>, Error = SendOperationError>,
     S::Future: Send + 'static,
-    B: http_body::Body + Send + 'static,
-    B::Error: Into<BoxError>,
-    O: ParseHttpResponse<B, Output = Result<T, E>> + Send + Sync + 'static,
+    O: ParseHttpResponse<SdkBody, Output = Result<T, E>> + Send + Sync + 'static,
     E: Error,
 {
     type Response = smithy_http::result::SdkSuccess<T>;

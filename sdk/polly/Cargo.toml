@@ -36,6 +36,8 @@ features = ["float_roundtrip"]
 version = "1"
 [features]
 client = ["aws-hyper"]
-default = ["client"]
+rustls = ["aws-hyper/rustls"]
+native-tls = ["aws-hyper/native-tls"]
+default = ["client", "rustls"]
 
 

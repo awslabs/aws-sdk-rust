@@ -48,13 +48,13 @@ impl ProvideCredentials for EnvironmentVariableCredentialsProvider {
             .or_else(|_| (self.env)("SECRET_ACCESS_KEY"))
             .map_err(to_cred_error)?;
         let session_token = (self.env)("AWS_SESSION_TOKEN").ok();
-        Ok(Credentials {
-            access_key_id: access_key,
-            secret_access_key: secret_key,
+        Ok(Credentials::new(
+            access_key,
+            secret_key,
             session_token,
-            expires_after: None,
-            provider_name: ENV_PROVIDER,
-        })
+            None,
+            ENV_PROVIDER,
+        ))
     }
 }
 
@@ -79,9 +79,9 @@ mod test {
 
         let provider = EnvironmentVariableCredentialsProvider::for_map(env);
         let creds = provider.provide_credentials().expect("valid credentials");
-        assert_eq!(creds.session_token, None);
-        assert_eq!(creds.access_key_id, "access");
-        assert_eq!(creds.secret_access_key, "secret");
+        assert_eq!(creds.session_token(), None);
+        assert_eq!(creds.access_key_id(), "access");
+        assert_eq!(creds.secret_access_key(), "secret");
     }
 
     #[test]
@@ -93,9 +93,9 @@ mod test {
 
         let provider = EnvironmentVariableCredentialsProvider::for_map(env);
         let creds = provider.provide_credentials().expect("valid credentials");
-        assert_eq!(creds.session_token.unwrap(), "token");
-        assert_eq!(creds.access_key_id, "access");
-        assert_eq!(creds.secret_access_key, "secret");
+        assert_eq!(creds.session_token().unwrap(), "token");
+        assert_eq!(creds.access_key_id(), "access");
+        assert_eq!(creds.secret_access_key(), "secret");
     }
 
     #[test]
@@ -107,9 +107,9 @@ mod test {
 
         let provider = EnvironmentVariableCredentialsProvider::for_map(env);
         let creds = provider.provide_credentials().expect("valid credentials");
-        assert_eq!(creds.session_token.unwrap(), "token");
-        assert_eq!(creds.access_key_id, "access");
-        assert_eq!(creds.secret_access_key, "secret");
+        assert_eq!(creds.session_token().unwrap(), "token");
+        assert_eq!(creds.access_key_id(), "access");
+        assert_eq!(creds.secret_access_key(), "secret");
     }
 
     #[test]

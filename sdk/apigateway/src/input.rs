@@ -104,81 +104,90 @@ pub mod create_api_key_input {
             self.tags = inp;
             self
         }
-        /// Consumes the builder and constructs an Operation<[`CreateApiKey`](crate::operation::CreateApiKey)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`CreateApiKeyInput`](crate::input::CreateApiKeyInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::CreateApiKey,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op = crate::operation::CreateApiKey::new(crate::input::CreateApiKeyInput {
-                    name: self.name,
-                    description: self.description,
-                    enabled: self.enabled.unwrap_or_default(),
-                    generate_distinct_id: self.generate_distinct_id.unwrap_or_default(),
-                    value: self.value,
-                    stage_keys: self.stage_keys,
-                    customer_id: self.customer_id,
-                    tags: self.tags,
-                });
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .request_mut()
-                    .headers_mut()
-                    .insert("Accept", http::HeaderValue::from_static("application/json"));
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
-                }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op).with_metadata(
-                    smithy_http::operation::Metadata::new("CreateApiKey", "apigateway"),
-                );
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
+        ) -> Result<crate::input::CreateApiKeyInput, smithy_http::operation::BuildError> {
+            Ok(crate::input::CreateApiKeyInput {
+                name: self.name,
+                description: self.description,
+                enabled: self.enabled.unwrap_or_default(),
+                generate_distinct_id: self.generate_distinct_id.unwrap_or_default(),
+                value: self.value,
+                stage_keys: self.stage_keys,
+                customer_id: self.customer_id,
+                tags: self.tags,
             })
         }
     }
 }
 impl CreateApiKeyInput {
+    /// Consumes the builder and constructs an Operation<[`CreateApiKey`](crate::operation::CreateApiKey)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::CreateApiKey,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .request_mut()
+                .headers_mut()
+                .insert("Accept", http::HeaderValue::from_static("application/json"));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::CreateApiKey::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "CreateApiKey",
+                "apigateway",
+            ));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     fn uri_base(&self, output: &mut String) {
         write!(output, "/apikeys").expect("formatting should succeed")
     }
@@ -355,84 +364,93 @@ pub mod create_authorizer_input {
             self.authorizer_result_ttl_in_seconds = inp;
             self
         }
-        /// Consumes the builder and constructs an Operation<[`CreateAuthorizer`](crate::operation::CreateAuthorizer)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`CreateAuthorizerInput`](crate::input::CreateAuthorizerInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::CreateAuthorizer,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op =
-                    crate::operation::CreateAuthorizer::new(crate::input::CreateAuthorizerInput {
-                        rest_api_id: self.rest_api_id.unwrap_or_default(),
-                        name: self.name,
-                        r#type: self.r#type,
-                        provider_ar_ns: self.provider_ar_ns,
-                        auth_type: self.auth_type,
-                        authorizer_uri: self.authorizer_uri,
-                        authorizer_credentials: self.authorizer_credentials,
-                        identity_source: self.identity_source,
-                        identity_validation_expression: self.identity_validation_expression,
-                        authorizer_result_ttl_in_seconds: self.authorizer_result_ttl_in_seconds,
-                    });
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .request_mut()
-                    .headers_mut()
-                    .insert("Accept", http::HeaderValue::from_static("application/json"));
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
-                }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op).with_metadata(
-                    smithy_http::operation::Metadata::new("CreateAuthorizer", "apigateway"),
-                );
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
+        ) -> Result<crate::input::CreateAuthorizerInput, smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::CreateAuthorizerInput {
+                rest_api_id: self.rest_api_id.unwrap_or_default(),
+                name: self.name,
+                r#type: self.r#type,
+                provider_ar_ns: self.provider_ar_ns,
+                auth_type: self.auth_type,
+                authorizer_uri: self.authorizer_uri,
+                authorizer_credentials: self.authorizer_credentials,
+                identity_source: self.identity_source,
+                identity_validation_expression: self.identity_validation_expression,
+                authorizer_result_ttl_in_seconds: self.authorizer_result_ttl_in_seconds,
             })
         }
     }
 }
 impl CreateAuthorizerInput {
+    /// Consumes the builder and constructs an Operation<[`CreateAuthorizer`](crate::operation::CreateAuthorizer)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::CreateAuthorizer,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .request_mut()
+                .headers_mut()
+                .insert("Accept", http::HeaderValue::from_static("application/json"));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::CreateAuthorizer::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "CreateAuthorizer",
+                "apigateway",
+            ));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     fn uri_base(&self, output: &mut String) {
         write!(
             output,
@@ -536,79 +554,87 @@ pub mod create_base_path_mapping_input {
             self.stage = inp;
             self
         }
-        /// Consumes the builder and constructs an Operation<[`CreateBasePathMapping`](crate::operation::CreateBasePathMapping)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`CreateBasePathMappingInput`](crate::input::CreateBasePathMappingInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::CreateBasePathMapping,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op = crate::operation::CreateBasePathMapping::new(
-                    crate::input::CreateBasePathMappingInput {
-                        domain_name: self.domain_name.unwrap_or_default(),
-                        base_path: self.base_path,
-                        rest_api_id: self.rest_api_id,
-                        stage: self.stage,
-                    },
-                );
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .request_mut()
-                    .headers_mut()
-                    .insert("Accept", http::HeaderValue::from_static("application/json"));
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
-                }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op).with_metadata(
-                    smithy_http::operation::Metadata::new("CreateBasePathMapping", "apigateway"),
-                );
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
+        ) -> Result<crate::input::CreateBasePathMappingInput, smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::CreateBasePathMappingInput {
+                domain_name: self.domain_name.unwrap_or_default(),
+                base_path: self.base_path,
+                rest_api_id: self.rest_api_id,
+                stage: self.stage,
             })
         }
     }
 }
 impl CreateBasePathMappingInput {
+    /// Consumes the builder and constructs an Operation<[`CreateBasePathMapping`](crate::operation::CreateBasePathMapping)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::CreateBasePathMapping,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .request_mut()
+                .headers_mut()
+                .insert("Accept", http::HeaderValue::from_static("application/json"));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::CreateBasePathMapping::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "CreateBasePathMapping",
+                "apigateway",
+            ));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     fn uri_base(&self, output: &mut String) {
         write!(
             output,
@@ -777,83 +803,92 @@ pub mod create_deployment_input {
             self.tracing_enabled = inp;
             self
         }
-        /// Consumes the builder and constructs an Operation<[`CreateDeployment`](crate::operation::CreateDeployment)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`CreateDeploymentInput`](crate::input::CreateDeploymentInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::CreateDeployment,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op =
-                    crate::operation::CreateDeployment::new(crate::input::CreateDeploymentInput {
-                        rest_api_id: self.rest_api_id.unwrap_or_default(),
-                        stage_name: self.stage_name,
-                        stage_description: self.stage_description,
-                        description: self.description,
-                        cache_cluster_enabled: self.cache_cluster_enabled,
-                        cache_cluster_size: self.cache_cluster_size,
-                        variables: self.variables,
-                        canary_settings: self.canary_settings,
-                        tracing_enabled: self.tracing_enabled,
-                    });
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .request_mut()
-                    .headers_mut()
-                    .insert("Accept", http::HeaderValue::from_static("application/json"));
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
-                }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op).with_metadata(
-                    smithy_http::operation::Metadata::new("CreateDeployment", "apigateway"),
-                );
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
+        ) -> Result<crate::input::CreateDeploymentInput, smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::CreateDeploymentInput {
+                rest_api_id: self.rest_api_id.unwrap_or_default(),
+                stage_name: self.stage_name,
+                stage_description: self.stage_description,
+                description: self.description,
+                cache_cluster_enabled: self.cache_cluster_enabled,
+                cache_cluster_size: self.cache_cluster_size,
+                variables: self.variables,
+                canary_settings: self.canary_settings,
+                tracing_enabled: self.tracing_enabled,
             })
         }
     }
 }
 impl CreateDeploymentInput {
+    /// Consumes the builder and constructs an Operation<[`CreateDeployment`](crate::operation::CreateDeployment)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::CreateDeployment,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .request_mut()
+                .headers_mut()
+                .insert("Accept", http::HeaderValue::from_static("application/json"));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::CreateDeployment::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "CreateDeployment",
+                "apigateway",
+            ));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     fn uri_base(&self, output: &mut String) {
         write!(
             output,
@@ -949,78 +984,86 @@ pub mod create_documentation_part_input {
             self.properties = inp;
             self
         }
-        /// Consumes the builder and constructs an Operation<[`CreateDocumentationPart`](crate::operation::CreateDocumentationPart)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`CreateDocumentationPartInput`](crate::input::CreateDocumentationPartInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::CreateDocumentationPart,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op = crate::operation::CreateDocumentationPart::new(
-                    crate::input::CreateDocumentationPartInput {
-                        rest_api_id: self.rest_api_id.unwrap_or_default(),
-                        location: self.location,
-                        properties: self.properties,
-                    },
-                );
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .request_mut()
-                    .headers_mut()
-                    .insert("Accept", http::HeaderValue::from_static("application/json"));
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
-                }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op).with_metadata(
-                    smithy_http::operation::Metadata::new("CreateDocumentationPart", "apigateway"),
-                );
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
+        ) -> Result<crate::input::CreateDocumentationPartInput, smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::CreateDocumentationPartInput {
+                rest_api_id: self.rest_api_id.unwrap_or_default(),
+                location: self.location,
+                properties: self.properties,
             })
         }
     }
 }
 impl CreateDocumentationPartInput {
+    /// Consumes the builder and constructs an Operation<[`CreateDocumentationPart`](crate::operation::CreateDocumentationPart)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::CreateDocumentationPart,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .request_mut()
+                .headers_mut()
+                .insert("Accept", http::HeaderValue::from_static("application/json"));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::CreateDocumentationPart::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "CreateDocumentationPart",
+                "apigateway",
+            ));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     fn uri_base(&self, output: &mut String) {
         write!(
             output,
@@ -1120,82 +1163,87 @@ pub mod create_documentation_version_input {
             self.description = inp;
             self
         }
-        /// Consumes the builder and constructs an Operation<[`CreateDocumentationVersion`](crate::operation::CreateDocumentationVersion)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`CreateDocumentationVersionInput`](crate::input::CreateDocumentationVersionInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::CreateDocumentationVersion,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op = crate::operation::CreateDocumentationVersion::new(
-                    crate::input::CreateDocumentationVersionInput {
-                        rest_api_id: self.rest_api_id.unwrap_or_default(),
-                        documentation_version: self.documentation_version,
-                        stage_name: self.stage_name,
-                        description: self.description,
-                    },
-                );
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .request_mut()
-                    .headers_mut()
-                    .insert("Accept", http::HeaderValue::from_static("application/json"));
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
-                }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op).with_metadata(
-                    smithy_http::operation::Metadata::new(
-                        "CreateDocumentationVersion",
-                        "apigateway",
-                    ),
-                );
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
+        ) -> Result<crate::input::CreateDocumentationVersionInput, smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::CreateDocumentationVersionInput {
+                rest_api_id: self.rest_api_id.unwrap_or_default(),
+                documentation_version: self.documentation_version,
+                stage_name: self.stage_name,
+                description: self.description,
             })
         }
     }
 }
 impl CreateDocumentationVersionInput {
+    /// Consumes the builder and constructs an Operation<[`CreateDocumentationVersion`](crate::operation::CreateDocumentationVersion)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::CreateDocumentationVersion,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .request_mut()
+                .headers_mut()
+                .insert("Accept", http::HeaderValue::from_static("application/json"));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::CreateDocumentationVersion::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "CreateDocumentationVersion",
+                "apigateway",
+            ));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     fn uri_base(&self, output: &mut String) {
         write!(
             output,
@@ -1418,86 +1466,95 @@ pub mod create_domain_name_input {
             self.mutual_tls_authentication = inp;
             self
         }
-        /// Consumes the builder and constructs an Operation<[`CreateDomainName`](crate::operation::CreateDomainName)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`CreateDomainNameInput`](crate::input::CreateDomainNameInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::CreateDomainName,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op =
-                    crate::operation::CreateDomainName::new(crate::input::CreateDomainNameInput {
-                        domain_name: self.domain_name,
-                        certificate_name: self.certificate_name,
-                        certificate_body: self.certificate_body,
-                        certificate_private_key: self.certificate_private_key,
-                        certificate_chain: self.certificate_chain,
-                        certificate_arn: self.certificate_arn,
-                        regional_certificate_name: self.regional_certificate_name,
-                        regional_certificate_arn: self.regional_certificate_arn,
-                        endpoint_configuration: self.endpoint_configuration,
-                        tags: self.tags,
-                        security_policy: self.security_policy,
-                        mutual_tls_authentication: self.mutual_tls_authentication,
-                    });
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .request_mut()
-                    .headers_mut()
-                    .insert("Accept", http::HeaderValue::from_static("application/json"));
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
-                }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op).with_metadata(
-                    smithy_http::operation::Metadata::new("CreateDomainName", "apigateway"),
-                );
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
+        ) -> Result<crate::input::CreateDomainNameInput, smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::CreateDomainNameInput {
+                domain_name: self.domain_name,
+                certificate_name: self.certificate_name,
+                certificate_body: self.certificate_body,
+                certificate_private_key: self.certificate_private_key,
+                certificate_chain: self.certificate_chain,
+                certificate_arn: self.certificate_arn,
+                regional_certificate_name: self.regional_certificate_name,
+                regional_certificate_arn: self.regional_certificate_arn,
+                endpoint_configuration: self.endpoint_configuration,
+                tags: self.tags,
+                security_policy: self.security_policy,
+                mutual_tls_authentication: self.mutual_tls_authentication,
             })
         }
     }
 }
 impl CreateDomainNameInput {
+    /// Consumes the builder and constructs an Operation<[`CreateDomainName`](crate::operation::CreateDomainName)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::CreateDomainName,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .request_mut()
+                .headers_mut()
+                .insert("Accept", http::HeaderValue::from_static("application/json"));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::CreateDomainName::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "CreateDomainName",
+                "apigateway",
+            ));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     fn uri_base(&self, output: &mut String) {
         write!(output, "/domainnames").expect("formatting should succeed")
     }
@@ -1609,78 +1666,87 @@ pub mod create_model_input {
             self.content_type = inp;
             self
         }
-        /// Consumes the builder and constructs an Operation<[`CreateModel`](crate::operation::CreateModel)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`CreateModelInput`](crate::input::CreateModelInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::CreateModel,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op = crate::operation::CreateModel::new(crate::input::CreateModelInput {
-                    rest_api_id: self.rest_api_id.unwrap_or_default(),
-                    name: self.name,
-                    description: self.description,
-                    schema: self.schema,
-                    content_type: self.content_type,
-                });
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .request_mut()
-                    .headers_mut()
-                    .insert("Accept", http::HeaderValue::from_static("application/json"));
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
-                }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op).with_metadata(
-                    smithy_http::operation::Metadata::new("CreateModel", "apigateway"),
-                );
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
+        ) -> Result<crate::input::CreateModelInput, smithy_http::operation::BuildError> {
+            Ok(crate::input::CreateModelInput {
+                rest_api_id: self.rest_api_id.unwrap_or_default(),
+                name: self.name,
+                description: self.description,
+                schema: self.schema,
+                content_type: self.content_type,
             })
         }
     }
 }
 impl CreateModelInput {
+    /// Consumes the builder and constructs an Operation<[`CreateModel`](crate::operation::CreateModel)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::CreateModel,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .request_mut()
+                .headers_mut()
+                .insert("Accept", http::HeaderValue::from_static("application/json"));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::CreateModel::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "CreateModel",
+                "apigateway",
+            ));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     fn uri_base(&self, output: &mut String) {
         write!(
             output,
@@ -1779,81 +1845,87 @@ pub mod create_request_validator_input {
             self.validate_request_parameters = Some(inp);
             self
         }
-        /// Consumes the builder and constructs an Operation<[`CreateRequestValidator`](crate::operation::CreateRequestValidator)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`CreateRequestValidatorInput`](crate::input::CreateRequestValidatorInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::CreateRequestValidator,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op = crate::operation::CreateRequestValidator::new(
-                    crate::input::CreateRequestValidatorInput {
-                        rest_api_id: self.rest_api_id.unwrap_or_default(),
-                        name: self.name,
-                        validate_request_body: self.validate_request_body.unwrap_or_default(),
-                        validate_request_parameters: self
-                            .validate_request_parameters
-                            .unwrap_or_default(),
-                    },
-                );
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .request_mut()
-                    .headers_mut()
-                    .insert("Accept", http::HeaderValue::from_static("application/json"));
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
-                }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op).with_metadata(
-                    smithy_http::operation::Metadata::new("CreateRequestValidator", "apigateway"),
-                );
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
+        ) -> Result<crate::input::CreateRequestValidatorInput, smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::CreateRequestValidatorInput {
+                rest_api_id: self.rest_api_id.unwrap_or_default(),
+                name: self.name,
+                validate_request_body: self.validate_request_body.unwrap_or_default(),
+                validate_request_parameters: self.validate_request_parameters.unwrap_or_default(),
             })
         }
     }
 }
 impl CreateRequestValidatorInput {
+    /// Consumes the builder and constructs an Operation<[`CreateRequestValidator`](crate::operation::CreateRequestValidator)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::CreateRequestValidator,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .request_mut()
+                .headers_mut()
+                .insert("Accept", http::HeaderValue::from_static("application/json"));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::CreateRequestValidator::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "CreateRequestValidator",
+                "apigateway",
+            ));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     fn uri_base(&self, output: &mut String) {
         write!(
             output,
@@ -1941,76 +2013,85 @@ pub mod create_resource_input {
             self.path_part = inp;
             self
         }
-        /// Consumes the builder and constructs an Operation<[`CreateResource`](crate::operation::CreateResource)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`CreateResourceInput`](crate::input::CreateResourceInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::CreateResource,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op = crate::operation::CreateResource::new(crate::input::CreateResourceInput {
-                    rest_api_id: self.rest_api_id.unwrap_or_default(),
-                    parent_id: self.parent_id.unwrap_or_default(),
-                    path_part: self.path_part,
-                });
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .request_mut()
-                    .headers_mut()
-                    .insert("Accept", http::HeaderValue::from_static("application/json"));
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
-                }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op).with_metadata(
-                    smithy_http::operation::Metadata::new("CreateResource", "apigateway"),
-                );
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
+        ) -> Result<crate::input::CreateResourceInput, smithy_http::operation::BuildError> {
+            Ok(crate::input::CreateResourceInput {
+                rest_api_id: self.rest_api_id.unwrap_or_default(),
+                parent_id: self.parent_id.unwrap_or_default(),
+                path_part: self.path_part,
             })
         }
     }
 }
 impl CreateResourceInput {
+    /// Consumes the builder and constructs an Operation<[`CreateResource`](crate::operation::CreateResource)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::CreateResource,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .request_mut()
+                .headers_mut()
+                .insert("Accept", http::HeaderValue::from_static("application/json"));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::CreateResource::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "CreateResource",
+                "apigateway",
+            ));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     fn uri_base(&self, output: &mut String) {
         write!(
             output,
@@ -2199,86 +2280,93 @@ pub mod create_rest_api_input {
             self.disable_execute_api_endpoint = Some(inp);
             self
         }
-        /// Consumes the builder and constructs an Operation<[`CreateRestApi`](crate::operation::CreateRestApi)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`CreateRestApiInput`](crate::input::CreateRestApiInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::CreateRestApi,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op = crate::operation::CreateRestApi::new(crate::input::CreateRestApiInput {
-                    name: self.name,
-                    description: self.description,
-                    version: self.version,
-                    clone_from: self.clone_from,
-                    binary_media_types: self.binary_media_types,
-                    minimum_compression_size: self.minimum_compression_size,
-                    api_key_source: self.api_key_source,
-                    endpoint_configuration: self.endpoint_configuration,
-                    policy: self.policy,
-                    tags: self.tags,
-                    disable_execute_api_endpoint: self
-                        .disable_execute_api_endpoint
-                        .unwrap_or_default(),
-                });
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .request_mut()
-                    .headers_mut()
-                    .insert("Accept", http::HeaderValue::from_static("application/json"));
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
-                }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op).with_metadata(
-                    smithy_http::operation::Metadata::new("CreateRestApi", "apigateway"),
-                );
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
+        ) -> Result<crate::input::CreateRestApiInput, smithy_http::operation::BuildError> {
+            Ok(crate::input::CreateRestApiInput {
+                name: self.name,
+                description: self.description,
+                version: self.version,
+                clone_from: self.clone_from,
+                binary_media_types: self.binary_media_types,
+                minimum_compression_size: self.minimum_compression_size,
+                api_key_source: self.api_key_source,
+                endpoint_configuration: self.endpoint_configuration,
+                policy: self.policy,
+                tags: self.tags,
+                disable_execute_api_endpoint: self.disable_execute_api_endpoint.unwrap_or_default(),
             })
         }
     }
 }
 impl CreateRestApiInput {
+    /// Consumes the builder and constructs an Operation<[`CreateRestApi`](crate::operation::CreateRestApi)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::CreateRestApi,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .request_mut()
+                .headers_mut()
+                .insert("Accept", http::HeaderValue::from_static("application/json"));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::CreateRestApi::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "CreateRestApi",
+                "apigateway",
+            ));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     fn uri_base(&self, output: &mut String) {
         write!(output, "/restapis").expect("formatting should succeed")
     }
@@ -2482,84 +2570,93 @@ pub mod create_stage_input {
             self.tags = inp;
             self
         }
-        /// Consumes the builder and constructs an Operation<[`CreateStage`](crate::operation::CreateStage)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`CreateStageInput`](crate::input::CreateStageInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::CreateStage,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op = crate::operation::CreateStage::new(crate::input::CreateStageInput {
-                    rest_api_id: self.rest_api_id.unwrap_or_default(),
-                    stage_name: self.stage_name,
-                    deployment_id: self.deployment_id,
-                    description: self.description,
-                    cache_cluster_enabled: self.cache_cluster_enabled.unwrap_or_default(),
-                    cache_cluster_size: self.cache_cluster_size,
-                    variables: self.variables,
-                    documentation_version: self.documentation_version,
-                    canary_settings: self.canary_settings,
-                    tracing_enabled: self.tracing_enabled.unwrap_or_default(),
-                    tags: self.tags,
-                });
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .request_mut()
-                    .headers_mut()
-                    .insert("Accept", http::HeaderValue::from_static("application/json"));
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
-                }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op).with_metadata(
-                    smithy_http::operation::Metadata::new("CreateStage", "apigateway"),
-                );
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
+        ) -> Result<crate::input::CreateStageInput, smithy_http::operation::BuildError> {
+            Ok(crate::input::CreateStageInput {
+                rest_api_id: self.rest_api_id.unwrap_or_default(),
+                stage_name: self.stage_name,
+                deployment_id: self.deployment_id,
+                description: self.description,
+                cache_cluster_enabled: self.cache_cluster_enabled.unwrap_or_default(),
+                cache_cluster_size: self.cache_cluster_size,
+                variables: self.variables,
+                documentation_version: self.documentation_version,
+                canary_settings: self.canary_settings,
+                tracing_enabled: self.tracing_enabled.unwrap_or_default(),
+                tags: self.tags,
             })
         }
     }
 }
 impl CreateStageInput {
+    /// Consumes the builder and constructs an Operation<[`CreateStage`](crate::operation::CreateStage)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::CreateStage,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .request_mut()
+                .headers_mut()
+                .insert("Accept", http::HeaderValue::from_static("application/json"));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::CreateStage::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "CreateStage",
+                "apigateway",
+            ));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     fn uri_base(&self, output: &mut String) {
         write!(
             output,
@@ -2703,80 +2800,89 @@ pub mod create_usage_plan_input {
             self.tags = inp;
             self
         }
-        /// Consumes the builder and constructs an Operation<[`CreateUsagePlan`](crate::operation::CreateUsagePlan)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`CreateUsagePlanInput`](crate::input::CreateUsagePlanInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::CreateUsagePlan,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op =
-                    crate::operation::CreateUsagePlan::new(crate::input::CreateUsagePlanInput {
-                        name: self.name,
-                        description: self.description,
-                        api_stages: self.api_stages,
-                        throttle: self.throttle,
-                        quota: self.quota,
-                        tags: self.tags,
-                    });
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .request_mut()
-                    .headers_mut()
-                    .insert("Accept", http::HeaderValue::from_static("application/json"));
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
-                }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op).with_metadata(
-                    smithy_http::operation::Metadata::new("CreateUsagePlan", "apigateway"),
-                );
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
+        ) -> Result<crate::input::CreateUsagePlanInput, smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::CreateUsagePlanInput {
+                name: self.name,
+                description: self.description,
+                api_stages: self.api_stages,
+                throttle: self.throttle,
+                quota: self.quota,
+                tags: self.tags,
             })
         }
     }
 }
 impl CreateUsagePlanInput {
+    /// Consumes the builder and constructs an Operation<[`CreateUsagePlan`](crate::operation::CreateUsagePlan)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::CreateUsagePlan,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .request_mut()
+                .headers_mut()
+                .insert("Accept", http::HeaderValue::from_static("application/json"));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::CreateUsagePlan::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "CreateUsagePlan",
+                "apigateway",
+            ));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     fn uri_base(&self, output: &mut String) {
         write!(output, "/usageplans").expect("formatting should succeed")
     }
@@ -2862,78 +2968,86 @@ pub mod create_usage_plan_key_input {
             self.key_type = inp;
             self
         }
-        /// Consumes the builder and constructs an Operation<[`CreateUsagePlanKey`](crate::operation::CreateUsagePlanKey)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`CreateUsagePlanKeyInput`](crate::input::CreateUsagePlanKeyInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::CreateUsagePlanKey,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op = crate::operation::CreateUsagePlanKey::new(
-                    crate::input::CreateUsagePlanKeyInput {
-                        usage_plan_id: self.usage_plan_id.unwrap_or_default(),
-                        key_id: self.key_id,
-                        key_type: self.key_type,
-                    },
-                );
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .request_mut()
-                    .headers_mut()
-                    .insert("Accept", http::HeaderValue::from_static("application/json"));
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
-                }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op).with_metadata(
-                    smithy_http::operation::Metadata::new("CreateUsagePlanKey", "apigateway"),
-                );
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
+        ) -> Result<crate::input::CreateUsagePlanKeyInput, smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::CreateUsagePlanKeyInput {
+                usage_plan_id: self.usage_plan_id.unwrap_or_default(),
+                key_id: self.key_id,
+                key_type: self.key_type,
             })
         }
     }
 }
 impl CreateUsagePlanKeyInput {
+    /// Consumes the builder and constructs an Operation<[`CreateUsagePlanKey`](crate::operation::CreateUsagePlanKey)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::CreateUsagePlanKey,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .request_mut()
+                .headers_mut()
+                .insert("Accept", http::HeaderValue::from_static("application/json"));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::CreateUsagePlanKey::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "CreateUsagePlanKey",
+                "apigateway",
+            ));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     fn uri_base(&self, output: &mut String) {
         write!(
             output,
@@ -3046,77 +3160,86 @@ pub mod create_vpc_link_input {
             self.tags = inp;
             self
         }
-        /// Consumes the builder and constructs an Operation<[`CreateVpcLink`](crate::operation::CreateVpcLink)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`CreateVpcLinkInput`](crate::input::CreateVpcLinkInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::CreateVpcLink,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op = crate::operation::CreateVpcLink::new(crate::input::CreateVpcLinkInput {
-                    name: self.name,
-                    description: self.description,
-                    target_arns: self.target_arns,
-                    tags: self.tags,
-                });
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .request_mut()
-                    .headers_mut()
-                    .insert("Accept", http::HeaderValue::from_static("application/json"));
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
-                }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op).with_metadata(
-                    smithy_http::operation::Metadata::new("CreateVpcLink", "apigateway"),
-                );
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
+        ) -> Result<crate::input::CreateVpcLinkInput, smithy_http::operation::BuildError> {
+            Ok(crate::input::CreateVpcLinkInput {
+                name: self.name,
+                description: self.description,
+                target_arns: self.target_arns,
+                tags: self.tags,
             })
         }
     }
 }
 impl CreateVpcLinkInput {
+    /// Consumes the builder and constructs an Operation<[`CreateVpcLink`](crate::operation::CreateVpcLink)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::CreateVpcLink,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .request_mut()
+                .headers_mut()
+                .insert("Accept", http::HeaderValue::from_static("application/json"));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::CreateVpcLink::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "CreateVpcLink",
+                "apigateway",
+            ));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     fn uri_base(&self, output: &mut String) {
         write!(output, "/vpclinks").expect("formatting should succeed")
     }
@@ -3180,74 +3303,83 @@ pub mod delete_api_key_input {
             self.api_key = Some(inp);
             self
         }
-        /// Consumes the builder and constructs an Operation<[`DeleteApiKey`](crate::operation::DeleteApiKey)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`DeleteApiKeyInput`](crate::input::DeleteApiKeyInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::DeleteApiKey,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op = crate::operation::DeleteApiKey::new(crate::input::DeleteApiKeyInput {
-                    api_key: self.api_key.unwrap_or_default(),
-                });
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .request_mut()
-                    .headers_mut()
-                    .insert("Accept", http::HeaderValue::from_static("application/json"));
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
-                }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op).with_metadata(
-                    smithy_http::operation::Metadata::new("DeleteApiKey", "apigateway"),
-                );
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
+        ) -> Result<crate::input::DeleteApiKeyInput, smithy_http::operation::BuildError> {
+            Ok(crate::input::DeleteApiKeyInput {
+                api_key: self.api_key.unwrap_or_default(),
             })
         }
     }
 }
 impl DeleteApiKeyInput {
+    /// Consumes the builder and constructs an Operation<[`DeleteApiKey`](crate::operation::DeleteApiKey)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::DeleteApiKey,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .request_mut()
+                .headers_mut()
+                .insert("Accept", http::HeaderValue::from_static("application/json"));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::DeleteApiKey::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "DeleteApiKey",
+                "apigateway",
+            ));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     fn uri_base(&self, output: &mut String) {
         write!(
             output,
@@ -3318,76 +3450,85 @@ pub mod delete_authorizer_input {
             self.authorizer_id = Some(inp);
             self
         }
-        /// Consumes the builder and constructs an Operation<[`DeleteAuthorizer`](crate::operation::DeleteAuthorizer)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`DeleteAuthorizerInput`](crate::input::DeleteAuthorizerInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::DeleteAuthorizer,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op =
-                    crate::operation::DeleteAuthorizer::new(crate::input::DeleteAuthorizerInput {
-                        rest_api_id: self.rest_api_id.unwrap_or_default(),
-                        authorizer_id: self.authorizer_id.unwrap_or_default(),
-                    });
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .request_mut()
-                    .headers_mut()
-                    .insert("Accept", http::HeaderValue::from_static("application/json"));
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
-                }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op).with_metadata(
-                    smithy_http::operation::Metadata::new("DeleteAuthorizer", "apigateway"),
-                );
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
+        ) -> Result<crate::input::DeleteAuthorizerInput, smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::DeleteAuthorizerInput {
+                rest_api_id: self.rest_api_id.unwrap_or_default(),
+                authorizer_id: self.authorizer_id.unwrap_or_default(),
             })
         }
     }
 }
 impl DeleteAuthorizerInput {
+    /// Consumes the builder and constructs an Operation<[`DeleteAuthorizer`](crate::operation::DeleteAuthorizer)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::DeleteAuthorizer,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .request_mut()
+                .headers_mut()
+                .insert("Accept", http::HeaderValue::from_static("application/json"));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::DeleteAuthorizer::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "DeleteAuthorizer",
+                "apigateway",
+            ));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     fn uri_base(&self, output: &mut String) {
         write!(
             output,
@@ -3460,77 +3601,85 @@ pub mod delete_base_path_mapping_input {
             self.base_path = Some(inp);
             self
         }
-        /// Consumes the builder and constructs an Operation<[`DeleteBasePathMapping`](crate::operation::DeleteBasePathMapping)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`DeleteBasePathMappingInput`](crate::input::DeleteBasePathMappingInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::DeleteBasePathMapping,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op = crate::operation::DeleteBasePathMapping::new(
-                    crate::input::DeleteBasePathMappingInput {
-                        domain_name: self.domain_name.unwrap_or_default(),
-                        base_path: self.base_path.unwrap_or_default(),
-                    },
-                );
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .request_mut()
-                    .headers_mut()
-                    .insert("Accept", http::HeaderValue::from_static("application/json"));
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
-                }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op).with_metadata(
-                    smithy_http::operation::Metadata::new("DeleteBasePathMapping", "apigateway"),
-                );
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
+        ) -> Result<crate::input::DeleteBasePathMappingInput, smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::DeleteBasePathMappingInput {
+                domain_name: self.domain_name.unwrap_or_default(),
+                base_path: self.base_path.unwrap_or_default(),
             })
         }
     }
 }
 impl DeleteBasePathMappingInput {
+    /// Consumes the builder and constructs an Operation<[`DeleteBasePathMapping`](crate::operation::DeleteBasePathMapping)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::DeleteBasePathMapping,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .request_mut()
+                .headers_mut()
+                .insert("Accept", http::HeaderValue::from_static("application/json"));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::DeleteBasePathMapping::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "DeleteBasePathMapping",
+                "apigateway",
+            ));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     fn uri_base(&self, output: &mut String) {
         write!(
             output,
@@ -3592,76 +3741,84 @@ pub mod delete_client_certificate_input {
             self.client_certificate_id = Some(inp);
             self
         }
-        /// Consumes the builder and constructs an Operation<[`DeleteClientCertificate`](crate::operation::DeleteClientCertificate)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`DeleteClientCertificateInput`](crate::input::DeleteClientCertificateInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::DeleteClientCertificate,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op = crate::operation::DeleteClientCertificate::new(
-                    crate::input::DeleteClientCertificateInput {
-                        client_certificate_id: self.client_certificate_id.unwrap_or_default(),
-                    },
-                );
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .request_mut()
-                    .headers_mut()
-                    .insert("Accept", http::HeaderValue::from_static("application/json"));
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
-                }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op).with_metadata(
-                    smithy_http::operation::Metadata::new("DeleteClientCertificate", "apigateway"),
-                );
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
+        ) -> Result<crate::input::DeleteClientCertificateInput, smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::DeleteClientCertificateInput {
+                client_certificate_id: self.client_certificate_id.unwrap_or_default(),
             })
         }
     }
 }
 impl DeleteClientCertificateInput {
+    /// Consumes the builder and constructs an Operation<[`DeleteClientCertificate`](crate::operation::DeleteClientCertificate)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::DeleteClientCertificate,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .request_mut()
+                .headers_mut()
+                .insert("Accept", http::HeaderValue::from_static("application/json"));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::DeleteClientCertificate::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "DeleteClientCertificate",
+                "apigateway",
+            ));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     fn uri_base(&self, output: &mut String) {
         write!(
             output,
@@ -3733,76 +3890,85 @@ pub mod delete_deployment_input {
             self.deployment_id = Some(inp);
             self
         }
-        /// Consumes the builder and constructs an Operation<[`DeleteDeployment`](crate::operation::DeleteDeployment)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`DeleteDeploymentInput`](crate::input::DeleteDeploymentInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::DeleteDeployment,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op =
-                    crate::operation::DeleteDeployment::new(crate::input::DeleteDeploymentInput {
-                        rest_api_id: self.rest_api_id.unwrap_or_default(),
-                        deployment_id: self.deployment_id.unwrap_or_default(),
-                    });
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .request_mut()
-                    .headers_mut()
-                    .insert("Accept", http::HeaderValue::from_static("application/json"));
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
-                }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op).with_metadata(
-                    smithy_http::operation::Metadata::new("DeleteDeployment", "apigateway"),
-                );
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
+        ) -> Result<crate::input::DeleteDeploymentInput, smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::DeleteDeploymentInput {
+                rest_api_id: self.rest_api_id.unwrap_or_default(),
+                deployment_id: self.deployment_id.unwrap_or_default(),
             })
         }
     }
 }
 impl DeleteDeploymentInput {
+    /// Consumes the builder and constructs an Operation<[`DeleteDeployment`](crate::operation::DeleteDeployment)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::DeleteDeployment,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .request_mut()
+                .headers_mut()
+                .insert("Accept", http::HeaderValue::from_static("application/json"));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::DeleteDeployment::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "DeleteDeployment",
+                "apigateway",
+            ));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     fn uri_base(&self, output: &mut String) {
         write!(
             output,
@@ -3874,77 +4040,85 @@ pub mod delete_documentation_part_input {
             self.documentation_part_id = Some(inp);
             self
         }
-        /// Consumes the builder and constructs an Operation<[`DeleteDocumentationPart`](crate::operation::DeleteDocumentationPart)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`DeleteDocumentationPartInput`](crate::input::DeleteDocumentationPartInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::DeleteDocumentationPart,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op = crate::operation::DeleteDocumentationPart::new(
-                    crate::input::DeleteDocumentationPartInput {
-                        rest_api_id: self.rest_api_id.unwrap_or_default(),
-                        documentation_part_id: self.documentation_part_id.unwrap_or_default(),
-                    },
-                );
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .request_mut()
-                    .headers_mut()
-                    .insert("Accept", http::HeaderValue::from_static("application/json"));
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
-                }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op).with_metadata(
-                    smithy_http::operation::Metadata::new("DeleteDocumentationPart", "apigateway"),
-                );
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
+        ) -> Result<crate::input::DeleteDocumentationPartInput, smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::DeleteDocumentationPartInput {
+                rest_api_id: self.rest_api_id.unwrap_or_default(),
+                documentation_part_id: self.documentation_part_id.unwrap_or_default(),
             })
         }
     }
 }
 impl DeleteDocumentationPartInput {
+    /// Consumes the builder and constructs an Operation<[`DeleteDocumentationPart`](crate::operation::DeleteDocumentationPart)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::DeleteDocumentationPart,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .request_mut()
+                .headers_mut()
+                .insert("Accept", http::HeaderValue::from_static("application/json"));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::DeleteDocumentationPart::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "DeleteDocumentationPart",
+                "apigateway",
+            ));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     fn uri_base(&self, output: &mut String) {
         write!(
             output,
@@ -4017,80 +4191,85 @@ pub mod delete_documentation_version_input {
             self.documentation_version = Some(inp);
             self
         }
-        /// Consumes the builder and constructs an Operation<[`DeleteDocumentationVersion`](crate::operation::DeleteDocumentationVersion)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`DeleteDocumentationVersionInput`](crate::input::DeleteDocumentationVersionInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::DeleteDocumentationVersion,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op = crate::operation::DeleteDocumentationVersion::new(
-                    crate::input::DeleteDocumentationVersionInput {
-                        rest_api_id: self.rest_api_id.unwrap_or_default(),
-                        documentation_version: self.documentation_version.unwrap_or_default(),
-                    },
-                );
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .request_mut()
-                    .headers_mut()
-                    .insert("Accept", http::HeaderValue::from_static("application/json"));
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
-                }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op).with_metadata(
-                    smithy_http::operation::Metadata::new(
-                        "DeleteDocumentationVersion",
-                        "apigateway",
-                    ),
-                );
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
+        ) -> Result<crate::input::DeleteDocumentationVersionInput, smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::DeleteDocumentationVersionInput {
+                rest_api_id: self.rest_api_id.unwrap_or_default(),
+                documentation_version: self.documentation_version.unwrap_or_default(),
             })
         }
     }
 }
 impl DeleteDocumentationVersionInput {
+    /// Consumes the builder and constructs an Operation<[`DeleteDocumentationVersion`](crate::operation::DeleteDocumentationVersion)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::DeleteDocumentationVersion,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .request_mut()
+                .headers_mut()
+                .insert("Accept", http::HeaderValue::from_static("application/json"));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::DeleteDocumentationVersion::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "DeleteDocumentationVersion",
+                "apigateway",
+            ));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     fn uri_base(&self, output: &mut String) {
         write!(
             output,
@@ -4153,75 +4332,84 @@ pub mod delete_domain_name_input {
             self.domain_name = Some(inp);
             self
         }
-        /// Consumes the builder and constructs an Operation<[`DeleteDomainName`](crate::operation::DeleteDomainName)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`DeleteDomainNameInput`](crate::input::DeleteDomainNameInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::DeleteDomainName,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op =
-                    crate::operation::DeleteDomainName::new(crate::input::DeleteDomainNameInput {
-                        domain_name: self.domain_name.unwrap_or_default(),
-                    });
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .request_mut()
-                    .headers_mut()
-                    .insert("Accept", http::HeaderValue::from_static("application/json"));
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
-                }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op).with_metadata(
-                    smithy_http::operation::Metadata::new("DeleteDomainName", "apigateway"),
-                );
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
+        ) -> Result<crate::input::DeleteDomainNameInput, smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::DeleteDomainNameInput {
+                domain_name: self.domain_name.unwrap_or_default(),
             })
         }
     }
 }
 impl DeleteDomainNameInput {
+    /// Consumes the builder and constructs an Operation<[`DeleteDomainName`](crate::operation::DeleteDomainName)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::DeleteDomainName,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .request_mut()
+                .headers_mut()
+                .insert("Accept", http::HeaderValue::from_static("application/json"));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::DeleteDomainName::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "DeleteDomainName",
+                "apigateway",
+            ));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     fn uri_base(&self, output: &mut String) {
         write!(
             output,
@@ -4292,83 +4480,93 @@ pub mod delete_gateway_response_input {
             self.response_type = Some(inp);
             self
         }
-        /// Consumes the builder and constructs an Operation<[`DeleteGatewayResponse`](crate::operation::DeleteGatewayResponse)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`DeleteGatewayResponseInput`](crate::input::DeleteGatewayResponseInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::DeleteGatewayResponse,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op = crate::operation::DeleteGatewayResponse::new(
-                    crate::input::DeleteGatewayResponseInput {
-                        rest_api_id: self.rest_api_id
-                            .unwrap_or_default()
-                        ,
-                        response_type: self.response_type
-                            .ok_or(
-                                smithy_http::operation::BuildError::MissingField { field: "response_type", details: "response_type was not specified but it is required when building DeleteGatewayResponse"}
-                            )?
-                        ,
-                    }
-                );
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .request_mut()
-                    .headers_mut()
-                    .insert("Accept", http::HeaderValue::from_static("application/json"));
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
+        ) -> Result<crate::input::DeleteGatewayResponseInput, smithy_http::operation::BuildError>
+        {
+            Ok(
+                crate::input::DeleteGatewayResponseInput {
+                    rest_api_id: self.rest_api_id
+                        .unwrap_or_default()
+                    ,
+                    response_type: self.response_type
+                        .ok_or(
+                            smithy_http::operation::BuildError::MissingField { field: "response_type", details: "response_type was not specified but it is required when building DeleteGatewayResponseInput"}
+                        )?
+                    ,
                 }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op).with_metadata(
-                    smithy_http::operation::Metadata::new("DeleteGatewayResponse", "apigateway"),
-                );
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
-            })
+            )
         }
     }
 }
 impl DeleteGatewayResponseInput {
+    /// Consumes the builder and constructs an Operation<[`DeleteGatewayResponse`](crate::operation::DeleteGatewayResponse)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::DeleteGatewayResponse,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .request_mut()
+                .headers_mut()
+                .insert("Accept", http::HeaderValue::from_static("application/json"));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::DeleteGatewayResponse::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "DeleteGatewayResponse",
+                "apigateway",
+            ));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     fn uri_base(&self, output: &mut String) {
         write!(
             output,
@@ -4450,78 +4648,86 @@ pub mod delete_integration_input {
             self.http_method = Some(inp);
             self
         }
-        /// Consumes the builder and constructs an Operation<[`DeleteIntegration`](crate::operation::DeleteIntegration)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`DeleteIntegrationInput`](crate::input::DeleteIntegrationInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::DeleteIntegration,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op = crate::operation::DeleteIntegration::new(
-                    crate::input::DeleteIntegrationInput {
-                        rest_api_id: self.rest_api_id.unwrap_or_default(),
-                        resource_id: self.resource_id.unwrap_or_default(),
-                        http_method: self.http_method.unwrap_or_default(),
-                    },
-                );
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .request_mut()
-                    .headers_mut()
-                    .insert("Accept", http::HeaderValue::from_static("application/json"));
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
-                }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op).with_metadata(
-                    smithy_http::operation::Metadata::new("DeleteIntegration", "apigateway"),
-                );
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
+        ) -> Result<crate::input::DeleteIntegrationInput, smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::DeleteIntegrationInput {
+                rest_api_id: self.rest_api_id.unwrap_or_default(),
+                resource_id: self.resource_id.unwrap_or_default(),
+                http_method: self.http_method.unwrap_or_default(),
             })
         }
     }
 }
 impl DeleteIntegrationInput {
+    /// Consumes the builder and constructs an Operation<[`DeleteIntegration`](crate::operation::DeleteIntegration)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::DeleteIntegration,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .request_mut()
+                .headers_mut()
+                .insert("Accept", http::HeaderValue::from_static("application/json"));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::DeleteIntegration::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "DeleteIntegration",
+                "apigateway",
+            ));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     fn uri_base(&self, output: &mut String) {
         write!(
             output,
@@ -4614,82 +4820,87 @@ pub mod delete_integration_response_input {
             self.status_code = Some(inp);
             self
         }
-        /// Consumes the builder and constructs an Operation<[`DeleteIntegrationResponse`](crate::operation::DeleteIntegrationResponse)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`DeleteIntegrationResponseInput`](crate::input::DeleteIntegrationResponseInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::DeleteIntegrationResponse,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op = crate::operation::DeleteIntegrationResponse::new(
-                    crate::input::DeleteIntegrationResponseInput {
-                        rest_api_id: self.rest_api_id.unwrap_or_default(),
-                        resource_id: self.resource_id.unwrap_or_default(),
-                        http_method: self.http_method.unwrap_or_default(),
-                        status_code: self.status_code.unwrap_or_default(),
-                    },
-                );
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .request_mut()
-                    .headers_mut()
-                    .insert("Accept", http::HeaderValue::from_static("application/json"));
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
-                }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op).with_metadata(
-                    smithy_http::operation::Metadata::new(
-                        "DeleteIntegrationResponse",
-                        "apigateway",
-                    ),
-                );
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
+        ) -> Result<crate::input::DeleteIntegrationResponseInput, smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::DeleteIntegrationResponseInput {
+                rest_api_id: self.rest_api_id.unwrap_or_default(),
+                resource_id: self.resource_id.unwrap_or_default(),
+                http_method: self.http_method.unwrap_or_default(),
+                status_code: self.status_code.unwrap_or_default(),
             })
         }
     }
 }
 impl DeleteIntegrationResponseInput {
+    /// Consumes the builder and constructs an Operation<[`DeleteIntegrationResponse`](crate::operation::DeleteIntegrationResponse)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::DeleteIntegrationResponse,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .request_mut()
+                .headers_mut()
+                .insert("Accept", http::HeaderValue::from_static("application/json"));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::DeleteIntegrationResponse::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "DeleteIntegrationResponse",
+                "apigateway",
+            ));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     fn uri_base(&self, output: &mut String) {
         write!(output, "/restapis/{restApiId}/resources/{resourceId}/methods/{httpMethod}/integration/responses/{statusCode}", restApiId = smithy_http::label::fmt_string(&self.rest_api_id, false), resourceId = smithy_http::label::fmt_string(&self.resource_id, false), httpMethod = smithy_http::label::fmt_string(&self.http_method, false), statusCode = smithy_http::label::fmt_string(&self.status_code, false)).expect("formatting should succeed")
     }
@@ -4765,76 +4976,85 @@ pub mod delete_method_input {
             self.http_method = Some(inp);
             self
         }
-        /// Consumes the builder and constructs an Operation<[`DeleteMethod`](crate::operation::DeleteMethod)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`DeleteMethodInput`](crate::input::DeleteMethodInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::DeleteMethod,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op = crate::operation::DeleteMethod::new(crate::input::DeleteMethodInput {
-                    rest_api_id: self.rest_api_id.unwrap_or_default(),
-                    resource_id: self.resource_id.unwrap_or_default(),
-                    http_method: self.http_method.unwrap_or_default(),
-                });
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .request_mut()
-                    .headers_mut()
-                    .insert("Accept", http::HeaderValue::from_static("application/json"));
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
-                }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op).with_metadata(
-                    smithy_http::operation::Metadata::new("DeleteMethod", "apigateway"),
-                );
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
+        ) -> Result<crate::input::DeleteMethodInput, smithy_http::operation::BuildError> {
+            Ok(crate::input::DeleteMethodInput {
+                rest_api_id: self.rest_api_id.unwrap_or_default(),
+                resource_id: self.resource_id.unwrap_or_default(),
+                http_method: self.http_method.unwrap_or_default(),
             })
         }
     }
 }
 impl DeleteMethodInput {
+    /// Consumes the builder and constructs an Operation<[`DeleteMethod`](crate::operation::DeleteMethod)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::DeleteMethod,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .request_mut()
+                .headers_mut()
+                .insert("Accept", http::HeaderValue::from_static("application/json"));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::DeleteMethod::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "DeleteMethod",
+                "apigateway",
+            ));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     fn uri_base(&self, output: &mut String) {
         write!(
             output,
@@ -4927,79 +5147,87 @@ pub mod delete_method_response_input {
             self.status_code = Some(inp);
             self
         }
-        /// Consumes the builder and constructs an Operation<[`DeleteMethodResponse`](crate::operation::DeleteMethodResponse)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`DeleteMethodResponseInput`](crate::input::DeleteMethodResponseInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::DeleteMethodResponse,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op = crate::operation::DeleteMethodResponse::new(
-                    crate::input::DeleteMethodResponseInput {
-                        rest_api_id: self.rest_api_id.unwrap_or_default(),
-                        resource_id: self.resource_id.unwrap_or_default(),
-                        http_method: self.http_method.unwrap_or_default(),
-                        status_code: self.status_code.unwrap_or_default(),
-                    },
-                );
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .request_mut()
-                    .headers_mut()
-                    .insert("Accept", http::HeaderValue::from_static("application/json"));
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
-                }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op).with_metadata(
-                    smithy_http::operation::Metadata::new("DeleteMethodResponse", "apigateway"),
-                );
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
+        ) -> Result<crate::input::DeleteMethodResponseInput, smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::DeleteMethodResponseInput {
+                rest_api_id: self.rest_api_id.unwrap_or_default(),
+                resource_id: self.resource_id.unwrap_or_default(),
+                http_method: self.http_method.unwrap_or_default(),
+                status_code: self.status_code.unwrap_or_default(),
             })
         }
     }
 }
 impl DeleteMethodResponseInput {
+    /// Consumes the builder and constructs an Operation<[`DeleteMethodResponse`](crate::operation::DeleteMethodResponse)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::DeleteMethodResponse,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .request_mut()
+                .headers_mut()
+                .insert("Accept", http::HeaderValue::from_static("application/json"));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::DeleteMethodResponse::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "DeleteMethodResponse",
+                "apigateway",
+            ));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     fn uri_base(&self, output: &mut String) {
         write!(output, "/restapis/{restApiId}/resources/{resourceId}/methods/{httpMethod}/responses/{statusCode}", restApiId = smithy_http::label::fmt_string(&self.rest_api_id, false), resourceId = smithy_http::label::fmt_string(&self.resource_id, false), httpMethod = smithy_http::label::fmt_string(&self.http_method, false), statusCode = smithy_http::label::fmt_string(&self.status_code, false)).expect("formatting should succeed")
     }
@@ -5065,75 +5293,84 @@ pub mod delete_model_input {
             self.model_name = Some(inp);
             self
         }
-        /// Consumes the builder and constructs an Operation<[`DeleteModel`](crate::operation::DeleteModel)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`DeleteModelInput`](crate::input::DeleteModelInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::DeleteModel,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op = crate::operation::DeleteModel::new(crate::input::DeleteModelInput {
-                    rest_api_id: self.rest_api_id.unwrap_or_default(),
-                    model_name: self.model_name.unwrap_or_default(),
-                });
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .request_mut()
-                    .headers_mut()
-                    .insert("Accept", http::HeaderValue::from_static("application/json"));
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
-                }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op).with_metadata(
-                    smithy_http::operation::Metadata::new("DeleteModel", "apigateway"),
-                );
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
+        ) -> Result<crate::input::DeleteModelInput, smithy_http::operation::BuildError> {
+            Ok(crate::input::DeleteModelInput {
+                rest_api_id: self.rest_api_id.unwrap_or_default(),
+                model_name: self.model_name.unwrap_or_default(),
             })
         }
     }
 }
 impl DeleteModelInput {
+    /// Consumes the builder and constructs an Operation<[`DeleteModel`](crate::operation::DeleteModel)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::DeleteModel,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .request_mut()
+                .headers_mut()
+                .insert("Accept", http::HeaderValue::from_static("application/json"));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::DeleteModel::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "DeleteModel",
+                "apigateway",
+            ));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     fn uri_base(&self, output: &mut String) {
         write!(
             output,
@@ -5205,77 +5442,85 @@ pub mod delete_request_validator_input {
             self.request_validator_id = Some(inp);
             self
         }
-        /// Consumes the builder and constructs an Operation<[`DeleteRequestValidator`](crate::operation::DeleteRequestValidator)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`DeleteRequestValidatorInput`](crate::input::DeleteRequestValidatorInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::DeleteRequestValidator,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op = crate::operation::DeleteRequestValidator::new(
-                    crate::input::DeleteRequestValidatorInput {
-                        rest_api_id: self.rest_api_id.unwrap_or_default(),
-                        request_validator_id: self.request_validator_id.unwrap_or_default(),
-                    },
-                );
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .request_mut()
-                    .headers_mut()
-                    .insert("Accept", http::HeaderValue::from_static("application/json"));
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
-                }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op).with_metadata(
-                    smithy_http::operation::Metadata::new("DeleteRequestValidator", "apigateway"),
-                );
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
+        ) -> Result<crate::input::DeleteRequestValidatorInput, smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::DeleteRequestValidatorInput {
+                rest_api_id: self.rest_api_id.unwrap_or_default(),
+                request_validator_id: self.request_validator_id.unwrap_or_default(),
             })
         }
     }
 }
 impl DeleteRequestValidatorInput {
+    /// Consumes the builder and constructs an Operation<[`DeleteRequestValidator`](crate::operation::DeleteRequestValidator)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::DeleteRequestValidator,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .request_mut()
+                .headers_mut()
+                .insert("Accept", http::HeaderValue::from_static("application/json"));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::DeleteRequestValidator::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "DeleteRequestValidator",
+                "apigateway",
+            ));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     fn uri_base(&self, output: &mut String) {
         write!(
             output,
@@ -5347,75 +5592,84 @@ pub mod delete_resource_input {
             self.resource_id = Some(inp);
             self
         }
-        /// Consumes the builder and constructs an Operation<[`DeleteResource`](crate::operation::DeleteResource)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`DeleteResourceInput`](crate::input::DeleteResourceInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::DeleteResource,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op = crate::operation::DeleteResource::new(crate::input::DeleteResourceInput {
-                    rest_api_id: self.rest_api_id.unwrap_or_default(),
-                    resource_id: self.resource_id.unwrap_or_default(),
-                });
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .request_mut()
-                    .headers_mut()
-                    .insert("Accept", http::HeaderValue::from_static("application/json"));
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
-                }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op).with_metadata(
-                    smithy_http::operation::Metadata::new("DeleteResource", "apigateway"),
-                );
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
+        ) -> Result<crate::input::DeleteResourceInput, smithy_http::operation::BuildError> {
+            Ok(crate::input::DeleteResourceInput {
+                rest_api_id: self.rest_api_id.unwrap_or_default(),
+                resource_id: self.resource_id.unwrap_or_default(),
             })
         }
     }
 }
 impl DeleteResourceInput {
+    /// Consumes the builder and constructs an Operation<[`DeleteResource`](crate::operation::DeleteResource)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::DeleteResource,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .request_mut()
+                .headers_mut()
+                .insert("Accept", http::HeaderValue::from_static("application/json"));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::DeleteResource::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "DeleteResource",
+                "apigateway",
+            ));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     fn uri_base(&self, output: &mut String) {
         write!(
             output,
@@ -5477,74 +5731,83 @@ pub mod delete_rest_api_input {
             self.rest_api_id = Some(inp);
             self
         }
-        /// Consumes the builder and constructs an Operation<[`DeleteRestApi`](crate::operation::DeleteRestApi)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`DeleteRestApiInput`](crate::input::DeleteRestApiInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::DeleteRestApi,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op = crate::operation::DeleteRestApi::new(crate::input::DeleteRestApiInput {
-                    rest_api_id: self.rest_api_id.unwrap_or_default(),
-                });
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .request_mut()
-                    .headers_mut()
-                    .insert("Accept", http::HeaderValue::from_static("application/json"));
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
-                }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op).with_metadata(
-                    smithy_http::operation::Metadata::new("DeleteRestApi", "apigateway"),
-                );
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
+        ) -> Result<crate::input::DeleteRestApiInput, smithy_http::operation::BuildError> {
+            Ok(crate::input::DeleteRestApiInput {
+                rest_api_id: self.rest_api_id.unwrap_or_default(),
             })
         }
     }
 }
 impl DeleteRestApiInput {
+    /// Consumes the builder and constructs an Operation<[`DeleteRestApi`](crate::operation::DeleteRestApi)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::DeleteRestApi,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .request_mut()
+                .headers_mut()
+                .insert("Accept", http::HeaderValue::from_static("application/json"));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::DeleteRestApi::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "DeleteRestApi",
+                "apigateway",
+            ));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     fn uri_base(&self, output: &mut String) {
         write!(
             output,
@@ -5615,75 +5878,84 @@ pub mod delete_stage_input {
             self.stage_name = Some(inp);
             self
         }
-        /// Consumes the builder and constructs an Operation<[`DeleteStage`](crate::operation::DeleteStage)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`DeleteStageInput`](crate::input::DeleteStageInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::DeleteStage,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op = crate::operation::DeleteStage::new(crate::input::DeleteStageInput {
-                    rest_api_id: self.rest_api_id.unwrap_or_default(),
-                    stage_name: self.stage_name.unwrap_or_default(),
-                });
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .request_mut()
-                    .headers_mut()
-                    .insert("Accept", http::HeaderValue::from_static("application/json"));
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
-                }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op).with_metadata(
-                    smithy_http::operation::Metadata::new("DeleteStage", "apigateway"),
-                );
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
+        ) -> Result<crate::input::DeleteStageInput, smithy_http::operation::BuildError> {
+            Ok(crate::input::DeleteStageInput {
+                rest_api_id: self.rest_api_id.unwrap_or_default(),
+                stage_name: self.stage_name.unwrap_or_default(),
             })
         }
     }
 }
 impl DeleteStageInput {
+    /// Consumes the builder and constructs an Operation<[`DeleteStage`](crate::operation::DeleteStage)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::DeleteStage,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .request_mut()
+                .headers_mut()
+                .insert("Accept", http::HeaderValue::from_static("application/json"));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::DeleteStage::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "DeleteStage",
+                "apigateway",
+            ));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     fn uri_base(&self, output: &mut String) {
         write!(
             output,
@@ -5745,75 +6017,84 @@ pub mod delete_usage_plan_input {
             self.usage_plan_id = Some(inp);
             self
         }
-        /// Consumes the builder and constructs an Operation<[`DeleteUsagePlan`](crate::operation::DeleteUsagePlan)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`DeleteUsagePlanInput`](crate::input::DeleteUsagePlanInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::DeleteUsagePlan,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op =
-                    crate::operation::DeleteUsagePlan::new(crate::input::DeleteUsagePlanInput {
-                        usage_plan_id: self.usage_plan_id.unwrap_or_default(),
-                    });
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .request_mut()
-                    .headers_mut()
-                    .insert("Accept", http::HeaderValue::from_static("application/json"));
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
-                }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op).with_metadata(
-                    smithy_http::operation::Metadata::new("DeleteUsagePlan", "apigateway"),
-                );
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
+        ) -> Result<crate::input::DeleteUsagePlanInput, smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::DeleteUsagePlanInput {
+                usage_plan_id: self.usage_plan_id.unwrap_or_default(),
             })
         }
     }
 }
 impl DeleteUsagePlanInput {
+    /// Consumes the builder and constructs an Operation<[`DeleteUsagePlan`](crate::operation::DeleteUsagePlan)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::DeleteUsagePlan,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .request_mut()
+                .headers_mut()
+                .insert("Accept", http::HeaderValue::from_static("application/json"));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::DeleteUsagePlan::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "DeleteUsagePlan",
+                "apigateway",
+            ));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     fn uri_base(&self, output: &mut String) {
         write!(
             output,
@@ -5884,77 +6165,85 @@ pub mod delete_usage_plan_key_input {
             self.key_id = Some(inp);
             self
         }
-        /// Consumes the builder and constructs an Operation<[`DeleteUsagePlanKey`](crate::operation::DeleteUsagePlanKey)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`DeleteUsagePlanKeyInput`](crate::input::DeleteUsagePlanKeyInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::DeleteUsagePlanKey,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op = crate::operation::DeleteUsagePlanKey::new(
-                    crate::input::DeleteUsagePlanKeyInput {
-                        usage_plan_id: self.usage_plan_id.unwrap_or_default(),
-                        key_id: self.key_id.unwrap_or_default(),
-                    },
-                );
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .request_mut()
-                    .headers_mut()
-                    .insert("Accept", http::HeaderValue::from_static("application/json"));
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
-                }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op).with_metadata(
-                    smithy_http::operation::Metadata::new("DeleteUsagePlanKey", "apigateway"),
-                );
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
+        ) -> Result<crate::input::DeleteUsagePlanKeyInput, smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::DeleteUsagePlanKeyInput {
+                usage_plan_id: self.usage_plan_id.unwrap_or_default(),
+                key_id: self.key_id.unwrap_or_default(),
             })
         }
     }
 }
 impl DeleteUsagePlanKeyInput {
+    /// Consumes the builder and constructs an Operation<[`DeleteUsagePlanKey`](crate::operation::DeleteUsagePlanKey)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::DeleteUsagePlanKey,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .request_mut()
+                .headers_mut()
+                .insert("Accept", http::HeaderValue::from_static("application/json"));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::DeleteUsagePlanKey::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "DeleteUsagePlanKey",
+                "apigateway",
+            ));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     fn uri_base(&self, output: &mut String) {
         write!(
             output,
@@ -6016,74 +6305,83 @@ pub mod delete_vpc_link_input {
             self.vpc_link_id = Some(inp);
             self
         }
-        /// Consumes the builder and constructs an Operation<[`DeleteVpcLink`](crate::operation::DeleteVpcLink)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`DeleteVpcLinkInput`](crate::input::DeleteVpcLinkInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::DeleteVpcLink,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op = crate::operation::DeleteVpcLink::new(crate::input::DeleteVpcLinkInput {
-                    vpc_link_id: self.vpc_link_id.unwrap_or_default(),
-                });
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .request_mut()
-                    .headers_mut()
-                    .insert("Accept", http::HeaderValue::from_static("application/json"));
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
-                }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op).with_metadata(
-                    smithy_http::operation::Metadata::new("DeleteVpcLink", "apigateway"),
-                );
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
+        ) -> Result<crate::input::DeleteVpcLinkInput, smithy_http::operation::BuildError> {
+            Ok(crate::input::DeleteVpcLinkInput {
+                vpc_link_id: self.vpc_link_id.unwrap_or_default(),
             })
         }
     }
 }
 impl DeleteVpcLinkInput {
+    /// Consumes the builder and constructs an Operation<[`DeleteVpcLink`](crate::operation::DeleteVpcLink)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::DeleteVpcLink,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .request_mut()
+                .headers_mut()
+                .insert("Accept", http::HeaderValue::from_static("application/json"));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::DeleteVpcLink::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "DeleteVpcLink",
+                "apigateway",
+            ));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     fn uri_base(&self, output: &mut String) {
         write!(
             output,
@@ -6154,80 +6452,85 @@ pub mod flush_stage_authorizers_cache_input {
             self.stage_name = Some(inp);
             self
         }
-        /// Consumes the builder and constructs an Operation<[`FlushStageAuthorizersCache`](crate::operation::FlushStageAuthorizersCache)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`FlushStageAuthorizersCacheInput`](crate::input::FlushStageAuthorizersCacheInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::FlushStageAuthorizersCache,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op = crate::operation::FlushStageAuthorizersCache::new(
-                    crate::input::FlushStageAuthorizersCacheInput {
-                        rest_api_id: self.rest_api_id.unwrap_or_default(),
-                        stage_name: self.stage_name.unwrap_or_default(),
-                    },
-                );
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .request_mut()
-                    .headers_mut()
-                    .insert("Accept", http::HeaderValue::from_static("application/json"));
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
-                }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op).with_metadata(
-                    smithy_http::operation::Metadata::new(
-                        "FlushStageAuthorizersCache",
-                        "apigateway",
-                    ),
-                );
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
+        ) -> Result<crate::input::FlushStageAuthorizersCacheInput, smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::FlushStageAuthorizersCacheInput {
+                rest_api_id: self.rest_api_id.unwrap_or_default(),
+                stage_name: self.stage_name.unwrap_or_default(),
             })
         }
     }
 }
 impl FlushStageAuthorizersCacheInput {
+    /// Consumes the builder and constructs an Operation<[`FlushStageAuthorizersCache`](crate::operation::FlushStageAuthorizersCache)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::FlushStageAuthorizersCache,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .request_mut()
+                .headers_mut()
+                .insert("Accept", http::HeaderValue::from_static("application/json"));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::FlushStageAuthorizersCache::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "FlushStageAuthorizersCache",
+                "apigateway",
+            ));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     fn uri_base(&self, output: &mut String) {
         write!(
             output,
@@ -6299,76 +6602,85 @@ pub mod flush_stage_cache_input {
             self.stage_name = Some(inp);
             self
         }
-        /// Consumes the builder and constructs an Operation<[`FlushStageCache`](crate::operation::FlushStageCache)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`FlushStageCacheInput`](crate::input::FlushStageCacheInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::FlushStageCache,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op =
-                    crate::operation::FlushStageCache::new(crate::input::FlushStageCacheInput {
-                        rest_api_id: self.rest_api_id.unwrap_or_default(),
-                        stage_name: self.stage_name.unwrap_or_default(),
-                    });
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .request_mut()
-                    .headers_mut()
-                    .insert("Accept", http::HeaderValue::from_static("application/json"));
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
-                }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op).with_metadata(
-                    smithy_http::operation::Metadata::new("FlushStageCache", "apigateway"),
-                );
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
+        ) -> Result<crate::input::FlushStageCacheInput, smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::FlushStageCacheInput {
+                rest_api_id: self.rest_api_id.unwrap_or_default(),
+                stage_name: self.stage_name.unwrap_or_default(),
             })
         }
     }
 }
 impl FlushStageCacheInput {
+    /// Consumes the builder and constructs an Operation<[`FlushStageCache`](crate::operation::FlushStageCache)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::FlushStageCache,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .request_mut()
+                .headers_mut()
+                .insert("Accept", http::HeaderValue::from_static("application/json"));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::FlushStageCache::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "FlushStageCache",
+                "apigateway",
+            ));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     fn uri_base(&self, output: &mut String) {
         write!(
             output,
@@ -6452,80 +6764,85 @@ pub mod generate_client_certificate_input {
             self.tags = inp;
             self
         }
-        /// Consumes the builder and constructs an Operation<[`GenerateClientCertificate`](crate::operation::GenerateClientCertificate)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`GenerateClientCertificateInput`](crate::input::GenerateClientCertificateInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::GenerateClientCertificate,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op = crate::operation::GenerateClientCertificate::new(
-                    crate::input::GenerateClientCertificateInput {
-                        description: self.description,
-                        tags: self.tags,
-                    },
-                );
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .request_mut()
-                    .headers_mut()
-                    .insert("Accept", http::HeaderValue::from_static("application/json"));
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
-                }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op).with_metadata(
-                    smithy_http::operation::Metadata::new(
-                        "GenerateClientCertificate",
-                        "apigateway",
-                    ),
-                );
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
+        ) -> Result<crate::input::GenerateClientCertificateInput, smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::GenerateClientCertificateInput {
+                description: self.description,
+                tags: self.tags,
             })
         }
     }
 }
 impl GenerateClientCertificateInput {
+    /// Consumes the builder and constructs an Operation<[`GenerateClientCertificate`](crate::operation::GenerateClientCertificate)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::GenerateClientCertificate,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .request_mut()
+                .headers_mut()
+                .insert("Accept", http::HeaderValue::from_static("application/json"));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::GenerateClientCertificate::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "GenerateClientCertificate",
+                "apigateway",
+            ));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     fn uri_base(&self, output: &mut String) {
         write!(output, "/clientcertificates").expect("formatting should succeed")
     }
@@ -6576,72 +6893,81 @@ pub mod get_account_input {
     #[derive(Debug, Clone, Default)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs an Operation<[`GetAccount`](crate::operation::GetAccount)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`GetAccountInput`](crate::input::GetAccountInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::GetAccount,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op = crate::operation::GetAccount::new(crate::input::GetAccountInput {});
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .request_mut()
-                    .headers_mut()
-                    .insert("Accept", http::HeaderValue::from_static("application/json"));
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
-                }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op).with_metadata(
-                    smithy_http::operation::Metadata::new("GetAccount", "apigateway"),
-                );
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
-            })
+        ) -> Result<crate::input::GetAccountInput, smithy_http::operation::BuildError> {
+            Ok(crate::input::GetAccountInput {})
         }
     }
 }
 impl GetAccountInput {
+    /// Consumes the builder and constructs an Operation<[`GetAccount`](crate::operation::GetAccount)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::GetAccount,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .request_mut()
+                .headers_mut()
+                .insert("Accept", http::HeaderValue::from_static("application/json"));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::GetAccount::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "GetAccount",
+                "apigateway",
+            ));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     fn uri_base(&self, output: &mut String) {
         write!(output, "/account").expect("formatting should succeed")
     }
@@ -6707,75 +7033,82 @@ pub mod get_api_key_input {
             self.include_value = inp;
             self
         }
-        /// Consumes the builder and constructs an Operation<[`GetApiKey`](crate::operation::GetApiKey)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`GetApiKeyInput`](crate::input::GetApiKeyInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::GetApiKey,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op = crate::operation::GetApiKey::new(crate::input::GetApiKeyInput {
-                    api_key: self.api_key.unwrap_or_default(),
-                    include_value: self.include_value,
-                });
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .request_mut()
-                    .headers_mut()
-                    .insert("Accept", http::HeaderValue::from_static("application/json"));
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
-                }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op).with_metadata(
-                    smithy_http::operation::Metadata::new("GetApiKey", "apigateway"),
-                );
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
+        ) -> Result<crate::input::GetApiKeyInput, smithy_http::operation::BuildError> {
+            Ok(crate::input::GetApiKeyInput {
+                api_key: self.api_key.unwrap_or_default(),
+                include_value: self.include_value,
             })
         }
     }
 }
 impl GetApiKeyInput {
+    /// Consumes the builder and constructs an Operation<[`GetApiKey`](crate::operation::GetApiKey)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::GetApiKey,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .request_mut()
+                .headers_mut()
+                .insert("Accept", http::HeaderValue::from_static("application/json"));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op =
+                smithy_http::operation::Operation::new(request, crate::operation::GetApiKey::new())
+                    .with_metadata(smithy_http::operation::Metadata::new(
+                        "GetApiKey",
+                        "apigateway",
+                    ));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     fn uri_base(&self, output: &mut String) {
         write!(
             output,
@@ -6883,78 +7216,87 @@ pub mod get_api_keys_input {
             self.include_values = inp;
             self
         }
-        /// Consumes the builder and constructs an Operation<[`GetApiKeys`](crate::operation::GetApiKeys)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`GetApiKeysInput`](crate::input::GetApiKeysInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::GetApiKeys,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op = crate::operation::GetApiKeys::new(crate::input::GetApiKeysInput {
-                    position: self.position,
-                    limit: self.limit,
-                    name_query: self.name_query,
-                    customer_id: self.customer_id,
-                    include_values: self.include_values,
-                });
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .request_mut()
-                    .headers_mut()
-                    .insert("Accept", http::HeaderValue::from_static("application/json"));
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
-                }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op).with_metadata(
-                    smithy_http::operation::Metadata::new("GetApiKeys", "apigateway"),
-                );
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
+        ) -> Result<crate::input::GetApiKeysInput, smithy_http::operation::BuildError> {
+            Ok(crate::input::GetApiKeysInput {
+                position: self.position,
+                limit: self.limit,
+                name_query: self.name_query,
+                customer_id: self.customer_id,
+                include_values: self.include_values,
             })
         }
     }
 }
 impl GetApiKeysInput {
+    /// Consumes the builder and constructs an Operation<[`GetApiKeys`](crate::operation::GetApiKeys)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::GetApiKeys,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .request_mut()
+                .headers_mut()
+                .insert("Accept", http::HeaderValue::from_static("application/json"));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::GetApiKeys::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "GetApiKeys",
+                "apigateway",
+            ));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     fn uri_base(&self, output: &mut String) {
         write!(output, "/apikeys").expect("formatting should succeed")
     }
@@ -7039,75 +7381,84 @@ pub mod get_authorizer_input {
             self.authorizer_id = Some(inp);
             self
         }
-        /// Consumes the builder and constructs an Operation<[`GetAuthorizer`](crate::operation::GetAuthorizer)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`GetAuthorizerInput`](crate::input::GetAuthorizerInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::GetAuthorizer,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op = crate::operation::GetAuthorizer::new(crate::input::GetAuthorizerInput {
-                    rest_api_id: self.rest_api_id.unwrap_or_default(),
-                    authorizer_id: self.authorizer_id.unwrap_or_default(),
-                });
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .request_mut()
-                    .headers_mut()
-                    .insert("Accept", http::HeaderValue::from_static("application/json"));
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
-                }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op).with_metadata(
-                    smithy_http::operation::Metadata::new("GetAuthorizer", "apigateway"),
-                );
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
+        ) -> Result<crate::input::GetAuthorizerInput, smithy_http::operation::BuildError> {
+            Ok(crate::input::GetAuthorizerInput {
+                rest_api_id: self.rest_api_id.unwrap_or_default(),
+                authorizer_id: self.authorizer_id.unwrap_or_default(),
             })
         }
     }
 }
 impl GetAuthorizerInput {
+    /// Consumes the builder and constructs an Operation<[`GetAuthorizer`](crate::operation::GetAuthorizer)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::GetAuthorizer,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .request_mut()
+                .headers_mut()
+                .insert("Accept", http::HeaderValue::from_static("application/json"));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::GetAuthorizer::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "GetAuthorizer",
+                "apigateway",
+            ));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     fn uri_base(&self, output: &mut String) {
         write!(
             output,
@@ -7189,76 +7540,85 @@ pub mod get_authorizers_input {
             self.limit = inp;
             self
         }
-        /// Consumes the builder and constructs an Operation<[`GetAuthorizers`](crate::operation::GetAuthorizers)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`GetAuthorizersInput`](crate::input::GetAuthorizersInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::GetAuthorizers,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op = crate::operation::GetAuthorizers::new(crate::input::GetAuthorizersInput {
-                    rest_api_id: self.rest_api_id.unwrap_or_default(),
-                    position: self.position,
-                    limit: self.limit,
-                });
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .request_mut()
-                    .headers_mut()
-                    .insert("Accept", http::HeaderValue::from_static("application/json"));
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
-                }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op).with_metadata(
-                    smithy_http::operation::Metadata::new("GetAuthorizers", "apigateway"),
-                );
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
+        ) -> Result<crate::input::GetAuthorizersInput, smithy_http::operation::BuildError> {
+            Ok(crate::input::GetAuthorizersInput {
+                rest_api_id: self.rest_api_id.unwrap_or_default(),
+                position: self.position,
+                limit: self.limit,
             })
         }
     }
 }
 impl GetAuthorizersInput {
+    /// Consumes the builder and constructs an Operation<[`GetAuthorizers`](crate::operation::GetAuthorizers)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::GetAuthorizers,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .request_mut()
+                .headers_mut()
+                .insert("Accept", http::HeaderValue::from_static("application/json"));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::GetAuthorizers::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "GetAuthorizers",
+                "apigateway",
+            ));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     fn uri_base(&self, output: &mut String) {
         write!(
             output,
@@ -7339,77 +7699,85 @@ pub mod get_base_path_mapping_input {
             self.base_path = Some(inp);
             self
         }
-        /// Consumes the builder and constructs an Operation<[`GetBasePathMapping`](crate::operation::GetBasePathMapping)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`GetBasePathMappingInput`](crate::input::GetBasePathMappingInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::GetBasePathMapping,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op = crate::operation::GetBasePathMapping::new(
-                    crate::input::GetBasePathMappingInput {
-                        domain_name: self.domain_name.unwrap_or_default(),
-                        base_path: self.base_path.unwrap_or_default(),
-                    },
-                );
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .request_mut()
-                    .headers_mut()
-                    .insert("Accept", http::HeaderValue::from_static("application/json"));
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
-                }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op).with_metadata(
-                    smithy_http::operation::Metadata::new("GetBasePathMapping", "apigateway"),
-                );
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
+        ) -> Result<crate::input::GetBasePathMappingInput, smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::GetBasePathMappingInput {
+                domain_name: self.domain_name.unwrap_or_default(),
+                base_path: self.base_path.unwrap_or_default(),
             })
         }
     }
 }
 impl GetBasePathMappingInput {
+    /// Consumes the builder and constructs an Operation<[`GetBasePathMapping`](crate::operation::GetBasePathMapping)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::GetBasePathMapping,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .request_mut()
+                .headers_mut()
+                .insert("Accept", http::HeaderValue::from_static("application/json"));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::GetBasePathMapping::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "GetBasePathMapping",
+                "apigateway",
+            ));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     fn uri_base(&self, output: &mut String) {
         write!(
             output,
@@ -7491,78 +7859,86 @@ pub mod get_base_path_mappings_input {
             self.limit = inp;
             self
         }
-        /// Consumes the builder and constructs an Operation<[`GetBasePathMappings`](crate::operation::GetBasePathMappings)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`GetBasePathMappingsInput`](crate::input::GetBasePathMappingsInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::GetBasePathMappings,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op = crate::operation::GetBasePathMappings::new(
-                    crate::input::GetBasePathMappingsInput {
-                        domain_name: self.domain_name.unwrap_or_default(),
-                        position: self.position,
-                        limit: self.limit,
-                    },
-                );
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .request_mut()
-                    .headers_mut()
-                    .insert("Accept", http::HeaderValue::from_static("application/json"));
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
-                }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op).with_metadata(
-                    smithy_http::operation::Metadata::new("GetBasePathMappings", "apigateway"),
-                );
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
+        ) -> Result<crate::input::GetBasePathMappingsInput, smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::GetBasePathMappingsInput {
+                domain_name: self.domain_name.unwrap_or_default(),
+                position: self.position,
+                limit: self.limit,
             })
         }
     }
 }
 impl GetBasePathMappingsInput {
+    /// Consumes the builder and constructs an Operation<[`GetBasePathMappings`](crate::operation::GetBasePathMappings)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::GetBasePathMappings,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .request_mut()
+                .headers_mut()
+                .insert("Accept", http::HeaderValue::from_static("application/json"));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::GetBasePathMappings::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "GetBasePathMappings",
+                "apigateway",
+            ));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     fn uri_base(&self, output: &mut String) {
         write!(
             output,
@@ -7633,76 +8009,84 @@ pub mod get_client_certificate_input {
             self.client_certificate_id = Some(inp);
             self
         }
-        /// Consumes the builder and constructs an Operation<[`GetClientCertificate`](crate::operation::GetClientCertificate)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`GetClientCertificateInput`](crate::input::GetClientCertificateInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::GetClientCertificate,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op = crate::operation::GetClientCertificate::new(
-                    crate::input::GetClientCertificateInput {
-                        client_certificate_id: self.client_certificate_id.unwrap_or_default(),
-                    },
-                );
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .request_mut()
-                    .headers_mut()
-                    .insert("Accept", http::HeaderValue::from_static("application/json"));
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
-                }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op).with_metadata(
-                    smithy_http::operation::Metadata::new("GetClientCertificate", "apigateway"),
-                );
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
+        ) -> Result<crate::input::GetClientCertificateInput, smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::GetClientCertificateInput {
+                client_certificate_id: self.client_certificate_id.unwrap_or_default(),
             })
         }
     }
 }
 impl GetClientCertificateInput {
+    /// Consumes the builder and constructs an Operation<[`GetClientCertificate`](crate::operation::GetClientCertificate)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::GetClientCertificate,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .request_mut()
+                .headers_mut()
+                .insert("Accept", http::HeaderValue::from_static("application/json"));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::GetClientCertificate::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "GetClientCertificate",
+                "apigateway",
+            ));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     fn uri_base(&self, output: &mut String) {
         write!(
             output,
@@ -7774,77 +8158,85 @@ pub mod get_client_certificates_input {
             self.limit = inp;
             self
         }
-        /// Consumes the builder and constructs an Operation<[`GetClientCertificates`](crate::operation::GetClientCertificates)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`GetClientCertificatesInput`](crate::input::GetClientCertificatesInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::GetClientCertificates,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op = crate::operation::GetClientCertificates::new(
-                    crate::input::GetClientCertificatesInput {
-                        position: self.position,
-                        limit: self.limit,
-                    },
-                );
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .request_mut()
-                    .headers_mut()
-                    .insert("Accept", http::HeaderValue::from_static("application/json"));
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
-                }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op).with_metadata(
-                    smithy_http::operation::Metadata::new("GetClientCertificates", "apigateway"),
-                );
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
+        ) -> Result<crate::input::GetClientCertificatesInput, smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::GetClientCertificatesInput {
+                position: self.position,
+                limit: self.limit,
             })
         }
     }
 }
 impl GetClientCertificatesInput {
+    /// Consumes the builder and constructs an Operation<[`GetClientCertificates`](crate::operation::GetClientCertificates)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::GetClientCertificates,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .request_mut()
+                .headers_mut()
+                .insert("Accept", http::HeaderValue::from_static("application/json"));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::GetClientCertificates::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "GetClientCertificates",
+                "apigateway",
+            ));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     fn uri_base(&self, output: &mut String) {
         write!(output, "/clientcertificates").expect("formatting should succeed")
     }
@@ -7934,76 +8326,85 @@ pub mod get_deployment_input {
             self.embed = inp;
             self
         }
-        /// Consumes the builder and constructs an Operation<[`GetDeployment`](crate::operation::GetDeployment)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`GetDeploymentInput`](crate::input::GetDeploymentInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::GetDeployment,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op = crate::operation::GetDeployment::new(crate::input::GetDeploymentInput {
-                    rest_api_id: self.rest_api_id.unwrap_or_default(),
-                    deployment_id: self.deployment_id.unwrap_or_default(),
-                    embed: self.embed,
-                });
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .request_mut()
-                    .headers_mut()
-                    .insert("Accept", http::HeaderValue::from_static("application/json"));
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
-                }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op).with_metadata(
-                    smithy_http::operation::Metadata::new("GetDeployment", "apigateway"),
-                );
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
+        ) -> Result<crate::input::GetDeploymentInput, smithy_http::operation::BuildError> {
+            Ok(crate::input::GetDeploymentInput {
+                rest_api_id: self.rest_api_id.unwrap_or_default(),
+                deployment_id: self.deployment_id.unwrap_or_default(),
+                embed: self.embed,
             })
         }
     }
 }
 impl GetDeploymentInput {
+    /// Consumes the builder and constructs an Operation<[`GetDeployment`](crate::operation::GetDeployment)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::GetDeployment,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .request_mut()
+                .headers_mut()
+                .insert("Accept", http::HeaderValue::from_static("application/json"));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::GetDeployment::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "GetDeployment",
+                "apigateway",
+            ));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     fn uri_base(&self, output: &mut String) {
         write!(
             output,
@@ -8094,76 +8495,85 @@ pub mod get_deployments_input {
             self.limit = inp;
             self
         }
-        /// Consumes the builder and constructs an Operation<[`GetDeployments`](crate::operation::GetDeployments)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`GetDeploymentsInput`](crate::input::GetDeploymentsInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::GetDeployments,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op = crate::operation::GetDeployments::new(crate::input::GetDeploymentsInput {
-                    rest_api_id: self.rest_api_id.unwrap_or_default(),
-                    position: self.position,
-                    limit: self.limit,
-                });
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .request_mut()
-                    .headers_mut()
-                    .insert("Accept", http::HeaderValue::from_static("application/json"));
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
-                }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op).with_metadata(
-                    smithy_http::operation::Metadata::new("GetDeployments", "apigateway"),
-                );
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
+        ) -> Result<crate::input::GetDeploymentsInput, smithy_http::operation::BuildError> {
+            Ok(crate::input::GetDeploymentsInput {
+                rest_api_id: self.rest_api_id.unwrap_or_default(),
+                position: self.position,
+                limit: self.limit,
             })
         }
     }
 }
 impl GetDeploymentsInput {
+    /// Consumes the builder and constructs an Operation<[`GetDeployments`](crate::operation::GetDeployments)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::GetDeployments,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .request_mut()
+                .headers_mut()
+                .insert("Accept", http::HeaderValue::from_static("application/json"));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::GetDeployments::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "GetDeployments",
+                "apigateway",
+            ));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     fn uri_base(&self, output: &mut String) {
         write!(
             output,
@@ -8244,77 +8654,85 @@ pub mod get_documentation_part_input {
             self.documentation_part_id = Some(inp);
             self
         }
-        /// Consumes the builder and constructs an Operation<[`GetDocumentationPart`](crate::operation::GetDocumentationPart)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`GetDocumentationPartInput`](crate::input::GetDocumentationPartInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::GetDocumentationPart,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op = crate::operation::GetDocumentationPart::new(
-                    crate::input::GetDocumentationPartInput {
-                        rest_api_id: self.rest_api_id.unwrap_or_default(),
-                        documentation_part_id: self.documentation_part_id.unwrap_or_default(),
-                    },
-                );
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .request_mut()
-                    .headers_mut()
-                    .insert("Accept", http::HeaderValue::from_static("application/json"));
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
-                }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op).with_metadata(
-                    smithy_http::operation::Metadata::new("GetDocumentationPart", "apigateway"),
-                );
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
+        ) -> Result<crate::input::GetDocumentationPartInput, smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::GetDocumentationPartInput {
+                rest_api_id: self.rest_api_id.unwrap_or_default(),
+                documentation_part_id: self.documentation_part_id.unwrap_or_default(),
             })
         }
     }
 }
 impl GetDocumentationPartInput {
+    /// Consumes the builder and constructs an Operation<[`GetDocumentationPart`](crate::operation::GetDocumentationPart)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::GetDocumentationPart,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .request_mut()
+                .headers_mut()
+                .insert("Accept", http::HeaderValue::from_static("application/json"));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::GetDocumentationPart::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "GetDocumentationPart",
+                "apigateway",
+            ));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     fn uri_base(&self, output: &mut String) {
         write!(
             output,
@@ -8443,82 +8861,90 @@ pub mod get_documentation_parts_input {
             self.location_status = inp;
             self
         }
-        /// Consumes the builder and constructs an Operation<[`GetDocumentationParts`](crate::operation::GetDocumentationParts)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`GetDocumentationPartsInput`](crate::input::GetDocumentationPartsInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::GetDocumentationParts,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op = crate::operation::GetDocumentationParts::new(
-                    crate::input::GetDocumentationPartsInput {
-                        rest_api_id: self.rest_api_id.unwrap_or_default(),
-                        r#type: self.r#type,
-                        name_query: self.name_query,
-                        path: self.path,
-                        position: self.position,
-                        limit: self.limit,
-                        location_status: self.location_status,
-                    },
-                );
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .request_mut()
-                    .headers_mut()
-                    .insert("Accept", http::HeaderValue::from_static("application/json"));
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
-                }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op).with_metadata(
-                    smithy_http::operation::Metadata::new("GetDocumentationParts", "apigateway"),
-                );
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
+        ) -> Result<crate::input::GetDocumentationPartsInput, smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::GetDocumentationPartsInput {
+                rest_api_id: self.rest_api_id.unwrap_or_default(),
+                r#type: self.r#type,
+                name_query: self.name_query,
+                path: self.path,
+                position: self.position,
+                limit: self.limit,
+                location_status: self.location_status,
             })
         }
     }
 }
 impl GetDocumentationPartsInput {
+    /// Consumes the builder and constructs an Operation<[`GetDocumentationParts`](crate::operation::GetDocumentationParts)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::GetDocumentationParts,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .request_mut()
+                .headers_mut()
+                .insert("Accept", http::HeaderValue::from_static("application/json"));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::GetDocumentationParts::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "GetDocumentationParts",
+                "apigateway",
+            ));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     fn uri_base(&self, output: &mut String) {
         write!(
             output,
@@ -8611,77 +9037,85 @@ pub mod get_documentation_version_input {
             self.documentation_version = Some(inp);
             self
         }
-        /// Consumes the builder and constructs an Operation<[`GetDocumentationVersion`](crate::operation::GetDocumentationVersion)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`GetDocumentationVersionInput`](crate::input::GetDocumentationVersionInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::GetDocumentationVersion,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op = crate::operation::GetDocumentationVersion::new(
-                    crate::input::GetDocumentationVersionInput {
-                        rest_api_id: self.rest_api_id.unwrap_or_default(),
-                        documentation_version: self.documentation_version.unwrap_or_default(),
-                    },
-                );
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .request_mut()
-                    .headers_mut()
-                    .insert("Accept", http::HeaderValue::from_static("application/json"));
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
-                }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op).with_metadata(
-                    smithy_http::operation::Metadata::new("GetDocumentationVersion", "apigateway"),
-                );
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
+        ) -> Result<crate::input::GetDocumentationVersionInput, smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::GetDocumentationVersionInput {
+                rest_api_id: self.rest_api_id.unwrap_or_default(),
+                documentation_version: self.documentation_version.unwrap_or_default(),
             })
         }
     }
 }
 impl GetDocumentationVersionInput {
+    /// Consumes the builder and constructs an Operation<[`GetDocumentationVersion`](crate::operation::GetDocumentationVersion)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::GetDocumentationVersion,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .request_mut()
+                .headers_mut()
+                .insert("Accept", http::HeaderValue::from_static("application/json"));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::GetDocumentationVersion::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "GetDocumentationVersion",
+                "apigateway",
+            ));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     fn uri_base(&self, output: &mut String) {
         write!(
             output,
@@ -8764,78 +9198,86 @@ pub mod get_documentation_versions_input {
             self.limit = inp;
             self
         }
-        /// Consumes the builder and constructs an Operation<[`GetDocumentationVersions`](crate::operation::GetDocumentationVersions)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`GetDocumentationVersionsInput`](crate::input::GetDocumentationVersionsInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::GetDocumentationVersions,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op = crate::operation::GetDocumentationVersions::new(
-                    crate::input::GetDocumentationVersionsInput {
-                        rest_api_id: self.rest_api_id.unwrap_or_default(),
-                        position: self.position,
-                        limit: self.limit,
-                    },
-                );
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .request_mut()
-                    .headers_mut()
-                    .insert("Accept", http::HeaderValue::from_static("application/json"));
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
-                }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op).with_metadata(
-                    smithy_http::operation::Metadata::new("GetDocumentationVersions", "apigateway"),
-                );
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
+        ) -> Result<crate::input::GetDocumentationVersionsInput, smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::GetDocumentationVersionsInput {
+                rest_api_id: self.rest_api_id.unwrap_or_default(),
+                position: self.position,
+                limit: self.limit,
             })
         }
     }
 }
 impl GetDocumentationVersionsInput {
+    /// Consumes the builder and constructs an Operation<[`GetDocumentationVersions`](crate::operation::GetDocumentationVersions)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::GetDocumentationVersions,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .request_mut()
+                .headers_mut()
+                .insert("Accept", http::HeaderValue::from_static("application/json"));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::GetDocumentationVersions::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "GetDocumentationVersions",
+                "apigateway",
+            ));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     fn uri_base(&self, output: &mut String) {
         write!(
             output,
@@ -8906,74 +9348,83 @@ pub mod get_domain_name_input {
             self.domain_name = Some(inp);
             self
         }
-        /// Consumes the builder and constructs an Operation<[`GetDomainName`](crate::operation::GetDomainName)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`GetDomainNameInput`](crate::input::GetDomainNameInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::GetDomainName,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op = crate::operation::GetDomainName::new(crate::input::GetDomainNameInput {
-                    domain_name: self.domain_name.unwrap_or_default(),
-                });
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .request_mut()
-                    .headers_mut()
-                    .insert("Accept", http::HeaderValue::from_static("application/json"));
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
-                }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op).with_metadata(
-                    smithy_http::operation::Metadata::new("GetDomainName", "apigateway"),
-                );
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
+        ) -> Result<crate::input::GetDomainNameInput, smithy_http::operation::BuildError> {
+            Ok(crate::input::GetDomainNameInput {
+                domain_name: self.domain_name.unwrap_or_default(),
             })
         }
     }
 }
 impl GetDomainNameInput {
+    /// Consumes the builder and constructs an Operation<[`GetDomainName`](crate::operation::GetDomainName)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::GetDomainName,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .request_mut()
+                .headers_mut()
+                .insert("Accept", http::HeaderValue::from_static("application/json"));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::GetDomainName::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "GetDomainName",
+                "apigateway",
+            ));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     fn uri_base(&self, output: &mut String) {
         write!(
             output,
@@ -9044,75 +9495,84 @@ pub mod get_domain_names_input {
             self.limit = inp;
             self
         }
-        /// Consumes the builder and constructs an Operation<[`GetDomainNames`](crate::operation::GetDomainNames)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`GetDomainNamesInput`](crate::input::GetDomainNamesInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::GetDomainNames,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op = crate::operation::GetDomainNames::new(crate::input::GetDomainNamesInput {
-                    position: self.position,
-                    limit: self.limit,
-                });
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .request_mut()
-                    .headers_mut()
-                    .insert("Accept", http::HeaderValue::from_static("application/json"));
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
-                }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op).with_metadata(
-                    smithy_http::operation::Metadata::new("GetDomainNames", "apigateway"),
-                );
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
+        ) -> Result<crate::input::GetDomainNamesInput, smithy_http::operation::BuildError> {
+            Ok(crate::input::GetDomainNamesInput {
+                position: self.position,
+                limit: self.limit,
             })
         }
     }
 }
 impl GetDomainNamesInput {
+    /// Consumes the builder and constructs an Operation<[`GetDomainNames`](crate::operation::GetDomainNames)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::GetDomainNames,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .request_mut()
+                .headers_mut()
+                .insert("Accept", http::HeaderValue::from_static("application/json"));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::GetDomainNames::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "GetDomainNames",
+                "apigateway",
+            ));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     fn uri_base(&self, output: &mut String) {
         write!(output, "/domainnames").expect("formatting should succeed")
     }
@@ -9230,78 +9690,85 @@ pub mod get_export_input {
             self.accepts = inp;
             self
         }
-        /// Consumes the builder and constructs an Operation<[`GetExport`](crate::operation::GetExport)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`GetExportInput`](crate::input::GetExportInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::GetExport,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op = crate::operation::GetExport::new(crate::input::GetExportInput {
-                    rest_api_id: self.rest_api_id.unwrap_or_default(),
-                    stage_name: self.stage_name.unwrap_or_default(),
-                    export_type: self.export_type.unwrap_or_default(),
-                    parameters: self.parameters,
-                    accepts: self.accepts,
-                });
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .request_mut()
-                    .headers_mut()
-                    .insert("Accept", http::HeaderValue::from_static("application/json"));
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
-                }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op).with_metadata(
-                    smithy_http::operation::Metadata::new("GetExport", "apigateway"),
-                );
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
+        ) -> Result<crate::input::GetExportInput, smithy_http::operation::BuildError> {
+            Ok(crate::input::GetExportInput {
+                rest_api_id: self.rest_api_id.unwrap_or_default(),
+                stage_name: self.stage_name.unwrap_or_default(),
+                export_type: self.export_type.unwrap_or_default(),
+                parameters: self.parameters,
+                accepts: self.accepts,
             })
         }
     }
 }
 impl GetExportInput {
+    /// Consumes the builder and constructs an Operation<[`GetExport`](crate::operation::GetExport)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::GetExport,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .request_mut()
+                .headers_mut()
+                .insert("Accept", http::HeaderValue::from_static("application/json"));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op =
+                smithy_http::operation::Operation::new(request, crate::operation::GetExport::new())
+                    .with_metadata(smithy_http::operation::Metadata::new(
+                        "GetExport",
+                        "apigateway",
+                    ));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     fn uri_base(&self, output: &mut String) {
         write!(
             output,
@@ -9404,83 +9871,93 @@ pub mod get_gateway_response_input {
             self.response_type = Some(inp);
             self
         }
-        /// Consumes the builder and constructs an Operation<[`GetGatewayResponse`](crate::operation::GetGatewayResponse)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`GetGatewayResponseInput`](crate::input::GetGatewayResponseInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::GetGatewayResponse,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op = crate::operation::GetGatewayResponse::new(
-                    crate::input::GetGatewayResponseInput {
-                        rest_api_id: self.rest_api_id
-                            .unwrap_or_default()
-                        ,
-                        response_type: self.response_type
-                            .ok_or(
-                                smithy_http::operation::BuildError::MissingField { field: "response_type", details: "response_type was not specified but it is required when building GetGatewayResponse"}
-                            )?
-                        ,
-                    }
-                );
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .request_mut()
-                    .headers_mut()
-                    .insert("Accept", http::HeaderValue::from_static("application/json"));
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
+        ) -> Result<crate::input::GetGatewayResponseInput, smithy_http::operation::BuildError>
+        {
+            Ok(
+                crate::input::GetGatewayResponseInput {
+                    rest_api_id: self.rest_api_id
+                        .unwrap_or_default()
+                    ,
+                    response_type: self.response_type
+                        .ok_or(
+                            smithy_http::operation::BuildError::MissingField { field: "response_type", details: "response_type was not specified but it is required when building GetGatewayResponseInput"}
+                        )?
+                    ,
                 }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op).with_metadata(
-                    smithy_http::operation::Metadata::new("GetGatewayResponse", "apigateway"),
-                );
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
-            })
+            )
         }
     }
 }
 impl GetGatewayResponseInput {
+    /// Consumes the builder and constructs an Operation<[`GetGatewayResponse`](crate::operation::GetGatewayResponse)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::GetGatewayResponse,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .request_mut()
+                .headers_mut()
+                .insert("Accept", http::HeaderValue::from_static("application/json"));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::GetGatewayResponse::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "GetGatewayResponse",
+                "apigateway",
+            ));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     fn uri_base(&self, output: &mut String) {
         write!(
             output,
@@ -9562,78 +10039,86 @@ pub mod get_gateway_responses_input {
             self.limit = inp;
             self
         }
-        /// Consumes the builder and constructs an Operation<[`GetGatewayResponses`](crate::operation::GetGatewayResponses)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`GetGatewayResponsesInput`](crate::input::GetGatewayResponsesInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::GetGatewayResponses,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op = crate::operation::GetGatewayResponses::new(
-                    crate::input::GetGatewayResponsesInput {
-                        rest_api_id: self.rest_api_id.unwrap_or_default(),
-                        position: self.position,
-                        limit: self.limit,
-                    },
-                );
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .request_mut()
-                    .headers_mut()
-                    .insert("Accept", http::HeaderValue::from_static("application/json"));
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
-                }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op).with_metadata(
-                    smithy_http::operation::Metadata::new("GetGatewayResponses", "apigateway"),
-                );
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
+        ) -> Result<crate::input::GetGatewayResponsesInput, smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::GetGatewayResponsesInput {
+                rest_api_id: self.rest_api_id.unwrap_or_default(),
+                position: self.position,
+                limit: self.limit,
             })
         }
     }
 }
 impl GetGatewayResponsesInput {
+    /// Consumes the builder and constructs an Operation<[`GetGatewayResponses`](crate::operation::GetGatewayResponses)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::GetGatewayResponses,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .request_mut()
+                .headers_mut()
+                .insert("Accept", http::HeaderValue::from_static("application/json"));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::GetGatewayResponses::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "GetGatewayResponses",
+                "apigateway",
+            ));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     fn uri_base(&self, output: &mut String) {
         write!(
             output,
@@ -9724,76 +10209,85 @@ pub mod get_integration_input {
             self.http_method = Some(inp);
             self
         }
-        /// Consumes the builder and constructs an Operation<[`GetIntegration`](crate::operation::GetIntegration)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`GetIntegrationInput`](crate::input::GetIntegrationInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::GetIntegration,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op = crate::operation::GetIntegration::new(crate::input::GetIntegrationInput {
-                    rest_api_id: self.rest_api_id.unwrap_or_default(),
-                    resource_id: self.resource_id.unwrap_or_default(),
-                    http_method: self.http_method.unwrap_or_default(),
-                });
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .request_mut()
-                    .headers_mut()
-                    .insert("Accept", http::HeaderValue::from_static("application/json"));
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
-                }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op).with_metadata(
-                    smithy_http::operation::Metadata::new("GetIntegration", "apigateway"),
-                );
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
+        ) -> Result<crate::input::GetIntegrationInput, smithy_http::operation::BuildError> {
+            Ok(crate::input::GetIntegrationInput {
+                rest_api_id: self.rest_api_id.unwrap_or_default(),
+                resource_id: self.resource_id.unwrap_or_default(),
+                http_method: self.http_method.unwrap_or_default(),
             })
         }
     }
 }
 impl GetIntegrationInput {
+    /// Consumes the builder and constructs an Operation<[`GetIntegration`](crate::operation::GetIntegration)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::GetIntegration,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .request_mut()
+                .headers_mut()
+                .insert("Accept", http::HeaderValue::from_static("application/json"));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::GetIntegration::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "GetIntegration",
+                "apigateway",
+            ));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     fn uri_base(&self, output: &mut String) {
         write!(
             output,
@@ -9886,79 +10380,87 @@ pub mod get_integration_response_input {
             self.status_code = Some(inp);
             self
         }
-        /// Consumes the builder and constructs an Operation<[`GetIntegrationResponse`](crate::operation::GetIntegrationResponse)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`GetIntegrationResponseInput`](crate::input::GetIntegrationResponseInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::GetIntegrationResponse,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op = crate::operation::GetIntegrationResponse::new(
-                    crate::input::GetIntegrationResponseInput {
-                        rest_api_id: self.rest_api_id.unwrap_or_default(),
-                        resource_id: self.resource_id.unwrap_or_default(),
-                        http_method: self.http_method.unwrap_or_default(),
-                        status_code: self.status_code.unwrap_or_default(),
-                    },
-                );
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .request_mut()
-                    .headers_mut()
-                    .insert("Accept", http::HeaderValue::from_static("application/json"));
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
-                }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op).with_metadata(
-                    smithy_http::operation::Metadata::new("GetIntegrationResponse", "apigateway"),
-                );
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
+        ) -> Result<crate::input::GetIntegrationResponseInput, smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::GetIntegrationResponseInput {
+                rest_api_id: self.rest_api_id.unwrap_or_default(),
+                resource_id: self.resource_id.unwrap_or_default(),
+                http_method: self.http_method.unwrap_or_default(),
+                status_code: self.status_code.unwrap_or_default(),
             })
         }
     }
 }
 impl GetIntegrationResponseInput {
+    /// Consumes the builder and constructs an Operation<[`GetIntegrationResponse`](crate::operation::GetIntegrationResponse)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::GetIntegrationResponse,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .request_mut()
+                .headers_mut()
+                .insert("Accept", http::HeaderValue::from_static("application/json"));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::GetIntegrationResponse::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "GetIntegrationResponse",
+                "apigateway",
+            ));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     fn uri_base(&self, output: &mut String) {
         write!(output, "/restapis/{restApiId}/resources/{resourceId}/methods/{httpMethod}/integration/responses/{statusCode}", restApiId = smithy_http::label::fmt_string(&self.rest_api_id, false), resourceId = smithy_http::label::fmt_string(&self.resource_id, false), httpMethod = smithy_http::label::fmt_string(&self.http_method, false), statusCode = smithy_http::label::fmt_string(&self.status_code, false)).expect("formatting should succeed")
     }
@@ -10034,76 +10536,83 @@ pub mod get_method_input {
             self.http_method = Some(inp);
             self
         }
-        /// Consumes the builder and constructs an Operation<[`GetMethod`](crate::operation::GetMethod)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`GetMethodInput`](crate::input::GetMethodInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::GetMethod,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op = crate::operation::GetMethod::new(crate::input::GetMethodInput {
-                    rest_api_id: self.rest_api_id.unwrap_or_default(),
-                    resource_id: self.resource_id.unwrap_or_default(),
-                    http_method: self.http_method.unwrap_or_default(),
-                });
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .request_mut()
-                    .headers_mut()
-                    .insert("Accept", http::HeaderValue::from_static("application/json"));
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
-                }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op).with_metadata(
-                    smithy_http::operation::Metadata::new("GetMethod", "apigateway"),
-                );
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
+        ) -> Result<crate::input::GetMethodInput, smithy_http::operation::BuildError> {
+            Ok(crate::input::GetMethodInput {
+                rest_api_id: self.rest_api_id.unwrap_or_default(),
+                resource_id: self.resource_id.unwrap_or_default(),
+                http_method: self.http_method.unwrap_or_default(),
             })
         }
     }
 }
 impl GetMethodInput {
+    /// Consumes the builder and constructs an Operation<[`GetMethod`](crate::operation::GetMethod)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::GetMethod,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .request_mut()
+                .headers_mut()
+                .insert("Accept", http::HeaderValue::from_static("application/json"));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op =
+                smithy_http::operation::Operation::new(request, crate::operation::GetMethod::new())
+                    .with_metadata(smithy_http::operation::Metadata::new(
+                        "GetMethod",
+                        "apigateway",
+                    ));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     fn uri_base(&self, output: &mut String) {
         write!(
             output,
@@ -10196,79 +10705,87 @@ pub mod get_method_response_input {
             self.status_code = Some(inp);
             self
         }
-        /// Consumes the builder and constructs an Operation<[`GetMethodResponse`](crate::operation::GetMethodResponse)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`GetMethodResponseInput`](crate::input::GetMethodResponseInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::GetMethodResponse,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op = crate::operation::GetMethodResponse::new(
-                    crate::input::GetMethodResponseInput {
-                        rest_api_id: self.rest_api_id.unwrap_or_default(),
-                        resource_id: self.resource_id.unwrap_or_default(),
-                        http_method: self.http_method.unwrap_or_default(),
-                        status_code: self.status_code.unwrap_or_default(),
-                    },
-                );
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .request_mut()
-                    .headers_mut()
-                    .insert("Accept", http::HeaderValue::from_static("application/json"));
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
-                }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op).with_metadata(
-                    smithy_http::operation::Metadata::new("GetMethodResponse", "apigateway"),
-                );
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
+        ) -> Result<crate::input::GetMethodResponseInput, smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::GetMethodResponseInput {
+                rest_api_id: self.rest_api_id.unwrap_or_default(),
+                resource_id: self.resource_id.unwrap_or_default(),
+                http_method: self.http_method.unwrap_or_default(),
+                status_code: self.status_code.unwrap_or_default(),
             })
         }
     }
 }
 impl GetMethodResponseInput {
+    /// Consumes the builder and constructs an Operation<[`GetMethodResponse`](crate::operation::GetMethodResponse)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::GetMethodResponse,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .request_mut()
+                .headers_mut()
+                .insert("Accept", http::HeaderValue::from_static("application/json"));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::GetMethodResponse::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "GetMethodResponse",
+                "apigateway",
+            ));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     fn uri_base(&self, output: &mut String) {
         write!(output, "/restapis/{restApiId}/resources/{resourceId}/methods/{httpMethod}/responses/{statusCode}", restApiId = smithy_http::label::fmt_string(&self.rest_api_id, false), resourceId = smithy_http::label::fmt_string(&self.resource_id, false), httpMethod = smithy_http::label::fmt_string(&self.http_method, false), statusCode = smithy_http::label::fmt_string(&self.status_code, false)).expect("formatting should succeed")
     }
@@ -10344,76 +10861,83 @@ pub mod get_model_input {
             self.flatten = Some(inp);
             self
         }
-        /// Consumes the builder and constructs an Operation<[`GetModel`](crate::operation::GetModel)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`GetModelInput`](crate::input::GetModelInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::GetModel,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op = crate::operation::GetModel::new(crate::input::GetModelInput {
-                    rest_api_id: self.rest_api_id.unwrap_or_default(),
-                    model_name: self.model_name.unwrap_or_default(),
-                    flatten: self.flatten.unwrap_or_default(),
-                });
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .request_mut()
-                    .headers_mut()
-                    .insert("Accept", http::HeaderValue::from_static("application/json"));
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
-                }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op).with_metadata(
-                    smithy_http::operation::Metadata::new("GetModel", "apigateway"),
-                );
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
+        ) -> Result<crate::input::GetModelInput, smithy_http::operation::BuildError> {
+            Ok(crate::input::GetModelInput {
+                rest_api_id: self.rest_api_id.unwrap_or_default(),
+                model_name: self.model_name.unwrap_or_default(),
+                flatten: self.flatten.unwrap_or_default(),
             })
         }
     }
 }
 impl GetModelInput {
+    /// Consumes the builder and constructs an Operation<[`GetModel`](crate::operation::GetModel)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::GetModel,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .request_mut()
+                .headers_mut()
+                .insert("Accept", http::HeaderValue::from_static("application/json"));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op =
+                smithy_http::operation::Operation::new(request, crate::operation::GetModel::new())
+                    .with_metadata(smithy_http::operation::Metadata::new(
+                        "GetModel",
+                        "apigateway",
+                    ));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     fn uri_base(&self, output: &mut String) {
         write!(
             output,
@@ -10502,76 +11026,83 @@ pub mod get_models_input {
             self.limit = inp;
             self
         }
-        /// Consumes the builder and constructs an Operation<[`GetModels`](crate::operation::GetModels)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`GetModelsInput`](crate::input::GetModelsInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::GetModels,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op = crate::operation::GetModels::new(crate::input::GetModelsInput {
-                    rest_api_id: self.rest_api_id.unwrap_or_default(),
-                    position: self.position,
-                    limit: self.limit,
-                });
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .request_mut()
-                    .headers_mut()
-                    .insert("Accept", http::HeaderValue::from_static("application/json"));
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
-                }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op).with_metadata(
-                    smithy_http::operation::Metadata::new("GetModels", "apigateway"),
-                );
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
+        ) -> Result<crate::input::GetModelsInput, smithy_http::operation::BuildError> {
+            Ok(crate::input::GetModelsInput {
+                rest_api_id: self.rest_api_id.unwrap_or_default(),
+                position: self.position,
+                limit: self.limit,
             })
         }
     }
 }
 impl GetModelsInput {
+    /// Consumes the builder and constructs an Operation<[`GetModels`](crate::operation::GetModels)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::GetModels,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .request_mut()
+                .headers_mut()
+                .insert("Accept", http::HeaderValue::from_static("application/json"));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op =
+                smithy_http::operation::Operation::new(request, crate::operation::GetModels::new())
+                    .with_metadata(smithy_http::operation::Metadata::new(
+                        "GetModels",
+                        "apigateway",
+                    ));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     fn uri_base(&self, output: &mut String) {
         write!(
             output,
@@ -10652,76 +11183,85 @@ pub mod get_model_template_input {
             self.model_name = Some(inp);
             self
         }
-        /// Consumes the builder and constructs an Operation<[`GetModelTemplate`](crate::operation::GetModelTemplate)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`GetModelTemplateInput`](crate::input::GetModelTemplateInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::GetModelTemplate,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op =
-                    crate::operation::GetModelTemplate::new(crate::input::GetModelTemplateInput {
-                        rest_api_id: self.rest_api_id.unwrap_or_default(),
-                        model_name: self.model_name.unwrap_or_default(),
-                    });
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .request_mut()
-                    .headers_mut()
-                    .insert("Accept", http::HeaderValue::from_static("application/json"));
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
-                }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op).with_metadata(
-                    smithy_http::operation::Metadata::new("GetModelTemplate", "apigateway"),
-                );
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
+        ) -> Result<crate::input::GetModelTemplateInput, smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::GetModelTemplateInput {
+                rest_api_id: self.rest_api_id.unwrap_or_default(),
+                model_name: self.model_name.unwrap_or_default(),
             })
         }
     }
 }
 impl GetModelTemplateInput {
+    /// Consumes the builder and constructs an Operation<[`GetModelTemplate`](crate::operation::GetModelTemplate)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::GetModelTemplate,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .request_mut()
+                .headers_mut()
+                .insert("Accept", http::HeaderValue::from_static("application/json"));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::GetModelTemplate::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "GetModelTemplate",
+                "apigateway",
+            ));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     fn uri_base(&self, output: &mut String) {
         write!(
             output,
@@ -10793,77 +11333,85 @@ pub mod get_request_validator_input {
             self.request_validator_id = Some(inp);
             self
         }
-        /// Consumes the builder and constructs an Operation<[`GetRequestValidator`](crate::operation::GetRequestValidator)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`GetRequestValidatorInput`](crate::input::GetRequestValidatorInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::GetRequestValidator,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op = crate::operation::GetRequestValidator::new(
-                    crate::input::GetRequestValidatorInput {
-                        rest_api_id: self.rest_api_id.unwrap_or_default(),
-                        request_validator_id: self.request_validator_id.unwrap_or_default(),
-                    },
-                );
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .request_mut()
-                    .headers_mut()
-                    .insert("Accept", http::HeaderValue::from_static("application/json"));
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
-                }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op).with_metadata(
-                    smithy_http::operation::Metadata::new("GetRequestValidator", "apigateway"),
-                );
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
+        ) -> Result<crate::input::GetRequestValidatorInput, smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::GetRequestValidatorInput {
+                rest_api_id: self.rest_api_id.unwrap_or_default(),
+                request_validator_id: self.request_validator_id.unwrap_or_default(),
             })
         }
     }
 }
 impl GetRequestValidatorInput {
+    /// Consumes the builder and constructs an Operation<[`GetRequestValidator`](crate::operation::GetRequestValidator)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::GetRequestValidator,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .request_mut()
+                .headers_mut()
+                .insert("Accept", http::HeaderValue::from_static("application/json"));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::GetRequestValidator::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "GetRequestValidator",
+                "apigateway",
+            ));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     fn uri_base(&self, output: &mut String) {
         write!(
             output,
@@ -10945,78 +11493,86 @@ pub mod get_request_validators_input {
             self.limit = inp;
             self
         }
-        /// Consumes the builder and constructs an Operation<[`GetRequestValidators`](crate::operation::GetRequestValidators)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`GetRequestValidatorsInput`](crate::input::GetRequestValidatorsInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::GetRequestValidators,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op = crate::operation::GetRequestValidators::new(
-                    crate::input::GetRequestValidatorsInput {
-                        rest_api_id: self.rest_api_id.unwrap_or_default(),
-                        position: self.position,
-                        limit: self.limit,
-                    },
-                );
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .request_mut()
-                    .headers_mut()
-                    .insert("Accept", http::HeaderValue::from_static("application/json"));
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
-                }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op).with_metadata(
-                    smithy_http::operation::Metadata::new("GetRequestValidators", "apigateway"),
-                );
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
+        ) -> Result<crate::input::GetRequestValidatorsInput, smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::GetRequestValidatorsInput {
+                rest_api_id: self.rest_api_id.unwrap_or_default(),
+                position: self.position,
+                limit: self.limit,
             })
         }
     }
 }
 impl GetRequestValidatorsInput {
+    /// Consumes the builder and constructs an Operation<[`GetRequestValidators`](crate::operation::GetRequestValidators)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::GetRequestValidators,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .request_mut()
+                .headers_mut()
+                .insert("Accept", http::HeaderValue::from_static("application/json"));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::GetRequestValidators::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "GetRequestValidators",
+                "apigateway",
+            ));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     fn uri_base(&self, output: &mut String) {
         write!(
             output,
@@ -11111,76 +11667,85 @@ pub mod get_resource_input {
             self.embed = inp;
             self
         }
-        /// Consumes the builder and constructs an Operation<[`GetResource`](crate::operation::GetResource)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`GetResourceInput`](crate::input::GetResourceInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::GetResource,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op = crate::operation::GetResource::new(crate::input::GetResourceInput {
-                    rest_api_id: self.rest_api_id.unwrap_or_default(),
-                    resource_id: self.resource_id.unwrap_or_default(),
-                    embed: self.embed,
-                });
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .request_mut()
-                    .headers_mut()
-                    .insert("Accept", http::HeaderValue::from_static("application/json"));
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
-                }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op).with_metadata(
-                    smithy_http::operation::Metadata::new("GetResource", "apigateway"),
-                );
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
+        ) -> Result<crate::input::GetResourceInput, smithy_http::operation::BuildError> {
+            Ok(crate::input::GetResourceInput {
+                rest_api_id: self.rest_api_id.unwrap_or_default(),
+                resource_id: self.resource_id.unwrap_or_default(),
+                embed: self.embed,
             })
         }
     }
 }
 impl GetResourceInput {
+    /// Consumes the builder and constructs an Operation<[`GetResource`](crate::operation::GetResource)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::GetResource,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .request_mut()
+                .headers_mut()
+                .insert("Accept", http::HeaderValue::from_static("application/json"));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::GetResource::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "GetResource",
+                "apigateway",
+            ));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     fn uri_base(&self, output: &mut String) {
         write!(
             output,
@@ -11285,77 +11850,86 @@ pub mod get_resources_input {
             self.embed = inp;
             self
         }
-        /// Consumes the builder and constructs an Operation<[`GetResources`](crate::operation::GetResources)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`GetResourcesInput`](crate::input::GetResourcesInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::GetResources,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op = crate::operation::GetResources::new(crate::input::GetResourcesInput {
-                    rest_api_id: self.rest_api_id.unwrap_or_default(),
-                    position: self.position,
-                    limit: self.limit,
-                    embed: self.embed,
-                });
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .request_mut()
-                    .headers_mut()
-                    .insert("Accept", http::HeaderValue::from_static("application/json"));
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
-                }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op).with_metadata(
-                    smithy_http::operation::Metadata::new("GetResources", "apigateway"),
-                );
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
+        ) -> Result<crate::input::GetResourcesInput, smithy_http::operation::BuildError> {
+            Ok(crate::input::GetResourcesInput {
+                rest_api_id: self.rest_api_id.unwrap_or_default(),
+                position: self.position,
+                limit: self.limit,
+                embed: self.embed,
             })
         }
     }
 }
 impl GetResourcesInput {
+    /// Consumes the builder and constructs an Operation<[`GetResources`](crate::operation::GetResources)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::GetResources,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .request_mut()
+                .headers_mut()
+                .insert("Accept", http::HeaderValue::from_static("application/json"));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::GetResources::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "GetResources",
+                "apigateway",
+            ));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     fn uri_base(&self, output: &mut String) {
         write!(
             output,
@@ -11431,74 +12005,83 @@ pub mod get_rest_api_input {
             self.rest_api_id = Some(inp);
             self
         }
-        /// Consumes the builder and constructs an Operation<[`GetRestApi`](crate::operation::GetRestApi)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`GetRestApiInput`](crate::input::GetRestApiInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::GetRestApi,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op = crate::operation::GetRestApi::new(crate::input::GetRestApiInput {
-                    rest_api_id: self.rest_api_id.unwrap_or_default(),
-                });
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .request_mut()
-                    .headers_mut()
-                    .insert("Accept", http::HeaderValue::from_static("application/json"));
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
-                }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op).with_metadata(
-                    smithy_http::operation::Metadata::new("GetRestApi", "apigateway"),
-                );
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
+        ) -> Result<crate::input::GetRestApiInput, smithy_http::operation::BuildError> {
+            Ok(crate::input::GetRestApiInput {
+                rest_api_id: self.rest_api_id.unwrap_or_default(),
             })
         }
     }
 }
 impl GetRestApiInput {
+    /// Consumes the builder and constructs an Operation<[`GetRestApi`](crate::operation::GetRestApi)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::GetRestApi,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .request_mut()
+                .headers_mut()
+                .insert("Accept", http::HeaderValue::from_static("application/json"));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::GetRestApi::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "GetRestApi",
+                "apigateway",
+            ));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     fn uri_base(&self, output: &mut String) {
         write!(
             output,
@@ -11569,75 +12152,84 @@ pub mod get_rest_apis_input {
             self.limit = inp;
             self
         }
-        /// Consumes the builder and constructs an Operation<[`GetRestApis`](crate::operation::GetRestApis)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`GetRestApisInput`](crate::input::GetRestApisInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::GetRestApis,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op = crate::operation::GetRestApis::new(crate::input::GetRestApisInput {
-                    position: self.position,
-                    limit: self.limit,
-                });
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .request_mut()
-                    .headers_mut()
-                    .insert("Accept", http::HeaderValue::from_static("application/json"));
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
-                }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op).with_metadata(
-                    smithy_http::operation::Metadata::new("GetRestApis", "apigateway"),
-                );
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
+        ) -> Result<crate::input::GetRestApisInput, smithy_http::operation::BuildError> {
+            Ok(crate::input::GetRestApisInput {
+                position: self.position,
+                limit: self.limit,
             })
         }
     }
 }
 impl GetRestApisInput {
+    /// Consumes the builder and constructs an Operation<[`GetRestApis`](crate::operation::GetRestApis)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::GetRestApis,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .request_mut()
+                .headers_mut()
+                .insert("Accept", http::HeaderValue::from_static("application/json"));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::GetRestApis::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "GetRestApis",
+                "apigateway",
+            ));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     fn uri_base(&self, output: &mut String) {
         write!(output, "/restapis").expect("formatting should succeed")
     }
@@ -11745,77 +12337,81 @@ pub mod get_sdk_input {
             self.parameters = inp;
             self
         }
-        /// Consumes the builder and constructs an Operation<[`GetSdk`](crate::operation::GetSdk)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`GetSdkInput`](crate::input::GetSdkInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::GetSdk,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op = crate::operation::GetSdk::new(crate::input::GetSdkInput {
-                    rest_api_id: self.rest_api_id.unwrap_or_default(),
-                    stage_name: self.stage_name.unwrap_or_default(),
-                    sdk_type: self.sdk_type.unwrap_or_default(),
-                    parameters: self.parameters,
-                });
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .request_mut()
-                    .headers_mut()
-                    .insert("Accept", http::HeaderValue::from_static("application/json"));
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
-                }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op).with_metadata(
-                    smithy_http::operation::Metadata::new("GetSdk", "apigateway"),
-                );
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
+        ) -> Result<crate::input::GetSdkInput, smithy_http::operation::BuildError> {
+            Ok(crate::input::GetSdkInput {
+                rest_api_id: self.rest_api_id.unwrap_or_default(),
+                stage_name: self.stage_name.unwrap_or_default(),
+                sdk_type: self.sdk_type.unwrap_or_default(),
+                parameters: self.parameters,
             })
         }
     }
 }
 impl GetSdkInput {
+    /// Consumes the builder and constructs an Operation<[`GetSdk`](crate::operation::GetSdk)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<crate::operation::GetSdk, aws_http::AwsErrorRetryPolicy>,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .request_mut()
+                .headers_mut()
+                .insert("Accept", http::HeaderValue::from_static("application/json"));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op =
+                smithy_http::operation::Operation::new(request, crate::operation::GetSdk::new())
+                    .with_metadata(smithy_http::operation::Metadata::new(
+                        "GetSdk",
+                        "apigateway",
+                    ));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     fn uri_base(&self, output: &mut String) {
         write!(
             output,
@@ -11883,74 +12479,83 @@ pub mod get_sdk_type_input {
             self.id = Some(inp);
             self
         }
-        /// Consumes the builder and constructs an Operation<[`GetSdkType`](crate::operation::GetSdkType)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`GetSdkTypeInput`](crate::input::GetSdkTypeInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::GetSdkType,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op = crate::operation::GetSdkType::new(crate::input::GetSdkTypeInput {
-                    id: self.id.unwrap_or_default(),
-                });
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .request_mut()
-                    .headers_mut()
-                    .insert("Accept", http::HeaderValue::from_static("application/json"));
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
-                }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op).with_metadata(
-                    smithy_http::operation::Metadata::new("GetSdkType", "apigateway"),
-                );
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
+        ) -> Result<crate::input::GetSdkTypeInput, smithy_http::operation::BuildError> {
+            Ok(crate::input::GetSdkTypeInput {
+                id: self.id.unwrap_or_default(),
             })
         }
     }
 }
 impl GetSdkTypeInput {
+    /// Consumes the builder and constructs an Operation<[`GetSdkType`](crate::operation::GetSdkType)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::GetSdkType,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .request_mut()
+                .headers_mut()
+                .insert("Accept", http::HeaderValue::from_static("application/json"));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::GetSdkType::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "GetSdkType",
+                "apigateway",
+            ));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     fn uri_base(&self, output: &mut String) {
         write!(
             output,
@@ -12021,75 +12626,84 @@ pub mod get_sdk_types_input {
             self.limit = inp;
             self
         }
-        /// Consumes the builder and constructs an Operation<[`GetSdkTypes`](crate::operation::GetSdkTypes)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`GetSdkTypesInput`](crate::input::GetSdkTypesInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::GetSdkTypes,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op = crate::operation::GetSdkTypes::new(crate::input::GetSdkTypesInput {
-                    position: self.position,
-                    limit: self.limit,
-                });
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .request_mut()
-                    .headers_mut()
-                    .insert("Accept", http::HeaderValue::from_static("application/json"));
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
-                }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op).with_metadata(
-                    smithy_http::operation::Metadata::new("GetSdkTypes", "apigateway"),
-                );
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
+        ) -> Result<crate::input::GetSdkTypesInput, smithy_http::operation::BuildError> {
+            Ok(crate::input::GetSdkTypesInput {
+                position: self.position,
+                limit: self.limit,
             })
         }
     }
 }
 impl GetSdkTypesInput {
+    /// Consumes the builder and constructs an Operation<[`GetSdkTypes`](crate::operation::GetSdkTypes)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::GetSdkTypes,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .request_mut()
+                .headers_mut()
+                .insert("Accept", http::HeaderValue::from_static("application/json"));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::GetSdkTypes::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "GetSdkTypes",
+                "apigateway",
+            ));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     fn uri_base(&self, output: &mut String) {
         write!(output, "/sdktypes").expect("formatting should succeed")
     }
@@ -12165,75 +12779,82 @@ pub mod get_stage_input {
             self.stage_name = Some(inp);
             self
         }
-        /// Consumes the builder and constructs an Operation<[`GetStage`](crate::operation::GetStage)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`GetStageInput`](crate::input::GetStageInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::GetStage,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op = crate::operation::GetStage::new(crate::input::GetStageInput {
-                    rest_api_id: self.rest_api_id.unwrap_or_default(),
-                    stage_name: self.stage_name.unwrap_or_default(),
-                });
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .request_mut()
-                    .headers_mut()
-                    .insert("Accept", http::HeaderValue::from_static("application/json"));
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
-                }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op).with_metadata(
-                    smithy_http::operation::Metadata::new("GetStage", "apigateway"),
-                );
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
+        ) -> Result<crate::input::GetStageInput, smithy_http::operation::BuildError> {
+            Ok(crate::input::GetStageInput {
+                rest_api_id: self.rest_api_id.unwrap_or_default(),
+                stage_name: self.stage_name.unwrap_or_default(),
             })
         }
     }
 }
 impl GetStageInput {
+    /// Consumes the builder and constructs an Operation<[`GetStage`](crate::operation::GetStage)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::GetStage,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .request_mut()
+                .headers_mut()
+                .insert("Accept", http::HeaderValue::from_static("application/json"));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op =
+                smithy_http::operation::Operation::new(request, crate::operation::GetStage::new())
+                    .with_metadata(smithy_http::operation::Metadata::new(
+                        "GetStage",
+                        "apigateway",
+                    ));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     fn uri_base(&self, output: &mut String) {
         write!(
             output,
@@ -12305,75 +12926,82 @@ pub mod get_stages_input {
             self.deployment_id = inp;
             self
         }
-        /// Consumes the builder and constructs an Operation<[`GetStages`](crate::operation::GetStages)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`GetStagesInput`](crate::input::GetStagesInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::GetStages,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op = crate::operation::GetStages::new(crate::input::GetStagesInput {
-                    rest_api_id: self.rest_api_id.unwrap_or_default(),
-                    deployment_id: self.deployment_id,
-                });
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .request_mut()
-                    .headers_mut()
-                    .insert("Accept", http::HeaderValue::from_static("application/json"));
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
-                }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op).with_metadata(
-                    smithy_http::operation::Metadata::new("GetStages", "apigateway"),
-                );
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
+        ) -> Result<crate::input::GetStagesInput, smithy_http::operation::BuildError> {
+            Ok(crate::input::GetStagesInput {
+                rest_api_id: self.rest_api_id.unwrap_or_default(),
+                deployment_id: self.deployment_id,
             })
         }
     }
 }
 impl GetStagesInput {
+    /// Consumes the builder and constructs an Operation<[`GetStages`](crate::operation::GetStages)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::GetStages,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .request_mut()
+                .headers_mut()
+                .insert("Accept", http::HeaderValue::from_static("application/json"));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op =
+                smithy_http::operation::Operation::new(request, crate::operation::GetStages::new())
+                    .with_metadata(smithy_http::operation::Metadata::new(
+                        "GetStages",
+                        "apigateway",
+                    ));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     fn uri_base(&self, output: &mut String) {
         write!(
             output,
@@ -12461,76 +13089,80 @@ pub mod get_tags_input {
             self.limit = inp;
             self
         }
-        /// Consumes the builder and constructs an Operation<[`GetTags`](crate::operation::GetTags)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`GetTagsInput`](crate::input::GetTagsInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::GetTags,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op = crate::operation::GetTags::new(crate::input::GetTagsInput {
-                    resource_arn: self.resource_arn.unwrap_or_default(),
-                    position: self.position,
-                    limit: self.limit,
-                });
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .request_mut()
-                    .headers_mut()
-                    .insert("Accept", http::HeaderValue::from_static("application/json"));
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
-                }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op).with_metadata(
-                    smithy_http::operation::Metadata::new("GetTags", "apigateway"),
-                );
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
+        ) -> Result<crate::input::GetTagsInput, smithy_http::operation::BuildError> {
+            Ok(crate::input::GetTagsInput {
+                resource_arn: self.resource_arn.unwrap_or_default(),
+                position: self.position,
+                limit: self.limit,
             })
         }
     }
 }
 impl GetTagsInput {
+    /// Consumes the builder and constructs an Operation<[`GetTags`](crate::operation::GetTags)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<crate::operation::GetTags, aws_http::AwsErrorRetryPolicy>,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .request_mut()
+                .headers_mut()
+                .insert("Accept", http::HeaderValue::from_static("application/json"));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op =
+                smithy_http::operation::Operation::new(request, crate::operation::GetTags::new())
+                    .with_metadata(smithy_http::operation::Metadata::new(
+                        "GetTags",
+                        "apigateway",
+                    ));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     fn uri_base(&self, output: &mut String) {
         write!(
             output,
@@ -12651,79 +13283,86 @@ pub mod get_usage_input {
             self.limit = inp;
             self
         }
-        /// Consumes the builder and constructs an Operation<[`GetUsage`](crate::operation::GetUsage)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`GetUsageInput`](crate::input::GetUsageInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::GetUsage,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op = crate::operation::GetUsage::new(crate::input::GetUsageInput {
-                    usage_plan_id: self.usage_plan_id.unwrap_or_default(),
-                    key_id: self.key_id,
-                    start_date: self.start_date,
-                    end_date: self.end_date,
-                    position: self.position,
-                    limit: self.limit,
-                });
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .request_mut()
-                    .headers_mut()
-                    .insert("Accept", http::HeaderValue::from_static("application/json"));
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
-                }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op).with_metadata(
-                    smithy_http::operation::Metadata::new("GetUsage", "apigateway"),
-                );
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
+        ) -> Result<crate::input::GetUsageInput, smithy_http::operation::BuildError> {
+            Ok(crate::input::GetUsageInput {
+                usage_plan_id: self.usage_plan_id.unwrap_or_default(),
+                key_id: self.key_id,
+                start_date: self.start_date,
+                end_date: self.end_date,
+                position: self.position,
+                limit: self.limit,
             })
         }
     }
 }
 impl GetUsageInput {
+    /// Consumes the builder and constructs an Operation<[`GetUsage`](crate::operation::GetUsage)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::GetUsage,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .request_mut()
+                .headers_mut()
+                .insert("Accept", http::HeaderValue::from_static("application/json"));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op =
+                smithy_http::operation::Operation::new(request, crate::operation::GetUsage::new())
+                    .with_metadata(smithy_http::operation::Metadata::new(
+                        "GetUsage",
+                        "apigateway",
+                    ));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     fn uri_base(&self, output: &mut String) {
         write!(
             output,
@@ -12803,74 +13442,83 @@ pub mod get_usage_plan_input {
             self.usage_plan_id = Some(inp);
             self
         }
-        /// Consumes the builder and constructs an Operation<[`GetUsagePlan`](crate::operation::GetUsagePlan)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`GetUsagePlanInput`](crate::input::GetUsagePlanInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::GetUsagePlan,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op = crate::operation::GetUsagePlan::new(crate::input::GetUsagePlanInput {
-                    usage_plan_id: self.usage_plan_id.unwrap_or_default(),
-                });
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .request_mut()
-                    .headers_mut()
-                    .insert("Accept", http::HeaderValue::from_static("application/json"));
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
-                }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op).with_metadata(
-                    smithy_http::operation::Metadata::new("GetUsagePlan", "apigateway"),
-                );
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
+        ) -> Result<crate::input::GetUsagePlanInput, smithy_http::operation::BuildError> {
+            Ok(crate::input::GetUsagePlanInput {
+                usage_plan_id: self.usage_plan_id.unwrap_or_default(),
             })
         }
     }
 }
 impl GetUsagePlanInput {
+    /// Consumes the builder and constructs an Operation<[`GetUsagePlan`](crate::operation::GetUsagePlan)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::GetUsagePlan,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .request_mut()
+                .headers_mut()
+                .insert("Accept", http::HeaderValue::from_static("application/json"));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::GetUsagePlan::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "GetUsagePlan",
+                "apigateway",
+            ));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     fn uri_base(&self, output: &mut String) {
         write!(
             output,
@@ -12941,76 +13589,85 @@ pub mod get_usage_plan_key_input {
             self.key_id = Some(inp);
             self
         }
-        /// Consumes the builder and constructs an Operation<[`GetUsagePlanKey`](crate::operation::GetUsagePlanKey)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`GetUsagePlanKeyInput`](crate::input::GetUsagePlanKeyInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::GetUsagePlanKey,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op =
-                    crate::operation::GetUsagePlanKey::new(crate::input::GetUsagePlanKeyInput {
-                        usage_plan_id: self.usage_plan_id.unwrap_or_default(),
-                        key_id: self.key_id.unwrap_or_default(),
-                    });
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .request_mut()
-                    .headers_mut()
-                    .insert("Accept", http::HeaderValue::from_static("application/json"));
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
-                }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op).with_metadata(
-                    smithy_http::operation::Metadata::new("GetUsagePlanKey", "apigateway"),
-                );
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
+        ) -> Result<crate::input::GetUsagePlanKeyInput, smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::GetUsagePlanKeyInput {
+                usage_plan_id: self.usage_plan_id.unwrap_or_default(),
+                key_id: self.key_id.unwrap_or_default(),
             })
         }
     }
 }
 impl GetUsagePlanKeyInput {
+    /// Consumes the builder and constructs an Operation<[`GetUsagePlanKey`](crate::operation::GetUsagePlanKey)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::GetUsagePlanKey,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .request_mut()
+                .headers_mut()
+                .insert("Accept", http::HeaderValue::from_static("application/json"));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::GetUsagePlanKey::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "GetUsagePlanKey",
+                "apigateway",
+            ));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     fn uri_base(&self, output: &mut String) {
         write!(
             output,
@@ -13102,78 +13759,87 @@ pub mod get_usage_plan_keys_input {
             self.name_query = inp;
             self
         }
-        /// Consumes the builder and constructs an Operation<[`GetUsagePlanKeys`](crate::operation::GetUsagePlanKeys)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`GetUsagePlanKeysInput`](crate::input::GetUsagePlanKeysInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::GetUsagePlanKeys,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op =
-                    crate::operation::GetUsagePlanKeys::new(crate::input::GetUsagePlanKeysInput {
-                        usage_plan_id: self.usage_plan_id.unwrap_or_default(),
-                        position: self.position,
-                        limit: self.limit,
-                        name_query: self.name_query,
-                    });
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .request_mut()
-                    .headers_mut()
-                    .insert("Accept", http::HeaderValue::from_static("application/json"));
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
-                }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op).with_metadata(
-                    smithy_http::operation::Metadata::new("GetUsagePlanKeys", "apigateway"),
-                );
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
+        ) -> Result<crate::input::GetUsagePlanKeysInput, smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::GetUsagePlanKeysInput {
+                usage_plan_id: self.usage_plan_id.unwrap_or_default(),
+                position: self.position,
+                limit: self.limit,
+                name_query: self.name_query,
             })
         }
     }
 }
 impl GetUsagePlanKeysInput {
+    /// Consumes the builder and constructs an Operation<[`GetUsagePlanKeys`](crate::operation::GetUsagePlanKeys)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::GetUsagePlanKeys,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .request_mut()
+                .headers_mut()
+                .insert("Accept", http::HeaderValue::from_static("application/json"));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::GetUsagePlanKeys::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "GetUsagePlanKeys",
+                "apigateway",
+            ));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     fn uri_base(&self, output: &mut String) {
         write!(
             output,
@@ -13267,76 +13933,85 @@ pub mod get_usage_plans_input {
             self.limit = inp;
             self
         }
-        /// Consumes the builder and constructs an Operation<[`GetUsagePlans`](crate::operation::GetUsagePlans)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`GetUsagePlansInput`](crate::input::GetUsagePlansInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::GetUsagePlans,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op = crate::operation::GetUsagePlans::new(crate::input::GetUsagePlansInput {
-                    position: self.position,
-                    key_id: self.key_id,
-                    limit: self.limit,
-                });
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .request_mut()
-                    .headers_mut()
-                    .insert("Accept", http::HeaderValue::from_static("application/json"));
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
-                }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op).with_metadata(
-                    smithy_http::operation::Metadata::new("GetUsagePlans", "apigateway"),
-                );
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
+        ) -> Result<crate::input::GetUsagePlansInput, smithy_http::operation::BuildError> {
+            Ok(crate::input::GetUsagePlansInput {
+                position: self.position,
+                key_id: self.key_id,
+                limit: self.limit,
             })
         }
     }
 }
 impl GetUsagePlansInput {
+    /// Consumes the builder and constructs an Operation<[`GetUsagePlans`](crate::operation::GetUsagePlans)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::GetUsagePlans,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .request_mut()
+                .headers_mut()
+                .insert("Accept", http::HeaderValue::from_static("application/json"));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::GetUsagePlans::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "GetUsagePlans",
+                "apigateway",
+            ));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     fn uri_base(&self, output: &mut String) {
         write!(output, "/usageplans").expect("formatting should succeed")
     }
@@ -13405,74 +14080,83 @@ pub mod get_vpc_link_input {
             self.vpc_link_id = Some(inp);
             self
         }
-        /// Consumes the builder and constructs an Operation<[`GetVpcLink`](crate::operation::GetVpcLink)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`GetVpcLinkInput`](crate::input::GetVpcLinkInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::GetVpcLink,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op = crate::operation::GetVpcLink::new(crate::input::GetVpcLinkInput {
-                    vpc_link_id: self.vpc_link_id.unwrap_or_default(),
-                });
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .request_mut()
-                    .headers_mut()
-                    .insert("Accept", http::HeaderValue::from_static("application/json"));
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
-                }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op).with_metadata(
-                    smithy_http::operation::Metadata::new("GetVpcLink", "apigateway"),
-                );
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
+        ) -> Result<crate::input::GetVpcLinkInput, smithy_http::operation::BuildError> {
+            Ok(crate::input::GetVpcLinkInput {
+                vpc_link_id: self.vpc_link_id.unwrap_or_default(),
             })
         }
     }
 }
 impl GetVpcLinkInput {
+    /// Consumes the builder and constructs an Operation<[`GetVpcLink`](crate::operation::GetVpcLink)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::GetVpcLink,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .request_mut()
+                .headers_mut()
+                .insert("Accept", http::HeaderValue::from_static("application/json"));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::GetVpcLink::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "GetVpcLink",
+                "apigateway",
+            ));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     fn uri_base(&self, output: &mut String) {
         write!(
             output,
@@ -13543,75 +14227,84 @@ pub mod get_vpc_links_input {
             self.limit = inp;
             self
         }
-        /// Consumes the builder and constructs an Operation<[`GetVpcLinks`](crate::operation::GetVpcLinks)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`GetVpcLinksInput`](crate::input::GetVpcLinksInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::GetVpcLinks,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op = crate::operation::GetVpcLinks::new(crate::input::GetVpcLinksInput {
-                    position: self.position,
-                    limit: self.limit,
-                });
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .request_mut()
-                    .headers_mut()
-                    .insert("Accept", http::HeaderValue::from_static("application/json"));
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
-                }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op).with_metadata(
-                    smithy_http::operation::Metadata::new("GetVpcLinks", "apigateway"),
-                );
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
+        ) -> Result<crate::input::GetVpcLinksInput, smithy_http::operation::BuildError> {
+            Ok(crate::input::GetVpcLinksInput {
+                position: self.position,
+                limit: self.limit,
             })
         }
     }
 }
 impl GetVpcLinksInput {
+    /// Consumes the builder and constructs an Operation<[`GetVpcLinks`](crate::operation::GetVpcLinks)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::GetVpcLinks,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .request_mut()
+                .headers_mut()
+                .insert("Accept", http::HeaderValue::from_static("application/json"));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::GetVpcLinks::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "GetVpcLinks",
+                "apigateway",
+            ));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     fn uri_base(&self, output: &mut String) {
         write!(output, "/vpclinks").expect("formatting should succeed")
     }
@@ -13687,75 +14380,84 @@ pub mod import_api_keys_input {
             self.fail_on_warnings = Some(inp);
             self
         }
-        /// Consumes the builder and constructs an Operation<[`ImportApiKeys`](crate::operation::ImportApiKeys)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`ImportApiKeysInput`](crate::input::ImportApiKeysInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::ImportApiKeys,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op = crate::operation::ImportApiKeys::new(crate::input::ImportApiKeysInput {
-                    format: self.format,
-                    fail_on_warnings: self.fail_on_warnings.unwrap_or_default(),
-                });
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .request_mut()
-                    .headers_mut()
-                    .insert("Accept", http::HeaderValue::from_static("application/json"));
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
-                }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op).with_metadata(
-                    smithy_http::operation::Metadata::new("ImportApiKeys", "apigateway"),
-                );
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
+        ) -> Result<crate::input::ImportApiKeysInput, smithy_http::operation::BuildError> {
+            Ok(crate::input::ImportApiKeysInput {
+                format: self.format,
+                fail_on_warnings: self.fail_on_warnings.unwrap_or_default(),
             })
         }
     }
 }
 impl ImportApiKeysInput {
+    /// Consumes the builder and constructs an Operation<[`ImportApiKeys`](crate::operation::ImportApiKeys)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::ImportApiKeys,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .request_mut()
+                .headers_mut()
+                .insert("Accept", http::HeaderValue::from_static("application/json"));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::ImportApiKeys::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "ImportApiKeys",
+                "apigateway",
+            ));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     fn uri_base(&self, output: &mut String) {
         write!(output, "/apikeys").expect("formatting should succeed")
     }
@@ -13845,78 +14547,86 @@ pub mod import_documentation_parts_input {
             self.fail_on_warnings = Some(inp);
             self
         }
-        /// Consumes the builder and constructs an Operation<[`ImportDocumentationParts`](crate::operation::ImportDocumentationParts)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`ImportDocumentationPartsInput`](crate::input::ImportDocumentationPartsInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::ImportDocumentationParts,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op = crate::operation::ImportDocumentationParts::new(
-                    crate::input::ImportDocumentationPartsInput {
-                        rest_api_id: self.rest_api_id.unwrap_or_default(),
-                        mode: self.mode,
-                        fail_on_warnings: self.fail_on_warnings.unwrap_or_default(),
-                    },
-                );
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .request_mut()
-                    .headers_mut()
-                    .insert("Accept", http::HeaderValue::from_static("application/json"));
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
-                }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op).with_metadata(
-                    smithy_http::operation::Metadata::new("ImportDocumentationParts", "apigateway"),
-                );
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
+        ) -> Result<crate::input::ImportDocumentationPartsInput, smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::ImportDocumentationPartsInput {
+                rest_api_id: self.rest_api_id.unwrap_or_default(),
+                mode: self.mode,
+                fail_on_warnings: self.fail_on_warnings.unwrap_or_default(),
             })
         }
     }
 }
 impl ImportDocumentationPartsInput {
+    /// Consumes the builder and constructs an Operation<[`ImportDocumentationParts`](crate::operation::ImportDocumentationParts)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::ImportDocumentationParts,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .request_mut()
+                .headers_mut()
+                .insert("Accept", http::HeaderValue::from_static("application/json"));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::ImportDocumentationParts::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "ImportDocumentationParts",
+                "apigateway",
+            ));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     fn uri_base(&self, output: &mut String) {
         write!(
             output,
@@ -14013,75 +14723,84 @@ pub mod import_rest_api_input {
             self.parameters = inp;
             self
         }
-        /// Consumes the builder and constructs an Operation<[`ImportRestApi`](crate::operation::ImportRestApi)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`ImportRestApiInput`](crate::input::ImportRestApiInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::ImportRestApi,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op = crate::operation::ImportRestApi::new(crate::input::ImportRestApiInput {
-                    fail_on_warnings: self.fail_on_warnings.unwrap_or_default(),
-                    parameters: self.parameters,
-                });
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .request_mut()
-                    .headers_mut()
-                    .insert("Accept", http::HeaderValue::from_static("application/json"));
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
-                }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op).with_metadata(
-                    smithy_http::operation::Metadata::new("ImportRestApi", "apigateway"),
-                );
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
+        ) -> Result<crate::input::ImportRestApiInput, smithy_http::operation::BuildError> {
+            Ok(crate::input::ImportRestApiInput {
+                fail_on_warnings: self.fail_on_warnings.unwrap_or_default(),
+                parameters: self.parameters,
             })
         }
     }
 }
 impl ImportRestApiInput {
+    /// Consumes the builder and constructs an Operation<[`ImportRestApi`](crate::operation::ImportRestApi)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::ImportRestApi,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .request_mut()
+                .headers_mut()
+                .insert("Accept", http::HeaderValue::from_static("application/json"));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::ImportRestApi::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "ImportRestApi",
+                "apigateway",
+            ));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     fn uri_base(&self, output: &mut String) {
         write!(output, "/restapis").expect("formatting should succeed")
     }
@@ -14217,89 +14936,99 @@ pub mod put_gateway_response_input {
             self.response_templates = inp;
             self
         }
-        /// Consumes the builder and constructs an Operation<[`PutGatewayResponse`](crate::operation::PutGatewayResponse)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`PutGatewayResponseInput`](crate::input::PutGatewayResponseInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::PutGatewayResponse,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op = crate::operation::PutGatewayResponse::new(
-                    crate::input::PutGatewayResponseInput {
-                        rest_api_id: self.rest_api_id
-                            .unwrap_or_default()
-                        ,
-                        response_type: self.response_type
-                            .ok_or(
-                                smithy_http::operation::BuildError::MissingField { field: "response_type", details: "response_type was not specified but it is required when building PutGatewayResponse"}
-                            )?
-                        ,
-                        status_code: self.status_code
-                        ,
-                        response_parameters: self.response_parameters
-                        ,
-                        response_templates: self.response_templates
-                        ,
-                    }
-                );
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .request_mut()
-                    .headers_mut()
-                    .insert("Accept", http::HeaderValue::from_static("application/json"));
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
+        ) -> Result<crate::input::PutGatewayResponseInput, smithy_http::operation::BuildError>
+        {
+            Ok(
+                crate::input::PutGatewayResponseInput {
+                    rest_api_id: self.rest_api_id
+                        .unwrap_or_default()
+                    ,
+                    response_type: self.response_type
+                        .ok_or(
+                            smithy_http::operation::BuildError::MissingField { field: "response_type", details: "response_type was not specified but it is required when building PutGatewayResponseInput"}
+                        )?
+                    ,
+                    status_code: self.status_code
+                    ,
+                    response_parameters: self.response_parameters
+                    ,
+                    response_templates: self.response_templates
+                    ,
                 }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op).with_metadata(
-                    smithy_http::operation::Metadata::new("PutGatewayResponse", "apigateway"),
-                );
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
-            })
+            )
         }
     }
 }
 impl PutGatewayResponseInput {
+    /// Consumes the builder and constructs an Operation<[`PutGatewayResponse`](crate::operation::PutGatewayResponse)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::PutGatewayResponse,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .request_mut()
+                .headers_mut()
+                .insert("Accept", http::HeaderValue::from_static("application/json"));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::PutGatewayResponse::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "PutGatewayResponse",
+                "apigateway",
+            ));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     fn uri_base(&self, output: &mut String) {
         write!(
             output,
@@ -14586,90 +15315,99 @@ pub mod put_integration_input {
             self.tls_config = inp;
             self
         }
-        /// Consumes the builder and constructs an Operation<[`PutIntegration`](crate::operation::PutIntegration)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`PutIntegrationInput`](crate::input::PutIntegrationInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::PutIntegration,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op = crate::operation::PutIntegration::new(crate::input::PutIntegrationInput {
-                    rest_api_id: self.rest_api_id.unwrap_or_default(),
-                    resource_id: self.resource_id.unwrap_or_default(),
-                    http_method: self.http_method.unwrap_or_default(),
-                    r#type: self.r#type,
-                    integration_http_method: self.integration_http_method,
-                    uri: self.uri,
-                    connection_type: self.connection_type,
-                    connection_id: self.connection_id,
-                    credentials: self.credentials,
-                    request_parameters: self.request_parameters,
-                    request_templates: self.request_templates,
-                    passthrough_behavior: self.passthrough_behavior,
-                    cache_namespace: self.cache_namespace,
-                    cache_key_parameters: self.cache_key_parameters,
-                    content_handling: self.content_handling,
-                    timeout_in_millis: self.timeout_in_millis,
-                    tls_config: self.tls_config,
-                });
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .request_mut()
-                    .headers_mut()
-                    .insert("Accept", http::HeaderValue::from_static("application/json"));
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
-                }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op).with_metadata(
-                    smithy_http::operation::Metadata::new("PutIntegration", "apigateway"),
-                );
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
+        ) -> Result<crate::input::PutIntegrationInput, smithy_http::operation::BuildError> {
+            Ok(crate::input::PutIntegrationInput {
+                rest_api_id: self.rest_api_id.unwrap_or_default(),
+                resource_id: self.resource_id.unwrap_or_default(),
+                http_method: self.http_method.unwrap_or_default(),
+                r#type: self.r#type,
+                integration_http_method: self.integration_http_method,
+                uri: self.uri,
+                connection_type: self.connection_type,
+                connection_id: self.connection_id,
+                credentials: self.credentials,
+                request_parameters: self.request_parameters,
+                request_templates: self.request_templates,
+                passthrough_behavior: self.passthrough_behavior,
+                cache_namespace: self.cache_namespace,
+                cache_key_parameters: self.cache_key_parameters,
+                content_handling: self.content_handling,
+                timeout_in_millis: self.timeout_in_millis,
+                tls_config: self.tls_config,
             })
         }
     }
 }
 impl PutIntegrationInput {
+    /// Consumes the builder and constructs an Operation<[`PutIntegration`](crate::operation::PutIntegration)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::PutIntegration,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .request_mut()
+                .headers_mut()
+                .insert("Accept", http::HeaderValue::from_static("application/json"));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::PutIntegration::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "PutIntegration",
+                "apigateway",
+            ));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     fn uri_base(&self, output: &mut String) {
         write!(
             output,
@@ -14855,83 +15593,91 @@ pub mod put_integration_response_input {
             self.content_handling = inp;
             self
         }
-        /// Consumes the builder and constructs an Operation<[`PutIntegrationResponse`](crate::operation::PutIntegrationResponse)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`PutIntegrationResponseInput`](crate::input::PutIntegrationResponseInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::PutIntegrationResponse,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op = crate::operation::PutIntegrationResponse::new(
-                    crate::input::PutIntegrationResponseInput {
-                        rest_api_id: self.rest_api_id.unwrap_or_default(),
-                        resource_id: self.resource_id.unwrap_or_default(),
-                        http_method: self.http_method.unwrap_or_default(),
-                        status_code: self.status_code.unwrap_or_default(),
-                        selection_pattern: self.selection_pattern,
-                        response_parameters: self.response_parameters,
-                        response_templates: self.response_templates,
-                        content_handling: self.content_handling,
-                    },
-                );
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .request_mut()
-                    .headers_mut()
-                    .insert("Accept", http::HeaderValue::from_static("application/json"));
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
-                }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op).with_metadata(
-                    smithy_http::operation::Metadata::new("PutIntegrationResponse", "apigateway"),
-                );
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
+        ) -> Result<crate::input::PutIntegrationResponseInput, smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::PutIntegrationResponseInput {
+                rest_api_id: self.rest_api_id.unwrap_or_default(),
+                resource_id: self.resource_id.unwrap_or_default(),
+                http_method: self.http_method.unwrap_or_default(),
+                status_code: self.status_code.unwrap_or_default(),
+                selection_pattern: self.selection_pattern,
+                response_parameters: self.response_parameters,
+                response_templates: self.response_templates,
+                content_handling: self.content_handling,
             })
         }
     }
 }
 impl PutIntegrationResponseInput {
+    /// Consumes the builder and constructs an Operation<[`PutIntegrationResponse`](crate::operation::PutIntegrationResponse)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::PutIntegrationResponse,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .request_mut()
+                .headers_mut()
+                .insert("Accept", http::HeaderValue::from_static("application/json"));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::PutIntegrationResponse::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "PutIntegrationResponse",
+                "apigateway",
+            ));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     fn uri_base(&self, output: &mut String) {
         write!(output, "/restapis/{restApiId}/resources/{resourceId}/methods/{httpMethod}/integration/responses/{statusCode}", restApiId = smithy_http::label::fmt_string(&self.rest_api_id, false), resourceId = smithy_http::label::fmt_string(&self.resource_id, false), httpMethod = smithy_http::label::fmt_string(&self.http_method, false), statusCode = smithy_http::label::fmt_string(&self.status_code, false)).expect("formatting should succeed")
     }
@@ -15126,84 +15872,91 @@ pub mod put_method_input {
             self.authorization_scopes = inp;
             self
         }
-        /// Consumes the builder and constructs an Operation<[`PutMethod`](crate::operation::PutMethod)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`PutMethodInput`](crate::input::PutMethodInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::PutMethod,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op = crate::operation::PutMethod::new(crate::input::PutMethodInput {
-                    rest_api_id: self.rest_api_id.unwrap_or_default(),
-                    resource_id: self.resource_id.unwrap_or_default(),
-                    http_method: self.http_method.unwrap_or_default(),
-                    authorization_type: self.authorization_type,
-                    authorizer_id: self.authorizer_id,
-                    api_key_required: self.api_key_required.unwrap_or_default(),
-                    operation_name: self.operation_name,
-                    request_parameters: self.request_parameters,
-                    request_models: self.request_models,
-                    request_validator_id: self.request_validator_id,
-                    authorization_scopes: self.authorization_scopes,
-                });
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .request_mut()
-                    .headers_mut()
-                    .insert("Accept", http::HeaderValue::from_static("application/json"));
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
-                }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op).with_metadata(
-                    smithy_http::operation::Metadata::new("PutMethod", "apigateway"),
-                );
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
+        ) -> Result<crate::input::PutMethodInput, smithy_http::operation::BuildError> {
+            Ok(crate::input::PutMethodInput {
+                rest_api_id: self.rest_api_id.unwrap_or_default(),
+                resource_id: self.resource_id.unwrap_or_default(),
+                http_method: self.http_method.unwrap_or_default(),
+                authorization_type: self.authorization_type,
+                authorizer_id: self.authorizer_id,
+                api_key_required: self.api_key_required.unwrap_or_default(),
+                operation_name: self.operation_name,
+                request_parameters: self.request_parameters,
+                request_models: self.request_models,
+                request_validator_id: self.request_validator_id,
+                authorization_scopes: self.authorization_scopes,
             })
         }
     }
 }
 impl PutMethodInput {
+    /// Consumes the builder and constructs an Operation<[`PutMethod`](crate::operation::PutMethod)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::PutMethod,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .request_mut()
+                .headers_mut()
+                .insert("Accept", http::HeaderValue::from_static("application/json"));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op =
+                smithy_http::operation::Operation::new(request, crate::operation::PutMethod::new())
+                    .with_metadata(smithy_http::operation::Metadata::new(
+                        "PutMethod",
+                        "apigateway",
+                    ));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     fn uri_base(&self, output: &mut String) {
         write!(
             output,
@@ -15349,81 +16102,89 @@ pub mod put_method_response_input {
             self.response_models = inp;
             self
         }
-        /// Consumes the builder and constructs an Operation<[`PutMethodResponse`](crate::operation::PutMethodResponse)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`PutMethodResponseInput`](crate::input::PutMethodResponseInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::PutMethodResponse,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op = crate::operation::PutMethodResponse::new(
-                    crate::input::PutMethodResponseInput {
-                        rest_api_id: self.rest_api_id.unwrap_or_default(),
-                        resource_id: self.resource_id.unwrap_or_default(),
-                        http_method: self.http_method.unwrap_or_default(),
-                        status_code: self.status_code.unwrap_or_default(),
-                        response_parameters: self.response_parameters,
-                        response_models: self.response_models,
-                    },
-                );
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .request_mut()
-                    .headers_mut()
-                    .insert("Accept", http::HeaderValue::from_static("application/json"));
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
-                }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op).with_metadata(
-                    smithy_http::operation::Metadata::new("PutMethodResponse", "apigateway"),
-                );
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
+        ) -> Result<crate::input::PutMethodResponseInput, smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::PutMethodResponseInput {
+                rest_api_id: self.rest_api_id.unwrap_or_default(),
+                resource_id: self.resource_id.unwrap_or_default(),
+                http_method: self.http_method.unwrap_or_default(),
+                status_code: self.status_code.unwrap_or_default(),
+                response_parameters: self.response_parameters,
+                response_models: self.response_models,
             })
         }
     }
 }
 impl PutMethodResponseInput {
+    /// Consumes the builder and constructs an Operation<[`PutMethodResponse`](crate::operation::PutMethodResponse)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::PutMethodResponse,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .request_mut()
+                .headers_mut()
+                .insert("Accept", http::HeaderValue::from_static("application/json"));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::PutMethodResponse::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "PutMethodResponse",
+                "apigateway",
+            ));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     fn uri_base(&self, output: &mut String) {
         write!(output, "/restapis/{restApiId}/resources/{resourceId}/methods/{httpMethod}/responses/{statusCode}", restApiId = smithy_http::label::fmt_string(&self.rest_api_id, false), resourceId = smithy_http::label::fmt_string(&self.resource_id, false), httpMethod = smithy_http::label::fmt_string(&self.http_method, false), statusCode = smithy_http::label::fmt_string(&self.status_code, false)).expect("formatting should succeed")
     }
@@ -15529,77 +16290,86 @@ pub mod put_rest_api_input {
             self.parameters = inp;
             self
         }
-        /// Consumes the builder and constructs an Operation<[`PutRestApi`](crate::operation::PutRestApi)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`PutRestApiInput`](crate::input::PutRestApiInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::PutRestApi,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op = crate::operation::PutRestApi::new(crate::input::PutRestApiInput {
-                    rest_api_id: self.rest_api_id.unwrap_or_default(),
-                    mode: self.mode,
-                    fail_on_warnings: self.fail_on_warnings.unwrap_or_default(),
-                    parameters: self.parameters,
-                });
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .request_mut()
-                    .headers_mut()
-                    .insert("Accept", http::HeaderValue::from_static("application/json"));
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
-                }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op).with_metadata(
-                    smithy_http::operation::Metadata::new("PutRestApi", "apigateway"),
-                );
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
+        ) -> Result<crate::input::PutRestApiInput, smithy_http::operation::BuildError> {
+            Ok(crate::input::PutRestApiInput {
+                rest_api_id: self.rest_api_id.unwrap_or_default(),
+                mode: self.mode,
+                fail_on_warnings: self.fail_on_warnings.unwrap_or_default(),
+                parameters: self.parameters,
             })
         }
     }
 }
 impl PutRestApiInput {
+    /// Consumes the builder and constructs an Operation<[`PutRestApi`](crate::operation::PutRestApi)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::PutRestApi,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .request_mut()
+                .headers_mut()
+                .insert("Accept", http::HeaderValue::from_static("application/json"));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::PutRestApi::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "PutRestApi",
+                "apigateway",
+            ));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     fn uri_base(&self, output: &mut String) {
         write!(
             output,
@@ -15700,75 +16470,84 @@ pub mod tag_resource_input {
             self.tags = inp;
             self
         }
-        /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`TagResourceInput`](crate::input::TagResourceInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::TagResource,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op = crate::operation::TagResource::new(crate::input::TagResourceInput {
-                    resource_arn: self.resource_arn.unwrap_or_default(),
-                    tags: self.tags,
-                });
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .request_mut()
-                    .headers_mut()
-                    .insert("Accept", http::HeaderValue::from_static("application/json"));
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
-                }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op).with_metadata(
-                    smithy_http::operation::Metadata::new("TagResource", "apigateway"),
-                );
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
+        ) -> Result<crate::input::TagResourceInput, smithy_http::operation::BuildError> {
+            Ok(crate::input::TagResourceInput {
+                resource_arn: self.resource_arn.unwrap_or_default(),
+                tags: self.tags,
             })
         }
     }
 }
 impl TagResourceInput {
+    /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::TagResource,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .request_mut()
+                .headers_mut()
+                .insert("Accept", http::HeaderValue::from_static("application/json"));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::TagResource::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "TagResource",
+                "apigateway",
+            ));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     fn uri_base(&self, output: &mut String) {
         write!(
             output,
@@ -15953,83 +16732,91 @@ pub mod test_invoke_authorizer_input {
             self.additional_context = inp;
             self
         }
-        /// Consumes the builder and constructs an Operation<[`TestInvokeAuthorizer`](crate::operation::TestInvokeAuthorizer)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`TestInvokeAuthorizerInput`](crate::input::TestInvokeAuthorizerInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::TestInvokeAuthorizer,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op = crate::operation::TestInvokeAuthorizer::new(
-                    crate::input::TestInvokeAuthorizerInput {
-                        rest_api_id: self.rest_api_id.unwrap_or_default(),
-                        authorizer_id: self.authorizer_id.unwrap_or_default(),
-                        headers: self.headers,
-                        multi_value_headers: self.multi_value_headers,
-                        path_with_query_string: self.path_with_query_string,
-                        body: self.body,
-                        stage_variables: self.stage_variables,
-                        additional_context: self.additional_context,
-                    },
-                );
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .request_mut()
-                    .headers_mut()
-                    .insert("Accept", http::HeaderValue::from_static("application/json"));
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
-                }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op).with_metadata(
-                    smithy_http::operation::Metadata::new("TestInvokeAuthorizer", "apigateway"),
-                );
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
+        ) -> Result<crate::input::TestInvokeAuthorizerInput, smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::TestInvokeAuthorizerInput {
+                rest_api_id: self.rest_api_id.unwrap_or_default(),
+                authorizer_id: self.authorizer_id.unwrap_or_default(),
+                headers: self.headers,
+                multi_value_headers: self.multi_value_headers,
+                path_with_query_string: self.path_with_query_string,
+                body: self.body,
+                stage_variables: self.stage_variables,
+                additional_context: self.additional_context,
             })
         }
     }
 }
 impl TestInvokeAuthorizerInput {
+    /// Consumes the builder and constructs an Operation<[`TestInvokeAuthorizer`](crate::operation::TestInvokeAuthorizer)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::TestInvokeAuthorizer,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .request_mut()
+                .headers_mut()
+                .insert("Accept", http::HeaderValue::from_static("application/json"));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::TestInvokeAuthorizer::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "TestInvokeAuthorizer",
+                "apigateway",
+            ));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     fn uri_base(&self, output: &mut String) {
         write!(
             output,
@@ -16223,83 +17010,92 @@ pub mod test_invoke_method_input {
             self.stage_variables = inp;
             self
         }
-        /// Consumes the builder and constructs an Operation<[`TestInvokeMethod`](crate::operation::TestInvokeMethod)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`TestInvokeMethodInput`](crate::input::TestInvokeMethodInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::TestInvokeMethod,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op =
-                    crate::operation::TestInvokeMethod::new(crate::input::TestInvokeMethodInput {
-                        rest_api_id: self.rest_api_id.unwrap_or_default(),
-                        resource_id: self.resource_id.unwrap_or_default(),
-                        http_method: self.http_method.unwrap_or_default(),
-                        path_with_query_string: self.path_with_query_string,
-                        body: self.body,
-                        headers: self.headers,
-                        multi_value_headers: self.multi_value_headers,
-                        client_certificate_id: self.client_certificate_id,
-                        stage_variables: self.stage_variables,
-                    });
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .request_mut()
-                    .headers_mut()
-                    .insert("Accept", http::HeaderValue::from_static("application/json"));
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
-                }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op).with_metadata(
-                    smithy_http::operation::Metadata::new("TestInvokeMethod", "apigateway"),
-                );
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
+        ) -> Result<crate::input::TestInvokeMethodInput, smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::TestInvokeMethodInput {
+                rest_api_id: self.rest_api_id.unwrap_or_default(),
+                resource_id: self.resource_id.unwrap_or_default(),
+                http_method: self.http_method.unwrap_or_default(),
+                path_with_query_string: self.path_with_query_string,
+                body: self.body,
+                headers: self.headers,
+                multi_value_headers: self.multi_value_headers,
+                client_certificate_id: self.client_certificate_id,
+                stage_variables: self.stage_variables,
             })
         }
     }
 }
 impl TestInvokeMethodInput {
+    /// Consumes the builder and constructs an Operation<[`TestInvokeMethod`](crate::operation::TestInvokeMethod)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::TestInvokeMethod,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .request_mut()
+                .headers_mut()
+                .insert("Accept", http::HeaderValue::from_static("application/json"));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::TestInvokeMethod::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "TestInvokeMethod",
+                "apigateway",
+            ));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     fn uri_base(&self, output: &mut String) {
         write!(
             output,
@@ -16386,75 +17182,84 @@ pub mod untag_resource_input {
             self.tag_keys = inp;
             self
         }
-        /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`UntagResourceInput`](crate::input::UntagResourceInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::UntagResource,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op = crate::operation::UntagResource::new(crate::input::UntagResourceInput {
-                    resource_arn: self.resource_arn.unwrap_or_default(),
-                    tag_keys: self.tag_keys,
-                });
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .request_mut()
-                    .headers_mut()
-                    .insert("Accept", http::HeaderValue::from_static("application/json"));
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
-                }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op).with_metadata(
-                    smithy_http::operation::Metadata::new("UntagResource", "apigateway"),
-                );
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
+        ) -> Result<crate::input::UntagResourceInput, smithy_http::operation::BuildError> {
+            Ok(crate::input::UntagResourceInput {
+                resource_arn: self.resource_arn.unwrap_or_default(),
+                tag_keys: self.tag_keys,
             })
         }
     }
 }
 impl UntagResourceInput {
+    /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::UntagResource,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .request_mut()
+                .headers_mut()
+                .insert("Accept", http::HeaderValue::from_static("application/json"));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::UntagResource::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "UntagResource",
+                "apigateway",
+            ));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     fn uri_base(&self, output: &mut String) {
         write!(
             output,
@@ -16528,74 +17333,83 @@ pub mod update_account_input {
             self.patch_operations = inp;
             self
         }
-        /// Consumes the builder and constructs an Operation<[`UpdateAccount`](crate::operation::UpdateAccount)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`UpdateAccountInput`](crate::input::UpdateAccountInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::UpdateAccount,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op = crate::operation::UpdateAccount::new(crate::input::UpdateAccountInput {
-                    patch_operations: self.patch_operations,
-                });
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .request_mut()
-                    .headers_mut()
-                    .insert("Accept", http::HeaderValue::from_static("application/json"));
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
-                }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op).with_metadata(
-                    smithy_http::operation::Metadata::new("UpdateAccount", "apigateway"),
-                );
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
+        ) -> Result<crate::input::UpdateAccountInput, smithy_http::operation::BuildError> {
+            Ok(crate::input::UpdateAccountInput {
+                patch_operations: self.patch_operations,
             })
         }
     }
 }
 impl UpdateAccountInput {
+    /// Consumes the builder and constructs an Operation<[`UpdateAccount`](crate::operation::UpdateAccount)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::UpdateAccount,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .request_mut()
+                .headers_mut()
+                .insert("Accept", http::HeaderValue::from_static("application/json"));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::UpdateAccount::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "UpdateAccount",
+                "apigateway",
+            ));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     fn uri_base(&self, output: &mut String) {
         write!(output, "/account").expect("formatting should succeed")
     }
@@ -16670,75 +17484,84 @@ pub mod update_api_key_input {
             self.patch_operations = inp;
             self
         }
-        /// Consumes the builder and constructs an Operation<[`UpdateApiKey`](crate::operation::UpdateApiKey)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`UpdateApiKeyInput`](crate::input::UpdateApiKeyInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::UpdateApiKey,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op = crate::operation::UpdateApiKey::new(crate::input::UpdateApiKeyInput {
-                    api_key: self.api_key.unwrap_or_default(),
-                    patch_operations: self.patch_operations,
-                });
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .request_mut()
-                    .headers_mut()
-                    .insert("Accept", http::HeaderValue::from_static("application/json"));
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
-                }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op).with_metadata(
-                    smithy_http::operation::Metadata::new("UpdateApiKey", "apigateway"),
-                );
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
+        ) -> Result<crate::input::UpdateApiKeyInput, smithy_http::operation::BuildError> {
+            Ok(crate::input::UpdateApiKeyInput {
+                api_key: self.api_key.unwrap_or_default(),
+                patch_operations: self.patch_operations,
             })
         }
     }
 }
 impl UpdateApiKeyInput {
+    /// Consumes the builder and constructs an Operation<[`UpdateApiKey`](crate::operation::UpdateApiKey)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::UpdateApiKey,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .request_mut()
+                .headers_mut()
+                .insert("Accept", http::HeaderValue::from_static("application/json"));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::UpdateApiKey::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "UpdateApiKey",
+                "apigateway",
+            ));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     fn uri_base(&self, output: &mut String) {
         write!(
             output,
@@ -16828,77 +17651,86 @@ pub mod update_authorizer_input {
             self.patch_operations = inp;
             self
         }
-        /// Consumes the builder and constructs an Operation<[`UpdateAuthorizer`](crate::operation::UpdateAuthorizer)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`UpdateAuthorizerInput`](crate::input::UpdateAuthorizerInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::UpdateAuthorizer,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op =
-                    crate::operation::UpdateAuthorizer::new(crate::input::UpdateAuthorizerInput {
-                        rest_api_id: self.rest_api_id.unwrap_or_default(),
-                        authorizer_id: self.authorizer_id.unwrap_or_default(),
-                        patch_operations: self.patch_operations,
-                    });
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .request_mut()
-                    .headers_mut()
-                    .insert("Accept", http::HeaderValue::from_static("application/json"));
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
-                }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op).with_metadata(
-                    smithy_http::operation::Metadata::new("UpdateAuthorizer", "apigateway"),
-                );
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
+        ) -> Result<crate::input::UpdateAuthorizerInput, smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::UpdateAuthorizerInput {
+                rest_api_id: self.rest_api_id.unwrap_or_default(),
+                authorizer_id: self.authorizer_id.unwrap_or_default(),
+                patch_operations: self.patch_operations,
             })
         }
     }
 }
 impl UpdateAuthorizerInput {
+    /// Consumes the builder and constructs an Operation<[`UpdateAuthorizer`](crate::operation::UpdateAuthorizer)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::UpdateAuthorizer,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .request_mut()
+                .headers_mut()
+                .insert("Accept", http::HeaderValue::from_static("application/json"));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::UpdateAuthorizer::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "UpdateAuthorizer",
+                "apigateway",
+            ));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     fn uri_base(&self, output: &mut String) {
         write!(
             output,
@@ -16990,78 +17822,86 @@ pub mod update_base_path_mapping_input {
             self.patch_operations = inp;
             self
         }
-        /// Consumes the builder and constructs an Operation<[`UpdateBasePathMapping`](crate::operation::UpdateBasePathMapping)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`UpdateBasePathMappingInput`](crate::input::UpdateBasePathMappingInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::UpdateBasePathMapping,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op = crate::operation::UpdateBasePathMapping::new(
-                    crate::input::UpdateBasePathMappingInput {
-                        domain_name: self.domain_name.unwrap_or_default(),
-                        base_path: self.base_path.unwrap_or_default(),
-                        patch_operations: self.patch_operations,
-                    },
-                );
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .request_mut()
-                    .headers_mut()
-                    .insert("Accept", http::HeaderValue::from_static("application/json"));
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
-                }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op).with_metadata(
-                    smithy_http::operation::Metadata::new("UpdateBasePathMapping", "apigateway"),
-                );
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
+        ) -> Result<crate::input::UpdateBasePathMappingInput, smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::UpdateBasePathMappingInput {
+                domain_name: self.domain_name.unwrap_or_default(),
+                base_path: self.base_path.unwrap_or_default(),
+                patch_operations: self.patch_operations,
             })
         }
     }
 }
 impl UpdateBasePathMappingInput {
+    /// Consumes the builder and constructs an Operation<[`UpdateBasePathMapping`](crate::operation::UpdateBasePathMapping)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::UpdateBasePathMapping,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .request_mut()
+                .headers_mut()
+                .insert("Accept", http::HeaderValue::from_static("application/json"));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::UpdateBasePathMapping::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "UpdateBasePathMapping",
+                "apigateway",
+            ));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     fn uri_base(&self, output: &mut String) {
         write!(
             output,
@@ -17142,77 +17982,85 @@ pub mod update_client_certificate_input {
             self.patch_operations = inp;
             self
         }
-        /// Consumes the builder and constructs an Operation<[`UpdateClientCertificate`](crate::operation::UpdateClientCertificate)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`UpdateClientCertificateInput`](crate::input::UpdateClientCertificateInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::UpdateClientCertificate,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op = crate::operation::UpdateClientCertificate::new(
-                    crate::input::UpdateClientCertificateInput {
-                        client_certificate_id: self.client_certificate_id.unwrap_or_default(),
-                        patch_operations: self.patch_operations,
-                    },
-                );
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .request_mut()
-                    .headers_mut()
-                    .insert("Accept", http::HeaderValue::from_static("application/json"));
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
-                }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op).with_metadata(
-                    smithy_http::operation::Metadata::new("UpdateClientCertificate", "apigateway"),
-                );
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
+        ) -> Result<crate::input::UpdateClientCertificateInput, smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::UpdateClientCertificateInput {
+                client_certificate_id: self.client_certificate_id.unwrap_or_default(),
+                patch_operations: self.patch_operations,
             })
         }
     }
 }
 impl UpdateClientCertificateInput {
+    /// Consumes the builder and constructs an Operation<[`UpdateClientCertificate`](crate::operation::UpdateClientCertificate)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::UpdateClientCertificate,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .request_mut()
+                .headers_mut()
+                .insert("Accept", http::HeaderValue::from_static("application/json"));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::UpdateClientCertificate::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "UpdateClientCertificate",
+                "apigateway",
+            ));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     fn uri_base(&self, output: &mut String) {
         write!(
             output,
@@ -17303,77 +18151,86 @@ pub mod update_deployment_input {
             self.patch_operations = inp;
             self
         }
-        /// Consumes the builder and constructs an Operation<[`UpdateDeployment`](crate::operation::UpdateDeployment)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`UpdateDeploymentInput`](crate::input::UpdateDeploymentInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::UpdateDeployment,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op =
-                    crate::operation::UpdateDeployment::new(crate::input::UpdateDeploymentInput {
-                        rest_api_id: self.rest_api_id.unwrap_or_default(),
-                        deployment_id: self.deployment_id.unwrap_or_default(),
-                        patch_operations: self.patch_operations,
-                    });
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .request_mut()
-                    .headers_mut()
-                    .insert("Accept", http::HeaderValue::from_static("application/json"));
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
-                }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op).with_metadata(
-                    smithy_http::operation::Metadata::new("UpdateDeployment", "apigateway"),
-                );
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
+        ) -> Result<crate::input::UpdateDeploymentInput, smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::UpdateDeploymentInput {
+                rest_api_id: self.rest_api_id.unwrap_or_default(),
+                deployment_id: self.deployment_id.unwrap_or_default(),
+                patch_operations: self.patch_operations,
             })
         }
     }
 }
 impl UpdateDeploymentInput {
+    /// Consumes the builder and constructs an Operation<[`UpdateDeployment`](crate::operation::UpdateDeployment)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::UpdateDeployment,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .request_mut()
+                .headers_mut()
+                .insert("Accept", http::HeaderValue::from_static("application/json"));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::UpdateDeployment::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "UpdateDeployment",
+                "apigateway",
+            ));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     fn uri_base(&self, output: &mut String) {
         write!(
             output,
@@ -17464,78 +18321,86 @@ pub mod update_documentation_part_input {
             self.patch_operations = inp;
             self
         }
-        /// Consumes the builder and constructs an Operation<[`UpdateDocumentationPart`](crate::operation::UpdateDocumentationPart)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`UpdateDocumentationPartInput`](crate::input::UpdateDocumentationPartInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::UpdateDocumentationPart,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op = crate::operation::UpdateDocumentationPart::new(
-                    crate::input::UpdateDocumentationPartInput {
-                        rest_api_id: self.rest_api_id.unwrap_or_default(),
-                        documentation_part_id: self.documentation_part_id.unwrap_or_default(),
-                        patch_operations: self.patch_operations,
-                    },
-                );
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .request_mut()
-                    .headers_mut()
-                    .insert("Accept", http::HeaderValue::from_static("application/json"));
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
-                }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op).with_metadata(
-                    smithy_http::operation::Metadata::new("UpdateDocumentationPart", "apigateway"),
-                );
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
+        ) -> Result<crate::input::UpdateDocumentationPartInput, smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::UpdateDocumentationPartInput {
+                rest_api_id: self.rest_api_id.unwrap_or_default(),
+                documentation_part_id: self.documentation_part_id.unwrap_or_default(),
+                patch_operations: self.patch_operations,
             })
         }
     }
 }
 impl UpdateDocumentationPartInput {
+    /// Consumes the builder and constructs an Operation<[`UpdateDocumentationPart`](crate::operation::UpdateDocumentationPart)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::UpdateDocumentationPart,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .request_mut()
+                .headers_mut()
+                .insert("Accept", http::HeaderValue::from_static("application/json"));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::UpdateDocumentationPart::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "UpdateDocumentationPart",
+                "apigateway",
+            ));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     fn uri_base(&self, output: &mut String) {
         write!(
             output,
@@ -17627,81 +18492,86 @@ pub mod update_documentation_version_input {
             self.patch_operations = inp;
             self
         }
-        /// Consumes the builder and constructs an Operation<[`UpdateDocumentationVersion`](crate::operation::UpdateDocumentationVersion)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`UpdateDocumentationVersionInput`](crate::input::UpdateDocumentationVersionInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::UpdateDocumentationVersion,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op = crate::operation::UpdateDocumentationVersion::new(
-                    crate::input::UpdateDocumentationVersionInput {
-                        rest_api_id: self.rest_api_id.unwrap_or_default(),
-                        documentation_version: self.documentation_version.unwrap_or_default(),
-                        patch_operations: self.patch_operations,
-                    },
-                );
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .request_mut()
-                    .headers_mut()
-                    .insert("Accept", http::HeaderValue::from_static("application/json"));
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
-                }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op).with_metadata(
-                    smithy_http::operation::Metadata::new(
-                        "UpdateDocumentationVersion",
-                        "apigateway",
-                    ),
-                );
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
+        ) -> Result<crate::input::UpdateDocumentationVersionInput, smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::UpdateDocumentationVersionInput {
+                rest_api_id: self.rest_api_id.unwrap_or_default(),
+                documentation_version: self.documentation_version.unwrap_or_default(),
+                patch_operations: self.patch_operations,
             })
         }
     }
 }
 impl UpdateDocumentationVersionInput {
+    /// Consumes the builder and constructs an Operation<[`UpdateDocumentationVersion`](crate::operation::UpdateDocumentationVersion)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::UpdateDocumentationVersion,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .request_mut()
+                .headers_mut()
+                .insert("Accept", http::HeaderValue::from_static("application/json"));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::UpdateDocumentationVersion::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "UpdateDocumentationVersion",
+                "apigateway",
+            ));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     fn uri_base(&self, output: &mut String) {
         write!(
             output,
@@ -17783,76 +18653,85 @@ pub mod update_domain_name_input {
             self.patch_operations = inp;
             self
         }
-        /// Consumes the builder and constructs an Operation<[`UpdateDomainName`](crate::operation::UpdateDomainName)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`UpdateDomainNameInput`](crate::input::UpdateDomainNameInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::UpdateDomainName,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op =
-                    crate::operation::UpdateDomainName::new(crate::input::UpdateDomainNameInput {
-                        domain_name: self.domain_name.unwrap_or_default(),
-                        patch_operations: self.patch_operations,
-                    });
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .request_mut()
-                    .headers_mut()
-                    .insert("Accept", http::HeaderValue::from_static("application/json"));
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
-                }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op).with_metadata(
-                    smithy_http::operation::Metadata::new("UpdateDomainName", "apigateway"),
-                );
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
+        ) -> Result<crate::input::UpdateDomainNameInput, smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::UpdateDomainNameInput {
+                domain_name: self.domain_name.unwrap_or_default(),
+                patch_operations: self.patch_operations,
             })
         }
     }
 }
 impl UpdateDomainNameInput {
+    /// Consumes the builder and constructs an Operation<[`UpdateDomainName`](crate::operation::UpdateDomainName)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::UpdateDomainName,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .request_mut()
+                .headers_mut()
+                .insert("Accept", http::HeaderValue::from_static("application/json"));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::UpdateDomainName::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "UpdateDomainName",
+                "apigateway",
+            ));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     fn uri_base(&self, output: &mut String) {
         write!(
             output,
@@ -17942,85 +18821,95 @@ pub mod update_gateway_response_input {
             self.patch_operations = inp;
             self
         }
-        /// Consumes the builder and constructs an Operation<[`UpdateGatewayResponse`](crate::operation::UpdateGatewayResponse)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`UpdateGatewayResponseInput`](crate::input::UpdateGatewayResponseInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::UpdateGatewayResponse,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op = crate::operation::UpdateGatewayResponse::new(
-                    crate::input::UpdateGatewayResponseInput {
-                        rest_api_id: self.rest_api_id
-                            .unwrap_or_default()
-                        ,
-                        response_type: self.response_type
-                            .ok_or(
-                                smithy_http::operation::BuildError::MissingField { field: "response_type", details: "response_type was not specified but it is required when building UpdateGatewayResponse"}
-                            )?
-                        ,
-                        patch_operations: self.patch_operations
-                        ,
-                    }
-                );
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .request_mut()
-                    .headers_mut()
-                    .insert("Accept", http::HeaderValue::from_static("application/json"));
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
+        ) -> Result<crate::input::UpdateGatewayResponseInput, smithy_http::operation::BuildError>
+        {
+            Ok(
+                crate::input::UpdateGatewayResponseInput {
+                    rest_api_id: self.rest_api_id
+                        .unwrap_or_default()
+                    ,
+                    response_type: self.response_type
+                        .ok_or(
+                            smithy_http::operation::BuildError::MissingField { field: "response_type", details: "response_type was not specified but it is required when building UpdateGatewayResponseInput"}
+                        )?
+                    ,
+                    patch_operations: self.patch_operations
+                    ,
                 }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op).with_metadata(
-                    smithy_http::operation::Metadata::new("UpdateGatewayResponse", "apigateway"),
-                );
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
-            })
+            )
         }
     }
 }
 impl UpdateGatewayResponseInput {
+    /// Consumes the builder and constructs an Operation<[`UpdateGatewayResponse`](crate::operation::UpdateGatewayResponse)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::UpdateGatewayResponse,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .request_mut()
+                .headers_mut()
+                .insert("Accept", http::HeaderValue::from_static("application/json"));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::UpdateGatewayResponse::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "UpdateGatewayResponse",
+                "apigateway",
+            ));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     fn uri_base(&self, output: &mut String) {
         write!(
             output,
@@ -18121,79 +19010,87 @@ pub mod update_integration_input {
             self.patch_operations = inp;
             self
         }
-        /// Consumes the builder and constructs an Operation<[`UpdateIntegration`](crate::operation::UpdateIntegration)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`UpdateIntegrationInput`](crate::input::UpdateIntegrationInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::UpdateIntegration,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op = crate::operation::UpdateIntegration::new(
-                    crate::input::UpdateIntegrationInput {
-                        rest_api_id: self.rest_api_id.unwrap_or_default(),
-                        resource_id: self.resource_id.unwrap_or_default(),
-                        http_method: self.http_method.unwrap_or_default(),
-                        patch_operations: self.patch_operations,
-                    },
-                );
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .request_mut()
-                    .headers_mut()
-                    .insert("Accept", http::HeaderValue::from_static("application/json"));
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
-                }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op).with_metadata(
-                    smithy_http::operation::Metadata::new("UpdateIntegration", "apigateway"),
-                );
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
+        ) -> Result<crate::input::UpdateIntegrationInput, smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::UpdateIntegrationInput {
+                rest_api_id: self.rest_api_id.unwrap_or_default(),
+                resource_id: self.resource_id.unwrap_or_default(),
+                http_method: self.http_method.unwrap_or_default(),
+                patch_operations: self.patch_operations,
             })
         }
     }
 }
 impl UpdateIntegrationInput {
+    /// Consumes the builder and constructs an Operation<[`UpdateIntegration`](crate::operation::UpdateIntegration)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::UpdateIntegration,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .request_mut()
+                .headers_mut()
+                .insert("Accept", http::HeaderValue::from_static("application/json"));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::UpdateIntegration::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "UpdateIntegration",
+                "apigateway",
+            ));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     fn uri_base(&self, output: &mut String) {
         write!(
             output,
@@ -18305,83 +19202,88 @@ pub mod update_integration_response_input {
             self.patch_operations = inp;
             self
         }
-        /// Consumes the builder and constructs an Operation<[`UpdateIntegrationResponse`](crate::operation::UpdateIntegrationResponse)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`UpdateIntegrationResponseInput`](crate::input::UpdateIntegrationResponseInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::UpdateIntegrationResponse,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op = crate::operation::UpdateIntegrationResponse::new(
-                    crate::input::UpdateIntegrationResponseInput {
-                        rest_api_id: self.rest_api_id.unwrap_or_default(),
-                        resource_id: self.resource_id.unwrap_or_default(),
-                        http_method: self.http_method.unwrap_or_default(),
-                        status_code: self.status_code.unwrap_or_default(),
-                        patch_operations: self.patch_operations,
-                    },
-                );
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .request_mut()
-                    .headers_mut()
-                    .insert("Accept", http::HeaderValue::from_static("application/json"));
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
-                }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op).with_metadata(
-                    smithy_http::operation::Metadata::new(
-                        "UpdateIntegrationResponse",
-                        "apigateway",
-                    ),
-                );
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
+        ) -> Result<crate::input::UpdateIntegrationResponseInput, smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::UpdateIntegrationResponseInput {
+                rest_api_id: self.rest_api_id.unwrap_or_default(),
+                resource_id: self.resource_id.unwrap_or_default(),
+                http_method: self.http_method.unwrap_or_default(),
+                status_code: self.status_code.unwrap_or_default(),
+                patch_operations: self.patch_operations,
             })
         }
     }
 }
 impl UpdateIntegrationResponseInput {
+    /// Consumes the builder and constructs an Operation<[`UpdateIntegrationResponse`](crate::operation::UpdateIntegrationResponse)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::UpdateIntegrationResponse,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .request_mut()
+                .headers_mut()
+                .insert("Accept", http::HeaderValue::from_static("application/json"));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::UpdateIntegrationResponse::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "UpdateIntegrationResponse",
+                "apigateway",
+            ));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     fn uri_base(&self, output: &mut String) {
         write!(output, "/restapis/{restApiId}/resources/{resourceId}/methods/{httpMethod}/integration/responses/{statusCode}", restApiId = smithy_http::label::fmt_string(&self.rest_api_id, false), resourceId = smithy_http::label::fmt_string(&self.resource_id, false), httpMethod = smithy_http::label::fmt_string(&self.http_method, false), statusCode = smithy_http::label::fmt_string(&self.status_code, false)).expect("formatting should succeed")
     }
@@ -18476,77 +19378,86 @@ pub mod update_method_input {
             self.patch_operations = inp;
             self
         }
-        /// Consumes the builder and constructs an Operation<[`UpdateMethod`](crate::operation::UpdateMethod)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`UpdateMethodInput`](crate::input::UpdateMethodInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::UpdateMethod,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op = crate::operation::UpdateMethod::new(crate::input::UpdateMethodInput {
-                    rest_api_id: self.rest_api_id.unwrap_or_default(),
-                    resource_id: self.resource_id.unwrap_or_default(),
-                    http_method: self.http_method.unwrap_or_default(),
-                    patch_operations: self.patch_operations,
-                });
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .request_mut()
-                    .headers_mut()
-                    .insert("Accept", http::HeaderValue::from_static("application/json"));
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
-                }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op).with_metadata(
-                    smithy_http::operation::Metadata::new("UpdateMethod", "apigateway"),
-                );
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
+        ) -> Result<crate::input::UpdateMethodInput, smithy_http::operation::BuildError> {
+            Ok(crate::input::UpdateMethodInput {
+                rest_api_id: self.rest_api_id.unwrap_or_default(),
+                resource_id: self.resource_id.unwrap_or_default(),
+                http_method: self.http_method.unwrap_or_default(),
+                patch_operations: self.patch_operations,
             })
         }
     }
 }
 impl UpdateMethodInput {
+    /// Consumes the builder and constructs an Operation<[`UpdateMethod`](crate::operation::UpdateMethod)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::UpdateMethod,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .request_mut()
+                .headers_mut()
+                .insert("Accept", http::HeaderValue::from_static("application/json"));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::UpdateMethod::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "UpdateMethod",
+                "apigateway",
+            ));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     fn uri_base(&self, output: &mut String) {
         write!(
             output,
@@ -18658,80 +19569,88 @@ pub mod update_method_response_input {
             self.patch_operations = inp;
             self
         }
-        /// Consumes the builder and constructs an Operation<[`UpdateMethodResponse`](crate::operation::UpdateMethodResponse)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`UpdateMethodResponseInput`](crate::input::UpdateMethodResponseInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::UpdateMethodResponse,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op = crate::operation::UpdateMethodResponse::new(
-                    crate::input::UpdateMethodResponseInput {
-                        rest_api_id: self.rest_api_id.unwrap_or_default(),
-                        resource_id: self.resource_id.unwrap_or_default(),
-                        http_method: self.http_method.unwrap_or_default(),
-                        status_code: self.status_code.unwrap_or_default(),
-                        patch_operations: self.patch_operations,
-                    },
-                );
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .request_mut()
-                    .headers_mut()
-                    .insert("Accept", http::HeaderValue::from_static("application/json"));
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
-                }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op).with_metadata(
-                    smithy_http::operation::Metadata::new("UpdateMethodResponse", "apigateway"),
-                );
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
+        ) -> Result<crate::input::UpdateMethodResponseInput, smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::UpdateMethodResponseInput {
+                rest_api_id: self.rest_api_id.unwrap_or_default(),
+                resource_id: self.resource_id.unwrap_or_default(),
+                http_method: self.http_method.unwrap_or_default(),
+                status_code: self.status_code.unwrap_or_default(),
+                patch_operations: self.patch_operations,
             })
         }
     }
 }
 impl UpdateMethodResponseInput {
+    /// Consumes the builder and constructs an Operation<[`UpdateMethodResponse`](crate::operation::UpdateMethodResponse)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::UpdateMethodResponse,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .request_mut()
+                .headers_mut()
+                .insert("Accept", http::HeaderValue::from_static("application/json"));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::UpdateMethodResponse::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "UpdateMethodResponse",
+                "apigateway",
+            ));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     fn uri_base(&self, output: &mut String) {
         write!(output, "/restapis/{restApiId}/resources/{resourceId}/methods/{httpMethod}/responses/{statusCode}", restApiId = smithy_http::label::fmt_string(&self.rest_api_id, false), resourceId = smithy_http::label::fmt_string(&self.resource_id, false), httpMethod = smithy_http::label::fmt_string(&self.http_method, false), statusCode = smithy_http::label::fmt_string(&self.status_code, false)).expect("formatting should succeed")
     }
@@ -18816,76 +19735,85 @@ pub mod update_model_input {
             self.patch_operations = inp;
             self
         }
-        /// Consumes the builder and constructs an Operation<[`UpdateModel`](crate::operation::UpdateModel)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`UpdateModelInput`](crate::input::UpdateModelInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::UpdateModel,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op = crate::operation::UpdateModel::new(crate::input::UpdateModelInput {
-                    rest_api_id: self.rest_api_id.unwrap_or_default(),
-                    model_name: self.model_name.unwrap_or_default(),
-                    patch_operations: self.patch_operations,
-                });
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .request_mut()
-                    .headers_mut()
-                    .insert("Accept", http::HeaderValue::from_static("application/json"));
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
-                }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op).with_metadata(
-                    smithy_http::operation::Metadata::new("UpdateModel", "apigateway"),
-                );
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
+        ) -> Result<crate::input::UpdateModelInput, smithy_http::operation::BuildError> {
+            Ok(crate::input::UpdateModelInput {
+                rest_api_id: self.rest_api_id.unwrap_or_default(),
+                model_name: self.model_name.unwrap_or_default(),
+                patch_operations: self.patch_operations,
             })
         }
     }
 }
 impl UpdateModelInput {
+    /// Consumes the builder and constructs an Operation<[`UpdateModel`](crate::operation::UpdateModel)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::UpdateModel,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .request_mut()
+                .headers_mut()
+                .insert("Accept", http::HeaderValue::from_static("application/json"));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::UpdateModel::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "UpdateModel",
+                "apigateway",
+            ));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     fn uri_base(&self, output: &mut String) {
         write!(
             output,
@@ -18976,78 +19904,86 @@ pub mod update_request_validator_input {
             self.patch_operations = inp;
             self
         }
-        /// Consumes the builder and constructs an Operation<[`UpdateRequestValidator`](crate::operation::UpdateRequestValidator)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`UpdateRequestValidatorInput`](crate::input::UpdateRequestValidatorInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::UpdateRequestValidator,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op = crate::operation::UpdateRequestValidator::new(
-                    crate::input::UpdateRequestValidatorInput {
-                        rest_api_id: self.rest_api_id.unwrap_or_default(),
-                        request_validator_id: self.request_validator_id.unwrap_or_default(),
-                        patch_operations: self.patch_operations,
-                    },
-                );
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .request_mut()
-                    .headers_mut()
-                    .insert("Accept", http::HeaderValue::from_static("application/json"));
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
-                }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op).with_metadata(
-                    smithy_http::operation::Metadata::new("UpdateRequestValidator", "apigateway"),
-                );
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
+        ) -> Result<crate::input::UpdateRequestValidatorInput, smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::UpdateRequestValidatorInput {
+                rest_api_id: self.rest_api_id.unwrap_or_default(),
+                request_validator_id: self.request_validator_id.unwrap_or_default(),
+                patch_operations: self.patch_operations,
             })
         }
     }
 }
 impl UpdateRequestValidatorInput {
+    /// Consumes the builder and constructs an Operation<[`UpdateRequestValidator`](crate::operation::UpdateRequestValidator)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::UpdateRequestValidator,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .request_mut()
+                .headers_mut()
+                .insert("Accept", http::HeaderValue::from_static("application/json"));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::UpdateRequestValidator::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "UpdateRequestValidator",
+                "apigateway",
+            ));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     fn uri_base(&self, output: &mut String) {
         write!(
             output,
@@ -19138,76 +20074,85 @@ pub mod update_resource_input {
             self.patch_operations = inp;
             self
         }
-        /// Consumes the builder and constructs an Operation<[`UpdateResource`](crate::operation::UpdateResource)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`UpdateResourceInput`](crate::input::UpdateResourceInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::UpdateResource,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op = crate::operation::UpdateResource::new(crate::input::UpdateResourceInput {
-                    rest_api_id: self.rest_api_id.unwrap_or_default(),
-                    resource_id: self.resource_id.unwrap_or_default(),
-                    patch_operations: self.patch_operations,
-                });
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .request_mut()
-                    .headers_mut()
-                    .insert("Accept", http::HeaderValue::from_static("application/json"));
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
-                }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op).with_metadata(
-                    smithy_http::operation::Metadata::new("UpdateResource", "apigateway"),
-                );
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
+        ) -> Result<crate::input::UpdateResourceInput, smithy_http::operation::BuildError> {
+            Ok(crate::input::UpdateResourceInput {
+                rest_api_id: self.rest_api_id.unwrap_or_default(),
+                resource_id: self.resource_id.unwrap_or_default(),
+                patch_operations: self.patch_operations,
             })
         }
     }
 }
 impl UpdateResourceInput {
+    /// Consumes the builder and constructs an Operation<[`UpdateResource`](crate::operation::UpdateResource)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::UpdateResource,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .request_mut()
+                .headers_mut()
+                .insert("Accept", http::HeaderValue::from_static("application/json"));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::UpdateResource::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "UpdateResource",
+                "apigateway",
+            ));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     fn uri_base(&self, output: &mut String) {
         write!(
             output,
@@ -19288,75 +20233,84 @@ pub mod update_rest_api_input {
             self.patch_operations = inp;
             self
         }
-        /// Consumes the builder and constructs an Operation<[`UpdateRestApi`](crate::operation::UpdateRestApi)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`UpdateRestApiInput`](crate::input::UpdateRestApiInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::UpdateRestApi,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op = crate::operation::UpdateRestApi::new(crate::input::UpdateRestApiInput {
-                    rest_api_id: self.rest_api_id.unwrap_or_default(),
-                    patch_operations: self.patch_operations,
-                });
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .request_mut()
-                    .headers_mut()
-                    .insert("Accept", http::HeaderValue::from_static("application/json"));
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
-                }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op).with_metadata(
-                    smithy_http::operation::Metadata::new("UpdateRestApi", "apigateway"),
-                );
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
+        ) -> Result<crate::input::UpdateRestApiInput, smithy_http::operation::BuildError> {
+            Ok(crate::input::UpdateRestApiInput {
+                rest_api_id: self.rest_api_id.unwrap_or_default(),
+                patch_operations: self.patch_operations,
             })
         }
     }
 }
 impl UpdateRestApiInput {
+    /// Consumes the builder and constructs an Operation<[`UpdateRestApi`](crate::operation::UpdateRestApi)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::UpdateRestApi,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .request_mut()
+                .headers_mut()
+                .insert("Accept", http::HeaderValue::from_static("application/json"));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::UpdateRestApi::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "UpdateRestApi",
+                "apigateway",
+            ));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     fn uri_base(&self, output: &mut String) {
         write!(
             output,
@@ -19446,76 +20400,85 @@ pub mod update_stage_input {
             self.patch_operations = inp;
             self
         }
-        /// Consumes the builder and constructs an Operation<[`UpdateStage`](crate::operation::UpdateStage)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`UpdateStageInput`](crate::input::UpdateStageInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::UpdateStage,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op = crate::operation::UpdateStage::new(crate::input::UpdateStageInput {
-                    rest_api_id: self.rest_api_id.unwrap_or_default(),
-                    stage_name: self.stage_name.unwrap_or_default(),
-                    patch_operations: self.patch_operations,
-                });
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .request_mut()
-                    .headers_mut()
-                    .insert("Accept", http::HeaderValue::from_static("application/json"));
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
-                }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op).with_metadata(
-                    smithy_http::operation::Metadata::new("UpdateStage", "apigateway"),
-                );
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
+        ) -> Result<crate::input::UpdateStageInput, smithy_http::operation::BuildError> {
+            Ok(crate::input::UpdateStageInput {
+                rest_api_id: self.rest_api_id.unwrap_or_default(),
+                stage_name: self.stage_name.unwrap_or_default(),
+                patch_operations: self.patch_operations,
             })
         }
     }
 }
 impl UpdateStageInput {
+    /// Consumes the builder and constructs an Operation<[`UpdateStage`](crate::operation::UpdateStage)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::UpdateStage,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .request_mut()
+                .headers_mut()
+                .insert("Accept", http::HeaderValue::from_static("application/json"));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::UpdateStage::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "UpdateStage",
+                "apigateway",
+            ));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     fn uri_base(&self, output: &mut String) {
         write!(
             output,
@@ -19606,76 +20569,85 @@ pub mod update_usage_input {
             self.patch_operations = inp;
             self
         }
-        /// Consumes the builder and constructs an Operation<[`UpdateUsage`](crate::operation::UpdateUsage)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`UpdateUsageInput`](crate::input::UpdateUsageInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::UpdateUsage,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op = crate::operation::UpdateUsage::new(crate::input::UpdateUsageInput {
-                    usage_plan_id: self.usage_plan_id.unwrap_or_default(),
-                    key_id: self.key_id.unwrap_or_default(),
-                    patch_operations: self.patch_operations,
-                });
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .request_mut()
-                    .headers_mut()
-                    .insert("Accept", http::HeaderValue::from_static("application/json"));
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
-                }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op).with_metadata(
-                    smithy_http::operation::Metadata::new("UpdateUsage", "apigateway"),
-                );
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
+        ) -> Result<crate::input::UpdateUsageInput, smithy_http::operation::BuildError> {
+            Ok(crate::input::UpdateUsageInput {
+                usage_plan_id: self.usage_plan_id.unwrap_or_default(),
+                key_id: self.key_id.unwrap_or_default(),
+                patch_operations: self.patch_operations,
             })
         }
     }
 }
 impl UpdateUsageInput {
+    /// Consumes the builder and constructs an Operation<[`UpdateUsage`](crate::operation::UpdateUsage)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::UpdateUsage,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .request_mut()
+                .headers_mut()
+                .insert("Accept", http::HeaderValue::from_static("application/json"));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::UpdateUsage::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "UpdateUsage",
+                "apigateway",
+            ));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     fn uri_base(&self, output: &mut String) {
         write!(
             output,
@@ -19756,76 +20728,85 @@ pub mod update_usage_plan_input {
             self.patch_operations = inp;
             self
         }
-        /// Consumes the builder and constructs an Operation<[`UpdateUsagePlan`](crate::operation::UpdateUsagePlan)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`UpdateUsagePlanInput`](crate::input::UpdateUsagePlanInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::UpdateUsagePlan,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op =
-                    crate::operation::UpdateUsagePlan::new(crate::input::UpdateUsagePlanInput {
-                        usage_plan_id: self.usage_plan_id.unwrap_or_default(),
-                        patch_operations: self.patch_operations,
-                    });
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .request_mut()
-                    .headers_mut()
-                    .insert("Accept", http::HeaderValue::from_static("application/json"));
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
-                }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op).with_metadata(
-                    smithy_http::operation::Metadata::new("UpdateUsagePlan", "apigateway"),
-                );
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
+        ) -> Result<crate::input::UpdateUsagePlanInput, smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::UpdateUsagePlanInput {
+                usage_plan_id: self.usage_plan_id.unwrap_or_default(),
+                patch_operations: self.patch_operations,
             })
         }
     }
 }
 impl UpdateUsagePlanInput {
+    /// Consumes the builder and constructs an Operation<[`UpdateUsagePlan`](crate::operation::UpdateUsagePlan)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::UpdateUsagePlan,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .request_mut()
+                .headers_mut()
+                .insert("Accept", http::HeaderValue::from_static("application/json"));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::UpdateUsagePlan::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "UpdateUsagePlan",
+                "apigateway",
+            ));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     fn uri_base(&self, output: &mut String) {
         write!(
             output,
@@ -19905,75 +20886,84 @@ pub mod update_vpc_link_input {
             self.patch_operations = inp;
             self
         }
-        /// Consumes the builder and constructs an Operation<[`UpdateVpcLink`](crate::operation::UpdateVpcLink)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`UpdateVpcLinkInput`](crate::input::UpdateVpcLinkInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::UpdateVpcLink,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op = crate::operation::UpdateVpcLink::new(crate::input::UpdateVpcLinkInput {
-                    vpc_link_id: self.vpc_link_id.unwrap_or_default(),
-                    patch_operations: self.patch_operations,
-                });
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .request_mut()
-                    .headers_mut()
-                    .insert("Accept", http::HeaderValue::from_static("application/json"));
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
-                }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op).with_metadata(
-                    smithy_http::operation::Metadata::new("UpdateVpcLink", "apigateway"),
-                );
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
+        ) -> Result<crate::input::UpdateVpcLinkInput, smithy_http::operation::BuildError> {
+            Ok(crate::input::UpdateVpcLinkInput {
+                vpc_link_id: self.vpc_link_id.unwrap_or_default(),
+                patch_operations: self.patch_operations,
             })
         }
     }
 }
 impl UpdateVpcLinkInput {
+    /// Consumes the builder and constructs an Operation<[`UpdateVpcLink`](crate::operation::UpdateVpcLink)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::UpdateVpcLink,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .request_mut()
+                .headers_mut()
+                .insert("Accept", http::HeaderValue::from_static("application/json"));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::UpdateVpcLink::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "UpdateVpcLink",
+                "apigateway",
+            ));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     fn uri_base(&self, output: &mut String) {
         write!(
             output,

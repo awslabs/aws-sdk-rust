@@ -53,20 +53,12 @@
 /// </ul>
 #[derive(std::clone::Clone)]
 pub struct CancelRotateSecret {
-    input: crate::input::CancelRotateSecretInput,
+    _private: (),
 }
 impl CancelRotateSecret {
     /// Creates a new builder-style object to manufacture [`CancelRotateSecretInput`](crate::input::CancelRotateSecretInput)
     pub fn builder() -> crate::input::cancel_rotate_secret_input::Builder {
         crate::input::cancel_rotate_secret_input::Builder::default()
-    }
-    pub fn build_http_request(
-        &self,
-    ) -> Result<http::request::Request<Vec<u8>>, smithy_http::operation::BuildError> {
-        Ok(crate::input::CancelRotateSecretInput::assemble(
-            self.input.request_builder_base()?,
-            self.input.build_body(),
-        ))
     }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
@@ -134,8 +126,8 @@ impl CancelRotateSecret {
     {
         Self::from_response(&response)
     }
-    pub fn new(input: crate::input::CancelRotateSecretInput) -> Self {
-        Self { input }
+    pub fn new() -> Self {
+        Self { _private: () }
     }
 }
 
@@ -237,20 +229,12 @@ impl smithy_http::response::ParseStrictResponse for CancelRotateSecret {
 /// </ul>
 #[derive(std::clone::Clone)]
 pub struct CreateSecret {
-    input: crate::input::CreateSecretInput,
+    _private: (),
 }
 impl CreateSecret {
     /// Creates a new builder-style object to manufacture [`CreateSecretInput`](crate::input::CreateSecretInput)
     pub fn builder() -> crate::input::create_secret_input::Builder {
         crate::input::create_secret_input::Builder::default()
-    }
-    pub fn build_http_request(
-        &self,
-    ) -> Result<http::request::Request<Vec<u8>>, smithy_http::operation::BuildError> {
-        Ok(crate::input::CreateSecretInput::assemble(
-            self.input.request_builder_base()?,
-            self.input.build_body(),
-        ))
     }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
@@ -349,8 +333,8 @@ impl CreateSecret {
     ) -> Result<crate::output::CreateSecretOutput, crate::error::CreateSecretError> {
         Self::from_response(&response)
     }
-    pub fn new(input: crate::input::CreateSecretInput) -> Self {
-        Self { input }
+    pub fn new() -> Self {
+        Self { _private: () }
     }
 }
 
@@ -387,20 +371,12 @@ impl smithy_http::response::ParseStrictResponse for CreateSecret {
 /// </ul>
 #[derive(std::clone::Clone)]
 pub struct DeleteResourcePolicy {
-    input: crate::input::DeleteResourcePolicyInput,
+    _private: (),
 }
 impl DeleteResourcePolicy {
     /// Creates a new builder-style object to manufacture [`DeleteResourcePolicyInput`](crate::input::DeleteResourcePolicyInput)
     pub fn builder() -> crate::input::delete_resource_policy_input::Builder {
         crate::input::delete_resource_policy_input::Builder::default()
-    }
-    pub fn build_http_request(
-        &self,
-    ) -> Result<http::request::Request<Vec<u8>>, smithy_http::operation::BuildError> {
-        Ok(crate::input::DeleteResourcePolicyInput::assemble(
-            self.input.request_builder_base()?,
-            self.input.build_body(),
-        ))
     }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
@@ -462,8 +438,8 @@ impl DeleteResourcePolicy {
     {
         Self::from_response(&response)
     }
-    pub fn new(input: crate::input::DeleteResourcePolicyInput) -> Self {
-        Self { input }
+    pub fn new() -> Self {
+        Self { _private: () }
     }
 }
 
@@ -523,20 +499,12 @@ impl smithy_http::response::ParseStrictResponse for DeleteResourcePolicy {
 /// </ul>
 #[derive(std::clone::Clone)]
 pub struct DeleteSecret {
-    input: crate::input::DeleteSecretInput,
+    _private: (),
 }
 impl DeleteSecret {
     /// Creates a new builder-style object to manufacture [`DeleteSecretInput`](crate::input::DeleteSecretInput)
     pub fn builder() -> crate::input::delete_secret_input::Builder {
         crate::input::delete_secret_input::Builder::default()
-    }
-    pub fn build_http_request(
-        &self,
-    ) -> Result<http::request::Request<Vec<u8>>, smithy_http::operation::BuildError> {
-        Ok(crate::input::DeleteSecretInput::assemble(
-            self.input.request_builder_base()?,
-            self.input.build_body(),
-        ))
     }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
@@ -598,8 +566,8 @@ impl DeleteSecret {
     ) -> Result<crate::output::DeleteSecretOutput, crate::error::DeleteSecretError> {
         Self::from_response(&response)
     }
-    pub fn new(input: crate::input::DeleteSecretInput) -> Self {
-        Self { input }
+    pub fn new() -> Self {
+        Self { _private: () }
     }
 }
 
@@ -640,20 +608,12 @@ impl smithy_http::response::ParseStrictResponse for DeleteSecret {
 /// </ul>
 #[derive(std::clone::Clone)]
 pub struct DescribeSecret {
-    input: crate::input::DescribeSecretInput,
+    _private: (),
 }
 impl DescribeSecret {
     /// Creates a new builder-style object to manufacture [`DescribeSecretInput`](crate::input::DescribeSecretInput)
     pub fn builder() -> crate::input::describe_secret_input::Builder {
         crate::input::describe_secret_input::Builder::default()
-    }
-    pub fn build_http_request(
-        &self,
-    ) -> Result<http::request::Request<Vec<u8>>, smithy_http::operation::BuildError> {
-        Ok(crate::input::DescribeSecretInput::assemble(
-            self.input.request_builder_base()?,
-            self.input.build_body(),
-        ))
     }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
@@ -713,8 +673,8 @@ impl DescribeSecret {
     ) -> Result<crate::output::DescribeSecretOutput, crate::error::DescribeSecretError> {
         Self::from_response(&response)
     }
-    pub fn new(input: crate::input::DescribeSecretInput) -> Self {
-        Self { input }
+    pub fn new() -> Self {
+        Self { _private: () }
     }
 }
 
@@ -740,20 +700,12 @@ impl smithy_http::response::ParseStrictResponse for DescribeSecret {
 /// </ul>
 #[derive(std::clone::Clone)]
 pub struct GetRandomPassword {
-    input: crate::input::GetRandomPasswordInput,
+    _private: (),
 }
 impl GetRandomPassword {
     /// Creates a new builder-style object to manufacture [`GetRandomPasswordInput`](crate::input::GetRandomPasswordInput)
     pub fn builder() -> crate::input::get_random_password_input::Builder {
         crate::input::get_random_password_input::Builder::default()
-    }
-    pub fn build_http_request(
-        &self,
-    ) -> Result<http::request::Request<Vec<u8>>, smithy_http::operation::BuildError> {
-        Ok(crate::input::GetRandomPasswordInput::assemble(
-            self.input.request_builder_base()?,
-            self.input.build_body(),
-        ))
     }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
@@ -806,8 +758,8 @@ impl GetRandomPassword {
     ) -> Result<crate::output::GetRandomPasswordOutput, crate::error::GetRandomPasswordError> {
         Self::from_response(&response)
     }
-    pub fn new(input: crate::input::GetRandomPasswordInput) -> Self {
-        Self { input }
+    pub fn new() -> Self {
+        Self { _private: () }
     }
 }
 
@@ -848,20 +800,12 @@ impl smithy_http::response::ParseStrictResponse for GetRandomPassword {
 /// </ul>
 #[derive(std::clone::Clone)]
 pub struct GetResourcePolicy {
-    input: crate::input::GetResourcePolicyInput,
+    _private: (),
 }
 impl GetResourcePolicy {
     /// Creates a new builder-style object to manufacture [`GetResourcePolicyInput`](crate::input::GetResourcePolicyInput)
     pub fn builder() -> crate::input::get_resource_policy_input::Builder {
         crate::input::get_resource_policy_input::Builder::default()
-    }
-    pub fn build_http_request(
-        &self,
-    ) -> Result<http::request::Request<Vec<u8>>, smithy_http::operation::BuildError> {
-        Ok(crate::input::GetResourcePolicyInput::assemble(
-            self.input.request_builder_base()?,
-            self.input.build_body(),
-        ))
     }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
@@ -916,8 +860,8 @@ impl GetResourcePolicy {
     ) -> Result<crate::output::GetResourcePolicyOutput, crate::error::GetResourcePolicyError> {
         Self::from_response(&response)
     }
-    pub fn new(input: crate::input::GetResourcePolicyInput) -> Self {
-        Self { input }
+    pub fn new() -> Self {
+        Self { _private: () }
     }
 }
 
@@ -959,20 +903,12 @@ impl smithy_http::response::ParseStrictResponse for GetResourcePolicy {
 /// </ul>
 #[derive(std::clone::Clone)]
 pub struct GetSecretValue {
-    input: crate::input::GetSecretValueInput,
+    _private: (),
 }
 impl GetSecretValue {
     /// Creates a new builder-style object to manufacture [`GetSecretValueInput`](crate::input::GetSecretValueInput)
     pub fn builder() -> crate::input::get_secret_value_input::Builder {
         crate::input::get_secret_value_input::Builder::default()
-    }
-    pub fn build_http_request(
-        &self,
-    ) -> Result<http::request::Request<Vec<u8>>, smithy_http::operation::BuildError> {
-        Ok(crate::input::GetSecretValueInput::assemble(
-            self.input.request_builder_base()?,
-            self.input.build_body(),
-        ))
     }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
@@ -1045,8 +981,8 @@ impl GetSecretValue {
     ) -> Result<crate::output::GetSecretValueOutput, crate::error::GetSecretValueError> {
         Self::from_response(&response)
     }
-    pub fn new(input: crate::input::GetSecretValueInput) -> Self {
-        Self { input }
+    pub fn new() -> Self {
+        Self { _private: () }
     }
 }
 
@@ -1089,20 +1025,12 @@ impl smithy_http::response::ParseStrictResponse for GetSecretValue {
 /// </ul>
 #[derive(std::clone::Clone)]
 pub struct ListSecrets {
-    input: crate::input::ListSecretsInput,
+    _private: (),
 }
 impl ListSecrets {
     /// Creates a new builder-style object to manufacture [`ListSecretsInput`](crate::input::ListSecretsInput)
     pub fn builder() -> crate::input::list_secrets_input::Builder {
         crate::input::list_secrets_input::Builder::default()
-    }
-    pub fn build_http_request(
-        &self,
-    ) -> Result<http::request::Request<Vec<u8>>, smithy_http::operation::BuildError> {
-        Ok(crate::input::ListSecretsInput::assemble(
-            self.input.request_builder_base()?,
-            self.input.build_body(),
-        ))
     }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
@@ -1156,8 +1084,8 @@ impl ListSecrets {
     ) -> Result<crate::output::ListSecretsOutput, crate::error::ListSecretsError> {
         Self::from_response(&response)
     }
-    pub fn new(input: crate::input::ListSecretsInput) -> Self {
-        Self { input }
+    pub fn new() -> Self {
+        Self { _private: () }
     }
 }
 
@@ -1199,20 +1127,12 @@ impl smithy_http::response::ParseStrictResponse for ListSecrets {
 /// </ul>
 #[derive(std::clone::Clone)]
 pub struct ListSecretVersionIds {
-    input: crate::input::ListSecretVersionIdsInput,
+    _private: (),
 }
 impl ListSecretVersionIds {
     /// Creates a new builder-style object to manufacture [`ListSecretVersionIdsInput`](crate::input::ListSecretVersionIdsInput)
     pub fn builder() -> crate::input::list_secret_version_ids_input::Builder {
         crate::input::list_secret_version_ids_input::Builder::default()
-    }
-    pub fn build_http_request(
-        &self,
-    ) -> Result<http::request::Request<Vec<u8>>, smithy_http::operation::BuildError> {
-        Ok(crate::input::ListSecretVersionIdsInput::assemble(
-            self.input.request_builder_base()?,
-            self.input.build_body(),
-        ))
     }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
@@ -1276,8 +1196,8 @@ impl ListSecretVersionIds {
     {
         Self::from_response(&response)
     }
-    pub fn new(input: crate::input::ListSecretVersionIdsInput) -> Self {
-        Self { input }
+    pub fn new() -> Self {
+        Self { _private: () }
     }
 }
 
@@ -1323,20 +1243,12 @@ impl smithy_http::response::ParseStrictResponse for ListSecretVersionIds {
 /// </ul>
 #[derive(std::clone::Clone)]
 pub struct PutResourcePolicy {
-    input: crate::input::PutResourcePolicyInput,
+    _private: (),
 }
 impl PutResourcePolicy {
     /// Creates a new builder-style object to manufacture [`PutResourcePolicyInput`](crate::input::PutResourcePolicyInput)
     pub fn builder() -> crate::input::put_resource_policy_input::Builder {
         crate::input::put_resource_policy_input::Builder::default()
-    }
-    pub fn build_http_request(
-        &self,
-    ) -> Result<http::request::Request<Vec<u8>>, smithy_http::operation::BuildError> {
-        Ok(crate::input::PutResourcePolicyInput::assemble(
-            self.input.request_builder_base()?,
-            self.input.build_body(),
-        ))
     }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
@@ -1414,8 +1326,8 @@ impl PutResourcePolicy {
     ) -> Result<crate::output::PutResourcePolicyOutput, crate::error::PutResourcePolicyError> {
         Self::from_response(&response)
     }
-    pub fn new(input: crate::input::PutResourcePolicyInput) -> Self {
-        Self { input }
+    pub fn new() -> Self {
+        Self { _private: () }
     }
 }
 
@@ -1519,20 +1431,12 @@ impl smithy_http::response::ParseStrictResponse for PutResourcePolicy {
 /// </ul>
 #[derive(std::clone::Clone)]
 pub struct PutSecretValue {
-    input: crate::input::PutSecretValueInput,
+    _private: (),
 }
 impl PutSecretValue {
     /// Creates a new builder-style object to manufacture [`PutSecretValueInput`](crate::input::PutSecretValueInput)
     pub fn builder() -> crate::input::put_secret_value_input::Builder {
         crate::input::put_secret_value_input::Builder::default()
-    }
-    pub fn build_http_request(
-        &self,
-    ) -> Result<http::request::Request<Vec<u8>>, smithy_http::operation::BuildError> {
-        Ok(crate::input::PutSecretValueInput::assemble(
-            self.input.request_builder_base()?,
-            self.input.build_body(),
-        ))
     }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
@@ -1616,8 +1520,8 @@ impl PutSecretValue {
     ) -> Result<crate::output::PutSecretValueOutput, crate::error::PutSecretValueError> {
         Self::from_response(&response)
     }
-    pub fn new(input: crate::input::PutSecretValueInput) -> Self {
-        Self { input }
+    pub fn new() -> Self {
+        Self { _private: () }
     }
 }
 
@@ -1649,20 +1553,12 @@ impl smithy_http::response::ParseStrictResponse for PutSecretValue {
 /// </ul>
 #[derive(std::clone::Clone)]
 pub struct RestoreSecret {
-    input: crate::input::RestoreSecretInput,
+    _private: (),
 }
 impl RestoreSecret {
     /// Creates a new builder-style object to manufacture [`RestoreSecretInput`](crate::input::RestoreSecretInput)
     pub fn builder() -> crate::input::restore_secret_input::Builder {
         crate::input::restore_secret_input::Builder::default()
-    }
-    pub fn build_http_request(
-        &self,
-    ) -> Result<http::request::Request<Vec<u8>>, smithy_http::operation::BuildError> {
-        Ok(crate::input::RestoreSecretInput::assemble(
-            self.input.request_builder_base()?,
-            self.input.build_body(),
-        ))
     }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
@@ -1723,8 +1619,8 @@ impl RestoreSecret {
     ) -> Result<crate::output::RestoreSecretOutput, crate::error::RestoreSecretError> {
         Self::from_response(&response)
     }
-    pub fn new(input: crate::input::RestoreSecretInput) -> Self {
-        Self { input }
+    pub fn new() -> Self {
+        Self { _private: () }
     }
 }
 
@@ -1799,20 +1695,12 @@ impl smithy_http::response::ParseStrictResponse for RestoreSecret {
 /// </ul>
 #[derive(std::clone::Clone)]
 pub struct RotateSecret {
-    input: crate::input::RotateSecretInput,
+    _private: (),
 }
 impl RotateSecret {
     /// Creates a new builder-style object to manufacture [`RotateSecretInput`](crate::input::RotateSecretInput)
     pub fn builder() -> crate::input::rotate_secret_input::Builder {
         crate::input::rotate_secret_input::Builder::default()
-    }
-    pub fn build_http_request(
-        &self,
-    ) -> Result<http::request::Request<Vec<u8>>, smithy_http::operation::BuildError> {
-        Ok(crate::input::RotateSecretInput::assemble(
-            self.input.request_builder_base()?,
-            self.input.build_body(),
-        ))
     }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
@@ -1874,8 +1762,8 @@ impl RotateSecret {
     ) -> Result<crate::output::RotateSecretOutput, crate::error::RotateSecretError> {
         Self::from_response(&response)
     }
-    pub fn new(input: crate::input::RotateSecretInput) -> Self {
-        Self { input }
+    pub fn new() -> Self {
+        Self { _private: () }
     }
 }
 
@@ -1944,20 +1832,12 @@ impl smithy_http::response::ParseStrictResponse for RotateSecret {
 /// </ul>
 #[derive(std::clone::Clone)]
 pub struct TagResource {
-    input: crate::input::TagResourceInput,
+    _private: (),
 }
 impl TagResource {
     /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput)
     pub fn builder() -> crate::input::tag_resource_input::Builder {
         crate::input::tag_resource_input::Builder::default()
-    }
-    pub fn build_http_request(
-        &self,
-    ) -> Result<http::request::Request<Vec<u8>>, smithy_http::operation::BuildError> {
-        Ok(crate::input::TagResourceInput::assemble(
-            self.input.request_builder_base()?,
-            self.input.build_body(),
-        ))
     }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
@@ -2012,8 +1892,8 @@ impl TagResource {
     ) -> Result<crate::output::TagResourceOutput, crate::error::TagResourceError> {
         Self::from_response(&response)
     }
-    pub fn new(input: crate::input::TagResourceInput) -> Self {
-        Self { input }
+    pub fn new() -> Self {
+        Self { _private: () }
     }
 }
 
@@ -2055,20 +1935,12 @@ impl smithy_http::response::ParseStrictResponse for TagResource {
 /// </ul>
 #[derive(std::clone::Clone)]
 pub struct UntagResource {
-    input: crate::input::UntagResourceInput,
+    _private: (),
 }
 impl UntagResource {
     /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput)
     pub fn builder() -> crate::input::untag_resource_input::Builder {
         crate::input::untag_resource_input::Builder::default()
-    }
-    pub fn build_http_request(
-        &self,
-    ) -> Result<http::request::Request<Vec<u8>>, smithy_http::operation::BuildError> {
-        Ok(crate::input::UntagResourceInput::assemble(
-            self.input.request_builder_base()?,
-            self.input.build_body(),
-        ))
     }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
@@ -2123,8 +1995,8 @@ impl UntagResource {
     ) -> Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError> {
         Self::from_response(&response)
     }
-    pub fn new(input: crate::input::UntagResourceInput) -> Self {
-        Self { input }
+    pub fn new() -> Self {
+        Self { _private: () }
     }
 }
 
@@ -2222,20 +2094,12 @@ impl smithy_http::response::ParseStrictResponse for UntagResource {
 /// </ul>
 #[derive(std::clone::Clone)]
 pub struct UpdateSecret {
-    input: crate::input::UpdateSecretInput,
+    _private: (),
 }
 impl UpdateSecret {
     /// Creates a new builder-style object to manufacture [`UpdateSecretInput`](crate::input::UpdateSecretInput)
     pub fn builder() -> crate::input::update_secret_input::Builder {
         crate::input::update_secret_input::Builder::default()
-    }
-    pub fn build_http_request(
-        &self,
-    ) -> Result<http::request::Request<Vec<u8>>, smithy_http::operation::BuildError> {
-        Ok(crate::input::UpdateSecretInput::assemble(
-            self.input.request_builder_base()?,
-            self.input.build_body(),
-        ))
     }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
@@ -2334,8 +2198,8 @@ impl UpdateSecret {
     ) -> Result<crate::output::UpdateSecretOutput, crate::error::UpdateSecretError> {
         Self::from_response(&response)
     }
-    pub fn new(input: crate::input::UpdateSecretInput) -> Self {
-        Self { input }
+    pub fn new() -> Self {
+        Self { _private: () }
     }
 }
 
@@ -2385,20 +2249,12 @@ impl smithy_http::response::ParseStrictResponse for UpdateSecret {
 /// </ul>
 #[derive(std::clone::Clone)]
 pub struct UpdateSecretVersionStage {
-    input: crate::input::UpdateSecretVersionStageInput,
+    _private: (),
 }
 impl UpdateSecretVersionStage {
     /// Creates a new builder-style object to manufacture [`UpdateSecretVersionStageInput`](crate::input::UpdateSecretVersionStageInput)
     pub fn builder() -> crate::input::update_secret_version_stage_input::Builder {
         crate::input::update_secret_version_stage_input::Builder::default()
-    }
-    pub fn build_http_request(
-        &self,
-    ) -> Result<http::request::Request<Vec<u8>>, smithy_http::operation::BuildError> {
-        Ok(crate::input::UpdateSecretVersionStageInput::assemble(
-            self.input.request_builder_base()?,
-            self.input.build_body(),
-        ))
     }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
@@ -2488,8 +2344,8 @@ impl UpdateSecretVersionStage {
     > {
         Self::from_response(&response)
     }
-    pub fn new(input: crate::input::UpdateSecretVersionStageInput) -> Self {
-        Self { input }
+    pub fn new() -> Self {
+        Self { _private: () }
     }
 }
 
@@ -2510,20 +2366,12 @@ impl smithy_http::response::ParseStrictResponse for UpdateSecretVersionStage {
 /// policy is optional.</p>
 #[derive(std::clone::Clone)]
 pub struct ValidateResourcePolicy {
-    input: crate::input::ValidateResourcePolicyInput,
+    _private: (),
 }
 impl ValidateResourcePolicy {
     /// Creates a new builder-style object to manufacture [`ValidateResourcePolicyInput`](crate::input::ValidateResourcePolicyInput)
     pub fn builder() -> crate::input::validate_resource_policy_input::Builder {
         crate::input::validate_resource_policy_input::Builder::default()
-    }
-    pub fn build_http_request(
-        &self,
-    ) -> Result<http::request::Request<Vec<u8>>, smithy_http::operation::BuildError> {
-        Ok(crate::input::ValidateResourcePolicyInput::assemble(
-            self.input.request_builder_base()?,
-            self.input.build_body(),
-        ))
     }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
@@ -2586,8 +2434,8 @@ impl ValidateResourcePolicy {
     > {
         Self::from_response(&response)
     }
-    pub fn new(input: crate::input::ValidateResourcePolicyInput) -> Self {
-        Self { input }
+    pub fn new() -> Self {
+        Self { _private: () }
     }
 }
 

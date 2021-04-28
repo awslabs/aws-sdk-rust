@@ -11,6 +11,7 @@ use aws_hyper::test_connection::TestConnection;
 use aws_hyper::{Client, RetryConfig};
 use aws_sig_auth::signer::OperationSigningConfig;
 use aws_types::region::Region;
+use aws_types::SigningService;
 use bytes::Bytes;
 use http::header::{AUTHORIZATION, HOST, USER_AGENT};
 use http::{Response, Uri};
@@ -84,6 +85,7 @@ fn test_operation() -> Operation<TestOperationParser, AwsErrorRetryPolicy> {
             );
             conf.insert(Region::new("test-region"));
             conf.insert(OperationSigningConfig::default_config());
+            conf.insert(SigningService::from_static("test-service-signing"));
             conf.insert(UNIX_EPOCH + Duration::from_secs(1613414417));
             conf.insert(AwsUserAgent::for_tests());
             Result::<_, Infallible>::Ok(req)
@@ -92,13 +94,20 @@ fn test_operation() -> Operation<TestOperationParser, AwsErrorRetryPolicy> {
     Operation::new(req, TestOperationParser).with_retry_policy(AwsErrorRetryPolicy::new())
 }
 
+#[cfg(any(feature = "native-tls", feature = "rustls"))]
+#[test]
+fn test_default_client() {
+    let client = Client::https();
+    let _ = client.call(test_operation());
+}
+
 #[tokio::test]
 async fn e2e_test() {
     let expected_req = http::Request::builder()
         .header(USER_AGENT, "aws-sdk-rust/0.123.test os/windows/XPSP3 lang/rust/1.50.0")
         .header("x-amz-user-agent", "aws-sdk-rust/0.123.test api/test-service/0.123 os/windows/XPSP3 lang/rust/1.50.0")
         .header(HOST, "test-service.test-region.amazonaws.com")
-        .header(AUTHORIZATION, "AWS4-HMAC-SHA256 Credential=access_key/20210215/test-region/test-service/aws4_request, SignedHeaders=host, Signature=b4bccc6f03b22e88b9e52a60314d4629c5d159a7cc2de25b1d687b3e5e480d2c")
+        .header(AUTHORIZATION, "AWS4-HMAC-SHA256 Credential=access_key/20210215/test-region/test-service-signing/aws4_request, SignedHeaders=host, Signature=5ebafc2fc4a104b63a1f87ffe829e6eb860a48db8c105a7921b82ee3dc02f1b8")
         .header("x-amz-date", "20210215T184017Z")
         .uri(Uri::from_static("https://test-service.test-region.amazonaws.com/"))
         .body(SdkBody::from("request body")).unwrap();
