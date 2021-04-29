@@ -6275,6 +6275,110 @@ pub enum AttributeValue {
     #[serde(rename = "SS")]
     Ss(std::vec::Vec<std::string::String>),
 }
+impl AttributeValue {
+    pub fn as_b(&self) -> Option<&smithy_types::Blob> {
+        if let AttributeValue::B(val) = &self {
+            Some(&val)
+        } else {
+            None
+        }
+    }
+    pub fn is_b(&self) -> bool {
+        self.as_b().is_some()
+    }
+    pub fn as_bool(&self) -> Option<&bool> {
+        if let AttributeValue::Bool(val) = &self {
+            Some(&val)
+        } else {
+            None
+        }
+    }
+    pub fn is_bool(&self) -> bool {
+        self.as_bool().is_some()
+    }
+    pub fn as_bs(&self) -> Option<&std::vec::Vec<smithy_types::Blob>> {
+        if let AttributeValue::Bs(val) = &self {
+            Some(&val)
+        } else {
+            None
+        }
+    }
+    pub fn is_bs(&self) -> bool {
+        self.as_bs().is_some()
+    }
+    pub fn as_l(&self) -> Option<&std::vec::Vec<crate::model::AttributeValue>> {
+        if let AttributeValue::L(val) = &self {
+            Some(&val)
+        } else {
+            None
+        }
+    }
+    pub fn is_l(&self) -> bool {
+        self.as_l().is_some()
+    }
+    pub fn as_m(
+        &self,
+    ) -> Option<&std::collections::HashMap<std::string::String, crate::model::AttributeValue>> {
+        if let AttributeValue::M(val) = &self {
+            Some(&val)
+        } else {
+            None
+        }
+    }
+    pub fn is_m(&self) -> bool {
+        self.as_m().is_some()
+    }
+    pub fn as_n(&self) -> Option<&std::string::String> {
+        if let AttributeValue::N(val) = &self {
+            Some(&val)
+        } else {
+            None
+        }
+    }
+    pub fn is_n(&self) -> bool {
+        self.as_n().is_some()
+    }
+    pub fn as_ns(&self) -> Option<&std::vec::Vec<std::string::String>> {
+        if let AttributeValue::Ns(val) = &self {
+            Some(&val)
+        } else {
+            None
+        }
+    }
+    pub fn is_ns(&self) -> bool {
+        self.as_ns().is_some()
+    }
+    pub fn as_null(&self) -> Option<&bool> {
+        if let AttributeValue::Null(val) = &self {
+            Some(&val)
+        } else {
+            None
+        }
+    }
+    pub fn is_null(&self) -> bool {
+        self.as_null().is_some()
+    }
+    pub fn as_s(&self) -> Option<&std::string::String> {
+        if let AttributeValue::S(val) = &self {
+            Some(&val)
+        } else {
+            None
+        }
+    }
+    pub fn is_s(&self) -> bool {
+        self.as_s().is_some()
+    }
+    pub fn as_ss(&self) -> Option<&std::vec::Vec<std::string::String>> {
+        if let AttributeValue::Ss(val) = &self {
+            Some(&val)
+        } else {
+            None
+        }
+    }
+    pub fn is_ss(&self) -> bool {
+        self.as_ss().is_some()
+    }
+}
 
 /// <p>The capacity units consumed by an operation. The data returned includes the total
 /// provisioned throughput consumed, along with statistics for the table and any indexes involved

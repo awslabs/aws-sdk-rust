@@ -68,513 +68,6 @@ impl<'de> serde::Deserialize<'de> for ScalingType {
 
 #[non_exhaustive]
 #[derive(
-    serde::Deserialize, serde::Serialize, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug,
-)]
-pub enum SubscribeToShardEventStream {
-    /// <p>The processing of the request failed because of an unknown error, exception, or
-    /// failure.</p>
-    #[serde(rename = "InternalFailureException")]
-    InternalFailureException(crate::error::InternalFailureError),
-    /// <p>The ciphertext references a key that doesn't exist or that you don't have access
-    /// to.</p>
-    #[serde(rename = "KMSAccessDeniedException")]
-    KmsAccessDeniedException(crate::error::KMSAccessDeniedError),
-    /// <p>The request was rejected because the specified customer master key (CMK) isn't
-    /// enabled.</p>
-    #[serde(rename = "KMSDisabledException")]
-    KmsDisabledException(crate::error::KMSDisabledError),
-    /// <p>The request was rejected because the state of the specified resource isn't valid
-    /// for this request. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How Key State Affects Use of a
-    /// Customer Master Key</a> in the <i>AWS Key Management Service Developer
-    /// Guide</i>.</p>
-    #[serde(rename = "KMSInvalidStateException")]
-    KmsInvalidStateException(crate::error::KMSInvalidStateError),
-    /// <p>The request was rejected because the specified entity or resource can't be
-    /// found.</p>
-    #[serde(rename = "KMSNotFoundException")]
-    KmsNotFoundException(crate::error::KMSNotFoundError),
-    /// <p>The AWS access key ID needs a subscription for the service.</p>
-    #[serde(rename = "KMSOptInRequired")]
-    KmsOptInRequired(crate::error::KMSOptInRequired),
-    /// <p>The request was denied due to request throttling. For more information about
-    /// throttling, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html#requests-per-second">Limits</a> in
-    /// the <i>AWS Key Management Service Developer Guide</i>.</p>
-    #[serde(rename = "KMSThrottlingException")]
-    KmsThrottlingException(crate::error::KMSThrottlingError),
-    /// <p>The resource is not available for this operation. For successful operation, the
-    /// resource must be in the <code>ACTIVE</code> state.</p>
-    #[serde(rename = "ResourceInUseException")]
-    ResourceInUseException(crate::error::ResourceInUseError),
-    /// <p>The requested resource could not be found. The stream might not be specified
-    /// correctly.</p>
-    #[serde(rename = "ResourceNotFoundException")]
-    ResourceNotFoundException(crate::error::ResourceNotFoundError),
-    /// <p>After you call <a>SubscribeToShard</a>, Kinesis Data Streams sends events
-    /// of this type to your consumer. For an example of how to handle these events, see <a href="/streams/latest/dev/building-enhanced-consumers-api.html">Enhanced Fan-Out
-    /// Using the Kinesis Data Streams API</a>.</p>
-    #[serde(rename = "SubscribeToShardEvent")]
-    SubscribeToShardEvent(crate::model::SubscribeToShardEvent),
-}
-
-/// <p>After you call <a>SubscribeToShard</a>, Kinesis Data Streams sends events
-/// of this type over an HTTP/2 connection to your consumer.</p>
-#[non_exhaustive]
-#[derive(serde::Deserialize, serde::Serialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct SubscribeToShardEvent {
-    /// <p></p>
-    #[serde(rename = "Records")]
-    #[serde(skip_serializing_if = "Option::is_none")]
-    #[serde(default)]
-    pub records: std::option::Option<std::vec::Vec<crate::model::Record>>,
-    /// <p>Use this as <code>SequenceNumber</code> in the next call to <a>SubscribeToShard</a>, with <code>StartingPosition</code> set to
-    /// <code>AT_SEQUENCE_NUMBER</code> or <code>AFTER_SEQUENCE_NUMBER</code>. Use
-    /// <code>ContinuationSequenceNumber</code> for checkpointing because it captures your
-    /// shard progress even when no data is written to the shard.</p>
-    #[serde(rename = "ContinuationSequenceNumber")]
-    #[serde(skip_serializing_if = "Option::is_none")]
-    #[serde(default)]
-    pub continuation_sequence_number: std::option::Option<std::string::String>,
-    /// <p>The number of milliseconds the read records are from the tip of the stream, indicating
-    /// how far behind current time the consumer is. A value of zero indicates that record
-    /// processing is caught up, and there are no new records to process at this moment.</p>
-    #[serde(rename = "MillisBehindLatest")]
-    #[serde(skip_serializing_if = "Option::is_none")]
-    #[serde(default)]
-    pub millis_behind_latest: std::option::Option<i64>,
-    #[serde(rename = "ChildShards")]
-    #[serde(skip_serializing_if = "Option::is_none")]
-    #[serde(default)]
-    pub child_shards: std::option::Option<std::vec::Vec<crate::model::ChildShard>>,
-}
-impl std::fmt::Debug for SubscribeToShardEvent {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SubscribeToShardEvent");
-        formatter.field("records", &self.records);
-        formatter.field(
-            "continuation_sequence_number",
-            &self.continuation_sequence_number,
-        );
-        formatter.field("millis_behind_latest", &self.millis_behind_latest);
-        formatter.field("child_shards", &self.child_shards);
-        formatter.finish()
-    }
-}
-/// See [`SubscribeToShardEvent`](crate::model::SubscribeToShardEvent)
-pub mod subscribe_to_shard_event {
-    /// A builder for [`SubscribeToShardEvent`](crate::model::SubscribeToShardEvent)
-    #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
-    pub struct Builder {
-        records: std::option::Option<std::vec::Vec<crate::model::Record>>,
-        continuation_sequence_number: std::option::Option<std::string::String>,
-        millis_behind_latest: std::option::Option<i64>,
-        child_shards: std::option::Option<std::vec::Vec<crate::model::ChildShard>>,
-    }
-    impl Builder {
-        pub fn records(mut self, inp: impl Into<crate::model::Record>) -> Self {
-            let mut v = self.records.unwrap_or_default();
-            v.push(inp.into());
-            self.records = Some(v);
-            self
-        }
-        pub fn set_records(
-            mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Record>>,
-        ) -> Self {
-            self.records = inp;
-            self
-        }
-        /// <p>Use this as <code>SequenceNumber</code> in the next call to <a>SubscribeToShard</a>, with <code>StartingPosition</code> set to
-        /// <code>AT_SEQUENCE_NUMBER</code> or <code>AFTER_SEQUENCE_NUMBER</code>. Use
-        /// <code>ContinuationSequenceNumber</code> for checkpointing because it captures your
-        /// shard progress even when no data is written to the shard.</p>
-        pub fn continuation_sequence_number(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.continuation_sequence_number = Some(inp.into());
-            self
-        }
-        pub fn set_continuation_sequence_number(
-            mut self,
-            inp: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.continuation_sequence_number = inp;
-            self
-        }
-        /// <p>The number of milliseconds the read records are from the tip of the stream, indicating
-        /// how far behind current time the consumer is. A value of zero indicates that record
-        /// processing is caught up, and there are no new records to process at this moment.</p>
-        pub fn millis_behind_latest(mut self, inp: i64) -> Self {
-            self.millis_behind_latest = Some(inp);
-            self
-        }
-        pub fn set_millis_behind_latest(mut self, inp: std::option::Option<i64>) -> Self {
-            self.millis_behind_latest = inp;
-            self
-        }
-        pub fn child_shards(mut self, inp: impl Into<crate::model::ChildShard>) -> Self {
-            let mut v = self.child_shards.unwrap_or_default();
-            v.push(inp.into());
-            self.child_shards = Some(v);
-            self
-        }
-        pub fn set_child_shards(
-            mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::ChildShard>>,
-        ) -> Self {
-            self.child_shards = inp;
-            self
-        }
-        /// Consumes the builder and constructs a [`SubscribeToShardEvent`](crate::model::SubscribeToShardEvent)
-        pub fn build(self) -> crate::model::SubscribeToShardEvent {
-            crate::model::SubscribeToShardEvent {
-                records: self.records,
-                continuation_sequence_number: self.continuation_sequence_number,
-                millis_behind_latest: self.millis_behind_latest,
-                child_shards: self.child_shards,
-            }
-        }
-    }
-}
-impl SubscribeToShardEvent {
-    /// Creates a new builder-style object to manufacture [`SubscribeToShardEvent`](crate::model::SubscribeToShardEvent)
-    pub fn builder() -> crate::model::subscribe_to_shard_event::Builder {
-        crate::model::subscribe_to_shard_event::Builder::default()
-    }
-}
-
-#[non_exhaustive]
-#[derive(serde::Deserialize, serde::Serialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct ChildShard {
-    #[serde(rename = "ParentShards")]
-    #[serde(skip_serializing_if = "Option::is_none")]
-    #[serde(default)]
-    pub parent_shards: std::option::Option<std::vec::Vec<std::string::String>>,
-    #[serde(rename = "ShardId")]
-    #[serde(skip_serializing_if = "Option::is_none")]
-    #[serde(default)]
-    pub shard_id: std::option::Option<std::string::String>,
-    /// <p>The range of possible hash key values for the shard, which is a set of ordered
-    /// contiguous positive integers.</p>
-    #[serde(rename = "HashKeyRange")]
-    #[serde(skip_serializing_if = "Option::is_none")]
-    #[serde(default)]
-    pub hash_key_range: std::option::Option<crate::model::HashKeyRange>,
-}
-impl std::fmt::Debug for ChildShard {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ChildShard");
-        formatter.field("parent_shards", &self.parent_shards);
-        formatter.field("shard_id", &self.shard_id);
-        formatter.field("hash_key_range", &self.hash_key_range);
-        formatter.finish()
-    }
-}
-/// See [`ChildShard`](crate::model::ChildShard)
-pub mod child_shard {
-    /// A builder for [`ChildShard`](crate::model::ChildShard)
-    #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
-    pub struct Builder {
-        parent_shards: std::option::Option<std::vec::Vec<std::string::String>>,
-        shard_id: std::option::Option<std::string::String>,
-        hash_key_range: std::option::Option<crate::model::HashKeyRange>,
-    }
-    impl Builder {
-        pub fn parent_shards(mut self, inp: impl Into<std::string::String>) -> Self {
-            let mut v = self.parent_shards.unwrap_or_default();
-            v.push(inp.into());
-            self.parent_shards = Some(v);
-            self
-        }
-        pub fn set_parent_shards(
-            mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.parent_shards = inp;
-            self
-        }
-        pub fn shard_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.shard_id = Some(inp.into());
-            self
-        }
-        pub fn set_shard_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.shard_id = inp;
-            self
-        }
-        /// <p>The range of possible hash key values for the shard, which is a set of ordered
-        /// contiguous positive integers.</p>
-        pub fn hash_key_range(mut self, inp: crate::model::HashKeyRange) -> Self {
-            self.hash_key_range = Some(inp);
-            self
-        }
-        pub fn set_hash_key_range(
-            mut self,
-            inp: std::option::Option<crate::model::HashKeyRange>,
-        ) -> Self {
-            self.hash_key_range = inp;
-            self
-        }
-        /// Consumes the builder and constructs a [`ChildShard`](crate::model::ChildShard)
-        pub fn build(self) -> crate::model::ChildShard {
-            crate::model::ChildShard {
-                parent_shards: self.parent_shards,
-                shard_id: self.shard_id,
-                hash_key_range: self.hash_key_range,
-            }
-        }
-    }
-}
-impl ChildShard {
-    /// Creates a new builder-style object to manufacture [`ChildShard`](crate::model::ChildShard)
-    pub fn builder() -> crate::model::child_shard::Builder {
-        crate::model::child_shard::Builder::default()
-    }
-}
-
-/// <p>The range of possible hash key values for the shard, which is a set of ordered
-/// contiguous positive integers.</p>
-#[non_exhaustive]
-#[derive(serde::Deserialize, serde::Serialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct HashKeyRange {
-    /// <p>The starting hash key of the hash key range.</p>
-    #[serde(rename = "StartingHashKey")]
-    #[serde(skip_serializing_if = "Option::is_none")]
-    #[serde(default)]
-    pub starting_hash_key: std::option::Option<std::string::String>,
-    /// <p>The ending hash key of the hash key range.</p>
-    #[serde(rename = "EndingHashKey")]
-    #[serde(skip_serializing_if = "Option::is_none")]
-    #[serde(default)]
-    pub ending_hash_key: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for HashKeyRange {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HashKeyRange");
-        formatter.field("starting_hash_key", &self.starting_hash_key);
-        formatter.field("ending_hash_key", &self.ending_hash_key);
-        formatter.finish()
-    }
-}
-/// See [`HashKeyRange`](crate::model::HashKeyRange)
-pub mod hash_key_range {
-    /// A builder for [`HashKeyRange`](crate::model::HashKeyRange)
-    #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
-    pub struct Builder {
-        starting_hash_key: std::option::Option<std::string::String>,
-        ending_hash_key: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        /// <p>The starting hash key of the hash key range.</p>
-        pub fn starting_hash_key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.starting_hash_key = Some(inp.into());
-            self
-        }
-        pub fn set_starting_hash_key(
-            mut self,
-            inp: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.starting_hash_key = inp;
-            self
-        }
-        /// <p>The ending hash key of the hash key range.</p>
-        pub fn ending_hash_key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.ending_hash_key = Some(inp.into());
-            self
-        }
-        pub fn set_ending_hash_key(
-            mut self,
-            inp: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.ending_hash_key = inp;
-            self
-        }
-        /// Consumes the builder and constructs a [`HashKeyRange`](crate::model::HashKeyRange)
-        pub fn build(self) -> crate::model::HashKeyRange {
-            crate::model::HashKeyRange {
-                starting_hash_key: self.starting_hash_key,
-                ending_hash_key: self.ending_hash_key,
-            }
-        }
-    }
-}
-impl HashKeyRange {
-    /// Creates a new builder-style object to manufacture [`HashKeyRange`](crate::model::HashKeyRange)
-    pub fn builder() -> crate::model::hash_key_range::Builder {
-        crate::model::hash_key_range::Builder::default()
-    }
-}
-
-/// <p>The unit of data of the Kinesis data stream, which is composed of a sequence
-/// number, a partition key, and a data blob.</p>
-#[non_exhaustive]
-#[derive(serde::Deserialize, serde::Serialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct Record {
-    /// <p>The unique identifier of the record within its shard.</p>
-    #[serde(rename = "SequenceNumber")]
-    #[serde(skip_serializing_if = "Option::is_none")]
-    #[serde(default)]
-    pub sequence_number: std::option::Option<std::string::String>,
-    /// <p>The encryption type used on the record. This parameter can be one of the following
-    /// values:</p>
-    /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>NONE</code>: Do not encrypt the records in the stream.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>KMS</code>: Use server-side encryption on the records in the stream
-    /// using a customer-managed AWS KMS key.</p>
-    /// </li>
-    /// </ul>
-    #[serde(rename = "EncryptionType")]
-    #[serde(skip_serializing_if = "Option::is_none")]
-    #[serde(default)]
-    pub encryption_type: std::option::Option<crate::model::EncryptionType>,
-    /// <p>The data blob. The data in the blob is both opaque and immutable to Kinesis Data
-    /// Streams, which does not inspect, interpret, or change the data in the blob in any way.
-    /// When the data blob (the payload before base64-encoding) is added to the partition key
-    /// size, the total size must not exceed the maximum record size (1 MiB).</p>
-    #[serde(rename = "Data")]
-    #[serde(skip_serializing_if = "Option::is_none")]
-    #[serde(serialize_with = "crate::serde_util::stdoptionoptionsmithytypesblob_ser")]
-    #[serde(deserialize_with = "crate::serde_util::stdoptionoptionsmithytypesblob_deser")]
-    #[serde(default)]
-    pub data: std::option::Option<smithy_types::Blob>,
-    /// <p>The approximate time that the record was inserted into the stream.</p>
-    #[serde(rename = "ApproximateArrivalTimestamp")]
-    #[serde(skip_serializing_if = "Option::is_none")]
-    #[serde(
-        serialize_with = "crate::serde_util::stdoptionoptionsmithytypesinstant_epoch_seconds_ser"
-    )]
-    #[serde(
-        deserialize_with = "crate::serde_util::stdoptionoptionsmithytypesinstant_epoch_seconds_deser"
-    )]
-    #[serde(default)]
-    pub approximate_arrival_timestamp: std::option::Option<smithy_types::Instant>,
-    /// <p>Identifies which shard in the stream the data record is assigned to.</p>
-    #[serde(rename = "PartitionKey")]
-    #[serde(skip_serializing_if = "Option::is_none")]
-    #[serde(default)]
-    pub partition_key: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for Record {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Record");
-        formatter.field("sequence_number", &self.sequence_number);
-        formatter.field("encryption_type", &self.encryption_type);
-        formatter.field("data", &self.data);
-        formatter.field(
-            "approximate_arrival_timestamp",
-            &self.approximate_arrival_timestamp,
-        );
-        formatter.field("partition_key", &self.partition_key);
-        formatter.finish()
-    }
-}
-/// See [`Record`](crate::model::Record)
-pub mod record {
-    /// A builder for [`Record`](crate::model::Record)
-    #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
-    pub struct Builder {
-        sequence_number: std::option::Option<std::string::String>,
-        encryption_type: std::option::Option<crate::model::EncryptionType>,
-        data: std::option::Option<smithy_types::Blob>,
-        approximate_arrival_timestamp: std::option::Option<smithy_types::Instant>,
-        partition_key: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        /// <p>The unique identifier of the record within its shard.</p>
-        pub fn sequence_number(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.sequence_number = Some(inp.into());
-            self
-        }
-        pub fn set_sequence_number(
-            mut self,
-            inp: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.sequence_number = inp;
-            self
-        }
-        /// <p>The encryption type used on the record. This parameter can be one of the following
-        /// values:</p>
-        /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>NONE</code>: Do not encrypt the records in the stream.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>KMS</code>: Use server-side encryption on the records in the stream
-        /// using a customer-managed AWS KMS key.</p>
-        /// </li>
-        /// </ul>
-        pub fn encryption_type(mut self, inp: crate::model::EncryptionType) -> Self {
-            self.encryption_type = Some(inp);
-            self
-        }
-        pub fn set_encryption_type(
-            mut self,
-            inp: std::option::Option<crate::model::EncryptionType>,
-        ) -> Self {
-            self.encryption_type = inp;
-            self
-        }
-        /// <p>The data blob. The data in the blob is both opaque and immutable to Kinesis Data
-        /// Streams, which does not inspect, interpret, or change the data in the blob in any way.
-        /// When the data blob (the payload before base64-encoding) is added to the partition key
-        /// size, the total size must not exceed the maximum record size (1 MiB).</p>
-        pub fn data(mut self, inp: smithy_types::Blob) -> Self {
-            self.data = Some(inp);
-            self
-        }
-        pub fn set_data(mut self, inp: std::option::Option<smithy_types::Blob>) -> Self {
-            self.data = inp;
-            self
-        }
-        /// <p>The approximate time that the record was inserted into the stream.</p>
-        pub fn approximate_arrival_timestamp(mut self, inp: smithy_types::Instant) -> Self {
-            self.approximate_arrival_timestamp = Some(inp);
-            self
-        }
-        pub fn set_approximate_arrival_timestamp(
-            mut self,
-            inp: std::option::Option<smithy_types::Instant>,
-        ) -> Self {
-            self.approximate_arrival_timestamp = inp;
-            self
-        }
-        /// <p>Identifies which shard in the stream the data record is assigned to.</p>
-        pub fn partition_key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.partition_key = Some(inp.into());
-            self
-        }
-        pub fn set_partition_key(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.partition_key = inp;
-            self
-        }
-        /// Consumes the builder and constructs a [`Record`](crate::model::Record)
-        pub fn build(self) -> crate::model::Record {
-            crate::model::Record {
-                sequence_number: self.sequence_number,
-                encryption_type: self.encryption_type,
-                data: self.data,
-                approximate_arrival_timestamp: self.approximate_arrival_timestamp,
-                partition_key: self.partition_key,
-            }
-        }
-    }
-}
-impl Record {
-    /// Creates a new builder-style object to manufacture [`Record`](crate::model::Record)
-    pub fn builder() -> crate::model::record::Builder {
-        crate::model::record::Builder::default()
-    }
-}
-
-#[non_exhaustive]
-#[derive(
     std::clone::Clone,
     std::cmp::Eq,
     std::cmp::Ord,
@@ -634,227 +127,6 @@ impl serde::Serialize for EncryptionType {
 }
 
 impl<'de> serde::Deserialize<'de> for EncryptionType {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
-    }
-}
-
-/// <p></p>
-#[non_exhaustive]
-#[derive(serde::Deserialize, serde::Serialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct StartingPosition {
-    /// <p>The time stamp of the data record from which to start reading. To specify a time
-    /// stamp, set <code>StartingPosition</code> to <code>Type AT_TIMESTAMP</code>. A time stamp
-    /// is the Unix epoch date with precision in milliseconds. For example,
-    /// <code>2016-04-04T19:58:46.480-00:00</code> or <code>1459799926.480</code>. If a
-    /// record with this exact time stamp does not exist, records will be streamed from the next
-    /// (later) record. If the time stamp is older than the current trim horizon, records will
-    /// be streamed from the oldest untrimmed data record (<code>TRIM_HORIZON</code>).</p>
-    #[serde(rename = "Timestamp")]
-    #[serde(skip_serializing_if = "Option::is_none")]
-    #[serde(
-        serialize_with = "crate::serde_util::stdoptionoptionsmithytypesinstant_epoch_seconds_ser"
-    )]
-    #[serde(
-        deserialize_with = "crate::serde_util::stdoptionoptionsmithytypesinstant_epoch_seconds_deser"
-    )]
-    #[serde(default)]
-    pub timestamp: std::option::Option<smithy_types::Instant>,
-    /// <p>The sequence number of the data record in the shard from which to start streaming. To
-    /// specify a sequence number, set <code>StartingPosition</code> to
-    /// <code>AT_SEQUENCE_NUMBER</code> or <code>AFTER_SEQUENCE_NUMBER</code>.</p>
-    #[serde(rename = "SequenceNumber")]
-    #[serde(skip_serializing_if = "Option::is_none")]
-    #[serde(default)]
-    pub sequence_number: std::option::Option<std::string::String>,
-    /// <p>You can set the starting position to one of the following values:</p>
-    /// <p>
-    /// <code>AT_SEQUENCE_NUMBER</code>: Start streaming from the position denoted by the
-    /// sequence number specified in the <code>SequenceNumber</code> field.</p>
-    /// <p>
-    /// <code>AFTER_SEQUENCE_NUMBER</code>: Start streaming right after the position denoted
-    /// by the sequence number specified in the <code>SequenceNumber</code> field.</p>
-    /// <p>
-    /// <code>AT_TIMESTAMP</code>: Start streaming from the position denoted by the time stamp
-    /// specified in the <code>Timestamp</code> field.</p>
-    /// <p>
-    /// <code>TRIM_HORIZON</code>: Start streaming at the last untrimmed record in the shard,
-    /// which is the oldest data record in the shard.</p>
-    /// <p>
-    /// <code>LATEST</code>: Start streaming just after the most recent record in the shard,
-    /// so that you always read the most recent data in the shard.</p>
-    #[serde(rename = "Type")]
-    #[serde(skip_serializing_if = "Option::is_none")]
-    #[serde(default)]
-    pub r#type: std::option::Option<crate::model::ShardIteratorType>,
-}
-impl std::fmt::Debug for StartingPosition {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartingPosition");
-        formatter.field("timestamp", &self.timestamp);
-        formatter.field("sequence_number", &self.sequence_number);
-        formatter.field("r#type", &self.r#type);
-        formatter.finish()
-    }
-}
-/// See [`StartingPosition`](crate::model::StartingPosition)
-pub mod starting_position {
-    /// A builder for [`StartingPosition`](crate::model::StartingPosition)
-    #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
-    pub struct Builder {
-        timestamp: std::option::Option<smithy_types::Instant>,
-        sequence_number: std::option::Option<std::string::String>,
-        r#type: std::option::Option<crate::model::ShardIteratorType>,
-    }
-    impl Builder {
-        /// <p>The time stamp of the data record from which to start reading. To specify a time
-        /// stamp, set <code>StartingPosition</code> to <code>Type AT_TIMESTAMP</code>. A time stamp
-        /// is the Unix epoch date with precision in milliseconds. For example,
-        /// <code>2016-04-04T19:58:46.480-00:00</code> or <code>1459799926.480</code>. If a
-        /// record with this exact time stamp does not exist, records will be streamed from the next
-        /// (later) record. If the time stamp is older than the current trim horizon, records will
-        /// be streamed from the oldest untrimmed data record (<code>TRIM_HORIZON</code>).</p>
-        pub fn timestamp(mut self, inp: smithy_types::Instant) -> Self {
-            self.timestamp = Some(inp);
-            self
-        }
-        pub fn set_timestamp(mut self, inp: std::option::Option<smithy_types::Instant>) -> Self {
-            self.timestamp = inp;
-            self
-        }
-        /// <p>The sequence number of the data record in the shard from which to start streaming. To
-        /// specify a sequence number, set <code>StartingPosition</code> to
-        /// <code>AT_SEQUENCE_NUMBER</code> or <code>AFTER_SEQUENCE_NUMBER</code>.</p>
-        pub fn sequence_number(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.sequence_number = Some(inp.into());
-            self
-        }
-        pub fn set_sequence_number(
-            mut self,
-            inp: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.sequence_number = inp;
-            self
-        }
-        /// <p>You can set the starting position to one of the following values:</p>
-        /// <p>
-        /// <code>AT_SEQUENCE_NUMBER</code>: Start streaming from the position denoted by the
-        /// sequence number specified in the <code>SequenceNumber</code> field.</p>
-        /// <p>
-        /// <code>AFTER_SEQUENCE_NUMBER</code>: Start streaming right after the position denoted
-        /// by the sequence number specified in the <code>SequenceNumber</code> field.</p>
-        /// <p>
-        /// <code>AT_TIMESTAMP</code>: Start streaming from the position denoted by the time stamp
-        /// specified in the <code>Timestamp</code> field.</p>
-        /// <p>
-        /// <code>TRIM_HORIZON</code>: Start streaming at the last untrimmed record in the shard,
-        /// which is the oldest data record in the shard.</p>
-        /// <p>
-        /// <code>LATEST</code>: Start streaming just after the most recent record in the shard,
-        /// so that you always read the most recent data in the shard.</p>
-        pub fn r#type(mut self, inp: crate::model::ShardIteratorType) -> Self {
-            self.r#type = Some(inp);
-            self
-        }
-        pub fn set_type(
-            mut self,
-            inp: std::option::Option<crate::model::ShardIteratorType>,
-        ) -> Self {
-            self.r#type = inp;
-            self
-        }
-        /// Consumes the builder and constructs a [`StartingPosition`](crate::model::StartingPosition)
-        pub fn build(self) -> crate::model::StartingPosition {
-            crate::model::StartingPosition {
-                timestamp: self.timestamp,
-                sequence_number: self.sequence_number,
-                r#type: self.r#type,
-            }
-        }
-    }
-}
-impl StartingPosition {
-    /// Creates a new builder-style object to manufacture [`StartingPosition`](crate::model::StartingPosition)
-    pub fn builder() -> crate::model::starting_position::Builder {
-        crate::model::starting_position::Builder::default()
-    }
-}
-
-#[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
-pub enum ShardIteratorType {
-    AfterSequenceNumber,
-    AtSequenceNumber,
-    AtTimestamp,
-    Latest,
-    TrimHorizon,
-    Unknown(String),
-}
-impl std::convert::From<&str> for ShardIteratorType {
-    fn from(s: &str) -> Self {
-        match s {
-            "AFTER_SEQUENCE_NUMBER" => ShardIteratorType::AfterSequenceNumber,
-            "AT_SEQUENCE_NUMBER" => ShardIteratorType::AtSequenceNumber,
-            "AT_TIMESTAMP" => ShardIteratorType::AtTimestamp,
-            "LATEST" => ShardIteratorType::Latest,
-            "TRIM_HORIZON" => ShardIteratorType::TrimHorizon,
-            other => ShardIteratorType::Unknown(other.to_owned()),
-        }
-    }
-}
-
-impl std::str::FromStr for ShardIteratorType {
-    type Err = std::convert::Infallible;
-
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
-        Ok(ShardIteratorType::from(s))
-    }
-}
-
-impl ShardIteratorType {
-    pub fn as_str(&self) -> &str {
-        match self {
-            ShardIteratorType::AfterSequenceNumber => "AFTER_SEQUENCE_NUMBER",
-            ShardIteratorType::AtSequenceNumber => "AT_SEQUENCE_NUMBER",
-            ShardIteratorType::AtTimestamp => "AT_TIMESTAMP",
-            ShardIteratorType::Latest => "LATEST",
-            ShardIteratorType::TrimHorizon => "TRIM_HORIZON",
-            ShardIteratorType::Unknown(s) => s.as_ref(),
-        }
-    }
-}
-impl AsRef<str> for ShardIteratorType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
-
-impl serde::Serialize for ShardIteratorType {
-    fn serialize<S>(
-        &self,
-        serializer: S,
-    ) -> Result<<S as serde::Serializer>::Ok, <S as serde::Serializer>::Error>
-    where
-        S: serde::Serializer,
-    {
-        serializer.serialize_str(self.as_str())
-    }
-}
-
-impl<'de> serde::Deserialize<'de> for ShardIteratorType {
     fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
     where
         D: serde::Deserializer<'de>,
@@ -1500,6 +772,80 @@ impl Shard {
     }
 }
 
+/// <p>The range of possible hash key values for the shard, which is a set of ordered
+/// contiguous positive integers.</p>
+#[non_exhaustive]
+#[derive(serde::Deserialize, serde::Serialize, std::clone::Clone, std::cmp::PartialEq)]
+pub struct HashKeyRange {
+    /// <p>The starting hash key of the hash key range.</p>
+    #[serde(rename = "StartingHashKey")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(default)]
+    pub starting_hash_key: std::option::Option<std::string::String>,
+    /// <p>The ending hash key of the hash key range.</p>
+    #[serde(rename = "EndingHashKey")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(default)]
+    pub ending_hash_key: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for HashKeyRange {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("HashKeyRange");
+        formatter.field("starting_hash_key", &self.starting_hash_key);
+        formatter.field("ending_hash_key", &self.ending_hash_key);
+        formatter.finish()
+    }
+}
+/// See [`HashKeyRange`](crate::model::HashKeyRange)
+pub mod hash_key_range {
+    /// A builder for [`HashKeyRange`](crate::model::HashKeyRange)
+    #[non_exhaustive]
+    #[derive(Debug, Clone, Default)]
+    pub struct Builder {
+        starting_hash_key: std::option::Option<std::string::String>,
+        ending_hash_key: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The starting hash key of the hash key range.</p>
+        pub fn starting_hash_key(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.starting_hash_key = Some(inp.into());
+            self
+        }
+        pub fn set_starting_hash_key(
+            mut self,
+            inp: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.starting_hash_key = inp;
+            self
+        }
+        /// <p>The ending hash key of the hash key range.</p>
+        pub fn ending_hash_key(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.ending_hash_key = Some(inp.into());
+            self
+        }
+        pub fn set_ending_hash_key(
+            mut self,
+            inp: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.ending_hash_key = inp;
+            self
+        }
+        /// Consumes the builder and constructs a [`HashKeyRange`](crate::model::HashKeyRange)
+        pub fn build(self) -> crate::model::HashKeyRange {
+            crate::model::HashKeyRange {
+                starting_hash_key: self.starting_hash_key,
+                ending_hash_key: self.ending_hash_key,
+            }
+        }
+    }
+}
+impl HashKeyRange {
+    /// Creates a new builder-style object to manufacture [`HashKeyRange`](crate::model::HashKeyRange)
+    pub fn builder() -> crate::model::hash_key_range::Builder {
+        crate::model::hash_key_range::Builder::default()
+    }
+}
+
 /// <p>The range of possible sequence numbers for the shard.</p>
 #[non_exhaustive]
 #[derive(serde::Deserialize, serde::Serialize, std::clone::Clone, std::cmp::PartialEq)]
@@ -1737,6 +1083,343 @@ impl<'de> serde::Deserialize<'de> for ShardFilterType {
     {
         let data = <&str>::deserialize(deserializer)?;
         Ok(Self::from(data))
+    }
+}
+
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum ShardIteratorType {
+    AfterSequenceNumber,
+    AtSequenceNumber,
+    AtTimestamp,
+    Latest,
+    TrimHorizon,
+    Unknown(String),
+}
+impl std::convert::From<&str> for ShardIteratorType {
+    fn from(s: &str) -> Self {
+        match s {
+            "AFTER_SEQUENCE_NUMBER" => ShardIteratorType::AfterSequenceNumber,
+            "AT_SEQUENCE_NUMBER" => ShardIteratorType::AtSequenceNumber,
+            "AT_TIMESTAMP" => ShardIteratorType::AtTimestamp,
+            "LATEST" => ShardIteratorType::Latest,
+            "TRIM_HORIZON" => ShardIteratorType::TrimHorizon,
+            other => ShardIteratorType::Unknown(other.to_owned()),
+        }
+    }
+}
+
+impl std::str::FromStr for ShardIteratorType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> Result<Self, Self::Err> {
+        Ok(ShardIteratorType::from(s))
+    }
+}
+
+impl ShardIteratorType {
+    pub fn as_str(&self) -> &str {
+        match self {
+            ShardIteratorType::AfterSequenceNumber => "AFTER_SEQUENCE_NUMBER",
+            ShardIteratorType::AtSequenceNumber => "AT_SEQUENCE_NUMBER",
+            ShardIteratorType::AtTimestamp => "AT_TIMESTAMP",
+            ShardIteratorType::Latest => "LATEST",
+            ShardIteratorType::TrimHorizon => "TRIM_HORIZON",
+            ShardIteratorType::Unknown(s) => s.as_ref(),
+        }
+    }
+}
+impl AsRef<str> for ShardIteratorType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+impl serde::Serialize for ShardIteratorType {
+    fn serialize<S>(
+        &self,
+        serializer: S,
+    ) -> Result<<S as serde::Serializer>::Ok, <S as serde::Serializer>::Error>
+    where
+        S: serde::Serializer,
+    {
+        serializer.serialize_str(self.as_str())
+    }
+}
+
+impl<'de> serde::Deserialize<'de> for ShardIteratorType {
+    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+    where
+        D: serde::Deserializer<'de>,
+    {
+        let data = <&str>::deserialize(deserializer)?;
+        Ok(Self::from(data))
+    }
+}
+
+#[non_exhaustive]
+#[derive(serde::Deserialize, serde::Serialize, std::clone::Clone, std::cmp::PartialEq)]
+pub struct ChildShard {
+    #[serde(rename = "ParentShards")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(default)]
+    pub parent_shards: std::option::Option<std::vec::Vec<std::string::String>>,
+    #[serde(rename = "ShardId")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(default)]
+    pub shard_id: std::option::Option<std::string::String>,
+    /// <p>The range of possible hash key values for the shard, which is a set of ordered
+    /// contiguous positive integers.</p>
+    #[serde(rename = "HashKeyRange")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(default)]
+    pub hash_key_range: std::option::Option<crate::model::HashKeyRange>,
+}
+impl std::fmt::Debug for ChildShard {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ChildShard");
+        formatter.field("parent_shards", &self.parent_shards);
+        formatter.field("shard_id", &self.shard_id);
+        formatter.field("hash_key_range", &self.hash_key_range);
+        formatter.finish()
+    }
+}
+/// See [`ChildShard`](crate::model::ChildShard)
+pub mod child_shard {
+    /// A builder for [`ChildShard`](crate::model::ChildShard)
+    #[non_exhaustive]
+    #[derive(Debug, Clone, Default)]
+    pub struct Builder {
+        parent_shards: std::option::Option<std::vec::Vec<std::string::String>>,
+        shard_id: std::option::Option<std::string::String>,
+        hash_key_range: std::option::Option<crate::model::HashKeyRange>,
+    }
+    impl Builder {
+        pub fn parent_shards(mut self, inp: impl Into<std::string::String>) -> Self {
+            let mut v = self.parent_shards.unwrap_or_default();
+            v.push(inp.into());
+            self.parent_shards = Some(v);
+            self
+        }
+        pub fn set_parent_shards(
+            mut self,
+            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.parent_shards = inp;
+            self
+        }
+        pub fn shard_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.shard_id = Some(inp.into());
+            self
+        }
+        pub fn set_shard_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
+            self.shard_id = inp;
+            self
+        }
+        /// <p>The range of possible hash key values for the shard, which is a set of ordered
+        /// contiguous positive integers.</p>
+        pub fn hash_key_range(mut self, inp: crate::model::HashKeyRange) -> Self {
+            self.hash_key_range = Some(inp);
+            self
+        }
+        pub fn set_hash_key_range(
+            mut self,
+            inp: std::option::Option<crate::model::HashKeyRange>,
+        ) -> Self {
+            self.hash_key_range = inp;
+            self
+        }
+        /// Consumes the builder and constructs a [`ChildShard`](crate::model::ChildShard)
+        pub fn build(self) -> crate::model::ChildShard {
+            crate::model::ChildShard {
+                parent_shards: self.parent_shards,
+                shard_id: self.shard_id,
+                hash_key_range: self.hash_key_range,
+            }
+        }
+    }
+}
+impl ChildShard {
+    /// Creates a new builder-style object to manufacture [`ChildShard`](crate::model::ChildShard)
+    pub fn builder() -> crate::model::child_shard::Builder {
+        crate::model::child_shard::Builder::default()
+    }
+}
+
+/// <p>The unit of data of the Kinesis data stream, which is composed of a sequence
+/// number, a partition key, and a data blob.</p>
+#[non_exhaustive]
+#[derive(serde::Deserialize, serde::Serialize, std::clone::Clone, std::cmp::PartialEq)]
+pub struct Record {
+    /// <p>The unique identifier of the record within its shard.</p>
+    #[serde(rename = "SequenceNumber")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(default)]
+    pub sequence_number: std::option::Option<std::string::String>,
+    /// <p>The encryption type used on the record. This parameter can be one of the following
+    /// values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>NONE</code>: Do not encrypt the records in the stream.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>KMS</code>: Use server-side encryption on the records in the stream
+    /// using a customer-managed AWS KMS key.</p>
+    /// </li>
+    /// </ul>
+    #[serde(rename = "EncryptionType")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(default)]
+    pub encryption_type: std::option::Option<crate::model::EncryptionType>,
+    /// <p>The data blob. The data in the blob is both opaque and immutable to Kinesis Data
+    /// Streams, which does not inspect, interpret, or change the data in the blob in any way.
+    /// When the data blob (the payload before base64-encoding) is added to the partition key
+    /// size, the total size must not exceed the maximum record size (1 MiB).</p>
+    #[serde(rename = "Data")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(serialize_with = "crate::serde_util::stdoptionoptionsmithytypesblob_ser")]
+    #[serde(deserialize_with = "crate::serde_util::stdoptionoptionsmithytypesblob_deser")]
+    #[serde(default)]
+    pub data: std::option::Option<smithy_types::Blob>,
+    /// <p>The approximate time that the record was inserted into the stream.</p>
+    #[serde(rename = "ApproximateArrivalTimestamp")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(
+        serialize_with = "crate::serde_util::stdoptionoptionsmithytypesinstant_epoch_seconds_ser"
+    )]
+    #[serde(
+        deserialize_with = "crate::serde_util::stdoptionoptionsmithytypesinstant_epoch_seconds_deser"
+    )]
+    #[serde(default)]
+    pub approximate_arrival_timestamp: std::option::Option<smithy_types::Instant>,
+    /// <p>Identifies which shard in the stream the data record is assigned to.</p>
+    #[serde(rename = "PartitionKey")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(default)]
+    pub partition_key: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for Record {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("Record");
+        formatter.field("sequence_number", &self.sequence_number);
+        formatter.field("encryption_type", &self.encryption_type);
+        formatter.field("data", &self.data);
+        formatter.field(
+            "approximate_arrival_timestamp",
+            &self.approximate_arrival_timestamp,
+        );
+        formatter.field("partition_key", &self.partition_key);
+        formatter.finish()
+    }
+}
+/// See [`Record`](crate::model::Record)
+pub mod record {
+    /// A builder for [`Record`](crate::model::Record)
+    #[non_exhaustive]
+    #[derive(Debug, Clone, Default)]
+    pub struct Builder {
+        sequence_number: std::option::Option<std::string::String>,
+        encryption_type: std::option::Option<crate::model::EncryptionType>,
+        data: std::option::Option<smithy_types::Blob>,
+        approximate_arrival_timestamp: std::option::Option<smithy_types::Instant>,
+        partition_key: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The unique identifier of the record within its shard.</p>
+        pub fn sequence_number(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.sequence_number = Some(inp.into());
+            self
+        }
+        pub fn set_sequence_number(
+            mut self,
+            inp: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.sequence_number = inp;
+            self
+        }
+        /// <p>The encryption type used on the record. This parameter can be one of the following
+        /// values:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>NONE</code>: Do not encrypt the records in the stream.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>KMS</code>: Use server-side encryption on the records in the stream
+        /// using a customer-managed AWS KMS key.</p>
+        /// </li>
+        /// </ul>
+        pub fn encryption_type(mut self, inp: crate::model::EncryptionType) -> Self {
+            self.encryption_type = Some(inp);
+            self
+        }
+        pub fn set_encryption_type(
+            mut self,
+            inp: std::option::Option<crate::model::EncryptionType>,
+        ) -> Self {
+            self.encryption_type = inp;
+            self
+        }
+        /// <p>The data blob. The data in the blob is both opaque and immutable to Kinesis Data
+        /// Streams, which does not inspect, interpret, or change the data in the blob in any way.
+        /// When the data blob (the payload before base64-encoding) is added to the partition key
+        /// size, the total size must not exceed the maximum record size (1 MiB).</p>
+        pub fn data(mut self, inp: smithy_types::Blob) -> Self {
+            self.data = Some(inp);
+            self
+        }
+        pub fn set_data(mut self, inp: std::option::Option<smithy_types::Blob>) -> Self {
+            self.data = inp;
+            self
+        }
+        /// <p>The approximate time that the record was inserted into the stream.</p>
+        pub fn approximate_arrival_timestamp(mut self, inp: smithy_types::Instant) -> Self {
+            self.approximate_arrival_timestamp = Some(inp);
+            self
+        }
+        pub fn set_approximate_arrival_timestamp(
+            mut self,
+            inp: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.approximate_arrival_timestamp = inp;
+            self
+        }
+        /// <p>Identifies which shard in the stream the data record is assigned to.</p>
+        pub fn partition_key(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.partition_key = Some(inp.into());
+            self
+        }
+        pub fn set_partition_key(mut self, inp: std::option::Option<std::string::String>) -> Self {
+            self.partition_key = inp;
+            self
+        }
+        /// Consumes the builder and constructs a [`Record`](crate::model::Record)
+        pub fn build(self) -> crate::model::Record {
+            crate::model::Record {
+                sequence_number: self.sequence_number,
+                encryption_type: self.encryption_type,
+                data: self.data,
+                approximate_arrival_timestamp: self.approximate_arrival_timestamp,
+                partition_key: self.partition_key,
+            }
+        }
+    }
+}
+impl Record {
+    /// Creates a new builder-style object to manufacture [`Record`](crate::model::Record)
+    pub fn builder() -> crate::model::record::Builder {
+        crate::model::record::Builder::default()
     }
 }
 

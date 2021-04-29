@@ -15,20 +15,12 @@
 /// </p>
 #[derive(std::clone::Clone)]
 pub struct CancelKeyDeletion {
-    input: crate::input::CancelKeyDeletionInput,
+    _private: (),
 }
 impl CancelKeyDeletion {
     /// Creates a new builder-style object to manufacture [`CancelKeyDeletionInput`](crate::input::CancelKeyDeletionInput)
     pub fn builder() -> crate::input::cancel_key_deletion_input::Builder {
         crate::input::cancel_key_deletion_input::Builder::default()
-    }
-    pub fn build_http_request(
-        &self,
-    ) -> Result<http::request::Request<Vec<u8>>, smithy_http::operation::BuildError> {
-        Ok(crate::input::CancelKeyDeletionInput::assemble(
-            self.input.request_builder_base()?,
-            self.input.build_body(),
-        ))
     }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
@@ -97,8 +89,8 @@ impl CancelKeyDeletion {
     ) -> Result<crate::output::CancelKeyDeletionOutput, crate::error::CancelKeyDeletionError> {
         Self::from_response(&response)
     }
-    pub fn new(input: crate::input::CancelKeyDeletionInput) -> Self {
-        Self { input }
+    pub fn new() -> Self {
+        Self { _private: () }
     }
 }
 
@@ -173,20 +165,12 @@ impl smithy_http::response::ParseStrictResponse for CancelKeyDeletion {
 /// </ul>
 #[derive(std::clone::Clone)]
 pub struct ConnectCustomKeyStore {
-    input: crate::input::ConnectCustomKeyStoreInput,
+    _private: (),
 }
 impl ConnectCustomKeyStore {
     /// Creates a new builder-style object to manufacture [`ConnectCustomKeyStoreInput`](crate::input::ConnectCustomKeyStoreInput)
     pub fn builder() -> crate::input::connect_custom_key_store_input::Builder {
         crate::input::connect_custom_key_store_input::Builder::default()
-    }
-    pub fn build_http_request(
-        &self,
-    ) -> Result<http::request::Request<Vec<u8>>, smithy_http::operation::BuildError> {
-        Ok(crate::input::ConnectCustomKeyStoreInput::assemble(
-            self.input.request_builder_base()?,
-            self.input.build_body(),
-        ))
     }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
@@ -235,8 +219,8 @@ impl ConnectCustomKeyStore {
     {
         Self::from_response(&response)
     }
-    pub fn new(input: crate::input::ConnectCustomKeyStoreInput) -> Self {
-        Self { input }
+    pub fn new() -> Self {
+        Self { _private: () }
     }
 }
 
@@ -304,20 +288,12 @@ impl smithy_http::response::ParseStrictResponse for ConnectCustomKeyStore {
 /// </ul>
 #[derive(std::clone::Clone)]
 pub struct CreateAlias {
-    input: crate::input::CreateAliasInput,
+    _private: (),
 }
 impl CreateAlias {
     /// Creates a new builder-style object to manufacture [`CreateAliasInput`](crate::input::CreateAliasInput)
     pub fn builder() -> crate::input::create_alias_input::Builder {
         crate::input::create_alias_input::Builder::default()
-    }
-    pub fn build_http_request(
-        &self,
-    ) -> Result<http::request::Request<Vec<u8>>, smithy_http::operation::BuildError> {
-        Ok(crate::input::CreateAliasInput::assemble(
-            self.input.request_builder_base()?,
-            self.input.build_body(),
-        ))
     }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
@@ -393,8 +369,8 @@ impl CreateAlias {
     ) -> Result<crate::output::CreateAliasOutput, crate::error::CreateAliasError> {
         Self::from_response(&response)
     }
-    pub fn new(input: crate::input::CreateAliasInput) -> Self {
-        Self { input }
+    pub fn new() -> Self {
+        Self { _private: () }
     }
 }
 
@@ -457,20 +433,12 @@ impl smithy_http::response::ParseStrictResponse for CreateAlias {
 /// </ul>
 #[derive(std::clone::Clone)]
 pub struct CreateCustomKeyStore {
-    input: crate::input::CreateCustomKeyStoreInput,
+    _private: (),
 }
 impl CreateCustomKeyStore {
     /// Creates a new builder-style object to manufacture [`CreateCustomKeyStoreInput`](crate::input::CreateCustomKeyStoreInput)
     pub fn builder() -> crate::input::create_custom_key_store_input::Builder {
         crate::input::create_custom_key_store_input::Builder::default()
-    }
-    pub fn build_http_request(
-        &self,
-    ) -> Result<http::request::Request<Vec<u8>>, smithy_http::operation::BuildError> {
-        Ok(crate::input::CreateCustomKeyStoreInput::assemble(
-            self.input.request_builder_base()?,
-            self.input.build_body(),
-        ))
     }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
@@ -532,8 +500,8 @@ impl CreateCustomKeyStore {
     {
         Self::from_response(&response)
     }
-    pub fn new(input: crate::input::CreateCustomKeyStoreInput) -> Self {
-        Self { input }
+    pub fn new() -> Self {
+        Self { _private: () }
     }
 }
 
@@ -616,20 +584,12 @@ impl smithy_http::response::ParseStrictResponse for CreateCustomKeyStore {
 /// </ul>
 #[derive(std::clone::Clone)]
 pub struct CreateGrant {
-    input: crate::input::CreateGrantInput,
+    _private: (),
 }
 impl CreateGrant {
     /// Creates a new builder-style object to manufacture [`CreateGrantInput`](crate::input::CreateGrantInput)
     pub fn builder() -> crate::input::create_grant_input::Builder {
         crate::input::create_grant_input::Builder::default()
-    }
-    pub fn build_http_request(
-        &self,
-    ) -> Result<http::request::Request<Vec<u8>>, smithy_http::operation::BuildError> {
-        Ok(crate::input::CreateGrantInput::assemble(
-            self.input.request_builder_base()?,
-            self.input.build_body(),
-        ))
     }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
@@ -718,8 +678,8 @@ impl CreateGrant {
     ) -> Result<crate::output::CreateGrantOutput, crate::error::CreateGrantError> {
         Self::from_response(&response)
     }
-    pub fn new(input: crate::input::CreateGrantInput) -> Self {
-        Self { input }
+    pub fn new() -> Self {
+        Self { _private: () }
     }
 }
 
@@ -831,20 +791,12 @@ impl smithy_http::response::ParseStrictResponse for CreateGrant {
 /// </ul>
 #[derive(std::clone::Clone)]
 pub struct CreateKey {
-    input: crate::input::CreateKeyInput,
+    _private: (),
 }
 impl CreateKey {
     /// Creates a new builder-style object to manufacture [`CreateKeyInput`](crate::input::CreateKeyInput)
     pub fn builder() -> crate::input::create_key_input::Builder {
         crate::input::create_key_input::Builder::default()
-    }
-    pub fn build_http_request(
-        &self,
-    ) -> Result<http::request::Request<Vec<u8>>, smithy_http::operation::BuildError> {
-        Ok(crate::input::CreateKeyInput::assemble(
-            self.input.request_builder_base()?,
-            self.input.build_body(),
-        ))
     }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
@@ -916,8 +868,8 @@ impl CreateKey {
     ) -> Result<crate::output::CreateKeyOutput, crate::error::CreateKeyError> {
         Self::from_response(&response)
     }
-    pub fn new(input: crate::input::CreateKeyInput) -> Self {
-        Self { input }
+    pub fn new() -> Self {
+        Self { _private: () }
     }
 }
 
@@ -1015,20 +967,12 @@ impl smithy_http::response::ParseStrictResponse for CreateKey {
 /// </ul>
 #[derive(std::clone::Clone)]
 pub struct Decrypt {
-    input: crate::input::DecryptInput,
+    _private: (),
 }
 impl Decrypt {
     /// Creates a new builder-style object to manufacture [`DecryptInput`](crate::input::DecryptInput)
     pub fn builder() -> crate::input::decrypt_input::Builder {
         crate::input::decrypt_input::Builder::default()
-    }
-    pub fn build_http_request(
-        &self,
-    ) -> Result<http::request::Request<Vec<u8>>, smithy_http::operation::BuildError> {
-        Ok(crate::input::DecryptInput::assemble(
-            self.input.request_builder_base()?,
-            self.input.build_body(),
-        ))
     }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
@@ -1132,8 +1076,8 @@ impl Decrypt {
     ) -> Result<crate::output::DecryptOutput, crate::error::DecryptError> {
         Self::from_response(&response)
     }
-    pub fn new(input: crate::input::DecryptInput) -> Self {
-        Self { input }
+    pub fn new() -> Self {
+        Self { _private: () }
     }
 }
 
@@ -1188,20 +1132,12 @@ impl smithy_http::response::ParseStrictResponse for Decrypt {
 /// </ul>
 #[derive(std::clone::Clone)]
 pub struct DeleteAlias {
-    input: crate::input::DeleteAliasInput,
+    _private: (),
 }
 impl DeleteAlias {
     /// Creates a new builder-style object to manufacture [`DeleteAliasInput`](crate::input::DeleteAliasInput)
     pub fn builder() -> crate::input::delete_alias_input::Builder {
         crate::input::delete_alias_input::Builder::default()
-    }
-    pub fn build_http_request(
-        &self,
-    ) -> Result<http::request::Request<Vec<u8>>, smithy_http::operation::BuildError> {
-        Ok(crate::input::DeleteAliasInput::assemble(
-            self.input.request_builder_base()?,
-            self.input.build_body(),
-        ))
     }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
@@ -1256,8 +1192,8 @@ impl DeleteAlias {
     ) -> Result<crate::output::DeleteAliasOutput, crate::error::DeleteAliasError> {
         Self::from_response(&response)
     }
-    pub fn new(input: crate::input::DeleteAliasInput) -> Self {
-        Self { input }
+    pub fn new() -> Self {
+        Self { _private: () }
     }
 }
 
@@ -1324,20 +1260,12 @@ impl smithy_http::response::ParseStrictResponse for DeleteAlias {
 /// </ul>
 #[derive(std::clone::Clone)]
 pub struct DeleteCustomKeyStore {
-    input: crate::input::DeleteCustomKeyStoreInput,
+    _private: (),
 }
 impl DeleteCustomKeyStore {
     /// Creates a new builder-style object to manufacture [`DeleteCustomKeyStoreInput`](crate::input::DeleteCustomKeyStoreInput)
     pub fn builder() -> crate::input::delete_custom_key_store_input::Builder {
         crate::input::delete_custom_key_store_input::Builder::default()
-    }
-    pub fn build_http_request(
-        &self,
-    ) -> Result<http::request::Request<Vec<u8>>, smithy_http::operation::BuildError> {
-        Ok(crate::input::DeleteCustomKeyStoreInput::assemble(
-            self.input.request_builder_base()?,
-            self.input.build_body(),
-        ))
     }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
@@ -1382,8 +1310,8 @@ impl DeleteCustomKeyStore {
     {
         Self::from_response(&response)
     }
-    pub fn new(input: crate::input::DeleteCustomKeyStoreInput) -> Self {
-        Self { input }
+    pub fn new() -> Self {
+        Self { _private: () }
     }
 }
 
@@ -1428,20 +1356,12 @@ impl smithy_http::response::ParseStrictResponse for DeleteCustomKeyStore {
 /// </ul>
 #[derive(std::clone::Clone)]
 pub struct DeleteImportedKeyMaterial {
-    input: crate::input::DeleteImportedKeyMaterialInput,
+    _private: (),
 }
 impl DeleteImportedKeyMaterial {
     /// Creates a new builder-style object to manufacture [`DeleteImportedKeyMaterialInput`](crate::input::DeleteImportedKeyMaterialInput)
     pub fn builder() -> crate::input::delete_imported_key_material_input::Builder {
         crate::input::delete_imported_key_material_input::Builder::default()
-    }
-    pub fn build_http_request(
-        &self,
-    ) -> Result<http::request::Request<Vec<u8>>, smithy_http::operation::BuildError> {
-        Ok(crate::input::DeleteImportedKeyMaterialInput::assemble(
-            self.input.request_builder_base()?,
-            self.input.build_body(),
-        ))
     }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
@@ -1502,8 +1422,8 @@ impl DeleteImportedKeyMaterial {
     > {
         Self::from_response(&response)
     }
-    pub fn new(input: crate::input::DeleteImportedKeyMaterialInput) -> Self {
-        Self { input }
+    pub fn new() -> Self {
+        Self { _private: () }
     }
 }
 
@@ -1573,20 +1493,12 @@ impl smithy_http::response::ParseStrictResponse for DeleteImportedKeyMaterial {
 /// </ul>
 #[derive(std::clone::Clone)]
 pub struct DescribeCustomKeyStores {
-    input: crate::input::DescribeCustomKeyStoresInput,
+    _private: (),
 }
 impl DescribeCustomKeyStores {
     /// Creates a new builder-style object to manufacture [`DescribeCustomKeyStoresInput`](crate::input::DescribeCustomKeyStoresInput)
     pub fn builder() -> crate::input::describe_custom_key_stores_input::Builder {
         crate::input::describe_custom_key_stores_input::Builder::default()
-    }
-    pub fn build_http_request(
-        &self,
-    ) -> Result<http::request::Request<Vec<u8>>, smithy_http::operation::BuildError> {
-        Ok(crate::input::DescribeCustomKeyStoresInput::assemble(
-            self.input.request_builder_base()?,
-            self.input.build_body(),
-        ))
     }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
@@ -1638,8 +1550,8 @@ impl DescribeCustomKeyStores {
     > {
         Self::from_response(&response)
     }
-    pub fn new(input: crate::input::DescribeCustomKeyStoresInput) -> Self {
-        Self { input }
+    pub fn new() -> Self {
+        Self { _private: () }
     }
 }
 
@@ -1733,20 +1645,12 @@ impl smithy_http::response::ParseStrictResponse for DescribeCustomKeyStores {
 /// </ul>
 #[derive(std::clone::Clone)]
 pub struct DescribeKey {
-    input: crate::input::DescribeKeyInput,
+    _private: (),
 }
 impl DescribeKey {
     /// Creates a new builder-style object to manufacture [`DescribeKeyInput`](crate::input::DescribeKeyInput)
     pub fn builder() -> crate::input::describe_key_input::Builder {
         crate::input::describe_key_input::Builder::default()
-    }
-    pub fn build_http_request(
-        &self,
-    ) -> Result<http::request::Request<Vec<u8>>, smithy_http::operation::BuildError> {
-        Ok(crate::input::DescribeKeyInput::assemble(
-            self.input.request_builder_base()?,
-            self.input.build_body(),
-        ))
     }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
@@ -1806,8 +1710,8 @@ impl DescribeKey {
     ) -> Result<crate::output::DescribeKeyOutput, crate::error::DescribeKeyError> {
         Self::from_response(&response)
     }
-    pub fn new(input: crate::input::DescribeKeyInput) -> Self {
-        Self { input }
+    pub fn new() -> Self {
+        Self { _private: () }
     }
 }
 
@@ -1836,20 +1740,12 @@ impl smithy_http::response::ParseStrictResponse for DescribeKey {
 /// </p>
 #[derive(std::clone::Clone)]
 pub struct DisableKey {
-    input: crate::input::DisableKeyInput,
+    _private: (),
 }
 impl DisableKey {
     /// Creates a new builder-style object to manufacture [`DisableKeyInput`](crate::input::DisableKeyInput)
     pub fn builder() -> crate::input::disable_key_input::Builder {
         crate::input::disable_key_input::Builder::default()
-    }
-    pub fn build_http_request(
-        &self,
-    ) -> Result<http::request::Request<Vec<u8>>, smithy_http::operation::BuildError> {
-        Ok(crate::input::DisableKeyInput::assemble(
-            self.input.request_builder_base()?,
-            self.input.build_body(),
-        ))
     }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
@@ -1911,8 +1807,8 @@ impl DisableKey {
     ) -> Result<crate::output::DisableKeyOutput, crate::error::DisableKeyError> {
         Self::from_response(&response)
     }
-    pub fn new(input: crate::input::DisableKeyInput) -> Self {
-        Self { input }
+    pub fn new() -> Self {
+        Self { _private: () }
     }
 }
 
@@ -1951,20 +1847,12 @@ impl smithy_http::response::ParseStrictResponse for DisableKey {
 /// </ul>
 #[derive(std::clone::Clone)]
 pub struct DisableKeyRotation {
-    input: crate::input::DisableKeyRotationInput,
+    _private: (),
 }
 impl DisableKeyRotation {
     /// Creates a new builder-style object to manufacture [`DisableKeyRotationInput`](crate::input::DisableKeyRotationInput)
     pub fn builder() -> crate::input::disable_key_rotation_input::Builder {
         crate::input::disable_key_rotation_input::Builder::default()
-    }
-    pub fn build_http_request(
-        &self,
-    ) -> Result<http::request::Request<Vec<u8>>, smithy_http::operation::BuildError> {
-        Ok(crate::input::DisableKeyRotationInput::assemble(
-            self.input.request_builder_base()?,
-            self.input.build_body(),
-        ))
     }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
@@ -2046,8 +1934,8 @@ impl DisableKeyRotation {
     {
         Self::from_response(&response)
     }
-    pub fn new(input: crate::input::DisableKeyRotationInput) -> Self {
-        Self { input }
+    pub fn new() -> Self {
+        Self { _private: () }
     }
 }
 
@@ -2112,20 +2000,12 @@ impl smithy_http::response::ParseStrictResponse for DisableKeyRotation {
 /// </ul>
 #[derive(std::clone::Clone)]
 pub struct DisconnectCustomKeyStore {
-    input: crate::input::DisconnectCustomKeyStoreInput,
+    _private: (),
 }
 impl DisconnectCustomKeyStore {
     /// Creates a new builder-style object to manufacture [`DisconnectCustomKeyStoreInput`](crate::input::DisconnectCustomKeyStoreInput)
     pub fn builder() -> crate::input::disconnect_custom_key_store_input::Builder {
         crate::input::disconnect_custom_key_store_input::Builder::default()
-    }
-    pub fn build_http_request(
-        &self,
-    ) -> Result<http::request::Request<Vec<u8>>, smithy_http::operation::BuildError> {
-        Ok(crate::input::DisconnectCustomKeyStoreInput::assemble(
-            self.input.request_builder_base()?,
-            self.input.build_body(),
-        ))
     }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
@@ -2174,8 +2054,8 @@ impl DisconnectCustomKeyStore {
     > {
         Self::from_response(&response)
     }
-    pub fn new(input: crate::input::DisconnectCustomKeyStoreInput) -> Self {
-        Self { input }
+    pub fn new() -> Self {
+        Self { _private: () }
     }
 }
 
@@ -2203,20 +2083,12 @@ impl smithy_http::response::ParseStrictResponse for DisconnectCustomKeyStore {
 /// </p>
 #[derive(std::clone::Clone)]
 pub struct EnableKey {
-    input: crate::input::EnableKeyInput,
+    _private: (),
 }
 impl EnableKey {
     /// Creates a new builder-style object to manufacture [`EnableKeyInput`](crate::input::EnableKeyInput)
     pub fn builder() -> crate::input::enable_key_input::Builder {
         crate::input::enable_key_input::Builder::default()
-    }
-    pub fn build_http_request(
-        &self,
-    ) -> Result<http::request::Request<Vec<u8>>, smithy_http::operation::BuildError> {
-        Ok(crate::input::EnableKeyInput::assemble(
-            self.input.request_builder_base()?,
-            self.input.build_body(),
-        ))
     }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
@@ -2285,8 +2157,8 @@ impl EnableKey {
     ) -> Result<crate::output::EnableKeyOutput, crate::error::EnableKeyError> {
         Self::from_response(&response)
     }
-    pub fn new(input: crate::input::EnableKeyInput) -> Self {
-        Self { input }
+    pub fn new() -> Self {
+        Self { _private: () }
     }
 }
 
@@ -2324,20 +2196,12 @@ impl smithy_http::response::ParseStrictResponse for EnableKey {
 /// </ul>
 #[derive(std::clone::Clone)]
 pub struct EnableKeyRotation {
-    input: crate::input::EnableKeyRotationInput,
+    _private: (),
 }
 impl EnableKeyRotation {
     /// Creates a new builder-style object to manufacture [`EnableKeyRotationInput`](crate::input::EnableKeyRotationInput)
     pub fn builder() -> crate::input::enable_key_rotation_input::Builder {
         crate::input::enable_key_rotation_input::Builder::default()
-    }
-    pub fn build_http_request(
-        &self,
-    ) -> Result<http::request::Request<Vec<u8>>, smithy_http::operation::BuildError> {
-        Ok(crate::input::EnableKeyRotationInput::assemble(
-            self.input.request_builder_base()?,
-            self.input.build_body(),
-        ))
     }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
@@ -2417,8 +2281,8 @@ impl EnableKeyRotation {
     ) -> Result<crate::output::EnableKeyRotationOutput, crate::error::EnableKeyRotationError> {
         Self::from_response(&response)
     }
-    pub fn new(input: crate::input::EnableKeyRotationInput) -> Self {
-        Self { input }
+    pub fn new() -> Self {
+        Self { _private: () }
     }
 }
 
@@ -2551,20 +2415,12 @@ impl smithy_http::response::ParseStrictResponse for EnableKeyRotation {
 /// </ul>
 #[derive(std::clone::Clone)]
 pub struct Encrypt {
-    input: crate::input::EncryptInput,
+    _private: (),
 }
 impl Encrypt {
     /// Creates a new builder-style object to manufacture [`EncryptInput`](crate::input::EncryptInput)
     pub fn builder() -> crate::input::encrypt_input::Builder {
         crate::input::encrypt_input::Builder::default()
-    }
-    pub fn build_http_request(
-        &self,
-    ) -> Result<http::request::Request<Vec<u8>>, smithy_http::operation::BuildError> {
-        Ok(crate::input::EncryptInput::assemble(
-            self.input.request_builder_base()?,
-            self.input.build_body(),
-        ))
     }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
@@ -2654,8 +2510,8 @@ impl Encrypt {
     ) -> Result<crate::output::EncryptOutput, crate::error::EncryptError> {
         Self::from_response(&response)
     }
-    pub fn new(input: crate::input::EncryptInput) -> Self {
-        Self { input }
+    pub fn new() -> Self {
+        Self { _private: () }
     }
 }
 
@@ -2758,20 +2614,12 @@ impl smithy_http::response::ParseStrictResponse for Encrypt {
 /// </ul>
 #[derive(std::clone::Clone)]
 pub struct GenerateDataKey {
-    input: crate::input::GenerateDataKeyInput,
+    _private: (),
 }
 impl GenerateDataKey {
     /// Creates a new builder-style object to manufacture [`GenerateDataKeyInput`](crate::input::GenerateDataKeyInput)
     pub fn builder() -> crate::input::generate_data_key_input::Builder {
         crate::input::generate_data_key_input::Builder::default()
-    }
-    pub fn build_http_request(
-        &self,
-    ) -> Result<http::request::Request<Vec<u8>>, smithy_http::operation::BuildError> {
-        Ok(crate::input::GenerateDataKeyInput::assemble(
-            self.input.request_builder_base()?,
-            self.input.build_body(),
-        ))
     }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
@@ -2861,8 +2709,8 @@ impl GenerateDataKey {
     ) -> Result<crate::output::GenerateDataKeyOutput, crate::error::GenerateDataKeyError> {
         Self::from_response(&response)
     }
-    pub fn new(input: crate::input::GenerateDataKeyInput) -> Self {
-        Self { input }
+    pub fn new() -> Self {
+        Self { _private: () }
     }
 }
 
@@ -2939,20 +2787,12 @@ impl smithy_http::response::ParseStrictResponse for GenerateDataKey {
 /// </ul>
 #[derive(std::clone::Clone)]
 pub struct GenerateDataKeyPair {
-    input: crate::input::GenerateDataKeyPairInput,
+    _private: (),
 }
 impl GenerateDataKeyPair {
     /// Creates a new builder-style object to manufacture [`GenerateDataKeyPairInput`](crate::input::GenerateDataKeyPairInput)
     pub fn builder() -> crate::input::generate_data_key_pair_input::Builder {
         crate::input::generate_data_key_pair_input::Builder::default()
-    }
-    pub fn build_http_request(
-        &self,
-    ) -> Result<http::request::Request<Vec<u8>>, smithy_http::operation::BuildError> {
-        Ok(crate::input::GenerateDataKeyPairInput::assemble(
-            self.input.request_builder_base()?,
-            self.input.build_body(),
-        ))
     }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
@@ -3063,8 +2903,8 @@ impl GenerateDataKeyPair {
     {
         Self::from_response(&response)
     }
-    pub fn new(input: crate::input::GenerateDataKeyPairInput) -> Self {
-        Self { input }
+    pub fn new() -> Self {
+        Self { _private: () }
     }
 }
 
@@ -3137,22 +2977,12 @@ impl smithy_http::response::ParseStrictResponse for GenerateDataKeyPair {
 /// </ul>
 #[derive(std::clone::Clone)]
 pub struct GenerateDataKeyPairWithoutPlaintext {
-    input: crate::input::GenerateDataKeyPairWithoutPlaintextInput,
+    _private: (),
 }
 impl GenerateDataKeyPairWithoutPlaintext {
     /// Creates a new builder-style object to manufacture [`GenerateDataKeyPairWithoutPlaintextInput`](crate::input::GenerateDataKeyPairWithoutPlaintextInput)
     pub fn builder() -> crate::input::generate_data_key_pair_without_plaintext_input::Builder {
         crate::input::generate_data_key_pair_without_plaintext_input::Builder::default()
-    }
-    pub fn build_http_request(
-        &self,
-    ) -> Result<http::request::Request<Vec<u8>>, smithy_http::operation::BuildError> {
-        Ok(
-            crate::input::GenerateDataKeyPairWithoutPlaintextInput::assemble(
-                self.input.request_builder_base()?,
-                self.input.build_body(),
-            ),
-        )
     }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
@@ -3233,8 +3063,8 @@ impl GenerateDataKeyPairWithoutPlaintext {
     > {
         Self::from_response(&response)
     }
-    pub fn new(input: crate::input::GenerateDataKeyPairWithoutPlaintextInput) -> Self {
-        Self { input }
+    pub fn new() -> Self {
+        Self { _private: () }
     }
 }
 
@@ -3317,22 +3147,12 @@ impl smithy_http::response::ParseStrictResponse for GenerateDataKeyPairWithoutPl
 /// </ul>
 #[derive(std::clone::Clone)]
 pub struct GenerateDataKeyWithoutPlaintext {
-    input: crate::input::GenerateDataKeyWithoutPlaintextInput,
+    _private: (),
 }
 impl GenerateDataKeyWithoutPlaintext {
     /// Creates a new builder-style object to manufacture [`GenerateDataKeyWithoutPlaintextInput`](crate::input::GenerateDataKeyWithoutPlaintextInput)
     pub fn builder() -> crate::input::generate_data_key_without_plaintext_input::Builder {
         crate::input::generate_data_key_without_plaintext_input::Builder::default()
-    }
-    pub fn build_http_request(
-        &self,
-    ) -> Result<http::request::Request<Vec<u8>>, smithy_http::operation::BuildError> {
-        Ok(
-            crate::input::GenerateDataKeyWithoutPlaintextInput::assemble(
-                self.input.request_builder_base()?,
-                self.input.build_body(),
-            ),
-        )
     }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
@@ -3407,8 +3227,8 @@ impl GenerateDataKeyWithoutPlaintext {
     > {
         Self::from_response(&response)
     }
-    pub fn new(input: crate::input::GenerateDataKeyWithoutPlaintextInput) -> Self {
-        Self { input }
+    pub fn new() -> Self {
+        Self { _private: () }
     }
 }
 
@@ -3432,20 +3252,12 @@ impl smithy_http::response::ParseStrictResponse for GenerateDataKeyWithoutPlaint
 /// <b>Required permissions</b>: <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:GenerateRandom</a> (IAM policy)</p>
 #[derive(std::clone::Clone)]
 pub struct GenerateRandom {
-    input: crate::input::GenerateRandomInput,
+    _private: (),
 }
 impl GenerateRandom {
     /// Creates a new builder-style object to manufacture [`GenerateRandomInput`](crate::input::GenerateRandomInput)
     pub fn builder() -> crate::input::generate_random_input::Builder {
         crate::input::generate_random_input::Builder::default()
-    }
-    pub fn build_http_request(
-        &self,
-    ) -> Result<http::request::Request<Vec<u8>>, smithy_http::operation::BuildError> {
-        Ok(crate::input::GenerateRandomInput::assemble(
-            self.input.request_builder_base()?,
-            self.input.build_body(),
-        ))
     }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
@@ -3510,8 +3322,8 @@ impl GenerateRandom {
     ) -> Result<crate::output::GenerateRandomOutput, crate::error::GenerateRandomError> {
         Self::from_response(&response)
     }
-    pub fn new(input: crate::input::GenerateRandomInput) -> Self {
-        Self { input }
+    pub fn new() -> Self {
+        Self { _private: () }
     }
 }
 
@@ -3532,20 +3344,12 @@ impl smithy_http::response::ParseStrictResponse for GenerateRandom {
 /// </p>
 #[derive(std::clone::Clone)]
 pub struct GetKeyPolicy {
-    input: crate::input::GetKeyPolicyInput,
+    _private: (),
 }
 impl GetKeyPolicy {
     /// Creates a new builder-style object to manufacture [`GetKeyPolicyInput`](crate::input::GetKeyPolicyInput)
     pub fn builder() -> crate::input::get_key_policy_input::Builder {
         crate::input::get_key_policy_input::Builder::default()
-    }
-    pub fn build_http_request(
-        &self,
-    ) -> Result<http::request::Request<Vec<u8>>, smithy_http::operation::BuildError> {
-        Ok(crate::input::GetKeyPolicyInput::assemble(
-            self.input.request_builder_base()?,
-            self.input.build_body(),
-        ))
     }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
@@ -3612,8 +3416,8 @@ impl GetKeyPolicy {
     ) -> Result<crate::output::GetKeyPolicyOutput, crate::error::GetKeyPolicyError> {
         Self::from_response(&response)
     }
-    pub fn new(input: crate::input::GetKeyPolicyInput) -> Self {
-        Self { input }
+    pub fn new() -> Self {
+        Self { _private: () }
     }
 }
 
@@ -3663,20 +3467,12 @@ impl smithy_http::response::ParseStrictResponse for GetKeyPolicy {
 /// </ul>
 #[derive(std::clone::Clone)]
 pub struct GetKeyRotationStatus {
-    input: crate::input::GetKeyRotationStatusInput,
+    _private: (),
 }
 impl GetKeyRotationStatus {
     /// Creates a new builder-style object to manufacture [`GetKeyRotationStatusInput`](crate::input::GetKeyRotationStatusInput)
     pub fn builder() -> crate::input::get_key_rotation_status_input::Builder {
         crate::input::get_key_rotation_status_input::Builder::default()
-    }
-    pub fn build_http_request(
-        &self,
-    ) -> Result<http::request::Request<Vec<u8>>, smithy_http::operation::BuildError> {
-        Ok(crate::input::GetKeyRotationStatusInput::assemble(
-            self.input.request_builder_base()?,
-            self.input.build_body(),
-        ))
     }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
@@ -3759,8 +3555,8 @@ impl GetKeyRotationStatus {
     {
         Self::from_response(&response)
     }
-    pub fn new(input: crate::input::GetKeyRotationStatusInput) -> Self {
-        Self { input }
+    pub fn new() -> Self {
+        Self { _private: () }
     }
 }
 
@@ -3810,20 +3606,12 @@ impl smithy_http::response::ParseStrictResponse for GetKeyRotationStatus {
 /// </ul>
 #[derive(std::clone::Clone)]
 pub struct GetParametersForImport {
-    input: crate::input::GetParametersForImportInput,
+    _private: (),
 }
 impl GetParametersForImport {
     /// Creates a new builder-style object to manufacture [`GetParametersForImportInput`](crate::input::GetParametersForImportInput)
     pub fn builder() -> crate::input::get_parameters_for_import_input::Builder {
         crate::input::get_parameters_for_import_input::Builder::default()
-    }
-    pub fn build_http_request(
-        &self,
-    ) -> Result<http::request::Request<Vec<u8>>, smithy_http::operation::BuildError> {
-        Ok(crate::input::GetParametersForImportInput::assemble(
-            self.input.request_builder_base()?,
-            self.input.build_body(),
-        ))
     }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
@@ -3917,8 +3705,8 @@ impl GetParametersForImport {
     > {
         Self::from_response(&response)
     }
-    pub fn new(input: crate::input::GetParametersForImportInput) -> Self {
-        Self { input }
+    pub fn new() -> Self {
+        Self { _private: () }
     }
 }
 
@@ -3979,20 +3767,12 @@ impl smithy_http::response::ParseStrictResponse for GetParametersForImport {
 /// </p>
 #[derive(std::clone::Clone)]
 pub struct GetPublicKey {
-    input: crate::input::GetPublicKeyInput,
+    _private: (),
 }
 impl GetPublicKey {
     /// Creates a new builder-style object to manufacture [`GetPublicKeyInput`](crate::input::GetPublicKeyInput)
     pub fn builder() -> crate::input::get_public_key_input::Builder {
         crate::input::get_public_key_input::Builder::default()
-    }
-    pub fn build_http_request(
-        &self,
-    ) -> Result<http::request::Request<Vec<u8>>, smithy_http::operation::BuildError> {
-        Ok(crate::input::GetPublicKeyInput::assemble(
-            self.input.request_builder_base()?,
-            self.input.build_body(),
-        ))
     }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
@@ -4099,8 +3879,8 @@ impl GetPublicKey {
     ) -> Result<crate::output::GetPublicKeyOutput, crate::error::GetPublicKeyError> {
         Self::from_response(&response)
     }
-    pub fn new(input: crate::input::GetPublicKeyInput) -> Self {
-        Self { input }
+    pub fn new() -> Self {
+        Self { _private: () }
     }
 }
 
@@ -4177,20 +3957,12 @@ impl smithy_http::response::ParseStrictResponse for GetPublicKey {
 /// </ul>
 #[derive(std::clone::Clone)]
 pub struct ImportKeyMaterial {
-    input: crate::input::ImportKeyMaterialInput,
+    _private: (),
 }
 impl ImportKeyMaterial {
     /// Creates a new builder-style object to manufacture [`ImportKeyMaterialInput`](crate::input::ImportKeyMaterialInput)
     pub fn builder() -> crate::input::import_key_material_input::Builder {
         crate::input::import_key_material_input::Builder::default()
-    }
-    pub fn build_http_request(
-        &self,
-    ) -> Result<http::request::Request<Vec<u8>>, smithy_http::operation::BuildError> {
-        Ok(crate::input::ImportKeyMaterialInput::assemble(
-            self.input.request_builder_base()?,
-            self.input.build_body(),
-        ))
     }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
@@ -4299,8 +4071,8 @@ impl ImportKeyMaterial {
     ) -> Result<crate::output::ImportKeyMaterialOutput, crate::error::ImportKeyMaterialError> {
         Self::from_response(&response)
     }
-    pub fn new(input: crate::input::ImportKeyMaterialInput) -> Self {
-        Self { input }
+    pub fn new() -> Self {
+        Self { _private: () }
     }
 }
 
@@ -4354,20 +4126,12 @@ impl smithy_http::response::ParseStrictResponse for ImportKeyMaterial {
 /// </ul>
 #[derive(std::clone::Clone)]
 pub struct ListAliases {
-    input: crate::input::ListAliasesInput,
+    _private: (),
 }
 impl ListAliases {
     /// Creates a new builder-style object to manufacture [`ListAliasesInput`](crate::input::ListAliasesInput)
     pub fn builder() -> crate::input::list_aliases_input::Builder {
         crate::input::list_aliases_input::Builder::default()
-    }
-    pub fn build_http_request(
-        &self,
-    ) -> Result<http::request::Request<Vec<u8>>, smithy_http::operation::BuildError> {
-        Ok(crate::input::ListAliasesInput::assemble(
-            self.input.request_builder_base()?,
-            self.input.build_body(),
-        ))
     }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
@@ -4436,8 +4200,8 @@ impl ListAliases {
     ) -> Result<crate::output::ListAliasesOutput, crate::error::ListAliasesError> {
         Self::from_response(&response)
     }
-    pub fn new(input: crate::input::ListAliasesInput) -> Self {
-        Self { input }
+    pub fn new() -> Self {
+        Self { _private: () }
     }
 }
 
@@ -4488,20 +4252,12 @@ impl smithy_http::response::ParseStrictResponse for ListAliases {
 /// </ul>
 #[derive(std::clone::Clone)]
 pub struct ListGrants {
-    input: crate::input::ListGrantsInput,
+    _private: (),
 }
 impl ListGrants {
     /// Creates a new builder-style object to manufacture [`ListGrantsInput`](crate::input::ListGrantsInput)
     pub fn builder() -> crate::input::list_grants_input::Builder {
         crate::input::list_grants_input::Builder::default()
-    }
-    pub fn build_http_request(
-        &self,
-    ) -> Result<http::request::Request<Vec<u8>>, smithy_http::operation::BuildError> {
-        Ok(crate::input::ListGrantsInput::assemble(
-            self.input.request_builder_base()?,
-            self.input.build_body(),
-        ))
     }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
@@ -4577,8 +4333,8 @@ impl ListGrants {
     ) -> Result<crate::output::ListGrantsOutput, crate::error::ListGrantsError> {
         Self::from_response(&response)
     }
-    pub fn new(input: crate::input::ListGrantsInput) -> Self {
-        Self { input }
+    pub fn new() -> Self {
+        Self { _private: () }
     }
 }
 
@@ -4613,20 +4369,12 @@ impl smithy_http::response::ParseStrictResponse for ListGrants {
 /// </ul>
 #[derive(std::clone::Clone)]
 pub struct ListKeyPolicies {
-    input: crate::input::ListKeyPoliciesInput,
+    _private: (),
 }
 impl ListKeyPolicies {
     /// Creates a new builder-style object to manufacture [`ListKeyPoliciesInput`](crate::input::ListKeyPoliciesInput)
     pub fn builder() -> crate::input::list_key_policies_input::Builder {
         crate::input::list_key_policies_input::Builder::default()
-    }
-    pub fn build_http_request(
-        &self,
-    ) -> Result<http::request::Request<Vec<u8>>, smithy_http::operation::BuildError> {
-        Ok(crate::input::ListKeyPoliciesInput::assemble(
-            self.input.request_builder_base()?,
-            self.input.build_body(),
-        ))
     }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
@@ -4695,8 +4443,8 @@ impl ListKeyPolicies {
     ) -> Result<crate::output::ListKeyPoliciesOutput, crate::error::ListKeyPoliciesError> {
         Self::from_response(&response)
     }
-    pub fn new(input: crate::input::ListKeyPoliciesInput) -> Self {
-        Self { input }
+    pub fn new() -> Self {
+        Self { _private: () }
     }
 }
 
@@ -4740,20 +4488,12 @@ impl smithy_http::response::ParseStrictResponse for ListKeyPolicies {
 /// </ul>
 #[derive(std::clone::Clone)]
 pub struct ListKeys {
-    input: crate::input::ListKeysInput,
+    _private: (),
 }
 impl ListKeys {
     /// Creates a new builder-style object to manufacture [`ListKeysInput`](crate::input::ListKeysInput)
     pub fn builder() -> crate::input::list_keys_input::Builder {
         crate::input::list_keys_input::Builder::default()
-    }
-    pub fn build_http_request(
-        &self,
-    ) -> Result<http::request::Request<Vec<u8>>, smithy_http::operation::BuildError> {
-        Ok(crate::input::ListKeysInput::assemble(
-            self.input.request_builder_base()?,
-            self.input.build_body(),
-        ))
     }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
@@ -4808,8 +4548,8 @@ impl ListKeys {
     ) -> Result<crate::output::ListKeysOutput, crate::error::ListKeysError> {
         Self::from_response(&response)
     }
-    pub fn new(input: crate::input::ListKeysInput) -> Self {
-        Self { input }
+    pub fn new() -> Self {
+        Self { _private: () }
     }
 }
 
@@ -4846,20 +4586,12 @@ impl smithy_http::response::ParseStrictResponse for ListKeys {
 /// </ul>
 #[derive(std::clone::Clone)]
 pub struct ListResourceTags {
-    input: crate::input::ListResourceTagsInput,
+    _private: (),
 }
 impl ListResourceTags {
     /// Creates a new builder-style object to manufacture [`ListResourceTagsInput`](crate::input::ListResourceTagsInput)
     pub fn builder() -> crate::input::list_resource_tags_input::Builder {
         crate::input::list_resource_tags_input::Builder::default()
-    }
-    pub fn build_http_request(
-        &self,
-    ) -> Result<http::request::Request<Vec<u8>>, smithy_http::operation::BuildError> {
-        Ok(crate::input::ListResourceTagsInput::assemble(
-            self.input.request_builder_base()?,
-            self.input.build_body(),
-        ))
     }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
@@ -4921,8 +4653,8 @@ impl ListResourceTags {
     ) -> Result<crate::output::ListResourceTagsOutput, crate::error::ListResourceTagsError> {
         Self::from_response(&response)
     }
-    pub fn new(input: crate::input::ListResourceTagsInput) -> Self {
-        Self { input }
+    pub fn new() -> Self {
+        Self { _private: () }
     }
 }
 
@@ -4975,20 +4707,12 @@ impl smithy_http::response::ParseStrictResponse for ListResourceTags {
 /// </ul>
 #[derive(std::clone::Clone)]
 pub struct ListRetirableGrants {
-    input: crate::input::ListRetirableGrantsInput,
+    _private: (),
 }
 impl ListRetirableGrants {
     /// Creates a new builder-style object to manufacture [`ListRetirableGrantsInput`](crate::input::ListRetirableGrantsInput)
     pub fn builder() -> crate::input::list_retirable_grants_input::Builder {
         crate::input::list_retirable_grants_input::Builder::default()
-    }
-    pub fn build_http_request(
-        &self,
-    ) -> Result<http::request::Request<Vec<u8>>, smithy_http::operation::BuildError> {
-        Ok(crate::input::ListRetirableGrantsInput::assemble(
-            self.input.request_builder_base()?,
-            self.input.build_body(),
-        ))
     }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
@@ -5061,8 +4785,8 @@ impl ListRetirableGrants {
     {
         Self::from_response(&response)
     }
-    pub fn new(input: crate::input::ListRetirableGrantsInput) -> Self {
-        Self { input }
+    pub fn new() -> Self {
+        Self { _private: () }
     }
 }
 
@@ -5089,20 +4813,12 @@ impl smithy_http::response::ParseStrictResponse for ListRetirableGrants {
 /// </p>
 #[derive(std::clone::Clone)]
 pub struct PutKeyPolicy {
-    input: crate::input::PutKeyPolicyInput,
+    _private: (),
 }
 impl PutKeyPolicy {
     /// Creates a new builder-style object to manufacture [`PutKeyPolicyInput`](crate::input::PutKeyPolicyInput)
     pub fn builder() -> crate::input::put_key_policy_input::Builder {
         crate::input::put_key_policy_input::Builder::default()
-    }
-    pub fn build_http_request(
-        &self,
-    ) -> Result<http::request::Request<Vec<u8>>, smithy_http::operation::BuildError> {
-        Ok(crate::input::PutKeyPolicyInput::assemble(
-            self.input.request_builder_base()?,
-            self.input.build_body(),
-        ))
     }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
@@ -5187,8 +4903,8 @@ impl PutKeyPolicy {
     ) -> Result<crate::output::PutKeyPolicyOutput, crate::error::PutKeyPolicyError> {
         Self::from_response(&response)
     }
-    pub fn new(input: crate::input::PutKeyPolicyInput) -> Self {
-        Self { input }
+    pub fn new() -> Self {
+        Self { _private: () }
     }
 }
 
@@ -5291,20 +5007,12 @@ impl smithy_http::response::ParseStrictResponse for PutKeyPolicy {
 /// </ul>
 #[derive(std::clone::Clone)]
 pub struct ReEncrypt {
-    input: crate::input::ReEncryptInput,
+    _private: (),
 }
 impl ReEncrypt {
     /// Creates a new builder-style object to manufacture [`ReEncryptInput`](crate::input::ReEncryptInput)
     pub fn builder() -> crate::input::re_encrypt_input::Builder {
         crate::input::re_encrypt_input::Builder::default()
-    }
-    pub fn build_http_request(
-        &self,
-    ) -> Result<http::request::Request<Vec<u8>>, smithy_http::operation::BuildError> {
-        Ok(crate::input::ReEncryptInput::assemble(
-            self.input.request_builder_base()?,
-            self.input.build_body(),
-        ))
     }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
@@ -5410,8 +5118,8 @@ impl ReEncrypt {
     ) -> Result<crate::output::ReEncryptOutput, crate::error::ReEncryptError> {
         Self::from_response(&response)
     }
-    pub fn new(input: crate::input::ReEncryptInput) -> Self {
-        Self { input }
+    pub fn new() -> Self {
+        Self { _private: () }
     }
 }
 
@@ -5476,20 +5184,12 @@ impl smithy_http::response::ParseStrictResponse for ReEncrypt {
 /// </ul>
 #[derive(std::clone::Clone)]
 pub struct RetireGrant {
-    input: crate::input::RetireGrantInput,
+    _private: (),
 }
 impl RetireGrant {
     /// Creates a new builder-style object to manufacture [`RetireGrantInput`](crate::input::RetireGrantInput)
     pub fn builder() -> crate::input::retire_grant_input::Builder {
         crate::input::retire_grant_input::Builder::default()
-    }
-    pub fn build_http_request(
-        &self,
-    ) -> Result<http::request::Request<Vec<u8>>, smithy_http::operation::BuildError> {
-        Ok(crate::input::RetireGrantInput::assemble(
-            self.input.request_builder_base()?,
-            self.input.build_body(),
-        ))
     }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
@@ -5565,8 +5265,8 @@ impl RetireGrant {
     ) -> Result<crate::output::RetireGrantOutput, crate::error::RetireGrantError> {
         Self::from_response(&response)
     }
-    pub fn new(input: crate::input::RetireGrantInput) -> Self {
-        Self { input }
+    pub fn new() -> Self {
+        Self { _private: () }
     }
 }
 
@@ -5611,20 +5311,12 @@ impl smithy_http::response::ParseStrictResponse for RetireGrant {
 /// </ul>
 #[derive(std::clone::Clone)]
 pub struct RevokeGrant {
-    input: crate::input::RevokeGrantInput,
+    _private: (),
 }
 impl RevokeGrant {
     /// Creates a new builder-style object to manufacture [`RevokeGrantInput`](crate::input::RevokeGrantInput)
     pub fn builder() -> crate::input::revoke_grant_input::Builder {
         crate::input::revoke_grant_input::Builder::default()
-    }
-    pub fn build_http_request(
-        &self,
-    ) -> Result<http::request::Request<Vec<u8>>, smithy_http::operation::BuildError> {
-        Ok(crate::input::RevokeGrantInput::assemble(
-            self.input.request_builder_base()?,
-            self.input.build_body(),
-        ))
     }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
@@ -5693,8 +5385,8 @@ impl RevokeGrant {
     ) -> Result<crate::output::RevokeGrantOutput, crate::error::RevokeGrantError> {
         Self::from_response(&response)
     }
-    pub fn new(input: crate::input::RevokeGrantInput) -> Self {
-        Self { input }
+    pub fn new() -> Self {
+        Self { _private: () }
     }
 }
 
@@ -5747,20 +5439,12 @@ impl smithy_http::response::ParseStrictResponse for RevokeGrant {
 /// </ul>
 #[derive(std::clone::Clone)]
 pub struct ScheduleKeyDeletion {
-    input: crate::input::ScheduleKeyDeletionInput,
+    _private: (),
 }
 impl ScheduleKeyDeletion {
     /// Creates a new builder-style object to manufacture [`ScheduleKeyDeletionInput`](crate::input::ScheduleKeyDeletionInput)
     pub fn builder() -> crate::input::schedule_key_deletion_input::Builder {
         crate::input::schedule_key_deletion_input::Builder::default()
-    }
-    pub fn build_http_request(
-        &self,
-    ) -> Result<http::request::Request<Vec<u8>>, smithy_http::operation::BuildError> {
-        Ok(crate::input::ScheduleKeyDeletionInput::assemble(
-            self.input.request_builder_base()?,
-            self.input.build_body(),
-        ))
     }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
@@ -5834,8 +5518,8 @@ impl ScheduleKeyDeletion {
     {
         Self::from_response(&response)
     }
-    pub fn new(input: crate::input::ScheduleKeyDeletionInput) -> Self {
-        Self { input }
+    pub fn new() -> Self {
+        Self { _private: () }
     }
 }
 
@@ -5895,20 +5579,12 @@ impl smithy_http::response::ParseStrictResponse for ScheduleKeyDeletion {
 /// </p>
 #[derive(std::clone::Clone)]
 pub struct Sign {
-    input: crate::input::SignInput,
+    _private: (),
 }
 impl Sign {
     /// Creates a new builder-style object to manufacture [`SignInput`](crate::input::SignInput)
     pub fn builder() -> crate::input::sign_input::Builder {
         crate::input::sign_input::Builder::default()
-    }
-    pub fn build_http_request(
-        &self,
-    ) -> Result<http::request::Request<Vec<u8>>, smithy_http::operation::BuildError> {
-        Ok(crate::input::SignInput::assemble(
-            self.input.request_builder_base()?,
-            self.input.build_body(),
-        ))
     }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
@@ -5998,8 +5674,8 @@ impl Sign {
     ) -> Result<crate::output::SignOutput, crate::error::SignError> {
         Self::from_response(&response)
     }
-    pub fn new(input: crate::input::SignInput) -> Self {
-        Self { input }
+    pub fn new() -> Self {
+        Self { _private: () }
     }
 }
 
@@ -6046,20 +5722,12 @@ impl smithy_http::response::ParseStrictResponse for Sign {
 /// </ul>
 #[derive(std::clone::Clone)]
 pub struct TagResource {
-    input: crate::input::TagResourceInput,
+    _private: (),
 }
 impl TagResource {
     /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput)
     pub fn builder() -> crate::input::tag_resource_input::Builder {
         crate::input::tag_resource_input::Builder::default()
-    }
-    pub fn build_http_request(
-        &self,
-    ) -> Result<http::request::Request<Vec<u8>>, smithy_http::operation::BuildError> {
-        Ok(crate::input::TagResourceInput::assemble(
-            self.input.request_builder_base()?,
-            self.input.build_body(),
-        ))
     }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
@@ -6128,8 +5796,8 @@ impl TagResource {
     ) -> Result<crate::output::TagResourceOutput, crate::error::TagResourceError> {
         Self::from_response(&response)
     }
-    pub fn new(input: crate::input::TagResourceInput) -> Self {
-        Self { input }
+    pub fn new() -> Self {
+        Self { _private: () }
     }
 }
 
@@ -6173,20 +5841,12 @@ impl smithy_http::response::ParseStrictResponse for TagResource {
 /// </ul>
 #[derive(std::clone::Clone)]
 pub struct UntagResource {
-    input: crate::input::UntagResourceInput,
+    _private: (),
 }
 impl UntagResource {
     /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput)
     pub fn builder() -> crate::input::untag_resource_input::Builder {
         crate::input::untag_resource_input::Builder::default()
-    }
-    pub fn build_http_request(
-        &self,
-    ) -> Result<http::request::Request<Vec<u8>>, smithy_http::operation::BuildError> {
-        Ok(crate::input::UntagResourceInput::assemble(
-            self.input.request_builder_base()?,
-            self.input.build_body(),
-        ))
     }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
@@ -6248,8 +5908,8 @@ impl UntagResource {
     ) -> Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError> {
         Self::from_response(&response)
     }
-    pub fn new(input: crate::input::UntagResourceInput) -> Self {
-        Self { input }
+    pub fn new() -> Self {
+        Self { _private: () }
     }
 }
 
@@ -6319,20 +5979,12 @@ impl smithy_http::response::ParseStrictResponse for UntagResource {
 /// </ul>
 #[derive(std::clone::Clone)]
 pub struct UpdateAlias {
-    input: crate::input::UpdateAliasInput,
+    _private: (),
 }
 impl UpdateAlias {
     /// Creates a new builder-style object to manufacture [`UpdateAliasInput`](crate::input::UpdateAliasInput)
     pub fn builder() -> crate::input::update_alias_input::Builder {
         crate::input::update_alias_input::Builder::default()
-    }
-    pub fn build_http_request(
-        &self,
-    ) -> Result<http::request::Request<Vec<u8>>, smithy_http::operation::BuildError> {
-        Ok(crate::input::UpdateAliasInput::assemble(
-            self.input.request_builder_base()?,
-            self.input.build_body(),
-        ))
     }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
@@ -6394,8 +6046,8 @@ impl UpdateAlias {
     ) -> Result<crate::output::UpdateAliasOutput, crate::error::UpdateAliasError> {
         Self::from_response(&response)
     }
-    pub fn new(input: crate::input::UpdateAliasInput) -> Self {
-        Self { input }
+    pub fn new() -> Self {
+        Self { _private: () }
     }
 }
 
@@ -6480,20 +6132,12 @@ impl smithy_http::response::ParseStrictResponse for UpdateAlias {
 /// </ul>
 #[derive(std::clone::Clone)]
 pub struct UpdateCustomKeyStore {
-    input: crate::input::UpdateCustomKeyStoreInput,
+    _private: (),
 }
 impl UpdateCustomKeyStore {
     /// Creates a new builder-style object to manufacture [`UpdateCustomKeyStoreInput`](crate::input::UpdateCustomKeyStoreInput)
     pub fn builder() -> crate::input::update_custom_key_store_input::Builder {
         crate::input::update_custom_key_store_input::Builder::default()
-    }
-    pub fn build_http_request(
-        &self,
-    ) -> Result<http::request::Request<Vec<u8>>, smithy_http::operation::BuildError> {
-        Ok(crate::input::UpdateCustomKeyStoreInput::assemble(
-            self.input.request_builder_base()?,
-            self.input.build_body(),
-        ))
     }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
@@ -6554,8 +6198,8 @@ impl UpdateCustomKeyStore {
     {
         Self::from_response(&response)
     }
-    pub fn new(input: crate::input::UpdateCustomKeyStoreInput) -> Self {
-        Self { input }
+    pub fn new() -> Self {
+        Self { _private: () }
     }
 }
 
@@ -6593,20 +6237,12 @@ impl smithy_http::response::ParseStrictResponse for UpdateCustomKeyStore {
 /// </ul>
 #[derive(std::clone::Clone)]
 pub struct UpdateKeyDescription {
-    input: crate::input::UpdateKeyDescriptionInput,
+    _private: (),
 }
 impl UpdateKeyDescription {
     /// Creates a new builder-style object to manufacture [`UpdateKeyDescriptionInput`](crate::input::UpdateKeyDescriptionInput)
     pub fn builder() -> crate::input::update_key_description_input::Builder {
         crate::input::update_key_description_input::Builder::default()
-    }
-    pub fn build_http_request(
-        &self,
-    ) -> Result<http::request::Request<Vec<u8>>, smithy_http::operation::BuildError> {
-        Ok(crate::input::UpdateKeyDescriptionInput::assemble(
-            self.input.request_builder_base()?,
-            self.input.build_body(),
-        ))
     }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
@@ -6674,8 +6310,8 @@ impl UpdateKeyDescription {
     {
         Self::from_response(&response)
     }
-    pub fn new(input: crate::input::UpdateKeyDescriptionInput) -> Self {
-        Self { input }
+    pub fn new() -> Self {
+        Self { _private: () }
     }
 }
 
@@ -6720,20 +6356,12 @@ impl smithy_http::response::ParseStrictResponse for UpdateKeyDescription {
 /// </p>
 #[derive(std::clone::Clone)]
 pub struct Verify {
-    input: crate::input::VerifyInput,
+    _private: (),
 }
 impl Verify {
     /// Creates a new builder-style object to manufacture [`VerifyInput`](crate::input::VerifyInput)
     pub fn builder() -> crate::input::verify_input::Builder {
         crate::input::verify_input::Builder::default()
-    }
-    pub fn build_http_request(
-        &self,
-    ) -> Result<http::request::Request<Vec<u8>>, smithy_http::operation::BuildError> {
-        Ok(crate::input::VerifyInput::assemble(
-            self.input.request_builder_base()?,
-            self.input.build_body(),
-        ))
     }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
@@ -6830,8 +6458,8 @@ impl Verify {
     ) -> Result<crate::output::VerifyOutput, crate::error::VerifyError> {
         Self::from_response(&response)
     }
-    pub fn new(input: crate::input::VerifyInput) -> Self {
-        Self { input }
+    pub fn new() -> Self {
+        Self { _private: () }
     }
 }
 

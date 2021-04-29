@@ -44,6 +44,8 @@ version = "1"
 features = ["macros", "test-util"]
 [features]
 client = ["aws-hyper"]
-default = ["client"]
+rustls = ["aws-hyper/rustls"]
+native-tls = ["aws-hyper/native-tls"]
+default = ["client", "rustls"]
 
 

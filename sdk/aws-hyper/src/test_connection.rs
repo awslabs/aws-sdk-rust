@@ -104,7 +104,7 @@ impl<B> TestConnection<B> {
 }
 
 impl<B: Into<hyper::Body>> tower::Service<http::Request<SdkBody>> for TestConnection<B> {
-    type Response = http::Response<hyper::Body>;
+    type Response = http::Response<SdkBody>;
     type Error = BoxError;
     type Future = Ready<Result<Self::Response, Self::Error>>;
 
@@ -119,7 +119,7 @@ impl<B: Into<hyper::Body>> tower::Service<http::Request<SdkBody>> for TestConnec
                 .lock()
                 .unwrap()
                 .push(ValidateRequest { actual, expected });
-            std::future::ready(Ok(resp.map(|body| body.into())))
+            std::future::ready(Ok(resp.map(|body| SdkBody::from(body.into()))))
         } else {
             std::future::ready(Err("No more data".into()))
         }
@@ -130,22 +130,6 @@ impl<B: Into<hyper::Body>> tower::Service<http::Request<SdkBody>> for TestConnec
 mod tests {
     use crate::test_connection::TestConnection;
     use crate::{conn, Client};
-    use smithy_http::body::SdkBody;
-    use tower::BoxError;
-
-    /// Validate that the `TestConnection` meets the required trait bounds to be used with a aws-hyper service
-    #[test]
-    fn meets_trait_bounds() {
-        fn check() -> impl tower::Service<
-            http::Request<SdkBody>,
-            Response = http::Response<hyper::Body>,
-            Error = BoxError,
-            Future = impl Send,
-        > + Clone {
-            TestConnection::<String>::new(vec![])
-        }
-        let _ = check();
-    }
 
     fn is_send_sync<T: Send + Sync>(_: T) {}
 

@@ -123,6 +123,7 @@ mod test {
     use aws_auth::CredentialsProvider;
     use aws_endpoint::{set_endpoint_resolver, AwsEndpointStage, DefaultAwsEndpointResolver};
     use aws_types::region::Region;
+    use aws_types::SigningService;
     use http::header::AUTHORIZATION;
     use smithy_http::body::SdkBody;
     use smithy_http::middleware::MapRequest;
@@ -141,6 +142,7 @@ mod test {
             .augment(|req, conf| {
                 conf.insert(region.clone());
                 conf.insert(UNIX_EPOCH + Duration::new(1611160427, 0));
+                conf.insert(SigningService::from_static("kinesis"));
                 set_endpoint_resolver(conf, provider);
                 Result::<_, Infallible>::Ok(req)
             })

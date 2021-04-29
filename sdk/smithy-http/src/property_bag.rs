@@ -72,7 +72,10 @@ impl PropertyBag {
     /// #[derive(Debug, Eq, PartialEq)]
     /// struct Endpoint(&'static str);
     /// assert!(ext.insert(Endpoint("dynamo.amazon.com")).is_none());
-    /// assert_eq!(ext.insert(Endpoint("kinesis.amazon.com")), Some(Endpoint("dynamo.amazon.com")));
+    /// assert_eq!(
+    ///     ext.insert(Endpoint("kinesis.amazon.com")),
+    ///     Some(Endpoint("dynamo.amazon.com"))
+    /// );
     /// ```
     pub fn insert<T: Send + Sync + 'static>(&mut self, val: T) -> Option<T> {
         self.map

@@ -10,20 +10,12 @@
 /// account.</p>
 #[derive(std::clone::Clone)]
 pub struct AddTagsToStream {
-    input: crate::input::AddTagsToStreamInput,
+    _private: (),
 }
 impl AddTagsToStream {
     /// Creates a new builder-style object to manufacture [`AddTagsToStreamInput`](crate::input::AddTagsToStreamInput)
     pub fn builder() -> crate::input::add_tags_to_stream_input::Builder {
         crate::input::add_tags_to_stream_input::Builder::default()
-    }
-    pub fn build_http_request(
-        &self,
-    ) -> Result<http::request::Request<Vec<u8>>, smithy_http::operation::BuildError> {
-        Ok(crate::input::AddTagsToStreamInput::assemble(
-            self.input.request_builder_base()?,
-            self.input.build_body(),
-        ))
     }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
@@ -46,16 +38,16 @@ impl AddTagsToStream {
                     },
                     Err(e) => crate::error::AddTagsToStreamError::unhandled(e),
                 },
-                "LimitExceededException" => match serde_json::from_value(body) {
+                "ResourceInUseException" => match serde_json::from_value(body) {
                     Ok(body) => crate::error::AddTagsToStreamError {
-                        kind: crate::error::AddTagsToStreamErrorKind::LimitExceededError(body),
+                        kind: crate::error::AddTagsToStreamErrorKind::ResourceInUseError(body),
                         meta: generic,
                     },
                     Err(e) => crate::error::AddTagsToStreamError::unhandled(e),
                 },
-                "ResourceInUseException" => match serde_json::from_value(body) {
+                "LimitExceededException" => match serde_json::from_value(body) {
                     Ok(body) => crate::error::AddTagsToStreamError {
-                        kind: crate::error::AddTagsToStreamErrorKind::ResourceInUseError(body),
+                        kind: crate::error::AddTagsToStreamErrorKind::LimitExceededError(body),
                         meta: generic,
                     },
                     Err(e) => crate::error::AddTagsToStreamError::unhandled(e),
@@ -78,8 +70,8 @@ impl AddTagsToStream {
     ) -> Result<crate::output::AddTagsToStreamOutput, crate::error::AddTagsToStreamError> {
         Self::from_response(&response)
     }
-    pub fn new(input: crate::input::AddTagsToStreamInput) -> Self {
-        Self { input }
+    pub fn new() -> Self {
+        Self { _private: () }
     }
 }
 
@@ -131,20 +123,12 @@ impl smithy_http::response::ParseStrictResponse for AddTagsToStream {
 /// account.</p>
 #[derive(std::clone::Clone)]
 pub struct CreateStream {
-    input: crate::input::CreateStreamInput,
+    _private: (),
 }
 impl CreateStream {
     /// Creates a new builder-style object to manufacture [`CreateStreamInput`](crate::input::CreateStreamInput)
     pub fn builder() -> crate::input::create_stream_input::Builder {
         crate::input::create_stream_input::Builder::default()
-    }
-    pub fn build_http_request(
-        &self,
-    ) -> Result<http::request::Request<Vec<u8>>, smithy_http::operation::BuildError> {
-        Ok(crate::input::CreateStreamInput::assemble(
-            self.input.request_builder_base()?,
-            self.input.build_body(),
-        ))
     }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
@@ -167,16 +151,16 @@ impl CreateStream {
                     },
                     Err(e) => crate::error::CreateStreamError::unhandled(e),
                 },
-                "LimitExceededException" => match serde_json::from_value(body) {
+                "ResourceInUseException" => match serde_json::from_value(body) {
                     Ok(body) => crate::error::CreateStreamError {
-                        kind: crate::error::CreateStreamErrorKind::LimitExceededError(body),
+                        kind: crate::error::CreateStreamErrorKind::ResourceInUseError(body),
                         meta: generic,
                     },
                     Err(e) => crate::error::CreateStreamError::unhandled(e),
                 },
-                "ResourceInUseException" => match serde_json::from_value(body) {
+                "LimitExceededException" => match serde_json::from_value(body) {
                     Ok(body) => crate::error::CreateStreamError {
-                        kind: crate::error::CreateStreamErrorKind::ResourceInUseError(body),
+                        kind: crate::error::CreateStreamErrorKind::LimitExceededError(body),
                         meta: generic,
                     },
                     Err(e) => crate::error::CreateStreamError::unhandled(e),
@@ -192,8 +176,8 @@ impl CreateStream {
     ) -> Result<crate::output::CreateStreamOutput, crate::error::CreateStreamError> {
         Self::from_response(&response)
     }
-    pub fn new(input: crate::input::CreateStreamInput) -> Self {
-        Self { input }
+    pub fn new() -> Self {
+        Self { _private: () }
     }
 }
 
@@ -212,20 +196,12 @@ impl smithy_http::response::ParseStrictResponse for CreateStream {
 /// older than 24 hours is inaccessible.</p>
 #[derive(std::clone::Clone)]
 pub struct DecreaseStreamRetentionPeriod {
-    input: crate::input::DecreaseStreamRetentionPeriodInput,
+    _private: (),
 }
 impl DecreaseStreamRetentionPeriod {
     /// Creates a new builder-style object to manufacture [`DecreaseStreamRetentionPeriodInput`](crate::input::DecreaseStreamRetentionPeriodInput)
     pub fn builder() -> crate::input::decrease_stream_retention_period_input::Builder {
         crate::input::decrease_stream_retention_period_input::Builder::default()
-    }
-    pub fn build_http_request(
-        &self,
-    ) -> Result<http::request::Request<Vec<u8>>, smithy_http::operation::BuildError> {
-        Ok(crate::input::DecreaseStreamRetentionPeriodInput::assemble(
-            self.input.request_builder_base()?,
-            self.input.build_body(),
-        ))
     }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
@@ -252,12 +228,12 @@ impl DecreaseStreamRetentionPeriod {
                     Ok(body) => crate::error::DecreaseStreamRetentionPeriodError { kind: crate::error::DecreaseStreamRetentionPeriodErrorKind::InvalidArgumentError(body), meta: generic },
                     Err(e) => crate::error::DecreaseStreamRetentionPeriodError::unhandled(e)
                 }
-                "LimitExceededException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::DecreaseStreamRetentionPeriodError { kind: crate::error::DecreaseStreamRetentionPeriodErrorKind::LimitExceededError(body), meta: generic },
-                    Err(e) => crate::error::DecreaseStreamRetentionPeriodError::unhandled(e)
-                }
                 "ResourceInUseException" => match serde_json::from_value(body) {
                     Ok(body) => crate::error::DecreaseStreamRetentionPeriodError { kind: crate::error::DecreaseStreamRetentionPeriodErrorKind::ResourceInUseError(body), meta: generic },
+                    Err(e) => crate::error::DecreaseStreamRetentionPeriodError::unhandled(e)
+                }
+                "LimitExceededException" => match serde_json::from_value(body) {
+                    Ok(body) => crate::error::DecreaseStreamRetentionPeriodError { kind: crate::error::DecreaseStreamRetentionPeriodErrorKind::LimitExceededError(body), meta: generic },
                     Err(e) => crate::error::DecreaseStreamRetentionPeriodError::unhandled(e)
                 }
                 "ResourceNotFoundException" => match serde_json::from_value(body) {
@@ -278,8 +254,8 @@ impl DecreaseStreamRetentionPeriod {
     > {
         Self::from_response(&response)
     }
-    pub fn new(input: crate::input::DecreaseStreamRetentionPeriodInput) -> Self {
-        Self { input }
+    pub fn new() -> Self {
+        Self { _private: () }
     }
 }
 
@@ -314,20 +290,12 @@ impl smithy_http::response::ParseStrictResponse for DecreaseStreamRetentionPerio
 /// account.</p>
 #[derive(std::clone::Clone)]
 pub struct DeleteStream {
-    input: crate::input::DeleteStreamInput,
+    _private: (),
 }
 impl DeleteStream {
     /// Creates a new builder-style object to manufacture [`DeleteStreamInput`](crate::input::DeleteStreamInput)
     pub fn builder() -> crate::input::delete_stream_input::Builder {
         crate::input::delete_stream_input::Builder::default()
-    }
-    pub fn build_http_request(
-        &self,
-    ) -> Result<http::request::Request<Vec<u8>>, smithy_http::operation::BuildError> {
-        Ok(crate::input::DeleteStreamInput::assemble(
-            self.input.request_builder_base()?,
-            self.input.build_body(),
-        ))
     }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
@@ -343,16 +311,16 @@ impl DeleteStream {
                 None => return Err(crate::error::DeleteStreamError::unhandled(generic)),
             };
             return Err(match error_code {
-                "LimitExceededException" => match serde_json::from_value(body) {
+                "ResourceInUseException" => match serde_json::from_value(body) {
                     Ok(body) => crate::error::DeleteStreamError {
-                        kind: crate::error::DeleteStreamErrorKind::LimitExceededError(body),
+                        kind: crate::error::DeleteStreamErrorKind::ResourceInUseError(body),
                         meta: generic,
                     },
                     Err(e) => crate::error::DeleteStreamError::unhandled(e),
                 },
-                "ResourceInUseException" => match serde_json::from_value(body) {
+                "LimitExceededException" => match serde_json::from_value(body) {
                     Ok(body) => crate::error::DeleteStreamError {
-                        kind: crate::error::DeleteStreamErrorKind::ResourceInUseError(body),
+                        kind: crate::error::DeleteStreamErrorKind::LimitExceededError(body),
                         meta: generic,
                     },
                     Err(e) => crate::error::DeleteStreamError::unhandled(e),
@@ -375,8 +343,8 @@ impl DeleteStream {
     ) -> Result<crate::output::DeleteStreamOutput, crate::error::DeleteStreamError> {
         Self::from_response(&response)
     }
-    pub fn new(input: crate::input::DeleteStreamInput) -> Self {
-        Self { input }
+    pub fn new() -> Self {
+        Self { _private: () }
     }
 }
 
@@ -397,20 +365,12 @@ impl smithy_http::response::ParseStrictResponse for DeleteStream {
 /// <p>This operation has a limit of five transactions per second per stream.</p>
 #[derive(std::clone::Clone)]
 pub struct DeregisterStreamConsumer {
-    input: crate::input::DeregisterStreamConsumerInput,
+    _private: (),
 }
 impl DeregisterStreamConsumer {
     /// Creates a new builder-style object to manufacture [`DeregisterStreamConsumerInput`](crate::input::DeregisterStreamConsumerInput)
     pub fn builder() -> crate::input::deregister_stream_consumer_input::Builder {
         crate::input::deregister_stream_consumer_input::Builder::default()
-    }
-    pub fn build_http_request(
-        &self,
-    ) -> Result<http::request::Request<Vec<u8>>, smithy_http::operation::BuildError> {
-        Ok(crate::input::DeregisterStreamConsumerInput::assemble(
-            self.input.request_builder_base()?,
-            self.input.build_body(),
-        ))
     }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
@@ -475,8 +435,8 @@ impl DeregisterStreamConsumer {
     > {
         Self::from_response(&response)
     }
-    pub fn new(input: crate::input::DeregisterStreamConsumerInput) -> Self {
-        Self { input }
+    pub fn new() -> Self {
+        Self { _private: () }
     }
 }
 
@@ -496,20 +456,12 @@ impl smithy_http::response::ParseStrictResponse for DeregisterStreamConsumer {
 /// <p>This operation has a limit of one transaction per second per account.</p>
 #[derive(std::clone::Clone)]
 pub struct DescribeLimits {
-    input: crate::input::DescribeLimitsInput,
+    _private: (),
 }
 impl DescribeLimits {
     /// Creates a new builder-style object to manufacture [`DescribeLimitsInput`](crate::input::DescribeLimitsInput)
     pub fn builder() -> crate::input::describe_limits_input::Builder {
         crate::input::describe_limits_input::Builder::default()
-    }
-    pub fn build_http_request(
-        &self,
-    ) -> Result<http::request::Request<Vec<u8>>, smithy_http::operation::BuildError> {
-        Ok(crate::input::DescribeLimitsInput::assemble(
-            self.input.request_builder_base()?,
-            self.input.build_body(),
-        ))
     }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
@@ -549,8 +501,8 @@ impl DescribeLimits {
     ) -> Result<crate::output::DescribeLimitsOutput, crate::error::DescribeLimitsError> {
         Self::from_response(&response)
     }
-    pub fn new(input: crate::input::DescribeLimitsInput) -> Self {
-        Self { input }
+    pub fn new() -> Self {
+        Self { _private: () }
     }
 }
 
@@ -578,20 +530,12 @@ impl smithy_http::response::ParseStrictResponse for DescribeLimits {
 /// <p>This operation has a limit of 10 transactions per second per account.</p>
 #[derive(std::clone::Clone)]
 pub struct DescribeStream {
-    input: crate::input::DescribeStreamInput,
+    _private: (),
 }
 impl DescribeStream {
     /// Creates a new builder-style object to manufacture [`DescribeStreamInput`](crate::input::DescribeStreamInput)
     pub fn builder() -> crate::input::describe_stream_input::Builder {
         crate::input::describe_stream_input::Builder::default()
-    }
-    pub fn build_http_request(
-        &self,
-    ) -> Result<http::request::Request<Vec<u8>>, smithy_http::operation::BuildError> {
-        Ok(crate::input::DescribeStreamInput::assemble(
-            self.input.request_builder_base()?,
-            self.input.build_body(),
-        ))
     }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
@@ -637,8 +581,8 @@ impl DescribeStream {
     ) -> Result<crate::output::DescribeStreamOutput, crate::error::DescribeStreamError> {
         Self::from_response(&response)
     }
-    pub fn new(input: crate::input::DescribeStreamInput) -> Self {
-        Self { input }
+    pub fn new() -> Self {
+        Self { _private: () }
     }
 }
 
@@ -659,20 +603,12 @@ impl smithy_http::response::ParseStrictResponse for DescribeStream {
 /// <p>This operation has a limit of 20 transactions per second per stream.</p>
 #[derive(std::clone::Clone)]
 pub struct DescribeStreamConsumer {
-    input: crate::input::DescribeStreamConsumerInput,
+    _private: (),
 }
 impl DescribeStreamConsumer {
     /// Creates a new builder-style object to manufacture [`DescribeStreamConsumerInput`](crate::input::DescribeStreamConsumerInput)
     pub fn builder() -> crate::input::describe_stream_consumer_input::Builder {
         crate::input::describe_stream_consumer_input::Builder::default()
-    }
-    pub fn build_http_request(
-        &self,
-    ) -> Result<http::request::Request<Vec<u8>>, smithy_http::operation::BuildError> {
-        Ok(crate::input::DescribeStreamConsumerInput::assemble(
-            self.input.request_builder_base()?,
-            self.input.build_body(),
-        ))
     }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
@@ -741,8 +677,8 @@ impl DescribeStreamConsumer {
     > {
         Self::from_response(&response)
     }
-    pub fn new(input: crate::input::DescribeStreamConsumerInput) -> Self {
-        Self { input }
+    pub fn new() -> Self {
+        Self { _private: () }
     }
 }
 
@@ -766,20 +702,12 @@ impl smithy_http::response::ParseStrictResponse for DescribeStreamConsumer {
 /// per account.</p>
 #[derive(std::clone::Clone)]
 pub struct DescribeStreamSummary {
-    input: crate::input::DescribeStreamSummaryInput,
+    _private: (),
 }
 impl DescribeStreamSummary {
     /// Creates a new builder-style object to manufacture [`DescribeStreamSummaryInput`](crate::input::DescribeStreamSummaryInput)
     pub fn builder() -> crate::input::describe_stream_summary_input::Builder {
         crate::input::describe_stream_summary_input::Builder::default()
-    }
-    pub fn build_http_request(
-        &self,
-    ) -> Result<http::request::Request<Vec<u8>>, smithy_http::operation::BuildError> {
-        Ok(crate::input::DescribeStreamSummaryInput::assemble(
-            self.input.request_builder_base()?,
-            self.input.build_body(),
-        ))
     }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
@@ -831,8 +759,8 @@ impl DescribeStreamSummary {
     {
         Self::from_response(&response)
     }
-    pub fn new(input: crate::input::DescribeStreamSummaryInput) -> Self {
-        Self { input }
+    pub fn new() -> Self {
+        Self { _private: () }
     }
 }
 
@@ -849,20 +777,12 @@ impl smithy_http::response::ParseStrictResponse for DescribeStreamSummary {
 /// <p>Disables enhanced monitoring.</p>
 #[derive(std::clone::Clone)]
 pub struct DisableEnhancedMonitoring {
-    input: crate::input::DisableEnhancedMonitoringInput,
+    _private: (),
 }
 impl DisableEnhancedMonitoring {
     /// Creates a new builder-style object to manufacture [`DisableEnhancedMonitoringInput`](crate::input::DisableEnhancedMonitoringInput)
     pub fn builder() -> crate::input::disable_enhanced_monitoring_input::Builder {
         crate::input::disable_enhanced_monitoring_input::Builder::default()
-    }
-    pub fn build_http_request(
-        &self,
-    ) -> Result<http::request::Request<Vec<u8>>, smithy_http::operation::BuildError> {
-        Ok(crate::input::DisableEnhancedMonitoringInput::assemble(
-            self.input.request_builder_base()?,
-            self.input.build_body(),
-        ))
     }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
@@ -895,18 +815,18 @@ impl DisableEnhancedMonitoring {
                     },
                     Err(e) => crate::error::DisableEnhancedMonitoringError::unhandled(e),
                 },
-                "LimitExceededException" => match serde_json::from_value(body) {
+                "ResourceInUseException" => match serde_json::from_value(body) {
                     Ok(body) => crate::error::DisableEnhancedMonitoringError {
-                        kind: crate::error::DisableEnhancedMonitoringErrorKind::LimitExceededError(
+                        kind: crate::error::DisableEnhancedMonitoringErrorKind::ResourceInUseError(
                             body,
                         ),
                         meta: generic,
                     },
                     Err(e) => crate::error::DisableEnhancedMonitoringError::unhandled(e),
                 },
-                "ResourceInUseException" => match serde_json::from_value(body) {
+                "LimitExceededException" => match serde_json::from_value(body) {
                     Ok(body) => crate::error::DisableEnhancedMonitoringError {
-                        kind: crate::error::DisableEnhancedMonitoringErrorKind::ResourceInUseError(
+                        kind: crate::error::DisableEnhancedMonitoringErrorKind::LimitExceededError(
                             body,
                         ),
                         meta: generic,
@@ -944,8 +864,8 @@ impl DisableEnhancedMonitoring {
     > {
         Self::from_response(&response)
     }
-    pub fn new(input: crate::input::DisableEnhancedMonitoringInput) -> Self {
-        Self { input }
+    pub fn new() -> Self {
+        Self { _private: () }
     }
 }
 
@@ -962,20 +882,12 @@ impl smithy_http::response::ParseStrictResponse for DisableEnhancedMonitoring {
 /// <p>Enables enhanced Kinesis data stream monitoring for shard-level metrics.</p>
 #[derive(std::clone::Clone)]
 pub struct EnableEnhancedMonitoring {
-    input: crate::input::EnableEnhancedMonitoringInput,
+    _private: (),
 }
 impl EnableEnhancedMonitoring {
     /// Creates a new builder-style object to manufacture [`EnableEnhancedMonitoringInput`](crate::input::EnableEnhancedMonitoringInput)
     pub fn builder() -> crate::input::enable_enhanced_monitoring_input::Builder {
         crate::input::enable_enhanced_monitoring_input::Builder::default()
-    }
-    pub fn build_http_request(
-        &self,
-    ) -> Result<http::request::Request<Vec<u8>>, smithy_http::operation::BuildError> {
-        Ok(crate::input::EnableEnhancedMonitoringInput::assemble(
-            self.input.request_builder_base()?,
-            self.input.build_body(),
-        ))
     }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
@@ -1007,18 +919,18 @@ impl EnableEnhancedMonitoring {
                     },
                     Err(e) => crate::error::EnableEnhancedMonitoringError::unhandled(e),
                 },
-                "LimitExceededException" => match serde_json::from_value(body) {
+                "ResourceInUseException" => match serde_json::from_value(body) {
                     Ok(body) => crate::error::EnableEnhancedMonitoringError {
-                        kind: crate::error::EnableEnhancedMonitoringErrorKind::LimitExceededError(
+                        kind: crate::error::EnableEnhancedMonitoringErrorKind::ResourceInUseError(
                             body,
                         ),
                         meta: generic,
                     },
                     Err(e) => crate::error::EnableEnhancedMonitoringError::unhandled(e),
                 },
-                "ResourceInUseException" => match serde_json::from_value(body) {
+                "LimitExceededException" => match serde_json::from_value(body) {
                     Ok(body) => crate::error::EnableEnhancedMonitoringError {
-                        kind: crate::error::EnableEnhancedMonitoringErrorKind::ResourceInUseError(
+                        kind: crate::error::EnableEnhancedMonitoringErrorKind::LimitExceededError(
                             body,
                         ),
                         meta: generic,
@@ -1056,8 +968,8 @@ impl EnableEnhancedMonitoring {
     > {
         Self::from_response(&response)
     }
-    pub fn new(input: crate::input::EnableEnhancedMonitoringInput) -> Self {
-        Self { input }
+    pub fn new() -> Self {
+        Self { _private: () }
     }
 }
 
@@ -1119,20 +1031,12 @@ impl smithy_http::response::ParseStrictResponse for EnableEnhancedMonitoring {
 /// <p>This operation has a limit of five transactions per second per shard.</p>
 #[derive(std::clone::Clone)]
 pub struct GetRecords {
-    input: crate::input::GetRecordsInput,
+    _private: (),
 }
 impl GetRecords {
     /// Creates a new builder-style object to manufacture [`GetRecordsInput`](crate::input::GetRecordsInput)
     pub fn builder() -> crate::input::get_records_input::Builder {
         crate::input::get_records_input::Builder::default()
-    }
-    pub fn build_http_request(
-        &self,
-    ) -> Result<http::request::Request<Vec<u8>>, smithy_http::operation::BuildError> {
-        Ok(crate::input::GetRecordsInput::assemble(
-            self.input.request_builder_base()?,
-            self.input.build_body(),
-        ))
     }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
@@ -1148,20 +1052,6 @@ impl GetRecords {
                 None => return Err(crate::error::GetRecordsError::unhandled(generic)),
             };
             return Err(match error_code {
-                "ExpiredIteratorException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::GetRecordsError {
-                        kind: crate::error::GetRecordsErrorKind::ExpiredIteratorError(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::GetRecordsError::unhandled(e),
-                },
-                "InvalidArgumentException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::GetRecordsError {
-                        kind: crate::error::GetRecordsErrorKind::InvalidArgumentError(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::GetRecordsError::unhandled(e),
-                },
                 "KMSAccessDeniedException" => match serde_json::from_value(body) {
                     Ok(body) => crate::error::GetRecordsError {
                         kind: crate::error::GetRecordsErrorKind::KMSAccessDeniedError(body),
@@ -1176,16 +1066,16 @@ impl GetRecords {
                     },
                     Err(e) => crate::error::GetRecordsError::unhandled(e),
                 },
-                "KMSInvalidStateException" => match serde_json::from_value(body) {
+                "KMSNotFoundException" => match serde_json::from_value(body) {
                     Ok(body) => crate::error::GetRecordsError {
-                        kind: crate::error::GetRecordsErrorKind::KMSInvalidStateError(body),
+                        kind: crate::error::GetRecordsErrorKind::KMSNotFoundError(body),
                         meta: generic,
                     },
                     Err(e) => crate::error::GetRecordsError::unhandled(e),
                 },
-                "KMSNotFoundException" => match serde_json::from_value(body) {
+                "ExpiredIteratorException" => match serde_json::from_value(body) {
                     Ok(body) => crate::error::GetRecordsError {
-                        kind: crate::error::GetRecordsErrorKind::KMSNotFoundError(body),
+                        kind: crate::error::GetRecordsErrorKind::ExpiredIteratorError(body),
                         meta: generic,
                     },
                     Err(e) => crate::error::GetRecordsError::unhandled(e),
@@ -1209,6 +1099,20 @@ impl GetRecords {
                         kind: crate::error::GetRecordsErrorKind::ProvisionedThroughputExceededError(
                             body,
                         ),
+                        meta: generic,
+                    },
+                    Err(e) => crate::error::GetRecordsError::unhandled(e),
+                },
+                "InvalidArgumentException" => match serde_json::from_value(body) {
+                    Ok(body) => crate::error::GetRecordsError {
+                        kind: crate::error::GetRecordsErrorKind::InvalidArgumentError(body),
+                        meta: generic,
+                    },
+                    Err(e) => crate::error::GetRecordsError::unhandled(e),
+                },
+                "KMSInvalidStateException" => match serde_json::from_value(body) {
+                    Ok(body) => crate::error::GetRecordsError {
+                        kind: crate::error::GetRecordsErrorKind::KMSInvalidStateError(body),
                         meta: generic,
                     },
                     Err(e) => crate::error::GetRecordsError::unhandled(e),
@@ -1239,8 +1143,8 @@ impl GetRecords {
     ) -> Result<crate::output::GetRecordsOutput, crate::error::GetRecordsError> {
         Self::from_response(&response)
     }
-    pub fn new(input: crate::input::GetRecordsInput) -> Self {
-        Self { input }
+    pub fn new() -> Self {
+        Self { _private: () }
     }
 }
 
@@ -1287,20 +1191,12 @@ impl smithy_http::response::ParseStrictResponse for GetRecords {
 /// account per open shard.</p>
 #[derive(std::clone::Clone)]
 pub struct GetShardIterator {
-    input: crate::input::GetShardIteratorInput,
+    _private: (),
 }
 impl GetShardIterator {
     /// Creates a new builder-style object to manufacture [`GetShardIteratorInput`](crate::input::GetShardIteratorInput)
     pub fn builder() -> crate::input::get_shard_iterator_input::Builder {
         crate::input::get_shard_iterator_input::Builder::default()
-    }
-    pub fn build_http_request(
-        &self,
-    ) -> Result<http::request::Request<Vec<u8>>, smithy_http::operation::BuildError> {
-        Ok(crate::input::GetShardIteratorInput::assemble(
-            self.input.request_builder_base()?,
-            self.input.build_body(),
-        ))
     }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
@@ -1316,12 +1212,12 @@ impl GetShardIterator {
                 None => return Err(crate::error::GetShardIteratorError::unhandled(generic)),
             };
             return Err(match error_code {
-                "InvalidArgumentException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::GetShardIteratorError { kind: crate::error::GetShardIteratorErrorKind::InvalidArgumentError(body), meta: generic },
-                    Err(e) => crate::error::GetShardIteratorError::unhandled(e)
-                }
                 "ProvisionedThroughputExceededException" => match serde_json::from_value(body) {
                     Ok(body) => crate::error::GetShardIteratorError { kind: crate::error::GetShardIteratorErrorKind::ProvisionedThroughputExceededError(body), meta: generic },
+                    Err(e) => crate::error::GetShardIteratorError::unhandled(e)
+                }
+                "InvalidArgumentException" => match serde_json::from_value(body) {
+                    Ok(body) => crate::error::GetShardIteratorError { kind: crate::error::GetShardIteratorErrorKind::InvalidArgumentError(body), meta: generic },
                     Err(e) => crate::error::GetShardIteratorError::unhandled(e)
                 }
                 "ResourceNotFoundException" => match serde_json::from_value(body) {
@@ -1344,8 +1240,8 @@ impl GetShardIterator {
     ) -> Result<crate::output::GetShardIteratorOutput, crate::error::GetShardIteratorError> {
         Self::from_response(&response)
     }
-    pub fn new(input: crate::input::GetShardIteratorInput) -> Self {
-        Self { input }
+    pub fn new() -> Self {
+        Self { _private: () }
     }
 }
 
@@ -1368,20 +1264,12 @@ impl smithy_http::response::ParseStrictResponse for GetShardIterator {
 /// hours remains inaccessible to consumer applications.</p>
 #[derive(std::clone::Clone)]
 pub struct IncreaseStreamRetentionPeriod {
-    input: crate::input::IncreaseStreamRetentionPeriodInput,
+    _private: (),
 }
 impl IncreaseStreamRetentionPeriod {
     /// Creates a new builder-style object to manufacture [`IncreaseStreamRetentionPeriodInput`](crate::input::IncreaseStreamRetentionPeriodInput)
     pub fn builder() -> crate::input::increase_stream_retention_period_input::Builder {
         crate::input::increase_stream_retention_period_input::Builder::default()
-    }
-    pub fn build_http_request(
-        &self,
-    ) -> Result<http::request::Request<Vec<u8>>, smithy_http::operation::BuildError> {
-        Ok(crate::input::IncreaseStreamRetentionPeriodInput::assemble(
-            self.input.request_builder_base()?,
-            self.input.build_body(),
-        ))
     }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
@@ -1408,12 +1296,12 @@ impl IncreaseStreamRetentionPeriod {
                     Ok(body) => crate::error::IncreaseStreamRetentionPeriodError { kind: crate::error::IncreaseStreamRetentionPeriodErrorKind::InvalidArgumentError(body), meta: generic },
                     Err(e) => crate::error::IncreaseStreamRetentionPeriodError::unhandled(e)
                 }
-                "LimitExceededException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::IncreaseStreamRetentionPeriodError { kind: crate::error::IncreaseStreamRetentionPeriodErrorKind::LimitExceededError(body), meta: generic },
-                    Err(e) => crate::error::IncreaseStreamRetentionPeriodError::unhandled(e)
-                }
                 "ResourceInUseException" => match serde_json::from_value(body) {
                     Ok(body) => crate::error::IncreaseStreamRetentionPeriodError { kind: crate::error::IncreaseStreamRetentionPeriodErrorKind::ResourceInUseError(body), meta: generic },
+                    Err(e) => crate::error::IncreaseStreamRetentionPeriodError::unhandled(e)
+                }
+                "LimitExceededException" => match serde_json::from_value(body) {
+                    Ok(body) => crate::error::IncreaseStreamRetentionPeriodError { kind: crate::error::IncreaseStreamRetentionPeriodErrorKind::LimitExceededError(body), meta: generic },
                     Err(e) => crate::error::IncreaseStreamRetentionPeriodError::unhandled(e)
                 }
                 "ResourceNotFoundException" => match serde_json::from_value(body) {
@@ -1434,8 +1322,8 @@ impl IncreaseStreamRetentionPeriod {
     > {
         Self::from_response(&response)
     }
-    pub fn new(input: crate::input::IncreaseStreamRetentionPeriodInput) -> Self {
-        Self { input }
+    pub fn new() -> Self {
+        Self { _private: () }
     }
 }
 
@@ -1460,20 +1348,12 @@ impl smithy_http::response::ParseStrictResponse for IncreaseStreamRetentionPerio
 /// </important>
 #[derive(std::clone::Clone)]
 pub struct ListShards {
-    input: crate::input::ListShardsInput,
+    _private: (),
 }
 impl ListShards {
     /// Creates a new builder-style object to manufacture [`ListShardsInput`](crate::input::ListShardsInput)
     pub fn builder() -> crate::input::list_shards_input::Builder {
         crate::input::list_shards_input::Builder::default()
-    }
-    pub fn build_http_request(
-        &self,
-    ) -> Result<http::request::Request<Vec<u8>>, smithy_http::operation::BuildError> {
-        Ok(crate::input::ListShardsInput::assemble(
-            self.input.request_builder_base()?,
-            self.input.build_body(),
-        ))
     }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
@@ -1503,16 +1383,16 @@ impl ListShards {
                     },
                     Err(e) => crate::error::ListShardsError::unhandled(e),
                 },
-                "LimitExceededException" => match serde_json::from_value(body) {
+                "ResourceInUseException" => match serde_json::from_value(body) {
                     Ok(body) => crate::error::ListShardsError {
-                        kind: crate::error::ListShardsErrorKind::LimitExceededError(body),
+                        kind: crate::error::ListShardsErrorKind::ResourceInUseError(body),
                         meta: generic,
                     },
                     Err(e) => crate::error::ListShardsError::unhandled(e),
                 },
-                "ResourceInUseException" => match serde_json::from_value(body) {
+                "LimitExceededException" => match serde_json::from_value(body) {
                     Ok(body) => crate::error::ListShardsError {
-                        kind: crate::error::ListShardsErrorKind::ResourceInUseError(body),
+                        kind: crate::error::ListShardsErrorKind::LimitExceededError(body),
                         meta: generic,
                     },
                     Err(e) => crate::error::ListShardsError::unhandled(e),
@@ -1541,8 +1421,8 @@ impl ListShards {
     ) -> Result<crate::output::ListShardsOutput, crate::error::ListShardsError> {
         Self::from_response(&response)
     }
-    pub fn new(input: crate::input::ListShardsInput) -> Self {
-        Self { input }
+    pub fn new() -> Self {
+        Self { _private: () }
     }
 }
 
@@ -1558,20 +1438,12 @@ impl smithy_http::response::ParseStrictResponse for ListShards {
 /// <p>This operation has a limit of 5 transactions per second per stream.</p>
 #[derive(std::clone::Clone)]
 pub struct ListStreamConsumers {
-    input: crate::input::ListStreamConsumersInput,
+    _private: (),
 }
 impl ListStreamConsumers {
     /// Creates a new builder-style object to manufacture [`ListStreamConsumersInput`](crate::input::ListStreamConsumersInput)
     pub fn builder() -> crate::input::list_stream_consumers_input::Builder {
         crate::input::list_stream_consumers_input::Builder::default()
-    }
-    pub fn build_http_request(
-        &self,
-    ) -> Result<http::request::Request<Vec<u8>>, smithy_http::operation::BuildError> {
-        Ok(crate::input::ListStreamConsumersInput::assemble(
-            self.input.request_builder_base()?,
-            self.input.build_body(),
-        ))
     }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
@@ -1606,16 +1478,16 @@ impl ListStreamConsumers {
                     },
                     Err(e) => crate::error::ListStreamConsumersError::unhandled(e),
                 },
-                "LimitExceededException" => match serde_json::from_value(body) {
+                "ResourceInUseException" => match serde_json::from_value(body) {
                     Ok(body) => crate::error::ListStreamConsumersError {
-                        kind: crate::error::ListStreamConsumersErrorKind::LimitExceededError(body),
+                        kind: crate::error::ListStreamConsumersErrorKind::ResourceInUseError(body),
                         meta: generic,
                     },
                     Err(e) => crate::error::ListStreamConsumersError::unhandled(e),
                 },
-                "ResourceInUseException" => match serde_json::from_value(body) {
+                "LimitExceededException" => match serde_json::from_value(body) {
                     Ok(body) => crate::error::ListStreamConsumersError {
-                        kind: crate::error::ListStreamConsumersErrorKind::ResourceInUseError(body),
+                        kind: crate::error::ListStreamConsumersErrorKind::LimitExceededError(body),
                         meta: generic,
                     },
                     Err(e) => crate::error::ListStreamConsumersError::unhandled(e),
@@ -1647,8 +1519,8 @@ impl ListStreamConsumers {
     {
         Self::from_response(&response)
     }
-    pub fn new(input: crate::input::ListStreamConsumersInput) -> Self {
-        Self { input }
+    pub fn new() -> Self {
+        Self { _private: () }
     }
 }
 
@@ -1678,20 +1550,12 @@ impl smithy_http::response::ParseStrictResponse for ListStreamConsumers {
 /// account.</p>
 #[derive(std::clone::Clone)]
 pub struct ListStreams {
-    input: crate::input::ListStreamsInput,
+    _private: (),
 }
 impl ListStreams {
     /// Creates a new builder-style object to manufacture [`ListStreamsInput`](crate::input::ListStreamsInput)
     pub fn builder() -> crate::input::list_streams_input::Builder {
         crate::input::list_streams_input::Builder::default()
-    }
-    pub fn build_http_request(
-        &self,
-    ) -> Result<http::request::Request<Vec<u8>>, smithy_http::operation::BuildError> {
-        Ok(crate::input::ListStreamsInput::assemble(
-            self.input.request_builder_base()?,
-            self.input.build_body(),
-        ))
     }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
@@ -1731,8 +1595,8 @@ impl ListStreams {
     ) -> Result<crate::output::ListStreamsOutput, crate::error::ListStreamsError> {
         Self::from_response(&response)
     }
-    pub fn new(input: crate::input::ListStreamsInput) -> Self {
-        Self { input }
+    pub fn new() -> Self {
+        Self { _private: () }
     }
 }
 
@@ -1747,20 +1611,12 @@ impl smithy_http::response::ParseStrictResponse for ListStreams {
 /// five transactions per second per account.</p>
 #[derive(std::clone::Clone)]
 pub struct ListTagsForStream {
-    input: crate::input::ListTagsForStreamInput,
+    _private: (),
 }
 impl ListTagsForStream {
     /// Creates a new builder-style object to manufacture [`ListTagsForStreamInput`](crate::input::ListTagsForStreamInput)
     pub fn builder() -> crate::input::list_tags_for_stream_input::Builder {
         crate::input::list_tags_for_stream_input::Builder::default()
-    }
-    pub fn build_http_request(
-        &self,
-    ) -> Result<http::request::Request<Vec<u8>>, smithy_http::operation::BuildError> {
-        Ok(crate::input::ListTagsForStreamInput::assemble(
-            self.input.request_builder_base()?,
-            self.input.build_body(),
-        ))
     }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
@@ -1814,8 +1670,8 @@ impl ListTagsForStream {
     ) -> Result<crate::output::ListTagsForStreamOutput, crate::error::ListTagsForStreamError> {
         Self::from_response(&response)
     }
-    pub fn new(input: crate::input::ListTagsForStreamInput) -> Self {
-        Self { input }
+    pub fn new() -> Self {
+        Self { _private: () }
     }
 }
 
@@ -1865,20 +1721,12 @@ impl smithy_http::response::ParseStrictResponse for ListTagsForStream {
 /// account.</p>
 #[derive(std::clone::Clone)]
 pub struct MergeShards {
-    input: crate::input::MergeShardsInput,
+    _private: (),
 }
 impl MergeShards {
     /// Creates a new builder-style object to manufacture [`MergeShardsInput`](crate::input::MergeShardsInput)
     pub fn builder() -> crate::input::merge_shards_input::Builder {
         crate::input::merge_shards_input::Builder::default()
-    }
-    pub fn build_http_request(
-        &self,
-    ) -> Result<http::request::Request<Vec<u8>>, smithy_http::operation::BuildError> {
-        Ok(crate::input::MergeShardsInput::assemble(
-            self.input.request_builder_base()?,
-            self.input.build_body(),
-        ))
     }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
@@ -1901,16 +1749,16 @@ impl MergeShards {
                     },
                     Err(e) => crate::error::MergeShardsError::unhandled(e),
                 },
-                "LimitExceededException" => match serde_json::from_value(body) {
+                "ResourceInUseException" => match serde_json::from_value(body) {
                     Ok(body) => crate::error::MergeShardsError {
-                        kind: crate::error::MergeShardsErrorKind::LimitExceededError(body),
+                        kind: crate::error::MergeShardsErrorKind::ResourceInUseError(body),
                         meta: generic,
                     },
                     Err(e) => crate::error::MergeShardsError::unhandled(e),
                 },
-                "ResourceInUseException" => match serde_json::from_value(body) {
+                "LimitExceededException" => match serde_json::from_value(body) {
                     Ok(body) => crate::error::MergeShardsError {
-                        kind: crate::error::MergeShardsErrorKind::ResourceInUseError(body),
+                        kind: crate::error::MergeShardsErrorKind::LimitExceededError(body),
                         meta: generic,
                     },
                     Err(e) => crate::error::MergeShardsError::unhandled(e),
@@ -1933,8 +1781,8 @@ impl MergeShards {
     ) -> Result<crate::output::MergeShardsOutput, crate::error::MergeShardsError> {
         Self::from_response(&response)
     }
-    pub fn new(input: crate::input::MergeShardsInput) -> Self {
-        Self { input }
+    pub fn new() -> Self {
+        Self { _private: () }
     }
 }
 
@@ -1983,20 +1831,12 @@ impl smithy_http::response::ParseStrictResponse for MergeShards {
 /// added to a stream. You can use <a>IncreaseStreamRetentionPeriod</a> or <a>DecreaseStreamRetentionPeriod</a> to modify this retention period.</p>
 #[derive(std::clone::Clone)]
 pub struct PutRecord {
-    input: crate::input::PutRecordInput,
+    _private: (),
 }
 impl PutRecord {
     /// Creates a new builder-style object to manufacture [`PutRecordInput`](crate::input::PutRecordInput)
     pub fn builder() -> crate::input::put_record_input::Builder {
         crate::input::put_record_input::Builder::default()
-    }
-    pub fn build_http_request(
-        &self,
-    ) -> Result<http::request::Request<Vec<u8>>, smithy_http::operation::BuildError> {
-        Ok(crate::input::PutRecordInput::assemble(
-            self.input.request_builder_base()?,
-            self.input.build_body(),
-        ))
     }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
@@ -2012,13 +1852,6 @@ impl PutRecord {
                 None => return Err(crate::error::PutRecordError::unhandled(generic)),
             };
             return Err(match error_code {
-                "InvalidArgumentException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::PutRecordError {
-                        kind: crate::error::PutRecordErrorKind::InvalidArgumentError(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::PutRecordError::unhandled(e),
-                },
                 "KMSAccessDeniedException" => match serde_json::from_value(body) {
                     Ok(body) => crate::error::PutRecordError {
                         kind: crate::error::PutRecordErrorKind::KMSAccessDeniedError(body),
@@ -2029,13 +1862,6 @@ impl PutRecord {
                 "KMSDisabledException" => match serde_json::from_value(body) {
                     Ok(body) => crate::error::PutRecordError {
                         kind: crate::error::PutRecordErrorKind::KMSDisabledError(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::PutRecordError::unhandled(e),
-                },
-                "KMSInvalidStateException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::PutRecordError {
-                        kind: crate::error::PutRecordErrorKind::KMSInvalidStateError(body),
                         meta: generic,
                     },
                     Err(e) => crate::error::PutRecordError::unhandled(e),
@@ -2070,6 +1896,20 @@ impl PutRecord {
                     },
                     Err(e) => crate::error::PutRecordError::unhandled(e),
                 },
+                "InvalidArgumentException" => match serde_json::from_value(body) {
+                    Ok(body) => crate::error::PutRecordError {
+                        kind: crate::error::PutRecordErrorKind::InvalidArgumentError(body),
+                        meta: generic,
+                    },
+                    Err(e) => crate::error::PutRecordError::unhandled(e),
+                },
+                "KMSInvalidStateException" => match serde_json::from_value(body) {
+                    Ok(body) => crate::error::PutRecordError {
+                        kind: crate::error::PutRecordErrorKind::KMSInvalidStateError(body),
+                        meta: generic,
+                    },
+                    Err(e) => crate::error::PutRecordError::unhandled(e),
+                },
                 "ResourceNotFoundException" => match serde_json::from_value(body) {
                     Ok(body) => crate::error::PutRecordError {
                         kind: crate::error::PutRecordErrorKind::ResourceNotFoundError(body),
@@ -2095,8 +1935,8 @@ impl PutRecord {
     ) -> Result<crate::output::PutRecordOutput, crate::error::PutRecordError> {
         Self::from_response(&response)
     }
-    pub fn new(input: crate::input::PutRecordInput) -> Self {
-        Self { input }
+    pub fn new() -> Self {
+        Self { _private: () }
     }
 }
 
@@ -2165,20 +2005,12 @@ impl smithy_http::response::ParseStrictResponse for PutRecord {
 /// added to a stream. You can use <a>IncreaseStreamRetentionPeriod</a> or <a>DecreaseStreamRetentionPeriod</a> to modify this retention period.</p>
 #[derive(std::clone::Clone)]
 pub struct PutRecords {
-    input: crate::input::PutRecordsInput,
+    _private: (),
 }
 impl PutRecords {
     /// Creates a new builder-style object to manufacture [`PutRecordsInput`](crate::input::PutRecordsInput)
     pub fn builder() -> crate::input::put_records_input::Builder {
         crate::input::put_records_input::Builder::default()
-    }
-    pub fn build_http_request(
-        &self,
-    ) -> Result<http::request::Request<Vec<u8>>, smithy_http::operation::BuildError> {
-        Ok(crate::input::PutRecordsInput::assemble(
-            self.input.request_builder_base()?,
-            self.input.build_body(),
-        ))
     }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
@@ -2194,13 +2026,6 @@ impl PutRecords {
                 None => return Err(crate::error::PutRecordsError::unhandled(generic)),
             };
             return Err(match error_code {
-                "InvalidArgumentException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::PutRecordsError {
-                        kind: crate::error::PutRecordsErrorKind::InvalidArgumentError(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::PutRecordsError::unhandled(e),
-                },
                 "KMSAccessDeniedException" => match serde_json::from_value(body) {
                     Ok(body) => crate::error::PutRecordsError {
                         kind: crate::error::PutRecordsErrorKind::KMSAccessDeniedError(body),
@@ -2211,13 +2036,6 @@ impl PutRecords {
                 "KMSDisabledException" => match serde_json::from_value(body) {
                     Ok(body) => crate::error::PutRecordsError {
                         kind: crate::error::PutRecordsErrorKind::KMSDisabledError(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::PutRecordsError::unhandled(e),
-                },
-                "KMSInvalidStateException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::PutRecordsError {
-                        kind: crate::error::PutRecordsErrorKind::KMSInvalidStateError(body),
                         meta: generic,
                     },
                     Err(e) => crate::error::PutRecordsError::unhandled(e),
@@ -2252,6 +2070,20 @@ impl PutRecords {
                     },
                     Err(e) => crate::error::PutRecordsError::unhandled(e),
                 },
+                "InvalidArgumentException" => match serde_json::from_value(body) {
+                    Ok(body) => crate::error::PutRecordsError {
+                        kind: crate::error::PutRecordsErrorKind::InvalidArgumentError(body),
+                        meta: generic,
+                    },
+                    Err(e) => crate::error::PutRecordsError::unhandled(e),
+                },
+                "KMSInvalidStateException" => match serde_json::from_value(body) {
+                    Ok(body) => crate::error::PutRecordsError {
+                        kind: crate::error::PutRecordsErrorKind::KMSInvalidStateError(body),
+                        meta: generic,
+                    },
+                    Err(e) => crate::error::PutRecordsError::unhandled(e),
+                },
                 "ResourceNotFoundException" => match serde_json::from_value(body) {
                     Ok(body) => crate::error::PutRecordsError {
                         kind: crate::error::PutRecordsErrorKind::ResourceNotFoundError(body),
@@ -2277,8 +2109,8 @@ impl PutRecords {
     ) -> Result<crate::output::PutRecordsOutput, crate::error::PutRecordsError> {
         Self::from_response(&response)
     }
-    pub fn new(input: crate::input::PutRecordsInput) -> Self {
-        Self { input }
+    pub fn new() -> Self {
+        Self { _private: () }
     }
 }
 
@@ -2305,20 +2137,12 @@ impl smithy_http::response::ParseStrictResponse for PutRecords {
 /// <code>LimitExceededException</code>.</p>
 #[derive(std::clone::Clone)]
 pub struct RegisterStreamConsumer {
-    input: crate::input::RegisterStreamConsumerInput,
+    _private: (),
 }
 impl RegisterStreamConsumer {
     /// Creates a new builder-style object to manufacture [`RegisterStreamConsumerInput`](crate::input::RegisterStreamConsumerInput)
     pub fn builder() -> crate::input::register_stream_consumer_input::Builder {
         crate::input::register_stream_consumer_input::Builder::default()
-    }
-    pub fn build_http_request(
-        &self,
-    ) -> Result<http::request::Request<Vec<u8>>, smithy_http::operation::BuildError> {
-        Ok(crate::input::RegisterStreamConsumerInput::assemble(
-            self.input.request_builder_base()?,
-            self.input.build_body(),
-        ))
     }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
@@ -2350,18 +2174,18 @@ impl RegisterStreamConsumer {
                     },
                     Err(e) => crate::error::RegisterStreamConsumerError::unhandled(e),
                 },
-                "LimitExceededException" => match serde_json::from_value(body) {
+                "ResourceInUseException" => match serde_json::from_value(body) {
                     Ok(body) => crate::error::RegisterStreamConsumerError {
-                        kind: crate::error::RegisterStreamConsumerErrorKind::LimitExceededError(
+                        kind: crate::error::RegisterStreamConsumerErrorKind::ResourceInUseError(
                             body,
                         ),
                         meta: generic,
                     },
                     Err(e) => crate::error::RegisterStreamConsumerError::unhandled(e),
                 },
-                "ResourceInUseException" => match serde_json::from_value(body) {
+                "LimitExceededException" => match serde_json::from_value(body) {
                     Ok(body) => crate::error::RegisterStreamConsumerError {
-                        kind: crate::error::RegisterStreamConsumerErrorKind::ResourceInUseError(
+                        kind: crate::error::RegisterStreamConsumerErrorKind::LimitExceededError(
                             body,
                         ),
                         meta: generic,
@@ -2396,8 +2220,8 @@ impl RegisterStreamConsumer {
     > {
         Self::from_response(&response)
     }
-    pub fn new(input: crate::input::RegisterStreamConsumerInput) -> Self {
-        Self { input }
+    pub fn new() -> Self {
+        Self { _private: () }
     }
 }
 
@@ -2419,20 +2243,12 @@ impl smithy_http::response::ParseStrictResponse for RegisterStreamConsumer {
 /// account.</p>
 #[derive(std::clone::Clone)]
 pub struct RemoveTagsFromStream {
-    input: crate::input::RemoveTagsFromStreamInput,
+    _private: (),
 }
 impl RemoveTagsFromStream {
     /// Creates a new builder-style object to manufacture [`RemoveTagsFromStreamInput`](crate::input::RemoveTagsFromStreamInput)
     pub fn builder() -> crate::input::remove_tags_from_stream_input::Builder {
         crate::input::remove_tags_from_stream_input::Builder::default()
-    }
-    pub fn build_http_request(
-        &self,
-    ) -> Result<http::request::Request<Vec<u8>>, smithy_http::operation::BuildError> {
-        Ok(crate::input::RemoveTagsFromStreamInput::assemble(
-            self.input.request_builder_base()?,
-            self.input.build_body(),
-        ))
     }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
@@ -2458,16 +2274,16 @@ impl RemoveTagsFromStream {
                     },
                     Err(e) => crate::error::RemoveTagsFromStreamError::unhandled(e),
                 },
-                "LimitExceededException" => match serde_json::from_value(body) {
+                "ResourceInUseException" => match serde_json::from_value(body) {
                     Ok(body) => crate::error::RemoveTagsFromStreamError {
-                        kind: crate::error::RemoveTagsFromStreamErrorKind::LimitExceededError(body),
+                        kind: crate::error::RemoveTagsFromStreamErrorKind::ResourceInUseError(body),
                         meta: generic,
                     },
                     Err(e) => crate::error::RemoveTagsFromStreamError::unhandled(e),
                 },
-                "ResourceInUseException" => match serde_json::from_value(body) {
+                "LimitExceededException" => match serde_json::from_value(body) {
                     Ok(body) => crate::error::RemoveTagsFromStreamError {
-                        kind: crate::error::RemoveTagsFromStreamErrorKind::ResourceInUseError(body),
+                        kind: crate::error::RemoveTagsFromStreamErrorKind::LimitExceededError(body),
                         meta: generic,
                     },
                     Err(e) => crate::error::RemoveTagsFromStreamError::unhandled(e),
@@ -2493,8 +2309,8 @@ impl RemoveTagsFromStream {
     {
         Self::from_response(&response)
     }
-    pub fn new(input: crate::input::RemoveTagsFromStreamInput) -> Self {
-        Self { input }
+    pub fn new() -> Self {
+        Self { _private: () }
     }
 }
 
@@ -2550,20 +2366,12 @@ impl smithy_http::response::ParseStrictResponse for RemoveTagsFromStream {
 /// account.</p>
 #[derive(std::clone::Clone)]
 pub struct SplitShard {
-    input: crate::input::SplitShardInput,
+    _private: (),
 }
 impl SplitShard {
     /// Creates a new builder-style object to manufacture [`SplitShardInput`](crate::input::SplitShardInput)
     pub fn builder() -> crate::input::split_shard_input::Builder {
         crate::input::split_shard_input::Builder::default()
-    }
-    pub fn build_http_request(
-        &self,
-    ) -> Result<http::request::Request<Vec<u8>>, smithy_http::operation::BuildError> {
-        Ok(crate::input::SplitShardInput::assemble(
-            self.input.request_builder_base()?,
-            self.input.build_body(),
-        ))
     }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
@@ -2586,16 +2394,16 @@ impl SplitShard {
                     },
                     Err(e) => crate::error::SplitShardError::unhandled(e),
                 },
-                "LimitExceededException" => match serde_json::from_value(body) {
+                "ResourceInUseException" => match serde_json::from_value(body) {
                     Ok(body) => crate::error::SplitShardError {
-                        kind: crate::error::SplitShardErrorKind::LimitExceededError(body),
+                        kind: crate::error::SplitShardErrorKind::ResourceInUseError(body),
                         meta: generic,
                     },
                     Err(e) => crate::error::SplitShardError::unhandled(e),
                 },
-                "ResourceInUseException" => match serde_json::from_value(body) {
+                "LimitExceededException" => match serde_json::from_value(body) {
                     Ok(body) => crate::error::SplitShardError {
-                        kind: crate::error::SplitShardErrorKind::ResourceInUseError(body),
+                        kind: crate::error::SplitShardErrorKind::LimitExceededError(body),
                         meta: generic,
                     },
                     Err(e) => crate::error::SplitShardError::unhandled(e),
@@ -2618,8 +2426,8 @@ impl SplitShard {
     ) -> Result<crate::output::SplitShardOutput, crate::error::SplitShardError> {
         Self::from_response(&response)
     }
-    pub fn new(input: crate::input::SplitShardInput) -> Self {
-        Self { input }
+    pub fn new() -> Self {
+        Self { _private: () }
     }
 }
 
@@ -2648,20 +2456,12 @@ impl smithy_http::response::ParseStrictResponse for SplitShard {
 /// from <code>PutRecord</code> or <code>PutRecords</code>.</p>
 #[derive(std::clone::Clone)]
 pub struct StartStreamEncryption {
-    input: crate::input::StartStreamEncryptionInput,
+    _private: (),
 }
 impl StartStreamEncryption {
     /// Creates a new builder-style object to manufacture [`StartStreamEncryptionInput`](crate::input::StartStreamEncryptionInput)
     pub fn builder() -> crate::input::start_stream_encryption_input::Builder {
         crate::input::start_stream_encryption_input::Builder::default()
-    }
-    pub fn build_http_request(
-        &self,
-    ) -> Result<http::request::Request<Vec<u8>>, smithy_http::operation::BuildError> {
-        Ok(crate::input::StartStreamEncryptionInput::assemble(
-            self.input.request_builder_base()?,
-            self.input.build_body(),
-        ))
     }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
@@ -2678,15 +2478,6 @@ impl StartStreamEncryption {
                 None => return Err(crate::error::StartStreamEncryptionError::unhandled(generic)),
             };
             return Err(match error_code {
-                "InvalidArgumentException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::StartStreamEncryptionError {
-                        kind: crate::error::StartStreamEncryptionErrorKind::InvalidArgumentError(
-                            body,
-                        ),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::StartStreamEncryptionError::unhandled(e),
-                },
                 "KMSAccessDeniedException" => match serde_json::from_value(body) {
                     Ok(body) => crate::error::StartStreamEncryptionError {
                         kind: crate::error::StartStreamEncryptionErrorKind::KMSAccessDeniedError(
@@ -2699,15 +2490,6 @@ impl StartStreamEncryption {
                 "KMSDisabledException" => match serde_json::from_value(body) {
                     Ok(body) => crate::error::StartStreamEncryptionError {
                         kind: crate::error::StartStreamEncryptionErrorKind::KMSDisabledError(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::StartStreamEncryptionError::unhandled(e),
-                },
-                "KMSInvalidStateException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::StartStreamEncryptionError {
-                        kind: crate::error::StartStreamEncryptionErrorKind::KMSInvalidStateError(
-                            body,
-                        ),
                         meta: generic,
                     },
                     Err(e) => crate::error::StartStreamEncryptionError::unhandled(e),
@@ -2735,9 +2517,18 @@ impl StartStreamEncryption {
                     },
                     Err(e) => crate::error::StartStreamEncryptionError::unhandled(e),
                 },
-                "LimitExceededException" => match serde_json::from_value(body) {
+                "InvalidArgumentException" => match serde_json::from_value(body) {
                     Ok(body) => crate::error::StartStreamEncryptionError {
-                        kind: crate::error::StartStreamEncryptionErrorKind::LimitExceededError(
+                        kind: crate::error::StartStreamEncryptionErrorKind::InvalidArgumentError(
+                            body,
+                        ),
+                        meta: generic,
+                    },
+                    Err(e) => crate::error::StartStreamEncryptionError::unhandled(e),
+                },
+                "KMSInvalidStateException" => match serde_json::from_value(body) {
+                    Ok(body) => crate::error::StartStreamEncryptionError {
+                        kind: crate::error::StartStreamEncryptionErrorKind::KMSInvalidStateError(
                             body,
                         ),
                         meta: generic,
@@ -2747,6 +2538,15 @@ impl StartStreamEncryption {
                 "ResourceInUseException" => match serde_json::from_value(body) {
                     Ok(body) => crate::error::StartStreamEncryptionError {
                         kind: crate::error::StartStreamEncryptionErrorKind::ResourceInUseError(
+                            body,
+                        ),
+                        meta: generic,
+                    },
+                    Err(e) => crate::error::StartStreamEncryptionError::unhandled(e),
+                },
+                "LimitExceededException" => match serde_json::from_value(body) {
+                    Ok(body) => crate::error::StartStreamEncryptionError {
+                        kind: crate::error::StartStreamEncryptionErrorKind::LimitExceededError(
                             body,
                         ),
                         meta: generic,
@@ -2774,8 +2574,8 @@ impl StartStreamEncryption {
     {
         Self::from_response(&response)
     }
-    pub fn new(input: crate::input::StartStreamEncryptionInput) -> Self {
-        Self { input }
+    pub fn new() -> Self {
+        Self { _private: () }
     }
 }
 
@@ -2807,20 +2607,12 @@ impl smithy_http::response::ParseStrictResponse for StartStreamEncryption {
 /// <code>PutRecords</code>.</p>
 #[derive(std::clone::Clone)]
 pub struct StopStreamEncryption {
-    input: crate::input::StopStreamEncryptionInput,
+    _private: (),
 }
 impl StopStreamEncryption {
     /// Creates a new builder-style object to manufacture [`StopStreamEncryptionInput`](crate::input::StopStreamEncryptionInput)
     pub fn builder() -> crate::input::stop_stream_encryption_input::Builder {
         crate::input::stop_stream_encryption_input::Builder::default()
-    }
-    pub fn build_http_request(
-        &self,
-    ) -> Result<http::request::Request<Vec<u8>>, smithy_http::operation::BuildError> {
-        Ok(crate::input::StopStreamEncryptionInput::assemble(
-            self.input.request_builder_base()?,
-            self.input.build_body(),
-        ))
     }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
@@ -2846,16 +2638,16 @@ impl StopStreamEncryption {
                     },
                     Err(e) => crate::error::StopStreamEncryptionError::unhandled(e),
                 },
-                "LimitExceededException" => match serde_json::from_value(body) {
+                "ResourceInUseException" => match serde_json::from_value(body) {
                     Ok(body) => crate::error::StopStreamEncryptionError {
-                        kind: crate::error::StopStreamEncryptionErrorKind::LimitExceededError(body),
+                        kind: crate::error::StopStreamEncryptionErrorKind::ResourceInUseError(body),
                         meta: generic,
                     },
                     Err(e) => crate::error::StopStreamEncryptionError::unhandled(e),
                 },
-                "ResourceInUseException" => match serde_json::from_value(body) {
+                "LimitExceededException" => match serde_json::from_value(body) {
                     Ok(body) => crate::error::StopStreamEncryptionError {
-                        kind: crate::error::StopStreamEncryptionErrorKind::ResourceInUseError(body),
+                        kind: crate::error::StopStreamEncryptionErrorKind::LimitExceededError(body),
                         meta: generic,
                     },
                     Err(e) => crate::error::StopStreamEncryptionError::unhandled(e),
@@ -2881,124 +2673,14 @@ impl StopStreamEncryption {
     {
         Self::from_response(&response)
     }
-    pub fn new(input: crate::input::StopStreamEncryptionInput) -> Self {
-        Self { input }
+    pub fn new() -> Self {
+        Self { _private: () }
     }
 }
 
 impl smithy_http::response::ParseStrictResponse for StopStreamEncryption {
     type Output =
         Result<crate::output::StopStreamEncryptionOutput, crate::error::StopStreamEncryptionError>;
-    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
-    }
-}
-
-/// <p>This operation establishes an HTTP/2 connection between the consumer you specify in
-/// the <code>ConsumerARN</code> parameter and the shard you specify in the
-/// <code>ShardId</code> parameter. After the connection is successfully established,
-/// Kinesis Data Streams pushes records from the shard to the consumer over this connection.
-/// Before you call this operation, call <a>RegisterStreamConsumer</a> to
-/// register the consumer with Kinesis Data Streams.</p>
-/// <p>When the <code>SubscribeToShard</code> call succeeds, your consumer starts receiving
-/// events of type <a>SubscribeToShardEvent</a> over the HTTP/2 connection for up
-/// to 5 minutes, after which time you need to call <code>SubscribeToShard</code> again to
-/// renew the subscription if you want to continue to receive records.</p>
-/// <p>You can make one call to <code>SubscribeToShard</code> per second per registered
-/// consumer per shard. For example, if you have a 4000 shard stream and two registered
-/// stream consumers, you can make one <code>SubscribeToShard</code> request per second for
-/// each combination of shard and registered consumer, allowing you to subscribe both
-/// consumers to all 4000 shards in one second. </p>
-/// <p>If you call <code>SubscribeToShard</code> again with the same <code>ConsumerARN</code>
-/// and <code>ShardId</code> within 5 seconds of a successful call, you'll get a
-/// <code>ResourceInUseException</code>. If you call <code>SubscribeToShard</code> 5
-/// seconds or more after a successful call, the first connection will expire and the second
-/// call will take over the subscription.</p>
-/// <p>For an example of how to use this operations, see <a href="/streams/latest/dev/building-enhanced-consumers-api.html">Enhanced Fan-Out
-/// Using the Kinesis Data Streams API</a>.</p>
-#[derive(std::clone::Clone)]
-pub struct SubscribeToShard {
-    input: crate::input::SubscribeToShardInput,
-}
-impl SubscribeToShard {
-    /// Creates a new builder-style object to manufacture [`SubscribeToShardInput`](crate::input::SubscribeToShardInput)
-    pub fn builder() -> crate::input::subscribe_to_shard_input::Builder {
-        crate::input::subscribe_to_shard_input::Builder::default()
-    }
-    pub fn build_http_request(
-        &self,
-    ) -> Result<http::request::Request<Vec<u8>>, smithy_http::operation::BuildError> {
-        Ok(crate::input::SubscribeToShardInput::assemble(
-            self.input.request_builder_base()?,
-            self.input.build_body(),
-        ))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn from_response(
-        response: &http::response::Response<impl AsRef<[u8]>>,
-    ) -> Result<crate::output::SubscribeToShardOutput, crate::error::SubscribeToShardError> {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => return Err(crate::error::SubscribeToShardError::unhandled(generic)),
-            };
-            return Err(match error_code {
-                "InvalidArgumentException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::SubscribeToShardError {
-                        kind: crate::error::SubscribeToShardErrorKind::InvalidArgumentError(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::SubscribeToShardError::unhandled(e),
-                },
-                "LimitExceededException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::SubscribeToShardError {
-                        kind: crate::error::SubscribeToShardErrorKind::LimitExceededError(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::SubscribeToShardError::unhandled(e),
-                },
-                "ResourceInUseException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::SubscribeToShardError {
-                        kind: crate::error::SubscribeToShardErrorKind::ResourceInUseError(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::SubscribeToShardError::unhandled(e),
-                },
-                "ResourceNotFoundException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::SubscribeToShardError {
-                        kind: crate::error::SubscribeToShardErrorKind::ResourceNotFoundError(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::SubscribeToShardError::unhandled(e),
-                },
-                _ => crate::error::SubscribeToShardError::generic(generic),
-            });
-        }
-        let body: crate::serializer::SubscribeToShardOutputBody =
-            serde_json::from_slice(response.body().as_ref())
-                .map_err(crate::error::SubscribeToShardError::unhandled)?;
-        Ok(crate::output::SubscribeToShardOutput {
-            event_stream: body.event_stream,
-        })
-    }
-    pub fn parse_response(
-        &self,
-        response: &http::response::Response<impl AsRef<[u8]>>,
-    ) -> Result<crate::output::SubscribeToShardOutput, crate::error::SubscribeToShardError> {
-        Self::from_response(&response)
-    }
-    pub fn new(input: crate::input::SubscribeToShardInput) -> Self {
-        Self { input }
-    }
-}
-
-impl smithy_http::response::ParseStrictResponse for SubscribeToShard {
-    type Output =
-        Result<crate::output::SubscribeToShardOutput, crate::error::SubscribeToShardError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         self.parse_response(response)
     }
@@ -3050,20 +2732,12 @@ impl smithy_http::response::ParseStrictResponse for SubscribeToShard {
 /// limit, use the <a href="https://console.aws.amazon.com/support/v1#/case/create?issueType=service-limit-increase&limitType=service-code-kinesis">limits form</a>.</p>
 #[derive(std::clone::Clone)]
 pub struct UpdateShardCount {
-    input: crate::input::UpdateShardCountInput,
+    _private: (),
 }
 impl UpdateShardCount {
     /// Creates a new builder-style object to manufacture [`UpdateShardCountInput`](crate::input::UpdateShardCountInput)
     pub fn builder() -> crate::input::update_shard_count_input::Builder {
         crate::input::update_shard_count_input::Builder::default()
-    }
-    pub fn build_http_request(
-        &self,
-    ) -> Result<http::request::Request<Vec<u8>>, smithy_http::operation::BuildError> {
-        Ok(crate::input::UpdateShardCountInput::assemble(
-            self.input.request_builder_base()?,
-            self.input.build_body(),
-        ))
     }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
@@ -3086,16 +2760,16 @@ impl UpdateShardCount {
                     },
                     Err(e) => crate::error::UpdateShardCountError::unhandled(e),
                 },
-                "LimitExceededException" => match serde_json::from_value(body) {
+                "ResourceInUseException" => match serde_json::from_value(body) {
                     Ok(body) => crate::error::UpdateShardCountError {
-                        kind: crate::error::UpdateShardCountErrorKind::LimitExceededError(body),
+                        kind: crate::error::UpdateShardCountErrorKind::ResourceInUseError(body),
                         meta: generic,
                     },
                     Err(e) => crate::error::UpdateShardCountError::unhandled(e),
                 },
-                "ResourceInUseException" => match serde_json::from_value(body) {
+                "LimitExceededException" => match serde_json::from_value(body) {
                     Ok(body) => crate::error::UpdateShardCountError {
-                        kind: crate::error::UpdateShardCountErrorKind::ResourceInUseError(body),
+                        kind: crate::error::UpdateShardCountErrorKind::LimitExceededError(body),
                         meta: generic,
                     },
                     Err(e) => crate::error::UpdateShardCountError::unhandled(e),
@@ -3125,8 +2799,8 @@ impl UpdateShardCount {
     ) -> Result<crate::output::UpdateShardCountOutput, crate::error::UpdateShardCountError> {
         Self::from_response(&response)
     }
-    pub fn new(input: crate::input::UpdateShardCountInput) -> Self {
-        Self { input }
+    pub fn new() -> Self {
+        Self { _private: () }
     }
 }
 

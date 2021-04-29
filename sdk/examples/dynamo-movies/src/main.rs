@@ -219,8 +219,10 @@ fn wait_for_ready_table(
 ) -> Operation<DescribeTable, WaitForReadyTable<AwsErrorRetryPolicy>> {
     let operation = DescribeTableInput::builder()
         .table_name(table_name)
-        .build(&conf)
-        .expect("valid input");
+        .build()
+        .expect("valid input")
+        .make_operation(&conf)
+        .expect("valid operation");
     let waiting_policy = WaitForReadyTable {
         inner: operation.retry_policy().clone(),
     };

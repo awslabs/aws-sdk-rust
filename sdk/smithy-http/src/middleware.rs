@@ -8,6 +8,7 @@
 //!
 //! smithy-middleware-tower provides Tower-specific middleware utilities (todo)
 
+use crate::body::SdkBody;
 use crate::operation;
 use crate::pin_mut;
 use crate::response::ParseHttpResponse;
@@ -16,42 +17,6 @@ use bytes::{Buf, Bytes};
 use http::Response;
 use http_body::Body;
 use std::error::Error;
-
-/// Body for debugging purposes
-///
-/// When receiving data from the AWS services, it is often helpful to be able to see the response
-/// body that a service generated. When the SDK has fully buffered the body into memory, this
-/// facilitates straightforward debugging of the response.
-///
-/// Take care when calling the debug implementation to avoid printing responses from sensitive operations.
-#[derive(Debug)]
-pub struct ResponseBody(Inner);
-
-impl ResponseBody {
-    /// Load a response body from a static string
-    pub fn from_static(s: &'static str) -> Self {
-        ResponseBody(Inner::Bytes(Bytes::from_static(s.as_bytes())))
-    }
-
-    /// Returns the raw bytes of this response
-    ///
-    /// When the response has been buffered into memory, the bytes are returned
-    /// If the response is streaming or errored during the read process, `None` is returned.
-    pub fn bytes(&self) -> Option<&[u8]> {
-        match &self.0 {
-            Inner::Bytes(bytes) => Some(&bytes),
-            _ => None,
-        }
-    }
-}
-
-/// Private ResponseBody internals
-#[derive(Debug)]
-enum Inner {
-    Bytes(bytes::Bytes),
-    Streaming,
-    Err,
-}
 
 type BoxError = Box<dyn Error + Send + Sync>;
 
@@ -74,10 +39,7 @@ type BoxError = Box<dyn Error + Send + Sync>;
 ///     fn apply(&self, request: operation::Request) -> Result<operation::Request, Self::Error> {
 ///         request.augment(|mut request, properties| {
 ///             if properties.get::<NeedsHeader>().is_some() {
-///                 request.headers_mut().append(
-///                     self.0.clone(),
-///                     self.1.clone(),
-///                 );
+///                 request.headers_mut().append(self.0.clone(), self.1.clone());
 ///             }
 ///             Ok(request)
 ///         })
@@ -106,39 +68,31 @@ pub trait MapRequest {
 /// - `B`: The Response Body
 /// - `O`: The Http response handler that returns `Result<T, E>`
 /// - `T`/`E`: `Result<T, E>` returned by `handler`.
-pub async fn load_response<B, T, E, O>(
-    mut response: http::Response<B>,
+pub async fn load_response<T, E, O>(
+    mut response: http::Response<SdkBody>,
     handler: &O,
 ) -> Result<SdkSuccess<T>, SdkError<E>>
 where
-    B: http_body::Body,
-    B::Error: Into<BoxError>,
-    O: ParseHttpResponse<B, Output = Result<T, E>>,
+    O: ParseHttpResponse<SdkBody, Output = Result<T, E>>,
 {
     if let Some(parsed_response) = handler.parse_unloaded(&mut response) {
-        return sdk_result(
-            parsed_response,
-            response.map(|_| ResponseBody(Inner::Streaming)),
-        );
+        return sdk_result(parsed_response, response);
     }
     let (parts, body) = response.into_parts();
 
     let body = match read_body(body).await {
         Ok(body) => body,
-        Err(e) => {
+        Err(err) => {
             return Err(SdkError::ResponseError {
-                raw: Response::from_parts(parts, ResponseBody(Inner::Err)),
-                err: e.into(),
+                raw: Response::from_parts(parts, SdkBody::taken()),
+                err,
             });
         }
     };
 
     let response = Response::from_parts(parts, Bytes::from(body));
     let parsed = handler.parse_loaded(&response);
-    sdk_result(
-        parsed,
-        response.map(|body| ResponseBody(Inner::Bytes(body))),
-    )
+    sdk_result(parsed, response.map(SdkBody::from))
 }
 
 async fn read_body<B: http_body::Body>(body: B) -> Result<Vec<u8>, B::Error> {
@@ -157,7 +111,7 @@ async fn read_body<B: http_body::Body>(body: B) -> Result<Vec<u8>, B::Error> {
 /// Convert a `Result<T, E>` into an `SdkResult` that includes the raw HTTP response
 fn sdk_result<T, E>(
     parsed: Result<T, E>,
-    raw: http::Response<ResponseBody>,
+    raw: http::Response<SdkBody>,
 ) -> Result<SdkSuccess<T>, SdkError<E>> {
     match parsed {
         Ok(parsed) => Ok(SdkSuccess { raw, parsed }),

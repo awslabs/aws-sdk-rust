@@ -10,11 +10,14 @@ license = "Apache-2.0"
 [features]
 test-util = ["protocol-test-helpers"]
 default = ["test-util"]
+native-tls = ["hyper-tls"]
+rustls = ["hyper-rustls"]
 
 [dependencies]
 hyper = { version = "0.14.2", features = ["client", "http1", "http2", "tcp", "runtime"] }
 tower = { version = "0.4.6", features = ["util", "retry"] }
-hyper-tls = "0.5.0"
+hyper-tls = { version ="0.5.0", optional = true }
+hyper-rustls = { version = "0.22.1", optional = true, features = ["rustls-native-certs"] }
 aws-auth = { path = "../aws-auth" }
 aws-sig-auth = { path = "../aws-sig-auth" }
 aws-endpoint = { path = "../aws-endpoint" }

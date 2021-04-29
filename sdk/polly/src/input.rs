@@ -18,69 +18,78 @@ pub mod delete_lexicon_input {
             self.name = Some(inp);
             self
         }
-        /// Consumes the builder and constructs an Operation<[`DeleteLexicon`](crate::operation::DeleteLexicon)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`DeleteLexiconInput`](crate::input::DeleteLexiconInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::DeleteLexicon,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op = crate::operation::DeleteLexicon::new(crate::input::DeleteLexiconInput {
-                    name: self.name.unwrap_or_default(),
-                });
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
-                }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op).with_metadata(
-                    smithy_http::operation::Metadata::new("DeleteLexicon", "polly"),
-                );
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
+        ) -> Result<crate::input::DeleteLexiconInput, smithy_http::operation::BuildError> {
+            Ok(crate::input::DeleteLexiconInput {
+                name: self.name.unwrap_or_default(),
             })
         }
     }
 }
 impl DeleteLexiconInput {
+    /// Consumes the builder and constructs an Operation<[`DeleteLexicon`](crate::operation::DeleteLexicon)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::DeleteLexicon,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::DeleteLexicon::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "DeleteLexicon",
+                "polly",
+            ));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     fn uri_base(&self, output: &mut String) {
         write!(
             output,
@@ -182,74 +191,83 @@ pub mod describe_voices_input {
             self.next_token = inp;
             self
         }
-        /// Consumes the builder and constructs an Operation<[`DescribeVoices`](crate::operation::DescribeVoices)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`DescribeVoicesInput`](crate::input::DescribeVoicesInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::DescribeVoices,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op = crate::operation::DescribeVoices::new(crate::input::DescribeVoicesInput {
-                    engine: self.engine,
-                    language_code: self.language_code,
-                    include_additional_language_codes: self
-                        .include_additional_language_codes
-                        .unwrap_or_default(),
-                    next_token: self.next_token,
-                });
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
-                }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op).with_metadata(
-                    smithy_http::operation::Metadata::new("DescribeVoices", "polly"),
-                );
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
+        ) -> Result<crate::input::DescribeVoicesInput, smithy_http::operation::BuildError> {
+            Ok(crate::input::DescribeVoicesInput {
+                engine: self.engine,
+                language_code: self.language_code,
+                include_additional_language_codes: self
+                    .include_additional_language_codes
+                    .unwrap_or_default(),
+                next_token: self.next_token,
             })
         }
     }
 }
 impl DescribeVoicesInput {
+    /// Consumes the builder and constructs an Operation<[`DescribeVoices`](crate::operation::DescribeVoices)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::DescribeVoices,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::DescribeVoices::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "DescribeVoices",
+                "polly",
+            ));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     fn uri_base(&self, output: &mut String) {
         write!(output, "/v1/voices").expect("formatting should succeed")
     }
@@ -324,68 +342,75 @@ pub mod get_lexicon_input {
             self.name = Some(inp);
             self
         }
-        /// Consumes the builder and constructs an Operation<[`GetLexicon`](crate::operation::GetLexicon)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`GetLexiconInput`](crate::input::GetLexiconInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::GetLexicon,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op = crate::operation::GetLexicon::new(crate::input::GetLexiconInput {
-                    name: self.name.unwrap_or_default(),
-                });
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
-                }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op)
-                    .with_metadata(smithy_http::operation::Metadata::new("GetLexicon", "polly"));
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
+        ) -> Result<crate::input::GetLexiconInput, smithy_http::operation::BuildError> {
+            Ok(crate::input::GetLexiconInput {
+                name: self.name.unwrap_or_default(),
             })
         }
     }
 }
 impl GetLexiconInput {
+    /// Consumes the builder and constructs an Operation<[`GetLexicon`](crate::operation::GetLexicon)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::GetLexicon,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::GetLexicon::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new("GetLexicon", "polly"));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     fn uri_base(&self, output: &mut String) {
         write!(
             output,
@@ -446,71 +471,79 @@ pub mod get_speech_synthesis_task_input {
             self.task_id = Some(inp);
             self
         }
-        /// Consumes the builder and constructs an Operation<[`GetSpeechSynthesisTask`](crate::operation::GetSpeechSynthesisTask)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`GetSpeechSynthesisTaskInput`](crate::input::GetSpeechSynthesisTaskInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::GetSpeechSynthesisTask,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op = crate::operation::GetSpeechSynthesisTask::new(
-                    crate::input::GetSpeechSynthesisTaskInput {
-                        task_id: self.task_id.unwrap_or_default(),
-                    },
-                );
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
-                }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op).with_metadata(
-                    smithy_http::operation::Metadata::new("GetSpeechSynthesisTask", "polly"),
-                );
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
+        ) -> Result<crate::input::GetSpeechSynthesisTaskInput, smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::GetSpeechSynthesisTaskInput {
+                task_id: self.task_id.unwrap_or_default(),
             })
         }
     }
 }
 impl GetSpeechSynthesisTaskInput {
+    /// Consumes the builder and constructs an Operation<[`GetSpeechSynthesisTask`](crate::operation::GetSpeechSynthesisTask)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::GetSpeechSynthesisTask,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::GetSpeechSynthesisTask::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "GetSpeechSynthesisTask",
+                "polly",
+            ));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     fn uri_base(&self, output: &mut String) {
         write!(
             output,
@@ -572,69 +605,78 @@ pub mod list_lexicons_input {
             self.next_token = inp;
             self
         }
-        /// Consumes the builder and constructs an Operation<[`ListLexicons`](crate::operation::ListLexicons)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`ListLexiconsInput`](crate::input::ListLexiconsInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::ListLexicons,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op = crate::operation::ListLexicons::new(crate::input::ListLexiconsInput {
-                    next_token: self.next_token,
-                });
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
-                }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op).with_metadata(
-                    smithy_http::operation::Metadata::new("ListLexicons", "polly"),
-                );
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
+        ) -> Result<crate::input::ListLexiconsInput, smithy_http::operation::BuildError> {
+            Ok(crate::input::ListLexiconsInput {
+                next_token: self.next_token,
             })
         }
     }
 }
 impl ListLexiconsInput {
+    /// Consumes the builder and constructs an Operation<[`ListLexicons`](crate::operation::ListLexicons)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::ListLexicons,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::ListLexicons::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "ListLexicons",
+                "polly",
+            ));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     fn uri_base(&self, output: &mut String) {
         write!(output, "/v1/lexicons").expect("formatting should succeed")
     }
@@ -718,73 +760,81 @@ pub mod list_speech_synthesis_tasks_input {
             self.status = inp;
             self
         }
-        /// Consumes the builder and constructs an Operation<[`ListSpeechSynthesisTasks`](crate::operation::ListSpeechSynthesisTasks)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`ListSpeechSynthesisTasksInput`](crate::input::ListSpeechSynthesisTasksInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::ListSpeechSynthesisTasks,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op = crate::operation::ListSpeechSynthesisTasks::new(
-                    crate::input::ListSpeechSynthesisTasksInput {
-                        max_results: self.max_results,
-                        next_token: self.next_token,
-                        status: self.status,
-                    },
-                );
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
-                }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op).with_metadata(
-                    smithy_http::operation::Metadata::new("ListSpeechSynthesisTasks", "polly"),
-                );
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
+        ) -> Result<crate::input::ListSpeechSynthesisTasksInput, smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::ListSpeechSynthesisTasksInput {
+                max_results: self.max_results,
+                next_token: self.next_token,
+                status: self.status,
             })
         }
     }
 }
 impl ListSpeechSynthesisTasksInput {
+    /// Consumes the builder and constructs an Operation<[`ListSpeechSynthesisTasks`](crate::operation::ListSpeechSynthesisTasks)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::ListSpeechSynthesisTasks,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::ListSpeechSynthesisTasks::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "ListSpeechSynthesisTasks",
+                "polly",
+            ));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     fn uri_base(&self, output: &mut String) {
         write!(output, "/v1/synthesisTasks").expect("formatting should succeed")
     }
@@ -864,69 +914,76 @@ pub mod put_lexicon_input {
             self.content = inp;
             self
         }
-        /// Consumes the builder and constructs an Operation<[`PutLexicon`](crate::operation::PutLexicon)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`PutLexiconInput`](crate::input::PutLexiconInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::PutLexicon,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op = crate::operation::PutLexicon::new(crate::input::PutLexiconInput {
-                    name: self.name.unwrap_or_default(),
-                    content: self.content,
-                });
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
-                }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op)
-                    .with_metadata(smithy_http::operation::Metadata::new("PutLexicon", "polly"));
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
+        ) -> Result<crate::input::PutLexiconInput, smithy_http::operation::BuildError> {
+            Ok(crate::input::PutLexiconInput {
+                name: self.name.unwrap_or_default(),
+                content: self.content,
             })
         }
     }
 }
 impl PutLexiconInput {
+    /// Consumes the builder and constructs an Operation<[`PutLexicon`](crate::operation::PutLexicon)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::PutLexicon,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::PutLexicon::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new("PutLexicon", "polly"));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     fn uri_base(&self, output: &mut String) {
         write!(
             output,
@@ -1138,82 +1195,90 @@ pub mod start_speech_synthesis_task_input {
             self.voice_id = inp;
             self
         }
-        /// Consumes the builder and constructs an Operation<[`StartSpeechSynthesisTask`](crate::operation::StartSpeechSynthesisTask)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`StartSpeechSynthesisTaskInput`](crate::input::StartSpeechSynthesisTaskInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::StartSpeechSynthesisTask,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op = crate::operation::StartSpeechSynthesisTask::new(
-                    crate::input::StartSpeechSynthesisTaskInput {
-                        engine: self.engine,
-                        language_code: self.language_code,
-                        lexicon_names: self.lexicon_names,
-                        output_format: self.output_format,
-                        output_s3_bucket_name: self.output_s3_bucket_name,
-                        output_s3_key_prefix: self.output_s3_key_prefix,
-                        sample_rate: self.sample_rate,
-                        sns_topic_arn: self.sns_topic_arn,
-                        speech_mark_types: self.speech_mark_types,
-                        text: self.text,
-                        text_type: self.text_type,
-                        voice_id: self.voice_id,
-                    },
-                );
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
-                }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op).with_metadata(
-                    smithy_http::operation::Metadata::new("StartSpeechSynthesisTask", "polly"),
-                );
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
+        ) -> Result<crate::input::StartSpeechSynthesisTaskInput, smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::StartSpeechSynthesisTaskInput {
+                engine: self.engine,
+                language_code: self.language_code,
+                lexicon_names: self.lexicon_names,
+                output_format: self.output_format,
+                output_s3_bucket_name: self.output_s3_bucket_name,
+                output_s3_key_prefix: self.output_s3_key_prefix,
+                sample_rate: self.sample_rate,
+                sns_topic_arn: self.sns_topic_arn,
+                speech_mark_types: self.speech_mark_types,
+                text: self.text,
+                text_type: self.text_type,
+                voice_id: self.voice_id,
             })
         }
     }
 }
 impl StartSpeechSynthesisTaskInput {
+    /// Consumes the builder and constructs an Operation<[`StartSpeechSynthesisTask`](crate::operation::StartSpeechSynthesisTask)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::StartSpeechSynthesisTask,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::StartSpeechSynthesisTask::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "StartSpeechSynthesisTask",
+                "polly",
+            ));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     fn uri_base(&self, output: &mut String) {
         write!(output, "/v1/synthesisTasks").expect("formatting should succeed")
     }
@@ -1413,78 +1478,87 @@ pub mod synthesize_speech_input {
             self.voice_id = inp;
             self
         }
-        /// Consumes the builder and constructs an Operation<[`SynthesizeSpeech`](crate::operation::SynthesizeSpeech)>
-        #[allow(clippy::let_and_return)]
+        /// Consumes the builder and constructs a [`SynthesizeSpeechInput`](crate::input::SynthesizeSpeechInput)
         pub fn build(
             self,
-            _config: &crate::config::Config,
-        ) -> Result<
-            smithy_http::operation::Operation<
-                crate::operation::SynthesizeSpeech,
-                aws_http::AwsErrorRetryPolicy,
-            >,
-            smithy_http::operation::BuildError,
-        > {
-            Ok({
-                let op =
-                    crate::operation::SynthesizeSpeech::new(crate::input::SynthesizeSpeechInput {
-                        engine: self.engine,
-                        language_code: self.language_code,
-                        lexicon_names: self.lexicon_names,
-                        output_format: self.output_format,
-                        sample_rate: self.sample_rate,
-                        speech_mark_types: self.speech_mark_types,
-                        text: self.text,
-                        text_type: self.text_type,
-                        voice_id: self.voice_id,
-                    });
-
-                #[allow(unused_mut)]
-                let mut request = smithy_http::operation::Request::new(
-                    op.build_http_request()?
-                        .map(smithy_http::body::SdkBody::from),
-                );
-
-                request.config_mut().insert(
-                    aws_http::user_agent::AwsUserAgent::new_from_environment(
-                        crate::API_METADATA.clone(),
-                    ),
-                );
-
-                request
-                    .config_mut()
-                    .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
-                request
-                    .config_mut()
-                    .insert(aws_types::SigningService::from_static(
-                        _config.signing_service(),
-                    ));
-
-                aws_endpoint::set_endpoint_resolver(
-                    &mut request.config_mut(),
-                    _config.endpoint_resolver.clone(),
-                );
-
-                if let Some(region) = &_config.region {
-                    request.config_mut().insert(region.clone());
-                }
-
-                aws_auth::set_provider(
-                    &mut request.config_mut(),
-                    _config.credentials_provider.clone(),
-                );
-
-                let op = smithy_http::operation::Operation::new(request, op).with_metadata(
-                    smithy_http::operation::Metadata::new("SynthesizeSpeech", "polly"),
-                );
-
-                let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-                op
+        ) -> Result<crate::input::SynthesizeSpeechInput, smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::SynthesizeSpeechInput {
+                engine: self.engine,
+                language_code: self.language_code,
+                lexicon_names: self.lexicon_names,
+                output_format: self.output_format,
+                sample_rate: self.sample_rate,
+                speech_mark_types: self.speech_mark_types,
+                text: self.text,
+                text_type: self.text_type,
+                voice_id: self.voice_id,
             })
         }
     }
 }
 impl SynthesizeSpeechInput {
+    /// Consumes the builder and constructs an Operation<[`SynthesizeSpeech`](crate::operation::SynthesizeSpeech)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::SynthesizeSpeech,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+
+            request
+                .config_mut()
+                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::SynthesizeSpeech::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "SynthesizeSpeech",
+                "polly",
+            ));
+
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
     fn uri_base(&self, output: &mut String) {
         write!(output, "/v1/speech").expect("formatting should succeed")
     }

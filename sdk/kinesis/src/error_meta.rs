@@ -44,11 +44,11 @@ impl From<smithy_http::result::SdkError<crate::error::AddTagsToStreamError>> for
                 crate::error::AddTagsToStreamErrorKind::InvalidArgumentError(inner) => {
                     Error::InvalidArgumentError(inner)
                 }
-                crate::error::AddTagsToStreamErrorKind::LimitExceededError(inner) => {
-                    Error::LimitExceededError(inner)
-                }
                 crate::error::AddTagsToStreamErrorKind::ResourceInUseError(inner) => {
                     Error::ResourceInUseError(inner)
+                }
+                crate::error::AddTagsToStreamErrorKind::LimitExceededError(inner) => {
+                    Error::LimitExceededError(inner)
                 }
                 crate::error::AddTagsToStreamErrorKind::ResourceNotFoundError(inner) => {
                     Error::ResourceNotFoundError(inner)
@@ -66,11 +66,11 @@ impl From<smithy_http::result::SdkError<crate::error::CreateStreamError>> for Er
                 crate::error::CreateStreamErrorKind::InvalidArgumentError(inner) => {
                     Error::InvalidArgumentError(inner)
                 }
-                crate::error::CreateStreamErrorKind::LimitExceededError(inner) => {
-                    Error::LimitExceededError(inner)
-                }
                 crate::error::CreateStreamErrorKind::ResourceInUseError(inner) => {
                     Error::ResourceInUseError(inner)
+                }
+                crate::error::CreateStreamErrorKind::LimitExceededError(inner) => {
+                    Error::LimitExceededError(inner)
                 }
                 crate::error::CreateStreamErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -89,11 +89,11 @@ impl From<smithy_http::result::SdkError<crate::error::DecreaseStreamRetentionPer
                 crate::error::DecreaseStreamRetentionPeriodErrorKind::InvalidArgumentError(
                     inner,
                 ) => Error::InvalidArgumentError(inner),
-                crate::error::DecreaseStreamRetentionPeriodErrorKind::LimitExceededError(inner) => {
-                    Error::LimitExceededError(inner)
-                }
                 crate::error::DecreaseStreamRetentionPeriodErrorKind::ResourceInUseError(inner) => {
                     Error::ResourceInUseError(inner)
+                }
+                crate::error::DecreaseStreamRetentionPeriodErrorKind::LimitExceededError(inner) => {
+                    Error::LimitExceededError(inner)
                 }
                 crate::error::DecreaseStreamRetentionPeriodErrorKind::ResourceNotFoundError(
                     inner,
@@ -110,11 +110,11 @@ impl From<smithy_http::result::SdkError<crate::error::DeleteStreamError>> for Er
     fn from(err: smithy_http::result::SdkError<crate::error::DeleteStreamError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DeleteStreamErrorKind::LimitExceededError(inner) => {
-                    Error::LimitExceededError(inner)
-                }
                 crate::error::DeleteStreamErrorKind::ResourceInUseError(inner) => {
                     Error::ResourceInUseError(inner)
+                }
+                crate::error::DeleteStreamErrorKind::LimitExceededError(inner) => {
+                    Error::LimitExceededError(inner)
                 }
                 crate::error::DeleteStreamErrorKind::ResourceNotFoundError(inner) => {
                     Error::ResourceNotFoundError(inner)
@@ -225,11 +225,11 @@ impl From<smithy_http::result::SdkError<crate::error::DisableEnhancedMonitoringE
                 crate::error::DisableEnhancedMonitoringErrorKind::InvalidArgumentError(inner) => {
                     Error::InvalidArgumentError(inner)
                 }
-                crate::error::DisableEnhancedMonitoringErrorKind::LimitExceededError(inner) => {
-                    Error::LimitExceededError(inner)
-                }
                 crate::error::DisableEnhancedMonitoringErrorKind::ResourceInUseError(inner) => {
                     Error::ResourceInUseError(inner)
+                }
+                crate::error::DisableEnhancedMonitoringErrorKind::LimitExceededError(inner) => {
+                    Error::LimitExceededError(inner)
                 }
                 crate::error::DisableEnhancedMonitoringErrorKind::ResourceNotFoundError(inner) => {
                     Error::ResourceNotFoundError(inner)
@@ -251,11 +251,11 @@ impl From<smithy_http::result::SdkError<crate::error::EnableEnhancedMonitoringEr
                 crate::error::EnableEnhancedMonitoringErrorKind::InvalidArgumentError(inner) => {
                     Error::InvalidArgumentError(inner)
                 }
-                crate::error::EnableEnhancedMonitoringErrorKind::LimitExceededError(inner) => {
-                    Error::LimitExceededError(inner)
-                }
                 crate::error::EnableEnhancedMonitoringErrorKind::ResourceInUseError(inner) => {
                     Error::ResourceInUseError(inner)
+                }
+                crate::error::EnableEnhancedMonitoringErrorKind::LimitExceededError(inner) => {
+                    Error::LimitExceededError(inner)
                 }
                 crate::error::EnableEnhancedMonitoringErrorKind::ResourceNotFoundError(inner) => {
                     Error::ResourceNotFoundError(inner)
@@ -272,23 +272,17 @@ impl From<smithy_http::result::SdkError<crate::error::GetRecordsError>> for Erro
     fn from(err: smithy_http::result::SdkError<crate::error::GetRecordsError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::GetRecordsErrorKind::ExpiredIteratorError(inner) => {
-                    Error::ExpiredIteratorError(inner)
-                }
-                crate::error::GetRecordsErrorKind::InvalidArgumentError(inner) => {
-                    Error::InvalidArgumentError(inner)
-                }
                 crate::error::GetRecordsErrorKind::KMSAccessDeniedError(inner) => {
                     Error::KMSAccessDeniedError(inner)
                 }
                 crate::error::GetRecordsErrorKind::KMSDisabledError(inner) => {
                     Error::KMSDisabledError(inner)
                 }
-                crate::error::GetRecordsErrorKind::KMSInvalidStateError(inner) => {
-                    Error::KMSInvalidStateError(inner)
-                }
                 crate::error::GetRecordsErrorKind::KMSNotFoundError(inner) => {
                     Error::KMSNotFoundError(inner)
+                }
+                crate::error::GetRecordsErrorKind::ExpiredIteratorError(inner) => {
+                    Error::ExpiredIteratorError(inner)
                 }
                 crate::error::GetRecordsErrorKind::KMSOptInRequired(inner) => {
                     Error::KMSOptInRequired(inner)
@@ -298,6 +292,12 @@ impl From<smithy_http::result::SdkError<crate::error::GetRecordsError>> for Erro
                 }
                 crate::error::GetRecordsErrorKind::ProvisionedThroughputExceededError(inner) => {
                     Error::ProvisionedThroughputExceededError(inner)
+                }
+                crate::error::GetRecordsErrorKind::InvalidArgumentError(inner) => {
+                    Error::InvalidArgumentError(inner)
+                }
+                crate::error::GetRecordsErrorKind::KMSInvalidStateError(inner) => {
+                    Error::KMSInvalidStateError(inner)
                 }
                 crate::error::GetRecordsErrorKind::ResourceNotFoundError(inner) => {
                     Error::ResourceNotFoundError(inner)
@@ -312,12 +312,12 @@ impl From<smithy_http::result::SdkError<crate::error::GetShardIteratorError>> fo
     fn from(err: smithy_http::result::SdkError<crate::error::GetShardIteratorError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::GetShardIteratorErrorKind::InvalidArgumentError(inner) => {
-                    Error::InvalidArgumentError(inner)
-                }
                 crate::error::GetShardIteratorErrorKind::ProvisionedThroughputExceededError(
                     inner,
                 ) => Error::ProvisionedThroughputExceededError(inner),
+                crate::error::GetShardIteratorErrorKind::InvalidArgumentError(inner) => {
+                    Error::InvalidArgumentError(inner)
+                }
                 crate::error::GetShardIteratorErrorKind::ResourceNotFoundError(inner) => {
                     Error::ResourceNotFoundError(inner)
                 }
@@ -340,11 +340,11 @@ impl From<smithy_http::result::SdkError<crate::error::IncreaseStreamRetentionPer
                 crate::error::IncreaseStreamRetentionPeriodErrorKind::InvalidArgumentError(
                     inner,
                 ) => Error::InvalidArgumentError(inner),
-                crate::error::IncreaseStreamRetentionPeriodErrorKind::LimitExceededError(inner) => {
-                    Error::LimitExceededError(inner)
-                }
                 crate::error::IncreaseStreamRetentionPeriodErrorKind::ResourceInUseError(inner) => {
                     Error::ResourceInUseError(inner)
+                }
+                crate::error::IncreaseStreamRetentionPeriodErrorKind::LimitExceededError(inner) => {
+                    Error::LimitExceededError(inner)
                 }
                 crate::error::IncreaseStreamRetentionPeriodErrorKind::ResourceNotFoundError(
                     inner,
@@ -367,11 +367,11 @@ impl From<smithy_http::result::SdkError<crate::error::ListShardsError>> for Erro
                 crate::error::ListShardsErrorKind::InvalidArgumentError(inner) => {
                     Error::InvalidArgumentError(inner)
                 }
-                crate::error::ListShardsErrorKind::LimitExceededError(inner) => {
-                    Error::LimitExceededError(inner)
-                }
                 crate::error::ListShardsErrorKind::ResourceInUseError(inner) => {
                     Error::ResourceInUseError(inner)
+                }
+                crate::error::ListShardsErrorKind::LimitExceededError(inner) => {
+                    Error::LimitExceededError(inner)
                 }
                 crate::error::ListShardsErrorKind::ResourceNotFoundError(inner) => {
                     Error::ResourceNotFoundError(inner)
@@ -392,11 +392,11 @@ impl From<smithy_http::result::SdkError<crate::error::ListStreamConsumersError>>
                 crate::error::ListStreamConsumersErrorKind::InvalidArgumentError(inner) => {
                     Error::InvalidArgumentError(inner)
                 }
-                crate::error::ListStreamConsumersErrorKind::LimitExceededError(inner) => {
-                    Error::LimitExceededError(inner)
-                }
                 crate::error::ListStreamConsumersErrorKind::ResourceInUseError(inner) => {
                     Error::ResourceInUseError(inner)
+                }
+                crate::error::ListStreamConsumersErrorKind::LimitExceededError(inner) => {
+                    Error::LimitExceededError(inner)
                 }
                 crate::error::ListStreamConsumersErrorKind::ResourceNotFoundError(inner) => {
                     Error::ResourceNotFoundError(inner)
@@ -450,11 +450,11 @@ impl From<smithy_http::result::SdkError<crate::error::MergeShardsError>> for Err
                 crate::error::MergeShardsErrorKind::InvalidArgumentError(inner) => {
                     Error::InvalidArgumentError(inner)
                 }
-                crate::error::MergeShardsErrorKind::LimitExceededError(inner) => {
-                    Error::LimitExceededError(inner)
-                }
                 crate::error::MergeShardsErrorKind::ResourceInUseError(inner) => {
                     Error::ResourceInUseError(inner)
+                }
+                crate::error::MergeShardsErrorKind::LimitExceededError(inner) => {
+                    Error::LimitExceededError(inner)
                 }
                 crate::error::MergeShardsErrorKind::ResourceNotFoundError(inner) => {
                     Error::ResourceNotFoundError(inner)
@@ -469,17 +469,11 @@ impl From<smithy_http::result::SdkError<crate::error::PutRecordError>> for Error
     fn from(err: smithy_http::result::SdkError<crate::error::PutRecordError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::PutRecordErrorKind::InvalidArgumentError(inner) => {
-                    Error::InvalidArgumentError(inner)
-                }
                 crate::error::PutRecordErrorKind::KMSAccessDeniedError(inner) => {
                     Error::KMSAccessDeniedError(inner)
                 }
                 crate::error::PutRecordErrorKind::KMSDisabledError(inner) => {
                     Error::KMSDisabledError(inner)
-                }
-                crate::error::PutRecordErrorKind::KMSInvalidStateError(inner) => {
-                    Error::KMSInvalidStateError(inner)
                 }
                 crate::error::PutRecordErrorKind::KMSNotFoundError(inner) => {
                     Error::KMSNotFoundError(inner)
@@ -492,6 +486,12 @@ impl From<smithy_http::result::SdkError<crate::error::PutRecordError>> for Error
                 }
                 crate::error::PutRecordErrorKind::ProvisionedThroughputExceededError(inner) => {
                     Error::ProvisionedThroughputExceededError(inner)
+                }
+                crate::error::PutRecordErrorKind::InvalidArgumentError(inner) => {
+                    Error::InvalidArgumentError(inner)
+                }
+                crate::error::PutRecordErrorKind::KMSInvalidStateError(inner) => {
+                    Error::KMSInvalidStateError(inner)
                 }
                 crate::error::PutRecordErrorKind::ResourceNotFoundError(inner) => {
                     Error::ResourceNotFoundError(inner)
@@ -506,17 +506,11 @@ impl From<smithy_http::result::SdkError<crate::error::PutRecordsError>> for Erro
     fn from(err: smithy_http::result::SdkError<crate::error::PutRecordsError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::PutRecordsErrorKind::InvalidArgumentError(inner) => {
-                    Error::InvalidArgumentError(inner)
-                }
                 crate::error::PutRecordsErrorKind::KMSAccessDeniedError(inner) => {
                     Error::KMSAccessDeniedError(inner)
                 }
                 crate::error::PutRecordsErrorKind::KMSDisabledError(inner) => {
                     Error::KMSDisabledError(inner)
-                }
-                crate::error::PutRecordsErrorKind::KMSInvalidStateError(inner) => {
-                    Error::KMSInvalidStateError(inner)
                 }
                 crate::error::PutRecordsErrorKind::KMSNotFoundError(inner) => {
                     Error::KMSNotFoundError(inner)
@@ -529,6 +523,12 @@ impl From<smithy_http::result::SdkError<crate::error::PutRecordsError>> for Erro
                 }
                 crate::error::PutRecordsErrorKind::ProvisionedThroughputExceededError(inner) => {
                     Error::ProvisionedThroughputExceededError(inner)
+                }
+                crate::error::PutRecordsErrorKind::InvalidArgumentError(inner) => {
+                    Error::InvalidArgumentError(inner)
+                }
+                crate::error::PutRecordsErrorKind::KMSInvalidStateError(inner) => {
+                    Error::KMSInvalidStateError(inner)
                 }
                 crate::error::PutRecordsErrorKind::ResourceNotFoundError(inner) => {
                     Error::ResourceNotFoundError(inner)
@@ -546,11 +546,11 @@ impl From<smithy_http::result::SdkError<crate::error::RegisterStreamConsumerErro
                 crate::error::RegisterStreamConsumerErrorKind::InvalidArgumentError(inner) => {
                     Error::InvalidArgumentError(inner)
                 }
-                crate::error::RegisterStreamConsumerErrorKind::LimitExceededError(inner) => {
-                    Error::LimitExceededError(inner)
-                }
                 crate::error::RegisterStreamConsumerErrorKind::ResourceInUseError(inner) => {
                     Error::ResourceInUseError(inner)
+                }
+                crate::error::RegisterStreamConsumerErrorKind::LimitExceededError(inner) => {
+                    Error::LimitExceededError(inner)
                 }
                 crate::error::RegisterStreamConsumerErrorKind::ResourceNotFoundError(inner) => {
                     Error::ResourceNotFoundError(inner)
@@ -570,11 +570,11 @@ impl From<smithy_http::result::SdkError<crate::error::RemoveTagsFromStreamError>
                 crate::error::RemoveTagsFromStreamErrorKind::InvalidArgumentError(inner) => {
                     Error::InvalidArgumentError(inner)
                 }
-                crate::error::RemoveTagsFromStreamErrorKind::LimitExceededError(inner) => {
-                    Error::LimitExceededError(inner)
-                }
                 crate::error::RemoveTagsFromStreamErrorKind::ResourceInUseError(inner) => {
                     Error::ResourceInUseError(inner)
+                }
+                crate::error::RemoveTagsFromStreamErrorKind::LimitExceededError(inner) => {
+                    Error::LimitExceededError(inner)
                 }
                 crate::error::RemoveTagsFromStreamErrorKind::ResourceNotFoundError(inner) => {
                     Error::ResourceNotFoundError(inner)
@@ -594,11 +594,11 @@ impl From<smithy_http::result::SdkError<crate::error::SplitShardError>> for Erro
                 crate::error::SplitShardErrorKind::InvalidArgumentError(inner) => {
                     Error::InvalidArgumentError(inner)
                 }
-                crate::error::SplitShardErrorKind::LimitExceededError(inner) => {
-                    Error::LimitExceededError(inner)
-                }
                 crate::error::SplitShardErrorKind::ResourceInUseError(inner) => {
                     Error::ResourceInUseError(inner)
+                }
+                crate::error::SplitShardErrorKind::LimitExceededError(inner) => {
+                    Error::LimitExceededError(inner)
                 }
                 crate::error::SplitShardErrorKind::ResourceNotFoundError(inner) => {
                     Error::ResourceNotFoundError(inner)
@@ -613,17 +613,11 @@ impl From<smithy_http::result::SdkError<crate::error::StartStreamEncryptionError
     fn from(err: smithy_http::result::SdkError<crate::error::StartStreamEncryptionError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::StartStreamEncryptionErrorKind::InvalidArgumentError(inner) => {
-                    Error::InvalidArgumentError(inner)
-                }
                 crate::error::StartStreamEncryptionErrorKind::KMSAccessDeniedError(inner) => {
                     Error::KMSAccessDeniedError(inner)
                 }
                 crate::error::StartStreamEncryptionErrorKind::KMSDisabledError(inner) => {
                     Error::KMSDisabledError(inner)
-                }
-                crate::error::StartStreamEncryptionErrorKind::KMSInvalidStateError(inner) => {
-                    Error::KMSInvalidStateError(inner)
                 }
                 crate::error::StartStreamEncryptionErrorKind::KMSNotFoundError(inner) => {
                     Error::KMSNotFoundError(inner)
@@ -634,11 +628,17 @@ impl From<smithy_http::result::SdkError<crate::error::StartStreamEncryptionError
                 crate::error::StartStreamEncryptionErrorKind::KMSThrottlingError(inner) => {
                     Error::KMSThrottlingError(inner)
                 }
-                crate::error::StartStreamEncryptionErrorKind::LimitExceededError(inner) => {
-                    Error::LimitExceededError(inner)
+                crate::error::StartStreamEncryptionErrorKind::InvalidArgumentError(inner) => {
+                    Error::InvalidArgumentError(inner)
+                }
+                crate::error::StartStreamEncryptionErrorKind::KMSInvalidStateError(inner) => {
+                    Error::KMSInvalidStateError(inner)
                 }
                 crate::error::StartStreamEncryptionErrorKind::ResourceInUseError(inner) => {
                     Error::ResourceInUseError(inner)
+                }
+                crate::error::StartStreamEncryptionErrorKind::LimitExceededError(inner) => {
+                    Error::LimitExceededError(inner)
                 }
                 crate::error::StartStreamEncryptionErrorKind::ResourceNotFoundError(inner) => {
                     Error::ResourceNotFoundError(inner)
@@ -658,40 +658,16 @@ impl From<smithy_http::result::SdkError<crate::error::StopStreamEncryptionError>
                 crate::error::StopStreamEncryptionErrorKind::InvalidArgumentError(inner) => {
                     Error::InvalidArgumentError(inner)
                 }
-                crate::error::StopStreamEncryptionErrorKind::LimitExceededError(inner) => {
-                    Error::LimitExceededError(inner)
-                }
                 crate::error::StopStreamEncryptionErrorKind::ResourceInUseError(inner) => {
                     Error::ResourceInUseError(inner)
+                }
+                crate::error::StopStreamEncryptionErrorKind::LimitExceededError(inner) => {
+                    Error::LimitExceededError(inner)
                 }
                 crate::error::StopStreamEncryptionErrorKind::ResourceNotFoundError(inner) => {
                     Error::ResourceNotFoundError(inner)
                 }
                 crate::error::StopStreamEncryptionErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
-                }
-            },
-            _ => Error::Unhandled(err.into()),
-        }
-    }
-}
-impl From<smithy_http::result::SdkError<crate::error::SubscribeToShardError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::SubscribeToShardError>) -> Self {
-        match err {
-            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::SubscribeToShardErrorKind::InvalidArgumentError(inner) => {
-                    Error::InvalidArgumentError(inner)
-                }
-                crate::error::SubscribeToShardErrorKind::LimitExceededError(inner) => {
-                    Error::LimitExceededError(inner)
-                }
-                crate::error::SubscribeToShardErrorKind::ResourceInUseError(inner) => {
-                    Error::ResourceInUseError(inner)
-                }
-                crate::error::SubscribeToShardErrorKind::ResourceNotFoundError(inner) => {
-                    Error::ResourceNotFoundError(inner)
-                }
-                crate::error::SubscribeToShardErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
             },
@@ -706,11 +682,11 @@ impl From<smithy_http::result::SdkError<crate::error::UpdateShardCountError>> fo
                 crate::error::UpdateShardCountErrorKind::InvalidArgumentError(inner) => {
                     Error::InvalidArgumentError(inner)
                 }
-                crate::error::UpdateShardCountErrorKind::LimitExceededError(inner) => {
-                    Error::LimitExceededError(inner)
-                }
                 crate::error::UpdateShardCountErrorKind::ResourceInUseError(inner) => {
                     Error::ResourceInUseError(inner)
+                }
+                crate::error::UpdateShardCountErrorKind::LimitExceededError(inner) => {
+                    Error::LimitExceededError(inner)
                 }
                 crate::error::UpdateShardCountErrorKind::ResourceNotFoundError(inner) => {
                     Error::ResourceNotFoundError(inner)

@@ -958,33 +958,6 @@ impl<'a> std::fmt::Debug for StopStreamEncryptionInputBody<'a> {
 
 #[non_exhaustive]
 #[derive(serde::Serialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct SubscribeToShardInputBody<'a> {
-    /// <p>The ID of the shard you want to subscribe to. To see a list of all the shards for a
-    /// given stream, use <a>ListShards</a>.</p>
-    #[serde(rename = "ShardId")]
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub shard_id: &'a std::option::Option<std::string::String>,
-    /// <p></p>
-    #[serde(rename = "StartingPosition")]
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub starting_position: &'a std::option::Option<crate::model::StartingPosition>,
-    /// <p>For this parameter, use the value you obtained when you called <a>RegisterStreamConsumer</a>.</p>
-    #[serde(rename = "ConsumerARN")]
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub consumer_arn: &'a std::option::Option<std::string::String>,
-}
-impl<'a> std::fmt::Debug for SubscribeToShardInputBody<'a> {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SubscribeToShardInputBody");
-        formatter.field("shard_id", &self.shard_id);
-        formatter.field("starting_position", &self.starting_position);
-        formatter.field("consumer_arn", &self.consumer_arn);
-        formatter.finish()
-    }
-}
-
-#[non_exhaustive]
-#[derive(serde::Serialize, std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateShardCountInputBody<'a> {
     /// <p>The scaling type. Uniform scaling creates shards of equal size.</p>
     #[serde(rename = "ScalingType")]
@@ -1448,22 +1421,6 @@ impl std::fmt::Debug for RegisterStreamConsumerOutputBody {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RegisterStreamConsumerOutputBody");
         formatter.field("consumer", &self.consumer);
-        formatter.finish()
-    }
-}
-
-#[non_exhaustive]
-#[derive(std::default::Default, serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct SubscribeToShardOutputBody {
-    /// <p>The event stream that your consumer can use to read records from the shard.</p>
-    #[serde(rename = "EventStream")]
-    #[serde(default)]
-    pub event_stream: std::option::Option<crate::model::SubscribeToShardEventStream>,
-}
-impl std::fmt::Debug for SubscribeToShardOutputBody {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SubscribeToShardOutputBody");
-        formatter.field("event_stream", &self.event_stream);
         formatter.finish()
     }
 }

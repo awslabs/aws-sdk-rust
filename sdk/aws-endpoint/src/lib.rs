@@ -112,7 +112,7 @@ impl ResolveAwsEndpoint for DefaultAwsEndpointResolver {
         Ok(AwsEndpoint {
             endpoint: Endpoint::mutable(uri),
             signing_region: Some(region.clone().into()),
-            signing_service: Some(SigningService::from_static(self.service)),
+            signing_service: None,
         })
     }
 }
@@ -199,8 +199,12 @@ mod test {
     use smithy_http::middleware::MapRequest;
     use smithy_http::operation;
 
-    use crate::{set_endpoint_resolver, AwsEndpointStage, DefaultAwsEndpointResolver};
+    use crate::{
+        set_endpoint_resolver, AwsEndpoint, AwsEndpointStage, BoxError, DefaultAwsEndpointResolver,
+        ResolveAwsEndpoint,
+    };
     use http::header::HOST;
+    use smithy_http::endpoint::Endpoint;
 
     #[test]
     fn default_endpoint_updates_request() {
@@ -211,6 +215,7 @@ mod test {
         {
             let mut conf = req.config_mut();
             conf.insert(region.clone());
+            conf.insert(SigningService::from_static("kinesis"));
             set_endpoint_resolver(&mut conf, provider);
         };
         let req = AwsEndpointStage.apply(req).expect("should succeed");
@@ -231,6 +236,39 @@ mod test {
         assert_eq!(
             req.headers().get(HOST).expect("host header must be set"),
             "kinesis.us-east-1.amazonaws.com"
+        );
+    }
+
+    #[test]
+    fn sets_service_override_when_set() {
+        struct ServiceOverrideResolver;
+        impl ResolveAwsEndpoint for ServiceOverrideResolver {
+            fn endpoint(&self, _region: &Region) -> Result<AwsEndpoint, BoxError> {
+                Ok(AwsEndpoint {
+                    endpoint: Endpoint::immutable(Uri::from_static("http://www.service.com")),
+                    signing_service: Some(SigningService::from_static("qldb-override")),
+                    signing_region: Some(SigningRegion::from(Region::new("us-east-override"))),
+                })
+            }
+        }
+        let provider = Arc::new(ServiceOverrideResolver);
+        let req = http::Request::new(SdkBody::from(""));
+        let region = Region::new("us-east-1");
+        let mut req = operation::Request::new(req);
+        {
+            let mut conf = req.config_mut();
+            conf.insert(region.clone());
+            conf.insert(SigningService::from_static("kinesis"));
+            set_endpoint_resolver(&mut conf, provider);
+        };
+        let req = AwsEndpointStage.apply(req).expect("should succeed");
+        assert_eq!(
+            req.config().get(),
+            Some(&SigningRegion::from(Region::new("us-east-override")))
+        );
+        assert_eq!(
+            req.config().get(),
+            Some(&SigningService::from_static("qldb-override"))
         );
     }
 }
