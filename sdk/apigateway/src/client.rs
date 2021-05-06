@@ -5722,6 +5722,15 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
 
+        /// <p>The payload of the POST request to import API keys. For the payload format, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-key-file-format.html">API Key File Format</a>.</p>
+        pub fn body(mut self, inp: smithy_types::Blob) -> Self {
+            self.inner = self.inner.body(inp);
+            self
+        }
+        pub fn set_body(mut self, inp: std::option::Option<smithy_types::Blob>) -> Self {
+            self.inner = self.inner.set_body(inp);
+            self
+        }
         /// <p>A query parameter to specify the input format to imported API keys. Currently, only the <code>csv</code> format is supported.</p>
         pub fn format(mut self, inp: crate::model::ApiKeysFormat) -> Self {
             self.inner = self.inner.format(inp);
@@ -5797,6 +5806,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_fail_on_warnings(inp);
             self
         }
+        /// <p>[Required] Raw byte array representing the to-be-imported documentation parts. To import from an OpenAPI file, this is a JSON object.</p>
+        pub fn body(mut self, inp: smithy_types::Blob) -> Self {
+            self.inner = self.inner.body(inp);
+            self
+        }
+        pub fn set_body(mut self, inp: std::option::Option<smithy_types::Blob>) -> Self {
+            self.inner = self.inner.set_body(inp);
+            self
+        }
     }
 
     pub struct ImportRestApi {
@@ -5860,6 +5878,15 @@ pub mod fluent_builders {
             >,
         ) -> Self {
             self.inner = self.inner.set_parameters(inp);
+            self
+        }
+        /// <p>[Required] The POST request body containing external API definitions. Currently, only OpenAPI definition JSON/YAML files are supported. The maximum size of the API definition file is 6MB.</p>
+        pub fn body(mut self, inp: smithy_types::Blob) -> Self {
+            self.inner = self.inner.body(inp);
+            self
+        }
+        pub fn set_body(mut self, inp: std::option::Option<smithy_types::Blob>) -> Self {
+            self.inner = self.inner.set_body(inp);
             self
         }
     }
@@ -6650,6 +6677,15 @@ pub mod fluent_builders {
             >,
         ) -> Self {
             self.inner = self.inner.set_parameters(inp);
+            self
+        }
+        /// <p>[Required] The PUT request body containing external API definitions. Currently, only OpenAPI definition JSON/YAML files are supported. The maximum size of the API definition file is 6MB.</p>
+        pub fn body(mut self, inp: smithy_types::Blob) -> Self {
+            self.inner = self.inner.body(inp);
+            self
+        }
+        pub fn set_body(mut self, inp: std::option::Option<smithy_types::Blob>) -> Self {
+            self.inner = self.inner.set_body(inp);
             self
         }
     }

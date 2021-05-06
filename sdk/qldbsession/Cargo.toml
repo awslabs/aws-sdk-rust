@@ -34,6 +34,12 @@ version = "1"
 features = ["float_roundtrip"]
 [dependencies.bytes]
 version = "1"
+[dev-dependencies.aws-hyper]
+path = "..//aws-hyper"
+features = ["test-util"]
+[dev-dependencies.tokio]
+version = "1"
+features = ["macros", "test-util"]
 [features]
 client = ["aws-hyper"]
 rustls = ["aws-hyper/rustls"]

@@ -19,7 +19,7 @@ impl std::fmt::Debug for ValidateResourcePolicyOutput {
 pub mod validate_resource_policy_output {
     /// A builder for [`ValidateResourcePolicyOutput`](crate::output::ValidateResourcePolicyOutput)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         validation_errors: std::option::Option<std::vec::Vec<crate::model::ValidationErrorsEntry>>,
         policy_validation_passed: std::option::Option<bool>,
@@ -86,7 +86,7 @@ impl std::fmt::Debug for UpdateSecretVersionStageOutput {
 pub mod update_secret_version_stage_output {
     /// A builder for [`UpdateSecretVersionStageOutput`](crate::output::UpdateSecretVersionStageOutput)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         arn: std::option::Option<std::string::String>,
         name: std::option::Option<std::string::String>,
@@ -157,7 +157,7 @@ impl std::fmt::Debug for UpdateSecretOutput {
 pub mod update_secret_output {
     /// A builder for [`UpdateSecretOutput`](crate::output::UpdateSecretOutput)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         name: std::option::Option<std::string::String>,
         version_id: std::option::Option<std::string::String>,
@@ -229,7 +229,7 @@ impl std::fmt::Debug for UntagResourceOutput {
 pub mod untag_resource_output {
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput)
@@ -258,7 +258,7 @@ impl std::fmt::Debug for TagResourceOutput {
 pub mod tag_resource_output {
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput)
@@ -298,7 +298,7 @@ impl std::fmt::Debug for RotateSecretOutput {
 pub mod rotate_secret_output {
     /// A builder for [`RotateSecretOutput`](crate::output::RotateSecretOutput)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         arn: std::option::Option<std::string::String>,
         name: std::option::Option<std::string::String>,
@@ -370,7 +370,7 @@ impl std::fmt::Debug for RestoreSecretOutput {
 pub mod restore_secret_output {
     /// A builder for [`RestoreSecretOutput`](crate::output::RestoreSecretOutput)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         arn: std::option::Option<std::string::String>,
         name: std::option::Option<std::string::String>,
@@ -438,7 +438,7 @@ impl std::fmt::Debug for PutSecretValueOutput {
 pub mod put_secret_value_output {
     /// A builder for [`PutSecretValueOutput`](crate::output::PutSecretValueOutput)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         arn: std::option::Option<std::string::String>,
         version_stages: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -524,7 +524,7 @@ impl std::fmt::Debug for PutResourcePolicyOutput {
 pub mod put_resource_policy_output {
     /// A builder for [`PutResourcePolicyOutput`](crate::output::PutResourcePolicyOutput)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         arn: std::option::Option<std::string::String>,
         name: std::option::Option<std::string::String>,
@@ -603,7 +603,7 @@ impl std::fmt::Debug for ListSecretVersionIdsOutput {
 pub mod list_secret_version_ids_output {
     /// A builder for [`ListSecretVersionIdsOutput`](crate::output::ListSecretVersionIdsOutput)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         next_token: std::option::Option<std::string::String>,
         versions: std::option::Option<std::vec::Vec<crate::model::SecretVersionsListEntry>>,
@@ -708,7 +708,7 @@ impl std::fmt::Debug for ListSecretsOutput {
 pub mod list_secrets_output {
     /// A builder for [`ListSecretsOutput`](crate::output::ListSecretsOutput)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         secret_list: std::option::Option<std::vec::Vec<crate::model::SecretListEntry>>,
         next_token: std::option::Option<std::string::String>,
@@ -810,7 +810,7 @@ impl std::fmt::Debug for GetSecretValueOutput {
 pub mod get_secret_value_output {
     /// A builder for [`GetSecretValueOutput`](crate::output::GetSecretValueOutput)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         version_id: std::option::Option<std::string::String>,
         created_date: std::option::Option<smithy_types::Instant>,
@@ -952,7 +952,7 @@ impl std::fmt::Debug for GetResourcePolicyOutput {
 pub mod get_resource_policy_output {
     /// A builder for [`GetResourcePolicyOutput`](crate::output::GetResourcePolicyOutput)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         resource_policy: std::option::Option<std::string::String>,
         name: std::option::Option<std::string::String>,
@@ -1027,7 +1027,7 @@ impl std::fmt::Debug for GetRandomPasswordOutput {
 pub mod get_random_password_output {
     /// A builder for [`GetRandomPasswordOutput`](crate::output::GetRandomPasswordOutput)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         random_password: std::option::Option<std::string::String>,
     }
@@ -1140,7 +1140,7 @@ impl std::fmt::Debug for DescribeSecretOutput {
 pub mod describe_secret_output {
     /// A builder for [`DescribeSecretOutput`](crate::output::DescribeSecretOutput)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         last_rotated_date: std::option::Option<smithy_types::Instant>,
         description: std::option::Option<std::string::String>,
@@ -1392,7 +1392,7 @@ impl std::fmt::Debug for DeleteSecretOutput {
 pub mod delete_secret_output {
     /// A builder for [`DeleteSecretOutput`](crate::output::DeleteSecretOutput)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         arn: std::option::Option<std::string::String>,
         name: std::option::Option<std::string::String>,
@@ -1468,7 +1468,7 @@ impl std::fmt::Debug for DeleteResourcePolicyOutput {
 pub mod delete_resource_policy_output {
     /// A builder for [`DeleteResourcePolicyOutput`](crate::output::DeleteResourcePolicyOutput)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         arn: std::option::Option<std::string::String>,
         name: std::option::Option<std::string::String>,
@@ -1539,7 +1539,7 @@ impl std::fmt::Debug for CreateSecretOutput {
 pub mod create_secret_output {
     /// A builder for [`CreateSecretOutput`](crate::output::CreateSecretOutput)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         version_id: std::option::Option<std::string::String>,
         name: std::option::Option<std::string::String>,
@@ -1625,7 +1625,7 @@ impl std::fmt::Debug for CancelRotateSecretOutput {
 pub mod cancel_rotate_secret_output {
     /// A builder for [`CancelRotateSecretOutput`](crate::output::CancelRotateSecretOutput)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         arn: std::option::Option<std::string::String>,
         version_id: std::option::Option<std::string::String>,

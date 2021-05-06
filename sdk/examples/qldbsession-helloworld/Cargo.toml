@@ -9,7 +9,7 @@ edition = "2018"
 [dependencies]
 qldbsession = { package = "aws-sdk-qldbsession", path = "../../qldbsession" }
 ### To use native TLS:
-# dynamodb = { package = "aws-sdk-qldbsession", path = "../../qldbsession", default-features = false, features = ["native-tls"] }
+# qldbsession = { package = "aws-sdk-qldbsession", path = "../../qldbsession", default-features = false, features = ["native-tls"] }
 
 tokio = { version = "1", features = ["full"] }
 

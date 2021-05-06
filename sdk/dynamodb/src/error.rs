@@ -4326,7 +4326,7 @@ impl std::error::Error for ResourceNotFoundError {}
 pub mod resource_not_found_error {
     /// A builder for [`ResourceNotFoundError`](crate::error::ResourceNotFoundError)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         message: std::option::Option<std::string::String>,
     }
@@ -4393,7 +4393,7 @@ impl std::error::Error for ResourceInUseError {}
 pub mod resource_in_use_error {
     /// A builder for [`ResourceInUseError`](crate::error::ResourceInUseError)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         message: std::option::Option<std::string::String>,
     }
@@ -4466,7 +4466,7 @@ impl std::error::Error for LimitExceededError {}
 pub mod limit_exceeded_error {
     /// A builder for [`LimitExceededError`](crate::error::LimitExceededError)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         message: std::option::Option<std::string::String>,
     }
@@ -4526,7 +4526,7 @@ impl std::error::Error for InvalidEndpointError {}
 pub mod invalid_endpoint_error {
     /// A builder for [`InvalidEndpointError`](crate::error::InvalidEndpointError)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         message: std::option::Option<std::string::String>,
     }
@@ -4590,7 +4590,7 @@ impl std::error::Error for InternalServerError {}
 pub mod internal_server_error {
     /// A builder for [`InternalServerError`](crate::error::InternalServerError)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         message: std::option::Option<std::string::String>,
     }
@@ -4654,7 +4654,7 @@ impl std::error::Error for TransactionConflictError {}
 pub mod transaction_conflict_error {
     /// A builder for [`TransactionConflictError`](crate::error::TransactionConflictError)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         message: std::option::Option<std::string::String>,
     }
@@ -4717,7 +4717,7 @@ impl std::error::Error for RequestLimitExceeded {}
 pub mod request_limit_exceeded {
     /// A builder for [`RequestLimitExceeded`](crate::error::RequestLimitExceeded)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         message: std::option::Option<std::string::String>,
     }
@@ -4788,7 +4788,7 @@ impl std::error::Error for ProvisionedThroughputExceededError {}
 pub mod provisioned_throughput_exceeded_error {
     /// A builder for [`ProvisionedThroughputExceededError`](crate::error::ProvisionedThroughputExceededError)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         message: std::option::Option<std::string::String>,
     }
@@ -4856,7 +4856,7 @@ impl std::error::Error for ItemCollectionSizeLimitExceededError {}
 pub mod item_collection_size_limit_exceeded_error {
     /// A builder for [`ItemCollectionSizeLimitExceededError`](crate::error::ItemCollectionSizeLimitExceededError)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         message: std::option::Option<std::string::String>,
     }
@@ -4924,7 +4924,7 @@ impl std::error::Error for ConditionalCheckFailedError {}
 pub mod conditional_check_failed_error {
     /// A builder for [`ConditionalCheckFailedError`](crate::error::ConditionalCheckFailedError)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         message: std::option::Option<std::string::String>,
     }
@@ -4988,7 +4988,7 @@ impl std::error::Error for ReplicaNotFoundError {}
 pub mod replica_not_found_error {
     /// A builder for [`ReplicaNotFoundError`](crate::error::ReplicaNotFoundError)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         message: std::option::Option<std::string::String>,
     }
@@ -5051,7 +5051,7 @@ impl std::error::Error for IndexNotFoundError {}
 pub mod index_not_found_error {
     /// A builder for [`IndexNotFoundError`](crate::error::IndexNotFoundError)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         message: std::option::Option<std::string::String>,
     }
@@ -5114,7 +5114,7 @@ impl std::error::Error for GlobalTableNotFoundError {}
 pub mod global_table_not_found_error {
     /// A builder for [`GlobalTableNotFoundError`](crate::error::GlobalTableNotFoundError)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         message: std::option::Option<std::string::String>,
     }
@@ -5177,7 +5177,7 @@ impl std::error::Error for TableNotFoundError {}
 pub mod table_not_found_error {
     /// A builder for [`TableNotFoundError`](crate::error::TableNotFoundError)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         message: std::option::Option<std::string::String>,
     }
@@ -5243,7 +5243,7 @@ impl std::error::Error for ReplicaAlreadyExistsError {}
 pub mod replica_already_exists_error {
     /// A builder for [`ReplicaAlreadyExistsError`](crate::error::ReplicaAlreadyExistsError)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         message: std::option::Option<std::string::String>,
     }
@@ -5309,7 +5309,7 @@ impl std::error::Error for ContinuousBackupsUnavailableError {}
 pub mod continuous_backups_unavailable_error {
     /// A builder for [`ContinuousBackupsUnavailableError`](crate::error::ContinuousBackupsUnavailableError)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         message: std::option::Option<std::string::String>,
     }
@@ -5372,7 +5372,7 @@ impl std::error::Error for TransactionInProgressError {}
 pub mod transaction_in_progress_error {
     /// A builder for [`TransactionInProgressError`](crate::error::TransactionInProgressError)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         message: std::option::Option<std::string::String>,
     }
@@ -5635,7 +5635,7 @@ impl std::error::Error for TransactionCanceledError {}
 pub mod transaction_canceled_error {
     /// A builder for [`TransactionCanceledError`](crate::error::TransactionCanceledError)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         message: std::option::Option<std::string::String>,
         cancellation_reasons: std::option::Option<std::vec::Vec<crate::model::CancellationReason>>,
@@ -5717,7 +5717,7 @@ impl std::error::Error for IdempotentParameterMismatchError {}
 pub mod idempotent_parameter_mismatch_error {
     /// A builder for [`IdempotentParameterMismatchError`](crate::error::IdempotentParameterMismatchError)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         message: std::option::Option<std::string::String>,
     }
@@ -5780,7 +5780,7 @@ impl std::error::Error for TableInUseError {}
 pub mod table_in_use_error {
     /// A builder for [`TableInUseError`](crate::error::TableInUseError)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         message: std::option::Option<std::string::String>,
     }
@@ -5843,7 +5843,7 @@ impl std::error::Error for TableAlreadyExistsError {}
 pub mod table_already_exists_error {
     /// A builder for [`TableAlreadyExistsError`](crate::error::TableAlreadyExistsError)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         message: std::option::Option<std::string::String>,
     }
@@ -5909,7 +5909,7 @@ impl std::error::Error for PointInTimeRecoveryUnavailableError {}
 pub mod point_in_time_recovery_unavailable_error {
     /// A builder for [`PointInTimeRecoveryUnavailableError`](crate::error::PointInTimeRecoveryUnavailableError)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         message: std::option::Option<std::string::String>,
     }
@@ -5972,7 +5972,7 @@ impl std::error::Error for InvalidRestoreTimeError {}
 pub mod invalid_restore_time_error {
     /// A builder for [`InvalidRestoreTimeError`](crate::error::InvalidRestoreTimeError)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         message: std::option::Option<std::string::String>,
     }
@@ -6035,7 +6035,7 @@ impl std::error::Error for BackupNotFoundError {}
 pub mod backup_not_found_error {
     /// A builder for [`BackupNotFoundError`](crate::error::BackupNotFoundError)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         message: std::option::Option<std::string::String>,
     }
@@ -6098,7 +6098,7 @@ impl std::error::Error for BackupInUseError {}
 pub mod backup_in_use_error {
     /// A builder for [`BackupInUseError`](crate::error::BackupInUseError)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         message: std::option::Option<std::string::String>,
     }
@@ -6162,7 +6162,7 @@ impl std::error::Error for InvalidExportTimeError {}
 pub mod invalid_export_time_error {
     /// A builder for [`InvalidExportTimeError`](crate::error::InvalidExportTimeError)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         message: std::option::Option<std::string::String>,
     }
@@ -6225,7 +6225,7 @@ impl std::error::Error for ExportConflictError {}
 pub mod export_conflict_error {
     /// A builder for [`ExportConflictError`](crate::error::ExportConflictError)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         message: std::option::Option<std::string::String>,
     }
@@ -6290,7 +6290,7 @@ impl std::error::Error for DuplicateItemError {}
 pub mod duplicate_item_error {
     /// A builder for [`DuplicateItemError`](crate::error::DuplicateItemError)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         message: std::option::Option<std::string::String>,
     }
@@ -6353,7 +6353,7 @@ impl std::error::Error for ExportNotFoundError {}
 pub mod export_not_found_error {
     /// A builder for [`ExportNotFoundError`](crate::error::ExportNotFoundError)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         message: std::option::Option<std::string::String>,
     }
@@ -6419,7 +6419,7 @@ impl std::error::Error for GlobalTableAlreadyExistsError {}
 pub mod global_table_already_exists_error {
     /// A builder for [`GlobalTableAlreadyExistsError`](crate::error::GlobalTableAlreadyExistsError)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         message: std::option::Option<std::string::String>,
     }

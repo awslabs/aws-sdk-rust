@@ -3,7 +3,7 @@
 pub mod cancel_rotate_secret_input {
     /// A builder for [`CancelRotateSecretInput`](crate::input::CancelRotateSecretInput)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         secret_id: std::option::Option<std::string::String>,
     }
@@ -142,7 +142,7 @@ impl CancelRotateSecretInput {
 pub mod create_secret_input {
     /// A builder for [`CreateSecretInput`](crate::input::CreateSecretInput)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         name: std::option::Option<std::string::String>,
         tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -424,7 +424,7 @@ impl CreateSecretInput {
 pub mod delete_resource_policy_input {
     /// A builder for [`DeleteResourcePolicyInput`](crate::input::DeleteResourcePolicyInput)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         secret_id: std::option::Option<std::string::String>,
     }
@@ -563,7 +563,7 @@ impl DeleteResourcePolicyInput {
 pub mod delete_secret_input {
     /// A builder for [`DeleteSecretInput`](crate::input::DeleteSecretInput)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         force_delete_without_recovery: std::option::Option<bool>,
         recovery_window_in_days: std::option::Option<i64>,
@@ -741,7 +741,7 @@ impl DeleteSecretInput {
 pub mod describe_secret_input {
     /// A builder for [`DescribeSecretInput`](crate::input::DescribeSecretInput)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         secret_id: std::option::Option<std::string::String>,
     }
@@ -879,7 +879,7 @@ impl DescribeSecretInput {
 pub mod get_random_password_input {
     /// A builder for [`GetRandomPasswordInput`](crate::input::GetRandomPasswordInput)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         exclude_numbers: std::option::Option<bool>,
         exclude_characters: std::option::Option<std::string::String>,
@@ -1107,7 +1107,7 @@ impl GetRandomPasswordInput {
 pub mod get_resource_policy_input {
     /// A builder for [`GetResourcePolicyInput`](crate::input::GetResourcePolicyInput)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         secret_id: std::option::Option<std::string::String>,
     }
@@ -1246,7 +1246,7 @@ impl GetResourcePolicyInput {
 pub mod get_secret_value_input {
     /// A builder for [`GetSecretValueInput`](crate::input::GetSecretValueInput)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         secret_id: std::option::Option<std::string::String>,
         version_stage: std::option::Option<std::string::String>,
@@ -1420,7 +1420,7 @@ impl GetSecretValueInput {
 pub mod list_secrets_input {
     /// A builder for [`ListSecretsInput`](crate::input::ListSecretsInput)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         max_results: std::option::Option<i32>,
         sort_order: std::option::Option<crate::model::SortOrderType>,
@@ -1596,7 +1596,7 @@ impl ListSecretsInput {
 pub mod list_secret_version_ids_input {
     /// A builder for [`ListSecretVersionIdsInput`](crate::input::ListSecretVersionIdsInput)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         max_results: std::option::Option<i32>,
         secret_id: std::option::Option<std::string::String>,
@@ -1783,7 +1783,7 @@ impl ListSecretVersionIdsInput {
 pub mod put_resource_policy_input {
     /// A builder for [`PutResourcePolicyInput`](crate::input::PutResourcePolicyInput)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         resource_policy: std::option::Option<std::string::String>,
         block_public_policy: std::option::Option<bool>,
@@ -1953,7 +1953,7 @@ impl PutResourcePolicyInput {
 pub mod put_secret_value_input {
     /// A builder for [`PutSecretValueInput`](crate::input::PutSecretValueInput)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         client_request_token: std::option::Option<std::string::String>,
         secret_id: std::option::Option<std::string::String>,
@@ -2202,7 +2202,7 @@ impl PutSecretValueInput {
 pub mod restore_secret_input {
     /// A builder for [`RestoreSecretInput`](crate::input::RestoreSecretInput)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         secret_id: std::option::Option<std::string::String>,
     }
@@ -2340,7 +2340,7 @@ impl RestoreSecretInput {
 pub mod rotate_secret_input {
     /// A builder for [`RotateSecretInput`](crate::input::RotateSecretInput)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         secret_id: std::option::Option<std::string::String>,
         client_request_token: std::option::Option<std::string::String>,
@@ -2540,7 +2540,7 @@ impl RotateSecretInput {
 pub mod tag_resource_input {
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         secret_id: std::option::Option<std::string::String>,
         tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -2694,7 +2694,7 @@ impl TagResourceInput {
 pub mod untag_resource_input {
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
         secret_id: std::option::Option<std::string::String>,
@@ -2848,7 +2848,7 @@ impl UntagResourceInput {
 pub mod update_secret_input {
     /// A builder for [`UpdateSecretInput`](crate::input::UpdateSecretInput)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         secret_string: std::option::Option<std::string::String>,
         kms_key_id: std::option::Option<std::string::String>,
@@ -3117,7 +3117,7 @@ impl UpdateSecretInput {
 pub mod update_secret_version_stage_input {
     /// A builder for [`UpdateSecretVersionStageInput`](crate::input::UpdateSecretVersionStageInput)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         move_to_version_id: std::option::Option<std::string::String>,
         secret_id: std::option::Option<std::string::String>,
@@ -3306,7 +3306,7 @@ impl UpdateSecretVersionStageInput {
 pub mod validate_resource_policy_input {
     /// A builder for [`ValidateResourcePolicyInput`](crate::input::ValidateResourcePolicyInput)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         resource_policy: std::option::Option<std::string::String>,
         secret_id: std::option::Option<std::string::String>,

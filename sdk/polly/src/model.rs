@@ -818,7 +818,7 @@ impl std::fmt::Debug for SynthesisTask {
 pub mod synthesis_task {
     /// A builder for [`SynthesisTask`](crate::model::SynthesisTask)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         engine: std::option::Option<crate::model::Engine>,
         task_id: std::option::Option<std::string::String>,
@@ -1142,7 +1142,7 @@ impl std::fmt::Debug for LexiconDescription {
 pub mod lexicon_description {
     /// A builder for [`LexiconDescription`](crate::model::LexiconDescription)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         name: std::option::Option<std::string::String>,
         attributes: std::option::Option<crate::model::LexiconAttributes>,
@@ -1242,7 +1242,7 @@ impl std::fmt::Debug for LexiconAttributes {
 pub mod lexicon_attributes {
     /// A builder for [`LexiconAttributes`](crate::model::LexiconAttributes)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         alphabet: std::option::Option<std::string::String>,
         language_code: std::option::Option<crate::model::LanguageCode>,
@@ -1364,7 +1364,7 @@ impl std::fmt::Debug for Lexicon {
 pub mod lexicon {
     /// A builder for [`Lexicon`](crate::model::Lexicon)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         content: std::option::Option<std::string::String>,
         name: std::option::Option<std::string::String>,
@@ -1469,7 +1469,7 @@ impl std::fmt::Debug for Voice {
 pub mod voice {
     /// A builder for [`Voice`](crate::model::Voice)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         gender: std::option::Option<crate::model::Gender>,
         id: std::option::Option<crate::model::VoiceId>,

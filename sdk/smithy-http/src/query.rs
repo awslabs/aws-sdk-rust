@@ -65,7 +65,7 @@ fn url_encode(c: char, buff: &mut String) {
     if is_valid_query(c) {
         buff.push(c)
     } else {
-        let mut inner_buff = [0; 2];
+        let mut inner_buff = [0; 4];
         let u8_slice = c.encode_utf8(&mut inner_buff).as_bytes();
         for c in u8_slice {
             let upper = (c & 0xf0) >> 4;
@@ -129,5 +129,6 @@ mod test {
         assert_eq!(fmt_string(" ").as_str(), "%20");
         assert_eq!(fmt_string("foo/baz%20").as_str(), "foo/baz%2520");
         assert_eq!(fmt_string("&=").as_str(), "%26%3D");
+        assert_eq!(fmt_string("🐱").as_str(), "%F0%9F%90%B1");
     }
 }

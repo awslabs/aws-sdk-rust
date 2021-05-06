@@ -17,14 +17,18 @@ async fn main() -> Result<(), dynamodb::Error> {
     let new_table = client
         .create_table()
         .table_name("test-table")
-        .key_schema(KeySchemaElement::builder()
-            .attribute_name("k")
-            .key_type(KeyType::Hash)
-            .build())
-        .attribute_definitions(AttributeDefinition::builder()
-            .attribute_name("k")
-            .attribute_type(ScalarAttributeType::S)
-            .build())
+        .key_schema(
+            KeySchemaElement::builder()
+                .attribute_name("k")
+                .key_type(KeyType::Hash)
+                .build(),
+        )
+        .attribute_definitions(
+            AttributeDefinition::builder()
+                .attribute_name("k")
+                .attribute_type(ScalarAttributeType::S)
+                .build(),
+        )
         .provisioned_throughput(
             ProvisionedThroughput::builder()
                 .write_capacity_units(10)

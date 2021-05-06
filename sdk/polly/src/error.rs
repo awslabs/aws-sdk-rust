@@ -813,7 +813,7 @@ impl std::error::Error for TextLengthExceededError {}
 pub mod text_length_exceeded_error {
     /// A builder for [`TextLengthExceededError`](crate::error::TextLengthExceededError)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         message: std::option::Option<std::string::String>,
     }
@@ -879,7 +879,7 @@ impl std::error::Error for SsmlMarksNotSupportedForTextTypeError {}
 pub mod ssml_marks_not_supported_for_text_type_error {
     /// A builder for [`SsmlMarksNotSupportedForTextTypeError`](crate::error::SsmlMarksNotSupportedForTextTypeError)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         message: std::option::Option<std::string::String>,
     }
@@ -942,7 +942,7 @@ impl std::error::Error for ServiceFailureError {}
 pub mod service_failure_error {
     /// A builder for [`ServiceFailureError`](crate::error::ServiceFailureError)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         message: std::option::Option<std::string::String>,
     }
@@ -1009,7 +1009,7 @@ impl std::error::Error for MarksNotSupportedForFormatError {}
 pub mod marks_not_supported_for_format_error {
     /// A builder for [`MarksNotSupportedForFormatError`](crate::error::MarksNotSupportedForFormatError)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         message: std::option::Option<std::string::String>,
     }
@@ -1076,7 +1076,7 @@ impl std::error::Error for LexiconNotFoundError {}
 pub mod lexicon_not_found_error {
     /// A builder for [`LexiconNotFoundError`](crate::error::LexiconNotFoundError)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         message: std::option::Option<std::string::String>,
     }
@@ -1142,7 +1142,7 @@ impl std::error::Error for LanguageNotSupportedError {}
 pub mod language_not_supported_error {
     /// A builder for [`LanguageNotSupportedError`](crate::error::LanguageNotSupportedError)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         message: std::option::Option<std::string::String>,
     }
@@ -1206,7 +1206,7 @@ impl std::error::Error for InvalidSsmlError {}
 pub mod invalid_ssml_error {
     /// A builder for [`InvalidSsmlError`](crate::error::InvalidSsmlError)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         message: std::option::Option<std::string::String>,
     }
@@ -1269,7 +1269,7 @@ impl std::error::Error for InvalidSampleRateError {}
 pub mod invalid_sample_rate_error {
     /// A builder for [`InvalidSampleRateError`](crate::error::InvalidSampleRateError)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         message: std::option::Option<std::string::String>,
     }
@@ -1333,7 +1333,7 @@ impl std::error::Error for EngineNotSupportedError {}
 pub mod engine_not_supported_error {
     /// A builder for [`EngineNotSupportedError`](crate::error::EngineNotSupportedError)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         message: std::option::Option<std::string::String>,
     }
@@ -1397,7 +1397,7 @@ impl std::error::Error for InvalidSnsTopicArnError {}
 pub mod invalid_sns_topic_arn_error {
     /// A builder for [`InvalidSnsTopicArnError`](crate::error::InvalidSnsTopicArnError)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         message: std::option::Option<std::string::String>,
     }
@@ -1461,7 +1461,7 @@ impl std::error::Error for InvalidS3KeyError {}
 pub mod invalid_s3_key_error {
     /// A builder for [`InvalidS3KeyError`](crate::error::InvalidS3KeyError)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         message: std::option::Option<std::string::String>,
     }
@@ -1525,7 +1525,7 @@ impl std::error::Error for InvalidS3BucketError {}
 pub mod invalid_s3_bucket_error {
     /// A builder for [`InvalidS3BucketError`](crate::error::InvalidS3BucketError)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         message: std::option::Option<std::string::String>,
     }
@@ -1593,7 +1593,7 @@ impl std::error::Error for UnsupportedPlsLanguageError {}
 pub mod unsupported_pls_language_error {
     /// A builder for [`UnsupportedPlsLanguageError`](crate::error::UnsupportedPlsLanguageError)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         message: std::option::Option<std::string::String>,
     }
@@ -1660,7 +1660,7 @@ impl std::error::Error for UnsupportedPlsAlphabetError {}
 pub mod unsupported_pls_alphabet_error {
     /// A builder for [`UnsupportedPlsAlphabetError`](crate::error::UnsupportedPlsAlphabetError)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         message: std::option::Option<std::string::String>,
     }
@@ -1726,7 +1726,7 @@ impl std::error::Error for MaxLexiconsNumberExceededError {}
 pub mod max_lexicons_number_exceeded_error {
     /// A builder for [`MaxLexiconsNumberExceededError`](crate::error::MaxLexiconsNumberExceededError)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         message: std::option::Option<std::string::String>,
     }
@@ -1792,7 +1792,7 @@ impl std::error::Error for MaxLexemeLengthExceededError {}
 pub mod max_lexeme_length_exceeded_error {
     /// A builder for [`MaxLexemeLengthExceededError`](crate::error::MaxLexemeLengthExceededError)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         message: std::option::Option<std::string::String>,
     }
@@ -1856,7 +1856,7 @@ impl std::error::Error for LexiconSizeExceededError {}
 pub mod lexicon_size_exceeded_error {
     /// A builder for [`LexiconSizeExceededError`](crate::error::LexiconSizeExceededError)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         message: std::option::Option<std::string::String>,
     }
@@ -1920,7 +1920,7 @@ impl std::error::Error for InvalidLexiconError {}
 pub mod invalid_lexicon_error {
     /// A builder for [`InvalidLexiconError`](crate::error::InvalidLexiconError)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         message: std::option::Option<std::string::String>,
     }
@@ -1984,7 +1984,7 @@ impl std::error::Error for InvalidNextTokenError {}
 pub mod invalid_next_token_error {
     /// A builder for [`InvalidNextTokenError`](crate::error::InvalidNextTokenError)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         message: std::option::Option<std::string::String>,
     }
@@ -2050,7 +2050,7 @@ impl std::error::Error for SynthesisTaskNotFoundError {}
 pub mod synthesis_task_not_found_error {
     /// A builder for [`SynthesisTaskNotFoundError`](crate::error::SynthesisTaskNotFoundError)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         message: std::option::Option<std::string::String>,
     }
@@ -2113,7 +2113,7 @@ impl std::error::Error for InvalidTaskIdError {}
 pub mod invalid_task_id_error {
     /// A builder for [`InvalidTaskIdError`](crate::error::InvalidTaskIdError)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         message: std::option::Option<std::string::String>,
     }

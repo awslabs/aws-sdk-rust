@@ -1641,7 +1641,7 @@ impl std::error::Error for ResourceNotFoundError {}
 pub mod resource_not_found_error {
     /// A builder for [`ResourceNotFoundError`](crate::error::ResourceNotFoundError)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         message: std::option::Option<std::string::String>,
     }
@@ -1704,7 +1704,7 @@ impl std::error::Error for MalformedPolicyDocumentError {}
 pub mod malformed_policy_document_error {
     /// A builder for [`MalformedPolicyDocumentError`](crate::error::MalformedPolicyDocumentError)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         message: std::option::Option<std::string::String>,
     }
@@ -1775,7 +1775,7 @@ impl std::error::Error for InvalidRequestError {}
 pub mod invalid_request_error {
     /// A builder for [`InvalidRequestError`](crate::error::InvalidRequestError)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         message: std::option::Option<std::string::String>,
     }
@@ -1835,7 +1835,7 @@ impl std::error::Error for InvalidParameterError {}
 pub mod invalid_parameter_error {
     /// A builder for [`InvalidParameterError`](crate::error::InvalidParameterError)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         message: std::option::Option<std::string::String>,
     }
@@ -1895,7 +1895,7 @@ impl std::error::Error for InternalServiceError {}
 pub mod internal_service_error {
     /// A builder for [`InternalServiceError`](crate::error::InternalServiceError)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         message: std::option::Option<std::string::String>,
     }
@@ -1955,7 +1955,7 @@ impl std::error::Error for LimitExceededError {}
 pub mod limit_exceeded_error {
     /// A builder for [`LimitExceededError`](crate::error::LimitExceededError)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         message: std::option::Option<std::string::String>,
     }
@@ -2015,7 +2015,7 @@ impl std::error::Error for ResourceExistsError {}
 pub mod resource_exists_error {
     /// A builder for [`ResourceExistsError`](crate::error::ResourceExistsError)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         message: std::option::Option<std::string::String>,
     }
@@ -2075,7 +2075,7 @@ impl std::error::Error for PreconditionNotMetError {}
 pub mod precondition_not_met_error {
     /// A builder for [`PreconditionNotMetError`](crate::error::PreconditionNotMetError)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         message: std::option::Option<std::string::String>,
     }
@@ -2138,7 +2138,7 @@ impl std::error::Error for EncryptionFailure {}
 pub mod encryption_failure {
     /// A builder for [`EncryptionFailure`](crate::error::EncryptionFailure)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         message: std::option::Option<std::string::String>,
     }
@@ -2198,7 +2198,7 @@ impl std::error::Error for PublicPolicyError {}
 pub mod public_policy_error {
     /// A builder for [`PublicPolicyError`](crate::error::PublicPolicyError)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         message: std::option::Option<std::string::String>,
     }
@@ -2258,7 +2258,7 @@ impl std::error::Error for InvalidNextTokenError {}
 pub mod invalid_next_token_error {
     /// A builder for [`InvalidNextTokenError`](crate::error::InvalidNextTokenError)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         message: std::option::Option<std::string::String>,
     }
@@ -2318,7 +2318,7 @@ impl std::error::Error for DecryptionFailure {}
 pub mod decryption_failure {
     /// A builder for [`DecryptionFailure`](crate::error::DecryptionFailure)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         message: std::option::Option<std::string::String>,
     }

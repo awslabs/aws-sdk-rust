@@ -191,7 +191,7 @@ impl std::fmt::Debug for Consumer {
 pub mod consumer {
     /// A builder for [`Consumer`](crate::model::Consumer)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         consumer_name: std::option::Option<std::string::String>,
         consumer_arn: std::option::Option<std::string::String>,
@@ -387,7 +387,7 @@ impl std::fmt::Debug for PutRecordsResultEntry {
 pub mod put_records_result_entry {
     /// A builder for [`PutRecordsResultEntry`](crate::model::PutRecordsResultEntry)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         error_code: std::option::Option<std::string::String>,
         shard_id: std::option::Option<std::string::String>,
@@ -503,7 +503,7 @@ impl std::fmt::Debug for PutRecordsRequestEntry {
 pub mod put_records_request_entry {
     /// A builder for [`PutRecordsRequestEntry`](crate::model::PutRecordsRequestEntry)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         data: std::option::Option<smithy_types::Blob>,
         partition_key: std::option::Option<std::string::String>,
@@ -597,7 +597,7 @@ impl std::fmt::Debug for Tag {
 pub mod tag {
     /// A builder for [`Tag`](crate::model::Tag)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         value: std::option::Option<std::string::String>,
         key: std::option::Option<std::string::String>,
@@ -686,7 +686,7 @@ impl std::fmt::Debug for Shard {
 pub mod shard {
     /// A builder for [`Shard`](crate::model::Shard)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         sequence_number_range: std::option::Option<crate::model::SequenceNumberRange>,
         shard_id: std::option::Option<std::string::String>,
@@ -800,7 +800,7 @@ impl std::fmt::Debug for HashKeyRange {
 pub mod hash_key_range {
     /// A builder for [`HashKeyRange`](crate::model::HashKeyRange)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         starting_hash_key: std::option::Option<std::string::String>,
         ending_hash_key: std::option::Option<std::string::String>,
@@ -874,7 +874,7 @@ impl std::fmt::Debug for SequenceNumberRange {
 pub mod sequence_number_range {
     /// A builder for [`SequenceNumberRange`](crate::model::SequenceNumberRange)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         starting_sequence_number: std::option::Option<std::string::String>,
         ending_sequence_number: std::option::Option<std::string::String>,
@@ -956,7 +956,7 @@ impl std::fmt::Debug for ShardFilter {
 pub mod shard_filter {
     /// A builder for [`ShardFilter`](crate::model::ShardFilter)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         shard_id: std::option::Option<std::string::String>,
         timestamp: std::option::Option<smithy_types::Instant>,
@@ -1196,7 +1196,7 @@ impl std::fmt::Debug for ChildShard {
 pub mod child_shard {
     /// A builder for [`ChildShard`](crate::model::ChildShard)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         parent_shards: std::option::Option<std::vec::Vec<std::string::String>>,
         shard_id: std::option::Option<std::string::String>,
@@ -1326,7 +1326,7 @@ impl std::fmt::Debug for Record {
 pub mod record {
     /// A builder for [`Record`](crate::model::Record)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         sequence_number: std::option::Option<std::string::String>,
         encryption_type: std::option::Option<crate::model::EncryptionType>,
@@ -1661,7 +1661,7 @@ impl std::fmt::Debug for StreamDescriptionSummary {
 pub mod stream_description_summary {
     /// A builder for [`StreamDescriptionSummary`](crate::model::StreamDescriptionSummary)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         key_id: std::option::Option<std::string::String>,
         stream_status: std::option::Option<crate::model::StreamStatus>,
@@ -1941,7 +1941,7 @@ impl std::fmt::Debug for EnhancedMetrics {
 pub mod enhanced_metrics {
     /// A builder for [`EnhancedMetrics`](crate::model::EnhancedMetrics)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         shard_level_metrics: std::option::Option<std::vec::Vec<crate::model::MetricsName>>,
     }
@@ -2111,7 +2111,7 @@ impl std::fmt::Debug for ConsumerDescription {
 pub mod consumer_description {
     /// A builder for [`ConsumerDescription`](crate::model::ConsumerDescription)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         stream_arn: std::option::Option<std::string::String>,
         consumer_name: std::option::Option<std::string::String>,
@@ -2347,7 +2347,7 @@ impl std::fmt::Debug for StreamDescription {
 pub mod stream_description {
     /// A builder for [`StreamDescription`](crate::model::StreamDescription)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         encryption_type: std::option::Option<crate::model::EncryptionType>,
         enhanced_monitoring: std::option::Option<std::vec::Vec<crate::model::EnhancedMetrics>>,

@@ -120,7 +120,7 @@ impl std::error::Error for RateExceededError {}
 pub mod rate_exceeded_error {
     /// A builder for [`RateExceededError`](crate::error::RateExceededError)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         message: std::option::Option<std::string::String>,
     }
@@ -181,7 +181,7 @@ impl std::error::Error for OccConflictError {}
 pub mod occ_conflict_error {
     /// A builder for [`OccConflictError`](crate::error::OccConflictError)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         message: std::option::Option<std::string::String>,
     }
@@ -241,7 +241,7 @@ impl std::error::Error for LimitExceededError {}
 pub mod limit_exceeded_error {
     /// A builder for [`LimitExceededError`](crate::error::LimitExceededError)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         message: std::option::Option<std::string::String>,
     }
@@ -306,7 +306,7 @@ impl std::error::Error for InvalidSessionError {}
 pub mod invalid_session_error {
     /// A builder for [`InvalidSessionError`](crate::error::InvalidSessionError)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         message: std::option::Option<std::string::String>,
         code: std::option::Option<std::string::String>,
@@ -376,7 +376,7 @@ impl std::error::Error for CapacityExceededError {}
 pub mod capacity_exceeded_error {
     /// A builder for [`CapacityExceededError`](crate::error::CapacityExceededError)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         message: std::option::Option<std::string::String>,
     }
@@ -442,7 +442,7 @@ impl std::error::Error for BadRequestError {}
 pub mod bad_request_error {
     /// A builder for [`BadRequestError`](crate::error::BadRequestError)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         message: std::option::Option<std::string::String>,
         code: std::option::Option<std::string::String>,
