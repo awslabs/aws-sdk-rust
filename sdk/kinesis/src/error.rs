@@ -2301,7 +2301,7 @@ impl std::error::Error for ResourceNotFoundError {}
 pub mod resource_not_found_error {
     /// A builder for [`ResourceNotFoundError`](crate::error::ResourceNotFoundError)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         message: std::option::Option<std::string::String>,
     }
@@ -2367,7 +2367,7 @@ impl std::error::Error for LimitExceededError {}
 pub mod limit_exceeded_error {
     /// A builder for [`LimitExceededError`](crate::error::LimitExceededError)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         message: std::option::Option<std::string::String>,
     }
@@ -2433,7 +2433,7 @@ impl std::error::Error for ResourceInUseError {}
 pub mod resource_in_use_error {
     /// A builder for [`ResourceInUseError`](crate::error::ResourceInUseError)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         message: std::option::Option<std::string::String>,
     }
@@ -2499,7 +2499,7 @@ impl std::error::Error for InvalidArgumentError {}
 pub mod invalid_argument_error {
     /// A builder for [`InvalidArgumentError`](crate::error::InvalidArgumentError)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         message: std::option::Option<std::string::String>,
     }
@@ -2567,7 +2567,7 @@ impl std::error::Error for KMSInvalidStateError {}
 pub mod kms_invalid_state_error {
     /// A builder for [`KMSInvalidStateError`](crate::error::KMSInvalidStateError)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         message: std::option::Option<std::string::String>,
     }
@@ -2634,7 +2634,7 @@ impl std::error::Error for KMSThrottlingError {}
 pub mod kms_throttling_error {
     /// A builder for [`KMSThrottlingError`](crate::error::KMSThrottlingError)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         message: std::option::Option<std::string::String>,
     }
@@ -2699,7 +2699,7 @@ impl std::error::Error for KMSOptInRequired {}
 pub mod kms_opt_in_required {
     /// A builder for [`KMSOptInRequired`](crate::error::KMSOptInRequired)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         message: std::option::Option<std::string::String>,
     }
@@ -2765,7 +2765,7 @@ impl std::error::Error for KMSNotFoundError {}
 pub mod kms_not_found_error {
     /// A builder for [`KMSNotFoundError`](crate::error::KMSNotFoundError)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         message: std::option::Option<std::string::String>,
     }
@@ -2831,7 +2831,7 @@ impl std::error::Error for KMSDisabledError {}
 pub mod kms_disabled_error {
     /// A builder for [`KMSDisabledError`](crate::error::KMSDisabledError)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         message: std::option::Option<std::string::String>,
     }
@@ -2897,7 +2897,7 @@ impl std::error::Error for KMSAccessDeniedError {}
 pub mod kms_access_denied_error {
     /// A builder for [`KMSAccessDeniedError`](crate::error::KMSAccessDeniedError)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         message: std::option::Option<std::string::String>,
     }
@@ -2970,7 +2970,7 @@ impl std::error::Error for ProvisionedThroughputExceededError {}
 pub mod provisioned_throughput_exceeded_error {
     /// A builder for [`ProvisionedThroughputExceededError`](crate::error::ProvisionedThroughputExceededError)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         message: std::option::Option<std::string::String>,
     }
@@ -3034,7 +3034,7 @@ impl std::error::Error for ExpiredNextTokenError {}
 pub mod expired_next_token_error {
     /// A builder for [`ExpiredNextTokenError`](crate::error::ExpiredNextTokenError)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         message: std::option::Option<std::string::String>,
     }
@@ -3098,7 +3098,7 @@ impl std::error::Error for ExpiredIteratorError {}
 pub mod expired_iterator_error {
     /// A builder for [`ExpiredIteratorError`](crate::error::ExpiredIteratorError)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         message: std::option::Option<std::string::String>,
     }

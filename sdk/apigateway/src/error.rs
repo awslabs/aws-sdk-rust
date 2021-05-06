@@ -10117,7 +10117,7 @@ impl std::error::Error for UnauthorizedError {}
 pub mod unauthorized_error {
     /// A builder for [`UnauthorizedError`](crate::error::UnauthorizedError)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         message: std::option::Option<std::string::String>,
     }
@@ -10185,7 +10185,7 @@ impl std::error::Error for TooManyRequestsError {}
 pub mod too_many_requests_error {
     /// A builder for [`TooManyRequestsError`](crate::error::TooManyRequestsError)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         retry_after_seconds: std::option::Option<std::string::String>,
         message: std::option::Option<std::string::String>,
@@ -10261,7 +10261,7 @@ impl std::error::Error for NotFoundError {}
 pub mod not_found_error {
     /// A builder for [`NotFoundError`](crate::error::NotFoundError)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         message: std::option::Option<std::string::String>,
     }
@@ -10324,7 +10324,7 @@ impl std::error::Error for ConflictError {}
 pub mod conflict_error {
     /// A builder for [`ConflictError`](crate::error::ConflictError)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         message: std::option::Option<std::string::String>,
     }
@@ -10387,7 +10387,7 @@ impl std::error::Error for BadRequestError {}
 pub mod bad_request_error {
     /// A builder for [`BadRequestError`](crate::error::BadRequestError)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         message: std::option::Option<std::string::String>,
     }
@@ -10455,7 +10455,7 @@ impl std::error::Error for LimitExceededError {}
 pub mod limit_exceeded_error {
     /// A builder for [`LimitExceededError`](crate::error::LimitExceededError)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         retry_after_seconds: std::option::Option<std::string::String>,
         message: std::option::Option<std::string::String>,
@@ -10536,7 +10536,7 @@ impl std::error::Error for ServiceUnavailableError {}
 pub mod service_unavailable_error {
     /// A builder for [`ServiceUnavailableError`](crate::error::ServiceUnavailableError)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         retry_after_seconds: std::option::Option<std::string::String>,
         message: std::option::Option<std::string::String>,

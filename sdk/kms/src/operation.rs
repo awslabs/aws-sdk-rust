@@ -13,7 +13,7 @@
 /// <p>
 /// <b>Related operations</b>: <a>ScheduleKeyDeletion</a>
 /// </p>
-#[derive(std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone)]
 pub struct CancelKeyDeletion {
     _private: (),
 }
@@ -163,7 +163,7 @@ impl smithy_http::response::ParseStrictResponse for CancelKeyDeletion {
 /// </p>
 /// </li>
 /// </ul>
-#[derive(std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone)]
 pub struct ConnectCustomKeyStore {
     _private: (),
 }
@@ -286,7 +286,7 @@ impl smithy_http::response::ParseStrictResponse for ConnectCustomKeyStore {
 /// </p>
 /// </li>
 /// </ul>
-#[derive(std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone)]
 pub struct CreateAlias {
     _private: (),
 }
@@ -431,7 +431,7 @@ impl smithy_http::response::ParseStrictResponse for CreateAlias {
 /// </p>
 /// </li>
 /// </ul>
-#[derive(std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone)]
 pub struct CreateCustomKeyStore {
     _private: (),
 }
@@ -582,7 +582,7 @@ impl smithy_http::response::ParseStrictResponse for CreateCustomKeyStore {
 /// </p>
 /// </li>
 /// </ul>
-#[derive(std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone)]
 pub struct CreateGrant {
     _private: (),
 }
@@ -789,7 +789,7 @@ impl smithy_http::response::ParseStrictResponse for CreateGrant {
 /// </p>
 /// </li>
 /// </ul>
-#[derive(std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone)]
 pub struct CreateKey {
     _private: (),
 }
@@ -965,7 +965,7 @@ impl smithy_http::response::ParseStrictResponse for CreateKey {
 /// </p>
 /// </li>
 /// </ul>
-#[derive(std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone)]
 pub struct Decrypt {
     _private: (),
 }
@@ -1130,7 +1130,7 @@ impl smithy_http::response::ParseStrictResponse for Decrypt {
 /// </p>
 /// </li>
 /// </ul>
-#[derive(std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone)]
 pub struct DeleteAlias {
     _private: (),
 }
@@ -1258,7 +1258,7 @@ impl smithy_http::response::ParseStrictResponse for DeleteAlias {
 /// </p>
 /// </li>
 /// </ul>
-#[derive(std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone)]
 pub struct DeleteCustomKeyStore {
     _private: (),
 }
@@ -1354,7 +1354,7 @@ impl smithy_http::response::ParseStrictResponse for DeleteCustomKeyStore {
 /// </p>
 /// </li>
 /// </ul>
-#[derive(std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone)]
 pub struct DeleteImportedKeyMaterial {
     _private: (),
 }
@@ -1491,7 +1491,7 @@ impl smithy_http::response::ParseStrictResponse for DeleteImportedKeyMaterial {
 /// </p>
 /// </li>
 /// </ul>
-#[derive(std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone)]
 pub struct DescribeCustomKeyStores {
     _private: (),
 }
@@ -1643,7 +1643,7 @@ impl smithy_http::response::ParseStrictResponse for DescribeCustomKeyStores {
 /// </p>
 /// </li>
 /// </ul>
-#[derive(std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone)]
 pub struct DescribeKey {
     _private: (),
 }
@@ -1738,7 +1738,7 @@ impl smithy_http::response::ParseStrictResponse for DescribeKey {
 /// <p>
 /// <b>Related operations</b>: <a>EnableKey</a>
 /// </p>
-#[derive(std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone)]
 pub struct DisableKey {
     _private: (),
 }
@@ -1845,7 +1845,7 @@ impl smithy_http::response::ParseStrictResponse for DisableKey {
 /// </p>
 /// </li>
 /// </ul>
-#[derive(std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone)]
 pub struct DisableKeyRotation {
     _private: (),
 }
@@ -1998,7 +1998,7 @@ impl smithy_http::response::ParseStrictResponse for DisableKeyRotation {
 /// </p>
 /// </li>
 /// </ul>
-#[derive(std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone)]
 pub struct DisconnectCustomKeyStore {
     _private: (),
 }
@@ -2081,7 +2081,7 @@ impl smithy_http::response::ParseStrictResponse for DisconnectCustomKeyStore {
 /// <p>
 /// <b>Related operations</b>: <a>DisableKey</a>
 /// </p>
-#[derive(std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone)]
 pub struct EnableKey {
     _private: (),
 }
@@ -2194,7 +2194,7 @@ impl smithy_http::response::ParseStrictResponse for EnableKey {
 /// </p>
 /// </li>
 /// </ul>
-#[derive(std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone)]
 pub struct EnableKeyRotation {
     _private: (),
 }
@@ -2413,7 +2413,7 @@ impl smithy_http::response::ParseStrictResponse for EnableKeyRotation {
 /// </p>
 /// </li>
 /// </ul>
-#[derive(std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone)]
 pub struct Encrypt {
     _private: (),
 }
@@ -2612,7 +2612,7 @@ impl smithy_http::response::ParseStrictResponse for Encrypt {
 /// </p>
 /// </li>
 /// </ul>
-#[derive(std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone)]
 pub struct GenerateDataKey {
     _private: (),
 }
@@ -2785,7 +2785,7 @@ impl smithy_http::response::ParseStrictResponse for GenerateDataKey {
 /// </p>
 /// </li>
 /// </ul>
-#[derive(std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone)]
 pub struct GenerateDataKeyPair {
     _private: (),
 }
@@ -2975,7 +2975,7 @@ impl smithy_http::response::ParseStrictResponse for GenerateDataKeyPair {
 /// </p>
 /// </li>
 /// </ul>
-#[derive(std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone)]
 pub struct GenerateDataKeyPairWithoutPlaintext {
     _private: (),
 }
@@ -3145,7 +3145,7 @@ impl smithy_http::response::ParseStrictResponse for GenerateDataKeyPairWithoutPl
 /// </p>
 /// </li>
 /// </ul>
-#[derive(std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone)]
 pub struct GenerateDataKeyWithoutPlaintext {
     _private: (),
 }
@@ -3250,7 +3250,7 @@ impl smithy_http::response::ParseStrictResponse for GenerateDataKeyWithoutPlaint
 /// Cryptographic Details</a> whitepaper.</p>
 /// <p>
 /// <b>Required permissions</b>: <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:GenerateRandom</a> (IAM policy)</p>
-#[derive(std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone)]
 pub struct GenerateRandom {
     _private: (),
 }
@@ -3342,7 +3342,7 @@ impl smithy_http::response::ParseStrictResponse for GenerateRandom {
 /// <p>
 /// <b>Related operations</b>: <a>PutKeyPolicy</a>
 /// </p>
-#[derive(std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone)]
 pub struct GetKeyPolicy {
     _private: (),
 }
@@ -3465,7 +3465,7 @@ impl smithy_http::response::ParseStrictResponse for GetKeyPolicy {
 /// </p>
 /// </li>
 /// </ul>
-#[derive(std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone)]
 pub struct GetKeyRotationStatus {
     _private: (),
 }
@@ -3604,7 +3604,7 @@ impl smithy_http::response::ParseStrictResponse for GetKeyRotationStatus {
 /// </p>
 /// </li>
 /// </ul>
-#[derive(std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone)]
 pub struct GetParametersForImport {
     _private: (),
 }
@@ -3765,7 +3765,7 @@ impl smithy_http::response::ParseStrictResponse for GetParametersForImport {
 /// <p>
 /// <b>Related operations</b>: <a>CreateKey</a>
 /// </p>
-#[derive(std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone)]
 pub struct GetPublicKey {
     _private: (),
 }
@@ -3955,7 +3955,7 @@ impl smithy_http::response::ParseStrictResponse for GetPublicKey {
 /// </p>
 /// </li>
 /// </ul>
-#[derive(std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone)]
 pub struct ImportKeyMaterial {
     _private: (),
 }
@@ -4124,7 +4124,7 @@ impl smithy_http::response::ParseStrictResponse for ImportKeyMaterial {
 /// </p>
 /// </li>
 /// </ul>
-#[derive(std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone)]
 pub struct ListAliases {
     _private: (),
 }
@@ -4250,7 +4250,7 @@ impl smithy_http::response::ParseStrictResponse for ListAliases {
 /// </p>
 /// </li>
 /// </ul>
-#[derive(std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone)]
 pub struct ListGrants {
     _private: (),
 }
@@ -4367,7 +4367,7 @@ impl smithy_http::response::ParseStrictResponse for ListGrants {
 /// </p>
 /// </li>
 /// </ul>
-#[derive(std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone)]
 pub struct ListKeyPolicies {
     _private: (),
 }
@@ -4486,7 +4486,7 @@ impl smithy_http::response::ParseStrictResponse for ListKeyPolicies {
 /// </p>
 /// </li>
 /// </ul>
-#[derive(std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone)]
 pub struct ListKeys {
     _private: (),
 }
@@ -4584,7 +4584,7 @@ impl smithy_http::response::ParseStrictResponse for ListKeys {
 /// </p>
 /// </li>
 /// </ul>
-#[derive(std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone)]
 pub struct ListResourceTags {
     _private: (),
 }
@@ -4705,7 +4705,7 @@ impl smithy_http::response::ParseStrictResponse for ListResourceTags {
 /// </p>
 /// </li>
 /// </ul>
-#[derive(std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone)]
 pub struct ListRetirableGrants {
     _private: (),
 }
@@ -4811,7 +4811,7 @@ impl smithy_http::response::ParseStrictResponse for ListRetirableGrants {
 /// <p>
 /// <b>Related operations</b>: <a>GetKeyPolicy</a>
 /// </p>
-#[derive(std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone)]
 pub struct PutKeyPolicy {
     _private: (),
 }
@@ -5005,7 +5005,7 @@ impl smithy_http::response::ParseStrictResponse for PutKeyPolicy {
 /// </p>
 /// </li>
 /// </ul>
-#[derive(std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone)]
 pub struct ReEncrypt {
     _private: (),
 }
@@ -5182,7 +5182,7 @@ impl smithy_http::response::ParseStrictResponse for ReEncrypt {
 /// </p>
 /// </li>
 /// </ul>
-#[derive(std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone)]
 pub struct RetireGrant {
     _private: (),
 }
@@ -5309,7 +5309,7 @@ impl smithy_http::response::ParseStrictResponse for RetireGrant {
 /// </p>
 /// </li>
 /// </ul>
-#[derive(std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone)]
 pub struct RevokeGrant {
     _private: (),
 }
@@ -5437,7 +5437,7 @@ impl smithy_http::response::ParseStrictResponse for RevokeGrant {
 /// </p>
 /// </li>
 /// </ul>
-#[derive(std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone)]
 pub struct ScheduleKeyDeletion {
     _private: (),
 }
@@ -5577,7 +5577,7 @@ impl smithy_http::response::ParseStrictResponse for ScheduleKeyDeletion {
 /// <p>
 /// <b>Related operations</b>: <a>Verify</a>
 /// </p>
-#[derive(std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone)]
 pub struct Sign {
     _private: (),
 }
@@ -5720,7 +5720,7 @@ impl smithy_http::response::ParseStrictResponse for Sign {
 /// </p>
 /// </li>
 /// </ul>
-#[derive(std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone)]
 pub struct TagResource {
     _private: (),
 }
@@ -5839,7 +5839,7 @@ impl smithy_http::response::ParseStrictResponse for TagResource {
 /// </p>
 /// </li>
 /// </ul>
-#[derive(std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone)]
 pub struct UntagResource {
     _private: (),
 }
@@ -5977,7 +5977,7 @@ impl smithy_http::response::ParseStrictResponse for UntagResource {
 /// </p>
 /// </li>
 /// </ul>
-#[derive(std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone)]
 pub struct UpdateAlias {
     _private: (),
 }
@@ -6130,7 +6130,7 @@ impl smithy_http::response::ParseStrictResponse for UpdateAlias {
 /// </p>
 /// </li>
 /// </ul>
-#[derive(std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone)]
 pub struct UpdateCustomKeyStore {
     _private: (),
 }
@@ -6235,7 +6235,7 @@ impl smithy_http::response::ParseStrictResponse for UpdateCustomKeyStore {
 /// </p>
 /// </li>
 /// </ul>
-#[derive(std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone)]
 pub struct UpdateKeyDescription {
     _private: (),
 }
@@ -6354,7 +6354,7 @@ impl smithy_http::response::ParseStrictResponse for UpdateKeyDescription {
 /// <p>
 /// <b>Related operations</b>: <a>Sign</a>
 /// </p>
-#[derive(std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone)]
 pub struct Verify {
     _private: (),
 }

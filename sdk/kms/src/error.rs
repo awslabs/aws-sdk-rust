@@ -4243,7 +4243,7 @@ impl std::error::Error for NotFoundError {}
 pub mod not_found_error {
     /// A builder for [`NotFoundError`](crate::error::NotFoundError)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         message: std::option::Option<std::string::String>,
     }
@@ -4311,7 +4311,7 @@ impl std::error::Error for KMSInvalidStateError {}
 pub mod kms_invalid_state_error {
     /// A builder for [`KMSInvalidStateError`](crate::error::KMSInvalidStateError)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         message: std::option::Option<std::string::String>,
     }
@@ -4376,7 +4376,7 @@ impl std::error::Error for KMSInvalidSignatureError {}
 pub mod kms_invalid_signature_error {
     /// A builder for [`KMSInvalidSignatureError`](crate::error::KMSInvalidSignatureError)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         message: std::option::Option<std::string::String>,
     }
@@ -4440,7 +4440,7 @@ impl std::error::Error for KMSInternalError {}
 pub mod kms_internal_error {
     /// A builder for [`KMSInternalError`](crate::error::KMSInternalError)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         message: std::option::Option<std::string::String>,
     }
@@ -4504,7 +4504,7 @@ impl std::error::Error for KeyUnavailableError {}
 pub mod key_unavailable_error {
     /// A builder for [`KeyUnavailableError`](crate::error::KeyUnavailableError)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         message: std::option::Option<std::string::String>,
     }
@@ -4583,7 +4583,7 @@ impl std::error::Error for InvalidKeyUsageError {}
 pub mod invalid_key_usage_error {
     /// A builder for [`InvalidKeyUsageError`](crate::error::InvalidKeyUsageError)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         message: std::option::Option<std::string::String>,
     }
@@ -4646,7 +4646,7 @@ impl std::error::Error for InvalidGrantTokenError {}
 pub mod invalid_grant_token_error {
     /// A builder for [`InvalidGrantTokenError`](crate::error::InvalidGrantTokenError)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         message: std::option::Option<std::string::String>,
     }
@@ -4709,7 +4709,7 @@ impl std::error::Error for DisabledError {}
 pub mod disabled_error {
     /// A builder for [`DisabledError`](crate::error::DisabledError)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         message: std::option::Option<std::string::String>,
     }
@@ -4773,7 +4773,7 @@ impl std::error::Error for DependencyTimeoutError {}
 pub mod dependency_timeout_error {
     /// A builder for [`DependencyTimeoutError`](crate::error::DependencyTimeoutError)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         message: std::option::Option<std::string::String>,
     }
@@ -4837,7 +4837,7 @@ impl std::error::Error for InvalidArnError {}
 pub mod invalid_arn_error {
     /// A builder for [`InvalidArnError`](crate::error::InvalidArnError)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         message: std::option::Option<std::string::String>,
     }
@@ -4904,7 +4904,7 @@ impl std::error::Error for CustomKeyStoreNotFoundError {}
 pub mod custom_key_store_not_found_error {
     /// A builder for [`CustomKeyStoreNotFoundError`](crate::error::CustomKeyStoreNotFoundError)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         message: std::option::Option<std::string::String>,
     }
@@ -4972,7 +4972,7 @@ impl std::error::Error for CustomKeyStoreNameInUseError {}
 pub mod custom_key_store_name_in_use_error {
     /// A builder for [`CustomKeyStoreNameInUseError`](crate::error::CustomKeyStoreNameInUseError)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         message: std::option::Option<std::string::String>,
     }
@@ -5058,7 +5058,7 @@ impl std::error::Error for CustomKeyStoreInvalidStateError {}
 pub mod custom_key_store_invalid_state_error {
     /// A builder for [`CustomKeyStoreInvalidStateError`](crate::error::CustomKeyStoreInvalidStateError)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         message: std::option::Option<std::string::String>,
     }
@@ -5131,7 +5131,7 @@ impl std::error::Error for CloudHsmClusterNotRelatedError {}
 pub mod cloud_hsm_cluster_not_related_error {
     /// A builder for [`CloudHsmClusterNotRelatedError`](crate::error::CloudHsmClusterNotRelatedError)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         message: std::option::Option<std::string::String>,
     }
@@ -5198,7 +5198,7 @@ impl std::error::Error for CloudHsmClusterNotFoundError {}
 pub mod cloud_hsm_cluster_not_found_error {
     /// A builder for [`CloudHsmClusterNotFoundError`](crate::error::CloudHsmClusterNotFoundError)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         message: std::option::Option<std::string::String>,
     }
@@ -5266,7 +5266,7 @@ impl std::error::Error for CloudHsmClusterNotActiveError {}
 pub mod cloud_hsm_cluster_not_active_error {
     /// A builder for [`CloudHsmClusterNotActiveError`](crate::error::CloudHsmClusterNotActiveError)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         message: std::option::Option<std::string::String>,
     }
@@ -5360,7 +5360,7 @@ impl std::error::Error for CloudHsmClusterInvalidConfigurationError {}
 pub mod cloud_hsm_cluster_invalid_configuration_error {
     /// A builder for [`CloudHsmClusterInvalidConfigurationError`](crate::error::CloudHsmClusterInvalidConfigurationError)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         message: std::option::Option<std::string::String>,
     }
@@ -5424,7 +5424,7 @@ impl std::error::Error for LimitExceededError {}
 pub mod limit_exceeded_error {
     /// A builder for [`LimitExceededError`](crate::error::LimitExceededError)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         message: std::option::Option<std::string::String>,
     }
@@ -5487,7 +5487,7 @@ impl std::error::Error for TagError {}
 pub mod tag_error {
     /// A builder for [`TagError`](crate::error::TagError)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         message: std::option::Option<std::string::String>,
     }
@@ -5550,7 +5550,7 @@ impl std::error::Error for InvalidGrantIdError {}
 pub mod invalid_grant_id_error {
     /// A builder for [`InvalidGrantIdError`](crate::error::InvalidGrantIdError)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         message: std::option::Option<std::string::String>,
     }
@@ -5618,7 +5618,7 @@ impl std::error::Error for InvalidCiphertextError {}
 pub mod invalid_ciphertext_error {
     /// A builder for [`InvalidCiphertextError`](crate::error::InvalidCiphertextError)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         message: std::option::Option<std::string::String>,
     }
@@ -5684,7 +5684,7 @@ impl std::error::Error for IncorrectKeyError {}
 pub mod incorrect_key_error {
     /// A builder for [`IncorrectKeyError`](crate::error::IncorrectKeyError)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         message: std::option::Option<std::string::String>,
     }
@@ -5751,7 +5751,7 @@ impl std::error::Error for UnsupportedOperationError {}
 pub mod unsupported_operation_error {
     /// A builder for [`UnsupportedOperationError`](crate::error::UnsupportedOperationError)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         message: std::option::Option<std::string::String>,
     }
@@ -5818,7 +5818,7 @@ impl std::error::Error for MalformedPolicyDocumentError {}
 pub mod malformed_policy_document_error {
     /// A builder for [`MalformedPolicyDocumentError`](crate::error::MalformedPolicyDocumentError)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         message: std::option::Option<std::string::String>,
     }
@@ -5882,7 +5882,7 @@ impl std::error::Error for InvalidMarkerError {}
 pub mod invalid_marker_error {
     /// A builder for [`InvalidMarkerError`](crate::error::InvalidMarkerError)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         message: std::option::Option<std::string::String>,
     }
@@ -5946,7 +5946,7 @@ impl std::error::Error for InvalidImportTokenError {}
 pub mod invalid_import_token_error {
     /// A builder for [`InvalidImportTokenError`](crate::error::InvalidImportTokenError)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         message: std::option::Option<std::string::String>,
     }
@@ -6014,7 +6014,7 @@ impl std::error::Error for IncorrectKeyMaterialError {}
 pub mod incorrect_key_material_error {
     /// A builder for [`IncorrectKeyMaterialError`](crate::error::IncorrectKeyMaterialError)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         message: std::option::Option<std::string::String>,
     }
@@ -6078,7 +6078,7 @@ impl std::error::Error for ExpiredImportTokenError {}
 pub mod expired_import_token_error {
     /// A builder for [`ExpiredImportTokenError`](crate::error::ExpiredImportTokenError)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         message: std::option::Option<std::string::String>,
     }
@@ -6146,7 +6146,7 @@ impl std::error::Error for CustomKeyStoreHasCMKsError {}
 pub mod custom_key_store_has_cm_ks_error {
     /// A builder for [`CustomKeyStoreHasCMKsError`](crate::error::CustomKeyStoreHasCMKsError)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         message: std::option::Option<std::string::String>,
     }
@@ -6215,7 +6215,7 @@ impl std::error::Error for IncorrectTrustAnchorError {}
 pub mod incorrect_trust_anchor_error {
     /// A builder for [`IncorrectTrustAnchorError`](crate::error::IncorrectTrustAnchorError)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         message: std::option::Option<std::string::String>,
     }
@@ -6285,7 +6285,7 @@ impl std::error::Error for CloudHsmClusterInUseError {}
 pub mod cloud_hsm_cluster_in_use_error {
     /// A builder for [`CloudHsmClusterInUseError`](crate::error::CloudHsmClusterInUseError)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         message: std::option::Option<std::string::String>,
     }
@@ -6348,7 +6348,7 @@ impl std::error::Error for InvalidAliasNameError {}
 pub mod invalid_alias_name_error {
     /// A builder for [`InvalidAliasNameError`](crate::error::InvalidAliasNameError)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         message: std::option::Option<std::string::String>,
     }
@@ -6412,7 +6412,7 @@ impl std::error::Error for AlreadyExistsError {}
 pub mod already_exists_error {
     /// A builder for [`AlreadyExistsError`](crate::error::AlreadyExistsError)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         message: std::option::Option<std::string::String>,
     }

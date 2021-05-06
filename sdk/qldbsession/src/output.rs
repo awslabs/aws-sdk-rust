@@ -36,7 +36,7 @@ impl std::fmt::Debug for SendCommandOutput {
 pub mod send_command_output {
     /// A builder for [`SendCommandOutput`](crate::output::SendCommandOutput)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         start_session: std::option::Option<crate::model::StartSessionResult>,
         start_transaction: std::option::Option<crate::model::StartTransactionResult>,

@@ -659,70 +659,6 @@ impl<'a> std::fmt::Debug for GenerateClientCertificateInputBody<'a> {
     }
 }
 
-/// <p>Request a new export of a <a>RestApi</a> for a particular <a>Stage</a>.</p>
-#[non_exhaustive]
-#[derive(serde::Serialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct GetExportInputBody<'a> {
-    /// <p>A key-value map of query string parameters that specify properties of the export, depending on the requested <code>exportType</code>. For <code>exportType</code> <code>oas30</code> and <code>swagger</code>, any combination of the following parameters are supported: <code>extensions='integrations'</code> or <code>extensions='apigateway'</code> will export the API with x-amazon-apigateway-integration extensions. <code>extensions='authorizers'</code> will export the API with  x-amazon-apigateway-authorizer extensions. <code>postman</code> will export the API with Postman extensions, allowing for import to the Postman tool</p>
-    #[serde(rename = "parameters")]
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub parameters: &'a std::option::Option<
-        std::collections::HashMap<std::string::String, std::string::String>,
-    >,
-}
-impl<'a> std::fmt::Debug for GetExportInputBody<'a> {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetExportInputBody");
-        formatter.field("parameters", &self.parameters);
-        formatter.finish()
-    }
-}
-
-/// <p>Request a new generated client SDK for a <a>RestApi</a> and <a>Stage</a>.</p>
-#[non_exhaustive]
-#[derive(serde::Serialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct GetSdkInputBody<'a> {
-    /// <p>A string-to-string key-value map of query parameters <code>sdkType</code>-dependent properties of the SDK. For <code>sdkType</code> of <code>objectivec</code> or <code>swift</code>,  a parameter named <code>classPrefix</code> is required. For <code>sdkType</code> of <code>android</code>, parameters named <code>groupId</code>, <code>artifactId</code>, <code>artifactVersion</code>, and <code>invokerPackage</code> are required. For <code>sdkType</code> of <code>java</code>, parameters named <code>serviceName</code> and <code>javaPackageName</code> are required. </p>
-    #[serde(rename = "parameters")]
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub parameters: &'a std::option::Option<
-        std::collections::HashMap<std::string::String, std::string::String>,
-    >,
-}
-impl<'a> std::fmt::Debug for GetSdkInputBody<'a> {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetSdkInputBody");
-        formatter.field("parameters", &self.parameters);
-        formatter.finish()
-    }
-}
-
-/// <p>A POST request to import an API to API Gateway using an input of an API definition file.</p>
-#[non_exhaustive]
-#[derive(serde::Serialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct ImportRestApiInputBody<'a> {
-    /// <p>A key-value map of context-specific query string parameters specifying the behavior of different API importing operations. The following shows operation-specific parameters and their supported values.</p>
-    /// <p> To exclude <a>DocumentationParts</a> from the import, set <code>parameters</code> as <code>ignore=documentation</code>.</p>
-    /// <p> To configure the endpoint type, set <code>parameters</code> as <code>endpointConfigurationTypes=EDGE</code>, <code>endpointConfigurationTypes=REGIONAL</code>, or <code>endpointConfigurationTypes=PRIVATE</code>. The default endpoint type is <code>EDGE</code>.</p>
-    /// <p> To handle imported <code>basepath</code>, set <code>parameters</code> as <code>basepath=ignore</code>, <code>basepath=prepend</code> or <code>basepath=split</code>.</p>
-    /// <p>For example, the AWS CLI command to exclude documentation from the imported API is:</p>
-    /// <pre><code>aws apigateway import-rest-api --parameters ignore=documentation --body 'file:///path/to/imported-api-body.json'</code></pre>
-    /// <p>The AWS CLI command to set the regional endpoint on the imported API is:</p>
-    /// <pre><code>aws apigateway import-rest-api --parameters endpointConfigurationTypes=REGIONAL --body 'file:///path/to/imported-api-body.json'</code></pre>
-    #[serde(rename = "parameters")]
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub parameters: &'a std::option::Option<
-        std::collections::HashMap<std::string::String, std::string::String>,
-    >,
-}
-impl<'a> std::fmt::Debug for ImportRestApiInputBody<'a> {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ImportRestApiInputBody");
-        formatter.field("parameters", &self.parameters);
-        formatter.finish()
-    }
-}
-
 /// <p>Creates a customization of a <a>GatewayResponse</a> of a specified response type and status code on the given <a>RestApi</a>.</p>
 #[non_exhaustive]
 #[derive(serde::Serialize, std::clone::Clone, std::cmp::PartialEq)]
@@ -972,25 +908,6 @@ impl<'a> std::fmt::Debug for PutMethodResponseInputBody<'a> {
         let mut formatter = f.debug_struct("PutMethodResponseInputBody");
         formatter.field("response_parameters", &self.response_parameters);
         formatter.field("response_models", &self.response_models);
-        formatter.finish()
-    }
-}
-
-/// <p>A PUT request to update an existing API, with external API definitions specified as the request body.</p>
-#[non_exhaustive]
-#[derive(serde::Serialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct PutRestApiInputBody<'a> {
-    /// <p>Custom header parameters as part of the request. For example, to exclude <a>DocumentationParts</a> from an imported API, set <code>ignore=documentation</code> as a <code>parameters</code> value, as in the AWS CLI command of <code>aws apigateway import-rest-api --parameters ignore=documentation --body 'file:///path/to/imported-api-body.json'</code>.</p>
-    #[serde(rename = "parameters")]
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub parameters: &'a std::option::Option<
-        std::collections::HashMap<std::string::String, std::string::String>,
-    >,
-}
-impl<'a> std::fmt::Debug for PutRestApiInputBody<'a> {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutRestApiInputBody");
-        formatter.field("parameters", &self.parameters);
         formatter.finish()
     }
 }

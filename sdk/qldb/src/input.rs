@@ -4,7 +4,7 @@ use std::fmt::Write;
 pub mod cancel_journal_kinesis_stream_input {
     /// A builder for [`CancelJournalKinesisStreamInput`](crate::input::CancelJournalKinesisStreamInput)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         ledger_name: std::option::Option<std::string::String>,
         stream_id: std::option::Option<std::string::String>,
@@ -149,7 +149,7 @@ impl CancelJournalKinesisStreamInput {
 pub mod create_ledger_input {
     /// A builder for [`CreateLedgerInput`](crate::input::CreateLedgerInput)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         name: std::option::Option<std::string::String>,
         tags: std::option::Option<
@@ -346,7 +346,7 @@ impl CreateLedgerInput {
 pub mod delete_ledger_input {
     /// A builder for [`DeleteLedgerInput`](crate::input::DeleteLedgerInput)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         name: std::option::Option<std::string::String>,
     }
@@ -478,7 +478,7 @@ impl DeleteLedgerInput {
 pub mod describe_journal_kinesis_stream_input {
     /// A builder for [`DescribeJournalKinesisStreamInput`](crate::input::DescribeJournalKinesisStreamInput)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         ledger_name: std::option::Option<std::string::String>,
         stream_id: std::option::Option<std::string::String>,
@@ -625,7 +625,7 @@ impl DescribeJournalKinesisStreamInput {
 pub mod describe_journal_s3_export_input {
     /// A builder for [`DescribeJournalS3ExportInput`](crate::input::DescribeJournalS3ExportInput)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         name: std::option::Option<std::string::String>,
         export_id: std::option::Option<std::string::String>,
@@ -770,7 +770,7 @@ impl DescribeJournalS3ExportInput {
 pub mod describe_ledger_input {
     /// A builder for [`DescribeLedgerInput`](crate::input::DescribeLedgerInput)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         name: std::option::Option<std::string::String>,
     }
@@ -902,7 +902,7 @@ impl DescribeLedgerInput {
 pub mod export_journal_to_s3_input {
     /// A builder for [`ExportJournalToS3Input`](crate::input::ExportJournalToS3Input)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         name: std::option::Option<std::string::String>,
         inclusive_start_time: std::option::Option<smithy_types::Instant>,
@@ -1123,7 +1123,7 @@ impl ExportJournalToS3Input {
 pub mod get_block_input {
     /// A builder for [`GetBlockInput`](crate::input::GetBlockInput)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         name: std::option::Option<std::string::String>,
         block_address: std::option::Option<crate::model::ValueHolder>,
@@ -1291,7 +1291,7 @@ impl GetBlockInput {
 pub mod get_digest_input {
     /// A builder for [`GetDigestInput`](crate::input::GetDigestInput)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         name: std::option::Option<std::string::String>,
     }
@@ -1418,7 +1418,7 @@ impl GetDigestInput {
 pub mod get_revision_input {
     /// A builder for [`GetRevisionInput`](crate::input::GetRevisionInput)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         name: std::option::Option<std::string::String>,
         block_address: std::option::Option<crate::model::ValueHolder>,
@@ -1600,7 +1600,7 @@ impl GetRevisionInput {
 pub mod list_journal_kinesis_streams_for_ledger_input {
     /// A builder for [`ListJournalKinesisStreamsForLedgerInput`](crate::input::ListJournalKinesisStreamsForLedgerInput)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         ledger_name: std::option::Option<std::string::String>,
         max_results: std::option::Option<i32>,
@@ -1772,7 +1772,7 @@ impl ListJournalKinesisStreamsForLedgerInput {
 pub mod list_journal_s3_exports_input {
     /// A builder for [`ListJournalS3ExportsInput`](crate::input::ListJournalS3ExportsInput)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         max_results: std::option::Option<i32>,
         next_token: std::option::Option<std::string::String>,
@@ -1925,7 +1925,7 @@ impl ListJournalS3ExportsInput {
 pub mod list_journal_s3_exports_for_ledger_input {
     /// A builder for [`ListJournalS3ExportsForLedgerInput`](crate::input::ListJournalS3ExportsForLedgerInput)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         name: std::option::Option<std::string::String>,
         max_results: std::option::Option<i32>,
@@ -2097,7 +2097,7 @@ impl ListJournalS3ExportsForLedgerInput {
 pub mod list_ledgers_input {
     /// A builder for [`ListLedgersInput`](crate::input::ListLedgersInput)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         max_results: std::option::Option<i32>,
         next_token: std::option::Option<std::string::String>,
@@ -2245,7 +2245,7 @@ impl ListLedgersInput {
 pub mod list_tags_for_resource_input {
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         resource_arn: std::option::Option<std::string::String>,
     }
@@ -2381,7 +2381,7 @@ impl ListTagsForResourceInput {
 pub mod stream_journal_to_kinesis_input {
     /// A builder for [`StreamJournalToKinesisInput`](crate::input::StreamJournalToKinesisInput)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         ledger_name: std::option::Option<std::string::String>,
         role_arn: std::option::Option<std::string::String>,
@@ -2636,7 +2636,7 @@ impl StreamJournalToKinesisInput {
 pub mod tag_resource_input {
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         resource_arn: std::option::Option<std::string::String>,
         tags: std::option::Option<
@@ -2800,7 +2800,7 @@ impl TagResourceInput {
 pub mod untag_resource_input {
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         resource_arn: std::option::Option<std::string::String>,
         tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2960,7 +2960,7 @@ impl UntagResourceInput {
 pub mod update_ledger_input {
     /// A builder for [`UpdateLedgerInput`](crate::input::UpdateLedgerInput)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         name: std::option::Option<std::string::String>,
         deletion_protection: std::option::Option<bool>,

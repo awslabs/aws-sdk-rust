@@ -4,7 +4,7 @@
 /// using either the <code>GetLexicon</code> or <code>ListLexicon</code> APIs.</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html">Managing
 /// Lexicons</a>.</p>
-#[derive(std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone)]
 pub struct DeleteLexicon {
     _private: (),
 }
@@ -13,73 +13,74 @@ impl DeleteLexicon {
     pub fn builder() -> crate::input::delete_lexicon_input::Builder {
         crate::input::delete_lexicon_input::Builder::default()
     }
+    fn parse_error(
+        &self,
+        response: &http::Response<bytes::Bytes>,
+    ) -> Result<crate::output::DeleteLexiconOutput, crate::error::DeleteLexiconError> {
+        let body = serde_json::from_slice(response.body().as_ref())
+            .unwrap_or_else(|_| serde_json::json!({}));
+        let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
+
+        let error_code = match generic.code() {
+            Some(code) => code,
+            None => return Err(crate::error::DeleteLexiconError::unhandled(generic)),
+        };
+        Err(match error_code {
+            "LexiconNotFoundException" => crate::error::DeleteLexiconError {
+                meta: generic,
+                kind: crate::error::DeleteLexiconErrorKind::LexiconNotFoundError({
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::lexicon_not_found_error::Builder::default();
+                    let _ = response;
+
+                    let body_slice = response.body().as_ref();
+
+                    let parsed_body: crate::error::LexiconNotFoundError = if body_slice.is_empty() {
+                        // To enable JSON parsing to succeed, replace an empty body
+                        // with an empty JSON body. If a member was required, it will fail slightly later
+                        // during the operation construction phase.
+                        serde_json::from_slice(b"{}")
+                            .map_err(crate::error::DeleteLexiconError::unhandled)?
+                    } else {
+                        serde_json::from_slice(response.body().as_ref())
+                            .map_err(crate::error::DeleteLexiconError::unhandled)?
+                    };
+
+                    output = output.set_message(parsed_body.message);
+                    output.build()
+                }),
+            },
+            "ServiceFailureException" => crate::error::DeleteLexiconError {
+                meta: generic,
+                kind: crate::error::DeleteLexiconErrorKind::ServiceFailureError({
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::service_failure_error::Builder::default();
+                    let _ = response;
+
+                    let body_slice = response.body().as_ref();
+
+                    let parsed_body: crate::error::ServiceFailureError = if body_slice.is_empty() {
+                        // To enable JSON parsing to succeed, replace an empty body
+                        // with an empty JSON body. If a member was required, it will fail slightly later
+                        // during the operation construction phase.
+                        serde_json::from_slice(b"{}")
+                            .map_err(crate::error::DeleteLexiconError::unhandled)?
+                    } else {
+                        serde_json::from_slice(response.body().as_ref())
+                            .map_err(crate::error::DeleteLexiconError::unhandled)?
+                    };
+
+                    output = output.set_message(parsed_body.message);
+                    output.build()
+                }),
+            },
+            _ => crate::error::DeleteLexiconError::generic(generic),
+        })
+    }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
         response: &http::response::Response<impl AsRef<[u8]>>,
     ) -> Result<crate::output::DeleteLexiconOutput, crate::error::DeleteLexiconError> {
-        if crate::aws_json_errors::is_error(&response) && response.status().as_u16() != 200 {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => return Err(crate::error::DeleteLexiconError::unhandled(generic)),
-            };
-            return Err(match error_code {
-                "LexiconNotFoundException" => crate::error::DeleteLexiconError {
-                    meta: generic,
-                    kind: crate::error::DeleteLexiconErrorKind::LexiconNotFoundError({
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::lexicon_not_found_error::Builder::default();
-                        let _ = response;
-
-                        let body_slice = response.body().as_ref();
-
-                        let parsed_body: crate::error::LexiconNotFoundError =
-                            if body_slice.is_empty() {
-                                // To enable JSON parsing to succeed, replace an empty body
-                                // with an empty JSON body. If a member was required, it will fail slightly later
-                                // during the operation construction phase.
-                                serde_json::from_slice(b"{}")
-                                    .map_err(crate::error::DeleteLexiconError::unhandled)?
-                            } else {
-                                serde_json::from_slice(response.body().as_ref())
-                                    .map_err(crate::error::DeleteLexiconError::unhandled)?
-                            };
-
-                        output = output.set_message(parsed_body.message);
-                        output.build()
-                    }),
-                },
-                "ServiceFailureException" => crate::error::DeleteLexiconError {
-                    meta: generic,
-                    kind: crate::error::DeleteLexiconErrorKind::ServiceFailureError({
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::service_failure_error::Builder::default();
-                        let _ = response;
-
-                        let body_slice = response.body().as_ref();
-
-                        let parsed_body: crate::error::ServiceFailureError =
-                            if body_slice.is_empty() {
-                                // To enable JSON parsing to succeed, replace an empty body
-                                // with an empty JSON body. If a member was required, it will fail slightly later
-                                // during the operation construction phase.
-                                serde_json::from_slice(b"{}")
-                                    .map_err(crate::error::DeleteLexiconError::unhandled)?
-                            } else {
-                                serde_json::from_slice(response.body().as_ref())
-                                    .map_err(crate::error::DeleteLexiconError::unhandled)?
-                            };
-
-                        output = output.set_message(parsed_body.message);
-                        output.build()
-                    }),
-                },
-                _ => crate::error::DeleteLexiconError::generic(generic),
-            });
-        }
         Ok({
             #[allow(unused_mut)]
             let mut output = crate::output::delete_lexicon_output::Builder::default();
@@ -101,7 +102,11 @@ impl DeleteLexicon {
 impl smithy_http::response::ParseStrictResponse for DeleteLexicon {
     type Output = Result<crate::output::DeleteLexiconOutput, crate::error::DeleteLexiconError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if crate::aws_json_errors::is_error(&response) && response.status().as_u16() != 200 {
+            self.parse_error(response)
+        } else {
+            self.parse_response(response)
+        }
     }
 }
 
@@ -119,7 +124,7 @@ impl smithy_http::response::ParseStrictResponse for DeleteLexicon {
 /// English voices. </p>
 /// <p>This operation requires permissions to perform the <code>polly:DescribeVoices</code>
 /// action.</p>
-#[derive(std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone)]
 pub struct DescribeVoices {
     _private: (),
 }
@@ -128,73 +133,75 @@ impl DescribeVoices {
     pub fn builder() -> crate::input::describe_voices_input::Builder {
         crate::input::describe_voices_input::Builder::default()
     }
+    fn parse_error(
+        &self,
+        response: &http::Response<bytes::Bytes>,
+    ) -> Result<crate::output::DescribeVoicesOutput, crate::error::DescribeVoicesError> {
+        let body = serde_json::from_slice(response.body().as_ref())
+            .unwrap_or_else(|_| serde_json::json!({}));
+        let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
+
+        let error_code = match generic.code() {
+            Some(code) => code,
+            None => return Err(crate::error::DescribeVoicesError::unhandled(generic)),
+        };
+        Err(match error_code {
+            "InvalidNextTokenException" => crate::error::DescribeVoicesError {
+                meta: generic,
+                kind: crate::error::DescribeVoicesErrorKind::InvalidNextTokenError({
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_next_token_error::Builder::default();
+                    let _ = response;
+
+                    let body_slice = response.body().as_ref();
+
+                    let parsed_body: crate::error::InvalidNextTokenError = if body_slice.is_empty()
+                    {
+                        // To enable JSON parsing to succeed, replace an empty body
+                        // with an empty JSON body. If a member was required, it will fail slightly later
+                        // during the operation construction phase.
+                        serde_json::from_slice(b"{}")
+                            .map_err(crate::error::DescribeVoicesError::unhandled)?
+                    } else {
+                        serde_json::from_slice(response.body().as_ref())
+                            .map_err(crate::error::DescribeVoicesError::unhandled)?
+                    };
+
+                    output = output.set_message(parsed_body.message);
+                    output.build()
+                }),
+            },
+            "ServiceFailureException" => crate::error::DescribeVoicesError {
+                meta: generic,
+                kind: crate::error::DescribeVoicesErrorKind::ServiceFailureError({
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::service_failure_error::Builder::default();
+                    let _ = response;
+
+                    let body_slice = response.body().as_ref();
+
+                    let parsed_body: crate::error::ServiceFailureError = if body_slice.is_empty() {
+                        // To enable JSON parsing to succeed, replace an empty body
+                        // with an empty JSON body. If a member was required, it will fail slightly later
+                        // during the operation construction phase.
+                        serde_json::from_slice(b"{}")
+                            .map_err(crate::error::DescribeVoicesError::unhandled)?
+                    } else {
+                        serde_json::from_slice(response.body().as_ref())
+                            .map_err(crate::error::DescribeVoicesError::unhandled)?
+                    };
+
+                    output = output.set_message(parsed_body.message);
+                    output.build()
+                }),
+            },
+            _ => crate::error::DescribeVoicesError::generic(generic),
+        })
+    }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
         response: &http::response::Response<impl AsRef<[u8]>>,
     ) -> Result<crate::output::DescribeVoicesOutput, crate::error::DescribeVoicesError> {
-        if crate::aws_json_errors::is_error(&response) && response.status().as_u16() != 200 {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => return Err(crate::error::DescribeVoicesError::unhandled(generic)),
-            };
-            return Err(match error_code {
-                "InvalidNextTokenException" => crate::error::DescribeVoicesError {
-                    meta: generic,
-                    kind: crate::error::DescribeVoicesErrorKind::InvalidNextTokenError({
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::invalid_next_token_error::Builder::default();
-                        let _ = response;
-
-                        let body_slice = response.body().as_ref();
-
-                        let parsed_body: crate::error::InvalidNextTokenError =
-                            if body_slice.is_empty() {
-                                // To enable JSON parsing to succeed, replace an empty body
-                                // with an empty JSON body. If a member was required, it will fail slightly later
-                                // during the operation construction phase.
-                                serde_json::from_slice(b"{}")
-                                    .map_err(crate::error::DescribeVoicesError::unhandled)?
-                            } else {
-                                serde_json::from_slice(response.body().as_ref())
-                                    .map_err(crate::error::DescribeVoicesError::unhandled)?
-                            };
-
-                        output = output.set_message(parsed_body.message);
-                        output.build()
-                    }),
-                },
-                "ServiceFailureException" => crate::error::DescribeVoicesError {
-                    meta: generic,
-                    kind: crate::error::DescribeVoicesErrorKind::ServiceFailureError({
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::service_failure_error::Builder::default();
-                        let _ = response;
-
-                        let body_slice = response.body().as_ref();
-
-                        let parsed_body: crate::error::ServiceFailureError =
-                            if body_slice.is_empty() {
-                                // To enable JSON parsing to succeed, replace an empty body
-                                // with an empty JSON body. If a member was required, it will fail slightly later
-                                // during the operation construction phase.
-                                serde_json::from_slice(b"{}")
-                                    .map_err(crate::error::DescribeVoicesError::unhandled)?
-                            } else {
-                                serde_json::from_slice(response.body().as_ref())
-                                    .map_err(crate::error::DescribeVoicesError::unhandled)?
-                            };
-
-                        output = output.set_message(parsed_body.message);
-                        output.build()
-                    }),
-                },
-                _ => crate::error::DescribeVoicesError::generic(generic),
-            });
-        }
         Ok({
             #[allow(unused_mut)]
             let mut output = crate::output::describe_voices_output::Builder::default();
@@ -233,14 +240,18 @@ impl DescribeVoices {
 impl smithy_http::response::ParseStrictResponse for DescribeVoices {
     type Output = Result<crate::output::DescribeVoicesOutput, crate::error::DescribeVoicesError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if crate::aws_json_errors::is_error(&response) && response.status().as_u16() != 200 {
+            self.parse_error(response)
+        } else {
+            self.parse_response(response)
+        }
     }
 }
 
 /// <p>Returns the content of the specified pronunciation lexicon stored in an AWS Region. For
 /// more information, see <a href="https://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html">Managing
 /// Lexicons</a>.</p>
-#[derive(std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone)]
 pub struct GetLexicon {
     _private: (),
 }
@@ -249,73 +260,74 @@ impl GetLexicon {
     pub fn builder() -> crate::input::get_lexicon_input::Builder {
         crate::input::get_lexicon_input::Builder::default()
     }
+    fn parse_error(
+        &self,
+        response: &http::Response<bytes::Bytes>,
+    ) -> Result<crate::output::GetLexiconOutput, crate::error::GetLexiconError> {
+        let body = serde_json::from_slice(response.body().as_ref())
+            .unwrap_or_else(|_| serde_json::json!({}));
+        let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
+
+        let error_code = match generic.code() {
+            Some(code) => code,
+            None => return Err(crate::error::GetLexiconError::unhandled(generic)),
+        };
+        Err(match error_code {
+            "LexiconNotFoundException" => crate::error::GetLexiconError {
+                meta: generic,
+                kind: crate::error::GetLexiconErrorKind::LexiconNotFoundError({
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::lexicon_not_found_error::Builder::default();
+                    let _ = response;
+
+                    let body_slice = response.body().as_ref();
+
+                    let parsed_body: crate::error::LexiconNotFoundError = if body_slice.is_empty() {
+                        // To enable JSON parsing to succeed, replace an empty body
+                        // with an empty JSON body. If a member was required, it will fail slightly later
+                        // during the operation construction phase.
+                        serde_json::from_slice(b"{}")
+                            .map_err(crate::error::GetLexiconError::unhandled)?
+                    } else {
+                        serde_json::from_slice(response.body().as_ref())
+                            .map_err(crate::error::GetLexiconError::unhandled)?
+                    };
+
+                    output = output.set_message(parsed_body.message);
+                    output.build()
+                }),
+            },
+            "ServiceFailureException" => crate::error::GetLexiconError {
+                meta: generic,
+                kind: crate::error::GetLexiconErrorKind::ServiceFailureError({
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::service_failure_error::Builder::default();
+                    let _ = response;
+
+                    let body_slice = response.body().as_ref();
+
+                    let parsed_body: crate::error::ServiceFailureError = if body_slice.is_empty() {
+                        // To enable JSON parsing to succeed, replace an empty body
+                        // with an empty JSON body. If a member was required, it will fail slightly later
+                        // during the operation construction phase.
+                        serde_json::from_slice(b"{}")
+                            .map_err(crate::error::GetLexiconError::unhandled)?
+                    } else {
+                        serde_json::from_slice(response.body().as_ref())
+                            .map_err(crate::error::GetLexiconError::unhandled)?
+                    };
+
+                    output = output.set_message(parsed_body.message);
+                    output.build()
+                }),
+            },
+            _ => crate::error::GetLexiconError::generic(generic),
+        })
+    }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
         response: &http::response::Response<impl AsRef<[u8]>>,
     ) -> Result<crate::output::GetLexiconOutput, crate::error::GetLexiconError> {
-        if crate::aws_json_errors::is_error(&response) && response.status().as_u16() != 200 {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => return Err(crate::error::GetLexiconError::unhandled(generic)),
-            };
-            return Err(match error_code {
-                "LexiconNotFoundException" => crate::error::GetLexiconError {
-                    meta: generic,
-                    kind: crate::error::GetLexiconErrorKind::LexiconNotFoundError({
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::lexicon_not_found_error::Builder::default();
-                        let _ = response;
-
-                        let body_slice = response.body().as_ref();
-
-                        let parsed_body: crate::error::LexiconNotFoundError =
-                            if body_slice.is_empty() {
-                                // To enable JSON parsing to succeed, replace an empty body
-                                // with an empty JSON body. If a member was required, it will fail slightly later
-                                // during the operation construction phase.
-                                serde_json::from_slice(b"{}")
-                                    .map_err(crate::error::GetLexiconError::unhandled)?
-                            } else {
-                                serde_json::from_slice(response.body().as_ref())
-                                    .map_err(crate::error::GetLexiconError::unhandled)?
-                            };
-
-                        output = output.set_message(parsed_body.message);
-                        output.build()
-                    }),
-                },
-                "ServiceFailureException" => crate::error::GetLexiconError {
-                    meta: generic,
-                    kind: crate::error::GetLexiconErrorKind::ServiceFailureError({
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::service_failure_error::Builder::default();
-                        let _ = response;
-
-                        let body_slice = response.body().as_ref();
-
-                        let parsed_body: crate::error::ServiceFailureError =
-                            if body_slice.is_empty() {
-                                // To enable JSON parsing to succeed, replace an empty body
-                                // with an empty JSON body. If a member was required, it will fail slightly later
-                                // during the operation construction phase.
-                                serde_json::from_slice(b"{}")
-                                    .map_err(crate::error::GetLexiconError::unhandled)?
-                            } else {
-                                serde_json::from_slice(response.body().as_ref())
-                                    .map_err(crate::error::GetLexiconError::unhandled)?
-                            };
-
-                        output = output.set_message(parsed_body.message);
-                        output.build()
-                    }),
-                },
-                _ => crate::error::GetLexiconError::generic(generic),
-            });
-        }
         Ok({
             #[allow(unused_mut)]
             let mut output = crate::output::get_lexicon_output::Builder::default();
@@ -352,14 +364,18 @@ impl GetLexicon {
 impl smithy_http::response::ParseStrictResponse for GetLexicon {
     type Output = Result<crate::output::GetLexiconOutput, crate::error::GetLexiconError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if crate::aws_json_errors::is_error(&response) && response.status().as_u16() != 200 {
+            self.parse_error(response)
+        } else {
+            self.parse_response(response)
+        }
     }
 }
 
 /// <p>Retrieves a specific SpeechSynthesisTask object based on its TaskID. This object contains
 /// information about the given speech synthesis task, including the status of the task, and a
 /// link to the S3 bucket containing the output of the task.</p>
-#[derive(std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone)]
 pub struct GetSpeechSynthesisTask {
     _private: (),
 }
@@ -368,38 +384,86 @@ impl GetSpeechSynthesisTask {
     pub fn builder() -> crate::input::get_speech_synthesis_task_input::Builder {
         crate::input::get_speech_synthesis_task_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    fn from_response(
-        response: &http::response::Response<impl AsRef<[u8]>>,
+    fn parse_error(
+        &self,
+        response: &http::Response<bytes::Bytes>,
     ) -> Result<
         crate::output::GetSpeechSynthesisTaskOutput,
         crate::error::GetSpeechSynthesisTaskError,
     > {
-        if crate::aws_json_errors::is_error(&response) && response.status().as_u16() != 200 {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
+        let body = serde_json::from_slice(response.body().as_ref())
+            .unwrap_or_else(|_| serde_json::json!({}));
+        let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
 
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => {
-                    return Err(crate::error::GetSpeechSynthesisTaskError::unhandled(
-                        generic,
-                    ))
-                }
-            };
-            return Err(match error_code {
-                "InvalidTaskIdException" => crate::error::GetSpeechSynthesisTaskError {
-                    meta: generic,
-                    kind: crate::error::GetSpeechSynthesisTaskErrorKind::InvalidTaskIdError({
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::invalid_task_id_error::Builder::default();
-                        let _ = response;
+        let error_code = match generic.code() {
+            Some(code) => code,
+            None => {
+                return Err(crate::error::GetSpeechSynthesisTaskError::unhandled(
+                    generic,
+                ))
+            }
+        };
+        Err(match error_code {
+            "InvalidTaskIdException" => crate::error::GetSpeechSynthesisTaskError {
+                meta: generic,
+                kind: crate::error::GetSpeechSynthesisTaskErrorKind::InvalidTaskIdError({
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_task_id_error::Builder::default();
+                    let _ = response;
 
-                        let body_slice = response.body().as_ref();
+                    let body_slice = response.body().as_ref();
 
-                        let parsed_body: crate::error::InvalidTaskIdError = if body_slice.is_empty()
-                        {
+                    let parsed_body: crate::error::InvalidTaskIdError = if body_slice.is_empty() {
+                        // To enable JSON parsing to succeed, replace an empty body
+                        // with an empty JSON body. If a member was required, it will fail slightly later
+                        // during the operation construction phase.
+                        serde_json::from_slice(b"{}")
+                            .map_err(crate::error::GetSpeechSynthesisTaskError::unhandled)?
+                    } else {
+                        serde_json::from_slice(response.body().as_ref())
+                            .map_err(crate::error::GetSpeechSynthesisTaskError::unhandled)?
+                    };
+
+                    output = output.set_message(parsed_body.message);
+                    output.build()
+                }),
+            },
+            "ServiceFailureException" => crate::error::GetSpeechSynthesisTaskError {
+                meta: generic,
+                kind: crate::error::GetSpeechSynthesisTaskErrorKind::ServiceFailureError({
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::service_failure_error::Builder::default();
+                    let _ = response;
+
+                    let body_slice = response.body().as_ref();
+
+                    let parsed_body: crate::error::ServiceFailureError = if body_slice.is_empty() {
+                        // To enable JSON parsing to succeed, replace an empty body
+                        // with an empty JSON body. If a member was required, it will fail slightly later
+                        // during the operation construction phase.
+                        serde_json::from_slice(b"{}")
+                            .map_err(crate::error::GetSpeechSynthesisTaskError::unhandled)?
+                    } else {
+                        serde_json::from_slice(response.body().as_ref())
+                            .map_err(crate::error::GetSpeechSynthesisTaskError::unhandled)?
+                    };
+
+                    output = output.set_message(parsed_body.message);
+                    output.build()
+                }),
+            },
+            "SynthesisTaskNotFoundException" => crate::error::GetSpeechSynthesisTaskError {
+                meta: generic,
+                kind: crate::error::GetSpeechSynthesisTaskErrorKind::SynthesisTaskNotFoundError({
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::synthesis_task_not_found_error::Builder::default();
+                    let _ = response;
+
+                    let body_slice = response.body().as_ref();
+
+                    let parsed_body: crate::error::SynthesisTaskNotFoundError =
+                        if body_slice.is_empty() {
                             // To enable JSON parsing to succeed, replace an empty body
                             // with an empty JSON body. If a member was required, it will fail slightly later
                             // during the operation construction phase.
@@ -410,68 +474,20 @@ impl GetSpeechSynthesisTask {
                                 .map_err(crate::error::GetSpeechSynthesisTaskError::unhandled)?
                         };
 
-                        output = output.set_message(parsed_body.message);
-                        output.build()
-                    }),
-                },
-                "ServiceFailureException" => crate::error::GetSpeechSynthesisTaskError {
-                    meta: generic,
-                    kind: crate::error::GetSpeechSynthesisTaskErrorKind::ServiceFailureError({
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::service_failure_error::Builder::default();
-                        let _ = response;
-
-                        let body_slice = response.body().as_ref();
-
-                        let parsed_body: crate::error::ServiceFailureError =
-                            if body_slice.is_empty() {
-                                // To enable JSON parsing to succeed, replace an empty body
-                                // with an empty JSON body. If a member was required, it will fail slightly later
-                                // during the operation construction phase.
-                                serde_json::from_slice(b"{}")
-                                    .map_err(crate::error::GetSpeechSynthesisTaskError::unhandled)?
-                            } else {
-                                serde_json::from_slice(response.body().as_ref())
-                                    .map_err(crate::error::GetSpeechSynthesisTaskError::unhandled)?
-                            };
-
-                        output = output.set_message(parsed_body.message);
-                        output.build()
-                    }),
-                },
-                "SynthesisTaskNotFoundException" => crate::error::GetSpeechSynthesisTaskError {
-                    meta: generic,
-                    kind: crate::error::GetSpeechSynthesisTaskErrorKind::SynthesisTaskNotFoundError(
-                        {
-                            #[allow(unused_mut)]
-                            let mut output =
-                                crate::error::synthesis_task_not_found_error::Builder::default();
-                            let _ = response;
-
-                            let body_slice = response.body().as_ref();
-
-                            let parsed_body: crate::error::SynthesisTaskNotFoundError =
-                                if body_slice.is_empty() {
-                                    // To enable JSON parsing to succeed, replace an empty body
-                                    // with an empty JSON body. If a member was required, it will fail slightly later
-                                    // during the operation construction phase.
-                                    serde_json::from_slice(b"{}").map_err(
-                                        crate::error::GetSpeechSynthesisTaskError::unhandled,
-                                    )?
-                                } else {
-                                    serde_json::from_slice(response.body().as_ref()).map_err(
-                                        crate::error::GetSpeechSynthesisTaskError::unhandled,
-                                    )?
-                                };
-
-                            output = output.set_message(parsed_body.message);
-                            output.build()
-                        },
-                    ),
-                },
-                _ => crate::error::GetSpeechSynthesisTaskError::generic(generic),
-            });
-        }
+                    output = output.set_message(parsed_body.message);
+                    output.build()
+                }),
+            },
+            _ => crate::error::GetSpeechSynthesisTaskError::generic(generic),
+        })
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn from_response(
+        response: &http::response::Response<impl AsRef<[u8]>>,
+    ) -> Result<
+        crate::output::GetSpeechSynthesisTaskOutput,
+        crate::error::GetSpeechSynthesisTaskError,
+    > {
         Ok({
             #[allow(unused_mut)]
             let mut output = crate::output::get_speech_synthesis_task_output::Builder::default();
@@ -515,14 +531,18 @@ impl smithy_http::response::ParseStrictResponse for GetSpeechSynthesisTask {
         crate::error::GetSpeechSynthesisTaskError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if crate::aws_json_errors::is_error(&response) && response.status().as_u16() != 200 {
+            self.parse_error(response)
+        } else {
+            self.parse_response(response)
+        }
     }
 }
 
 /// <p>Returns a list of pronunciation lexicons stored in an AWS Region. For more information,
 /// see <a href="https://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html">Managing
 /// Lexicons</a>.</p>
-#[derive(std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone)]
 pub struct ListLexicons {
     _private: (),
 }
@@ -531,73 +551,75 @@ impl ListLexicons {
     pub fn builder() -> crate::input::list_lexicons_input::Builder {
         crate::input::list_lexicons_input::Builder::default()
     }
+    fn parse_error(
+        &self,
+        response: &http::Response<bytes::Bytes>,
+    ) -> Result<crate::output::ListLexiconsOutput, crate::error::ListLexiconsError> {
+        let body = serde_json::from_slice(response.body().as_ref())
+            .unwrap_or_else(|_| serde_json::json!({}));
+        let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
+
+        let error_code = match generic.code() {
+            Some(code) => code,
+            None => return Err(crate::error::ListLexiconsError::unhandled(generic)),
+        };
+        Err(match error_code {
+            "InvalidNextTokenException" => crate::error::ListLexiconsError {
+                meta: generic,
+                kind: crate::error::ListLexiconsErrorKind::InvalidNextTokenError({
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_next_token_error::Builder::default();
+                    let _ = response;
+
+                    let body_slice = response.body().as_ref();
+
+                    let parsed_body: crate::error::InvalidNextTokenError = if body_slice.is_empty()
+                    {
+                        // To enable JSON parsing to succeed, replace an empty body
+                        // with an empty JSON body. If a member was required, it will fail slightly later
+                        // during the operation construction phase.
+                        serde_json::from_slice(b"{}")
+                            .map_err(crate::error::ListLexiconsError::unhandled)?
+                    } else {
+                        serde_json::from_slice(response.body().as_ref())
+                            .map_err(crate::error::ListLexiconsError::unhandled)?
+                    };
+
+                    output = output.set_message(parsed_body.message);
+                    output.build()
+                }),
+            },
+            "ServiceFailureException" => crate::error::ListLexiconsError {
+                meta: generic,
+                kind: crate::error::ListLexiconsErrorKind::ServiceFailureError({
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::service_failure_error::Builder::default();
+                    let _ = response;
+
+                    let body_slice = response.body().as_ref();
+
+                    let parsed_body: crate::error::ServiceFailureError = if body_slice.is_empty() {
+                        // To enable JSON parsing to succeed, replace an empty body
+                        // with an empty JSON body. If a member was required, it will fail slightly later
+                        // during the operation construction phase.
+                        serde_json::from_slice(b"{}")
+                            .map_err(crate::error::ListLexiconsError::unhandled)?
+                    } else {
+                        serde_json::from_slice(response.body().as_ref())
+                            .map_err(crate::error::ListLexiconsError::unhandled)?
+                    };
+
+                    output = output.set_message(parsed_body.message);
+                    output.build()
+                }),
+            },
+            _ => crate::error::ListLexiconsError::generic(generic),
+        })
+    }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
         response: &http::response::Response<impl AsRef<[u8]>>,
     ) -> Result<crate::output::ListLexiconsOutput, crate::error::ListLexiconsError> {
-        if crate::aws_json_errors::is_error(&response) && response.status().as_u16() != 200 {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => return Err(crate::error::ListLexiconsError::unhandled(generic)),
-            };
-            return Err(match error_code {
-                "InvalidNextTokenException" => crate::error::ListLexiconsError {
-                    meta: generic,
-                    kind: crate::error::ListLexiconsErrorKind::InvalidNextTokenError({
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::invalid_next_token_error::Builder::default();
-                        let _ = response;
-
-                        let body_slice = response.body().as_ref();
-
-                        let parsed_body: crate::error::InvalidNextTokenError =
-                            if body_slice.is_empty() {
-                                // To enable JSON parsing to succeed, replace an empty body
-                                // with an empty JSON body. If a member was required, it will fail slightly later
-                                // during the operation construction phase.
-                                serde_json::from_slice(b"{}")
-                                    .map_err(crate::error::ListLexiconsError::unhandled)?
-                            } else {
-                                serde_json::from_slice(response.body().as_ref())
-                                    .map_err(crate::error::ListLexiconsError::unhandled)?
-                            };
-
-                        output = output.set_message(parsed_body.message);
-                        output.build()
-                    }),
-                },
-                "ServiceFailureException" => crate::error::ListLexiconsError {
-                    meta: generic,
-                    kind: crate::error::ListLexiconsErrorKind::ServiceFailureError({
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::service_failure_error::Builder::default();
-                        let _ = response;
-
-                        let body_slice = response.body().as_ref();
-
-                        let parsed_body: crate::error::ServiceFailureError =
-                            if body_slice.is_empty() {
-                                // To enable JSON parsing to succeed, replace an empty body
-                                // with an empty JSON body. If a member was required, it will fail slightly later
-                                // during the operation construction phase.
-                                serde_json::from_slice(b"{}")
-                                    .map_err(crate::error::ListLexiconsError::unhandled)?
-                            } else {
-                                serde_json::from_slice(response.body().as_ref())
-                                    .map_err(crate::error::ListLexiconsError::unhandled)?
-                            };
-
-                        output = output.set_message(parsed_body.message);
-                        output.build()
-                    }),
-                },
-                _ => crate::error::ListLexiconsError::generic(generic),
-            });
-        }
         Ok({
             #[allow(unused_mut)]
             let mut output = crate::output::list_lexicons_output::Builder::default();
@@ -634,14 +656,18 @@ impl ListLexicons {
 impl smithy_http::response::ParseStrictResponse for ListLexicons {
     type Output = Result<crate::output::ListLexiconsOutput, crate::error::ListLexiconsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if crate::aws_json_errors::is_error(&response) && response.status().as_u16() != 200 {
+            self.parse_error(response)
+        } else {
+            self.parse_response(response)
+        }
     }
 }
 
 /// <p>Returns a list of SpeechSynthesisTask objects ordered by their creation date. This
 /// operation can filter the tasks by their status, for example, allowing users to list only tasks
 /// that are completed.</p>
-#[derive(std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone)]
 pub struct ListSpeechSynthesisTasks {
     _private: (),
 }
@@ -650,6 +676,78 @@ impl ListSpeechSynthesisTasks {
     pub fn builder() -> crate::input::list_speech_synthesis_tasks_input::Builder {
         crate::input::list_speech_synthesis_tasks_input::Builder::default()
     }
+    fn parse_error(
+        &self,
+        response: &http::Response<bytes::Bytes>,
+    ) -> Result<
+        crate::output::ListSpeechSynthesisTasksOutput,
+        crate::error::ListSpeechSynthesisTasksError,
+    > {
+        let body = serde_json::from_slice(response.body().as_ref())
+            .unwrap_or_else(|_| serde_json::json!({}));
+        let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
+
+        let error_code = match generic.code() {
+            Some(code) => code,
+            None => {
+                return Err(crate::error::ListSpeechSynthesisTasksError::unhandled(
+                    generic,
+                ))
+            }
+        };
+        Err(match error_code {
+            "InvalidNextTokenException" => crate::error::ListSpeechSynthesisTasksError {
+                meta: generic,
+                kind: crate::error::ListSpeechSynthesisTasksErrorKind::InvalidNextTokenError({
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_next_token_error::Builder::default();
+                    let _ = response;
+
+                    let body_slice = response.body().as_ref();
+
+                    let parsed_body: crate::error::InvalidNextTokenError = if body_slice.is_empty()
+                    {
+                        // To enable JSON parsing to succeed, replace an empty body
+                        // with an empty JSON body. If a member was required, it will fail slightly later
+                        // during the operation construction phase.
+                        serde_json::from_slice(b"{}")
+                            .map_err(crate::error::ListSpeechSynthesisTasksError::unhandled)?
+                    } else {
+                        serde_json::from_slice(response.body().as_ref())
+                            .map_err(crate::error::ListSpeechSynthesisTasksError::unhandled)?
+                    };
+
+                    output = output.set_message(parsed_body.message);
+                    output.build()
+                }),
+            },
+            "ServiceFailureException" => crate::error::ListSpeechSynthesisTasksError {
+                meta: generic,
+                kind: crate::error::ListSpeechSynthesisTasksErrorKind::ServiceFailureError({
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::service_failure_error::Builder::default();
+                    let _ = response;
+
+                    let body_slice = response.body().as_ref();
+
+                    let parsed_body: crate::error::ServiceFailureError = if body_slice.is_empty() {
+                        // To enable JSON parsing to succeed, replace an empty body
+                        // with an empty JSON body. If a member was required, it will fail slightly later
+                        // during the operation construction phase.
+                        serde_json::from_slice(b"{}")
+                            .map_err(crate::error::ListSpeechSynthesisTasksError::unhandled)?
+                    } else {
+                        serde_json::from_slice(response.body().as_ref())
+                            .map_err(crate::error::ListSpeechSynthesisTasksError::unhandled)?
+                    };
+
+                    output = output.set_message(parsed_body.message);
+                    output.build()
+                }),
+            },
+            _ => crate::error::ListSpeechSynthesisTasksError::generic(generic),
+        })
+    }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
         response: &http::response::Response<impl AsRef<[u8]>>,
@@ -657,75 +755,6 @@ impl ListSpeechSynthesisTasks {
         crate::output::ListSpeechSynthesisTasksOutput,
         crate::error::ListSpeechSynthesisTasksError,
     > {
-        if crate::aws_json_errors::is_error(&response) && response.status().as_u16() != 200 {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => {
-                    return Err(crate::error::ListSpeechSynthesisTasksError::unhandled(
-                        generic,
-                    ))
-                }
-            };
-            return Err(match error_code {
-                "InvalidNextTokenException" => crate::error::ListSpeechSynthesisTasksError {
-                    meta: generic,
-                    kind: crate::error::ListSpeechSynthesisTasksErrorKind::InvalidNextTokenError({
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::invalid_next_token_error::Builder::default();
-                        let _ = response;
-
-                        let body_slice = response.body().as_ref();
-
-                        let parsed_body: crate::error::InvalidNextTokenError = if body_slice
-                            .is_empty()
-                        {
-                            // To enable JSON parsing to succeed, replace an empty body
-                            // with an empty JSON body. If a member was required, it will fail slightly later
-                            // during the operation construction phase.
-                            serde_json::from_slice(b"{}")
-                                .map_err(crate::error::ListSpeechSynthesisTasksError::unhandled)?
-                        } else {
-                            serde_json::from_slice(response.body().as_ref())
-                                .map_err(crate::error::ListSpeechSynthesisTasksError::unhandled)?
-                        };
-
-                        output = output.set_message(parsed_body.message);
-                        output.build()
-                    }),
-                },
-                "ServiceFailureException" => crate::error::ListSpeechSynthesisTasksError {
-                    meta: generic,
-                    kind: crate::error::ListSpeechSynthesisTasksErrorKind::ServiceFailureError({
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::service_failure_error::Builder::default();
-                        let _ = response;
-
-                        let body_slice = response.body().as_ref();
-
-                        let parsed_body: crate::error::ServiceFailureError = if body_slice
-                            .is_empty()
-                        {
-                            // To enable JSON parsing to succeed, replace an empty body
-                            // with an empty JSON body. If a member was required, it will fail slightly later
-                            // during the operation construction phase.
-                            serde_json::from_slice(b"{}")
-                                .map_err(crate::error::ListSpeechSynthesisTasksError::unhandled)?
-                        } else {
-                            serde_json::from_slice(response.body().as_ref())
-                                .map_err(crate::error::ListSpeechSynthesisTasksError::unhandled)?
-                        };
-
-                        output = output.set_message(parsed_body.message);
-                        output.build()
-                    }),
-                },
-                _ => crate::error::ListSpeechSynthesisTasksError::generic(generic),
-            });
-        }
         Ok({
             #[allow(unused_mut)]
             let mut output = crate::output::list_speech_synthesis_tasks_output::Builder::default();
@@ -770,7 +799,11 @@ impl smithy_http::response::ParseStrictResponse for ListSpeechSynthesisTasks {
         crate::error::ListSpeechSynthesisTasksError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if crate::aws_json_errors::is_error(&response) && response.status().as_u16() != 200 {
+            self.parse_error(response)
+        } else {
+            self.parse_response(response)
+        }
     }
 }
 
@@ -780,7 +813,7 @@ impl smithy_http::response::ParseStrictResponse for ListSpeechSynthesisTasks {
 /// the SynthesizeSpeech operation.</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html">Managing
 /// Lexicons</a>.</p>
-#[derive(std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone)]
 pub struct PutLexicon {
     _private: (),
 }
@@ -789,203 +822,203 @@ impl PutLexicon {
     pub fn builder() -> crate::input::put_lexicon_input::Builder {
         crate::input::put_lexicon_input::Builder::default()
     }
+    fn parse_error(
+        &self,
+        response: &http::Response<bytes::Bytes>,
+    ) -> Result<crate::output::PutLexiconOutput, crate::error::PutLexiconError> {
+        let body = serde_json::from_slice(response.body().as_ref())
+            .unwrap_or_else(|_| serde_json::json!({}));
+        let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
+
+        let error_code = match generic.code() {
+            Some(code) => code,
+            None => return Err(crate::error::PutLexiconError::unhandled(generic)),
+        };
+        Err(match error_code {
+            "InvalidLexiconException" => crate::error::PutLexiconError {
+                meta: generic,
+                kind: crate::error::PutLexiconErrorKind::InvalidLexiconError({
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_lexicon_error::Builder::default();
+                    let _ = response;
+
+                    let body_slice = response.body().as_ref();
+
+                    let parsed_body: crate::error::InvalidLexiconError = if body_slice.is_empty() {
+                        // To enable JSON parsing to succeed, replace an empty body
+                        // with an empty JSON body. If a member was required, it will fail slightly later
+                        // during the operation construction phase.
+                        serde_json::from_slice(b"{}")
+                            .map_err(crate::error::PutLexiconError::unhandled)?
+                    } else {
+                        serde_json::from_slice(response.body().as_ref())
+                            .map_err(crate::error::PutLexiconError::unhandled)?
+                    };
+
+                    output = output.set_message(parsed_body.message);
+                    output.build()
+                }),
+            },
+            "LexiconSizeExceededException" => crate::error::PutLexiconError {
+                meta: generic,
+                kind: crate::error::PutLexiconErrorKind::LexiconSizeExceededError({
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::lexicon_size_exceeded_error::Builder::default();
+                    let _ = response;
+
+                    let body_slice = response.body().as_ref();
+
+                    let parsed_body: crate::error::LexiconSizeExceededError =
+                        if body_slice.is_empty() {
+                            // To enable JSON parsing to succeed, replace an empty body
+                            // with an empty JSON body. If a member was required, it will fail slightly later
+                            // during the operation construction phase.
+                            serde_json::from_slice(b"{}")
+                                .map_err(crate::error::PutLexiconError::unhandled)?
+                        } else {
+                            serde_json::from_slice(response.body().as_ref())
+                                .map_err(crate::error::PutLexiconError::unhandled)?
+                        };
+
+                    output = output.set_message(parsed_body.message);
+                    output.build()
+                }),
+            },
+            "MaxLexemeLengthExceededException" => crate::error::PutLexiconError {
+                meta: generic,
+                kind: crate::error::PutLexiconErrorKind::MaxLexemeLengthExceededError({
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::max_lexeme_length_exceeded_error::Builder::default();
+                    let _ = response;
+
+                    let body_slice = response.body().as_ref();
+
+                    let parsed_body: crate::error::MaxLexemeLengthExceededError =
+                        if body_slice.is_empty() {
+                            // To enable JSON parsing to succeed, replace an empty body
+                            // with an empty JSON body. If a member was required, it will fail slightly later
+                            // during the operation construction phase.
+                            serde_json::from_slice(b"{}")
+                                .map_err(crate::error::PutLexiconError::unhandled)?
+                        } else {
+                            serde_json::from_slice(response.body().as_ref())
+                                .map_err(crate::error::PutLexiconError::unhandled)?
+                        };
+
+                    output = output.set_message(parsed_body.message);
+                    output.build()
+                }),
+            },
+            "MaxLexiconsNumberExceededException" => crate::error::PutLexiconError {
+                meta: generic,
+                kind: crate::error::PutLexiconErrorKind::MaxLexiconsNumberExceededError({
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::max_lexicons_number_exceeded_error::Builder::default();
+                    let _ = response;
+
+                    let body_slice = response.body().as_ref();
+
+                    let parsed_body: crate::error::MaxLexiconsNumberExceededError =
+                        if body_slice.is_empty() {
+                            // To enable JSON parsing to succeed, replace an empty body
+                            // with an empty JSON body. If a member was required, it will fail slightly later
+                            // during the operation construction phase.
+                            serde_json::from_slice(b"{}")
+                                .map_err(crate::error::PutLexiconError::unhandled)?
+                        } else {
+                            serde_json::from_slice(response.body().as_ref())
+                                .map_err(crate::error::PutLexiconError::unhandled)?
+                        };
+
+                    output = output.set_message(parsed_body.message);
+                    output.build()
+                }),
+            },
+            "ServiceFailureException" => crate::error::PutLexiconError {
+                meta: generic,
+                kind: crate::error::PutLexiconErrorKind::ServiceFailureError({
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::service_failure_error::Builder::default();
+                    let _ = response;
+
+                    let body_slice = response.body().as_ref();
+
+                    let parsed_body: crate::error::ServiceFailureError = if body_slice.is_empty() {
+                        // To enable JSON parsing to succeed, replace an empty body
+                        // with an empty JSON body. If a member was required, it will fail slightly later
+                        // during the operation construction phase.
+                        serde_json::from_slice(b"{}")
+                            .map_err(crate::error::PutLexiconError::unhandled)?
+                    } else {
+                        serde_json::from_slice(response.body().as_ref())
+                            .map_err(crate::error::PutLexiconError::unhandled)?
+                    };
+
+                    output = output.set_message(parsed_body.message);
+                    output.build()
+                }),
+            },
+            "UnsupportedPlsAlphabetException" => crate::error::PutLexiconError {
+                meta: generic,
+                kind: crate::error::PutLexiconErrorKind::UnsupportedPlsAlphabetError({
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::unsupported_pls_alphabet_error::Builder::default();
+                    let _ = response;
+
+                    let body_slice = response.body().as_ref();
+
+                    let parsed_body: crate::error::UnsupportedPlsAlphabetError =
+                        if body_slice.is_empty() {
+                            // To enable JSON parsing to succeed, replace an empty body
+                            // with an empty JSON body. If a member was required, it will fail slightly later
+                            // during the operation construction phase.
+                            serde_json::from_slice(b"{}")
+                                .map_err(crate::error::PutLexiconError::unhandled)?
+                        } else {
+                            serde_json::from_slice(response.body().as_ref())
+                                .map_err(crate::error::PutLexiconError::unhandled)?
+                        };
+
+                    output = output.set_message(parsed_body.message);
+                    output.build()
+                }),
+            },
+            "UnsupportedPlsLanguageException" => crate::error::PutLexiconError {
+                meta: generic,
+                kind: crate::error::PutLexiconErrorKind::UnsupportedPlsLanguageError({
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::unsupported_pls_language_error::Builder::default();
+                    let _ = response;
+
+                    let body_slice = response.body().as_ref();
+
+                    let parsed_body: crate::error::UnsupportedPlsLanguageError =
+                        if body_slice.is_empty() {
+                            // To enable JSON parsing to succeed, replace an empty body
+                            // with an empty JSON body. If a member was required, it will fail slightly later
+                            // during the operation construction phase.
+                            serde_json::from_slice(b"{}")
+                                .map_err(crate::error::PutLexiconError::unhandled)?
+                        } else {
+                            serde_json::from_slice(response.body().as_ref())
+                                .map_err(crate::error::PutLexiconError::unhandled)?
+                        };
+
+                    output = output.set_message(parsed_body.message);
+                    output.build()
+                }),
+            },
+            _ => crate::error::PutLexiconError::generic(generic),
+        })
+    }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
         response: &http::response::Response<impl AsRef<[u8]>>,
     ) -> Result<crate::output::PutLexiconOutput, crate::error::PutLexiconError> {
-        if crate::aws_json_errors::is_error(&response) && response.status().as_u16() != 200 {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => return Err(crate::error::PutLexiconError::unhandled(generic)),
-            };
-            return Err(match error_code {
-                "InvalidLexiconException" => crate::error::PutLexiconError {
-                    meta: generic,
-                    kind: crate::error::PutLexiconErrorKind::InvalidLexiconError({
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::invalid_lexicon_error::Builder::default();
-                        let _ = response;
-
-                        let body_slice = response.body().as_ref();
-
-                        let parsed_body: crate::error::InvalidLexiconError =
-                            if body_slice.is_empty() {
-                                // To enable JSON parsing to succeed, replace an empty body
-                                // with an empty JSON body. If a member was required, it will fail slightly later
-                                // during the operation construction phase.
-                                serde_json::from_slice(b"{}")
-                                    .map_err(crate::error::PutLexiconError::unhandled)?
-                            } else {
-                                serde_json::from_slice(response.body().as_ref())
-                                    .map_err(crate::error::PutLexiconError::unhandled)?
-                            };
-
-                        output = output.set_message(parsed_body.message);
-                        output.build()
-                    }),
-                },
-                "LexiconSizeExceededException" => crate::error::PutLexiconError {
-                    meta: generic,
-                    kind: crate::error::PutLexiconErrorKind::LexiconSizeExceededError({
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::lexicon_size_exceeded_error::Builder::default();
-                        let _ = response;
-
-                        let body_slice = response.body().as_ref();
-
-                        let parsed_body: crate::error::LexiconSizeExceededError =
-                            if body_slice.is_empty() {
-                                // To enable JSON parsing to succeed, replace an empty body
-                                // with an empty JSON body. If a member was required, it will fail slightly later
-                                // during the operation construction phase.
-                                serde_json::from_slice(b"{}")
-                                    .map_err(crate::error::PutLexiconError::unhandled)?
-                            } else {
-                                serde_json::from_slice(response.body().as_ref())
-                                    .map_err(crate::error::PutLexiconError::unhandled)?
-                            };
-
-                        output = output.set_message(parsed_body.message);
-                        output.build()
-                    }),
-                },
-                "MaxLexemeLengthExceededException" => crate::error::PutLexiconError {
-                    meta: generic,
-                    kind: crate::error::PutLexiconErrorKind::MaxLexemeLengthExceededError({
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::max_lexeme_length_exceeded_error::Builder::default();
-                        let _ = response;
-
-                        let body_slice = response.body().as_ref();
-
-                        let parsed_body: crate::error::MaxLexemeLengthExceededError =
-                            if body_slice.is_empty() {
-                                // To enable JSON parsing to succeed, replace an empty body
-                                // with an empty JSON body. If a member was required, it will fail slightly later
-                                // during the operation construction phase.
-                                serde_json::from_slice(b"{}")
-                                    .map_err(crate::error::PutLexiconError::unhandled)?
-                            } else {
-                                serde_json::from_slice(response.body().as_ref())
-                                    .map_err(crate::error::PutLexiconError::unhandled)?
-                            };
-
-                        output = output.set_message(parsed_body.message);
-                        output.build()
-                    }),
-                },
-                "MaxLexiconsNumberExceededException" => crate::error::PutLexiconError {
-                    meta: generic,
-                    kind: crate::error::PutLexiconErrorKind::MaxLexiconsNumberExceededError({
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::max_lexicons_number_exceeded_error::Builder::default();
-                        let _ = response;
-
-                        let body_slice = response.body().as_ref();
-
-                        let parsed_body: crate::error::MaxLexiconsNumberExceededError =
-                            if body_slice.is_empty() {
-                                // To enable JSON parsing to succeed, replace an empty body
-                                // with an empty JSON body. If a member was required, it will fail slightly later
-                                // during the operation construction phase.
-                                serde_json::from_slice(b"{}")
-                                    .map_err(crate::error::PutLexiconError::unhandled)?
-                            } else {
-                                serde_json::from_slice(response.body().as_ref())
-                                    .map_err(crate::error::PutLexiconError::unhandled)?
-                            };
-
-                        output = output.set_message(parsed_body.message);
-                        output.build()
-                    }),
-                },
-                "ServiceFailureException" => crate::error::PutLexiconError {
-                    meta: generic,
-                    kind: crate::error::PutLexiconErrorKind::ServiceFailureError({
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::service_failure_error::Builder::default();
-                        let _ = response;
-
-                        let body_slice = response.body().as_ref();
-
-                        let parsed_body: crate::error::ServiceFailureError =
-                            if body_slice.is_empty() {
-                                // To enable JSON parsing to succeed, replace an empty body
-                                // with an empty JSON body. If a member was required, it will fail slightly later
-                                // during the operation construction phase.
-                                serde_json::from_slice(b"{}")
-                                    .map_err(crate::error::PutLexiconError::unhandled)?
-                            } else {
-                                serde_json::from_slice(response.body().as_ref())
-                                    .map_err(crate::error::PutLexiconError::unhandled)?
-                            };
-
-                        output = output.set_message(parsed_body.message);
-                        output.build()
-                    }),
-                },
-                "UnsupportedPlsAlphabetException" => crate::error::PutLexiconError {
-                    meta: generic,
-                    kind: crate::error::PutLexiconErrorKind::UnsupportedPlsAlphabetError({
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::unsupported_pls_alphabet_error::Builder::default();
-                        let _ = response;
-
-                        let body_slice = response.body().as_ref();
-
-                        let parsed_body: crate::error::UnsupportedPlsAlphabetError =
-                            if body_slice.is_empty() {
-                                // To enable JSON parsing to succeed, replace an empty body
-                                // with an empty JSON body. If a member was required, it will fail slightly later
-                                // during the operation construction phase.
-                                serde_json::from_slice(b"{}")
-                                    .map_err(crate::error::PutLexiconError::unhandled)?
-                            } else {
-                                serde_json::from_slice(response.body().as_ref())
-                                    .map_err(crate::error::PutLexiconError::unhandled)?
-                            };
-
-                        output = output.set_message(parsed_body.message);
-                        output.build()
-                    }),
-                },
-                "UnsupportedPlsLanguageException" => crate::error::PutLexiconError {
-                    meta: generic,
-                    kind: crate::error::PutLexiconErrorKind::UnsupportedPlsLanguageError({
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::unsupported_pls_language_error::Builder::default();
-                        let _ = response;
-
-                        let body_slice = response.body().as_ref();
-
-                        let parsed_body: crate::error::UnsupportedPlsLanguageError =
-                            if body_slice.is_empty() {
-                                // To enable JSON parsing to succeed, replace an empty body
-                                // with an empty JSON body. If a member was required, it will fail slightly later
-                                // during the operation construction phase.
-                                serde_json::from_slice(b"{}")
-                                    .map_err(crate::error::PutLexiconError::unhandled)?
-                            } else {
-                                serde_json::from_slice(response.body().as_ref())
-                                    .map_err(crate::error::PutLexiconError::unhandled)?
-                            };
-
-                        output = output.set_message(parsed_body.message);
-                        output.build()
-                    }),
-                },
-                _ => crate::error::PutLexiconError::generic(generic),
-            });
-        }
         Ok({
             #[allow(unused_mut)]
             let mut output = crate::output::put_lexicon_output::Builder::default();
@@ -1007,7 +1040,11 @@ impl PutLexicon {
 impl smithy_http::response::ParseStrictResponse for PutLexicon {
     type Output = Result<crate::output::PutLexiconOutput, crate::error::PutLexiconError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if crate::aws_json_errors::is_error(&response) && response.status().as_u16() != 200 {
+            self.parse_error(response)
+        } else {
+            self.parse_response(response)
+        }
     }
 }
 
@@ -1017,7 +1054,7 @@ impl smithy_http::response::ParseStrictResponse for PutLexicon {
 /// output of the synthesis task and two optional parameters (OutputS3KeyPrefix and SnsTopicArn).
 /// Once the synthesis task is created, this operation will return a SpeechSynthesisTask object,
 /// which will include an identifier of this task as well as the current status.</p>
-#[derive(std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone)]
 pub struct StartSpeechSynthesisTask {
     _private: (),
 }
@@ -1026,6 +1063,269 @@ impl StartSpeechSynthesisTask {
     pub fn builder() -> crate::input::start_speech_synthesis_task_input::Builder {
         crate::input::start_speech_synthesis_task_input::Builder::default()
     }
+    fn parse_error(
+        &self,
+        response: &http::Response<bytes::Bytes>,
+    ) -> Result<
+        crate::output::StartSpeechSynthesisTaskOutput,
+        crate::error::StartSpeechSynthesisTaskError,
+    > {
+        let body = serde_json::from_slice(response.body().as_ref())
+            .unwrap_or_else(|_| serde_json::json!({}));
+        let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
+
+        let error_code = match generic.code() {
+            Some(code) => code,
+            None => {
+                return Err(crate::error::StartSpeechSynthesisTaskError::unhandled(
+                    generic,
+                ))
+            }
+        };
+        Err(match error_code {
+            "EngineNotSupportedException" => crate::error::StartSpeechSynthesisTaskError { meta: generic, kind: crate::error::StartSpeechSynthesisTaskErrorKind::EngineNotSupportedError({
+                #[allow(unused_mut)]let mut output = crate::error::engine_not_supported_error::Builder::default();
+                let _ = response;
+                
+                                    let body_slice = response.body().as_ref();
+                
+                                    let parsed_body: crate::error::EngineNotSupportedError = if body_slice.is_empty() {
+                                        // To enable JSON parsing to succeed, replace an empty body
+                                        // with an empty JSON body. If a member was required, it will fail slightly later
+                                        // during the operation construction phase.
+                                        serde_json::from_slice(b"{}").map_err(crate::error::StartSpeechSynthesisTaskError::unhandled)?
+                                    } else {
+                                        serde_json::from_slice(response.body().as_ref()).map_err(crate::error::StartSpeechSynthesisTaskError::unhandled)?
+                                    };
+                                
+                output = output.set_message(
+                    parsed_body.message
+                );
+                output.build()
+            })},
+            "InvalidS3BucketException" => crate::error::StartSpeechSynthesisTaskError { meta: generic, kind: crate::error::StartSpeechSynthesisTaskErrorKind::InvalidS3BucketError({
+                #[allow(unused_mut)]let mut output = crate::error::invalid_s3_bucket_error::Builder::default();
+                let _ = response;
+                
+                                    let body_slice = response.body().as_ref();
+                
+                                    let parsed_body: crate::error::InvalidS3BucketError = if body_slice.is_empty() {
+                                        // To enable JSON parsing to succeed, replace an empty body
+                                        // with an empty JSON body. If a member was required, it will fail slightly later
+                                        // during the operation construction phase.
+                                        serde_json::from_slice(b"{}").map_err(crate::error::StartSpeechSynthesisTaskError::unhandled)?
+                                    } else {
+                                        serde_json::from_slice(response.body().as_ref()).map_err(crate::error::StartSpeechSynthesisTaskError::unhandled)?
+                                    };
+                                
+                output = output.set_message(
+                    parsed_body.message
+                );
+                output.build()
+            })},
+            "InvalidS3KeyException" => crate::error::StartSpeechSynthesisTaskError { meta: generic, kind: crate::error::StartSpeechSynthesisTaskErrorKind::InvalidS3KeyError({
+                #[allow(unused_mut)]let mut output = crate::error::invalid_s3_key_error::Builder::default();
+                let _ = response;
+                
+                                    let body_slice = response.body().as_ref();
+                
+                                    let parsed_body: crate::error::InvalidS3KeyError = if body_slice.is_empty() {
+                                        // To enable JSON parsing to succeed, replace an empty body
+                                        // with an empty JSON body. If a member was required, it will fail slightly later
+                                        // during the operation construction phase.
+                                        serde_json::from_slice(b"{}").map_err(crate::error::StartSpeechSynthesisTaskError::unhandled)?
+                                    } else {
+                                        serde_json::from_slice(response.body().as_ref()).map_err(crate::error::StartSpeechSynthesisTaskError::unhandled)?
+                                    };
+                                
+                output = output.set_message(
+                    parsed_body.message
+                );
+                output.build()
+            })},
+            "InvalidSampleRateException" => crate::error::StartSpeechSynthesisTaskError { meta: generic, kind: crate::error::StartSpeechSynthesisTaskErrorKind::InvalidSampleRateError({
+                #[allow(unused_mut)]let mut output = crate::error::invalid_sample_rate_error::Builder::default();
+                let _ = response;
+                
+                                    let body_slice = response.body().as_ref();
+                
+                                    let parsed_body: crate::error::InvalidSampleRateError = if body_slice.is_empty() {
+                                        // To enable JSON parsing to succeed, replace an empty body
+                                        // with an empty JSON body. If a member was required, it will fail slightly later
+                                        // during the operation construction phase.
+                                        serde_json::from_slice(b"{}").map_err(crate::error::StartSpeechSynthesisTaskError::unhandled)?
+                                    } else {
+                                        serde_json::from_slice(response.body().as_ref()).map_err(crate::error::StartSpeechSynthesisTaskError::unhandled)?
+                                    };
+                                
+                output = output.set_message(
+                    parsed_body.message
+                );
+                output.build()
+            })},
+            "InvalidSnsTopicArnException" => crate::error::StartSpeechSynthesisTaskError { meta: generic, kind: crate::error::StartSpeechSynthesisTaskErrorKind::InvalidSnsTopicArnError({
+                #[allow(unused_mut)]let mut output = crate::error::invalid_sns_topic_arn_error::Builder::default();
+                let _ = response;
+                
+                                    let body_slice = response.body().as_ref();
+                
+                                    let parsed_body: crate::error::InvalidSnsTopicArnError = if body_slice.is_empty() {
+                                        // To enable JSON parsing to succeed, replace an empty body
+                                        // with an empty JSON body. If a member was required, it will fail slightly later
+                                        // during the operation construction phase.
+                                        serde_json::from_slice(b"{}").map_err(crate::error::StartSpeechSynthesisTaskError::unhandled)?
+                                    } else {
+                                        serde_json::from_slice(response.body().as_ref()).map_err(crate::error::StartSpeechSynthesisTaskError::unhandled)?
+                                    };
+                                
+                output = output.set_message(
+                    parsed_body.message
+                );
+                output.build()
+            })},
+            "InvalidSsmlException" => crate::error::StartSpeechSynthesisTaskError { meta: generic, kind: crate::error::StartSpeechSynthesisTaskErrorKind::InvalidSsmlError({
+                #[allow(unused_mut)]let mut output = crate::error::invalid_ssml_error::Builder::default();
+                let _ = response;
+                
+                                    let body_slice = response.body().as_ref();
+                
+                                    let parsed_body: crate::error::InvalidSsmlError = if body_slice.is_empty() {
+                                        // To enable JSON parsing to succeed, replace an empty body
+                                        // with an empty JSON body. If a member was required, it will fail slightly later
+                                        // during the operation construction phase.
+                                        serde_json::from_slice(b"{}").map_err(crate::error::StartSpeechSynthesisTaskError::unhandled)?
+                                    } else {
+                                        serde_json::from_slice(response.body().as_ref()).map_err(crate::error::StartSpeechSynthesisTaskError::unhandled)?
+                                    };
+                                
+                output = output.set_message(
+                    parsed_body.message
+                );
+                output.build()
+            })},
+            "LanguageNotSupportedException" => crate::error::StartSpeechSynthesisTaskError { meta: generic, kind: crate::error::StartSpeechSynthesisTaskErrorKind::LanguageNotSupportedError({
+                #[allow(unused_mut)]let mut output = crate::error::language_not_supported_error::Builder::default();
+                let _ = response;
+                
+                                    let body_slice = response.body().as_ref();
+                
+                                    let parsed_body: crate::error::LanguageNotSupportedError = if body_slice.is_empty() {
+                                        // To enable JSON parsing to succeed, replace an empty body
+                                        // with an empty JSON body. If a member was required, it will fail slightly later
+                                        // during the operation construction phase.
+                                        serde_json::from_slice(b"{}").map_err(crate::error::StartSpeechSynthesisTaskError::unhandled)?
+                                    } else {
+                                        serde_json::from_slice(response.body().as_ref()).map_err(crate::error::StartSpeechSynthesisTaskError::unhandled)?
+                                    };
+                                
+                output = output.set_message(
+                    parsed_body.message
+                );
+                output.build()
+            })},
+            "LexiconNotFoundException" => crate::error::StartSpeechSynthesisTaskError { meta: generic, kind: crate::error::StartSpeechSynthesisTaskErrorKind::LexiconNotFoundError({
+                #[allow(unused_mut)]let mut output = crate::error::lexicon_not_found_error::Builder::default();
+                let _ = response;
+                
+                                    let body_slice = response.body().as_ref();
+                
+                                    let parsed_body: crate::error::LexiconNotFoundError = if body_slice.is_empty() {
+                                        // To enable JSON parsing to succeed, replace an empty body
+                                        // with an empty JSON body. If a member was required, it will fail slightly later
+                                        // during the operation construction phase.
+                                        serde_json::from_slice(b"{}").map_err(crate::error::StartSpeechSynthesisTaskError::unhandled)?
+                                    } else {
+                                        serde_json::from_slice(response.body().as_ref()).map_err(crate::error::StartSpeechSynthesisTaskError::unhandled)?
+                                    };
+                                
+                output = output.set_message(
+                    parsed_body.message
+                );
+                output.build()
+            })},
+            "MarksNotSupportedForFormatException" => crate::error::StartSpeechSynthesisTaskError { meta: generic, kind: crate::error::StartSpeechSynthesisTaskErrorKind::MarksNotSupportedForFormatError({
+                #[allow(unused_mut)]let mut output = crate::error::marks_not_supported_for_format_error::Builder::default();
+                let _ = response;
+                
+                                    let body_slice = response.body().as_ref();
+                
+                                    let parsed_body: crate::error::MarksNotSupportedForFormatError = if body_slice.is_empty() {
+                                        // To enable JSON parsing to succeed, replace an empty body
+                                        // with an empty JSON body. If a member was required, it will fail slightly later
+                                        // during the operation construction phase.
+                                        serde_json::from_slice(b"{}").map_err(crate::error::StartSpeechSynthesisTaskError::unhandled)?
+                                    } else {
+                                        serde_json::from_slice(response.body().as_ref()).map_err(crate::error::StartSpeechSynthesisTaskError::unhandled)?
+                                    };
+                                
+                output = output.set_message(
+                    parsed_body.message
+                );
+                output.build()
+            })},
+            "ServiceFailureException" => crate::error::StartSpeechSynthesisTaskError { meta: generic, kind: crate::error::StartSpeechSynthesisTaskErrorKind::ServiceFailureError({
+                #[allow(unused_mut)]let mut output = crate::error::service_failure_error::Builder::default();
+                let _ = response;
+                
+                                    let body_slice = response.body().as_ref();
+                
+                                    let parsed_body: crate::error::ServiceFailureError = if body_slice.is_empty() {
+                                        // To enable JSON parsing to succeed, replace an empty body
+                                        // with an empty JSON body. If a member was required, it will fail slightly later
+                                        // during the operation construction phase.
+                                        serde_json::from_slice(b"{}").map_err(crate::error::StartSpeechSynthesisTaskError::unhandled)?
+                                    } else {
+                                        serde_json::from_slice(response.body().as_ref()).map_err(crate::error::StartSpeechSynthesisTaskError::unhandled)?
+                                    };
+                                
+                output = output.set_message(
+                    parsed_body.message
+                );
+                output.build()
+            })},
+            "SsmlMarksNotSupportedForTextTypeException" => crate::error::StartSpeechSynthesisTaskError { meta: generic, kind: crate::error::StartSpeechSynthesisTaskErrorKind::SsmlMarksNotSupportedForTextTypeError({
+                #[allow(unused_mut)]let mut output = crate::error::ssml_marks_not_supported_for_text_type_error::Builder::default();
+                let _ = response;
+                
+                                    let body_slice = response.body().as_ref();
+                
+                                    let parsed_body: crate::error::SsmlMarksNotSupportedForTextTypeError = if body_slice.is_empty() {
+                                        // To enable JSON parsing to succeed, replace an empty body
+                                        // with an empty JSON body. If a member was required, it will fail slightly later
+                                        // during the operation construction phase.
+                                        serde_json::from_slice(b"{}").map_err(crate::error::StartSpeechSynthesisTaskError::unhandled)?
+                                    } else {
+                                        serde_json::from_slice(response.body().as_ref()).map_err(crate::error::StartSpeechSynthesisTaskError::unhandled)?
+                                    };
+                                
+                output = output.set_message(
+                    parsed_body.message
+                );
+                output.build()
+            })},
+            "TextLengthExceededException" => crate::error::StartSpeechSynthesisTaskError { meta: generic, kind: crate::error::StartSpeechSynthesisTaskErrorKind::TextLengthExceededError({
+                #[allow(unused_mut)]let mut output = crate::error::text_length_exceeded_error::Builder::default();
+                let _ = response;
+                
+                                    let body_slice = response.body().as_ref();
+                
+                                    let parsed_body: crate::error::TextLengthExceededError = if body_slice.is_empty() {
+                                        // To enable JSON parsing to succeed, replace an empty body
+                                        // with an empty JSON body. If a member was required, it will fail slightly later
+                                        // during the operation construction phase.
+                                        serde_json::from_slice(b"{}").map_err(crate::error::StartSpeechSynthesisTaskError::unhandled)?
+                                    } else {
+                                        serde_json::from_slice(response.body().as_ref()).map_err(crate::error::StartSpeechSynthesisTaskError::unhandled)?
+                                    };
+                                
+                output = output.set_message(
+                    parsed_body.message
+                );
+                output.build()
+            })},
+            _ => crate::error::StartSpeechSynthesisTaskError::generic(generic)
+        })
+    }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
         response: &http::response::Response<impl AsRef<[u8]>>,
@@ -1033,263 +1333,6 @@ impl StartSpeechSynthesisTask {
         crate::output::StartSpeechSynthesisTaskOutput,
         crate::error::StartSpeechSynthesisTaskError,
     > {
-        if crate::aws_json_errors::is_error(&response) && response.status().as_u16() != 200 {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => {
-                    return Err(crate::error::StartSpeechSynthesisTaskError::unhandled(
-                        generic,
-                    ))
-                }
-            };
-            return Err(match error_code {
-                "EngineNotSupportedException" => crate::error::StartSpeechSynthesisTaskError { meta: generic, kind: crate::error::StartSpeechSynthesisTaskErrorKind::EngineNotSupportedError({
-                    #[allow(unused_mut)]let mut output = crate::error::engine_not_supported_error::Builder::default();
-                    let _ = response;
-                    
-                                        let body_slice = response.body().as_ref();
-                    
-                                        let parsed_body: crate::error::EngineNotSupportedError = if body_slice.is_empty() {
-                                            // To enable JSON parsing to succeed, replace an empty body
-                                            // with an empty JSON body. If a member was required, it will fail slightly later
-                                            // during the operation construction phase.
-                                            serde_json::from_slice(b"{}").map_err(crate::error::StartSpeechSynthesisTaskError::unhandled)?
-                                        } else {
-                                            serde_json::from_slice(response.body().as_ref()).map_err(crate::error::StartSpeechSynthesisTaskError::unhandled)?
-                                        };
-                                    
-                    output = output.set_message(
-                        parsed_body.message
-                    );
-                    output.build()
-                })},
-                "InvalidS3BucketException" => crate::error::StartSpeechSynthesisTaskError { meta: generic, kind: crate::error::StartSpeechSynthesisTaskErrorKind::InvalidS3BucketError({
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_s3_bucket_error::Builder::default();
-                    let _ = response;
-                    
-                                        let body_slice = response.body().as_ref();
-                    
-                                        let parsed_body: crate::error::InvalidS3BucketError = if body_slice.is_empty() {
-                                            // To enable JSON parsing to succeed, replace an empty body
-                                            // with an empty JSON body. If a member was required, it will fail slightly later
-                                            // during the operation construction phase.
-                                            serde_json::from_slice(b"{}").map_err(crate::error::StartSpeechSynthesisTaskError::unhandled)?
-                                        } else {
-                                            serde_json::from_slice(response.body().as_ref()).map_err(crate::error::StartSpeechSynthesisTaskError::unhandled)?
-                                        };
-                                    
-                    output = output.set_message(
-                        parsed_body.message
-                    );
-                    output.build()
-                })},
-                "InvalidS3KeyException" => crate::error::StartSpeechSynthesisTaskError { meta: generic, kind: crate::error::StartSpeechSynthesisTaskErrorKind::InvalidS3KeyError({
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_s3_key_error::Builder::default();
-                    let _ = response;
-                    
-                                        let body_slice = response.body().as_ref();
-                    
-                                        let parsed_body: crate::error::InvalidS3KeyError = if body_slice.is_empty() {
-                                            // To enable JSON parsing to succeed, replace an empty body
-                                            // with an empty JSON body. If a member was required, it will fail slightly later
-                                            // during the operation construction phase.
-                                            serde_json::from_slice(b"{}").map_err(crate::error::StartSpeechSynthesisTaskError::unhandled)?
-                                        } else {
-                                            serde_json::from_slice(response.body().as_ref()).map_err(crate::error::StartSpeechSynthesisTaskError::unhandled)?
-                                        };
-                                    
-                    output = output.set_message(
-                        parsed_body.message
-                    );
-                    output.build()
-                })},
-                "InvalidSampleRateException" => crate::error::StartSpeechSynthesisTaskError { meta: generic, kind: crate::error::StartSpeechSynthesisTaskErrorKind::InvalidSampleRateError({
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_sample_rate_error::Builder::default();
-                    let _ = response;
-                    
-                                        let body_slice = response.body().as_ref();
-                    
-                                        let parsed_body: crate::error::InvalidSampleRateError = if body_slice.is_empty() {
-                                            // To enable JSON parsing to succeed, replace an empty body
-                                            // with an empty JSON body. If a member was required, it will fail slightly later
-                                            // during the operation construction phase.
-                                            serde_json::from_slice(b"{}").map_err(crate::error::StartSpeechSynthesisTaskError::unhandled)?
-                                        } else {
-                                            serde_json::from_slice(response.body().as_ref()).map_err(crate::error::StartSpeechSynthesisTaskError::unhandled)?
-                                        };
-                                    
-                    output = output.set_message(
-                        parsed_body.message
-                    );
-                    output.build()
-                })},
-                "InvalidSnsTopicArnException" => crate::error::StartSpeechSynthesisTaskError { meta: generic, kind: crate::error::StartSpeechSynthesisTaskErrorKind::InvalidSnsTopicArnError({
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_sns_topic_arn_error::Builder::default();
-                    let _ = response;
-                    
-                                        let body_slice = response.body().as_ref();
-                    
-                                        let parsed_body: crate::error::InvalidSnsTopicArnError = if body_slice.is_empty() {
-                                            // To enable JSON parsing to succeed, replace an empty body
-                                            // with an empty JSON body. If a member was required, it will fail slightly later
-                                            // during the operation construction phase.
-                                            serde_json::from_slice(b"{}").map_err(crate::error::StartSpeechSynthesisTaskError::unhandled)?
-                                        } else {
-                                            serde_json::from_slice(response.body().as_ref()).map_err(crate::error::StartSpeechSynthesisTaskError::unhandled)?
-                                        };
-                                    
-                    output = output.set_message(
-                        parsed_body.message
-                    );
-                    output.build()
-                })},
-                "InvalidSsmlException" => crate::error::StartSpeechSynthesisTaskError { meta: generic, kind: crate::error::StartSpeechSynthesisTaskErrorKind::InvalidSsmlError({
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_ssml_error::Builder::default();
-                    let _ = response;
-                    
-                                        let body_slice = response.body().as_ref();
-                    
-                                        let parsed_body: crate::error::InvalidSsmlError = if body_slice.is_empty() {
-                                            // To enable JSON parsing to succeed, replace an empty body
-                                            // with an empty JSON body. If a member was required, it will fail slightly later
-                                            // during the operation construction phase.
-                                            serde_json::from_slice(b"{}").map_err(crate::error::StartSpeechSynthesisTaskError::unhandled)?
-                                        } else {
-                                            serde_json::from_slice(response.body().as_ref()).map_err(crate::error::StartSpeechSynthesisTaskError::unhandled)?
-                                        };
-                                    
-                    output = output.set_message(
-                        parsed_body.message
-                    );
-                    output.build()
-                })},
-                "LanguageNotSupportedException" => crate::error::StartSpeechSynthesisTaskError { meta: generic, kind: crate::error::StartSpeechSynthesisTaskErrorKind::LanguageNotSupportedError({
-                    #[allow(unused_mut)]let mut output = crate::error::language_not_supported_error::Builder::default();
-                    let _ = response;
-                    
-                                        let body_slice = response.body().as_ref();
-                    
-                                        let parsed_body: crate::error::LanguageNotSupportedError = if body_slice.is_empty() {
-                                            // To enable JSON parsing to succeed, replace an empty body
-                                            // with an empty JSON body. If a member was required, it will fail slightly later
-                                            // during the operation construction phase.
-                                            serde_json::from_slice(b"{}").map_err(crate::error::StartSpeechSynthesisTaskError::unhandled)?
-                                        } else {
-                                            serde_json::from_slice(response.body().as_ref()).map_err(crate::error::StartSpeechSynthesisTaskError::unhandled)?
-                                        };
-                                    
-                    output = output.set_message(
-                        parsed_body.message
-                    );
-                    output.build()
-                })},
-                "LexiconNotFoundException" => crate::error::StartSpeechSynthesisTaskError { meta: generic, kind: crate::error::StartSpeechSynthesisTaskErrorKind::LexiconNotFoundError({
-                    #[allow(unused_mut)]let mut output = crate::error::lexicon_not_found_error::Builder::default();
-                    let _ = response;
-                    
-                                        let body_slice = response.body().as_ref();
-                    
-                                        let parsed_body: crate::error::LexiconNotFoundError = if body_slice.is_empty() {
-                                            // To enable JSON parsing to succeed, replace an empty body
-                                            // with an empty JSON body. If a member was required, it will fail slightly later
-                                            // during the operation construction phase.
-                                            serde_json::from_slice(b"{}").map_err(crate::error::StartSpeechSynthesisTaskError::unhandled)?
-                                        } else {
-                                            serde_json::from_slice(response.body().as_ref()).map_err(crate::error::StartSpeechSynthesisTaskError::unhandled)?
-                                        };
-                                    
-                    output = output.set_message(
-                        parsed_body.message
-                    );
-                    output.build()
-                })},
-                "MarksNotSupportedForFormatException" => crate::error::StartSpeechSynthesisTaskError { meta: generic, kind: crate::error::StartSpeechSynthesisTaskErrorKind::MarksNotSupportedForFormatError({
-                    #[allow(unused_mut)]let mut output = crate::error::marks_not_supported_for_format_error::Builder::default();
-                    let _ = response;
-                    
-                                        let body_slice = response.body().as_ref();
-                    
-                                        let parsed_body: crate::error::MarksNotSupportedForFormatError = if body_slice.is_empty() {
-                                            // To enable JSON parsing to succeed, replace an empty body
-                                            // with an empty JSON body. If a member was required, it will fail slightly later
-                                            // during the operation construction phase.
-                                            serde_json::from_slice(b"{}").map_err(crate::error::StartSpeechSynthesisTaskError::unhandled)?
-                                        } else {
-                                            serde_json::from_slice(response.body().as_ref()).map_err(crate::error::StartSpeechSynthesisTaskError::unhandled)?
-                                        };
-                                    
-                    output = output.set_message(
-                        parsed_body.message
-                    );
-                    output.build()
-                })},
-                "ServiceFailureException" => crate::error::StartSpeechSynthesisTaskError { meta: generic, kind: crate::error::StartSpeechSynthesisTaskErrorKind::ServiceFailureError({
-                    #[allow(unused_mut)]let mut output = crate::error::service_failure_error::Builder::default();
-                    let _ = response;
-                    
-                                        let body_slice = response.body().as_ref();
-                    
-                                        let parsed_body: crate::error::ServiceFailureError = if body_slice.is_empty() {
-                                            // To enable JSON parsing to succeed, replace an empty body
-                                            // with an empty JSON body. If a member was required, it will fail slightly later
-                                            // during the operation construction phase.
-                                            serde_json::from_slice(b"{}").map_err(crate::error::StartSpeechSynthesisTaskError::unhandled)?
-                                        } else {
-                                            serde_json::from_slice(response.body().as_ref()).map_err(crate::error::StartSpeechSynthesisTaskError::unhandled)?
-                                        };
-                                    
-                    output = output.set_message(
-                        parsed_body.message
-                    );
-                    output.build()
-                })},
-                "SsmlMarksNotSupportedForTextTypeException" => crate::error::StartSpeechSynthesisTaskError { meta: generic, kind: crate::error::StartSpeechSynthesisTaskErrorKind::SsmlMarksNotSupportedForTextTypeError({
-                    #[allow(unused_mut)]let mut output = crate::error::ssml_marks_not_supported_for_text_type_error::Builder::default();
-                    let _ = response;
-                    
-                                        let body_slice = response.body().as_ref();
-                    
-                                        let parsed_body: crate::error::SsmlMarksNotSupportedForTextTypeError = if body_slice.is_empty() {
-                                            // To enable JSON parsing to succeed, replace an empty body
-                                            // with an empty JSON body. If a member was required, it will fail slightly later
-                                            // during the operation construction phase.
-                                            serde_json::from_slice(b"{}").map_err(crate::error::StartSpeechSynthesisTaskError::unhandled)?
-                                        } else {
-                                            serde_json::from_slice(response.body().as_ref()).map_err(crate::error::StartSpeechSynthesisTaskError::unhandled)?
-                                        };
-                                    
-                    output = output.set_message(
-                        parsed_body.message
-                    );
-                    output.build()
-                })},
-                "TextLengthExceededException" => crate::error::StartSpeechSynthesisTaskError { meta: generic, kind: crate::error::StartSpeechSynthesisTaskErrorKind::TextLengthExceededError({
-                    #[allow(unused_mut)]let mut output = crate::error::text_length_exceeded_error::Builder::default();
-                    let _ = response;
-                    
-                                        let body_slice = response.body().as_ref();
-                    
-                                        let parsed_body: crate::error::TextLengthExceededError = if body_slice.is_empty() {
-                                            // To enable JSON parsing to succeed, replace an empty body
-                                            // with an empty JSON body. If a member was required, it will fail slightly later
-                                            // during the operation construction phase.
-                                            serde_json::from_slice(b"{}").map_err(crate::error::StartSpeechSynthesisTaskError::unhandled)?
-                                        } else {
-                                            serde_json::from_slice(response.body().as_ref()).map_err(crate::error::StartSpeechSynthesisTaskError::unhandled)?
-                                        };
-                                    
-                    output = output.set_message(
-                        parsed_body.message
-                    );
-                    output.build()
-                })},
-                _ => crate::error::StartSpeechSynthesisTaskError::generic(generic)
-            });
-        }
         Ok({
             #[allow(unused_mut)]
             let mut output = crate::output::start_speech_synthesis_task_output::Builder::default();
@@ -1333,7 +1376,11 @@ impl smithy_http::response::ParseStrictResponse for StartSpeechSynthesisTask {
         crate::error::StartSpeechSynthesisTaskError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if crate::aws_json_errors::is_error(&response) && response.status().as_u16() != 200 {
+            self.parse_error(response)
+        } else {
+            self.parse_response(response)
+        }
     }
 }
 
@@ -1342,7 +1389,7 @@ impl smithy_http::response::ParseStrictResponse for StartSpeechSynthesisTask {
 /// example, Cyrillic might not be read at all by English voices) unless phoneme mapping is used.
 /// For more information, see <a href="https://docs.aws.amazon.com/polly/latest/dg/how-text-to-speech-works.html">How it
 /// Works</a>.</p>
-#[derive(std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone)]
 pub struct SynthesizeSpeech {
     _private: (),
 }
@@ -1351,210 +1398,258 @@ impl SynthesizeSpeech {
     pub fn builder() -> crate::input::synthesize_speech_input::Builder {
         crate::input::synthesize_speech_input::Builder::default()
     }
+    fn parse_error(
+        &self,
+        response: &http::Response<bytes::Bytes>,
+    ) -> Result<crate::output::SynthesizeSpeechOutput, crate::error::SynthesizeSpeechError> {
+        let body = serde_json::from_slice(response.body().as_ref())
+            .unwrap_or_else(|_| serde_json::json!({}));
+        let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
+
+        let error_code = match generic.code() {
+            Some(code) => code,
+            None => return Err(crate::error::SynthesizeSpeechError::unhandled(generic)),
+        };
+        Err(match error_code {
+            "EngineNotSupportedException" => crate::error::SynthesizeSpeechError {
+                meta: generic,
+                kind: crate::error::SynthesizeSpeechErrorKind::EngineNotSupportedError({
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::engine_not_supported_error::Builder::default();
+                    let _ = response;
+
+                    let body_slice = response.body().as_ref();
+
+                    let parsed_body: crate::error::EngineNotSupportedError =
+                        if body_slice.is_empty() {
+                            // To enable JSON parsing to succeed, replace an empty body
+                            // with an empty JSON body. If a member was required, it will fail slightly later
+                            // during the operation construction phase.
+                            serde_json::from_slice(b"{}")
+                                .map_err(crate::error::SynthesizeSpeechError::unhandled)?
+                        } else {
+                            serde_json::from_slice(response.body().as_ref())
+                                .map_err(crate::error::SynthesizeSpeechError::unhandled)?
+                        };
+
+                    output = output.set_message(parsed_body.message);
+                    output.build()
+                }),
+            },
+            "InvalidSampleRateException" => crate::error::SynthesizeSpeechError {
+                meta: generic,
+                kind: crate::error::SynthesizeSpeechErrorKind::InvalidSampleRateError({
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_sample_rate_error::Builder::default();
+                    let _ = response;
+
+                    let body_slice = response.body().as_ref();
+
+                    let parsed_body: crate::error::InvalidSampleRateError = if body_slice.is_empty()
+                    {
+                        // To enable JSON parsing to succeed, replace an empty body
+                        // with an empty JSON body. If a member was required, it will fail slightly later
+                        // during the operation construction phase.
+                        serde_json::from_slice(b"{}")
+                            .map_err(crate::error::SynthesizeSpeechError::unhandled)?
+                    } else {
+                        serde_json::from_slice(response.body().as_ref())
+                            .map_err(crate::error::SynthesizeSpeechError::unhandled)?
+                    };
+
+                    output = output.set_message(parsed_body.message);
+                    output.build()
+                }),
+            },
+            "InvalidSsmlException" => crate::error::SynthesizeSpeechError {
+                meta: generic,
+                kind: crate::error::SynthesizeSpeechErrorKind::InvalidSsmlError({
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_ssml_error::Builder::default();
+                    let _ = response;
+
+                    let body_slice = response.body().as_ref();
+
+                    let parsed_body: crate::error::InvalidSsmlError = if body_slice.is_empty() {
+                        // To enable JSON parsing to succeed, replace an empty body
+                        // with an empty JSON body. If a member was required, it will fail slightly later
+                        // during the operation construction phase.
+                        serde_json::from_slice(b"{}")
+                            .map_err(crate::error::SynthesizeSpeechError::unhandled)?
+                    } else {
+                        serde_json::from_slice(response.body().as_ref())
+                            .map_err(crate::error::SynthesizeSpeechError::unhandled)?
+                    };
+
+                    output = output.set_message(parsed_body.message);
+                    output.build()
+                }),
+            },
+            "LanguageNotSupportedException" => crate::error::SynthesizeSpeechError {
+                meta: generic,
+                kind: crate::error::SynthesizeSpeechErrorKind::LanguageNotSupportedError({
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::language_not_supported_error::Builder::default();
+                    let _ = response;
+
+                    let body_slice = response.body().as_ref();
+
+                    let parsed_body: crate::error::LanguageNotSupportedError =
+                        if body_slice.is_empty() {
+                            // To enable JSON parsing to succeed, replace an empty body
+                            // with an empty JSON body. If a member was required, it will fail slightly later
+                            // during the operation construction phase.
+                            serde_json::from_slice(b"{}")
+                                .map_err(crate::error::SynthesizeSpeechError::unhandled)?
+                        } else {
+                            serde_json::from_slice(response.body().as_ref())
+                                .map_err(crate::error::SynthesizeSpeechError::unhandled)?
+                        };
+
+                    output = output.set_message(parsed_body.message);
+                    output.build()
+                }),
+            },
+            "LexiconNotFoundException" => crate::error::SynthesizeSpeechError {
+                meta: generic,
+                kind: crate::error::SynthesizeSpeechErrorKind::LexiconNotFoundError({
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::lexicon_not_found_error::Builder::default();
+                    let _ = response;
+
+                    let body_slice = response.body().as_ref();
+
+                    let parsed_body: crate::error::LexiconNotFoundError = if body_slice.is_empty() {
+                        // To enable JSON parsing to succeed, replace an empty body
+                        // with an empty JSON body. If a member was required, it will fail slightly later
+                        // during the operation construction phase.
+                        serde_json::from_slice(b"{}")
+                            .map_err(crate::error::SynthesizeSpeechError::unhandled)?
+                    } else {
+                        serde_json::from_slice(response.body().as_ref())
+                            .map_err(crate::error::SynthesizeSpeechError::unhandled)?
+                    };
+
+                    output = output.set_message(parsed_body.message);
+                    output.build()
+                }),
+            },
+            "MarksNotSupportedForFormatException" => crate::error::SynthesizeSpeechError {
+                meta: generic,
+                kind: crate::error::SynthesizeSpeechErrorKind::MarksNotSupportedForFormatError({
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::marks_not_supported_for_format_error::Builder::default();
+                    let _ = response;
+
+                    let body_slice = response.body().as_ref();
+
+                    let parsed_body: crate::error::MarksNotSupportedForFormatError =
+                        if body_slice.is_empty() {
+                            // To enable JSON parsing to succeed, replace an empty body
+                            // with an empty JSON body. If a member was required, it will fail slightly later
+                            // during the operation construction phase.
+                            serde_json::from_slice(b"{}")
+                                .map_err(crate::error::SynthesizeSpeechError::unhandled)?
+                        } else {
+                            serde_json::from_slice(response.body().as_ref())
+                                .map_err(crate::error::SynthesizeSpeechError::unhandled)?
+                        };
+
+                    output = output.set_message(parsed_body.message);
+                    output.build()
+                }),
+            },
+            "ServiceFailureException" => crate::error::SynthesizeSpeechError {
+                meta: generic,
+                kind: crate::error::SynthesizeSpeechErrorKind::ServiceFailureError({
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::service_failure_error::Builder::default();
+                    let _ = response;
+
+                    let body_slice = response.body().as_ref();
+
+                    let parsed_body: crate::error::ServiceFailureError = if body_slice.is_empty() {
+                        // To enable JSON parsing to succeed, replace an empty body
+                        // with an empty JSON body. If a member was required, it will fail slightly later
+                        // during the operation construction phase.
+                        serde_json::from_slice(b"{}")
+                            .map_err(crate::error::SynthesizeSpeechError::unhandled)?
+                    } else {
+                        serde_json::from_slice(response.body().as_ref())
+                            .map_err(crate::error::SynthesizeSpeechError::unhandled)?
+                    };
+
+                    output = output.set_message(parsed_body.message);
+                    output.build()
+                }),
+            },
+            "SsmlMarksNotSupportedForTextTypeException" => crate::error::SynthesizeSpeechError {
+                meta: generic,
+                kind:
+                    crate::error::SynthesizeSpeechErrorKind::SsmlMarksNotSupportedForTextTypeError(
+                        {
+                            #[allow(unused_mut)]let mut output = crate::error::ssml_marks_not_supported_for_text_type_error::Builder::default();
+                            let _ = response;
+
+                            let body_slice = response.body().as_ref();
+
+                            let parsed_body: crate::error::SsmlMarksNotSupportedForTextTypeError =
+                                if body_slice.is_empty() {
+                                    // To enable JSON parsing to succeed, replace an empty body
+                                    // with an empty JSON body. If a member was required, it will fail slightly later
+                                    // during the operation construction phase.
+                                    serde_json::from_slice(b"{}")
+                                        .map_err(crate::error::SynthesizeSpeechError::unhandled)?
+                                } else {
+                                    serde_json::from_slice(response.body().as_ref())
+                                        .map_err(crate::error::SynthesizeSpeechError::unhandled)?
+                                };
+
+                            output = output.set_message(parsed_body.message);
+                            output.build()
+                        },
+                    ),
+            },
+            "TextLengthExceededException" => crate::error::SynthesizeSpeechError {
+                meta: generic,
+                kind: crate::error::SynthesizeSpeechErrorKind::TextLengthExceededError({
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::text_length_exceeded_error::Builder::default();
+                    let _ = response;
+
+                    let body_slice = response.body().as_ref();
+
+                    let parsed_body: crate::error::TextLengthExceededError =
+                        if body_slice.is_empty() {
+                            // To enable JSON parsing to succeed, replace an empty body
+                            // with an empty JSON body. If a member was required, it will fail slightly later
+                            // during the operation construction phase.
+                            serde_json::from_slice(b"{}")
+                                .map_err(crate::error::SynthesizeSpeechError::unhandled)?
+                        } else {
+                            serde_json::from_slice(response.body().as_ref())
+                                .map_err(crate::error::SynthesizeSpeechError::unhandled)?
+                        };
+
+                    output = output.set_message(parsed_body.message);
+                    output.build()
+                }),
+            },
+            _ => crate::error::SynthesizeSpeechError::generic(generic),
+        })
+    }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
-        response: &http::response::Response<impl AsRef<[u8]>>,
+        response: &mut http::response::Response<smithy_http::body::SdkBody>,
     ) -> Result<crate::output::SynthesizeSpeechOutput, crate::error::SynthesizeSpeechError> {
-        if crate::aws_json_errors::is_error(&response) && response.status().as_u16() != 200 {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => return Err(crate::error::SynthesizeSpeechError::unhandled(generic)),
-            };
-            return Err(match error_code {
-                "EngineNotSupportedException" => crate::error::SynthesizeSpeechError { meta: generic, kind: crate::error::SynthesizeSpeechErrorKind::EngineNotSupportedError({
-                    #[allow(unused_mut)]let mut output = crate::error::engine_not_supported_error::Builder::default();
-                    let _ = response;
-                    
-                                        let body_slice = response.body().as_ref();
-                    
-                                        let parsed_body: crate::error::EngineNotSupportedError = if body_slice.is_empty() {
-                                            // To enable JSON parsing to succeed, replace an empty body
-                                            // with an empty JSON body. If a member was required, it will fail slightly later
-                                            // during the operation construction phase.
-                                            serde_json::from_slice(b"{}").map_err(crate::error::SynthesizeSpeechError::unhandled)?
-                                        } else {
-                                            serde_json::from_slice(response.body().as_ref()).map_err(crate::error::SynthesizeSpeechError::unhandled)?
-                                        };
-                                    
-                    output = output.set_message(
-                        parsed_body.message
-                    );
-                    output.build()
-                })},
-                "InvalidSampleRateException" => crate::error::SynthesizeSpeechError { meta: generic, kind: crate::error::SynthesizeSpeechErrorKind::InvalidSampleRateError({
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_sample_rate_error::Builder::default();
-                    let _ = response;
-                    
-                                        let body_slice = response.body().as_ref();
-                    
-                                        let parsed_body: crate::error::InvalidSampleRateError = if body_slice.is_empty() {
-                                            // To enable JSON parsing to succeed, replace an empty body
-                                            // with an empty JSON body. If a member was required, it will fail slightly later
-                                            // during the operation construction phase.
-                                            serde_json::from_slice(b"{}").map_err(crate::error::SynthesizeSpeechError::unhandled)?
-                                        } else {
-                                            serde_json::from_slice(response.body().as_ref()).map_err(crate::error::SynthesizeSpeechError::unhandled)?
-                                        };
-                                    
-                    output = output.set_message(
-                        parsed_body.message
-                    );
-                    output.build()
-                })},
-                "InvalidSsmlException" => crate::error::SynthesizeSpeechError { meta: generic, kind: crate::error::SynthesizeSpeechErrorKind::InvalidSsmlError({
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_ssml_error::Builder::default();
-                    let _ = response;
-                    
-                                        let body_slice = response.body().as_ref();
-                    
-                                        let parsed_body: crate::error::InvalidSsmlError = if body_slice.is_empty() {
-                                            // To enable JSON parsing to succeed, replace an empty body
-                                            // with an empty JSON body. If a member was required, it will fail slightly later
-                                            // during the operation construction phase.
-                                            serde_json::from_slice(b"{}").map_err(crate::error::SynthesizeSpeechError::unhandled)?
-                                        } else {
-                                            serde_json::from_slice(response.body().as_ref()).map_err(crate::error::SynthesizeSpeechError::unhandled)?
-                                        };
-                                    
-                    output = output.set_message(
-                        parsed_body.message
-                    );
-                    output.build()
-                })},
-                "LanguageNotSupportedException" => crate::error::SynthesizeSpeechError { meta: generic, kind: crate::error::SynthesizeSpeechErrorKind::LanguageNotSupportedError({
-                    #[allow(unused_mut)]let mut output = crate::error::language_not_supported_error::Builder::default();
-                    let _ = response;
-                    
-                                        let body_slice = response.body().as_ref();
-                    
-                                        let parsed_body: crate::error::LanguageNotSupportedError = if body_slice.is_empty() {
-                                            // To enable JSON parsing to succeed, replace an empty body
-                                            // with an empty JSON body. If a member was required, it will fail slightly later
-                                            // during the operation construction phase.
-                                            serde_json::from_slice(b"{}").map_err(crate::error::SynthesizeSpeechError::unhandled)?
-                                        } else {
-                                            serde_json::from_slice(response.body().as_ref()).map_err(crate::error::SynthesizeSpeechError::unhandled)?
-                                        };
-                                    
-                    output = output.set_message(
-                        parsed_body.message
-                    );
-                    output.build()
-                })},
-                "LexiconNotFoundException" => crate::error::SynthesizeSpeechError { meta: generic, kind: crate::error::SynthesizeSpeechErrorKind::LexiconNotFoundError({
-                    #[allow(unused_mut)]let mut output = crate::error::lexicon_not_found_error::Builder::default();
-                    let _ = response;
-                    
-                                        let body_slice = response.body().as_ref();
-                    
-                                        let parsed_body: crate::error::LexiconNotFoundError = if body_slice.is_empty() {
-                                            // To enable JSON parsing to succeed, replace an empty body
-                                            // with an empty JSON body. If a member was required, it will fail slightly later
-                                            // during the operation construction phase.
-                                            serde_json::from_slice(b"{}").map_err(crate::error::SynthesizeSpeechError::unhandled)?
-                                        } else {
-                                            serde_json::from_slice(response.body().as_ref()).map_err(crate::error::SynthesizeSpeechError::unhandled)?
-                                        };
-                                    
-                    output = output.set_message(
-                        parsed_body.message
-                    );
-                    output.build()
-                })},
-                "MarksNotSupportedForFormatException" => crate::error::SynthesizeSpeechError { meta: generic, kind: crate::error::SynthesizeSpeechErrorKind::MarksNotSupportedForFormatError({
-                    #[allow(unused_mut)]let mut output = crate::error::marks_not_supported_for_format_error::Builder::default();
-                    let _ = response;
-                    
-                                        let body_slice = response.body().as_ref();
-                    
-                                        let parsed_body: crate::error::MarksNotSupportedForFormatError = if body_slice.is_empty() {
-                                            // To enable JSON parsing to succeed, replace an empty body
-                                            // with an empty JSON body. If a member was required, it will fail slightly later
-                                            // during the operation construction phase.
-                                            serde_json::from_slice(b"{}").map_err(crate::error::SynthesizeSpeechError::unhandled)?
-                                        } else {
-                                            serde_json::from_slice(response.body().as_ref()).map_err(crate::error::SynthesizeSpeechError::unhandled)?
-                                        };
-                                    
-                    output = output.set_message(
-                        parsed_body.message
-                    );
-                    output.build()
-                })},
-                "ServiceFailureException" => crate::error::SynthesizeSpeechError { meta: generic, kind: crate::error::SynthesizeSpeechErrorKind::ServiceFailureError({
-                    #[allow(unused_mut)]let mut output = crate::error::service_failure_error::Builder::default();
-                    let _ = response;
-                    
-                                        let body_slice = response.body().as_ref();
-                    
-                                        let parsed_body: crate::error::ServiceFailureError = if body_slice.is_empty() {
-                                            // To enable JSON parsing to succeed, replace an empty body
-                                            // with an empty JSON body. If a member was required, it will fail slightly later
-                                            // during the operation construction phase.
-                                            serde_json::from_slice(b"{}").map_err(crate::error::SynthesizeSpeechError::unhandled)?
-                                        } else {
-                                            serde_json::from_slice(response.body().as_ref()).map_err(crate::error::SynthesizeSpeechError::unhandled)?
-                                        };
-                                    
-                    output = output.set_message(
-                        parsed_body.message
-                    );
-                    output.build()
-                })},
-                "SsmlMarksNotSupportedForTextTypeException" => crate::error::SynthesizeSpeechError { meta: generic, kind: crate::error::SynthesizeSpeechErrorKind::SsmlMarksNotSupportedForTextTypeError({
-                    #[allow(unused_mut)]let mut output = crate::error::ssml_marks_not_supported_for_text_type_error::Builder::default();
-                    let _ = response;
-                    
-                                        let body_slice = response.body().as_ref();
-                    
-                                        let parsed_body: crate::error::SsmlMarksNotSupportedForTextTypeError = if body_slice.is_empty() {
-                                            // To enable JSON parsing to succeed, replace an empty body
-                                            // with an empty JSON body. If a member was required, it will fail slightly later
-                                            // during the operation construction phase.
-                                            serde_json::from_slice(b"{}").map_err(crate::error::SynthesizeSpeechError::unhandled)?
-                                        } else {
-                                            serde_json::from_slice(response.body().as_ref()).map_err(crate::error::SynthesizeSpeechError::unhandled)?
-                                        };
-                                    
-                    output = output.set_message(
-                        parsed_body.message
-                    );
-                    output.build()
-                })},
-                "TextLengthExceededException" => crate::error::SynthesizeSpeechError { meta: generic, kind: crate::error::SynthesizeSpeechErrorKind::TextLengthExceededError({
-                    #[allow(unused_mut)]let mut output = crate::error::text_length_exceeded_error::Builder::default();
-                    let _ = response;
-                    
-                                        let body_slice = response.body().as_ref();
-                    
-                                        let parsed_body: crate::error::TextLengthExceededError = if body_slice.is_empty() {
-                                            // To enable JSON parsing to succeed, replace an empty body
-                                            // with an empty JSON body. If a member was required, it will fail slightly later
-                                            // during the operation construction phase.
-                                            serde_json::from_slice(b"{}").map_err(crate::error::SynthesizeSpeechError::unhandled)?
-                                        } else {
-                                            serde_json::from_slice(response.body().as_ref()).map_err(crate::error::SynthesizeSpeechError::unhandled)?
-                                        };
-                                    
-                    output = output.set_message(
-                        parsed_body.message
-                    );
-                    output.build()
-                })},
-                _ => crate::error::SynthesizeSpeechError::generic(generic)
-            });
-        }
         Ok({
             #[allow(unused_mut)]
             let mut output = crate::output::synthesize_speech_output::Builder::default();
             let _ = response;
             output = output.set_audio_stream(
                 crate::http_serde::deser_payload_synthesize_speech_audio_stream(
-                    response.body().as_ref(),
+                    response.body_mut(),
                 )?,
             );
             output = output.set_content_type(
@@ -1580,19 +1675,30 @@ impl SynthesizeSpeech {
     }
     pub fn parse_response(
         &self,
-        response: &http::response::Response<impl AsRef<[u8]>>,
+        mut response: &mut http::response::Response<smithy_http::body::SdkBody>,
     ) -> Result<crate::output::SynthesizeSpeechOutput, crate::error::SynthesizeSpeechError> {
-        Self::from_response(&response)
+        Self::from_response(&mut response)
     }
     pub fn new() -> Self {
         Self { _private: () }
     }
 }
 
-impl smithy_http::response::ParseStrictResponse for SynthesizeSpeech {
+impl smithy_http::response::ParseHttpResponse<smithy_http::body::SdkBody> for SynthesizeSpeech {
     type Output =
         Result<crate::output::SynthesizeSpeechOutput, crate::error::SynthesizeSpeechError>;
-    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+    fn parse_unloaded(
+        &self,
+        response: &mut http::Response<smithy_http::body::SdkBody>,
+    ) -> Option<Self::Output> {
+        // This is an error, defer to the non-streaming parser
+        if crate::aws_json_errors::is_error(&response) && response.status().as_u16() != 200 {
+            return None;
+        }
+        Some(self.parse_response(response))
+    }
+    fn parse_loaded(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        // if streaming, we only hit this case if its an error
+        self.parse_error(response)
     }
 }

@@ -23,7 +23,7 @@ struct Opt {
     #[structopt(short, long)]
     table: String,
 
-    /// Activate verbose mode    
+    /// Activate verbose mode
     #[structopt(short, long)]
     verbose: bool,
 }

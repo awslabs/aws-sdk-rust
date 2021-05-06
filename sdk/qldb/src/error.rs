@@ -1542,7 +1542,7 @@ impl std::error::Error for ResourceNotFoundError {}
 pub mod resource_not_found_error {
     /// A builder for [`ResourceNotFoundError`](crate::error::ResourceNotFoundError)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         message: std::option::Option<std::string::String>,
         resource_type: std::option::Option<std::string::String>,
@@ -1630,7 +1630,7 @@ impl std::error::Error for InvalidParameterError {}
 pub mod invalid_parameter_error {
     /// A builder for [`InvalidParameterError`](crate::error::InvalidParameterError)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         message: std::option::Option<std::string::String>,
         parameter_name: std::option::Option<std::string::String>,
@@ -1716,7 +1716,7 @@ impl std::error::Error for ResourcePreconditionNotMetError {}
 pub mod resource_precondition_not_met_error {
     /// A builder for [`ResourcePreconditionNotMetError`](crate::error::ResourcePreconditionNotMetError)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         message: std::option::Option<std::string::String>,
         resource_type: std::option::Option<std::string::String>,
@@ -1810,7 +1810,7 @@ impl std::error::Error for ResourceInUseError {}
 pub mod resource_in_use_error {
     /// A builder for [`ResourceInUseError`](crate::error::ResourceInUseError)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         message: std::option::Option<std::string::String>,
         resource_type: std::option::Option<std::string::String>,
@@ -1907,7 +1907,7 @@ impl std::error::Error for ResourceAlreadyExistsError {}
 pub mod resource_already_exists_error {
     /// A builder for [`ResourceAlreadyExistsError`](crate::error::ResourceAlreadyExistsError)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         message: std::option::Option<std::string::String>,
         resource_type: std::option::Option<std::string::String>,
@@ -1995,7 +1995,7 @@ impl std::error::Error for LimitExceededError {}
 pub mod limit_exceeded_error {
     /// A builder for [`LimitExceededError`](crate::error::LimitExceededError)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         message: std::option::Option<std::string::String>,
         resource_type: std::option::Option<std::string::String>,

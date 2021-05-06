@@ -34,7 +34,7 @@ impl std::fmt::Debug for UpdateLedgerOutput {
 pub mod update_ledger_output {
     /// A builder for [`UpdateLedgerOutput`](crate::output::UpdateLedgerOutput)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         name: std::option::Option<std::string::String>,
         arn: std::option::Option<std::string::String>,
@@ -129,7 +129,7 @@ impl std::fmt::Debug for UntagResourceOutput {
 pub mod untag_resource_output {
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput)
@@ -158,7 +158,7 @@ impl std::fmt::Debug for TagResourceOutput {
 pub mod tag_resource_output {
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput)
@@ -191,7 +191,7 @@ impl std::fmt::Debug for StreamJournalToKinesisOutput {
 pub mod stream_journal_to_kinesis_output {
     /// A builder for [`StreamJournalToKinesisOutput`](crate::output::StreamJournalToKinesisOutput)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         stream_id: std::option::Option<std::string::String>,
     }
@@ -239,7 +239,7 @@ impl std::fmt::Debug for ListTagsForResourceOutput {
 pub mod list_tags_for_resource_output {
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         tags: std::option::Option<
             std::collections::HashMap<
@@ -316,7 +316,7 @@ impl std::fmt::Debug for ListLedgersOutput {
 pub mod list_ledgers_output {
     /// A builder for [`ListLedgersOutput`](crate::output::ListLedgersOutput)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         ledgers: std::option::Option<std::vec::Vec<crate::model::LedgerSummary>>,
         next_token: std::option::Option<std::string::String>,
@@ -404,7 +404,7 @@ impl std::fmt::Debug for ListJournalS3ExportsForLedgerOutput {
 pub mod list_journal_s3_exports_for_ledger_output {
     /// A builder for [`ListJournalS3ExportsForLedgerOutput`](crate::output::ListJournalS3ExportsForLedgerOutput)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         journal_s3_exports:
             std::option::Option<std::vec::Vec<crate::model::JournalS3ExportDescription>>,
@@ -496,7 +496,7 @@ impl std::fmt::Debug for ListJournalS3ExportsOutput {
 pub mod list_journal_s3_exports_output {
     /// A builder for [`ListJournalS3ExportsOutput`](crate::output::ListJournalS3ExportsOutput)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         journal_s3_exports:
             std::option::Option<std::vec::Vec<crate::model::JournalS3ExportDescription>>,
@@ -587,7 +587,7 @@ impl std::fmt::Debug for ListJournalKinesisStreamsForLedgerOutput {
 pub mod list_journal_kinesis_streams_for_ledger_output {
     /// A builder for [`ListJournalKinesisStreamsForLedgerOutput`](crate::output::ListJournalKinesisStreamsForLedgerOutput)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         streams: std::option::Option<std::vec::Vec<crate::model::JournalKinesisStreamDescription>>,
         next_token: std::option::Option<std::string::String>,
@@ -667,7 +667,7 @@ impl std::fmt::Debug for GetRevisionOutput {
 pub mod get_revision_output {
     /// A builder for [`GetRevisionOutput`](crate::output::GetRevisionOutput)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         proof: std::option::Option<crate::model::ValueHolder>,
         revision: std::option::Option<crate::model::ValueHolder>,
@@ -732,7 +732,7 @@ impl std::fmt::Debug for GetDigestOutput {
 pub mod get_digest_output {
     /// A builder for [`GetDigestOutput`](crate::output::GetDigestOutput)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         digest: std::option::Option<smithy_types::Blob>,
         digest_tip_address: std::option::Option<crate::model::ValueHolder>,
@@ -800,7 +800,7 @@ impl std::fmt::Debug for GetBlockOutput {
 pub mod get_block_output {
     /// A builder for [`GetBlockOutput`](crate::output::GetBlockOutput)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         block: std::option::Option<crate::model::ValueHolder>,
         proof: std::option::Option<crate::model::ValueHolder>,
@@ -861,7 +861,7 @@ impl std::fmt::Debug for ExportJournalToS3Output {
 pub mod export_journal_to_s3_output {
     /// A builder for [`ExportJournalToS3Output`](crate::output::ExportJournalToS3Output)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         export_id: std::option::Option<std::string::String>,
     }
@@ -927,7 +927,7 @@ impl std::fmt::Debug for DescribeLedgerOutput {
 pub mod describe_ledger_output {
     /// A builder for [`DescribeLedgerOutput`](crate::output::DescribeLedgerOutput)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         name: std::option::Option<std::string::String>,
         arn: std::option::Option<std::string::String>,
@@ -1027,7 +1027,7 @@ impl std::fmt::Debug for DescribeJournalS3ExportOutput {
 pub mod describe_journal_s3_export_output {
     /// A builder for [`DescribeJournalS3ExportOutput`](crate::output::DescribeJournalS3ExportOutput)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         export_description: std::option::Option<crate::model::JournalS3ExportDescription>,
     }
@@ -1078,7 +1078,7 @@ impl std::fmt::Debug for DescribeJournalKinesisStreamOutput {
 pub mod describe_journal_kinesis_stream_output {
     /// A builder for [`DescribeJournalKinesisStreamOutput`](crate::output::DescribeJournalKinesisStreamOutput)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         stream: std::option::Option<crate::model::JournalKinesisStreamDescription>,
     }
@@ -1124,7 +1124,7 @@ impl std::fmt::Debug for DeleteLedgerOutput {
 pub mod delete_ledger_output {
     /// A builder for [`DeleteLedgerOutput`](crate::output::DeleteLedgerOutput)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteLedgerOutput`](crate::output::DeleteLedgerOutput)
@@ -1175,7 +1175,7 @@ impl std::fmt::Debug for CreateLedgerOutput {
 pub mod create_ledger_output {
     /// A builder for [`CreateLedgerOutput`](crate::output::CreateLedgerOutput)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         name: std::option::Option<std::string::String>,
         arn: std::option::Option<std::string::String>,
@@ -1274,7 +1274,7 @@ impl std::fmt::Debug for CancelJournalKinesisStreamOutput {
 pub mod cancel_journal_kinesis_stream_output {
     /// A builder for [`CancelJournalKinesisStreamOutput`](crate::output::CancelJournalKinesisStreamOutput)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         stream_id: std::option::Option<std::string::String>,
     }

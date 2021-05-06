@@ -145,6 +145,10 @@ impl ByteStream {
         Self(Inner::new(body))
     }
 
+    pub fn from_static(bytes: &'static [u8]) -> Self {
+        Self(Inner::new(SdkBody::from(Bytes::from_static(bytes))))
+    }
+
     /// Consumes the ByteStream, returning the wrapped SdkBody
     // Backwards compatibility note: Because SdkBody has a dyn variant,
     // we will always be able to implement this method, even if we stop using
@@ -171,6 +175,14 @@ impl ByteStream {
     /// ```
     pub async fn collect(self) -> Result<AggregatedBytes, Error> {
         self.0.collect().await.map_err(|err| Error(err))
+    }
+}
+
+impl Default for ByteStream {
+    fn default() -> Self {
+        Self(Inner {
+            body: SdkBody::from(""),
+        })
     }
 }
 

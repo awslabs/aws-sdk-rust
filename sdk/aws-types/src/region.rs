@@ -46,6 +46,12 @@ impl ProvideRegion for Region {
     }
 }
 
+impl<'a> ProvideRegion for &'a Region {
+    fn region(&self) -> Option<Region> {
+        Some((*self).clone())
+    }
+}
+
 pub fn default_provider() -> impl ProvideRegion {
     EnvironmentProvider
 }

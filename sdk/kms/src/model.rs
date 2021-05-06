@@ -190,7 +190,7 @@ impl std::fmt::Debug for Tag {
 pub mod tag {
     /// A builder for [`Tag`](crate::model::Tag)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         tag_key: std::option::Option<std::string::String>,
         tag_value: std::option::Option<std::string::String>,
@@ -384,7 +384,7 @@ impl std::fmt::Debug for GrantListEntry {
 pub mod grant_list_entry {
     /// A builder for [`GrantListEntry`](crate::model::GrantListEntry)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         key_id: std::option::Option<std::string::String>,
         grant_id: std::option::Option<std::string::String>,
@@ -577,7 +577,7 @@ impl std::fmt::Debug for GrantConstraints {
 pub mod grant_constraints {
     /// A builder for [`GrantConstraints`](crate::model::GrantConstraints)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         encryption_context_subset: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
@@ -778,7 +778,7 @@ impl std::fmt::Debug for KeyListEntry {
 pub mod key_list_entry {
     /// A builder for [`KeyListEntry`](crate::model::KeyListEntry)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         key_id: std::option::Option<std::string::String>,
         key_arn: std::option::Option<std::string::String>,
@@ -875,7 +875,7 @@ impl std::fmt::Debug for AliasListEntry {
 pub mod alias_list_entry {
     /// A builder for [`AliasListEntry`](crate::model::AliasListEntry)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         alias_name: std::option::Option<std::string::String>,
         alias_arn: std::option::Option<std::string::String>,
@@ -1643,7 +1643,7 @@ impl std::fmt::Debug for KeyMetadata {
 pub mod key_metadata {
     /// A builder for [`KeyMetadata`](crate::model::KeyMetadata)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         aws_account_id: std::option::Option<std::string::String>,
         key_id: std::option::Option<std::string::String>,
@@ -2276,7 +2276,7 @@ impl std::fmt::Debug for CustomKeyStoresListEntry {
 pub mod custom_key_stores_list_entry {
     /// A builder for [`CustomKeyStoresListEntry`](crate::model::CustomKeyStoresListEntry)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         custom_key_store_id: std::option::Option<std::string::String>,
         custom_key_store_name: std::option::Option<std::string::String>,

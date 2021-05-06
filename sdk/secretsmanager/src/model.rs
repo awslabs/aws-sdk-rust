@@ -26,7 +26,7 @@ impl std::fmt::Debug for ValidationErrorsEntry {
 pub mod validation_errors_entry {
     /// A builder for [`ValidationErrorsEntry`](crate::model::ValidationErrorsEntry)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         error_message: std::option::Option<std::string::String>,
         check_name: std::option::Option<std::string::String>,
@@ -93,7 +93,7 @@ impl std::fmt::Debug for Tag {
 pub mod tag {
     /// A builder for [`Tag`](crate::model::Tag)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         value: std::option::Option<std::string::String>,
         key: std::option::Option<std::string::String>,
@@ -159,7 +159,7 @@ impl std::fmt::Debug for RotationRulesType {
 pub mod rotation_rules_type {
     /// A builder for [`RotationRulesType`](crate::model::RotationRulesType)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         automatically_after_days: std::option::Option<i64>,
     }
@@ -246,7 +246,7 @@ impl std::fmt::Debug for SecretVersionsListEntry {
 pub mod secret_versions_list_entry {
     /// A builder for [`SecretVersionsListEntry`](crate::model::SecretVersionsListEntry)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         version_stages: std::option::Option<std::vec::Vec<std::string::String>>,
         created_date: std::option::Option<smithy_types::Instant>,
@@ -474,7 +474,7 @@ impl std::fmt::Debug for SecretListEntry {
 pub mod secret_list_entry {
     /// A builder for [`SecretListEntry`](crate::model::SecretListEntry)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         last_rotated_date: std::option::Option<smithy_types::Instant>,
         description: std::option::Option<std::string::String>,
@@ -727,7 +727,7 @@ impl std::fmt::Debug for Filter {
 pub mod filter {
     /// A builder for [`Filter`](crate::model::Filter)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         key: std::option::Option<crate::model::FilterNameStringType>,
         values: std::option::Option<std::vec::Vec<std::string::String>>,

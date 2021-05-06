@@ -44,7 +44,7 @@ struct Opt {
     #[structopt(short, long)]
     region: Option<String>,
 
-    /// Activate verbose mode    
+    /// Activate verbose mode
     #[structopt(short, long)]
     verbose: bool,
 }

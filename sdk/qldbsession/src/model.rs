@@ -32,7 +32,7 @@ impl std::fmt::Debug for FetchPageResult {
 pub mod fetch_page_result {
     /// A builder for [`FetchPageResult`](crate::model::FetchPageResult)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         page: std::option::Option<crate::model::Page>,
         timing_information: std::option::Option<crate::model::TimingInformation>,
@@ -112,7 +112,7 @@ impl std::fmt::Debug for IOUsage {
 pub mod io_usage {
     /// A builder for [`IOUsage`](crate::model::IOUsage)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         read_i_os: std::option::Option<i64>,
         write_i_os: std::option::Option<i64>,
@@ -177,7 +177,7 @@ impl std::fmt::Debug for TimingInformation {
 pub mod timing_information {
     /// A builder for [`TimingInformation`](crate::model::TimingInformation)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         processing_time_milliseconds: std::option::Option<i64>,
     }
@@ -234,7 +234,7 @@ impl std::fmt::Debug for Page {
 pub mod page {
     /// A builder for [`Page`](crate::model::Page)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         values: std::option::Option<std::vec::Vec<crate::model::ValueHolder>>,
         next_page_token: std::option::Option<std::string::String>,
@@ -310,7 +310,7 @@ impl std::fmt::Debug for ValueHolder {
 pub mod value_holder {
     /// A builder for [`ValueHolder`](crate::model::ValueHolder)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         ion_binary: std::option::Option<smithy_types::Blob>,
         ion_text: std::option::Option<std::string::String>,
@@ -383,7 +383,7 @@ impl std::fmt::Debug for ExecuteStatementResult {
 pub mod execute_statement_result {
     /// A builder for [`ExecuteStatementResult`](crate::model::ExecuteStatementResult)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         first_page: std::option::Option<crate::model::Page>,
         timing_information: std::option::Option<crate::model::TimingInformation>,
@@ -461,7 +461,7 @@ impl std::fmt::Debug for AbortTransactionResult {
 pub mod abort_transaction_result {
     /// A builder for [`AbortTransactionResult`](crate::model::AbortTransactionResult)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         timing_information: std::option::Option<crate::model::TimingInformation>,
     }
@@ -534,7 +534,7 @@ impl std::fmt::Debug for CommitTransactionResult {
 pub mod commit_transaction_result {
     /// A builder for [`CommitTransactionResult`](crate::model::CommitTransactionResult)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         transaction_id: std::option::Option<std::string::String>,
         commit_digest: std::option::Option<smithy_types::Blob>,
@@ -623,7 +623,7 @@ impl std::fmt::Debug for EndSessionResult {
 pub mod end_session_result {
     /// A builder for [`EndSessionResult`](crate::model::EndSessionResult)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         timing_information: std::option::Option<crate::model::TimingInformation>,
     }
@@ -682,7 +682,7 @@ impl std::fmt::Debug for StartTransactionResult {
 pub mod start_transaction_result {
     /// A builder for [`StartTransactionResult`](crate::model::StartTransactionResult)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         transaction_id: std::option::Option<std::string::String>,
         timing_information: std::option::Option<crate::model::TimingInformation>,
@@ -753,7 +753,7 @@ impl std::fmt::Debug for StartSessionResult {
 pub mod start_session_result {
     /// A builder for [`StartSessionResult`](crate::model::StartSessionResult)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         session_token: std::option::Option<std::string::String>,
         timing_information: std::option::Option<crate::model::TimingInformation>,
@@ -824,7 +824,7 @@ impl std::fmt::Debug for FetchPageRequest {
 pub mod fetch_page_request {
     /// A builder for [`FetchPageRequest`](crate::model::FetchPageRequest)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         transaction_id: std::option::Option<std::string::String>,
         next_page_token: std::option::Option<std::string::String>,
@@ -900,7 +900,7 @@ impl std::fmt::Debug for ExecuteStatementRequest {
 pub mod execute_statement_request {
     /// A builder for [`ExecuteStatementRequest`](crate::model::ExecuteStatementRequest)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         transaction_id: std::option::Option<std::string::String>,
         statement: std::option::Option<std::string::String>,
@@ -969,7 +969,7 @@ impl std::fmt::Debug for AbortTransactionRequest {
 pub mod abort_transaction_request {
     /// A builder for [`AbortTransactionRequest`](crate::model::AbortTransactionRequest)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`AbortTransactionRequest`](crate::model::AbortTransactionRequest)
@@ -1020,7 +1020,7 @@ impl std::fmt::Debug for CommitTransactionRequest {
 pub mod commit_transaction_request {
     /// A builder for [`CommitTransactionRequest`](crate::model::CommitTransactionRequest)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         transaction_id: std::option::Option<std::string::String>,
         commit_digest: std::option::Option<smithy_types::Blob>,
@@ -1080,7 +1080,7 @@ impl std::fmt::Debug for EndSessionRequest {
 pub mod end_session_request {
     /// A builder for [`EndSessionRequest`](crate::model::EndSessionRequest)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`EndSessionRequest`](crate::model::EndSessionRequest)
@@ -1110,7 +1110,7 @@ impl std::fmt::Debug for StartTransactionRequest {
 pub mod start_transaction_request {
     /// A builder for [`StartTransactionRequest`](crate::model::StartTransactionRequest)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`StartTransactionRequest`](crate::model::StartTransactionRequest)
@@ -1147,7 +1147,7 @@ impl std::fmt::Debug for StartSessionRequest {
 pub mod start_session_request {
     /// A builder for [`StartSessionRequest`](crate::model::StartSessionRequest)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         ledger_name: std::option::Option<std::string::String>,
     }

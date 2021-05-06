@@ -30,7 +30,7 @@ struct Opt {
     #[structopt(short, long)]
     key: String,
 
-    /// Activate verbose mode    
+    /// Activate verbose mode
     #[structopt(short, long)]
     verbose: bool,
 }

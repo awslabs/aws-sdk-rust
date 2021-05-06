@@ -10,7 +10,9 @@ use polly::{Client, Config, Region};
 
 use aws_types::region::{EnvironmentProvider, ProvideRegion};
 
+use bytes::Buf;
 use structopt::StructOpt;
+use tokio::io::AsyncWriteExt;
 use tracing_subscriber::fmt::format::FmtSpan;
 use tracing_subscriber::fmt::SubscriberBuilder;
 
@@ -76,12 +78,21 @@ async fn main() {
     };
 
     // Get MP3 data from response and save it
-    let blob = resp.audio_stream.expect("Could not get synthesized text");
-    let bytes = blob.as_ref();
+    let mut blob = resp
+        .audio_stream
+        .collect()
+        .await
+        .expect("failed to read data");
 
-    // Create output filename from input filename
     let parts: Vec<&str> = filename.split('.').collect();
     let out_file = format!("{}{}", String::from(parts[0]), ".mp3");
 
-    fs::write(out_file, bytes).expect("Could not write to file");
+    let mut file = tokio::fs::File::create(out_file)
+        .await
+        .expect("failed to create file");
+    while blob.has_remaining() {
+        file.write_buf(&mut blob)
+            .await
+            .expect("failed to write to file");
+    }
 }

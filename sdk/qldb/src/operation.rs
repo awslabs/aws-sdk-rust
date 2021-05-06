@@ -4,7 +4,7 @@
 /// <p>You can't restart a stream after you cancel it. Canceled QLDB stream resources are
 /// subject to a 7-day retention period, so they are automatically deleted after this limit
 /// expires.</p>
-#[derive(std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone)]
 pub struct CancelJournalKinesisStream {
     _private: (),
 }
@@ -13,6 +13,104 @@ impl CancelJournalKinesisStream {
     pub fn builder() -> crate::input::cancel_journal_kinesis_stream_input::Builder {
         crate::input::cancel_journal_kinesis_stream_input::Builder::default()
     }
+    fn parse_error(
+        &self,
+        response: &http::Response<bytes::Bytes>,
+    ) -> Result<
+        crate::output::CancelJournalKinesisStreamOutput,
+        crate::error::CancelJournalKinesisStreamError,
+    > {
+        let body = serde_json::from_slice(response.body().as_ref())
+            .unwrap_or_else(|_| serde_json::json!({}));
+        let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
+
+        let error_code = match generic.code() {
+            Some(code) => code,
+            None => {
+                return Err(crate::error::CancelJournalKinesisStreamError::unhandled(
+                    generic,
+                ))
+            }
+        };
+        Err(match error_code {
+            "InvalidParameterException" => crate::error::CancelJournalKinesisStreamError { meta: generic, kind: crate::error::CancelJournalKinesisStreamErrorKind::InvalidParameterError({
+                #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_error::Builder::default();
+                let _ = response;
+                
+                                    let body_slice = response.body().as_ref();
+                
+                                    let parsed_body: crate::error::InvalidParameterError = if body_slice.is_empty() {
+                                        // To enable JSON parsing to succeed, replace an empty body
+                                        // with an empty JSON body. If a member was required, it will fail slightly later
+                                        // during the operation construction phase.
+                                        serde_json::from_slice(b"{}").map_err(crate::error::CancelJournalKinesisStreamError::unhandled)?
+                                    } else {
+                                        serde_json::from_slice(response.body().as_ref()).map_err(crate::error::CancelJournalKinesisStreamError::unhandled)?
+                                    };
+                                
+                output = output.set_message(
+                    parsed_body.message
+                );
+                output = output.set_parameter_name(
+                    parsed_body.parameter_name
+                );
+                output.build()
+            })},
+            "ResourceNotFoundException" => crate::error::CancelJournalKinesisStreamError { meta: generic, kind: crate::error::CancelJournalKinesisStreamErrorKind::ResourceNotFoundError({
+                #[allow(unused_mut)]let mut output = crate::error::resource_not_found_error::Builder::default();
+                let _ = response;
+                
+                                    let body_slice = response.body().as_ref();
+                
+                                    let parsed_body: crate::error::ResourceNotFoundError = if body_slice.is_empty() {
+                                        // To enable JSON parsing to succeed, replace an empty body
+                                        // with an empty JSON body. If a member was required, it will fail slightly later
+                                        // during the operation construction phase.
+                                        serde_json::from_slice(b"{}").map_err(crate::error::CancelJournalKinesisStreamError::unhandled)?
+                                    } else {
+                                        serde_json::from_slice(response.body().as_ref()).map_err(crate::error::CancelJournalKinesisStreamError::unhandled)?
+                                    };
+                                
+                output = output.set_message(
+                    parsed_body.message
+                );
+                output = output.set_resource_type(
+                    parsed_body.resource_type
+                );
+                output = output.set_resource_name(
+                    parsed_body.resource_name
+                );
+                output.build()
+            })},
+            "ResourcePreconditionNotMetException" => crate::error::CancelJournalKinesisStreamError { meta: generic, kind: crate::error::CancelJournalKinesisStreamErrorKind::ResourcePreconditionNotMetError({
+                #[allow(unused_mut)]let mut output = crate::error::resource_precondition_not_met_error::Builder::default();
+                let _ = response;
+                
+                                    let body_slice = response.body().as_ref();
+                
+                                    let parsed_body: crate::error::ResourcePreconditionNotMetError = if body_slice.is_empty() {
+                                        // To enable JSON parsing to succeed, replace an empty body
+                                        // with an empty JSON body. If a member was required, it will fail slightly later
+                                        // during the operation construction phase.
+                                        serde_json::from_slice(b"{}").map_err(crate::error::CancelJournalKinesisStreamError::unhandled)?
+                                    } else {
+                                        serde_json::from_slice(response.body().as_ref()).map_err(crate::error::CancelJournalKinesisStreamError::unhandled)?
+                                    };
+                                
+                output = output.set_message(
+                    parsed_body.message
+                );
+                output = output.set_resource_type(
+                    parsed_body.resource_type
+                );
+                output = output.set_resource_name(
+                    parsed_body.resource_name
+                );
+                output.build()
+            })},
+            _ => crate::error::CancelJournalKinesisStreamError::generic(generic)
+        })
+    }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
         response: &http::response::Response<impl AsRef<[u8]>>,
@@ -20,98 +118,6 @@ impl CancelJournalKinesisStream {
         crate::output::CancelJournalKinesisStreamOutput,
         crate::error::CancelJournalKinesisStreamError,
     > {
-        if crate::aws_json_errors::is_error(&response) && response.status().as_u16() != 200 {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => {
-                    return Err(crate::error::CancelJournalKinesisStreamError::unhandled(
-                        generic,
-                    ))
-                }
-            };
-            return Err(match error_code {
-                "InvalidParameterException" => crate::error::CancelJournalKinesisStreamError { meta: generic, kind: crate::error::CancelJournalKinesisStreamErrorKind::InvalidParameterError({
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_error::Builder::default();
-                    let _ = response;
-                    
-                                        let body_slice = response.body().as_ref();
-                    
-                                        let parsed_body: crate::error::InvalidParameterError = if body_slice.is_empty() {
-                                            // To enable JSON parsing to succeed, replace an empty body
-                                            // with an empty JSON body. If a member was required, it will fail slightly later
-                                            // during the operation construction phase.
-                                            serde_json::from_slice(b"{}").map_err(crate::error::CancelJournalKinesisStreamError::unhandled)?
-                                        } else {
-                                            serde_json::from_slice(response.body().as_ref()).map_err(crate::error::CancelJournalKinesisStreamError::unhandled)?
-                                        };
-                                    
-                    output = output.set_message(
-                        parsed_body.message
-                    );
-                    output = output.set_parameter_name(
-                        parsed_body.parameter_name
-                    );
-                    output.build()
-                })},
-                "ResourceNotFoundException" => crate::error::CancelJournalKinesisStreamError { meta: generic, kind: crate::error::CancelJournalKinesisStreamErrorKind::ResourceNotFoundError({
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_error::Builder::default();
-                    let _ = response;
-                    
-                                        let body_slice = response.body().as_ref();
-                    
-                                        let parsed_body: crate::error::ResourceNotFoundError = if body_slice.is_empty() {
-                                            // To enable JSON parsing to succeed, replace an empty body
-                                            // with an empty JSON body. If a member was required, it will fail slightly later
-                                            // during the operation construction phase.
-                                            serde_json::from_slice(b"{}").map_err(crate::error::CancelJournalKinesisStreamError::unhandled)?
-                                        } else {
-                                            serde_json::from_slice(response.body().as_ref()).map_err(crate::error::CancelJournalKinesisStreamError::unhandled)?
-                                        };
-                                    
-                    output = output.set_message(
-                        parsed_body.message
-                    );
-                    output = output.set_resource_type(
-                        parsed_body.resource_type
-                    );
-                    output = output.set_resource_name(
-                        parsed_body.resource_name
-                    );
-                    output.build()
-                })},
-                "ResourcePreconditionNotMetException" => crate::error::CancelJournalKinesisStreamError { meta: generic, kind: crate::error::CancelJournalKinesisStreamErrorKind::ResourcePreconditionNotMetError({
-                    #[allow(unused_mut)]let mut output = crate::error::resource_precondition_not_met_error::Builder::default();
-                    let _ = response;
-                    
-                                        let body_slice = response.body().as_ref();
-                    
-                                        let parsed_body: crate::error::ResourcePreconditionNotMetError = if body_slice.is_empty() {
-                                            // To enable JSON parsing to succeed, replace an empty body
-                                            // with an empty JSON body. If a member was required, it will fail slightly later
-                                            // during the operation construction phase.
-                                            serde_json::from_slice(b"{}").map_err(crate::error::CancelJournalKinesisStreamError::unhandled)?
-                                        } else {
-                                            serde_json::from_slice(response.body().as_ref()).map_err(crate::error::CancelJournalKinesisStreamError::unhandled)?
-                                        };
-                                    
-                    output = output.set_message(
-                        parsed_body.message
-                    );
-                    output = output.set_resource_type(
-                        parsed_body.resource_type
-                    );
-                    output = output.set_resource_name(
-                        parsed_body.resource_name
-                    );
-                    output.build()
-                })},
-                _ => crate::error::CancelJournalKinesisStreamError::generic(generic)
-            });
-        }
         Ok({
             #[allow(unused_mut)]
             let mut output =
@@ -156,12 +162,16 @@ impl smithy_http::response::ParseStrictResponse for CancelJournalKinesisStream {
         crate::error::CancelJournalKinesisStreamError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if crate::aws_json_errors::is_error(&response) && response.status().as_u16() != 200 {
+            self.parse_error(response)
+        } else {
+            self.parse_response(response)
+        }
     }
 }
 
 /// <p>Creates a new ledger in your AWS account.</p>
-#[derive(std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone)]
 pub struct CreateLedger {
     _private: (),
 }
@@ -170,130 +180,131 @@ impl CreateLedger {
     pub fn builder() -> crate::input::create_ledger_input::Builder {
         crate::input::create_ledger_input::Builder::default()
     }
+    fn parse_error(
+        &self,
+        response: &http::Response<bytes::Bytes>,
+    ) -> Result<crate::output::CreateLedgerOutput, crate::error::CreateLedgerError> {
+        let body = serde_json::from_slice(response.body().as_ref())
+            .unwrap_or_else(|_| serde_json::json!({}));
+        let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
+
+        let error_code = match generic.code() {
+            Some(code) => code,
+            None => return Err(crate::error::CreateLedgerError::unhandled(generic)),
+        };
+        Err(match error_code {
+            "InvalidParameterException" => crate::error::CreateLedgerError {
+                meta: generic,
+                kind: crate::error::CreateLedgerErrorKind::InvalidParameterError({
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_error::Builder::default();
+                    let _ = response;
+
+                    let body_slice = response.body().as_ref();
+
+                    let parsed_body: crate::error::InvalidParameterError = if body_slice.is_empty()
+                    {
+                        // To enable JSON parsing to succeed, replace an empty body
+                        // with an empty JSON body. If a member was required, it will fail slightly later
+                        // during the operation construction phase.
+                        serde_json::from_slice(b"{}")
+                            .map_err(crate::error::CreateLedgerError::unhandled)?
+                    } else {
+                        serde_json::from_slice(response.body().as_ref())
+                            .map_err(crate::error::CreateLedgerError::unhandled)?
+                    };
+
+                    output = output.set_message(parsed_body.message);
+                    output = output.set_parameter_name(parsed_body.parameter_name);
+                    output.build()
+                }),
+            },
+            "LimitExceededException" => crate::error::CreateLedgerError {
+                meta: generic,
+                kind: crate::error::CreateLedgerErrorKind::LimitExceededError({
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::limit_exceeded_error::Builder::default();
+                    let _ = response;
+
+                    let body_slice = response.body().as_ref();
+
+                    let parsed_body: crate::error::LimitExceededError = if body_slice.is_empty() {
+                        // To enable JSON parsing to succeed, replace an empty body
+                        // with an empty JSON body. If a member was required, it will fail slightly later
+                        // during the operation construction phase.
+                        serde_json::from_slice(b"{}")
+                            .map_err(crate::error::CreateLedgerError::unhandled)?
+                    } else {
+                        serde_json::from_slice(response.body().as_ref())
+                            .map_err(crate::error::CreateLedgerError::unhandled)?
+                    };
+
+                    output = output.set_message(parsed_body.message);
+                    output = output.set_resource_type(parsed_body.resource_type);
+                    output.build()
+                }),
+            },
+            "ResourceAlreadyExistsException" => crate::error::CreateLedgerError {
+                meta: generic,
+                kind: crate::error::CreateLedgerErrorKind::ResourceAlreadyExistsError({
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::resource_already_exists_error::Builder::default();
+                    let _ = response;
+
+                    let body_slice = response.body().as_ref();
+
+                    let parsed_body: crate::error::ResourceAlreadyExistsError =
+                        if body_slice.is_empty() {
+                            // To enable JSON parsing to succeed, replace an empty body
+                            // with an empty JSON body. If a member was required, it will fail slightly later
+                            // during the operation construction phase.
+                            serde_json::from_slice(b"{}")
+                                .map_err(crate::error::CreateLedgerError::unhandled)?
+                        } else {
+                            serde_json::from_slice(response.body().as_ref())
+                                .map_err(crate::error::CreateLedgerError::unhandled)?
+                        };
+
+                    output = output.set_message(parsed_body.message);
+                    output = output.set_resource_type(parsed_body.resource_type);
+                    output = output.set_resource_name(parsed_body.resource_name);
+                    output.build()
+                }),
+            },
+            "ResourceInUseException" => crate::error::CreateLedgerError {
+                meta: generic,
+                kind: crate::error::CreateLedgerErrorKind::ResourceInUseError({
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_in_use_error::Builder::default();
+                    let _ = response;
+
+                    let body_slice = response.body().as_ref();
+
+                    let parsed_body: crate::error::ResourceInUseError = if body_slice.is_empty() {
+                        // To enable JSON parsing to succeed, replace an empty body
+                        // with an empty JSON body. If a member was required, it will fail slightly later
+                        // during the operation construction phase.
+                        serde_json::from_slice(b"{}")
+                            .map_err(crate::error::CreateLedgerError::unhandled)?
+                    } else {
+                        serde_json::from_slice(response.body().as_ref())
+                            .map_err(crate::error::CreateLedgerError::unhandled)?
+                    };
+
+                    output = output.set_message(parsed_body.message);
+                    output = output.set_resource_type(parsed_body.resource_type);
+                    output = output.set_resource_name(parsed_body.resource_name);
+                    output.build()
+                }),
+            },
+            _ => crate::error::CreateLedgerError::generic(generic),
+        })
+    }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
         response: &http::response::Response<impl AsRef<[u8]>>,
     ) -> Result<crate::output::CreateLedgerOutput, crate::error::CreateLedgerError> {
-        if crate::aws_json_errors::is_error(&response) && response.status().as_u16() != 200 {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => return Err(crate::error::CreateLedgerError::unhandled(generic)),
-            };
-            return Err(match error_code {
-                "InvalidParameterException" => crate::error::CreateLedgerError {
-                    meta: generic,
-                    kind: crate::error::CreateLedgerErrorKind::InvalidParameterError({
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::invalid_parameter_error::Builder::default();
-                        let _ = response;
-
-                        let body_slice = response.body().as_ref();
-
-                        let parsed_body: crate::error::InvalidParameterError =
-                            if body_slice.is_empty() {
-                                // To enable JSON parsing to succeed, replace an empty body
-                                // with an empty JSON body. If a member was required, it will fail slightly later
-                                // during the operation construction phase.
-                                serde_json::from_slice(b"{}")
-                                    .map_err(crate::error::CreateLedgerError::unhandled)?
-                            } else {
-                                serde_json::from_slice(response.body().as_ref())
-                                    .map_err(crate::error::CreateLedgerError::unhandled)?
-                            };
-
-                        output = output.set_message(parsed_body.message);
-                        output = output.set_parameter_name(parsed_body.parameter_name);
-                        output.build()
-                    }),
-                },
-                "LimitExceededException" => crate::error::CreateLedgerError {
-                    meta: generic,
-                    kind: crate::error::CreateLedgerErrorKind::LimitExceededError({
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::limit_exceeded_error::Builder::default();
-                        let _ = response;
-
-                        let body_slice = response.body().as_ref();
-
-                        let parsed_body: crate::error::LimitExceededError = if body_slice.is_empty()
-                        {
-                            // To enable JSON parsing to succeed, replace an empty body
-                            // with an empty JSON body. If a member was required, it will fail slightly later
-                            // during the operation construction phase.
-                            serde_json::from_slice(b"{}")
-                                .map_err(crate::error::CreateLedgerError::unhandled)?
-                        } else {
-                            serde_json::from_slice(response.body().as_ref())
-                                .map_err(crate::error::CreateLedgerError::unhandled)?
-                        };
-
-                        output = output.set_message(parsed_body.message);
-                        output = output.set_resource_type(parsed_body.resource_type);
-                        output.build()
-                    }),
-                },
-                "ResourceAlreadyExistsException" => crate::error::CreateLedgerError {
-                    meta: generic,
-                    kind: crate::error::CreateLedgerErrorKind::ResourceAlreadyExistsError({
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::resource_already_exists_error::Builder::default();
-                        let _ = response;
-
-                        let body_slice = response.body().as_ref();
-
-                        let parsed_body: crate::error::ResourceAlreadyExistsError =
-                            if body_slice.is_empty() {
-                                // To enable JSON parsing to succeed, replace an empty body
-                                // with an empty JSON body. If a member was required, it will fail slightly later
-                                // during the operation construction phase.
-                                serde_json::from_slice(b"{}")
-                                    .map_err(crate::error::CreateLedgerError::unhandled)?
-                            } else {
-                                serde_json::from_slice(response.body().as_ref())
-                                    .map_err(crate::error::CreateLedgerError::unhandled)?
-                            };
-
-                        output = output.set_message(parsed_body.message);
-                        output = output.set_resource_type(parsed_body.resource_type);
-                        output = output.set_resource_name(parsed_body.resource_name);
-                        output.build()
-                    }),
-                },
-                "ResourceInUseException" => crate::error::CreateLedgerError {
-                    meta: generic,
-                    kind: crate::error::CreateLedgerErrorKind::ResourceInUseError({
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::resource_in_use_error::Builder::default();
-                        let _ = response;
-
-                        let body_slice = response.body().as_ref();
-
-                        let parsed_body: crate::error::ResourceInUseError = if body_slice.is_empty()
-                        {
-                            // To enable JSON parsing to succeed, replace an empty body
-                            // with an empty JSON body. If a member was required, it will fail slightly later
-                            // during the operation construction phase.
-                            serde_json::from_slice(b"{}")
-                                .map_err(crate::error::CreateLedgerError::unhandled)?
-                        } else {
-                            serde_json::from_slice(response.body().as_ref())
-                                .map_err(crate::error::CreateLedgerError::unhandled)?
-                        };
-
-                        output = output.set_message(parsed_body.message);
-                        output = output.set_resource_type(parsed_body.resource_type);
-                        output = output.set_resource_name(parsed_body.resource_name);
-                        output.build()
-                    }),
-                },
-                _ => crate::error::CreateLedgerError::generic(generic),
-            });
-        }
         Ok({
             #[allow(unused_mut)]
             let mut output = crate::output::create_ledger_output::Builder::default();
@@ -333,7 +344,11 @@ impl CreateLedger {
 impl smithy_http::response::ParseStrictResponse for CreateLedger {
     type Output = Result<crate::output::CreateLedgerOutput, crate::error::CreateLedgerError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if crate::aws_json_errors::is_error(&response) && response.status().as_u16() != 200 {
+            self.parse_error(response)
+        } else {
+            self.parse_response(response)
+        }
     }
 }
 
@@ -342,7 +357,7 @@ impl smithy_http::response::ParseStrictResponse for CreateLedger {
 /// ledger using the QLDB API or the AWS Command Line Interface (AWS CLI). You can disable it by calling the
 /// <code>UpdateLedger</code> operation to set the flag to <code>false</code>. The QLDB
 /// console disables deletion protection for you when you use it to delete a ledger.</p>
-#[derive(std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone)]
 pub struct DeleteLedger {
     _private: (),
 }
@@ -351,57 +366,110 @@ impl DeleteLedger {
     pub fn builder() -> crate::input::delete_ledger_input::Builder {
         crate::input::delete_ledger_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    fn from_response(
-        response: &http::response::Response<impl AsRef<[u8]>>,
+    fn parse_error(
+        &self,
+        response: &http::Response<bytes::Bytes>,
     ) -> Result<crate::output::DeleteLedgerOutput, crate::error::DeleteLedgerError> {
-        if crate::aws_json_errors::is_error(&response) && response.status().as_u16() != 200 {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
+        let body = serde_json::from_slice(response.body().as_ref())
+            .unwrap_or_else(|_| serde_json::json!({}));
+        let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
 
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => return Err(crate::error::DeleteLedgerError::unhandled(generic)),
-            };
-            return Err(match error_code {
-                "InvalidParameterException" => crate::error::DeleteLedgerError {
-                    meta: generic,
-                    kind: crate::error::DeleteLedgerErrorKind::InvalidParameterError({
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::invalid_parameter_error::Builder::default();
-                        let _ = response;
+        let error_code = match generic.code() {
+            Some(code) => code,
+            None => return Err(crate::error::DeleteLedgerError::unhandled(generic)),
+        };
+        Err(match error_code {
+            "InvalidParameterException" => crate::error::DeleteLedgerError {
+                meta: generic,
+                kind: crate::error::DeleteLedgerErrorKind::InvalidParameterError({
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_error::Builder::default();
+                    let _ = response;
 
-                        let body_slice = response.body().as_ref();
+                    let body_slice = response.body().as_ref();
 
-                        let parsed_body: crate::error::InvalidParameterError =
-                            if body_slice.is_empty() {
-                                // To enable JSON parsing to succeed, replace an empty body
-                                // with an empty JSON body. If a member was required, it will fail slightly later
-                                // during the operation construction phase.
-                                serde_json::from_slice(b"{}")
-                                    .map_err(crate::error::DeleteLedgerError::unhandled)?
-                            } else {
-                                serde_json::from_slice(response.body().as_ref())
-                                    .map_err(crate::error::DeleteLedgerError::unhandled)?
-                            };
+                    let parsed_body: crate::error::InvalidParameterError = if body_slice.is_empty()
+                    {
+                        // To enable JSON parsing to succeed, replace an empty body
+                        // with an empty JSON body. If a member was required, it will fail slightly later
+                        // during the operation construction phase.
+                        serde_json::from_slice(b"{}")
+                            .map_err(crate::error::DeleteLedgerError::unhandled)?
+                    } else {
+                        serde_json::from_slice(response.body().as_ref())
+                            .map_err(crate::error::DeleteLedgerError::unhandled)?
+                    };
 
-                        output = output.set_message(parsed_body.message);
-                        output = output.set_parameter_name(parsed_body.parameter_name);
-                        output.build()
-                    }),
-                },
-                "ResourceInUseException" => crate::error::DeleteLedgerError {
-                    meta: generic,
-                    kind: crate::error::DeleteLedgerErrorKind::ResourceInUseError({
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::resource_in_use_error::Builder::default();
-                        let _ = response;
+                    output = output.set_message(parsed_body.message);
+                    output = output.set_parameter_name(parsed_body.parameter_name);
+                    output.build()
+                }),
+            },
+            "ResourceInUseException" => crate::error::DeleteLedgerError {
+                meta: generic,
+                kind: crate::error::DeleteLedgerErrorKind::ResourceInUseError({
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_in_use_error::Builder::default();
+                    let _ = response;
 
-                        let body_slice = response.body().as_ref();
+                    let body_slice = response.body().as_ref();
 
-                        let parsed_body: crate::error::ResourceInUseError = if body_slice.is_empty()
-                        {
+                    let parsed_body: crate::error::ResourceInUseError = if body_slice.is_empty() {
+                        // To enable JSON parsing to succeed, replace an empty body
+                        // with an empty JSON body. If a member was required, it will fail slightly later
+                        // during the operation construction phase.
+                        serde_json::from_slice(b"{}")
+                            .map_err(crate::error::DeleteLedgerError::unhandled)?
+                    } else {
+                        serde_json::from_slice(response.body().as_ref())
+                            .map_err(crate::error::DeleteLedgerError::unhandled)?
+                    };
+
+                    output = output.set_message(parsed_body.message);
+                    output = output.set_resource_type(parsed_body.resource_type);
+                    output = output.set_resource_name(parsed_body.resource_name);
+                    output.build()
+                }),
+            },
+            "ResourceNotFoundException" => crate::error::DeleteLedgerError {
+                meta: generic,
+                kind: crate::error::DeleteLedgerErrorKind::ResourceNotFoundError({
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_error::Builder::default();
+                    let _ = response;
+
+                    let body_slice = response.body().as_ref();
+
+                    let parsed_body: crate::error::ResourceNotFoundError = if body_slice.is_empty()
+                    {
+                        // To enable JSON parsing to succeed, replace an empty body
+                        // with an empty JSON body. If a member was required, it will fail slightly later
+                        // during the operation construction phase.
+                        serde_json::from_slice(b"{}")
+                            .map_err(crate::error::DeleteLedgerError::unhandled)?
+                    } else {
+                        serde_json::from_slice(response.body().as_ref())
+                            .map_err(crate::error::DeleteLedgerError::unhandled)?
+                    };
+
+                    output = output.set_message(parsed_body.message);
+                    output = output.set_resource_type(parsed_body.resource_type);
+                    output = output.set_resource_name(parsed_body.resource_name);
+                    output.build()
+                }),
+            },
+            "ResourcePreconditionNotMetException" => crate::error::DeleteLedgerError {
+                meta: generic,
+                kind: crate::error::DeleteLedgerErrorKind::ResourcePreconditionNotMetError({
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::resource_precondition_not_met_error::Builder::default();
+                    let _ = response;
+
+                    let body_slice = response.body().as_ref();
+
+                    let parsed_body: crate::error::ResourcePreconditionNotMetError =
+                        if body_slice.is_empty() {
                             // To enable JSON parsing to succeed, replace an empty body
                             // with an empty JSON body. If a member was required, it will fail slightly later
                             // during the operation construction phase.
@@ -412,70 +480,19 @@ impl DeleteLedger {
                                 .map_err(crate::error::DeleteLedgerError::unhandled)?
                         };
 
-                        output = output.set_message(parsed_body.message);
-                        output = output.set_resource_type(parsed_body.resource_type);
-                        output = output.set_resource_name(parsed_body.resource_name);
-                        output.build()
-                    }),
-                },
-                "ResourceNotFoundException" => crate::error::DeleteLedgerError {
-                    meta: generic,
-                    kind: crate::error::DeleteLedgerErrorKind::ResourceNotFoundError({
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::resource_not_found_error::Builder::default();
-                        let _ = response;
-
-                        let body_slice = response.body().as_ref();
-
-                        let parsed_body: crate::error::ResourceNotFoundError =
-                            if body_slice.is_empty() {
-                                // To enable JSON parsing to succeed, replace an empty body
-                                // with an empty JSON body. If a member was required, it will fail slightly later
-                                // during the operation construction phase.
-                                serde_json::from_slice(b"{}")
-                                    .map_err(crate::error::DeleteLedgerError::unhandled)?
-                            } else {
-                                serde_json::from_slice(response.body().as_ref())
-                                    .map_err(crate::error::DeleteLedgerError::unhandled)?
-                            };
-
-                        output = output.set_message(parsed_body.message);
-                        output = output.set_resource_type(parsed_body.resource_type);
-                        output = output.set_resource_name(parsed_body.resource_name);
-                        output.build()
-                    }),
-                },
-                "ResourcePreconditionNotMetException" => crate::error::DeleteLedgerError {
-                    meta: generic,
-                    kind: crate::error::DeleteLedgerErrorKind::ResourcePreconditionNotMetError({
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::resource_precondition_not_met_error::Builder::default();
-                        let _ = response;
-
-                        let body_slice = response.body().as_ref();
-
-                        let parsed_body: crate::error::ResourcePreconditionNotMetError =
-                            if body_slice.is_empty() {
-                                // To enable JSON parsing to succeed, replace an empty body
-                                // with an empty JSON body. If a member was required, it will fail slightly later
-                                // during the operation construction phase.
-                                serde_json::from_slice(b"{}")
-                                    .map_err(crate::error::DeleteLedgerError::unhandled)?
-                            } else {
-                                serde_json::from_slice(response.body().as_ref())
-                                    .map_err(crate::error::DeleteLedgerError::unhandled)?
-                            };
-
-                        output = output.set_message(parsed_body.message);
-                        output = output.set_resource_type(parsed_body.resource_type);
-                        output = output.set_resource_name(parsed_body.resource_name);
-                        output.build()
-                    }),
-                },
-                _ => crate::error::DeleteLedgerError::generic(generic),
-            });
-        }
+                    output = output.set_message(parsed_body.message);
+                    output = output.set_resource_type(parsed_body.resource_type);
+                    output = output.set_resource_name(parsed_body.resource_name);
+                    output.build()
+                }),
+            },
+            _ => crate::error::DeleteLedgerError::generic(generic),
+        })
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn from_response(
+        response: &http::response::Response<impl AsRef<[u8]>>,
+    ) -> Result<crate::output::DeleteLedgerOutput, crate::error::DeleteLedgerError> {
         Ok({
             #[allow(unused_mut)]
             let mut output = crate::output::delete_ledger_output::Builder::default();
@@ -497,14 +514,18 @@ impl DeleteLedger {
 impl smithy_http::response::ParseStrictResponse for DeleteLedger {
     type Output = Result<crate::output::DeleteLedgerOutput, crate::error::DeleteLedgerError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if crate::aws_json_errors::is_error(&response) && response.status().as_u16() != 200 {
+            self.parse_error(response)
+        } else {
+            self.parse_response(response)
+        }
     }
 }
 
 /// <p>Returns detailed information about a given Amazon QLDB journal stream. The output
 /// includes the Amazon Resource Name (ARN), stream name, current status, creation time, and
 /// the parameters of your original stream creation request.</p>
-#[derive(std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone)]
 pub struct DescribeJournalKinesisStream {
     _private: (),
 }
@@ -513,6 +534,104 @@ impl DescribeJournalKinesisStream {
     pub fn builder() -> crate::input::describe_journal_kinesis_stream_input::Builder {
         crate::input::describe_journal_kinesis_stream_input::Builder::default()
     }
+    fn parse_error(
+        &self,
+        response: &http::Response<bytes::Bytes>,
+    ) -> Result<
+        crate::output::DescribeJournalKinesisStreamOutput,
+        crate::error::DescribeJournalKinesisStreamError,
+    > {
+        let body = serde_json::from_slice(response.body().as_ref())
+            .unwrap_or_else(|_| serde_json::json!({}));
+        let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
+
+        let error_code = match generic.code() {
+            Some(code) => code,
+            None => {
+                return Err(crate::error::DescribeJournalKinesisStreamError::unhandled(
+                    generic,
+                ))
+            }
+        };
+        Err(match error_code {
+            "InvalidParameterException" => crate::error::DescribeJournalKinesisStreamError { meta: generic, kind: crate::error::DescribeJournalKinesisStreamErrorKind::InvalidParameterError({
+                #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_error::Builder::default();
+                let _ = response;
+                
+                                    let body_slice = response.body().as_ref();
+                
+                                    let parsed_body: crate::error::InvalidParameterError = if body_slice.is_empty() {
+                                        // To enable JSON parsing to succeed, replace an empty body
+                                        // with an empty JSON body. If a member was required, it will fail slightly later
+                                        // during the operation construction phase.
+                                        serde_json::from_slice(b"{}").map_err(crate::error::DescribeJournalKinesisStreamError::unhandled)?
+                                    } else {
+                                        serde_json::from_slice(response.body().as_ref()).map_err(crate::error::DescribeJournalKinesisStreamError::unhandled)?
+                                    };
+                                
+                output = output.set_message(
+                    parsed_body.message
+                );
+                output = output.set_parameter_name(
+                    parsed_body.parameter_name
+                );
+                output.build()
+            })},
+            "ResourceNotFoundException" => crate::error::DescribeJournalKinesisStreamError { meta: generic, kind: crate::error::DescribeJournalKinesisStreamErrorKind::ResourceNotFoundError({
+                #[allow(unused_mut)]let mut output = crate::error::resource_not_found_error::Builder::default();
+                let _ = response;
+                
+                                    let body_slice = response.body().as_ref();
+                
+                                    let parsed_body: crate::error::ResourceNotFoundError = if body_slice.is_empty() {
+                                        // To enable JSON parsing to succeed, replace an empty body
+                                        // with an empty JSON body. If a member was required, it will fail slightly later
+                                        // during the operation construction phase.
+                                        serde_json::from_slice(b"{}").map_err(crate::error::DescribeJournalKinesisStreamError::unhandled)?
+                                    } else {
+                                        serde_json::from_slice(response.body().as_ref()).map_err(crate::error::DescribeJournalKinesisStreamError::unhandled)?
+                                    };
+                                
+                output = output.set_message(
+                    parsed_body.message
+                );
+                output = output.set_resource_type(
+                    parsed_body.resource_type
+                );
+                output = output.set_resource_name(
+                    parsed_body.resource_name
+                );
+                output.build()
+            })},
+            "ResourcePreconditionNotMetException" => crate::error::DescribeJournalKinesisStreamError { meta: generic, kind: crate::error::DescribeJournalKinesisStreamErrorKind::ResourcePreconditionNotMetError({
+                #[allow(unused_mut)]let mut output = crate::error::resource_precondition_not_met_error::Builder::default();
+                let _ = response;
+                
+                                    let body_slice = response.body().as_ref();
+                
+                                    let parsed_body: crate::error::ResourcePreconditionNotMetError = if body_slice.is_empty() {
+                                        // To enable JSON parsing to succeed, replace an empty body
+                                        // with an empty JSON body. If a member was required, it will fail slightly later
+                                        // during the operation construction phase.
+                                        serde_json::from_slice(b"{}").map_err(crate::error::DescribeJournalKinesisStreamError::unhandled)?
+                                    } else {
+                                        serde_json::from_slice(response.body().as_ref()).map_err(crate::error::DescribeJournalKinesisStreamError::unhandled)?
+                                    };
+                                
+                output = output.set_message(
+                    parsed_body.message
+                );
+                output = output.set_resource_type(
+                    parsed_body.resource_type
+                );
+                output = output.set_resource_name(
+                    parsed_body.resource_name
+                );
+                output.build()
+            })},
+            _ => crate::error::DescribeJournalKinesisStreamError::generic(generic)
+        })
+    }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
         response: &http::response::Response<impl AsRef<[u8]>>,
@@ -520,98 +639,6 @@ impl DescribeJournalKinesisStream {
         crate::output::DescribeJournalKinesisStreamOutput,
         crate::error::DescribeJournalKinesisStreamError,
     > {
-        if crate::aws_json_errors::is_error(&response) && response.status().as_u16() != 200 {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => {
-                    return Err(crate::error::DescribeJournalKinesisStreamError::unhandled(
-                        generic,
-                    ))
-                }
-            };
-            return Err(match error_code {
-                "InvalidParameterException" => crate::error::DescribeJournalKinesisStreamError { meta: generic, kind: crate::error::DescribeJournalKinesisStreamErrorKind::InvalidParameterError({
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_error::Builder::default();
-                    let _ = response;
-                    
-                                        let body_slice = response.body().as_ref();
-                    
-                                        let parsed_body: crate::error::InvalidParameterError = if body_slice.is_empty() {
-                                            // To enable JSON parsing to succeed, replace an empty body
-                                            // with an empty JSON body. If a member was required, it will fail slightly later
-                                            // during the operation construction phase.
-                                            serde_json::from_slice(b"{}").map_err(crate::error::DescribeJournalKinesisStreamError::unhandled)?
-                                        } else {
-                                            serde_json::from_slice(response.body().as_ref()).map_err(crate::error::DescribeJournalKinesisStreamError::unhandled)?
-                                        };
-                                    
-                    output = output.set_message(
-                        parsed_body.message
-                    );
-                    output = output.set_parameter_name(
-                        parsed_body.parameter_name
-                    );
-                    output.build()
-                })},
-                "ResourceNotFoundException" => crate::error::DescribeJournalKinesisStreamError { meta: generic, kind: crate::error::DescribeJournalKinesisStreamErrorKind::ResourceNotFoundError({
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_error::Builder::default();
-                    let _ = response;
-                    
-                                        let body_slice = response.body().as_ref();
-                    
-                                        let parsed_body: crate::error::ResourceNotFoundError = if body_slice.is_empty() {
-                                            // To enable JSON parsing to succeed, replace an empty body
-                                            // with an empty JSON body. If a member was required, it will fail slightly later
-                                            // during the operation construction phase.
-                                            serde_json::from_slice(b"{}").map_err(crate::error::DescribeJournalKinesisStreamError::unhandled)?
-                                        } else {
-                                            serde_json::from_slice(response.body().as_ref()).map_err(crate::error::DescribeJournalKinesisStreamError::unhandled)?
-                                        };
-                                    
-                    output = output.set_message(
-                        parsed_body.message
-                    );
-                    output = output.set_resource_type(
-                        parsed_body.resource_type
-                    );
-                    output = output.set_resource_name(
-                        parsed_body.resource_name
-                    );
-                    output.build()
-                })},
-                "ResourcePreconditionNotMetException" => crate::error::DescribeJournalKinesisStreamError { meta: generic, kind: crate::error::DescribeJournalKinesisStreamErrorKind::ResourcePreconditionNotMetError({
-                    #[allow(unused_mut)]let mut output = crate::error::resource_precondition_not_met_error::Builder::default();
-                    let _ = response;
-                    
-                                        let body_slice = response.body().as_ref();
-                    
-                                        let parsed_body: crate::error::ResourcePreconditionNotMetError = if body_slice.is_empty() {
-                                            // To enable JSON parsing to succeed, replace an empty body
-                                            // with an empty JSON body. If a member was required, it will fail slightly later
-                                            // during the operation construction phase.
-                                            serde_json::from_slice(b"{}").map_err(crate::error::DescribeJournalKinesisStreamError::unhandled)?
-                                        } else {
-                                            serde_json::from_slice(response.body().as_ref()).map_err(crate::error::DescribeJournalKinesisStreamError::unhandled)?
-                                        };
-                                    
-                    output = output.set_message(
-                        parsed_body.message
-                    );
-                    output = output.set_resource_type(
-                        parsed_body.resource_type
-                    );
-                    output = output.set_resource_name(
-                        parsed_body.resource_name
-                    );
-                    output.build()
-                })},
-                _ => crate::error::DescribeJournalKinesisStreamError::generic(generic)
-            });
-        }
         Ok({
             #[allow(unused_mut)]
             let mut output =
@@ -656,7 +683,11 @@ impl smithy_http::response::ParseStrictResponse for DescribeJournalKinesisStream
         crate::error::DescribeJournalKinesisStreamError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if crate::aws_json_errors::is_error(&response) && response.status().as_u16() != 200 {
+            self.parse_error(response)
+        } else {
+            self.parse_response(response)
+        }
     }
 }
 
@@ -668,7 +699,7 @@ impl smithy_http::response::ParseStrictResponse for DescribeJournalKinesisStream
 /// <code>ResourceNotFoundException</code>.</p>
 /// <p>If the ledger with the given <code>Name</code> doesn't exist, then throws
 /// <code>ResourceNotFoundException</code>.</p>
-#[derive(std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone)]
 pub struct DescribeJournalS3Export {
     _private: (),
 }
@@ -677,6 +708,56 @@ impl DescribeJournalS3Export {
     pub fn builder() -> crate::input::describe_journal_s3_export_input::Builder {
         crate::input::describe_journal_s3_export_input::Builder::default()
     }
+    fn parse_error(
+        &self,
+        response: &http::Response<bytes::Bytes>,
+    ) -> Result<
+        crate::output::DescribeJournalS3ExportOutput,
+        crate::error::DescribeJournalS3ExportError,
+    > {
+        let body = serde_json::from_slice(response.body().as_ref())
+            .unwrap_or_else(|_| serde_json::json!({}));
+        let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
+
+        let error_code = match generic.code() {
+            Some(code) => code,
+            None => {
+                return Err(crate::error::DescribeJournalS3ExportError::unhandled(
+                    generic,
+                ))
+            }
+        };
+        Err(match error_code {
+            "ResourceNotFoundException" => crate::error::DescribeJournalS3ExportError {
+                meta: generic,
+                kind: crate::error::DescribeJournalS3ExportErrorKind::ResourceNotFoundError({
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_error::Builder::default();
+                    let _ = response;
+
+                    let body_slice = response.body().as_ref();
+
+                    let parsed_body: crate::error::ResourceNotFoundError = if body_slice.is_empty()
+                    {
+                        // To enable JSON parsing to succeed, replace an empty body
+                        // with an empty JSON body. If a member was required, it will fail slightly later
+                        // during the operation construction phase.
+                        serde_json::from_slice(b"{}")
+                            .map_err(crate::error::DescribeJournalS3ExportError::unhandled)?
+                    } else {
+                        serde_json::from_slice(response.body().as_ref())
+                            .map_err(crate::error::DescribeJournalS3ExportError::unhandled)?
+                    };
+
+                    output = output.set_message(parsed_body.message);
+                    output = output.set_resource_type(parsed_body.resource_type);
+                    output = output.set_resource_name(parsed_body.resource_name);
+                    output.build()
+                }),
+            },
+            _ => crate::error::DescribeJournalS3ExportError::generic(generic),
+        })
+    }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
         response: &http::response::Response<impl AsRef<[u8]>>,
@@ -684,51 +765,6 @@ impl DescribeJournalS3Export {
         crate::output::DescribeJournalS3ExportOutput,
         crate::error::DescribeJournalS3ExportError,
     > {
-        if crate::aws_json_errors::is_error(&response) && response.status().as_u16() != 200 {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => {
-                    return Err(crate::error::DescribeJournalS3ExportError::unhandled(
-                        generic,
-                    ))
-                }
-            };
-            return Err(match error_code {
-                "ResourceNotFoundException" => crate::error::DescribeJournalS3ExportError {
-                    meta: generic,
-                    kind: crate::error::DescribeJournalS3ExportErrorKind::ResourceNotFoundError({
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::resource_not_found_error::Builder::default();
-                        let _ = response;
-
-                        let body_slice = response.body().as_ref();
-
-                        let parsed_body: crate::error::ResourceNotFoundError = if body_slice
-                            .is_empty()
-                        {
-                            // To enable JSON parsing to succeed, replace an empty body
-                            // with an empty JSON body. If a member was required, it will fail slightly later
-                            // during the operation construction phase.
-                            serde_json::from_slice(b"{}")
-                                .map_err(crate::error::DescribeJournalS3ExportError::unhandled)?
-                        } else {
-                            serde_json::from_slice(response.body().as_ref())
-                                .map_err(crate::error::DescribeJournalS3ExportError::unhandled)?
-                        };
-
-                        output = output.set_message(parsed_body.message);
-                        output = output.set_resource_type(parsed_body.resource_type);
-                        output = output.set_resource_name(parsed_body.resource_name);
-                        output.build()
-                    }),
-                },
-                _ => crate::error::DescribeJournalS3ExportError::generic(generic),
-            });
-        }
         Ok({
             #[allow(unused_mut)]
             let mut output = crate::output::describe_journal_s3_export_output::Builder::default();
@@ -772,12 +808,16 @@ impl smithy_http::response::ParseStrictResponse for DescribeJournalS3Export {
         crate::error::DescribeJournalS3ExportError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if crate::aws_json_errors::is_error(&response) && response.status().as_u16() != 200 {
+            self.parse_error(response)
+        } else {
+            self.parse_response(response)
+        }
     }
 }
 
 /// <p>Returns information about a ledger, including its state and when it was created.</p>
-#[derive(std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone)]
 pub struct DescribeLedger {
     _private: (),
 }
@@ -786,76 +826,79 @@ impl DescribeLedger {
     pub fn builder() -> crate::input::describe_ledger_input::Builder {
         crate::input::describe_ledger_input::Builder::default()
     }
+    fn parse_error(
+        &self,
+        response: &http::Response<bytes::Bytes>,
+    ) -> Result<crate::output::DescribeLedgerOutput, crate::error::DescribeLedgerError> {
+        let body = serde_json::from_slice(response.body().as_ref())
+            .unwrap_or_else(|_| serde_json::json!({}));
+        let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
+
+        let error_code = match generic.code() {
+            Some(code) => code,
+            None => return Err(crate::error::DescribeLedgerError::unhandled(generic)),
+        };
+        Err(match error_code {
+            "InvalidParameterException" => crate::error::DescribeLedgerError {
+                meta: generic,
+                kind: crate::error::DescribeLedgerErrorKind::InvalidParameterError({
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_error::Builder::default();
+                    let _ = response;
+
+                    let body_slice = response.body().as_ref();
+
+                    let parsed_body: crate::error::InvalidParameterError = if body_slice.is_empty()
+                    {
+                        // To enable JSON parsing to succeed, replace an empty body
+                        // with an empty JSON body. If a member was required, it will fail slightly later
+                        // during the operation construction phase.
+                        serde_json::from_slice(b"{}")
+                            .map_err(crate::error::DescribeLedgerError::unhandled)?
+                    } else {
+                        serde_json::from_slice(response.body().as_ref())
+                            .map_err(crate::error::DescribeLedgerError::unhandled)?
+                    };
+
+                    output = output.set_message(parsed_body.message);
+                    output = output.set_parameter_name(parsed_body.parameter_name);
+                    output.build()
+                }),
+            },
+            "ResourceNotFoundException" => crate::error::DescribeLedgerError {
+                meta: generic,
+                kind: crate::error::DescribeLedgerErrorKind::ResourceNotFoundError({
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_error::Builder::default();
+                    let _ = response;
+
+                    let body_slice = response.body().as_ref();
+
+                    let parsed_body: crate::error::ResourceNotFoundError = if body_slice.is_empty()
+                    {
+                        // To enable JSON parsing to succeed, replace an empty body
+                        // with an empty JSON body. If a member was required, it will fail slightly later
+                        // during the operation construction phase.
+                        serde_json::from_slice(b"{}")
+                            .map_err(crate::error::DescribeLedgerError::unhandled)?
+                    } else {
+                        serde_json::from_slice(response.body().as_ref())
+                            .map_err(crate::error::DescribeLedgerError::unhandled)?
+                    };
+
+                    output = output.set_message(parsed_body.message);
+                    output = output.set_resource_type(parsed_body.resource_type);
+                    output = output.set_resource_name(parsed_body.resource_name);
+                    output.build()
+                }),
+            },
+            _ => crate::error::DescribeLedgerError::generic(generic),
+        })
+    }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
         response: &http::response::Response<impl AsRef<[u8]>>,
     ) -> Result<crate::output::DescribeLedgerOutput, crate::error::DescribeLedgerError> {
-        if crate::aws_json_errors::is_error(&response) && response.status().as_u16() != 200 {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => return Err(crate::error::DescribeLedgerError::unhandled(generic)),
-            };
-            return Err(match error_code {
-                "InvalidParameterException" => crate::error::DescribeLedgerError {
-                    meta: generic,
-                    kind: crate::error::DescribeLedgerErrorKind::InvalidParameterError({
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::invalid_parameter_error::Builder::default();
-                        let _ = response;
-
-                        let body_slice = response.body().as_ref();
-
-                        let parsed_body: crate::error::InvalidParameterError =
-                            if body_slice.is_empty() {
-                                // To enable JSON parsing to succeed, replace an empty body
-                                // with an empty JSON body. If a member was required, it will fail slightly later
-                                // during the operation construction phase.
-                                serde_json::from_slice(b"{}")
-                                    .map_err(crate::error::DescribeLedgerError::unhandled)?
-                            } else {
-                                serde_json::from_slice(response.body().as_ref())
-                                    .map_err(crate::error::DescribeLedgerError::unhandled)?
-                            };
-
-                        output = output.set_message(parsed_body.message);
-                        output = output.set_parameter_name(parsed_body.parameter_name);
-                        output.build()
-                    }),
-                },
-                "ResourceNotFoundException" => crate::error::DescribeLedgerError {
-                    meta: generic,
-                    kind: crate::error::DescribeLedgerErrorKind::ResourceNotFoundError({
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::resource_not_found_error::Builder::default();
-                        let _ = response;
-
-                        let body_slice = response.body().as_ref();
-
-                        let parsed_body: crate::error::ResourceNotFoundError =
-                            if body_slice.is_empty() {
-                                // To enable JSON parsing to succeed, replace an empty body
-                                // with an empty JSON body. If a member was required, it will fail slightly later
-                                // during the operation construction phase.
-                                serde_json::from_slice(b"{}")
-                                    .map_err(crate::error::DescribeLedgerError::unhandled)?
-                            } else {
-                                serde_json::from_slice(response.body().as_ref())
-                                    .map_err(crate::error::DescribeLedgerError::unhandled)?
-                            };
-
-                        output = output.set_message(parsed_body.message);
-                        output = output.set_resource_type(parsed_body.resource_type);
-                        output = output.set_resource_name(parsed_body.resource_name);
-                        output.build()
-                    }),
-                },
-                _ => crate::error::DescribeLedgerError::generic(generic),
-            });
-        }
         Ok({
             #[allow(unused_mut)]
             let mut output = crate::output::describe_ledger_output::Builder::default();
@@ -897,7 +940,11 @@ impl DescribeLedger {
 impl smithy_http::response::ParseStrictResponse for DescribeLedger {
     type Output = Result<crate::output::DescribeLedgerOutput, crate::error::DescribeLedgerError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if crate::aws_json_errors::is_error(&response) && response.status().as_u16() != 200 {
+            self.parse_error(response)
+        } else {
+            self.parse_response(response)
+        }
     }
 }
 
@@ -909,7 +956,7 @@ impl smithy_http::response::ParseStrictResponse for DescribeLedger {
 /// throws <code>ResourcePreconditionNotMetException</code>.</p>
 /// <p>You can initiate up to two concurrent journal export requests for each ledger. Beyond
 /// this limit, journal export requests throw <code>LimitExceededException</code>.</p>
-#[derive(std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone)]
 pub struct ExportJournalToS3 {
     _private: (),
 }
@@ -918,81 +965,81 @@ impl ExportJournalToS3 {
     pub fn builder() -> crate::input::export_journal_to_s3_input::Builder {
         crate::input::export_journal_to_s3_input::Builder::default()
     }
+    fn parse_error(
+        &self,
+        response: &http::Response<bytes::Bytes>,
+    ) -> Result<crate::output::ExportJournalToS3Output, crate::error::ExportJournalToS3Error> {
+        let body = serde_json::from_slice(response.body().as_ref())
+            .unwrap_or_else(|_| serde_json::json!({}));
+        let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
+
+        let error_code = match generic.code() {
+            Some(code) => code,
+            None => return Err(crate::error::ExportJournalToS3Error::unhandled(generic)),
+        };
+        Err(match error_code {
+            "ResourceNotFoundException" => crate::error::ExportJournalToS3Error {
+                meta: generic,
+                kind: crate::error::ExportJournalToS3ErrorKind::ResourceNotFoundError({
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_error::Builder::default();
+                    let _ = response;
+
+                    let body_slice = response.body().as_ref();
+
+                    let parsed_body: crate::error::ResourceNotFoundError = if body_slice.is_empty()
+                    {
+                        // To enable JSON parsing to succeed, replace an empty body
+                        // with an empty JSON body. If a member was required, it will fail slightly later
+                        // during the operation construction phase.
+                        serde_json::from_slice(b"{}")
+                            .map_err(crate::error::ExportJournalToS3Error::unhandled)?
+                    } else {
+                        serde_json::from_slice(response.body().as_ref())
+                            .map_err(crate::error::ExportJournalToS3Error::unhandled)?
+                    };
+
+                    output = output.set_message(parsed_body.message);
+                    output = output.set_resource_type(parsed_body.resource_type);
+                    output = output.set_resource_name(parsed_body.resource_name);
+                    output.build()
+                }),
+            },
+            "ResourcePreconditionNotMetException" => crate::error::ExportJournalToS3Error {
+                meta: generic,
+                kind: crate::error::ExportJournalToS3ErrorKind::ResourcePreconditionNotMetError({
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::resource_precondition_not_met_error::Builder::default();
+                    let _ = response;
+
+                    let body_slice = response.body().as_ref();
+
+                    let parsed_body: crate::error::ResourcePreconditionNotMetError =
+                        if body_slice.is_empty() {
+                            // To enable JSON parsing to succeed, replace an empty body
+                            // with an empty JSON body. If a member was required, it will fail slightly later
+                            // during the operation construction phase.
+                            serde_json::from_slice(b"{}")
+                                .map_err(crate::error::ExportJournalToS3Error::unhandled)?
+                        } else {
+                            serde_json::from_slice(response.body().as_ref())
+                                .map_err(crate::error::ExportJournalToS3Error::unhandled)?
+                        };
+
+                    output = output.set_message(parsed_body.message);
+                    output = output.set_resource_type(parsed_body.resource_type);
+                    output = output.set_resource_name(parsed_body.resource_name);
+                    output.build()
+                }),
+            },
+            _ => crate::error::ExportJournalToS3Error::generic(generic),
+        })
+    }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
         response: &http::response::Response<impl AsRef<[u8]>>,
     ) -> Result<crate::output::ExportJournalToS3Output, crate::error::ExportJournalToS3Error> {
-        if crate::aws_json_errors::is_error(&response) && response.status().as_u16() != 200 {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => return Err(crate::error::ExportJournalToS3Error::unhandled(generic)),
-            };
-            return Err(match error_code {
-                "ResourceNotFoundException" => crate::error::ExportJournalToS3Error {
-                    meta: generic,
-                    kind: crate::error::ExportJournalToS3ErrorKind::ResourceNotFoundError({
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::resource_not_found_error::Builder::default();
-                        let _ = response;
-
-                        let body_slice = response.body().as_ref();
-
-                        let parsed_body: crate::error::ResourceNotFoundError =
-                            if body_slice.is_empty() {
-                                // To enable JSON parsing to succeed, replace an empty body
-                                // with an empty JSON body. If a member was required, it will fail slightly later
-                                // during the operation construction phase.
-                                serde_json::from_slice(b"{}")
-                                    .map_err(crate::error::ExportJournalToS3Error::unhandled)?
-                            } else {
-                                serde_json::from_slice(response.body().as_ref())
-                                    .map_err(crate::error::ExportJournalToS3Error::unhandled)?
-                            };
-
-                        output = output.set_message(parsed_body.message);
-                        output = output.set_resource_type(parsed_body.resource_type);
-                        output = output.set_resource_name(parsed_body.resource_name);
-                        output.build()
-                    }),
-                },
-                "ResourcePreconditionNotMetException" => crate::error::ExportJournalToS3Error {
-                    meta: generic,
-                    kind: crate::error::ExportJournalToS3ErrorKind::ResourcePreconditionNotMetError(
-                        {
-                            #[allow(unused_mut)]
-                            let mut output =
-                                crate::error::resource_precondition_not_met_error::Builder::default(
-                                );
-                            let _ = response;
-
-                            let body_slice = response.body().as_ref();
-
-                            let parsed_body: crate::error::ResourcePreconditionNotMetError =
-                                if body_slice.is_empty() {
-                                    // To enable JSON parsing to succeed, replace an empty body
-                                    // with an empty JSON body. If a member was required, it will fail slightly later
-                                    // during the operation construction phase.
-                                    serde_json::from_slice(b"{}")
-                                        .map_err(crate::error::ExportJournalToS3Error::unhandled)?
-                                } else {
-                                    serde_json::from_slice(response.body().as_ref())
-                                        .map_err(crate::error::ExportJournalToS3Error::unhandled)?
-                                };
-
-                            output = output.set_message(parsed_body.message);
-                            output = output.set_resource_type(parsed_body.resource_type);
-                            output = output.set_resource_name(parsed_body.resource_name);
-                            output.build()
-                        },
-                    ),
-                },
-                _ => crate::error::ExportJournalToS3Error::generic(generic),
-            });
-        }
         Ok({
             #[allow(unused_mut)]
             let mut output = crate::output::export_journal_to_s3_output::Builder::default();
@@ -1031,7 +1078,11 @@ impl smithy_http::response::ParseStrictResponse for ExportJournalToS3 {
     type Output =
         Result<crate::output::ExportJournalToS3Output, crate::error::ExportJournalToS3Error>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if crate::aws_json_errors::is_error(&response) && response.status().as_u16() != 200 {
+            self.parse_error(response)
+        } else {
+            self.parse_response(response)
+        }
     }
 }
 
@@ -1045,7 +1096,7 @@ impl smithy_http::response::ParseStrictResponse for ExportJournalToS3 {
 /// <code>ResourcePreconditionNotMetException</code>.</p>
 /// <p>If no block exists with the specified address, then throws
 /// <code>InvalidParameterException</code>.</p>
-#[derive(std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone)]
 pub struct GetBlock {
     _private: (),
 }
@@ -1054,104 +1105,107 @@ impl GetBlock {
     pub fn builder() -> crate::input::get_block_input::Builder {
         crate::input::get_block_input::Builder::default()
     }
+    fn parse_error(
+        &self,
+        response: &http::Response<bytes::Bytes>,
+    ) -> Result<crate::output::GetBlockOutput, crate::error::GetBlockError> {
+        let body = serde_json::from_slice(response.body().as_ref())
+            .unwrap_or_else(|_| serde_json::json!({}));
+        let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
+
+        let error_code = match generic.code() {
+            Some(code) => code,
+            None => return Err(crate::error::GetBlockError::unhandled(generic)),
+        };
+        Err(match error_code {
+            "InvalidParameterException" => crate::error::GetBlockError {
+                meta: generic,
+                kind: crate::error::GetBlockErrorKind::InvalidParameterError({
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_error::Builder::default();
+                    let _ = response;
+
+                    let body_slice = response.body().as_ref();
+
+                    let parsed_body: crate::error::InvalidParameterError = if body_slice.is_empty()
+                    {
+                        // To enable JSON parsing to succeed, replace an empty body
+                        // with an empty JSON body. If a member was required, it will fail slightly later
+                        // during the operation construction phase.
+                        serde_json::from_slice(b"{}")
+                            .map_err(crate::error::GetBlockError::unhandled)?
+                    } else {
+                        serde_json::from_slice(response.body().as_ref())
+                            .map_err(crate::error::GetBlockError::unhandled)?
+                    };
+
+                    output = output.set_message(parsed_body.message);
+                    output = output.set_parameter_name(parsed_body.parameter_name);
+                    output.build()
+                }),
+            },
+            "ResourceNotFoundException" => crate::error::GetBlockError {
+                meta: generic,
+                kind: crate::error::GetBlockErrorKind::ResourceNotFoundError({
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_error::Builder::default();
+                    let _ = response;
+
+                    let body_slice = response.body().as_ref();
+
+                    let parsed_body: crate::error::ResourceNotFoundError = if body_slice.is_empty()
+                    {
+                        // To enable JSON parsing to succeed, replace an empty body
+                        // with an empty JSON body. If a member was required, it will fail slightly later
+                        // during the operation construction phase.
+                        serde_json::from_slice(b"{}")
+                            .map_err(crate::error::GetBlockError::unhandled)?
+                    } else {
+                        serde_json::from_slice(response.body().as_ref())
+                            .map_err(crate::error::GetBlockError::unhandled)?
+                    };
+
+                    output = output.set_message(parsed_body.message);
+                    output = output.set_resource_type(parsed_body.resource_type);
+                    output = output.set_resource_name(parsed_body.resource_name);
+                    output.build()
+                }),
+            },
+            "ResourcePreconditionNotMetException" => crate::error::GetBlockError {
+                meta: generic,
+                kind: crate::error::GetBlockErrorKind::ResourcePreconditionNotMetError({
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::resource_precondition_not_met_error::Builder::default();
+                    let _ = response;
+
+                    let body_slice = response.body().as_ref();
+
+                    let parsed_body: crate::error::ResourcePreconditionNotMetError =
+                        if body_slice.is_empty() {
+                            // To enable JSON parsing to succeed, replace an empty body
+                            // with an empty JSON body. If a member was required, it will fail slightly later
+                            // during the operation construction phase.
+                            serde_json::from_slice(b"{}")
+                                .map_err(crate::error::GetBlockError::unhandled)?
+                        } else {
+                            serde_json::from_slice(response.body().as_ref())
+                                .map_err(crate::error::GetBlockError::unhandled)?
+                        };
+
+                    output = output.set_message(parsed_body.message);
+                    output = output.set_resource_type(parsed_body.resource_type);
+                    output = output.set_resource_name(parsed_body.resource_name);
+                    output.build()
+                }),
+            },
+            _ => crate::error::GetBlockError::generic(generic),
+        })
+    }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
         response: &http::response::Response<impl AsRef<[u8]>>,
     ) -> Result<crate::output::GetBlockOutput, crate::error::GetBlockError> {
-        if crate::aws_json_errors::is_error(&response) && response.status().as_u16() != 200 {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => return Err(crate::error::GetBlockError::unhandled(generic)),
-            };
-            return Err(match error_code {
-                "InvalidParameterException" => crate::error::GetBlockError {
-                    meta: generic,
-                    kind: crate::error::GetBlockErrorKind::InvalidParameterError({
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::invalid_parameter_error::Builder::default();
-                        let _ = response;
-
-                        let body_slice = response.body().as_ref();
-
-                        let parsed_body: crate::error::InvalidParameterError =
-                            if body_slice.is_empty() {
-                                // To enable JSON parsing to succeed, replace an empty body
-                                // with an empty JSON body. If a member was required, it will fail slightly later
-                                // during the operation construction phase.
-                                serde_json::from_slice(b"{}")
-                                    .map_err(crate::error::GetBlockError::unhandled)?
-                            } else {
-                                serde_json::from_slice(response.body().as_ref())
-                                    .map_err(crate::error::GetBlockError::unhandled)?
-                            };
-
-                        output = output.set_message(parsed_body.message);
-                        output = output.set_parameter_name(parsed_body.parameter_name);
-                        output.build()
-                    }),
-                },
-                "ResourceNotFoundException" => crate::error::GetBlockError {
-                    meta: generic,
-                    kind: crate::error::GetBlockErrorKind::ResourceNotFoundError({
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::resource_not_found_error::Builder::default();
-                        let _ = response;
-
-                        let body_slice = response.body().as_ref();
-
-                        let parsed_body: crate::error::ResourceNotFoundError =
-                            if body_slice.is_empty() {
-                                // To enable JSON parsing to succeed, replace an empty body
-                                // with an empty JSON body. If a member was required, it will fail slightly later
-                                // during the operation construction phase.
-                                serde_json::from_slice(b"{}")
-                                    .map_err(crate::error::GetBlockError::unhandled)?
-                            } else {
-                                serde_json::from_slice(response.body().as_ref())
-                                    .map_err(crate::error::GetBlockError::unhandled)?
-                            };
-
-                        output = output.set_message(parsed_body.message);
-                        output = output.set_resource_type(parsed_body.resource_type);
-                        output = output.set_resource_name(parsed_body.resource_name);
-                        output.build()
-                    }),
-                },
-                "ResourcePreconditionNotMetException" => crate::error::GetBlockError {
-                    meta: generic,
-                    kind: crate::error::GetBlockErrorKind::ResourcePreconditionNotMetError({
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::resource_precondition_not_met_error::Builder::default();
-                        let _ = response;
-
-                        let body_slice = response.body().as_ref();
-
-                        let parsed_body: crate::error::ResourcePreconditionNotMetError =
-                            if body_slice.is_empty() {
-                                // To enable JSON parsing to succeed, replace an empty body
-                                // with an empty JSON body. If a member was required, it will fail slightly later
-                                // during the operation construction phase.
-                                serde_json::from_slice(b"{}")
-                                    .map_err(crate::error::GetBlockError::unhandled)?
-                            } else {
-                                serde_json::from_slice(response.body().as_ref())
-                                    .map_err(crate::error::GetBlockError::unhandled)?
-                            };
-
-                        output = output.set_message(parsed_body.message);
-                        output = output.set_resource_type(parsed_body.resource_type);
-                        output = output.set_resource_name(parsed_body.resource_name);
-                        output.build()
-                    }),
-                },
-                _ => crate::error::GetBlockError::generic(generic),
-            });
-        }
         Ok({
             #[allow(unused_mut)]
             let mut output = crate::output::get_block_output::Builder::default();
@@ -1188,13 +1242,17 @@ impl GetBlock {
 impl smithy_http::response::ParseStrictResponse for GetBlock {
     type Output = Result<crate::output::GetBlockOutput, crate::error::GetBlockError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if crate::aws_json_errors::is_error(&response) && response.status().as_u16() != 200 {
+            self.parse_error(response)
+        } else {
+            self.parse_response(response)
+        }
     }
 }
 
 /// <p>Returns the digest of a ledger at the latest committed block in the journal. The
 /// response includes a 256-bit hash value and a block address.</p>
-#[derive(std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone)]
 pub struct GetDigest {
     _private: (),
 }
@@ -1203,104 +1261,107 @@ impl GetDigest {
     pub fn builder() -> crate::input::get_digest_input::Builder {
         crate::input::get_digest_input::Builder::default()
     }
+    fn parse_error(
+        &self,
+        response: &http::Response<bytes::Bytes>,
+    ) -> Result<crate::output::GetDigestOutput, crate::error::GetDigestError> {
+        let body = serde_json::from_slice(response.body().as_ref())
+            .unwrap_or_else(|_| serde_json::json!({}));
+        let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
+
+        let error_code = match generic.code() {
+            Some(code) => code,
+            None => return Err(crate::error::GetDigestError::unhandled(generic)),
+        };
+        Err(match error_code {
+            "InvalidParameterException" => crate::error::GetDigestError {
+                meta: generic,
+                kind: crate::error::GetDigestErrorKind::InvalidParameterError({
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_error::Builder::default();
+                    let _ = response;
+
+                    let body_slice = response.body().as_ref();
+
+                    let parsed_body: crate::error::InvalidParameterError = if body_slice.is_empty()
+                    {
+                        // To enable JSON parsing to succeed, replace an empty body
+                        // with an empty JSON body. If a member was required, it will fail slightly later
+                        // during the operation construction phase.
+                        serde_json::from_slice(b"{}")
+                            .map_err(crate::error::GetDigestError::unhandled)?
+                    } else {
+                        serde_json::from_slice(response.body().as_ref())
+                            .map_err(crate::error::GetDigestError::unhandled)?
+                    };
+
+                    output = output.set_message(parsed_body.message);
+                    output = output.set_parameter_name(parsed_body.parameter_name);
+                    output.build()
+                }),
+            },
+            "ResourceNotFoundException" => crate::error::GetDigestError {
+                meta: generic,
+                kind: crate::error::GetDigestErrorKind::ResourceNotFoundError({
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_error::Builder::default();
+                    let _ = response;
+
+                    let body_slice = response.body().as_ref();
+
+                    let parsed_body: crate::error::ResourceNotFoundError = if body_slice.is_empty()
+                    {
+                        // To enable JSON parsing to succeed, replace an empty body
+                        // with an empty JSON body. If a member was required, it will fail slightly later
+                        // during the operation construction phase.
+                        serde_json::from_slice(b"{}")
+                            .map_err(crate::error::GetDigestError::unhandled)?
+                    } else {
+                        serde_json::from_slice(response.body().as_ref())
+                            .map_err(crate::error::GetDigestError::unhandled)?
+                    };
+
+                    output = output.set_message(parsed_body.message);
+                    output = output.set_resource_type(parsed_body.resource_type);
+                    output = output.set_resource_name(parsed_body.resource_name);
+                    output.build()
+                }),
+            },
+            "ResourcePreconditionNotMetException" => crate::error::GetDigestError {
+                meta: generic,
+                kind: crate::error::GetDigestErrorKind::ResourcePreconditionNotMetError({
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::resource_precondition_not_met_error::Builder::default();
+                    let _ = response;
+
+                    let body_slice = response.body().as_ref();
+
+                    let parsed_body: crate::error::ResourcePreconditionNotMetError =
+                        if body_slice.is_empty() {
+                            // To enable JSON parsing to succeed, replace an empty body
+                            // with an empty JSON body. If a member was required, it will fail slightly later
+                            // during the operation construction phase.
+                            serde_json::from_slice(b"{}")
+                                .map_err(crate::error::GetDigestError::unhandled)?
+                        } else {
+                            serde_json::from_slice(response.body().as_ref())
+                                .map_err(crate::error::GetDigestError::unhandled)?
+                        };
+
+                    output = output.set_message(parsed_body.message);
+                    output = output.set_resource_type(parsed_body.resource_type);
+                    output = output.set_resource_name(parsed_body.resource_name);
+                    output.build()
+                }),
+            },
+            _ => crate::error::GetDigestError::generic(generic),
+        })
+    }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
         response: &http::response::Response<impl AsRef<[u8]>>,
     ) -> Result<crate::output::GetDigestOutput, crate::error::GetDigestError> {
-        if crate::aws_json_errors::is_error(&response) && response.status().as_u16() != 200 {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => return Err(crate::error::GetDigestError::unhandled(generic)),
-            };
-            return Err(match error_code {
-                "InvalidParameterException" => crate::error::GetDigestError {
-                    meta: generic,
-                    kind: crate::error::GetDigestErrorKind::InvalidParameterError({
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::invalid_parameter_error::Builder::default();
-                        let _ = response;
-
-                        let body_slice = response.body().as_ref();
-
-                        let parsed_body: crate::error::InvalidParameterError =
-                            if body_slice.is_empty() {
-                                // To enable JSON parsing to succeed, replace an empty body
-                                // with an empty JSON body. If a member was required, it will fail slightly later
-                                // during the operation construction phase.
-                                serde_json::from_slice(b"{}")
-                                    .map_err(crate::error::GetDigestError::unhandled)?
-                            } else {
-                                serde_json::from_slice(response.body().as_ref())
-                                    .map_err(crate::error::GetDigestError::unhandled)?
-                            };
-
-                        output = output.set_message(parsed_body.message);
-                        output = output.set_parameter_name(parsed_body.parameter_name);
-                        output.build()
-                    }),
-                },
-                "ResourceNotFoundException" => crate::error::GetDigestError {
-                    meta: generic,
-                    kind: crate::error::GetDigestErrorKind::ResourceNotFoundError({
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::resource_not_found_error::Builder::default();
-                        let _ = response;
-
-                        let body_slice = response.body().as_ref();
-
-                        let parsed_body: crate::error::ResourceNotFoundError =
-                            if body_slice.is_empty() {
-                                // To enable JSON parsing to succeed, replace an empty body
-                                // with an empty JSON body. If a member was required, it will fail slightly later
-                                // during the operation construction phase.
-                                serde_json::from_slice(b"{}")
-                                    .map_err(crate::error::GetDigestError::unhandled)?
-                            } else {
-                                serde_json::from_slice(response.body().as_ref())
-                                    .map_err(crate::error::GetDigestError::unhandled)?
-                            };
-
-                        output = output.set_message(parsed_body.message);
-                        output = output.set_resource_type(parsed_body.resource_type);
-                        output = output.set_resource_name(parsed_body.resource_name);
-                        output.build()
-                    }),
-                },
-                "ResourcePreconditionNotMetException" => crate::error::GetDigestError {
-                    meta: generic,
-                    kind: crate::error::GetDigestErrorKind::ResourcePreconditionNotMetError({
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::resource_precondition_not_met_error::Builder::default();
-                        let _ = response;
-
-                        let body_slice = response.body().as_ref();
-
-                        let parsed_body: crate::error::ResourcePreconditionNotMetError =
-                            if body_slice.is_empty() {
-                                // To enable JSON parsing to succeed, replace an empty body
-                                // with an empty JSON body. If a member was required, it will fail slightly later
-                                // during the operation construction phase.
-                                serde_json::from_slice(b"{}")
-                                    .map_err(crate::error::GetDigestError::unhandled)?
-                            } else {
-                                serde_json::from_slice(response.body().as_ref())
-                                    .map_err(crate::error::GetDigestError::unhandled)?
-                            };
-
-                        output = output.set_message(parsed_body.message);
-                        output = output.set_resource_type(parsed_body.resource_type);
-                        output = output.set_resource_name(parsed_body.resource_name);
-                        output.build()
-                    }),
-                },
-                _ => crate::error::GetDigestError::generic(generic),
-            });
-        }
         Ok({
             #[allow(unused_mut)]
             let mut output = crate::output::get_digest_output::Builder::default();
@@ -1337,14 +1398,18 @@ impl GetDigest {
 impl smithy_http::response::ParseStrictResponse for GetDigest {
     type Output = Result<crate::output::GetDigestOutput, crate::error::GetDigestError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if crate::aws_json_errors::is_error(&response) && response.status().as_u16() != 200 {
+            self.parse_error(response)
+        } else {
+            self.parse_response(response)
+        }
     }
 }
 
 /// <p>Returns a revision data object for a specified document ID and block address. Also
 /// returns a proof of the specified revision for verification if <code>DigestTipAddress</code>
 /// is provided.</p>
-#[derive(std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone)]
 pub struct GetRevision {
     _private: (),
 }
@@ -1353,104 +1418,107 @@ impl GetRevision {
     pub fn builder() -> crate::input::get_revision_input::Builder {
         crate::input::get_revision_input::Builder::default()
     }
+    fn parse_error(
+        &self,
+        response: &http::Response<bytes::Bytes>,
+    ) -> Result<crate::output::GetRevisionOutput, crate::error::GetRevisionError> {
+        let body = serde_json::from_slice(response.body().as_ref())
+            .unwrap_or_else(|_| serde_json::json!({}));
+        let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
+
+        let error_code = match generic.code() {
+            Some(code) => code,
+            None => return Err(crate::error::GetRevisionError::unhandled(generic)),
+        };
+        Err(match error_code {
+            "InvalidParameterException" => crate::error::GetRevisionError {
+                meta: generic,
+                kind: crate::error::GetRevisionErrorKind::InvalidParameterError({
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_error::Builder::default();
+                    let _ = response;
+
+                    let body_slice = response.body().as_ref();
+
+                    let parsed_body: crate::error::InvalidParameterError = if body_slice.is_empty()
+                    {
+                        // To enable JSON parsing to succeed, replace an empty body
+                        // with an empty JSON body. If a member was required, it will fail slightly later
+                        // during the operation construction phase.
+                        serde_json::from_slice(b"{}")
+                            .map_err(crate::error::GetRevisionError::unhandled)?
+                    } else {
+                        serde_json::from_slice(response.body().as_ref())
+                            .map_err(crate::error::GetRevisionError::unhandled)?
+                    };
+
+                    output = output.set_message(parsed_body.message);
+                    output = output.set_parameter_name(parsed_body.parameter_name);
+                    output.build()
+                }),
+            },
+            "ResourceNotFoundException" => crate::error::GetRevisionError {
+                meta: generic,
+                kind: crate::error::GetRevisionErrorKind::ResourceNotFoundError({
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_error::Builder::default();
+                    let _ = response;
+
+                    let body_slice = response.body().as_ref();
+
+                    let parsed_body: crate::error::ResourceNotFoundError = if body_slice.is_empty()
+                    {
+                        // To enable JSON parsing to succeed, replace an empty body
+                        // with an empty JSON body. If a member was required, it will fail slightly later
+                        // during the operation construction phase.
+                        serde_json::from_slice(b"{}")
+                            .map_err(crate::error::GetRevisionError::unhandled)?
+                    } else {
+                        serde_json::from_slice(response.body().as_ref())
+                            .map_err(crate::error::GetRevisionError::unhandled)?
+                    };
+
+                    output = output.set_message(parsed_body.message);
+                    output = output.set_resource_type(parsed_body.resource_type);
+                    output = output.set_resource_name(parsed_body.resource_name);
+                    output.build()
+                }),
+            },
+            "ResourcePreconditionNotMetException" => crate::error::GetRevisionError {
+                meta: generic,
+                kind: crate::error::GetRevisionErrorKind::ResourcePreconditionNotMetError({
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::resource_precondition_not_met_error::Builder::default();
+                    let _ = response;
+
+                    let body_slice = response.body().as_ref();
+
+                    let parsed_body: crate::error::ResourcePreconditionNotMetError =
+                        if body_slice.is_empty() {
+                            // To enable JSON parsing to succeed, replace an empty body
+                            // with an empty JSON body. If a member was required, it will fail slightly later
+                            // during the operation construction phase.
+                            serde_json::from_slice(b"{}")
+                                .map_err(crate::error::GetRevisionError::unhandled)?
+                        } else {
+                            serde_json::from_slice(response.body().as_ref())
+                                .map_err(crate::error::GetRevisionError::unhandled)?
+                        };
+
+                    output = output.set_message(parsed_body.message);
+                    output = output.set_resource_type(parsed_body.resource_type);
+                    output = output.set_resource_name(parsed_body.resource_name);
+                    output.build()
+                }),
+            },
+            _ => crate::error::GetRevisionError::generic(generic),
+        })
+    }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
         response: &http::response::Response<impl AsRef<[u8]>>,
     ) -> Result<crate::output::GetRevisionOutput, crate::error::GetRevisionError> {
-        if crate::aws_json_errors::is_error(&response) && response.status().as_u16() != 200 {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => return Err(crate::error::GetRevisionError::unhandled(generic)),
-            };
-            return Err(match error_code {
-                "InvalidParameterException" => crate::error::GetRevisionError {
-                    meta: generic,
-                    kind: crate::error::GetRevisionErrorKind::InvalidParameterError({
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::invalid_parameter_error::Builder::default();
-                        let _ = response;
-
-                        let body_slice = response.body().as_ref();
-
-                        let parsed_body: crate::error::InvalidParameterError =
-                            if body_slice.is_empty() {
-                                // To enable JSON parsing to succeed, replace an empty body
-                                // with an empty JSON body. If a member was required, it will fail slightly later
-                                // during the operation construction phase.
-                                serde_json::from_slice(b"{}")
-                                    .map_err(crate::error::GetRevisionError::unhandled)?
-                            } else {
-                                serde_json::from_slice(response.body().as_ref())
-                                    .map_err(crate::error::GetRevisionError::unhandled)?
-                            };
-
-                        output = output.set_message(parsed_body.message);
-                        output = output.set_parameter_name(parsed_body.parameter_name);
-                        output.build()
-                    }),
-                },
-                "ResourceNotFoundException" => crate::error::GetRevisionError {
-                    meta: generic,
-                    kind: crate::error::GetRevisionErrorKind::ResourceNotFoundError({
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::resource_not_found_error::Builder::default();
-                        let _ = response;
-
-                        let body_slice = response.body().as_ref();
-
-                        let parsed_body: crate::error::ResourceNotFoundError =
-                            if body_slice.is_empty() {
-                                // To enable JSON parsing to succeed, replace an empty body
-                                // with an empty JSON body. If a member was required, it will fail slightly later
-                                // during the operation construction phase.
-                                serde_json::from_slice(b"{}")
-                                    .map_err(crate::error::GetRevisionError::unhandled)?
-                            } else {
-                                serde_json::from_slice(response.body().as_ref())
-                                    .map_err(crate::error::GetRevisionError::unhandled)?
-                            };
-
-                        output = output.set_message(parsed_body.message);
-                        output = output.set_resource_type(parsed_body.resource_type);
-                        output = output.set_resource_name(parsed_body.resource_name);
-                        output.build()
-                    }),
-                },
-                "ResourcePreconditionNotMetException" => crate::error::GetRevisionError {
-                    meta: generic,
-                    kind: crate::error::GetRevisionErrorKind::ResourcePreconditionNotMetError({
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::resource_precondition_not_met_error::Builder::default();
-                        let _ = response;
-
-                        let body_slice = response.body().as_ref();
-
-                        let parsed_body: crate::error::ResourcePreconditionNotMetError =
-                            if body_slice.is_empty() {
-                                // To enable JSON parsing to succeed, replace an empty body
-                                // with an empty JSON body. If a member was required, it will fail slightly later
-                                // during the operation construction phase.
-                                serde_json::from_slice(b"{}")
-                                    .map_err(crate::error::GetRevisionError::unhandled)?
-                            } else {
-                                serde_json::from_slice(response.body().as_ref())
-                                    .map_err(crate::error::GetRevisionError::unhandled)?
-                            };
-
-                        output = output.set_message(parsed_body.message);
-                        output = output.set_resource_type(parsed_body.resource_type);
-                        output = output.set_resource_name(parsed_body.resource_name);
-                        output.build()
-                    }),
-                },
-                _ => crate::error::GetRevisionError::generic(generic),
-            });
-        }
         Ok({
             #[allow(unused_mut)]
             let mut output = crate::output::get_revision_output::Builder::default();
@@ -1487,7 +1555,11 @@ impl GetRevision {
 impl smithy_http::response::ParseStrictResponse for GetRevision {
     type Output = Result<crate::output::GetRevisionOutput, crate::error::GetRevisionError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if crate::aws_json_errors::is_error(&response) && response.status().as_u16() != 200 {
+            self.parse_error(response)
+        } else {
+            self.parse_response(response)
+        }
     }
 }
 
@@ -1497,7 +1569,7 @@ impl smithy_http::response::ParseStrictResponse for GetRevision {
 /// <p>This action returns a maximum of <code>MaxResults</code> items. It is paginated so that
 /// you can retrieve all the items by calling <code>ListJournalKinesisStreamsForLedger</code>
 /// multiple times.</p>
-#[derive(std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone)]
 pub struct ListJournalKinesisStreamsForLedger {
     _private: (),
 }
@@ -1506,6 +1578,104 @@ impl ListJournalKinesisStreamsForLedger {
     pub fn builder() -> crate::input::list_journal_kinesis_streams_for_ledger_input::Builder {
         crate::input::list_journal_kinesis_streams_for_ledger_input::Builder::default()
     }
+    fn parse_error(
+        &self,
+        response: &http::Response<bytes::Bytes>,
+    ) -> Result<
+        crate::output::ListJournalKinesisStreamsForLedgerOutput,
+        crate::error::ListJournalKinesisStreamsForLedgerError,
+    > {
+        let body = serde_json::from_slice(response.body().as_ref())
+            .unwrap_or_else(|_| serde_json::json!({}));
+        let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
+
+        let error_code = match generic.code() {
+            Some(code) => code,
+            None => {
+                return Err(
+                    crate::error::ListJournalKinesisStreamsForLedgerError::unhandled(generic),
+                )
+            }
+        };
+        Err(match error_code {
+            "InvalidParameterException" => crate::error::ListJournalKinesisStreamsForLedgerError { meta: generic, kind: crate::error::ListJournalKinesisStreamsForLedgerErrorKind::InvalidParameterError({
+                #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_error::Builder::default();
+                let _ = response;
+                
+                                    let body_slice = response.body().as_ref();
+                
+                                    let parsed_body: crate::error::InvalidParameterError = if body_slice.is_empty() {
+                                        // To enable JSON parsing to succeed, replace an empty body
+                                        // with an empty JSON body. If a member was required, it will fail slightly later
+                                        // during the operation construction phase.
+                                        serde_json::from_slice(b"{}").map_err(crate::error::ListJournalKinesisStreamsForLedgerError::unhandled)?
+                                    } else {
+                                        serde_json::from_slice(response.body().as_ref()).map_err(crate::error::ListJournalKinesisStreamsForLedgerError::unhandled)?
+                                    };
+                                
+                output = output.set_message(
+                    parsed_body.message
+                );
+                output = output.set_parameter_name(
+                    parsed_body.parameter_name
+                );
+                output.build()
+            })},
+            "ResourceNotFoundException" => crate::error::ListJournalKinesisStreamsForLedgerError { meta: generic, kind: crate::error::ListJournalKinesisStreamsForLedgerErrorKind::ResourceNotFoundError({
+                #[allow(unused_mut)]let mut output = crate::error::resource_not_found_error::Builder::default();
+                let _ = response;
+                
+                                    let body_slice = response.body().as_ref();
+                
+                                    let parsed_body: crate::error::ResourceNotFoundError = if body_slice.is_empty() {
+                                        // To enable JSON parsing to succeed, replace an empty body
+                                        // with an empty JSON body. If a member was required, it will fail slightly later
+                                        // during the operation construction phase.
+                                        serde_json::from_slice(b"{}").map_err(crate::error::ListJournalKinesisStreamsForLedgerError::unhandled)?
+                                    } else {
+                                        serde_json::from_slice(response.body().as_ref()).map_err(crate::error::ListJournalKinesisStreamsForLedgerError::unhandled)?
+                                    };
+                                
+                output = output.set_message(
+                    parsed_body.message
+                );
+                output = output.set_resource_type(
+                    parsed_body.resource_type
+                );
+                output = output.set_resource_name(
+                    parsed_body.resource_name
+                );
+                output.build()
+            })},
+            "ResourcePreconditionNotMetException" => crate::error::ListJournalKinesisStreamsForLedgerError { meta: generic, kind: crate::error::ListJournalKinesisStreamsForLedgerErrorKind::ResourcePreconditionNotMetError({
+                #[allow(unused_mut)]let mut output = crate::error::resource_precondition_not_met_error::Builder::default();
+                let _ = response;
+                
+                                    let body_slice = response.body().as_ref();
+                
+                                    let parsed_body: crate::error::ResourcePreconditionNotMetError = if body_slice.is_empty() {
+                                        // To enable JSON parsing to succeed, replace an empty body
+                                        // with an empty JSON body. If a member was required, it will fail slightly later
+                                        // during the operation construction phase.
+                                        serde_json::from_slice(b"{}").map_err(crate::error::ListJournalKinesisStreamsForLedgerError::unhandled)?
+                                    } else {
+                                        serde_json::from_slice(response.body().as_ref()).map_err(crate::error::ListJournalKinesisStreamsForLedgerError::unhandled)?
+                                    };
+                                
+                output = output.set_message(
+                    parsed_body.message
+                );
+                output = output.set_resource_type(
+                    parsed_body.resource_type
+                );
+                output = output.set_resource_name(
+                    parsed_body.resource_name
+                );
+                output.build()
+            })},
+            _ => crate::error::ListJournalKinesisStreamsForLedgerError::generic(generic)
+        })
+    }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
         response: &http::response::Response<impl AsRef<[u8]>>,
@@ -1513,98 +1683,6 @@ impl ListJournalKinesisStreamsForLedger {
         crate::output::ListJournalKinesisStreamsForLedgerOutput,
         crate::error::ListJournalKinesisStreamsForLedgerError,
     > {
-        if crate::aws_json_errors::is_error(&response) && response.status().as_u16() != 200 {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => {
-                    return Err(
-                        crate::error::ListJournalKinesisStreamsForLedgerError::unhandled(generic),
-                    )
-                }
-            };
-            return Err(match error_code {
-                "InvalidParameterException" => crate::error::ListJournalKinesisStreamsForLedgerError { meta: generic, kind: crate::error::ListJournalKinesisStreamsForLedgerErrorKind::InvalidParameterError({
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_error::Builder::default();
-                    let _ = response;
-                    
-                                        let body_slice = response.body().as_ref();
-                    
-                                        let parsed_body: crate::error::InvalidParameterError = if body_slice.is_empty() {
-                                            // To enable JSON parsing to succeed, replace an empty body
-                                            // with an empty JSON body. If a member was required, it will fail slightly later
-                                            // during the operation construction phase.
-                                            serde_json::from_slice(b"{}").map_err(crate::error::ListJournalKinesisStreamsForLedgerError::unhandled)?
-                                        } else {
-                                            serde_json::from_slice(response.body().as_ref()).map_err(crate::error::ListJournalKinesisStreamsForLedgerError::unhandled)?
-                                        };
-                                    
-                    output = output.set_message(
-                        parsed_body.message
-                    );
-                    output = output.set_parameter_name(
-                        parsed_body.parameter_name
-                    );
-                    output.build()
-                })},
-                "ResourceNotFoundException" => crate::error::ListJournalKinesisStreamsForLedgerError { meta: generic, kind: crate::error::ListJournalKinesisStreamsForLedgerErrorKind::ResourceNotFoundError({
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_error::Builder::default();
-                    let _ = response;
-                    
-                                        let body_slice = response.body().as_ref();
-                    
-                                        let parsed_body: crate::error::ResourceNotFoundError = if body_slice.is_empty() {
-                                            // To enable JSON parsing to succeed, replace an empty body
-                                            // with an empty JSON body. If a member was required, it will fail slightly later
-                                            // during the operation construction phase.
-                                            serde_json::from_slice(b"{}").map_err(crate::error::ListJournalKinesisStreamsForLedgerError::unhandled)?
-                                        } else {
-                                            serde_json::from_slice(response.body().as_ref()).map_err(crate::error::ListJournalKinesisStreamsForLedgerError::unhandled)?
-                                        };
-                                    
-                    output = output.set_message(
-                        parsed_body.message
-                    );
-                    output = output.set_resource_type(
-                        parsed_body.resource_type
-                    );
-                    output = output.set_resource_name(
-                        parsed_body.resource_name
-                    );
-                    output.build()
-                })},
-                "ResourcePreconditionNotMetException" => crate::error::ListJournalKinesisStreamsForLedgerError { meta: generic, kind: crate::error::ListJournalKinesisStreamsForLedgerErrorKind::ResourcePreconditionNotMetError({
-                    #[allow(unused_mut)]let mut output = crate::error::resource_precondition_not_met_error::Builder::default();
-                    let _ = response;
-                    
-                                        let body_slice = response.body().as_ref();
-                    
-                                        let parsed_body: crate::error::ResourcePreconditionNotMetError = if body_slice.is_empty() {
-                                            // To enable JSON parsing to succeed, replace an empty body
-                                            // with an empty JSON body. If a member was required, it will fail slightly later
-                                            // during the operation construction phase.
-                                            serde_json::from_slice(b"{}").map_err(crate::error::ListJournalKinesisStreamsForLedgerError::unhandled)?
-                                        } else {
-                                            serde_json::from_slice(response.body().as_ref()).map_err(crate::error::ListJournalKinesisStreamsForLedgerError::unhandled)?
-                                        };
-                                    
-                    output = output.set_message(
-                        parsed_body.message
-                    );
-                    output = output.set_resource_type(
-                        parsed_body.resource_type
-                    );
-                    output = output.set_resource_name(
-                        parsed_body.resource_name
-                    );
-                    output.build()
-                })},
-                _ => crate::error::ListJournalKinesisStreamsForLedgerError::generic(generic)
-            });
-        }
         Ok({
             #[allow(unused_mut)]
             let mut output =
@@ -1650,7 +1728,11 @@ impl smithy_http::response::ParseStrictResponse for ListJournalKinesisStreamsFor
         crate::error::ListJournalKinesisStreamsForLedgerError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if crate::aws_json_errors::is_error(&response) && response.status().as_u16() != 200 {
+            self.parse_error(response)
+        } else {
+            self.parse_response(response)
+        }
     }
 }
 
@@ -1661,7 +1743,7 @@ impl smithy_http::response::ParseStrictResponse for ListJournalKinesisStreamsFor
 /// times.</p>
 /// <p>This action does not return any expired export jobs. For more information, see <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/export-journal.request.html#export-journal.request.expiration">Export Job Expiration</a> in the <i>Amazon QLDB Developer
 /// Guide</i>.</p>
-#[derive(std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone)]
 pub struct ListJournalS3Exports {
     _private: (),
 }
@@ -1670,18 +1752,22 @@ impl ListJournalS3Exports {
     pub fn builder() -> crate::input::list_journal_s3_exports_input::Builder {
         crate::input::list_journal_s3_exports_input::Builder::default()
     }
+    fn parse_error(
+        &self,
+        response: &http::Response<bytes::Bytes>,
+    ) -> Result<crate::output::ListJournalS3ExportsOutput, crate::error::ListJournalS3ExportsError>
+    {
+        let body = serde_json::from_slice(response.body().as_ref())
+            .unwrap_or_else(|_| serde_json::json!({}));
+        let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
+
+        Err(crate::error::ListJournalS3ExportsError::generic(generic))
+    }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
         response: &http::response::Response<impl AsRef<[u8]>>,
     ) -> Result<crate::output::ListJournalS3ExportsOutput, crate::error::ListJournalS3ExportsError>
     {
-        if crate::aws_json_errors::is_error(&response) && response.status().as_u16() != 200 {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
-            return Err(crate::error::ListJournalS3ExportsError::generic(generic));
-        }
         Ok({
             #[allow(unused_mut)]
             let mut output = crate::output::list_journal_s3_exports_output::Builder::default();
@@ -1722,7 +1808,11 @@ impl smithy_http::response::ParseStrictResponse for ListJournalS3Exports {
     type Output =
         Result<crate::output::ListJournalS3ExportsOutput, crate::error::ListJournalS3ExportsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if crate::aws_json_errors::is_error(&response) && response.status().as_u16() != 200 {
+            self.parse_error(response)
+        } else {
+            self.parse_response(response)
+        }
     }
 }
 
@@ -1732,7 +1822,7 @@ impl smithy_http::response::ParseStrictResponse for ListJournalS3Exports {
 /// multiple times.</p>
 /// <p>This action does not return any expired export jobs. For more information, see <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/export-journal.request.html#export-journal.request.expiration">Export Job Expiration</a> in the <i>Amazon QLDB Developer
 /// Guide</i>.</p>
-#[derive(std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone)]
 pub struct ListJournalS3ExportsForLedger {
     _private: (),
 }
@@ -1741,6 +1831,21 @@ impl ListJournalS3ExportsForLedger {
     pub fn builder() -> crate::input::list_journal_s3_exports_for_ledger_input::Builder {
         crate::input::list_journal_s3_exports_for_ledger_input::Builder::default()
     }
+    fn parse_error(
+        &self,
+        response: &http::Response<bytes::Bytes>,
+    ) -> Result<
+        crate::output::ListJournalS3ExportsForLedgerOutput,
+        crate::error::ListJournalS3ExportsForLedgerError,
+    > {
+        let body = serde_json::from_slice(response.body().as_ref())
+            .unwrap_or_else(|_| serde_json::json!({}));
+        let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
+
+        Err(crate::error::ListJournalS3ExportsForLedgerError::generic(
+            generic,
+        ))
+    }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
         response: &http::response::Response<impl AsRef<[u8]>>,
@@ -1748,15 +1853,6 @@ impl ListJournalS3ExportsForLedger {
         crate::output::ListJournalS3ExportsForLedgerOutput,
         crate::error::ListJournalS3ExportsForLedgerError,
     > {
-        if crate::aws_json_errors::is_error(&response) && response.status().as_u16() != 200 {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
-            return Err(crate::error::ListJournalS3ExportsForLedgerError::generic(
-                generic,
-            ));
-        }
         Ok({
             #[allow(unused_mut)]
             let mut output =
@@ -1802,7 +1898,11 @@ impl smithy_http::response::ParseStrictResponse for ListJournalS3ExportsForLedge
         crate::error::ListJournalS3ExportsForLedgerError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if crate::aws_json_errors::is_error(&response) && response.status().as_u16() != 200 {
+            self.parse_error(response)
+        } else {
+            self.parse_response(response)
+        }
     }
 }
 
@@ -1810,7 +1910,7 @@ impl smithy_http::response::ParseStrictResponse for ListJournalS3ExportsForLedge
 /// and Region.</p>
 /// <p>This action returns a maximum of 100 items and is paginated so that you can
 /// retrieve all the items by calling <code>ListLedgers</code> multiple times.</p>
-#[derive(std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone)]
 pub struct ListLedgers {
     _private: (),
 }
@@ -1819,17 +1919,20 @@ impl ListLedgers {
     pub fn builder() -> crate::input::list_ledgers_input::Builder {
         crate::input::list_ledgers_input::Builder::default()
     }
+    fn parse_error(
+        &self,
+        response: &http::Response<bytes::Bytes>,
+    ) -> Result<crate::output::ListLedgersOutput, crate::error::ListLedgersError> {
+        let body = serde_json::from_slice(response.body().as_ref())
+            .unwrap_or_else(|_| serde_json::json!({}));
+        let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
+
+        Err(crate::error::ListLedgersError::generic(generic))
+    }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
         response: &http::response::Response<impl AsRef<[u8]>>,
     ) -> Result<crate::output::ListLedgersOutput, crate::error::ListLedgersError> {
-        if crate::aws_json_errors::is_error(&response) && response.status().as_u16() != 200 {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
-            return Err(crate::error::ListLedgersError::generic(generic));
-        }
         Ok({
             #[allow(unused_mut)]
             let mut output = crate::output::list_ledgers_output::Builder::default();
@@ -1866,12 +1969,16 @@ impl ListLedgers {
 impl smithy_http::response::ParseStrictResponse for ListLedgers {
     type Output = Result<crate::output::ListLedgersOutput, crate::error::ListLedgersError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if crate::aws_json_errors::is_error(&response) && response.status().as_u16() != 200 {
+            self.parse_error(response)
+        } else {
+            self.parse_response(response)
+        }
     }
 }
 
 /// <p>Returns all tags for a specified Amazon QLDB resource.</p>
-#[derive(std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone)]
 pub struct ListTagsForResource {
     _private: (),
 }
@@ -1880,77 +1987,81 @@ impl ListTagsForResource {
     pub fn builder() -> crate::input::list_tags_for_resource_input::Builder {
         crate::input::list_tags_for_resource_input::Builder::default()
     }
+    fn parse_error(
+        &self,
+        response: &http::Response<bytes::Bytes>,
+    ) -> Result<crate::output::ListTagsForResourceOutput, crate::error::ListTagsForResourceError>
+    {
+        let body = serde_json::from_slice(response.body().as_ref())
+            .unwrap_or_else(|_| serde_json::json!({}));
+        let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
+
+        let error_code = match generic.code() {
+            Some(code) => code,
+            None => return Err(crate::error::ListTagsForResourceError::unhandled(generic)),
+        };
+        Err(match error_code {
+            "InvalidParameterException" => crate::error::ListTagsForResourceError {
+                meta: generic,
+                kind: crate::error::ListTagsForResourceErrorKind::InvalidParameterError({
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_error::Builder::default();
+                    let _ = response;
+
+                    let body_slice = response.body().as_ref();
+
+                    let parsed_body: crate::error::InvalidParameterError = if body_slice.is_empty()
+                    {
+                        // To enable JSON parsing to succeed, replace an empty body
+                        // with an empty JSON body. If a member was required, it will fail slightly later
+                        // during the operation construction phase.
+                        serde_json::from_slice(b"{}")
+                            .map_err(crate::error::ListTagsForResourceError::unhandled)?
+                    } else {
+                        serde_json::from_slice(response.body().as_ref())
+                            .map_err(crate::error::ListTagsForResourceError::unhandled)?
+                    };
+
+                    output = output.set_message(parsed_body.message);
+                    output = output.set_parameter_name(parsed_body.parameter_name);
+                    output.build()
+                }),
+            },
+            "ResourceNotFoundException" => crate::error::ListTagsForResourceError {
+                meta: generic,
+                kind: crate::error::ListTagsForResourceErrorKind::ResourceNotFoundError({
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_error::Builder::default();
+                    let _ = response;
+
+                    let body_slice = response.body().as_ref();
+
+                    let parsed_body: crate::error::ResourceNotFoundError = if body_slice.is_empty()
+                    {
+                        // To enable JSON parsing to succeed, replace an empty body
+                        // with an empty JSON body. If a member was required, it will fail slightly later
+                        // during the operation construction phase.
+                        serde_json::from_slice(b"{}")
+                            .map_err(crate::error::ListTagsForResourceError::unhandled)?
+                    } else {
+                        serde_json::from_slice(response.body().as_ref())
+                            .map_err(crate::error::ListTagsForResourceError::unhandled)?
+                    };
+
+                    output = output.set_message(parsed_body.message);
+                    output = output.set_resource_type(parsed_body.resource_type);
+                    output = output.set_resource_name(parsed_body.resource_name);
+                    output.build()
+                }),
+            },
+            _ => crate::error::ListTagsForResourceError::generic(generic),
+        })
+    }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
         response: &http::response::Response<impl AsRef<[u8]>>,
     ) -> Result<crate::output::ListTagsForResourceOutput, crate::error::ListTagsForResourceError>
     {
-        if crate::aws_json_errors::is_error(&response) && response.status().as_u16() != 200 {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => return Err(crate::error::ListTagsForResourceError::unhandled(generic)),
-            };
-            return Err(match error_code {
-                "InvalidParameterException" => crate::error::ListTagsForResourceError {
-                    meta: generic,
-                    kind: crate::error::ListTagsForResourceErrorKind::InvalidParameterError({
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::invalid_parameter_error::Builder::default();
-                        let _ = response;
-
-                        let body_slice = response.body().as_ref();
-
-                        let parsed_body: crate::error::InvalidParameterError =
-                            if body_slice.is_empty() {
-                                // To enable JSON parsing to succeed, replace an empty body
-                                // with an empty JSON body. If a member was required, it will fail slightly later
-                                // during the operation construction phase.
-                                serde_json::from_slice(b"{}")
-                                    .map_err(crate::error::ListTagsForResourceError::unhandled)?
-                            } else {
-                                serde_json::from_slice(response.body().as_ref())
-                                    .map_err(crate::error::ListTagsForResourceError::unhandled)?
-                            };
-
-                        output = output.set_message(parsed_body.message);
-                        output = output.set_parameter_name(parsed_body.parameter_name);
-                        output.build()
-                    }),
-                },
-                "ResourceNotFoundException" => crate::error::ListTagsForResourceError {
-                    meta: generic,
-                    kind: crate::error::ListTagsForResourceErrorKind::ResourceNotFoundError({
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::resource_not_found_error::Builder::default();
-                        let _ = response;
-
-                        let body_slice = response.body().as_ref();
-
-                        let parsed_body: crate::error::ResourceNotFoundError =
-                            if body_slice.is_empty() {
-                                // To enable JSON parsing to succeed, replace an empty body
-                                // with an empty JSON body. If a member was required, it will fail slightly later
-                                // during the operation construction phase.
-                                serde_json::from_slice(b"{}")
-                                    .map_err(crate::error::ListTagsForResourceError::unhandled)?
-                            } else {
-                                serde_json::from_slice(response.body().as_ref())
-                                    .map_err(crate::error::ListTagsForResourceError::unhandled)?
-                            };
-
-                        output = output.set_message(parsed_body.message);
-                        output = output.set_resource_type(parsed_body.resource_type);
-                        output = output.set_resource_name(parsed_body.resource_name);
-                        output.build()
-                    }),
-                },
-                _ => crate::error::ListTagsForResourceError::generic(generic),
-            });
-        }
         Ok({
             #[allow(unused_mut)]
             let mut output = crate::output::list_tags_for_resource_output::Builder::default();
@@ -1990,14 +2101,18 @@ impl smithy_http::response::ParseStrictResponse for ListTagsForResource {
     type Output =
         Result<crate::output::ListTagsForResourceOutput, crate::error::ListTagsForResourceError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if crate::aws_json_errors::is_error(&response) && response.status().as_u16() != 200 {
+            self.parse_error(response)
+        } else {
+            self.parse_response(response)
+        }
     }
 }
 
 /// <p>Creates a journal stream for a given Amazon QLDB ledger. The stream captures every
 /// document revision that is committed to the ledger's journal and delivers the data to a
 /// specified Amazon Kinesis Data Streams resource.</p>
-#[derive(std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone)]
 pub struct StreamJournalToKinesis {
     _private: (),
 }
@@ -2006,6 +2121,116 @@ impl StreamJournalToKinesis {
     pub fn builder() -> crate::input::stream_journal_to_kinesis_input::Builder {
         crate::input::stream_journal_to_kinesis_input::Builder::default()
     }
+    fn parse_error(
+        &self,
+        response: &http::Response<bytes::Bytes>,
+    ) -> Result<
+        crate::output::StreamJournalToKinesisOutput,
+        crate::error::StreamJournalToKinesisError,
+    > {
+        let body = serde_json::from_slice(response.body().as_ref())
+            .unwrap_or_else(|_| serde_json::json!({}));
+        let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
+
+        let error_code = match generic.code() {
+            Some(code) => code,
+            None => {
+                return Err(crate::error::StreamJournalToKinesisError::unhandled(
+                    generic,
+                ))
+            }
+        };
+        Err(match error_code {
+            "InvalidParameterException" => crate::error::StreamJournalToKinesisError {
+                meta: generic,
+                kind: crate::error::StreamJournalToKinesisErrorKind::InvalidParameterError({
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_error::Builder::default();
+                    let _ = response;
+
+                    let body_slice = response.body().as_ref();
+
+                    let parsed_body: crate::error::InvalidParameterError = if body_slice.is_empty()
+                    {
+                        // To enable JSON parsing to succeed, replace an empty body
+                        // with an empty JSON body. If a member was required, it will fail slightly later
+                        // during the operation construction phase.
+                        serde_json::from_slice(b"{}")
+                            .map_err(crate::error::StreamJournalToKinesisError::unhandled)?
+                    } else {
+                        serde_json::from_slice(response.body().as_ref())
+                            .map_err(crate::error::StreamJournalToKinesisError::unhandled)?
+                    };
+
+                    output = output.set_message(parsed_body.message);
+                    output = output.set_parameter_name(parsed_body.parameter_name);
+                    output.build()
+                }),
+            },
+            "ResourceNotFoundException" => crate::error::StreamJournalToKinesisError {
+                meta: generic,
+                kind: crate::error::StreamJournalToKinesisErrorKind::ResourceNotFoundError({
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_error::Builder::default();
+                    let _ = response;
+
+                    let body_slice = response.body().as_ref();
+
+                    let parsed_body: crate::error::ResourceNotFoundError = if body_slice.is_empty()
+                    {
+                        // To enable JSON parsing to succeed, replace an empty body
+                        // with an empty JSON body. If a member was required, it will fail slightly later
+                        // during the operation construction phase.
+                        serde_json::from_slice(b"{}")
+                            .map_err(crate::error::StreamJournalToKinesisError::unhandled)?
+                    } else {
+                        serde_json::from_slice(response.body().as_ref())
+                            .map_err(crate::error::StreamJournalToKinesisError::unhandled)?
+                    };
+
+                    output = output.set_message(parsed_body.message);
+                    output = output.set_resource_type(parsed_body.resource_type);
+                    output = output.set_resource_name(parsed_body.resource_name);
+                    output.build()
+                }),
+            },
+            "ResourcePreconditionNotMetException" => crate::error::StreamJournalToKinesisError {
+                meta: generic,
+                kind:
+                    crate::error::StreamJournalToKinesisErrorKind::ResourcePreconditionNotMetError(
+                        {
+                            #[allow(unused_mut)]
+                            let mut output =
+                                crate::error::resource_precondition_not_met_error::Builder::default(
+                                );
+                            let _ = response;
+
+                            let body_slice = response.body().as_ref();
+
+                            let parsed_body: crate::error::ResourcePreconditionNotMetError =
+                                if body_slice.is_empty() {
+                                    // To enable JSON parsing to succeed, replace an empty body
+                                    // with an empty JSON body. If a member was required, it will fail slightly later
+                                    // during the operation construction phase.
+                                    serde_json::from_slice(b"{}").map_err(
+                                        crate::error::StreamJournalToKinesisError::unhandled,
+                                    )?
+                                } else {
+                                    serde_json::from_slice(response.body().as_ref()).map_err(
+                                        crate::error::StreamJournalToKinesisError::unhandled,
+                                    )?
+                                };
+
+                            output = output.set_message(parsed_body.message);
+                            output = output.set_resource_type(parsed_body.resource_type);
+                            output = output.set_resource_name(parsed_body.resource_name);
+                            output.build()
+                        },
+                    ),
+            },
+            _ => crate::error::StreamJournalToKinesisError::generic(generic),
+        })
+    }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
         response: &http::response::Response<impl AsRef<[u8]>>,
@@ -2013,98 +2238,6 @@ impl StreamJournalToKinesis {
         crate::output::StreamJournalToKinesisOutput,
         crate::error::StreamJournalToKinesisError,
     > {
-        if crate::aws_json_errors::is_error(&response) && response.status().as_u16() != 200 {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => {
-                    return Err(crate::error::StreamJournalToKinesisError::unhandled(
-                        generic,
-                    ))
-                }
-            };
-            return Err(match error_code {
-                "InvalidParameterException" => crate::error::StreamJournalToKinesisError { meta: generic, kind: crate::error::StreamJournalToKinesisErrorKind::InvalidParameterError({
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_error::Builder::default();
-                    let _ = response;
-                    
-                                        let body_slice = response.body().as_ref();
-                    
-                                        let parsed_body: crate::error::InvalidParameterError = if body_slice.is_empty() {
-                                            // To enable JSON parsing to succeed, replace an empty body
-                                            // with an empty JSON body. If a member was required, it will fail slightly later
-                                            // during the operation construction phase.
-                                            serde_json::from_slice(b"{}").map_err(crate::error::StreamJournalToKinesisError::unhandled)?
-                                        } else {
-                                            serde_json::from_slice(response.body().as_ref()).map_err(crate::error::StreamJournalToKinesisError::unhandled)?
-                                        };
-                                    
-                    output = output.set_message(
-                        parsed_body.message
-                    );
-                    output = output.set_parameter_name(
-                        parsed_body.parameter_name
-                    );
-                    output.build()
-                })},
-                "ResourceNotFoundException" => crate::error::StreamJournalToKinesisError { meta: generic, kind: crate::error::StreamJournalToKinesisErrorKind::ResourceNotFoundError({
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_error::Builder::default();
-                    let _ = response;
-                    
-                                        let body_slice = response.body().as_ref();
-                    
-                                        let parsed_body: crate::error::ResourceNotFoundError = if body_slice.is_empty() {
-                                            // To enable JSON parsing to succeed, replace an empty body
-                                            // with an empty JSON body. If a member was required, it will fail slightly later
-                                            // during the operation construction phase.
-                                            serde_json::from_slice(b"{}").map_err(crate::error::StreamJournalToKinesisError::unhandled)?
-                                        } else {
-                                            serde_json::from_slice(response.body().as_ref()).map_err(crate::error::StreamJournalToKinesisError::unhandled)?
-                                        };
-                                    
-                    output = output.set_message(
-                        parsed_body.message
-                    );
-                    output = output.set_resource_type(
-                        parsed_body.resource_type
-                    );
-                    output = output.set_resource_name(
-                        parsed_body.resource_name
-                    );
-                    output.build()
-                })},
-                "ResourcePreconditionNotMetException" => crate::error::StreamJournalToKinesisError { meta: generic, kind: crate::error::StreamJournalToKinesisErrorKind::ResourcePreconditionNotMetError({
-                    #[allow(unused_mut)]let mut output = crate::error::resource_precondition_not_met_error::Builder::default();
-                    let _ = response;
-                    
-                                        let body_slice = response.body().as_ref();
-                    
-                                        let parsed_body: crate::error::ResourcePreconditionNotMetError = if body_slice.is_empty() {
-                                            // To enable JSON parsing to succeed, replace an empty body
-                                            // with an empty JSON body. If a member was required, it will fail slightly later
-                                            // during the operation construction phase.
-                                            serde_json::from_slice(b"{}").map_err(crate::error::StreamJournalToKinesisError::unhandled)?
-                                        } else {
-                                            serde_json::from_slice(response.body().as_ref()).map_err(crate::error::StreamJournalToKinesisError::unhandled)?
-                                        };
-                                    
-                    output = output.set_message(
-                        parsed_body.message
-                    );
-                    output = output.set_resource_type(
-                        parsed_body.resource_type
-                    );
-                    output = output.set_resource_name(
-                        parsed_body.resource_name
-                    );
-                    output.build()
-                })},
-                _ => crate::error::StreamJournalToKinesisError::generic(generic)
-            });
-        }
         Ok({
             #[allow(unused_mut)]
             let mut output = crate::output::stream_journal_to_kinesis_output::Builder::default();
@@ -2148,14 +2281,18 @@ impl smithy_http::response::ParseStrictResponse for StreamJournalToKinesis {
         crate::error::StreamJournalToKinesisError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if crate::aws_json_errors::is_error(&response) && response.status().as_u16() != 200 {
+            self.parse_error(response)
+        } else {
+            self.parse_response(response)
+        }
     }
 }
 
 /// <p>Adds one or more tags to a specified Amazon QLDB resource.</p>
 /// <p>A resource can have up to 50 tags. If you try to create more than 50 tags for a
 /// resource, your request fails and returns an error.</p>
-#[derive(std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone)]
 pub struct TagResource {
     _private: (),
 }
@@ -2164,76 +2301,79 @@ impl TagResource {
     pub fn builder() -> crate::input::tag_resource_input::Builder {
         crate::input::tag_resource_input::Builder::default()
     }
+    fn parse_error(
+        &self,
+        response: &http::Response<bytes::Bytes>,
+    ) -> Result<crate::output::TagResourceOutput, crate::error::TagResourceError> {
+        let body = serde_json::from_slice(response.body().as_ref())
+            .unwrap_or_else(|_| serde_json::json!({}));
+        let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
+
+        let error_code = match generic.code() {
+            Some(code) => code,
+            None => return Err(crate::error::TagResourceError::unhandled(generic)),
+        };
+        Err(match error_code {
+            "InvalidParameterException" => crate::error::TagResourceError {
+                meta: generic,
+                kind: crate::error::TagResourceErrorKind::InvalidParameterError({
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_error::Builder::default();
+                    let _ = response;
+
+                    let body_slice = response.body().as_ref();
+
+                    let parsed_body: crate::error::InvalidParameterError = if body_slice.is_empty()
+                    {
+                        // To enable JSON parsing to succeed, replace an empty body
+                        // with an empty JSON body. If a member was required, it will fail slightly later
+                        // during the operation construction phase.
+                        serde_json::from_slice(b"{}")
+                            .map_err(crate::error::TagResourceError::unhandled)?
+                    } else {
+                        serde_json::from_slice(response.body().as_ref())
+                            .map_err(crate::error::TagResourceError::unhandled)?
+                    };
+
+                    output = output.set_message(parsed_body.message);
+                    output = output.set_parameter_name(parsed_body.parameter_name);
+                    output.build()
+                }),
+            },
+            "ResourceNotFoundException" => crate::error::TagResourceError {
+                meta: generic,
+                kind: crate::error::TagResourceErrorKind::ResourceNotFoundError({
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_error::Builder::default();
+                    let _ = response;
+
+                    let body_slice = response.body().as_ref();
+
+                    let parsed_body: crate::error::ResourceNotFoundError = if body_slice.is_empty()
+                    {
+                        // To enable JSON parsing to succeed, replace an empty body
+                        // with an empty JSON body. If a member was required, it will fail slightly later
+                        // during the operation construction phase.
+                        serde_json::from_slice(b"{}")
+                            .map_err(crate::error::TagResourceError::unhandled)?
+                    } else {
+                        serde_json::from_slice(response.body().as_ref())
+                            .map_err(crate::error::TagResourceError::unhandled)?
+                    };
+
+                    output = output.set_message(parsed_body.message);
+                    output = output.set_resource_type(parsed_body.resource_type);
+                    output = output.set_resource_name(parsed_body.resource_name);
+                    output.build()
+                }),
+            },
+            _ => crate::error::TagResourceError::generic(generic),
+        })
+    }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
         response: &http::response::Response<impl AsRef<[u8]>>,
     ) -> Result<crate::output::TagResourceOutput, crate::error::TagResourceError> {
-        if crate::aws_json_errors::is_error(&response) && response.status().as_u16() != 200 {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => return Err(crate::error::TagResourceError::unhandled(generic)),
-            };
-            return Err(match error_code {
-                "InvalidParameterException" => crate::error::TagResourceError {
-                    meta: generic,
-                    kind: crate::error::TagResourceErrorKind::InvalidParameterError({
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::invalid_parameter_error::Builder::default();
-                        let _ = response;
-
-                        let body_slice = response.body().as_ref();
-
-                        let parsed_body: crate::error::InvalidParameterError =
-                            if body_slice.is_empty() {
-                                // To enable JSON parsing to succeed, replace an empty body
-                                // with an empty JSON body. If a member was required, it will fail slightly later
-                                // during the operation construction phase.
-                                serde_json::from_slice(b"{}")
-                                    .map_err(crate::error::TagResourceError::unhandled)?
-                            } else {
-                                serde_json::from_slice(response.body().as_ref())
-                                    .map_err(crate::error::TagResourceError::unhandled)?
-                            };
-
-                        output = output.set_message(parsed_body.message);
-                        output = output.set_parameter_name(parsed_body.parameter_name);
-                        output.build()
-                    }),
-                },
-                "ResourceNotFoundException" => crate::error::TagResourceError {
-                    meta: generic,
-                    kind: crate::error::TagResourceErrorKind::ResourceNotFoundError({
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::resource_not_found_error::Builder::default();
-                        let _ = response;
-
-                        let body_slice = response.body().as_ref();
-
-                        let parsed_body: crate::error::ResourceNotFoundError =
-                            if body_slice.is_empty() {
-                                // To enable JSON parsing to succeed, replace an empty body
-                                // with an empty JSON body. If a member was required, it will fail slightly later
-                                // during the operation construction phase.
-                                serde_json::from_slice(b"{}")
-                                    .map_err(crate::error::TagResourceError::unhandled)?
-                            } else {
-                                serde_json::from_slice(response.body().as_ref())
-                                    .map_err(crate::error::TagResourceError::unhandled)?
-                            };
-
-                        output = output.set_message(parsed_body.message);
-                        output = output.set_resource_type(parsed_body.resource_type);
-                        output = output.set_resource_name(parsed_body.resource_name);
-                        output.build()
-                    }),
-                },
-                _ => crate::error::TagResourceError::generic(generic),
-            });
-        }
         Ok({
             #[allow(unused_mut)]
             let mut output = crate::output::tag_resource_output::Builder::default();
@@ -2255,13 +2395,17 @@ impl TagResource {
 impl smithy_http::response::ParseStrictResponse for TagResource {
     type Output = Result<crate::output::TagResourceOutput, crate::error::TagResourceError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if crate::aws_json_errors::is_error(&response) && response.status().as_u16() != 200 {
+            self.parse_error(response)
+        } else {
+            self.parse_response(response)
+        }
     }
 }
 
 /// <p>Removes one or more tags from a specified Amazon QLDB resource. You can specify up to 50
 /// tag keys to remove.</p>
-#[derive(std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone)]
 pub struct UntagResource {
     _private: (),
 }
@@ -2270,76 +2414,79 @@ impl UntagResource {
     pub fn builder() -> crate::input::untag_resource_input::Builder {
         crate::input::untag_resource_input::Builder::default()
     }
+    fn parse_error(
+        &self,
+        response: &http::Response<bytes::Bytes>,
+    ) -> Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError> {
+        let body = serde_json::from_slice(response.body().as_ref())
+            .unwrap_or_else(|_| serde_json::json!({}));
+        let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
+
+        let error_code = match generic.code() {
+            Some(code) => code,
+            None => return Err(crate::error::UntagResourceError::unhandled(generic)),
+        };
+        Err(match error_code {
+            "InvalidParameterException" => crate::error::UntagResourceError {
+                meta: generic,
+                kind: crate::error::UntagResourceErrorKind::InvalidParameterError({
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_error::Builder::default();
+                    let _ = response;
+
+                    let body_slice = response.body().as_ref();
+
+                    let parsed_body: crate::error::InvalidParameterError = if body_slice.is_empty()
+                    {
+                        // To enable JSON parsing to succeed, replace an empty body
+                        // with an empty JSON body. If a member was required, it will fail slightly later
+                        // during the operation construction phase.
+                        serde_json::from_slice(b"{}")
+                            .map_err(crate::error::UntagResourceError::unhandled)?
+                    } else {
+                        serde_json::from_slice(response.body().as_ref())
+                            .map_err(crate::error::UntagResourceError::unhandled)?
+                    };
+
+                    output = output.set_message(parsed_body.message);
+                    output = output.set_parameter_name(parsed_body.parameter_name);
+                    output.build()
+                }),
+            },
+            "ResourceNotFoundException" => crate::error::UntagResourceError {
+                meta: generic,
+                kind: crate::error::UntagResourceErrorKind::ResourceNotFoundError({
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_error::Builder::default();
+                    let _ = response;
+
+                    let body_slice = response.body().as_ref();
+
+                    let parsed_body: crate::error::ResourceNotFoundError = if body_slice.is_empty()
+                    {
+                        // To enable JSON parsing to succeed, replace an empty body
+                        // with an empty JSON body. If a member was required, it will fail slightly later
+                        // during the operation construction phase.
+                        serde_json::from_slice(b"{}")
+                            .map_err(crate::error::UntagResourceError::unhandled)?
+                    } else {
+                        serde_json::from_slice(response.body().as_ref())
+                            .map_err(crate::error::UntagResourceError::unhandled)?
+                    };
+
+                    output = output.set_message(parsed_body.message);
+                    output = output.set_resource_type(parsed_body.resource_type);
+                    output = output.set_resource_name(parsed_body.resource_name);
+                    output.build()
+                }),
+            },
+            _ => crate::error::UntagResourceError::generic(generic),
+        })
+    }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
         response: &http::response::Response<impl AsRef<[u8]>>,
     ) -> Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError> {
-        if crate::aws_json_errors::is_error(&response) && response.status().as_u16() != 200 {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => return Err(crate::error::UntagResourceError::unhandled(generic)),
-            };
-            return Err(match error_code {
-                "InvalidParameterException" => crate::error::UntagResourceError {
-                    meta: generic,
-                    kind: crate::error::UntagResourceErrorKind::InvalidParameterError({
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::invalid_parameter_error::Builder::default();
-                        let _ = response;
-
-                        let body_slice = response.body().as_ref();
-
-                        let parsed_body: crate::error::InvalidParameterError =
-                            if body_slice.is_empty() {
-                                // To enable JSON parsing to succeed, replace an empty body
-                                // with an empty JSON body. If a member was required, it will fail slightly later
-                                // during the operation construction phase.
-                                serde_json::from_slice(b"{}")
-                                    .map_err(crate::error::UntagResourceError::unhandled)?
-                            } else {
-                                serde_json::from_slice(response.body().as_ref())
-                                    .map_err(crate::error::UntagResourceError::unhandled)?
-                            };
-
-                        output = output.set_message(parsed_body.message);
-                        output = output.set_parameter_name(parsed_body.parameter_name);
-                        output.build()
-                    }),
-                },
-                "ResourceNotFoundException" => crate::error::UntagResourceError {
-                    meta: generic,
-                    kind: crate::error::UntagResourceErrorKind::ResourceNotFoundError({
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::resource_not_found_error::Builder::default();
-                        let _ = response;
-
-                        let body_slice = response.body().as_ref();
-
-                        let parsed_body: crate::error::ResourceNotFoundError =
-                            if body_slice.is_empty() {
-                                // To enable JSON parsing to succeed, replace an empty body
-                                // with an empty JSON body. If a member was required, it will fail slightly later
-                                // during the operation construction phase.
-                                serde_json::from_slice(b"{}")
-                                    .map_err(crate::error::UntagResourceError::unhandled)?
-                            } else {
-                                serde_json::from_slice(response.body().as_ref())
-                                    .map_err(crate::error::UntagResourceError::unhandled)?
-                            };
-
-                        output = output.set_message(parsed_body.message);
-                        output = output.set_resource_type(parsed_body.resource_type);
-                        output = output.set_resource_name(parsed_body.resource_name);
-                        output.build()
-                    }),
-                },
-                _ => crate::error::UntagResourceError::generic(generic),
-            });
-        }
         Ok({
             #[allow(unused_mut)]
             let mut output = crate::output::untag_resource_output::Builder::default();
@@ -2361,12 +2508,16 @@ impl UntagResource {
 impl smithy_http::response::ParseStrictResponse for UntagResource {
     type Output = Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if crate::aws_json_errors::is_error(&response) && response.status().as_u16() != 200 {
+            self.parse_error(response)
+        } else {
+            self.parse_response(response)
+        }
     }
 }
 
 /// <p>Updates properties on a ledger.</p>
-#[derive(std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone)]
 pub struct UpdateLedger {
     _private: (),
 }
@@ -2375,76 +2526,79 @@ impl UpdateLedger {
     pub fn builder() -> crate::input::update_ledger_input::Builder {
         crate::input::update_ledger_input::Builder::default()
     }
+    fn parse_error(
+        &self,
+        response: &http::Response<bytes::Bytes>,
+    ) -> Result<crate::output::UpdateLedgerOutput, crate::error::UpdateLedgerError> {
+        let body = serde_json::from_slice(response.body().as_ref())
+            .unwrap_or_else(|_| serde_json::json!({}));
+        let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
+
+        let error_code = match generic.code() {
+            Some(code) => code,
+            None => return Err(crate::error::UpdateLedgerError::unhandled(generic)),
+        };
+        Err(match error_code {
+            "InvalidParameterException" => crate::error::UpdateLedgerError {
+                meta: generic,
+                kind: crate::error::UpdateLedgerErrorKind::InvalidParameterError({
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_error::Builder::default();
+                    let _ = response;
+
+                    let body_slice = response.body().as_ref();
+
+                    let parsed_body: crate::error::InvalidParameterError = if body_slice.is_empty()
+                    {
+                        // To enable JSON parsing to succeed, replace an empty body
+                        // with an empty JSON body. If a member was required, it will fail slightly later
+                        // during the operation construction phase.
+                        serde_json::from_slice(b"{}")
+                            .map_err(crate::error::UpdateLedgerError::unhandled)?
+                    } else {
+                        serde_json::from_slice(response.body().as_ref())
+                            .map_err(crate::error::UpdateLedgerError::unhandled)?
+                    };
+
+                    output = output.set_message(parsed_body.message);
+                    output = output.set_parameter_name(parsed_body.parameter_name);
+                    output.build()
+                }),
+            },
+            "ResourceNotFoundException" => crate::error::UpdateLedgerError {
+                meta: generic,
+                kind: crate::error::UpdateLedgerErrorKind::ResourceNotFoundError({
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_error::Builder::default();
+                    let _ = response;
+
+                    let body_slice = response.body().as_ref();
+
+                    let parsed_body: crate::error::ResourceNotFoundError = if body_slice.is_empty()
+                    {
+                        // To enable JSON parsing to succeed, replace an empty body
+                        // with an empty JSON body. If a member was required, it will fail slightly later
+                        // during the operation construction phase.
+                        serde_json::from_slice(b"{}")
+                            .map_err(crate::error::UpdateLedgerError::unhandled)?
+                    } else {
+                        serde_json::from_slice(response.body().as_ref())
+                            .map_err(crate::error::UpdateLedgerError::unhandled)?
+                    };
+
+                    output = output.set_message(parsed_body.message);
+                    output = output.set_resource_type(parsed_body.resource_type);
+                    output = output.set_resource_name(parsed_body.resource_name);
+                    output.build()
+                }),
+            },
+            _ => crate::error::UpdateLedgerError::generic(generic),
+        })
+    }
     #[allow(clippy::unnecessary_wraps)]
     fn from_response(
         response: &http::response::Response<impl AsRef<[u8]>>,
     ) -> Result<crate::output::UpdateLedgerOutput, crate::error::UpdateLedgerError> {
-        if crate::aws_json_errors::is_error(&response) && response.status().as_u16() != 200 {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => return Err(crate::error::UpdateLedgerError::unhandled(generic)),
-            };
-            return Err(match error_code {
-                "InvalidParameterException" => crate::error::UpdateLedgerError {
-                    meta: generic,
-                    kind: crate::error::UpdateLedgerErrorKind::InvalidParameterError({
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::invalid_parameter_error::Builder::default();
-                        let _ = response;
-
-                        let body_slice = response.body().as_ref();
-
-                        let parsed_body: crate::error::InvalidParameterError =
-                            if body_slice.is_empty() {
-                                // To enable JSON parsing to succeed, replace an empty body
-                                // with an empty JSON body. If a member was required, it will fail slightly later
-                                // during the operation construction phase.
-                                serde_json::from_slice(b"{}")
-                                    .map_err(crate::error::UpdateLedgerError::unhandled)?
-                            } else {
-                                serde_json::from_slice(response.body().as_ref())
-                                    .map_err(crate::error::UpdateLedgerError::unhandled)?
-                            };
-
-                        output = output.set_message(parsed_body.message);
-                        output = output.set_parameter_name(parsed_body.parameter_name);
-                        output.build()
-                    }),
-                },
-                "ResourceNotFoundException" => crate::error::UpdateLedgerError {
-                    meta: generic,
-                    kind: crate::error::UpdateLedgerErrorKind::ResourceNotFoundError({
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::resource_not_found_error::Builder::default();
-                        let _ = response;
-
-                        let body_slice = response.body().as_ref();
-
-                        let parsed_body: crate::error::ResourceNotFoundError =
-                            if body_slice.is_empty() {
-                                // To enable JSON parsing to succeed, replace an empty body
-                                // with an empty JSON body. If a member was required, it will fail slightly later
-                                // during the operation construction phase.
-                                serde_json::from_slice(b"{}")
-                                    .map_err(crate::error::UpdateLedgerError::unhandled)?
-                            } else {
-                                serde_json::from_slice(response.body().as_ref())
-                                    .map_err(crate::error::UpdateLedgerError::unhandled)?
-                            };
-
-                        output = output.set_message(parsed_body.message);
-                        output = output.set_resource_type(parsed_body.resource_type);
-                        output = output.set_resource_name(parsed_body.resource_name);
-                        output.build()
-                    }),
-                },
-                _ => crate::error::UpdateLedgerError::generic(generic),
-            });
-        }
         Ok({
             #[allow(unused_mut)]
             let mut output = crate::output::update_ledger_output::Builder::default();
@@ -2484,6 +2638,10 @@ impl UpdateLedger {
 impl smithy_http::response::ParseStrictResponse for UpdateLedger {
     type Output = Result<crate::output::UpdateLedgerOutput, crate::error::UpdateLedgerError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if crate::aws_json_errors::is_error(&response) && response.status().as_u16() != 200 {
+            self.parse_error(response)
+        } else {
+            self.parse_response(response)
+        }
     }
 }

@@ -22,7 +22,7 @@ impl std::fmt::Debug for UpdateShardCountOutput {
 pub mod update_shard_count_output {
     /// A builder for [`UpdateShardCountOutput`](crate::output::UpdateShardCountOutput)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         stream_name: std::option::Option<std::string::String>,
         target_shard_count: std::option::Option<i32>,
@@ -86,7 +86,7 @@ impl std::fmt::Debug for StopStreamEncryptionOutput {
 pub mod stop_stream_encryption_output {
     /// A builder for [`StopStreamEncryptionOutput`](crate::output::StopStreamEncryptionOutput)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`StopStreamEncryptionOutput`](crate::output::StopStreamEncryptionOutput)
@@ -115,7 +115,7 @@ impl std::fmt::Debug for StartStreamEncryptionOutput {
 pub mod start_stream_encryption_output {
     /// A builder for [`StartStreamEncryptionOutput`](crate::output::StartStreamEncryptionOutput)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`StartStreamEncryptionOutput`](crate::output::StartStreamEncryptionOutput)
@@ -144,7 +144,7 @@ impl std::fmt::Debug for SplitShardOutput {
 pub mod split_shard_output {
     /// A builder for [`SplitShardOutput`](crate::output::SplitShardOutput)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`SplitShardOutput`](crate::output::SplitShardOutput)
@@ -173,7 +173,7 @@ impl std::fmt::Debug for RemoveTagsFromStreamOutput {
 pub mod remove_tags_from_stream_output {
     /// A builder for [`RemoveTagsFromStreamOutput`](crate::output::RemoveTagsFromStreamOutput)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`RemoveTagsFromStreamOutput`](crate::output::RemoveTagsFromStreamOutput)
@@ -207,7 +207,7 @@ impl std::fmt::Debug for RegisterStreamConsumerOutput {
 pub mod register_stream_consumer_output {
     /// A builder for [`RegisterStreamConsumerOutput`](crate::output::RegisterStreamConsumerOutput)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         consumer: std::option::Option<crate::model::Consumer>,
     }
@@ -279,7 +279,7 @@ impl std::fmt::Debug for PutRecordsOutput {
 pub mod put_records_output {
     /// A builder for [`PutRecordsOutput`](crate::output::PutRecordsOutput)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         records: std::option::Option<std::vec::Vec<crate::model::PutRecordsResultEntry>>,
         encryption_type: std::option::Option<crate::model::EncryptionType>,
@@ -388,7 +388,7 @@ impl std::fmt::Debug for PutRecordOutput {
 pub mod put_record_output {
     /// A builder for [`PutRecordOutput`](crate::output::PutRecordOutput)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         shard_id: std::option::Option<std::string::String>,
         sequence_number: std::option::Option<std::string::String>,
@@ -472,7 +472,7 @@ impl std::fmt::Debug for MergeShardsOutput {
 pub mod merge_shards_output {
     /// A builder for [`MergeShardsOutput`](crate::output::MergeShardsOutput)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`MergeShardsOutput`](crate::output::MergeShardsOutput)
@@ -512,7 +512,7 @@ impl std::fmt::Debug for ListTagsForStreamOutput {
 pub mod list_tags_for_stream_output {
     /// A builder for [`ListTagsForStreamOutput`](crate::output::ListTagsForStreamOutput)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         has_more_tags: std::option::Option<bool>,
@@ -579,7 +579,7 @@ impl std::fmt::Debug for ListStreamsOutput {
 pub mod list_streams_output {
     /// A builder for [`ListStreamsOutput`](crate::output::ListStreamsOutput)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         stream_names: std::option::Option<std::vec::Vec<std::string::String>>,
         has_more_streams: std::option::Option<bool>,
@@ -657,7 +657,7 @@ impl std::fmt::Debug for ListStreamConsumersOutput {
 pub mod list_stream_consumers_output {
     /// A builder for [`ListStreamConsumersOutput`](crate::output::ListStreamConsumersOutput)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         consumers: std::option::Option<std::vec::Vec<crate::model::Consumer>>,
         next_token: std::option::Option<std::string::String>,
@@ -751,7 +751,7 @@ impl std::fmt::Debug for ListShardsOutput {
 pub mod list_shards_output {
     /// A builder for [`ListShardsOutput`](crate::output::ListShardsOutput)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         next_token: std::option::Option<std::string::String>,
         shards: std::option::Option<std::vec::Vec<crate::model::Shard>>,
@@ -821,7 +821,7 @@ impl std::fmt::Debug for IncreaseStreamRetentionPeriodOutput {
 pub mod increase_stream_retention_period_output {
     /// A builder for [`IncreaseStreamRetentionPeriodOutput`](crate::output::IncreaseStreamRetentionPeriodOutput)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`IncreaseStreamRetentionPeriodOutput`](crate::output::IncreaseStreamRetentionPeriodOutput)
@@ -857,7 +857,7 @@ impl std::fmt::Debug for GetShardIteratorOutput {
 pub mod get_shard_iterator_output {
     /// A builder for [`GetShardIteratorOutput`](crate::output::GetShardIteratorOutput)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         shard_iterator: std::option::Option<std::string::String>,
     }
@@ -919,7 +919,7 @@ impl std::fmt::Debug for GetRecordsOutput {
 pub mod get_records_output {
     /// A builder for [`GetRecordsOutput`](crate::output::GetRecordsOutput)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         next_shard_iterator: std::option::Option<std::string::String>,
         records: std::option::Option<std::vec::Vec<crate::model::Record>>,
@@ -1029,7 +1029,7 @@ impl std::fmt::Debug for EnableEnhancedMonitoringOutput {
 pub mod enable_enhanced_monitoring_output {
     /// A builder for [`EnableEnhancedMonitoringOutput`](crate::output::EnableEnhancedMonitoringOutput)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         desired_shard_level_metrics: std::option::Option<std::vec::Vec<crate::model::MetricsName>>,
         stream_name: std::option::Option<std::string::String>,
@@ -1126,7 +1126,7 @@ impl std::fmt::Debug for DisableEnhancedMonitoringOutput {
 pub mod disable_enhanced_monitoring_output {
     /// A builder for [`DisableEnhancedMonitoringOutput`](crate::output::DisableEnhancedMonitoringOutput)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         desired_shard_level_metrics: std::option::Option<std::vec::Vec<crate::model::MetricsName>>,
         stream_name: std::option::Option<std::string::String>,
@@ -1212,7 +1212,7 @@ impl std::fmt::Debug for DescribeStreamSummaryOutput {
 pub mod describe_stream_summary_output {
     /// A builder for [`DescribeStreamSummaryOutput`](crate::output::DescribeStreamSummaryOutput)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         stream_description_summary: std::option::Option<crate::model::StreamDescriptionSummary>,
     }
@@ -1265,7 +1265,7 @@ impl std::fmt::Debug for DescribeStreamConsumerOutput {
 pub mod describe_stream_consumer_output {
     /// A builder for [`DescribeStreamConsumerOutput`](crate::output::DescribeStreamConsumerOutput)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         consumer_description: std::option::Option<crate::model::ConsumerDescription>,
     }
@@ -1317,7 +1317,7 @@ impl std::fmt::Debug for DescribeStreamOutput {
 pub mod describe_stream_output {
     /// A builder for [`DescribeStreamOutput`](crate::output::DescribeStreamOutput)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         stream_description: std::option::Option<crate::model::StreamDescription>,
     }
@@ -1371,7 +1371,7 @@ impl std::fmt::Debug for DescribeLimitsOutput {
 pub mod describe_limits_output {
     /// A builder for [`DescribeLimitsOutput`](crate::output::DescribeLimitsOutput)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         open_shard_count: std::option::Option<i32>,
         shard_limit: std::option::Option<i32>,
@@ -1424,7 +1424,7 @@ impl std::fmt::Debug for DeregisterStreamConsumerOutput {
 pub mod deregister_stream_consumer_output {
     /// A builder for [`DeregisterStreamConsumerOutput`](crate::output::DeregisterStreamConsumerOutput)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeregisterStreamConsumerOutput`](crate::output::DeregisterStreamConsumerOutput)
@@ -1453,7 +1453,7 @@ impl std::fmt::Debug for DeleteStreamOutput {
 pub mod delete_stream_output {
     /// A builder for [`DeleteStreamOutput`](crate::output::DeleteStreamOutput)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteStreamOutput`](crate::output::DeleteStreamOutput)
@@ -1482,7 +1482,7 @@ impl std::fmt::Debug for DecreaseStreamRetentionPeriodOutput {
 pub mod decrease_stream_retention_period_output {
     /// A builder for [`DecreaseStreamRetentionPeriodOutput`](crate::output::DecreaseStreamRetentionPeriodOutput)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DecreaseStreamRetentionPeriodOutput`](crate::output::DecreaseStreamRetentionPeriodOutput)
@@ -1511,7 +1511,7 @@ impl std::fmt::Debug for CreateStreamOutput {
 pub mod create_stream_output {
     /// A builder for [`CreateStreamOutput`](crate::output::CreateStreamOutput)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`CreateStreamOutput`](crate::output::CreateStreamOutput)
@@ -1540,7 +1540,7 @@ impl std::fmt::Debug for AddTagsToStreamOutput {
 pub mod add_tags_to_stream_output {
     /// A builder for [`AddTagsToStreamOutput`](crate::output::AddTagsToStreamOutput)
     #[non_exhaustive]
-    #[derive(Debug, Clone, Default)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`AddTagsToStreamOutput`](crate::output::AddTagsToStreamOutput)
