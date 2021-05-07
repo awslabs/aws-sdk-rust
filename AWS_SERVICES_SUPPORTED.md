@@ -176,8 +176,8 @@ The alpha SDK for Rust currently supports the checked services below. If you wan
 - [ ] Amazon Pinpoint
 - [ ] Amazon Pinpoint-Email
 - [ ] Amazon Pricing
-- [ ] Amazon Qldb
-- [ ] Amazon Qldb-Session
+- [X] Amazon Qldb
+- [X] Amazon Qldb-Session
 - [ ] Amazon Quicksight
 - [ ] Amazon RAM
 - [ ] [Amazon RDS](https://github.com/awslabs/aws-sdk-rust/issues/36)
