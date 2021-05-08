@@ -1,3 +1,6 @@
+use duct::cmd;
+
 fn main() {
-    println!("Hello, world!");
+   let stdout = cmd!("aws", "--version").read();
+   assert_eq!(stdout.unwrap(), "llama");
 }
