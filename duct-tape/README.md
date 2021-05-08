@@ -13,7 +13,7 @@ aws s3 presign s3://awsexamplebucket/test2.txt --expires-in 604800
 ## Delelop on a remote EC2 instance 
 aws ec2 start-instances i-INSTANCE_ID
 aws ec2 describe-instances # TODO pipe to jq to get IP address
-ssh  username@INSTANCE_IP       -i keyfile   # alternatively connect with vscode
+ssh  username@INSTANCE_IP -i keyfile # alternatively connect with vscode
 # shut down for the day
 aws ec2 stop-instances --instance-ids i-INSTANCE_ID
 ```
