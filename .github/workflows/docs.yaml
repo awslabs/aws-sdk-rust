@@ -17,11 +17,11 @@ jobs:
         with:
           toolchain: ${{ env.rust_version }}
       - name: Generate docs
-        run: cargo doc --target-dir ../docs-new --no-deps
+        run: mkdir docs-new && touch docs-new/docs.txt # cargo doc --target-dir ../docs-new --no-deps
         working-directory: sdk
       - name: Push the docs 
         run: |
-          git checkout gh-pages
+          git checkout -B gh-pages
           rm docs
           mv docs-new docs
           git config --local user.email "docs-action@github.com"
