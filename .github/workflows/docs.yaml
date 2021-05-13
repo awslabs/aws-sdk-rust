@@ -1,6 +1,6 @@
 on: 
   push:
-    branches: [rcoh-docs]
+    branches: [main]
     
 env:
   rust_version: 1.51.0
@@ -17,7 +17,7 @@ jobs:
         with:
           toolchain: nightly
       - name: Generate docs
-        run: cargo +nightly doc --target-dir ../docs-new
+        run: cargo +nightly doc --target-dir ../docs-new --no-deps
         env: 
           RUSTDOCFLAGS: "--enable-index-page -Zunstable-options"
         working-directory: sdk
