@@ -17,7 +17,7 @@ jobs:
         with:
           toolchain: nightly
       - name: Generate docs
-        run: cargo +nightly doc
+        run: cargo +nightly doc --target-dir ../docs-new
         env: 
           RUSTDOCFLAGS: "--enable-index-page -Zunstable-options"
         working-directory: sdk
