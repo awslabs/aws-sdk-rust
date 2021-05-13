@@ -27,7 +27,7 @@ jobs:
           git checkout -B gh-pages
           ls
           rm -rf docs
-          mv docs-new/target/doc docs
+          mv docs-new/doc docs
           git config --local user.email "docs-action@github.com"
           git config --local user.name "GitHub Action (docs)"
           git add docs
