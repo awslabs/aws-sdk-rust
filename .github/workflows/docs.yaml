@@ -15,9 +15,11 @@ jobs:
           persist-credentials: false
       - uses: actions-rs/toolchain@v1
         with:
-          toolchain: ${{ env.rust_version }}
+          toolchain: nightly
       - name: Generate docs
-        run: cargo doc --target-dir ../docs-new --no-deps
+        run: cargo +nightly doc
+        env: 
+          RUSTDOCFLAGS: "--enable-index-page -Zunstable-options"
         working-directory: sdk
       - name: Push the docs 
         run: |
@@ -25,7 +27,7 @@ jobs:
           git checkout -B gh-pages
           ls
           rm -rf docs
-          mv docs-new docs
+          mv docs-new/target/doc docs
           git config --local user.email "docs-action@github.com"
           git config --local user.name "GitHub Action (docs)"
           git add docs
