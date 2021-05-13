@@ -1,8 +1,10 @@
 on: 
   push:
-    branch: [main]
+    branches: [rcoh-docs]
     
-    
+env:
+  rust_version: 1.51.0
+  
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
