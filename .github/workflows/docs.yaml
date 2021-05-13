@@ -22,7 +22,7 @@ jobs:
       - name: Push the docs 
         run: |
           git checkout -B gh-pages
-          rm docs
+          rm -rf docs
           mv docs-new docs
           git config --local user.email "docs-action@github.com"
           git config --local user.name "GitHub Action (docs)"
