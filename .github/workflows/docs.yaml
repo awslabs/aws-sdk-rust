@@ -13,15 +13,17 @@ jobs:
         uses: actions/checkout@v2
         with:
           persist-credentials: false
-      - uses: actions-rs/toolchain@v1
-        with:
-          toolchain: ${{ env.rust_version }}
+      #- uses: actions-rs/toolchain@v1
+      #  with:
+      #    toolchain: ${{ env.rust_version }}
       - name: Generate docs
-        run: mkdir docs-new && touch docs-new/docs.txt # cargo doc --target-dir ../docs-new --no-deps
+        run: mkdir ../docs-new && touch ../docs-new/docs.txt && ls # cargo doc --target-dir ../docs-new --no-deps
         working-directory: sdk
       - name: Push the docs 
         run: |
+          ls
           git checkout -B gh-pages
+          ls
           rm -rf docs
           mv docs-new docs
           git config --local user.email "docs-action@github.com"
