@@ -1,0 +1,36 @@
+on: 
+  push:
+    branches: [main]
+    
+env:
+  rust_version: 1.51.0
+  
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          persist-credentials: false
+      - uses: actions-rs/toolchain@v1
+        with:
+          toolchain: nightly
+      - name: Generate docs
+        run: cargo +nightly doc --target-dir ../docs-new --no-deps
+        env: 
+          RUSTDOCFLAGS: "--enable-index-page -Zunstable-options"
+        working-directory: sdk
+      - name: Push the docs 
+        run: |
+          ls
+          git checkout -B gh-pages
+          ls
+          rm -rf docs
+          mv docs-new/doc docs
+          git config --local user.email "docs-action@github.com"
+          git config --local user.name "GitHub Action (docs)"
+          git add docs
+          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
+          git commit -m 'Add docs'
+          git push -f origin gh-pages
