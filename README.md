@@ -56,6 +56,8 @@ In order to use the SDK for Rust, you must already have Rust and Cargo installed
 
 * [GitHub discussions](https://github.com/awslabs/aws-sdk-rust/discussions) - For ideas, RFCs & general questions
 * [GitHub issues](https://github.com/awslabs/aws-sdk-rust/issues/new/choose) – For bug reports & feature requests
+* [Generated Docs (latest version)](https://awslabs.github.io/aws-sdk-rust/)
+* [Usage examples](https://github.com/awslabs/aws-sdk-rust/tree/main/sdk/examples)
 
 ## Feedback and Contributing
 
@@ -80,9 +82,6 @@ This alpha SDK currently does not provide support for every AWS service. You can
 - [Code Examples](https://github.com/awslabs/aws-sdk-rust/tree/main/sdk/examples)
 - API reference docs - You can generate API reference docs by calling `cargo doc --open` on your  project and navigating to the SDK crate
 
-<!-- TODO
-- Our alpha launch announcement
---> 
 ## Security
 
 See [CONTRIBUTING](CONTRIBUTING.md#security-issue-notifications) for more information.
