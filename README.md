@@ -15,7 +15,7 @@ The new AWS SDK for Rust is built with one crate per AWS service. [Tokio](https:
 
 ```toml
 [dependencies]
-dynamodb = { git = "https://github.com/awslabs/aws-sdk-rust", tag = "v0.0.3-alpha", package = "aws-sdk-dynamodb" }
+dynamodb = { git = "https://github.com/awslabs/aws-sdk-rust", tag = "v0.0.4-alpha", package = "aws-sdk-dynamodb" }
 tokio = { version = "1", features = ["full"] }
 ```
 3. Provide your AWS credentials as environment variables:
@@ -56,6 +56,8 @@ In order to use the SDK for Rust, you must already have Rust and Cargo installed
 
 * [GitHub discussions](https://github.com/awslabs/aws-sdk-rust/discussions) - For ideas, RFCs & general questions
 * [GitHub issues](https://github.com/awslabs/aws-sdk-rust/issues/new/choose) – For bug reports & feature requests
+* [Generated Docs (latest version)](https://awslabs.github.io/aws-sdk-rust/)
+* [Usage examples](https://github.com/awslabs/aws-sdk-rust/tree/main/sdk/examples)
 
 ## Feedback and Contributing
 
@@ -78,11 +80,7 @@ This alpha SDK currently does not provide support for every AWS service. You can
 - Design docs - Design documentation for the SDK lives in the [design folder of smithy-rs](https://github.com/awslabs/smithy-rs/tree/main/design).
 - Runtime / Handwritten code: The Rust Runtime code that underpins the SDK can be accessed [here](https://github.com/awslabs/smithy-rs/tree/main/rust-runtime) and [here](https://github.com/awslabs/smithy-rs/tree/main/aws/rust-runtime). This code is copied into this repo as part of code generation.
 - [Code Examples](https://github.com/awslabs/aws-sdk-rust/tree/main/sdk/examples)
-- API reference docs - You can generate API reference docs by calling `cargo doc --open` on your  project and navigating to the SDK crate
-
-<!-- TODO
-- Our alpha launch announcement
---> 
+- [API reference documentation (rustdoc)](https://awslabs.github.io/aws-sdk-rust/)
 ## Security
 
 See [CONTRIBUTING](CONTRIBUTING.md#security-issue-notifications) for more information.
