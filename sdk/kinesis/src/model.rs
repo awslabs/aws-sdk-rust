@@ -193,10 +193,10 @@ pub mod consumer {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        consumer_name: std::option::Option<std::string::String>,
-        consumer_arn: std::option::Option<std::string::String>,
-        consumer_status: std::option::Option<crate::model::ConsumerStatus>,
-        consumer_creation_timestamp: std::option::Option<smithy_types::Instant>,
+        pub(crate) consumer_name: std::option::Option<std::string::String>,
+        pub(crate) consumer_arn: std::option::Option<std::string::String>,
+        pub(crate) consumer_status: std::option::Option<crate::model::ConsumerStatus>,
+        pub(crate) consumer_creation_timestamp: std::option::Option<smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The name of the consumer is something you choose when you register the
@@ -389,10 +389,10 @@ pub mod put_records_result_entry {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        error_code: std::option::Option<std::string::String>,
-        shard_id: std::option::Option<std::string::String>,
-        error_message: std::option::Option<std::string::String>,
-        sequence_number: std::option::Option<std::string::String>,
+        pub(crate) error_code: std::option::Option<std::string::String>,
+        pub(crate) shard_id: std::option::Option<std::string::String>,
+        pub(crate) error_message: std::option::Option<std::string::String>,
+        pub(crate) sequence_number: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The error code for an individual record result. <code>ErrorCodes</code> can be
@@ -505,9 +505,9 @@ pub mod put_records_request_entry {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        data: std::option::Option<smithy_types::Blob>,
-        partition_key: std::option::Option<std::string::String>,
-        explicit_hash_key: std::option::Option<std::string::String>,
+        pub(crate) data: std::option::Option<smithy_types::Blob>,
+        pub(crate) partition_key: std::option::Option<std::string::String>,
+        pub(crate) explicit_hash_key: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The data blob to put into the record, which is base64-encoded when the blob is
@@ -599,8 +599,8 @@ pub mod tag {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        value: std::option::Option<std::string::String>,
-        key: std::option::Option<std::string::String>,
+        pub(crate) value: std::option::Option<std::string::String>,
+        pub(crate) key: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>An optional string, typically used to describe or define the tag. Maximum length:
@@ -688,11 +688,11 @@ pub mod shard {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        sequence_number_range: std::option::Option<crate::model::SequenceNumberRange>,
-        shard_id: std::option::Option<std::string::String>,
-        hash_key_range: std::option::Option<crate::model::HashKeyRange>,
-        adjacent_parent_shard_id: std::option::Option<std::string::String>,
-        parent_shard_id: std::option::Option<std::string::String>,
+        pub(crate) sequence_number_range: std::option::Option<crate::model::SequenceNumberRange>,
+        pub(crate) shard_id: std::option::Option<std::string::String>,
+        pub(crate) hash_key_range: std::option::Option<crate::model::HashKeyRange>,
+        pub(crate) adjacent_parent_shard_id: std::option::Option<std::string::String>,
+        pub(crate) parent_shard_id: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The range of possible sequence numbers for the shard.</p>
@@ -802,8 +802,8 @@ pub mod hash_key_range {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        starting_hash_key: std::option::Option<std::string::String>,
-        ending_hash_key: std::option::Option<std::string::String>,
+        pub(crate) starting_hash_key: std::option::Option<std::string::String>,
+        pub(crate) ending_hash_key: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The starting hash key of the hash key range.</p>
@@ -876,8 +876,8 @@ pub mod sequence_number_range {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        starting_sequence_number: std::option::Option<std::string::String>,
-        ending_sequence_number: std::option::Option<std::string::String>,
+        pub(crate) starting_sequence_number: std::option::Option<std::string::String>,
+        pub(crate) ending_sequence_number: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The starting sequence number for the range.</p>
@@ -958,9 +958,9 @@ pub mod shard_filter {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        shard_id: std::option::Option<std::string::String>,
-        timestamp: std::option::Option<smithy_types::Instant>,
-        r#type: std::option::Option<crate::model::ShardFilterType>,
+        pub(crate) shard_id: std::option::Option<std::string::String>,
+        pub(crate) timestamp: std::option::Option<smithy_types::Instant>,
+        pub(crate) r#type: std::option::Option<crate::model::ShardFilterType>,
     }
     impl Builder {
         pub fn shard_id(mut self, inp: impl Into<std::string::String>) -> Self {
@@ -1198,9 +1198,9 @@ pub mod child_shard {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        parent_shards: std::option::Option<std::vec::Vec<std::string::String>>,
-        shard_id: std::option::Option<std::string::String>,
-        hash_key_range: std::option::Option<crate::model::HashKeyRange>,
+        pub(crate) parent_shards: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) shard_id: std::option::Option<std::string::String>,
+        pub(crate) hash_key_range: std::option::Option<crate::model::HashKeyRange>,
     }
     impl Builder {
         pub fn parent_shards(mut self, inp: impl Into<std::string::String>) -> Self {
@@ -1328,11 +1328,11 @@ pub mod record {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        sequence_number: std::option::Option<std::string::String>,
-        encryption_type: std::option::Option<crate::model::EncryptionType>,
-        data: std::option::Option<smithy_types::Blob>,
-        approximate_arrival_timestamp: std::option::Option<smithy_types::Instant>,
-        partition_key: std::option::Option<std::string::String>,
+        pub(crate) sequence_number: std::option::Option<std::string::String>,
+        pub(crate) encryption_type: std::option::Option<crate::model::EncryptionType>,
+        pub(crate) data: std::option::Option<smithy_types::Blob>,
+        pub(crate) approximate_arrival_timestamp: std::option::Option<smithy_types::Instant>,
+        pub(crate) partition_key: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The unique identifier of the record within its shard.</p>
@@ -1663,16 +1663,17 @@ pub mod stream_description_summary {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        key_id: std::option::Option<std::string::String>,
-        stream_status: std::option::Option<crate::model::StreamStatus>,
-        stream_arn: std::option::Option<std::string::String>,
-        consumer_count: std::option::Option<i32>,
-        open_shard_count: std::option::Option<i32>,
-        stream_creation_timestamp: std::option::Option<smithy_types::Instant>,
-        encryption_type: std::option::Option<crate::model::EncryptionType>,
-        stream_name: std::option::Option<std::string::String>,
-        retention_period_hours: std::option::Option<i32>,
-        enhanced_monitoring: std::option::Option<std::vec::Vec<crate::model::EnhancedMetrics>>,
+        pub(crate) key_id: std::option::Option<std::string::String>,
+        pub(crate) stream_status: std::option::Option<crate::model::StreamStatus>,
+        pub(crate) stream_arn: std::option::Option<std::string::String>,
+        pub(crate) consumer_count: std::option::Option<i32>,
+        pub(crate) open_shard_count: std::option::Option<i32>,
+        pub(crate) stream_creation_timestamp: std::option::Option<smithy_types::Instant>,
+        pub(crate) encryption_type: std::option::Option<crate::model::EncryptionType>,
+        pub(crate) stream_name: std::option::Option<std::string::String>,
+        pub(crate) retention_period_hours: std::option::Option<i32>,
+        pub(crate) enhanced_monitoring:
+            std::option::Option<std::vec::Vec<crate::model::EnhancedMetrics>>,
     }
     impl Builder {
         /// <p>The GUID for the customer-managed AWS KMS key to use for encryption. This value can
@@ -1943,7 +1944,8 @@ pub mod enhanced_metrics {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        shard_level_metrics: std::option::Option<std::vec::Vec<crate::model::MetricsName>>,
+        pub(crate) shard_level_metrics:
+            std::option::Option<std::vec::Vec<crate::model::MetricsName>>,
     }
     impl Builder {
         pub fn shard_level_metrics(mut self, inp: impl Into<crate::model::MetricsName>) -> Self {
@@ -2113,11 +2115,11 @@ pub mod consumer_description {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        stream_arn: std::option::Option<std::string::String>,
-        consumer_name: std::option::Option<std::string::String>,
-        consumer_arn: std::option::Option<std::string::String>,
-        consumer_status: std::option::Option<crate::model::ConsumerStatus>,
-        consumer_creation_timestamp: std::option::Option<smithy_types::Instant>,
+        pub(crate) stream_arn: std::option::Option<std::string::String>,
+        pub(crate) consumer_name: std::option::Option<std::string::String>,
+        pub(crate) consumer_arn: std::option::Option<std::string::String>,
+        pub(crate) consumer_status: std::option::Option<crate::model::ConsumerStatus>,
+        pub(crate) consumer_creation_timestamp: std::option::Option<smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The ARN of the stream with which you registered the consumer.</p>
@@ -2349,16 +2351,17 @@ pub mod stream_description {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        encryption_type: std::option::Option<crate::model::EncryptionType>,
-        enhanced_monitoring: std::option::Option<std::vec::Vec<crate::model::EnhancedMetrics>>,
-        stream_name: std::option::Option<std::string::String>,
-        stream_arn: std::option::Option<std::string::String>,
-        shards: std::option::Option<std::vec::Vec<crate::model::Shard>>,
-        retention_period_hours: std::option::Option<i32>,
-        has_more_shards: std::option::Option<bool>,
-        key_id: std::option::Option<std::string::String>,
-        stream_status: std::option::Option<crate::model::StreamStatus>,
-        stream_creation_timestamp: std::option::Option<smithy_types::Instant>,
+        pub(crate) encryption_type: std::option::Option<crate::model::EncryptionType>,
+        pub(crate) enhanced_monitoring:
+            std::option::Option<std::vec::Vec<crate::model::EnhancedMetrics>>,
+        pub(crate) stream_name: std::option::Option<std::string::String>,
+        pub(crate) stream_arn: std::option::Option<std::string::String>,
+        pub(crate) shards: std::option::Option<std::vec::Vec<crate::model::Shard>>,
+        pub(crate) retention_period_hours: std::option::Option<i32>,
+        pub(crate) has_more_shards: std::option::Option<bool>,
+        pub(crate) key_id: std::option::Option<std::string::String>,
+        pub(crate) stream_status: std::option::Option<crate::model::StreamStatus>,
+        pub(crate) stream_creation_timestamp: std::option::Option<smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The server-side encryption type used on the stream. This parameter can be one of

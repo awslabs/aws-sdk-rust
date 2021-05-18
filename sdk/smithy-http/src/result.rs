@@ -45,7 +45,12 @@ where
     E: Error,
 {
     fn fmt(&self, f: &mut Formatter<'_>) -> fmt::Result {
-        write!(f, "{:?}", self)
+        match self {
+            SdkError::ConstructionFailure(err) => Display::fmt(&err, f),
+            SdkError::DispatchFailure(err) => Display::fmt(&err, f),
+            SdkError::ResponseError { err, .. } => Display::fmt(&err, f),
+            SdkError::ServiceError { err, .. } => Display::fmt(&err, f),
+        }
     }
 }
 

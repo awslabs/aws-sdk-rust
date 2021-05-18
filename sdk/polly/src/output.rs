@@ -44,9 +44,9 @@ pub mod synthesize_speech_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        audio_stream: std::option::Option<smithy_http::byte_stream::ByteStream>,
-        content_type: std::option::Option<std::string::String>,
-        request_characters: std::option::Option<i32>,
+        pub(crate) audio_stream: std::option::Option<smithy_http::byte_stream::ByteStream>,
+        pub(crate) content_type: std::option::Option<std::string::String>,
+        pub(crate) request_characters: std::option::Option<i32>,
     }
     impl Builder {
         /// <p> Stream containing the synthesized speech. </p>
@@ -134,7 +134,7 @@ pub mod start_speech_synthesis_task_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        synthesis_task: std::option::Option<crate::model::SynthesisTask>,
+        pub(crate) synthesis_task: std::option::Option<crate::model::SynthesisTask>,
     }
     impl Builder {
         /// <p>SynthesisTask object that provides information and attributes about a newly submitted
@@ -218,8 +218,8 @@ pub mod list_speech_synthesis_tasks_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        next_token: std::option::Option<std::string::String>,
-        synthesis_tasks: std::option::Option<std::vec::Vec<crate::model::SynthesisTask>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) synthesis_tasks: std::option::Option<std::vec::Vec<crate::model::SynthesisTask>>,
     }
     impl Builder {
         /// <p>An opaque pagination token returned from the previous List operation in this request. If
@@ -284,8 +284,8 @@ pub mod list_lexicons_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        lexicons: std::option::Option<std::vec::Vec<crate::model::LexiconDescription>>,
-        next_token: std::option::Option<std::string::String>,
+        pub(crate) lexicons: std::option::Option<std::vec::Vec<crate::model::LexiconDescription>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
         pub fn lexicons(mut self, inp: impl Into<crate::model::LexiconDescription>) -> Self {
@@ -347,7 +347,7 @@ pub mod get_speech_synthesis_task_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        synthesis_task: std::option::Option<crate::model::SynthesisTask>,
+        pub(crate) synthesis_task: std::option::Option<crate::model::SynthesisTask>,
     }
     impl Builder {
         /// <p>SynthesisTask object that provides information from the requested task, including output
@@ -401,8 +401,8 @@ pub mod get_lexicon_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        lexicon: std::option::Option<crate::model::Lexicon>,
-        lexicon_attributes: std::option::Option<crate::model::LexiconAttributes>,
+        pub(crate) lexicon: std::option::Option<crate::model::Lexicon>,
+        pub(crate) lexicon_attributes: std::option::Option<crate::model::LexiconAttributes>,
     }
     impl Builder {
         /// <p>Lexicon object that provides name and the string content of the lexicon. </p>
@@ -466,8 +466,8 @@ pub mod describe_voices_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        voices: std::option::Option<std::vec::Vec<crate::model::Voice>>,
-        next_token: std::option::Option<std::string::String>,
+        pub(crate) voices: std::option::Option<std::vec::Vec<crate::model::Voice>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
         pub fn voices(mut self, inp: impl Into<crate::model::Voice>) -> Self {

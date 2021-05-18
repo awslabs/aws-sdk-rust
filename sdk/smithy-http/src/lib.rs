@@ -17,3 +17,4 @@ pub mod query;
 pub mod response;
 pub mod result;
 pub mod retry;
+mod urlencode;

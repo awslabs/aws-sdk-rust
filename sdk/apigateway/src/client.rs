@@ -28,7 +28,7 @@ impl Client {
     pub fn from_conf_conn(conf: crate::Config, conn: aws_hyper::conn::Standard) -> Self {
         let client = aws_hyper::Client::new(conn);
         Self {
-            handle: std::sync::Arc::new(Handle { conf, client }),
+            handle: std::sync::Arc::new(Handle { client, conf }),
         }
     }
 
@@ -518,6 +518,7 @@ impl Client {
 }
 pub mod fluent_builders {
 
+    #[derive(std::fmt::Debug)]
     pub struct CreateApiKey {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::create_api_key_input::Builder,
@@ -632,6 +633,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct CreateAuthorizer {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::create_authorizer_input::Builder,
@@ -770,6 +772,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct CreateBasePathMapping {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::create_base_path_mapping_input::Builder,
@@ -836,6 +839,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct CreateDeployment {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::create_deployment_input::Builder,
@@ -967,6 +971,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct CreateDocumentationPart {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::create_documentation_part_input::Builder,
@@ -1027,6 +1032,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct CreateDocumentationVersion {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::create_documentation_version_input::Builder,
@@ -1096,6 +1102,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct CreateDomainName {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::create_domain_name_input::Builder,
@@ -1276,6 +1283,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct CreateModel {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::create_model_input::Builder,
@@ -1351,6 +1359,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct CreateRequestValidator {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::create_request_validator_input::Builder,
@@ -1417,6 +1426,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct CreateResource {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::create_resource_input::Builder,
@@ -1474,6 +1484,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct CreateRestApi {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::create_rest_api_input::Builder,
@@ -1621,6 +1632,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct CreateStage {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::create_stage_input::Builder,
@@ -1779,6 +1791,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct CreateUsagePlan {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::create_usage_plan_input::Builder,
@@ -1878,6 +1891,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct CreateUsagePlanKey {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::create_usage_plan_key_input::Builder,
@@ -1935,6 +1949,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct CreateVpcLink {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::create_vpc_link_input::Builder,
@@ -2013,6 +2028,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct DeleteApiKey {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::delete_api_key_input::Builder,
@@ -2052,6 +2068,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct DeleteAuthorizer {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::delete_authorizer_input::Builder,
@@ -2100,6 +2117,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct DeleteBasePathMapping {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::delete_base_path_mapping_input::Builder,
@@ -2149,6 +2167,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct DeleteClientCertificate {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::delete_client_certificate_input::Builder,
@@ -2188,6 +2207,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct DeleteDeployment {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::delete_deployment_input::Builder,
@@ -2236,6 +2256,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct DeleteDocumentationPart {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::delete_documentation_part_input::Builder,
@@ -2284,6 +2305,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct DeleteDocumentationVersion {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::delete_documentation_version_input::Builder,
@@ -2332,6 +2354,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct DeleteDomainName {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::delete_domain_name_input::Builder,
@@ -2371,6 +2394,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct DeleteGatewayResponse {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::delete_gateway_response_input::Builder,
@@ -2419,6 +2443,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct DeleteIntegration {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::delete_integration_input::Builder,
@@ -2476,6 +2501,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct DeleteIntegrationResponse {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::delete_integration_response_input::Builder,
@@ -2542,6 +2568,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct DeleteMethod {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::delete_method_input::Builder,
@@ -2599,6 +2626,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct DeleteMethodResponse {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::delete_method_response_input::Builder,
@@ -2665,6 +2693,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct DeleteModel {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::delete_model_input::Builder,
@@ -2713,6 +2742,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct DeleteRequestValidator {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::delete_request_validator_input::Builder,
@@ -2761,6 +2791,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct DeleteResource {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::delete_resource_input::Builder,
@@ -2809,6 +2840,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct DeleteRestApi {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::delete_rest_api_input::Builder,
@@ -2848,6 +2880,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct DeleteStage {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::delete_stage_input::Builder,
@@ -2896,6 +2929,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct DeleteUsagePlan {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::delete_usage_plan_input::Builder,
@@ -2935,6 +2969,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct DeleteUsagePlanKey {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::delete_usage_plan_key_input::Builder,
@@ -2983,6 +3018,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct DeleteVpcLink {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::delete_vpc_link_input::Builder,
@@ -3022,6 +3058,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct FlushStageAuthorizersCache {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::flush_stage_authorizers_cache_input::Builder,
@@ -3070,6 +3107,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct FlushStageCache {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::flush_stage_cache_input::Builder,
@@ -3118,6 +3156,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct GenerateClientCertificate {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::generate_client_certificate_input::Builder,
@@ -3175,6 +3214,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct GetAccount {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::get_account_input::Builder,
@@ -3204,6 +3244,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct GetApiKey {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::get_api_key_input::Builder,
@@ -3252,6 +3293,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct GetApiKeys {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::get_api_keys_input::Builder,
@@ -3327,6 +3369,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct GetAuthorizer {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::get_authorizer_input::Builder,
@@ -3375,6 +3418,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct GetAuthorizers {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::get_authorizers_input::Builder,
@@ -3432,6 +3476,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct GetBasePathMapping {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::get_base_path_mapping_input::Builder,
@@ -3480,6 +3525,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct GetBasePathMappings {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::get_base_path_mappings_input::Builder,
@@ -3537,6 +3583,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct GetClientCertificate {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::get_client_certificate_input::Builder,
@@ -3576,6 +3623,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct GetClientCertificates {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::get_client_certificates_input::Builder,
@@ -3624,6 +3672,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct GetDeployment {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::get_deployment_input::Builder,
@@ -3684,6 +3733,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct GetDeployments {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::get_deployments_input::Builder,
@@ -3741,6 +3791,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct GetDocumentationPart {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::get_documentation_part_input::Builder,
@@ -3789,6 +3840,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct GetDocumentationParts {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::get_documentation_parts_input::Builder,
@@ -3888,6 +3940,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct GetDocumentationVersion {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::get_documentation_version_input::Builder,
@@ -3936,6 +3989,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct GetDocumentationVersions {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::get_documentation_versions_input::Builder,
@@ -3993,6 +4047,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct GetDomainName {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::get_domain_name_input::Builder,
@@ -4032,6 +4087,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct GetDomainNames {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::get_domain_names_input::Builder,
@@ -4080,6 +4136,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct GetExport {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::get_export_input::Builder,
@@ -4164,6 +4221,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct GetGatewayResponse {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::get_gateway_response_input::Builder,
@@ -4212,6 +4270,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct GetGatewayResponses {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::get_gateway_responses_input::Builder,
@@ -4269,6 +4328,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct GetIntegration {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::get_integration_input::Builder,
@@ -4326,6 +4386,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct GetIntegrationResponse {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::get_integration_response_input::Builder,
@@ -4392,6 +4453,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct GetMethod {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::get_method_input::Builder,
@@ -4449,6 +4511,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct GetMethodResponse {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::get_method_response_input::Builder,
@@ -4515,6 +4578,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct GetModel {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::get_model_input::Builder,
@@ -4572,6 +4636,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct GetModels {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::get_models_input::Builder,
@@ -4629,6 +4694,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct GetModelTemplate {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::get_model_template_input::Builder,
@@ -4677,6 +4743,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct GetRequestValidator {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::get_request_validator_input::Builder,
@@ -4725,6 +4792,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct GetRequestValidators {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::get_request_validators_input::Builder,
@@ -4782,6 +4850,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct GetResource {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::get_resource_input::Builder,
@@ -4842,6 +4911,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct GetResources {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::get_resources_input::Builder,
@@ -4911,6 +4981,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct GetRestApi {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::get_rest_api_input::Builder,
@@ -4950,6 +5021,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct GetRestApis {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::get_rest_apis_input::Builder,
@@ -4998,6 +5070,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct GetSdk {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::get_sdk_input::Builder,
@@ -5073,6 +5146,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct GetSdkType {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::get_sdk_type_input::Builder,
@@ -5112,6 +5186,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct GetSdkTypes {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::get_sdk_types_input::Builder,
@@ -5160,6 +5235,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct GetStage {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::get_stage_input::Builder,
@@ -5208,6 +5284,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct GetStages {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::get_stages_input::Builder,
@@ -5256,6 +5333,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct GetTags {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::get_tags_input::Builder,
@@ -5313,6 +5391,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct GetUsage {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::get_usage_input::Builder,
@@ -5397,6 +5476,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct GetUsagePlan {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::get_usage_plan_input::Builder,
@@ -5436,6 +5516,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct GetUsagePlanKey {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::get_usage_plan_key_input::Builder,
@@ -5484,6 +5565,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct GetUsagePlanKeys {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::get_usage_plan_keys_input::Builder,
@@ -5550,6 +5632,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct GetUsagePlans {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::get_usage_plans_input::Builder,
@@ -5607,6 +5690,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct GetVpcLink {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::get_vpc_link_input::Builder,
@@ -5646,6 +5730,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct GetVpcLinks {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::get_vpc_links_input::Builder,
@@ -5694,6 +5779,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct ImportApiKeys {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::import_api_keys_input::Builder,
@@ -5751,6 +5837,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct ImportDocumentationParts {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::import_documentation_parts_input::Builder,
@@ -5817,6 +5904,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct ImportRestApi {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::import_rest_api_input::Builder,
@@ -5891,6 +5979,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct PutGatewayResponse {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::put_gateway_response_input::Builder,
@@ -5984,6 +6073,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct PutIntegration {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::put_integration_input::Builder,
@@ -6218,6 +6308,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct PutIntegrationResponse {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::put_integration_response_input::Builder,
@@ -6350,6 +6441,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct PutMethod {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::put_method_input::Builder,
@@ -6504,6 +6596,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct PutMethodResponse {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::put_method_response_input::Builder,
@@ -6604,6 +6697,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct PutRestApi {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::put_rest_api_input::Builder,
@@ -6690,6 +6784,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct TagResource {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::tag_resource_input::Builder,
@@ -6747,6 +6842,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct TestInvokeAuthorizer {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::test_invoke_authorizer_input::Builder,
@@ -6888,6 +6984,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct TestInvokeMethod {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::test_invoke_method_input::Builder,
@@ -7032,6 +7129,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct UntagResource {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::untag_resource_input::Builder,
@@ -7083,6 +7181,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct UpdateAccount {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::update_account_input::Builder,
@@ -7125,6 +7224,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct UpdateApiKey {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::update_api_key_input::Builder,
@@ -7176,6 +7276,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct UpdateAuthorizer {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::update_authorizer_input::Builder,
@@ -7236,6 +7337,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct UpdateBasePathMapping {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::update_base_path_mapping_input::Builder,
@@ -7297,6 +7399,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct UpdateClientCertificate {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::update_client_certificate_input::Builder,
@@ -7348,6 +7451,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct UpdateDeployment {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::update_deployment_input::Builder,
@@ -7408,6 +7512,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct UpdateDocumentationPart {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::update_documentation_part_input::Builder,
@@ -7468,6 +7573,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct UpdateDocumentationVersion {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::update_documentation_version_input::Builder,
@@ -7528,6 +7634,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct UpdateDomainName {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::update_domain_name_input::Builder,
@@ -7579,6 +7686,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct UpdateGatewayResponse {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::update_gateway_response_input::Builder,
@@ -7639,6 +7747,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct UpdateIntegration {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::update_integration_input::Builder,
@@ -7708,6 +7817,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct UpdateIntegrationResponse {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::update_integration_response_input::Builder,
@@ -7786,6 +7896,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct UpdateMethod {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::update_method_input::Builder,
@@ -7855,6 +7966,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct UpdateMethodResponse {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::update_method_response_input::Builder,
@@ -7933,6 +8045,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct UpdateModel {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::update_model_input::Builder,
@@ -7993,6 +8106,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct UpdateRequestValidator {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::update_request_validator_input::Builder,
@@ -8053,6 +8167,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct UpdateResource {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::update_resource_input::Builder,
@@ -8113,6 +8228,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct UpdateRestApi {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::update_rest_api_input::Builder,
@@ -8164,6 +8280,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct UpdateStage {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::update_stage_input::Builder,
@@ -8224,6 +8341,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct UpdateUsage {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::update_usage_input::Builder,
@@ -8284,6 +8402,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct UpdateUsagePlan {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::update_usage_plan_input::Builder,
@@ -8335,6 +8454,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct UpdateVpcLink {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::update_vpc_link_input::Builder,

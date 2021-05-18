@@ -28,7 +28,7 @@ impl Client {
     pub fn from_conf_conn(conf: crate::Config, conn: aws_hyper::conn::Standard) -> Self {
         let client = aws_hyper::Client::new(conn);
         Self {
-            handle: std::sync::Arc::new(Handle { conf, client }),
+            handle: std::sync::Arc::new(Handle { client, conf }),
         }
     }
 
@@ -150,6 +150,7 @@ impl Client {
 }
 pub mod fluent_builders {
 
+    #[derive(std::fmt::Debug)]
     pub struct AddTagsToStream {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::add_tags_to_stream_input::Builder,
@@ -207,6 +208,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct CreateStream {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::create_stream_input::Builder,
@@ -260,6 +262,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct DecreaseStreamRetentionPeriod {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::decrease_stream_retention_period_input::Builder,
@@ -309,6 +312,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct DeleteStream {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::delete_stream_input::Builder,
@@ -359,6 +363,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct DeregisterStreamConsumer {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::deregister_stream_consumer_input::Builder,
@@ -421,6 +426,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct DescribeLimits {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::describe_limits_input::Builder,
@@ -450,6 +456,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct DescribeStream {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::describe_stream_input::Builder,
@@ -511,6 +518,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct DescribeStreamConsumer {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::describe_stream_consumer_input::Builder,
@@ -569,6 +577,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct DescribeStreamSummary {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::describe_stream_summary_input::Builder,
@@ -608,6 +617,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct DisableEnhancedMonitoring {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::disable_enhanced_monitoring_input::Builder,
@@ -707,6 +717,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct EnableEnhancedMonitoring {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::enable_enhanced_monitoring_input::Builder,
@@ -805,6 +816,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct GetRecords {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::get_records_input::Builder,
@@ -857,6 +869,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct GetShardIterator {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::get_shard_iterator_input::Builder,
@@ -971,6 +984,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct IncreaseStreamRetentionPeriod {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::increase_stream_retention_period_input::Builder,
@@ -1020,6 +1034,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct ListShards {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::list_shards_input::Builder,
@@ -1151,6 +1166,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct ListStreamConsumers {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::list_stream_consumers_input::Builder,
@@ -1248,6 +1264,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct ListStreams {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::list_streams_input::Builder,
@@ -1299,6 +1316,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct ListTagsForStream {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::list_tags_for_stream_input::Builder,
@@ -1364,6 +1382,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct MergeShards {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::merge_shards_input::Builder,
@@ -1425,6 +1444,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct PutRecord {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::put_record_input::Builder,
@@ -1520,6 +1540,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct PutRecords {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::put_records_input::Builder,
@@ -1571,6 +1592,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct RegisterStreamConsumer {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::register_stream_consumer_input::Builder,
@@ -1621,6 +1643,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct RemoveTagsFromStream {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::remove_tags_from_stream_input::Builder,
@@ -1672,6 +1695,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct SplitShard {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::split_shard_input::Builder,
@@ -1738,6 +1762,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct StartStreamEncryption {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::start_stream_encryption_input::Builder,
@@ -1828,6 +1853,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct StopStreamEncryption {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::stop_stream_encryption_input::Builder,
@@ -1918,6 +1944,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct UpdateShardCount {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::update_shard_count_input::Builder,

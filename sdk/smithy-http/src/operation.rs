@@ -6,6 +6,7 @@
 use crate::body::SdkBody;
 use crate::property_bag::PropertyBag;
 use std::borrow::Cow;
+use std::error::Error;
 use std::ops::DerefMut;
 use std::sync::{Arc, Mutex, MutexGuard};
 use thiserror::Error;
@@ -62,6 +63,8 @@ pub enum BuildError {
         field: &'static str,
         details: &'static str,
     },
+    #[error("Failed during serialization: {0}")]
+    SerializationError(#[from] Box<dyn Error + Send + Sync + 'static>),
 }
 
 pub struct Operation<H, R> {

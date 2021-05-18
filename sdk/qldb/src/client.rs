@@ -28,7 +28,7 @@ impl Client {
     pub fn from_conf_conn(conf: crate::Config, conn: aws_hyper::conn::Standard) -> Self {
         let client = aws_hyper::Client::new(conn);
         Self {
-            handle: std::sync::Arc::new(Handle { conf, client }),
+            handle: std::sync::Arc::new(Handle { client, conf }),
         }
     }
 
@@ -118,6 +118,7 @@ impl Client {
 }
 pub mod fluent_builders {
 
+    #[derive(std::fmt::Debug)]
     pub struct CancelJournalKinesisStream {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::cancel_journal_kinesis_stream_input::Builder,
@@ -166,6 +167,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct CreateLedger {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::create_ledger_input::Builder,
@@ -256,6 +258,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct DeleteLedger {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::delete_ledger_input::Builder,
@@ -295,6 +298,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct DescribeJournalKinesisStream {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::describe_journal_kinesis_stream_input::Builder,
@@ -343,6 +347,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct DescribeJournalS3Export {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::describe_journal_s3_export_input::Builder,
@@ -391,6 +396,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct DescribeLedger {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::describe_ledger_input::Builder,
@@ -430,6 +436,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct ExportJournalToS3 {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::export_journal_to_s3_input::Builder,
@@ -541,6 +548,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct GetBlock {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::get_block_input::Builder,
@@ -611,6 +619,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct GetDigest {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::get_digest_input::Builder,
@@ -650,6 +659,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct GetRevision {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::get_revision_input::Builder,
@@ -729,6 +739,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct ListJournalKinesisStreamsForLedger {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::list_journal_kinesis_streams_for_ledger_input::Builder,
@@ -791,6 +802,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct ListJournalS3Exports {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::list_journal_s3_exports_input::Builder,
@@ -843,6 +855,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct ListJournalS3ExportsForLedger {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::list_journal_s3_exports_for_ledger_input::Builder,
@@ -905,6 +918,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct ListLedgers {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::list_ledgers_input::Builder,
@@ -956,6 +970,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct ListTagsForResource {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::list_tags_for_resource_input::Builder,
@@ -998,6 +1013,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct StreamJournalToKinesis {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::stream_journal_to_kinesis_input::Builder,
@@ -1132,6 +1148,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct TagResource {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::tag_resource_input::Builder,
@@ -1197,6 +1214,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct UntagResource {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::untag_resource_input::Builder,
@@ -1252,6 +1270,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct UpdateLedger {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::update_ledger_input::Builder,

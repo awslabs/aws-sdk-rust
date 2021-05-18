@@ -24,9 +24,9 @@ pub mod update_shard_count_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        stream_name: std::option::Option<std::string::String>,
-        target_shard_count: std::option::Option<i32>,
-        current_shard_count: std::option::Option<i32>,
+        pub(crate) stream_name: std::option::Option<std::string::String>,
+        pub(crate) target_shard_count: std::option::Option<i32>,
+        pub(crate) current_shard_count: std::option::Option<i32>,
     }
     impl Builder {
         /// <p>The name of the stream.</p>
@@ -209,7 +209,7 @@ pub mod register_stream_consumer_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        consumer: std::option::Option<crate::model::Consumer>,
+        pub(crate) consumer: std::option::Option<crate::model::Consumer>,
     }
     impl Builder {
         /// <p>An object that represents the details of the consumer you registered. When you
@@ -281,9 +281,9 @@ pub mod put_records_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        records: std::option::Option<std::vec::Vec<crate::model::PutRecordsResultEntry>>,
-        encryption_type: std::option::Option<crate::model::EncryptionType>,
-        failed_record_count: std::option::Option<i32>,
+        pub(crate) records: std::option::Option<std::vec::Vec<crate::model::PutRecordsResultEntry>>,
+        pub(crate) encryption_type: std::option::Option<crate::model::EncryptionType>,
+        pub(crate) failed_record_count: std::option::Option<i32>,
     }
     impl Builder {
         pub fn records(mut self, inp: impl Into<crate::model::PutRecordsResultEntry>) -> Self {
@@ -390,9 +390,9 @@ pub mod put_record_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        shard_id: std::option::Option<std::string::String>,
-        sequence_number: std::option::Option<std::string::String>,
-        encryption_type: std::option::Option<crate::model::EncryptionType>,
+        pub(crate) shard_id: std::option::Option<std::string::String>,
+        pub(crate) sequence_number: std::option::Option<std::string::String>,
+        pub(crate) encryption_type: std::option::Option<crate::model::EncryptionType>,
     }
     impl Builder {
         /// <p>The shard ID of the shard where the data record was placed.</p>
@@ -514,8 +514,8 @@ pub mod list_tags_for_stream_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        has_more_tags: std::option::Option<bool>,
+        pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        pub(crate) has_more_tags: std::option::Option<bool>,
     }
     impl Builder {
         pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
@@ -581,8 +581,8 @@ pub mod list_streams_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        stream_names: std::option::Option<std::vec::Vec<std::string::String>>,
-        has_more_streams: std::option::Option<bool>,
+        pub(crate) stream_names: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) has_more_streams: std::option::Option<bool>,
     }
     impl Builder {
         pub fn stream_names(mut self, inp: impl Into<std::string::String>) -> Self {
@@ -659,8 +659,8 @@ pub mod list_stream_consumers_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        consumers: std::option::Option<std::vec::Vec<crate::model::Consumer>>,
-        next_token: std::option::Option<std::string::String>,
+        pub(crate) consumers: std::option::Option<std::vec::Vec<crate::model::Consumer>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
         pub fn consumers(mut self, inp: impl Into<crate::model::Consumer>) -> Self {
@@ -753,8 +753,8 @@ pub mod list_shards_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        next_token: std::option::Option<std::string::String>,
-        shards: std::option::Option<std::vec::Vec<crate::model::Shard>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) shards: std::option::Option<std::vec::Vec<crate::model::Shard>>,
     }
     impl Builder {
         /// <p>When the number of shards in the data stream is greater than the default value for
@@ -859,7 +859,7 @@ pub mod get_shard_iterator_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        shard_iterator: std::option::Option<std::string::String>,
+        pub(crate) shard_iterator: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The position in the shard from which to start reading data records sequentially. A
@@ -921,10 +921,10 @@ pub mod get_records_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        next_shard_iterator: std::option::Option<std::string::String>,
-        records: std::option::Option<std::vec::Vec<crate::model::Record>>,
-        millis_behind_latest: std::option::Option<i64>,
-        child_shards: std::option::Option<std::vec::Vec<crate::model::ChildShard>>,
+        pub(crate) next_shard_iterator: std::option::Option<std::string::String>,
+        pub(crate) records: std::option::Option<std::vec::Vec<crate::model::Record>>,
+        pub(crate) millis_behind_latest: std::option::Option<i64>,
+        pub(crate) child_shards: std::option::Option<std::vec::Vec<crate::model::ChildShard>>,
     }
     impl Builder {
         /// <p>The next position in the shard from which to start sequentially reading data
@@ -1031,9 +1031,11 @@ pub mod enable_enhanced_monitoring_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        desired_shard_level_metrics: std::option::Option<std::vec::Vec<crate::model::MetricsName>>,
-        stream_name: std::option::Option<std::string::String>,
-        current_shard_level_metrics: std::option::Option<std::vec::Vec<crate::model::MetricsName>>,
+        pub(crate) desired_shard_level_metrics:
+            std::option::Option<std::vec::Vec<crate::model::MetricsName>>,
+        pub(crate) stream_name: std::option::Option<std::string::String>,
+        pub(crate) current_shard_level_metrics:
+            std::option::Option<std::vec::Vec<crate::model::MetricsName>>,
     }
     impl Builder {
         pub fn desired_shard_level_metrics(
@@ -1128,9 +1130,11 @@ pub mod disable_enhanced_monitoring_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        desired_shard_level_metrics: std::option::Option<std::vec::Vec<crate::model::MetricsName>>,
-        stream_name: std::option::Option<std::string::String>,
-        current_shard_level_metrics: std::option::Option<std::vec::Vec<crate::model::MetricsName>>,
+        pub(crate) desired_shard_level_metrics:
+            std::option::Option<std::vec::Vec<crate::model::MetricsName>>,
+        pub(crate) stream_name: std::option::Option<std::string::String>,
+        pub(crate) current_shard_level_metrics:
+            std::option::Option<std::vec::Vec<crate::model::MetricsName>>,
     }
     impl Builder {
         pub fn desired_shard_level_metrics(
@@ -1214,7 +1218,8 @@ pub mod describe_stream_summary_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        stream_description_summary: std::option::Option<crate::model::StreamDescriptionSummary>,
+        pub(crate) stream_description_summary:
+            std::option::Option<crate::model::StreamDescriptionSummary>,
     }
     impl Builder {
         /// <p>A <a>StreamDescriptionSummary</a> containing information about the
@@ -1267,7 +1272,7 @@ pub mod describe_stream_consumer_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        consumer_description: std::option::Option<crate::model::ConsumerDescription>,
+        pub(crate) consumer_description: std::option::Option<crate::model::ConsumerDescription>,
     }
     impl Builder {
         /// <p>An object that represents the details of the consumer.</p>
@@ -1319,7 +1324,7 @@ pub mod describe_stream_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        stream_description: std::option::Option<crate::model::StreamDescription>,
+        pub(crate) stream_description: std::option::Option<crate::model::StreamDescription>,
     }
     impl Builder {
         /// <p>The current status of the stream, the stream Amazon Resource Name (ARN), an array
@@ -1373,8 +1378,8 @@ pub mod describe_limits_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        open_shard_count: std::option::Option<i32>,
-        shard_limit: std::option::Option<i32>,
+        pub(crate) open_shard_count: std::option::Option<i32>,
+        pub(crate) shard_limit: std::option::Option<i32>,
     }
     impl Builder {
         /// <p>The number of open shards.</p>

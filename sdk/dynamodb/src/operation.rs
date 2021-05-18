@@ -12,8 +12,10 @@ impl BatchExecuteStatement {
         crate::input::batch_execute_statement_input::Builder::default()
     }
     #[allow(clippy::unnecessary_wraps)]
-    fn from_response(
-        response: &http::response::Response<impl AsRef<[u8]>>,
+    #[allow(dead_code)]
+    fn parse_response(
+        &self,
+        response: &http::response::Response<bytes::Bytes>,
     ) -> Result<crate::output::BatchExecuteStatementOutput, crate::error::BatchExecuteStatementError>
     {
         if crate::aws_json_errors::is_error(&response) {
@@ -47,19 +49,14 @@ impl BatchExecuteStatement {
                 _ => crate::error::BatchExecuteStatementError::generic(generic),
             });
         }
-        let body: crate::serializer::BatchExecuteStatementOutputBody =
-            serde_json::from_slice(response.body().as_ref())
-                .map_err(crate::error::BatchExecuteStatementError::unhandled)?;
-        Ok(crate::output::BatchExecuteStatementOutput {
-            responses: body.responses,
-        })
-    }
-    pub fn parse_response(
-        &self,
-        response: &http::response::Response<impl AsRef<[u8]>>,
-    ) -> Result<crate::output::BatchExecuteStatementOutput, crate::error::BatchExecuteStatementError>
-    {
-        Self::from_response(&response)
+        #[allow(unused_mut)]
+        let mut builder = crate::output::batch_execute_statement_output::Builder::default();
+        builder = crate::json_deser::batch_execute_statement_deser_operation(
+            response.body().as_ref(),
+            builder,
+        )
+        .map_err(crate::error::BatchExecuteStatementError::unhandled)?;
+        Ok(builder.build())
     }
     pub fn new() -> Self {
         Self { _private: () }
@@ -132,8 +129,10 @@ impl BatchGetItem {
         crate::input::batch_get_item_input::Builder::default()
     }
     #[allow(clippy::unnecessary_wraps)]
-    fn from_response(
-        response: &http::response::Response<impl AsRef<[u8]>>,
+    #[allow(dead_code)]
+    fn parse_response(
+        &self,
+        response: &http::response::Response<bytes::Bytes>,
     ) -> Result<crate::output::BatchGetItemOutput, crate::error::BatchGetItemError> {
         if crate::aws_json_errors::is_error(&response) {
             let body = serde_json::from_slice(response.body().as_ref())
@@ -186,20 +185,12 @@ impl BatchGetItem {
                 _ => crate::error::BatchGetItemError::generic(generic),
             });
         }
-        let body: crate::serializer::BatchGetItemOutputBody =
-            serde_json::from_slice(response.body().as_ref())
+        #[allow(unused_mut)]
+        let mut builder = crate::output::batch_get_item_output::Builder::default();
+        builder =
+            crate::json_deser::batch_get_item_deser_operation(response.body().as_ref(), builder)
                 .map_err(crate::error::BatchGetItemError::unhandled)?;
-        Ok(crate::output::BatchGetItemOutput {
-            responses: body.responses,
-            unprocessed_keys: body.unprocessed_keys,
-            consumed_capacity: body.consumed_capacity,
-        })
-    }
-    pub fn parse_response(
-        &self,
-        response: &http::response::Response<impl AsRef<[u8]>>,
-    ) -> Result<crate::output::BatchGetItemOutput, crate::error::BatchGetItemError> {
-        Self::from_response(&response)
+        Ok(builder.build())
     }
     pub fn new() -> Self {
         Self { _private: () }
@@ -297,8 +288,10 @@ impl BatchWriteItem {
         crate::input::batch_write_item_input::Builder::default()
     }
     #[allow(clippy::unnecessary_wraps)]
-    fn from_response(
-        response: &http::response::Response<impl AsRef<[u8]>>,
+    #[allow(dead_code)]
+    fn parse_response(
+        &self,
+        response: &http::response::Response<bytes::Bytes>,
     ) -> Result<crate::output::BatchWriteItemOutput, crate::error::BatchWriteItemError> {
         if crate::aws_json_errors::is_error(&response) {
             let body = serde_json::from_slice(response.body().as_ref())
@@ -337,20 +330,12 @@ impl BatchWriteItem {
                 _ => crate::error::BatchWriteItemError::generic(generic)
             });
         }
-        let body: crate::serializer::BatchWriteItemOutputBody =
-            serde_json::from_slice(response.body().as_ref())
+        #[allow(unused_mut)]
+        let mut builder = crate::output::batch_write_item_output::Builder::default();
+        builder =
+            crate::json_deser::batch_write_item_deser_operation(response.body().as_ref(), builder)
                 .map_err(crate::error::BatchWriteItemError::unhandled)?;
-        Ok(crate::output::BatchWriteItemOutput {
-            unprocessed_items: body.unprocessed_items,
-            item_collection_metrics: body.item_collection_metrics,
-            consumed_capacity: body.consumed_capacity,
-        })
-    }
-    pub fn parse_response(
-        &self,
-        response: &http::response::Response<impl AsRef<[u8]>>,
-    ) -> Result<crate::output::BatchWriteItemOutput, crate::error::BatchWriteItemError> {
-        Self::from_response(&response)
+        Ok(builder.build())
     }
     pub fn new() -> Self {
         Self { _private: () }
@@ -404,8 +389,10 @@ impl CreateBackup {
         crate::input::create_backup_input::Builder::default()
     }
     #[allow(clippy::unnecessary_wraps)]
-    fn from_response(
-        response: &http::response::Response<impl AsRef<[u8]>>,
+    #[allow(dead_code)]
+    fn parse_response(
+        &self,
+        response: &http::response::Response<bytes::Bytes>,
     ) -> Result<crate::output::CreateBackupOutput, crate::error::CreateBackupError> {
         if crate::aws_json_errors::is_error(&response) {
             let body = serde_json::from_slice(response.body().as_ref())
@@ -472,18 +459,12 @@ impl CreateBackup {
                 _ => crate::error::CreateBackupError::generic(generic),
             });
         }
-        let body: crate::serializer::CreateBackupOutputBody =
-            serde_json::from_slice(response.body().as_ref())
+        #[allow(unused_mut)]
+        let mut builder = crate::output::create_backup_output::Builder::default();
+        builder =
+            crate::json_deser::create_backup_deser_operation(response.body().as_ref(), builder)
                 .map_err(crate::error::CreateBackupError::unhandled)?;
-        Ok(crate::output::CreateBackupOutput {
-            backup_details: body.backup_details,
-        })
-    }
-    pub fn parse_response(
-        &self,
-        response: &http::response::Response<impl AsRef<[u8]>>,
-    ) -> Result<crate::output::CreateBackupOutput, crate::error::CreateBackupError> {
-        Self::from_response(&response)
+        Ok(builder.build())
     }
     pub fn new() -> Self {
         Self { _private: () }
@@ -573,8 +554,10 @@ impl CreateGlobalTable {
         crate::input::create_global_table_input::Builder::default()
     }
     #[allow(clippy::unnecessary_wraps)]
-    fn from_response(
-        response: &http::response::Response<impl AsRef<[u8]>>,
+    #[allow(dead_code)]
+    fn parse_response(
+        &self,
+        response: &http::response::Response<bytes::Bytes>,
     ) -> Result<crate::output::CreateGlobalTableOutput, crate::error::CreateGlobalTableError> {
         if crate::aws_json_errors::is_error(&response) {
             let body = serde_json::from_slice(response.body().as_ref())
@@ -627,18 +610,14 @@ impl CreateGlobalTable {
                 _ => crate::error::CreateGlobalTableError::generic(generic),
             });
         }
-        let body: crate::serializer::CreateGlobalTableOutputBody =
-            serde_json::from_slice(response.body().as_ref())
-                .map_err(crate::error::CreateGlobalTableError::unhandled)?;
-        Ok(crate::output::CreateGlobalTableOutput {
-            global_table_description: body.global_table_description,
-        })
-    }
-    pub fn parse_response(
-        &self,
-        response: &http::response::Response<impl AsRef<[u8]>>,
-    ) -> Result<crate::output::CreateGlobalTableOutput, crate::error::CreateGlobalTableError> {
-        Self::from_response(&response)
+        #[allow(unused_mut)]
+        let mut builder = crate::output::create_global_table_output::Builder::default();
+        builder = crate::json_deser::create_global_table_deser_operation(
+            response.body().as_ref(),
+            builder,
+        )
+        .map_err(crate::error::CreateGlobalTableError::unhandled)?;
+        Ok(builder.build())
     }
     pub fn new() -> Self {
         Self { _private: () }
@@ -676,8 +655,10 @@ impl CreateTable {
         crate::input::create_table_input::Builder::default()
     }
     #[allow(clippy::unnecessary_wraps)]
-    fn from_response(
-        response: &http::response::Response<impl AsRef<[u8]>>,
+    #[allow(dead_code)]
+    fn parse_response(
+        &self,
+        response: &http::response::Response<bytes::Bytes>,
     ) -> Result<crate::output::CreateTableOutput, crate::error::CreateTableError> {
         if crate::aws_json_errors::is_error(&response) {
             let body = serde_json::from_slice(response.body().as_ref())
@@ -720,18 +701,12 @@ impl CreateTable {
                 _ => crate::error::CreateTableError::generic(generic),
             });
         }
-        let body: crate::serializer::CreateTableOutputBody =
-            serde_json::from_slice(response.body().as_ref())
+        #[allow(unused_mut)]
+        let mut builder = crate::output::create_table_output::Builder::default();
+        builder =
+            crate::json_deser::create_table_deser_operation(response.body().as_ref(), builder)
                 .map_err(crate::error::CreateTableError::unhandled)?;
-        Ok(crate::output::CreateTableOutput {
-            table_description: body.table_description,
-        })
-    }
-    pub fn parse_response(
-        &self,
-        response: &http::response::Response<impl AsRef<[u8]>>,
-    ) -> Result<crate::output::CreateTableOutput, crate::error::CreateTableError> {
-        Self::from_response(&response)
+        Ok(builder.build())
     }
     pub fn new() -> Self {
         Self { _private: () }
@@ -757,8 +732,10 @@ impl DeleteBackup {
         crate::input::delete_backup_input::Builder::default()
     }
     #[allow(clippy::unnecessary_wraps)]
-    fn from_response(
-        response: &http::response::Response<impl AsRef<[u8]>>,
+    #[allow(dead_code)]
+    fn parse_response(
+        &self,
+        response: &http::response::Response<bytes::Bytes>,
     ) -> Result<crate::output::DeleteBackupOutput, crate::error::DeleteBackupError> {
         if crate::aws_json_errors::is_error(&response) {
             let body = serde_json::from_slice(response.body().as_ref())
@@ -808,18 +785,12 @@ impl DeleteBackup {
                 _ => crate::error::DeleteBackupError::generic(generic),
             });
         }
-        let body: crate::serializer::DeleteBackupOutputBody =
-            serde_json::from_slice(response.body().as_ref())
+        #[allow(unused_mut)]
+        let mut builder = crate::output::delete_backup_output::Builder::default();
+        builder =
+            crate::json_deser::delete_backup_deser_operation(response.body().as_ref(), builder)
                 .map_err(crate::error::DeleteBackupError::unhandled)?;
-        Ok(crate::output::DeleteBackupOutput {
-            backup_description: body.backup_description,
-        })
-    }
-    pub fn parse_response(
-        &self,
-        response: &http::response::Response<impl AsRef<[u8]>>,
-    ) -> Result<crate::output::DeleteBackupOutput, crate::error::DeleteBackupError> {
-        Self::from_response(&response)
+        Ok(builder.build())
     }
     pub fn new() -> Self {
         Self { _private: () }
@@ -849,8 +820,10 @@ impl DeleteItem {
         crate::input::delete_item_input::Builder::default()
     }
     #[allow(clippy::unnecessary_wraps)]
-    fn from_response(
-        response: &http::response::Response<impl AsRef<[u8]>>,
+    #[allow(dead_code)]
+    fn parse_response(
+        &self,
+        response: &http::response::Response<bytes::Bytes>,
     ) -> Result<crate::output::DeleteItemOutput, crate::error::DeleteItemError> {
         if crate::aws_json_errors::is_error(&response) {
             let body = serde_json::from_slice(response.body().as_ref())
@@ -926,20 +899,11 @@ impl DeleteItem {
                 _ => crate::error::DeleteItemError::generic(generic),
             });
         }
-        let body: crate::serializer::DeleteItemOutputBody =
-            serde_json::from_slice(response.body().as_ref())
-                .map_err(crate::error::DeleteItemError::unhandled)?;
-        Ok(crate::output::DeleteItemOutput {
-            attributes: body.attributes,
-            consumed_capacity: body.consumed_capacity,
-            item_collection_metrics: body.item_collection_metrics,
-        })
-    }
-    pub fn parse_response(
-        &self,
-        response: &http::response::Response<impl AsRef<[u8]>>,
-    ) -> Result<crate::output::DeleteItemOutput, crate::error::DeleteItemError> {
-        Self::from_response(&response)
+        #[allow(unused_mut)]
+        let mut builder = crate::output::delete_item_output::Builder::default();
+        builder = crate::json_deser::delete_item_deser_operation(response.body().as_ref(), builder)
+            .map_err(crate::error::DeleteItemError::unhandled)?;
+        Ok(builder.build())
     }
     pub fn new() -> Self {
         Self { _private: () }
@@ -979,8 +943,10 @@ impl DeleteTable {
         crate::input::delete_table_input::Builder::default()
     }
     #[allow(clippy::unnecessary_wraps)]
-    fn from_response(
-        response: &http::response::Response<impl AsRef<[u8]>>,
+    #[allow(dead_code)]
+    fn parse_response(
+        &self,
+        response: &http::response::Response<bytes::Bytes>,
     ) -> Result<crate::output::DeleteTableOutput, crate::error::DeleteTableError> {
         if crate::aws_json_errors::is_error(&response) {
             let body = serde_json::from_slice(response.body().as_ref())
@@ -1030,18 +996,12 @@ impl DeleteTable {
                 _ => crate::error::DeleteTableError::generic(generic),
             });
         }
-        let body: crate::serializer::DeleteTableOutputBody =
-            serde_json::from_slice(response.body().as_ref())
+        #[allow(unused_mut)]
+        let mut builder = crate::output::delete_table_output::Builder::default();
+        builder =
+            crate::json_deser::delete_table_deser_operation(response.body().as_ref(), builder)
                 .map_err(crate::error::DeleteTableError::unhandled)?;
-        Ok(crate::output::DeleteTableOutput {
-            table_description: body.table_description,
-        })
-    }
-    pub fn parse_response(
-        &self,
-        response: &http::response::Response<impl AsRef<[u8]>>,
-    ) -> Result<crate::output::DeleteTableOutput, crate::error::DeleteTableError> {
-        Self::from_response(&response)
+        Ok(builder.build())
     }
     pub fn new() -> Self {
         Self { _private: () }
@@ -1067,8 +1027,10 @@ impl DescribeBackup {
         crate::input::describe_backup_input::Builder::default()
     }
     #[allow(clippy::unnecessary_wraps)]
-    fn from_response(
-        response: &http::response::Response<impl AsRef<[u8]>>,
+    #[allow(dead_code)]
+    fn parse_response(
+        &self,
+        response: &http::response::Response<bytes::Bytes>,
     ) -> Result<crate::output::DescribeBackupOutput, crate::error::DescribeBackupError> {
         if crate::aws_json_errors::is_error(&response) {
             let body = serde_json::from_slice(response.body().as_ref())
@@ -1104,18 +1066,12 @@ impl DescribeBackup {
                 _ => crate::error::DescribeBackupError::generic(generic),
             });
         }
-        let body: crate::serializer::DescribeBackupOutputBody =
-            serde_json::from_slice(response.body().as_ref())
+        #[allow(unused_mut)]
+        let mut builder = crate::output::describe_backup_output::Builder::default();
+        builder =
+            crate::json_deser::describe_backup_deser_operation(response.body().as_ref(), builder)
                 .map_err(crate::error::DescribeBackupError::unhandled)?;
-        Ok(crate::output::DescribeBackupOutput {
-            backup_description: body.backup_description,
-        })
-    }
-    pub fn parse_response(
-        &self,
-        response: &http::response::Response<impl AsRef<[u8]>>,
-    ) -> Result<crate::output::DescribeBackupOutput, crate::error::DescribeBackupError> {
-        Self::from_response(&response)
+        Ok(builder.build())
     }
     pub fn new() -> Self {
         Self { _private: () }
@@ -1150,8 +1106,10 @@ impl DescribeContinuousBackups {
         crate::input::describe_continuous_backups_input::Builder::default()
     }
     #[allow(clippy::unnecessary_wraps)]
-    fn from_response(
-        response: &http::response::Response<impl AsRef<[u8]>>,
+    #[allow(dead_code)]
+    fn parse_response(
+        &self,
+        response: &http::response::Response<bytes::Bytes>,
     ) -> Result<
         crate::output::DescribeContinuousBackupsOutput,
         crate::error::DescribeContinuousBackupsError,
@@ -1201,21 +1159,14 @@ impl DescribeContinuousBackups {
                 _ => crate::error::DescribeContinuousBackupsError::generic(generic),
             });
         }
-        let body: crate::serializer::DescribeContinuousBackupsOutputBody =
-            serde_json::from_slice(response.body().as_ref())
-                .map_err(crate::error::DescribeContinuousBackupsError::unhandled)?;
-        Ok(crate::output::DescribeContinuousBackupsOutput {
-            continuous_backups_description: body.continuous_backups_description,
-        })
-    }
-    pub fn parse_response(
-        &self,
-        response: &http::response::Response<impl AsRef<[u8]>>,
-    ) -> Result<
-        crate::output::DescribeContinuousBackupsOutput,
-        crate::error::DescribeContinuousBackupsError,
-    > {
-        Self::from_response(&response)
+        #[allow(unused_mut)]
+        let mut builder = crate::output::describe_continuous_backups_output::Builder::default();
+        builder = crate::json_deser::describe_continuous_backups_deser_operation(
+            response.body().as_ref(),
+            builder,
+        )
+        .map_err(crate::error::DescribeContinuousBackupsError::unhandled)?;
+        Ok(builder.build())
     }
     pub fn new() -> Self {
         Self { _private: () }
@@ -1243,8 +1194,10 @@ impl DescribeContributorInsights {
         crate::input::describe_contributor_insights_input::Builder::default()
     }
     #[allow(clippy::unnecessary_wraps)]
-    fn from_response(
-        response: &http::response::Response<impl AsRef<[u8]>>,
+    #[allow(dead_code)]
+    fn parse_response(
+        &self,
+        response: &http::response::Response<bytes::Bytes>,
     ) -> Result<
         crate::output::DescribeContributorInsightsOutput,
         crate::error::DescribeContributorInsightsError,
@@ -1274,26 +1227,14 @@ impl DescribeContributorInsights {
                 _ => crate::error::DescribeContributorInsightsError::generic(generic)
             });
         }
-        let body: crate::serializer::DescribeContributorInsightsOutputBody =
-            serde_json::from_slice(response.body().as_ref())
-                .map_err(crate::error::DescribeContributorInsightsError::unhandled)?;
-        Ok(crate::output::DescribeContributorInsightsOutput {
-            table_name: body.table_name,
-            index_name: body.index_name,
-            contributor_insights_rule_list: body.contributor_insights_rule_list,
-            contributor_insights_status: body.contributor_insights_status,
-            last_update_date_time: body.last_update_date_time,
-            failure_exception: body.failure_exception,
-        })
-    }
-    pub fn parse_response(
-        &self,
-        response: &http::response::Response<impl AsRef<[u8]>>,
-    ) -> Result<
-        crate::output::DescribeContributorInsightsOutput,
-        crate::error::DescribeContributorInsightsError,
-    > {
-        Self::from_response(&response)
+        #[allow(unused_mut)]
+        let mut builder = crate::output::describe_contributor_insights_output::Builder::default();
+        builder = crate::json_deser::describe_contributor_insights_deser_operation(
+            response.body().as_ref(),
+            builder,
+        )
+        .map_err(crate::error::DescribeContributorInsightsError::unhandled)?;
+        Ok(builder.build())
     }
     pub fn new() -> Self {
         Self { _private: () }
@@ -1321,8 +1262,10 @@ impl DescribeEndpoints {
         crate::input::describe_endpoints_input::Builder::default()
     }
     #[allow(clippy::unnecessary_wraps)]
-    fn from_response(
-        response: &http::response::Response<impl AsRef<[u8]>>,
+    #[allow(dead_code)]
+    fn parse_response(
+        &self,
+        response: &http::response::Response<bytes::Bytes>,
     ) -> Result<crate::output::DescribeEndpointsOutput, crate::error::DescribeEndpointsError> {
         if crate::aws_json_errors::is_error(&response) {
             let body = serde_json::from_slice(response.body().as_ref())
@@ -1331,18 +1274,14 @@ impl DescribeEndpoints {
 
             return Err(crate::error::DescribeEndpointsError::generic(generic));
         }
-        let body: crate::serializer::DescribeEndpointsOutputBody =
-            serde_json::from_slice(response.body().as_ref())
-                .map_err(crate::error::DescribeEndpointsError::unhandled)?;
-        Ok(crate::output::DescribeEndpointsOutput {
-            endpoints: body.endpoints,
-        })
-    }
-    pub fn parse_response(
-        &self,
-        response: &http::response::Response<impl AsRef<[u8]>>,
-    ) -> Result<crate::output::DescribeEndpointsOutput, crate::error::DescribeEndpointsError> {
-        Self::from_response(&response)
+        #[allow(unused_mut)]
+        let mut builder = crate::output::describe_endpoints_output::Builder::default();
+        builder = crate::json_deser::describe_endpoints_deser_operation(
+            response.body().as_ref(),
+            builder,
+        )
+        .map_err(crate::error::DescribeEndpointsError::unhandled)?;
+        Ok(builder.build())
     }
     pub fn new() -> Self {
         Self { _private: () }
@@ -1368,8 +1307,10 @@ impl DescribeExport {
         crate::input::describe_export_input::Builder::default()
     }
     #[allow(clippy::unnecessary_wraps)]
-    fn from_response(
-        response: &http::response::Response<impl AsRef<[u8]>>,
+    #[allow(dead_code)]
+    fn parse_response(
+        &self,
+        response: &http::response::Response<bytes::Bytes>,
     ) -> Result<crate::output::DescribeExportOutput, crate::error::DescribeExportError> {
         if crate::aws_json_errors::is_error(&response) {
             let body = serde_json::from_slice(response.body().as_ref())
@@ -1405,18 +1346,12 @@ impl DescribeExport {
                 _ => crate::error::DescribeExportError::generic(generic),
             });
         }
-        let body: crate::serializer::DescribeExportOutputBody =
-            serde_json::from_slice(response.body().as_ref())
+        #[allow(unused_mut)]
+        let mut builder = crate::output::describe_export_output::Builder::default();
+        builder =
+            crate::json_deser::describe_export_deser_operation(response.body().as_ref(), builder)
                 .map_err(crate::error::DescribeExportError::unhandled)?;
-        Ok(crate::output::DescribeExportOutput {
-            export_description: body.export_description,
-        })
-    }
-    pub fn parse_response(
-        &self,
-        response: &http::response::Response<impl AsRef<[u8]>>,
-    ) -> Result<crate::output::DescribeExportOutput, crate::error::DescribeExportError> {
-        Self::from_response(&response)
+        Ok(builder.build())
     }
     pub fn new() -> Self {
         Self { _private: () }
@@ -1445,8 +1380,10 @@ impl DescribeGlobalTable {
         crate::input::describe_global_table_input::Builder::default()
     }
     #[allow(clippy::unnecessary_wraps)]
-    fn from_response(
-        response: &http::response::Response<impl AsRef<[u8]>>,
+    #[allow(dead_code)]
+    fn parse_response(
+        &self,
+        response: &http::response::Response<bytes::Bytes>,
     ) -> Result<crate::output::DescribeGlobalTableOutput, crate::error::DescribeGlobalTableError>
     {
         if crate::aws_json_errors::is_error(&response) {
@@ -1487,19 +1424,14 @@ impl DescribeGlobalTable {
                 _ => crate::error::DescribeGlobalTableError::generic(generic),
             });
         }
-        let body: crate::serializer::DescribeGlobalTableOutputBody =
-            serde_json::from_slice(response.body().as_ref())
-                .map_err(crate::error::DescribeGlobalTableError::unhandled)?;
-        Ok(crate::output::DescribeGlobalTableOutput {
-            global_table_description: body.global_table_description,
-        })
-    }
-    pub fn parse_response(
-        &self,
-        response: &http::response::Response<impl AsRef<[u8]>>,
-    ) -> Result<crate::output::DescribeGlobalTableOutput, crate::error::DescribeGlobalTableError>
-    {
-        Self::from_response(&response)
+        #[allow(unused_mut)]
+        let mut builder = crate::output::describe_global_table_output::Builder::default();
+        builder = crate::json_deser::describe_global_table_deser_operation(
+            response.body().as_ref(),
+            builder,
+        )
+        .map_err(crate::error::DescribeGlobalTableError::unhandled)?;
+        Ok(builder.build())
     }
     pub fn new() -> Self {
         Self { _private: () }
@@ -1528,8 +1460,10 @@ impl DescribeGlobalTableSettings {
         crate::input::describe_global_table_settings_input::Builder::default()
     }
     #[allow(clippy::unnecessary_wraps)]
-    fn from_response(
-        response: &http::response::Response<impl AsRef<[u8]>>,
+    #[allow(dead_code)]
+    fn parse_response(
+        &self,
+        response: &http::response::Response<bytes::Bytes>,
     ) -> Result<
         crate::output::DescribeGlobalTableSettingsOutput,
         crate::error::DescribeGlobalTableSettingsError,
@@ -1563,22 +1497,14 @@ impl DescribeGlobalTableSettings {
                 _ => crate::error::DescribeGlobalTableSettingsError::generic(generic)
             });
         }
-        let body: crate::serializer::DescribeGlobalTableSettingsOutputBody =
-            serde_json::from_slice(response.body().as_ref())
-                .map_err(crate::error::DescribeGlobalTableSettingsError::unhandled)?;
-        Ok(crate::output::DescribeGlobalTableSettingsOutput {
-            global_table_name: body.global_table_name,
-            replica_settings: body.replica_settings,
-        })
-    }
-    pub fn parse_response(
-        &self,
-        response: &http::response::Response<impl AsRef<[u8]>>,
-    ) -> Result<
-        crate::output::DescribeGlobalTableSettingsOutput,
-        crate::error::DescribeGlobalTableSettingsError,
-    > {
-        Self::from_response(&response)
+        #[allow(unused_mut)]
+        let mut builder = crate::output::describe_global_table_settings_output::Builder::default();
+        builder = crate::json_deser::describe_global_table_settings_deser_operation(
+            response.body().as_ref(),
+            builder,
+        )
+        .map_err(crate::error::DescribeGlobalTableSettingsError::unhandled)?;
+        Ok(builder.build())
     }
     pub fn new() -> Self {
         Self { _private: () }
@@ -1606,8 +1532,10 @@ impl DescribeKinesisStreamingDestination {
         crate::input::describe_kinesis_streaming_destination_input::Builder::default()
     }
     #[allow(clippy::unnecessary_wraps)]
-    fn from_response(
-        response: &http::response::Response<impl AsRef<[u8]>>,
+    #[allow(dead_code)]
+    fn parse_response(
+        &self,
+        response: &http::response::Response<bytes::Bytes>,
     ) -> Result<
         crate::output::DescribeKinesisStreamingDestinationOutput,
         crate::error::DescribeKinesisStreamingDestinationError,
@@ -1641,22 +1569,15 @@ impl DescribeKinesisStreamingDestination {
                 _ => crate::error::DescribeKinesisStreamingDestinationError::generic(generic)
             });
         }
-        let body: crate::serializer::DescribeKinesisStreamingDestinationOutputBody =
-            serde_json::from_slice(response.body().as_ref())
-                .map_err(crate::error::DescribeKinesisStreamingDestinationError::unhandled)?;
-        Ok(crate::output::DescribeKinesisStreamingDestinationOutput {
-            table_name: body.table_name,
-            kinesis_data_stream_destinations: body.kinesis_data_stream_destinations,
-        })
-    }
-    pub fn parse_response(
-        &self,
-        response: &http::response::Response<impl AsRef<[u8]>>,
-    ) -> Result<
-        crate::output::DescribeKinesisStreamingDestinationOutput,
-        crate::error::DescribeKinesisStreamingDestinationError,
-    > {
-        Self::from_response(&response)
+        #[allow(unused_mut)]
+        let mut builder =
+            crate::output::describe_kinesis_streaming_destination_output::Builder::default();
+        builder = crate::json_deser::describe_kinesis_streaming_destination_deser_operation(
+            response.body().as_ref(),
+            builder,
+        )
+        .map_err(crate::error::DescribeKinesisStreamingDestinationError::unhandled)?;
+        Ok(builder.build())
     }
     pub fn new() -> Self {
         Self { _private: () }
@@ -1743,8 +1664,10 @@ impl DescribeLimits {
         crate::input::describe_limits_input::Builder::default()
     }
     #[allow(clippy::unnecessary_wraps)]
-    fn from_response(
-        response: &http::response::Response<impl AsRef<[u8]>>,
+    #[allow(dead_code)]
+    fn parse_response(
+        &self,
+        response: &http::response::Response<bytes::Bytes>,
     ) -> Result<crate::output::DescribeLimitsOutput, crate::error::DescribeLimitsError> {
         if crate::aws_json_errors::is_error(&response) {
             let body = serde_json::from_slice(response.body().as_ref())
@@ -1773,21 +1696,12 @@ impl DescribeLimits {
                 _ => crate::error::DescribeLimitsError::generic(generic),
             });
         }
-        let body: crate::serializer::DescribeLimitsOutputBody =
-            serde_json::from_slice(response.body().as_ref())
+        #[allow(unused_mut)]
+        let mut builder = crate::output::describe_limits_output::Builder::default();
+        builder =
+            crate::json_deser::describe_limits_deser_operation(response.body().as_ref(), builder)
                 .map_err(crate::error::DescribeLimitsError::unhandled)?;
-        Ok(crate::output::DescribeLimitsOutput {
-            account_max_read_capacity_units: body.account_max_read_capacity_units,
-            account_max_write_capacity_units: body.account_max_write_capacity_units,
-            table_max_read_capacity_units: body.table_max_read_capacity_units,
-            table_max_write_capacity_units: body.table_max_write_capacity_units,
-        })
-    }
-    pub fn parse_response(
-        &self,
-        response: &http::response::Response<impl AsRef<[u8]>>,
-    ) -> Result<crate::output::DescribeLimitsOutput, crate::error::DescribeLimitsError> {
-        Self::from_response(&response)
+        Ok(builder.build())
     }
     pub fn new() -> Self {
         Self { _private: () }
@@ -1818,8 +1732,10 @@ impl DescribeTable {
         crate::input::describe_table_input::Builder::default()
     }
     #[allow(clippy::unnecessary_wraps)]
-    fn from_response(
-        response: &http::response::Response<impl AsRef<[u8]>>,
+    #[allow(dead_code)]
+    fn parse_response(
+        &self,
+        response: &http::response::Response<bytes::Bytes>,
     ) -> Result<crate::output::DescribeTableOutput, crate::error::DescribeTableError> {
         if crate::aws_json_errors::is_error(&response) {
             let body = serde_json::from_slice(response.body().as_ref())
@@ -1855,16 +1771,12 @@ impl DescribeTable {
                 _ => crate::error::DescribeTableError::generic(generic),
             });
         }
-        let body: crate::serializer::DescribeTableOutputBody =
-            serde_json::from_slice(response.body().as_ref())
+        #[allow(unused_mut)]
+        let mut builder = crate::output::describe_table_output::Builder::default();
+        builder =
+            crate::json_deser::describe_table_deser_operation(response.body().as_ref(), builder)
                 .map_err(crate::error::DescribeTableError::unhandled)?;
-        Ok(crate::output::DescribeTableOutput { table: body.table })
-    }
-    pub fn parse_response(
-        &self,
-        response: &http::response::Response<impl AsRef<[u8]>>,
-    ) -> Result<crate::output::DescribeTableOutput, crate::error::DescribeTableError> {
-        Self::from_response(&response)
+        Ok(builder.build())
     }
     pub fn new() -> Self {
         Self { _private: () }
@@ -1892,8 +1804,10 @@ impl DescribeTableReplicaAutoScaling {
         crate::input::describe_table_replica_auto_scaling_input::Builder::default()
     }
     #[allow(clippy::unnecessary_wraps)]
-    fn from_response(
-        response: &http::response::Response<impl AsRef<[u8]>>,
+    #[allow(dead_code)]
+    fn parse_response(
+        &self,
+        response: &http::response::Response<bytes::Bytes>,
     ) -> Result<
         crate::output::DescribeTableReplicaAutoScalingOutput,
         crate::error::DescribeTableReplicaAutoScalingError,
@@ -1923,21 +1837,15 @@ impl DescribeTableReplicaAutoScaling {
                 _ => crate::error::DescribeTableReplicaAutoScalingError::generic(generic)
             });
         }
-        let body: crate::serializer::DescribeTableReplicaAutoScalingOutputBody =
-            serde_json::from_slice(response.body().as_ref())
-                .map_err(crate::error::DescribeTableReplicaAutoScalingError::unhandled)?;
-        Ok(crate::output::DescribeTableReplicaAutoScalingOutput {
-            table_auto_scaling_description: body.table_auto_scaling_description,
-        })
-    }
-    pub fn parse_response(
-        &self,
-        response: &http::response::Response<impl AsRef<[u8]>>,
-    ) -> Result<
-        crate::output::DescribeTableReplicaAutoScalingOutput,
-        crate::error::DescribeTableReplicaAutoScalingError,
-    > {
-        Self::from_response(&response)
+        #[allow(unused_mut)]
+        let mut builder =
+            crate::output::describe_table_replica_auto_scaling_output::Builder::default();
+        builder = crate::json_deser::describe_table_replica_auto_scaling_deser_operation(
+            response.body().as_ref(),
+            builder,
+        )
+        .map_err(crate::error::DescribeTableReplicaAutoScalingError::unhandled)?;
+        Ok(builder.build())
     }
     pub fn new() -> Self {
         Self { _private: () }
@@ -1965,8 +1873,10 @@ impl DescribeTimeToLive {
         crate::input::describe_time_to_live_input::Builder::default()
     }
     #[allow(clippy::unnecessary_wraps)]
-    fn from_response(
-        response: &http::response::Response<impl AsRef<[u8]>>,
+    #[allow(dead_code)]
+    fn parse_response(
+        &self,
+        response: &http::response::Response<bytes::Bytes>,
     ) -> Result<crate::output::DescribeTimeToLiveOutput, crate::error::DescribeTimeToLiveError>
     {
         if crate::aws_json_errors::is_error(&response) {
@@ -2005,19 +1915,14 @@ impl DescribeTimeToLive {
                 _ => crate::error::DescribeTimeToLiveError::generic(generic),
             });
         }
-        let body: crate::serializer::DescribeTimeToLiveOutputBody =
-            serde_json::from_slice(response.body().as_ref())
-                .map_err(crate::error::DescribeTimeToLiveError::unhandled)?;
-        Ok(crate::output::DescribeTimeToLiveOutput {
-            time_to_live_description: body.time_to_live_description,
-        })
-    }
-    pub fn parse_response(
-        &self,
-        response: &http::response::Response<impl AsRef<[u8]>>,
-    ) -> Result<crate::output::DescribeTimeToLiveOutput, crate::error::DescribeTimeToLiveError>
-    {
-        Self::from_response(&response)
+        #[allow(unused_mut)]
+        let mut builder = crate::output::describe_time_to_live_output::Builder::default();
+        builder = crate::json_deser::describe_time_to_live_deser_operation(
+            response.body().as_ref(),
+            builder,
+        )
+        .map_err(crate::error::DescribeTimeToLiveError::unhandled)?;
+        Ok(builder.build())
     }
     pub fn new() -> Self {
         Self { _private: () }
@@ -2044,8 +1949,10 @@ impl DisableKinesisStreamingDestination {
         crate::input::disable_kinesis_streaming_destination_input::Builder::default()
     }
     #[allow(clippy::unnecessary_wraps)]
-    fn from_response(
-        response: &http::response::Response<impl AsRef<[u8]>>,
+    #[allow(dead_code)]
+    fn parse_response(
+        &self,
+        response: &http::response::Response<bytes::Bytes>,
     ) -> Result<
         crate::output::DisableKinesisStreamingDestinationOutput,
         crate::error::DisableKinesisStreamingDestinationError,
@@ -2087,23 +1994,15 @@ impl DisableKinesisStreamingDestination {
                 _ => crate::error::DisableKinesisStreamingDestinationError::generic(generic)
             });
         }
-        let body: crate::serializer::DisableKinesisStreamingDestinationOutputBody =
-            serde_json::from_slice(response.body().as_ref())
-                .map_err(crate::error::DisableKinesisStreamingDestinationError::unhandled)?;
-        Ok(crate::output::DisableKinesisStreamingDestinationOutput {
-            table_name: body.table_name,
-            stream_arn: body.stream_arn,
-            destination_status: body.destination_status,
-        })
-    }
-    pub fn parse_response(
-        &self,
-        response: &http::response::Response<impl AsRef<[u8]>>,
-    ) -> Result<
-        crate::output::DisableKinesisStreamingDestinationOutput,
-        crate::error::DisableKinesisStreamingDestinationError,
-    > {
-        Self::from_response(&response)
+        #[allow(unused_mut)]
+        let mut builder =
+            crate::output::disable_kinesis_streaming_destination_output::Builder::default();
+        builder = crate::json_deser::disable_kinesis_streaming_destination_deser_operation(
+            response.body().as_ref(),
+            builder,
+        )
+        .map_err(crate::error::DisableKinesisStreamingDestinationError::unhandled)?;
+        Ok(builder.build())
     }
     pub fn new() -> Self {
         Self { _private: () }
@@ -2134,8 +2033,10 @@ impl EnableKinesisStreamingDestination {
         crate::input::enable_kinesis_streaming_destination_input::Builder::default()
     }
     #[allow(clippy::unnecessary_wraps)]
-    fn from_response(
-        response: &http::response::Response<impl AsRef<[u8]>>,
+    #[allow(dead_code)]
+    fn parse_response(
+        &self,
+        response: &http::response::Response<bytes::Bytes>,
     ) -> Result<
         crate::output::EnableKinesisStreamingDestinationOutput,
         crate::error::EnableKinesisStreamingDestinationError,
@@ -2177,23 +2078,15 @@ impl EnableKinesisStreamingDestination {
                 _ => crate::error::EnableKinesisStreamingDestinationError::generic(generic)
             });
         }
-        let body: crate::serializer::EnableKinesisStreamingDestinationOutputBody =
-            serde_json::from_slice(response.body().as_ref())
-                .map_err(crate::error::EnableKinesisStreamingDestinationError::unhandled)?;
-        Ok(crate::output::EnableKinesisStreamingDestinationOutput {
-            table_name: body.table_name,
-            stream_arn: body.stream_arn,
-            destination_status: body.destination_status,
-        })
-    }
-    pub fn parse_response(
-        &self,
-        response: &http::response::Response<impl AsRef<[u8]>>,
-    ) -> Result<
-        crate::output::EnableKinesisStreamingDestinationOutput,
-        crate::error::EnableKinesisStreamingDestinationError,
-    > {
-        Self::from_response(&response)
+        #[allow(unused_mut)]
+        let mut builder =
+            crate::output::enable_kinesis_streaming_destination_output::Builder::default();
+        builder = crate::json_deser::enable_kinesis_streaming_destination_deser_operation(
+            response.body().as_ref(),
+            builder,
+        )
+        .map_err(crate::error::EnableKinesisStreamingDestinationError::unhandled)?;
+        Ok(builder.build())
     }
     pub fn new() -> Self {
         Self { _private: () }
@@ -2223,8 +2116,10 @@ impl ExecuteStatement {
         crate::input::execute_statement_input::Builder::default()
     }
     #[allow(clippy::unnecessary_wraps)]
-    fn from_response(
-        response: &http::response::Response<impl AsRef<[u8]>>,
+    #[allow(dead_code)]
+    fn parse_response(
+        &self,
+        response: &http::response::Response<bytes::Bytes>,
     ) -> Result<crate::output::ExecuteStatementOutput, crate::error::ExecuteStatementError> {
         if crate::aws_json_errors::is_error(&response) {
             let body = serde_json::from_slice(response.body().as_ref())
@@ -2271,19 +2166,12 @@ impl ExecuteStatement {
                 _ => crate::error::ExecuteStatementError::generic(generic)
             });
         }
-        let body: crate::serializer::ExecuteStatementOutputBody =
-            serde_json::from_slice(response.body().as_ref())
+        #[allow(unused_mut)]
+        let mut builder = crate::output::execute_statement_output::Builder::default();
+        builder =
+            crate::json_deser::execute_statement_deser_operation(response.body().as_ref(), builder)
                 .map_err(crate::error::ExecuteStatementError::unhandled)?;
-        Ok(crate::output::ExecuteStatementOutput {
-            items: body.items,
-            next_token: body.next_token,
-        })
-    }
-    pub fn parse_response(
-        &self,
-        response: &http::response::Response<impl AsRef<[u8]>>,
-    ) -> Result<crate::output::ExecuteStatementOutput, crate::error::ExecuteStatementError> {
-        Self::from_response(&response)
+        Ok(builder.build())
     }
     pub fn new() -> Self {
         Self { _private: () }
@@ -2311,8 +2199,10 @@ impl ExecuteTransaction {
         crate::input::execute_transaction_input::Builder::default()
     }
     #[allow(clippy::unnecessary_wraps)]
-    fn from_response(
-        response: &http::response::Response<impl AsRef<[u8]>>,
+    #[allow(dead_code)]
+    fn parse_response(
+        &self,
+        response: &http::response::Response<bytes::Bytes>,
     ) -> Result<crate::output::ExecuteTransactionOutput, crate::error::ExecuteTransactionError>
     {
         if crate::aws_json_errors::is_error(&response) {
@@ -2356,19 +2246,14 @@ impl ExecuteTransaction {
                 _ => crate::error::ExecuteTransactionError::generic(generic)
             });
         }
-        let body: crate::serializer::ExecuteTransactionOutputBody =
-            serde_json::from_slice(response.body().as_ref())
-                .map_err(crate::error::ExecuteTransactionError::unhandled)?;
-        Ok(crate::output::ExecuteTransactionOutput {
-            responses: body.responses,
-        })
-    }
-    pub fn parse_response(
-        &self,
-        response: &http::response::Response<impl AsRef<[u8]>>,
-    ) -> Result<crate::output::ExecuteTransactionOutput, crate::error::ExecuteTransactionError>
-    {
-        Self::from_response(&response)
+        #[allow(unused_mut)]
+        let mut builder = crate::output::execute_transaction_output::Builder::default();
+        builder = crate::json_deser::execute_transaction_deser_operation(
+            response.body().as_ref(),
+            builder,
+        )
+        .map_err(crate::error::ExecuteTransactionError::unhandled)?;
+        Ok(builder.build())
     }
     pub fn new() -> Self {
         Self { _private: () }
@@ -2396,8 +2281,10 @@ impl ExportTableToPointInTime {
         crate::input::export_table_to_point_in_time_input::Builder::default()
     }
     #[allow(clippy::unnecessary_wraps)]
-    fn from_response(
-        response: &http::response::Response<impl AsRef<[u8]>>,
+    #[allow(dead_code)]
+    fn parse_response(
+        &self,
+        response: &http::response::Response<bytes::Bytes>,
     ) -> Result<
         crate::output::ExportTableToPointInTimeOutput,
         crate::error::ExportTableToPointInTimeError,
@@ -2443,21 +2330,14 @@ impl ExportTableToPointInTime {
                 _ => crate::error::ExportTableToPointInTimeError::generic(generic)
             });
         }
-        let body: crate::serializer::ExportTableToPointInTimeOutputBody =
-            serde_json::from_slice(response.body().as_ref())
-                .map_err(crate::error::ExportTableToPointInTimeError::unhandled)?;
-        Ok(crate::output::ExportTableToPointInTimeOutput {
-            export_description: body.export_description,
-        })
-    }
-    pub fn parse_response(
-        &self,
-        response: &http::response::Response<impl AsRef<[u8]>>,
-    ) -> Result<
-        crate::output::ExportTableToPointInTimeOutput,
-        crate::error::ExportTableToPointInTimeError,
-    > {
-        Self::from_response(&response)
+        #[allow(unused_mut)]
+        let mut builder = crate::output::export_table_to_point_in_time_output::Builder::default();
+        builder = crate::json_deser::export_table_to_point_in_time_deser_operation(
+            response.body().as_ref(),
+            builder,
+        )
+        .map_err(crate::error::ExportTableToPointInTimeError::unhandled)?;
+        Ok(builder.build())
     }
     pub fn new() -> Self {
         Self { _private: () }
@@ -2491,8 +2371,10 @@ impl GetItem {
         crate::input::get_item_input::Builder::default()
     }
     #[allow(clippy::unnecessary_wraps)]
-    fn from_response(
-        response: &http::response::Response<impl AsRef<[u8]>>,
+    #[allow(dead_code)]
+    fn parse_response(
+        &self,
+        response: &http::response::Response<bytes::Bytes>,
     ) -> Result<crate::output::GetItemOutput, crate::error::GetItemError> {
         if crate::aws_json_errors::is_error(&response) {
             let body = serde_json::from_slice(response.body().as_ref())
@@ -2544,19 +2426,11 @@ impl GetItem {
                 _ => crate::error::GetItemError::generic(generic),
             });
         }
-        let body: crate::serializer::GetItemOutputBody =
-            serde_json::from_slice(response.body().as_ref())
-                .map_err(crate::error::GetItemError::unhandled)?;
-        Ok(crate::output::GetItemOutput {
-            item: body.item,
-            consumed_capacity: body.consumed_capacity,
-        })
-    }
-    pub fn parse_response(
-        &self,
-        response: &http::response::Response<impl AsRef<[u8]>>,
-    ) -> Result<crate::output::GetItemOutput, crate::error::GetItemError> {
-        Self::from_response(&response)
+        #[allow(unused_mut)]
+        let mut builder = crate::output::get_item_output::Builder::default();
+        builder = crate::json_deser::get_item_deser_operation(response.body().as_ref(), builder)
+            .map_err(crate::error::GetItemError::unhandled)?;
+        Ok(builder.build())
     }
     pub fn new() -> Self {
         Self { _private: () }
@@ -2587,8 +2461,10 @@ impl ListBackups {
         crate::input::list_backups_input::Builder::default()
     }
     #[allow(clippy::unnecessary_wraps)]
-    fn from_response(
-        response: &http::response::Response<impl AsRef<[u8]>>,
+    #[allow(dead_code)]
+    fn parse_response(
+        &self,
+        response: &http::response::Response<bytes::Bytes>,
     ) -> Result<crate::output::ListBackupsOutput, crate::error::ListBackupsError> {
         if crate::aws_json_errors::is_error(&response) {
             let body = serde_json::from_slice(response.body().as_ref())
@@ -2617,19 +2493,12 @@ impl ListBackups {
                 _ => crate::error::ListBackupsError::generic(generic),
             });
         }
-        let body: crate::serializer::ListBackupsOutputBody =
-            serde_json::from_slice(response.body().as_ref())
+        #[allow(unused_mut)]
+        let mut builder = crate::output::list_backups_output::Builder::default();
+        builder =
+            crate::json_deser::list_backups_deser_operation(response.body().as_ref(), builder)
                 .map_err(crate::error::ListBackupsError::unhandled)?;
-        Ok(crate::output::ListBackupsOutput {
-            backup_summaries: body.backup_summaries,
-            last_evaluated_backup_arn: body.last_evaluated_backup_arn,
-        })
-    }
-    pub fn parse_response(
-        &self,
-        response: &http::response::Response<impl AsRef<[u8]>>,
-    ) -> Result<crate::output::ListBackupsOutput, crate::error::ListBackupsError> {
-        Self::from_response(&response)
+        Ok(builder.build())
     }
     pub fn new() -> Self {
         Self { _private: () }
@@ -2654,8 +2523,10 @@ impl ListContributorInsights {
         crate::input::list_contributor_insights_input::Builder::default()
     }
     #[allow(clippy::unnecessary_wraps)]
-    fn from_response(
-        response: &http::response::Response<impl AsRef<[u8]>>,
+    #[allow(dead_code)]
+    fn parse_response(
+        &self,
+        response: &http::response::Response<bytes::Bytes>,
     ) -> Result<
         crate::output::ListContributorInsightsOutput,
         crate::error::ListContributorInsightsError,
@@ -2695,22 +2566,14 @@ impl ListContributorInsights {
                 _ => crate::error::ListContributorInsightsError::generic(generic),
             });
         }
-        let body: crate::serializer::ListContributorInsightsOutputBody =
-            serde_json::from_slice(response.body().as_ref())
-                .map_err(crate::error::ListContributorInsightsError::unhandled)?;
-        Ok(crate::output::ListContributorInsightsOutput {
-            contributor_insights_summaries: body.contributor_insights_summaries,
-            next_token: body.next_token,
-        })
-    }
-    pub fn parse_response(
-        &self,
-        response: &http::response::Response<impl AsRef<[u8]>>,
-    ) -> Result<
-        crate::output::ListContributorInsightsOutput,
-        crate::error::ListContributorInsightsError,
-    > {
-        Self::from_response(&response)
+        #[allow(unused_mut)]
+        let mut builder = crate::output::list_contributor_insights_output::Builder::default();
+        builder = crate::json_deser::list_contributor_insights_deser_operation(
+            response.body().as_ref(),
+            builder,
+        )
+        .map_err(crate::error::ListContributorInsightsError::unhandled)?;
+        Ok(builder.build())
     }
     pub fn new() -> Self {
         Self { _private: () }
@@ -2738,8 +2601,10 @@ impl ListExports {
         crate::input::list_exports_input::Builder::default()
     }
     #[allow(clippy::unnecessary_wraps)]
-    fn from_response(
-        response: &http::response::Response<impl AsRef<[u8]>>,
+    #[allow(dead_code)]
+    fn parse_response(
+        &self,
+        response: &http::response::Response<bytes::Bytes>,
     ) -> Result<crate::output::ListExportsOutput, crate::error::ListExportsError> {
         if crate::aws_json_errors::is_error(&response) {
             let body = serde_json::from_slice(response.body().as_ref())
@@ -2768,19 +2633,12 @@ impl ListExports {
                 _ => crate::error::ListExportsError::generic(generic),
             });
         }
-        let body: crate::serializer::ListExportsOutputBody =
-            serde_json::from_slice(response.body().as_ref())
+        #[allow(unused_mut)]
+        let mut builder = crate::output::list_exports_output::Builder::default();
+        builder =
+            crate::json_deser::list_exports_deser_operation(response.body().as_ref(), builder)
                 .map_err(crate::error::ListExportsError::unhandled)?;
-        Ok(crate::output::ListExportsOutput {
-            export_summaries: body.export_summaries,
-            next_token: body.next_token,
-        })
-    }
-    pub fn parse_response(
-        &self,
-        response: &http::response::Response<impl AsRef<[u8]>>,
-    ) -> Result<crate::output::ListExportsOutput, crate::error::ListExportsError> {
-        Self::from_response(&response)
+        Ok(builder.build())
     }
     pub fn new() -> Self {
         Self { _private: () }
@@ -2808,8 +2666,10 @@ impl ListGlobalTables {
         crate::input::list_global_tables_input::Builder::default()
     }
     #[allow(clippy::unnecessary_wraps)]
-    fn from_response(
-        response: &http::response::Response<impl AsRef<[u8]>>,
+    #[allow(dead_code)]
+    fn parse_response(
+        &self,
+        response: &http::response::Response<bytes::Bytes>,
     ) -> Result<crate::output::ListGlobalTablesOutput, crate::error::ListGlobalTablesError> {
         if crate::aws_json_errors::is_error(&response) {
             let body = serde_json::from_slice(response.body().as_ref())
@@ -2838,19 +2698,14 @@ impl ListGlobalTables {
                 _ => crate::error::ListGlobalTablesError::generic(generic),
             });
         }
-        let body: crate::serializer::ListGlobalTablesOutputBody =
-            serde_json::from_slice(response.body().as_ref())
-                .map_err(crate::error::ListGlobalTablesError::unhandled)?;
-        Ok(crate::output::ListGlobalTablesOutput {
-            global_tables: body.global_tables,
-            last_evaluated_global_table_name: body.last_evaluated_global_table_name,
-        })
-    }
-    pub fn parse_response(
-        &self,
-        response: &http::response::Response<impl AsRef<[u8]>>,
-    ) -> Result<crate::output::ListGlobalTablesOutput, crate::error::ListGlobalTablesError> {
-        Self::from_response(&response)
+        #[allow(unused_mut)]
+        let mut builder = crate::output::list_global_tables_output::Builder::default();
+        builder = crate::json_deser::list_global_tables_deser_operation(
+            response.body().as_ref(),
+            builder,
+        )
+        .map_err(crate::error::ListGlobalTablesError::unhandled)?;
+        Ok(builder.build())
     }
     pub fn new() -> Self {
         Self { _private: () }
@@ -2878,8 +2733,10 @@ impl ListTables {
         crate::input::list_tables_input::Builder::default()
     }
     #[allow(clippy::unnecessary_wraps)]
-    fn from_response(
-        response: &http::response::Response<impl AsRef<[u8]>>,
+    #[allow(dead_code)]
+    fn parse_response(
+        &self,
+        response: &http::response::Response<bytes::Bytes>,
     ) -> Result<crate::output::ListTablesOutput, crate::error::ListTablesError> {
         if crate::aws_json_errors::is_error(&response) {
             let body = serde_json::from_slice(response.body().as_ref())
@@ -2908,19 +2765,11 @@ impl ListTables {
                 _ => crate::error::ListTablesError::generic(generic),
             });
         }
-        let body: crate::serializer::ListTablesOutputBody =
-            serde_json::from_slice(response.body().as_ref())
-                .map_err(crate::error::ListTablesError::unhandled)?;
-        Ok(crate::output::ListTablesOutput {
-            table_names: body.table_names,
-            last_evaluated_table_name: body.last_evaluated_table_name,
-        })
-    }
-    pub fn parse_response(
-        &self,
-        response: &http::response::Response<impl AsRef<[u8]>>,
-    ) -> Result<crate::output::ListTablesOutput, crate::error::ListTablesError> {
-        Self::from_response(&response)
+        #[allow(unused_mut)]
+        let mut builder = crate::output::list_tables_output::Builder::default();
+        builder = crate::json_deser::list_tables_deser_operation(response.body().as_ref(), builder)
+            .map_err(crate::error::ListTablesError::unhandled)?;
+        Ok(builder.build())
     }
     pub fn new() -> Self {
         Self { _private: () }
@@ -2948,8 +2797,10 @@ impl ListTagsOfResource {
         crate::input::list_tags_of_resource_input::Builder::default()
     }
     #[allow(clippy::unnecessary_wraps)]
-    fn from_response(
-        response: &http::response::Response<impl AsRef<[u8]>>,
+    #[allow(dead_code)]
+    fn parse_response(
+        &self,
+        response: &http::response::Response<bytes::Bytes>,
     ) -> Result<crate::output::ListTagsOfResourceOutput, crate::error::ListTagsOfResourceError>
     {
         if crate::aws_json_errors::is_error(&response) {
@@ -2988,20 +2839,14 @@ impl ListTagsOfResource {
                 _ => crate::error::ListTagsOfResourceError::generic(generic),
             });
         }
-        let body: crate::serializer::ListTagsOfResourceOutputBody =
-            serde_json::from_slice(response.body().as_ref())
-                .map_err(crate::error::ListTagsOfResourceError::unhandled)?;
-        Ok(crate::output::ListTagsOfResourceOutput {
-            tags: body.tags,
-            next_token: body.next_token,
-        })
-    }
-    pub fn parse_response(
-        &self,
-        response: &http::response::Response<impl AsRef<[u8]>>,
-    ) -> Result<crate::output::ListTagsOfResourceOutput, crate::error::ListTagsOfResourceError>
-    {
-        Self::from_response(&response)
+        #[allow(unused_mut)]
+        let mut builder = crate::output::list_tags_of_resource_output::Builder::default();
+        builder = crate::json_deser::list_tags_of_resource_deser_operation(
+            response.body().as_ref(),
+            builder,
+        )
+        .map_err(crate::error::ListTagsOfResourceError::unhandled)?;
+        Ok(builder.build())
     }
     pub fn new() -> Self {
         Self { _private: () }
@@ -3093,8 +2938,10 @@ impl PutItem {
         crate::input::put_item_input::Builder::default()
     }
     #[allow(clippy::unnecessary_wraps)]
-    fn from_response(
-        response: &http::response::Response<impl AsRef<[u8]>>,
+    #[allow(dead_code)]
+    fn parse_response(
+        &self,
+        response: &http::response::Response<bytes::Bytes>,
     ) -> Result<crate::output::PutItemOutput, crate::error::PutItemError> {
         if crate::aws_json_errors::is_error(&response) {
             let body = serde_json::from_slice(response.body().as_ref())
@@ -3169,20 +3016,11 @@ impl PutItem {
                 _ => crate::error::PutItemError::generic(generic),
             });
         }
-        let body: crate::serializer::PutItemOutputBody =
-            serde_json::from_slice(response.body().as_ref())
-                .map_err(crate::error::PutItemError::unhandled)?;
-        Ok(crate::output::PutItemOutput {
-            attributes: body.attributes,
-            consumed_capacity: body.consumed_capacity,
-            item_collection_metrics: body.item_collection_metrics,
-        })
-    }
-    pub fn parse_response(
-        &self,
-        response: &http::response::Response<impl AsRef<[u8]>>,
-    ) -> Result<crate::output::PutItemOutput, crate::error::PutItemError> {
-        Self::from_response(&response)
+        #[allow(unused_mut)]
+        let mut builder = crate::output::put_item_output::Builder::default();
+        builder = crate::json_deser::put_item_deser_operation(response.body().as_ref(), builder)
+            .map_err(crate::error::PutItemError::unhandled)?;
+        Ok(builder.build())
     }
     pub fn new() -> Self {
         Self { _private: () }
@@ -3262,8 +3100,10 @@ impl Query {
         crate::input::query_input::Builder::default()
     }
     #[allow(clippy::unnecessary_wraps)]
-    fn from_response(
-        response: &http::response::Response<impl AsRef<[u8]>>,
+    #[allow(dead_code)]
+    fn parse_response(
+        &self,
+        response: &http::response::Response<bytes::Bytes>,
     ) -> Result<crate::output::QueryOutput, crate::error::QueryError> {
         if crate::aws_json_errors::is_error(&response) {
             let body = serde_json::from_slice(response.body().as_ref())
@@ -3315,22 +3155,11 @@ impl Query {
                 _ => crate::error::QueryError::generic(generic),
             });
         }
-        let body: crate::serializer::QueryOutputBody =
-            serde_json::from_slice(response.body().as_ref())
-                .map_err(crate::error::QueryError::unhandled)?;
-        Ok(crate::output::QueryOutput {
-            items: body.items,
-            count: body.count,
-            scanned_count: body.scanned_count,
-            last_evaluated_key: body.last_evaluated_key,
-            consumed_capacity: body.consumed_capacity,
-        })
-    }
-    pub fn parse_response(
-        &self,
-        response: &http::response::Response<impl AsRef<[u8]>>,
-    ) -> Result<crate::output::QueryOutput, crate::error::QueryError> {
-        Self::from_response(&response)
+        #[allow(unused_mut)]
+        let mut builder = crate::output::query_output::Builder::default();
+        builder = crate::json_deser::query_deser_operation(response.body().as_ref(), builder)
+            .map_err(crate::error::QueryError::unhandled)?;
+        Ok(builder.build())
     }
     pub fn new() -> Self {
         Self { _private: () }
@@ -3379,8 +3208,10 @@ impl RestoreTableFromBackup {
         crate::input::restore_table_from_backup_input::Builder::default()
     }
     #[allow(clippy::unnecessary_wraps)]
-    fn from_response(
-        response: &http::response::Response<impl AsRef<[u8]>>,
+    #[allow(dead_code)]
+    fn parse_response(
+        &self,
+        response: &http::response::Response<bytes::Bytes>,
     ) -> Result<
         crate::output::RestoreTableFromBackupOutput,
         crate::error::RestoreTableFromBackupError,
@@ -3462,21 +3293,14 @@ impl RestoreTableFromBackup {
                 _ => crate::error::RestoreTableFromBackupError::generic(generic),
             });
         }
-        let body: crate::serializer::RestoreTableFromBackupOutputBody =
-            serde_json::from_slice(response.body().as_ref())
-                .map_err(crate::error::RestoreTableFromBackupError::unhandled)?;
-        Ok(crate::output::RestoreTableFromBackupOutput {
-            table_description: body.table_description,
-        })
-    }
-    pub fn parse_response(
-        &self,
-        response: &http::response::Response<impl AsRef<[u8]>>,
-    ) -> Result<
-        crate::output::RestoreTableFromBackupOutput,
-        crate::error::RestoreTableFromBackupError,
-    > {
-        Self::from_response(&response)
+        #[allow(unused_mut)]
+        let mut builder = crate::output::restore_table_from_backup_output::Builder::default();
+        builder = crate::json_deser::restore_table_from_backup_deser_operation(
+            response.body().as_ref(),
+            builder,
+        )
+        .map_err(crate::error::RestoreTableFromBackupError::unhandled)?;
+        Ok(builder.build())
     }
     pub fn new() -> Self {
         Self { _private: () }
@@ -3558,8 +3382,10 @@ impl RestoreTableToPointInTime {
         crate::input::restore_table_to_point_in_time_input::Builder::default()
     }
     #[allow(clippy::unnecessary_wraps)]
-    fn from_response(
-        response: &http::response::Response<impl AsRef<[u8]>>,
+    #[allow(dead_code)]
+    fn parse_response(
+        &self,
+        response: &http::response::Response<bytes::Bytes>,
     ) -> Result<
         crate::output::RestoreTableToPointInTimeOutput,
         crate::error::RestoreTableToPointInTimeError,
@@ -3613,21 +3439,14 @@ impl RestoreTableToPointInTime {
                 _ => crate::error::RestoreTableToPointInTimeError::generic(generic)
             });
         }
-        let body: crate::serializer::RestoreTableToPointInTimeOutputBody =
-            serde_json::from_slice(response.body().as_ref())
-                .map_err(crate::error::RestoreTableToPointInTimeError::unhandled)?;
-        Ok(crate::output::RestoreTableToPointInTimeOutput {
-            table_description: body.table_description,
-        })
-    }
-    pub fn parse_response(
-        &self,
-        response: &http::response::Response<impl AsRef<[u8]>>,
-    ) -> Result<
-        crate::output::RestoreTableToPointInTimeOutput,
-        crate::error::RestoreTableToPointInTimeError,
-    > {
-        Self::from_response(&response)
+        #[allow(unused_mut)]
+        let mut builder = crate::output::restore_table_to_point_in_time_output::Builder::default();
+        builder = crate::json_deser::restore_table_to_point_in_time_deser_operation(
+            response.body().as_ref(),
+            builder,
+        )
+        .map_err(crate::error::RestoreTableToPointInTimeError::unhandled)?;
+        Ok(builder.build())
     }
     pub fn new() -> Self {
         Self { _private: () }
@@ -3679,8 +3498,10 @@ impl Scan {
         crate::input::scan_input::Builder::default()
     }
     #[allow(clippy::unnecessary_wraps)]
-    fn from_response(
-        response: &http::response::Response<impl AsRef<[u8]>>,
+    #[allow(dead_code)]
+    fn parse_response(
+        &self,
+        response: &http::response::Response<bytes::Bytes>,
     ) -> Result<crate::output::ScanOutput, crate::error::ScanError> {
         if crate::aws_json_errors::is_error(&response) {
             let body = serde_json::from_slice(response.body().as_ref())
@@ -3730,22 +3551,11 @@ impl Scan {
                 _ => crate::error::ScanError::generic(generic),
             });
         }
-        let body: crate::serializer::ScanOutputBody =
-            serde_json::from_slice(response.body().as_ref())
-                .map_err(crate::error::ScanError::unhandled)?;
-        Ok(crate::output::ScanOutput {
-            items: body.items,
-            count: body.count,
-            scanned_count: body.scanned_count,
-            last_evaluated_key: body.last_evaluated_key,
-            consumed_capacity: body.consumed_capacity,
-        })
-    }
-    pub fn parse_response(
-        &self,
-        response: &http::response::Response<impl AsRef<[u8]>>,
-    ) -> Result<crate::output::ScanOutput, crate::error::ScanError> {
-        Self::from_response(&response)
+        #[allow(unused_mut)]
+        let mut builder = crate::output::scan_output::Builder::default();
+        builder = crate::json_deser::scan_deser_operation(response.body().as_ref(), builder)
+            .map_err(crate::error::ScanError::unhandled)?;
+        Ok(builder.build())
     }
     pub fn new() -> Self {
         Self { _private: () }
@@ -3776,8 +3586,10 @@ impl TagResource {
         crate::input::tag_resource_input::Builder::default()
     }
     #[allow(clippy::unnecessary_wraps)]
-    fn from_response(
-        response: &http::response::Response<impl AsRef<[u8]>>,
+    #[allow(dead_code)]
+    fn parse_response(
+        &self,
+        response: &http::response::Response<bytes::Bytes>,
     ) -> Result<crate::output::TagResourceOutput, crate::error::TagResourceError> {
         if crate::aws_json_errors::is_error(&response) {
             let body = serde_json::from_slice(response.body().as_ref())
@@ -3827,13 +3639,9 @@ impl TagResource {
                 _ => crate::error::TagResourceError::generic(generic),
             });
         }
-        Ok(crate::output::TagResourceOutput {})
-    }
-    pub fn parse_response(
-        &self,
-        response: &http::response::Response<impl AsRef<[u8]>>,
-    ) -> Result<crate::output::TagResourceOutput, crate::error::TagResourceError> {
-        Self::from_response(&response)
+        #[allow(unused_mut)]
+        let mut builder = crate::output::tag_resource_output::Builder::default();
+        Ok(builder.build())
     }
     pub fn new() -> Self {
         Self { _private: () }
@@ -3883,8 +3691,10 @@ impl TransactGetItems {
         crate::input::transact_get_items_input::Builder::default()
     }
     #[allow(clippy::unnecessary_wraps)]
-    fn from_response(
-        response: &http::response::Response<impl AsRef<[u8]>>,
+    #[allow(dead_code)]
+    fn parse_response(
+        &self,
+        response: &http::response::Response<bytes::Bytes>,
     ) -> Result<crate::output::TransactGetItemsOutput, crate::error::TransactGetItemsError> {
         if crate::aws_json_errors::is_error(&response) {
             let body = serde_json::from_slice(response.body().as_ref())
@@ -3923,19 +3733,14 @@ impl TransactGetItems {
                 _ => crate::error::TransactGetItemsError::generic(generic)
             });
         }
-        let body: crate::serializer::TransactGetItemsOutputBody =
-            serde_json::from_slice(response.body().as_ref())
-                .map_err(crate::error::TransactGetItemsError::unhandled)?;
-        Ok(crate::output::TransactGetItemsOutput {
-            consumed_capacity: body.consumed_capacity,
-            responses: body.responses,
-        })
-    }
-    pub fn parse_response(
-        &self,
-        response: &http::response::Response<impl AsRef<[u8]>>,
-    ) -> Result<crate::output::TransactGetItemsOutput, crate::error::TransactGetItemsError> {
-        Self::from_response(&response)
+        #[allow(unused_mut)]
+        let mut builder = crate::output::transact_get_items_output::Builder::default();
+        builder = crate::json_deser::transact_get_items_deser_operation(
+            response.body().as_ref(),
+            builder,
+        )
+        .map_err(crate::error::TransactGetItemsError::unhandled)?;
+        Ok(builder.build())
     }
     pub fn new() -> Self {
         Self { _private: () }
@@ -4031,8 +3836,10 @@ impl TransactWriteItems {
         crate::input::transact_write_items_input::Builder::default()
     }
     #[allow(clippy::unnecessary_wraps)]
-    fn from_response(
-        response: &http::response::Response<impl AsRef<[u8]>>,
+    #[allow(dead_code)]
+    fn parse_response(
+        &self,
+        response: &http::response::Response<bytes::Bytes>,
     ) -> Result<crate::output::TransactWriteItemsOutput, crate::error::TransactWriteItemsError>
     {
         if crate::aws_json_errors::is_error(&response) {
@@ -4080,20 +3887,14 @@ impl TransactWriteItems {
                 _ => crate::error::TransactWriteItemsError::generic(generic)
             });
         }
-        let body: crate::serializer::TransactWriteItemsOutputBody =
-            serde_json::from_slice(response.body().as_ref())
-                .map_err(crate::error::TransactWriteItemsError::unhandled)?;
-        Ok(crate::output::TransactWriteItemsOutput {
-            consumed_capacity: body.consumed_capacity,
-            item_collection_metrics: body.item_collection_metrics,
-        })
-    }
-    pub fn parse_response(
-        &self,
-        response: &http::response::Response<impl AsRef<[u8]>>,
-    ) -> Result<crate::output::TransactWriteItemsOutput, crate::error::TransactWriteItemsError>
-    {
-        Self::from_response(&response)
+        #[allow(unused_mut)]
+        let mut builder = crate::output::transact_write_items_output::Builder::default();
+        builder = crate::json_deser::transact_write_items_deser_operation(
+            response.body().as_ref(),
+            builder,
+        )
+        .map_err(crate::error::TransactWriteItemsError::unhandled)?;
+        Ok(builder.build())
     }
     pub fn new() -> Self {
         Self { _private: () }
@@ -4123,8 +3924,10 @@ impl UntagResource {
         crate::input::untag_resource_input::Builder::default()
     }
     #[allow(clippy::unnecessary_wraps)]
-    fn from_response(
-        response: &http::response::Response<impl AsRef<[u8]>>,
+    #[allow(dead_code)]
+    fn parse_response(
+        &self,
+        response: &http::response::Response<bytes::Bytes>,
     ) -> Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError> {
         if crate::aws_json_errors::is_error(&response) {
             let body = serde_json::from_slice(response.body().as_ref())
@@ -4174,13 +3977,9 @@ impl UntagResource {
                 _ => crate::error::UntagResourceError::generic(generic),
             });
         }
-        Ok(crate::output::UntagResourceOutput {})
-    }
-    pub fn parse_response(
-        &self,
-        response: &http::response::Response<impl AsRef<[u8]>>,
-    ) -> Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError> {
-        Self::from_response(&response)
+        #[allow(unused_mut)]
+        let mut builder = crate::output::untag_resource_output::Builder::default();
+        Ok(builder.build())
     }
     pub fn new() -> Self {
         Self { _private: () }
@@ -4216,8 +4015,10 @@ impl UpdateContinuousBackups {
         crate::input::update_continuous_backups_input::Builder::default()
     }
     #[allow(clippy::unnecessary_wraps)]
-    fn from_response(
-        response: &http::response::Response<impl AsRef<[u8]>>,
+    #[allow(dead_code)]
+    fn parse_response(
+        &self,
+        response: &http::response::Response<bytes::Bytes>,
     ) -> Result<
         crate::output::UpdateContinuousBackupsOutput,
         crate::error::UpdateContinuousBackupsError,
@@ -4255,21 +4056,14 @@ impl UpdateContinuousBackups {
                 _ => crate::error::UpdateContinuousBackupsError::generic(generic)
             });
         }
-        let body: crate::serializer::UpdateContinuousBackupsOutputBody =
-            serde_json::from_slice(response.body().as_ref())
-                .map_err(crate::error::UpdateContinuousBackupsError::unhandled)?;
-        Ok(crate::output::UpdateContinuousBackupsOutput {
-            continuous_backups_description: body.continuous_backups_description,
-        })
-    }
-    pub fn parse_response(
-        &self,
-        response: &http::response::Response<impl AsRef<[u8]>>,
-    ) -> Result<
-        crate::output::UpdateContinuousBackupsOutput,
-        crate::error::UpdateContinuousBackupsError,
-    > {
-        Self::from_response(&response)
+        #[allow(unused_mut)]
+        let mut builder = crate::output::update_continuous_backups_output::Builder::default();
+        builder = crate::json_deser::update_continuous_backups_deser_operation(
+            response.body().as_ref(),
+            builder,
+        )
+        .map_err(crate::error::UpdateContinuousBackupsError::unhandled)?;
+        Ok(builder.build())
     }
     pub fn new() -> Self {
         Self { _private: () }
@@ -4297,8 +4091,10 @@ impl UpdateContributorInsights {
         crate::input::update_contributor_insights_input::Builder::default()
     }
     #[allow(clippy::unnecessary_wraps)]
-    fn from_response(
-        response: &http::response::Response<impl AsRef<[u8]>>,
+    #[allow(dead_code)]
+    fn parse_response(
+        &self,
+        response: &http::response::Response<bytes::Bytes>,
     ) -> Result<
         crate::output::UpdateContributorInsightsOutput,
         crate::error::UpdateContributorInsightsError,
@@ -4339,23 +4135,14 @@ impl UpdateContributorInsights {
                 _ => crate::error::UpdateContributorInsightsError::generic(generic),
             });
         }
-        let body: crate::serializer::UpdateContributorInsightsOutputBody =
-            serde_json::from_slice(response.body().as_ref())
-                .map_err(crate::error::UpdateContributorInsightsError::unhandled)?;
-        Ok(crate::output::UpdateContributorInsightsOutput {
-            table_name: body.table_name,
-            index_name: body.index_name,
-            contributor_insights_status: body.contributor_insights_status,
-        })
-    }
-    pub fn parse_response(
-        &self,
-        response: &http::response::Response<impl AsRef<[u8]>>,
-    ) -> Result<
-        crate::output::UpdateContributorInsightsOutput,
-        crate::error::UpdateContributorInsightsError,
-    > {
-        Self::from_response(&response)
+        #[allow(unused_mut)]
+        let mut builder = crate::output::update_contributor_insights_output::Builder::default();
+        builder = crate::json_deser::update_contributor_insights_deser_operation(
+            response.body().as_ref(),
+            builder,
+        )
+        .map_err(crate::error::UpdateContributorInsightsError::unhandled)?;
+        Ok(builder.build())
     }
     pub fn new() -> Self {
         Self { _private: () }
@@ -4411,8 +4198,10 @@ impl UpdateGlobalTable {
         crate::input::update_global_table_input::Builder::default()
     }
     #[allow(clippy::unnecessary_wraps)]
-    fn from_response(
-        response: &http::response::Response<impl AsRef<[u8]>>,
+    #[allow(dead_code)]
+    fn parse_response(
+        &self,
+        response: &http::response::Response<bytes::Bytes>,
     ) -> Result<crate::output::UpdateGlobalTableOutput, crate::error::UpdateGlobalTableError> {
         if crate::aws_json_errors::is_error(&response) {
             let body = serde_json::from_slice(response.body().as_ref())
@@ -4473,18 +4262,14 @@ impl UpdateGlobalTable {
                 _ => crate::error::UpdateGlobalTableError::generic(generic),
             });
         }
-        let body: crate::serializer::UpdateGlobalTableOutputBody =
-            serde_json::from_slice(response.body().as_ref())
-                .map_err(crate::error::UpdateGlobalTableError::unhandled)?;
-        Ok(crate::output::UpdateGlobalTableOutput {
-            global_table_description: body.global_table_description,
-        })
-    }
-    pub fn parse_response(
-        &self,
-        response: &http::response::Response<impl AsRef<[u8]>>,
-    ) -> Result<crate::output::UpdateGlobalTableOutput, crate::error::UpdateGlobalTableError> {
-        Self::from_response(&response)
+        #[allow(unused_mut)]
+        let mut builder = crate::output::update_global_table_output::Builder::default();
+        builder = crate::json_deser::update_global_table_deser_operation(
+            response.body().as_ref(),
+            builder,
+        )
+        .map_err(crate::error::UpdateGlobalTableError::unhandled)?;
+        Ok(builder.build())
     }
     pub fn new() -> Self {
         Self { _private: () }
@@ -4510,8 +4295,10 @@ impl UpdateGlobalTableSettings {
         crate::input::update_global_table_settings_input::Builder::default()
     }
     #[allow(clippy::unnecessary_wraps)]
-    fn from_response(
-        response: &http::response::Response<impl AsRef<[u8]>>,
+    #[allow(dead_code)]
+    fn parse_response(
+        &self,
+        response: &http::response::Response<bytes::Bytes>,
     ) -> Result<
         crate::output::UpdateGlobalTableSettingsOutput,
         crate::error::UpdateGlobalTableSettingsError,
@@ -4561,22 +4348,14 @@ impl UpdateGlobalTableSettings {
                 _ => crate::error::UpdateGlobalTableSettingsError::generic(generic)
             });
         }
-        let body: crate::serializer::UpdateGlobalTableSettingsOutputBody =
-            serde_json::from_slice(response.body().as_ref())
-                .map_err(crate::error::UpdateGlobalTableSettingsError::unhandled)?;
-        Ok(crate::output::UpdateGlobalTableSettingsOutput {
-            global_table_name: body.global_table_name,
-            replica_settings: body.replica_settings,
-        })
-    }
-    pub fn parse_response(
-        &self,
-        response: &http::response::Response<impl AsRef<[u8]>>,
-    ) -> Result<
-        crate::output::UpdateGlobalTableSettingsOutput,
-        crate::error::UpdateGlobalTableSettingsError,
-    > {
-        Self::from_response(&response)
+        #[allow(unused_mut)]
+        let mut builder = crate::output::update_global_table_settings_output::Builder::default();
+        builder = crate::json_deser::update_global_table_settings_deser_operation(
+            response.body().as_ref(),
+            builder,
+        )
+        .map_err(crate::error::UpdateGlobalTableSettingsError::unhandled)?;
+        Ok(builder.build())
     }
     pub fn new() -> Self {
         Self { _private: () }
@@ -4606,8 +4385,10 @@ impl UpdateItem {
         crate::input::update_item_input::Builder::default()
     }
     #[allow(clippy::unnecessary_wraps)]
-    fn from_response(
-        response: &http::response::Response<impl AsRef<[u8]>>,
+    #[allow(dead_code)]
+    fn parse_response(
+        &self,
+        response: &http::response::Response<bytes::Bytes>,
     ) -> Result<crate::output::UpdateItemOutput, crate::error::UpdateItemError> {
         if crate::aws_json_errors::is_error(&response) {
             let body = serde_json::from_slice(response.body().as_ref())
@@ -4683,20 +4464,11 @@ impl UpdateItem {
                 _ => crate::error::UpdateItemError::generic(generic),
             });
         }
-        let body: crate::serializer::UpdateItemOutputBody =
-            serde_json::from_slice(response.body().as_ref())
-                .map_err(crate::error::UpdateItemError::unhandled)?;
-        Ok(crate::output::UpdateItemOutput {
-            attributes: body.attributes,
-            consumed_capacity: body.consumed_capacity,
-            item_collection_metrics: body.item_collection_metrics,
-        })
-    }
-    pub fn parse_response(
-        &self,
-        response: &http::response::Response<impl AsRef<[u8]>>,
-    ) -> Result<crate::output::UpdateItemOutput, crate::error::UpdateItemError> {
-        Self::from_response(&response)
+        #[allow(unused_mut)]
+        let mut builder = crate::output::update_item_output::Builder::default();
+        builder = crate::json_deser::update_item_deser_operation(response.body().as_ref(), builder)
+            .map_err(crate::error::UpdateItemError::unhandled)?;
+        Ok(builder.build())
     }
     pub fn new() -> Self {
         Self { _private: () }
@@ -4743,8 +4515,10 @@ impl UpdateTable {
         crate::input::update_table_input::Builder::default()
     }
     #[allow(clippy::unnecessary_wraps)]
-    fn from_response(
-        response: &http::response::Response<impl AsRef<[u8]>>,
+    #[allow(dead_code)]
+    fn parse_response(
+        &self,
+        response: &http::response::Response<bytes::Bytes>,
     ) -> Result<crate::output::UpdateTableOutput, crate::error::UpdateTableError> {
         if crate::aws_json_errors::is_error(&response) {
             let body = serde_json::from_slice(response.body().as_ref())
@@ -4794,18 +4568,12 @@ impl UpdateTable {
                 _ => crate::error::UpdateTableError::generic(generic),
             });
         }
-        let body: crate::serializer::UpdateTableOutputBody =
-            serde_json::from_slice(response.body().as_ref())
+        #[allow(unused_mut)]
+        let mut builder = crate::output::update_table_output::Builder::default();
+        builder =
+            crate::json_deser::update_table_deser_operation(response.body().as_ref(), builder)
                 .map_err(crate::error::UpdateTableError::unhandled)?;
-        Ok(crate::output::UpdateTableOutput {
-            table_description: body.table_description,
-        })
-    }
-    pub fn parse_response(
-        &self,
-        response: &http::response::Response<impl AsRef<[u8]>>,
-    ) -> Result<crate::output::UpdateTableOutput, crate::error::UpdateTableError> {
-        Self::from_response(&response)
+        Ok(builder.build())
     }
     pub fn new() -> Self {
         Self { _private: () }
@@ -4833,8 +4601,10 @@ impl UpdateTableReplicaAutoScaling {
         crate::input::update_table_replica_auto_scaling_input::Builder::default()
     }
     #[allow(clippy::unnecessary_wraps)]
-    fn from_response(
-        response: &http::response::Response<impl AsRef<[u8]>>,
+    #[allow(dead_code)]
+    fn parse_response(
+        &self,
+        response: &http::response::Response<bytes::Bytes>,
     ) -> Result<
         crate::output::UpdateTableReplicaAutoScalingOutput,
         crate::error::UpdateTableReplicaAutoScalingError,
@@ -4872,21 +4642,15 @@ impl UpdateTableReplicaAutoScaling {
                 _ => crate::error::UpdateTableReplicaAutoScalingError::generic(generic)
             });
         }
-        let body: crate::serializer::UpdateTableReplicaAutoScalingOutputBody =
-            serde_json::from_slice(response.body().as_ref())
-                .map_err(crate::error::UpdateTableReplicaAutoScalingError::unhandled)?;
-        Ok(crate::output::UpdateTableReplicaAutoScalingOutput {
-            table_auto_scaling_description: body.table_auto_scaling_description,
-        })
-    }
-    pub fn parse_response(
-        &self,
-        response: &http::response::Response<impl AsRef<[u8]>>,
-    ) -> Result<
-        crate::output::UpdateTableReplicaAutoScalingOutput,
-        crate::error::UpdateTableReplicaAutoScalingError,
-    > {
-        Self::from_response(&response)
+        #[allow(unused_mut)]
+        let mut builder =
+            crate::output::update_table_replica_auto_scaling_output::Builder::default();
+        builder = crate::json_deser::update_table_replica_auto_scaling_deser_operation(
+            response.body().as_ref(),
+            builder,
+        )
+        .map_err(crate::error::UpdateTableReplicaAutoScalingError::unhandled)?;
+        Ok(builder.build())
     }
     pub fn new() -> Self {
         Self { _private: () }
@@ -4938,8 +4702,10 @@ impl UpdateTimeToLive {
         crate::input::update_time_to_live_input::Builder::default()
     }
     #[allow(clippy::unnecessary_wraps)]
-    fn from_response(
-        response: &http::response::Response<impl AsRef<[u8]>>,
+    #[allow(dead_code)]
+    fn parse_response(
+        &self,
+        response: &http::response::Response<bytes::Bytes>,
     ) -> Result<crate::output::UpdateTimeToLiveOutput, crate::error::UpdateTimeToLiveError> {
         if crate::aws_json_errors::is_error(&response) {
             let body = serde_json::from_slice(response.body().as_ref())
@@ -4989,18 +4755,14 @@ impl UpdateTimeToLive {
                 _ => crate::error::UpdateTimeToLiveError::generic(generic),
             });
         }
-        let body: crate::serializer::UpdateTimeToLiveOutputBody =
-            serde_json::from_slice(response.body().as_ref())
-                .map_err(crate::error::UpdateTimeToLiveError::unhandled)?;
-        Ok(crate::output::UpdateTimeToLiveOutput {
-            time_to_live_specification: body.time_to_live_specification,
-        })
-    }
-    pub fn parse_response(
-        &self,
-        response: &http::response::Response<impl AsRef<[u8]>>,
-    ) -> Result<crate::output::UpdateTimeToLiveOutput, crate::error::UpdateTimeToLiveError> {
-        Self::from_response(&response)
+        #[allow(unused_mut)]
+        let mut builder = crate::output::update_time_to_live_output::Builder::default();
+        builder = crate::json_deser::update_time_to_live_deser_operation(
+            response.body().as_ref(),
+            builder,
+        )
+        .map_err(crate::error::UpdateTimeToLiveError::unhandled)?;
+        Ok(builder.build())
     }
     pub fn new() -> Self {
         Self { _private: () }

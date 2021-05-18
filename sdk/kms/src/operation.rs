@@ -23,8 +23,10 @@ impl CancelKeyDeletion {
         crate::input::cancel_key_deletion_input::Builder::default()
     }
     #[allow(clippy::unnecessary_wraps)]
-    fn from_response(
-        response: &http::response::Response<impl AsRef<[u8]>>,
+    #[allow(dead_code)]
+    fn parse_response(
+        &self,
+        response: &http::response::Response<bytes::Bytes>,
     ) -> Result<crate::output::CancelKeyDeletionOutput, crate::error::CancelKeyDeletionError> {
         if crate::aws_json_errors::is_error(&response) {
             let body = serde_json::from_slice(response.body().as_ref())
@@ -76,18 +78,14 @@ impl CancelKeyDeletion {
                 _ => crate::error::CancelKeyDeletionError::generic(generic),
             });
         }
-        let body: crate::serializer::CancelKeyDeletionOutputBody =
-            serde_json::from_slice(response.body().as_ref())
-                .map_err(crate::error::CancelKeyDeletionError::unhandled)?;
-        Ok(crate::output::CancelKeyDeletionOutput {
-            key_id: body.key_id,
-        })
-    }
-    pub fn parse_response(
-        &self,
-        response: &http::response::Response<impl AsRef<[u8]>>,
-    ) -> Result<crate::output::CancelKeyDeletionOutput, crate::error::CancelKeyDeletionError> {
-        Self::from_response(&response)
+        #[allow(unused_mut)]
+        let mut builder = crate::output::cancel_key_deletion_output::Builder::default();
+        builder = crate::json_deser::cancel_key_deletion_deser_operation(
+            response.body().as_ref(),
+            builder,
+        )
+        .map_err(crate::error::CancelKeyDeletionError::unhandled)?;
+        Ok(builder.build())
     }
     pub fn new() -> Self {
         Self { _private: () }
@@ -173,8 +171,10 @@ impl ConnectCustomKeyStore {
         crate::input::connect_custom_key_store_input::Builder::default()
     }
     #[allow(clippy::unnecessary_wraps)]
-    fn from_response(
-        response: &http::response::Response<impl AsRef<[u8]>>,
+    #[allow(dead_code)]
+    fn parse_response(
+        &self,
+        response: &http::response::Response<bytes::Bytes>,
     ) -> Result<crate::output::ConnectCustomKeyStoreOutput, crate::error::ConnectCustomKeyStoreError>
     {
         if crate::aws_json_errors::is_error(&response) {
@@ -210,14 +210,9 @@ impl ConnectCustomKeyStore {
                 _ => crate::error::ConnectCustomKeyStoreError::generic(generic)
             });
         }
-        Ok(crate::output::ConnectCustomKeyStoreOutput {})
-    }
-    pub fn parse_response(
-        &self,
-        response: &http::response::Response<impl AsRef<[u8]>>,
-    ) -> Result<crate::output::ConnectCustomKeyStoreOutput, crate::error::ConnectCustomKeyStoreError>
-    {
-        Self::from_response(&response)
+        #[allow(unused_mut)]
+        let mut builder = crate::output::connect_custom_key_store_output::Builder::default();
+        Ok(builder.build())
     }
     pub fn new() -> Self {
         Self { _private: () }
@@ -296,8 +291,10 @@ impl CreateAlias {
         crate::input::create_alias_input::Builder::default()
     }
     #[allow(clippy::unnecessary_wraps)]
-    fn from_response(
-        response: &http::response::Response<impl AsRef<[u8]>>,
+    #[allow(dead_code)]
+    fn parse_response(
+        &self,
+        response: &http::response::Response<bytes::Bytes>,
     ) -> Result<crate::output::CreateAliasOutput, crate::error::CreateAliasError> {
         if crate::aws_json_errors::is_error(&response) {
             let body = serde_json::from_slice(response.body().as_ref())
@@ -361,13 +358,9 @@ impl CreateAlias {
                 _ => crate::error::CreateAliasError::generic(generic),
             });
         }
-        Ok(crate::output::CreateAliasOutput {})
-    }
-    pub fn parse_response(
-        &self,
-        response: &http::response::Response<impl AsRef<[u8]>>,
-    ) -> Result<crate::output::CreateAliasOutput, crate::error::CreateAliasError> {
-        Self::from_response(&response)
+        #[allow(unused_mut)]
+        let mut builder = crate::output::create_alias_output::Builder::default();
+        Ok(builder.build())
     }
     pub fn new() -> Self {
         Self { _private: () }
@@ -441,8 +434,10 @@ impl CreateCustomKeyStore {
         crate::input::create_custom_key_store_input::Builder::default()
     }
     #[allow(clippy::unnecessary_wraps)]
-    fn from_response(
-        response: &http::response::Response<impl AsRef<[u8]>>,
+    #[allow(dead_code)]
+    fn parse_response(
+        &self,
+        response: &http::response::Response<bytes::Bytes>,
     ) -> Result<crate::output::CreateCustomKeyStoreOutput, crate::error::CreateCustomKeyStoreError>
     {
         if crate::aws_json_errors::is_error(&response) {
@@ -486,19 +481,14 @@ impl CreateCustomKeyStore {
                 _ => crate::error::CreateCustomKeyStoreError::generic(generic)
             });
         }
-        let body: crate::serializer::CreateCustomKeyStoreOutputBody =
-            serde_json::from_slice(response.body().as_ref())
-                .map_err(crate::error::CreateCustomKeyStoreError::unhandled)?;
-        Ok(crate::output::CreateCustomKeyStoreOutput {
-            custom_key_store_id: body.custom_key_store_id,
-        })
-    }
-    pub fn parse_response(
-        &self,
-        response: &http::response::Response<impl AsRef<[u8]>>,
-    ) -> Result<crate::output::CreateCustomKeyStoreOutput, crate::error::CreateCustomKeyStoreError>
-    {
-        Self::from_response(&response)
+        #[allow(unused_mut)]
+        let mut builder = crate::output::create_custom_key_store_output::Builder::default();
+        builder = crate::json_deser::create_custom_key_store_deser_operation(
+            response.body().as_ref(),
+            builder,
+        )
+        .map_err(crate::error::CreateCustomKeyStoreError::unhandled)?;
+        Ok(builder.build())
     }
     pub fn new() -> Self {
         Self { _private: () }
@@ -592,8 +582,10 @@ impl CreateGrant {
         crate::input::create_grant_input::Builder::default()
     }
     #[allow(clippy::unnecessary_wraps)]
-    fn from_response(
-        response: &http::response::Response<impl AsRef<[u8]>>,
+    #[allow(dead_code)]
+    fn parse_response(
+        &self,
+        response: &http::response::Response<bytes::Bytes>,
     ) -> Result<crate::output::CreateGrantOutput, crate::error::CreateGrantError> {
         if crate::aws_json_errors::is_error(&response) {
             let body = serde_json::from_slice(response.body().as_ref())
@@ -664,19 +656,12 @@ impl CreateGrant {
                 _ => crate::error::CreateGrantError::generic(generic),
             });
         }
-        let body: crate::serializer::CreateGrantOutputBody =
-            serde_json::from_slice(response.body().as_ref())
+        #[allow(unused_mut)]
+        let mut builder = crate::output::create_grant_output::Builder::default();
+        builder =
+            crate::json_deser::create_grant_deser_operation(response.body().as_ref(), builder)
                 .map_err(crate::error::CreateGrantError::unhandled)?;
-        Ok(crate::output::CreateGrantOutput {
-            grant_token: body.grant_token,
-            grant_id: body.grant_id,
-        })
-    }
-    pub fn parse_response(
-        &self,
-        response: &http::response::Response<impl AsRef<[u8]>>,
-    ) -> Result<crate::output::CreateGrantOutput, crate::error::CreateGrantError> {
-        Self::from_response(&response)
+        Ok(builder.build())
     }
     pub fn new() -> Self {
         Self { _private: () }
@@ -799,8 +784,10 @@ impl CreateKey {
         crate::input::create_key_input::Builder::default()
     }
     #[allow(clippy::unnecessary_wraps)]
-    fn from_response(
-        response: &http::response::Response<impl AsRef<[u8]>>,
+    #[allow(dead_code)]
+    fn parse_response(
+        &self,
+        response: &http::response::Response<bytes::Bytes>,
     ) -> Result<crate::output::CreateKeyOutput, crate::error::CreateKeyError> {
         if crate::aws_json_errors::is_error(&response) {
             let body = serde_json::from_slice(response.body().as_ref())
@@ -855,18 +842,11 @@ impl CreateKey {
                 _ => crate::error::CreateKeyError::generic(generic)
             });
         }
-        let body: crate::serializer::CreateKeyOutputBody =
-            serde_json::from_slice(response.body().as_ref())
-                .map_err(crate::error::CreateKeyError::unhandled)?;
-        Ok(crate::output::CreateKeyOutput {
-            key_metadata: body.key_metadata,
-        })
-    }
-    pub fn parse_response(
-        &self,
-        response: &http::response::Response<impl AsRef<[u8]>>,
-    ) -> Result<crate::output::CreateKeyOutput, crate::error::CreateKeyError> {
-        Self::from_response(&response)
+        #[allow(unused_mut)]
+        let mut builder = crate::output::create_key_output::Builder::default();
+        builder = crate::json_deser::create_key_deser_operation(response.body().as_ref(), builder)
+            .map_err(crate::error::CreateKeyError::unhandled)?;
+        Ok(builder.build())
     }
     pub fn new() -> Self {
         Self { _private: () }
@@ -975,8 +955,10 @@ impl Decrypt {
         crate::input::decrypt_input::Builder::default()
     }
     #[allow(clippy::unnecessary_wraps)]
-    fn from_response(
-        response: &http::response::Response<impl AsRef<[u8]>>,
+    #[allow(dead_code)]
+    fn parse_response(
+        &self,
+        response: &http::response::Response<bytes::Bytes>,
     ) -> Result<crate::output::DecryptOutput, crate::error::DecryptError> {
         if crate::aws_json_errors::is_error(&response) {
             let body = serde_json::from_slice(response.body().as_ref())
@@ -1061,20 +1043,11 @@ impl Decrypt {
                 _ => crate::error::DecryptError::generic(generic),
             });
         }
-        let body: crate::serializer::DecryptOutputBody =
-            serde_json::from_slice(response.body().as_ref())
-                .map_err(crate::error::DecryptError::unhandled)?;
-        Ok(crate::output::DecryptOutput {
-            key_id: body.key_id,
-            plaintext: body.plaintext,
-            encryption_algorithm: body.encryption_algorithm,
-        })
-    }
-    pub fn parse_response(
-        &self,
-        response: &http::response::Response<impl AsRef<[u8]>>,
-    ) -> Result<crate::output::DecryptOutput, crate::error::DecryptError> {
-        Self::from_response(&response)
+        #[allow(unused_mut)]
+        let mut builder = crate::output::decrypt_output::Builder::default();
+        builder = crate::json_deser::decrypt_deser_operation(response.body().as_ref(), builder)
+            .map_err(crate::error::DecryptError::unhandled)?;
+        Ok(builder.build())
     }
     pub fn new() -> Self {
         Self { _private: () }
@@ -1140,8 +1113,10 @@ impl DeleteAlias {
         crate::input::delete_alias_input::Builder::default()
     }
     #[allow(clippy::unnecessary_wraps)]
-    fn from_response(
-        response: &http::response::Response<impl AsRef<[u8]>>,
+    #[allow(dead_code)]
+    fn parse_response(
+        &self,
+        response: &http::response::Response<bytes::Bytes>,
     ) -> Result<crate::output::DeleteAliasOutput, crate::error::DeleteAliasError> {
         if crate::aws_json_errors::is_error(&response) {
             let body = serde_json::from_slice(response.body().as_ref())
@@ -1184,13 +1159,9 @@ impl DeleteAlias {
                 _ => crate::error::DeleteAliasError::generic(generic),
             });
         }
-        Ok(crate::output::DeleteAliasOutput {})
-    }
-    pub fn parse_response(
-        &self,
-        response: &http::response::Response<impl AsRef<[u8]>>,
-    ) -> Result<crate::output::DeleteAliasOutput, crate::error::DeleteAliasError> {
-        Self::from_response(&response)
+        #[allow(unused_mut)]
+        let mut builder = crate::output::delete_alias_output::Builder::default();
+        Ok(builder.build())
     }
     pub fn new() -> Self {
         Self { _private: () }
@@ -1268,8 +1239,10 @@ impl DeleteCustomKeyStore {
         crate::input::delete_custom_key_store_input::Builder::default()
     }
     #[allow(clippy::unnecessary_wraps)]
-    fn from_response(
-        response: &http::response::Response<impl AsRef<[u8]>>,
+    #[allow(dead_code)]
+    fn parse_response(
+        &self,
+        response: &http::response::Response<bytes::Bytes>,
     ) -> Result<crate::output::DeleteCustomKeyStoreOutput, crate::error::DeleteCustomKeyStoreError>
     {
         if crate::aws_json_errors::is_error(&response) {
@@ -1301,14 +1274,9 @@ impl DeleteCustomKeyStore {
                 _ => crate::error::DeleteCustomKeyStoreError::generic(generic)
             });
         }
-        Ok(crate::output::DeleteCustomKeyStoreOutput {})
-    }
-    pub fn parse_response(
-        &self,
-        response: &http::response::Response<impl AsRef<[u8]>>,
-    ) -> Result<crate::output::DeleteCustomKeyStoreOutput, crate::error::DeleteCustomKeyStoreError>
-    {
-        Self::from_response(&response)
+        #[allow(unused_mut)]
+        let mut builder = crate::output::delete_custom_key_store_output::Builder::default();
+        Ok(builder.build())
     }
     pub fn new() -> Self {
         Self { _private: () }
@@ -1364,8 +1332,10 @@ impl DeleteImportedKeyMaterial {
         crate::input::delete_imported_key_material_input::Builder::default()
     }
     #[allow(clippy::unnecessary_wraps)]
-    fn from_response(
-        response: &http::response::Response<impl AsRef<[u8]>>,
+    #[allow(dead_code)]
+    fn parse_response(
+        &self,
+        response: &http::response::Response<bytes::Bytes>,
     ) -> Result<
         crate::output::DeleteImportedKeyMaterialOutput,
         crate::error::DeleteImportedKeyMaterialError,
@@ -1411,16 +1381,9 @@ impl DeleteImportedKeyMaterial {
                 _ => crate::error::DeleteImportedKeyMaterialError::generic(generic)
             });
         }
-        Ok(crate::output::DeleteImportedKeyMaterialOutput {})
-    }
-    pub fn parse_response(
-        &self,
-        response: &http::response::Response<impl AsRef<[u8]>>,
-    ) -> Result<
-        crate::output::DeleteImportedKeyMaterialOutput,
-        crate::error::DeleteImportedKeyMaterialError,
-    > {
-        Self::from_response(&response)
+        #[allow(unused_mut)]
+        let mut builder = crate::output::delete_imported_key_material_output::Builder::default();
+        Ok(builder.build())
     }
     pub fn new() -> Self {
         Self { _private: () }
@@ -1501,8 +1464,10 @@ impl DescribeCustomKeyStores {
         crate::input::describe_custom_key_stores_input::Builder::default()
     }
     #[allow(clippy::unnecessary_wraps)]
-    fn from_response(
-        response: &http::response::Response<impl AsRef<[u8]>>,
+    #[allow(dead_code)]
+    fn parse_response(
+        &self,
+        response: &http::response::Response<bytes::Bytes>,
     ) -> Result<
         crate::output::DescribeCustomKeyStoresOutput,
         crate::error::DescribeCustomKeyStoresError,
@@ -1532,23 +1497,14 @@ impl DescribeCustomKeyStores {
                 _ => crate::error::DescribeCustomKeyStoresError::generic(generic)
             });
         }
-        let body: crate::serializer::DescribeCustomKeyStoresOutputBody =
-            serde_json::from_slice(response.body().as_ref())
-                .map_err(crate::error::DescribeCustomKeyStoresError::unhandled)?;
-        Ok(crate::output::DescribeCustomKeyStoresOutput {
-            custom_key_stores: body.custom_key_stores,
-            next_marker: body.next_marker,
-            truncated: body.truncated,
-        })
-    }
-    pub fn parse_response(
-        &self,
-        response: &http::response::Response<impl AsRef<[u8]>>,
-    ) -> Result<
-        crate::output::DescribeCustomKeyStoresOutput,
-        crate::error::DescribeCustomKeyStoresError,
-    > {
-        Self::from_response(&response)
+        #[allow(unused_mut)]
+        let mut builder = crate::output::describe_custom_key_stores_output::Builder::default();
+        builder = crate::json_deser::describe_custom_key_stores_deser_operation(
+            response.body().as_ref(),
+            builder,
+        )
+        .map_err(crate::error::DescribeCustomKeyStoresError::unhandled)?;
+        Ok(builder.build())
     }
     pub fn new() -> Self {
         Self { _private: () }
@@ -1653,8 +1609,10 @@ impl DescribeKey {
         crate::input::describe_key_input::Builder::default()
     }
     #[allow(clippy::unnecessary_wraps)]
-    fn from_response(
-        response: &http::response::Response<impl AsRef<[u8]>>,
+    #[allow(dead_code)]
+    fn parse_response(
+        &self,
+        response: &http::response::Response<bytes::Bytes>,
     ) -> Result<crate::output::DescribeKeyOutput, crate::error::DescribeKeyError> {
         if crate::aws_json_errors::is_error(&response) {
             let body = serde_json::from_slice(response.body().as_ref())
@@ -1697,18 +1655,12 @@ impl DescribeKey {
                 _ => crate::error::DescribeKeyError::generic(generic),
             });
         }
-        let body: crate::serializer::DescribeKeyOutputBody =
-            serde_json::from_slice(response.body().as_ref())
+        #[allow(unused_mut)]
+        let mut builder = crate::output::describe_key_output::Builder::default();
+        builder =
+            crate::json_deser::describe_key_deser_operation(response.body().as_ref(), builder)
                 .map_err(crate::error::DescribeKeyError::unhandled)?;
-        Ok(crate::output::DescribeKeyOutput {
-            key_metadata: body.key_metadata,
-        })
-    }
-    pub fn parse_response(
-        &self,
-        response: &http::response::Response<impl AsRef<[u8]>>,
-    ) -> Result<crate::output::DescribeKeyOutput, crate::error::DescribeKeyError> {
-        Self::from_response(&response)
+        Ok(builder.build())
     }
     pub fn new() -> Self {
         Self { _private: () }
@@ -1748,8 +1700,10 @@ impl DisableKey {
         crate::input::disable_key_input::Builder::default()
     }
     #[allow(clippy::unnecessary_wraps)]
-    fn from_response(
-        response: &http::response::Response<impl AsRef<[u8]>>,
+    #[allow(dead_code)]
+    fn parse_response(
+        &self,
+        response: &http::response::Response<bytes::Bytes>,
     ) -> Result<crate::output::DisableKeyOutput, crate::error::DisableKeyError> {
         if crate::aws_json_errors::is_error(&response) {
             let body = serde_json::from_slice(response.body().as_ref())
@@ -1799,13 +1753,9 @@ impl DisableKey {
                 _ => crate::error::DisableKeyError::generic(generic),
             });
         }
-        Ok(crate::output::DisableKeyOutput {})
-    }
-    pub fn parse_response(
-        &self,
-        response: &http::response::Response<impl AsRef<[u8]>>,
-    ) -> Result<crate::output::DisableKeyOutput, crate::error::DisableKeyError> {
-        Self::from_response(&response)
+        #[allow(unused_mut)]
+        let mut builder = crate::output::disable_key_output::Builder::default();
+        Ok(builder.build())
     }
     pub fn new() -> Self {
         Self { _private: () }
@@ -1855,8 +1805,10 @@ impl DisableKeyRotation {
         crate::input::disable_key_rotation_input::Builder::default()
     }
     #[allow(clippy::unnecessary_wraps)]
-    fn from_response(
-        response: &http::response::Response<impl AsRef<[u8]>>,
+    #[allow(dead_code)]
+    fn parse_response(
+        &self,
+        response: &http::response::Response<bytes::Bytes>,
     ) -> Result<crate::output::DisableKeyRotationOutput, crate::error::DisableKeyRotationError>
     {
         if crate::aws_json_errors::is_error(&response) {
@@ -1925,14 +1877,9 @@ impl DisableKeyRotation {
                 _ => crate::error::DisableKeyRotationError::generic(generic),
             });
         }
-        Ok(crate::output::DisableKeyRotationOutput {})
-    }
-    pub fn parse_response(
-        &self,
-        response: &http::response::Response<impl AsRef<[u8]>>,
-    ) -> Result<crate::output::DisableKeyRotationOutput, crate::error::DisableKeyRotationError>
-    {
-        Self::from_response(&response)
+        #[allow(unused_mut)]
+        let mut builder = crate::output::disable_key_rotation_output::Builder::default();
+        Ok(builder.build())
     }
     pub fn new() -> Self {
         Self { _private: () }
@@ -2008,8 +1955,10 @@ impl DisconnectCustomKeyStore {
         crate::input::disconnect_custom_key_store_input::Builder::default()
     }
     #[allow(clippy::unnecessary_wraps)]
-    fn from_response(
-        response: &http::response::Response<impl AsRef<[u8]>>,
+    #[allow(dead_code)]
+    fn parse_response(
+        &self,
+        response: &http::response::Response<bytes::Bytes>,
     ) -> Result<
         crate::output::DisconnectCustomKeyStoreOutput,
         crate::error::DisconnectCustomKeyStoreError,
@@ -2043,16 +1992,9 @@ impl DisconnectCustomKeyStore {
                 _ => crate::error::DisconnectCustomKeyStoreError::generic(generic)
             });
         }
-        Ok(crate::output::DisconnectCustomKeyStoreOutput {})
-    }
-    pub fn parse_response(
-        &self,
-        response: &http::response::Response<impl AsRef<[u8]>>,
-    ) -> Result<
-        crate::output::DisconnectCustomKeyStoreOutput,
-        crate::error::DisconnectCustomKeyStoreError,
-    > {
-        Self::from_response(&response)
+        #[allow(unused_mut)]
+        let mut builder = crate::output::disconnect_custom_key_store_output::Builder::default();
+        Ok(builder.build())
     }
     pub fn new() -> Self {
         Self { _private: () }
@@ -2091,8 +2033,10 @@ impl EnableKey {
         crate::input::enable_key_input::Builder::default()
     }
     #[allow(clippy::unnecessary_wraps)]
-    fn from_response(
-        response: &http::response::Response<impl AsRef<[u8]>>,
+    #[allow(dead_code)]
+    fn parse_response(
+        &self,
+        response: &http::response::Response<bytes::Bytes>,
     ) -> Result<crate::output::EnableKeyOutput, crate::error::EnableKeyError> {
         if crate::aws_json_errors::is_error(&response) {
             let body = serde_json::from_slice(response.body().as_ref())
@@ -2149,13 +2093,9 @@ impl EnableKey {
                 _ => crate::error::EnableKeyError::generic(generic),
             });
         }
-        Ok(crate::output::EnableKeyOutput {})
-    }
-    pub fn parse_response(
-        &self,
-        response: &http::response::Response<impl AsRef<[u8]>>,
-    ) -> Result<crate::output::EnableKeyOutput, crate::error::EnableKeyError> {
-        Self::from_response(&response)
+        #[allow(unused_mut)]
+        let mut builder = crate::output::enable_key_output::Builder::default();
+        Ok(builder.build())
     }
     pub fn new() -> Self {
         Self { _private: () }
@@ -2204,8 +2144,10 @@ impl EnableKeyRotation {
         crate::input::enable_key_rotation_input::Builder::default()
     }
     #[allow(clippy::unnecessary_wraps)]
-    fn from_response(
-        response: &http::response::Response<impl AsRef<[u8]>>,
+    #[allow(dead_code)]
+    fn parse_response(
+        &self,
+        response: &http::response::Response<bytes::Bytes>,
     ) -> Result<crate::output::EnableKeyRotationOutput, crate::error::EnableKeyRotationError> {
         if crate::aws_json_errors::is_error(&response) {
             let body = serde_json::from_slice(response.body().as_ref())
@@ -2273,13 +2215,9 @@ impl EnableKeyRotation {
                 _ => crate::error::EnableKeyRotationError::generic(generic),
             });
         }
-        Ok(crate::output::EnableKeyRotationOutput {})
-    }
-    pub fn parse_response(
-        &self,
-        response: &http::response::Response<impl AsRef<[u8]>>,
-    ) -> Result<crate::output::EnableKeyRotationOutput, crate::error::EnableKeyRotationError> {
-        Self::from_response(&response)
+        #[allow(unused_mut)]
+        let mut builder = crate::output::enable_key_rotation_output::Builder::default();
+        Ok(builder.build())
     }
     pub fn new() -> Self {
         Self { _private: () }
@@ -2423,8 +2361,10 @@ impl Encrypt {
         crate::input::encrypt_input::Builder::default()
     }
     #[allow(clippy::unnecessary_wraps)]
-    fn from_response(
-        response: &http::response::Response<impl AsRef<[u8]>>,
+    #[allow(dead_code)]
+    fn parse_response(
+        &self,
+        response: &http::response::Response<bytes::Bytes>,
     ) -> Result<crate::output::EncryptOutput, crate::error::EncryptError> {
         if crate::aws_json_errors::is_error(&response) {
             let body = serde_json::from_slice(response.body().as_ref())
@@ -2495,20 +2435,11 @@ impl Encrypt {
                 _ => crate::error::EncryptError::generic(generic),
             });
         }
-        let body: crate::serializer::EncryptOutputBody =
-            serde_json::from_slice(response.body().as_ref())
-                .map_err(crate::error::EncryptError::unhandled)?;
-        Ok(crate::output::EncryptOutput {
-            ciphertext_blob: body.ciphertext_blob,
-            key_id: body.key_id,
-            encryption_algorithm: body.encryption_algorithm,
-        })
-    }
-    pub fn parse_response(
-        &self,
-        response: &http::response::Response<impl AsRef<[u8]>>,
-    ) -> Result<crate::output::EncryptOutput, crate::error::EncryptError> {
-        Self::from_response(&response)
+        #[allow(unused_mut)]
+        let mut builder = crate::output::encrypt_output::Builder::default();
+        builder = crate::json_deser::encrypt_deser_operation(response.body().as_ref(), builder)
+            .map_err(crate::error::EncryptError::unhandled)?;
+        Ok(builder.build())
     }
     pub fn new() -> Self {
         Self { _private: () }
@@ -2622,8 +2553,10 @@ impl GenerateDataKey {
         crate::input::generate_data_key_input::Builder::default()
     }
     #[allow(clippy::unnecessary_wraps)]
-    fn from_response(
-        response: &http::response::Response<impl AsRef<[u8]>>,
+    #[allow(dead_code)]
+    fn parse_response(
+        &self,
+        response: &http::response::Response<bytes::Bytes>,
     ) -> Result<crate::output::GenerateDataKeyOutput, crate::error::GenerateDataKeyError> {
         if crate::aws_json_errors::is_error(&response) {
             let body = serde_json::from_slice(response.body().as_ref())
@@ -2694,20 +2627,12 @@ impl GenerateDataKey {
                 _ => crate::error::GenerateDataKeyError::generic(generic),
             });
         }
-        let body: crate::serializer::GenerateDataKeyOutputBody =
-            serde_json::from_slice(response.body().as_ref())
+        #[allow(unused_mut)]
+        let mut builder = crate::output::generate_data_key_output::Builder::default();
+        builder =
+            crate::json_deser::generate_data_key_deser_operation(response.body().as_ref(), builder)
                 .map_err(crate::error::GenerateDataKeyError::unhandled)?;
-        Ok(crate::output::GenerateDataKeyOutput {
-            ciphertext_blob: body.ciphertext_blob,
-            plaintext: body.plaintext,
-            key_id: body.key_id,
-        })
-    }
-    pub fn parse_response(
-        &self,
-        response: &http::response::Response<impl AsRef<[u8]>>,
-    ) -> Result<crate::output::GenerateDataKeyOutput, crate::error::GenerateDataKeyError> {
-        Self::from_response(&response)
+        Ok(builder.build())
     }
     pub fn new() -> Self {
         Self { _private: () }
@@ -2795,8 +2720,10 @@ impl GenerateDataKeyPair {
         crate::input::generate_data_key_pair_input::Builder::default()
     }
     #[allow(clippy::unnecessary_wraps)]
-    fn from_response(
-        response: &http::response::Response<impl AsRef<[u8]>>,
+    #[allow(dead_code)]
+    fn parse_response(
+        &self,
+        response: &http::response::Response<bytes::Bytes>,
     ) -> Result<crate::output::GenerateDataKeyPairOutput, crate::error::GenerateDataKeyPairError>
     {
         if crate::aws_json_errors::is_error(&response) {
@@ -2885,23 +2812,14 @@ impl GenerateDataKeyPair {
                 _ => crate::error::GenerateDataKeyPairError::generic(generic),
             });
         }
-        let body: crate::serializer::GenerateDataKeyPairOutputBody =
-            serde_json::from_slice(response.body().as_ref())
-                .map_err(crate::error::GenerateDataKeyPairError::unhandled)?;
-        Ok(crate::output::GenerateDataKeyPairOutput {
-            private_key_ciphertext_blob: body.private_key_ciphertext_blob,
-            private_key_plaintext: body.private_key_plaintext,
-            public_key: body.public_key,
-            key_id: body.key_id,
-            key_pair_spec: body.key_pair_spec,
-        })
-    }
-    pub fn parse_response(
-        &self,
-        response: &http::response::Response<impl AsRef<[u8]>>,
-    ) -> Result<crate::output::GenerateDataKeyPairOutput, crate::error::GenerateDataKeyPairError>
-    {
-        Self::from_response(&response)
+        #[allow(unused_mut)]
+        let mut builder = crate::output::generate_data_key_pair_output::Builder::default();
+        builder = crate::json_deser::generate_data_key_pair_deser_operation(
+            response.body().as_ref(),
+            builder,
+        )
+        .map_err(crate::error::GenerateDataKeyPairError::unhandled)?;
+        Ok(builder.build())
     }
     pub fn new() -> Self {
         Self { _private: () }
@@ -2985,8 +2903,10 @@ impl GenerateDataKeyPairWithoutPlaintext {
         crate::input::generate_data_key_pair_without_plaintext_input::Builder::default()
     }
     #[allow(clippy::unnecessary_wraps)]
-    fn from_response(
-        response: &http::response::Response<impl AsRef<[u8]>>,
+    #[allow(dead_code)]
+    fn parse_response(
+        &self,
+        response: &http::response::Response<bytes::Bytes>,
     ) -> Result<
         crate::output::GenerateDataKeyPairWithoutPlaintextOutput,
         crate::error::GenerateDataKeyPairWithoutPlaintextError,
@@ -3044,24 +2964,15 @@ impl GenerateDataKeyPairWithoutPlaintext {
                 _ => crate::error::GenerateDataKeyPairWithoutPlaintextError::generic(generic)
             });
         }
-        let body: crate::serializer::GenerateDataKeyPairWithoutPlaintextOutputBody =
-            serde_json::from_slice(response.body().as_ref())
-                .map_err(crate::error::GenerateDataKeyPairWithoutPlaintextError::unhandled)?;
-        Ok(crate::output::GenerateDataKeyPairWithoutPlaintextOutput {
-            private_key_ciphertext_blob: body.private_key_ciphertext_blob,
-            public_key: body.public_key,
-            key_id: body.key_id,
-            key_pair_spec: body.key_pair_spec,
-        })
-    }
-    pub fn parse_response(
-        &self,
-        response: &http::response::Response<impl AsRef<[u8]>>,
-    ) -> Result<
-        crate::output::GenerateDataKeyPairWithoutPlaintextOutput,
-        crate::error::GenerateDataKeyPairWithoutPlaintextError,
-    > {
-        Self::from_response(&response)
+        #[allow(unused_mut)]
+        let mut builder =
+            crate::output::generate_data_key_pair_without_plaintext_output::Builder::default();
+        builder = crate::json_deser::generate_data_key_pair_without_plaintext_deser_operation(
+            response.body().as_ref(),
+            builder,
+        )
+        .map_err(crate::error::GenerateDataKeyPairWithoutPlaintextError::unhandled)?;
+        Ok(builder.build())
     }
     pub fn new() -> Self {
         Self { _private: () }
@@ -3155,8 +3066,10 @@ impl GenerateDataKeyWithoutPlaintext {
         crate::input::generate_data_key_without_plaintext_input::Builder::default()
     }
     #[allow(clippy::unnecessary_wraps)]
-    fn from_response(
-        response: &http::response::Response<impl AsRef<[u8]>>,
+    #[allow(dead_code)]
+    fn parse_response(
+        &self,
+        response: &http::response::Response<bytes::Bytes>,
     ) -> Result<
         crate::output::GenerateDataKeyWithoutPlaintextOutput,
         crate::error::GenerateDataKeyWithoutPlaintextError,
@@ -3210,22 +3123,15 @@ impl GenerateDataKeyWithoutPlaintext {
                 _ => crate::error::GenerateDataKeyWithoutPlaintextError::generic(generic)
             });
         }
-        let body: crate::serializer::GenerateDataKeyWithoutPlaintextOutputBody =
-            serde_json::from_slice(response.body().as_ref())
-                .map_err(crate::error::GenerateDataKeyWithoutPlaintextError::unhandled)?;
-        Ok(crate::output::GenerateDataKeyWithoutPlaintextOutput {
-            ciphertext_blob: body.ciphertext_blob,
-            key_id: body.key_id,
-        })
-    }
-    pub fn parse_response(
-        &self,
-        response: &http::response::Response<impl AsRef<[u8]>>,
-    ) -> Result<
-        crate::output::GenerateDataKeyWithoutPlaintextOutput,
-        crate::error::GenerateDataKeyWithoutPlaintextError,
-    > {
-        Self::from_response(&response)
+        #[allow(unused_mut)]
+        let mut builder =
+            crate::output::generate_data_key_without_plaintext_output::Builder::default();
+        builder = crate::json_deser::generate_data_key_without_plaintext_deser_operation(
+            response.body().as_ref(),
+            builder,
+        )
+        .map_err(crate::error::GenerateDataKeyWithoutPlaintextError::unhandled)?;
+        Ok(builder.build())
     }
     pub fn new() -> Self {
         Self { _private: () }
@@ -3260,8 +3166,10 @@ impl GenerateRandom {
         crate::input::generate_random_input::Builder::default()
     }
     #[allow(clippy::unnecessary_wraps)]
-    fn from_response(
-        response: &http::response::Response<impl AsRef<[u8]>>,
+    #[allow(dead_code)]
+    fn parse_response(
+        &self,
+        response: &http::response::Response<bytes::Bytes>,
     ) -> Result<crate::output::GenerateRandomOutput, crate::error::GenerateRandomError> {
         if crate::aws_json_errors::is_error(&response) {
             let body = serde_json::from_slice(response.body().as_ref())
@@ -3309,18 +3217,12 @@ impl GenerateRandom {
                 _ => crate::error::GenerateRandomError::generic(generic),
             });
         }
-        let body: crate::serializer::GenerateRandomOutputBody =
-            serde_json::from_slice(response.body().as_ref())
+        #[allow(unused_mut)]
+        let mut builder = crate::output::generate_random_output::Builder::default();
+        builder =
+            crate::json_deser::generate_random_deser_operation(response.body().as_ref(), builder)
                 .map_err(crate::error::GenerateRandomError::unhandled)?;
-        Ok(crate::output::GenerateRandomOutput {
-            plaintext: body.plaintext,
-        })
-    }
-    pub fn parse_response(
-        &self,
-        response: &http::response::Response<impl AsRef<[u8]>>,
-    ) -> Result<crate::output::GenerateRandomOutput, crate::error::GenerateRandomError> {
-        Self::from_response(&response)
+        Ok(builder.build())
     }
     pub fn new() -> Self {
         Self { _private: () }
@@ -3352,8 +3254,10 @@ impl GetKeyPolicy {
         crate::input::get_key_policy_input::Builder::default()
     }
     #[allow(clippy::unnecessary_wraps)]
-    fn from_response(
-        response: &http::response::Response<impl AsRef<[u8]>>,
+    #[allow(dead_code)]
+    fn parse_response(
+        &self,
+        response: &http::response::Response<bytes::Bytes>,
     ) -> Result<crate::output::GetKeyPolicyOutput, crate::error::GetKeyPolicyError> {
         if crate::aws_json_errors::is_error(&response) {
             let body = serde_json::from_slice(response.body().as_ref())
@@ -3403,18 +3307,12 @@ impl GetKeyPolicy {
                 _ => crate::error::GetKeyPolicyError::generic(generic),
             });
         }
-        let body: crate::serializer::GetKeyPolicyOutputBody =
-            serde_json::from_slice(response.body().as_ref())
+        #[allow(unused_mut)]
+        let mut builder = crate::output::get_key_policy_output::Builder::default();
+        builder =
+            crate::json_deser::get_key_policy_deser_operation(response.body().as_ref(), builder)
                 .map_err(crate::error::GetKeyPolicyError::unhandled)?;
-        Ok(crate::output::GetKeyPolicyOutput {
-            policy: body.policy,
-        })
-    }
-    pub fn parse_response(
-        &self,
-        response: &http::response::Response<impl AsRef<[u8]>>,
-    ) -> Result<crate::output::GetKeyPolicyOutput, crate::error::GetKeyPolicyError> {
-        Self::from_response(&response)
+        Ok(builder.build())
     }
     pub fn new() -> Self {
         Self { _private: () }
@@ -3475,8 +3373,10 @@ impl GetKeyRotationStatus {
         crate::input::get_key_rotation_status_input::Builder::default()
     }
     #[allow(clippy::unnecessary_wraps)]
-    fn from_response(
-        response: &http::response::Response<impl AsRef<[u8]>>,
+    #[allow(dead_code)]
+    fn parse_response(
+        &self,
+        response: &http::response::Response<bytes::Bytes>,
     ) -> Result<crate::output::GetKeyRotationStatusOutput, crate::error::GetKeyRotationStatusError>
     {
         if crate::aws_json_errors::is_error(&response) {
@@ -3541,19 +3441,14 @@ impl GetKeyRotationStatus {
                 _ => crate::error::GetKeyRotationStatusError::generic(generic),
             });
         }
-        let body: crate::serializer::GetKeyRotationStatusOutputBody =
-            serde_json::from_slice(response.body().as_ref())
-                .map_err(crate::error::GetKeyRotationStatusError::unhandled)?;
-        Ok(crate::output::GetKeyRotationStatusOutput {
-            key_rotation_enabled: body.key_rotation_enabled,
-        })
-    }
-    pub fn parse_response(
-        &self,
-        response: &http::response::Response<impl AsRef<[u8]>>,
-    ) -> Result<crate::output::GetKeyRotationStatusOutput, crate::error::GetKeyRotationStatusError>
-    {
-        Self::from_response(&response)
+        #[allow(unused_mut)]
+        let mut builder = crate::output::get_key_rotation_status_output::Builder::default();
+        builder = crate::json_deser::get_key_rotation_status_deser_operation(
+            response.body().as_ref(),
+            builder,
+        )
+        .map_err(crate::error::GetKeyRotationStatusError::unhandled)?;
+        Ok(builder.build())
     }
     pub fn new() -> Self {
         Self { _private: () }
@@ -3614,8 +3509,10 @@ impl GetParametersForImport {
         crate::input::get_parameters_for_import_input::Builder::default()
     }
     #[allow(clippy::unnecessary_wraps)]
-    fn from_response(
-        response: &http::response::Response<impl AsRef<[u8]>>,
+    #[allow(dead_code)]
+    fn parse_response(
+        &self,
+        response: &http::response::Response<bytes::Bytes>,
     ) -> Result<
         crate::output::GetParametersForImportOutput,
         crate::error::GetParametersForImportError,
@@ -3686,24 +3583,14 @@ impl GetParametersForImport {
                 _ => crate::error::GetParametersForImportError::generic(generic),
             });
         }
-        let body: crate::serializer::GetParametersForImportOutputBody =
-            serde_json::from_slice(response.body().as_ref())
-                .map_err(crate::error::GetParametersForImportError::unhandled)?;
-        Ok(crate::output::GetParametersForImportOutput {
-            key_id: body.key_id,
-            import_token: body.import_token,
-            public_key: body.public_key,
-            parameters_valid_to: body.parameters_valid_to,
-        })
-    }
-    pub fn parse_response(
-        &self,
-        response: &http::response::Response<impl AsRef<[u8]>>,
-    ) -> Result<
-        crate::output::GetParametersForImportOutput,
-        crate::error::GetParametersForImportError,
-    > {
-        Self::from_response(&response)
+        #[allow(unused_mut)]
+        let mut builder = crate::output::get_parameters_for_import_output::Builder::default();
+        builder = crate::json_deser::get_parameters_for_import_deser_operation(
+            response.body().as_ref(),
+            builder,
+        )
+        .map_err(crate::error::GetParametersForImportError::unhandled)?;
+        Ok(builder.build())
     }
     pub fn new() -> Self {
         Self { _private: () }
@@ -3775,8 +3662,10 @@ impl GetPublicKey {
         crate::input::get_public_key_input::Builder::default()
     }
     #[allow(clippy::unnecessary_wraps)]
-    fn from_response(
-        response: &http::response::Response<impl AsRef<[u8]>>,
+    #[allow(dead_code)]
+    fn parse_response(
+        &self,
+        response: &http::response::Response<bytes::Bytes>,
     ) -> Result<crate::output::GetPublicKeyOutput, crate::error::GetPublicKeyError> {
         if crate::aws_json_errors::is_error(&response) {
             let body = serde_json::from_slice(response.body().as_ref())
@@ -3861,23 +3750,12 @@ impl GetPublicKey {
                 _ => crate::error::GetPublicKeyError::generic(generic),
             });
         }
-        let body: crate::serializer::GetPublicKeyOutputBody =
-            serde_json::from_slice(response.body().as_ref())
+        #[allow(unused_mut)]
+        let mut builder = crate::output::get_public_key_output::Builder::default();
+        builder =
+            crate::json_deser::get_public_key_deser_operation(response.body().as_ref(), builder)
                 .map_err(crate::error::GetPublicKeyError::unhandled)?;
-        Ok(crate::output::GetPublicKeyOutput {
-            key_id: body.key_id,
-            public_key: body.public_key,
-            customer_master_key_spec: body.customer_master_key_spec,
-            key_usage: body.key_usage,
-            encryption_algorithms: body.encryption_algorithms,
-            signing_algorithms: body.signing_algorithms,
-        })
-    }
-    pub fn parse_response(
-        &self,
-        response: &http::response::Response<impl AsRef<[u8]>>,
-    ) -> Result<crate::output::GetPublicKeyOutput, crate::error::GetPublicKeyError> {
-        Self::from_response(&response)
+        Ok(builder.build())
     }
     pub fn new() -> Self {
         Self { _private: () }
@@ -3965,8 +3843,10 @@ impl ImportKeyMaterial {
         crate::input::import_key_material_input::Builder::default()
     }
     #[allow(clippy::unnecessary_wraps)]
-    fn from_response(
-        response: &http::response::Response<impl AsRef<[u8]>>,
+    #[allow(dead_code)]
+    fn parse_response(
+        &self,
+        response: &http::response::Response<bytes::Bytes>,
     ) -> Result<crate::output::ImportKeyMaterialOutput, crate::error::ImportKeyMaterialError> {
         if crate::aws_json_errors::is_error(&response) {
             let body = serde_json::from_slice(response.body().as_ref())
@@ -4063,13 +3943,9 @@ impl ImportKeyMaterial {
                 _ => crate::error::ImportKeyMaterialError::generic(generic),
             });
         }
-        Ok(crate::output::ImportKeyMaterialOutput {})
-    }
-    pub fn parse_response(
-        &self,
-        response: &http::response::Response<impl AsRef<[u8]>>,
-    ) -> Result<crate::output::ImportKeyMaterialOutput, crate::error::ImportKeyMaterialError> {
-        Self::from_response(&response)
+        #[allow(unused_mut)]
+        let mut builder = crate::output::import_key_material_output::Builder::default();
+        Ok(builder.build())
     }
     pub fn new() -> Self {
         Self { _private: () }
@@ -4134,8 +4010,10 @@ impl ListAliases {
         crate::input::list_aliases_input::Builder::default()
     }
     #[allow(clippy::unnecessary_wraps)]
-    fn from_response(
-        response: &http::response::Response<impl AsRef<[u8]>>,
+    #[allow(dead_code)]
+    fn parse_response(
+        &self,
+        response: &http::response::Response<bytes::Bytes>,
     ) -> Result<crate::output::ListAliasesOutput, crate::error::ListAliasesError> {
         if crate::aws_json_errors::is_error(&response) {
             let body = serde_json::from_slice(response.body().as_ref())
@@ -4185,20 +4063,12 @@ impl ListAliases {
                 _ => crate::error::ListAliasesError::generic(generic),
             });
         }
-        let body: crate::serializer::ListAliasesOutputBody =
-            serde_json::from_slice(response.body().as_ref())
+        #[allow(unused_mut)]
+        let mut builder = crate::output::list_aliases_output::Builder::default();
+        builder =
+            crate::json_deser::list_aliases_deser_operation(response.body().as_ref(), builder)
                 .map_err(crate::error::ListAliasesError::unhandled)?;
-        Ok(crate::output::ListAliasesOutput {
-            aliases: body.aliases,
-            next_marker: body.next_marker,
-            truncated: body.truncated,
-        })
-    }
-    pub fn parse_response(
-        &self,
-        response: &http::response::Response<impl AsRef<[u8]>>,
-    ) -> Result<crate::output::ListAliasesOutput, crate::error::ListAliasesError> {
-        Self::from_response(&response)
+        Ok(builder.build())
     }
     pub fn new() -> Self {
         Self { _private: () }
@@ -4260,8 +4130,10 @@ impl ListGrants {
         crate::input::list_grants_input::Builder::default()
     }
     #[allow(clippy::unnecessary_wraps)]
-    fn from_response(
-        response: &http::response::Response<impl AsRef<[u8]>>,
+    #[allow(dead_code)]
+    fn parse_response(
+        &self,
+        response: &http::response::Response<bytes::Bytes>,
     ) -> Result<crate::output::ListGrantsOutput, crate::error::ListGrantsError> {
         if crate::aws_json_errors::is_error(&response) {
             let body = serde_json::from_slice(response.body().as_ref())
@@ -4318,20 +4190,11 @@ impl ListGrants {
                 _ => crate::error::ListGrantsError::generic(generic),
             });
         }
-        let body: crate::serializer::ListGrantsOutputBody =
-            serde_json::from_slice(response.body().as_ref())
-                .map_err(crate::error::ListGrantsError::unhandled)?;
-        Ok(crate::output::ListGrantsOutput {
-            grants: body.grants,
-            next_marker: body.next_marker,
-            truncated: body.truncated,
-        })
-    }
-    pub fn parse_response(
-        &self,
-        response: &http::response::Response<impl AsRef<[u8]>>,
-    ) -> Result<crate::output::ListGrantsOutput, crate::error::ListGrantsError> {
-        Self::from_response(&response)
+        #[allow(unused_mut)]
+        let mut builder = crate::output::list_grants_output::Builder::default();
+        builder = crate::json_deser::list_grants_deser_operation(response.body().as_ref(), builder)
+            .map_err(crate::error::ListGrantsError::unhandled)?;
+        Ok(builder.build())
     }
     pub fn new() -> Self {
         Self { _private: () }
@@ -4377,8 +4240,10 @@ impl ListKeyPolicies {
         crate::input::list_key_policies_input::Builder::default()
     }
     #[allow(clippy::unnecessary_wraps)]
-    fn from_response(
-        response: &http::response::Response<impl AsRef<[u8]>>,
+    #[allow(dead_code)]
+    fn parse_response(
+        &self,
+        response: &http::response::Response<bytes::Bytes>,
     ) -> Result<crate::output::ListKeyPoliciesOutput, crate::error::ListKeyPoliciesError> {
         if crate::aws_json_errors::is_error(&response) {
             let body = serde_json::from_slice(response.body().as_ref())
@@ -4428,20 +4293,12 @@ impl ListKeyPolicies {
                 _ => crate::error::ListKeyPoliciesError::generic(generic),
             });
         }
-        let body: crate::serializer::ListKeyPoliciesOutputBody =
-            serde_json::from_slice(response.body().as_ref())
+        #[allow(unused_mut)]
+        let mut builder = crate::output::list_key_policies_output::Builder::default();
+        builder =
+            crate::json_deser::list_key_policies_deser_operation(response.body().as_ref(), builder)
                 .map_err(crate::error::ListKeyPoliciesError::unhandled)?;
-        Ok(crate::output::ListKeyPoliciesOutput {
-            policy_names: body.policy_names,
-            next_marker: body.next_marker,
-            truncated: body.truncated,
-        })
-    }
-    pub fn parse_response(
-        &self,
-        response: &http::response::Response<impl AsRef<[u8]>>,
-    ) -> Result<crate::output::ListKeyPoliciesOutput, crate::error::ListKeyPoliciesError> {
-        Self::from_response(&response)
+        Ok(builder.build())
     }
     pub fn new() -> Self {
         Self { _private: () }
@@ -4496,8 +4353,10 @@ impl ListKeys {
         crate::input::list_keys_input::Builder::default()
     }
     #[allow(clippy::unnecessary_wraps)]
-    fn from_response(
-        response: &http::response::Response<impl AsRef<[u8]>>,
+    #[allow(dead_code)]
+    fn parse_response(
+        &self,
+        response: &http::response::Response<bytes::Bytes>,
     ) -> Result<crate::output::ListKeysOutput, crate::error::ListKeysError> {
         if crate::aws_json_errors::is_error(&response) {
             let body = serde_json::from_slice(response.body().as_ref())
@@ -4533,20 +4392,11 @@ impl ListKeys {
                 _ => crate::error::ListKeysError::generic(generic),
             });
         }
-        let body: crate::serializer::ListKeysOutputBody =
-            serde_json::from_slice(response.body().as_ref())
-                .map_err(crate::error::ListKeysError::unhandled)?;
-        Ok(crate::output::ListKeysOutput {
-            keys: body.keys,
-            next_marker: body.next_marker,
-            truncated: body.truncated,
-        })
-    }
-    pub fn parse_response(
-        &self,
-        response: &http::response::Response<impl AsRef<[u8]>>,
-    ) -> Result<crate::output::ListKeysOutput, crate::error::ListKeysError> {
-        Self::from_response(&response)
+        #[allow(unused_mut)]
+        let mut builder = crate::output::list_keys_output::Builder::default();
+        builder = crate::json_deser::list_keys_deser_operation(response.body().as_ref(), builder)
+            .map_err(crate::error::ListKeysError::unhandled)?;
+        Ok(builder.build())
     }
     pub fn new() -> Self {
         Self { _private: () }
@@ -4594,8 +4444,10 @@ impl ListResourceTags {
         crate::input::list_resource_tags_input::Builder::default()
     }
     #[allow(clippy::unnecessary_wraps)]
-    fn from_response(
-        response: &http::response::Response<impl AsRef<[u8]>>,
+    #[allow(dead_code)]
+    fn parse_response(
+        &self,
+        response: &http::response::Response<bytes::Bytes>,
     ) -> Result<crate::output::ListResourceTagsOutput, crate::error::ListResourceTagsError> {
         if crate::aws_json_errors::is_error(&response) {
             let body = serde_json::from_slice(response.body().as_ref())
@@ -4638,20 +4490,14 @@ impl ListResourceTags {
                 _ => crate::error::ListResourceTagsError::generic(generic),
             });
         }
-        let body: crate::serializer::ListResourceTagsOutputBody =
-            serde_json::from_slice(response.body().as_ref())
-                .map_err(crate::error::ListResourceTagsError::unhandled)?;
-        Ok(crate::output::ListResourceTagsOutput {
-            tags: body.tags,
-            next_marker: body.next_marker,
-            truncated: body.truncated,
-        })
-    }
-    pub fn parse_response(
-        &self,
-        response: &http::response::Response<impl AsRef<[u8]>>,
-    ) -> Result<crate::output::ListResourceTagsOutput, crate::error::ListResourceTagsError> {
-        Self::from_response(&response)
+        #[allow(unused_mut)]
+        let mut builder = crate::output::list_resource_tags_output::Builder::default();
+        builder = crate::json_deser::list_resource_tags_deser_operation(
+            response.body().as_ref(),
+            builder,
+        )
+        .map_err(crate::error::ListResourceTagsError::unhandled)?;
+        Ok(builder.build())
     }
     pub fn new() -> Self {
         Self { _private: () }
@@ -4715,8 +4561,10 @@ impl ListRetirableGrants {
         crate::input::list_retirable_grants_input::Builder::default()
     }
     #[allow(clippy::unnecessary_wraps)]
-    fn from_response(
-        response: &http::response::Response<impl AsRef<[u8]>>,
+    #[allow(dead_code)]
+    fn parse_response(
+        &self,
+        response: &http::response::Response<bytes::Bytes>,
     ) -> Result<crate::output::ListRetirableGrantsOutput, crate::error::ListRetirableGrantsError>
     {
         if crate::aws_json_errors::is_error(&response) {
@@ -4769,21 +4617,14 @@ impl ListRetirableGrants {
                 _ => crate::error::ListRetirableGrantsError::generic(generic),
             });
         }
-        let body: crate::serializer::ListRetirableGrantsOutputBody =
-            serde_json::from_slice(response.body().as_ref())
-                .map_err(crate::error::ListRetirableGrantsError::unhandled)?;
-        Ok(crate::output::ListRetirableGrantsOutput {
-            grants: body.grants,
-            next_marker: body.next_marker,
-            truncated: body.truncated,
-        })
-    }
-    pub fn parse_response(
-        &self,
-        response: &http::response::Response<impl AsRef<[u8]>>,
-    ) -> Result<crate::output::ListRetirableGrantsOutput, crate::error::ListRetirableGrantsError>
-    {
-        Self::from_response(&response)
+        #[allow(unused_mut)]
+        let mut builder = crate::output::list_retirable_grants_output::Builder::default();
+        builder = crate::json_deser::list_retirable_grants_deser_operation(
+            response.body().as_ref(),
+            builder,
+        )
+        .map_err(crate::error::ListRetirableGrantsError::unhandled)?;
+        Ok(builder.build())
     }
     pub fn new() -> Self {
         Self { _private: () }
@@ -4821,8 +4662,10 @@ impl PutKeyPolicy {
         crate::input::put_key_policy_input::Builder::default()
     }
     #[allow(clippy::unnecessary_wraps)]
-    fn from_response(
-        response: &http::response::Response<impl AsRef<[u8]>>,
+    #[allow(dead_code)]
+    fn parse_response(
+        &self,
+        response: &http::response::Response<bytes::Bytes>,
     ) -> Result<crate::output::PutKeyPolicyOutput, crate::error::PutKeyPolicyError> {
         if crate::aws_json_errors::is_error(&response) {
             let body = serde_json::from_slice(response.body().as_ref())
@@ -4895,13 +4738,9 @@ impl PutKeyPolicy {
                 _ => crate::error::PutKeyPolicyError::generic(generic),
             });
         }
-        Ok(crate::output::PutKeyPolicyOutput {})
-    }
-    pub fn parse_response(
-        &self,
-        response: &http::response::Response<impl AsRef<[u8]>>,
-    ) -> Result<crate::output::PutKeyPolicyOutput, crate::error::PutKeyPolicyError> {
-        Self::from_response(&response)
+        #[allow(unused_mut)]
+        let mut builder = crate::output::put_key_policy_output::Builder::default();
+        Ok(builder.build())
     }
     pub fn new() -> Self {
         Self { _private: () }
@@ -5015,8 +4854,10 @@ impl ReEncrypt {
         crate::input::re_encrypt_input::Builder::default()
     }
     #[allow(clippy::unnecessary_wraps)]
-    fn from_response(
-        response: &http::response::Response<impl AsRef<[u8]>>,
+    #[allow(dead_code)]
+    fn parse_response(
+        &self,
+        response: &http::response::Response<bytes::Bytes>,
     ) -> Result<crate::output::ReEncryptOutput, crate::error::ReEncryptError> {
         if crate::aws_json_errors::is_error(&response) {
             let body = serde_json::from_slice(response.body().as_ref())
@@ -5101,22 +4942,11 @@ impl ReEncrypt {
                 _ => crate::error::ReEncryptError::generic(generic),
             });
         }
-        let body: crate::serializer::ReEncryptOutputBody =
-            serde_json::from_slice(response.body().as_ref())
-                .map_err(crate::error::ReEncryptError::unhandled)?;
-        Ok(crate::output::ReEncryptOutput {
-            ciphertext_blob: body.ciphertext_blob,
-            source_key_id: body.source_key_id,
-            key_id: body.key_id,
-            source_encryption_algorithm: body.source_encryption_algorithm,
-            destination_encryption_algorithm: body.destination_encryption_algorithm,
-        })
-    }
-    pub fn parse_response(
-        &self,
-        response: &http::response::Response<impl AsRef<[u8]>>,
-    ) -> Result<crate::output::ReEncryptOutput, crate::error::ReEncryptError> {
-        Self::from_response(&response)
+        #[allow(unused_mut)]
+        let mut builder = crate::output::re_encrypt_output::Builder::default();
+        builder = crate::json_deser::re_encrypt_deser_operation(response.body().as_ref(), builder)
+            .map_err(crate::error::ReEncryptError::unhandled)?;
+        Ok(builder.build())
     }
     pub fn new() -> Self {
         Self { _private: () }
@@ -5192,8 +5022,10 @@ impl RetireGrant {
         crate::input::retire_grant_input::Builder::default()
     }
     #[allow(clippy::unnecessary_wraps)]
-    fn from_response(
-        response: &http::response::Response<impl AsRef<[u8]>>,
+    #[allow(dead_code)]
+    fn parse_response(
+        &self,
+        response: &http::response::Response<bytes::Bytes>,
     ) -> Result<crate::output::RetireGrantOutput, crate::error::RetireGrantError> {
         if crate::aws_json_errors::is_error(&response) {
             let body = serde_json::from_slice(response.body().as_ref())
@@ -5257,13 +5089,9 @@ impl RetireGrant {
                 _ => crate::error::RetireGrantError::generic(generic),
             });
         }
-        Ok(crate::output::RetireGrantOutput {})
-    }
-    pub fn parse_response(
-        &self,
-        response: &http::response::Response<impl AsRef<[u8]>>,
-    ) -> Result<crate::output::RetireGrantOutput, crate::error::RetireGrantError> {
-        Self::from_response(&response)
+        #[allow(unused_mut)]
+        let mut builder = crate::output::retire_grant_output::Builder::default();
+        Ok(builder.build())
     }
     pub fn new() -> Self {
         Self { _private: () }
@@ -5319,8 +5147,10 @@ impl RevokeGrant {
         crate::input::revoke_grant_input::Builder::default()
     }
     #[allow(clippy::unnecessary_wraps)]
-    fn from_response(
-        response: &http::response::Response<impl AsRef<[u8]>>,
+    #[allow(dead_code)]
+    fn parse_response(
+        &self,
+        response: &http::response::Response<bytes::Bytes>,
     ) -> Result<crate::output::RevokeGrantOutput, crate::error::RevokeGrantError> {
         if crate::aws_json_errors::is_error(&response) {
             let body = serde_json::from_slice(response.body().as_ref())
@@ -5377,13 +5207,9 @@ impl RevokeGrant {
                 _ => crate::error::RevokeGrantError::generic(generic),
             });
         }
-        Ok(crate::output::RevokeGrantOutput {})
-    }
-    pub fn parse_response(
-        &self,
-        response: &http::response::Response<impl AsRef<[u8]>>,
-    ) -> Result<crate::output::RevokeGrantOutput, crate::error::RevokeGrantError> {
-        Self::from_response(&response)
+        #[allow(unused_mut)]
+        let mut builder = crate::output::revoke_grant_output::Builder::default();
+        Ok(builder.build())
     }
     pub fn new() -> Self {
         Self { _private: () }
@@ -5447,8 +5273,10 @@ impl ScheduleKeyDeletion {
         crate::input::schedule_key_deletion_input::Builder::default()
     }
     #[allow(clippy::unnecessary_wraps)]
-    fn from_response(
-        response: &http::response::Response<impl AsRef<[u8]>>,
+    #[allow(dead_code)]
+    fn parse_response(
+        &self,
+        response: &http::response::Response<bytes::Bytes>,
     ) -> Result<crate::output::ScheduleKeyDeletionOutput, crate::error::ScheduleKeyDeletionError>
     {
         if crate::aws_json_errors::is_error(&response) {
@@ -5503,20 +5331,14 @@ impl ScheduleKeyDeletion {
                 _ => crate::error::ScheduleKeyDeletionError::generic(generic),
             });
         }
-        let body: crate::serializer::ScheduleKeyDeletionOutputBody =
-            serde_json::from_slice(response.body().as_ref())
-                .map_err(crate::error::ScheduleKeyDeletionError::unhandled)?;
-        Ok(crate::output::ScheduleKeyDeletionOutput {
-            key_id: body.key_id,
-            deletion_date: body.deletion_date,
-        })
-    }
-    pub fn parse_response(
-        &self,
-        response: &http::response::Response<impl AsRef<[u8]>>,
-    ) -> Result<crate::output::ScheduleKeyDeletionOutput, crate::error::ScheduleKeyDeletionError>
-    {
-        Self::from_response(&response)
+        #[allow(unused_mut)]
+        let mut builder = crate::output::schedule_key_deletion_output::Builder::default();
+        builder = crate::json_deser::schedule_key_deletion_deser_operation(
+            response.body().as_ref(),
+            builder,
+        )
+        .map_err(crate::error::ScheduleKeyDeletionError::unhandled)?;
+        Ok(builder.build())
     }
     pub fn new() -> Self {
         Self { _private: () }
@@ -5587,8 +5409,10 @@ impl Sign {
         crate::input::sign_input::Builder::default()
     }
     #[allow(clippy::unnecessary_wraps)]
-    fn from_response(
-        response: &http::response::Response<impl AsRef<[u8]>>,
+    #[allow(dead_code)]
+    fn parse_response(
+        &self,
+        response: &http::response::Response<bytes::Bytes>,
     ) -> Result<crate::output::SignOutput, crate::error::SignError> {
         if crate::aws_json_errors::is_error(&response) {
             let body = serde_json::from_slice(response.body().as_ref())
@@ -5659,20 +5483,11 @@ impl Sign {
                 _ => crate::error::SignError::generic(generic),
             });
         }
-        let body: crate::serializer::SignOutputBody =
-            serde_json::from_slice(response.body().as_ref())
-                .map_err(crate::error::SignError::unhandled)?;
-        Ok(crate::output::SignOutput {
-            key_id: body.key_id,
-            signature: body.signature,
-            signing_algorithm: body.signing_algorithm,
-        })
-    }
-    pub fn parse_response(
-        &self,
-        response: &http::response::Response<impl AsRef<[u8]>>,
-    ) -> Result<crate::output::SignOutput, crate::error::SignError> {
-        Self::from_response(&response)
+        #[allow(unused_mut)]
+        let mut builder = crate::output::sign_output::Builder::default();
+        builder = crate::json_deser::sign_deser_operation(response.body().as_ref(), builder)
+            .map_err(crate::error::SignError::unhandled)?;
+        Ok(builder.build())
     }
     pub fn new() -> Self {
         Self { _private: () }
@@ -5730,8 +5545,10 @@ impl TagResource {
         crate::input::tag_resource_input::Builder::default()
     }
     #[allow(clippy::unnecessary_wraps)]
-    fn from_response(
-        response: &http::response::Response<impl AsRef<[u8]>>,
+    #[allow(dead_code)]
+    fn parse_response(
+        &self,
+        response: &http::response::Response<bytes::Bytes>,
     ) -> Result<crate::output::TagResourceOutput, crate::error::TagResourceError> {
         if crate::aws_json_errors::is_error(&response) {
             let body = serde_json::from_slice(response.body().as_ref())
@@ -5788,13 +5605,9 @@ impl TagResource {
                 _ => crate::error::TagResourceError::generic(generic),
             });
         }
-        Ok(crate::output::TagResourceOutput {})
-    }
-    pub fn parse_response(
-        &self,
-        response: &http::response::Response<impl AsRef<[u8]>>,
-    ) -> Result<crate::output::TagResourceOutput, crate::error::TagResourceError> {
-        Self::from_response(&response)
+        #[allow(unused_mut)]
+        let mut builder = crate::output::tag_resource_output::Builder::default();
+        Ok(builder.build())
     }
     pub fn new() -> Self {
         Self { _private: () }
@@ -5849,8 +5662,10 @@ impl UntagResource {
         crate::input::untag_resource_input::Builder::default()
     }
     #[allow(clippy::unnecessary_wraps)]
-    fn from_response(
-        response: &http::response::Response<impl AsRef<[u8]>>,
+    #[allow(dead_code)]
+    fn parse_response(
+        &self,
+        response: &http::response::Response<bytes::Bytes>,
     ) -> Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError> {
         if crate::aws_json_errors::is_error(&response) {
             let body = serde_json::from_slice(response.body().as_ref())
@@ -5900,13 +5715,9 @@ impl UntagResource {
                 _ => crate::error::UntagResourceError::generic(generic),
             });
         }
-        Ok(crate::output::UntagResourceOutput {})
-    }
-    pub fn parse_response(
-        &self,
-        response: &http::response::Response<impl AsRef<[u8]>>,
-    ) -> Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError> {
-        Self::from_response(&response)
+        #[allow(unused_mut)]
+        let mut builder = crate::output::untag_resource_output::Builder::default();
+        Ok(builder.build())
     }
     pub fn new() -> Self {
         Self { _private: () }
@@ -5987,8 +5798,10 @@ impl UpdateAlias {
         crate::input::update_alias_input::Builder::default()
     }
     #[allow(clippy::unnecessary_wraps)]
-    fn from_response(
-        response: &http::response::Response<impl AsRef<[u8]>>,
+    #[allow(dead_code)]
+    fn parse_response(
+        &self,
+        response: &http::response::Response<bytes::Bytes>,
     ) -> Result<crate::output::UpdateAliasOutput, crate::error::UpdateAliasError> {
         if crate::aws_json_errors::is_error(&response) {
             let body = serde_json::from_slice(response.body().as_ref())
@@ -6038,13 +5851,9 @@ impl UpdateAlias {
                 _ => crate::error::UpdateAliasError::generic(generic),
             });
         }
-        Ok(crate::output::UpdateAliasOutput {})
-    }
-    pub fn parse_response(
-        &self,
-        response: &http::response::Response<impl AsRef<[u8]>>,
-    ) -> Result<crate::output::UpdateAliasOutput, crate::error::UpdateAliasError> {
-        Self::from_response(&response)
+        #[allow(unused_mut)]
+        let mut builder = crate::output::update_alias_output::Builder::default();
+        Ok(builder.build())
     }
     pub fn new() -> Self {
         Self { _private: () }
@@ -6140,8 +5949,10 @@ impl UpdateCustomKeyStore {
         crate::input::update_custom_key_store_input::Builder::default()
     }
     #[allow(clippy::unnecessary_wraps)]
-    fn from_response(
-        response: &http::response::Response<impl AsRef<[u8]>>,
+    #[allow(dead_code)]
+    fn parse_response(
+        &self,
+        response: &http::response::Response<bytes::Bytes>,
     ) -> Result<crate::output::UpdateCustomKeyStoreOutput, crate::error::UpdateCustomKeyStoreError>
     {
         if crate::aws_json_errors::is_error(&response) {
@@ -6189,14 +6000,9 @@ impl UpdateCustomKeyStore {
                 _ => crate::error::UpdateCustomKeyStoreError::generic(generic)
             });
         }
-        Ok(crate::output::UpdateCustomKeyStoreOutput {})
-    }
-    pub fn parse_response(
-        &self,
-        response: &http::response::Response<impl AsRef<[u8]>>,
-    ) -> Result<crate::output::UpdateCustomKeyStoreOutput, crate::error::UpdateCustomKeyStoreError>
-    {
-        Self::from_response(&response)
+        #[allow(unused_mut)]
+        let mut builder = crate::output::update_custom_key_store_output::Builder::default();
+        Ok(builder.build())
     }
     pub fn new() -> Self {
         Self { _private: () }
@@ -6245,8 +6051,10 @@ impl UpdateKeyDescription {
         crate::input::update_key_description_input::Builder::default()
     }
     #[allow(clippy::unnecessary_wraps)]
-    fn from_response(
-        response: &http::response::Response<impl AsRef<[u8]>>,
+    #[allow(dead_code)]
+    fn parse_response(
+        &self,
+        response: &http::response::Response<bytes::Bytes>,
     ) -> Result<crate::output::UpdateKeyDescriptionOutput, crate::error::UpdateKeyDescriptionError>
     {
         if crate::aws_json_errors::is_error(&response) {
@@ -6301,14 +6109,9 @@ impl UpdateKeyDescription {
                 _ => crate::error::UpdateKeyDescriptionError::generic(generic),
             });
         }
-        Ok(crate::output::UpdateKeyDescriptionOutput {})
-    }
-    pub fn parse_response(
-        &self,
-        response: &http::response::Response<impl AsRef<[u8]>>,
-    ) -> Result<crate::output::UpdateKeyDescriptionOutput, crate::error::UpdateKeyDescriptionError>
-    {
-        Self::from_response(&response)
+        #[allow(unused_mut)]
+        let mut builder = crate::output::update_key_description_output::Builder::default();
+        Ok(builder.build())
     }
     pub fn new() -> Self {
         Self { _private: () }
@@ -6364,8 +6167,10 @@ impl Verify {
         crate::input::verify_input::Builder::default()
     }
     #[allow(clippy::unnecessary_wraps)]
-    fn from_response(
-        response: &http::response::Response<impl AsRef<[u8]>>,
+    #[allow(dead_code)]
+    fn parse_response(
+        &self,
+        response: &http::response::Response<bytes::Bytes>,
     ) -> Result<crate::output::VerifyOutput, crate::error::VerifyError> {
         if crate::aws_json_errors::is_error(&response) {
             let body = serde_json::from_slice(response.body().as_ref())
@@ -6443,20 +6248,11 @@ impl Verify {
                 _ => crate::error::VerifyError::generic(generic),
             });
         }
-        let body: crate::serializer::VerifyOutputBody =
-            serde_json::from_slice(response.body().as_ref())
-                .map_err(crate::error::VerifyError::unhandled)?;
-        Ok(crate::output::VerifyOutput {
-            key_id: body.key_id,
-            signature_valid: body.signature_valid,
-            signing_algorithm: body.signing_algorithm,
-        })
-    }
-    pub fn parse_response(
-        &self,
-        response: &http::response::Response<impl AsRef<[u8]>>,
-    ) -> Result<crate::output::VerifyOutput, crate::error::VerifyError> {
-        Self::from_response(&response)
+        #[allow(unused_mut)]
+        let mut builder = crate::output::verify_output::Builder::default();
+        builder = crate::json_deser::verify_deser_operation(response.body().as_ref(), builder)
+            .map_err(crate::error::VerifyError::unhandled)?;
+        Ok(builder.build())
     }
     pub fn new() -> Self {
         Self { _private: () }

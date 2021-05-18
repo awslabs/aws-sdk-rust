@@ -62,6 +62,10 @@ impl SdkBody {
         Self(Inner::Taken)
     }
 
+    pub fn empty() -> Self {
+        Self(Inner::Once(None))
+    }
+
     fn poll_inner(
         self: Pin<&mut Self>,
         cx: &mut Context<'_>,
@@ -101,11 +105,15 @@ impl SdkBody {
             _ => None,
         }
     }
+
+    pub fn content_length(&self) -> Option<u64> {
+        self.size_hint().exact()
+    }
 }
 
 impl From<&str> for SdkBody {
     fn from(s: &str) -> Self {
-        SdkBody(Inner::Once(Some(Bytes::copy_from_slice(s.as_bytes()))))
+        Self::from(s.as_bytes())
     }
 }
 
@@ -124,6 +132,18 @@ impl From<hyper::Body> for SdkBody {
 impl From<Vec<u8>> for SdkBody {
     fn from(data: Vec<u8>) -> Self {
         Self::from(Bytes::from(data))
+    }
+}
+
+impl From<String> for SdkBody {
+    fn from(s: String) -> Self {
+        Self::from(s.into_bytes())
+    }
+}
+
+impl From<&[u8]> for SdkBody {
+    fn from(data: &[u8]) -> Self {
+        SdkBody(Inner::Once(Some(Bytes::copy_from_slice(data))))
     }
 }
 

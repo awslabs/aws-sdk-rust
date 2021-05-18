@@ -114,17 +114,18 @@ async fn main() {
     let first_av = AttributeValue::S(String::from(&first));
     let last_av = AttributeValue::S(String::from(&last));
 
-    match client
+    let request = client
         .put_item()
         .table_name(table)
         .item("username", user_av)
         .item("account_type", type_av)
         .item("age", age_av)
         .item("first_name", first_av)
-        .item("last_name", last_av)
-        .send()
-        .await
-    {
+        .item("last_name", last_av);
+
+    println!("Executing request [{:?}] to add item...", request);
+
+    match request.send().await {
         Ok(_) => println!(
             "Added user {}, {} {}, age {} as {} user",
             username, first, last, age, p_type

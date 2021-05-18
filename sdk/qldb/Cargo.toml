@@ -29,11 +29,11 @@ path = "..//aws-http"
 path = "..//aws-sig-auth"
 [dependencies.http]
 version = "0.2"
+[dependencies.bytes]
+version = "1"
 [dependencies.serde_json]
 version = "1"
 features = ["float_roundtrip"]
-[dependencies.bytes]
-version = "1"
 [features]
 client = ["aws-hyper"]
 rustls = ["aws-hyper/rustls"]

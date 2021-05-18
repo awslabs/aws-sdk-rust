@@ -21,8 +21,9 @@ pub mod validate_resource_policy_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        validation_errors: std::option::Option<std::vec::Vec<crate::model::ValidationErrorsEntry>>,
-        policy_validation_passed: std::option::Option<bool>,
+        pub(crate) validation_errors:
+            std::option::Option<std::vec::Vec<crate::model::ValidationErrorsEntry>>,
+        pub(crate) policy_validation_passed: std::option::Option<bool>,
     }
     impl Builder {
         pub fn validation_errors(
@@ -88,8 +89,8 @@ pub mod update_secret_version_stage_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        arn: std::option::Option<std::string::String>,
-        name: std::option::Option<std::string::String>,
+        pub(crate) arn: std::option::Option<std::string::String>,
+        pub(crate) name: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The ARN of the secret with the modified staging label.</p>
@@ -159,9 +160,9 @@ pub mod update_secret_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        name: std::option::Option<std::string::String>,
-        version_id: std::option::Option<std::string::String>,
-        arn: std::option::Option<std::string::String>,
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) version_id: std::option::Option<std::string::String>,
+        pub(crate) arn: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The friendly name of the secret that was updated.</p>
@@ -300,9 +301,9 @@ pub mod rotate_secret_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        arn: std::option::Option<std::string::String>,
-        name: std::option::Option<std::string::String>,
-        version_id: std::option::Option<std::string::String>,
+        pub(crate) arn: std::option::Option<std::string::String>,
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) version_id: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The ARN of the secret.</p>
@@ -372,8 +373,8 @@ pub mod restore_secret_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        arn: std::option::Option<std::string::String>,
-        name: std::option::Option<std::string::String>,
+        pub(crate) arn: std::option::Option<std::string::String>,
+        pub(crate) name: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The ARN of the secret that was restored.</p>
@@ -440,10 +441,10 @@ pub mod put_secret_value_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        arn: std::option::Option<std::string::String>,
-        version_stages: std::option::Option<std::vec::Vec<std::string::String>>,
-        name: std::option::Option<std::string::String>,
-        version_id: std::option::Option<std::string::String>,
+        pub(crate) arn: std::option::Option<std::string::String>,
+        pub(crate) version_stages: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) version_id: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) for the secret for which you just created a version.</p>
@@ -526,8 +527,8 @@ pub mod put_resource_policy_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        arn: std::option::Option<std::string::String>,
-        name: std::option::Option<std::string::String>,
+        pub(crate) arn: std::option::Option<std::string::String>,
+        pub(crate) name: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The ARN of the secret retrieved by the resource-based policy.</p>
@@ -605,10 +606,11 @@ pub mod list_secret_version_ids_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        next_token: std::option::Option<std::string::String>,
-        versions: std::option::Option<std::vec::Vec<crate::model::SecretVersionsListEntry>>,
-        arn: std::option::Option<std::string::String>,
-        name: std::option::Option<std::string::String>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) versions:
+            std::option::Option<std::vec::Vec<crate::model::SecretVersionsListEntry>>,
+        pub(crate) arn: std::option::Option<std::string::String>,
+        pub(crate) name: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>If present in the response, this value indicates that
@@ -710,8 +712,8 @@ pub mod list_secrets_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        secret_list: std::option::Option<std::vec::Vec<crate::model::SecretListEntry>>,
-        next_token: std::option::Option<std::string::String>,
+        pub(crate) secret_list: std::option::Option<std::vec::Vec<crate::model::SecretListEntry>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
         pub fn secret_list(mut self, inp: impl Into<crate::model::SecretListEntry>) -> Self {
@@ -812,13 +814,13 @@ pub mod get_secret_value_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        version_id: std::option::Option<std::string::String>,
-        created_date: std::option::Option<smithy_types::Instant>,
-        secret_string: std::option::Option<std::string::String>,
-        secret_binary: std::option::Option<smithy_types::Blob>,
-        version_stages: std::option::Option<std::vec::Vec<std::string::String>>,
-        name: std::option::Option<std::string::String>,
-        arn: std::option::Option<std::string::String>,
+        pub(crate) version_id: std::option::Option<std::string::String>,
+        pub(crate) created_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) secret_string: std::option::Option<std::string::String>,
+        pub(crate) secret_binary: std::option::Option<smithy_types::Blob>,
+        pub(crate) version_stages: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) arn: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The unique identifier of this version of the secret.</p>
@@ -954,9 +956,9 @@ pub mod get_resource_policy_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        resource_policy: std::option::Option<std::string::String>,
-        name: std::option::Option<std::string::String>,
-        arn: std::option::Option<std::string::String>,
+        pub(crate) resource_policy: std::option::Option<std::string::String>,
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) arn: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>A JSON-formatted string that describes the permissions that are associated with the
@@ -1029,7 +1031,7 @@ pub mod get_random_password_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        random_password: std::option::Option<std::string::String>,
+        pub(crate) random_password: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>A string with the generated password.</p>
@@ -1142,23 +1144,23 @@ pub mod describe_secret_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        last_rotated_date: std::option::Option<smithy_types::Instant>,
-        description: std::option::Option<std::string::String>,
-        kms_key_id: std::option::Option<std::string::String>,
-        version_ids_to_stages: std::option::Option<
+        pub(crate) last_rotated_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) kms_key_id: std::option::Option<std::string::String>,
+        pub(crate) version_ids_to_stages: std::option::Option<
             std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
         >,
-        last_changed_date: std::option::Option<smithy_types::Instant>,
-        rotation_rules: std::option::Option<crate::model::RotationRulesType>,
-        name: std::option::Option<std::string::String>,
-        rotation_enabled: std::option::Option<bool>,
-        last_accessed_date: std::option::Option<smithy_types::Instant>,
-        created_date: std::option::Option<smithy_types::Instant>,
-        deleted_date: std::option::Option<smithy_types::Instant>,
-        arn: std::option::Option<std::string::String>,
-        owning_service: std::option::Option<std::string::String>,
-        rotation_lambda_arn: std::option::Option<std::string::String>,
-        tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        pub(crate) last_changed_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) rotation_rules: std::option::Option<crate::model::RotationRulesType>,
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) rotation_enabled: std::option::Option<bool>,
+        pub(crate) last_accessed_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) deleted_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) arn: std::option::Option<std::string::String>,
+        pub(crate) owning_service: std::option::Option<std::string::String>,
+        pub(crate) rotation_lambda_arn: std::option::Option<std::string::String>,
+        pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
         /// <p>The most recent date and time that the Secrets Manager rotation process was successfully
@@ -1394,9 +1396,9 @@ pub mod delete_secret_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        arn: std::option::Option<std::string::String>,
-        name: std::option::Option<std::string::String>,
-        deletion_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) arn: std::option::Option<std::string::String>,
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) deletion_date: std::option::Option<smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The ARN of the secret that is now scheduled for deletion.</p>
@@ -1470,8 +1472,8 @@ pub mod delete_resource_policy_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        arn: std::option::Option<std::string::String>,
-        name: std::option::Option<std::string::String>,
+        pub(crate) arn: std::option::Option<std::string::String>,
+        pub(crate) name: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The ARN of the secret that the resource-based policy was deleted for.</p>
@@ -1541,9 +1543,9 @@ pub mod create_secret_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        version_id: std::option::Option<std::string::String>,
-        name: std::option::Option<std::string::String>,
-        arn: std::option::Option<std::string::String>,
+        pub(crate) version_id: std::option::Option<std::string::String>,
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) arn: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The unique identifier associated with the version of the secret you just
@@ -1627,9 +1629,9 @@ pub mod cancel_rotate_secret_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        arn: std::option::Option<std::string::String>,
-        version_id: std::option::Option<std::string::String>,
-        name: std::option::Option<std::string::String>,
+        pub(crate) arn: std::option::Option<std::string::String>,
+        pub(crate) version_id: std::option::Option<std::string::String>,
+        pub(crate) name: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The ARN of the secret for which rotation was canceled.</p>

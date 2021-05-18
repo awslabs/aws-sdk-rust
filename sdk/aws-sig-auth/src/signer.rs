@@ -4,6 +4,7 @@
  */
 
 use aws_auth::Credentials;
+use aws_sigv4_poc::{SigningSettings, UriEncoding};
 use aws_types::region::SigningRegion;
 use aws_types::SigningService;
 use std::error::Error;
@@ -45,17 +46,19 @@ impl OperationSigningConfig {
         OperationSigningConfig {
             algorithm: SigningAlgorithm::SigV4,
             signature_type: HttpSignatureType::HttpRequestHeaders,
-            signing_options: SigningOptions { _private: () },
+            signing_options: SigningOptions {
+                double_uri_encode: true,
+            },
         }
     }
 }
 
 #[derive(Clone, Eq, PartialEq)]
+#[non_exhaustive]
 pub struct SigningOptions {
-    _private: (),
+    pub double_uri_encode: bool,
     /*
     Currently unsupported:
-    pub double_uri_encode: bool,
     pub normalize_uri_path: bool,
     pub omit_session_token: bool,
      */
@@ -93,7 +96,7 @@ impl SigV4Signer {
     pub fn sign<B>(
         &self,
         // There is currently only 1 way to sign, so operation level configuration is unused
-        _operation_config: &OperationSigningConfig,
+        operation_config: &OperationSigningConfig,
         request_config: &RequestConfig<'_>,
         credentials: &Credentials,
         request: &mut http::Request<B>,
@@ -101,19 +104,22 @@ impl SigV4Signer {
     where
         B: AsRef<[u8]>,
     {
-        let sigv4_creds = aws_sigv4_poc::Credentials {
-            access_key: credentials.access_key_id().to_string(),
-            secret_key: credentials.secret_access_key().to_string(),
-            security_token: credentials.session_token().map(|s| s.to_string()),
+        let sigv4_config = aws_sigv4_poc::Config {
+            access_key: credentials.access_key_id(),
+            secret_key: credentials.secret_access_key(),
+            security_token: credentials.session_token(),
+            region: request_config.region.as_ref(),
+            svc: request_config.service.as_ref(),
+            date: request_config.request_ts,
+            settings: SigningSettings {
+                uri_encoding: if operation_config.signing_options.double_uri_encode {
+                    UriEncoding::Double
+                } else {
+                    UriEncoding::Single
+                },
+            },
         };
-        let date = request_config.request_ts;
-        for (key, value) in aws_sigv4_poc::sign_core(
-            request,
-            &sigv4_creds,
-            request_config.region.as_ref(),
-            request_config.service.as_ref(),
-            date,
-        ) {
+        for (key, value) in aws_sigv4_poc::sign_core(request, sigv4_config) {
             request
                 .headers_mut()
                 .append(key.header_name(), value.parse()?);

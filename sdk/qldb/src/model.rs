@@ -107,8 +107,8 @@ pub mod kinesis_configuration {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        stream_arn: std::option::Option<std::string::String>,
-        aggregation_enabled: std::option::Option<bool>,
+        pub(crate) stream_arn: std::option::Option<std::string::String>,
+        pub(crate) aggregation_enabled: std::option::Option<bool>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the Kinesis data stream resource.</p>
@@ -189,9 +189,9 @@ pub mod ledger_summary {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        name: std::option::Option<std::string::String>,
-        state: std::option::Option<crate::model::LedgerState>,
-        creation_date_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) state: std::option::Option<crate::model::LedgerState>,
+        pub(crate) creation_date_time: std::option::Option<smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The name of the ledger.</p>
@@ -340,14 +340,15 @@ pub mod journal_s3_export_description {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        ledger_name: std::option::Option<std::string::String>,
-        export_id: std::option::Option<std::string::String>,
-        export_creation_time: std::option::Option<smithy_types::Instant>,
-        status: std::option::Option<crate::model::ExportStatus>,
-        inclusive_start_time: std::option::Option<smithy_types::Instant>,
-        exclusive_end_time: std::option::Option<smithy_types::Instant>,
-        s3_export_configuration: std::option::Option<crate::model::S3ExportConfiguration>,
-        role_arn: std::option::Option<std::string::String>,
+        pub(crate) ledger_name: std::option::Option<std::string::String>,
+        pub(crate) export_id: std::option::Option<std::string::String>,
+        pub(crate) export_creation_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) status: std::option::Option<crate::model::ExportStatus>,
+        pub(crate) inclusive_start_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) exclusive_end_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) s3_export_configuration:
+            std::option::Option<crate::model::S3ExportConfiguration>,
+        pub(crate) role_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The name of the ledger.</p>
@@ -532,9 +533,10 @@ pub mod s3_export_configuration {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        bucket: std::option::Option<std::string::String>,
-        prefix: std::option::Option<std::string::String>,
-        encryption_configuration: std::option::Option<crate::model::S3EncryptionConfiguration>,
+        pub(crate) bucket: std::option::Option<std::string::String>,
+        pub(crate) prefix: std::option::Option<std::string::String>,
+        pub(crate) encryption_configuration:
+            std::option::Option<crate::model::S3EncryptionConfiguration>,
     }
     impl Builder {
         /// <p>The Amazon S3 bucket name in which a journal export job writes the journal contents.</p>
@@ -652,8 +654,9 @@ pub mod s3_encryption_configuration {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        object_encryption_type: std::option::Option<crate::model::S3ObjectEncryptionType>,
-        kms_key_arn: std::option::Option<std::string::String>,
+        pub(crate) object_encryption_type:
+            std::option::Option<crate::model::S3ObjectEncryptionType>,
+        pub(crate) kms_key_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The Amazon S3 object encryption type.</p>
@@ -958,17 +961,17 @@ pub mod journal_kinesis_stream_description {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        ledger_name: std::option::Option<std::string::String>,
-        creation_time: std::option::Option<smithy_types::Instant>,
-        inclusive_start_time: std::option::Option<smithy_types::Instant>,
-        exclusive_end_time: std::option::Option<smithy_types::Instant>,
-        role_arn: std::option::Option<std::string::String>,
-        stream_id: std::option::Option<std::string::String>,
-        arn: std::option::Option<std::string::String>,
-        status: std::option::Option<crate::model::StreamStatus>,
-        kinesis_configuration: std::option::Option<crate::model::KinesisConfiguration>,
-        error_cause: std::option::Option<crate::model::ErrorCause>,
-        stream_name: std::option::Option<std::string::String>,
+        pub(crate) ledger_name: std::option::Option<std::string::String>,
+        pub(crate) creation_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) inclusive_start_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) exclusive_end_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) role_arn: std::option::Option<std::string::String>,
+        pub(crate) stream_id: std::option::Option<std::string::String>,
+        pub(crate) arn: std::option::Option<std::string::String>,
+        pub(crate) status: std::option::Option<crate::model::StreamStatus>,
+        pub(crate) kinesis_configuration: std::option::Option<crate::model::KinesisConfiguration>,
+        pub(crate) error_cause: std::option::Option<crate::model::ErrorCause>,
+        pub(crate) stream_name: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The name of the ledger.</p>
@@ -1289,7 +1292,7 @@ pub mod value_holder {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        ion_text: std::option::Option<std::string::String>,
+        pub(crate) ion_text: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>An Amazon Ion plaintext value contained in a <code>ValueHolder</code> structure.</p>

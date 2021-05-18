@@ -106,12 +106,15 @@ impl std::fmt::Debug for RateExceededError {
 }
 impl RateExceededError {
     pub fn message(&self) -> Option<&str> {
-        None
+        self.message.as_deref()
     }
 }
 impl std::fmt::Display for RateExceededError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "RateExceededError [RateExceededException]")?;
+        if let Some(inner_1) = &self.message {
+            write!(f, ": {}", inner_1)?;
+        }
         Ok(())
     }
 }
@@ -122,7 +125,7 @@ pub mod rate_exceeded_error {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        message: std::option::Option<std::string::String>,
+        pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
         pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
@@ -167,12 +170,15 @@ impl std::fmt::Debug for OccConflictError {
 }
 impl OccConflictError {
     pub fn message(&self) -> Option<&str> {
-        None
+        self.message.as_deref()
     }
 }
 impl std::fmt::Display for OccConflictError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "OccConflictError [OccConflictException]")?;
+        if let Some(inner_2) = &self.message {
+            write!(f, ": {}", inner_2)?;
+        }
         Ok(())
     }
 }
@@ -183,7 +189,7 @@ pub mod occ_conflict_error {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        message: std::option::Option<std::string::String>,
+        pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
         pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
@@ -227,12 +233,15 @@ impl std::fmt::Debug for LimitExceededError {
 }
 impl LimitExceededError {
     pub fn message(&self) -> Option<&str> {
-        None
+        self.message.as_deref()
     }
 }
 impl std::fmt::Display for LimitExceededError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "LimitExceededError [LimitExceededException]")?;
+        if let Some(inner_3) = &self.message {
+            write!(f, ": {}", inner_3)?;
+        }
         Ok(())
     }
 }
@@ -243,7 +252,7 @@ pub mod limit_exceeded_error {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        message: std::option::Option<std::string::String>,
+        pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
         pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
@@ -292,12 +301,15 @@ impl std::fmt::Debug for InvalidSessionError {
 }
 impl InvalidSessionError {
     pub fn message(&self) -> Option<&str> {
-        None
+        self.message.as_deref()
     }
 }
 impl std::fmt::Display for InvalidSessionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidSessionError [InvalidSessionException]")?;
+        if let Some(inner_4) = &self.message {
+            write!(f, ": {}", inner_4)?;
+        }
         Ok(())
     }
 }
@@ -308,8 +320,8 @@ pub mod invalid_session_error {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        message: std::option::Option<std::string::String>,
-        code: std::option::Option<std::string::String>,
+        pub(crate) message: std::option::Option<std::string::String>,
+        pub(crate) code: std::option::Option<std::string::String>,
     }
     impl Builder {
         pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
@@ -362,12 +374,15 @@ impl std::fmt::Debug for CapacityExceededError {
 }
 impl CapacityExceededError {
     pub fn message(&self) -> Option<&str> {
-        None
+        self.message.as_deref()
     }
 }
 impl std::fmt::Display for CapacityExceededError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "CapacityExceededError [CapacityExceededException]")?;
+        if let Some(inner_5) = &self.message {
+            write!(f, ": {}", inner_5)?;
+        }
         Ok(())
     }
 }
@@ -378,7 +393,7 @@ pub mod capacity_exceeded_error {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        message: std::option::Option<std::string::String>,
+        pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
         pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
@@ -428,12 +443,15 @@ impl std::fmt::Debug for BadRequestError {
 }
 impl BadRequestError {
     pub fn message(&self) -> Option<&str> {
-        None
+        self.message.as_deref()
     }
 }
 impl std::fmt::Display for BadRequestError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "BadRequestError [BadRequestException]")?;
+        if let Some(inner_6) = &self.message {
+            write!(f, ": {}", inner_6)?;
+        }
         Ok(())
     }
 }
@@ -444,8 +462,8 @@ pub mod bad_request_error {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        message: std::option::Option<std::string::String>,
-        code: std::option::Option<std::string::String>,
+        pub(crate) message: std::option::Option<std::string::String>,
+        pub(crate) code: std::option::Option<std::string::String>,
     }
     impl Builder {
         pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {

@@ -5,14 +5,14 @@ pub mod send_command_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        session_token: std::option::Option<std::string::String>,
-        start_session: std::option::Option<crate::model::StartSessionRequest>,
-        start_transaction: std::option::Option<crate::model::StartTransactionRequest>,
-        end_session: std::option::Option<crate::model::EndSessionRequest>,
-        commit_transaction: std::option::Option<crate::model::CommitTransactionRequest>,
-        abort_transaction: std::option::Option<crate::model::AbortTransactionRequest>,
-        execute_statement: std::option::Option<crate::model::ExecuteStatementRequest>,
-        fetch_page: std::option::Option<crate::model::FetchPageRequest>,
+        pub(crate) session_token: std::option::Option<std::string::String>,
+        pub(crate) start_session: std::option::Option<crate::model::StartSessionRequest>,
+        pub(crate) start_transaction: std::option::Option<crate::model::StartTransactionRequest>,
+        pub(crate) end_session: std::option::Option<crate::model::EndSessionRequest>,
+        pub(crate) commit_transaction: std::option::Option<crate::model::CommitTransactionRequest>,
+        pub(crate) abort_transaction: std::option::Option<crate::model::AbortTransactionRequest>,
+        pub(crate) execute_statement: std::option::Option<crate::model::ExecuteStatementRequest>,
+        pub(crate) fetch_page: std::option::Option<crate::model::FetchPageRequest>,
     }
     impl Builder {
         /// <p>Specifies the session token for the current command. A session token is constant
@@ -144,7 +144,12 @@ impl SendCommandInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body = crate::operation_ser::serialize_synthetic_send_command_input_body(&self)
+                .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -192,7 +197,8 @@ impl SendCommandInput {
             op
         })
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
@@ -202,29 +208,14 @@ impl SendCommandInput {
             .header("Content-Type", "application/x-amz-json-1.0")
             .header("X-Amz-Target", "QLDBSession.SendCommand"))
     }
-    fn body(&self) -> crate::serializer::SendCommandInputBody {
-        crate::serializer::SendCommandInputBody {
-            session_token: &self.session_token,
-            start_session: &self.start_session,
-            start_transaction: &self.start_transaction,
-            end_session: &self.end_session,
-            commit_transaction: &self.commit_transaction,
-            abort_transaction: &self.abort_transaction,
-            execute_statement: &self.execute_statement,
-            fetch_page: &self.fetch_page,
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
         }
-    }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        serde_json::to_vec(&self.body()).expect("serialization should succeed")
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`SendCommandInput`](crate::input::SendCommandInput)
     pub fn builder() -> crate::input::send_command_input::Builder {
