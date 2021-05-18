@@ -10,11 +10,15 @@ use std::time::{SystemTime, UNIX_EPOCH};
 
 mod format;
 
+/* ANCHOR: instant */
+
 #[derive(Debug, PartialEq, Clone, Copy)]
 pub struct Instant {
     seconds: i64,
     subsecond_nanos: u32,
 }
+
+/* ANCHOR_END: instant */
 
 impl Instant {
     pub fn from_epoch_seconds(epoch_seconds: i64) -> Self {

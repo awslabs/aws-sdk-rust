@@ -5,7 +5,7 @@ pub mod cancel_rotate_secret_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        secret_id: std::option::Option<std::string::String>,
+        pub(crate) secret_id: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>Specifies the secret to cancel a rotation request. You can specify either the Amazon
@@ -57,7 +57,13 @@ impl CancelRotateSecretInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body =
+                crate::operation_ser::serialize_synthetic_cancel_rotate_secret_input_body(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -105,7 +111,8 @@ impl CancelRotateSecretInput {
             op
         })
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
@@ -115,22 +122,14 @@ impl CancelRotateSecretInput {
             .header("Content-Type", "application/x-amz-json-1.1")
             .header("X-Amz-Target", "secretsmanager.CancelRotateSecret"))
     }
-    fn body(&self) -> crate::serializer::CancelRotateSecretInputBody {
-        crate::serializer::CancelRotateSecretInputBody {
-            secret_id: &self.secret_id,
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
         }
-    }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        serde_json::to_vec(&self.body()).expect("serialization should succeed")
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`CancelRotateSecretInput`](crate::input::CancelRotateSecretInput)
     pub fn builder() -> crate::input::cancel_rotate_secret_input::Builder {
@@ -144,13 +143,13 @@ pub mod create_secret_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        name: std::option::Option<std::string::String>,
-        tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        kms_key_id: std::option::Option<std::string::String>,
-        description: std::option::Option<std::string::String>,
-        secret_string: std::option::Option<std::string::String>,
-        secret_binary: std::option::Option<smithy_types::Blob>,
-        client_request_token: std::option::Option<std::string::String>,
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        pub(crate) kms_key_id: std::option::Option<std::string::String>,
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) secret_string: std::option::Option<std::string::String>,
+        pub(crate) secret_binary: std::option::Option<smithy_types::Blob>,
+        pub(crate) client_request_token: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>Specifies the friendly name of the new secret.</p>
@@ -333,7 +332,12 @@ impl CreateSecretInput {
                 self.client_request_token = Some(_config.make_token.make_idempotency_token());
             }
 
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body = crate::operation_ser::serialize_synthetic_create_secret_input_body(&self)
+                .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -381,7 +385,8 @@ impl CreateSecretInput {
             op
         })
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
@@ -391,28 +396,14 @@ impl CreateSecretInput {
             .header("Content-Type", "application/x-amz-json-1.1")
             .header("X-Amz-Target", "secretsmanager.CreateSecret"))
     }
-    fn body(&self) -> crate::serializer::CreateSecretInputBody {
-        crate::serializer::CreateSecretInputBody {
-            name: &self.name,
-            tags: &self.tags,
-            kms_key_id: &self.kms_key_id,
-            description: &self.description,
-            secret_string: &self.secret_string,
-            secret_binary: &self.secret_binary,
-            client_request_token: &self.client_request_token,
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
         }
-    }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        serde_json::to_vec(&self.body()).expect("serialization should succeed")
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`CreateSecretInput`](crate::input::CreateSecretInput)
     pub fn builder() -> crate::input::create_secret_input::Builder {
@@ -426,7 +417,7 @@ pub mod delete_resource_policy_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        secret_id: std::option::Option<std::string::String>,
+        pub(crate) secret_id: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>Specifies the secret that you want to delete the attached resource-based policy for. You
@@ -478,7 +469,13 @@ impl DeleteResourcePolicyInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body =
+                crate::operation_ser::serialize_synthetic_delete_resource_policy_input_body(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -526,7 +523,8 @@ impl DeleteResourcePolicyInput {
             op
         })
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
@@ -536,22 +534,14 @@ impl DeleteResourcePolicyInput {
             .header("Content-Type", "application/x-amz-json-1.1")
             .header("X-Amz-Target", "secretsmanager.DeleteResourcePolicy"))
     }
-    fn body(&self) -> crate::serializer::DeleteResourcePolicyInputBody {
-        crate::serializer::DeleteResourcePolicyInputBody {
-            secret_id: &self.secret_id,
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
         }
-    }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        serde_json::to_vec(&self.body()).expect("serialization should succeed")
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`DeleteResourcePolicyInput`](crate::input::DeleteResourcePolicyInput)
     pub fn builder() -> crate::input::delete_resource_policy_input::Builder {
@@ -565,9 +555,9 @@ pub mod delete_secret_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        force_delete_without_recovery: std::option::Option<bool>,
-        recovery_window_in_days: std::option::Option<i64>,
-        secret_id: std::option::Option<std::string::String>,
+        pub(crate) force_delete_without_recovery: std::option::Option<bool>,
+        pub(crate) recovery_window_in_days: std::option::Option<i64>,
+        pub(crate) secret_id: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>(Optional) Specifies that the secret is to be deleted without any recovery window. You
@@ -654,7 +644,12 @@ impl DeleteSecretInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body = crate::operation_ser::serialize_synthetic_delete_secret_input_body(&self)
+                .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -702,7 +697,8 @@ impl DeleteSecretInput {
             op
         })
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
@@ -712,24 +708,14 @@ impl DeleteSecretInput {
             .header("Content-Type", "application/x-amz-json-1.1")
             .header("X-Amz-Target", "secretsmanager.DeleteSecret"))
     }
-    fn body(&self) -> crate::serializer::DeleteSecretInputBody {
-        crate::serializer::DeleteSecretInputBody {
-            force_delete_without_recovery: &self.force_delete_without_recovery,
-            recovery_window_in_days: &self.recovery_window_in_days,
-            secret_id: &self.secret_id,
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
         }
-    }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        serde_json::to_vec(&self.body()).expect("serialization should succeed")
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`DeleteSecretInput`](crate::input::DeleteSecretInput)
     pub fn builder() -> crate::input::delete_secret_input::Builder {
@@ -743,7 +729,7 @@ pub mod describe_secret_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        secret_id: std::option::Option<std::string::String>,
+        pub(crate) secret_id: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The identifier of the secret whose details you want to retrieve. You can specify either
@@ -794,7 +780,12 @@ impl DescribeSecretInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body = crate::operation_ser::serialize_synthetic_describe_secret_input_body(&self)
+                .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -842,7 +833,8 @@ impl DescribeSecretInput {
             op
         })
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
@@ -852,22 +844,14 @@ impl DescribeSecretInput {
             .header("Content-Type", "application/x-amz-json-1.1")
             .header("X-Amz-Target", "secretsmanager.DescribeSecret"))
     }
-    fn body(&self) -> crate::serializer::DescribeSecretInputBody {
-        crate::serializer::DescribeSecretInputBody {
-            secret_id: &self.secret_id,
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
         }
-    }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        serde_json::to_vec(&self.body()).expect("serialization should succeed")
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`DescribeSecretInput`](crate::input::DescribeSecretInput)
     pub fn builder() -> crate::input::describe_secret_input::Builder {
@@ -881,14 +865,14 @@ pub mod get_random_password_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        exclude_numbers: std::option::Option<bool>,
-        exclude_characters: std::option::Option<std::string::String>,
-        password_length: std::option::Option<i64>,
-        require_each_included_type: std::option::Option<bool>,
-        include_space: std::option::Option<bool>,
-        exclude_punctuation: std::option::Option<bool>,
-        exclude_lowercase: std::option::Option<bool>,
-        exclude_uppercase: std::option::Option<bool>,
+        pub(crate) exclude_numbers: std::option::Option<bool>,
+        pub(crate) exclude_characters: std::option::Option<std::string::String>,
+        pub(crate) password_length: std::option::Option<i64>,
+        pub(crate) require_each_included_type: std::option::Option<bool>,
+        pub(crate) include_space: std::option::Option<bool>,
+        pub(crate) exclude_punctuation: std::option::Option<bool>,
+        pub(crate) exclude_lowercase: std::option::Option<bool>,
+        pub(crate) exclude_uppercase: std::option::Option<bool>,
     }
     impl Builder {
         /// <p>Specifies that the generated password should not include digits. The default if you do not
@@ -1015,7 +999,13 @@ impl GetRandomPasswordInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body =
+                crate::operation_ser::serialize_synthetic_get_random_password_input_body(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -1063,7 +1053,8 @@ impl GetRandomPasswordInput {
             op
         })
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
@@ -1073,29 +1064,14 @@ impl GetRandomPasswordInput {
             .header("Content-Type", "application/x-amz-json-1.1")
             .header("X-Amz-Target", "secretsmanager.GetRandomPassword"))
     }
-    fn body(&self) -> crate::serializer::GetRandomPasswordInputBody {
-        crate::serializer::GetRandomPasswordInputBody {
-            exclude_numbers: &self.exclude_numbers,
-            exclude_characters: &self.exclude_characters,
-            password_length: &self.password_length,
-            require_each_included_type: &self.require_each_included_type,
-            include_space: &self.include_space,
-            exclude_punctuation: &self.exclude_punctuation,
-            exclude_lowercase: &self.exclude_lowercase,
-            exclude_uppercase: &self.exclude_uppercase,
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
         }
-    }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        serde_json::to_vec(&self.body()).expect("serialization should succeed")
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`GetRandomPasswordInput`](crate::input::GetRandomPasswordInput)
     pub fn builder() -> crate::input::get_random_password_input::Builder {
@@ -1109,7 +1085,7 @@ pub mod get_resource_policy_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        secret_id: std::option::Option<std::string::String>,
+        pub(crate) secret_id: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>Specifies the secret that you want to retrieve the attached resource-based policy for. You
@@ -1161,7 +1137,13 @@ impl GetResourcePolicyInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body =
+                crate::operation_ser::serialize_synthetic_get_resource_policy_input_body(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -1209,7 +1191,8 @@ impl GetResourcePolicyInput {
             op
         })
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
@@ -1219,22 +1202,14 @@ impl GetResourcePolicyInput {
             .header("Content-Type", "application/x-amz-json-1.1")
             .header("X-Amz-Target", "secretsmanager.GetResourcePolicy"))
     }
-    fn body(&self) -> crate::serializer::GetResourcePolicyInputBody {
-        crate::serializer::GetResourcePolicyInputBody {
-            secret_id: &self.secret_id,
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
         }
-    }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        serde_json::to_vec(&self.body()).expect("serialization should succeed")
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`GetResourcePolicyInput`](crate::input::GetResourcePolicyInput)
     pub fn builder() -> crate::input::get_resource_policy_input::Builder {
@@ -1248,9 +1223,9 @@ pub mod get_secret_value_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        secret_id: std::option::Option<std::string::String>,
-        version_stage: std::option::Option<std::string::String>,
-        version_id: std::option::Option<std::string::String>,
+        pub(crate) secret_id: std::option::Option<std::string::String>,
+        pub(crate) version_stage: std::option::Option<std::string::String>,
+        pub(crate) version_id: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>Specifies the secret containing the version that you want to retrieve. You can specify
@@ -1333,7 +1308,12 @@ impl GetSecretValueInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body = crate::operation_ser::serialize_synthetic_get_secret_value_input_body(&self)
+                .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -1381,7 +1361,8 @@ impl GetSecretValueInput {
             op
         })
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
@@ -1391,24 +1372,14 @@ impl GetSecretValueInput {
             .header("Content-Type", "application/x-amz-json-1.1")
             .header("X-Amz-Target", "secretsmanager.GetSecretValue"))
     }
-    fn body(&self) -> crate::serializer::GetSecretValueInputBody {
-        crate::serializer::GetSecretValueInputBody {
-            secret_id: &self.secret_id,
-            version_stage: &self.version_stage,
-            version_id: &self.version_id,
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
         }
-    }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        serde_json::to_vec(&self.body()).expect("serialization should succeed")
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`GetSecretValueInput`](crate::input::GetSecretValueInput)
     pub fn builder() -> crate::input::get_secret_value_input::Builder {
@@ -1422,10 +1393,10 @@ pub mod list_secrets_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        max_results: std::option::Option<i32>,
-        sort_order: std::option::Option<crate::model::SortOrderType>,
-        next_token: std::option::Option<std::string::String>,
-        filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+        pub(crate) max_results: std::option::Option<i32>,
+        pub(crate) sort_order: std::option::Option<crate::model::SortOrderType>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
     }
     impl Builder {
         /// <p>(Optional) Limits the number of results you want to include in
@@ -1508,7 +1479,12 @@ impl ListSecretsInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body = crate::operation_ser::serialize_synthetic_list_secrets_input_body(&self)
+                .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -1556,7 +1532,8 @@ impl ListSecretsInput {
             op
         })
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
@@ -1566,25 +1543,14 @@ impl ListSecretsInput {
             .header("Content-Type", "application/x-amz-json-1.1")
             .header("X-Amz-Target", "secretsmanager.ListSecrets"))
     }
-    fn body(&self) -> crate::serializer::ListSecretsInputBody {
-        crate::serializer::ListSecretsInputBody {
-            max_results: &self.max_results,
-            sort_order: &self.sort_order,
-            next_token: &self.next_token,
-            filters: &self.filters,
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
         }
-    }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        serde_json::to_vec(&self.body()).expect("serialization should succeed")
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`ListSecretsInput`](crate::input::ListSecretsInput)
     pub fn builder() -> crate::input::list_secrets_input::Builder {
@@ -1598,10 +1564,10 @@ pub mod list_secret_version_ids_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        max_results: std::option::Option<i32>,
-        secret_id: std::option::Option<std::string::String>,
-        next_token: std::option::Option<std::string::String>,
-        include_deprecated: std::option::Option<bool>,
+        pub(crate) max_results: std::option::Option<i32>,
+        pub(crate) secret_id: std::option::Option<std::string::String>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) include_deprecated: std::option::Option<bool>,
     }
     impl Builder {
         /// <p>(Optional) Limits the number of results you want to include in
@@ -1695,7 +1661,13 @@ impl ListSecretVersionIdsInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body =
+                crate::operation_ser::serialize_synthetic_list_secret_version_ids_input_body(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -1743,7 +1715,8 @@ impl ListSecretVersionIdsInput {
             op
         })
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
@@ -1753,25 +1726,14 @@ impl ListSecretVersionIdsInput {
             .header("Content-Type", "application/x-amz-json-1.1")
             .header("X-Amz-Target", "secretsmanager.ListSecretVersionIds"))
     }
-    fn body(&self) -> crate::serializer::ListSecretVersionIdsInputBody {
-        crate::serializer::ListSecretVersionIdsInputBody {
-            max_results: &self.max_results,
-            secret_id: &self.secret_id,
-            next_token: &self.next_token,
-            include_deprecated: &self.include_deprecated,
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
         }
-    }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        serde_json::to_vec(&self.body()).expect("serialization should succeed")
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`ListSecretVersionIdsInput`](crate::input::ListSecretVersionIdsInput)
     pub fn builder() -> crate::input::list_secret_version_ids_input::Builder {
@@ -1785,9 +1747,9 @@ pub mod put_resource_policy_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        resource_policy: std::option::Option<std::string::String>,
-        block_public_policy: std::option::Option<bool>,
-        secret_id: std::option::Option<std::string::String>,
+        pub(crate) resource_policy: std::option::Option<std::string::String>,
+        pub(crate) block_public_policy: std::option::Option<bool>,
+        pub(crate) secret_id: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>A JSON-formatted string that's constructed according to the grammar and syntax for an
@@ -1866,7 +1828,13 @@ impl PutResourcePolicyInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body =
+                crate::operation_ser::serialize_synthetic_put_resource_policy_input_body(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -1914,7 +1882,8 @@ impl PutResourcePolicyInput {
             op
         })
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
@@ -1924,24 +1893,14 @@ impl PutResourcePolicyInput {
             .header("Content-Type", "application/x-amz-json-1.1")
             .header("X-Amz-Target", "secretsmanager.PutResourcePolicy"))
     }
-    fn body(&self) -> crate::serializer::PutResourcePolicyInputBody {
-        crate::serializer::PutResourcePolicyInputBody {
-            resource_policy: &self.resource_policy,
-            block_public_policy: &self.block_public_policy,
-            secret_id: &self.secret_id,
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
         }
-    }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        serde_json::to_vec(&self.body()).expect("serialization should succeed")
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`PutResourcePolicyInput`](crate::input::PutResourcePolicyInput)
     pub fn builder() -> crate::input::put_resource_policy_input::Builder {
@@ -1955,11 +1914,11 @@ pub mod put_secret_value_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        client_request_token: std::option::Option<std::string::String>,
-        secret_id: std::option::Option<std::string::String>,
-        secret_string: std::option::Option<std::string::String>,
-        secret_binary: std::option::Option<smithy_types::Blob>,
-        version_stages: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) client_request_token: std::option::Option<std::string::String>,
+        pub(crate) secret_id: std::option::Option<std::string::String>,
+        pub(crate) secret_string: std::option::Option<std::string::String>,
+        pub(crate) secret_binary: std::option::Option<smithy_types::Blob>,
+        pub(crate) version_stages: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
         /// <p>(Optional) Specifies a unique identifier for the new version of the secret. </p>
@@ -2113,7 +2072,12 @@ impl PutSecretValueInput {
                 self.client_request_token = Some(_config.make_token.make_idempotency_token());
             }
 
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body = crate::operation_ser::serialize_synthetic_put_secret_value_input_body(&self)
+                .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -2161,7 +2125,8 @@ impl PutSecretValueInput {
             op
         })
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
@@ -2171,26 +2136,14 @@ impl PutSecretValueInput {
             .header("Content-Type", "application/x-amz-json-1.1")
             .header("X-Amz-Target", "secretsmanager.PutSecretValue"))
     }
-    fn body(&self) -> crate::serializer::PutSecretValueInputBody {
-        crate::serializer::PutSecretValueInputBody {
-            client_request_token: &self.client_request_token,
-            secret_id: &self.secret_id,
-            secret_string: &self.secret_string,
-            secret_binary: &self.secret_binary,
-            version_stages: &self.version_stages,
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
         }
-    }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        serde_json::to_vec(&self.body()).expect("serialization should succeed")
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`PutSecretValueInput`](crate::input::PutSecretValueInput)
     pub fn builder() -> crate::input::put_secret_value_input::Builder {
@@ -2204,7 +2157,7 @@ pub mod restore_secret_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        secret_id: std::option::Option<std::string::String>,
+        pub(crate) secret_id: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>Specifies the secret that you want to restore from a previously scheduled deletion. You
@@ -2255,7 +2208,12 @@ impl RestoreSecretInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body = crate::operation_ser::serialize_synthetic_restore_secret_input_body(&self)
+                .map_err(|err| {
+                smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -2303,7 +2261,8 @@ impl RestoreSecretInput {
             op
         })
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
@@ -2313,22 +2272,14 @@ impl RestoreSecretInput {
             .header("Content-Type", "application/x-amz-json-1.1")
             .header("X-Amz-Target", "secretsmanager.RestoreSecret"))
     }
-    fn body(&self) -> crate::serializer::RestoreSecretInputBody {
-        crate::serializer::RestoreSecretInputBody {
-            secret_id: &self.secret_id,
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
         }
-    }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        serde_json::to_vec(&self.body()).expect("serialization should succeed")
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`RestoreSecretInput`](crate::input::RestoreSecretInput)
     pub fn builder() -> crate::input::restore_secret_input::Builder {
@@ -2342,10 +2293,10 @@ pub mod rotate_secret_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        secret_id: std::option::Option<std::string::String>,
-        client_request_token: std::option::Option<std::string::String>,
-        rotation_rules: std::option::Option<crate::model::RotationRulesType>,
-        rotation_lambda_arn: std::option::Option<std::string::String>,
+        pub(crate) secret_id: std::option::Option<std::string::String>,
+        pub(crate) client_request_token: std::option::Option<std::string::String>,
+        pub(crate) rotation_rules: std::option::Option<crate::model::RotationRulesType>,
+        pub(crate) rotation_lambda_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>Specifies the secret that you want to rotate. You can specify either the Amazon Resource
@@ -2452,7 +2403,12 @@ impl RotateSecretInput {
                 self.client_request_token = Some(_config.make_token.make_idempotency_token());
             }
 
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body = crate::operation_ser::serialize_synthetic_rotate_secret_input_body(&self)
+                .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -2500,7 +2456,8 @@ impl RotateSecretInput {
             op
         })
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
@@ -2510,25 +2467,14 @@ impl RotateSecretInput {
             .header("Content-Type", "application/x-amz-json-1.1")
             .header("X-Amz-Target", "secretsmanager.RotateSecret"))
     }
-    fn body(&self) -> crate::serializer::RotateSecretInputBody {
-        crate::serializer::RotateSecretInputBody {
-            secret_id: &self.secret_id,
-            client_request_token: &self.client_request_token,
-            rotation_rules: &self.rotation_rules,
-            rotation_lambda_arn: &self.rotation_lambda_arn,
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
         }
-    }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        serde_json::to_vec(&self.body()).expect("serialization should succeed")
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`RotateSecretInput`](crate::input::RotateSecretInput)
     pub fn builder() -> crate::input::rotate_secret_input::Builder {
@@ -2542,8 +2488,8 @@ pub mod tag_resource_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        secret_id: std::option::Option<std::string::String>,
-        tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        pub(crate) secret_id: std::option::Option<std::string::String>,
+        pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
         /// <p>The identifier for the secret that you want to attach tags to. You can specify either the
@@ -2608,7 +2554,12 @@ impl TagResourceInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body = crate::operation_ser::serialize_synthetic_tag_resource_input_body(&self)
+                .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -2656,7 +2607,8 @@ impl TagResourceInput {
             op
         })
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
@@ -2666,23 +2618,14 @@ impl TagResourceInput {
             .header("Content-Type", "application/x-amz-json-1.1")
             .header("X-Amz-Target", "secretsmanager.TagResource"))
     }
-    fn body(&self) -> crate::serializer::TagResourceInputBody {
-        crate::serializer::TagResourceInputBody {
-            secret_id: &self.secret_id,
-            tags: &self.tags,
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
         }
-    }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        serde_json::to_vec(&self.body()).expect("serialization should succeed")
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput)
     pub fn builder() -> crate::input::tag_resource_input::Builder {
@@ -2696,8 +2639,8 @@ pub mod untag_resource_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
-        secret_id: std::option::Option<std::string::String>,
+        pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) secret_id: std::option::Option<std::string::String>,
     }
     impl Builder {
         pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
@@ -2762,7 +2705,12 @@ impl UntagResourceInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body = crate::operation_ser::serialize_synthetic_untag_resource_input_body(&self)
+                .map_err(|err| {
+                smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -2810,7 +2758,8 @@ impl UntagResourceInput {
             op
         })
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
@@ -2820,23 +2769,14 @@ impl UntagResourceInput {
             .header("Content-Type", "application/x-amz-json-1.1")
             .header("X-Amz-Target", "secretsmanager.UntagResource"))
     }
-    fn body(&self) -> crate::serializer::UntagResourceInputBody {
-        crate::serializer::UntagResourceInputBody {
-            tag_keys: &self.tag_keys,
-            secret_id: &self.secret_id,
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
         }
-    }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        serde_json::to_vec(&self.body()).expect("serialization should succeed")
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput)
     pub fn builder() -> crate::input::untag_resource_input::Builder {
@@ -2850,12 +2790,12 @@ pub mod update_secret_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        secret_string: std::option::Option<std::string::String>,
-        kms_key_id: std::option::Option<std::string::String>,
-        secret_id: std::option::Option<std::string::String>,
-        description: std::option::Option<std::string::String>,
-        client_request_token: std::option::Option<std::string::String>,
-        secret_binary: std::option::Option<smithy_types::Blob>,
+        pub(crate) secret_string: std::option::Option<std::string::String>,
+        pub(crate) kms_key_id: std::option::Option<std::string::String>,
+        pub(crate) secret_id: std::option::Option<std::string::String>,
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) client_request_token: std::option::Option<std::string::String>,
+        pub(crate) secret_binary: std::option::Option<smithy_types::Blob>,
     }
     impl Builder {
         /// <p>(Optional) Specifies updated text data that you want to encrypt and store in this new
@@ -3027,7 +2967,12 @@ impl UpdateSecretInput {
                 self.client_request_token = Some(_config.make_token.make_idempotency_token());
             }
 
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body = crate::operation_ser::serialize_synthetic_update_secret_input_body(&self)
+                .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -3075,7 +3020,8 @@ impl UpdateSecretInput {
             op
         })
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
@@ -3085,27 +3031,14 @@ impl UpdateSecretInput {
             .header("Content-Type", "application/x-amz-json-1.1")
             .header("X-Amz-Target", "secretsmanager.UpdateSecret"))
     }
-    fn body(&self) -> crate::serializer::UpdateSecretInputBody {
-        crate::serializer::UpdateSecretInputBody {
-            secret_string: &self.secret_string,
-            kms_key_id: &self.kms_key_id,
-            secret_id: &self.secret_id,
-            description: &self.description,
-            client_request_token: &self.client_request_token,
-            secret_binary: &self.secret_binary,
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
         }
-    }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        serde_json::to_vec(&self.body()).expect("serialization should succeed")
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`UpdateSecretInput`](crate::input::UpdateSecretInput)
     pub fn builder() -> crate::input::update_secret_input::Builder {
@@ -3119,10 +3052,10 @@ pub mod update_secret_version_stage_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        move_to_version_id: std::option::Option<std::string::String>,
-        secret_id: std::option::Option<std::string::String>,
-        remove_from_version_id: std::option::Option<std::string::String>,
-        version_stage: std::option::Option<std::string::String>,
+        pub(crate) move_to_version_id: std::option::Option<std::string::String>,
+        pub(crate) secret_id: std::option::Option<std::string::String>,
+        pub(crate) remove_from_version_id: std::option::Option<std::string::String>,
+        pub(crate) version_stage: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>(Optional) The secret version ID that you want to add the staging label. If you want to
@@ -3218,7 +3151,15 @@ impl UpdateSecretVersionStageInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body =
+                crate::operation_ser::serialize_synthetic_update_secret_version_stage_input_body(
+                    &self,
+                )
+                .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -3266,7 +3207,8 @@ impl UpdateSecretVersionStageInput {
             op
         })
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
@@ -3276,25 +3218,14 @@ impl UpdateSecretVersionStageInput {
             .header("Content-Type", "application/x-amz-json-1.1")
             .header("X-Amz-Target", "secretsmanager.UpdateSecretVersionStage"))
     }
-    fn body(&self) -> crate::serializer::UpdateSecretVersionStageInputBody {
-        crate::serializer::UpdateSecretVersionStageInputBody {
-            move_to_version_id: &self.move_to_version_id,
-            secret_id: &self.secret_id,
-            remove_from_version_id: &self.remove_from_version_id,
-            version_stage: &self.version_stage,
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
         }
-    }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        serde_json::to_vec(&self.body()).expect("serialization should succeed")
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`UpdateSecretVersionStageInput`](crate::input::UpdateSecretVersionStageInput)
     pub fn builder() -> crate::input::update_secret_version_stage_input::Builder {
@@ -3308,8 +3239,8 @@ pub mod validate_resource_policy_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        resource_policy: std::option::Option<std::string::String>,
-        secret_id: std::option::Option<std::string::String>,
+        pub(crate) resource_policy: std::option::Option<std::string::String>,
+        pub(crate) secret_id: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>Identifies the Resource Policy attached to the secret.</p>
@@ -3374,7 +3305,15 @@ impl ValidateResourcePolicyInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body =
+                crate::operation_ser::serialize_synthetic_validate_resource_policy_input_body(
+                    &self,
+                )
+                .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -3422,7 +3361,8 @@ impl ValidateResourcePolicyInput {
             op
         })
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
@@ -3432,23 +3372,14 @@ impl ValidateResourcePolicyInput {
             .header("Content-Type", "application/x-amz-json-1.1")
             .header("X-Amz-Target", "secretsmanager.ValidateResourcePolicy"))
     }
-    fn body(&self) -> crate::serializer::ValidateResourcePolicyInputBody {
-        crate::serializer::ValidateResourcePolicyInputBody {
-            resource_policy: &self.resource_policy,
-            secret_id: &self.secret_id,
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
         }
-    }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        serde_json::to_vec(&self.body()).expect("serialization should succeed")
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`ValidateResourcePolicyInput`](crate::input::ValidateResourcePolicyInput)
     pub fn builder() -> crate::input::validate_resource_policy_input::Builder {

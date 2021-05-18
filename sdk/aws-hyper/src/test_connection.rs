@@ -118,7 +118,7 @@ impl<B: Into<hyper::Body>> tower::Service<http::Request<SdkBody>> for TestConnec
             self.requests
                 .lock()
                 .unwrap()
-                .push(ValidateRequest { actual, expected });
+                .push(ValidateRequest { expected, actual });
             std::future::ready(Ok(resp.map(|body| SdkBody::from(body.into()))))
         } else {
             std::future::ready(Err("No more data".into()))

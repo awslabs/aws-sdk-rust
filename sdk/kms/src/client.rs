@@ -28,7 +28,7 @@ impl Client {
     pub fn from_conf_conn(conf: crate::Config, conn: aws_hyper::conn::Standard) -> Self {
         let client = aws_hyper::Client::new(conn);
         Self {
-            handle: std::sync::Arc::new(Handle { conf, client }),
+            handle: std::sync::Arc::new(Handle { client, conf }),
         }
     }
 
@@ -226,6 +226,7 @@ impl Client {
 }
 pub mod fluent_builders {
 
+    #[derive(std::fmt::Debug)]
     pub struct CancelKeyDeletion {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::cancel_key_deletion_input::Builder,
@@ -279,6 +280,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct ConnectCustomKeyStore {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::connect_custom_key_store_input::Builder,
@@ -322,6 +324,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct CreateAlias {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::create_alias_input::Builder,
@@ -392,6 +395,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct CreateCustomKeyStore {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::create_custom_key_store_input::Builder,
@@ -480,6 +484,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct CreateGrant {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::create_grant_input::Builder,
@@ -632,6 +637,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct CreateKey {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::create_key_input::Builder,
@@ -907,6 +913,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct Decrypt {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::decrypt_input::Builder,
@@ -1035,6 +1042,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct DeleteAlias {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::delete_alias_input::Builder,
@@ -1075,6 +1083,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct DeleteCustomKeyStore {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::delete_custom_key_store_input::Builder,
@@ -1117,6 +1126,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct DeleteImportedKeyMaterial {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::delete_imported_key_material_input::Builder,
@@ -1170,6 +1180,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct DescribeCustomKeyStores {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::describe_custom_key_stores_input::Builder,
@@ -1255,6 +1266,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct DescribeKey {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::describe_key_input::Builder,
@@ -1333,6 +1345,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct DisableKey {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::disable_key_input::Builder,
@@ -1385,6 +1398,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct DisableKeyRotation {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::disable_key_rotation_input::Builder,
@@ -1440,6 +1454,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct DisconnectCustomKeyStore {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::disconnect_custom_key_store_input::Builder,
@@ -1482,6 +1497,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct EnableKey {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::enable_key_input::Builder,
@@ -1534,6 +1550,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct EnableKeyRotation {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::enable_key_rotation_input::Builder,
@@ -1586,6 +1603,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct Encrypt {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::encrypt_input::Builder,
@@ -1708,6 +1726,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct GenerateDataKey {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::generate_data_key_input::Builder,
@@ -1829,6 +1848,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct GenerateDataKeyPair {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::generate_data_key_pair_input::Builder,
@@ -1941,6 +1961,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct GenerateDataKeyPairWithoutPlaintext {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::generate_data_key_pair_without_plaintext_input::Builder,
@@ -2053,6 +2074,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct GenerateDataKeyWithoutPlaintext {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::generate_data_key_without_plaintext_input::Builder,
@@ -2171,6 +2193,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct GenerateRandom {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::generate_random_input::Builder,
@@ -2223,6 +2246,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct GetKeyPolicy {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::get_key_policy_input::Builder,
@@ -2285,6 +2309,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct GetKeyRotationStatus {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::get_key_rotation_status_input::Builder,
@@ -2338,6 +2363,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct GetParametersForImport {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::get_parameters_for_import_input::Builder,
@@ -2417,6 +2443,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct GetPublicKey {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::get_public_key_input::Builder,
@@ -2491,6 +2518,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct ImportKeyMaterial {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::import_key_material_input::Builder,
@@ -2597,6 +2625,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct ListAliases {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::list_aliases_input::Builder,
@@ -2676,6 +2705,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct ListGrants {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::list_grants_input::Builder,
@@ -2753,6 +2783,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct ListKeyPolicies {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::list_key_policies_input::Builder,
@@ -2830,6 +2861,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct ListKeys {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::list_keys_input::Builder,
@@ -2884,6 +2916,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct ListResourceTags {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::list_resource_tags_input::Builder,
@@ -2962,6 +2995,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct ListRetirableGrants {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::list_retirable_grants_input::Builder,
@@ -3034,6 +3068,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct PutKeyPolicy {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::put_key_policy_input::Builder,
@@ -3139,6 +3174,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct ReEncrypt {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::re_encrypt_input::Builder,
@@ -3351,6 +3387,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct RetireGrant {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::retire_grant_input::Builder,
@@ -3417,6 +3454,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct RevokeGrant {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::revoke_grant_input::Builder,
@@ -3479,6 +3517,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct ScheduleKeyDeletion {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::schedule_key_deletion_input::Builder,
@@ -3543,6 +3582,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct Sign {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::sign_input::Builder,
@@ -3657,6 +3697,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct TagResource {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::tag_resource_input::Builder,
@@ -3726,6 +3767,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct UntagResource {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::untag_resource_input::Builder,
@@ -3790,6 +3832,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct UpdateAlias {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::update_alias_input::Builder,
@@ -3859,6 +3902,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct UpdateCustomKeyStore {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::update_custom_key_store_input::Builder,
@@ -3948,6 +3992,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct UpdateKeyDescription {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::update_key_description_input::Builder,
@@ -4009,6 +4054,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct Verify {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::verify_input::Builder,

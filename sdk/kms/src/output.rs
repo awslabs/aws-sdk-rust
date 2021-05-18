@@ -28,9 +28,9 @@ pub mod verify_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        key_id: std::option::Option<std::string::String>,
-        signature_valid: std::option::Option<bool>,
-        signing_algorithm: std::option::Option<crate::model::SigningAlgorithmSpec>,
+        pub(crate) key_id: std::option::Option<std::string::String>,
+        pub(crate) signature_valid: std::option::Option<bool>,
+        pub(crate) signing_algorithm: std::option::Option<crate::model::SigningAlgorithmSpec>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the asymmetric CMK that was used to verify the signature.</p>
@@ -270,9 +270,9 @@ pub mod sign_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        key_id: std::option::Option<std::string::String>,
-        signature: std::option::Option<smithy_types::Blob>,
-        signing_algorithm: std::option::Option<crate::model::SigningAlgorithmSpec>,
+        pub(crate) key_id: std::option::Option<std::string::String>,
+        pub(crate) signature: std::option::Option<smithy_types::Blob>,
+        pub(crate) signing_algorithm: std::option::Option<crate::model::SigningAlgorithmSpec>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the asymmetric CMK that was used to sign the
@@ -360,8 +360,8 @@ pub mod schedule_key_deletion_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        key_id: std::option::Option<std::string::String>,
-        deletion_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) key_id: std::option::Option<std::string::String>,
+        pub(crate) deletion_date: std::option::Option<smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the CMK whose deletion is scheduled.</p>
@@ -498,11 +498,12 @@ pub mod re_encrypt_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        ciphertext_blob: std::option::Option<smithy_types::Blob>,
-        source_key_id: std::option::Option<std::string::String>,
-        key_id: std::option::Option<std::string::String>,
-        source_encryption_algorithm: std::option::Option<crate::model::EncryptionAlgorithmSpec>,
-        destination_encryption_algorithm:
+        pub(crate) ciphertext_blob: std::option::Option<smithy_types::Blob>,
+        pub(crate) source_key_id: std::option::Option<std::string::String>,
+        pub(crate) key_id: std::option::Option<std::string::String>,
+        pub(crate) source_encryption_algorithm:
+            std::option::Option<crate::model::EncryptionAlgorithmSpec>,
+        pub(crate) destination_encryption_algorithm:
             std::option::Option<crate::model::EncryptionAlgorithmSpec>,
     }
     impl Builder {
@@ -641,9 +642,9 @@ pub mod list_retirable_grants_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        grants: std::option::Option<std::vec::Vec<crate::model::GrantListEntry>>,
-        next_marker: std::option::Option<std::string::String>,
-        truncated: std::option::Option<bool>,
+        pub(crate) grants: std::option::Option<std::vec::Vec<crate::model::GrantListEntry>>,
+        pub(crate) next_marker: std::option::Option<std::string::String>,
+        pub(crate) truncated: std::option::Option<bool>,
     }
     impl Builder {
         pub fn grants(mut self, inp: impl Into<crate::model::GrantListEntry>) -> Self {
@@ -728,9 +729,9 @@ pub mod list_resource_tags_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        next_marker: std::option::Option<std::string::String>,
-        truncated: std::option::Option<bool>,
+        pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        pub(crate) next_marker: std::option::Option<std::string::String>,
+        pub(crate) truncated: std::option::Option<bool>,
     }
     impl Builder {
         pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
@@ -815,9 +816,9 @@ pub mod list_keys_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        keys: std::option::Option<std::vec::Vec<crate::model::KeyListEntry>>,
-        next_marker: std::option::Option<std::string::String>,
-        truncated: std::option::Option<bool>,
+        pub(crate) keys: std::option::Option<std::vec::Vec<crate::model::KeyListEntry>>,
+        pub(crate) next_marker: std::option::Option<std::string::String>,
+        pub(crate) truncated: std::option::Option<bool>,
     }
     impl Builder {
         pub fn keys(mut self, inp: impl Into<crate::model::KeyListEntry>) -> Self {
@@ -901,9 +902,9 @@ pub mod list_key_policies_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        policy_names: std::option::Option<std::vec::Vec<std::string::String>>,
-        next_marker: std::option::Option<std::string::String>,
-        truncated: std::option::Option<bool>,
+        pub(crate) policy_names: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) next_marker: std::option::Option<std::string::String>,
+        pub(crate) truncated: std::option::Option<bool>,
     }
     impl Builder {
         pub fn policy_names(mut self, inp: impl Into<std::string::String>) -> Self {
@@ -987,9 +988,9 @@ pub mod list_grants_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        grants: std::option::Option<std::vec::Vec<crate::model::GrantListEntry>>,
-        next_marker: std::option::Option<std::string::String>,
-        truncated: std::option::Option<bool>,
+        pub(crate) grants: std::option::Option<std::vec::Vec<crate::model::GrantListEntry>>,
+        pub(crate) next_marker: std::option::Option<std::string::String>,
+        pub(crate) truncated: std::option::Option<bool>,
     }
     impl Builder {
         pub fn grants(mut self, inp: impl Into<crate::model::GrantListEntry>) -> Self {
@@ -1073,9 +1074,9 @@ pub mod list_aliases_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        aliases: std::option::Option<std::vec::Vec<crate::model::AliasListEntry>>,
-        next_marker: std::option::Option<std::string::String>,
-        truncated: std::option::Option<bool>,
+        pub(crate) aliases: std::option::Option<std::vec::Vec<crate::model::AliasListEntry>>,
+        pub(crate) next_marker: std::option::Option<std::string::String>,
+        pub(crate) truncated: std::option::Option<bool>,
     }
     impl Builder {
         pub fn aliases(mut self, inp: impl Into<crate::model::AliasListEntry>) -> Self {
@@ -1206,13 +1207,15 @@ pub mod get_public_key_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        key_id: std::option::Option<std::string::String>,
-        public_key: std::option::Option<smithy_types::Blob>,
-        customer_master_key_spec: std::option::Option<crate::model::CustomerMasterKeySpec>,
-        key_usage: std::option::Option<crate::model::KeyUsageType>,
-        encryption_algorithms:
+        pub(crate) key_id: std::option::Option<std::string::String>,
+        pub(crate) public_key: std::option::Option<smithy_types::Blob>,
+        pub(crate) customer_master_key_spec:
+            std::option::Option<crate::model::CustomerMasterKeySpec>,
+        pub(crate) key_usage: std::option::Option<crate::model::KeyUsageType>,
+        pub(crate) encryption_algorithms:
             std::option::Option<std::vec::Vec<crate::model::EncryptionAlgorithmSpec>>,
-        signing_algorithms: std::option::Option<std::vec::Vec<crate::model::SigningAlgorithmSpec>>,
+        pub(crate) signing_algorithms:
+            std::option::Option<std::vec::Vec<crate::model::SigningAlgorithmSpec>>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the asymmetric CMK from which the public key was downloaded.</p>
@@ -1351,10 +1354,10 @@ pub mod get_parameters_for_import_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        key_id: std::option::Option<std::string::String>,
-        import_token: std::option::Option<smithy_types::Blob>,
-        public_key: std::option::Option<smithy_types::Blob>,
-        parameters_valid_to: std::option::Option<smithy_types::Instant>,
+        pub(crate) key_id: std::option::Option<std::string::String>,
+        pub(crate) import_token: std::option::Option<smithy_types::Blob>,
+        pub(crate) public_key: std::option::Option<smithy_types::Blob>,
+        pub(crate) parameters_valid_to: std::option::Option<smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the CMK to use in a subsequent <a>ImportKeyMaterial</a>
@@ -1438,7 +1441,7 @@ pub mod get_key_rotation_status_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        key_rotation_enabled: std::option::Option<bool>,
+        pub(crate) key_rotation_enabled: std::option::Option<bool>,
     }
     impl Builder {
         /// <p>A Boolean value that specifies whether key rotation is enabled.</p>
@@ -1484,7 +1487,7 @@ pub mod get_key_policy_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        policy: std::option::Option<std::string::String>,
+        pub(crate) policy: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>A key policy document in JSON format.</p>
@@ -1530,7 +1533,7 @@ pub mod generate_random_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        plaintext: std::option::Option<smithy_types::Blob>,
+        pub(crate) plaintext: std::option::Option<smithy_types::Blob>,
     }
     impl Builder {
         /// <p>The random byte string. When you use the HTTP API or the AWS CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
@@ -1579,8 +1582,8 @@ pub mod generate_data_key_without_plaintext_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        ciphertext_blob: std::option::Option<smithy_types::Blob>,
-        key_id: std::option::Option<std::string::String>,
+        pub(crate) ciphertext_blob: std::option::Option<smithy_types::Blob>,
+        pub(crate) key_id: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The encrypted data key. When you use the HTTP API or the AWS CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
@@ -1648,10 +1651,10 @@ pub mod generate_data_key_pair_without_plaintext_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        private_key_ciphertext_blob: std::option::Option<smithy_types::Blob>,
-        public_key: std::option::Option<smithy_types::Blob>,
-        key_id: std::option::Option<std::string::String>,
-        key_pair_spec: std::option::Option<crate::model::DataKeyPairSpec>,
+        pub(crate) private_key_ciphertext_blob: std::option::Option<smithy_types::Blob>,
+        pub(crate) public_key: std::option::Option<smithy_types::Blob>,
+        pub(crate) key_id: std::option::Option<std::string::String>,
+        pub(crate) key_pair_spec: std::option::Option<crate::model::DataKeyPairSpec>,
     }
     impl Builder {
         /// <p>The encrypted copy of the private key. When you use the HTTP API or the AWS CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
@@ -1748,11 +1751,11 @@ pub mod generate_data_key_pair_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        private_key_ciphertext_blob: std::option::Option<smithy_types::Blob>,
-        private_key_plaintext: std::option::Option<smithy_types::Blob>,
-        public_key: std::option::Option<smithy_types::Blob>,
-        key_id: std::option::Option<std::string::String>,
-        key_pair_spec: std::option::Option<crate::model::DataKeyPairSpec>,
+        pub(crate) private_key_ciphertext_blob: std::option::Option<smithy_types::Blob>,
+        pub(crate) private_key_plaintext: std::option::Option<smithy_types::Blob>,
+        pub(crate) public_key: std::option::Option<smithy_types::Blob>,
+        pub(crate) key_id: std::option::Option<std::string::String>,
+        pub(crate) key_pair_spec: std::option::Option<crate::model::DataKeyPairSpec>,
     }
     impl Builder {
         /// <p>The encrypted copy of the private key. When you use the HTTP API or the AWS CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
@@ -1854,9 +1857,9 @@ pub mod generate_data_key_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        ciphertext_blob: std::option::Option<smithy_types::Blob>,
-        plaintext: std::option::Option<smithy_types::Blob>,
-        key_id: std::option::Option<std::string::String>,
+        pub(crate) ciphertext_blob: std::option::Option<smithy_types::Blob>,
+        pub(crate) plaintext: std::option::Option<smithy_types::Blob>,
+        pub(crate) key_id: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The encrypted copy of the data key. When you use the HTTP API or the AWS CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
@@ -1929,9 +1932,9 @@ pub mod encrypt_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        ciphertext_blob: std::option::Option<smithy_types::Blob>,
-        key_id: std::option::Option<std::string::String>,
-        encryption_algorithm: std::option::Option<crate::model::EncryptionAlgorithmSpec>,
+        pub(crate) ciphertext_blob: std::option::Option<smithy_types::Blob>,
+        pub(crate) key_id: std::option::Option<std::string::String>,
+        pub(crate) encryption_algorithm: std::option::Option<crate::model::EncryptionAlgorithmSpec>,
     }
     impl Builder {
         /// <p>The encrypted plaintext. When you use the HTTP API or the AWS CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
@@ -2145,7 +2148,7 @@ pub mod describe_key_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        key_metadata: std::option::Option<crate::model::KeyMetadata>,
+        pub(crate) key_metadata: std::option::Option<crate::model::KeyMetadata>,
     }
     impl Builder {
         /// <p>Metadata associated with the key.</p>
@@ -2205,10 +2208,10 @@ pub mod describe_custom_key_stores_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        custom_key_stores:
+        pub(crate) custom_key_stores:
             std::option::Option<std::vec::Vec<crate::model::CustomKeyStoresListEntry>>,
-        next_marker: std::option::Option<std::string::String>,
-        truncated: std::option::Option<bool>,
+        pub(crate) next_marker: std::option::Option<std::string::String>,
+        pub(crate) truncated: std::option::Option<bool>,
     }
     impl Builder {
         pub fn custom_key_stores(
@@ -2378,9 +2381,9 @@ pub mod decrypt_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        key_id: std::option::Option<std::string::String>,
-        plaintext: std::option::Option<smithy_types::Blob>,
-        encryption_algorithm: std::option::Option<crate::model::EncryptionAlgorithmSpec>,
+        pub(crate) key_id: std::option::Option<std::string::String>,
+        pub(crate) plaintext: std::option::Option<smithy_types::Blob>,
+        pub(crate) encryption_algorithm: std::option::Option<crate::model::EncryptionAlgorithmSpec>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the CMK that was used to decrypt the ciphertext.</p>
@@ -2449,7 +2452,7 @@ pub mod create_key_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        key_metadata: std::option::Option<crate::model::KeyMetadata>,
+        pub(crate) key_metadata: std::option::Option<crate::model::KeyMetadata>,
     }
     impl Builder {
         /// <p>Metadata associated with the CMK.</p>
@@ -2505,8 +2508,8 @@ pub mod create_grant_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        grant_token: std::option::Option<std::string::String>,
-        grant_id: std::option::Option<std::string::String>,
+        pub(crate) grant_token: std::option::Option<std::string::String>,
+        pub(crate) grant_id: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The grant token.</p>
@@ -2566,7 +2569,7 @@ pub mod create_custom_key_store_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        custom_key_store_id: std::option::Option<std::string::String>,
+        pub(crate) custom_key_store_id: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>A unique identifier for the new custom key store.</p>
@@ -2673,7 +2676,7 @@ pub mod cancel_key_deletion_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        key_id: std::option::Option<std::string::String>,
+        pub(crate) key_id: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the CMK whose deletion is canceled.</p>

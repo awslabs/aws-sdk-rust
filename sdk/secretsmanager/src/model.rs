@@ -28,8 +28,8 @@ pub mod validation_errors_entry {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        error_message: std::option::Option<std::string::String>,
-        check_name: std::option::Option<std::string::String>,
+        pub(crate) error_message: std::option::Option<std::string::String>,
+        pub(crate) check_name: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>Displays error messages if validation encounters problems during validation of the resource policy.</p>
@@ -95,8 +95,8 @@ pub mod tag {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        value: std::option::Option<std::string::String>,
-        key: std::option::Option<std::string::String>,
+        pub(crate) value: std::option::Option<std::string::String>,
+        pub(crate) key: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The string value associated with the key of the tag.</p>
@@ -161,7 +161,7 @@ pub mod rotation_rules_type {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        automatically_after_days: std::option::Option<i64>,
+        pub(crate) automatically_after_days: std::option::Option<i64>,
     }
     impl Builder {
         /// <p>Specifies the number of days between automatic scheduled rotations of the secret.</p>
@@ -248,10 +248,10 @@ pub mod secret_versions_list_entry {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        version_stages: std::option::Option<std::vec::Vec<std::string::String>>,
-        created_date: std::option::Option<smithy_types::Instant>,
-        version_id: std::option::Option<std::string::String>,
-        last_accessed_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) version_stages: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) created_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) version_id: std::option::Option<std::string::String>,
+        pub(crate) last_accessed_date: std::option::Option<smithy_types::Instant>,
     }
     impl Builder {
         pub fn version_stages(mut self, inp: impl Into<std::string::String>) -> Self {
@@ -476,23 +476,23 @@ pub mod secret_list_entry {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        last_rotated_date: std::option::Option<smithy_types::Instant>,
-        description: std::option::Option<std::string::String>,
-        kms_key_id: std::option::Option<std::string::String>,
-        secret_versions_to_stages: std::option::Option<
+        pub(crate) last_rotated_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) kms_key_id: std::option::Option<std::string::String>,
+        pub(crate) secret_versions_to_stages: std::option::Option<
             std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
         >,
-        created_date: std::option::Option<smithy_types::Instant>,
-        deleted_date: std::option::Option<smithy_types::Instant>,
-        arn: std::option::Option<std::string::String>,
-        owning_service: std::option::Option<std::string::String>,
-        rotation_lambda_arn: std::option::Option<std::string::String>,
-        tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        rotation_enabled: std::option::Option<bool>,
-        last_accessed_date: std::option::Option<smithy_types::Instant>,
-        last_changed_date: std::option::Option<smithy_types::Instant>,
-        rotation_rules: std::option::Option<crate::model::RotationRulesType>,
-        name: std::option::Option<std::string::String>,
+        pub(crate) created_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) deleted_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) arn: std::option::Option<std::string::String>,
+        pub(crate) owning_service: std::option::Option<std::string::String>,
+        pub(crate) rotation_lambda_arn: std::option::Option<std::string::String>,
+        pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        pub(crate) rotation_enabled: std::option::Option<bool>,
+        pub(crate) last_accessed_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) last_changed_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) rotation_rules: std::option::Option<crate::model::RotationRulesType>,
+        pub(crate) name: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The last date and time that the rotation process for this secret was invoked.</p>
@@ -729,8 +729,8 @@ pub mod filter {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        key: std::option::Option<crate::model::FilterNameStringType>,
-        values: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) key: std::option::Option<crate::model::FilterNameStringType>,
+        pub(crate) values: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
         /// <p>Filters your list of secrets by a specific key.</p>

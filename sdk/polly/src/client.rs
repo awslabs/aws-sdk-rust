@@ -28,7 +28,7 @@ impl Client {
     pub fn from_conf_conn(conf: crate::Config, conn: aws_hyper::conn::Standard) -> Self {
         let client = aws_hyper::Client::new(conn);
         Self {
-            handle: std::sync::Arc::new(Handle { conf, client }),
+            handle: std::sync::Arc::new(Handle { client, conf }),
         }
     }
 
@@ -74,6 +74,7 @@ impl Client {
 }
 pub mod fluent_builders {
 
+    #[derive(std::fmt::Debug)]
     pub struct DeleteLexicon {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::delete_lexicon_input::Builder,
@@ -113,6 +114,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct DescribeVoices {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::describe_voices_input::Builder,
@@ -190,6 +192,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct GetLexicon {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::get_lexicon_input::Builder,
@@ -229,6 +232,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct GetSpeechSynthesisTask {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::get_speech_synthesis_task_input::Builder,
@@ -268,6 +272,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct ListLexicons {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::list_lexicons_input::Builder,
@@ -308,6 +313,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct ListSpeechSynthesisTasks {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::list_speech_synthesis_tasks_input::Builder,
@@ -366,6 +372,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct PutLexicon {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::put_lexicon_input::Builder,
@@ -415,6 +422,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct StartSpeechSynthesisTask {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::start_speech_synthesis_task_input::Builder,
@@ -589,6 +597,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct SynthesizeSpeech {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::synthesize_speech_input::Builder,

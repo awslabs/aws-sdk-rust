@@ -5,10 +5,10 @@ pub mod add_tags_to_stream_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        tags: std::option::Option<
+        pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
-        stream_name: std::option::Option<std::string::String>,
+        pub(crate) stream_name: std::option::Option<std::string::String>,
     }
     impl Builder {
         pub fn tags(
@@ -65,7 +65,13 @@ impl AddTagsToStreamInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body =
+                crate::operation_ser::serialize_synthetic_add_tags_to_stream_input_body(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -113,7 +119,8 @@ impl AddTagsToStreamInput {
             op
         })
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
@@ -123,23 +130,14 @@ impl AddTagsToStreamInput {
             .header("Content-Type", "application/x-amz-json-1.1")
             .header("X-Amz-Target", "Kinesis_20131202.AddTagsToStream"))
     }
-    fn body(&self) -> crate::serializer::AddTagsToStreamInputBody {
-        crate::serializer::AddTagsToStreamInputBody {
-            tags: &self.tags,
-            stream_name: &self.stream_name,
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
         }
-    }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        serde_json::to_vec(&self.body()).expect("serialization should succeed")
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`AddTagsToStreamInput`](crate::input::AddTagsToStreamInput)
     pub fn builder() -> crate::input::add_tags_to_stream_input::Builder {
@@ -153,8 +151,8 @@ pub mod create_stream_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        stream_name: std::option::Option<std::string::String>,
-        shard_count: std::option::Option<i32>,
+        pub(crate) stream_name: std::option::Option<std::string::String>,
+        pub(crate) shard_count: std::option::Option<i32>,
     }
     impl Builder {
         /// <p>A name to identify the stream. The stream name is scoped to the AWS account used by
@@ -205,7 +203,12 @@ impl CreateStreamInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body = crate::operation_ser::serialize_synthetic_create_stream_input_body(&self)
+                .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -253,7 +256,8 @@ impl CreateStreamInput {
             op
         })
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
@@ -263,23 +267,14 @@ impl CreateStreamInput {
             .header("Content-Type", "application/x-amz-json-1.1")
             .header("X-Amz-Target", "Kinesis_20131202.CreateStream"))
     }
-    fn body(&self) -> crate::serializer::CreateStreamInputBody {
-        crate::serializer::CreateStreamInputBody {
-            stream_name: &self.stream_name,
-            shard_count: &self.shard_count,
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
         }
-    }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        serde_json::to_vec(&self.body()).expect("serialization should succeed")
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`CreateStreamInput`](crate::input::CreateStreamInput)
     pub fn builder() -> crate::input::create_stream_input::Builder {
@@ -293,8 +288,8 @@ pub mod decrease_stream_retention_period_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        retention_period_hours: std::option::Option<i32>,
-        stream_name: std::option::Option<std::string::String>,
+        pub(crate) retention_period_hours: std::option::Option<i32>,
+        pub(crate) stream_name: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The new retention period of the stream, in hours. Must be less than the current
@@ -344,7 +339,11 @@ impl DecreaseStreamRetentionPeriodInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body = 
+                crate::operation_ser::serialize_synthetic_decrease_stream_retention_period_input_body(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -392,7 +391,8 @@ impl DecreaseStreamRetentionPeriodInput {
             op
         })
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
@@ -405,23 +405,14 @@ impl DecreaseStreamRetentionPeriodInput {
                 "Kinesis_20131202.DecreaseStreamRetentionPeriod",
             ))
     }
-    fn body(&self) -> crate::serializer::DecreaseStreamRetentionPeriodInputBody {
-        crate::serializer::DecreaseStreamRetentionPeriodInputBody {
-            retention_period_hours: &self.retention_period_hours,
-            stream_name: &self.stream_name,
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
         }
-    }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        serde_json::to_vec(&self.body()).expect("serialization should succeed")
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`DecreaseStreamRetentionPeriodInput`](crate::input::DecreaseStreamRetentionPeriodInput)
     pub fn builder() -> crate::input::decrease_stream_retention_period_input::Builder {
@@ -435,8 +426,8 @@ pub mod delete_stream_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        stream_name: std::option::Option<std::string::String>,
-        enforce_consumer_deletion: std::option::Option<bool>,
+        pub(crate) stream_name: std::option::Option<std::string::String>,
+        pub(crate) enforce_consumer_deletion: std::option::Option<bool>,
     }
     impl Builder {
         /// <p>The name of the stream to delete.</p>
@@ -484,7 +475,12 @@ impl DeleteStreamInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body = crate::operation_ser::serialize_synthetic_delete_stream_input_body(&self)
+                .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -532,7 +528,8 @@ impl DeleteStreamInput {
             op
         })
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
@@ -542,23 +539,14 @@ impl DeleteStreamInput {
             .header("Content-Type", "application/x-amz-json-1.1")
             .header("X-Amz-Target", "Kinesis_20131202.DeleteStream"))
     }
-    fn body(&self) -> crate::serializer::DeleteStreamInputBody {
-        crate::serializer::DeleteStreamInputBody {
-            stream_name: &self.stream_name,
-            enforce_consumer_deletion: &self.enforce_consumer_deletion,
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
         }
-    }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        serde_json::to_vec(&self.body()).expect("serialization should succeed")
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`DeleteStreamInput`](crate::input::DeleteStreamInput)
     pub fn builder() -> crate::input::delete_stream_input::Builder {
@@ -572,9 +560,9 @@ pub mod deregister_stream_consumer_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        stream_arn: std::option::Option<std::string::String>,
-        consumer_name: std::option::Option<std::string::String>,
-        consumer_arn: std::option::Option<std::string::String>,
+        pub(crate) stream_arn: std::option::Option<std::string::String>,
+        pub(crate) consumer_name: std::option::Option<std::string::String>,
+        pub(crate) consumer_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The ARN of the Kinesis data stream that the consumer is registered with. For more
@@ -636,7 +624,15 @@ impl DeregisterStreamConsumerInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body =
+                crate::operation_ser::serialize_synthetic_deregister_stream_consumer_input_body(
+                    &self,
+                )
+                .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -684,7 +680,8 @@ impl DeregisterStreamConsumerInput {
             op
         })
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
@@ -694,24 +691,14 @@ impl DeregisterStreamConsumerInput {
             .header("Content-Type", "application/x-amz-json-1.1")
             .header("X-Amz-Target", "Kinesis_20131202.DeregisterStreamConsumer"))
     }
-    fn body(&self) -> crate::serializer::DeregisterStreamConsumerInputBody {
-        crate::serializer::DeregisterStreamConsumerInputBody {
-            stream_arn: &self.stream_arn,
-            consumer_name: &self.consumer_name,
-            consumer_arn: &self.consumer_arn,
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
         }
-    }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        serde_json::to_vec(&self.body()).expect("serialization should succeed")
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`DeregisterStreamConsumerInput`](crate::input::DeregisterStreamConsumerInput)
     pub fn builder() -> crate::input::deregister_stream_consumer_input::Builder {
@@ -748,7 +735,9 @@ impl DescribeLimitsInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body = smithy_http::body::SdkBody::from("{}");
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -796,7 +785,8 @@ impl DescribeLimitsInput {
             op
         })
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
@@ -806,17 +796,14 @@ impl DescribeLimitsInput {
             .header("Content-Type", "application/x-amz-json-1.1")
             .header("X-Amz-Target", "Kinesis_20131202.DescribeLimits"))
     }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        "{}".to_string().into()
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+        }
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`DescribeLimitsInput`](crate::input::DescribeLimitsInput)
     pub fn builder() -> crate::input::describe_limits_input::Builder {
@@ -830,9 +817,9 @@ pub mod describe_stream_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        stream_name: std::option::Option<std::string::String>,
-        exclusive_start_shard_id: std::option::Option<std::string::String>,
-        limit: std::option::Option<i32>,
+        pub(crate) stream_name: std::option::Option<std::string::String>,
+        pub(crate) exclusive_start_shard_id: std::option::Option<std::string::String>,
+        pub(crate) limit: std::option::Option<i32>,
     }
     impl Builder {
         /// <p>The name of the stream to describe.</p>
@@ -892,7 +879,12 @@ impl DescribeStreamInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body = crate::operation_ser::serialize_synthetic_describe_stream_input_body(&self)
+                .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -940,7 +932,8 @@ impl DescribeStreamInput {
             op
         })
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
@@ -950,24 +943,14 @@ impl DescribeStreamInput {
             .header("Content-Type", "application/x-amz-json-1.1")
             .header("X-Amz-Target", "Kinesis_20131202.DescribeStream"))
     }
-    fn body(&self) -> crate::serializer::DescribeStreamInputBody {
-        crate::serializer::DescribeStreamInputBody {
-            stream_name: &self.stream_name,
-            exclusive_start_shard_id: &self.exclusive_start_shard_id,
-            limit: &self.limit,
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
         }
-    }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        serde_json::to_vec(&self.body()).expect("serialization should succeed")
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`DescribeStreamInput`](crate::input::DescribeStreamInput)
     pub fn builder() -> crate::input::describe_stream_input::Builder {
@@ -981,9 +964,9 @@ pub mod describe_stream_consumer_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        stream_arn: std::option::Option<std::string::String>,
-        consumer_name: std::option::Option<std::string::String>,
-        consumer_arn: std::option::Option<std::string::String>,
+        pub(crate) stream_arn: std::option::Option<std::string::String>,
+        pub(crate) consumer_name: std::option::Option<std::string::String>,
+        pub(crate) consumer_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The ARN of the Kinesis data stream that the consumer is registered with. For more
@@ -1041,7 +1024,15 @@ impl DescribeStreamConsumerInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body =
+                crate::operation_ser::serialize_synthetic_describe_stream_consumer_input_body(
+                    &self,
+                )
+                .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -1089,7 +1080,8 @@ impl DescribeStreamConsumerInput {
             op
         })
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
@@ -1099,24 +1091,14 @@ impl DescribeStreamConsumerInput {
             .header("Content-Type", "application/x-amz-json-1.1")
             .header("X-Amz-Target", "Kinesis_20131202.DescribeStreamConsumer"))
     }
-    fn body(&self) -> crate::serializer::DescribeStreamConsumerInputBody {
-        crate::serializer::DescribeStreamConsumerInputBody {
-            stream_arn: &self.stream_arn,
-            consumer_name: &self.consumer_name,
-            consumer_arn: &self.consumer_arn,
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
         }
-    }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        serde_json::to_vec(&self.body()).expect("serialization should succeed")
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`DescribeStreamConsumerInput`](crate::input::DescribeStreamConsumerInput)
     pub fn builder() -> crate::input::describe_stream_consumer_input::Builder {
@@ -1130,7 +1112,7 @@ pub mod describe_stream_summary_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        stream_name: std::option::Option<std::string::String>,
+        pub(crate) stream_name: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The name of the stream to describe.</p>
@@ -1167,7 +1149,13 @@ impl DescribeStreamSummaryInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body =
+                crate::operation_ser::serialize_synthetic_describe_stream_summary_input_body(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -1215,7 +1203,8 @@ impl DescribeStreamSummaryInput {
             op
         })
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
@@ -1225,22 +1214,14 @@ impl DescribeStreamSummaryInput {
             .header("Content-Type", "application/x-amz-json-1.1")
             .header("X-Amz-Target", "Kinesis_20131202.DescribeStreamSummary"))
     }
-    fn body(&self) -> crate::serializer::DescribeStreamSummaryInputBody {
-        crate::serializer::DescribeStreamSummaryInputBody {
-            stream_name: &self.stream_name,
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
         }
-    }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        serde_json::to_vec(&self.body()).expect("serialization should succeed")
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`DescribeStreamSummaryInput`](crate::input::DescribeStreamSummaryInput)
     pub fn builder() -> crate::input::describe_stream_summary_input::Builder {
@@ -1254,8 +1235,9 @@ pub mod disable_enhanced_monitoring_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        shard_level_metrics: std::option::Option<std::vec::Vec<crate::model::MetricsName>>,
-        stream_name: std::option::Option<std::string::String>,
+        pub(crate) shard_level_metrics:
+            std::option::Option<std::vec::Vec<crate::model::MetricsName>>,
+        pub(crate) stream_name: std::option::Option<std::string::String>,
     }
     impl Builder {
         pub fn shard_level_metrics(mut self, inp: impl Into<crate::model::MetricsName>) -> Self {
@@ -1307,7 +1289,15 @@ impl DisableEnhancedMonitoringInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body =
+                crate::operation_ser::serialize_synthetic_disable_enhanced_monitoring_input_body(
+                    &self,
+                )
+                .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -1355,7 +1345,8 @@ impl DisableEnhancedMonitoringInput {
             op
         })
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
@@ -1365,23 +1356,14 @@ impl DisableEnhancedMonitoringInput {
             .header("Content-Type", "application/x-amz-json-1.1")
             .header("X-Amz-Target", "Kinesis_20131202.DisableEnhancedMonitoring"))
     }
-    fn body(&self) -> crate::serializer::DisableEnhancedMonitoringInputBody {
-        crate::serializer::DisableEnhancedMonitoringInputBody {
-            shard_level_metrics: &self.shard_level_metrics,
-            stream_name: &self.stream_name,
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
         }
-    }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        serde_json::to_vec(&self.body()).expect("serialization should succeed")
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`DisableEnhancedMonitoringInput`](crate::input::DisableEnhancedMonitoringInput)
     pub fn builder() -> crate::input::disable_enhanced_monitoring_input::Builder {
@@ -1395,8 +1377,9 @@ pub mod enable_enhanced_monitoring_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        stream_name: std::option::Option<std::string::String>,
-        shard_level_metrics: std::option::Option<std::vec::Vec<crate::model::MetricsName>>,
+        pub(crate) stream_name: std::option::Option<std::string::String>,
+        pub(crate) shard_level_metrics:
+            std::option::Option<std::vec::Vec<crate::model::MetricsName>>,
     }
     impl Builder {
         /// <p>The name of the stream for which to enable enhanced monitoring.</p>
@@ -1447,7 +1430,15 @@ impl EnableEnhancedMonitoringInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body =
+                crate::operation_ser::serialize_synthetic_enable_enhanced_monitoring_input_body(
+                    &self,
+                )
+                .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -1495,7 +1486,8 @@ impl EnableEnhancedMonitoringInput {
             op
         })
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
@@ -1505,23 +1497,14 @@ impl EnableEnhancedMonitoringInput {
             .header("Content-Type", "application/x-amz-json-1.1")
             .header("X-Amz-Target", "Kinesis_20131202.EnableEnhancedMonitoring"))
     }
-    fn body(&self) -> crate::serializer::EnableEnhancedMonitoringInputBody {
-        crate::serializer::EnableEnhancedMonitoringInputBody {
-            stream_name: &self.stream_name,
-            shard_level_metrics: &self.shard_level_metrics,
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
         }
-    }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        serde_json::to_vec(&self.body()).expect("serialization should succeed")
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`EnableEnhancedMonitoringInput`](crate::input::EnableEnhancedMonitoringInput)
     pub fn builder() -> crate::input::enable_enhanced_monitoring_input::Builder {
@@ -1535,8 +1518,8 @@ pub mod get_records_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        shard_iterator: std::option::Option<std::string::String>,
-        limit: std::option::Option<i32>,
+        pub(crate) shard_iterator: std::option::Option<std::string::String>,
+        pub(crate) limit: std::option::Option<i32>,
     }
     impl Builder {
         /// <p>The position in the shard from which you want to start sequentially reading data
@@ -1586,7 +1569,12 @@ impl GetRecordsInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body = crate::operation_ser::serialize_synthetic_get_records_input_body(&self)
+                .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -1634,7 +1622,8 @@ impl GetRecordsInput {
             op
         })
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
@@ -1644,23 +1633,14 @@ impl GetRecordsInput {
             .header("Content-Type", "application/x-amz-json-1.1")
             .header("X-Amz-Target", "Kinesis_20131202.GetRecords"))
     }
-    fn body(&self) -> crate::serializer::GetRecordsInputBody {
-        crate::serializer::GetRecordsInputBody {
-            shard_iterator: &self.shard_iterator,
-            limit: &self.limit,
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
         }
-    }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        serde_json::to_vec(&self.body()).expect("serialization should succeed")
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`GetRecordsInput`](crate::input::GetRecordsInput)
     pub fn builder() -> crate::input::get_records_input::Builder {
@@ -1674,11 +1654,11 @@ pub mod get_shard_iterator_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        shard_iterator_type: std::option::Option<crate::model::ShardIteratorType>,
-        shard_id: std::option::Option<std::string::String>,
-        starting_sequence_number: std::option::Option<std::string::String>,
-        timestamp: std::option::Option<smithy_types::Instant>,
-        stream_name: std::option::Option<std::string::String>,
+        pub(crate) shard_iterator_type: std::option::Option<crate::model::ShardIteratorType>,
+        pub(crate) shard_id: std::option::Option<std::string::String>,
+        pub(crate) starting_sequence_number: std::option::Option<std::string::String>,
+        pub(crate) timestamp: std::option::Option<smithy_types::Instant>,
+        pub(crate) stream_name: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>Determines how the shard iterator is used to start reading data records from the
@@ -1794,7 +1774,13 @@ impl GetShardIteratorInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body =
+                crate::operation_ser::serialize_synthetic_get_shard_iterator_input_body(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -1842,7 +1828,8 @@ impl GetShardIteratorInput {
             op
         })
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
@@ -1852,26 +1839,14 @@ impl GetShardIteratorInput {
             .header("Content-Type", "application/x-amz-json-1.1")
             .header("X-Amz-Target", "Kinesis_20131202.GetShardIterator"))
     }
-    fn body(&self) -> crate::serializer::GetShardIteratorInputBody {
-        crate::serializer::GetShardIteratorInputBody {
-            shard_iterator_type: &self.shard_iterator_type,
-            shard_id: &self.shard_id,
-            starting_sequence_number: &self.starting_sequence_number,
-            timestamp: &self.timestamp,
-            stream_name: &self.stream_name,
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
         }
-    }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        serde_json::to_vec(&self.body()).expect("serialization should succeed")
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`GetShardIteratorInput`](crate::input::GetShardIteratorInput)
     pub fn builder() -> crate::input::get_shard_iterator_input::Builder {
@@ -1885,8 +1860,8 @@ pub mod increase_stream_retention_period_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        retention_period_hours: std::option::Option<i32>,
-        stream_name: std::option::Option<std::string::String>,
+        pub(crate) retention_period_hours: std::option::Option<i32>,
+        pub(crate) stream_name: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The new retention period of the stream, in hours. Must be more than the current
@@ -1936,7 +1911,11 @@ impl IncreaseStreamRetentionPeriodInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body = 
+                crate::operation_ser::serialize_synthetic_increase_stream_retention_period_input_body(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -1984,7 +1963,8 @@ impl IncreaseStreamRetentionPeriodInput {
             op
         })
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
@@ -1997,23 +1977,14 @@ impl IncreaseStreamRetentionPeriodInput {
                 "Kinesis_20131202.IncreaseStreamRetentionPeriod",
             ))
     }
-    fn body(&self) -> crate::serializer::IncreaseStreamRetentionPeriodInputBody {
-        crate::serializer::IncreaseStreamRetentionPeriodInputBody {
-            retention_period_hours: &self.retention_period_hours,
-            stream_name: &self.stream_name,
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
         }
-    }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        serde_json::to_vec(&self.body()).expect("serialization should succeed")
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`IncreaseStreamRetentionPeriodInput`](crate::input::IncreaseStreamRetentionPeriodInput)
     pub fn builder() -> crate::input::increase_stream_retention_period_input::Builder {
@@ -2027,12 +1998,12 @@ pub mod list_shards_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        max_results: std::option::Option<i32>,
-        stream_creation_timestamp: std::option::Option<smithy_types::Instant>,
-        next_token: std::option::Option<std::string::String>,
-        exclusive_start_shard_id: std::option::Option<std::string::String>,
-        shard_filter: std::option::Option<crate::model::ShardFilter>,
-        stream_name: std::option::Option<std::string::String>,
+        pub(crate) max_results: std::option::Option<i32>,
+        pub(crate) stream_creation_timestamp: std::option::Option<smithy_types::Instant>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) exclusive_start_shard_id: std::option::Option<std::string::String>,
+        pub(crate) shard_filter: std::option::Option<crate::model::ShardFilter>,
+        pub(crate) stream_name: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The maximum number of shards to return in a single call to <code>ListShards</code>.
@@ -2165,7 +2136,12 @@ impl ListShardsInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body = crate::operation_ser::serialize_synthetic_list_shards_input_body(&self)
+                .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -2213,7 +2189,8 @@ impl ListShardsInput {
             op
         })
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
@@ -2223,27 +2200,14 @@ impl ListShardsInput {
             .header("Content-Type", "application/x-amz-json-1.1")
             .header("X-Amz-Target", "Kinesis_20131202.ListShards"))
     }
-    fn body(&self) -> crate::serializer::ListShardsInputBody {
-        crate::serializer::ListShardsInputBody {
-            max_results: &self.max_results,
-            stream_creation_timestamp: &self.stream_creation_timestamp,
-            next_token: &self.next_token,
-            exclusive_start_shard_id: &self.exclusive_start_shard_id,
-            shard_filter: &self.shard_filter,
-            stream_name: &self.stream_name,
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
         }
-    }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        serde_json::to_vec(&self.body()).expect("serialization should succeed")
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`ListShardsInput`](crate::input::ListShardsInput)
     pub fn builder() -> crate::input::list_shards_input::Builder {
@@ -2257,10 +2221,10 @@ pub mod list_stream_consumers_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        next_token: std::option::Option<std::string::String>,
-        stream_creation_timestamp: std::option::Option<smithy_types::Instant>,
-        stream_arn: std::option::Option<std::string::String>,
-        max_results: std::option::Option<i32>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) stream_creation_timestamp: std::option::Option<smithy_types::Instant>,
+        pub(crate) stream_arn: std::option::Option<std::string::String>,
+        pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
         /// <p>When the number of consumers that are registered with the data stream is greater than
@@ -2358,7 +2322,13 @@ impl ListStreamConsumersInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body =
+                crate::operation_ser::serialize_synthetic_list_stream_consumers_input_body(&self)
+                    .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -2406,7 +2376,8 @@ impl ListStreamConsumersInput {
             op
         })
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
@@ -2416,25 +2387,14 @@ impl ListStreamConsumersInput {
             .header("Content-Type", "application/x-amz-json-1.1")
             .header("X-Amz-Target", "Kinesis_20131202.ListStreamConsumers"))
     }
-    fn body(&self) -> crate::serializer::ListStreamConsumersInputBody {
-        crate::serializer::ListStreamConsumersInputBody {
-            next_token: &self.next_token,
-            stream_creation_timestamp: &self.stream_creation_timestamp,
-            stream_arn: &self.stream_arn,
-            max_results: &self.max_results,
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
         }
-    }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        serde_json::to_vec(&self.body()).expect("serialization should succeed")
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`ListStreamConsumersInput`](crate::input::ListStreamConsumersInput)
     pub fn builder() -> crate::input::list_stream_consumers_input::Builder {
@@ -2448,8 +2408,8 @@ pub mod list_streams_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        limit: std::option::Option<i32>,
-        exclusive_start_stream_name: std::option::Option<std::string::String>,
+        pub(crate) limit: std::option::Option<i32>,
+        pub(crate) exclusive_start_stream_name: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The maximum number of streams to list.</p>
@@ -2498,7 +2458,12 @@ impl ListStreamsInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body = crate::operation_ser::serialize_synthetic_list_streams_input_body(&self)
+                .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -2546,7 +2511,8 @@ impl ListStreamsInput {
             op
         })
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
@@ -2556,23 +2522,14 @@ impl ListStreamsInput {
             .header("Content-Type", "application/x-amz-json-1.1")
             .header("X-Amz-Target", "Kinesis_20131202.ListStreams"))
     }
-    fn body(&self) -> crate::serializer::ListStreamsInputBody {
-        crate::serializer::ListStreamsInputBody {
-            limit: &self.limit,
-            exclusive_start_stream_name: &self.exclusive_start_stream_name,
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
         }
-    }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        serde_json::to_vec(&self.body()).expect("serialization should succeed")
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`ListStreamsInput`](crate::input::ListStreamsInput)
     pub fn builder() -> crate::input::list_streams_input::Builder {
@@ -2586,9 +2543,9 @@ pub mod list_tags_for_stream_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        limit: std::option::Option<i32>,
-        exclusive_start_tag_key: std::option::Option<std::string::String>,
-        stream_name: std::option::Option<std::string::String>,
+        pub(crate) limit: std::option::Option<i32>,
+        pub(crate) exclusive_start_tag_key: std::option::Option<std::string::String>,
+        pub(crate) stream_name: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The number of tags to return. If this number is less than the total number of tags
@@ -2653,7 +2610,13 @@ impl ListTagsForStreamInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body =
+                crate::operation_ser::serialize_synthetic_list_tags_for_stream_input_body(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -2701,7 +2664,8 @@ impl ListTagsForStreamInput {
             op
         })
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
@@ -2711,24 +2675,14 @@ impl ListTagsForStreamInput {
             .header("Content-Type", "application/x-amz-json-1.1")
             .header("X-Amz-Target", "Kinesis_20131202.ListTagsForStream"))
     }
-    fn body(&self) -> crate::serializer::ListTagsForStreamInputBody {
-        crate::serializer::ListTagsForStreamInputBody {
-            limit: &self.limit,
-            exclusive_start_tag_key: &self.exclusive_start_tag_key,
-            stream_name: &self.stream_name,
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
         }
-    }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        serde_json::to_vec(&self.body()).expect("serialization should succeed")
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`ListTagsForStreamInput`](crate::input::ListTagsForStreamInput)
     pub fn builder() -> crate::input::list_tags_for_stream_input::Builder {
@@ -2742,9 +2696,9 @@ pub mod merge_shards_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        adjacent_shard_to_merge: std::option::Option<std::string::String>,
-        stream_name: std::option::Option<std::string::String>,
-        shard_to_merge: std::option::Option<std::string::String>,
+        pub(crate) adjacent_shard_to_merge: std::option::Option<std::string::String>,
+        pub(crate) stream_name: std::option::Option<std::string::String>,
+        pub(crate) shard_to_merge: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The shard ID of the adjacent shard for the merge.</p>
@@ -2804,7 +2758,12 @@ impl MergeShardsInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body = crate::operation_ser::serialize_synthetic_merge_shards_input_body(&self)
+                .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -2852,7 +2811,8 @@ impl MergeShardsInput {
             op
         })
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
@@ -2862,24 +2822,14 @@ impl MergeShardsInput {
             .header("Content-Type", "application/x-amz-json-1.1")
             .header("X-Amz-Target", "Kinesis_20131202.MergeShards"))
     }
-    fn body(&self) -> crate::serializer::MergeShardsInputBody {
-        crate::serializer::MergeShardsInputBody {
-            adjacent_shard_to_merge: &self.adjacent_shard_to_merge,
-            stream_name: &self.stream_name,
-            shard_to_merge: &self.shard_to_merge,
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
         }
-    }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        serde_json::to_vec(&self.body()).expect("serialization should succeed")
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`MergeShardsInput`](crate::input::MergeShardsInput)
     pub fn builder() -> crate::input::merge_shards_input::Builder {
@@ -2893,11 +2843,11 @@ pub mod put_record_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        stream_name: std::option::Option<std::string::String>,
-        explicit_hash_key: std::option::Option<std::string::String>,
-        sequence_number_for_ordering: std::option::Option<std::string::String>,
-        partition_key: std::option::Option<std::string::String>,
-        data: std::option::Option<smithy_types::Blob>,
+        pub(crate) stream_name: std::option::Option<std::string::String>,
+        pub(crate) explicit_hash_key: std::option::Option<std::string::String>,
+        pub(crate) sequence_number_for_ordering: std::option::Option<std::string::String>,
+        pub(crate) partition_key: std::option::Option<std::string::String>,
+        pub(crate) data: std::option::Option<smithy_types::Blob>,
     }
     impl Builder {
         /// <p>The name of the stream to put the data record into.</p>
@@ -2993,7 +2943,12 @@ impl PutRecordInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body = crate::operation_ser::serialize_synthetic_put_record_input_body(&self)
+                .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -3039,7 +2994,8 @@ impl PutRecordInput {
             op
         })
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
@@ -3049,26 +3005,14 @@ impl PutRecordInput {
             .header("Content-Type", "application/x-amz-json-1.1")
             .header("X-Amz-Target", "Kinesis_20131202.PutRecord"))
     }
-    fn body(&self) -> crate::serializer::PutRecordInputBody {
-        crate::serializer::PutRecordInputBody {
-            stream_name: &self.stream_name,
-            explicit_hash_key: &self.explicit_hash_key,
-            sequence_number_for_ordering: &self.sequence_number_for_ordering,
-            partition_key: &self.partition_key,
-            data: &self.data,
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
         }
-    }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        serde_json::to_vec(&self.body()).expect("serialization should succeed")
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`PutRecordInput`](crate::input::PutRecordInput)
     pub fn builder() -> crate::input::put_record_input::Builder {
@@ -3082,8 +3026,9 @@ pub mod put_records_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        records: std::option::Option<std::vec::Vec<crate::model::PutRecordsRequestEntry>>,
-        stream_name: std::option::Option<std::string::String>,
+        pub(crate) records:
+            std::option::Option<std::vec::Vec<crate::model::PutRecordsRequestEntry>>,
+        pub(crate) stream_name: std::option::Option<std::string::String>,
     }
     impl Builder {
         pub fn records(mut self, inp: impl Into<crate::model::PutRecordsRequestEntry>) -> Self {
@@ -3133,7 +3078,12 @@ impl PutRecordsInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body = crate::operation_ser::serialize_synthetic_put_records_input_body(&self)
+                .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -3181,7 +3131,8 @@ impl PutRecordsInput {
             op
         })
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
@@ -3191,23 +3142,14 @@ impl PutRecordsInput {
             .header("Content-Type", "application/x-amz-json-1.1")
             .header("X-Amz-Target", "Kinesis_20131202.PutRecords"))
     }
-    fn body(&self) -> crate::serializer::PutRecordsInputBody {
-        crate::serializer::PutRecordsInputBody {
-            records: &self.records,
-            stream_name: &self.stream_name,
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
         }
-    }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        serde_json::to_vec(&self.body()).expect("serialization should succeed")
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`PutRecordsInput`](crate::input::PutRecordsInput)
     pub fn builder() -> crate::input::put_records_input::Builder {
@@ -3221,8 +3163,8 @@ pub mod register_stream_consumer_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        consumer_name: std::option::Option<std::string::String>,
-        stream_arn: std::option::Option<std::string::String>,
+        pub(crate) consumer_name: std::option::Option<std::string::String>,
+        pub(crate) stream_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>For a given Kinesis data stream, each consumer must have a unique name. However,
@@ -3271,7 +3213,15 @@ impl RegisterStreamConsumerInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body =
+                crate::operation_ser::serialize_synthetic_register_stream_consumer_input_body(
+                    &self,
+                )
+                .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -3319,7 +3269,8 @@ impl RegisterStreamConsumerInput {
             op
         })
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
@@ -3329,23 +3280,14 @@ impl RegisterStreamConsumerInput {
             .header("Content-Type", "application/x-amz-json-1.1")
             .header("X-Amz-Target", "Kinesis_20131202.RegisterStreamConsumer"))
     }
-    fn body(&self) -> crate::serializer::RegisterStreamConsumerInputBody {
-        crate::serializer::RegisterStreamConsumerInputBody {
-            consumer_name: &self.consumer_name,
-            stream_arn: &self.stream_arn,
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
         }
-    }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        serde_json::to_vec(&self.body()).expect("serialization should succeed")
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`RegisterStreamConsumerInput`](crate::input::RegisterStreamConsumerInput)
     pub fn builder() -> crate::input::register_stream_consumer_input::Builder {
@@ -3359,8 +3301,8 @@ pub mod remove_tags_from_stream_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
-        stream_name: std::option::Option<std::string::String>,
+        pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) stream_name: std::option::Option<std::string::String>,
     }
     impl Builder {
         pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
@@ -3411,7 +3353,13 @@ impl RemoveTagsFromStreamInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body =
+                crate::operation_ser::serialize_synthetic_remove_tags_from_stream_input_body(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -3459,7 +3407,8 @@ impl RemoveTagsFromStreamInput {
             op
         })
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
@@ -3469,23 +3418,14 @@ impl RemoveTagsFromStreamInput {
             .header("Content-Type", "application/x-amz-json-1.1")
             .header("X-Amz-Target", "Kinesis_20131202.RemoveTagsFromStream"))
     }
-    fn body(&self) -> crate::serializer::RemoveTagsFromStreamInputBody {
-        crate::serializer::RemoveTagsFromStreamInputBody {
-            tag_keys: &self.tag_keys,
-            stream_name: &self.stream_name,
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
         }
-    }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        serde_json::to_vec(&self.body()).expect("serialization should succeed")
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`RemoveTagsFromStreamInput`](crate::input::RemoveTagsFromStreamInput)
     pub fn builder() -> crate::input::remove_tags_from_stream_input::Builder {
@@ -3499,9 +3439,9 @@ pub mod split_shard_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        shard_to_split: std::option::Option<std::string::String>,
-        new_starting_hash_key: std::option::Option<std::string::String>,
-        stream_name: std::option::Option<std::string::String>,
+        pub(crate) shard_to_split: std::option::Option<std::string::String>,
+        pub(crate) new_starting_hash_key: std::option::Option<std::string::String>,
+        pub(crate) stream_name: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The shard ID of the shard to split.</p>
@@ -3566,7 +3506,12 @@ impl SplitShardInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body = crate::operation_ser::serialize_synthetic_split_shard_input_body(&self)
+                .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -3614,7 +3559,8 @@ impl SplitShardInput {
             op
         })
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
@@ -3624,24 +3570,14 @@ impl SplitShardInput {
             .header("Content-Type", "application/x-amz-json-1.1")
             .header("X-Amz-Target", "Kinesis_20131202.SplitShard"))
     }
-    fn body(&self) -> crate::serializer::SplitShardInputBody {
-        crate::serializer::SplitShardInputBody {
-            shard_to_split: &self.shard_to_split,
-            new_starting_hash_key: &self.new_starting_hash_key,
-            stream_name: &self.stream_name,
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
         }
-    }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        serde_json::to_vec(&self.body()).expect("serialization should succeed")
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`SplitShardInput`](crate::input::SplitShardInput)
     pub fn builder() -> crate::input::split_shard_input::Builder {
@@ -3655,9 +3591,9 @@ pub mod start_stream_encryption_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        stream_name: std::option::Option<std::string::String>,
-        encryption_type: std::option::Option<crate::model::EncryptionType>,
-        key_id: std::option::Option<std::string::String>,
+        pub(crate) stream_name: std::option::Option<std::string::String>,
+        pub(crate) encryption_type: std::option::Option<crate::model::EncryptionType>,
+        pub(crate) key_id: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The name of the stream for which to start encrypting records.</p>
@@ -3747,7 +3683,13 @@ impl StartStreamEncryptionInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body =
+                crate::operation_ser::serialize_synthetic_start_stream_encryption_input_body(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -3795,7 +3737,8 @@ impl StartStreamEncryptionInput {
             op
         })
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
@@ -3805,24 +3748,14 @@ impl StartStreamEncryptionInput {
             .header("Content-Type", "application/x-amz-json-1.1")
             .header("X-Amz-Target", "Kinesis_20131202.StartStreamEncryption"))
     }
-    fn body(&self) -> crate::serializer::StartStreamEncryptionInputBody {
-        crate::serializer::StartStreamEncryptionInputBody {
-            stream_name: &self.stream_name,
-            encryption_type: &self.encryption_type,
-            key_id: &self.key_id,
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
         }
-    }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        serde_json::to_vec(&self.body()).expect("serialization should succeed")
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`StartStreamEncryptionInput`](crate::input::StartStreamEncryptionInput)
     pub fn builder() -> crate::input::start_stream_encryption_input::Builder {
@@ -3836,9 +3769,9 @@ pub mod stop_stream_encryption_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        stream_name: std::option::Option<std::string::String>,
-        encryption_type: std::option::Option<crate::model::EncryptionType>,
-        key_id: std::option::Option<std::string::String>,
+        pub(crate) stream_name: std::option::Option<std::string::String>,
+        pub(crate) encryption_type: std::option::Option<crate::model::EncryptionType>,
+        pub(crate) key_id: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The name of the stream on which to stop encrypting records.</p>
@@ -3928,7 +3861,13 @@ impl StopStreamEncryptionInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body =
+                crate::operation_ser::serialize_synthetic_stop_stream_encryption_input_body(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -3976,7 +3915,8 @@ impl StopStreamEncryptionInput {
             op
         })
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
@@ -3986,24 +3926,14 @@ impl StopStreamEncryptionInput {
             .header("Content-Type", "application/x-amz-json-1.1")
             .header("X-Amz-Target", "Kinesis_20131202.StopStreamEncryption"))
     }
-    fn body(&self) -> crate::serializer::StopStreamEncryptionInputBody {
-        crate::serializer::StopStreamEncryptionInputBody {
-            stream_name: &self.stream_name,
-            encryption_type: &self.encryption_type,
-            key_id: &self.key_id,
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
         }
-    }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        serde_json::to_vec(&self.body()).expect("serialization should succeed")
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`StopStreamEncryptionInput`](crate::input::StopStreamEncryptionInput)
     pub fn builder() -> crate::input::stop_stream_encryption_input::Builder {
@@ -4017,9 +3947,9 @@ pub mod update_shard_count_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        scaling_type: std::option::Option<crate::model::ScalingType>,
-        stream_name: std::option::Option<std::string::String>,
-        target_shard_count: std::option::Option<i32>,
+        pub(crate) scaling_type: std::option::Option<crate::model::ScalingType>,
+        pub(crate) stream_name: std::option::Option<std::string::String>,
+        pub(crate) target_shard_count: std::option::Option<i32>,
     }
     impl Builder {
         /// <p>The scaling type. Uniform scaling creates shards of equal size.</p>
@@ -4098,7 +4028,13 @@ impl UpdateShardCountInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body =
+                crate::operation_ser::serialize_synthetic_update_shard_count_input_body(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -4146,7 +4082,8 @@ impl UpdateShardCountInput {
             op
         })
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
@@ -4156,24 +4093,14 @@ impl UpdateShardCountInput {
             .header("Content-Type", "application/x-amz-json-1.1")
             .header("X-Amz-Target", "Kinesis_20131202.UpdateShardCount"))
     }
-    fn body(&self) -> crate::serializer::UpdateShardCountInputBody {
-        crate::serializer::UpdateShardCountInputBody {
-            scaling_type: &self.scaling_type,
-            stream_name: &self.stream_name,
-            target_shard_count: &self.target_shard_count,
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
         }
-    }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        serde_json::to_vec(&self.body()).expect("serialization should succeed")
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`UpdateShardCountInput`](crate::input::UpdateShardCountInput)
     pub fn builder() -> crate::input::update_shard_count_input::Builder {

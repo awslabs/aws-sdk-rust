@@ -6,7 +6,7 @@ pub mod delete_lexicon_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        name: std::option::Option<std::string::String>,
+        pub(crate) name: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The name of the lexicon to delete. Must be an existing lexicon in the region.</p>
@@ -42,7 +42,9 @@ impl DeleteLexiconInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body = smithy_http::body::SdkBody::from("");
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -107,24 +109,22 @@ impl DeleteLexiconInput {
         self.uri_base(&mut uri);
         Ok(builder.method("DELETE").uri(uri))
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
     }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        vec![]
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+        }
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`DeleteLexiconInput`](crate::input::DeleteLexiconInput)
     pub fn builder() -> crate::input::delete_lexicon_input::Builder {
@@ -138,10 +138,10 @@ pub mod describe_voices_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        engine: std::option::Option<crate::model::Engine>,
-        language_code: std::option::Option<crate::model::LanguageCode>,
-        include_additional_language_codes: std::option::Option<bool>,
-        next_token: std::option::Option<std::string::String>,
+        pub(crate) engine: std::option::Option<crate::model::Engine>,
+        pub(crate) language_code: std::option::Option<crate::model::LanguageCode>,
+        pub(crate) include_additional_language_codes: std::option::Option<bool>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>Specifies the engine (<code>standard</code> or <code>neural</code>) used by Amazon Polly
@@ -220,7 +220,9 @@ impl DescribeVoicesInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body = smithy_http::body::SdkBody::from("");
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -299,24 +301,22 @@ impl DescribeVoicesInput {
         self.uri_query(&mut uri);
         Ok(builder.method("GET").uri(uri))
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
     }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        vec![]
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+        }
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`DescribeVoicesInput`](crate::input::DescribeVoicesInput)
     pub fn builder() -> crate::input::describe_voices_input::Builder {
@@ -330,7 +330,7 @@ pub mod get_lexicon_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        name: std::option::Option<std::string::String>,
+        pub(crate) name: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>Name of the lexicon.</p>
@@ -366,7 +366,9 @@ impl GetLexiconInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body = smithy_http::body::SdkBody::from("");
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -428,24 +430,22 @@ impl GetLexiconInput {
         self.uri_base(&mut uri);
         Ok(builder.method("GET").uri(uri))
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
     }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        vec![]
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+        }
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`GetLexiconInput`](crate::input::GetLexiconInput)
     pub fn builder() -> crate::input::get_lexicon_input::Builder {
@@ -459,7 +459,7 @@ pub mod get_speech_synthesis_task_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        task_id: std::option::Option<std::string::String>,
+        pub(crate) task_id: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The Amazon Polly generated identifier for a speech synthesis task.</p>
@@ -496,7 +496,9 @@ impl GetSpeechSynthesisTaskInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body = smithy_http::body::SdkBody::from("");
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -561,24 +563,22 @@ impl GetSpeechSynthesisTaskInput {
         self.uri_base(&mut uri);
         Ok(builder.method("GET").uri(uri))
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
     }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        vec![]
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+        }
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`GetSpeechSynthesisTaskInput`](crate::input::GetSpeechSynthesisTaskInput)
     pub fn builder() -> crate::input::get_speech_synthesis_task_input::Builder {
@@ -592,7 +592,7 @@ pub mod list_lexicons_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        next_token: std::option::Option<std::string::String>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>An opaque pagination token returned from previous <code>ListLexicons</code> operation.
@@ -629,7 +629,9 @@ impl ListLexiconsInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body = smithy_http::body::SdkBody::from("");
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -696,24 +698,22 @@ impl ListLexiconsInput {
         self.uri_query(&mut uri);
         Ok(builder.method("GET").uri(uri))
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
     }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        vec![]
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+        }
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`ListLexiconsInput`](crate::input::ListLexiconsInput)
     pub fn builder() -> crate::input::list_lexicons_input::Builder {
@@ -727,9 +727,9 @@ pub mod list_speech_synthesis_tasks_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        max_results: std::option::Option<i32>,
-        next_token: std::option::Option<std::string::String>,
-        status: std::option::Option<crate::model::TaskStatus>,
+        pub(crate) max_results: std::option::Option<i32>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) status: std::option::Option<crate::model::TaskStatus>,
     }
     impl Builder {
         /// <p>Maximum number of speech synthesis tasks returned in a List operation.</p>
@@ -787,7 +787,9 @@ impl ListSpeechSynthesisTasksInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body = smithy_http::body::SdkBody::from("");
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -860,24 +862,22 @@ impl ListSpeechSynthesisTasksInput {
         self.uri_query(&mut uri);
         Ok(builder.method("GET").uri(uri))
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
     }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        vec![]
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+        }
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`ListSpeechSynthesisTasksInput`](crate::input::ListSpeechSynthesisTasksInput)
     pub fn builder() -> crate::input::list_speech_synthesis_tasks_input::Builder {
@@ -891,8 +891,8 @@ pub mod put_lexicon_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        name: std::option::Option<std::string::String>,
-        content: std::option::Option<std::string::String>,
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) content: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>Name of the lexicon. The name must follow the regular express format [0-9A-Za-z]{1,20}.
@@ -939,7 +939,12 @@ impl PutLexiconInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body = crate::operation_ser::serialize_synthetic_put_lexicon_input_body(&self)
+                .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -1001,29 +1006,22 @@ impl PutLexiconInput {
         self.uri_base(&mut uri);
         Ok(builder.method("PUT").uri(uri))
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
     }
-    fn body(&self) -> crate::serializer::PutLexiconInputBody {
-        crate::serializer::PutLexiconInputBody {
-            content: &self.content,
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
         }
-    }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        serde_json::to_vec(&self.body()).expect("serialization should succeed")
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`PutLexiconInput`](crate::input::PutLexiconInput)
     pub fn builder() -> crate::input::put_lexicon_input::Builder {
@@ -1037,18 +1035,19 @@ pub mod start_speech_synthesis_task_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        engine: std::option::Option<crate::model::Engine>,
-        language_code: std::option::Option<crate::model::LanguageCode>,
-        lexicon_names: std::option::Option<std::vec::Vec<std::string::String>>,
-        output_format: std::option::Option<crate::model::OutputFormat>,
-        output_s3_bucket_name: std::option::Option<std::string::String>,
-        output_s3_key_prefix: std::option::Option<std::string::String>,
-        sample_rate: std::option::Option<std::string::String>,
-        sns_topic_arn: std::option::Option<std::string::String>,
-        speech_mark_types: std::option::Option<std::vec::Vec<crate::model::SpeechMarkType>>,
-        text: std::option::Option<std::string::String>,
-        text_type: std::option::Option<crate::model::TextType>,
-        voice_id: std::option::Option<crate::model::VoiceId>,
+        pub(crate) engine: std::option::Option<crate::model::Engine>,
+        pub(crate) language_code: std::option::Option<crate::model::LanguageCode>,
+        pub(crate) lexicon_names: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) output_format: std::option::Option<crate::model::OutputFormat>,
+        pub(crate) output_s3_bucket_name: std::option::Option<std::string::String>,
+        pub(crate) output_s3_key_prefix: std::option::Option<std::string::String>,
+        pub(crate) sample_rate: std::option::Option<std::string::String>,
+        pub(crate) sns_topic_arn: std::option::Option<std::string::String>,
+        pub(crate) speech_mark_types:
+            std::option::Option<std::vec::Vec<crate::model::SpeechMarkType>>,
+        pub(crate) text: std::option::Option<std::string::String>,
+        pub(crate) text_type: std::option::Option<crate::model::TextType>,
+        pub(crate) voice_id: std::option::Option<crate::model::VoiceId>,
     }
     impl Builder {
         /// <p>Specifies the engine (<code>standard</code> or <code>neural</code>) for Amazon Polly to
@@ -1231,7 +1230,15 @@ impl StartSpeechSynthesisTaskInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body =
+                crate::operation_ser::serialize_synthetic_start_speech_synthesis_task_input_body(
+                    &self,
+                )
+                .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -1291,40 +1298,22 @@ impl StartSpeechSynthesisTaskInput {
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
     }
-    fn body(&self) -> crate::serializer::StartSpeechSynthesisTaskInputBody {
-        crate::serializer::StartSpeechSynthesisTaskInputBody {
-            engine: &self.engine,
-            language_code: &self.language_code,
-            lexicon_names: &self.lexicon_names,
-            output_format: &self.output_format,
-            output_s3_bucket_name: &self.output_s3_bucket_name,
-            output_s3_key_prefix: &self.output_s3_key_prefix,
-            sample_rate: &self.sample_rate,
-            sns_topic_arn: &self.sns_topic_arn,
-            speech_mark_types: &self.speech_mark_types,
-            text: &self.text,
-            text_type: &self.text_type,
-            voice_id: &self.voice_id,
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
         }
-    }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        serde_json::to_vec(&self.body()).expect("serialization should succeed")
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`StartSpeechSynthesisTaskInput`](crate::input::StartSpeechSynthesisTaskInput)
     pub fn builder() -> crate::input::start_speech_synthesis_task_input::Builder {
@@ -1338,15 +1327,16 @@ pub mod synthesize_speech_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        engine: std::option::Option<crate::model::Engine>,
-        language_code: std::option::Option<crate::model::LanguageCode>,
-        lexicon_names: std::option::Option<std::vec::Vec<std::string::String>>,
-        output_format: std::option::Option<crate::model::OutputFormat>,
-        sample_rate: std::option::Option<std::string::String>,
-        speech_mark_types: std::option::Option<std::vec::Vec<crate::model::SpeechMarkType>>,
-        text: std::option::Option<std::string::String>,
-        text_type: std::option::Option<crate::model::TextType>,
-        voice_id: std::option::Option<crate::model::VoiceId>,
+        pub(crate) engine: std::option::Option<crate::model::Engine>,
+        pub(crate) language_code: std::option::Option<crate::model::LanguageCode>,
+        pub(crate) lexicon_names: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) output_format: std::option::Option<crate::model::OutputFormat>,
+        pub(crate) sample_rate: std::option::Option<std::string::String>,
+        pub(crate) speech_mark_types:
+            std::option::Option<std::vec::Vec<crate::model::SpeechMarkType>>,
+        pub(crate) text: std::option::Option<std::string::String>,
+        pub(crate) text_type: std::option::Option<crate::model::TextType>,
+        pub(crate) voice_id: std::option::Option<crate::model::VoiceId>,
     }
     impl Builder {
         /// <p>Specifies the engine (<code>standard</code> or <code>neural</code>) for Amazon Polly to
@@ -1511,7 +1501,13 @@ impl SynthesizeSpeechInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body =
+                crate::operation_ser::serialize_synthetic_synthesize_speech_input_body(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -1571,37 +1567,22 @@ impl SynthesizeSpeechInput {
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
     }
-    fn body(&self) -> crate::serializer::SynthesizeSpeechInputBody {
-        crate::serializer::SynthesizeSpeechInputBody {
-            engine: &self.engine,
-            language_code: &self.language_code,
-            lexicon_names: &self.lexicon_names,
-            output_format: &self.output_format,
-            sample_rate: &self.sample_rate,
-            speech_mark_types: &self.speech_mark_types,
-            text: &self.text,
-            text_type: &self.text_type,
-            voice_id: &self.voice_id,
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
         }
-    }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        serde_json::to_vec(&self.body()).expect("serialization should succeed")
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`SynthesizeSpeechInput`](crate::input::SynthesizeSpeechInput)
     pub fn builder() -> crate::input::synthesize_speech_input::Builder {

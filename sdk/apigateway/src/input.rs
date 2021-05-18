@@ -6,14 +6,14 @@ pub mod create_api_key_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        name: std::option::Option<std::string::String>,
-        description: std::option::Option<std::string::String>,
-        enabled: std::option::Option<bool>,
-        generate_distinct_id: std::option::Option<bool>,
-        value: std::option::Option<std::string::String>,
-        stage_keys: std::option::Option<std::vec::Vec<crate::model::StageKey>>,
-        customer_id: std::option::Option<std::string::String>,
-        tags: std::option::Option<
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) enabled: std::option::Option<bool>,
+        pub(crate) generate_distinct_id: std::option::Option<bool>,
+        pub(crate) value: std::option::Option<std::string::String>,
+        pub(crate) stage_keys: std::option::Option<std::vec::Vec<crate::model::StageKey>>,
+        pub(crate) customer_id: std::option::Option<std::string::String>,
+        pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
     }
@@ -135,7 +135,12 @@ impl CreateApiKeyInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body = crate::operation_ser::serialize_synthetic_create_api_key_input_body(&self)
+                .map_err(|err| {
+                smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -200,36 +205,22 @@ impl CreateApiKeyInput {
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
     }
-    fn body(&self) -> crate::serializer::CreateApiKeyInputBody {
-        crate::serializer::CreateApiKeyInputBody {
-            name: &self.name,
-            description: &self.description,
-            enabled: &self.enabled,
-            generate_distinct_id: &self.generate_distinct_id,
-            value: &self.value,
-            stage_keys: &self.stage_keys,
-            customer_id: &self.customer_id,
-            tags: &self.tags,
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
         }
-    }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        serde_json::to_vec(&self.body()).expect("serialization should succeed")
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`CreateApiKeyInput`](crate::input::CreateApiKeyInput)
     pub fn builder() -> crate::input::create_api_key_input::Builder {
@@ -243,16 +234,16 @@ pub mod create_authorizer_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        rest_api_id: std::option::Option<std::string::String>,
-        name: std::option::Option<std::string::String>,
-        r#type: std::option::Option<crate::model::AuthorizerType>,
-        provider_ar_ns: std::option::Option<std::vec::Vec<std::string::String>>,
-        auth_type: std::option::Option<std::string::String>,
-        authorizer_uri: std::option::Option<std::string::String>,
-        authorizer_credentials: std::option::Option<std::string::String>,
-        identity_source: std::option::Option<std::string::String>,
-        identity_validation_expression: std::option::Option<std::string::String>,
-        authorizer_result_ttl_in_seconds: std::option::Option<i32>,
+        pub(crate) rest_api_id: std::option::Option<std::string::String>,
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) r#type: std::option::Option<crate::model::AuthorizerType>,
+        pub(crate) provider_ar_ns: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) auth_type: std::option::Option<std::string::String>,
+        pub(crate) authorizer_uri: std::option::Option<std::string::String>,
+        pub(crate) authorizer_credentials: std::option::Option<std::string::String>,
+        pub(crate) identity_source: std::option::Option<std::string::String>,
+        pub(crate) identity_validation_expression: std::option::Option<std::string::String>,
+        pub(crate) authorizer_result_ttl_in_seconds: std::option::Option<i32>,
     }
     impl Builder {
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
@@ -398,7 +389,13 @@ impl CreateAuthorizerInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body =
+                crate::operation_ser::serialize_synthetic_create_authorizer_input_body(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -468,37 +465,22 @@ impl CreateAuthorizerInput {
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
     }
-    fn body(&self) -> crate::serializer::CreateAuthorizerInputBody {
-        crate::serializer::CreateAuthorizerInputBody {
-            name: &self.name,
-            r#type: &self.r#type,
-            provider_ar_ns: &self.provider_ar_ns,
-            auth_type: &self.auth_type,
-            authorizer_uri: &self.authorizer_uri,
-            authorizer_credentials: &self.authorizer_credentials,
-            identity_source: &self.identity_source,
-            identity_validation_expression: &self.identity_validation_expression,
-            authorizer_result_ttl_in_seconds: &self.authorizer_result_ttl_in_seconds,
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
         }
-    }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        serde_json::to_vec(&self.body()).expect("serialization should succeed")
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`CreateAuthorizerInput`](crate::input::CreateAuthorizerInput)
     pub fn builder() -> crate::input::create_authorizer_input::Builder {
@@ -512,10 +494,10 @@ pub mod create_base_path_mapping_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        domain_name: std::option::Option<std::string::String>,
-        base_path: std::option::Option<std::string::String>,
-        rest_api_id: std::option::Option<std::string::String>,
-        stage: std::option::Option<std::string::String>,
+        pub(crate) domain_name: std::option::Option<std::string::String>,
+        pub(crate) base_path: std::option::Option<std::string::String>,
+        pub(crate) rest_api_id: std::option::Option<std::string::String>,
+        pub(crate) stage: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>[Required] The domain name of the <a>BasePathMapping</a> resource to create.</p>
@@ -582,7 +564,15 @@ impl CreateBasePathMappingInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body =
+                crate::operation_ser::serialize_synthetic_create_base_path_mapping_input_body(
+                    &self,
+                )
+                .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -652,31 +642,22 @@ impl CreateBasePathMappingInput {
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
     }
-    fn body(&self) -> crate::serializer::CreateBasePathMappingInputBody {
-        crate::serializer::CreateBasePathMappingInputBody {
-            base_path: &self.base_path,
-            rest_api_id: &self.rest_api_id,
-            stage: &self.stage,
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
         }
-    }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        serde_json::to_vec(&self.body()).expect("serialization should succeed")
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`CreateBasePathMappingInput`](crate::input::CreateBasePathMappingInput)
     pub fn builder() -> crate::input::create_base_path_mapping_input::Builder {
@@ -690,17 +671,17 @@ pub mod create_deployment_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        rest_api_id: std::option::Option<std::string::String>,
-        stage_name: std::option::Option<std::string::String>,
-        stage_description: std::option::Option<std::string::String>,
-        description: std::option::Option<std::string::String>,
-        cache_cluster_enabled: std::option::Option<bool>,
-        cache_cluster_size: std::option::Option<crate::model::CacheClusterSize>,
-        variables: std::option::Option<
+        pub(crate) rest_api_id: std::option::Option<std::string::String>,
+        pub(crate) stage_name: std::option::Option<std::string::String>,
+        pub(crate) stage_description: std::option::Option<std::string::String>,
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) cache_cluster_enabled: std::option::Option<bool>,
+        pub(crate) cache_cluster_size: std::option::Option<crate::model::CacheClusterSize>,
+        pub(crate) variables: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
-        canary_settings: std::option::Option<crate::model::DeploymentCanarySettings>,
-        tracing_enabled: std::option::Option<bool>,
+        pub(crate) canary_settings: std::option::Option<crate::model::DeploymentCanarySettings>,
+        pub(crate) tracing_enabled: std::option::Option<bool>,
     }
     impl Builder {
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
@@ -836,7 +817,13 @@ impl CreateDeploymentInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body =
+                crate::operation_ser::serialize_synthetic_create_deployment_input_body(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -906,36 +893,22 @@ impl CreateDeploymentInput {
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
     }
-    fn body(&self) -> crate::serializer::CreateDeploymentInputBody {
-        crate::serializer::CreateDeploymentInputBody {
-            stage_name: &self.stage_name,
-            stage_description: &self.stage_description,
-            description: &self.description,
-            cache_cluster_enabled: &self.cache_cluster_enabled,
-            cache_cluster_size: &self.cache_cluster_size,
-            variables: &self.variables,
-            canary_settings: &self.canary_settings,
-            tracing_enabled: &self.tracing_enabled,
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
         }
-    }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        serde_json::to_vec(&self.body()).expect("serialization should succeed")
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`CreateDeploymentInput`](crate::input::CreateDeploymentInput)
     pub fn builder() -> crate::input::create_deployment_input::Builder {
@@ -949,9 +922,9 @@ pub mod create_documentation_part_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        rest_api_id: std::option::Option<std::string::String>,
-        location: std::option::Option<crate::model::DocumentationPartLocation>,
-        properties: std::option::Option<std::string::String>,
+        pub(crate) rest_api_id: std::option::Option<std::string::String>,
+        pub(crate) location: std::option::Option<crate::model::DocumentationPartLocation>,
+        pub(crate) properties: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
@@ -1011,7 +984,15 @@ impl CreateDocumentationPartInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body =
+                crate::operation_ser::serialize_synthetic_create_documentation_part_input_body(
+                    &self,
+                )
+                .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -1081,30 +1062,22 @@ impl CreateDocumentationPartInput {
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
     }
-    fn body(&self) -> crate::serializer::CreateDocumentationPartInputBody {
-        crate::serializer::CreateDocumentationPartInputBody {
-            location: &self.location,
-            properties: &self.properties,
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
         }
-    }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        serde_json::to_vec(&self.body()).expect("serialization should succeed")
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`CreateDocumentationPartInput`](crate::input::CreateDocumentationPartInput)
     pub fn builder() -> crate::input::create_documentation_part_input::Builder {
@@ -1118,10 +1091,10 @@ pub mod create_documentation_version_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        rest_api_id: std::option::Option<std::string::String>,
-        documentation_version: std::option::Option<std::string::String>,
-        stage_name: std::option::Option<std::string::String>,
-        description: std::option::Option<std::string::String>,
+        pub(crate) rest_api_id: std::option::Option<std::string::String>,
+        pub(crate) documentation_version: std::option::Option<std::string::String>,
+        pub(crate) stage_name: std::option::Option<std::string::String>,
+        pub(crate) description: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
@@ -1191,7 +1164,15 @@ impl CreateDocumentationVersionInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body =
+                crate::operation_ser::serialize_synthetic_create_documentation_version_input_body(
+                    &self,
+                )
+                .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -1261,31 +1242,22 @@ impl CreateDocumentationVersionInput {
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
     }
-    fn body(&self) -> crate::serializer::CreateDocumentationVersionInputBody {
-        crate::serializer::CreateDocumentationVersionInputBody {
-            documentation_version: &self.documentation_version,
-            stage_name: &self.stage_name,
-            description: &self.description,
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
         }
-    }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        serde_json::to_vec(&self.body()).expect("serialization should succeed")
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`CreateDocumentationVersionInput`](crate::input::CreateDocumentationVersionInput)
     pub fn builder() -> crate::input::create_documentation_version_input::Builder {
@@ -1299,20 +1271,21 @@ pub mod create_domain_name_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        domain_name: std::option::Option<std::string::String>,
-        certificate_name: std::option::Option<std::string::String>,
-        certificate_body: std::option::Option<std::string::String>,
-        certificate_private_key: std::option::Option<std::string::String>,
-        certificate_chain: std::option::Option<std::string::String>,
-        certificate_arn: std::option::Option<std::string::String>,
-        regional_certificate_name: std::option::Option<std::string::String>,
-        regional_certificate_arn: std::option::Option<std::string::String>,
-        endpoint_configuration: std::option::Option<crate::model::EndpointConfiguration>,
-        tags: std::option::Option<
+        pub(crate) domain_name: std::option::Option<std::string::String>,
+        pub(crate) certificate_name: std::option::Option<std::string::String>,
+        pub(crate) certificate_body: std::option::Option<std::string::String>,
+        pub(crate) certificate_private_key: std::option::Option<std::string::String>,
+        pub(crate) certificate_chain: std::option::Option<std::string::String>,
+        pub(crate) certificate_arn: std::option::Option<std::string::String>,
+        pub(crate) regional_certificate_name: std::option::Option<std::string::String>,
+        pub(crate) regional_certificate_arn: std::option::Option<std::string::String>,
+        pub(crate) endpoint_configuration: std::option::Option<crate::model::EndpointConfiguration>,
+        pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
-        security_policy: std::option::Option<crate::model::SecurityPolicy>,
-        mutual_tls_authentication: std::option::Option<crate::model::MutualTlsAuthenticationInput>,
+        pub(crate) security_policy: std::option::Option<crate::model::SecurityPolicy>,
+        pub(crate) mutual_tls_authentication:
+            std::option::Option<crate::model::MutualTlsAuthenticationInput>,
     }
     impl Builder {
         /// <p>[Required] The name of the <a>DomainName</a> resource.</p>
@@ -1502,7 +1475,13 @@ impl CreateDomainNameInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body =
+                crate::operation_ser::serialize_synthetic_create_domain_name_input_body(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -1567,40 +1546,22 @@ impl CreateDomainNameInput {
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
     }
-    fn body(&self) -> crate::serializer::CreateDomainNameInputBody {
-        crate::serializer::CreateDomainNameInputBody {
-            domain_name: &self.domain_name,
-            certificate_name: &self.certificate_name,
-            certificate_body: &self.certificate_body,
-            certificate_private_key: &self.certificate_private_key,
-            certificate_chain: &self.certificate_chain,
-            certificate_arn: &self.certificate_arn,
-            regional_certificate_name: &self.regional_certificate_name,
-            regional_certificate_arn: &self.regional_certificate_arn,
-            endpoint_configuration: &self.endpoint_configuration,
-            tags: &self.tags,
-            security_policy: &self.security_policy,
-            mutual_tls_authentication: &self.mutual_tls_authentication,
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
         }
-    }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        serde_json::to_vec(&self.body()).expect("serialization should succeed")
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`CreateDomainNameInput`](crate::input::CreateDomainNameInput)
     pub fn builder() -> crate::input::create_domain_name_input::Builder {
@@ -1614,11 +1575,11 @@ pub mod create_model_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        rest_api_id: std::option::Option<std::string::String>,
-        name: std::option::Option<std::string::String>,
-        description: std::option::Option<std::string::String>,
-        schema: std::option::Option<std::string::String>,
-        content_type: std::option::Option<std::string::String>,
+        pub(crate) rest_api_id: std::option::Option<std::string::String>,
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) schema: std::option::Option<std::string::String>,
+        pub(crate) content_type: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>[Required] The <a>RestApi</a> identifier under which the <a>Model</a> will be created.</p>
@@ -1694,7 +1655,12 @@ impl CreateModelInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body = crate::operation_ser::serialize_synthetic_create_model_input_body(&self)
+                .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -1764,32 +1730,22 @@ impl CreateModelInput {
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
     }
-    fn body(&self) -> crate::serializer::CreateModelInputBody {
-        crate::serializer::CreateModelInputBody {
-            name: &self.name,
-            description: &self.description,
-            schema: &self.schema,
-            content_type: &self.content_type,
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
         }
-    }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        serde_json::to_vec(&self.body()).expect("serialization should succeed")
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`CreateModelInput`](crate::input::CreateModelInput)
     pub fn builder() -> crate::input::create_model_input::Builder {
@@ -1803,10 +1759,10 @@ pub mod create_request_validator_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        rest_api_id: std::option::Option<std::string::String>,
-        name: std::option::Option<std::string::String>,
-        validate_request_body: std::option::Option<bool>,
-        validate_request_parameters: std::option::Option<bool>,
+        pub(crate) rest_api_id: std::option::Option<std::string::String>,
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) validate_request_body: std::option::Option<bool>,
+        pub(crate) validate_request_parameters: std::option::Option<bool>,
     }
     impl Builder {
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
@@ -1873,7 +1829,15 @@ impl CreateRequestValidatorInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body =
+                crate::operation_ser::serialize_synthetic_create_request_validator_input_body(
+                    &self,
+                )
+                .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -1943,31 +1907,22 @@ impl CreateRequestValidatorInput {
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
     }
-    fn body(&self) -> crate::serializer::CreateRequestValidatorInputBody {
-        crate::serializer::CreateRequestValidatorInputBody {
-            name: &self.name,
-            validate_request_body: &self.validate_request_body,
-            validate_request_parameters: &self.validate_request_parameters,
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
         }
-    }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        serde_json::to_vec(&self.body()).expect("serialization should succeed")
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`CreateRequestValidatorInput`](crate::input::CreateRequestValidatorInput)
     pub fn builder() -> crate::input::create_request_validator_input::Builder {
@@ -1981,9 +1936,9 @@ pub mod create_resource_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        rest_api_id: std::option::Option<std::string::String>,
-        parent_id: std::option::Option<std::string::String>,
-        path_part: std::option::Option<std::string::String>,
+        pub(crate) rest_api_id: std::option::Option<std::string::String>,
+        pub(crate) parent_id: std::option::Option<std::string::String>,
+        pub(crate) path_part: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
@@ -2039,7 +1994,12 @@ impl CreateResourceInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body = crate::operation_ser::serialize_synthetic_create_resource_input_body(&self)
+                .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -2110,29 +2070,22 @@ impl CreateResourceInput {
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
     }
-    fn body(&self) -> crate::serializer::CreateResourceInputBody {
-        crate::serializer::CreateResourceInputBody {
-            path_part: &self.path_part,
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
         }
-    }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        serde_json::to_vec(&self.body()).expect("serialization should succeed")
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`CreateResourceInput`](crate::input::CreateResourceInput)
     pub fn builder() -> crate::input::create_resource_input::Builder {
@@ -2146,19 +2099,19 @@ pub mod create_rest_api_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        name: std::option::Option<std::string::String>,
-        description: std::option::Option<std::string::String>,
-        version: std::option::Option<std::string::String>,
-        clone_from: std::option::Option<std::string::String>,
-        binary_media_types: std::option::Option<std::vec::Vec<std::string::String>>,
-        minimum_compression_size: std::option::Option<i32>,
-        api_key_source: std::option::Option<crate::model::ApiKeySourceType>,
-        endpoint_configuration: std::option::Option<crate::model::EndpointConfiguration>,
-        policy: std::option::Option<std::string::String>,
-        tags: std::option::Option<
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) version: std::option::Option<std::string::String>,
+        pub(crate) clone_from: std::option::Option<std::string::String>,
+        pub(crate) binary_media_types: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) minimum_compression_size: std::option::Option<i32>,
+        pub(crate) api_key_source: std::option::Option<crate::model::ApiKeySourceType>,
+        pub(crate) endpoint_configuration: std::option::Option<crate::model::EndpointConfiguration>,
+        pub(crate) policy: std::option::Option<std::string::String>,
+        pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
-        disable_execute_api_endpoint: std::option::Option<bool>,
+        pub(crate) disable_execute_api_endpoint: std::option::Option<bool>,
     }
     impl Builder {
         /// <p>[Required] The name of the <a>RestApi</a>.</p>
@@ -2314,7 +2267,12 @@ impl CreateRestApiInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body = crate::operation_ser::serialize_synthetic_create_rest_api_input_body(&self)
+                .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -2379,39 +2337,22 @@ impl CreateRestApiInput {
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
     }
-    fn body(&self) -> crate::serializer::CreateRestApiInputBody {
-        crate::serializer::CreateRestApiInputBody {
-            name: &self.name,
-            description: &self.description,
-            version: &self.version,
-            clone_from: &self.clone_from,
-            binary_media_types: &self.binary_media_types,
-            minimum_compression_size: &self.minimum_compression_size,
-            api_key_source: &self.api_key_source,
-            endpoint_configuration: &self.endpoint_configuration,
-            policy: &self.policy,
-            tags: &self.tags,
-            disable_execute_api_endpoint: &self.disable_execute_api_endpoint,
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
         }
-    }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        serde_json::to_vec(&self.body()).expect("serialization should succeed")
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`CreateRestApiInput`](crate::input::CreateRestApiInput)
     pub fn builder() -> crate::input::create_rest_api_input::Builder {
@@ -2425,19 +2366,19 @@ pub mod create_stage_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        rest_api_id: std::option::Option<std::string::String>,
-        stage_name: std::option::Option<std::string::String>,
-        deployment_id: std::option::Option<std::string::String>,
-        description: std::option::Option<std::string::String>,
-        cache_cluster_enabled: std::option::Option<bool>,
-        cache_cluster_size: std::option::Option<crate::model::CacheClusterSize>,
-        variables: std::option::Option<
+        pub(crate) rest_api_id: std::option::Option<std::string::String>,
+        pub(crate) stage_name: std::option::Option<std::string::String>,
+        pub(crate) deployment_id: std::option::Option<std::string::String>,
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) cache_cluster_enabled: std::option::Option<bool>,
+        pub(crate) cache_cluster_size: std::option::Option<crate::model::CacheClusterSize>,
+        pub(crate) variables: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
-        documentation_version: std::option::Option<std::string::String>,
-        canary_settings: std::option::Option<crate::model::CanarySettings>,
-        tracing_enabled: std::option::Option<bool>,
-        tags: std::option::Option<
+        pub(crate) documentation_version: std::option::Option<std::string::String>,
+        pub(crate) canary_settings: std::option::Option<crate::model::CanarySettings>,
+        pub(crate) tracing_enabled: std::option::Option<bool>,
+        pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
     }
@@ -2604,7 +2545,12 @@ impl CreateStageInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body = crate::operation_ser::serialize_synthetic_create_stage_input_body(&self)
+                .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -2674,38 +2620,22 @@ impl CreateStageInput {
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
     }
-    fn body(&self) -> crate::serializer::CreateStageInputBody {
-        crate::serializer::CreateStageInputBody {
-            stage_name: &self.stage_name,
-            deployment_id: &self.deployment_id,
-            description: &self.description,
-            cache_cluster_enabled: &self.cache_cluster_enabled,
-            cache_cluster_size: &self.cache_cluster_size,
-            variables: &self.variables,
-            documentation_version: &self.documentation_version,
-            canary_settings: &self.canary_settings,
-            tracing_enabled: &self.tracing_enabled,
-            tags: &self.tags,
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
         }
-    }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        serde_json::to_vec(&self.body()).expect("serialization should succeed")
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`CreateStageInput`](crate::input::CreateStageInput)
     pub fn builder() -> crate::input::create_stage_input::Builder {
@@ -2719,12 +2649,12 @@ pub mod create_usage_plan_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        name: std::option::Option<std::string::String>,
-        description: std::option::Option<std::string::String>,
-        api_stages: std::option::Option<std::vec::Vec<crate::model::ApiStage>>,
-        throttle: std::option::Option<crate::model::ThrottleSettings>,
-        quota: std::option::Option<crate::model::QuotaSettings>,
-        tags: std::option::Option<
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) api_stages: std::option::Option<std::vec::Vec<crate::model::ApiStage>>,
+        pub(crate) throttle: std::option::Option<crate::model::ThrottleSettings>,
+        pub(crate) quota: std::option::Option<crate::model::QuotaSettings>,
+        pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
     }
@@ -2830,7 +2760,13 @@ impl CreateUsagePlanInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body =
+                crate::operation_ser::serialize_synthetic_create_usage_plan_input_body(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -2895,34 +2831,22 @@ impl CreateUsagePlanInput {
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
     }
-    fn body(&self) -> crate::serializer::CreateUsagePlanInputBody {
-        crate::serializer::CreateUsagePlanInputBody {
-            name: &self.name,
-            description: &self.description,
-            api_stages: &self.api_stages,
-            throttle: &self.throttle,
-            quota: &self.quota,
-            tags: &self.tags,
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
         }
-    }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        serde_json::to_vec(&self.body()).expect("serialization should succeed")
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`CreateUsagePlanInput`](crate::input::CreateUsagePlanInput)
     pub fn builder() -> crate::input::create_usage_plan_input::Builder {
@@ -2936,9 +2860,9 @@ pub mod create_usage_plan_key_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        usage_plan_id: std::option::Option<std::string::String>,
-        key_id: std::option::Option<std::string::String>,
-        key_type: std::option::Option<std::string::String>,
+        pub(crate) usage_plan_id: std::option::Option<std::string::String>,
+        pub(crate) key_id: std::option::Option<std::string::String>,
+        pub(crate) key_type: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>[Required] The Id of the <a>UsagePlan</a> resource representing the usage plan containing the to-be-created <a>UsagePlanKey</a> resource representing a plan customer.</p>
@@ -2995,7 +2919,13 @@ impl CreateUsagePlanKeyInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body =
+                crate::operation_ser::serialize_synthetic_create_usage_plan_key_input_body(&self)
+                    .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -3065,30 +2995,22 @@ impl CreateUsagePlanKeyInput {
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
     }
-    fn body(&self) -> crate::serializer::CreateUsagePlanKeyInputBody {
-        crate::serializer::CreateUsagePlanKeyInputBody {
-            key_id: &self.key_id,
-            key_type: &self.key_type,
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
         }
-    }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        serde_json::to_vec(&self.body()).expect("serialization should succeed")
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`CreateUsagePlanKeyInput`](crate::input::CreateUsagePlanKeyInput)
     pub fn builder() -> crate::input::create_usage_plan_key_input::Builder {
@@ -3102,10 +3024,10 @@ pub mod create_vpc_link_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        name: std::option::Option<std::string::String>,
-        description: std::option::Option<std::string::String>,
-        target_arns: std::option::Option<std::vec::Vec<std::string::String>>,
-        tags: std::option::Option<
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) target_arns: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
     }
@@ -3187,7 +3109,12 @@ impl CreateVpcLinkInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body = crate::operation_ser::serialize_synthetic_create_vpc_link_input_body(&self)
+                .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -3252,32 +3179,22 @@ impl CreateVpcLinkInput {
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
     }
-    fn body(&self) -> crate::serializer::CreateVpcLinkInputBody {
-        crate::serializer::CreateVpcLinkInputBody {
-            name: &self.name,
-            description: &self.description,
-            target_arns: &self.target_arns,
-            tags: &self.tags,
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
         }
-    }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        serde_json::to_vec(&self.body()).expect("serialization should succeed")
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`CreateVpcLinkInput`](crate::input::CreateVpcLinkInput)
     pub fn builder() -> crate::input::create_vpc_link_input::Builder {
@@ -3291,7 +3208,7 @@ pub mod delete_api_key_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        api_key: std::option::Option<std::string::String>,
+        pub(crate) api_key: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>[Required] The identifier of the <a>ApiKey</a> resource to be deleted.</p>
@@ -3327,7 +3244,9 @@ impl DeleteApiKeyInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body = smithy_http::body::SdkBody::from("");
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -3397,24 +3316,22 @@ impl DeleteApiKeyInput {
         self.uri_base(&mut uri);
         Ok(builder.method("DELETE").uri(uri))
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
     }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        vec![]
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+        }
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`DeleteApiKeyInput`](crate::input::DeleteApiKeyInput)
     pub fn builder() -> crate::input::delete_api_key_input::Builder {
@@ -3428,8 +3345,8 @@ pub mod delete_authorizer_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        rest_api_id: std::option::Option<std::string::String>,
-        authorizer_id: std::option::Option<std::string::String>,
+        pub(crate) rest_api_id: std::option::Option<std::string::String>,
+        pub(crate) authorizer_id: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
@@ -3476,7 +3393,9 @@ impl DeleteAuthorizerInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body = smithy_http::body::SdkBody::from("");
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -3547,24 +3466,22 @@ impl DeleteAuthorizerInput {
         self.uri_base(&mut uri);
         Ok(builder.method("DELETE").uri(uri))
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
     }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        vec![]
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+        }
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`DeleteAuthorizerInput`](crate::input::DeleteAuthorizerInput)
     pub fn builder() -> crate::input::delete_authorizer_input::Builder {
@@ -3578,8 +3495,8 @@ pub mod delete_base_path_mapping_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        domain_name: std::option::Option<std::string::String>,
-        base_path: std::option::Option<std::string::String>,
+        pub(crate) domain_name: std::option::Option<std::string::String>,
+        pub(crate) base_path: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>[Required] The domain name of the <a>BasePathMapping</a> resource to delete.</p>
@@ -3627,7 +3544,9 @@ impl DeleteBasePathMappingInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body = smithy_http::body::SdkBody::from("");
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -3698,24 +3617,22 @@ impl DeleteBasePathMappingInput {
         self.uri_base(&mut uri);
         Ok(builder.method("DELETE").uri(uri))
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
     }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        vec![]
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+        }
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`DeleteBasePathMappingInput`](crate::input::DeleteBasePathMappingInput)
     pub fn builder() -> crate::input::delete_base_path_mapping_input::Builder {
@@ -3729,7 +3646,7 @@ pub mod delete_client_certificate_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        client_certificate_id: std::option::Option<std::string::String>,
+        pub(crate) client_certificate_id: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>[Required] The identifier of the <a>ClientCertificate</a> resource to be deleted.</p>
@@ -3766,7 +3683,9 @@ impl DeleteClientCertificateInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body = smithy_http::body::SdkBody::from("");
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -3837,24 +3756,22 @@ impl DeleteClientCertificateInput {
         self.uri_base(&mut uri);
         Ok(builder.method("DELETE").uri(uri))
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
     }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        vec![]
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+        }
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`DeleteClientCertificateInput`](crate::input::DeleteClientCertificateInput)
     pub fn builder() -> crate::input::delete_client_certificate_input::Builder {
@@ -3868,8 +3785,8 @@ pub mod delete_deployment_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        rest_api_id: std::option::Option<std::string::String>,
-        deployment_id: std::option::Option<std::string::String>,
+        pub(crate) rest_api_id: std::option::Option<std::string::String>,
+        pub(crate) deployment_id: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
@@ -3916,7 +3833,9 @@ impl DeleteDeploymentInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body = smithy_http::body::SdkBody::from("");
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -3987,24 +3906,22 @@ impl DeleteDeploymentInput {
         self.uri_base(&mut uri);
         Ok(builder.method("DELETE").uri(uri))
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
     }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        vec![]
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+        }
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`DeleteDeploymentInput`](crate::input::DeleteDeploymentInput)
     pub fn builder() -> crate::input::delete_deployment_input::Builder {
@@ -4018,8 +3935,8 @@ pub mod delete_documentation_part_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        rest_api_id: std::option::Option<std::string::String>,
-        documentation_part_id: std::option::Option<std::string::String>,
+        pub(crate) rest_api_id: std::option::Option<std::string::String>,
+        pub(crate) documentation_part_id: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
@@ -4066,7 +3983,9 @@ impl DeleteDocumentationPartInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body = smithy_http::body::SdkBody::from("");
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -4138,24 +4057,22 @@ impl DeleteDocumentationPartInput {
         self.uri_base(&mut uri);
         Ok(builder.method("DELETE").uri(uri))
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
     }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        vec![]
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+        }
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`DeleteDocumentationPartInput`](crate::input::DeleteDocumentationPartInput)
     pub fn builder() -> crate::input::delete_documentation_part_input::Builder {
@@ -4169,8 +4086,8 @@ pub mod delete_documentation_version_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        rest_api_id: std::option::Option<std::string::String>,
-        documentation_version: std::option::Option<std::string::String>,
+        pub(crate) rest_api_id: std::option::Option<std::string::String>,
+        pub(crate) documentation_version: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
@@ -4217,7 +4134,9 @@ impl DeleteDocumentationVersionInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body = smithy_http::body::SdkBody::from("");
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -4289,24 +4208,22 @@ impl DeleteDocumentationVersionInput {
         self.uri_base(&mut uri);
         Ok(builder.method("DELETE").uri(uri))
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
     }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        vec![]
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+        }
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`DeleteDocumentationVersionInput`](crate::input::DeleteDocumentationVersionInput)
     pub fn builder() -> crate::input::delete_documentation_version_input::Builder {
@@ -4320,7 +4237,7 @@ pub mod delete_domain_name_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        domain_name: std::option::Option<std::string::String>,
+        pub(crate) domain_name: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>[Required] The name of the <a>DomainName</a> resource to be deleted.</p>
@@ -4357,7 +4274,9 @@ impl DeleteDomainNameInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body = smithy_http::body::SdkBody::from("");
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -4427,24 +4346,22 @@ impl DeleteDomainNameInput {
         self.uri_base(&mut uri);
         Ok(builder.method("DELETE").uri(uri))
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
     }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        vec![]
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+        }
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`DeleteDomainNameInput`](crate::input::DeleteDomainNameInput)
     pub fn builder() -> crate::input::delete_domain_name_input::Builder {
@@ -4458,8 +4375,8 @@ pub mod delete_gateway_response_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        rest_api_id: std::option::Option<std::string::String>,
-        response_type: std::option::Option<crate::model::GatewayResponseType>,
+        pub(crate) rest_api_id: std::option::Option<std::string::String>,
+        pub(crate) response_type: std::option::Option<crate::model::GatewayResponseType>,
     }
     impl Builder {
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
@@ -4514,7 +4431,9 @@ impl DeleteGatewayResponseInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body = smithy_http::body::SdkBody::from("");
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -4585,24 +4504,22 @@ impl DeleteGatewayResponseInput {
         self.uri_base(&mut uri);
         Ok(builder.method("DELETE").uri(uri))
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
     }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        vec![]
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+        }
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`DeleteGatewayResponseInput`](crate::input::DeleteGatewayResponseInput)
     pub fn builder() -> crate::input::delete_gateway_response_input::Builder {
@@ -4616,9 +4533,9 @@ pub mod delete_integration_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        rest_api_id: std::option::Option<std::string::String>,
-        resource_id: std::option::Option<std::string::String>,
-        http_method: std::option::Option<std::string::String>,
+        pub(crate) rest_api_id: std::option::Option<std::string::String>,
+        pub(crate) resource_id: std::option::Option<std::string::String>,
+        pub(crate) http_method: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
@@ -4675,7 +4592,9 @@ impl DeleteIntegrationInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body = smithy_http::body::SdkBody::from("");
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -4747,24 +4666,22 @@ impl DeleteIntegrationInput {
         self.uri_base(&mut uri);
         Ok(builder.method("DELETE").uri(uri))
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
     }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        vec![]
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+        }
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`DeleteIntegrationInput`](crate::input::DeleteIntegrationInput)
     pub fn builder() -> crate::input::delete_integration_input::Builder {
@@ -4778,10 +4695,10 @@ pub mod delete_integration_response_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        rest_api_id: std::option::Option<std::string::String>,
-        resource_id: std::option::Option<std::string::String>,
-        http_method: std::option::Option<std::string::String>,
-        status_code: std::option::Option<std::string::String>,
+        pub(crate) rest_api_id: std::option::Option<std::string::String>,
+        pub(crate) resource_id: std::option::Option<std::string::String>,
+        pub(crate) http_method: std::option::Option<std::string::String>,
+        pub(crate) status_code: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
@@ -4848,7 +4765,9 @@ impl DeleteIntegrationResponseInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body = smithy_http::body::SdkBody::from("");
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -4913,24 +4832,22 @@ impl DeleteIntegrationResponseInput {
         self.uri_base(&mut uri);
         Ok(builder.method("DELETE").uri(uri))
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
     }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        vec![]
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+        }
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`DeleteIntegrationResponseInput`](crate::input::DeleteIntegrationResponseInput)
     pub fn builder() -> crate::input::delete_integration_response_input::Builder {
@@ -4944,9 +4861,9 @@ pub mod delete_method_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        rest_api_id: std::option::Option<std::string::String>,
-        resource_id: std::option::Option<std::string::String>,
-        http_method: std::option::Option<std::string::String>,
+        pub(crate) rest_api_id: std::option::Option<std::string::String>,
+        pub(crate) resource_id: std::option::Option<std::string::String>,
+        pub(crate) http_method: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
@@ -5002,7 +4919,9 @@ impl DeleteMethodInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body = smithy_http::body::SdkBody::from("");
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -5074,24 +4993,22 @@ impl DeleteMethodInput {
         self.uri_base(&mut uri);
         Ok(builder.method("DELETE").uri(uri))
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
     }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        vec![]
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+        }
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`DeleteMethodInput`](crate::input::DeleteMethodInput)
     pub fn builder() -> crate::input::delete_method_input::Builder {
@@ -5105,10 +5022,10 @@ pub mod delete_method_response_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        rest_api_id: std::option::Option<std::string::String>,
-        resource_id: std::option::Option<std::string::String>,
-        http_method: std::option::Option<std::string::String>,
-        status_code: std::option::Option<std::string::String>,
+        pub(crate) rest_api_id: std::option::Option<std::string::String>,
+        pub(crate) resource_id: std::option::Option<std::string::String>,
+        pub(crate) http_method: std::option::Option<std::string::String>,
+        pub(crate) status_code: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
@@ -5175,7 +5092,9 @@ impl DeleteMethodResponseInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body = smithy_http::body::SdkBody::from("");
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -5240,24 +5159,22 @@ impl DeleteMethodResponseInput {
         self.uri_base(&mut uri);
         Ok(builder.method("DELETE").uri(uri))
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
     }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        vec![]
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+        }
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`DeleteMethodResponseInput`](crate::input::DeleteMethodResponseInput)
     pub fn builder() -> crate::input::delete_method_response_input::Builder {
@@ -5271,8 +5188,8 @@ pub mod delete_model_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        rest_api_id: std::option::Option<std::string::String>,
-        model_name: std::option::Option<std::string::String>,
+        pub(crate) rest_api_id: std::option::Option<std::string::String>,
+        pub(crate) model_name: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
@@ -5318,7 +5235,9 @@ impl DeleteModelInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body = smithy_http::body::SdkBody::from("");
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -5389,24 +5308,22 @@ impl DeleteModelInput {
         self.uri_base(&mut uri);
         Ok(builder.method("DELETE").uri(uri))
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
     }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        vec![]
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+        }
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`DeleteModelInput`](crate::input::DeleteModelInput)
     pub fn builder() -> crate::input::delete_model_input::Builder {
@@ -5420,8 +5337,8 @@ pub mod delete_request_validator_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        rest_api_id: std::option::Option<std::string::String>,
-        request_validator_id: std::option::Option<std::string::String>,
+        pub(crate) rest_api_id: std::option::Option<std::string::String>,
+        pub(crate) request_validator_id: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
@@ -5468,7 +5385,9 @@ impl DeleteRequestValidatorInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body = smithy_http::body::SdkBody::from("");
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -5539,24 +5458,22 @@ impl DeleteRequestValidatorInput {
         self.uri_base(&mut uri);
         Ok(builder.method("DELETE").uri(uri))
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
     }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        vec![]
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+        }
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`DeleteRequestValidatorInput`](crate::input::DeleteRequestValidatorInput)
     pub fn builder() -> crate::input::delete_request_validator_input::Builder {
@@ -5570,8 +5487,8 @@ pub mod delete_resource_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        rest_api_id: std::option::Option<std::string::String>,
-        resource_id: std::option::Option<std::string::String>,
+        pub(crate) rest_api_id: std::option::Option<std::string::String>,
+        pub(crate) resource_id: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
@@ -5617,7 +5534,9 @@ impl DeleteResourceInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body = smithy_http::body::SdkBody::from("");
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -5688,24 +5607,22 @@ impl DeleteResourceInput {
         self.uri_base(&mut uri);
         Ok(builder.method("DELETE").uri(uri))
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
     }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        vec![]
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+        }
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`DeleteResourceInput`](crate::input::DeleteResourceInput)
     pub fn builder() -> crate::input::delete_resource_input::Builder {
@@ -5719,7 +5636,7 @@ pub mod delete_rest_api_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        rest_api_id: std::option::Option<std::string::String>,
+        pub(crate) rest_api_id: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
@@ -5755,7 +5672,9 @@ impl DeleteRestApiInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body = smithy_http::body::SdkBody::from("");
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -5825,24 +5744,22 @@ impl DeleteRestApiInput {
         self.uri_base(&mut uri);
         Ok(builder.method("DELETE").uri(uri))
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
     }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        vec![]
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+        }
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`DeleteRestApiInput`](crate::input::DeleteRestApiInput)
     pub fn builder() -> crate::input::delete_rest_api_input::Builder {
@@ -5856,8 +5773,8 @@ pub mod delete_stage_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        rest_api_id: std::option::Option<std::string::String>,
-        stage_name: std::option::Option<std::string::String>,
+        pub(crate) rest_api_id: std::option::Option<std::string::String>,
+        pub(crate) stage_name: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
@@ -5903,7 +5820,9 @@ impl DeleteStageInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body = smithy_http::body::SdkBody::from("");
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -5974,24 +5893,22 @@ impl DeleteStageInput {
         self.uri_base(&mut uri);
         Ok(builder.method("DELETE").uri(uri))
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
     }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        vec![]
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+        }
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`DeleteStageInput`](crate::input::DeleteStageInput)
     pub fn builder() -> crate::input::delete_stage_input::Builder {
@@ -6005,7 +5922,7 @@ pub mod delete_usage_plan_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        usage_plan_id: std::option::Option<std::string::String>,
+        pub(crate) usage_plan_id: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>[Required] The Id of the to-be-deleted usage plan.</p>
@@ -6042,7 +5959,9 @@ impl DeleteUsagePlanInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body = smithy_http::body::SdkBody::from("");
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -6112,24 +6031,22 @@ impl DeleteUsagePlanInput {
         self.uri_base(&mut uri);
         Ok(builder.method("DELETE").uri(uri))
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
     }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        vec![]
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+        }
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`DeleteUsagePlanInput`](crate::input::DeleteUsagePlanInput)
     pub fn builder() -> crate::input::delete_usage_plan_input::Builder {
@@ -6143,8 +6060,8 @@ pub mod delete_usage_plan_key_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        usage_plan_id: std::option::Option<std::string::String>,
-        key_id: std::option::Option<std::string::String>,
+        pub(crate) usage_plan_id: std::option::Option<std::string::String>,
+        pub(crate) key_id: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>[Required] The Id of the <a>UsagePlan</a> resource representing the usage plan containing the to-be-deleted <a>UsagePlanKey</a> resource representing a plan customer.</p>
@@ -6191,7 +6108,9 @@ impl DeleteUsagePlanKeyInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body = smithy_http::body::SdkBody::from("");
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -6262,24 +6181,22 @@ impl DeleteUsagePlanKeyInput {
         self.uri_base(&mut uri);
         Ok(builder.method("DELETE").uri(uri))
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
     }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        vec![]
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+        }
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`DeleteUsagePlanKeyInput`](crate::input::DeleteUsagePlanKeyInput)
     pub fn builder() -> crate::input::delete_usage_plan_key_input::Builder {
@@ -6293,7 +6210,7 @@ pub mod delete_vpc_link_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        vpc_link_id: std::option::Option<std::string::String>,
+        pub(crate) vpc_link_id: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>[Required] The identifier of the  <a>VpcLink</a>. It is used in an <a>Integration</a> to reference this <a>VpcLink</a>.</p>
@@ -6329,7 +6246,9 @@ impl DeleteVpcLinkInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body = smithy_http::body::SdkBody::from("");
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -6399,24 +6318,22 @@ impl DeleteVpcLinkInput {
         self.uri_base(&mut uri);
         Ok(builder.method("DELETE").uri(uri))
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
     }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        vec![]
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+        }
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`DeleteVpcLinkInput`](crate::input::DeleteVpcLinkInput)
     pub fn builder() -> crate::input::delete_vpc_link_input::Builder {
@@ -6430,8 +6347,8 @@ pub mod flush_stage_authorizers_cache_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        rest_api_id: std::option::Option<std::string::String>,
-        stage_name: std::option::Option<std::string::String>,
+        pub(crate) rest_api_id: std::option::Option<std::string::String>,
+        pub(crate) stage_name: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The string identifier of the associated <a>RestApi</a>.</p>
@@ -6478,7 +6395,9 @@ impl FlushStageAuthorizersCacheInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body = smithy_http::body::SdkBody::from("");
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -6549,24 +6468,22 @@ impl FlushStageAuthorizersCacheInput {
         self.uri_base(&mut uri);
         Ok(builder.method("DELETE").uri(uri))
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
     }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        vec![]
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+        }
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`FlushStageAuthorizersCacheInput`](crate::input::FlushStageAuthorizersCacheInput)
     pub fn builder() -> crate::input::flush_stage_authorizers_cache_input::Builder {
@@ -6580,8 +6497,8 @@ pub mod flush_stage_cache_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        rest_api_id: std::option::Option<std::string::String>,
-        stage_name: std::option::Option<std::string::String>,
+        pub(crate) rest_api_id: std::option::Option<std::string::String>,
+        pub(crate) stage_name: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
@@ -6628,7 +6545,9 @@ impl FlushStageCacheInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body = smithy_http::body::SdkBody::from("");
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -6699,24 +6618,22 @@ impl FlushStageCacheInput {
         self.uri_base(&mut uri);
         Ok(builder.method("DELETE").uri(uri))
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
     }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        vec![]
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+        }
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`FlushStageCacheInput`](crate::input::FlushStageCacheInput)
     pub fn builder() -> crate::input::flush_stage_cache_input::Builder {
@@ -6730,8 +6647,8 @@ pub mod generate_client_certificate_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        description: std::option::Option<std::string::String>,
-        tags: std::option::Option<
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
     }
@@ -6790,7 +6707,15 @@ impl GenerateClientCertificateInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body =
+                crate::operation_ser::serialize_synthetic_generate_client_certificate_input_body(
+                    &self,
+                )
+                .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -6855,30 +6780,22 @@ impl GenerateClientCertificateInput {
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
     }
-    fn body(&self) -> crate::serializer::GenerateClientCertificateInputBody {
-        crate::serializer::GenerateClientCertificateInputBody {
-            description: &self.description,
-            tags: &self.tags,
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
         }
-    }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        serde_json::to_vec(&self.body()).expect("serialization should succeed")
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`GenerateClientCertificateInput`](crate::input::GenerateClientCertificateInput)
     pub fn builder() -> crate::input::generate_client_certificate_input::Builder {
@@ -6915,7 +6832,9 @@ impl GetAccountInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body = smithy_http::body::SdkBody::from("");
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -6980,24 +6899,22 @@ impl GetAccountInput {
         self.uri_base(&mut uri);
         Ok(builder.method("GET").uri(uri))
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
     }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        vec![]
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+        }
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`GetAccountInput`](crate::input::GetAccountInput)
     pub fn builder() -> crate::input::get_account_input::Builder {
@@ -7011,8 +6928,8 @@ pub mod get_api_key_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        api_key: std::option::Option<std::string::String>,
-        include_value: std::option::Option<bool>,
+        pub(crate) api_key: std::option::Option<std::string::String>,
+        pub(crate) include_value: std::option::Option<bool>,
     }
     impl Builder {
         /// <p>[Required] The identifier of the <a>ApiKey</a> resource.</p>
@@ -7058,7 +6975,9 @@ impl GetApiKeyInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body = smithy_http::body::SdkBody::from("");
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -7133,24 +7052,22 @@ impl GetApiKeyInput {
         self.uri_query(&mut uri);
         Ok(builder.method("GET").uri(uri))
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
     }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        vec![]
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+        }
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`GetApiKeyInput`](crate::input::GetApiKeyInput)
     pub fn builder() -> crate::input::get_api_key_input::Builder {
@@ -7164,11 +7081,11 @@ pub mod get_api_keys_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        position: std::option::Option<std::string::String>,
-        limit: std::option::Option<i32>,
-        name_query: std::option::Option<std::string::String>,
-        customer_id: std::option::Option<std::string::String>,
-        include_values: std::option::Option<bool>,
+        pub(crate) position: std::option::Option<std::string::String>,
+        pub(crate) limit: std::option::Option<i32>,
+        pub(crate) name_query: std::option::Option<std::string::String>,
+        pub(crate) customer_id: std::option::Option<std::string::String>,
+        pub(crate) include_values: std::option::Option<bool>,
     }
     impl Builder {
         /// <p>The current pagination position in the paged result set.</p>
@@ -7244,7 +7161,9 @@ impl GetApiKeysInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body = smithy_http::body::SdkBody::from("");
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -7328,24 +7247,22 @@ impl GetApiKeysInput {
         self.uri_query(&mut uri);
         Ok(builder.method("GET").uri(uri))
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
     }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        vec![]
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+        }
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`GetApiKeysInput`](crate::input::GetApiKeysInput)
     pub fn builder() -> crate::input::get_api_keys_input::Builder {
@@ -7359,8 +7276,8 @@ pub mod get_authorizer_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        rest_api_id: std::option::Option<std::string::String>,
-        authorizer_id: std::option::Option<std::string::String>,
+        pub(crate) rest_api_id: std::option::Option<std::string::String>,
+        pub(crate) authorizer_id: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
@@ -7406,7 +7323,9 @@ impl GetAuthorizerInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body = smithy_http::body::SdkBody::from("");
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -7477,24 +7396,22 @@ impl GetAuthorizerInput {
         self.uri_base(&mut uri);
         Ok(builder.method("GET").uri(uri))
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
     }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        vec![]
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+        }
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`GetAuthorizerInput`](crate::input::GetAuthorizerInput)
     pub fn builder() -> crate::input::get_authorizer_input::Builder {
@@ -7508,9 +7425,9 @@ pub mod get_authorizers_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        rest_api_id: std::option::Option<std::string::String>,
-        position: std::option::Option<std::string::String>,
-        limit: std::option::Option<i32>,
+        pub(crate) rest_api_id: std::option::Option<std::string::String>,
+        pub(crate) position: std::option::Option<std::string::String>,
+        pub(crate) limit: std::option::Option<i32>,
     }
     impl Builder {
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
@@ -7566,7 +7483,9 @@ impl GetAuthorizersInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body = smithy_http::body::SdkBody::from("");
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -7646,24 +7565,22 @@ impl GetAuthorizersInput {
         self.uri_query(&mut uri);
         Ok(builder.method("GET").uri(uri))
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
     }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        vec![]
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+        }
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`GetAuthorizersInput`](crate::input::GetAuthorizersInput)
     pub fn builder() -> crate::input::get_authorizers_input::Builder {
@@ -7677,8 +7594,8 @@ pub mod get_base_path_mapping_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        domain_name: std::option::Option<std::string::String>,
-        base_path: std::option::Option<std::string::String>,
+        pub(crate) domain_name: std::option::Option<std::string::String>,
+        pub(crate) base_path: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>[Required] The domain name of the <a>BasePathMapping</a> resource to be described.</p>
@@ -7725,7 +7642,9 @@ impl GetBasePathMappingInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body = smithy_http::body::SdkBody::from("");
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -7796,24 +7715,22 @@ impl GetBasePathMappingInput {
         self.uri_base(&mut uri);
         Ok(builder.method("GET").uri(uri))
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
     }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        vec![]
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+        }
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`GetBasePathMappingInput`](crate::input::GetBasePathMappingInput)
     pub fn builder() -> crate::input::get_base_path_mapping_input::Builder {
@@ -7827,9 +7744,9 @@ pub mod get_base_path_mappings_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        domain_name: std::option::Option<std::string::String>,
-        position: std::option::Option<std::string::String>,
-        limit: std::option::Option<i32>,
+        pub(crate) domain_name: std::option::Option<std::string::String>,
+        pub(crate) position: std::option::Option<std::string::String>,
+        pub(crate) limit: std::option::Option<i32>,
     }
     impl Builder {
         /// <p>[Required] The domain name of a <a>BasePathMapping</a> resource.</p>
@@ -7886,7 +7803,9 @@ impl GetBasePathMappingsInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body = smithy_http::body::SdkBody::from("");
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -7966,24 +7885,22 @@ impl GetBasePathMappingsInput {
         self.uri_query(&mut uri);
         Ok(builder.method("GET").uri(uri))
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
     }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        vec![]
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+        }
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`GetBasePathMappingsInput`](crate::input::GetBasePathMappingsInput)
     pub fn builder() -> crate::input::get_base_path_mappings_input::Builder {
@@ -7997,7 +7914,7 @@ pub mod get_client_certificate_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        client_certificate_id: std::option::Option<std::string::String>,
+        pub(crate) client_certificate_id: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>[Required] The identifier of the <a>ClientCertificate</a> resource to be described.</p>
@@ -8034,7 +7951,9 @@ impl GetClientCertificateInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body = smithy_http::body::SdkBody::from("");
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -8105,24 +8024,22 @@ impl GetClientCertificateInput {
         self.uri_base(&mut uri);
         Ok(builder.method("GET").uri(uri))
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
     }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        vec![]
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+        }
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`GetClientCertificateInput`](crate::input::GetClientCertificateInput)
     pub fn builder() -> crate::input::get_client_certificate_input::Builder {
@@ -8136,8 +8053,8 @@ pub mod get_client_certificates_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        position: std::option::Option<std::string::String>,
-        limit: std::option::Option<i32>,
+        pub(crate) position: std::option::Option<std::string::String>,
+        pub(crate) limit: std::option::Option<i32>,
     }
     impl Builder {
         /// <p>The current pagination position in the paged result set.</p>
@@ -8184,7 +8101,9 @@ impl GetClientCertificatesInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body = smithy_http::body::SdkBody::from("");
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -8259,24 +8178,22 @@ impl GetClientCertificatesInput {
         self.uri_query(&mut uri);
         Ok(builder.method("GET").uri(uri))
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
     }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        vec![]
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+        }
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`GetClientCertificatesInput`](crate::input::GetClientCertificatesInput)
     pub fn builder() -> crate::input::get_client_certificates_input::Builder {
@@ -8290,9 +8207,9 @@ pub mod get_deployment_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        rest_api_id: std::option::Option<std::string::String>,
-        deployment_id: std::option::Option<std::string::String>,
-        embed: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) rest_api_id: std::option::Option<std::string::String>,
+        pub(crate) deployment_id: std::option::Option<std::string::String>,
+        pub(crate) embed: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
@@ -8352,7 +8269,9 @@ impl GetDeploymentInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body = smithy_http::body::SdkBody::from("");
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -8432,24 +8351,22 @@ impl GetDeploymentInput {
         self.uri_query(&mut uri);
         Ok(builder.method("GET").uri(uri))
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
     }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        vec![]
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+        }
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`GetDeploymentInput`](crate::input::GetDeploymentInput)
     pub fn builder() -> crate::input::get_deployment_input::Builder {
@@ -8463,9 +8380,9 @@ pub mod get_deployments_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        rest_api_id: std::option::Option<std::string::String>,
-        position: std::option::Option<std::string::String>,
-        limit: std::option::Option<i32>,
+        pub(crate) rest_api_id: std::option::Option<std::string::String>,
+        pub(crate) position: std::option::Option<std::string::String>,
+        pub(crate) limit: std::option::Option<i32>,
     }
     impl Builder {
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
@@ -8521,7 +8438,9 @@ impl GetDeploymentsInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body = smithy_http::body::SdkBody::from("");
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -8601,24 +8520,22 @@ impl GetDeploymentsInput {
         self.uri_query(&mut uri);
         Ok(builder.method("GET").uri(uri))
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
     }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        vec![]
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+        }
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`GetDeploymentsInput`](crate::input::GetDeploymentsInput)
     pub fn builder() -> crate::input::get_deployments_input::Builder {
@@ -8632,8 +8549,8 @@ pub mod get_documentation_part_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        rest_api_id: std::option::Option<std::string::String>,
-        documentation_part_id: std::option::Option<std::string::String>,
+        pub(crate) rest_api_id: std::option::Option<std::string::String>,
+        pub(crate) documentation_part_id: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
@@ -8680,7 +8597,9 @@ impl GetDocumentationPartInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body = smithy_http::body::SdkBody::from("");
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -8752,24 +8671,22 @@ impl GetDocumentationPartInput {
         self.uri_base(&mut uri);
         Ok(builder.method("GET").uri(uri))
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
     }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        vec![]
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+        }
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`GetDocumentationPartInput`](crate::input::GetDocumentationPartInput)
     pub fn builder() -> crate::input::get_documentation_part_input::Builder {
@@ -8783,13 +8700,13 @@ pub mod get_documentation_parts_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        rest_api_id: std::option::Option<std::string::String>,
-        r#type: std::option::Option<crate::model::DocumentationPartType>,
-        name_query: std::option::Option<std::string::String>,
-        path: std::option::Option<std::string::String>,
-        position: std::option::Option<std::string::String>,
-        limit: std::option::Option<i32>,
-        location_status: std::option::Option<crate::model::LocationStatusType>,
+        pub(crate) rest_api_id: std::option::Option<std::string::String>,
+        pub(crate) r#type: std::option::Option<crate::model::DocumentationPartType>,
+        pub(crate) name_query: std::option::Option<std::string::String>,
+        pub(crate) path: std::option::Option<std::string::String>,
+        pub(crate) position: std::option::Option<std::string::String>,
+        pub(crate) limit: std::option::Option<i32>,
+        pub(crate) location_status: std::option::Option<crate::model::LocationStatusType>,
     }
     impl Builder {
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
@@ -8892,7 +8809,9 @@ impl GetDocumentationPartsInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body = smithy_http::body::SdkBody::from("");
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -8984,24 +8903,22 @@ impl GetDocumentationPartsInput {
         self.uri_query(&mut uri);
         Ok(builder.method("GET").uri(uri))
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
     }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        vec![]
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+        }
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`GetDocumentationPartsInput`](crate::input::GetDocumentationPartsInput)
     pub fn builder() -> crate::input::get_documentation_parts_input::Builder {
@@ -9015,8 +8932,8 @@ pub mod get_documentation_version_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        rest_api_id: std::option::Option<std::string::String>,
-        documentation_version: std::option::Option<std::string::String>,
+        pub(crate) rest_api_id: std::option::Option<std::string::String>,
+        pub(crate) documentation_version: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
@@ -9063,7 +8980,9 @@ impl GetDocumentationVersionInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body = smithy_http::body::SdkBody::from("");
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -9135,24 +9054,22 @@ impl GetDocumentationVersionInput {
         self.uri_base(&mut uri);
         Ok(builder.method("GET").uri(uri))
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
     }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        vec![]
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+        }
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`GetDocumentationVersionInput`](crate::input::GetDocumentationVersionInput)
     pub fn builder() -> crate::input::get_documentation_version_input::Builder {
@@ -9166,9 +9083,9 @@ pub mod get_documentation_versions_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        rest_api_id: std::option::Option<std::string::String>,
-        position: std::option::Option<std::string::String>,
-        limit: std::option::Option<i32>,
+        pub(crate) rest_api_id: std::option::Option<std::string::String>,
+        pub(crate) position: std::option::Option<std::string::String>,
+        pub(crate) limit: std::option::Option<i32>,
     }
     impl Builder {
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
@@ -9225,7 +9142,9 @@ impl GetDocumentationVersionsInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body = smithy_http::body::SdkBody::from("");
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -9305,24 +9224,22 @@ impl GetDocumentationVersionsInput {
         self.uri_query(&mut uri);
         Ok(builder.method("GET").uri(uri))
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
     }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        vec![]
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+        }
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`GetDocumentationVersionsInput`](crate::input::GetDocumentationVersionsInput)
     pub fn builder() -> crate::input::get_documentation_versions_input::Builder {
@@ -9336,7 +9253,7 @@ pub mod get_domain_name_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        domain_name: std::option::Option<std::string::String>,
+        pub(crate) domain_name: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>[Required] The name of the <a>DomainName</a> resource.</p>
@@ -9372,7 +9289,9 @@ impl GetDomainNameInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body = smithy_http::body::SdkBody::from("");
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -9442,24 +9361,22 @@ impl GetDomainNameInput {
         self.uri_base(&mut uri);
         Ok(builder.method("GET").uri(uri))
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
     }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        vec![]
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+        }
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`GetDomainNameInput`](crate::input::GetDomainNameInput)
     pub fn builder() -> crate::input::get_domain_name_input::Builder {
@@ -9473,8 +9390,8 @@ pub mod get_domain_names_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        position: std::option::Option<std::string::String>,
-        limit: std::option::Option<i32>,
+        pub(crate) position: std::option::Option<std::string::String>,
+        pub(crate) limit: std::option::Option<i32>,
     }
     impl Builder {
         /// <p>The current pagination position in the paged result set.</p>
@@ -9520,7 +9437,9 @@ impl GetDomainNamesInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body = smithy_http::body::SdkBody::from("");
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -9595,24 +9514,22 @@ impl GetDomainNamesInput {
         self.uri_query(&mut uri);
         Ok(builder.method("GET").uri(uri))
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
     }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        vec![]
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+        }
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`GetDomainNamesInput`](crate::input::GetDomainNamesInput)
     pub fn builder() -> crate::input::get_domain_names_input::Builder {
@@ -9626,13 +9543,13 @@ pub mod get_export_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        rest_api_id: std::option::Option<std::string::String>,
-        stage_name: std::option::Option<std::string::String>,
-        export_type: std::option::Option<std::string::String>,
-        parameters: std::option::Option<
+        pub(crate) rest_api_id: std::option::Option<std::string::String>,
+        pub(crate) stage_name: std::option::Option<std::string::String>,
+        pub(crate) export_type: std::option::Option<std::string::String>,
+        pub(crate) parameters: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
-        accepts: std::option::Option<std::string::String>,
+        pub(crate) accepts: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
@@ -9718,7 +9635,9 @@ impl GetExportInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body = smithy_http::body::SdkBody::from("");
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -9813,24 +9732,22 @@ impl GetExportInput {
         let builder = self.add_headers(builder)?;
         Ok(builder.method("GET").uri(uri))
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
     }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        vec![]
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+        }
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`GetExportInput`](crate::input::GetExportInput)
     pub fn builder() -> crate::input::get_export_input::Builder {
@@ -9844,8 +9761,8 @@ pub mod get_gateway_response_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        rest_api_id: std::option::Option<std::string::String>,
-        response_type: std::option::Option<crate::model::GatewayResponseType>,
+        pub(crate) rest_api_id: std::option::Option<std::string::String>,
+        pub(crate) response_type: std::option::Option<crate::model::GatewayResponseType>,
     }
     impl Builder {
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
@@ -9900,7 +9817,9 @@ impl GetGatewayResponseInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body = smithy_http::body::SdkBody::from("");
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -9971,24 +9890,22 @@ impl GetGatewayResponseInput {
         self.uri_base(&mut uri);
         Ok(builder.method("GET").uri(uri))
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
     }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        vec![]
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+        }
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`GetGatewayResponseInput`](crate::input::GetGatewayResponseInput)
     pub fn builder() -> crate::input::get_gateway_response_input::Builder {
@@ -10002,9 +9919,9 @@ pub mod get_gateway_responses_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        rest_api_id: std::option::Option<std::string::String>,
-        position: std::option::Option<std::string::String>,
-        limit: std::option::Option<i32>,
+        pub(crate) rest_api_id: std::option::Option<std::string::String>,
+        pub(crate) position: std::option::Option<std::string::String>,
+        pub(crate) limit: std::option::Option<i32>,
     }
     impl Builder {
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
@@ -10061,7 +9978,9 @@ impl GetGatewayResponsesInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body = smithy_http::body::SdkBody::from("");
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -10141,24 +10060,22 @@ impl GetGatewayResponsesInput {
         self.uri_query(&mut uri);
         Ok(builder.method("GET").uri(uri))
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
     }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        vec![]
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+        }
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`GetGatewayResponsesInput`](crate::input::GetGatewayResponsesInput)
     pub fn builder() -> crate::input::get_gateway_responses_input::Builder {
@@ -10172,9 +10089,9 @@ pub mod get_integration_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        rest_api_id: std::option::Option<std::string::String>,
-        resource_id: std::option::Option<std::string::String>,
-        http_method: std::option::Option<std::string::String>,
+        pub(crate) rest_api_id: std::option::Option<std::string::String>,
+        pub(crate) resource_id: std::option::Option<std::string::String>,
+        pub(crate) http_method: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
@@ -10230,7 +10147,9 @@ impl GetIntegrationInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body = smithy_http::body::SdkBody::from("");
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -10302,24 +10221,22 @@ impl GetIntegrationInput {
         self.uri_base(&mut uri);
         Ok(builder.method("GET").uri(uri))
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
     }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        vec![]
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+        }
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`GetIntegrationInput`](crate::input::GetIntegrationInput)
     pub fn builder() -> crate::input::get_integration_input::Builder {
@@ -10333,10 +10250,10 @@ pub mod get_integration_response_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        rest_api_id: std::option::Option<std::string::String>,
-        resource_id: std::option::Option<std::string::String>,
-        http_method: std::option::Option<std::string::String>,
-        status_code: std::option::Option<std::string::String>,
+        pub(crate) rest_api_id: std::option::Option<std::string::String>,
+        pub(crate) resource_id: std::option::Option<std::string::String>,
+        pub(crate) http_method: std::option::Option<std::string::String>,
+        pub(crate) status_code: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
@@ -10403,7 +10320,9 @@ impl GetIntegrationResponseInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body = smithy_http::body::SdkBody::from("");
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -10468,24 +10387,22 @@ impl GetIntegrationResponseInput {
         self.uri_base(&mut uri);
         Ok(builder.method("GET").uri(uri))
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
     }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        vec![]
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+        }
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`GetIntegrationResponseInput`](crate::input::GetIntegrationResponseInput)
     pub fn builder() -> crate::input::get_integration_response_input::Builder {
@@ -10499,9 +10416,9 @@ pub mod get_method_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        rest_api_id: std::option::Option<std::string::String>,
-        resource_id: std::option::Option<std::string::String>,
-        http_method: std::option::Option<std::string::String>,
+        pub(crate) rest_api_id: std::option::Option<std::string::String>,
+        pub(crate) resource_id: std::option::Option<std::string::String>,
+        pub(crate) http_method: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
@@ -10557,7 +10474,9 @@ impl GetMethodInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body = smithy_http::body::SdkBody::from("");
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -10627,24 +10546,22 @@ impl GetMethodInput {
         self.uri_base(&mut uri);
         Ok(builder.method("GET").uri(uri))
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
     }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        vec![]
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+        }
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`GetMethodInput`](crate::input::GetMethodInput)
     pub fn builder() -> crate::input::get_method_input::Builder {
@@ -10658,10 +10575,10 @@ pub mod get_method_response_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        rest_api_id: std::option::Option<std::string::String>,
-        resource_id: std::option::Option<std::string::String>,
-        http_method: std::option::Option<std::string::String>,
-        status_code: std::option::Option<std::string::String>,
+        pub(crate) rest_api_id: std::option::Option<std::string::String>,
+        pub(crate) resource_id: std::option::Option<std::string::String>,
+        pub(crate) http_method: std::option::Option<std::string::String>,
+        pub(crate) status_code: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
@@ -10728,7 +10645,9 @@ impl GetMethodResponseInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body = smithy_http::body::SdkBody::from("");
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -10793,24 +10712,22 @@ impl GetMethodResponseInput {
         self.uri_base(&mut uri);
         Ok(builder.method("GET").uri(uri))
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
     }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        vec![]
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+        }
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`GetMethodResponseInput`](crate::input::GetMethodResponseInput)
     pub fn builder() -> crate::input::get_method_response_input::Builder {
@@ -10824,9 +10741,9 @@ pub mod get_model_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        rest_api_id: std::option::Option<std::string::String>,
-        model_name: std::option::Option<std::string::String>,
-        flatten: std::option::Option<bool>,
+        pub(crate) rest_api_id: std::option::Option<std::string::String>,
+        pub(crate) model_name: std::option::Option<std::string::String>,
+        pub(crate) flatten: std::option::Option<bool>,
     }
     impl Builder {
         /// <p>[Required] The <a>RestApi</a> identifier under which the <a>Model</a> exists.</p>
@@ -10882,7 +10799,9 @@ impl GetModelInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body = smithy_http::body::SdkBody::from("");
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -10958,24 +10877,22 @@ impl GetModelInput {
         self.uri_query(&mut uri);
         Ok(builder.method("GET").uri(uri))
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
     }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        vec![]
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+        }
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`GetModelInput`](crate::input::GetModelInput)
     pub fn builder() -> crate::input::get_model_input::Builder {
@@ -10989,9 +10906,9 @@ pub mod get_models_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        rest_api_id: std::option::Option<std::string::String>,
-        position: std::option::Option<std::string::String>,
-        limit: std::option::Option<i32>,
+        pub(crate) rest_api_id: std::option::Option<std::string::String>,
+        pub(crate) position: std::option::Option<std::string::String>,
+        pub(crate) limit: std::option::Option<i32>,
     }
     impl Builder {
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
@@ -11047,7 +10964,9 @@ impl GetModelsInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body = smithy_http::body::SdkBody::from("");
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -11125,24 +11044,22 @@ impl GetModelsInput {
         self.uri_query(&mut uri);
         Ok(builder.method("GET").uri(uri))
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
     }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        vec![]
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+        }
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`GetModelsInput`](crate::input::GetModelsInput)
     pub fn builder() -> crate::input::get_models_input::Builder {
@@ -11156,8 +11073,8 @@ pub mod get_model_template_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        rest_api_id: std::option::Option<std::string::String>,
-        model_name: std::option::Option<std::string::String>,
+        pub(crate) rest_api_id: std::option::Option<std::string::String>,
+        pub(crate) model_name: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
@@ -11204,7 +11121,9 @@ impl GetModelTemplateInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body = smithy_http::body::SdkBody::from("");
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -11275,24 +11194,22 @@ impl GetModelTemplateInput {
         self.uri_base(&mut uri);
         Ok(builder.method("GET").uri(uri))
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
     }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        vec![]
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+        }
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`GetModelTemplateInput`](crate::input::GetModelTemplateInput)
     pub fn builder() -> crate::input::get_model_template_input::Builder {
@@ -11306,8 +11223,8 @@ pub mod get_request_validator_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        rest_api_id: std::option::Option<std::string::String>,
-        request_validator_id: std::option::Option<std::string::String>,
+        pub(crate) rest_api_id: std::option::Option<std::string::String>,
+        pub(crate) request_validator_id: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
@@ -11354,7 +11271,9 @@ impl GetRequestValidatorInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body = smithy_http::body::SdkBody::from("");
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -11425,24 +11344,22 @@ impl GetRequestValidatorInput {
         self.uri_base(&mut uri);
         Ok(builder.method("GET").uri(uri))
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
     }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        vec![]
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+        }
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`GetRequestValidatorInput`](crate::input::GetRequestValidatorInput)
     pub fn builder() -> crate::input::get_request_validator_input::Builder {
@@ -11456,9 +11373,9 @@ pub mod get_request_validators_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        rest_api_id: std::option::Option<std::string::String>,
-        position: std::option::Option<std::string::String>,
-        limit: std::option::Option<i32>,
+        pub(crate) rest_api_id: std::option::Option<std::string::String>,
+        pub(crate) position: std::option::Option<std::string::String>,
+        pub(crate) limit: std::option::Option<i32>,
     }
     impl Builder {
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
@@ -11515,7 +11432,9 @@ impl GetRequestValidatorsInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body = smithy_http::body::SdkBody::from("");
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -11595,24 +11514,22 @@ impl GetRequestValidatorsInput {
         self.uri_query(&mut uri);
         Ok(builder.method("GET").uri(uri))
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
     }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        vec![]
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+        }
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`GetRequestValidatorsInput`](crate::input::GetRequestValidatorsInput)
     pub fn builder() -> crate::input::get_request_validators_input::Builder {
@@ -11626,9 +11543,9 @@ pub mod get_resource_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        rest_api_id: std::option::Option<std::string::String>,
-        resource_id: std::option::Option<std::string::String>,
-        embed: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) rest_api_id: std::option::Option<std::string::String>,
+        pub(crate) resource_id: std::option::Option<std::string::String>,
+        pub(crate) embed: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
@@ -11688,7 +11605,9 @@ impl GetResourceInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body = smithy_http::body::SdkBody::from("");
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -11768,24 +11687,22 @@ impl GetResourceInput {
         self.uri_query(&mut uri);
         Ok(builder.method("GET").uri(uri))
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
     }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        vec![]
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+        }
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`GetResourceInput`](crate::input::GetResourceInput)
     pub fn builder() -> crate::input::get_resource_input::Builder {
@@ -11799,10 +11716,10 @@ pub mod get_resources_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        rest_api_id: std::option::Option<std::string::String>,
-        position: std::option::Option<std::string::String>,
-        limit: std::option::Option<i32>,
-        embed: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) rest_api_id: std::option::Option<std::string::String>,
+        pub(crate) position: std::option::Option<std::string::String>,
+        pub(crate) limit: std::option::Option<i32>,
+        pub(crate) embed: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
@@ -11872,7 +11789,9 @@ impl GetResourcesInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body = smithy_http::body::SdkBody::from("");
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -11957,24 +11876,22 @@ impl GetResourcesInput {
         self.uri_query(&mut uri);
         Ok(builder.method("GET").uri(uri))
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
     }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        vec![]
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+        }
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`GetResourcesInput`](crate::input::GetResourcesInput)
     pub fn builder() -> crate::input::get_resources_input::Builder {
@@ -11988,7 +11905,7 @@ pub mod get_rest_api_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        rest_api_id: std::option::Option<std::string::String>,
+        pub(crate) rest_api_id: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
@@ -12024,7 +11941,9 @@ impl GetRestApiInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body = smithy_http::body::SdkBody::from("");
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -12094,24 +12013,22 @@ impl GetRestApiInput {
         self.uri_base(&mut uri);
         Ok(builder.method("GET").uri(uri))
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
     }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        vec![]
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+        }
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`GetRestApiInput`](crate::input::GetRestApiInput)
     pub fn builder() -> crate::input::get_rest_api_input::Builder {
@@ -12125,8 +12042,8 @@ pub mod get_rest_apis_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        position: std::option::Option<std::string::String>,
-        limit: std::option::Option<i32>,
+        pub(crate) position: std::option::Option<std::string::String>,
+        pub(crate) limit: std::option::Option<i32>,
     }
     impl Builder {
         /// <p>The current pagination position in the paged result set.</p>
@@ -12172,7 +12089,9 @@ impl GetRestApisInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body = smithy_http::body::SdkBody::from("");
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -12247,24 +12166,22 @@ impl GetRestApisInput {
         self.uri_query(&mut uri);
         Ok(builder.method("GET").uri(uri))
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
     }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        vec![]
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+        }
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`GetRestApisInput`](crate::input::GetRestApisInput)
     pub fn builder() -> crate::input::get_rest_apis_input::Builder {
@@ -12278,10 +12195,10 @@ pub mod get_sdk_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        rest_api_id: std::option::Option<std::string::String>,
-        stage_name: std::option::Option<std::string::String>,
-        sdk_type: std::option::Option<std::string::String>,
-        parameters: std::option::Option<
+        pub(crate) rest_api_id: std::option::Option<std::string::String>,
+        pub(crate) stage_name: std::option::Option<std::string::String>,
+        pub(crate) sdk_type: std::option::Option<std::string::String>,
+        pub(crate) parameters: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
     }
@@ -12356,7 +12273,9 @@ impl GetSdkInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body = smithy_http::body::SdkBody::from("");
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -12426,24 +12345,22 @@ impl GetSdkInput {
         self.uri_base(&mut uri);
         Ok(builder.method("GET").uri(uri))
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
     }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        vec![]
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+        }
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`GetSdkInput`](crate::input::GetSdkInput)
     pub fn builder() -> crate::input::get_sdk_input::Builder {
@@ -12457,7 +12374,7 @@ pub mod get_sdk_type_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        id: std::option::Option<std::string::String>,
+        pub(crate) id: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>[Required] The identifier of the queried <a>SdkType</a> instance.</p>
@@ -12493,7 +12410,9 @@ impl GetSdkTypeInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body = smithy_http::body::SdkBody::from("");
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -12563,24 +12482,22 @@ impl GetSdkTypeInput {
         self.uri_base(&mut uri);
         Ok(builder.method("GET").uri(uri))
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
     }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        vec![]
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+        }
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`GetSdkTypeInput`](crate::input::GetSdkTypeInput)
     pub fn builder() -> crate::input::get_sdk_type_input::Builder {
@@ -12594,8 +12511,8 @@ pub mod get_sdk_types_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        position: std::option::Option<std::string::String>,
-        limit: std::option::Option<i32>,
+        pub(crate) position: std::option::Option<std::string::String>,
+        pub(crate) limit: std::option::Option<i32>,
     }
     impl Builder {
         /// <p>The current pagination position in the paged result set.</p>
@@ -12641,7 +12558,9 @@ impl GetSdkTypesInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body = smithy_http::body::SdkBody::from("");
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -12716,24 +12635,22 @@ impl GetSdkTypesInput {
         self.uri_query(&mut uri);
         Ok(builder.method("GET").uri(uri))
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
     }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        vec![]
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+        }
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`GetSdkTypesInput`](crate::input::GetSdkTypesInput)
     pub fn builder() -> crate::input::get_sdk_types_input::Builder {
@@ -12747,8 +12664,8 @@ pub mod get_stage_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        rest_api_id: std::option::Option<std::string::String>,
-        stage_name: std::option::Option<std::string::String>,
+        pub(crate) rest_api_id: std::option::Option<std::string::String>,
+        pub(crate) stage_name: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
@@ -12794,7 +12711,9 @@ impl GetStageInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body = smithy_http::body::SdkBody::from("");
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -12863,24 +12782,22 @@ impl GetStageInput {
         self.uri_base(&mut uri);
         Ok(builder.method("GET").uri(uri))
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
     }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        vec![]
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+        }
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`GetStageInput`](crate::input::GetStageInput)
     pub fn builder() -> crate::input::get_stage_input::Builder {
@@ -12894,8 +12811,8 @@ pub mod get_stages_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        rest_api_id: std::option::Option<std::string::String>,
-        deployment_id: std::option::Option<std::string::String>,
+        pub(crate) rest_api_id: std::option::Option<std::string::String>,
+        pub(crate) deployment_id: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
@@ -12941,7 +12858,9 @@ impl GetStagesInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body = smithy_http::body::SdkBody::from("");
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -13016,24 +12935,22 @@ impl GetStagesInput {
         self.uri_query(&mut uri);
         Ok(builder.method("GET").uri(uri))
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
     }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        vec![]
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+        }
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`GetStagesInput`](crate::input::GetStagesInput)
     pub fn builder() -> crate::input::get_stages_input::Builder {
@@ -13047,9 +12964,9 @@ pub mod get_tags_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        resource_arn: std::option::Option<std::string::String>,
-        position: std::option::Option<std::string::String>,
-        limit: std::option::Option<i32>,
+        pub(crate) resource_arn: std::option::Option<std::string::String>,
+        pub(crate) position: std::option::Option<std::string::String>,
+        pub(crate) limit: std::option::Option<i32>,
     }
     impl Builder {
         /// <p>[Required] The ARN of a resource that can be tagged.</p>
@@ -13102,7 +13019,9 @@ impl GetTagsInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body = smithy_http::body::SdkBody::from("");
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -13180,24 +13099,22 @@ impl GetTagsInput {
         self.uri_query(&mut uri);
         Ok(builder.method("GET").uri(uri))
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
     }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        vec![]
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+        }
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`GetTagsInput`](crate::input::GetTagsInput)
     pub fn builder() -> crate::input::get_tags_input::Builder {
@@ -13211,12 +13128,12 @@ pub mod get_usage_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        usage_plan_id: std::option::Option<std::string::String>,
-        key_id: std::option::Option<std::string::String>,
-        start_date: std::option::Option<std::string::String>,
-        end_date: std::option::Option<std::string::String>,
-        position: std::option::Option<std::string::String>,
-        limit: std::option::Option<i32>,
+        pub(crate) usage_plan_id: std::option::Option<std::string::String>,
+        pub(crate) key_id: std::option::Option<std::string::String>,
+        pub(crate) start_date: std::option::Option<std::string::String>,
+        pub(crate) end_date: std::option::Option<std::string::String>,
+        pub(crate) position: std::option::Option<std::string::String>,
+        pub(crate) limit: std::option::Option<i32>,
     }
     impl Builder {
         /// <p>[Required] The Id of the usage plan associated with the usage data.</p>
@@ -13302,7 +13219,9 @@ impl GetUsageInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body = smithy_http::body::SdkBody::from("");
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -13389,24 +13308,22 @@ impl GetUsageInput {
         self.uri_query(&mut uri);
         Ok(builder.method("GET").uri(uri))
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
     }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        vec![]
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+        }
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`GetUsageInput`](crate::input::GetUsageInput)
     pub fn builder() -> crate::input::get_usage_input::Builder {
@@ -13420,7 +13337,7 @@ pub mod get_usage_plan_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        usage_plan_id: std::option::Option<std::string::String>,
+        pub(crate) usage_plan_id: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>[Required] The identifier of the <a>UsagePlan</a> resource to be retrieved.</p>
@@ -13456,7 +13373,9 @@ impl GetUsagePlanInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body = smithy_http::body::SdkBody::from("");
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -13526,24 +13445,22 @@ impl GetUsagePlanInput {
         self.uri_base(&mut uri);
         Ok(builder.method("GET").uri(uri))
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
     }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        vec![]
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+        }
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`GetUsagePlanInput`](crate::input::GetUsagePlanInput)
     pub fn builder() -> crate::input::get_usage_plan_input::Builder {
@@ -13557,8 +13474,8 @@ pub mod get_usage_plan_key_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        usage_plan_id: std::option::Option<std::string::String>,
-        key_id: std::option::Option<std::string::String>,
+        pub(crate) usage_plan_id: std::option::Option<std::string::String>,
+        pub(crate) key_id: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>[Required] The Id of the <a>UsagePlan</a> resource representing the usage plan containing the to-be-retrieved <a>UsagePlanKey</a> resource representing a plan customer.</p>
@@ -13605,7 +13522,9 @@ impl GetUsagePlanKeyInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body = smithy_http::body::SdkBody::from("");
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -13676,24 +13595,22 @@ impl GetUsagePlanKeyInput {
         self.uri_base(&mut uri);
         Ok(builder.method("GET").uri(uri))
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
     }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        vec![]
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+        }
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`GetUsagePlanKeyInput`](crate::input::GetUsagePlanKeyInput)
     pub fn builder() -> crate::input::get_usage_plan_key_input::Builder {
@@ -13707,10 +13624,10 @@ pub mod get_usage_plan_keys_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        usage_plan_id: std::option::Option<std::string::String>,
-        position: std::option::Option<std::string::String>,
-        limit: std::option::Option<i32>,
-        name_query: std::option::Option<std::string::String>,
+        pub(crate) usage_plan_id: std::option::Option<std::string::String>,
+        pub(crate) position: std::option::Option<std::string::String>,
+        pub(crate) limit: std::option::Option<i32>,
+        pub(crate) name_query: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>[Required] The Id of the <a>UsagePlan</a> resource representing the usage plan containing the to-be-retrieved <a>UsagePlanKey</a> resource representing a plan customer.</p>
@@ -13777,7 +13694,9 @@ impl GetUsagePlanKeysInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body = smithy_http::body::SdkBody::from("");
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -13860,24 +13779,22 @@ impl GetUsagePlanKeysInput {
         self.uri_query(&mut uri);
         Ok(builder.method("GET").uri(uri))
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
     }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        vec![]
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+        }
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`GetUsagePlanKeysInput`](crate::input::GetUsagePlanKeysInput)
     pub fn builder() -> crate::input::get_usage_plan_keys_input::Builder {
@@ -13891,9 +13808,9 @@ pub mod get_usage_plans_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        position: std::option::Option<std::string::String>,
-        key_id: std::option::Option<std::string::String>,
-        limit: std::option::Option<i32>,
+        pub(crate) position: std::option::Option<std::string::String>,
+        pub(crate) key_id: std::option::Option<std::string::String>,
+        pub(crate) limit: std::option::Option<i32>,
     }
     impl Builder {
         /// <p>The current pagination position in the paged result set.</p>
@@ -13949,7 +13866,9 @@ impl GetUsagePlansInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body = smithy_http::body::SdkBody::from("");
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -14027,24 +13946,22 @@ impl GetUsagePlansInput {
         self.uri_query(&mut uri);
         Ok(builder.method("GET").uri(uri))
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
     }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        vec![]
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+        }
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`GetUsagePlansInput`](crate::input::GetUsagePlansInput)
     pub fn builder() -> crate::input::get_usage_plans_input::Builder {
@@ -14058,7 +13975,7 @@ pub mod get_vpc_link_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        vpc_link_id: std::option::Option<std::string::String>,
+        pub(crate) vpc_link_id: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>[Required] The identifier of the  <a>VpcLink</a>. It is used in an <a>Integration</a> to reference this <a>VpcLink</a>.</p>
@@ -14094,7 +14011,9 @@ impl GetVpcLinkInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body = smithy_http::body::SdkBody::from("");
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -14164,24 +14083,22 @@ impl GetVpcLinkInput {
         self.uri_base(&mut uri);
         Ok(builder.method("GET").uri(uri))
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
     }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        vec![]
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+        }
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`GetVpcLinkInput`](crate::input::GetVpcLinkInput)
     pub fn builder() -> crate::input::get_vpc_link_input::Builder {
@@ -14195,8 +14112,8 @@ pub mod get_vpc_links_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        position: std::option::Option<std::string::String>,
-        limit: std::option::Option<i32>,
+        pub(crate) position: std::option::Option<std::string::String>,
+        pub(crate) limit: std::option::Option<i32>,
     }
     impl Builder {
         /// <p>The current pagination position in the paged result set.</p>
@@ -14242,7 +14159,9 @@ impl GetVpcLinksInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body = smithy_http::body::SdkBody::from("");
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -14317,24 +14236,22 @@ impl GetVpcLinksInput {
         self.uri_query(&mut uri);
         Ok(builder.method("GET").uri(uri))
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
     }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        vec![]
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+        }
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`GetVpcLinksInput`](crate::input::GetVpcLinksInput)
     pub fn builder() -> crate::input::get_vpc_links_input::Builder {
@@ -14348,9 +14265,9 @@ pub mod import_api_keys_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        body: std::option::Option<smithy_types::Blob>,
-        format: std::option::Option<crate::model::ApiKeysFormat>,
-        fail_on_warnings: std::option::Option<bool>,
+        pub(crate) body: std::option::Option<smithy_types::Blob>,
+        pub(crate) format: std::option::Option<crate::model::ApiKeysFormat>,
+        pub(crate) fail_on_warnings: std::option::Option<bool>,
     }
     impl Builder {
         /// <p>The payload of the POST request to import API keys. For the payload format, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-key-file-format.html">API Key File Format</a>.</p>
@@ -14396,7 +14313,7 @@ impl ImportApiKeysInput {
     /// Consumes the builder and constructs an Operation<[`ImportApiKeys`](crate::operation::ImportApiKeys)>
     #[allow(clippy::let_and_return)]
     pub fn make_operation(
-        &self,
+        self,
         _config: &crate::config::Config,
     ) -> Result<
         smithy_http::operation::Operation<
@@ -14406,7 +14323,9 @@ impl ImportApiKeysInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body = crate::operation_ser::ser_payload_import_api_keys_input(self.body)?;
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -14485,30 +14404,22 @@ impl ImportApiKeysInput {
         self.uri_query(&mut uri);
         Ok(builder.method("POST").uri(uri))
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/octet-stream");
         self.update_http_builder(builder)
     }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        let var_62 = &self.body;
-
-        let var_62 = match var_62.as_ref() {
-            Some(t) => t,
-            None => return vec![],
-        };
-        var_62.as_ref().into()
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+        }
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`ImportApiKeysInput`](crate::input::ImportApiKeysInput)
     pub fn builder() -> crate::input::import_api_keys_input::Builder {
@@ -14522,10 +14433,10 @@ pub mod import_documentation_parts_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        rest_api_id: std::option::Option<std::string::String>,
-        mode: std::option::Option<crate::model::PutMode>,
-        fail_on_warnings: std::option::Option<bool>,
-        body: std::option::Option<smithy_types::Blob>,
+        pub(crate) rest_api_id: std::option::Option<std::string::String>,
+        pub(crate) mode: std::option::Option<crate::model::PutMode>,
+        pub(crate) fail_on_warnings: std::option::Option<bool>,
+        pub(crate) body: std::option::Option<smithy_types::Blob>,
     }
     impl Builder {
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
@@ -14582,7 +14493,7 @@ impl ImportDocumentationPartsInput {
     /// Consumes the builder and constructs an Operation<[`ImportDocumentationParts`](crate::operation::ImportDocumentationParts)>
     #[allow(clippy::let_and_return)]
     pub fn make_operation(
-        &self,
+        self,
         _config: &crate::config::Config,
     ) -> Result<
         smithy_http::operation::Operation<
@@ -14592,7 +14503,10 @@ impl ImportDocumentationPartsInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body =
+                crate::operation_ser::ser_payload_import_documentation_parts_input(self.body)?;
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -14655,8 +14569,8 @@ impl ImportDocumentationPartsInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_63) = &self.mode {
-            query.push_kv("mode", &smithy_http::query::fmt_string(&inner_63));
+        if let Some(inner_62) = &self.mode {
+            query.push_kv("mode", &smithy_http::query::fmt_string(&inner_62));
         }
         if self.fail_on_warnings {
             query.push_kv(
@@ -14675,30 +14589,22 @@ impl ImportDocumentationPartsInput {
         self.uri_query(&mut uri);
         Ok(builder.method("PUT").uri(uri))
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/octet-stream");
         self.update_http_builder(builder)
     }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        let var_64 = &self.body;
-
-        let var_64 = match var_64.as_ref() {
-            Some(t) => t,
-            None => return vec![],
-        };
-        var_64.as_ref().into()
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+        }
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`ImportDocumentationPartsInput`](crate::input::ImportDocumentationPartsInput)
     pub fn builder() -> crate::input::import_documentation_parts_input::Builder {
@@ -14712,11 +14618,11 @@ pub mod import_rest_api_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        fail_on_warnings: std::option::Option<bool>,
-        parameters: std::option::Option<
+        pub(crate) fail_on_warnings: std::option::Option<bool>,
+        pub(crate) parameters: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
-        body: std::option::Option<smithy_types::Blob>,
+        pub(crate) body: std::option::Option<smithy_types::Blob>,
     }
     impl Builder {
         /// <p>A query parameter to indicate whether to rollback the API creation (<code>true</code>) or not (<code>false</code>)
@@ -14773,7 +14679,7 @@ impl ImportRestApiInput {
     /// Consumes the builder and constructs an Operation<[`ImportRestApi`](crate::operation::ImportRestApi)>
     #[allow(clippy::let_and_return)]
     pub fn make_operation(
-        &self,
+        self,
         _config: &crate::config::Config,
     ) -> Result<
         smithy_http::operation::Operation<
@@ -14783,7 +14689,9 @@ impl ImportRestApiInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body = crate::operation_ser::ser_payload_import_rest_api_input(self.body)?;
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -14843,8 +14751,8 @@ impl ImportRestApiInput {
         let mut query = smithy_http::query::Writer::new(&mut output);
         query.push_kv("mode", "import");
         let protected_params = ["mode", "failonwarnings"];
-        if let Some(inner_65) = &self.parameters {
-            for (k, v) in inner_65 {
+        if let Some(inner_63) = &self.parameters {
+            for (k, v) in inner_63 {
                 if !protected_params.contains(&k.as_str()) {
                     query.push_kv(
                         &smithy_http::query::fmt_string(k),
@@ -14870,30 +14778,22 @@ impl ImportRestApiInput {
         self.uri_query(&mut uri);
         Ok(builder.method("POST").uri(uri))
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/octet-stream");
         self.update_http_builder(builder)
     }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        let var_66 = &self.body;
-
-        let var_66 = match var_66.as_ref() {
-            Some(t) => t,
-            None => return vec![],
-        };
-        var_66.as_ref().into()
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+        }
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`ImportRestApiInput`](crate::input::ImportRestApiInput)
     pub fn builder() -> crate::input::import_rest_api_input::Builder {
@@ -14907,13 +14807,13 @@ pub mod put_gateway_response_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        rest_api_id: std::option::Option<std::string::String>,
-        response_type: std::option::Option<crate::model::GatewayResponseType>,
-        status_code: std::option::Option<std::string::String>,
-        response_parameters: std::option::Option<
+        pub(crate) rest_api_id: std::option::Option<std::string::String>,
+        pub(crate) response_type: std::option::Option<crate::model::GatewayResponseType>,
+        pub(crate) status_code: std::option::Option<std::string::String>,
+        pub(crate) response_parameters: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
-        response_templates: std::option::Option<
+        pub(crate) response_templates: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
     }
@@ -15023,7 +14923,13 @@ impl PutGatewayResponseInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body =
+                crate::operation_ser::serialize_synthetic_put_gateway_response_input_body(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -15094,31 +15000,22 @@ impl PutGatewayResponseInput {
         self.uri_base(&mut uri);
         Ok(builder.method("PUT").uri(uri))
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
     }
-    fn body(&self) -> crate::serializer::PutGatewayResponseInputBody {
-        crate::serializer::PutGatewayResponseInputBody {
-            status_code: &self.status_code,
-            response_parameters: &self.response_parameters,
-            response_templates: &self.response_templates,
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
         }
-    }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        serde_json::to_vec(&self.body()).expect("serialization should succeed")
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`PutGatewayResponseInput`](crate::input::PutGatewayResponseInput)
     pub fn builder() -> crate::input::put_gateway_response_input::Builder {
@@ -15132,27 +15029,27 @@ pub mod put_integration_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        rest_api_id: std::option::Option<std::string::String>,
-        resource_id: std::option::Option<std::string::String>,
-        http_method: std::option::Option<std::string::String>,
-        r#type: std::option::Option<crate::model::IntegrationType>,
-        integration_http_method: std::option::Option<std::string::String>,
-        uri: std::option::Option<std::string::String>,
-        connection_type: std::option::Option<crate::model::ConnectionType>,
-        connection_id: std::option::Option<std::string::String>,
-        credentials: std::option::Option<std::string::String>,
-        request_parameters: std::option::Option<
+        pub(crate) rest_api_id: std::option::Option<std::string::String>,
+        pub(crate) resource_id: std::option::Option<std::string::String>,
+        pub(crate) http_method: std::option::Option<std::string::String>,
+        pub(crate) r#type: std::option::Option<crate::model::IntegrationType>,
+        pub(crate) integration_http_method: std::option::Option<std::string::String>,
+        pub(crate) uri: std::option::Option<std::string::String>,
+        pub(crate) connection_type: std::option::Option<crate::model::ConnectionType>,
+        pub(crate) connection_id: std::option::Option<std::string::String>,
+        pub(crate) credentials: std::option::Option<std::string::String>,
+        pub(crate) request_parameters: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
-        request_templates: std::option::Option<
+        pub(crate) request_templates: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
-        passthrough_behavior: std::option::Option<std::string::String>,
-        cache_namespace: std::option::Option<std::string::String>,
-        cache_key_parameters: std::option::Option<std::vec::Vec<std::string::String>>,
-        content_handling: std::option::Option<crate::model::ContentHandlingStrategy>,
-        timeout_in_millis: std::option::Option<i32>,
-        tls_config: std::option::Option<crate::model::TlsConfig>,
+        pub(crate) passthrough_behavior: std::option::Option<std::string::String>,
+        pub(crate) cache_namespace: std::option::Option<std::string::String>,
+        pub(crate) cache_key_parameters: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) content_handling: std::option::Option<crate::model::ContentHandlingStrategy>,
+        pub(crate) timeout_in_millis: std::option::Option<i32>,
+        pub(crate) tls_config: std::option::Option<crate::model::TlsConfig>,
     }
     impl Builder {
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
@@ -15402,7 +15299,12 @@ impl PutIntegrationInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body = crate::operation_ser::serialize_synthetic_put_integration_input_body(&self)
+                .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -15474,42 +15376,22 @@ impl PutIntegrationInput {
         self.uri_base(&mut uri);
         Ok(builder.method("PUT").uri(uri))
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
     }
-    fn body(&self) -> crate::serializer::PutIntegrationInputBody {
-        crate::serializer::PutIntegrationInputBody {
-            r#type: &self.r#type,
-            integration_http_method: &self.integration_http_method,
-            uri: &self.uri,
-            connection_type: &self.connection_type,
-            connection_id: &self.connection_id,
-            credentials: &self.credentials,
-            request_parameters: &self.request_parameters,
-            request_templates: &self.request_templates,
-            passthrough_behavior: &self.passthrough_behavior,
-            cache_namespace: &self.cache_namespace,
-            cache_key_parameters: &self.cache_key_parameters,
-            content_handling: &self.content_handling,
-            timeout_in_millis: &self.timeout_in_millis,
-            tls_config: &self.tls_config,
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
         }
-    }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        serde_json::to_vec(&self.body()).expect("serialization should succeed")
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`PutIntegrationInput`](crate::input::PutIntegrationInput)
     pub fn builder() -> crate::input::put_integration_input::Builder {
@@ -15523,18 +15405,18 @@ pub mod put_integration_response_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        rest_api_id: std::option::Option<std::string::String>,
-        resource_id: std::option::Option<std::string::String>,
-        http_method: std::option::Option<std::string::String>,
-        status_code: std::option::Option<std::string::String>,
-        selection_pattern: std::option::Option<std::string::String>,
-        response_parameters: std::option::Option<
+        pub(crate) rest_api_id: std::option::Option<std::string::String>,
+        pub(crate) resource_id: std::option::Option<std::string::String>,
+        pub(crate) http_method: std::option::Option<std::string::String>,
+        pub(crate) status_code: std::option::Option<std::string::String>,
+        pub(crate) selection_pattern: std::option::Option<std::string::String>,
+        pub(crate) response_parameters: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
-        response_templates: std::option::Option<
+        pub(crate) response_templates: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
-        content_handling: std::option::Option<crate::model::ContentHandlingStrategy>,
+        pub(crate) content_handling: std::option::Option<crate::model::ContentHandlingStrategy>,
     }
     impl Builder {
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
@@ -15672,7 +15554,15 @@ impl PutIntegrationResponseInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body =
+                crate::operation_ser::serialize_synthetic_put_integration_response_input_body(
+                    &self,
+                )
+                .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -15737,32 +15627,22 @@ impl PutIntegrationResponseInput {
         self.uri_base(&mut uri);
         Ok(builder.method("PUT").uri(uri))
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
     }
-    fn body(&self) -> crate::serializer::PutIntegrationResponseInputBody {
-        crate::serializer::PutIntegrationResponseInputBody {
-            selection_pattern: &self.selection_pattern,
-            response_parameters: &self.response_parameters,
-            response_templates: &self.response_templates,
-            content_handling: &self.content_handling,
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
         }
-    }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        serde_json::to_vec(&self.body()).expect("serialization should succeed")
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`PutIntegrationResponseInput`](crate::input::PutIntegrationResponseInput)
     pub fn builder() -> crate::input::put_integration_response_input::Builder {
@@ -15776,20 +15656,20 @@ pub mod put_method_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        rest_api_id: std::option::Option<std::string::String>,
-        resource_id: std::option::Option<std::string::String>,
-        http_method: std::option::Option<std::string::String>,
-        authorization_type: std::option::Option<std::string::String>,
-        authorizer_id: std::option::Option<std::string::String>,
-        api_key_required: std::option::Option<bool>,
-        operation_name: std::option::Option<std::string::String>,
-        request_parameters:
+        pub(crate) rest_api_id: std::option::Option<std::string::String>,
+        pub(crate) resource_id: std::option::Option<std::string::String>,
+        pub(crate) http_method: std::option::Option<std::string::String>,
+        pub(crate) authorization_type: std::option::Option<std::string::String>,
+        pub(crate) authorizer_id: std::option::Option<std::string::String>,
+        pub(crate) api_key_required: std::option::Option<bool>,
+        pub(crate) operation_name: std::option::Option<std::string::String>,
+        pub(crate) request_parameters:
             std::option::Option<std::collections::HashMap<std::string::String, bool>>,
-        request_models: std::option::Option<
+        pub(crate) request_models: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
-        request_validator_id: std::option::Option<std::string::String>,
-        authorization_scopes: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) request_validator_id: std::option::Option<std::string::String>,
+        pub(crate) authorization_scopes: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
@@ -15953,7 +15833,12 @@ impl PutMethodInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body = crate::operation_ser::serialize_synthetic_put_method_input_body(&self)
+                .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -16023,36 +15908,22 @@ impl PutMethodInput {
         self.uri_base(&mut uri);
         Ok(builder.method("PUT").uri(uri))
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
     }
-    fn body(&self) -> crate::serializer::PutMethodInputBody {
-        crate::serializer::PutMethodInputBody {
-            authorization_type: &self.authorization_type,
-            authorizer_id: &self.authorizer_id,
-            api_key_required: &self.api_key_required,
-            operation_name: &self.operation_name,
-            request_parameters: &self.request_parameters,
-            request_models: &self.request_models,
-            request_validator_id: &self.request_validator_id,
-            authorization_scopes: &self.authorization_scopes,
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
         }
-    }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        serde_json::to_vec(&self.body()).expect("serialization should succeed")
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`PutMethodInput`](crate::input::PutMethodInput)
     pub fn builder() -> crate::input::put_method_input::Builder {
@@ -16066,13 +15937,13 @@ pub mod put_method_response_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        rest_api_id: std::option::Option<std::string::String>,
-        resource_id: std::option::Option<std::string::String>,
-        http_method: std::option::Option<std::string::String>,
-        status_code: std::option::Option<std::string::String>,
-        response_parameters:
+        pub(crate) rest_api_id: std::option::Option<std::string::String>,
+        pub(crate) resource_id: std::option::Option<std::string::String>,
+        pub(crate) http_method: std::option::Option<std::string::String>,
+        pub(crate) status_code: std::option::Option<std::string::String>,
+        pub(crate) response_parameters:
             std::option::Option<std::collections::HashMap<std::string::String, bool>>,
-        response_models: std::option::Option<
+        pub(crate) response_models: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
     }
@@ -16179,7 +16050,13 @@ impl PutMethodResponseInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body =
+                crate::operation_ser::serialize_synthetic_put_method_response_input_body(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -16244,30 +16121,22 @@ impl PutMethodResponseInput {
         self.uri_base(&mut uri);
         Ok(builder.method("PUT").uri(uri))
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
     }
-    fn body(&self) -> crate::serializer::PutMethodResponseInputBody {
-        crate::serializer::PutMethodResponseInputBody {
-            response_parameters: &self.response_parameters,
-            response_models: &self.response_models,
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
         }
-    }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        serde_json::to_vec(&self.body()).expect("serialization should succeed")
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`PutMethodResponseInput`](crate::input::PutMethodResponseInput)
     pub fn builder() -> crate::input::put_method_response_input::Builder {
@@ -16281,13 +16150,13 @@ pub mod put_rest_api_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        rest_api_id: std::option::Option<std::string::String>,
-        mode: std::option::Option<crate::model::PutMode>,
-        fail_on_warnings: std::option::Option<bool>,
-        parameters: std::option::Option<
+        pub(crate) rest_api_id: std::option::Option<std::string::String>,
+        pub(crate) mode: std::option::Option<crate::model::PutMode>,
+        pub(crate) fail_on_warnings: std::option::Option<bool>,
+        pub(crate) parameters: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
-        body: std::option::Option<smithy_types::Blob>,
+        pub(crate) body: std::option::Option<smithy_types::Blob>,
     }
     impl Builder {
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
@@ -16365,7 +16234,7 @@ impl PutRestApiInput {
     /// Consumes the builder and constructs an Operation<[`PutRestApi`](crate::operation::PutRestApi)>
     #[allow(clippy::let_and_return)]
     pub fn make_operation(
-        &self,
+        self,
         _config: &crate::config::Config,
     ) -> Result<
         smithy_http::operation::Operation<
@@ -16375,7 +16244,9 @@ impl PutRestApiInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body = crate::operation_ser::ser_payload_put_rest_api_input(self.body)?;
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -16439,8 +16310,8 @@ impl PutRestApiInput {
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
         let protected_params = ["mode", "failonwarnings"];
-        if let Some(inner_67) = &self.parameters {
-            for (k, v) in inner_67 {
+        if let Some(inner_64) = &self.parameters {
+            for (k, v) in inner_64 {
                 if !protected_params.contains(&k.as_str()) {
                     query.push_kv(
                         &smithy_http::query::fmt_string(k),
@@ -16449,8 +16320,8 @@ impl PutRestApiInput {
                 }
             }
         }
-        if let Some(inner_68) = &self.mode {
-            query.push_kv("mode", &smithy_http::query::fmt_string(&inner_68));
+        if let Some(inner_65) = &self.mode {
+            query.push_kv("mode", &smithy_http::query::fmt_string(&inner_65));
         }
         if self.fail_on_warnings {
             query.push_kv(
@@ -16469,30 +16340,22 @@ impl PutRestApiInput {
         self.uri_query(&mut uri);
         Ok(builder.method("PUT").uri(uri))
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/octet-stream");
         self.update_http_builder(builder)
     }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        let var_69 = &self.body;
-
-        let var_69 = match var_69.as_ref() {
-            Some(t) => t,
-            None => return vec![],
-        };
-        var_69.as_ref().into()
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+        }
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`PutRestApiInput`](crate::input::PutRestApiInput)
     pub fn builder() -> crate::input::put_rest_api_input::Builder {
@@ -16506,8 +16369,8 @@ pub mod tag_resource_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        resource_arn: std::option::Option<std::string::String>,
-        tags: std::option::Option<
+        pub(crate) resource_arn: std::option::Option<std::string::String>,
+        pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
     }
@@ -16565,7 +16428,12 @@ impl TagResourceInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body = crate::operation_ser::serialize_synthetic_tag_resource_input_body(&self)
+                .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -16635,27 +16503,22 @@ impl TagResourceInput {
         self.uri_base(&mut uri);
         Ok(builder.method("PUT").uri(uri))
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
     }
-    fn body(&self) -> crate::serializer::TagResourceInputBody {
-        crate::serializer::TagResourceInputBody { tags: &self.tags }
-    }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        serde_json::to_vec(&self.body()).expect("serialization should succeed")
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+        }
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput)
     pub fn builder() -> crate::input::tag_resource_input::Builder {
@@ -16669,20 +16532,20 @@ pub mod test_invoke_authorizer_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        rest_api_id: std::option::Option<std::string::String>,
-        authorizer_id: std::option::Option<std::string::String>,
-        headers: std::option::Option<
+        pub(crate) rest_api_id: std::option::Option<std::string::String>,
+        pub(crate) authorizer_id: std::option::Option<std::string::String>,
+        pub(crate) headers: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
-        multi_value_headers: std::option::Option<
+        pub(crate) multi_value_headers: std::option::Option<
             std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
         >,
-        path_with_query_string: std::option::Option<std::string::String>,
-        body: std::option::Option<std::string::String>,
-        stage_variables: std::option::Option<
+        pub(crate) path_with_query_string: std::option::Option<std::string::String>,
+        pub(crate) body: std::option::Option<std::string::String>,
+        pub(crate) stage_variables: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
-        additional_context: std::option::Option<
+        pub(crate) additional_context: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
     }
@@ -16834,7 +16697,13 @@ impl TestInvokeAuthorizerInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body =
+                crate::operation_ser::serialize_synthetic_test_invoke_authorizer_input_body(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -16905,34 +16774,22 @@ impl TestInvokeAuthorizerInput {
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
     }
-    fn body(&self) -> crate::serializer::TestInvokeAuthorizerInputBody {
-        crate::serializer::TestInvokeAuthorizerInputBody {
-            headers: &self.headers,
-            multi_value_headers: &self.multi_value_headers,
-            path_with_query_string: &self.path_with_query_string,
-            body: &self.body,
-            stage_variables: &self.stage_variables,
-            additional_context: &self.additional_context,
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
         }
-    }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        serde_json::to_vec(&self.body()).expect("serialization should succeed")
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`TestInvokeAuthorizerInput`](crate::input::TestInvokeAuthorizerInput)
     pub fn builder() -> crate::input::test_invoke_authorizer_input::Builder {
@@ -16946,19 +16803,19 @@ pub mod test_invoke_method_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        rest_api_id: std::option::Option<std::string::String>,
-        resource_id: std::option::Option<std::string::String>,
-        http_method: std::option::Option<std::string::String>,
-        path_with_query_string: std::option::Option<std::string::String>,
-        body: std::option::Option<std::string::String>,
-        headers: std::option::Option<
+        pub(crate) rest_api_id: std::option::Option<std::string::String>,
+        pub(crate) resource_id: std::option::Option<std::string::String>,
+        pub(crate) http_method: std::option::Option<std::string::String>,
+        pub(crate) path_with_query_string: std::option::Option<std::string::String>,
+        pub(crate) body: std::option::Option<std::string::String>,
+        pub(crate) headers: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
-        multi_value_headers: std::option::Option<
+        pub(crate) multi_value_headers: std::option::Option<
             std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
         >,
-        client_certificate_id: std::option::Option<std::string::String>,
-        stage_variables: std::option::Option<
+        pub(crate) client_certificate_id: std::option::Option<std::string::String>,
+        pub(crate) stage_variables: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
     }
@@ -17113,7 +16970,13 @@ impl TestInvokeMethodInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body =
+                crate::operation_ser::serialize_synthetic_test_invoke_method_input_body(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -17185,34 +17048,22 @@ impl TestInvokeMethodInput {
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
     }
-    fn body(&self) -> crate::serializer::TestInvokeMethodInputBody {
-        crate::serializer::TestInvokeMethodInputBody {
-            path_with_query_string: &self.path_with_query_string,
-            body: &self.body,
-            headers: &self.headers,
-            multi_value_headers: &self.multi_value_headers,
-            client_certificate_id: &self.client_certificate_id,
-            stage_variables: &self.stage_variables,
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
         }
-    }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        serde_json::to_vec(&self.body()).expect("serialization should succeed")
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`TestInvokeMethodInput`](crate::input::TestInvokeMethodInput)
     pub fn builder() -> crate::input::test_invoke_method_input::Builder {
@@ -17226,8 +17077,8 @@ pub mod untag_resource_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        resource_arn: std::option::Option<std::string::String>,
-        tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) resource_arn: std::option::Option<std::string::String>,
+        pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
         /// <p>[Required] The ARN of a resource that can be tagged.</p>
@@ -17277,7 +17128,9 @@ impl UntagResourceInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body = smithy_http::body::SdkBody::from("");
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -17340,9 +17193,9 @@ impl UntagResourceInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_70) = &self.tag_keys {
-            for inner_71 in inner_70 {
-                query.push_kv("tagKeys", &smithy_http::query::fmt_string(&inner_71));
+        if let Some(inner_66) = &self.tag_keys {
+            for inner_67 in inner_66 {
+                query.push_kv("tagKeys", &smithy_http::query::fmt_string(&inner_67));
             }
         }
     }
@@ -17356,24 +17209,22 @@ impl UntagResourceInput {
         self.uri_query(&mut uri);
         Ok(builder.method("DELETE").uri(uri))
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
     }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        vec![]
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+        }
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput)
     pub fn builder() -> crate::input::untag_resource_input::Builder {
@@ -17387,7 +17238,8 @@ pub mod update_account_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        patch_operations: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
+        pub(crate) patch_operations:
+            std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
     }
     impl Builder {
         pub fn patch_operations(mut self, inp: impl Into<crate::model::PatchOperation>) -> Self {
@@ -17427,7 +17279,12 @@ impl UpdateAccountInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body = crate::operation_ser::serialize_synthetic_update_account_input_body(&self)
+                .map_err(|err| {
+                smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -17492,29 +17349,22 @@ impl UpdateAccountInput {
         self.uri_base(&mut uri);
         Ok(builder.method("PATCH").uri(uri))
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
     }
-    fn body(&self) -> crate::serializer::UpdateAccountInputBody {
-        crate::serializer::UpdateAccountInputBody {
-            patch_operations: &self.patch_operations,
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
         }
-    }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        serde_json::to_vec(&self.body()).expect("serialization should succeed")
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`UpdateAccountInput`](crate::input::UpdateAccountInput)
     pub fn builder() -> crate::input::update_account_input::Builder {
@@ -17528,8 +17378,9 @@ pub mod update_api_key_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        api_key: std::option::Option<std::string::String>,
-        patch_operations: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
+        pub(crate) api_key: std::option::Option<std::string::String>,
+        pub(crate) patch_operations:
+            std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
     }
     impl Builder {
         /// <p>[Required] The identifier of the <a>ApiKey</a> resource to be updated.</p>
@@ -17579,7 +17430,12 @@ impl UpdateApiKeyInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body = crate::operation_ser::serialize_synthetic_update_api_key_input_body(&self)
+                .map_err(|err| {
+                smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -17649,29 +17505,22 @@ impl UpdateApiKeyInput {
         self.uri_base(&mut uri);
         Ok(builder.method("PATCH").uri(uri))
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
     }
-    fn body(&self) -> crate::serializer::UpdateApiKeyInputBody {
-        crate::serializer::UpdateApiKeyInputBody {
-            patch_operations: &self.patch_operations,
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
         }
-    }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        serde_json::to_vec(&self.body()).expect("serialization should succeed")
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`UpdateApiKeyInput`](crate::input::UpdateApiKeyInput)
     pub fn builder() -> crate::input::update_api_key_input::Builder {
@@ -17685,9 +17534,10 @@ pub mod update_authorizer_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        rest_api_id: std::option::Option<std::string::String>,
-        authorizer_id: std::option::Option<std::string::String>,
-        patch_operations: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
+        pub(crate) rest_api_id: std::option::Option<std::string::String>,
+        pub(crate) authorizer_id: std::option::Option<std::string::String>,
+        pub(crate) patch_operations:
+            std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
     }
     impl Builder {
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
@@ -17748,7 +17598,13 @@ impl UpdateAuthorizerInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body =
+                crate::operation_ser::serialize_synthetic_update_authorizer_input_body(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -17819,29 +17675,22 @@ impl UpdateAuthorizerInput {
         self.uri_base(&mut uri);
         Ok(builder.method("PATCH").uri(uri))
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
     }
-    fn body(&self) -> crate::serializer::UpdateAuthorizerInputBody {
-        crate::serializer::UpdateAuthorizerInputBody {
-            patch_operations: &self.patch_operations,
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
         }
-    }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        serde_json::to_vec(&self.body()).expect("serialization should succeed")
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`UpdateAuthorizerInput`](crate::input::UpdateAuthorizerInput)
     pub fn builder() -> crate::input::update_authorizer_input::Builder {
@@ -17855,9 +17704,10 @@ pub mod update_base_path_mapping_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        domain_name: std::option::Option<std::string::String>,
-        base_path: std::option::Option<std::string::String>,
-        patch_operations: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
+        pub(crate) domain_name: std::option::Option<std::string::String>,
+        pub(crate) base_path: std::option::Option<std::string::String>,
+        pub(crate) patch_operations:
+            std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
     }
     impl Builder {
         /// <p>[Required] The domain name of the <a>BasePathMapping</a> resource to change.</p>
@@ -17919,7 +17769,15 @@ impl UpdateBasePathMappingInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body =
+                crate::operation_ser::serialize_synthetic_update_base_path_mapping_input_body(
+                    &self,
+                )
+                .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -17990,29 +17848,22 @@ impl UpdateBasePathMappingInput {
         self.uri_base(&mut uri);
         Ok(builder.method("PATCH").uri(uri))
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
     }
-    fn body(&self) -> crate::serializer::UpdateBasePathMappingInputBody {
-        crate::serializer::UpdateBasePathMappingInputBody {
-            patch_operations: &self.patch_operations,
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
         }
-    }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        serde_json::to_vec(&self.body()).expect("serialization should succeed")
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`UpdateBasePathMappingInput`](crate::input::UpdateBasePathMappingInput)
     pub fn builder() -> crate::input::update_base_path_mapping_input::Builder {
@@ -18026,8 +17877,9 @@ pub mod update_client_certificate_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        client_certificate_id: std::option::Option<std::string::String>,
-        patch_operations: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
+        pub(crate) client_certificate_id: std::option::Option<std::string::String>,
+        pub(crate) patch_operations:
+            std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
     }
     impl Builder {
         /// <p>[Required] The identifier of the <a>ClientCertificate</a> resource to be updated.</p>
@@ -18078,7 +17930,15 @@ impl UpdateClientCertificateInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body =
+                crate::operation_ser::serialize_synthetic_update_client_certificate_input_body(
+                    &self,
+                )
+                .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -18149,29 +18009,22 @@ impl UpdateClientCertificateInput {
         self.uri_base(&mut uri);
         Ok(builder.method("PATCH").uri(uri))
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
     }
-    fn body(&self) -> crate::serializer::UpdateClientCertificateInputBody {
-        crate::serializer::UpdateClientCertificateInputBody {
-            patch_operations: &self.patch_operations,
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
         }
-    }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        serde_json::to_vec(&self.body()).expect("serialization should succeed")
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`UpdateClientCertificateInput`](crate::input::UpdateClientCertificateInput)
     pub fn builder() -> crate::input::update_client_certificate_input::Builder {
@@ -18185,9 +18038,10 @@ pub mod update_deployment_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        rest_api_id: std::option::Option<std::string::String>,
-        deployment_id: std::option::Option<std::string::String>,
-        patch_operations: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
+        pub(crate) rest_api_id: std::option::Option<std::string::String>,
+        pub(crate) deployment_id: std::option::Option<std::string::String>,
+        pub(crate) patch_operations:
+            std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
     }
     impl Builder {
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
@@ -18248,7 +18102,13 @@ impl UpdateDeploymentInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body =
+                crate::operation_ser::serialize_synthetic_update_deployment_input_body(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -18319,29 +18179,22 @@ impl UpdateDeploymentInput {
         self.uri_base(&mut uri);
         Ok(builder.method("PATCH").uri(uri))
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
     }
-    fn body(&self) -> crate::serializer::UpdateDeploymentInputBody {
-        crate::serializer::UpdateDeploymentInputBody {
-            patch_operations: &self.patch_operations,
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
         }
-    }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        serde_json::to_vec(&self.body()).expect("serialization should succeed")
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`UpdateDeploymentInput`](crate::input::UpdateDeploymentInput)
     pub fn builder() -> crate::input::update_deployment_input::Builder {
@@ -18355,9 +18208,10 @@ pub mod update_documentation_part_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        rest_api_id: std::option::Option<std::string::String>,
-        documentation_part_id: std::option::Option<std::string::String>,
-        patch_operations: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
+        pub(crate) rest_api_id: std::option::Option<std::string::String>,
+        pub(crate) documentation_part_id: std::option::Option<std::string::String>,
+        pub(crate) patch_operations:
+            std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
     }
     impl Builder {
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
@@ -18418,7 +18272,15 @@ impl UpdateDocumentationPartInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body =
+                crate::operation_ser::serialize_synthetic_update_documentation_part_input_body(
+                    &self,
+                )
+                .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -18490,29 +18352,22 @@ impl UpdateDocumentationPartInput {
         self.uri_base(&mut uri);
         Ok(builder.method("PATCH").uri(uri))
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
     }
-    fn body(&self) -> crate::serializer::UpdateDocumentationPartInputBody {
-        crate::serializer::UpdateDocumentationPartInputBody {
-            patch_operations: &self.patch_operations,
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
         }
-    }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        serde_json::to_vec(&self.body()).expect("serialization should succeed")
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`UpdateDocumentationPartInput`](crate::input::UpdateDocumentationPartInput)
     pub fn builder() -> crate::input::update_documentation_part_input::Builder {
@@ -18526,9 +18381,10 @@ pub mod update_documentation_version_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        rest_api_id: std::option::Option<std::string::String>,
-        documentation_version: std::option::Option<std::string::String>,
-        patch_operations: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
+        pub(crate) rest_api_id: std::option::Option<std::string::String>,
+        pub(crate) documentation_version: std::option::Option<std::string::String>,
+        pub(crate) patch_operations:
+            std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
     }
     impl Builder {
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>..</p>
@@ -18589,7 +18445,15 @@ impl UpdateDocumentationVersionInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body =
+                crate::operation_ser::serialize_synthetic_update_documentation_version_input_body(
+                    &self,
+                )
+                .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -18661,29 +18525,22 @@ impl UpdateDocumentationVersionInput {
         self.uri_base(&mut uri);
         Ok(builder.method("PATCH").uri(uri))
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
     }
-    fn body(&self) -> crate::serializer::UpdateDocumentationVersionInputBody {
-        crate::serializer::UpdateDocumentationVersionInputBody {
-            patch_operations: &self.patch_operations,
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
         }
-    }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        serde_json::to_vec(&self.body()).expect("serialization should succeed")
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`UpdateDocumentationVersionInput`](crate::input::UpdateDocumentationVersionInput)
     pub fn builder() -> crate::input::update_documentation_version_input::Builder {
@@ -18697,8 +18554,9 @@ pub mod update_domain_name_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        domain_name: std::option::Option<std::string::String>,
-        patch_operations: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
+        pub(crate) domain_name: std::option::Option<std::string::String>,
+        pub(crate) patch_operations:
+            std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
     }
     impl Builder {
         /// <p>[Required] The name of the <a>DomainName</a> resource to be changed.</p>
@@ -18749,7 +18607,13 @@ impl UpdateDomainNameInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body =
+                crate::operation_ser::serialize_synthetic_update_domain_name_input_body(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -18819,29 +18683,22 @@ impl UpdateDomainNameInput {
         self.uri_base(&mut uri);
         Ok(builder.method("PATCH").uri(uri))
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
     }
-    fn body(&self) -> crate::serializer::UpdateDomainNameInputBody {
-        crate::serializer::UpdateDomainNameInputBody {
-            patch_operations: &self.patch_operations,
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
         }
-    }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        serde_json::to_vec(&self.body()).expect("serialization should succeed")
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`UpdateDomainNameInput`](crate::input::UpdateDomainNameInput)
     pub fn builder() -> crate::input::update_domain_name_input::Builder {
@@ -18855,9 +18712,10 @@ pub mod update_gateway_response_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        rest_api_id: std::option::Option<std::string::String>,
-        response_type: std::option::Option<crate::model::GatewayResponseType>,
-        patch_operations: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
+        pub(crate) rest_api_id: std::option::Option<std::string::String>,
+        pub(crate) response_type: std::option::Option<crate::model::GatewayResponseType>,
+        pub(crate) patch_operations:
+            std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
     }
     impl Builder {
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
@@ -18927,7 +18785,13 @@ impl UpdateGatewayResponseInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body =
+                crate::operation_ser::serialize_synthetic_update_gateway_response_input_body(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -18998,29 +18862,22 @@ impl UpdateGatewayResponseInput {
         self.uri_base(&mut uri);
         Ok(builder.method("PATCH").uri(uri))
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
     }
-    fn body(&self) -> crate::serializer::UpdateGatewayResponseInputBody {
-        crate::serializer::UpdateGatewayResponseInputBody {
-            patch_operations: &self.patch_operations,
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
         }
-    }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        serde_json::to_vec(&self.body()).expect("serialization should succeed")
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`UpdateGatewayResponseInput`](crate::input::UpdateGatewayResponseInput)
     pub fn builder() -> crate::input::update_gateway_response_input::Builder {
@@ -19034,10 +18891,11 @@ pub mod update_integration_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        rest_api_id: std::option::Option<std::string::String>,
-        resource_id: std::option::Option<std::string::String>,
-        http_method: std::option::Option<std::string::String>,
-        patch_operations: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
+        pub(crate) rest_api_id: std::option::Option<std::string::String>,
+        pub(crate) resource_id: std::option::Option<std::string::String>,
+        pub(crate) http_method: std::option::Option<std::string::String>,
+        pub(crate) patch_operations:
+            std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
     }
     impl Builder {
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
@@ -19108,7 +18966,13 @@ impl UpdateIntegrationInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body =
+                crate::operation_ser::serialize_synthetic_update_integration_input_body(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -19180,29 +19044,22 @@ impl UpdateIntegrationInput {
         self.uri_base(&mut uri);
         Ok(builder.method("PATCH").uri(uri))
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
     }
-    fn body(&self) -> crate::serializer::UpdateIntegrationInputBody {
-        crate::serializer::UpdateIntegrationInputBody {
-            patch_operations: &self.patch_operations,
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
         }
-    }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        serde_json::to_vec(&self.body()).expect("serialization should succeed")
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`UpdateIntegrationInput`](crate::input::UpdateIntegrationInput)
     pub fn builder() -> crate::input::update_integration_input::Builder {
@@ -19216,11 +19073,12 @@ pub mod update_integration_response_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        rest_api_id: std::option::Option<std::string::String>,
-        resource_id: std::option::Option<std::string::String>,
-        http_method: std::option::Option<std::string::String>,
-        status_code: std::option::Option<std::string::String>,
-        patch_operations: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
+        pub(crate) rest_api_id: std::option::Option<std::string::String>,
+        pub(crate) resource_id: std::option::Option<std::string::String>,
+        pub(crate) http_method: std::option::Option<std::string::String>,
+        pub(crate) status_code: std::option::Option<std::string::String>,
+        pub(crate) patch_operations:
+            std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
     }
     impl Builder {
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
@@ -19301,7 +19159,15 @@ impl UpdateIntegrationResponseInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body =
+                crate::operation_ser::serialize_synthetic_update_integration_response_input_body(
+                    &self,
+                )
+                .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -19366,29 +19232,22 @@ impl UpdateIntegrationResponseInput {
         self.uri_base(&mut uri);
         Ok(builder.method("PATCH").uri(uri))
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
     }
-    fn body(&self) -> crate::serializer::UpdateIntegrationResponseInputBody {
-        crate::serializer::UpdateIntegrationResponseInputBody {
-            patch_operations: &self.patch_operations,
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
         }
-    }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        serde_json::to_vec(&self.body()).expect("serialization should succeed")
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`UpdateIntegrationResponseInput`](crate::input::UpdateIntegrationResponseInput)
     pub fn builder() -> crate::input::update_integration_response_input::Builder {
@@ -19402,10 +19261,11 @@ pub mod update_method_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        rest_api_id: std::option::Option<std::string::String>,
-        resource_id: std::option::Option<std::string::String>,
-        http_method: std::option::Option<std::string::String>,
-        patch_operations: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
+        pub(crate) rest_api_id: std::option::Option<std::string::String>,
+        pub(crate) resource_id: std::option::Option<std::string::String>,
+        pub(crate) http_method: std::option::Option<std::string::String>,
+        pub(crate) patch_operations:
+            std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
     }
     impl Builder {
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
@@ -19475,7 +19335,12 @@ impl UpdateMethodInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body = crate::operation_ser::serialize_synthetic_update_method_input_body(&self)
+                .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -19547,29 +19412,22 @@ impl UpdateMethodInput {
         self.uri_base(&mut uri);
         Ok(builder.method("PATCH").uri(uri))
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
     }
-    fn body(&self) -> crate::serializer::UpdateMethodInputBody {
-        crate::serializer::UpdateMethodInputBody {
-            patch_operations: &self.patch_operations,
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
         }
-    }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        serde_json::to_vec(&self.body()).expect("serialization should succeed")
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`UpdateMethodInput`](crate::input::UpdateMethodInput)
     pub fn builder() -> crate::input::update_method_input::Builder {
@@ -19583,11 +19441,12 @@ pub mod update_method_response_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        rest_api_id: std::option::Option<std::string::String>,
-        resource_id: std::option::Option<std::string::String>,
-        http_method: std::option::Option<std::string::String>,
-        status_code: std::option::Option<std::string::String>,
-        patch_operations: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
+        pub(crate) rest_api_id: std::option::Option<std::string::String>,
+        pub(crate) resource_id: std::option::Option<std::string::String>,
+        pub(crate) http_method: std::option::Option<std::string::String>,
+        pub(crate) status_code: std::option::Option<std::string::String>,
+        pub(crate) patch_operations:
+            std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
     }
     impl Builder {
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
@@ -19668,7 +19527,13 @@ impl UpdateMethodResponseInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body =
+                crate::operation_ser::serialize_synthetic_update_method_response_input_body(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -19733,29 +19598,22 @@ impl UpdateMethodResponseInput {
         self.uri_base(&mut uri);
         Ok(builder.method("PATCH").uri(uri))
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
     }
-    fn body(&self) -> crate::serializer::UpdateMethodResponseInputBody {
-        crate::serializer::UpdateMethodResponseInputBody {
-            patch_operations: &self.patch_operations,
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
         }
-    }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        serde_json::to_vec(&self.body()).expect("serialization should succeed")
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`UpdateMethodResponseInput`](crate::input::UpdateMethodResponseInput)
     pub fn builder() -> crate::input::update_method_response_input::Builder {
@@ -19769,9 +19627,10 @@ pub mod update_model_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        rest_api_id: std::option::Option<std::string::String>,
-        model_name: std::option::Option<std::string::String>,
-        patch_operations: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
+        pub(crate) rest_api_id: std::option::Option<std::string::String>,
+        pub(crate) model_name: std::option::Option<std::string::String>,
+        pub(crate) patch_operations:
+            std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
     }
     impl Builder {
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
@@ -19831,7 +19690,12 @@ impl UpdateModelInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body = crate::operation_ser::serialize_synthetic_update_model_input_body(&self)
+                .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -19902,29 +19766,22 @@ impl UpdateModelInput {
         self.uri_base(&mut uri);
         Ok(builder.method("PATCH").uri(uri))
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
     }
-    fn body(&self) -> crate::serializer::UpdateModelInputBody {
-        crate::serializer::UpdateModelInputBody {
-            patch_operations: &self.patch_operations,
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
         }
-    }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        serde_json::to_vec(&self.body()).expect("serialization should succeed")
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`UpdateModelInput`](crate::input::UpdateModelInput)
     pub fn builder() -> crate::input::update_model_input::Builder {
@@ -19938,9 +19795,10 @@ pub mod update_request_validator_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        rest_api_id: std::option::Option<std::string::String>,
-        request_validator_id: std::option::Option<std::string::String>,
-        patch_operations: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
+        pub(crate) rest_api_id: std::option::Option<std::string::String>,
+        pub(crate) request_validator_id: std::option::Option<std::string::String>,
+        pub(crate) patch_operations:
+            std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
     }
     impl Builder {
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
@@ -20001,7 +19859,15 @@ impl UpdateRequestValidatorInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body =
+                crate::operation_ser::serialize_synthetic_update_request_validator_input_body(
+                    &self,
+                )
+                .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -20072,29 +19938,22 @@ impl UpdateRequestValidatorInput {
         self.uri_base(&mut uri);
         Ok(builder.method("PATCH").uri(uri))
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
     }
-    fn body(&self) -> crate::serializer::UpdateRequestValidatorInputBody {
-        crate::serializer::UpdateRequestValidatorInputBody {
-            patch_operations: &self.patch_operations,
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
         }
-    }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        serde_json::to_vec(&self.body()).expect("serialization should succeed")
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`UpdateRequestValidatorInput`](crate::input::UpdateRequestValidatorInput)
     pub fn builder() -> crate::input::update_request_validator_input::Builder {
@@ -20108,9 +19967,10 @@ pub mod update_resource_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        rest_api_id: std::option::Option<std::string::String>,
-        resource_id: std::option::Option<std::string::String>,
-        patch_operations: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
+        pub(crate) rest_api_id: std::option::Option<std::string::String>,
+        pub(crate) resource_id: std::option::Option<std::string::String>,
+        pub(crate) patch_operations:
+            std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
     }
     impl Builder {
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
@@ -20170,7 +20030,12 @@ impl UpdateResourceInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body = crate::operation_ser::serialize_synthetic_update_resource_input_body(&self)
+                .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -20241,29 +20106,22 @@ impl UpdateResourceInput {
         self.uri_base(&mut uri);
         Ok(builder.method("PATCH").uri(uri))
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
     }
-    fn body(&self) -> crate::serializer::UpdateResourceInputBody {
-        crate::serializer::UpdateResourceInputBody {
-            patch_operations: &self.patch_operations,
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
         }
-    }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        serde_json::to_vec(&self.body()).expect("serialization should succeed")
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`UpdateResourceInput`](crate::input::UpdateResourceInput)
     pub fn builder() -> crate::input::update_resource_input::Builder {
@@ -20277,8 +20135,9 @@ pub mod update_rest_api_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        rest_api_id: std::option::Option<std::string::String>,
-        patch_operations: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
+        pub(crate) rest_api_id: std::option::Option<std::string::String>,
+        pub(crate) patch_operations:
+            std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
     }
     impl Builder {
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
@@ -20328,7 +20187,12 @@ impl UpdateRestApiInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body = crate::operation_ser::serialize_synthetic_update_rest_api_input_body(&self)
+                .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -20398,29 +20262,22 @@ impl UpdateRestApiInput {
         self.uri_base(&mut uri);
         Ok(builder.method("PATCH").uri(uri))
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
     }
-    fn body(&self) -> crate::serializer::UpdateRestApiInputBody {
-        crate::serializer::UpdateRestApiInputBody {
-            patch_operations: &self.patch_operations,
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
         }
-    }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        serde_json::to_vec(&self.body()).expect("serialization should succeed")
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`UpdateRestApiInput`](crate::input::UpdateRestApiInput)
     pub fn builder() -> crate::input::update_rest_api_input::Builder {
@@ -20434,9 +20291,10 @@ pub mod update_stage_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        rest_api_id: std::option::Option<std::string::String>,
-        stage_name: std::option::Option<std::string::String>,
-        patch_operations: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
+        pub(crate) rest_api_id: std::option::Option<std::string::String>,
+        pub(crate) stage_name: std::option::Option<std::string::String>,
+        pub(crate) patch_operations:
+            std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
     }
     impl Builder {
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
@@ -20496,7 +20354,12 @@ impl UpdateStageInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body = crate::operation_ser::serialize_synthetic_update_stage_input_body(&self)
+                .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -20567,29 +20430,22 @@ impl UpdateStageInput {
         self.uri_base(&mut uri);
         Ok(builder.method("PATCH").uri(uri))
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
     }
-    fn body(&self) -> crate::serializer::UpdateStageInputBody {
-        crate::serializer::UpdateStageInputBody {
-            patch_operations: &self.patch_operations,
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
         }
-    }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        serde_json::to_vec(&self.body()).expect("serialization should succeed")
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`UpdateStageInput`](crate::input::UpdateStageInput)
     pub fn builder() -> crate::input::update_stage_input::Builder {
@@ -20603,9 +20459,10 @@ pub mod update_usage_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        usage_plan_id: std::option::Option<std::string::String>,
-        key_id: std::option::Option<std::string::String>,
-        patch_operations: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
+        pub(crate) usage_plan_id: std::option::Option<std::string::String>,
+        pub(crate) key_id: std::option::Option<std::string::String>,
+        pub(crate) patch_operations:
+            std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
     }
     impl Builder {
         /// <p>[Required] The Id of the usage plan associated with the usage data.</p>
@@ -20665,7 +20522,12 @@ impl UpdateUsageInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body = crate::operation_ser::serialize_synthetic_update_usage_input_body(&self)
+                .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -20736,29 +20598,22 @@ impl UpdateUsageInput {
         self.uri_base(&mut uri);
         Ok(builder.method("PATCH").uri(uri))
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
     }
-    fn body(&self) -> crate::serializer::UpdateUsageInputBody {
-        crate::serializer::UpdateUsageInputBody {
-            patch_operations: &self.patch_operations,
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
         }
-    }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        serde_json::to_vec(&self.body()).expect("serialization should succeed")
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`UpdateUsageInput`](crate::input::UpdateUsageInput)
     pub fn builder() -> crate::input::update_usage_input::Builder {
@@ -20772,8 +20627,9 @@ pub mod update_usage_plan_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        usage_plan_id: std::option::Option<std::string::String>,
-        patch_operations: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
+        pub(crate) usage_plan_id: std::option::Option<std::string::String>,
+        pub(crate) patch_operations:
+            std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
     }
     impl Builder {
         /// <p>[Required] The Id of the to-be-updated usage plan.</p>
@@ -20824,7 +20680,13 @@ impl UpdateUsagePlanInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body =
+                crate::operation_ser::serialize_synthetic_update_usage_plan_input_body(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -20894,29 +20756,22 @@ impl UpdateUsagePlanInput {
         self.uri_base(&mut uri);
         Ok(builder.method("PATCH").uri(uri))
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
     }
-    fn body(&self) -> crate::serializer::UpdateUsagePlanInputBody {
-        crate::serializer::UpdateUsagePlanInputBody {
-            patch_operations: &self.patch_operations,
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
         }
-    }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        serde_json::to_vec(&self.body()).expect("serialization should succeed")
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`UpdateUsagePlanInput`](crate::input::UpdateUsagePlanInput)
     pub fn builder() -> crate::input::update_usage_plan_input::Builder {
@@ -20930,8 +20785,9 @@ pub mod update_vpc_link_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        vpc_link_id: std::option::Option<std::string::String>,
-        patch_operations: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
+        pub(crate) vpc_link_id: std::option::Option<std::string::String>,
+        pub(crate) patch_operations:
+            std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
     }
     impl Builder {
         /// <p>[Required] The identifier of the  <a>VpcLink</a>. It is used in an <a>Integration</a> to reference this <a>VpcLink</a>.</p>
@@ -20981,7 +20837,12 @@ impl UpdateVpcLinkInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body = crate::operation_ser::serialize_synthetic_update_vpc_link_input_body(&self)
+                .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -21051,29 +20912,22 @@ impl UpdateVpcLinkInput {
         self.uri_base(&mut uri);
         Ok(builder.method("PATCH").uri(uri))
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
     }
-    fn body(&self) -> crate::serializer::UpdateVpcLinkInputBody {
-        crate::serializer::UpdateVpcLinkInputBody {
-            patch_operations: &self.patch_operations,
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
         }
-    }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        serde_json::to_vec(&self.body()).expect("serialization should succeed")
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`UpdateVpcLinkInput`](crate::input::UpdateVpcLinkInput)
     pub fn builder() -> crate::input::update_vpc_link_input::Builder {
