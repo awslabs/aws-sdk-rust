@@ -3,8 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
+mod xml;
+
+use crate::xml::try_xml_equivalent;
 use assert_json_diff::assert_json_eq_no_panic;
 use http::{Request, Uri};
+use pretty_assertions::Comparison;
 use std::collections::HashSet;
 use thiserror::Error;
 
@@ -30,10 +34,11 @@ pub enum ProtocolTestFailure {
     MissingHeader { expected: String },
     #[error("Header `{forbidden}` was forbidden but found: `{found}`")]
     ForbiddenHeader { forbidden: String, found: String },
-    #[error("body did not match. Hint:\n{hint}. Expected:\n `{expected}`\n Actual: \n`{found}")]
+    #[error("body did not match. {comparison:?} \n == hint:\n{hint}.")]
     BodyDidNotMatch {
-        expected: String,
-        found: String,
+        // the comparison includes colorized escapes. PrettyString ensures that even during
+        // debug printing, these appear
+        comparison: PrettyString,
         hint: String,
     },
     #[error("Expected body to be valid {expected} but instead: {found}")]
@@ -211,8 +216,9 @@ pub fn require_headers<B>(
 pub enum MediaType {
     /// Json media types are deserialized and compared
     Json,
+    /// XML media types are normalized and compared
+    Xml,
     /// Other media types are compared literally
-    // TODO: XML, etc.
     Other(String),
 }
 
@@ -220,6 +226,7 @@ impl<T: AsRef<str>> From<T> for MediaType {
     fn from(inp: T) -> Self {
         match inp.as_ref() {
             "application/json" => MediaType::Json,
+            "application/xml" => MediaType::Xml,
             other => MediaType::Other(other.to_string()),
         }
     }
@@ -232,16 +239,20 @@ pub fn validate_body<T: AsRef<[u8]>>(
 ) -> Result<(), ProtocolTestFailure> {
     let body_str = std::str::from_utf8(actual_body.as_ref());
     match (media_type, body_str) {
-        (MediaType::Json, Ok(actual_body)) => validate_json_body(actual_body, expected_body),
+        (MediaType::Json, Ok(actual_body)) => try_json_eq(actual_body, expected_body),
+        (MediaType::Xml, Ok(actual_body)) => try_xml_equivalent(actual_body, expected_body),
         (MediaType::Json, Err(_)) => Err(ProtocolTestFailure::InvalidBodyFormat {
             expected: "json".to_owned(),
+            found: "input was not valid UTF-8".to_owned(),
+        }),
+        (MediaType::Xml, Err(_)) => Err(ProtocolTestFailure::InvalidBodyFormat {
+            expected: "XML".to_owned(),
             found: "input was not valid UTF-8".to_owned(),
         }),
         (MediaType::Other(media_type), Ok(actual_body)) => {
             if actual_body != expected_body {
                 Err(ProtocolTestFailure::BodyDidNotMatch {
-                    expected: expected_body.to_string(),
-                    found: actual_body.to_string(),
+                    comparison: pretty_comparison(actual_body, expected_body),
                     hint: format!("media type: {}", media_type),
                 })
             } else {
@@ -256,7 +267,31 @@ pub fn validate_body<T: AsRef<[u8]>>(
     }
 }
 
-fn validate_json_body(actual: &str, expected: &str) -> Result<(), ProtocolTestFailure> {
+use std::fmt::{self, Debug};
+#[derive(Eq, PartialEq)]
+struct PrettyStr<'a>(&'a str);
+impl Debug for PrettyStr<'_> {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        f.write_str(self.0)
+    }
+}
+
+#[derive(Eq, PartialEq)]
+pub struct PrettyString(String);
+impl Debug for PrettyString {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        f.write_str(&self.0)
+    }
+}
+
+fn pretty_comparison(left: &str, right: &str) -> PrettyString {
+    PrettyString(format!(
+        "{}",
+        Comparison::new(&PrettyStr(left), &PrettyStr(right))
+    ))
+}
+
+fn try_json_eq(actual: &str, expected: &str) -> Result<(), ProtocolTestFailure> {
     let actual_json: serde_json::Value =
         serde_json::from_str(actual).map_err(|e| ProtocolTestFailure::InvalidBodyFormat {
             expected: "json".to_owned(),
@@ -267,8 +302,7 @@ fn validate_json_body(actual: &str, expected: &str) -> Result<(), ProtocolTestFa
     match assert_json_eq_no_panic(&actual_json, &expected_json) {
         Ok(()) => Ok(()),
         Err(message) => Err(ProtocolTestFailure::BodyDidNotMatch {
-            expected: expected.to_string(),
-            found: actual.to_string(),
+            comparison: pretty_comparison(actual, expected),
             hint: message,
         }),
     }
@@ -398,6 +432,20 @@ mod tests {
         let expected = r#"{"abc": 5 }"#;
         let actual = r#"   {"abc":   6 }"#;
         validate_body(&actual, expected, MediaType::Json).expect_err("bodies do not match");
+    }
+
+    #[test]
+    fn test_validate_xml_body() {
+        let expected = r#"<a>
+        hello123
+        </a>"#;
+        let actual = "<a>hello123</a>";
+        validate_body(&actual, expected, MediaType::Xml).expect("inputs match as XML");
+        let expected = r#"<a>
+        hello123
+        </a>"#;
+        let actual = "<a>hello124</a>";
+        validate_body(&actual, expected, MediaType::Xml).expect_err("inputs are different");
     }
 
     #[test]

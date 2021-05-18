@@ -21,7 +21,8 @@ pub mod update_time_to_live_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        time_to_live_specification: std::option::Option<crate::model::TimeToLiveSpecification>,
+        pub(crate) time_to_live_specification:
+            std::option::Option<crate::model::TimeToLiveSpecification>,
     }
     impl Builder {
         /// <p>Represents the output of an <code>UpdateTimeToLive</code> operation.</p>
@@ -77,7 +78,7 @@ pub mod update_table_replica_auto_scaling_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        table_auto_scaling_description:
+        pub(crate) table_auto_scaling_description:
             std::option::Option<crate::model::TableAutoScalingDescription>,
     }
     impl Builder {
@@ -131,7 +132,7 @@ pub mod update_table_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        table_description: std::option::Option<crate::model::TableDescription>,
+        pub(crate) table_description: std::option::Option<crate::model::TableDescription>,
     }
     impl Builder {
         /// <p>Represents the properties of the table.</p>
@@ -221,11 +222,12 @@ pub mod update_item_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        attributes: std::option::Option<
+        pub(crate) attributes: std::option::Option<
             std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
         >,
-        consumed_capacity: std::option::Option<crate::model::ConsumedCapacity>,
-        item_collection_metrics: std::option::Option<crate::model::ItemCollectionMetrics>,
+        pub(crate) consumed_capacity: std::option::Option<crate::model::ConsumedCapacity>,
+        pub(crate) item_collection_metrics:
+            std::option::Option<crate::model::ItemCollectionMetrics>,
     }
     impl Builder {
         pub fn attributes(
@@ -339,8 +341,8 @@ pub mod update_global_table_settings_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        global_table_name: std::option::Option<std::string::String>,
-        replica_settings:
+        pub(crate) global_table_name: std::option::Option<std::string::String>,
+        pub(crate) replica_settings:
             std::option::Option<std::vec::Vec<crate::model::ReplicaSettingsDescription>>,
     }
     impl Builder {
@@ -407,7 +409,8 @@ pub mod update_global_table_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        global_table_description: std::option::Option<crate::model::GlobalTableDescription>,
+        pub(crate) global_table_description:
+            std::option::Option<crate::model::GlobalTableDescription>,
     }
     impl Builder {
         /// <p>Contains the details of the global table.</p>
@@ -468,9 +471,10 @@ pub mod update_contributor_insights_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        table_name: std::option::Option<std::string::String>,
-        index_name: std::option::Option<std::string::String>,
-        contributor_insights_status: std::option::Option<crate::model::ContributorInsightsStatus>,
+        pub(crate) table_name: std::option::Option<std::string::String>,
+        pub(crate) index_name: std::option::Option<std::string::String>,
+        pub(crate) contributor_insights_status:
+            std::option::Option<crate::model::ContributorInsightsStatus>,
     }
     impl Builder {
         /// <p>The name of the table.</p>
@@ -546,7 +550,7 @@ pub mod update_continuous_backups_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        continuous_backups_description:
+        pub(crate) continuous_backups_description:
             std::option::Option<crate::model::ContinuousBackupsDescription>,
     }
     impl Builder {
@@ -642,8 +646,9 @@ pub mod transact_write_items_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        consumed_capacity: std::option::Option<std::vec::Vec<crate::model::ConsumedCapacity>>,
-        item_collection_metrics: std::option::Option<
+        pub(crate) consumed_capacity:
+            std::option::Option<std::vec::Vec<crate::model::ConsumedCapacity>>,
+        pub(crate) item_collection_metrics: std::option::Option<
             std::collections::HashMap<
                 std::string::String,
                 std::vec::Vec<crate::model::ItemCollectionMetrics>,
@@ -735,8 +740,9 @@ pub mod transact_get_items_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        consumed_capacity: std::option::Option<std::vec::Vec<crate::model::ConsumedCapacity>>,
-        responses: std::option::Option<std::vec::Vec<crate::model::ItemResponse>>,
+        pub(crate) consumed_capacity:
+            std::option::Option<std::vec::Vec<crate::model::ConsumedCapacity>>,
+        pub(crate) responses: std::option::Option<std::vec::Vec<crate::model::ItemResponse>>,
     }
     impl Builder {
         pub fn consumed_capacity(mut self, inp: impl Into<crate::model::ConsumedCapacity>) -> Self {
@@ -868,17 +874,17 @@ pub mod scan_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        items: std::option::Option<
+        pub(crate) items: std::option::Option<
             std::vec::Vec<
                 std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
             >,
         >,
-        count: std::option::Option<i32>,
-        scanned_count: std::option::Option<i32>,
-        last_evaluated_key: std::option::Option<
+        pub(crate) count: std::option::Option<i32>,
+        pub(crate) scanned_count: std::option::Option<i32>,
+        pub(crate) last_evaluated_key: std::option::Option<
             std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
         >,
-        consumed_capacity: std::option::Option<crate::model::ConsumedCapacity>,
+        pub(crate) consumed_capacity: std::option::Option<crate::model::ConsumedCapacity>,
     }
     impl Builder {
         pub fn items(
@@ -1002,7 +1008,7 @@ pub mod restore_table_to_point_in_time_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        table_description: std::option::Option<crate::model::TableDescription>,
+        pub(crate) table_description: std::option::Option<crate::model::TableDescription>,
     }
     impl Builder {
         /// <p>Represents the properties of a table.</p>
@@ -1051,7 +1057,7 @@ pub mod restore_table_from_backup_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        table_description: std::option::Option<crate::model::TableDescription>,
+        pub(crate) table_description: std::option::Option<crate::model::TableDescription>,
     }
     impl Builder {
         /// <p>The description of the table created from an existing backup.</p>
@@ -1134,17 +1140,17 @@ pub mod query_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        items: std::option::Option<
+        pub(crate) items: std::option::Option<
             std::vec::Vec<
                 std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
             >,
         >,
-        count: std::option::Option<i32>,
-        scanned_count: std::option::Option<i32>,
-        last_evaluated_key: std::option::Option<
+        pub(crate) count: std::option::Option<i32>,
+        pub(crate) scanned_count: std::option::Option<i32>,
+        pub(crate) last_evaluated_key: std::option::Option<
             std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
         >,
-        consumed_capacity: std::option::Option<crate::model::ConsumedCapacity>,
+        pub(crate) consumed_capacity: std::option::Option<crate::model::ConsumedCapacity>,
     }
     impl Builder {
         pub fn items(
@@ -1308,11 +1314,12 @@ pub mod put_item_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        attributes: std::option::Option<
+        pub(crate) attributes: std::option::Option<
             std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
         >,
-        consumed_capacity: std::option::Option<crate::model::ConsumedCapacity>,
-        item_collection_metrics: std::option::Option<crate::model::ItemCollectionMetrics>,
+        pub(crate) consumed_capacity: std::option::Option<crate::model::ConsumedCapacity>,
+        pub(crate) item_collection_metrics:
+            std::option::Option<crate::model::ItemCollectionMetrics>,
     }
     impl Builder {
         pub fn attributes(
@@ -1426,8 +1433,8 @@ pub mod list_tags_of_resource_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        next_token: std::option::Option<std::string::String>,
+        pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
         pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
@@ -1499,8 +1506,8 @@ pub mod list_tables_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        table_names: std::option::Option<std::vec::Vec<std::string::String>>,
-        last_evaluated_table_name: std::option::Option<std::string::String>,
+        pub(crate) table_names: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) last_evaluated_table_name: std::option::Option<std::string::String>,
     }
     impl Builder {
         pub fn table_names(mut self, inp: impl Into<std::string::String>) -> Self {
@@ -1573,8 +1580,8 @@ pub mod list_global_tables_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        global_tables: std::option::Option<std::vec::Vec<crate::model::GlobalTable>>,
-        last_evaluated_global_table_name: std::option::Option<std::string::String>,
+        pub(crate) global_tables: std::option::Option<std::vec::Vec<crate::model::GlobalTable>>,
+        pub(crate) last_evaluated_global_table_name: std::option::Option<std::string::String>,
     }
     impl Builder {
         pub fn global_tables(mut self, inp: impl Into<crate::model::GlobalTable>) -> Self {
@@ -1645,8 +1652,9 @@ pub mod list_exports_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        export_summaries: std::option::Option<std::vec::Vec<crate::model::ExportSummary>>,
-        next_token: std::option::Option<std::string::String>,
+        pub(crate) export_summaries:
+            std::option::Option<std::vec::Vec<crate::model::ExportSummary>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
         pub fn export_summaries(mut self, inp: impl Into<crate::model::ExportSummary>) -> Self {
@@ -1715,9 +1723,9 @@ pub mod list_contributor_insights_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        contributor_insights_summaries:
+        pub(crate) contributor_insights_summaries:
             std::option::Option<std::vec::Vec<crate::model::ContributorInsightsSummary>>,
-        next_token: std::option::Option<std::string::String>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
         pub fn contributor_insights_summaries(
@@ -1794,8 +1802,9 @@ pub mod list_backups_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        backup_summaries: std::option::Option<std::vec::Vec<crate::model::BackupSummary>>,
-        last_evaluated_backup_arn: std::option::Option<std::string::String>,
+        pub(crate) backup_summaries:
+            std::option::Option<std::vec::Vec<crate::model::BackupSummary>>,
+        pub(crate) last_evaluated_backup_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
         pub fn backup_summaries(mut self, inp: impl Into<crate::model::BackupSummary>) -> Self {
@@ -1881,10 +1890,10 @@ pub mod get_item_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        item: std::option::Option<
+        pub(crate) item: std::option::Option<
             std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
         >,
-        consumed_capacity: std::option::Option<crate::model::ConsumedCapacity>,
+        pub(crate) consumed_capacity: std::option::Option<crate::model::ConsumedCapacity>,
     }
     impl Builder {
         pub fn item(
@@ -1958,7 +1967,7 @@ pub mod export_table_to_point_in_time_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        export_description: std::option::Option<crate::model::ExportDescription>,
+        pub(crate) export_description: std::option::Option<crate::model::ExportDescription>,
     }
     impl Builder {
         /// <p>Contains a description of the table export.</p>
@@ -2009,7 +2018,7 @@ pub mod execute_transaction_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        responses: std::option::Option<std::vec::Vec<crate::model::ItemResponse>>,
+        pub(crate) responses: std::option::Option<std::vec::Vec<crate::model::ItemResponse>>,
     }
     impl Builder {
         pub fn responses(mut self, inp: impl Into<crate::model::ItemResponse>) -> Self {
@@ -2068,12 +2077,12 @@ pub mod execute_statement_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        items: std::option::Option<
+        pub(crate) items: std::option::Option<
             std::vec::Vec<
                 std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
             >,
         >,
-        next_token: std::option::Option<std::string::String>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
         pub fn items(
@@ -2148,9 +2157,9 @@ pub mod enable_kinesis_streaming_destination_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        table_name: std::option::Option<std::string::String>,
-        stream_arn: std::option::Option<std::string::String>,
-        destination_status: std::option::Option<crate::model::DestinationStatus>,
+        pub(crate) table_name: std::option::Option<std::string::String>,
+        pub(crate) stream_arn: std::option::Option<std::string::String>,
+        pub(crate) destination_status: std::option::Option<crate::model::DestinationStatus>,
     }
     impl Builder {
         /// <p>The name of the table being modified.</p>
@@ -2225,9 +2234,9 @@ pub mod disable_kinesis_streaming_destination_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        table_name: std::option::Option<std::string::String>,
-        stream_arn: std::option::Option<std::string::String>,
-        destination_status: std::option::Option<crate::model::DestinationStatus>,
+        pub(crate) table_name: std::option::Option<std::string::String>,
+        pub(crate) stream_arn: std::option::Option<std::string::String>,
+        pub(crate) destination_status: std::option::Option<crate::model::DestinationStatus>,
     }
     impl Builder {
         /// <p>The name of the table being modified.</p>
@@ -2296,7 +2305,8 @@ pub mod describe_time_to_live_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        time_to_live_description: std::option::Option<crate::model::TimeToLiveDescription>,
+        pub(crate) time_to_live_description:
+            std::option::Option<crate::model::TimeToLiveDescription>,
     }
     impl Builder {
         /// <p></p>
@@ -2352,7 +2362,7 @@ pub mod describe_table_replica_auto_scaling_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        table_auto_scaling_description:
+        pub(crate) table_auto_scaling_description:
             std::option::Option<crate::model::TableAutoScalingDescription>,
     }
     impl Builder {
@@ -2406,7 +2416,7 @@ pub mod describe_table_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        table: std::option::Option<crate::model::TableDescription>,
+        pub(crate) table: std::option::Option<crate::model::TableDescription>,
     }
     impl Builder {
         /// <p>The properties of the table.</p>
@@ -2481,10 +2491,10 @@ pub mod describe_limits_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        account_max_read_capacity_units: std::option::Option<i64>,
-        account_max_write_capacity_units: std::option::Option<i64>,
-        table_max_read_capacity_units: std::option::Option<i64>,
-        table_max_write_capacity_units: std::option::Option<i64>,
+        pub(crate) account_max_read_capacity_units: std::option::Option<i64>,
+        pub(crate) account_max_write_capacity_units: std::option::Option<i64>,
+        pub(crate) table_max_read_capacity_units: std::option::Option<i64>,
+        pub(crate) table_max_write_capacity_units: std::option::Option<i64>,
     }
     impl Builder {
         /// <p>The maximum total read capacity units that your account allows you to provision across
@@ -2579,8 +2589,8 @@ pub mod describe_kinesis_streaming_destination_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        table_name: std::option::Option<std::string::String>,
-        kinesis_data_stream_destinations:
+        pub(crate) table_name: std::option::Option<std::string::String>,
+        pub(crate) kinesis_data_stream_destinations:
             std::option::Option<std::vec::Vec<crate::model::KinesisDataStreamDestination>>,
     }
     impl Builder {
@@ -2648,8 +2658,8 @@ pub mod describe_global_table_settings_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        global_table_name: std::option::Option<std::string::String>,
-        replica_settings:
+        pub(crate) global_table_name: std::option::Option<std::string::String>,
+        pub(crate) replica_settings:
             std::option::Option<std::vec::Vec<crate::model::ReplicaSettingsDescription>>,
     }
     impl Builder {
@@ -2716,7 +2726,8 @@ pub mod describe_global_table_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        global_table_description: std::option::Option<crate::model::GlobalTableDescription>,
+        pub(crate) global_table_description:
+            std::option::Option<crate::model::GlobalTableDescription>,
     }
     impl Builder {
         /// <p>Contains the details of the global table.</p>
@@ -2768,7 +2779,7 @@ pub mod describe_export_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        export_description: std::option::Option<crate::model::ExportDescription>,
+        pub(crate) export_description: std::option::Option<crate::model::ExportDescription>,
     }
     impl Builder {
         /// <p>Represents the properties of the export.</p>
@@ -2817,7 +2828,7 @@ pub mod describe_endpoints_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        endpoints: std::option::Option<std::vec::Vec<crate::model::Endpoint>>,
+        pub(crate) endpoints: std::option::Option<std::vec::Vec<crate::model::Endpoint>>,
     }
     impl Builder {
         pub fn endpoints(mut self, inp: impl Into<crate::model::Endpoint>) -> Self {
@@ -2904,12 +2915,14 @@ pub mod describe_contributor_insights_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        table_name: std::option::Option<std::string::String>,
-        index_name: std::option::Option<std::string::String>,
-        contributor_insights_rule_list: std::option::Option<std::vec::Vec<std::string::String>>,
-        contributor_insights_status: std::option::Option<crate::model::ContributorInsightsStatus>,
-        last_update_date_time: std::option::Option<smithy_types::Instant>,
-        failure_exception: std::option::Option<crate::model::FailureException>,
+        pub(crate) table_name: std::option::Option<std::string::String>,
+        pub(crate) index_name: std::option::Option<std::string::String>,
+        pub(crate) contributor_insights_rule_list:
+            std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) contributor_insights_status:
+            std::option::Option<crate::model::ContributorInsightsStatus>,
+        pub(crate) last_update_date_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) failure_exception: std::option::Option<crate::model::FailureException>,
     }
     impl Builder {
         /// <p>The name of the table being described.</p>
@@ -3044,7 +3057,7 @@ pub mod describe_continuous_backups_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        continuous_backups_description:
+        pub(crate) continuous_backups_description:
             std::option::Option<crate::model::ContinuousBackupsDescription>,
     }
     impl Builder {
@@ -3097,7 +3110,7 @@ pub mod describe_backup_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        backup_description: std::option::Option<crate::model::BackupDescription>,
+        pub(crate) backup_description: std::option::Option<crate::model::BackupDescription>,
     }
     impl Builder {
         /// <p>Contains the description of the backup created for the table.</p>
@@ -3147,7 +3160,7 @@ pub mod delete_table_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        table_description: std::option::Option<crate::model::TableDescription>,
+        pub(crate) table_description: std::option::Option<crate::model::TableDescription>,
     }
     impl Builder {
         /// <p>Represents the properties of a table.</p>
@@ -3237,11 +3250,12 @@ pub mod delete_item_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        attributes: std::option::Option<
+        pub(crate) attributes: std::option::Option<
             std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
         >,
-        consumed_capacity: std::option::Option<crate::model::ConsumedCapacity>,
-        item_collection_metrics: std::option::Option<crate::model::ItemCollectionMetrics>,
+        pub(crate) consumed_capacity: std::option::Option<crate::model::ConsumedCapacity>,
+        pub(crate) item_collection_metrics:
+            std::option::Option<crate::model::ItemCollectionMetrics>,
     }
     impl Builder {
         pub fn attributes(
@@ -3353,7 +3367,7 @@ pub mod delete_backup_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        backup_description: std::option::Option<crate::model::BackupDescription>,
+        pub(crate) backup_description: std::option::Option<crate::model::BackupDescription>,
     }
     impl Builder {
         /// <p>Contains the description of the backup created for the table.</p>
@@ -3403,7 +3417,7 @@ pub mod create_table_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        table_description: std::option::Option<crate::model::TableDescription>,
+        pub(crate) table_description: std::option::Option<crate::model::TableDescription>,
     }
     impl Builder {
         /// <p>Represents the properties of the table.</p>
@@ -3452,7 +3466,8 @@ pub mod create_global_table_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        global_table_description: std::option::Option<crate::model::GlobalTableDescription>,
+        pub(crate) global_table_description:
+            std::option::Option<crate::model::GlobalTableDescription>,
     }
     impl Builder {
         /// <p>Contains the details of the global table.</p>
@@ -3504,7 +3519,7 @@ pub mod create_backup_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        backup_details: std::option::Option<crate::model::BackupDetails>,
+        pub(crate) backup_details: std::option::Option<crate::model::BackupDetails>,
     }
     impl Builder {
         /// <p>Contains the details of the backup created for the table.</p>
@@ -3634,19 +3649,20 @@ pub mod batch_write_item_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        unprocessed_items: std::option::Option<
+        pub(crate) unprocessed_items: std::option::Option<
             std::collections::HashMap<
                 std::string::String,
                 std::vec::Vec<crate::model::WriteRequest>,
             >,
         >,
-        item_collection_metrics: std::option::Option<
+        pub(crate) item_collection_metrics: std::option::Option<
             std::collections::HashMap<
                 std::string::String,
                 std::vec::Vec<crate::model::ItemCollectionMetrics>,
             >,
         >,
-        consumed_capacity: std::option::Option<std::vec::Vec<crate::model::ConsumedCapacity>>,
+        pub(crate) consumed_capacity:
+            std::option::Option<std::vec::Vec<crate::model::ConsumedCapacity>>,
     }
     impl Builder {
         pub fn unprocessed_items(
@@ -3795,7 +3811,7 @@ pub mod batch_get_item_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        responses: std::option::Option<
+        pub(crate) responses: std::option::Option<
             std::collections::HashMap<
                 std::string::String,
                 std::vec::Vec<
@@ -3803,10 +3819,11 @@ pub mod batch_get_item_output {
                 >,
             >,
         >,
-        unprocessed_keys: std::option::Option<
+        pub(crate) unprocessed_keys: std::option::Option<
             std::collections::HashMap<std::string::String, crate::model::KeysAndAttributes>,
         >,
-        consumed_capacity: std::option::Option<std::vec::Vec<crate::model::ConsumedCapacity>>,
+        pub(crate) consumed_capacity:
+            std::option::Option<std::vec::Vec<crate::model::ConsumedCapacity>>,
     }
     impl Builder {
         pub fn responses(
@@ -3910,7 +3927,8 @@ pub mod batch_execute_statement_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        responses: std::option::Option<std::vec::Vec<crate::model::BatchStatementResponse>>,
+        pub(crate) responses:
+            std::option::Option<std::vec::Vec<crate::model::BatchStatementResponse>>,
     }
     impl Builder {
         pub fn responses(mut self, inp: impl Into<crate::model::BatchStatementResponse>) -> Self {

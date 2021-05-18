@@ -30,8 +30,10 @@ impl SendCommand {
         crate::input::send_command_input::Builder::default()
     }
     #[allow(clippy::unnecessary_wraps)]
-    fn from_response(
-        response: &http::response::Response<impl AsRef<[u8]>>,
+    #[allow(dead_code)]
+    fn parse_response(
+        &self,
+        response: &http::response::Response<bytes::Bytes>,
     ) -> Result<crate::output::SendCommandOutput, crate::error::SendCommandError> {
         if crate::aws_json_errors::is_error(&response) {
             let body = serde_json::from_slice(response.body().as_ref())
@@ -88,24 +90,12 @@ impl SendCommand {
                 _ => crate::error::SendCommandError::generic(generic),
             });
         }
-        let body: crate::serializer::SendCommandOutputBody =
-            serde_json::from_slice(response.body().as_ref())
+        #[allow(unused_mut)]
+        let mut builder = crate::output::send_command_output::Builder::default();
+        builder =
+            crate::json_deser::send_command_deser_operation(response.body().as_ref(), builder)
                 .map_err(crate::error::SendCommandError::unhandled)?;
-        Ok(crate::output::SendCommandOutput {
-            start_session: body.start_session,
-            start_transaction: body.start_transaction,
-            end_session: body.end_session,
-            commit_transaction: body.commit_transaction,
-            abort_transaction: body.abort_transaction,
-            execute_statement: body.execute_statement,
-            fetch_page: body.fetch_page,
-        })
-    }
-    pub fn parse_response(
-        &self,
-        response: &http::response::Response<impl AsRef<[u8]>>,
-    ) -> Result<crate::output::SendCommandOutput, crate::error::SendCommandError> {
-        Self::from_response(&response)
+        Ok(builder.build())
     }
     pub fn new() -> Self {
         Self { _private: () }

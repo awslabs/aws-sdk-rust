@@ -28,7 +28,7 @@ impl Client {
     pub fn from_conf_conn(conf: crate::Config, conn: aws_hyper::conn::Standard) -> Self {
         let client = aws_hyper::Client::new(conn);
         Self {
-            handle: std::sync::Arc::new(Handle { conf, client }),
+            handle: std::sync::Arc::new(Handle { client, conf }),
         }
     }
 
@@ -114,6 +114,7 @@ impl Client {
 }
 pub mod fluent_builders {
 
+    #[derive(std::fmt::Debug)]
     pub struct CancelRotateSecret {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::cancel_rotate_secret_input::Builder,
@@ -168,6 +169,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct CreateSecret {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::create_secret_input::Builder,
@@ -394,6 +396,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct DeleteResourcePolicy {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::delete_resource_policy_input::Builder,
@@ -448,6 +451,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct DeleteSecret {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::delete_secret_input::Builder,
@@ -536,6 +540,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct DescribeSecret {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::describe_secret_input::Builder,
@@ -590,6 +595,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct GetRandomPassword {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::get_random_password_input::Builder,
@@ -712,6 +718,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct GetResourcePolicy {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::get_resource_policy_input::Builder,
@@ -766,6 +773,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct GetSecretValue {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::get_secret_value_input::Builder,
@@ -850,6 +858,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct ListSecrets {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::list_secrets_input::Builder,
@@ -932,6 +941,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct ListSecretVersionIds {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::list_secret_version_ids_input::Builder,
@@ -1025,6 +1035,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct PutResourcePolicy {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::put_resource_policy_input::Builder,
@@ -1104,6 +1115,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct PutSecretValue {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::put_secret_value_input::Builder,
@@ -1259,6 +1271,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct RestoreSecret {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::restore_secret_input::Builder,
@@ -1313,6 +1326,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct RotateSecret {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::rotate_secret_input::Builder,
@@ -1416,6 +1430,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct TagResource {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::tag_resource_input::Builder,
@@ -1488,6 +1503,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct UntagResource {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::untag_resource_input::Builder,
@@ -1557,6 +1573,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct UpdateSecret {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::update_secret_input::Builder,
@@ -1723,6 +1740,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct UpdateSecretVersionStage {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::update_secret_version_stage_input::Builder,
@@ -1818,6 +1836,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct ValidateResourcePolicy {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::validate_resource_policy_input::Builder,

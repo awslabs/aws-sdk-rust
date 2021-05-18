@@ -61,8 +61,10 @@ impl CancelRotateSecret {
         crate::input::cancel_rotate_secret_input::Builder::default()
     }
     #[allow(clippy::unnecessary_wraps)]
-    fn from_response(
-        response: &http::response::Response<impl AsRef<[u8]>>,
+    #[allow(dead_code)]
+    fn parse_response(
+        &self,
+        response: &http::response::Response<bytes::Bytes>,
     ) -> Result<crate::output::CancelRotateSecretOutput, crate::error::CancelRotateSecretError>
     {
         if crate::aws_json_errors::is_error(&response) {
@@ -110,21 +112,14 @@ impl CancelRotateSecret {
                 _ => crate::error::CancelRotateSecretError::generic(generic),
             });
         }
-        let body: crate::serializer::CancelRotateSecretOutputBody =
-            serde_json::from_slice(response.body().as_ref())
-                .map_err(crate::error::CancelRotateSecretError::unhandled)?;
-        Ok(crate::output::CancelRotateSecretOutput {
-            arn: body.arn,
-            version_id: body.version_id,
-            name: body.name,
-        })
-    }
-    pub fn parse_response(
-        &self,
-        response: &http::response::Response<impl AsRef<[u8]>>,
-    ) -> Result<crate::output::CancelRotateSecretOutput, crate::error::CancelRotateSecretError>
-    {
-        Self::from_response(&response)
+        #[allow(unused_mut)]
+        let mut builder = crate::output::cancel_rotate_secret_output::Builder::default();
+        builder = crate::json_deser::cancel_rotate_secret_deser_operation(
+            response.body().as_ref(),
+            builder,
+        )
+        .map_err(crate::error::CancelRotateSecretError::unhandled)?;
+        Ok(builder.build())
     }
     pub fn new() -> Self {
         Self { _private: () }
@@ -237,8 +232,10 @@ impl CreateSecret {
         crate::input::create_secret_input::Builder::default()
     }
     #[allow(clippy::unnecessary_wraps)]
-    fn from_response(
-        response: &http::response::Response<impl AsRef<[u8]>>,
+    #[allow(dead_code)]
+    fn parse_response(
+        &self,
+        response: &http::response::Response<bytes::Bytes>,
     ) -> Result<crate::output::CreateSecretOutput, crate::error::CreateSecretError> {
         if crate::aws_json_errors::is_error(&response) {
             let body = serde_json::from_slice(response.body().as_ref())
@@ -318,20 +315,12 @@ impl CreateSecret {
                 _ => crate::error::CreateSecretError::generic(generic),
             });
         }
-        let body: crate::serializer::CreateSecretOutputBody =
-            serde_json::from_slice(response.body().as_ref())
+        #[allow(unused_mut)]
+        let mut builder = crate::output::create_secret_output::Builder::default();
+        builder =
+            crate::json_deser::create_secret_deser_operation(response.body().as_ref(), builder)
                 .map_err(crate::error::CreateSecretError::unhandled)?;
-        Ok(crate::output::CreateSecretOutput {
-            version_id: body.version_id,
-            name: body.name,
-            arn: body.arn,
-        })
-    }
-    pub fn parse_response(
-        &self,
-        response: &http::response::Response<impl AsRef<[u8]>>,
-    ) -> Result<crate::output::CreateSecretOutput, crate::error::CreateSecretError> {
-        Self::from_response(&response)
+        Ok(builder.build())
     }
     pub fn new() -> Self {
         Self { _private: () }
@@ -379,8 +368,10 @@ impl DeleteResourcePolicy {
         crate::input::delete_resource_policy_input::Builder::default()
     }
     #[allow(clippy::unnecessary_wraps)]
-    fn from_response(
-        response: &http::response::Response<impl AsRef<[u8]>>,
+    #[allow(dead_code)]
+    fn parse_response(
+        &self,
+        response: &http::response::Response<bytes::Bytes>,
     ) -> Result<crate::output::DeleteResourcePolicyOutput, crate::error::DeleteResourcePolicyError>
     {
         if crate::aws_json_errors::is_error(&response) {
@@ -423,20 +414,14 @@ impl DeleteResourcePolicy {
                 _ => crate::error::DeleteResourcePolicyError::generic(generic),
             });
         }
-        let body: crate::serializer::DeleteResourcePolicyOutputBody =
-            serde_json::from_slice(response.body().as_ref())
-                .map_err(crate::error::DeleteResourcePolicyError::unhandled)?;
-        Ok(crate::output::DeleteResourcePolicyOutput {
-            arn: body.arn,
-            name: body.name,
-        })
-    }
-    pub fn parse_response(
-        &self,
-        response: &http::response::Response<impl AsRef<[u8]>>,
-    ) -> Result<crate::output::DeleteResourcePolicyOutput, crate::error::DeleteResourcePolicyError>
-    {
-        Self::from_response(&response)
+        #[allow(unused_mut)]
+        let mut builder = crate::output::delete_resource_policy_output::Builder::default();
+        builder = crate::json_deser::delete_resource_policy_deser_operation(
+            response.body().as_ref(),
+            builder,
+        )
+        .map_err(crate::error::DeleteResourcePolicyError::unhandled)?;
+        Ok(builder.build())
     }
     pub fn new() -> Self {
         Self { _private: () }
@@ -507,8 +492,10 @@ impl DeleteSecret {
         crate::input::delete_secret_input::Builder::default()
     }
     #[allow(clippy::unnecessary_wraps)]
-    fn from_response(
-        response: &http::response::Response<impl AsRef<[u8]>>,
+    #[allow(dead_code)]
+    fn parse_response(
+        &self,
+        response: &http::response::Response<bytes::Bytes>,
     ) -> Result<crate::output::DeleteSecretOutput, crate::error::DeleteSecretError> {
         if crate::aws_json_errors::is_error(&response) {
             let body = serde_json::from_slice(response.body().as_ref())
@@ -551,20 +538,12 @@ impl DeleteSecret {
                 _ => crate::error::DeleteSecretError::generic(generic),
             });
         }
-        let body: crate::serializer::DeleteSecretOutputBody =
-            serde_json::from_slice(response.body().as_ref())
+        #[allow(unused_mut)]
+        let mut builder = crate::output::delete_secret_output::Builder::default();
+        builder =
+            crate::json_deser::delete_secret_deser_operation(response.body().as_ref(), builder)
                 .map_err(crate::error::DeleteSecretError::unhandled)?;
-        Ok(crate::output::DeleteSecretOutput {
-            arn: body.arn,
-            name: body.name,
-            deletion_date: body.deletion_date,
-        })
-    }
-    pub fn parse_response(
-        &self,
-        response: &http::response::Response<impl AsRef<[u8]>>,
-    ) -> Result<crate::output::DeleteSecretOutput, crate::error::DeleteSecretError> {
-        Self::from_response(&response)
+        Ok(builder.build())
     }
     pub fn new() -> Self {
         Self { _private: () }
@@ -616,8 +595,10 @@ impl DescribeSecret {
         crate::input::describe_secret_input::Builder::default()
     }
     #[allow(clippy::unnecessary_wraps)]
-    fn from_response(
-        response: &http::response::Response<impl AsRef<[u8]>>,
+    #[allow(dead_code)]
+    fn parse_response(
+        &self,
+        response: &http::response::Response<bytes::Bytes>,
     ) -> Result<crate::output::DescribeSecretOutput, crate::error::DescribeSecretError> {
         if crate::aws_json_errors::is_error(&response) {
             let body = serde_json::from_slice(response.body().as_ref())
@@ -646,32 +627,12 @@ impl DescribeSecret {
                 _ => crate::error::DescribeSecretError::generic(generic),
             });
         }
-        let body: crate::serializer::DescribeSecretOutputBody =
-            serde_json::from_slice(response.body().as_ref())
+        #[allow(unused_mut)]
+        let mut builder = crate::output::describe_secret_output::Builder::default();
+        builder =
+            crate::json_deser::describe_secret_deser_operation(response.body().as_ref(), builder)
                 .map_err(crate::error::DescribeSecretError::unhandled)?;
-        Ok(crate::output::DescribeSecretOutput {
-            last_rotated_date: body.last_rotated_date,
-            description: body.description,
-            kms_key_id: body.kms_key_id,
-            version_ids_to_stages: body.version_ids_to_stages,
-            last_changed_date: body.last_changed_date,
-            rotation_rules: body.rotation_rules,
-            name: body.name,
-            rotation_enabled: body.rotation_enabled,
-            last_accessed_date: body.last_accessed_date,
-            created_date: body.created_date,
-            deleted_date: body.deleted_date,
-            arn: body.arn,
-            owning_service: body.owning_service,
-            rotation_lambda_arn: body.rotation_lambda_arn,
-            tags: body.tags,
-        })
-    }
-    pub fn parse_response(
-        &self,
-        response: &http::response::Response<impl AsRef<[u8]>>,
-    ) -> Result<crate::output::DescribeSecretOutput, crate::error::DescribeSecretError> {
-        Self::from_response(&response)
+        Ok(builder.build())
     }
     pub fn new() -> Self {
         Self { _private: () }
@@ -708,8 +669,10 @@ impl GetRandomPassword {
         crate::input::get_random_password_input::Builder::default()
     }
     #[allow(clippy::unnecessary_wraps)]
-    fn from_response(
-        response: &http::response::Response<impl AsRef<[u8]>>,
+    #[allow(dead_code)]
+    fn parse_response(
+        &self,
+        response: &http::response::Response<bytes::Bytes>,
     ) -> Result<crate::output::GetRandomPasswordOutput, crate::error::GetRandomPasswordError> {
         if crate::aws_json_errors::is_error(&response) {
             let body = serde_json::from_slice(response.body().as_ref())
@@ -745,18 +708,14 @@ impl GetRandomPassword {
                 _ => crate::error::GetRandomPasswordError::generic(generic),
             });
         }
-        let body: crate::serializer::GetRandomPasswordOutputBody =
-            serde_json::from_slice(response.body().as_ref())
-                .map_err(crate::error::GetRandomPasswordError::unhandled)?;
-        Ok(crate::output::GetRandomPasswordOutput {
-            random_password: body.random_password,
-        })
-    }
-    pub fn parse_response(
-        &self,
-        response: &http::response::Response<impl AsRef<[u8]>>,
-    ) -> Result<crate::output::GetRandomPasswordOutput, crate::error::GetRandomPasswordError> {
-        Self::from_response(&response)
+        #[allow(unused_mut)]
+        let mut builder = crate::output::get_random_password_output::Builder::default();
+        builder = crate::json_deser::get_random_password_deser_operation(
+            response.body().as_ref(),
+            builder,
+        )
+        .map_err(crate::error::GetRandomPasswordError::unhandled)?;
+        Ok(builder.build())
     }
     pub fn new() -> Self {
         Self { _private: () }
@@ -808,8 +767,10 @@ impl GetResourcePolicy {
         crate::input::get_resource_policy_input::Builder::default()
     }
     #[allow(clippy::unnecessary_wraps)]
-    fn from_response(
-        response: &http::response::Response<impl AsRef<[u8]>>,
+    #[allow(dead_code)]
+    fn parse_response(
+        &self,
+        response: &http::response::Response<bytes::Bytes>,
     ) -> Result<crate::output::GetResourcePolicyOutput, crate::error::GetResourcePolicyError> {
         if crate::aws_json_errors::is_error(&response) {
             let body = serde_json::from_slice(response.body().as_ref())
@@ -845,20 +806,14 @@ impl GetResourcePolicy {
                 _ => crate::error::GetResourcePolicyError::generic(generic),
             });
         }
-        let body: crate::serializer::GetResourcePolicyOutputBody =
-            serde_json::from_slice(response.body().as_ref())
-                .map_err(crate::error::GetResourcePolicyError::unhandled)?;
-        Ok(crate::output::GetResourcePolicyOutput {
-            resource_policy: body.resource_policy,
-            name: body.name,
-            arn: body.arn,
-        })
-    }
-    pub fn parse_response(
-        &self,
-        response: &http::response::Response<impl AsRef<[u8]>>,
-    ) -> Result<crate::output::GetResourcePolicyOutput, crate::error::GetResourcePolicyError> {
-        Self::from_response(&response)
+        #[allow(unused_mut)]
+        let mut builder = crate::output::get_resource_policy_output::Builder::default();
+        builder = crate::json_deser::get_resource_policy_deser_operation(
+            response.body().as_ref(),
+            builder,
+        )
+        .map_err(crate::error::GetResourcePolicyError::unhandled)?;
+        Ok(builder.build())
     }
     pub fn new() -> Self {
         Self { _private: () }
@@ -911,8 +866,10 @@ impl GetSecretValue {
         crate::input::get_secret_value_input::Builder::default()
     }
     #[allow(clippy::unnecessary_wraps)]
-    fn from_response(
-        response: &http::response::Response<impl AsRef<[u8]>>,
+    #[allow(dead_code)]
+    fn parse_response(
+        &self,
+        response: &http::response::Response<bytes::Bytes>,
     ) -> Result<crate::output::GetSecretValueOutput, crate::error::GetSecretValueError> {
         if crate::aws_json_errors::is_error(&response) {
             let body = serde_json::from_slice(response.body().as_ref())
@@ -962,24 +919,12 @@ impl GetSecretValue {
                 _ => crate::error::GetSecretValueError::generic(generic),
             });
         }
-        let body: crate::serializer::GetSecretValueOutputBody =
-            serde_json::from_slice(response.body().as_ref())
+        #[allow(unused_mut)]
+        let mut builder = crate::output::get_secret_value_output::Builder::default();
+        builder =
+            crate::json_deser::get_secret_value_deser_operation(response.body().as_ref(), builder)
                 .map_err(crate::error::GetSecretValueError::unhandled)?;
-        Ok(crate::output::GetSecretValueOutput {
-            version_id: body.version_id,
-            created_date: body.created_date,
-            secret_string: body.secret_string,
-            secret_binary: body.secret_binary,
-            version_stages: body.version_stages,
-            name: body.name,
-            arn: body.arn,
-        })
-    }
-    pub fn parse_response(
-        &self,
-        response: &http::response::Response<impl AsRef<[u8]>>,
-    ) -> Result<crate::output::GetSecretValueOutput, crate::error::GetSecretValueError> {
-        Self::from_response(&response)
+        Ok(builder.build())
     }
     pub fn new() -> Self {
         Self { _private: () }
@@ -1033,8 +978,10 @@ impl ListSecrets {
         crate::input::list_secrets_input::Builder::default()
     }
     #[allow(clippy::unnecessary_wraps)]
-    fn from_response(
-        response: &http::response::Response<impl AsRef<[u8]>>,
+    #[allow(dead_code)]
+    fn parse_response(
+        &self,
+        response: &http::response::Response<bytes::Bytes>,
     ) -> Result<crate::output::ListSecretsOutput, crate::error::ListSecretsError> {
         if crate::aws_json_errors::is_error(&response) {
             let body = serde_json::from_slice(response.body().as_ref())
@@ -1070,19 +1017,12 @@ impl ListSecrets {
                 _ => crate::error::ListSecretsError::generic(generic),
             });
         }
-        let body: crate::serializer::ListSecretsOutputBody =
-            serde_json::from_slice(response.body().as_ref())
+        #[allow(unused_mut)]
+        let mut builder = crate::output::list_secrets_output::Builder::default();
+        builder =
+            crate::json_deser::list_secrets_deser_operation(response.body().as_ref(), builder)
                 .map_err(crate::error::ListSecretsError::unhandled)?;
-        Ok(crate::output::ListSecretsOutput {
-            secret_list: body.secret_list,
-            next_token: body.next_token,
-        })
-    }
-    pub fn parse_response(
-        &self,
-        response: &http::response::Response<impl AsRef<[u8]>>,
-    ) -> Result<crate::output::ListSecretsOutput, crate::error::ListSecretsError> {
-        Self::from_response(&response)
+        Ok(builder.build())
     }
     pub fn new() -> Self {
         Self { _private: () }
@@ -1135,8 +1075,10 @@ impl ListSecretVersionIds {
         crate::input::list_secret_version_ids_input::Builder::default()
     }
     #[allow(clippy::unnecessary_wraps)]
-    fn from_response(
-        response: &http::response::Response<impl AsRef<[u8]>>,
+    #[allow(dead_code)]
+    fn parse_response(
+        &self,
+        response: &http::response::Response<bytes::Bytes>,
     ) -> Result<crate::output::ListSecretVersionIdsOutput, crate::error::ListSecretVersionIdsError>
     {
         if crate::aws_json_errors::is_error(&response) {
@@ -1179,22 +1121,14 @@ impl ListSecretVersionIds {
                 _ => crate::error::ListSecretVersionIdsError::generic(generic),
             });
         }
-        let body: crate::serializer::ListSecretVersionIdsOutputBody =
-            serde_json::from_slice(response.body().as_ref())
-                .map_err(crate::error::ListSecretVersionIdsError::unhandled)?;
-        Ok(crate::output::ListSecretVersionIdsOutput {
-            next_token: body.next_token,
-            versions: body.versions,
-            arn: body.arn,
-            name: body.name,
-        })
-    }
-    pub fn parse_response(
-        &self,
-        response: &http::response::Response<impl AsRef<[u8]>>,
-    ) -> Result<crate::output::ListSecretVersionIdsOutput, crate::error::ListSecretVersionIdsError>
-    {
-        Self::from_response(&response)
+        #[allow(unused_mut)]
+        let mut builder = crate::output::list_secret_version_ids_output::Builder::default();
+        builder = crate::json_deser::list_secret_version_ids_deser_operation(
+            response.body().as_ref(),
+            builder,
+        )
+        .map_err(crate::error::ListSecretVersionIdsError::unhandled)?;
+        Ok(builder.build())
     }
     pub fn new() -> Self {
         Self { _private: () }
@@ -1251,8 +1185,10 @@ impl PutResourcePolicy {
         crate::input::put_resource_policy_input::Builder::default()
     }
     #[allow(clippy::unnecessary_wraps)]
-    fn from_response(
-        response: &http::response::Response<impl AsRef<[u8]>>,
+    #[allow(dead_code)]
+    fn parse_response(
+        &self,
+        response: &http::response::Response<bytes::Bytes>,
     ) -> Result<crate::output::PutResourcePolicyOutput, crate::error::PutResourcePolicyError> {
         if crate::aws_json_errors::is_error(&response) {
             let body = serde_json::from_slice(response.body().as_ref())
@@ -1312,19 +1248,14 @@ impl PutResourcePolicy {
                 _ => crate::error::PutResourcePolicyError::generic(generic),
             });
         }
-        let body: crate::serializer::PutResourcePolicyOutputBody =
-            serde_json::from_slice(response.body().as_ref())
-                .map_err(crate::error::PutResourcePolicyError::unhandled)?;
-        Ok(crate::output::PutResourcePolicyOutput {
-            arn: body.arn,
-            name: body.name,
-        })
-    }
-    pub fn parse_response(
-        &self,
-        response: &http::response::Response<impl AsRef<[u8]>>,
-    ) -> Result<crate::output::PutResourcePolicyOutput, crate::error::PutResourcePolicyError> {
-        Self::from_response(&response)
+        #[allow(unused_mut)]
+        let mut builder = crate::output::put_resource_policy_output::Builder::default();
+        builder = crate::json_deser::put_resource_policy_deser_operation(
+            response.body().as_ref(),
+            builder,
+        )
+        .map_err(crate::error::PutResourcePolicyError::unhandled)?;
+        Ok(builder.build())
     }
     pub fn new() -> Self {
         Self { _private: () }
@@ -1439,8 +1370,10 @@ impl PutSecretValue {
         crate::input::put_secret_value_input::Builder::default()
     }
     #[allow(clippy::unnecessary_wraps)]
-    fn from_response(
-        response: &http::response::Response<impl AsRef<[u8]>>,
+    #[allow(dead_code)]
+    fn parse_response(
+        &self,
+        response: &http::response::Response<bytes::Bytes>,
     ) -> Result<crate::output::PutSecretValueOutput, crate::error::PutSecretValueError> {
         if crate::aws_json_errors::is_error(&response) {
             let body = serde_json::from_slice(response.body().as_ref())
@@ -1504,21 +1437,12 @@ impl PutSecretValue {
                 _ => crate::error::PutSecretValueError::generic(generic),
             });
         }
-        let body: crate::serializer::PutSecretValueOutputBody =
-            serde_json::from_slice(response.body().as_ref())
+        #[allow(unused_mut)]
+        let mut builder = crate::output::put_secret_value_output::Builder::default();
+        builder =
+            crate::json_deser::put_secret_value_deser_operation(response.body().as_ref(), builder)
                 .map_err(crate::error::PutSecretValueError::unhandled)?;
-        Ok(crate::output::PutSecretValueOutput {
-            arn: body.arn,
-            version_stages: body.version_stages,
-            name: body.name,
-            version_id: body.version_id,
-        })
-    }
-    pub fn parse_response(
-        &self,
-        response: &http::response::Response<impl AsRef<[u8]>>,
-    ) -> Result<crate::output::PutSecretValueOutput, crate::error::PutSecretValueError> {
-        Self::from_response(&response)
+        Ok(builder.build())
     }
     pub fn new() -> Self {
         Self { _private: () }
@@ -1561,8 +1485,10 @@ impl RestoreSecret {
         crate::input::restore_secret_input::Builder::default()
     }
     #[allow(clippy::unnecessary_wraps)]
-    fn from_response(
-        response: &http::response::Response<impl AsRef<[u8]>>,
+    #[allow(dead_code)]
+    fn parse_response(
+        &self,
+        response: &http::response::Response<bytes::Bytes>,
     ) -> Result<crate::output::RestoreSecretOutput, crate::error::RestoreSecretError> {
         if crate::aws_json_errors::is_error(&response) {
             let body = serde_json::from_slice(response.body().as_ref())
@@ -1605,19 +1531,12 @@ impl RestoreSecret {
                 _ => crate::error::RestoreSecretError::generic(generic),
             });
         }
-        let body: crate::serializer::RestoreSecretOutputBody =
-            serde_json::from_slice(response.body().as_ref())
+        #[allow(unused_mut)]
+        let mut builder = crate::output::restore_secret_output::Builder::default();
+        builder =
+            crate::json_deser::restore_secret_deser_operation(response.body().as_ref(), builder)
                 .map_err(crate::error::RestoreSecretError::unhandled)?;
-        Ok(crate::output::RestoreSecretOutput {
-            arn: body.arn,
-            name: body.name,
-        })
-    }
-    pub fn parse_response(
-        &self,
-        response: &http::response::Response<impl AsRef<[u8]>>,
-    ) -> Result<crate::output::RestoreSecretOutput, crate::error::RestoreSecretError> {
-        Self::from_response(&response)
+        Ok(builder.build())
     }
     pub fn new() -> Self {
         Self { _private: () }
@@ -1703,8 +1622,10 @@ impl RotateSecret {
         crate::input::rotate_secret_input::Builder::default()
     }
     #[allow(clippy::unnecessary_wraps)]
-    fn from_response(
-        response: &http::response::Response<impl AsRef<[u8]>>,
+    #[allow(dead_code)]
+    fn parse_response(
+        &self,
+        response: &http::response::Response<bytes::Bytes>,
     ) -> Result<crate::output::RotateSecretOutput, crate::error::RotateSecretError> {
         if crate::aws_json_errors::is_error(&response) {
             let body = serde_json::from_slice(response.body().as_ref())
@@ -1747,20 +1668,12 @@ impl RotateSecret {
                 _ => crate::error::RotateSecretError::generic(generic),
             });
         }
-        let body: crate::serializer::RotateSecretOutputBody =
-            serde_json::from_slice(response.body().as_ref())
+        #[allow(unused_mut)]
+        let mut builder = crate::output::rotate_secret_output::Builder::default();
+        builder =
+            crate::json_deser::rotate_secret_deser_operation(response.body().as_ref(), builder)
                 .map_err(crate::error::RotateSecretError::unhandled)?;
-        Ok(crate::output::RotateSecretOutput {
-            arn: body.arn,
-            name: body.name,
-            version_id: body.version_id,
-        })
-    }
-    pub fn parse_response(
-        &self,
-        response: &http::response::Response<impl AsRef<[u8]>>,
-    ) -> Result<crate::output::RotateSecretOutput, crate::error::RotateSecretError> {
-        Self::from_response(&response)
+        Ok(builder.build())
     }
     pub fn new() -> Self {
         Self { _private: () }
@@ -1840,8 +1753,10 @@ impl TagResource {
         crate::input::tag_resource_input::Builder::default()
     }
     #[allow(clippy::unnecessary_wraps)]
-    fn from_response(
-        response: &http::response::Response<impl AsRef<[u8]>>,
+    #[allow(dead_code)]
+    fn parse_response(
+        &self,
+        response: &http::response::Response<bytes::Bytes>,
     ) -> Result<crate::output::TagResourceOutput, crate::error::TagResourceError> {
         if crate::aws_json_errors::is_error(&response) {
             let body = serde_json::from_slice(response.body().as_ref())
@@ -1884,13 +1799,9 @@ impl TagResource {
                 _ => crate::error::TagResourceError::generic(generic),
             });
         }
-        Ok(crate::output::TagResourceOutput {})
-    }
-    pub fn parse_response(
-        &self,
-        response: &http::response::Response<impl AsRef<[u8]>>,
-    ) -> Result<crate::output::TagResourceOutput, crate::error::TagResourceError> {
-        Self::from_response(&response)
+        #[allow(unused_mut)]
+        let mut builder = crate::output::tag_resource_output::Builder::default();
+        Ok(builder.build())
     }
     pub fn new() -> Self {
         Self { _private: () }
@@ -1943,8 +1854,10 @@ impl UntagResource {
         crate::input::untag_resource_input::Builder::default()
     }
     #[allow(clippy::unnecessary_wraps)]
-    fn from_response(
-        response: &http::response::Response<impl AsRef<[u8]>>,
+    #[allow(dead_code)]
+    fn parse_response(
+        &self,
+        response: &http::response::Response<bytes::Bytes>,
     ) -> Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError> {
         if crate::aws_json_errors::is_error(&response) {
             let body = serde_json::from_slice(response.body().as_ref())
@@ -1987,13 +1900,9 @@ impl UntagResource {
                 _ => crate::error::UntagResourceError::generic(generic),
             });
         }
-        Ok(crate::output::UntagResourceOutput {})
-    }
-    pub fn parse_response(
-        &self,
-        response: &http::response::Response<impl AsRef<[u8]>>,
-    ) -> Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError> {
-        Self::from_response(&response)
+        #[allow(unused_mut)]
+        let mut builder = crate::output::untag_resource_output::Builder::default();
+        Ok(builder.build())
     }
     pub fn new() -> Self {
         Self { _private: () }
@@ -2102,8 +2011,10 @@ impl UpdateSecret {
         crate::input::update_secret_input::Builder::default()
     }
     #[allow(clippy::unnecessary_wraps)]
-    fn from_response(
-        response: &http::response::Response<impl AsRef<[u8]>>,
+    #[allow(dead_code)]
+    fn parse_response(
+        &self,
+        response: &http::response::Response<bytes::Bytes>,
     ) -> Result<crate::output::UpdateSecretOutput, crate::error::UpdateSecretError> {
         if crate::aws_json_errors::is_error(&response) {
             let body = serde_json::from_slice(response.body().as_ref())
@@ -2183,20 +2094,12 @@ impl UpdateSecret {
                 _ => crate::error::UpdateSecretError::generic(generic),
             });
         }
-        let body: crate::serializer::UpdateSecretOutputBody =
-            serde_json::from_slice(response.body().as_ref())
+        #[allow(unused_mut)]
+        let mut builder = crate::output::update_secret_output::Builder::default();
+        builder =
+            crate::json_deser::update_secret_deser_operation(response.body().as_ref(), builder)
                 .map_err(crate::error::UpdateSecretError::unhandled)?;
-        Ok(crate::output::UpdateSecretOutput {
-            name: body.name,
-            version_id: body.version_id,
-            arn: body.arn,
-        })
-    }
-    pub fn parse_response(
-        &self,
-        response: &http::response::Response<impl AsRef<[u8]>>,
-    ) -> Result<crate::output::UpdateSecretOutput, crate::error::UpdateSecretError> {
-        Self::from_response(&response)
+        Ok(builder.build())
     }
     pub fn new() -> Self {
         Self { _private: () }
@@ -2257,8 +2160,10 @@ impl UpdateSecretVersionStage {
         crate::input::update_secret_version_stage_input::Builder::default()
     }
     #[allow(clippy::unnecessary_wraps)]
-    fn from_response(
-        response: &http::response::Response<impl AsRef<[u8]>>,
+    #[allow(dead_code)]
+    fn parse_response(
+        &self,
+        response: &http::response::Response<bytes::Bytes>,
     ) -> Result<
         crate::output::UpdateSecretVersionStageOutput,
         crate::error::UpdateSecretVersionStageError,
@@ -2327,22 +2232,14 @@ impl UpdateSecretVersionStage {
                 _ => crate::error::UpdateSecretVersionStageError::generic(generic),
             });
         }
-        let body: crate::serializer::UpdateSecretVersionStageOutputBody =
-            serde_json::from_slice(response.body().as_ref())
-                .map_err(crate::error::UpdateSecretVersionStageError::unhandled)?;
-        Ok(crate::output::UpdateSecretVersionStageOutput {
-            arn: body.arn,
-            name: body.name,
-        })
-    }
-    pub fn parse_response(
-        &self,
-        response: &http::response::Response<impl AsRef<[u8]>>,
-    ) -> Result<
-        crate::output::UpdateSecretVersionStageOutput,
-        crate::error::UpdateSecretVersionStageError,
-    > {
-        Self::from_response(&response)
+        #[allow(unused_mut)]
+        let mut builder = crate::output::update_secret_version_stage_output::Builder::default();
+        builder = crate::json_deser::update_secret_version_stage_deser_operation(
+            response.body().as_ref(),
+            builder,
+        )
+        .map_err(crate::error::UpdateSecretVersionStageError::unhandled)?;
+        Ok(builder.build())
     }
     pub fn new() -> Self {
         Self { _private: () }
@@ -2374,8 +2271,10 @@ impl ValidateResourcePolicy {
         crate::input::validate_resource_policy_input::Builder::default()
     }
     #[allow(clippy::unnecessary_wraps)]
-    fn from_response(
-        response: &http::response::Response<impl AsRef<[u8]>>,
+    #[allow(dead_code)]
+    fn parse_response(
+        &self,
+        response: &http::response::Response<bytes::Bytes>,
     ) -> Result<
         crate::output::ValidateResourcePolicyOutput,
         crate::error::ValidateResourcePolicyError,
@@ -2417,22 +2316,14 @@ impl ValidateResourcePolicy {
                 _ => crate::error::ValidateResourcePolicyError::generic(generic)
             });
         }
-        let body: crate::serializer::ValidateResourcePolicyOutputBody =
-            serde_json::from_slice(response.body().as_ref())
-                .map_err(crate::error::ValidateResourcePolicyError::unhandled)?;
-        Ok(crate::output::ValidateResourcePolicyOutput {
-            validation_errors: body.validation_errors,
-            policy_validation_passed: body.policy_validation_passed,
-        })
-    }
-    pub fn parse_response(
-        &self,
-        response: &http::response::Response<impl AsRef<[u8]>>,
-    ) -> Result<
-        crate::output::ValidateResourcePolicyOutput,
-        crate::error::ValidateResourcePolicyError,
-    > {
-        Self::from_response(&response)
+        #[allow(unused_mut)]
+        let mut builder = crate::output::validate_resource_policy_output::Builder::default();
+        builder = crate::json_deser::validate_resource_policy_deser_operation(
+            response.body().as_ref(),
+            builder,
+        )
+        .map_err(crate::error::ValidateResourcePolicyError::unhandled)?;
+        Ok(builder.build())
     }
     pub fn new() -> Self {
         Self { _private: () }

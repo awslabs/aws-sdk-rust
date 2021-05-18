@@ -820,21 +820,22 @@ pub mod synthesis_task {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        engine: std::option::Option<crate::model::Engine>,
-        task_id: std::option::Option<std::string::String>,
-        task_status: std::option::Option<crate::model::TaskStatus>,
-        task_status_reason: std::option::Option<std::string::String>,
-        output_uri: std::option::Option<std::string::String>,
-        creation_time: std::option::Option<smithy_types::Instant>,
-        request_characters: std::option::Option<i32>,
-        sns_topic_arn: std::option::Option<std::string::String>,
-        lexicon_names: std::option::Option<std::vec::Vec<std::string::String>>,
-        output_format: std::option::Option<crate::model::OutputFormat>,
-        sample_rate: std::option::Option<std::string::String>,
-        speech_mark_types: std::option::Option<std::vec::Vec<crate::model::SpeechMarkType>>,
-        text_type: std::option::Option<crate::model::TextType>,
-        voice_id: std::option::Option<crate::model::VoiceId>,
-        language_code: std::option::Option<crate::model::LanguageCode>,
+        pub(crate) engine: std::option::Option<crate::model::Engine>,
+        pub(crate) task_id: std::option::Option<std::string::String>,
+        pub(crate) task_status: std::option::Option<crate::model::TaskStatus>,
+        pub(crate) task_status_reason: std::option::Option<std::string::String>,
+        pub(crate) output_uri: std::option::Option<std::string::String>,
+        pub(crate) creation_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) request_characters: std::option::Option<i32>,
+        pub(crate) sns_topic_arn: std::option::Option<std::string::String>,
+        pub(crate) lexicon_names: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) output_format: std::option::Option<crate::model::OutputFormat>,
+        pub(crate) sample_rate: std::option::Option<std::string::String>,
+        pub(crate) speech_mark_types:
+            std::option::Option<std::vec::Vec<crate::model::SpeechMarkType>>,
+        pub(crate) text_type: std::option::Option<crate::model::TextType>,
+        pub(crate) voice_id: std::option::Option<crate::model::VoiceId>,
+        pub(crate) language_code: std::option::Option<crate::model::LanguageCode>,
     }
     impl Builder {
         /// <p>Specifies the engine (<code>standard</code> or <code>neural</code>) for Amazon Polly to
@@ -1144,8 +1145,8 @@ pub mod lexicon_description {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        name: std::option::Option<std::string::String>,
-        attributes: std::option::Option<crate::model::LexiconAttributes>,
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) attributes: std::option::Option<crate::model::LexiconAttributes>,
     }
     impl Builder {
         /// <p>Name of the lexicon.</p>
@@ -1244,12 +1245,12 @@ pub mod lexicon_attributes {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        alphabet: std::option::Option<std::string::String>,
-        language_code: std::option::Option<crate::model::LanguageCode>,
-        last_modified: std::option::Option<smithy_types::Instant>,
-        lexicon_arn: std::option::Option<std::string::String>,
-        lexemes_count: std::option::Option<i32>,
-        size: std::option::Option<i32>,
+        pub(crate) alphabet: std::option::Option<std::string::String>,
+        pub(crate) language_code: std::option::Option<crate::model::LanguageCode>,
+        pub(crate) last_modified: std::option::Option<smithy_types::Instant>,
+        pub(crate) lexicon_arn: std::option::Option<std::string::String>,
+        pub(crate) lexemes_count: std::option::Option<i32>,
+        pub(crate) size: std::option::Option<i32>,
     }
     impl Builder {
         /// <p>Phonetic alphabet used in the lexicon. Valid values are <code>ipa</code> and
@@ -1366,8 +1367,8 @@ pub mod lexicon {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        content: std::option::Option<std::string::String>,
-        name: std::option::Option<std::string::String>,
+        pub(crate) content: std::option::Option<std::string::String>,
+        pub(crate) name: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>Lexicon content in string format. The content of a lexicon must be in PLS
@@ -1471,13 +1472,14 @@ pub mod voice {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        gender: std::option::Option<crate::model::Gender>,
-        id: std::option::Option<crate::model::VoiceId>,
-        language_code: std::option::Option<crate::model::LanguageCode>,
-        language_name: std::option::Option<std::string::String>,
-        name: std::option::Option<std::string::String>,
-        additional_language_codes: std::option::Option<std::vec::Vec<crate::model::LanguageCode>>,
-        supported_engines: std::option::Option<std::vec::Vec<crate::model::Engine>>,
+        pub(crate) gender: std::option::Option<crate::model::Gender>,
+        pub(crate) id: std::option::Option<crate::model::VoiceId>,
+        pub(crate) language_code: std::option::Option<crate::model::LanguageCode>,
+        pub(crate) language_name: std::option::Option<std::string::String>,
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) additional_language_codes:
+            std::option::Option<std::vec::Vec<crate::model::LanguageCode>>,
+        pub(crate) supported_engines: std::option::Option<std::vec::Vec<crate::model::Engine>>,
     }
     impl Builder {
         /// <p>Gender of the voice.</p>

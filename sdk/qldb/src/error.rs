@@ -1528,12 +1528,15 @@ impl std::fmt::Debug for ResourceNotFoundError {
 }
 impl ResourceNotFoundError {
     pub fn message(&self) -> Option<&str> {
-        None
+        self.message.as_deref()
     }
 }
 impl std::fmt::Display for ResourceNotFoundError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ResourceNotFoundError [ResourceNotFoundException]")?;
+        if let Some(inner_1) = &self.message {
+            write!(f, ": {}", inner_1)?;
+        }
         Ok(())
     }
 }
@@ -1544,9 +1547,9 @@ pub mod resource_not_found_error {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        message: std::option::Option<std::string::String>,
-        resource_type: std::option::Option<std::string::String>,
-        resource_name: std::option::Option<std::string::String>,
+        pub(crate) message: std::option::Option<std::string::String>,
+        pub(crate) resource_type: std::option::Option<std::string::String>,
+        pub(crate) resource_name: std::option::Option<std::string::String>,
     }
     impl Builder {
         pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
@@ -1616,12 +1619,15 @@ impl std::fmt::Debug for InvalidParameterError {
 }
 impl InvalidParameterError {
     pub fn message(&self) -> Option<&str> {
-        None
+        self.message.as_deref()
     }
 }
 impl std::fmt::Display for InvalidParameterError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidParameterError [InvalidParameterException]")?;
+        if let Some(inner_2) = &self.message {
+            write!(f, ": {}", inner_2)?;
+        }
         Ok(())
     }
 }
@@ -1632,8 +1638,8 @@ pub mod invalid_parameter_error {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        message: std::option::Option<std::string::String>,
-        parameter_name: std::option::Option<std::string::String>,
+        pub(crate) message: std::option::Option<std::string::String>,
+        pub(crate) parameter_name: std::option::Option<std::string::String>,
     }
     impl Builder {
         pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
@@ -1699,7 +1705,7 @@ impl std::fmt::Debug for ResourcePreconditionNotMetError {
 }
 impl ResourcePreconditionNotMetError {
     pub fn message(&self) -> Option<&str> {
-        None
+        self.message.as_deref()
     }
 }
 impl std::fmt::Display for ResourcePreconditionNotMetError {
@@ -1708,6 +1714,9 @@ impl std::fmt::Display for ResourcePreconditionNotMetError {
             f,
             "ResourcePreconditionNotMetError [ResourcePreconditionNotMetException]"
         )?;
+        if let Some(inner_3) = &self.message {
+            write!(f, ": {}", inner_3)?;
+        }
         Ok(())
     }
 }
@@ -1718,9 +1727,9 @@ pub mod resource_precondition_not_met_error {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        message: std::option::Option<std::string::String>,
-        resource_type: std::option::Option<std::string::String>,
-        resource_name: std::option::Option<std::string::String>,
+        pub(crate) message: std::option::Option<std::string::String>,
+        pub(crate) resource_type: std::option::Option<std::string::String>,
+        pub(crate) resource_name: std::option::Option<std::string::String>,
     }
     impl Builder {
         pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
@@ -1796,12 +1805,15 @@ impl std::fmt::Debug for ResourceInUseError {
 }
 impl ResourceInUseError {
     pub fn message(&self) -> Option<&str> {
-        None
+        self.message.as_deref()
     }
 }
 impl std::fmt::Display for ResourceInUseError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ResourceInUseError [ResourceInUseException]")?;
+        if let Some(inner_4) = &self.message {
+            write!(f, ": {}", inner_4)?;
+        }
         Ok(())
     }
 }
@@ -1812,9 +1824,9 @@ pub mod resource_in_use_error {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        message: std::option::Option<std::string::String>,
-        resource_type: std::option::Option<std::string::String>,
-        resource_name: std::option::Option<std::string::String>,
+        pub(crate) message: std::option::Option<std::string::String>,
+        pub(crate) resource_type: std::option::Option<std::string::String>,
+        pub(crate) resource_name: std::option::Option<std::string::String>,
     }
     impl Builder {
         pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
@@ -1890,7 +1902,7 @@ impl std::fmt::Debug for ResourceAlreadyExistsError {
 }
 impl ResourceAlreadyExistsError {
     pub fn message(&self) -> Option<&str> {
-        None
+        self.message.as_deref()
     }
 }
 impl std::fmt::Display for ResourceAlreadyExistsError {
@@ -1899,6 +1911,9 @@ impl std::fmt::Display for ResourceAlreadyExistsError {
             f,
             "ResourceAlreadyExistsError [ResourceAlreadyExistsException]"
         )?;
+        if let Some(inner_5) = &self.message {
+            write!(f, ": {}", inner_5)?;
+        }
         Ok(())
     }
 }
@@ -1909,9 +1924,9 @@ pub mod resource_already_exists_error {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        message: std::option::Option<std::string::String>,
-        resource_type: std::option::Option<std::string::String>,
-        resource_name: std::option::Option<std::string::String>,
+        pub(crate) message: std::option::Option<std::string::String>,
+        pub(crate) resource_type: std::option::Option<std::string::String>,
+        pub(crate) resource_name: std::option::Option<std::string::String>,
     }
     impl Builder {
         pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
@@ -1981,12 +1996,15 @@ impl std::fmt::Debug for LimitExceededError {
 }
 impl LimitExceededError {
     pub fn message(&self) -> Option<&str> {
-        None
+        self.message.as_deref()
     }
 }
 impl std::fmt::Display for LimitExceededError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "LimitExceededError [LimitExceededException]")?;
+        if let Some(inner_6) = &self.message {
+            write!(f, ": {}", inner_6)?;
+        }
         Ok(())
     }
 }
@@ -1997,8 +2015,8 @@ pub mod limit_exceeded_error {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        message: std::option::Option<std::string::String>,
-        resource_type: std::option::Option<std::string::String>,
+        pub(crate) message: std::option::Option<std::string::String>,
+        pub(crate) resource_type: std::option::Option<std::string::String>,
     }
     impl Builder {
         pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {

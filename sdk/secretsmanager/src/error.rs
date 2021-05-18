@@ -1627,12 +1627,15 @@ impl std::fmt::Debug for ResourceNotFoundError {
 }
 impl ResourceNotFoundError {
     pub fn message(&self) -> Option<&str> {
-        None
+        self.message.as_deref()
     }
 }
 impl std::fmt::Display for ResourceNotFoundError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ResourceNotFoundError [ResourceNotFoundException]")?;
+        if let Some(inner_1) = &self.message {
+            write!(f, ": {}", inner_1)?;
+        }
         Ok(())
     }
 }
@@ -1643,7 +1646,7 @@ pub mod resource_not_found_error {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        message: std::option::Option<std::string::String>,
+        pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
         pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
@@ -1687,7 +1690,7 @@ impl std::fmt::Debug for MalformedPolicyDocumentError {
 }
 impl MalformedPolicyDocumentError {
     pub fn message(&self) -> Option<&str> {
-        None
+        self.message.as_deref()
     }
 }
 impl std::fmt::Display for MalformedPolicyDocumentError {
@@ -1696,6 +1699,9 @@ impl std::fmt::Display for MalformedPolicyDocumentError {
             f,
             "MalformedPolicyDocumentError [MalformedPolicyDocumentException]"
         )?;
+        if let Some(inner_2) = &self.message {
+            write!(f, ": {}", inner_2)?;
+        }
         Ok(())
     }
 }
@@ -1706,7 +1712,7 @@ pub mod malformed_policy_document_error {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        message: std::option::Option<std::string::String>,
+        pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
         pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
@@ -1761,12 +1767,15 @@ impl std::fmt::Debug for InvalidRequestError {
 }
 impl InvalidRequestError {
     pub fn message(&self) -> Option<&str> {
-        None
+        self.message.as_deref()
     }
 }
 impl std::fmt::Display for InvalidRequestError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidRequestError [InvalidRequestException]")?;
+        if let Some(inner_3) = &self.message {
+            write!(f, ": {}", inner_3)?;
+        }
         Ok(())
     }
 }
@@ -1777,7 +1786,7 @@ pub mod invalid_request_error {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        message: std::option::Option<std::string::String>,
+        pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
         pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
@@ -1821,12 +1830,15 @@ impl std::fmt::Debug for InvalidParameterError {
 }
 impl InvalidParameterError {
     pub fn message(&self) -> Option<&str> {
-        None
+        self.message.as_deref()
     }
 }
 impl std::fmt::Display for InvalidParameterError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidParameterError [InvalidParameterException]")?;
+        if let Some(inner_4) = &self.message {
+            write!(f, ": {}", inner_4)?;
+        }
         Ok(())
     }
 }
@@ -1837,7 +1849,7 @@ pub mod invalid_parameter_error {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        message: std::option::Option<std::string::String>,
+        pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
         pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
@@ -1881,12 +1893,15 @@ impl std::fmt::Debug for InternalServiceError {
 }
 impl InternalServiceError {
     pub fn message(&self) -> Option<&str> {
-        None
+        self.message.as_deref()
     }
 }
 impl std::fmt::Display for InternalServiceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InternalServiceError")?;
+        if let Some(inner_5) = &self.message {
+            write!(f, ": {}", inner_5)?;
+        }
         Ok(())
     }
 }
@@ -1897,7 +1912,7 @@ pub mod internal_service_error {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        message: std::option::Option<std::string::String>,
+        pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
         pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
@@ -1941,12 +1956,15 @@ impl std::fmt::Debug for LimitExceededError {
 }
 impl LimitExceededError {
     pub fn message(&self) -> Option<&str> {
-        None
+        self.message.as_deref()
     }
 }
 impl std::fmt::Display for LimitExceededError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "LimitExceededError [LimitExceededException]")?;
+        if let Some(inner_6) = &self.message {
+            write!(f, ": {}", inner_6)?;
+        }
         Ok(())
     }
 }
@@ -1957,7 +1975,7 @@ pub mod limit_exceeded_error {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        message: std::option::Option<std::string::String>,
+        pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
         pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
@@ -2001,12 +2019,15 @@ impl std::fmt::Debug for ResourceExistsError {
 }
 impl ResourceExistsError {
     pub fn message(&self) -> Option<&str> {
-        None
+        self.message.as_deref()
     }
 }
 impl std::fmt::Display for ResourceExistsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ResourceExistsError [ResourceExistsException]")?;
+        if let Some(inner_7) = &self.message {
+            write!(f, ": {}", inner_7)?;
+        }
         Ok(())
     }
 }
@@ -2017,7 +2038,7 @@ pub mod resource_exists_error {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        message: std::option::Option<std::string::String>,
+        pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
         pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
@@ -2061,12 +2082,15 @@ impl std::fmt::Debug for PreconditionNotMetError {
 }
 impl PreconditionNotMetError {
     pub fn message(&self) -> Option<&str> {
-        None
+        self.message.as_deref()
     }
 }
 impl std::fmt::Display for PreconditionNotMetError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "PreconditionNotMetError [PreconditionNotMetException]")?;
+        if let Some(inner_8) = &self.message {
+            write!(f, ": {}", inner_8)?;
+        }
         Ok(())
     }
 }
@@ -2077,7 +2101,7 @@ pub mod precondition_not_met_error {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        message: std::option::Option<std::string::String>,
+        pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
         pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
@@ -2124,12 +2148,15 @@ impl std::fmt::Debug for EncryptionFailure {
 }
 impl EncryptionFailure {
     pub fn message(&self) -> Option<&str> {
-        None
+        self.message.as_deref()
     }
 }
 impl std::fmt::Display for EncryptionFailure {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "EncryptionFailure")?;
+        if let Some(inner_9) = &self.message {
+            write!(f, ": {}", inner_9)?;
+        }
         Ok(())
     }
 }
@@ -2140,7 +2167,7 @@ pub mod encryption_failure {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        message: std::option::Option<std::string::String>,
+        pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
         pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
@@ -2184,12 +2211,15 @@ impl std::fmt::Debug for PublicPolicyError {
 }
 impl PublicPolicyError {
     pub fn message(&self) -> Option<&str> {
-        None
+        self.message.as_deref()
     }
 }
 impl std::fmt::Display for PublicPolicyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "PublicPolicyError [PublicPolicyException]")?;
+        if let Some(inner_10) = &self.message {
+            write!(f, ": {}", inner_10)?;
+        }
         Ok(())
     }
 }
@@ -2200,7 +2230,7 @@ pub mod public_policy_error {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        message: std::option::Option<std::string::String>,
+        pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
         pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
@@ -2244,12 +2274,15 @@ impl std::fmt::Debug for InvalidNextTokenError {
 }
 impl InvalidNextTokenError {
     pub fn message(&self) -> Option<&str> {
-        None
+        self.message.as_deref()
     }
 }
 impl std::fmt::Display for InvalidNextTokenError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidNextTokenError [InvalidNextTokenException]")?;
+        if let Some(inner_11) = &self.message {
+            write!(f, ": {}", inner_11)?;
+        }
         Ok(())
     }
 }
@@ -2260,7 +2293,7 @@ pub mod invalid_next_token_error {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        message: std::option::Option<std::string::String>,
+        pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
         pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
@@ -2304,12 +2337,15 @@ impl std::fmt::Debug for DecryptionFailure {
 }
 impl DecryptionFailure {
     pub fn message(&self) -> Option<&str> {
-        None
+        self.message.as_deref()
     }
 }
 impl std::fmt::Display for DecryptionFailure {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "DecryptionFailure")?;
+        if let Some(inner_12) = &self.message {
+            write!(f, ": {}", inner_12)?;
+        }
         Ok(())
     }
 }
@@ -2320,7 +2356,7 @@ pub mod decryption_failure {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        message: std::option::Option<std::string::String>,
+        pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
         pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {

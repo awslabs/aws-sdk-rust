@@ -192,8 +192,8 @@ pub mod tag {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        tag_key: std::option::Option<std::string::String>,
-        tag_value: std::option::Option<std::string::String>,
+        pub(crate) tag_key: std::option::Option<std::string::String>,
+        pub(crate) tag_value: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The key of the tag.</p>
@@ -386,15 +386,15 @@ pub mod grant_list_entry {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        key_id: std::option::Option<std::string::String>,
-        grant_id: std::option::Option<std::string::String>,
-        name: std::option::Option<std::string::String>,
-        creation_date: std::option::Option<smithy_types::Instant>,
-        grantee_principal: std::option::Option<std::string::String>,
-        retiring_principal: std::option::Option<std::string::String>,
-        issuing_account: std::option::Option<std::string::String>,
-        operations: std::option::Option<std::vec::Vec<crate::model::GrantOperation>>,
-        constraints: std::option::Option<crate::model::GrantConstraints>,
+        pub(crate) key_id: std::option::Option<std::string::String>,
+        pub(crate) grant_id: std::option::Option<std::string::String>,
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) creation_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) grantee_principal: std::option::Option<std::string::String>,
+        pub(crate) retiring_principal: std::option::Option<std::string::String>,
+        pub(crate) issuing_account: std::option::Option<std::string::String>,
+        pub(crate) operations: std::option::Option<std::vec::Vec<crate::model::GrantOperation>>,
+        pub(crate) constraints: std::option::Option<crate::model::GrantConstraints>,
     }
     impl Builder {
         /// <p>The unique identifier for the customer master key (CMK) to which the grant applies.</p>
@@ -579,10 +579,10 @@ pub mod grant_constraints {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        encryption_context_subset: std::option::Option<
+        pub(crate) encryption_context_subset: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
-        encryption_context_equals: std::option::Option<
+        pub(crate) encryption_context_equals: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
     }
@@ -780,8 +780,8 @@ pub mod key_list_entry {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        key_id: std::option::Option<std::string::String>,
-        key_arn: std::option::Option<std::string::String>,
+        pub(crate) key_id: std::option::Option<std::string::String>,
+        pub(crate) key_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>Unique identifier of the key.</p>
@@ -877,11 +877,11 @@ pub mod alias_list_entry {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        alias_name: std::option::Option<std::string::String>,
-        alias_arn: std::option::Option<std::string::String>,
-        target_key_id: std::option::Option<std::string::String>,
-        creation_date: std::option::Option<smithy_types::Instant>,
-        last_updated_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) alias_name: std::option::Option<std::string::String>,
+        pub(crate) alias_arn: std::option::Option<std::string::String>,
+        pub(crate) target_key_id: std::option::Option<std::string::String>,
+        pub(crate) creation_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) last_updated_date: std::option::Option<smithy_types::Instant>,
     }
     impl Builder {
         /// <p>String that contains the alias. This value begins with <code>alias/</code>.</p>
@@ -1645,25 +1645,27 @@ pub mod key_metadata {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        aws_account_id: std::option::Option<std::string::String>,
-        key_id: std::option::Option<std::string::String>,
-        arn: std::option::Option<std::string::String>,
-        creation_date: std::option::Option<smithy_types::Instant>,
-        enabled: std::option::Option<bool>,
-        description: std::option::Option<std::string::String>,
-        key_usage: std::option::Option<crate::model::KeyUsageType>,
-        key_state: std::option::Option<crate::model::KeyState>,
-        deletion_date: std::option::Option<smithy_types::Instant>,
-        valid_to: std::option::Option<smithy_types::Instant>,
-        origin: std::option::Option<crate::model::OriginType>,
-        custom_key_store_id: std::option::Option<std::string::String>,
-        cloud_hsm_cluster_id: std::option::Option<std::string::String>,
-        expiration_model: std::option::Option<crate::model::ExpirationModelType>,
-        key_manager: std::option::Option<crate::model::KeyManagerType>,
-        customer_master_key_spec: std::option::Option<crate::model::CustomerMasterKeySpec>,
-        encryption_algorithms:
+        pub(crate) aws_account_id: std::option::Option<std::string::String>,
+        pub(crate) key_id: std::option::Option<std::string::String>,
+        pub(crate) arn: std::option::Option<std::string::String>,
+        pub(crate) creation_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) enabled: std::option::Option<bool>,
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) key_usage: std::option::Option<crate::model::KeyUsageType>,
+        pub(crate) key_state: std::option::Option<crate::model::KeyState>,
+        pub(crate) deletion_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) valid_to: std::option::Option<smithy_types::Instant>,
+        pub(crate) origin: std::option::Option<crate::model::OriginType>,
+        pub(crate) custom_key_store_id: std::option::Option<std::string::String>,
+        pub(crate) cloud_hsm_cluster_id: std::option::Option<std::string::String>,
+        pub(crate) expiration_model: std::option::Option<crate::model::ExpirationModelType>,
+        pub(crate) key_manager: std::option::Option<crate::model::KeyManagerType>,
+        pub(crate) customer_master_key_spec:
+            std::option::Option<crate::model::CustomerMasterKeySpec>,
+        pub(crate) encryption_algorithms:
             std::option::Option<std::vec::Vec<crate::model::EncryptionAlgorithmSpec>>,
-        signing_algorithms: std::option::Option<std::vec::Vec<crate::model::SigningAlgorithmSpec>>,
+        pub(crate) signing_algorithms:
+            std::option::Option<std::vec::Vec<crate::model::SigningAlgorithmSpec>>,
     }
     impl Builder {
         /// <p>The twelve-digit account ID of the AWS account that owns the CMK.</p>
@@ -2278,13 +2280,14 @@ pub mod custom_key_stores_list_entry {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        custom_key_store_id: std::option::Option<std::string::String>,
-        custom_key_store_name: std::option::Option<std::string::String>,
-        cloud_hsm_cluster_id: std::option::Option<std::string::String>,
-        trust_anchor_certificate: std::option::Option<std::string::String>,
-        connection_state: std::option::Option<crate::model::ConnectionStateType>,
-        connection_error_code: std::option::Option<crate::model::ConnectionErrorCodeType>,
-        creation_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) custom_key_store_id: std::option::Option<std::string::String>,
+        pub(crate) custom_key_store_name: std::option::Option<std::string::String>,
+        pub(crate) cloud_hsm_cluster_id: std::option::Option<std::string::String>,
+        pub(crate) trust_anchor_certificate: std::option::Option<std::string::String>,
+        pub(crate) connection_state: std::option::Option<crate::model::ConnectionStateType>,
+        pub(crate) connection_error_code:
+            std::option::Option<crate::model::ConnectionErrorCodeType>,
+        pub(crate) creation_date: std::option::Option<smithy_types::Instant>,
     }
     impl Builder {
         /// <p>A unique identifier for the custom key store.</p>

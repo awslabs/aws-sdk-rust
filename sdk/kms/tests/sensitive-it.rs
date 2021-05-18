@@ -5,12 +5,14 @@
 
 use aws_http::AwsErrorRetryPolicy;
 use aws_sdk_kms as kms;
+use bytes::Bytes;
 use kms::error::CreateAliasError;
 use kms::operation::{CreateAlias, GenerateRandom};
 use kms::output::GenerateRandomOutput;
 use kms::Blob;
 use smithy_http::body::SdkBody;
 use smithy_http::operation::Parts;
+use smithy_http::response::ParseStrictResponse;
 use smithy_http::result::SdkError;
 use smithy_http::retry::ClassifyResponse;
 use smithy_types::retry::{ErrorKind, RetryKind};
@@ -28,6 +30,7 @@ fn validate_sensitive_trait() {
 
 fn assert_send_sync<T: Send + Sync + 'static>() {}
 fn assert_send_fut<T: Send + 'static>(_: T) {}
+fn assert_debug<T: std::fmt::Debug>() {}
 
 #[test]
 fn types_are_send_sync() {
@@ -52,6 +55,13 @@ fn client_is_clone() {
     let _ = client.clone();
 }
 
+#[test]
+fn types_are_debug() {
+    assert_debug::<kms::Client>();
+    assert_debug::<kms::client::fluent_builders::GenerateRandom>();
+    assert_debug::<kms::client::fluent_builders::CreateAlias>();
+}
+
 fn create_alias_op() -> Parts<CreateAlias, AwsErrorRetryPolicy> {
     let conf = kms::Config::builder().build();
     let (_, parts) = CreateAlias::builder()
@@ -69,11 +79,13 @@ fn errors_are_retryable() {
     let op = create_alias_op();
     let http_response = http::Response::builder()
         .status(400)
-        .body(r#"{ "code": "LimitExceededException" }"#)
+        .body(Bytes::from_static(
+            br#"{ "code": "LimitExceededException" }"#,
+        ))
         .unwrap();
     let err = op
         .response_handler
-        .parse_response(&http_response)
+        .parse(&http_response)
         .map_err(|e| SdkError::ServiceError {
             err: e,
             raw: http_response.map(SdkBody::from),
@@ -87,11 +99,11 @@ fn unmodeled_errors_are_retryable() {
     let op = create_alias_op();
     let http_response = http::Response::builder()
         .status(400)
-        .body(r#"{ "code": "ThrottlingException" }"#)
+        .body(Bytes::from_static(br#"{ "code": "ThrottlingException" }"#))
         .unwrap();
     let err = op
         .response_handler
-        .parse_response(&http_response)
+        .parse(&http_response)
         .map_err(|e| SdkError::ServiceError {
             err: e,
             raw: http_response.map(SdkBody::from),

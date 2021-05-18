@@ -36,11 +36,11 @@ pub mod update_ledger_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        name: std::option::Option<std::string::String>,
-        arn: std::option::Option<std::string::String>,
-        state: std::option::Option<crate::model::LedgerState>,
-        creation_date_time: std::option::Option<smithy_types::Instant>,
-        deletion_protection: std::option::Option<bool>,
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) arn: std::option::Option<std::string::String>,
+        pub(crate) state: std::option::Option<crate::model::LedgerState>,
+        pub(crate) creation_date_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) deletion_protection: std::option::Option<bool>,
     }
     impl Builder {
         /// <p>The name of the ledger.</p>
@@ -193,7 +193,7 @@ pub mod stream_journal_to_kinesis_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        stream_id: std::option::Option<std::string::String>,
+        pub(crate) stream_id: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The unique ID that QLDB assigns to each QLDB journal stream.</p>
@@ -241,7 +241,7 @@ pub mod list_tags_for_resource_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        tags: std::option::Option<
+        pub(crate) tags: std::option::Option<
             std::collections::HashMap<
                 std::string::String,
                 std::option::Option<std::string::String>,
@@ -318,8 +318,8 @@ pub mod list_ledgers_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        ledgers: std::option::Option<std::vec::Vec<crate::model::LedgerSummary>>,
-        next_token: std::option::Option<std::string::String>,
+        pub(crate) ledgers: std::option::Option<std::vec::Vec<crate::model::LedgerSummary>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
         pub fn ledgers(mut self, inp: impl Into<crate::model::LedgerSummary>) -> Self {
@@ -406,9 +406,9 @@ pub mod list_journal_s3_exports_for_ledger_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        journal_s3_exports:
+        pub(crate) journal_s3_exports:
             std::option::Option<std::vec::Vec<crate::model::JournalS3ExportDescription>>,
-        next_token: std::option::Option<std::string::String>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
         pub fn journal_s3_exports(
@@ -498,9 +498,9 @@ pub mod list_journal_s3_exports_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        journal_s3_exports:
+        pub(crate) journal_s3_exports:
             std::option::Option<std::vec::Vec<crate::model::JournalS3ExportDescription>>,
-        next_token: std::option::Option<std::string::String>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
         pub fn journal_s3_exports(
@@ -589,8 +589,9 @@ pub mod list_journal_kinesis_streams_for_ledger_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        streams: std::option::Option<std::vec::Vec<crate::model::JournalKinesisStreamDescription>>,
-        next_token: std::option::Option<std::string::String>,
+        pub(crate) streams:
+            std::option::Option<std::vec::Vec<crate::model::JournalKinesisStreamDescription>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
         pub fn streams(
@@ -669,8 +670,8 @@ pub mod get_revision_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        proof: std::option::Option<crate::model::ValueHolder>,
-        revision: std::option::Option<crate::model::ValueHolder>,
+        pub(crate) proof: std::option::Option<crate::model::ValueHolder>,
+        pub(crate) revision: std::option::Option<crate::model::ValueHolder>,
     }
     impl Builder {
         /// <p>The proof object in Amazon Ion format returned by a <code>GetRevision</code> request. A
@@ -734,8 +735,8 @@ pub mod get_digest_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        digest: std::option::Option<smithy_types::Blob>,
-        digest_tip_address: std::option::Option<crate::model::ValueHolder>,
+        pub(crate) digest: std::option::Option<smithy_types::Blob>,
+        pub(crate) digest_tip_address: std::option::Option<crate::model::ValueHolder>,
     }
     impl Builder {
         /// <p>The 256-bit hash value representing the digest returned by a <code>GetDigest</code>
@@ -802,8 +803,8 @@ pub mod get_block_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        block: std::option::Option<crate::model::ValueHolder>,
-        proof: std::option::Option<crate::model::ValueHolder>,
+        pub(crate) block: std::option::Option<crate::model::ValueHolder>,
+        pub(crate) proof: std::option::Option<crate::model::ValueHolder>,
     }
     impl Builder {
         /// <p>The block data object in Amazon Ion format.</p>
@@ -863,7 +864,7 @@ pub mod export_journal_to_s3_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        export_id: std::option::Option<std::string::String>,
+        pub(crate) export_id: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The unique ID that QLDB assigns to each journal export job.</p>
@@ -929,11 +930,11 @@ pub mod describe_ledger_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        name: std::option::Option<std::string::String>,
-        arn: std::option::Option<std::string::String>,
-        state: std::option::Option<crate::model::LedgerState>,
-        creation_date_time: std::option::Option<smithy_types::Instant>,
-        deletion_protection: std::option::Option<bool>,
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) arn: std::option::Option<std::string::String>,
+        pub(crate) state: std::option::Option<crate::model::LedgerState>,
+        pub(crate) creation_date_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) deletion_protection: std::option::Option<bool>,
     }
     impl Builder {
         /// <p>The name of the ledger.</p>
@@ -1029,7 +1030,8 @@ pub mod describe_journal_s3_export_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        export_description: std::option::Option<crate::model::JournalS3ExportDescription>,
+        pub(crate) export_description:
+            std::option::Option<crate::model::JournalS3ExportDescription>,
     }
     impl Builder {
         /// <p>Information about the journal export job returned by a
@@ -1080,7 +1082,7 @@ pub mod describe_journal_kinesis_stream_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        stream: std::option::Option<crate::model::JournalKinesisStreamDescription>,
+        pub(crate) stream: std::option::Option<crate::model::JournalKinesisStreamDescription>,
     }
     impl Builder {
         /// <p>Information about the QLDB journal stream returned by a
@@ -1177,11 +1179,11 @@ pub mod create_ledger_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        name: std::option::Option<std::string::String>,
-        arn: std::option::Option<std::string::String>,
-        state: std::option::Option<crate::model::LedgerState>,
-        creation_date_time: std::option::Option<smithy_types::Instant>,
-        deletion_protection: std::option::Option<bool>,
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) arn: std::option::Option<std::string::String>,
+        pub(crate) state: std::option::Option<crate::model::LedgerState>,
+        pub(crate) creation_date_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) deletion_protection: std::option::Option<bool>,
     }
     impl Builder {
         /// <p>The name of the ledger.</p>
@@ -1276,7 +1278,7 @@ pub mod cancel_journal_kinesis_stream_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        stream_id: std::option::Option<std::string::String>,
+        pub(crate) stream_id: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The unique ID that QLDB assigns to each QLDB journal stream.</p>

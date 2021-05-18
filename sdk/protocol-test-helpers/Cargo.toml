@@ -12,3 +12,6 @@ thiserror = "1"
 serde_json = "1"
 # Not perfect for our needs, but good for now
 assert-json-diff = "1"
+
+pretty_assertions = "0.7.2"
+roxmltree = "0.14.1"

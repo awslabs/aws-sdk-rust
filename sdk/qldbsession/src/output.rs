@@ -38,13 +38,13 @@ pub mod send_command_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        start_session: std::option::Option<crate::model::StartSessionResult>,
-        start_transaction: std::option::Option<crate::model::StartTransactionResult>,
-        end_session: std::option::Option<crate::model::EndSessionResult>,
-        commit_transaction: std::option::Option<crate::model::CommitTransactionResult>,
-        abort_transaction: std::option::Option<crate::model::AbortTransactionResult>,
-        execute_statement: std::option::Option<crate::model::ExecuteStatementResult>,
-        fetch_page: std::option::Option<crate::model::FetchPageResult>,
+        pub(crate) start_session: std::option::Option<crate::model::StartSessionResult>,
+        pub(crate) start_transaction: std::option::Option<crate::model::StartTransactionResult>,
+        pub(crate) end_session: std::option::Option<crate::model::EndSessionResult>,
+        pub(crate) commit_transaction: std::option::Option<crate::model::CommitTransactionResult>,
+        pub(crate) abort_transaction: std::option::Option<crate::model::AbortTransactionResult>,
+        pub(crate) execute_statement: std::option::Option<crate::model::ExecuteStatementResult>,
+        pub(crate) fetch_page: std::option::Option<crate::model::FetchPageResult>,
     }
     impl Builder {
         /// <p>Contains the details of the started session that includes a session token. This

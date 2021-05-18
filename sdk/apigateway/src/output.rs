@@ -41,13 +41,13 @@ pub mod update_vpc_link_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        id: std::option::Option<std::string::String>,
-        name: std::option::Option<std::string::String>,
-        description: std::option::Option<std::string::String>,
-        target_arns: std::option::Option<std::vec::Vec<std::string::String>>,
-        status: std::option::Option<crate::model::VpcLinkStatus>,
-        status_message: std::option::Option<std::string::String>,
-        tags: std::option::Option<
+        pub(crate) id: std::option::Option<std::string::String>,
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) target_arns: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) status: std::option::Option<crate::model::VpcLinkStatus>,
+        pub(crate) status_message: std::option::Option<std::string::String>,
+        pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
     }
@@ -198,14 +198,14 @@ pub mod update_usage_plan_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        id: std::option::Option<std::string::String>,
-        name: std::option::Option<std::string::String>,
-        description: std::option::Option<std::string::String>,
-        api_stages: std::option::Option<std::vec::Vec<crate::model::ApiStage>>,
-        throttle: std::option::Option<crate::model::ThrottleSettings>,
-        quota: std::option::Option<crate::model::QuotaSettings>,
-        product_code: std::option::Option<std::string::String>,
-        tags: std::option::Option<
+        pub(crate) id: std::option::Option<std::string::String>,
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) api_stages: std::option::Option<std::vec::Vec<crate::model::ApiStage>>,
+        pub(crate) throttle: std::option::Option<crate::model::ThrottleSettings>,
+        pub(crate) quota: std::option::Option<crate::model::QuotaSettings>,
+        pub(crate) product_code: std::option::Option<std::string::String>,
+        pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
     }
@@ -360,13 +360,13 @@ pub mod update_usage_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        usage_plan_id: std::option::Option<std::string::String>,
-        start_date: std::option::Option<std::string::String>,
-        end_date: std::option::Option<std::string::String>,
-        items: std::option::Option<
+        pub(crate) usage_plan_id: std::option::Option<std::string::String>,
+        pub(crate) start_date: std::option::Option<std::string::String>,
+        pub(crate) end_date: std::option::Option<std::string::String>,
+        pub(crate) items: std::option::Option<
             std::collections::HashMap<std::string::String, std::vec::Vec<std::vec::Vec<i64>>>,
         >,
-        position: std::option::Option<std::string::String>,
+        pub(crate) position: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The plan Id associated with this usage data.</p>
@@ -519,29 +519,29 @@ pub mod update_stage_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        deployment_id: std::option::Option<std::string::String>,
-        client_certificate_id: std::option::Option<std::string::String>,
-        stage_name: std::option::Option<std::string::String>,
-        description: std::option::Option<std::string::String>,
-        cache_cluster_enabled: std::option::Option<bool>,
-        cache_cluster_size: std::option::Option<crate::model::CacheClusterSize>,
-        cache_cluster_status: std::option::Option<crate::model::CacheClusterStatus>,
-        method_settings: std::option::Option<
+        pub(crate) deployment_id: std::option::Option<std::string::String>,
+        pub(crate) client_certificate_id: std::option::Option<std::string::String>,
+        pub(crate) stage_name: std::option::Option<std::string::String>,
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) cache_cluster_enabled: std::option::Option<bool>,
+        pub(crate) cache_cluster_size: std::option::Option<crate::model::CacheClusterSize>,
+        pub(crate) cache_cluster_status: std::option::Option<crate::model::CacheClusterStatus>,
+        pub(crate) method_settings: std::option::Option<
             std::collections::HashMap<std::string::String, crate::model::MethodSetting>,
         >,
-        variables: std::option::Option<
+        pub(crate) variables: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
-        documentation_version: std::option::Option<std::string::String>,
-        access_log_settings: std::option::Option<crate::model::AccessLogSettings>,
-        canary_settings: std::option::Option<crate::model::CanarySettings>,
-        tracing_enabled: std::option::Option<bool>,
-        web_acl_arn: std::option::Option<std::string::String>,
-        tags: std::option::Option<
+        pub(crate) documentation_version: std::option::Option<std::string::String>,
+        pub(crate) access_log_settings: std::option::Option<crate::model::AccessLogSettings>,
+        pub(crate) canary_settings: std::option::Option<crate::model::CanarySettings>,
+        pub(crate) tracing_enabled: std::option::Option<bool>,
+        pub(crate) web_acl_arn: std::option::Option<std::string::String>,
+        pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
-        created_date: std::option::Option<smithy_types::Instant>,
-        last_updated_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) last_updated_date: std::option::Option<smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The identifier of the <a>Deployment</a> that the stage points to.</p>
@@ -842,21 +842,21 @@ pub mod update_rest_api_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        id: std::option::Option<std::string::String>,
-        name: std::option::Option<std::string::String>,
-        description: std::option::Option<std::string::String>,
-        created_date: std::option::Option<smithy_types::Instant>,
-        version: std::option::Option<std::string::String>,
-        warnings: std::option::Option<std::vec::Vec<std::string::String>>,
-        binary_media_types: std::option::Option<std::vec::Vec<std::string::String>>,
-        minimum_compression_size: std::option::Option<i32>,
-        api_key_source: std::option::Option<crate::model::ApiKeySourceType>,
-        endpoint_configuration: std::option::Option<crate::model::EndpointConfiguration>,
-        policy: std::option::Option<std::string::String>,
-        tags: std::option::Option<
+        pub(crate) id: std::option::Option<std::string::String>,
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) created_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) version: std::option::Option<std::string::String>,
+        pub(crate) warnings: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) binary_media_types: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) minimum_compression_size: std::option::Option<i32>,
+        pub(crate) api_key_source: std::option::Option<crate::model::ApiKeySourceType>,
+        pub(crate) endpoint_configuration: std::option::Option<crate::model::EndpointConfiguration>,
+        pub(crate) policy: std::option::Option<std::string::String>,
+        pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
-        disable_execute_api_endpoint: std::option::Option<bool>,
+        pub(crate) disable_execute_api_endpoint: std::option::Option<bool>,
     }
     impl Builder {
         /// <p>The API's identifier. This identifier is unique across all of your APIs in API Gateway.</p>
@@ -1215,11 +1215,11 @@ pub mod update_resource_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        id: std::option::Option<std::string::String>,
-        parent_id: std::option::Option<std::string::String>,
-        path_part: std::option::Option<std::string::String>,
-        path: std::option::Option<std::string::String>,
-        resource_methods: std::option::Option<
+        pub(crate) id: std::option::Option<std::string::String>,
+        pub(crate) parent_id: std::option::Option<std::string::String>,
+        pub(crate) path_part: std::option::Option<std::string::String>,
+        pub(crate) path: std::option::Option<std::string::String>,
+        pub(crate) resource_methods: std::option::Option<
             std::collections::HashMap<std::string::String, crate::model::Method>,
         >,
     }
@@ -1334,10 +1334,10 @@ pub mod update_request_validator_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        id: std::option::Option<std::string::String>,
-        name: std::option::Option<std::string::String>,
-        validate_request_body: std::option::Option<bool>,
-        validate_request_parameters: std::option::Option<bool>,
+        pub(crate) id: std::option::Option<std::string::String>,
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) validate_request_body: std::option::Option<bool>,
+        pub(crate) validate_request_parameters: std::option::Option<bool>,
     }
     impl Builder {
         /// <p>The identifier of this <a>RequestValidator</a>.</p>
@@ -1433,11 +1433,11 @@ pub mod update_model_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        id: std::option::Option<std::string::String>,
-        name: std::option::Option<std::string::String>,
-        description: std::option::Option<std::string::String>,
-        schema: std::option::Option<std::string::String>,
-        content_type: std::option::Option<std::string::String>,
+        pub(crate) id: std::option::Option<std::string::String>,
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) schema: std::option::Option<std::string::String>,
+        pub(crate) content_type: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The identifier for the model resource.</p>
@@ -1576,10 +1576,10 @@ pub mod update_method_response_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        status_code: std::option::Option<std::string::String>,
-        response_parameters:
+        pub(crate) status_code: std::option::Option<std::string::String>,
+        pub(crate) response_parameters:
             std::option::Option<std::collections::HashMap<std::string::String, bool>>,
-        response_models: std::option::Option<
+        pub(crate) response_models: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
     }
@@ -1998,22 +1998,22 @@ pub mod update_method_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        http_method: std::option::Option<std::string::String>,
-        authorization_type: std::option::Option<std::string::String>,
-        authorizer_id: std::option::Option<std::string::String>,
-        api_key_required: std::option::Option<bool>,
-        request_validator_id: std::option::Option<std::string::String>,
-        operation_name: std::option::Option<std::string::String>,
-        request_parameters:
+        pub(crate) http_method: std::option::Option<std::string::String>,
+        pub(crate) authorization_type: std::option::Option<std::string::String>,
+        pub(crate) authorizer_id: std::option::Option<std::string::String>,
+        pub(crate) api_key_required: std::option::Option<bool>,
+        pub(crate) request_validator_id: std::option::Option<std::string::String>,
+        pub(crate) operation_name: std::option::Option<std::string::String>,
+        pub(crate) request_parameters:
             std::option::Option<std::collections::HashMap<std::string::String, bool>>,
-        request_models: std::option::Option<
+        pub(crate) request_models: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
-        method_responses: std::option::Option<
+        pub(crate) method_responses: std::option::Option<
             std::collections::HashMap<std::string::String, crate::model::MethodResponse>,
         >,
-        method_integration: std::option::Option<crate::model::Integration>,
-        authorization_scopes: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) method_integration: std::option::Option<crate::model::Integration>,
+        pub(crate) authorization_scopes: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
         /// <p>The method's HTTP verb.</p>
@@ -2313,15 +2313,15 @@ pub mod update_integration_response_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        status_code: std::option::Option<std::string::String>,
-        selection_pattern: std::option::Option<std::string::String>,
-        response_parameters: std::option::Option<
+        pub(crate) status_code: std::option::Option<std::string::String>,
+        pub(crate) selection_pattern: std::option::Option<std::string::String>,
+        pub(crate) response_parameters: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
-        response_templates: std::option::Option<
+        pub(crate) response_templates: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
-        content_handling: std::option::Option<crate::model::ContentHandlingStrategy>,
+        pub(crate) content_handling: std::option::Option<crate::model::ContentHandlingStrategy>,
     }
     impl Builder {
         /// <p>Specifies the status code that is used to map the integration response to an existing <a>MethodResponse</a>.</p>
@@ -2574,27 +2574,27 @@ pub mod update_integration_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        r#type: std::option::Option<crate::model::IntegrationType>,
-        http_method: std::option::Option<std::string::String>,
-        uri: std::option::Option<std::string::String>,
-        connection_type: std::option::Option<crate::model::ConnectionType>,
-        connection_id: std::option::Option<std::string::String>,
-        credentials: std::option::Option<std::string::String>,
-        request_parameters: std::option::Option<
+        pub(crate) r#type: std::option::Option<crate::model::IntegrationType>,
+        pub(crate) http_method: std::option::Option<std::string::String>,
+        pub(crate) uri: std::option::Option<std::string::String>,
+        pub(crate) connection_type: std::option::Option<crate::model::ConnectionType>,
+        pub(crate) connection_id: std::option::Option<std::string::String>,
+        pub(crate) credentials: std::option::Option<std::string::String>,
+        pub(crate) request_parameters: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
-        request_templates: std::option::Option<
+        pub(crate) request_templates: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
-        passthrough_behavior: std::option::Option<std::string::String>,
-        content_handling: std::option::Option<crate::model::ContentHandlingStrategy>,
-        timeout_in_millis: std::option::Option<i32>,
-        cache_namespace: std::option::Option<std::string::String>,
-        cache_key_parameters: std::option::Option<std::vec::Vec<std::string::String>>,
-        integration_responses: std::option::Option<
+        pub(crate) passthrough_behavior: std::option::Option<std::string::String>,
+        pub(crate) content_handling: std::option::Option<crate::model::ContentHandlingStrategy>,
+        pub(crate) timeout_in_millis: std::option::Option<i32>,
+        pub(crate) cache_namespace: std::option::Option<std::string::String>,
+        pub(crate) cache_key_parameters: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) integration_responses: std::option::Option<
             std::collections::HashMap<std::string::String, crate::model::IntegrationResponse>,
         >,
-        tls_config: std::option::Option<crate::model::TlsConfig>,
+        pub(crate) tls_config: std::option::Option<crate::model::TlsConfig>,
     }
     impl Builder {
         /// <p>Specifies an API method integration type. The valid value is one of the following:</p>
@@ -2939,15 +2939,15 @@ pub mod update_gateway_response_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        response_type: std::option::Option<crate::model::GatewayResponseType>,
-        status_code: std::option::Option<std::string::String>,
-        response_parameters: std::option::Option<
+        pub(crate) response_type: std::option::Option<crate::model::GatewayResponseType>,
+        pub(crate) status_code: std::option::Option<std::string::String>,
+        pub(crate) response_parameters: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
-        response_templates: std::option::Option<
+        pub(crate) response_templates: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
-        default_response: std::option::Option<bool>,
+        pub(crate) default_response: std::option::Option<bool>,
     }
     impl Builder {
         /// <p>The response type of the associated <a>GatewayResponse</a>. Valid values are <ul><li>ACCESS_DENIED</li><li>API_CONFIGURATION_ERROR</li><li>AUTHORIZER_FAILURE</li><li> AUTHORIZER_CONFIGURATION_ERROR</li><li>BAD_REQUEST_PARAMETERS</li><li>BAD_REQUEST_BODY</li><li>DEFAULT_4XX</li><li>DEFAULT_5XX</li><li>EXPIRED_TOKEN</li><li>INVALID_SIGNATURE</li><li>INTEGRATION_FAILURE</li><li>INTEGRATION_TIMEOUT</li><li>INVALID_API_KEY</li><li>MISSING_AUTHENTICATION_TOKEN</li><li> QUOTA_EXCEEDED</li><li>REQUEST_TOO_LARGE</li><li>RESOURCE_NOT_FOUND</li><li>THROTTLED</li><li>UNAUTHORIZED</li><li>UNSUPPORTED_MEDIA_TYPE</li></ul> </p>
@@ -3116,24 +3116,25 @@ pub mod update_domain_name_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        domain_name: std::option::Option<std::string::String>,
-        certificate_name: std::option::Option<std::string::String>,
-        certificate_arn: std::option::Option<std::string::String>,
-        certificate_upload_date: std::option::Option<smithy_types::Instant>,
-        regional_domain_name: std::option::Option<std::string::String>,
-        regional_hosted_zone_id: std::option::Option<std::string::String>,
-        regional_certificate_name: std::option::Option<std::string::String>,
-        regional_certificate_arn: std::option::Option<std::string::String>,
-        distribution_domain_name: std::option::Option<std::string::String>,
-        distribution_hosted_zone_id: std::option::Option<std::string::String>,
-        endpoint_configuration: std::option::Option<crate::model::EndpointConfiguration>,
-        domain_name_status: std::option::Option<crate::model::DomainNameStatus>,
-        domain_name_status_message: std::option::Option<std::string::String>,
-        security_policy: std::option::Option<crate::model::SecurityPolicy>,
-        tags: std::option::Option<
+        pub(crate) domain_name: std::option::Option<std::string::String>,
+        pub(crate) certificate_name: std::option::Option<std::string::String>,
+        pub(crate) certificate_arn: std::option::Option<std::string::String>,
+        pub(crate) certificate_upload_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) regional_domain_name: std::option::Option<std::string::String>,
+        pub(crate) regional_hosted_zone_id: std::option::Option<std::string::String>,
+        pub(crate) regional_certificate_name: std::option::Option<std::string::String>,
+        pub(crate) regional_certificate_arn: std::option::Option<std::string::String>,
+        pub(crate) distribution_domain_name: std::option::Option<std::string::String>,
+        pub(crate) distribution_hosted_zone_id: std::option::Option<std::string::String>,
+        pub(crate) endpoint_configuration: std::option::Option<crate::model::EndpointConfiguration>,
+        pub(crate) domain_name_status: std::option::Option<crate::model::DomainNameStatus>,
+        pub(crate) domain_name_status_message: std::option::Option<std::string::String>,
+        pub(crate) security_policy: std::option::Option<crate::model::SecurityPolicy>,
+        pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
-        mutual_tls_authentication: std::option::Option<crate::model::MutualTlsAuthentication>,
+        pub(crate) mutual_tls_authentication:
+            std::option::Option<crate::model::MutualTlsAuthentication>,
     }
     impl Builder {
         /// <p>The custom domain name as an API host name, for example, <code>my-api.example.com</code>.</p>
@@ -3395,9 +3396,9 @@ pub mod update_documentation_version_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        version: std::option::Option<std::string::String>,
-        created_date: std::option::Option<smithy_types::Instant>,
-        description: std::option::Option<std::string::String>,
+        pub(crate) version: std::option::Option<std::string::String>,
+        pub(crate) created_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) description: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The version identifier of the API documentation snapshot.</p>
@@ -3476,9 +3477,9 @@ pub mod update_documentation_part_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        id: std::option::Option<std::string::String>,
-        location: std::option::Option<crate::model::DocumentationPartLocation>,
-        properties: std::option::Option<std::string::String>,
+        pub(crate) id: std::option::Option<std::string::String>,
+        pub(crate) location: std::option::Option<crate::model::DocumentationPartLocation>,
+        pub(crate) properties: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The <a>DocumentationPart</a> identifier, generated by API Gateway when the <code>DocumentationPart</code> is created.</p>
@@ -3568,10 +3569,10 @@ pub mod update_deployment_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        id: std::option::Option<std::string::String>,
-        description: std::option::Option<std::string::String>,
-        created_date: std::option::Option<smithy_types::Instant>,
-        api_summary: std::option::Option<
+        pub(crate) id: std::option::Option<std::string::String>,
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) created_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) api_summary: std::option::Option<
             std::collections::HashMap<
                 std::string::String,
                 std::collections::HashMap<std::string::String, crate::model::MethodSnapshot>,
@@ -3686,12 +3687,12 @@ pub mod update_client_certificate_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        client_certificate_id: std::option::Option<std::string::String>,
-        description: std::option::Option<std::string::String>,
-        pem_encoded_certificate: std::option::Option<std::string::String>,
-        created_date: std::option::Option<smithy_types::Instant>,
-        expiration_date: std::option::Option<smithy_types::Instant>,
-        tags: std::option::Option<
+        pub(crate) client_certificate_id: std::option::Option<std::string::String>,
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) pem_encoded_certificate: std::option::Option<std::string::String>,
+        pub(crate) created_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) expiration_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
     }
@@ -3819,9 +3820,9 @@ pub mod update_base_path_mapping_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        base_path: std::option::Option<std::string::String>,
-        rest_api_id: std::option::Option<std::string::String>,
-        stage: std::option::Option<std::string::String>,
+        pub(crate) base_path: std::option::Option<std::string::String>,
+        pub(crate) rest_api_id: std::option::Option<std::string::String>,
+        pub(crate) stage: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The base path name that callers of the API must provide as part of the URL after the domain name.</p>
@@ -3925,16 +3926,16 @@ pub mod update_authorizer_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        id: std::option::Option<std::string::String>,
-        name: std::option::Option<std::string::String>,
-        r#type: std::option::Option<crate::model::AuthorizerType>,
-        provider_ar_ns: std::option::Option<std::vec::Vec<std::string::String>>,
-        auth_type: std::option::Option<std::string::String>,
-        authorizer_uri: std::option::Option<std::string::String>,
-        authorizer_credentials: std::option::Option<std::string::String>,
-        identity_source: std::option::Option<std::string::String>,
-        identity_validation_expression: std::option::Option<std::string::String>,
-        authorizer_result_ttl_in_seconds: std::option::Option<i32>,
+        pub(crate) id: std::option::Option<std::string::String>,
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) r#type: std::option::Option<crate::model::AuthorizerType>,
+        pub(crate) provider_ar_ns: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) auth_type: std::option::Option<std::string::String>,
+        pub(crate) authorizer_uri: std::option::Option<std::string::String>,
+        pub(crate) authorizer_credentials: std::option::Option<std::string::String>,
+        pub(crate) identity_source: std::option::Option<std::string::String>,
+        pub(crate) identity_validation_expression: std::option::Option<std::string::String>,
+        pub(crate) authorizer_result_ttl_in_seconds: std::option::Option<i32>,
     }
     impl Builder {
         /// <p>The identifier for the authorizer resource.</p>
@@ -4121,16 +4122,16 @@ pub mod update_api_key_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        id: std::option::Option<std::string::String>,
-        value: std::option::Option<std::string::String>,
-        name: std::option::Option<std::string::String>,
-        customer_id: std::option::Option<std::string::String>,
-        description: std::option::Option<std::string::String>,
-        enabled: std::option::Option<bool>,
-        created_date: std::option::Option<smithy_types::Instant>,
-        last_updated_date: std::option::Option<smithy_types::Instant>,
-        stage_keys: std::option::Option<std::vec::Vec<std::string::String>>,
-        tags: std::option::Option<
+        pub(crate) id: std::option::Option<std::string::String>,
+        pub(crate) value: std::option::Option<std::string::String>,
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) customer_id: std::option::Option<std::string::String>,
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) enabled: std::option::Option<bool>,
+        pub(crate) created_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) last_updated_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) stage_keys: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
     }
@@ -4343,10 +4344,10 @@ pub mod update_account_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        cloudwatch_role_arn: std::option::Option<std::string::String>,
-        throttle_settings: std::option::Option<crate::model::ThrottleSettings>,
-        features: std::option::Option<std::vec::Vec<std::string::String>>,
-        api_key_version: std::option::Option<std::string::String>,
+        pub(crate) cloudwatch_role_arn: std::option::Option<std::string::String>,
+        pub(crate) throttle_settings: std::option::Option<crate::model::ThrottleSettings>,
+        pub(crate) features: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) api_key_version: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The ARN of an Amazon CloudWatch role for the current <a>Account</a>. </p>
@@ -4486,16 +4487,16 @@ pub mod test_invoke_method_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        status: std::option::Option<i32>,
-        body: std::option::Option<std::string::String>,
-        headers: std::option::Option<
+        pub(crate) status: std::option::Option<i32>,
+        pub(crate) body: std::option::Option<std::string::String>,
+        pub(crate) headers: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
-        multi_value_headers: std::option::Option<
+        pub(crate) multi_value_headers: std::option::Option<
             std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
         >,
-        log: std::option::Option<std::string::String>,
-        latency: std::option::Option<i64>,
+        pub(crate) log: std::option::Option<std::string::String>,
+        pub(crate) latency: std::option::Option<i64>,
     }
     impl Builder {
         /// <p>The HTTP status code.</p>
@@ -4632,15 +4633,15 @@ pub mod test_invoke_authorizer_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        client_status: std::option::Option<i32>,
-        log: std::option::Option<std::string::String>,
-        latency: std::option::Option<i64>,
-        principal_id: std::option::Option<std::string::String>,
-        policy: std::option::Option<std::string::String>,
-        authorization: std::option::Option<
+        pub(crate) client_status: std::option::Option<i32>,
+        pub(crate) log: std::option::Option<std::string::String>,
+        pub(crate) latency: std::option::Option<i64>,
+        pub(crate) principal_id: std::option::Option<std::string::String>,
+        pub(crate) policy: std::option::Option<std::string::String>,
+        pub(crate) authorization: std::option::Option<
             std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
         >,
-        claims: std::option::Option<
+        pub(crate) claims: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
     }
@@ -4841,21 +4842,21 @@ pub mod put_rest_api_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        id: std::option::Option<std::string::String>,
-        name: std::option::Option<std::string::String>,
-        description: std::option::Option<std::string::String>,
-        created_date: std::option::Option<smithy_types::Instant>,
-        version: std::option::Option<std::string::String>,
-        warnings: std::option::Option<std::vec::Vec<std::string::String>>,
-        binary_media_types: std::option::Option<std::vec::Vec<std::string::String>>,
-        minimum_compression_size: std::option::Option<i32>,
-        api_key_source: std::option::Option<crate::model::ApiKeySourceType>,
-        endpoint_configuration: std::option::Option<crate::model::EndpointConfiguration>,
-        policy: std::option::Option<std::string::String>,
-        tags: std::option::Option<
+        pub(crate) id: std::option::Option<std::string::String>,
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) created_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) version: std::option::Option<std::string::String>,
+        pub(crate) warnings: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) binary_media_types: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) minimum_compression_size: std::option::Option<i32>,
+        pub(crate) api_key_source: std::option::Option<crate::model::ApiKeySourceType>,
+        pub(crate) endpoint_configuration: std::option::Option<crate::model::EndpointConfiguration>,
+        pub(crate) policy: std::option::Option<std::string::String>,
+        pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
-        disable_execute_api_endpoint: std::option::Option<bool>,
+        pub(crate) disable_execute_api_endpoint: std::option::Option<bool>,
     }
     impl Builder {
         /// <p>The API's identifier. This identifier is unique across all of your APIs in API Gateway.</p>
@@ -5098,10 +5099,10 @@ pub mod put_method_response_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        status_code: std::option::Option<std::string::String>,
-        response_parameters:
+        pub(crate) status_code: std::option::Option<std::string::String>,
+        pub(crate) response_parameters:
             std::option::Option<std::collections::HashMap<std::string::String, bool>>,
-        response_models: std::option::Option<
+        pub(crate) response_models: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
     }
@@ -5520,22 +5521,22 @@ pub mod put_method_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        http_method: std::option::Option<std::string::String>,
-        authorization_type: std::option::Option<std::string::String>,
-        authorizer_id: std::option::Option<std::string::String>,
-        api_key_required: std::option::Option<bool>,
-        request_validator_id: std::option::Option<std::string::String>,
-        operation_name: std::option::Option<std::string::String>,
-        request_parameters:
+        pub(crate) http_method: std::option::Option<std::string::String>,
+        pub(crate) authorization_type: std::option::Option<std::string::String>,
+        pub(crate) authorizer_id: std::option::Option<std::string::String>,
+        pub(crate) api_key_required: std::option::Option<bool>,
+        pub(crate) request_validator_id: std::option::Option<std::string::String>,
+        pub(crate) operation_name: std::option::Option<std::string::String>,
+        pub(crate) request_parameters:
             std::option::Option<std::collections::HashMap<std::string::String, bool>>,
-        request_models: std::option::Option<
+        pub(crate) request_models: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
-        method_responses: std::option::Option<
+        pub(crate) method_responses: std::option::Option<
             std::collections::HashMap<std::string::String, crate::model::MethodResponse>,
         >,
-        method_integration: std::option::Option<crate::model::Integration>,
-        authorization_scopes: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) method_integration: std::option::Option<crate::model::Integration>,
+        pub(crate) authorization_scopes: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
         /// <p>The method's HTTP verb.</p>
@@ -5835,15 +5836,15 @@ pub mod put_integration_response_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        status_code: std::option::Option<std::string::String>,
-        selection_pattern: std::option::Option<std::string::String>,
-        response_parameters: std::option::Option<
+        pub(crate) status_code: std::option::Option<std::string::String>,
+        pub(crate) selection_pattern: std::option::Option<std::string::String>,
+        pub(crate) response_parameters: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
-        response_templates: std::option::Option<
+        pub(crate) response_templates: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
-        content_handling: std::option::Option<crate::model::ContentHandlingStrategy>,
+        pub(crate) content_handling: std::option::Option<crate::model::ContentHandlingStrategy>,
     }
     impl Builder {
         /// <p>Specifies the status code that is used to map the integration response to an existing <a>MethodResponse</a>.</p>
@@ -6096,27 +6097,27 @@ pub mod put_integration_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        r#type: std::option::Option<crate::model::IntegrationType>,
-        http_method: std::option::Option<std::string::String>,
-        uri: std::option::Option<std::string::String>,
-        connection_type: std::option::Option<crate::model::ConnectionType>,
-        connection_id: std::option::Option<std::string::String>,
-        credentials: std::option::Option<std::string::String>,
-        request_parameters: std::option::Option<
+        pub(crate) r#type: std::option::Option<crate::model::IntegrationType>,
+        pub(crate) http_method: std::option::Option<std::string::String>,
+        pub(crate) uri: std::option::Option<std::string::String>,
+        pub(crate) connection_type: std::option::Option<crate::model::ConnectionType>,
+        pub(crate) connection_id: std::option::Option<std::string::String>,
+        pub(crate) credentials: std::option::Option<std::string::String>,
+        pub(crate) request_parameters: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
-        request_templates: std::option::Option<
+        pub(crate) request_templates: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
-        passthrough_behavior: std::option::Option<std::string::String>,
-        content_handling: std::option::Option<crate::model::ContentHandlingStrategy>,
-        timeout_in_millis: std::option::Option<i32>,
-        cache_namespace: std::option::Option<std::string::String>,
-        cache_key_parameters: std::option::Option<std::vec::Vec<std::string::String>>,
-        integration_responses: std::option::Option<
+        pub(crate) passthrough_behavior: std::option::Option<std::string::String>,
+        pub(crate) content_handling: std::option::Option<crate::model::ContentHandlingStrategy>,
+        pub(crate) timeout_in_millis: std::option::Option<i32>,
+        pub(crate) cache_namespace: std::option::Option<std::string::String>,
+        pub(crate) cache_key_parameters: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) integration_responses: std::option::Option<
             std::collections::HashMap<std::string::String, crate::model::IntegrationResponse>,
         >,
-        tls_config: std::option::Option<crate::model::TlsConfig>,
+        pub(crate) tls_config: std::option::Option<crate::model::TlsConfig>,
     }
     impl Builder {
         /// <p>Specifies an API method integration type. The valid value is one of the following:</p>
@@ -6461,15 +6462,15 @@ pub mod put_gateway_response_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        response_type: std::option::Option<crate::model::GatewayResponseType>,
-        status_code: std::option::Option<std::string::String>,
-        response_parameters: std::option::Option<
+        pub(crate) response_type: std::option::Option<crate::model::GatewayResponseType>,
+        pub(crate) status_code: std::option::Option<std::string::String>,
+        pub(crate) response_parameters: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
-        response_templates: std::option::Option<
+        pub(crate) response_templates: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
-        default_response: std::option::Option<bool>,
+        pub(crate) default_response: std::option::Option<bool>,
     }
     impl Builder {
         /// <p>The response type of the associated <a>GatewayResponse</a>. Valid values are <ul><li>ACCESS_DENIED</li><li>API_CONFIGURATION_ERROR</li><li>AUTHORIZER_FAILURE</li><li> AUTHORIZER_CONFIGURATION_ERROR</li><li>BAD_REQUEST_PARAMETERS</li><li>BAD_REQUEST_BODY</li><li>DEFAULT_4XX</li><li>DEFAULT_5XX</li><li>EXPIRED_TOKEN</li><li>INVALID_SIGNATURE</li><li>INTEGRATION_FAILURE</li><li>INTEGRATION_TIMEOUT</li><li>INVALID_API_KEY</li><li>MISSING_AUTHENTICATION_TOKEN</li><li> QUOTA_EXCEEDED</li><li>REQUEST_TOO_LARGE</li><li>RESOURCE_NOT_FOUND</li><li>THROTTLED</li><li>UNAUTHORIZED</li><li>UNSUPPORTED_MEDIA_TYPE</li></ul> </p>
@@ -6622,21 +6623,21 @@ pub mod import_rest_api_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        id: std::option::Option<std::string::String>,
-        name: std::option::Option<std::string::String>,
-        description: std::option::Option<std::string::String>,
-        created_date: std::option::Option<smithy_types::Instant>,
-        version: std::option::Option<std::string::String>,
-        warnings: std::option::Option<std::vec::Vec<std::string::String>>,
-        binary_media_types: std::option::Option<std::vec::Vec<std::string::String>>,
-        minimum_compression_size: std::option::Option<i32>,
-        api_key_source: std::option::Option<crate::model::ApiKeySourceType>,
-        endpoint_configuration: std::option::Option<crate::model::EndpointConfiguration>,
-        policy: std::option::Option<std::string::String>,
-        tags: std::option::Option<
+        pub(crate) id: std::option::Option<std::string::String>,
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) created_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) version: std::option::Option<std::string::String>,
+        pub(crate) warnings: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) binary_media_types: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) minimum_compression_size: std::option::Option<i32>,
+        pub(crate) api_key_source: std::option::Option<crate::model::ApiKeySourceType>,
+        pub(crate) endpoint_configuration: std::option::Option<crate::model::EndpointConfiguration>,
+        pub(crate) policy: std::option::Option<std::string::String>,
+        pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
-        disable_execute_api_endpoint: std::option::Option<bool>,
+        pub(crate) disable_execute_api_endpoint: std::option::Option<bool>,
     }
     impl Builder {
         /// <p>The API's identifier. This identifier is unique across all of your APIs in API Gateway.</p>
@@ -6834,8 +6835,8 @@ pub mod import_documentation_parts_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        ids: std::option::Option<std::vec::Vec<std::string::String>>,
-        warnings: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) ids: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) warnings: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
         pub fn ids(mut self, inp: impl Into<std::string::String>) -> Self {
@@ -6903,8 +6904,8 @@ pub mod import_api_keys_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        ids: std::option::Option<std::vec::Vec<std::string::String>>,
-        warnings: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) ids: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) warnings: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
         pub fn ids(mut self, inp: impl Into<std::string::String>) -> Self {
@@ -6976,8 +6977,8 @@ pub mod get_vpc_links_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        items: std::option::Option<std::vec::Vec<crate::model::VpcLink>>,
-        position: std::option::Option<std::string::String>,
+        pub(crate) items: std::option::Option<std::vec::Vec<crate::model::VpcLink>>,
+        pub(crate) position: std::option::Option<std::string::String>,
     }
     impl Builder {
         pub fn items(mut self, inp: impl Into<crate::model::VpcLink>) -> Self {
@@ -7060,13 +7061,13 @@ pub mod get_vpc_link_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        id: std::option::Option<std::string::String>,
-        name: std::option::Option<std::string::String>,
-        description: std::option::Option<std::string::String>,
-        target_arns: std::option::Option<std::vec::Vec<std::string::String>>,
-        status: std::option::Option<crate::model::VpcLinkStatus>,
-        status_message: std::option::Option<std::string::String>,
-        tags: std::option::Option<
+        pub(crate) id: std::option::Option<std::string::String>,
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) target_arns: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) status: std::option::Option<crate::model::VpcLinkStatus>,
+        pub(crate) status_message: std::option::Option<std::string::String>,
+        pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
     }
@@ -7195,8 +7196,8 @@ pub mod get_usage_plans_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        items: std::option::Option<std::vec::Vec<crate::model::UsagePlan>>,
-        position: std::option::Option<std::string::String>,
+        pub(crate) items: std::option::Option<std::vec::Vec<crate::model::UsagePlan>>,
+        pub(crate) position: std::option::Option<std::string::String>,
     }
     impl Builder {
         pub fn items(mut self, inp: impl Into<crate::model::UsagePlan>) -> Self {
@@ -7263,8 +7264,8 @@ pub mod get_usage_plan_keys_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        items: std::option::Option<std::vec::Vec<crate::model::UsagePlanKey>>,
-        position: std::option::Option<std::string::String>,
+        pub(crate) items: std::option::Option<std::vec::Vec<crate::model::UsagePlanKey>>,
+        pub(crate) position: std::option::Option<std::string::String>,
     }
     impl Builder {
         pub fn items(mut self, inp: impl Into<crate::model::UsagePlanKey>) -> Self {
@@ -7340,10 +7341,10 @@ pub mod get_usage_plan_key_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        id: std::option::Option<std::string::String>,
-        r#type: std::option::Option<std::string::String>,
-        value: std::option::Option<std::string::String>,
-        name: std::option::Option<std::string::String>,
+        pub(crate) id: std::option::Option<std::string::String>,
+        pub(crate) r#type: std::option::Option<std::string::String>,
+        pub(crate) value: std::option::Option<std::string::String>,
+        pub(crate) name: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The Id of a usage plan key.</p>
@@ -7448,14 +7449,14 @@ pub mod get_usage_plan_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        id: std::option::Option<std::string::String>,
-        name: std::option::Option<std::string::String>,
-        description: std::option::Option<std::string::String>,
-        api_stages: std::option::Option<std::vec::Vec<crate::model::ApiStage>>,
-        throttle: std::option::Option<crate::model::ThrottleSettings>,
-        quota: std::option::Option<crate::model::QuotaSettings>,
-        product_code: std::option::Option<std::string::String>,
-        tags: std::option::Option<
+        pub(crate) id: std::option::Option<std::string::String>,
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) api_stages: std::option::Option<std::vec::Vec<crate::model::ApiStage>>,
+        pub(crate) throttle: std::option::Option<crate::model::ThrottleSettings>,
+        pub(crate) quota: std::option::Option<crate::model::QuotaSettings>,
+        pub(crate) product_code: std::option::Option<std::string::String>,
+        pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
     }
@@ -7610,13 +7611,13 @@ pub mod get_usage_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        usage_plan_id: std::option::Option<std::string::String>,
-        start_date: std::option::Option<std::string::String>,
-        end_date: std::option::Option<std::string::String>,
-        items: std::option::Option<
+        pub(crate) usage_plan_id: std::option::Option<std::string::String>,
+        pub(crate) start_date: std::option::Option<std::string::String>,
+        pub(crate) end_date: std::option::Option<std::string::String>,
+        pub(crate) items: std::option::Option<
             std::collections::HashMap<std::string::String, std::vec::Vec<std::vec::Vec<i64>>>,
         >,
-        position: std::option::Option<std::string::String>,
+        pub(crate) position: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The plan Id associated with this usage data.</p>
@@ -7714,7 +7715,7 @@ pub mod get_tags_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        tags: std::option::Option<
+        pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
     }
@@ -7772,7 +7773,7 @@ pub mod get_stages_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        item: std::option::Option<std::vec::Vec<crate::model::Stage>>,
+        pub(crate) item: std::option::Option<std::vec::Vec<crate::model::Stage>>,
     }
     impl Builder {
         pub fn item(mut self, inp: impl Into<crate::model::Stage>) -> Self {
@@ -7877,29 +7878,29 @@ pub mod get_stage_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        deployment_id: std::option::Option<std::string::String>,
-        client_certificate_id: std::option::Option<std::string::String>,
-        stage_name: std::option::Option<std::string::String>,
-        description: std::option::Option<std::string::String>,
-        cache_cluster_enabled: std::option::Option<bool>,
-        cache_cluster_size: std::option::Option<crate::model::CacheClusterSize>,
-        cache_cluster_status: std::option::Option<crate::model::CacheClusterStatus>,
-        method_settings: std::option::Option<
+        pub(crate) deployment_id: std::option::Option<std::string::String>,
+        pub(crate) client_certificate_id: std::option::Option<std::string::String>,
+        pub(crate) stage_name: std::option::Option<std::string::String>,
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) cache_cluster_enabled: std::option::Option<bool>,
+        pub(crate) cache_cluster_size: std::option::Option<crate::model::CacheClusterSize>,
+        pub(crate) cache_cluster_status: std::option::Option<crate::model::CacheClusterStatus>,
+        pub(crate) method_settings: std::option::Option<
             std::collections::HashMap<std::string::String, crate::model::MethodSetting>,
         >,
-        variables: std::option::Option<
+        pub(crate) variables: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
-        documentation_version: std::option::Option<std::string::String>,
-        access_log_settings: std::option::Option<crate::model::AccessLogSettings>,
-        canary_settings: std::option::Option<crate::model::CanarySettings>,
-        tracing_enabled: std::option::Option<bool>,
-        web_acl_arn: std::option::Option<std::string::String>,
-        tags: std::option::Option<
+        pub(crate) documentation_version: std::option::Option<std::string::String>,
+        pub(crate) access_log_settings: std::option::Option<crate::model::AccessLogSettings>,
+        pub(crate) canary_settings: std::option::Option<crate::model::CanarySettings>,
+        pub(crate) tracing_enabled: std::option::Option<bool>,
+        pub(crate) web_acl_arn: std::option::Option<std::string::String>,
+        pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
-        created_date: std::option::Option<smithy_types::Instant>,
-        last_updated_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) last_updated_date: std::option::Option<smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The identifier of the <a>Deployment</a> that the stage points to.</p>
@@ -8157,7 +8158,7 @@ pub mod get_sdk_types_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        items: std::option::Option<std::vec::Vec<crate::model::SdkType>>,
+        pub(crate) items: std::option::Option<std::vec::Vec<crate::model::SdkType>>,
     }
     impl Builder {
         pub fn items(mut self, inp: impl Into<crate::model::SdkType>) -> Self {
@@ -8216,10 +8217,10 @@ pub mod get_sdk_type_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        id: std::option::Option<std::string::String>,
-        friendly_name: std::option::Option<std::string::String>,
-        description: std::option::Option<std::string::String>,
-        configuration_properties:
+        pub(crate) id: std::option::Option<std::string::String>,
+        pub(crate) friendly_name: std::option::Option<std::string::String>,
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) configuration_properties:
             std::option::Option<std::vec::Vec<crate::model::SdkConfigurationProperty>>,
     }
     impl Builder {
@@ -8310,9 +8311,9 @@ pub mod get_sdk_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        content_type: std::option::Option<std::string::String>,
-        content_disposition: std::option::Option<std::string::String>,
-        body: std::option::Option<smithy_types::Blob>,
+        pub(crate) content_type: std::option::Option<std::string::String>,
+        pub(crate) content_disposition: std::option::Option<std::string::String>,
+        pub(crate) body: std::option::Option<smithy_types::Blob>,
     }
     impl Builder {
         /// <p>The content-type header value in the HTTP response.</p>
@@ -8388,8 +8389,8 @@ pub mod get_rest_apis_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        items: std::option::Option<std::vec::Vec<crate::model::RestApi>>,
-        position: std::option::Option<std::string::String>,
+        pub(crate) items: std::option::Option<std::vec::Vec<crate::model::RestApi>>,
+        pub(crate) position: std::option::Option<std::string::String>,
     }
     impl Builder {
         pub fn items(mut self, inp: impl Into<crate::model::RestApi>) -> Self {
@@ -8493,21 +8494,21 @@ pub mod get_rest_api_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        id: std::option::Option<std::string::String>,
-        name: std::option::Option<std::string::String>,
-        description: std::option::Option<std::string::String>,
-        created_date: std::option::Option<smithy_types::Instant>,
-        version: std::option::Option<std::string::String>,
-        warnings: std::option::Option<std::vec::Vec<std::string::String>>,
-        binary_media_types: std::option::Option<std::vec::Vec<std::string::String>>,
-        minimum_compression_size: std::option::Option<i32>,
-        api_key_source: std::option::Option<crate::model::ApiKeySourceType>,
-        endpoint_configuration: std::option::Option<crate::model::EndpointConfiguration>,
-        policy: std::option::Option<std::string::String>,
-        tags: std::option::Option<
+        pub(crate) id: std::option::Option<std::string::String>,
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) created_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) version: std::option::Option<std::string::String>,
+        pub(crate) warnings: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) binary_media_types: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) minimum_compression_size: std::option::Option<i32>,
+        pub(crate) api_key_source: std::option::Option<crate::model::ApiKeySourceType>,
+        pub(crate) endpoint_configuration: std::option::Option<crate::model::EndpointConfiguration>,
+        pub(crate) policy: std::option::Option<std::string::String>,
+        pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
-        disable_execute_api_endpoint: std::option::Option<bool>,
+        pub(crate) disable_execute_api_endpoint: std::option::Option<bool>,
     }
     impl Builder {
         /// <p>The API's identifier. This identifier is unique across all of your APIs in API Gateway.</p>
@@ -8704,8 +8705,8 @@ pub mod get_resources_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        items: std::option::Option<std::vec::Vec<crate::model::Resource>>,
-        position: std::option::Option<std::string::String>,
+        pub(crate) items: std::option::Option<std::vec::Vec<crate::model::Resource>>,
+        pub(crate) position: std::option::Option<std::string::String>,
     }
     impl Builder {
         pub fn items(mut self, inp: impl Into<crate::model::Resource>) -> Self {
@@ -8934,11 +8935,11 @@ pub mod get_resource_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        id: std::option::Option<std::string::String>,
-        parent_id: std::option::Option<std::string::String>,
-        path_part: std::option::Option<std::string::String>,
-        path: std::option::Option<std::string::String>,
-        resource_methods: std::option::Option<
+        pub(crate) id: std::option::Option<std::string::String>,
+        pub(crate) parent_id: std::option::Option<std::string::String>,
+        pub(crate) path_part: std::option::Option<std::string::String>,
+        pub(crate) path: std::option::Option<std::string::String>,
+        pub(crate) resource_methods: std::option::Option<
             std::collections::HashMap<std::string::String, crate::model::Method>,
         >,
     }
@@ -9044,8 +9045,8 @@ pub mod get_request_validators_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        items: std::option::Option<std::vec::Vec<crate::model::RequestValidator>>,
-        position: std::option::Option<std::string::String>,
+        pub(crate) items: std::option::Option<std::vec::Vec<crate::model::RequestValidator>>,
+        pub(crate) position: std::option::Option<std::string::String>,
     }
     impl Builder {
         pub fn items(mut self, inp: impl Into<crate::model::RequestValidator>) -> Self {
@@ -9122,10 +9123,10 @@ pub mod get_request_validator_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        id: std::option::Option<std::string::String>,
-        name: std::option::Option<std::string::String>,
-        validate_request_body: std::option::Option<bool>,
-        validate_request_parameters: std::option::Option<bool>,
+        pub(crate) id: std::option::Option<std::string::String>,
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) validate_request_body: std::option::Option<bool>,
+        pub(crate) validate_request_parameters: std::option::Option<bool>,
     }
     impl Builder {
         /// <p>The identifier of this <a>RequestValidator</a>.</p>
@@ -9205,7 +9206,7 @@ pub mod get_model_template_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        value: std::option::Option<std::string::String>,
+        pub(crate) value: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The Apache <a target="_blank" href="https://velocity.apache.org/engine/devel/vtl-reference.html">Velocity Template Language (VTL)</a> template content used for the template resource.</p>
@@ -9256,8 +9257,8 @@ pub mod get_models_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        items: std::option::Option<std::vec::Vec<crate::model::Model>>,
-        position: std::option::Option<std::string::String>,
+        pub(crate) items: std::option::Option<std::vec::Vec<crate::model::Model>>,
+        pub(crate) position: std::option::Option<std::string::String>,
     }
     impl Builder {
         pub fn items(mut self, inp: impl Into<crate::model::Model>) -> Self {
@@ -9337,11 +9338,11 @@ pub mod get_model_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        id: std::option::Option<std::string::String>,
-        name: std::option::Option<std::string::String>,
-        description: std::option::Option<std::string::String>,
-        schema: std::option::Option<std::string::String>,
-        content_type: std::option::Option<std::string::String>,
+        pub(crate) id: std::option::Option<std::string::String>,
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) schema: std::option::Option<std::string::String>,
+        pub(crate) content_type: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The identifier for the model resource.</p>
@@ -9480,10 +9481,10 @@ pub mod get_method_response_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        status_code: std::option::Option<std::string::String>,
-        response_parameters:
+        pub(crate) status_code: std::option::Option<std::string::String>,
+        pub(crate) response_parameters:
             std::option::Option<std::collections::HashMap<std::string::String, bool>>,
-        response_models: std::option::Option<
+        pub(crate) response_models: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
     }
@@ -9902,22 +9903,22 @@ pub mod get_method_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        http_method: std::option::Option<std::string::String>,
-        authorization_type: std::option::Option<std::string::String>,
-        authorizer_id: std::option::Option<std::string::String>,
-        api_key_required: std::option::Option<bool>,
-        request_validator_id: std::option::Option<std::string::String>,
-        operation_name: std::option::Option<std::string::String>,
-        request_parameters:
+        pub(crate) http_method: std::option::Option<std::string::String>,
+        pub(crate) authorization_type: std::option::Option<std::string::String>,
+        pub(crate) authorizer_id: std::option::Option<std::string::String>,
+        pub(crate) api_key_required: std::option::Option<bool>,
+        pub(crate) request_validator_id: std::option::Option<std::string::String>,
+        pub(crate) operation_name: std::option::Option<std::string::String>,
+        pub(crate) request_parameters:
             std::option::Option<std::collections::HashMap<std::string::String, bool>>,
-        request_models: std::option::Option<
+        pub(crate) request_models: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
-        method_responses: std::option::Option<
+        pub(crate) method_responses: std::option::Option<
             std::collections::HashMap<std::string::String, crate::model::MethodResponse>,
         >,
-        method_integration: std::option::Option<crate::model::Integration>,
-        authorization_scopes: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) method_integration: std::option::Option<crate::model::Integration>,
+        pub(crate) authorization_scopes: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
         /// <p>The method's HTTP verb.</p>
@@ -10217,15 +10218,15 @@ pub mod get_integration_response_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        status_code: std::option::Option<std::string::String>,
-        selection_pattern: std::option::Option<std::string::String>,
-        response_parameters: std::option::Option<
+        pub(crate) status_code: std::option::Option<std::string::String>,
+        pub(crate) selection_pattern: std::option::Option<std::string::String>,
+        pub(crate) response_parameters: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
-        response_templates: std::option::Option<
+        pub(crate) response_templates: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
-        content_handling: std::option::Option<crate::model::ContentHandlingStrategy>,
+        pub(crate) content_handling: std::option::Option<crate::model::ContentHandlingStrategy>,
     }
     impl Builder {
         /// <p>Specifies the status code that is used to map the integration response to an existing <a>MethodResponse</a>.</p>
@@ -10478,27 +10479,27 @@ pub mod get_integration_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        r#type: std::option::Option<crate::model::IntegrationType>,
-        http_method: std::option::Option<std::string::String>,
-        uri: std::option::Option<std::string::String>,
-        connection_type: std::option::Option<crate::model::ConnectionType>,
-        connection_id: std::option::Option<std::string::String>,
-        credentials: std::option::Option<std::string::String>,
-        request_parameters: std::option::Option<
+        pub(crate) r#type: std::option::Option<crate::model::IntegrationType>,
+        pub(crate) http_method: std::option::Option<std::string::String>,
+        pub(crate) uri: std::option::Option<std::string::String>,
+        pub(crate) connection_type: std::option::Option<crate::model::ConnectionType>,
+        pub(crate) connection_id: std::option::Option<std::string::String>,
+        pub(crate) credentials: std::option::Option<std::string::String>,
+        pub(crate) request_parameters: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
-        request_templates: std::option::Option<
+        pub(crate) request_templates: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
-        passthrough_behavior: std::option::Option<std::string::String>,
-        content_handling: std::option::Option<crate::model::ContentHandlingStrategy>,
-        timeout_in_millis: std::option::Option<i32>,
-        cache_namespace: std::option::Option<std::string::String>,
-        cache_key_parameters: std::option::Option<std::vec::Vec<std::string::String>>,
-        integration_responses: std::option::Option<
+        pub(crate) passthrough_behavior: std::option::Option<std::string::String>,
+        pub(crate) content_handling: std::option::Option<crate::model::ContentHandlingStrategy>,
+        pub(crate) timeout_in_millis: std::option::Option<i32>,
+        pub(crate) cache_namespace: std::option::Option<std::string::String>,
+        pub(crate) cache_key_parameters: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) integration_responses: std::option::Option<
             std::collections::HashMap<std::string::String, crate::model::IntegrationResponse>,
         >,
-        tls_config: std::option::Option<crate::model::TlsConfig>,
+        pub(crate) tls_config: std::option::Option<crate::model::TlsConfig>,
     }
     impl Builder {
         /// <p>Specifies an API method integration type. The valid value is one of the following:</p>
@@ -11301,8 +11302,8 @@ pub mod get_gateway_responses_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        items: std::option::Option<std::vec::Vec<crate::model::GatewayResponse>>,
-        position: std::option::Option<std::string::String>,
+        pub(crate) items: std::option::Option<std::vec::Vec<crate::model::GatewayResponse>>,
+        pub(crate) position: std::option::Option<std::string::String>,
     }
     impl Builder {
         pub fn items(mut self, inp: impl Into<crate::model::GatewayResponse>) -> Self {
@@ -11434,15 +11435,15 @@ pub mod get_gateway_response_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        response_type: std::option::Option<crate::model::GatewayResponseType>,
-        status_code: std::option::Option<std::string::String>,
-        response_parameters: std::option::Option<
+        pub(crate) response_type: std::option::Option<crate::model::GatewayResponseType>,
+        pub(crate) status_code: std::option::Option<std::string::String>,
+        pub(crate) response_parameters: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
-        response_templates: std::option::Option<
+        pub(crate) response_templates: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
-        default_response: std::option::Option<bool>,
+        pub(crate) default_response: std::option::Option<bool>,
     }
     impl Builder {
         /// <p>The response type of the associated <a>GatewayResponse</a>. Valid values are <ul><li>ACCESS_DENIED</li><li>API_CONFIGURATION_ERROR</li><li>AUTHORIZER_FAILURE</li><li> AUTHORIZER_CONFIGURATION_ERROR</li><li>BAD_REQUEST_PARAMETERS</li><li>BAD_REQUEST_BODY</li><li>DEFAULT_4XX</li><li>DEFAULT_5XX</li><li>EXPIRED_TOKEN</li><li>INVALID_SIGNATURE</li><li>INTEGRATION_FAILURE</li><li>INTEGRATION_TIMEOUT</li><li>INVALID_API_KEY</li><li>MISSING_AUTHENTICATION_TOKEN</li><li> QUOTA_EXCEEDED</li><li>REQUEST_TOO_LARGE</li><li>RESOURCE_NOT_FOUND</li><li>THROTTLED</li><li>UNAUTHORIZED</li><li>UNSUPPORTED_MEDIA_TYPE</li></ul> </p>
@@ -11558,9 +11559,9 @@ pub mod get_export_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        content_type: std::option::Option<std::string::String>,
-        content_disposition: std::option::Option<std::string::String>,
-        body: std::option::Option<smithy_types::Blob>,
+        pub(crate) content_type: std::option::Option<std::string::String>,
+        pub(crate) content_disposition: std::option::Option<std::string::String>,
+        pub(crate) body: std::option::Option<smithy_types::Blob>,
     }
     impl Builder {
         /// <p>The content-type header value in the HTTP response. This will correspond to a valid 'accept' type in the request.</p>
@@ -11636,8 +11637,8 @@ pub mod get_domain_names_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        items: std::option::Option<std::vec::Vec<crate::model::DomainName>>,
-        position: std::option::Option<std::string::String>,
+        pub(crate) items: std::option::Option<std::vec::Vec<crate::model::DomainName>>,
+        pub(crate) position: std::option::Option<std::string::String>,
     }
     impl Builder {
         pub fn items(mut self, inp: impl Into<crate::model::DomainName>) -> Self {
@@ -11757,24 +11758,25 @@ pub mod get_domain_name_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        domain_name: std::option::Option<std::string::String>,
-        certificate_name: std::option::Option<std::string::String>,
-        certificate_arn: std::option::Option<std::string::String>,
-        certificate_upload_date: std::option::Option<smithy_types::Instant>,
-        regional_domain_name: std::option::Option<std::string::String>,
-        regional_hosted_zone_id: std::option::Option<std::string::String>,
-        regional_certificate_name: std::option::Option<std::string::String>,
-        regional_certificate_arn: std::option::Option<std::string::String>,
-        distribution_domain_name: std::option::Option<std::string::String>,
-        distribution_hosted_zone_id: std::option::Option<std::string::String>,
-        endpoint_configuration: std::option::Option<crate::model::EndpointConfiguration>,
-        domain_name_status: std::option::Option<crate::model::DomainNameStatus>,
-        domain_name_status_message: std::option::Option<std::string::String>,
-        security_policy: std::option::Option<crate::model::SecurityPolicy>,
-        tags: std::option::Option<
+        pub(crate) domain_name: std::option::Option<std::string::String>,
+        pub(crate) certificate_name: std::option::Option<std::string::String>,
+        pub(crate) certificate_arn: std::option::Option<std::string::String>,
+        pub(crate) certificate_upload_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) regional_domain_name: std::option::Option<std::string::String>,
+        pub(crate) regional_hosted_zone_id: std::option::Option<std::string::String>,
+        pub(crate) regional_certificate_name: std::option::Option<std::string::String>,
+        pub(crate) regional_certificate_arn: std::option::Option<std::string::String>,
+        pub(crate) distribution_domain_name: std::option::Option<std::string::String>,
+        pub(crate) distribution_hosted_zone_id: std::option::Option<std::string::String>,
+        pub(crate) endpoint_configuration: std::option::Option<crate::model::EndpointConfiguration>,
+        pub(crate) domain_name_status: std::option::Option<crate::model::DomainNameStatus>,
+        pub(crate) domain_name_status_message: std::option::Option<std::string::String>,
+        pub(crate) security_policy: std::option::Option<crate::model::SecurityPolicy>,
+        pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
-        mutual_tls_authentication: std::option::Option<crate::model::MutualTlsAuthentication>,
+        pub(crate) mutual_tls_authentication:
+            std::option::Option<crate::model::MutualTlsAuthentication>,
     }
     impl Builder {
         /// <p>The custom domain name as an API host name, for example, <code>my-api.example.com</code>.</p>
@@ -12033,8 +12035,8 @@ pub mod get_documentation_versions_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        items: std::option::Option<std::vec::Vec<crate::model::DocumentationVersion>>,
-        position: std::option::Option<std::string::String>,
+        pub(crate) items: std::option::Option<std::vec::Vec<crate::model::DocumentationVersion>>,
+        pub(crate) position: std::option::Option<std::string::String>,
     }
     impl Builder {
         pub fn items(mut self, inp: impl Into<crate::model::DocumentationVersion>) -> Self {
@@ -12105,9 +12107,9 @@ pub mod get_documentation_version_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        version: std::option::Option<std::string::String>,
-        created_date: std::option::Option<smithy_types::Instant>,
-        description: std::option::Option<std::string::String>,
+        pub(crate) version: std::option::Option<std::string::String>,
+        pub(crate) created_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) description: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The version identifier of the API documentation snapshot.</p>
@@ -12181,8 +12183,8 @@ pub mod get_documentation_parts_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        items: std::option::Option<std::vec::Vec<crate::model::DocumentationPart>>,
-        position: std::option::Option<std::string::String>,
+        pub(crate) items: std::option::Option<std::vec::Vec<crate::model::DocumentationPart>>,
+        pub(crate) position: std::option::Option<std::string::String>,
     }
     impl Builder {
         pub fn items(mut self, inp: impl Into<crate::model::DocumentationPart>) -> Self {
@@ -12255,9 +12257,9 @@ pub mod get_documentation_part_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        id: std::option::Option<std::string::String>,
-        location: std::option::Option<crate::model::DocumentationPartLocation>,
-        properties: std::option::Option<std::string::String>,
+        pub(crate) id: std::option::Option<std::string::String>,
+        pub(crate) location: std::option::Option<crate::model::DocumentationPartLocation>,
+        pub(crate) properties: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The <a>DocumentationPart</a> identifier, generated by API Gateway when the <code>DocumentationPart</code> is created.</p>
@@ -12337,8 +12339,8 @@ pub mod get_deployments_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        items: std::option::Option<std::vec::Vec<crate::model::Deployment>>,
-        position: std::option::Option<std::string::String>,
+        pub(crate) items: std::option::Option<std::vec::Vec<crate::model::Deployment>>,
+        pub(crate) position: std::option::Option<std::string::String>,
     }
     impl Builder {
         pub fn items(mut self, inp: impl Into<crate::model::Deployment>) -> Self {
@@ -12419,10 +12421,10 @@ pub mod get_deployment_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        id: std::option::Option<std::string::String>,
-        description: std::option::Option<std::string::String>,
-        created_date: std::option::Option<smithy_types::Instant>,
-        api_summary: std::option::Option<
+        pub(crate) id: std::option::Option<std::string::String>,
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) created_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) api_summary: std::option::Option<
             std::collections::HashMap<
                 std::string::String,
                 std::collections::HashMap<std::string::String, crate::model::MethodSnapshot>,
@@ -12523,8 +12525,8 @@ pub mod get_client_certificates_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        items: std::option::Option<std::vec::Vec<crate::model::ClientCertificate>>,
-        position: std::option::Option<std::string::String>,
+        pub(crate) items: std::option::Option<std::vec::Vec<crate::model::ClientCertificate>>,
+        pub(crate) position: std::option::Option<std::string::String>,
     }
     impl Builder {
         pub fn items(mut self, inp: impl Into<crate::model::ClientCertificate>) -> Self {
@@ -12605,12 +12607,12 @@ pub mod get_client_certificate_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        client_certificate_id: std::option::Option<std::string::String>,
-        description: std::option::Option<std::string::String>,
-        pem_encoded_certificate: std::option::Option<std::string::String>,
-        created_date: std::option::Option<smithy_types::Instant>,
-        expiration_date: std::option::Option<smithy_types::Instant>,
-        tags: std::option::Option<
+        pub(crate) client_certificate_id: std::option::Option<std::string::String>,
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) pem_encoded_certificate: std::option::Option<std::string::String>,
+        pub(crate) created_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) expiration_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
     }
@@ -12734,8 +12736,8 @@ pub mod get_base_path_mappings_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        items: std::option::Option<std::vec::Vec<crate::model::BasePathMapping>>,
-        position: std::option::Option<std::string::String>,
+        pub(crate) items: std::option::Option<std::vec::Vec<crate::model::BasePathMapping>>,
+        pub(crate) position: std::option::Option<std::string::String>,
     }
     impl Builder {
         pub fn items(mut self, inp: impl Into<crate::model::BasePathMapping>) -> Self {
@@ -12806,9 +12808,9 @@ pub mod get_base_path_mapping_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        base_path: std::option::Option<std::string::String>,
-        rest_api_id: std::option::Option<std::string::String>,
-        stage: std::option::Option<std::string::String>,
+        pub(crate) base_path: std::option::Option<std::string::String>,
+        pub(crate) rest_api_id: std::option::Option<std::string::String>,
+        pub(crate) stage: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The base path name that callers of the API must provide as part of the URL after the domain name.</p>
@@ -12882,8 +12884,8 @@ pub mod get_authorizers_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        items: std::option::Option<std::vec::Vec<crate::model::Authorizer>>,
-        position: std::option::Option<std::string::String>,
+        pub(crate) items: std::option::Option<std::vec::Vec<crate::model::Authorizer>>,
+        pub(crate) position: std::option::Option<std::string::String>,
     }
     impl Builder {
         pub fn items(mut self, inp: impl Into<crate::model::Authorizer>) -> Self {
@@ -12981,16 +12983,16 @@ pub mod get_authorizer_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        id: std::option::Option<std::string::String>,
-        name: std::option::Option<std::string::String>,
-        r#type: std::option::Option<crate::model::AuthorizerType>,
-        provider_ar_ns: std::option::Option<std::vec::Vec<std::string::String>>,
-        auth_type: std::option::Option<std::string::String>,
-        authorizer_uri: std::option::Option<std::string::String>,
-        authorizer_credentials: std::option::Option<std::string::String>,
-        identity_source: std::option::Option<std::string::String>,
-        identity_validation_expression: std::option::Option<std::string::String>,
-        authorizer_result_ttl_in_seconds: std::option::Option<i32>,
+        pub(crate) id: std::option::Option<std::string::String>,
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) r#type: std::option::Option<crate::model::AuthorizerType>,
+        pub(crate) provider_ar_ns: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) auth_type: std::option::Option<std::string::String>,
+        pub(crate) authorizer_uri: std::option::Option<std::string::String>,
+        pub(crate) authorizer_credentials: std::option::Option<std::string::String>,
+        pub(crate) identity_source: std::option::Option<std::string::String>,
+        pub(crate) identity_validation_expression: std::option::Option<std::string::String>,
+        pub(crate) authorizer_result_ttl_in_seconds: std::option::Option<i32>,
     }
     impl Builder {
         /// <p>The identifier for the authorizer resource.</p>
@@ -13155,9 +13157,9 @@ pub mod get_api_keys_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        warnings: std::option::Option<std::vec::Vec<std::string::String>>,
-        items: std::option::Option<std::vec::Vec<crate::model::ApiKey>>,
-        position: std::option::Option<std::string::String>,
+        pub(crate) warnings: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) items: std::option::Option<std::vec::Vec<crate::model::ApiKey>>,
+        pub(crate) position: std::option::Option<std::string::String>,
     }
     impl Builder {
         pub fn warnings(mut self, inp: impl Into<std::string::String>) -> Self {
@@ -13263,16 +13265,16 @@ pub mod get_api_key_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        id: std::option::Option<std::string::String>,
-        value: std::option::Option<std::string::String>,
-        name: std::option::Option<std::string::String>,
-        customer_id: std::option::Option<std::string::String>,
-        description: std::option::Option<std::string::String>,
-        enabled: std::option::Option<bool>,
-        created_date: std::option::Option<smithy_types::Instant>,
-        last_updated_date: std::option::Option<smithy_types::Instant>,
-        stage_keys: std::option::Option<std::vec::Vec<std::string::String>>,
-        tags: std::option::Option<
+        pub(crate) id: std::option::Option<std::string::String>,
+        pub(crate) value: std::option::Option<std::string::String>,
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) customer_id: std::option::Option<std::string::String>,
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) enabled: std::option::Option<bool>,
+        pub(crate) created_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) last_updated_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) stage_keys: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
     }
@@ -13485,10 +13487,10 @@ pub mod get_account_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        cloudwatch_role_arn: std::option::Option<std::string::String>,
-        throttle_settings: std::option::Option<crate::model::ThrottleSettings>,
-        features: std::option::Option<std::vec::Vec<std::string::String>>,
-        api_key_version: std::option::Option<std::string::String>,
+        pub(crate) cloudwatch_role_arn: std::option::Option<std::string::String>,
+        pub(crate) throttle_settings: std::option::Option<crate::model::ThrottleSettings>,
+        pub(crate) features: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) api_key_version: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The ARN of an Amazon CloudWatch role for the current <a>Account</a>. </p>
@@ -13598,12 +13600,12 @@ pub mod generate_client_certificate_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        client_certificate_id: std::option::Option<std::string::String>,
-        description: std::option::Option<std::string::String>,
-        pem_encoded_certificate: std::option::Option<std::string::String>,
-        created_date: std::option::Option<smithy_types::Instant>,
-        expiration_date: std::option::Option<smithy_types::Instant>,
-        tags: std::option::Option<
+        pub(crate) client_certificate_id: std::option::Option<std::string::String>,
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) pem_encoded_certificate: std::option::Option<std::string::String>,
+        pub(crate) created_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) expiration_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
     }
@@ -14410,13 +14412,13 @@ pub mod create_vpc_link_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        id: std::option::Option<std::string::String>,
-        name: std::option::Option<std::string::String>,
-        description: std::option::Option<std::string::String>,
-        target_arns: std::option::Option<std::vec::Vec<std::string::String>>,
-        status: std::option::Option<crate::model::VpcLinkStatus>,
-        status_message: std::option::Option<std::string::String>,
-        tags: std::option::Option<
+        pub(crate) id: std::option::Option<std::string::String>,
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) target_arns: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) status: std::option::Option<crate::model::VpcLinkStatus>,
+        pub(crate) status_message: std::option::Option<std::string::String>,
+        pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
     }
@@ -14554,10 +14556,10 @@ pub mod create_usage_plan_key_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        id: std::option::Option<std::string::String>,
-        r#type: std::option::Option<std::string::String>,
-        value: std::option::Option<std::string::String>,
-        name: std::option::Option<std::string::String>,
+        pub(crate) id: std::option::Option<std::string::String>,
+        pub(crate) r#type: std::option::Option<std::string::String>,
+        pub(crate) value: std::option::Option<std::string::String>,
+        pub(crate) name: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The Id of a usage plan key.</p>
@@ -14662,14 +14664,14 @@ pub mod create_usage_plan_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        id: std::option::Option<std::string::String>,
-        name: std::option::Option<std::string::String>,
-        description: std::option::Option<std::string::String>,
-        api_stages: std::option::Option<std::vec::Vec<crate::model::ApiStage>>,
-        throttle: std::option::Option<crate::model::ThrottleSettings>,
-        quota: std::option::Option<crate::model::QuotaSettings>,
-        product_code: std::option::Option<std::string::String>,
-        tags: std::option::Option<
+        pub(crate) id: std::option::Option<std::string::String>,
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) api_stages: std::option::Option<std::vec::Vec<crate::model::ApiStage>>,
+        pub(crate) throttle: std::option::Option<crate::model::ThrottleSettings>,
+        pub(crate) quota: std::option::Option<crate::model::QuotaSettings>,
+        pub(crate) product_code: std::option::Option<std::string::String>,
+        pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
     }
@@ -14861,29 +14863,29 @@ pub mod create_stage_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        deployment_id: std::option::Option<std::string::String>,
-        client_certificate_id: std::option::Option<std::string::String>,
-        stage_name: std::option::Option<std::string::String>,
-        description: std::option::Option<std::string::String>,
-        cache_cluster_enabled: std::option::Option<bool>,
-        cache_cluster_size: std::option::Option<crate::model::CacheClusterSize>,
-        cache_cluster_status: std::option::Option<crate::model::CacheClusterStatus>,
-        method_settings: std::option::Option<
+        pub(crate) deployment_id: std::option::Option<std::string::String>,
+        pub(crate) client_certificate_id: std::option::Option<std::string::String>,
+        pub(crate) stage_name: std::option::Option<std::string::String>,
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) cache_cluster_enabled: std::option::Option<bool>,
+        pub(crate) cache_cluster_size: std::option::Option<crate::model::CacheClusterSize>,
+        pub(crate) cache_cluster_status: std::option::Option<crate::model::CacheClusterStatus>,
+        pub(crate) method_settings: std::option::Option<
             std::collections::HashMap<std::string::String, crate::model::MethodSetting>,
         >,
-        variables: std::option::Option<
+        pub(crate) variables: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
-        documentation_version: std::option::Option<std::string::String>,
-        access_log_settings: std::option::Option<crate::model::AccessLogSettings>,
-        canary_settings: std::option::Option<crate::model::CanarySettings>,
-        tracing_enabled: std::option::Option<bool>,
-        web_acl_arn: std::option::Option<std::string::String>,
-        tags: std::option::Option<
+        pub(crate) documentation_version: std::option::Option<std::string::String>,
+        pub(crate) access_log_settings: std::option::Option<crate::model::AccessLogSettings>,
+        pub(crate) canary_settings: std::option::Option<crate::model::CanarySettings>,
+        pub(crate) tracing_enabled: std::option::Option<bool>,
+        pub(crate) web_acl_arn: std::option::Option<std::string::String>,
+        pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
-        created_date: std::option::Option<smithy_types::Instant>,
-        last_updated_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) last_updated_date: std::option::Option<smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The identifier of the <a>Deployment</a> that the stage points to.</p>
@@ -15184,21 +15186,21 @@ pub mod create_rest_api_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        id: std::option::Option<std::string::String>,
-        name: std::option::Option<std::string::String>,
-        description: std::option::Option<std::string::String>,
-        created_date: std::option::Option<smithy_types::Instant>,
-        version: std::option::Option<std::string::String>,
-        warnings: std::option::Option<std::vec::Vec<std::string::String>>,
-        binary_media_types: std::option::Option<std::vec::Vec<std::string::String>>,
-        minimum_compression_size: std::option::Option<i32>,
-        api_key_source: std::option::Option<crate::model::ApiKeySourceType>,
-        endpoint_configuration: std::option::Option<crate::model::EndpointConfiguration>,
-        policy: std::option::Option<std::string::String>,
-        tags: std::option::Option<
+        pub(crate) id: std::option::Option<std::string::String>,
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) created_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) version: std::option::Option<std::string::String>,
+        pub(crate) warnings: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) binary_media_types: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) minimum_compression_size: std::option::Option<i32>,
+        pub(crate) api_key_source: std::option::Option<crate::model::ApiKeySourceType>,
+        pub(crate) endpoint_configuration: std::option::Option<crate::model::EndpointConfiguration>,
+        pub(crate) policy: std::option::Option<std::string::String>,
+        pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
-        disable_execute_api_endpoint: std::option::Option<bool>,
+        pub(crate) disable_execute_api_endpoint: std::option::Option<bool>,
     }
     impl Builder {
         /// <p>The API's identifier. This identifier is unique across all of your APIs in API Gateway.</p>
@@ -15557,11 +15559,11 @@ pub mod create_resource_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        id: std::option::Option<std::string::String>,
-        parent_id: std::option::Option<std::string::String>,
-        path_part: std::option::Option<std::string::String>,
-        path: std::option::Option<std::string::String>,
-        resource_methods: std::option::Option<
+        pub(crate) id: std::option::Option<std::string::String>,
+        pub(crate) parent_id: std::option::Option<std::string::String>,
+        pub(crate) path_part: std::option::Option<std::string::String>,
+        pub(crate) path: std::option::Option<std::string::String>,
+        pub(crate) resource_methods: std::option::Option<
             std::collections::HashMap<std::string::String, crate::model::Method>,
         >,
     }
@@ -15676,10 +15678,10 @@ pub mod create_request_validator_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        id: std::option::Option<std::string::String>,
-        name: std::option::Option<std::string::String>,
-        validate_request_body: std::option::Option<bool>,
-        validate_request_parameters: std::option::Option<bool>,
+        pub(crate) id: std::option::Option<std::string::String>,
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) validate_request_body: std::option::Option<bool>,
+        pub(crate) validate_request_parameters: std::option::Option<bool>,
     }
     impl Builder {
         /// <p>The identifier of this <a>RequestValidator</a>.</p>
@@ -15775,11 +15777,11 @@ pub mod create_model_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        id: std::option::Option<std::string::String>,
-        name: std::option::Option<std::string::String>,
-        description: std::option::Option<std::string::String>,
-        schema: std::option::Option<std::string::String>,
-        content_type: std::option::Option<std::string::String>,
+        pub(crate) id: std::option::Option<std::string::String>,
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) schema: std::option::Option<std::string::String>,
+        pub(crate) content_type: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The identifier for the model resource.</p>
@@ -15925,24 +15927,25 @@ pub mod create_domain_name_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        domain_name: std::option::Option<std::string::String>,
-        certificate_name: std::option::Option<std::string::String>,
-        certificate_arn: std::option::Option<std::string::String>,
-        certificate_upload_date: std::option::Option<smithy_types::Instant>,
-        regional_domain_name: std::option::Option<std::string::String>,
-        regional_hosted_zone_id: std::option::Option<std::string::String>,
-        regional_certificate_name: std::option::Option<std::string::String>,
-        regional_certificate_arn: std::option::Option<std::string::String>,
-        distribution_domain_name: std::option::Option<std::string::String>,
-        distribution_hosted_zone_id: std::option::Option<std::string::String>,
-        endpoint_configuration: std::option::Option<crate::model::EndpointConfiguration>,
-        domain_name_status: std::option::Option<crate::model::DomainNameStatus>,
-        domain_name_status_message: std::option::Option<std::string::String>,
-        security_policy: std::option::Option<crate::model::SecurityPolicy>,
-        tags: std::option::Option<
+        pub(crate) domain_name: std::option::Option<std::string::String>,
+        pub(crate) certificate_name: std::option::Option<std::string::String>,
+        pub(crate) certificate_arn: std::option::Option<std::string::String>,
+        pub(crate) certificate_upload_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) regional_domain_name: std::option::Option<std::string::String>,
+        pub(crate) regional_hosted_zone_id: std::option::Option<std::string::String>,
+        pub(crate) regional_certificate_name: std::option::Option<std::string::String>,
+        pub(crate) regional_certificate_arn: std::option::Option<std::string::String>,
+        pub(crate) distribution_domain_name: std::option::Option<std::string::String>,
+        pub(crate) distribution_hosted_zone_id: std::option::Option<std::string::String>,
+        pub(crate) endpoint_configuration: std::option::Option<crate::model::EndpointConfiguration>,
+        pub(crate) domain_name_status: std::option::Option<crate::model::DomainNameStatus>,
+        pub(crate) domain_name_status_message: std::option::Option<std::string::String>,
+        pub(crate) security_policy: std::option::Option<crate::model::SecurityPolicy>,
+        pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
-        mutual_tls_authentication: std::option::Option<crate::model::MutualTlsAuthentication>,
+        pub(crate) mutual_tls_authentication:
+            std::option::Option<crate::model::MutualTlsAuthentication>,
     }
     impl Builder {
         /// <p>The custom domain name as an API host name, for example, <code>my-api.example.com</code>.</p>
@@ -16204,9 +16207,9 @@ pub mod create_documentation_version_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        version: std::option::Option<std::string::String>,
-        created_date: std::option::Option<smithy_types::Instant>,
-        description: std::option::Option<std::string::String>,
+        pub(crate) version: std::option::Option<std::string::String>,
+        pub(crate) created_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) description: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The version identifier of the API documentation snapshot.</p>
@@ -16285,9 +16288,9 @@ pub mod create_documentation_part_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        id: std::option::Option<std::string::String>,
-        location: std::option::Option<crate::model::DocumentationPartLocation>,
-        properties: std::option::Option<std::string::String>,
+        pub(crate) id: std::option::Option<std::string::String>,
+        pub(crate) location: std::option::Option<crate::model::DocumentationPartLocation>,
+        pub(crate) properties: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The <a>DocumentationPart</a> identifier, generated by API Gateway when the <code>DocumentationPart</code> is created.</p>
@@ -16377,10 +16380,10 @@ pub mod create_deployment_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        id: std::option::Option<std::string::String>,
-        description: std::option::Option<std::string::String>,
-        created_date: std::option::Option<smithy_types::Instant>,
-        api_summary: std::option::Option<
+        pub(crate) id: std::option::Option<std::string::String>,
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) created_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) api_summary: std::option::Option<
             std::collections::HashMap<
                 std::string::String,
                 std::collections::HashMap<std::string::String, crate::model::MethodSnapshot>,
@@ -16485,9 +16488,9 @@ pub mod create_base_path_mapping_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        base_path: std::option::Option<std::string::String>,
-        rest_api_id: std::option::Option<std::string::String>,
-        stage: std::option::Option<std::string::String>,
+        pub(crate) base_path: std::option::Option<std::string::String>,
+        pub(crate) rest_api_id: std::option::Option<std::string::String>,
+        pub(crate) stage: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The base path name that callers of the API must provide as part of the URL after the domain name.</p>
@@ -16591,16 +16594,16 @@ pub mod create_authorizer_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        id: std::option::Option<std::string::String>,
-        name: std::option::Option<std::string::String>,
-        r#type: std::option::Option<crate::model::AuthorizerType>,
-        provider_ar_ns: std::option::Option<std::vec::Vec<std::string::String>>,
-        auth_type: std::option::Option<std::string::String>,
-        authorizer_uri: std::option::Option<std::string::String>,
-        authorizer_credentials: std::option::Option<std::string::String>,
-        identity_source: std::option::Option<std::string::String>,
-        identity_validation_expression: std::option::Option<std::string::String>,
-        authorizer_result_ttl_in_seconds: std::option::Option<i32>,
+        pub(crate) id: std::option::Option<std::string::String>,
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) r#type: std::option::Option<crate::model::AuthorizerType>,
+        pub(crate) provider_ar_ns: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) auth_type: std::option::Option<std::string::String>,
+        pub(crate) authorizer_uri: std::option::Option<std::string::String>,
+        pub(crate) authorizer_credentials: std::option::Option<std::string::String>,
+        pub(crate) identity_source: std::option::Option<std::string::String>,
+        pub(crate) identity_validation_expression: std::option::Option<std::string::String>,
+        pub(crate) authorizer_result_ttl_in_seconds: std::option::Option<i32>,
     }
     impl Builder {
         /// <p>The identifier for the authorizer resource.</p>
@@ -16787,16 +16790,16 @@ pub mod create_api_key_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        id: std::option::Option<std::string::String>,
-        value: std::option::Option<std::string::String>,
-        name: std::option::Option<std::string::String>,
-        customer_id: std::option::Option<std::string::String>,
-        description: std::option::Option<std::string::String>,
-        enabled: std::option::Option<bool>,
-        created_date: std::option::Option<smithy_types::Instant>,
-        last_updated_date: std::option::Option<smithy_types::Instant>,
-        stage_keys: std::option::Option<std::vec::Vec<std::string::String>>,
-        tags: std::option::Option<
+        pub(crate) id: std::option::Option<std::string::String>,
+        pub(crate) value: std::option::Option<std::string::String>,
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) customer_id: std::option::Option<std::string::String>,
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) enabled: std::option::Option<bool>,
+        pub(crate) created_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) last_updated_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) stage_keys: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
     }

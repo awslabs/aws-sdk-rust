@@ -28,7 +28,7 @@ impl Client {
     pub fn from_conf_conn(conf: crate::Config, conn: aws_hyper::conn::Standard) -> Self {
         let client = aws_hyper::Client::new(conn);
         Self {
-            handle: std::sync::Arc::new(Handle { conf, client }),
+            handle: std::sync::Arc::new(Handle { client, conf }),
         }
     }
 
@@ -248,6 +248,7 @@ impl Client {
 }
 pub mod fluent_builders {
 
+    #[derive(std::fmt::Debug)]
     pub struct BatchExecuteStatement {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::batch_execute_statement_input::Builder,
@@ -292,6 +293,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct BatchGetItem {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::batch_get_item_input::Builder,
@@ -447,6 +449,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct BatchWriteItem {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::batch_write_item_input::Builder,
@@ -580,6 +583,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct CreateBackup {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::create_backup_input::Builder,
@@ -628,6 +632,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct CreateGlobalTable {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::create_global_table_input::Builder,
@@ -682,6 +687,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct CreateTable {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::create_table_input::Builder,
@@ -1040,6 +1046,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct DeleteBackup {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::delete_backup_input::Builder,
@@ -1079,6 +1086,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct DeleteItem {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::delete_item_input::Builder,
@@ -1372,6 +1380,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct DeleteTable {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::delete_table_input::Builder,
@@ -1411,6 +1420,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct DescribeBackup {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::describe_backup_input::Builder,
@@ -1450,6 +1460,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct DescribeContinuousBackups {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::describe_continuous_backups_input::Builder,
@@ -1489,6 +1500,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct DescribeContributorInsights {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::describe_contributor_insights_input::Builder,
@@ -1537,6 +1549,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct DescribeEndpoints {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::describe_endpoints_input::Builder,
@@ -1566,6 +1579,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct DescribeExport {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::describe_export_input::Builder,
@@ -1605,6 +1619,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct DescribeGlobalTable {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::describe_global_table_input::Builder,
@@ -1647,6 +1662,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct DescribeGlobalTableSettings {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::describe_global_table_settings_input::Builder,
@@ -1689,6 +1705,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct DescribeKinesisStreamingDestination {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::describe_kinesis_streaming_destination_input::Builder,
@@ -1728,6 +1745,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct DescribeLimits {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::describe_limits_input::Builder,
@@ -1757,6 +1775,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct DescribeTable {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::describe_table_input::Builder,
@@ -1796,6 +1815,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct DescribeTableReplicaAutoScaling {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::describe_table_replica_auto_scaling_input::Builder,
@@ -1835,6 +1855,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct DescribeTimeToLive {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::describe_time_to_live_input::Builder,
@@ -1874,6 +1895,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct DisableKinesisStreamingDestination {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::disable_kinesis_streaming_destination_input::Builder,
@@ -1922,6 +1944,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct EnableKinesisStreamingDestination {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::enable_kinesis_streaming_destination_input::Builder,
@@ -1970,6 +1993,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct ExecuteStatement {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::execute_statement_input::Builder,
@@ -2047,6 +2071,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct ExecuteTransaction {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::execute_transaction_input::Builder,
@@ -2108,6 +2133,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct ExportTableToPointInTime {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::export_table_to_point_in_time_input::Builder,
@@ -2255,6 +2281,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct GetItem {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::get_item_input::Builder,
@@ -2440,6 +2467,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct ListBackups {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::list_backups_input::Builder,
@@ -2556,6 +2584,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct ListContributorInsights {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::list_contributor_insights_input::Builder,
@@ -2613,6 +2642,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct ListExports {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::list_exports_input::Builder,
@@ -2672,6 +2702,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct ListGlobalTables {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::list_global_tables_input::Builder,
@@ -2737,6 +2768,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct ListTables {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::list_tables_input::Builder,
@@ -2790,6 +2822,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct ListTagsOfResource {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::list_tags_of_resource_input::Builder,
@@ -2839,6 +2872,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct PutItem {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::put_item_input::Builder,
@@ -3137,6 +3171,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct Query {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::query_input::Builder,
@@ -3647,6 +3682,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct RestoreTableFromBackup {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::restore_table_from_backup_input::Builder,
@@ -3771,6 +3807,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct RestoreTableToPointInTime {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::restore_table_to_point_in_time_input::Builder,
@@ -3933,6 +3970,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct Scan {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::scan_input::Builder,
@@ -4343,6 +4381,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct TagResource {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::tag_resource_input::Builder,
@@ -4394,6 +4433,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct TransactGetItems {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::transact_get_items_input::Builder,
@@ -4454,6 +4494,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct TransactWriteItems {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::transact_write_items_input::Builder,
@@ -4576,6 +4617,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct UntagResource {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::untag_resource_input::Builder,
@@ -4629,6 +4671,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct UpdateContinuousBackups {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::update_continuous_backups_input::Builder,
@@ -4683,6 +4726,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct UpdateContributorInsights {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::update_contributor_insights_input::Builder,
@@ -4746,6 +4790,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct UpdateGlobalTable {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::update_global_table_input::Builder,
@@ -4800,6 +4845,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct UpdateGlobalTableSettings {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::update_global_table_settings_input::Builder,
@@ -4938,6 +4984,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct UpdateItem {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::update_item_input::Builder,
@@ -5364,6 +5411,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct UpdateTable {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::update_table_input::Builder,
@@ -5535,6 +5583,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct UpdateTableReplicaAutoScaling {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::update_table_replica_auto_scaling_input::Builder,
@@ -5628,6 +5677,7 @@ pub mod fluent_builders {
         }
     }
 
+    #[derive(std::fmt::Debug)]
     pub struct UpdateTimeToLive {
         handle: std::sync::Arc<super::Handle>,
         inner: crate::input::update_time_to_live_input::Builder,

@@ -34,9 +34,9 @@ pub mod fetch_page_result {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        page: std::option::Option<crate::model::Page>,
-        timing_information: std::option::Option<crate::model::TimingInformation>,
-        consumed_i_os: std::option::Option<crate::model::IOUsage>,
+        pub(crate) page: std::option::Option<crate::model::Page>,
+        pub(crate) timing_information: std::option::Option<crate::model::TimingInformation>,
+        pub(crate) consumed_i_os: std::option::Option<crate::model::IOUsage>,
     }
     impl Builder {
         /// <p>Contains details of the fetched page.</p>
@@ -114,8 +114,8 @@ pub mod io_usage {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        read_i_os: std::option::Option<i64>,
-        write_i_os: std::option::Option<i64>,
+        pub(crate) read_i_os: std::option::Option<i64>,
+        pub(crate) write_i_os: std::option::Option<i64>,
     }
     impl Builder {
         /// <p>The number of read I/O requests that the command made.</p>
@@ -179,7 +179,7 @@ pub mod timing_information {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        processing_time_milliseconds: std::option::Option<i64>,
+        pub(crate) processing_time_milliseconds: std::option::Option<i64>,
     }
     impl Builder {
         /// <p>The amount of time that QLDB spent on processing the command, measured in
@@ -236,8 +236,8 @@ pub mod page {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        values: std::option::Option<std::vec::Vec<crate::model::ValueHolder>>,
-        next_page_token: std::option::Option<std::string::String>,
+        pub(crate) values: std::option::Option<std::vec::Vec<crate::model::ValueHolder>>,
+        pub(crate) next_page_token: std::option::Option<std::string::String>,
     }
     impl Builder {
         pub fn values(mut self, inp: impl Into<crate::model::ValueHolder>) -> Self {
@@ -312,8 +312,8 @@ pub mod value_holder {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        ion_binary: std::option::Option<smithy_types::Blob>,
-        ion_text: std::option::Option<std::string::String>,
+        pub(crate) ion_binary: std::option::Option<smithy_types::Blob>,
+        pub(crate) ion_text: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>An Amazon Ion binary value contained in a <code>ValueHolder</code> structure.</p>
@@ -385,9 +385,9 @@ pub mod execute_statement_result {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        first_page: std::option::Option<crate::model::Page>,
-        timing_information: std::option::Option<crate::model::TimingInformation>,
-        consumed_i_os: std::option::Option<crate::model::IOUsage>,
+        pub(crate) first_page: std::option::Option<crate::model::Page>,
+        pub(crate) timing_information: std::option::Option<crate::model::TimingInformation>,
+        pub(crate) consumed_i_os: std::option::Option<crate::model::IOUsage>,
     }
     impl Builder {
         /// <p>Contains the details of the first fetched page.</p>
@@ -463,7 +463,7 @@ pub mod abort_transaction_result {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        timing_information: std::option::Option<crate::model::TimingInformation>,
+        pub(crate) timing_information: std::option::Option<crate::model::TimingInformation>,
     }
     impl Builder {
         /// <p>Contains server-side performance information for the command.</p>
@@ -536,10 +536,10 @@ pub mod commit_transaction_result {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        transaction_id: std::option::Option<std::string::String>,
-        commit_digest: std::option::Option<smithy_types::Blob>,
-        timing_information: std::option::Option<crate::model::TimingInformation>,
-        consumed_i_os: std::option::Option<crate::model::IOUsage>,
+        pub(crate) transaction_id: std::option::Option<std::string::String>,
+        pub(crate) commit_digest: std::option::Option<smithy_types::Blob>,
+        pub(crate) timing_information: std::option::Option<crate::model::TimingInformation>,
+        pub(crate) consumed_i_os: std::option::Option<crate::model::IOUsage>,
     }
     impl Builder {
         /// <p>The transaction ID of the committed transaction.</p>
@@ -625,7 +625,7 @@ pub mod end_session_result {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        timing_information: std::option::Option<crate::model::TimingInformation>,
+        pub(crate) timing_information: std::option::Option<crate::model::TimingInformation>,
     }
     impl Builder {
         /// <p>Contains server-side performance information for the command.</p>
@@ -684,8 +684,8 @@ pub mod start_transaction_result {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        transaction_id: std::option::Option<std::string::String>,
-        timing_information: std::option::Option<crate::model::TimingInformation>,
+        pub(crate) transaction_id: std::option::Option<std::string::String>,
+        pub(crate) timing_information: std::option::Option<crate::model::TimingInformation>,
     }
     impl Builder {
         /// <p>The transaction ID of the started transaction.</p>
@@ -755,8 +755,8 @@ pub mod start_session_result {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        session_token: std::option::Option<std::string::String>,
-        timing_information: std::option::Option<crate::model::TimingInformation>,
+        pub(crate) session_token: std::option::Option<std::string::String>,
+        pub(crate) timing_information: std::option::Option<crate::model::TimingInformation>,
     }
     impl Builder {
         /// <p>Session token of the started session. This <code>SessionToken</code> is required for
@@ -826,8 +826,8 @@ pub mod fetch_page_request {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        transaction_id: std::option::Option<std::string::String>,
-        next_page_token: std::option::Option<std::string::String>,
+        pub(crate) transaction_id: std::option::Option<std::string::String>,
+        pub(crate) next_page_token: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>Specifies the transaction ID of the page to be fetched.</p>
@@ -902,9 +902,9 @@ pub mod execute_statement_request {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        transaction_id: std::option::Option<std::string::String>,
-        statement: std::option::Option<std::string::String>,
-        parameters: std::option::Option<std::vec::Vec<crate::model::ValueHolder>>,
+        pub(crate) transaction_id: std::option::Option<std::string::String>,
+        pub(crate) statement: std::option::Option<std::string::String>,
+        pub(crate) parameters: std::option::Option<std::vec::Vec<crate::model::ValueHolder>>,
     }
     impl Builder {
         /// <p>Specifies the transaction ID of the request.</p>
@@ -1022,8 +1022,8 @@ pub mod commit_transaction_request {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        transaction_id: std::option::Option<std::string::String>,
-        commit_digest: std::option::Option<smithy_types::Blob>,
+        pub(crate) transaction_id: std::option::Option<std::string::String>,
+        pub(crate) commit_digest: std::option::Option<smithy_types::Blob>,
     }
     impl Builder {
         /// <p>Specifies the transaction ID of the transaction to commit.</p>
@@ -1149,7 +1149,7 @@ pub mod start_session_request {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        ledger_name: std::option::Option<std::string::String>,
+        pub(crate) ledger_name: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The name of the ledger to start a new session against.</p>

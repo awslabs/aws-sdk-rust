@@ -4,6 +4,7 @@
  */
 
 use std::borrow::Cow;
+use std::env::VarError;
 
 /// The region to send requests to.
 ///
@@ -53,22 +54,35 @@ impl<'a> ProvideRegion for &'a Region {
 }
 
 pub fn default_provider() -> impl ProvideRegion {
-    EnvironmentProvider
+    EnvironmentProvider::new()
 }
 
 #[non_exhaustive]
-#[derive(Default)]
-pub struct EnvironmentProvider;
+pub struct EnvironmentProvider {
+    env: Box<dyn Fn(&str) -> Result<String, VarError> + Send + Sync>,
+}
 
+impl Default for EnvironmentProvider {
+    fn default() -> Self {
+        Self::new()
+    }
+}
+
+#[allow(clippy::redundant_closure)] // https://github.com/rust-lang/rust-clippy/issues/7218
 impl EnvironmentProvider {
     pub fn new() -> Self {
-        EnvironmentProvider
+        EnvironmentProvider {
+            env: Box::new(|key| std::env::var(key)),
+        }
     }
 }
 
 impl ProvideRegion for EnvironmentProvider {
     fn region(&self) -> Option<Region> {
-        std::env::var("AWS_DEFAULT_REGION").map(Region::new).ok()
+        (self.env)("AWS_REGION")
+            .or_else(|_| (self.env)("AWS_DEFAULT_REGION"))
+            .map(Region::new)
+            .ok()
     }
 }
 
@@ -87,5 +101,42 @@ impl AsRef<str> for SigningRegion {
 impl From<Region> for SigningRegion {
     fn from(inp: Region) -> Self {
         SigningRegion(inp.0)
+    }
+}
+
+#[cfg(test)]
+mod test {
+    use crate::region::{EnvironmentProvider, ProvideRegion, Region};
+    use std::collections::HashMap;
+    use std::env::VarError;
+
+    fn test_provider(map: HashMap<&'static str, &'static str>) -> EnvironmentProvider {
+        EnvironmentProvider {
+            env: Box::new(move |key: &str| {
+                map.get(key)
+                    .ok_or(VarError::NotPresent)
+                    .map(|k| k.to_string())
+            }),
+        }
+    }
+
+    #[test]
+    fn no_region() {
+        assert_eq!(test_provider(HashMap::new()).region(), None);
+    }
+
+    #[test]
+    fn prioritize_aws_region() {
+        let mut env = HashMap::new();
+        env.insert("AWS_REGION", "us-east-1");
+        env.insert("AWS_DEFAULT_REGION", "us-east-2");
+        assert_eq!(test_provider(env).region(), Some(Region::new("us-east-1")));
+    }
+
+    #[test]
+    fn fallback_to_default_region() {
+        let mut env = HashMap::new();
+        env.insert("AWS_DEFAULT_REGION", "us-east-2");
+        assert_eq!(test_provider(env).region(), Some(Region::new("us-east-2")));
     }
 }

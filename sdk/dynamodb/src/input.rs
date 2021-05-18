@@ -5,7 +5,8 @@ pub mod batch_execute_statement_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        statements: std::option::Option<std::vec::Vec<crate::model::BatchStatementRequest>>,
+        pub(crate) statements:
+            std::option::Option<std::vec::Vec<crate::model::BatchStatementRequest>>,
     }
     impl Builder {
         pub fn statements(mut self, inp: impl Into<crate::model::BatchStatementRequest>) -> Self {
@@ -46,7 +47,13 @@ impl BatchExecuteStatementInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body =
+                crate::operation_ser::serialize_synthetic_batch_execute_statement_input_body(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -94,7 +101,8 @@ impl BatchExecuteStatementInput {
             op
         })
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
@@ -104,22 +112,14 @@ impl BatchExecuteStatementInput {
             .header("Content-Type", "application/x-amz-json-1.0")
             .header("X-Amz-Target", "DynamoDB_20120810.BatchExecuteStatement"))
     }
-    fn body(&self) -> crate::serializer::BatchExecuteStatementInputBody {
-        crate::serializer::BatchExecuteStatementInputBody {
-            statements: &self.statements,
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
         }
-    }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        serde_json::to_vec(&self.body()).expect("serialization should succeed")
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`BatchExecuteStatementInput`](crate::input::BatchExecuteStatementInput)
     pub fn builder() -> crate::input::batch_execute_statement_input::Builder {
@@ -133,10 +133,11 @@ pub mod batch_get_item_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        request_items: std::option::Option<
+        pub(crate) request_items: std::option::Option<
             std::collections::HashMap<std::string::String, crate::model::KeysAndAttributes>,
         >,
-        return_consumed_capacity: std::option::Option<crate::model::ReturnConsumedCapacity>,
+        pub(crate) return_consumed_capacity:
+            std::option::Option<crate::model::ReturnConsumedCapacity>,
     }
     impl Builder {
         pub fn request_items(
@@ -213,7 +214,12 @@ impl BatchGetItemInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body = crate::operation_ser::serialize_synthetic_batch_get_item_input_body(&self)
+                .map_err(|err| {
+                smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -261,7 +267,8 @@ impl BatchGetItemInput {
             op
         })
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
@@ -271,23 +278,14 @@ impl BatchGetItemInput {
             .header("Content-Type", "application/x-amz-json-1.0")
             .header("X-Amz-Target", "DynamoDB_20120810.BatchGetItem"))
     }
-    fn body(&self) -> crate::serializer::BatchGetItemInputBody {
-        crate::serializer::BatchGetItemInputBody {
-            request_items: &self.request_items,
-            return_consumed_capacity: &self.return_consumed_capacity,
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
         }
-    }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        serde_json::to_vec(&self.body()).expect("serialization should succeed")
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`BatchGetItemInput`](crate::input::BatchGetItemInput)
     pub fn builder() -> crate::input::batch_get_item_input::Builder {
@@ -301,14 +299,15 @@ pub mod batch_write_item_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        request_items: std::option::Option<
+        pub(crate) request_items: std::option::Option<
             std::collections::HashMap<
                 std::string::String,
                 std::vec::Vec<crate::model::WriteRequest>,
             >,
         >,
-        return_consumed_capacity: std::option::Option<crate::model::ReturnConsumedCapacity>,
-        return_item_collection_metrics:
+        pub(crate) return_consumed_capacity:
+            std::option::Option<crate::model::ReturnConsumedCapacity>,
+        pub(crate) return_item_collection_metrics:
             std::option::Option<crate::model::ReturnItemCollectionMetrics>,
     }
     impl Builder {
@@ -406,7 +405,12 @@ impl BatchWriteItemInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body = crate::operation_ser::serialize_synthetic_batch_write_item_input_body(&self)
+                .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -454,7 +458,8 @@ impl BatchWriteItemInput {
             op
         })
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
@@ -464,24 +469,14 @@ impl BatchWriteItemInput {
             .header("Content-Type", "application/x-amz-json-1.0")
             .header("X-Amz-Target", "DynamoDB_20120810.BatchWriteItem"))
     }
-    fn body(&self) -> crate::serializer::BatchWriteItemInputBody {
-        crate::serializer::BatchWriteItemInputBody {
-            request_items: &self.request_items,
-            return_consumed_capacity: &self.return_consumed_capacity,
-            return_item_collection_metrics: &self.return_item_collection_metrics,
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
         }
-    }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        serde_json::to_vec(&self.body()).expect("serialization should succeed")
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`BatchWriteItemInput`](crate::input::BatchWriteItemInput)
     pub fn builder() -> crate::input::batch_write_item_input::Builder {
@@ -495,8 +490,8 @@ pub mod create_backup_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        table_name: std::option::Option<std::string::String>,
-        backup_name: std::option::Option<std::string::String>,
+        pub(crate) table_name: std::option::Option<std::string::String>,
+        pub(crate) backup_name: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The name of the table.</p>
@@ -542,7 +537,12 @@ impl CreateBackupInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body = crate::operation_ser::serialize_synthetic_create_backup_input_body(&self)
+                .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -590,7 +590,8 @@ impl CreateBackupInput {
             op
         })
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
@@ -600,23 +601,14 @@ impl CreateBackupInput {
             .header("Content-Type", "application/x-amz-json-1.0")
             .header("X-Amz-Target", "DynamoDB_20120810.CreateBackup"))
     }
-    fn body(&self) -> crate::serializer::CreateBackupInputBody {
-        crate::serializer::CreateBackupInputBody {
-            table_name: &self.table_name,
-            backup_name: &self.backup_name,
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
         }
-    }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        serde_json::to_vec(&self.body()).expect("serialization should succeed")
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`CreateBackupInput`](crate::input::CreateBackupInput)
     pub fn builder() -> crate::input::create_backup_input::Builder {
@@ -630,8 +622,8 @@ pub mod create_global_table_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        global_table_name: std::option::Option<std::string::String>,
-        replication_group: std::option::Option<std::vec::Vec<crate::model::Replica>>,
+        pub(crate) global_table_name: std::option::Option<std::string::String>,
+        pub(crate) replication_group: std::option::Option<std::vec::Vec<crate::model::Replica>>,
     }
     impl Builder {
         /// <p>The global table name.</p>
@@ -685,7 +677,13 @@ impl CreateGlobalTableInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body =
+                crate::operation_ser::serialize_synthetic_create_global_table_input_body(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -733,7 +731,8 @@ impl CreateGlobalTableInput {
             op
         })
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
@@ -743,23 +742,14 @@ impl CreateGlobalTableInput {
             .header("Content-Type", "application/x-amz-json-1.0")
             .header("X-Amz-Target", "DynamoDB_20120810.CreateGlobalTable"))
     }
-    fn body(&self) -> crate::serializer::CreateGlobalTableInputBody {
-        crate::serializer::CreateGlobalTableInputBody {
-            global_table_name: &self.global_table_name,
-            replication_group: &self.replication_group,
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
         }
-    }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        serde_json::to_vec(&self.body()).expect("serialization should succeed")
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`CreateGlobalTableInput`](crate::input::CreateGlobalTableInput)
     pub fn builder() -> crate::input::create_global_table_input::Builder {
@@ -773,19 +763,19 @@ pub mod create_table_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        attribute_definitions:
+        pub(crate) attribute_definitions:
             std::option::Option<std::vec::Vec<crate::model::AttributeDefinition>>,
-        table_name: std::option::Option<std::string::String>,
-        key_schema: std::option::Option<std::vec::Vec<crate::model::KeySchemaElement>>,
-        local_secondary_indexes:
+        pub(crate) table_name: std::option::Option<std::string::String>,
+        pub(crate) key_schema: std::option::Option<std::vec::Vec<crate::model::KeySchemaElement>>,
+        pub(crate) local_secondary_indexes:
             std::option::Option<std::vec::Vec<crate::model::LocalSecondaryIndex>>,
-        global_secondary_indexes:
+        pub(crate) global_secondary_indexes:
             std::option::Option<std::vec::Vec<crate::model::GlobalSecondaryIndex>>,
-        billing_mode: std::option::Option<crate::model::BillingMode>,
-        provisioned_throughput: std::option::Option<crate::model::ProvisionedThroughput>,
-        stream_specification: std::option::Option<crate::model::StreamSpecification>,
-        sse_specification: std::option::Option<crate::model::SSESpecification>,
-        tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        pub(crate) billing_mode: std::option::Option<crate::model::BillingMode>,
+        pub(crate) provisioned_throughput: std::option::Option<crate::model::ProvisionedThroughput>,
+        pub(crate) stream_specification: std::option::Option<crate::model::StreamSpecification>,
+        pub(crate) sse_specification: std::option::Option<crate::model::SSESpecification>,
+        pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
         pub fn attribute_definitions(
@@ -1005,7 +995,12 @@ impl CreateTableInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body = crate::operation_ser::serialize_synthetic_create_table_input_body(&self)
+                .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -1053,7 +1048,8 @@ impl CreateTableInput {
             op
         })
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
@@ -1063,31 +1059,14 @@ impl CreateTableInput {
             .header("Content-Type", "application/x-amz-json-1.0")
             .header("X-Amz-Target", "DynamoDB_20120810.CreateTable"))
     }
-    fn body(&self) -> crate::serializer::CreateTableInputBody {
-        crate::serializer::CreateTableInputBody {
-            attribute_definitions: &self.attribute_definitions,
-            table_name: &self.table_name,
-            key_schema: &self.key_schema,
-            local_secondary_indexes: &self.local_secondary_indexes,
-            global_secondary_indexes: &self.global_secondary_indexes,
-            billing_mode: &self.billing_mode,
-            provisioned_throughput: &self.provisioned_throughput,
-            stream_specification: &self.stream_specification,
-            sse_specification: &self.sse_specification,
-            tags: &self.tags,
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
         }
-    }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        serde_json::to_vec(&self.body()).expect("serialization should succeed")
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`CreateTableInput`](crate::input::CreateTableInput)
     pub fn builder() -> crate::input::create_table_input::Builder {
@@ -1101,7 +1080,7 @@ pub mod delete_backup_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        backup_arn: std::option::Option<std::string::String>,
+        pub(crate) backup_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The ARN associated with the backup.</p>
@@ -1137,7 +1116,12 @@ impl DeleteBackupInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body = crate::operation_ser::serialize_synthetic_delete_backup_input_body(&self)
+                .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -1185,7 +1169,8 @@ impl DeleteBackupInput {
             op
         })
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
@@ -1195,22 +1180,14 @@ impl DeleteBackupInput {
             .header("Content-Type", "application/x-amz-json-1.0")
             .header("X-Amz-Target", "DynamoDB_20120810.DeleteBackup"))
     }
-    fn body(&self) -> crate::serializer::DeleteBackupInputBody {
-        crate::serializer::DeleteBackupInputBody {
-            backup_arn: &self.backup_arn,
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
         }
-    }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        serde_json::to_vec(&self.body()).expect("serialization should succeed")
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`DeleteBackupInput`](crate::input::DeleteBackupInput)
     pub fn builder() -> crate::input::delete_backup_input::Builder {
@@ -1224,23 +1201,24 @@ pub mod delete_item_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        table_name: std::option::Option<std::string::String>,
-        key: std::option::Option<
+        pub(crate) table_name: std::option::Option<std::string::String>,
+        pub(crate) key: std::option::Option<
             std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
         >,
-        expected: std::option::Option<
+        pub(crate) expected: std::option::Option<
             std::collections::HashMap<std::string::String, crate::model::ExpectedAttributeValue>,
         >,
-        conditional_operator: std::option::Option<crate::model::ConditionalOperator>,
-        return_values: std::option::Option<crate::model::ReturnValue>,
-        return_consumed_capacity: std::option::Option<crate::model::ReturnConsumedCapacity>,
-        return_item_collection_metrics:
+        pub(crate) conditional_operator: std::option::Option<crate::model::ConditionalOperator>,
+        pub(crate) return_values: std::option::Option<crate::model::ReturnValue>,
+        pub(crate) return_consumed_capacity:
+            std::option::Option<crate::model::ReturnConsumedCapacity>,
+        pub(crate) return_item_collection_metrics:
             std::option::Option<crate::model::ReturnItemCollectionMetrics>,
-        condition_expression: std::option::Option<std::string::String>,
-        expression_attribute_names: std::option::Option<
+        pub(crate) condition_expression: std::option::Option<std::string::String>,
+        pub(crate) expression_attribute_names: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
-        expression_attribute_values: std::option::Option<
+        pub(crate) expression_attribute_values: std::option::Option<
             std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
         >,
     }
@@ -1488,7 +1466,12 @@ impl DeleteItemInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body = crate::operation_ser::serialize_synthetic_delete_item_input_body(&self)
+                .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -1536,7 +1519,8 @@ impl DeleteItemInput {
             op
         })
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
@@ -1546,31 +1530,14 @@ impl DeleteItemInput {
             .header("Content-Type", "application/x-amz-json-1.0")
             .header("X-Amz-Target", "DynamoDB_20120810.DeleteItem"))
     }
-    fn body(&self) -> crate::serializer::DeleteItemInputBody {
-        crate::serializer::DeleteItemInputBody {
-            table_name: &self.table_name,
-            key: &self.key,
-            expected: &self.expected,
-            conditional_operator: &self.conditional_operator,
-            return_values: &self.return_values,
-            return_consumed_capacity: &self.return_consumed_capacity,
-            return_item_collection_metrics: &self.return_item_collection_metrics,
-            condition_expression: &self.condition_expression,
-            expression_attribute_names: &self.expression_attribute_names,
-            expression_attribute_values: &self.expression_attribute_values,
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
         }
-    }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        serde_json::to_vec(&self.body()).expect("serialization should succeed")
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`DeleteItemInput`](crate::input::DeleteItemInput)
     pub fn builder() -> crate::input::delete_item_input::Builder {
@@ -1584,7 +1551,7 @@ pub mod delete_table_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        table_name: std::option::Option<std::string::String>,
+        pub(crate) table_name: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The name of the table to delete.</p>
@@ -1620,7 +1587,12 @@ impl DeleteTableInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body = crate::operation_ser::serialize_synthetic_delete_table_input_body(&self)
+                .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -1668,7 +1640,8 @@ impl DeleteTableInput {
             op
         })
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
@@ -1678,22 +1651,14 @@ impl DeleteTableInput {
             .header("Content-Type", "application/x-amz-json-1.0")
             .header("X-Amz-Target", "DynamoDB_20120810.DeleteTable"))
     }
-    fn body(&self) -> crate::serializer::DeleteTableInputBody {
-        crate::serializer::DeleteTableInputBody {
-            table_name: &self.table_name,
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
         }
-    }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        serde_json::to_vec(&self.body()).expect("serialization should succeed")
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`DeleteTableInput`](crate::input::DeleteTableInput)
     pub fn builder() -> crate::input::delete_table_input::Builder {
@@ -1707,7 +1672,7 @@ pub mod describe_backup_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        backup_arn: std::option::Option<std::string::String>,
+        pub(crate) backup_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) associated with the backup.</p>
@@ -1743,7 +1708,12 @@ impl DescribeBackupInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body = crate::operation_ser::serialize_synthetic_describe_backup_input_body(&self)
+                .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -1791,7 +1761,8 @@ impl DescribeBackupInput {
             op
         })
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
@@ -1801,22 +1772,14 @@ impl DescribeBackupInput {
             .header("Content-Type", "application/x-amz-json-1.0")
             .header("X-Amz-Target", "DynamoDB_20120810.DescribeBackup"))
     }
-    fn body(&self) -> crate::serializer::DescribeBackupInputBody {
-        crate::serializer::DescribeBackupInputBody {
-            backup_arn: &self.backup_arn,
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
         }
-    }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        serde_json::to_vec(&self.body()).expect("serialization should succeed")
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`DescribeBackupInput`](crate::input::DescribeBackupInput)
     pub fn builder() -> crate::input::describe_backup_input::Builder {
@@ -1830,7 +1793,7 @@ pub mod describe_continuous_backups_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        table_name: std::option::Option<std::string::String>,
+        pub(crate) table_name: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>Name of the table for which the customer wants to check the continuous backups and point in time recovery settings.</p>
@@ -1867,7 +1830,15 @@ impl DescribeContinuousBackupsInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body =
+                crate::operation_ser::serialize_synthetic_describe_continuous_backups_input_body(
+                    &self,
+                )
+                .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -1915,7 +1886,8 @@ impl DescribeContinuousBackupsInput {
             op
         })
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
@@ -1928,22 +1900,14 @@ impl DescribeContinuousBackupsInput {
                 "DynamoDB_20120810.DescribeContinuousBackups",
             ))
     }
-    fn body(&self) -> crate::serializer::DescribeContinuousBackupsInputBody {
-        crate::serializer::DescribeContinuousBackupsInputBody {
-            table_name: &self.table_name,
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
         }
-    }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        serde_json::to_vec(&self.body()).expect("serialization should succeed")
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`DescribeContinuousBackupsInput`](crate::input::DescribeContinuousBackupsInput)
     pub fn builder() -> crate::input::describe_continuous_backups_input::Builder {
@@ -1957,8 +1921,8 @@ pub mod describe_contributor_insights_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        table_name: std::option::Option<std::string::String>,
-        index_name: std::option::Option<std::string::String>,
+        pub(crate) table_name: std::option::Option<std::string::String>,
+        pub(crate) index_name: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The name of the table to describe.</p>
@@ -2007,7 +1971,15 @@ impl DescribeContributorInsightsInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body =
+                crate::operation_ser::serialize_synthetic_describe_contributor_insights_input_body(
+                    &self,
+                )
+                .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -2055,7 +2027,8 @@ impl DescribeContributorInsightsInput {
             op
         })
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
@@ -2068,23 +2041,14 @@ impl DescribeContributorInsightsInput {
                 "DynamoDB_20120810.DescribeContributorInsights",
             ))
     }
-    fn body(&self) -> crate::serializer::DescribeContributorInsightsInputBody {
-        crate::serializer::DescribeContributorInsightsInputBody {
-            table_name: &self.table_name,
-            index_name: &self.index_name,
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
         }
-    }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        serde_json::to_vec(&self.body()).expect("serialization should succeed")
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`DescribeContributorInsightsInput`](crate::input::DescribeContributorInsightsInput)
     pub fn builder() -> crate::input::describe_contributor_insights_input::Builder {
@@ -2122,7 +2086,9 @@ impl DescribeEndpointsInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body = smithy_http::body::SdkBody::from("{}");
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -2170,7 +2136,8 @@ impl DescribeEndpointsInput {
             op
         })
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
@@ -2180,17 +2147,14 @@ impl DescribeEndpointsInput {
             .header("Content-Type", "application/x-amz-json-1.0")
             .header("X-Amz-Target", "DynamoDB_20120810.DescribeEndpoints"))
     }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        "{}".to_string().into()
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+        }
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`DescribeEndpointsInput`](crate::input::DescribeEndpointsInput)
     pub fn builder() -> crate::input::describe_endpoints_input::Builder {
@@ -2204,7 +2168,7 @@ pub mod describe_export_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        export_arn: std::option::Option<std::string::String>,
+        pub(crate) export_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) associated with the export.</p>
@@ -2240,7 +2204,12 @@ impl DescribeExportInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body = crate::operation_ser::serialize_synthetic_describe_export_input_body(&self)
+                .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -2288,7 +2257,8 @@ impl DescribeExportInput {
             op
         })
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
@@ -2298,22 +2268,14 @@ impl DescribeExportInput {
             .header("Content-Type", "application/x-amz-json-1.0")
             .header("X-Amz-Target", "DynamoDB_20120810.DescribeExport"))
     }
-    fn body(&self) -> crate::serializer::DescribeExportInputBody {
-        crate::serializer::DescribeExportInputBody {
-            export_arn: &self.export_arn,
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
         }
-    }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        serde_json::to_vec(&self.body()).expect("serialization should succeed")
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`DescribeExportInput`](crate::input::DescribeExportInput)
     pub fn builder() -> crate::input::describe_export_input::Builder {
@@ -2327,7 +2289,7 @@ pub mod describe_global_table_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        global_table_name: std::option::Option<std::string::String>,
+        pub(crate) global_table_name: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The name of the global table.</p>
@@ -2367,7 +2329,13 @@ impl DescribeGlobalTableInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body =
+                crate::operation_ser::serialize_synthetic_describe_global_table_input_body(&self)
+                    .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -2415,7 +2383,8 @@ impl DescribeGlobalTableInput {
             op
         })
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
@@ -2425,22 +2394,14 @@ impl DescribeGlobalTableInput {
             .header("Content-Type", "application/x-amz-json-1.0")
             .header("X-Amz-Target", "DynamoDB_20120810.DescribeGlobalTable"))
     }
-    fn body(&self) -> crate::serializer::DescribeGlobalTableInputBody {
-        crate::serializer::DescribeGlobalTableInputBody {
-            global_table_name: &self.global_table_name,
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
         }
-    }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        serde_json::to_vec(&self.body()).expect("serialization should succeed")
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`DescribeGlobalTableInput`](crate::input::DescribeGlobalTableInput)
     pub fn builder() -> crate::input::describe_global_table_input::Builder {
@@ -2454,7 +2415,7 @@ pub mod describe_global_table_settings_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        global_table_name: std::option::Option<std::string::String>,
+        pub(crate) global_table_name: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The name of the global table to describe.</p>
@@ -2496,7 +2457,11 @@ impl DescribeGlobalTableSettingsInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body = 
+                crate::operation_ser::serialize_synthetic_describe_global_table_settings_input_body(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -2544,7 +2509,8 @@ impl DescribeGlobalTableSettingsInput {
             op
         })
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
@@ -2557,22 +2523,14 @@ impl DescribeGlobalTableSettingsInput {
                 "DynamoDB_20120810.DescribeGlobalTableSettings",
             ))
     }
-    fn body(&self) -> crate::serializer::DescribeGlobalTableSettingsInputBody {
-        crate::serializer::DescribeGlobalTableSettingsInputBody {
-            global_table_name: &self.global_table_name,
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
         }
-    }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        serde_json::to_vec(&self.body()).expect("serialization should succeed")
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`DescribeGlobalTableSettingsInput`](crate::input::DescribeGlobalTableSettingsInput)
     pub fn builder() -> crate::input::describe_global_table_settings_input::Builder {
@@ -2586,7 +2544,7 @@ pub mod describe_kinesis_streaming_destination_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        table_name: std::option::Option<std::string::String>,
+        pub(crate) table_name: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The name of the table being described.</p>
@@ -2625,7 +2583,11 @@ impl DescribeKinesisStreamingDestinationInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body = 
+                crate::operation_ser::serialize_synthetic_describe_kinesis_streaming_destination_input_body(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -2673,7 +2635,8 @@ impl DescribeKinesisStreamingDestinationInput {
             op
         })
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
@@ -2686,22 +2649,14 @@ impl DescribeKinesisStreamingDestinationInput {
                 "DynamoDB_20120810.DescribeKinesisStreamingDestination",
             ))
     }
-    fn body(&self) -> crate::serializer::DescribeKinesisStreamingDestinationInputBody {
-        crate::serializer::DescribeKinesisStreamingDestinationInputBody {
-            table_name: &self.table_name,
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
         }
-    }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        serde_json::to_vec(&self.body()).expect("serialization should succeed")
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`DescribeKinesisStreamingDestinationInput`](crate::input::DescribeKinesisStreamingDestinationInput)
     pub fn builder() -> crate::input::describe_kinesis_streaming_destination_input::Builder {
@@ -2738,7 +2693,9 @@ impl DescribeLimitsInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body = smithy_http::body::SdkBody::from("{}");
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -2786,7 +2743,8 @@ impl DescribeLimitsInput {
             op
         })
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
@@ -2796,17 +2754,14 @@ impl DescribeLimitsInput {
             .header("Content-Type", "application/x-amz-json-1.0")
             .header("X-Amz-Target", "DynamoDB_20120810.DescribeLimits"))
     }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        "{}".to_string().into()
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+        }
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`DescribeLimitsInput`](crate::input::DescribeLimitsInput)
     pub fn builder() -> crate::input::describe_limits_input::Builder {
@@ -2820,7 +2775,7 @@ pub mod describe_table_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        table_name: std::option::Option<std::string::String>,
+        pub(crate) table_name: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The name of the table to describe.</p>
@@ -2856,7 +2811,12 @@ impl DescribeTableInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body = crate::operation_ser::serialize_synthetic_describe_table_input_body(&self)
+                .map_err(|err| {
+                smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -2904,7 +2864,8 @@ impl DescribeTableInput {
             op
         })
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
@@ -2914,22 +2875,14 @@ impl DescribeTableInput {
             .header("Content-Type", "application/x-amz-json-1.0")
             .header("X-Amz-Target", "DynamoDB_20120810.DescribeTable"))
     }
-    fn body(&self) -> crate::serializer::DescribeTableInputBody {
-        crate::serializer::DescribeTableInputBody {
-            table_name: &self.table_name,
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
         }
-    }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        serde_json::to_vec(&self.body()).expect("serialization should succeed")
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`DescribeTableInput`](crate::input::DescribeTableInput)
     pub fn builder() -> crate::input::describe_table_input::Builder {
@@ -2943,7 +2896,7 @@ pub mod describe_table_replica_auto_scaling_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        table_name: std::option::Option<std::string::String>,
+        pub(crate) table_name: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The name of the table.</p>
@@ -2982,7 +2935,11 @@ impl DescribeTableReplicaAutoScalingInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body = 
+                crate::operation_ser::serialize_synthetic_describe_table_replica_auto_scaling_input_body(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -3030,7 +2987,8 @@ impl DescribeTableReplicaAutoScalingInput {
             op
         })
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
@@ -3043,22 +3001,14 @@ impl DescribeTableReplicaAutoScalingInput {
                 "DynamoDB_20120810.DescribeTableReplicaAutoScaling",
             ))
     }
-    fn body(&self) -> crate::serializer::DescribeTableReplicaAutoScalingInputBody {
-        crate::serializer::DescribeTableReplicaAutoScalingInputBody {
-            table_name: &self.table_name,
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
         }
-    }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        serde_json::to_vec(&self.body()).expect("serialization should succeed")
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`DescribeTableReplicaAutoScalingInput`](crate::input::DescribeTableReplicaAutoScalingInput)
     pub fn builder() -> crate::input::describe_table_replica_auto_scaling_input::Builder {
@@ -3072,7 +3022,7 @@ pub mod describe_time_to_live_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        table_name: std::option::Option<std::string::String>,
+        pub(crate) table_name: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The name of the table to be described.</p>
@@ -3109,7 +3059,13 @@ impl DescribeTimeToLiveInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body =
+                crate::operation_ser::serialize_synthetic_describe_time_to_live_input_body(&self)
+                    .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -3157,7 +3113,8 @@ impl DescribeTimeToLiveInput {
             op
         })
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
@@ -3167,22 +3124,14 @@ impl DescribeTimeToLiveInput {
             .header("Content-Type", "application/x-amz-json-1.0")
             .header("X-Amz-Target", "DynamoDB_20120810.DescribeTimeToLive"))
     }
-    fn body(&self) -> crate::serializer::DescribeTimeToLiveInputBody {
-        crate::serializer::DescribeTimeToLiveInputBody {
-            table_name: &self.table_name,
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
         }
-    }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        serde_json::to_vec(&self.body()).expect("serialization should succeed")
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`DescribeTimeToLiveInput`](crate::input::DescribeTimeToLiveInput)
     pub fn builder() -> crate::input::describe_time_to_live_input::Builder {
@@ -3196,8 +3145,8 @@ pub mod disable_kinesis_streaming_destination_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        table_name: std::option::Option<std::string::String>,
-        stream_arn: std::option::Option<std::string::String>,
+        pub(crate) table_name: std::option::Option<std::string::String>,
+        pub(crate) stream_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The name of the DynamoDB table.</p>
@@ -3246,7 +3195,11 @@ impl DisableKinesisStreamingDestinationInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body = 
+                crate::operation_ser::serialize_synthetic_disable_kinesis_streaming_destination_input_body(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -3294,7 +3247,8 @@ impl DisableKinesisStreamingDestinationInput {
             op
         })
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
@@ -3307,23 +3261,14 @@ impl DisableKinesisStreamingDestinationInput {
                 "DynamoDB_20120810.DisableKinesisStreamingDestination",
             ))
     }
-    fn body(&self) -> crate::serializer::DisableKinesisStreamingDestinationInputBody {
-        crate::serializer::DisableKinesisStreamingDestinationInputBody {
-            table_name: &self.table_name,
-            stream_arn: &self.stream_arn,
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
         }
-    }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        serde_json::to_vec(&self.body()).expect("serialization should succeed")
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`DisableKinesisStreamingDestinationInput`](crate::input::DisableKinesisStreamingDestinationInput)
     pub fn builder() -> crate::input::disable_kinesis_streaming_destination_input::Builder {
@@ -3337,8 +3282,8 @@ pub mod enable_kinesis_streaming_destination_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        table_name: std::option::Option<std::string::String>,
-        stream_arn: std::option::Option<std::string::String>,
+        pub(crate) table_name: std::option::Option<std::string::String>,
+        pub(crate) stream_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The name of the DynamoDB table.</p>
@@ -3387,7 +3332,11 @@ impl EnableKinesisStreamingDestinationInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body = 
+                crate::operation_ser::serialize_synthetic_enable_kinesis_streaming_destination_input_body(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -3435,7 +3384,8 @@ impl EnableKinesisStreamingDestinationInput {
             op
         })
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
@@ -3448,23 +3398,14 @@ impl EnableKinesisStreamingDestinationInput {
                 "DynamoDB_20120810.EnableKinesisStreamingDestination",
             ))
     }
-    fn body(&self) -> crate::serializer::EnableKinesisStreamingDestinationInputBody {
-        crate::serializer::EnableKinesisStreamingDestinationInputBody {
-            table_name: &self.table_name,
-            stream_arn: &self.stream_arn,
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
         }
-    }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        serde_json::to_vec(&self.body()).expect("serialization should succeed")
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`EnableKinesisStreamingDestinationInput`](crate::input::EnableKinesisStreamingDestinationInput)
     pub fn builder() -> crate::input::enable_kinesis_streaming_destination_input::Builder {
@@ -3478,10 +3419,10 @@ pub mod execute_statement_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        statement: std::option::Option<std::string::String>,
-        parameters: std::option::Option<std::vec::Vec<crate::model::AttributeValue>>,
-        consistent_read: std::option::Option<bool>,
-        next_token: std::option::Option<std::string::String>,
+        pub(crate) statement: std::option::Option<std::string::String>,
+        pub(crate) parameters: std::option::Option<std::vec::Vec<crate::model::AttributeValue>>,
+        pub(crate) consistent_read: std::option::Option<bool>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>
@@ -3558,7 +3499,13 @@ impl ExecuteStatementInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body =
+                crate::operation_ser::serialize_synthetic_execute_statement_input_body(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -3606,7 +3553,8 @@ impl ExecuteStatementInput {
             op
         })
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
@@ -3616,25 +3564,14 @@ impl ExecuteStatementInput {
             .header("Content-Type", "application/x-amz-json-1.0")
             .header("X-Amz-Target", "DynamoDB_20120810.ExecuteStatement"))
     }
-    fn body(&self) -> crate::serializer::ExecuteStatementInputBody {
-        crate::serializer::ExecuteStatementInputBody {
-            statement: &self.statement,
-            parameters: &self.parameters,
-            consistent_read: &self.consistent_read,
-            next_token: &self.next_token,
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
         }
-    }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        serde_json::to_vec(&self.body()).expect("serialization should succeed")
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`ExecuteStatementInput`](crate::input::ExecuteStatementInput)
     pub fn builder() -> crate::input::execute_statement_input::Builder {
@@ -3648,9 +3585,9 @@ pub mod execute_transaction_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        transact_statements:
+        pub(crate) transact_statements:
             std::option::Option<std::vec::Vec<crate::model::ParameterizedStatement>>,
-        client_request_token: std::option::Option<std::string::String>,
+        pub(crate) client_request_token: std::option::Option<std::string::String>,
     }
     impl Builder {
         pub fn transact_statements(
@@ -3713,7 +3650,13 @@ impl ExecuteTransactionInput {
                 self.client_request_token = Some(_config.make_token.make_idempotency_token());
             }
 
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body =
+                crate::operation_ser::serialize_synthetic_execute_transaction_input_body(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -3761,7 +3704,8 @@ impl ExecuteTransactionInput {
             op
         })
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
@@ -3771,23 +3715,14 @@ impl ExecuteTransactionInput {
             .header("Content-Type", "application/x-amz-json-1.0")
             .header("X-Amz-Target", "DynamoDB_20120810.ExecuteTransaction"))
     }
-    fn body(&self) -> crate::serializer::ExecuteTransactionInputBody {
-        crate::serializer::ExecuteTransactionInputBody {
-            transact_statements: &self.transact_statements,
-            client_request_token: &self.client_request_token,
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
         }
-    }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        serde_json::to_vec(&self.body()).expect("serialization should succeed")
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`ExecuteTransactionInput`](crate::input::ExecuteTransactionInput)
     pub fn builder() -> crate::input::execute_transaction_input::Builder {
@@ -3801,15 +3736,15 @@ pub mod export_table_to_point_in_time_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        table_arn: std::option::Option<std::string::String>,
-        export_time: std::option::Option<smithy_types::Instant>,
-        client_token: std::option::Option<std::string::String>,
-        s3_bucket: std::option::Option<std::string::String>,
-        s3_bucket_owner: std::option::Option<std::string::String>,
-        s3_prefix: std::option::Option<std::string::String>,
-        s3_sse_algorithm: std::option::Option<crate::model::S3SseAlgorithm>,
-        s3_sse_kms_key_id: std::option::Option<std::string::String>,
-        export_format: std::option::Option<crate::model::ExportFormat>,
+        pub(crate) table_arn: std::option::Option<std::string::String>,
+        pub(crate) export_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) client_token: std::option::Option<std::string::String>,
+        pub(crate) s3_bucket: std::option::Option<std::string::String>,
+        pub(crate) s3_bucket_owner: std::option::Option<std::string::String>,
+        pub(crate) s3_prefix: std::option::Option<std::string::String>,
+        pub(crate) s3_sse_algorithm: std::option::Option<crate::model::S3SseAlgorithm>,
+        pub(crate) s3_sse_kms_key_id: std::option::Option<std::string::String>,
+        pub(crate) export_format: std::option::Option<crate::model::ExportFormat>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) associated with the table to export.</p>
@@ -3966,7 +3901,15 @@ impl ExportTableToPointInTimeInput {
                 self.client_token = Some(_config.make_token.make_idempotency_token());
             }
 
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body =
+                crate::operation_ser::serialize_synthetic_export_table_to_point_in_time_input_body(
+                    &self,
+                )
+                .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -4014,7 +3957,8 @@ impl ExportTableToPointInTimeInput {
             op
         })
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
@@ -4024,30 +3968,14 @@ impl ExportTableToPointInTimeInput {
             .header("Content-Type", "application/x-amz-json-1.0")
             .header("X-Amz-Target", "DynamoDB_20120810.ExportTableToPointInTime"))
     }
-    fn body(&self) -> crate::serializer::ExportTableToPointInTimeInputBody {
-        crate::serializer::ExportTableToPointInTimeInputBody {
-            table_arn: &self.table_arn,
-            export_time: &self.export_time,
-            client_token: &self.client_token,
-            s3_bucket: &self.s3_bucket,
-            s3_bucket_owner: &self.s3_bucket_owner,
-            s3_prefix: &self.s3_prefix,
-            s3_sse_algorithm: &self.s3_sse_algorithm,
-            s3_sse_kms_key_id: &self.s3_sse_kms_key_id,
-            export_format: &self.export_format,
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
         }
-    }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        serde_json::to_vec(&self.body()).expect("serialization should succeed")
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`ExportTableToPointInTimeInput`](crate::input::ExportTableToPointInTimeInput)
     pub fn builder() -> crate::input::export_table_to_point_in_time_input::Builder {
@@ -4061,15 +3989,16 @@ pub mod get_item_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        table_name: std::option::Option<std::string::String>,
-        key: std::option::Option<
+        pub(crate) table_name: std::option::Option<std::string::String>,
+        pub(crate) key: std::option::Option<
             std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
         >,
-        attributes_to_get: std::option::Option<std::vec::Vec<std::string::String>>,
-        consistent_read: std::option::Option<bool>,
-        return_consumed_capacity: std::option::Option<crate::model::ReturnConsumedCapacity>,
-        projection_expression: std::option::Option<std::string::String>,
-        expression_attribute_names: std::option::Option<
+        pub(crate) attributes_to_get: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) consistent_read: std::option::Option<bool>,
+        pub(crate) return_consumed_capacity:
+            std::option::Option<crate::model::ReturnConsumedCapacity>,
+        pub(crate) projection_expression: std::option::Option<std::string::String>,
+        pub(crate) expression_attribute_names: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
     }
@@ -4216,7 +4145,12 @@ impl GetItemInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body = crate::operation_ser::serialize_synthetic_get_item_input_body(&self)
+                .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -4259,7 +4193,8 @@ impl GetItemInput {
             op
         })
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
@@ -4269,28 +4204,14 @@ impl GetItemInput {
             .header("Content-Type", "application/x-amz-json-1.0")
             .header("X-Amz-Target", "DynamoDB_20120810.GetItem"))
     }
-    fn body(&self) -> crate::serializer::GetItemInputBody {
-        crate::serializer::GetItemInputBody {
-            table_name: &self.table_name,
-            key: &self.key,
-            attributes_to_get: &self.attributes_to_get,
-            consistent_read: &self.consistent_read,
-            return_consumed_capacity: &self.return_consumed_capacity,
-            projection_expression: &self.projection_expression,
-            expression_attribute_names: &self.expression_attribute_names,
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
         }
-    }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        serde_json::to_vec(&self.body()).expect("serialization should succeed")
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`GetItemInput`](crate::input::GetItemInput)
     pub fn builder() -> crate::input::get_item_input::Builder {
@@ -4304,12 +4225,12 @@ pub mod list_backups_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        table_name: std::option::Option<std::string::String>,
-        limit: std::option::Option<i32>,
-        time_range_lower_bound: std::option::Option<smithy_types::Instant>,
-        time_range_upper_bound: std::option::Option<smithy_types::Instant>,
-        exclusive_start_backup_arn: std::option::Option<std::string::String>,
-        backup_type: std::option::Option<crate::model::BackupTypeFilter>,
+        pub(crate) table_name: std::option::Option<std::string::String>,
+        pub(crate) limit: std::option::Option<i32>,
+        pub(crate) time_range_lower_bound: std::option::Option<smithy_types::Instant>,
+        pub(crate) time_range_upper_bound: std::option::Option<smithy_types::Instant>,
+        pub(crate) exclusive_start_backup_arn: std::option::Option<std::string::String>,
+        pub(crate) backup_type: std::option::Option<crate::model::BackupTypeFilter>,
     }
     impl Builder {
         /// <p>The backups from the table specified by <code>TableName</code> are listed. </p>
@@ -4427,7 +4348,12 @@ impl ListBackupsInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body = crate::operation_ser::serialize_synthetic_list_backups_input_body(&self)
+                .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -4475,7 +4401,8 @@ impl ListBackupsInput {
             op
         })
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
@@ -4485,27 +4412,14 @@ impl ListBackupsInput {
             .header("Content-Type", "application/x-amz-json-1.0")
             .header("X-Amz-Target", "DynamoDB_20120810.ListBackups"))
     }
-    fn body(&self) -> crate::serializer::ListBackupsInputBody {
-        crate::serializer::ListBackupsInputBody {
-            table_name: &self.table_name,
-            limit: &self.limit,
-            time_range_lower_bound: &self.time_range_lower_bound,
-            time_range_upper_bound: &self.time_range_upper_bound,
-            exclusive_start_backup_arn: &self.exclusive_start_backup_arn,
-            backup_type: &self.backup_type,
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
         }
-    }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        serde_json::to_vec(&self.body()).expect("serialization should succeed")
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`ListBackupsInput`](crate::input::ListBackupsInput)
     pub fn builder() -> crate::input::list_backups_input::Builder {
@@ -4519,9 +4433,9 @@ pub mod list_contributor_insights_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        table_name: std::option::Option<std::string::String>,
-        next_token: std::option::Option<std::string::String>,
-        max_results: std::option::Option<i32>,
+        pub(crate) table_name: std::option::Option<std::string::String>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
         /// <p>The name of the table.</p>
@@ -4578,7 +4492,15 @@ impl ListContributorInsightsInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body =
+                crate::operation_ser::serialize_synthetic_list_contributor_insights_input_body(
+                    &self,
+                )
+                .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -4626,7 +4548,8 @@ impl ListContributorInsightsInput {
             op
         })
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
@@ -4636,24 +4559,14 @@ impl ListContributorInsightsInput {
             .header("Content-Type", "application/x-amz-json-1.0")
             .header("X-Amz-Target", "DynamoDB_20120810.ListContributorInsights"))
     }
-    fn body(&self) -> crate::serializer::ListContributorInsightsInputBody {
-        crate::serializer::ListContributorInsightsInputBody {
-            table_name: &self.table_name,
-            next_token: &self.next_token,
-            max_results: &self.max_results,
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
         }
-    }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        serde_json::to_vec(&self.body()).expect("serialization should succeed")
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`ListContributorInsightsInput`](crate::input::ListContributorInsightsInput)
     pub fn builder() -> crate::input::list_contributor_insights_input::Builder {
@@ -4667,9 +4580,9 @@ pub mod list_exports_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        table_arn: std::option::Option<std::string::String>,
-        max_results: std::option::Option<i32>,
-        next_token: std::option::Option<std::string::String>,
+        pub(crate) table_arn: std::option::Option<std::string::String>,
+        pub(crate) max_results: std::option::Option<i32>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) associated with the exported table.</p>
@@ -4727,7 +4640,12 @@ impl ListExportsInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body = crate::operation_ser::serialize_synthetic_list_exports_input_body(&self)
+                .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -4775,7 +4693,8 @@ impl ListExportsInput {
             op
         })
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
@@ -4785,24 +4704,14 @@ impl ListExportsInput {
             .header("Content-Type", "application/x-amz-json-1.0")
             .header("X-Amz-Target", "DynamoDB_20120810.ListExports"))
     }
-    fn body(&self) -> crate::serializer::ListExportsInputBody {
-        crate::serializer::ListExportsInputBody {
-            table_arn: &self.table_arn,
-            max_results: &self.max_results,
-            next_token: &self.next_token,
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
         }
-    }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        serde_json::to_vec(&self.body()).expect("serialization should succeed")
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`ListExportsInput`](crate::input::ListExportsInput)
     pub fn builder() -> crate::input::list_exports_input::Builder {
@@ -4816,9 +4725,9 @@ pub mod list_global_tables_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        exclusive_start_global_table_name: std::option::Option<std::string::String>,
-        limit: std::option::Option<i32>,
-        region_name: std::option::Option<std::string::String>,
+        pub(crate) exclusive_start_global_table_name: std::option::Option<std::string::String>,
+        pub(crate) limit: std::option::Option<i32>,
+        pub(crate) region_name: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The first global table name that this operation will evaluate.</p>
@@ -4883,7 +4792,13 @@ impl ListGlobalTablesInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body =
+                crate::operation_ser::serialize_synthetic_list_global_tables_input_body(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -4931,7 +4846,8 @@ impl ListGlobalTablesInput {
             op
         })
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
@@ -4941,24 +4857,14 @@ impl ListGlobalTablesInput {
             .header("Content-Type", "application/x-amz-json-1.0")
             .header("X-Amz-Target", "DynamoDB_20120810.ListGlobalTables"))
     }
-    fn body(&self) -> crate::serializer::ListGlobalTablesInputBody {
-        crate::serializer::ListGlobalTablesInputBody {
-            exclusive_start_global_table_name: &self.exclusive_start_global_table_name,
-            limit: &self.limit,
-            region_name: &self.region_name,
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
         }
-    }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        serde_json::to_vec(&self.body()).expect("serialization should succeed")
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`ListGlobalTablesInput`](crate::input::ListGlobalTablesInput)
     pub fn builder() -> crate::input::list_global_tables_input::Builder {
@@ -4972,8 +4878,8 @@ pub mod list_tables_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        exclusive_start_table_name: std::option::Option<std::string::String>,
-        limit: std::option::Option<i32>,
+        pub(crate) exclusive_start_table_name: std::option::Option<std::string::String>,
+        pub(crate) limit: std::option::Option<i32>,
     }
     impl Builder {
         /// <p>The first table name that this operation will evaluate. Use the value that was returned for
@@ -5024,7 +4930,12 @@ impl ListTablesInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body = crate::operation_ser::serialize_synthetic_list_tables_input_body(&self)
+                .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -5072,7 +4983,8 @@ impl ListTablesInput {
             op
         })
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
@@ -5082,23 +4994,14 @@ impl ListTablesInput {
             .header("Content-Type", "application/x-amz-json-1.0")
             .header("X-Amz-Target", "DynamoDB_20120810.ListTables"))
     }
-    fn body(&self) -> crate::serializer::ListTablesInputBody {
-        crate::serializer::ListTablesInputBody {
-            exclusive_start_table_name: &self.exclusive_start_table_name,
-            limit: &self.limit,
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
         }
-    }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        serde_json::to_vec(&self.body()).expect("serialization should succeed")
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`ListTablesInput`](crate::input::ListTablesInput)
     pub fn builder() -> crate::input::list_tables_input::Builder {
@@ -5112,8 +5015,8 @@ pub mod list_tags_of_resource_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        resource_arn: std::option::Option<std::string::String>,
-        next_token: std::option::Option<std::string::String>,
+        pub(crate) resource_arn: std::option::Option<std::string::String>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The Amazon DynamoDB resource with tags to be listed. This value is an Amazon Resource Name (ARN).</p>
@@ -5161,7 +5064,13 @@ impl ListTagsOfResourceInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body =
+                crate::operation_ser::serialize_synthetic_list_tags_of_resource_input_body(&self)
+                    .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -5209,7 +5118,8 @@ impl ListTagsOfResourceInput {
             op
         })
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
@@ -5219,23 +5129,14 @@ impl ListTagsOfResourceInput {
             .header("Content-Type", "application/x-amz-json-1.0")
             .header("X-Amz-Target", "DynamoDB_20120810.ListTagsOfResource"))
     }
-    fn body(&self) -> crate::serializer::ListTagsOfResourceInputBody {
-        crate::serializer::ListTagsOfResourceInputBody {
-            resource_arn: &self.resource_arn,
-            next_token: &self.next_token,
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
         }
-    }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        serde_json::to_vec(&self.body()).expect("serialization should succeed")
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`ListTagsOfResourceInput`](crate::input::ListTagsOfResourceInput)
     pub fn builder() -> crate::input::list_tags_of_resource_input::Builder {
@@ -5249,23 +5150,24 @@ pub mod put_item_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        table_name: std::option::Option<std::string::String>,
-        item: std::option::Option<
+        pub(crate) table_name: std::option::Option<std::string::String>,
+        pub(crate) item: std::option::Option<
             std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
         >,
-        expected: std::option::Option<
+        pub(crate) expected: std::option::Option<
             std::collections::HashMap<std::string::String, crate::model::ExpectedAttributeValue>,
         >,
-        return_values: std::option::Option<crate::model::ReturnValue>,
-        return_consumed_capacity: std::option::Option<crate::model::ReturnConsumedCapacity>,
-        return_item_collection_metrics:
+        pub(crate) return_values: std::option::Option<crate::model::ReturnValue>,
+        pub(crate) return_consumed_capacity:
+            std::option::Option<crate::model::ReturnConsumedCapacity>,
+        pub(crate) return_item_collection_metrics:
             std::option::Option<crate::model::ReturnItemCollectionMetrics>,
-        conditional_operator: std::option::Option<crate::model::ConditionalOperator>,
-        condition_expression: std::option::Option<std::string::String>,
-        expression_attribute_names: std::option::Option<
+        pub(crate) conditional_operator: std::option::Option<crate::model::ConditionalOperator>,
+        pub(crate) condition_expression: std::option::Option<std::string::String>,
+        pub(crate) expression_attribute_names: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
-        expression_attribute_values: std::option::Option<
+        pub(crate) expression_attribute_values: std::option::Option<
             std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
         >,
     }
@@ -5511,7 +5413,12 @@ impl PutItemInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body = crate::operation_ser::serialize_synthetic_put_item_input_body(&self)
+                .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -5554,7 +5461,8 @@ impl PutItemInput {
             op
         })
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
@@ -5564,31 +5472,14 @@ impl PutItemInput {
             .header("Content-Type", "application/x-amz-json-1.0")
             .header("X-Amz-Target", "DynamoDB_20120810.PutItem"))
     }
-    fn body(&self) -> crate::serializer::PutItemInputBody {
-        crate::serializer::PutItemInputBody {
-            table_name: &self.table_name,
-            item: &self.item,
-            expected: &self.expected,
-            return_values: &self.return_values,
-            return_consumed_capacity: &self.return_consumed_capacity,
-            return_item_collection_metrics: &self.return_item_collection_metrics,
-            conditional_operator: &self.conditional_operator,
-            condition_expression: &self.condition_expression,
-            expression_attribute_names: &self.expression_attribute_names,
-            expression_attribute_values: &self.expression_attribute_values,
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
         }
-    }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        serde_json::to_vec(&self.body()).expect("serialization should succeed")
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`PutItemInput`](crate::input::PutItemInput)
     pub fn builder() -> crate::input::put_item_input::Builder {
@@ -5602,31 +5493,32 @@ pub mod query_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        table_name: std::option::Option<std::string::String>,
-        index_name: std::option::Option<std::string::String>,
-        select: std::option::Option<crate::model::Select>,
-        attributes_to_get: std::option::Option<std::vec::Vec<std::string::String>>,
-        limit: std::option::Option<i32>,
-        consistent_read: std::option::Option<bool>,
-        key_conditions: std::option::Option<
+        pub(crate) table_name: std::option::Option<std::string::String>,
+        pub(crate) index_name: std::option::Option<std::string::String>,
+        pub(crate) select: std::option::Option<crate::model::Select>,
+        pub(crate) attributes_to_get: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) limit: std::option::Option<i32>,
+        pub(crate) consistent_read: std::option::Option<bool>,
+        pub(crate) key_conditions: std::option::Option<
             std::collections::HashMap<std::string::String, crate::model::Condition>,
         >,
-        query_filter: std::option::Option<
+        pub(crate) query_filter: std::option::Option<
             std::collections::HashMap<std::string::String, crate::model::Condition>,
         >,
-        conditional_operator: std::option::Option<crate::model::ConditionalOperator>,
-        scan_index_forward: std::option::Option<bool>,
-        exclusive_start_key: std::option::Option<
+        pub(crate) conditional_operator: std::option::Option<crate::model::ConditionalOperator>,
+        pub(crate) scan_index_forward: std::option::Option<bool>,
+        pub(crate) exclusive_start_key: std::option::Option<
             std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
         >,
-        return_consumed_capacity: std::option::Option<crate::model::ReturnConsumedCapacity>,
-        projection_expression: std::option::Option<std::string::String>,
-        filter_expression: std::option::Option<std::string::String>,
-        key_condition_expression: std::option::Option<std::string::String>,
-        expression_attribute_names: std::option::Option<
+        pub(crate) return_consumed_capacity:
+            std::option::Option<crate::model::ReturnConsumedCapacity>,
+        pub(crate) projection_expression: std::option::Option<std::string::String>,
+        pub(crate) filter_expression: std::option::Option<std::string::String>,
+        pub(crate) key_condition_expression: std::option::Option<std::string::String>,
+        pub(crate) expression_attribute_names: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
-        expression_attribute_values: std::option::Option<
+        pub(crate) expression_attribute_values: std::option::Option<
             std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
         >,
     }
@@ -6092,7 +5984,11 @@ impl QueryInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body = crate::operation_ser::serialize_synthetic_query_input_body(&self).map_err(
+                |err| smithy_http::operation::BuildError::SerializationError(err.into()),
+            )?;
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -6135,7 +6031,8 @@ impl QueryInput {
             op
         })
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
@@ -6145,38 +6042,14 @@ impl QueryInput {
             .header("Content-Type", "application/x-amz-json-1.0")
             .header("X-Amz-Target", "DynamoDB_20120810.Query"))
     }
-    fn body(&self) -> crate::serializer::QueryInputBody {
-        crate::serializer::QueryInputBody {
-            table_name: &self.table_name,
-            index_name: &self.index_name,
-            select: &self.select,
-            attributes_to_get: &self.attributes_to_get,
-            limit: &self.limit,
-            consistent_read: &self.consistent_read,
-            key_conditions: &self.key_conditions,
-            query_filter: &self.query_filter,
-            conditional_operator: &self.conditional_operator,
-            scan_index_forward: &self.scan_index_forward,
-            exclusive_start_key: &self.exclusive_start_key,
-            return_consumed_capacity: &self.return_consumed_capacity,
-            projection_expression: &self.projection_expression,
-            filter_expression: &self.filter_expression,
-            key_condition_expression: &self.key_condition_expression,
-            expression_attribute_names: &self.expression_attribute_names,
-            expression_attribute_values: &self.expression_attribute_values,
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
         }
-    }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        serde_json::to_vec(&self.body()).expect("serialization should succeed")
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`QueryInput`](crate::input::QueryInput)
     pub fn builder() -> crate::input::query_input::Builder {
@@ -6190,15 +6063,16 @@ pub mod restore_table_from_backup_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        target_table_name: std::option::Option<std::string::String>,
-        backup_arn: std::option::Option<std::string::String>,
-        billing_mode_override: std::option::Option<crate::model::BillingMode>,
-        global_secondary_index_override:
+        pub(crate) target_table_name: std::option::Option<std::string::String>,
+        pub(crate) backup_arn: std::option::Option<std::string::String>,
+        pub(crate) billing_mode_override: std::option::Option<crate::model::BillingMode>,
+        pub(crate) global_secondary_index_override:
             std::option::Option<std::vec::Vec<crate::model::GlobalSecondaryIndex>>,
-        local_secondary_index_override:
+        pub(crate) local_secondary_index_override:
             std::option::Option<std::vec::Vec<crate::model::LocalSecondaryIndex>>,
-        provisioned_throughput_override: std::option::Option<crate::model::ProvisionedThroughput>,
-        sse_specification_override: std::option::Option<crate::model::SSESpecification>,
+        pub(crate) provisioned_throughput_override:
+            std::option::Option<crate::model::ProvisionedThroughput>,
+        pub(crate) sse_specification_override: std::option::Option<crate::model::SSESpecification>,
     }
     impl Builder {
         /// <p>The name of the new table to which the backup must be restored.</p>
@@ -6324,7 +6198,15 @@ impl RestoreTableFromBackupInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body =
+                crate::operation_ser::serialize_synthetic_restore_table_from_backup_input_body(
+                    &self,
+                )
+                .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -6372,7 +6254,8 @@ impl RestoreTableFromBackupInput {
             op
         })
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
@@ -6382,28 +6265,14 @@ impl RestoreTableFromBackupInput {
             .header("Content-Type", "application/x-amz-json-1.0")
             .header("X-Amz-Target", "DynamoDB_20120810.RestoreTableFromBackup"))
     }
-    fn body(&self) -> crate::serializer::RestoreTableFromBackupInputBody {
-        crate::serializer::RestoreTableFromBackupInputBody {
-            target_table_name: &self.target_table_name,
-            backup_arn: &self.backup_arn,
-            billing_mode_override: &self.billing_mode_override,
-            global_secondary_index_override: &self.global_secondary_index_override,
-            local_secondary_index_override: &self.local_secondary_index_override,
-            provisioned_throughput_override: &self.provisioned_throughput_override,
-            sse_specification_override: &self.sse_specification_override,
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
         }
-    }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        serde_json::to_vec(&self.body()).expect("serialization should succeed")
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`RestoreTableFromBackupInput`](crate::input::RestoreTableFromBackupInput)
     pub fn builder() -> crate::input::restore_table_from_backup_input::Builder {
@@ -6417,18 +6286,19 @@ pub mod restore_table_to_point_in_time_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        source_table_arn: std::option::Option<std::string::String>,
-        source_table_name: std::option::Option<std::string::String>,
-        target_table_name: std::option::Option<std::string::String>,
-        use_latest_restorable_time: std::option::Option<bool>,
-        restore_date_time: std::option::Option<smithy_types::Instant>,
-        billing_mode_override: std::option::Option<crate::model::BillingMode>,
-        global_secondary_index_override:
+        pub(crate) source_table_arn: std::option::Option<std::string::String>,
+        pub(crate) source_table_name: std::option::Option<std::string::String>,
+        pub(crate) target_table_name: std::option::Option<std::string::String>,
+        pub(crate) use_latest_restorable_time: std::option::Option<bool>,
+        pub(crate) restore_date_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) billing_mode_override: std::option::Option<crate::model::BillingMode>,
+        pub(crate) global_secondary_index_override:
             std::option::Option<std::vec::Vec<crate::model::GlobalSecondaryIndex>>,
-        local_secondary_index_override:
+        pub(crate) local_secondary_index_override:
             std::option::Option<std::vec::Vec<crate::model::LocalSecondaryIndex>>,
-        provisioned_throughput_override: std::option::Option<crate::model::ProvisionedThroughput>,
-        sse_specification_override: std::option::Option<crate::model::SSESpecification>,
+        pub(crate) provisioned_throughput_override:
+            std::option::Option<crate::model::ProvisionedThroughput>,
+        pub(crate) sse_specification_override: std::option::Option<crate::model::SSESpecification>,
     }
     impl Builder {
         /// <p>The DynamoDB table that will be restored. This value is an Amazon
@@ -6595,7 +6465,11 @@ impl RestoreTableToPointInTimeInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body = 
+                crate::operation_ser::serialize_synthetic_restore_table_to_point_in_time_input_body(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -6643,7 +6517,8 @@ impl RestoreTableToPointInTimeInput {
             op
         })
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
@@ -6656,31 +6531,14 @@ impl RestoreTableToPointInTimeInput {
                 "DynamoDB_20120810.RestoreTableToPointInTime",
             ))
     }
-    fn body(&self) -> crate::serializer::RestoreTableToPointInTimeInputBody {
-        crate::serializer::RestoreTableToPointInTimeInputBody {
-            source_table_arn: &self.source_table_arn,
-            source_table_name: &self.source_table_name,
-            target_table_name: &self.target_table_name,
-            use_latest_restorable_time: &self.use_latest_restorable_time,
-            restore_date_time: &self.restore_date_time,
-            billing_mode_override: &self.billing_mode_override,
-            global_secondary_index_override: &self.global_secondary_index_override,
-            local_secondary_index_override: &self.local_secondary_index_override,
-            provisioned_throughput_override: &self.provisioned_throughput_override,
-            sse_specification_override: &self.sse_specification_override,
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
         }
-    }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        serde_json::to_vec(&self.body()).expect("serialization should succeed")
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`RestoreTableToPointInTimeInput`](crate::input::RestoreTableToPointInTimeInput)
     pub fn builder() -> crate::input::restore_table_to_point_in_time_input::Builder {
@@ -6694,30 +6552,31 @@ pub mod scan_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        table_name: std::option::Option<std::string::String>,
-        index_name: std::option::Option<std::string::String>,
-        attributes_to_get: std::option::Option<std::vec::Vec<std::string::String>>,
-        limit: std::option::Option<i32>,
-        select: std::option::Option<crate::model::Select>,
-        scan_filter: std::option::Option<
+        pub(crate) table_name: std::option::Option<std::string::String>,
+        pub(crate) index_name: std::option::Option<std::string::String>,
+        pub(crate) attributes_to_get: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) limit: std::option::Option<i32>,
+        pub(crate) select: std::option::Option<crate::model::Select>,
+        pub(crate) scan_filter: std::option::Option<
             std::collections::HashMap<std::string::String, crate::model::Condition>,
         >,
-        conditional_operator: std::option::Option<crate::model::ConditionalOperator>,
-        exclusive_start_key: std::option::Option<
+        pub(crate) conditional_operator: std::option::Option<crate::model::ConditionalOperator>,
+        pub(crate) exclusive_start_key: std::option::Option<
             std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
         >,
-        return_consumed_capacity: std::option::Option<crate::model::ReturnConsumedCapacity>,
-        total_segments: std::option::Option<i32>,
-        segment: std::option::Option<i32>,
-        projection_expression: std::option::Option<std::string::String>,
-        filter_expression: std::option::Option<std::string::String>,
-        expression_attribute_names: std::option::Option<
+        pub(crate) return_consumed_capacity:
+            std::option::Option<crate::model::ReturnConsumedCapacity>,
+        pub(crate) total_segments: std::option::Option<i32>,
+        pub(crate) segment: std::option::Option<i32>,
+        pub(crate) projection_expression: std::option::Option<std::string::String>,
+        pub(crate) filter_expression: std::option::Option<std::string::String>,
+        pub(crate) expression_attribute_names: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
-        expression_attribute_values: std::option::Option<
+        pub(crate) expression_attribute_values: std::option::Option<
             std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
         >,
-        consistent_read: std::option::Option<bool>,
+        pub(crate) consistent_read: std::option::Option<bool>,
     }
     impl Builder {
         /// <p>The name of the table containing the requested items; or, if you provide
@@ -7079,7 +6938,11 @@ impl ScanInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body = crate::operation_ser::serialize_synthetic_scan_input_body(&self).map_err(
+                |err| smithy_http::operation::BuildError::SerializationError(err.into()),
+            )?;
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -7121,7 +6984,8 @@ impl ScanInput {
             op
         })
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
@@ -7131,37 +6995,14 @@ impl ScanInput {
             .header("Content-Type", "application/x-amz-json-1.0")
             .header("X-Amz-Target", "DynamoDB_20120810.Scan"))
     }
-    fn body(&self) -> crate::serializer::ScanInputBody {
-        crate::serializer::ScanInputBody {
-            table_name: &self.table_name,
-            index_name: &self.index_name,
-            attributes_to_get: &self.attributes_to_get,
-            limit: &self.limit,
-            select: &self.select,
-            scan_filter: &self.scan_filter,
-            conditional_operator: &self.conditional_operator,
-            exclusive_start_key: &self.exclusive_start_key,
-            return_consumed_capacity: &self.return_consumed_capacity,
-            total_segments: &self.total_segments,
-            segment: &self.segment,
-            projection_expression: &self.projection_expression,
-            filter_expression: &self.filter_expression,
-            expression_attribute_names: &self.expression_attribute_names,
-            expression_attribute_values: &self.expression_attribute_values,
-            consistent_read: &self.consistent_read,
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
         }
-    }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        serde_json::to_vec(&self.body()).expect("serialization should succeed")
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`ScanInput`](crate::input::ScanInput)
     pub fn builder() -> crate::input::scan_input::Builder {
@@ -7175,8 +7016,8 @@ pub mod tag_resource_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        resource_arn: std::option::Option<std::string::String>,
-        tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        pub(crate) resource_arn: std::option::Option<std::string::String>,
+        pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
         /// <p>Identifies the Amazon DynamoDB resource to which tags should be added. This value is an Amazon Resource Name (ARN).</p>
@@ -7226,7 +7067,12 @@ impl TagResourceInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body = crate::operation_ser::serialize_synthetic_tag_resource_input_body(&self)
+                .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -7274,7 +7120,8 @@ impl TagResourceInput {
             op
         })
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
@@ -7284,23 +7131,14 @@ impl TagResourceInput {
             .header("Content-Type", "application/x-amz-json-1.0")
             .header("X-Amz-Target", "DynamoDB_20120810.TagResource"))
     }
-    fn body(&self) -> crate::serializer::TagResourceInputBody {
-        crate::serializer::TagResourceInputBody {
-            resource_arn: &self.resource_arn,
-            tags: &self.tags,
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
         }
-    }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        serde_json::to_vec(&self.body()).expect("serialization should succeed")
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput)
     pub fn builder() -> crate::input::tag_resource_input::Builder {
@@ -7314,8 +7152,10 @@ pub mod transact_get_items_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        transact_items: std::option::Option<std::vec::Vec<crate::model::TransactGetItem>>,
-        return_consumed_capacity: std::option::Option<crate::model::ReturnConsumedCapacity>,
+        pub(crate) transact_items:
+            std::option::Option<std::vec::Vec<crate::model::TransactGetItem>>,
+        pub(crate) return_consumed_capacity:
+            std::option::Option<crate::model::ReturnConsumedCapacity>,
     }
     impl Builder {
         pub fn transact_items(mut self, inp: impl Into<crate::model::TransactGetItem>) -> Self {
@@ -7374,7 +7214,13 @@ impl TransactGetItemsInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body =
+                crate::operation_ser::serialize_synthetic_transact_get_items_input_body(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -7422,7 +7268,8 @@ impl TransactGetItemsInput {
             op
         })
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
@@ -7432,23 +7279,14 @@ impl TransactGetItemsInput {
             .header("Content-Type", "application/x-amz-json-1.0")
             .header("X-Amz-Target", "DynamoDB_20120810.TransactGetItems"))
     }
-    fn body(&self) -> crate::serializer::TransactGetItemsInputBody {
-        crate::serializer::TransactGetItemsInputBody {
-            transact_items: &self.transact_items,
-            return_consumed_capacity: &self.return_consumed_capacity,
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
         }
-    }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        serde_json::to_vec(&self.body()).expect("serialization should succeed")
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`TransactGetItemsInput`](crate::input::TransactGetItemsInput)
     pub fn builder() -> crate::input::transact_get_items_input::Builder {
@@ -7462,11 +7300,13 @@ pub mod transact_write_items_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        transact_items: std::option::Option<std::vec::Vec<crate::model::TransactWriteItem>>,
-        return_consumed_capacity: std::option::Option<crate::model::ReturnConsumedCapacity>,
-        return_item_collection_metrics:
+        pub(crate) transact_items:
+            std::option::Option<std::vec::Vec<crate::model::TransactWriteItem>>,
+        pub(crate) return_consumed_capacity:
+            std::option::Option<crate::model::ReturnConsumedCapacity>,
+        pub(crate) return_item_collection_metrics:
             std::option::Option<crate::model::ReturnItemCollectionMetrics>,
-        client_request_token: std::option::Option<std::string::String>,
+        pub(crate) client_request_token: std::option::Option<std::string::String>,
     }
     impl Builder {
         pub fn transact_items(mut self, inp: impl Into<crate::model::TransactWriteItem>) -> Self {
@@ -7590,7 +7430,13 @@ impl TransactWriteItemsInput {
                 self.client_request_token = Some(_config.make_token.make_idempotency_token());
             }
 
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body =
+                crate::operation_ser::serialize_synthetic_transact_write_items_input_body(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -7638,7 +7484,8 @@ impl TransactWriteItemsInput {
             op
         })
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
@@ -7648,25 +7495,14 @@ impl TransactWriteItemsInput {
             .header("Content-Type", "application/x-amz-json-1.0")
             .header("X-Amz-Target", "DynamoDB_20120810.TransactWriteItems"))
     }
-    fn body(&self) -> crate::serializer::TransactWriteItemsInputBody {
-        crate::serializer::TransactWriteItemsInputBody {
-            transact_items: &self.transact_items,
-            return_consumed_capacity: &self.return_consumed_capacity,
-            return_item_collection_metrics: &self.return_item_collection_metrics,
-            client_request_token: &self.client_request_token,
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
         }
-    }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        serde_json::to_vec(&self.body()).expect("serialization should succeed")
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`TransactWriteItemsInput`](crate::input::TransactWriteItemsInput)
     pub fn builder() -> crate::input::transact_write_items_input::Builder {
@@ -7680,8 +7516,8 @@ pub mod untag_resource_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        resource_arn: std::option::Option<std::string::String>,
-        tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) resource_arn: std::option::Option<std::string::String>,
+        pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
         /// <p>The DynamoDB resource that the tags will be removed from. This value is an Amazon
@@ -7732,7 +7568,12 @@ impl UntagResourceInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body = crate::operation_ser::serialize_synthetic_untag_resource_input_body(&self)
+                .map_err(|err| {
+                smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -7780,7 +7621,8 @@ impl UntagResourceInput {
             op
         })
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
@@ -7790,23 +7632,14 @@ impl UntagResourceInput {
             .header("Content-Type", "application/x-amz-json-1.0")
             .header("X-Amz-Target", "DynamoDB_20120810.UntagResource"))
     }
-    fn body(&self) -> crate::serializer::UntagResourceInputBody {
-        crate::serializer::UntagResourceInputBody {
-            resource_arn: &self.resource_arn,
-            tag_keys: &self.tag_keys,
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
         }
-    }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        serde_json::to_vec(&self.body()).expect("serialization should succeed")
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput)
     pub fn builder() -> crate::input::untag_resource_input::Builder {
@@ -7820,8 +7653,8 @@ pub mod update_continuous_backups_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        table_name: std::option::Option<std::string::String>,
-        point_in_time_recovery_specification:
+        pub(crate) table_name: std::option::Option<std::string::String>,
+        pub(crate) point_in_time_recovery_specification:
             std::option::Option<crate::model::PointInTimeRecoverySpecification>,
     }
     impl Builder {
@@ -7875,7 +7708,15 @@ impl UpdateContinuousBackupsInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body =
+                crate::operation_ser::serialize_synthetic_update_continuous_backups_input_body(
+                    &self,
+                )
+                .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -7923,7 +7764,8 @@ impl UpdateContinuousBackupsInput {
             op
         })
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
@@ -7933,23 +7775,14 @@ impl UpdateContinuousBackupsInput {
             .header("Content-Type", "application/x-amz-json-1.0")
             .header("X-Amz-Target", "DynamoDB_20120810.UpdateContinuousBackups"))
     }
-    fn body(&self) -> crate::serializer::UpdateContinuousBackupsInputBody {
-        crate::serializer::UpdateContinuousBackupsInputBody {
-            table_name: &self.table_name,
-            point_in_time_recovery_specification: &self.point_in_time_recovery_specification,
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
         }
-    }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        serde_json::to_vec(&self.body()).expect("serialization should succeed")
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`UpdateContinuousBackupsInput`](crate::input::UpdateContinuousBackupsInput)
     pub fn builder() -> crate::input::update_continuous_backups_input::Builder {
@@ -7963,9 +7796,10 @@ pub mod update_contributor_insights_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        table_name: std::option::Option<std::string::String>,
-        index_name: std::option::Option<std::string::String>,
-        contributor_insights_action: std::option::Option<crate::model::ContributorInsightsAction>,
+        pub(crate) table_name: std::option::Option<std::string::String>,
+        pub(crate) index_name: std::option::Option<std::string::String>,
+        pub(crate) contributor_insights_action:
+            std::option::Option<crate::model::ContributorInsightsAction>,
     }
     impl Builder {
         /// <p>The name of the table.</p>
@@ -8028,7 +7862,15 @@ impl UpdateContributorInsightsInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body =
+                crate::operation_ser::serialize_synthetic_update_contributor_insights_input_body(
+                    &self,
+                )
+                .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -8076,7 +7918,8 @@ impl UpdateContributorInsightsInput {
             op
         })
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
@@ -8089,24 +7932,14 @@ impl UpdateContributorInsightsInput {
                 "DynamoDB_20120810.UpdateContributorInsights",
             ))
     }
-    fn body(&self) -> crate::serializer::UpdateContributorInsightsInputBody {
-        crate::serializer::UpdateContributorInsightsInputBody {
-            table_name: &self.table_name,
-            index_name: &self.index_name,
-            contributor_insights_action: &self.contributor_insights_action,
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
         }
-    }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        serde_json::to_vec(&self.body()).expect("serialization should succeed")
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`UpdateContributorInsightsInput`](crate::input::UpdateContributorInsightsInput)
     pub fn builder() -> crate::input::update_contributor_insights_input::Builder {
@@ -8120,8 +7953,8 @@ pub mod update_global_table_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        global_table_name: std::option::Option<std::string::String>,
-        replica_updates: std::option::Option<std::vec::Vec<crate::model::ReplicaUpdate>>,
+        pub(crate) global_table_name: std::option::Option<std::string::String>,
+        pub(crate) replica_updates: std::option::Option<std::vec::Vec<crate::model::ReplicaUpdate>>,
     }
     impl Builder {
         /// <p>The global table name.</p>
@@ -8175,7 +8008,13 @@ impl UpdateGlobalTableInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body =
+                crate::operation_ser::serialize_synthetic_update_global_table_input_body(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -8223,7 +8062,8 @@ impl UpdateGlobalTableInput {
             op
         })
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
@@ -8233,23 +8073,14 @@ impl UpdateGlobalTableInput {
             .header("Content-Type", "application/x-amz-json-1.0")
             .header("X-Amz-Target", "DynamoDB_20120810.UpdateGlobalTable"))
     }
-    fn body(&self) -> crate::serializer::UpdateGlobalTableInputBody {
-        crate::serializer::UpdateGlobalTableInputBody {
-            global_table_name: &self.global_table_name,
-            replica_updates: &self.replica_updates,
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
         }
-    }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        serde_json::to_vec(&self.body()).expect("serialization should succeed")
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`UpdateGlobalTableInput`](crate::input::UpdateGlobalTableInput)
     pub fn builder() -> crate::input::update_global_table_input::Builder {
@@ -8263,15 +8094,15 @@ pub mod update_global_table_settings_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        global_table_name: std::option::Option<std::string::String>,
-        global_table_billing_mode: std::option::Option<crate::model::BillingMode>,
-        global_table_provisioned_write_capacity_units: std::option::Option<i64>,
-        global_table_provisioned_write_capacity_auto_scaling_settings_update:
+        pub(crate) global_table_name: std::option::Option<std::string::String>,
+        pub(crate) global_table_billing_mode: std::option::Option<crate::model::BillingMode>,
+        pub(crate) global_table_provisioned_write_capacity_units: std::option::Option<i64>,
+        pub(crate) global_table_provisioned_write_capacity_auto_scaling_settings_update:
             std::option::Option<crate::model::AutoScalingSettingsUpdate>,
-        global_table_global_secondary_index_settings_update: std::option::Option<
+        pub(crate) global_table_global_secondary_index_settings_update: std::option::Option<
             std::vec::Vec<crate::model::GlobalTableGlobalSecondaryIndexSettingsUpdate>,
         >,
-        replica_settings_update:
+        pub(crate) replica_settings_update:
             std::option::Option<std::vec::Vec<crate::model::ReplicaSettingsUpdate>>,
     }
     impl Builder {
@@ -8408,7 +8239,15 @@ impl UpdateGlobalTableSettingsInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body =
+                crate::operation_ser::serialize_synthetic_update_global_table_settings_input_body(
+                    &self,
+                )
+                .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -8456,7 +8295,8 @@ impl UpdateGlobalTableSettingsInput {
             op
         })
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
@@ -8469,30 +8309,14 @@ impl UpdateGlobalTableSettingsInput {
                 "DynamoDB_20120810.UpdateGlobalTableSettings",
             ))
     }
-    fn body(&self) -> crate::serializer::UpdateGlobalTableSettingsInputBody {
-        crate::serializer::UpdateGlobalTableSettingsInputBody {
-            global_table_name: &self.global_table_name,
-            global_table_billing_mode: &self.global_table_billing_mode,
-            global_table_provisioned_write_capacity_units: &self
-                .global_table_provisioned_write_capacity_units,
-            global_table_provisioned_write_capacity_auto_scaling_settings_update: &self
-                .global_table_provisioned_write_capacity_auto_scaling_settings_update,
-            global_table_global_secondary_index_settings_update: &self
-                .global_table_global_secondary_index_settings_update,
-            replica_settings_update: &self.replica_settings_update,
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
         }
-    }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        serde_json::to_vec(&self.body()).expect("serialization should succeed")
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`UpdateGlobalTableSettingsInput`](crate::input::UpdateGlobalTableSettingsInput)
     pub fn builder() -> crate::input::update_global_table_settings_input::Builder {
@@ -8506,27 +8330,28 @@ pub mod update_item_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        table_name: std::option::Option<std::string::String>,
-        key: std::option::Option<
+        pub(crate) table_name: std::option::Option<std::string::String>,
+        pub(crate) key: std::option::Option<
             std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
         >,
-        attribute_updates: std::option::Option<
+        pub(crate) attribute_updates: std::option::Option<
             std::collections::HashMap<std::string::String, crate::model::AttributeValueUpdate>,
         >,
-        expected: std::option::Option<
+        pub(crate) expected: std::option::Option<
             std::collections::HashMap<std::string::String, crate::model::ExpectedAttributeValue>,
         >,
-        conditional_operator: std::option::Option<crate::model::ConditionalOperator>,
-        return_values: std::option::Option<crate::model::ReturnValue>,
-        return_consumed_capacity: std::option::Option<crate::model::ReturnConsumedCapacity>,
-        return_item_collection_metrics:
+        pub(crate) conditional_operator: std::option::Option<crate::model::ConditionalOperator>,
+        pub(crate) return_values: std::option::Option<crate::model::ReturnValue>,
+        pub(crate) return_consumed_capacity:
+            std::option::Option<crate::model::ReturnConsumedCapacity>,
+        pub(crate) return_item_collection_metrics:
             std::option::Option<crate::model::ReturnItemCollectionMetrics>,
-        update_expression: std::option::Option<std::string::String>,
-        condition_expression: std::option::Option<std::string::String>,
-        expression_attribute_names: std::option::Option<
+        pub(crate) update_expression: std::option::Option<std::string::String>,
+        pub(crate) condition_expression: std::option::Option<std::string::String>,
+        pub(crate) expression_attribute_names: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
-        expression_attribute_values: std::option::Option<
+        pub(crate) expression_attribute_values: std::option::Option<
             std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
         >,
     }
@@ -8905,7 +8730,12 @@ impl UpdateItemInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body = crate::operation_ser::serialize_synthetic_update_item_input_body(&self)
+                .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -8953,7 +8783,8 @@ impl UpdateItemInput {
             op
         })
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
@@ -8963,33 +8794,14 @@ impl UpdateItemInput {
             .header("Content-Type", "application/x-amz-json-1.0")
             .header("X-Amz-Target", "DynamoDB_20120810.UpdateItem"))
     }
-    fn body(&self) -> crate::serializer::UpdateItemInputBody {
-        crate::serializer::UpdateItemInputBody {
-            table_name: &self.table_name,
-            key: &self.key,
-            attribute_updates: &self.attribute_updates,
-            expected: &self.expected,
-            conditional_operator: &self.conditional_operator,
-            return_values: &self.return_values,
-            return_consumed_capacity: &self.return_consumed_capacity,
-            return_item_collection_metrics: &self.return_item_collection_metrics,
-            update_expression: &self.update_expression,
-            condition_expression: &self.condition_expression,
-            expression_attribute_names: &self.expression_attribute_names,
-            expression_attribute_values: &self.expression_attribute_values,
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
         }
-    }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        serde_json::to_vec(&self.body()).expect("serialization should succeed")
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`UpdateItemInput`](crate::input::UpdateItemInput)
     pub fn builder() -> crate::input::update_item_input::Builder {
@@ -9003,16 +8815,17 @@ pub mod update_table_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        attribute_definitions:
+        pub(crate) attribute_definitions:
             std::option::Option<std::vec::Vec<crate::model::AttributeDefinition>>,
-        table_name: std::option::Option<std::string::String>,
-        billing_mode: std::option::Option<crate::model::BillingMode>,
-        provisioned_throughput: std::option::Option<crate::model::ProvisionedThroughput>,
-        global_secondary_index_updates:
+        pub(crate) table_name: std::option::Option<std::string::String>,
+        pub(crate) billing_mode: std::option::Option<crate::model::BillingMode>,
+        pub(crate) provisioned_throughput: std::option::Option<crate::model::ProvisionedThroughput>,
+        pub(crate) global_secondary_index_updates:
             std::option::Option<std::vec::Vec<crate::model::GlobalSecondaryIndexUpdate>>,
-        stream_specification: std::option::Option<crate::model::StreamSpecification>,
-        sse_specification: std::option::Option<crate::model::SSESpecification>,
-        replica_updates: std::option::Option<std::vec::Vec<crate::model::ReplicationGroupUpdate>>,
+        pub(crate) stream_specification: std::option::Option<crate::model::StreamSpecification>,
+        pub(crate) sse_specification: std::option::Option<crate::model::SSESpecification>,
+        pub(crate) replica_updates:
+            std::option::Option<std::vec::Vec<crate::model::ReplicationGroupUpdate>>,
     }
     impl Builder {
         pub fn attribute_definitions(
@@ -9170,7 +8983,12 @@ impl UpdateTableInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body = crate::operation_ser::serialize_synthetic_update_table_input_body(&self)
+                .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -9218,7 +9036,8 @@ impl UpdateTableInput {
             op
         })
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
@@ -9228,29 +9047,14 @@ impl UpdateTableInput {
             .header("Content-Type", "application/x-amz-json-1.0")
             .header("X-Amz-Target", "DynamoDB_20120810.UpdateTable"))
     }
-    fn body(&self) -> crate::serializer::UpdateTableInputBody {
-        crate::serializer::UpdateTableInputBody {
-            attribute_definitions: &self.attribute_definitions,
-            table_name: &self.table_name,
-            billing_mode: &self.billing_mode,
-            provisioned_throughput: &self.provisioned_throughput,
-            global_secondary_index_updates: &self.global_secondary_index_updates,
-            stream_specification: &self.stream_specification,
-            sse_specification: &self.sse_specification,
-            replica_updates: &self.replica_updates,
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
         }
-    }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        serde_json::to_vec(&self.body()).expect("serialization should succeed")
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`UpdateTableInput`](crate::input::UpdateTableInput)
     pub fn builder() -> crate::input::update_table_input::Builder {
@@ -9264,12 +9068,13 @@ pub mod update_table_replica_auto_scaling_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        global_secondary_index_updates:
+        pub(crate) global_secondary_index_updates:
             std::option::Option<std::vec::Vec<crate::model::GlobalSecondaryIndexAutoScalingUpdate>>,
-        table_name: std::option::Option<std::string::String>,
-        provisioned_write_capacity_auto_scaling_update:
+        pub(crate) table_name: std::option::Option<std::string::String>,
+        pub(crate) provisioned_write_capacity_auto_scaling_update:
             std::option::Option<crate::model::AutoScalingSettingsUpdate>,
-        replica_updates: std::option::Option<std::vec::Vec<crate::model::ReplicaAutoScalingUpdate>>,
+        pub(crate) replica_updates:
+            std::option::Option<std::vec::Vec<crate::model::ReplicaAutoScalingUpdate>>,
     }
     impl Builder {
         pub fn global_secondary_index_updates(
@@ -9362,7 +9167,11 @@ impl UpdateTableReplicaAutoScalingInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body = 
+                crate::operation_ser::serialize_synthetic_update_table_replica_auto_scaling_input_body(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -9410,7 +9219,8 @@ impl UpdateTableReplicaAutoScalingInput {
             op
         })
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
@@ -9423,26 +9233,14 @@ impl UpdateTableReplicaAutoScalingInput {
                 "DynamoDB_20120810.UpdateTableReplicaAutoScaling",
             ))
     }
-    fn body(&self) -> crate::serializer::UpdateTableReplicaAutoScalingInputBody {
-        crate::serializer::UpdateTableReplicaAutoScalingInputBody {
-            global_secondary_index_updates: &self.global_secondary_index_updates,
-            table_name: &self.table_name,
-            provisioned_write_capacity_auto_scaling_update: &self
-                .provisioned_write_capacity_auto_scaling_update,
-            replica_updates: &self.replica_updates,
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
         }
-    }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        serde_json::to_vec(&self.body()).expect("serialization should succeed")
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`UpdateTableReplicaAutoScalingInput`](crate::input::UpdateTableReplicaAutoScalingInput)
     pub fn builder() -> crate::input::update_table_replica_auto_scaling_input::Builder {
@@ -9456,8 +9254,9 @@ pub mod update_time_to_live_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        table_name: std::option::Option<std::string::String>,
-        time_to_live_specification: std::option::Option<crate::model::TimeToLiveSpecification>,
+        pub(crate) table_name: std::option::Option<std::string::String>,
+        pub(crate) time_to_live_specification:
+            std::option::Option<crate::model::TimeToLiveSpecification>,
     }
     impl Builder {
         /// <p>The name of the table to be configured.</p>
@@ -9510,7 +9309,13 @@ impl UpdateTimeToLiveInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
-            let request = Self::assemble(self.request_builder_base()?, self.build_body());
+            let request = self.request_builder_base()?;
+            let body =
+                crate::operation_ser::serialize_synthetic_update_time_to_live_input_body(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
+            let request = Self::assemble(request, body);
 
             #[allow(unused_mut)]
             let mut request =
@@ -9558,7 +9363,8 @@ impl UpdateTimeToLiveInput {
             op
         })
     }
-    pub fn request_builder_base(
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
@@ -9568,23 +9374,14 @@ impl UpdateTimeToLiveInput {
             .header("Content-Type", "application/x-amz-json-1.0")
             .header("X-Amz-Target", "DynamoDB_20120810.UpdateTimeToLive"))
     }
-    fn body(&self) -> crate::serializer::UpdateTimeToLiveInputBody {
-        crate::serializer::UpdateTimeToLiveInputBody {
-            table_name: &self.table_name,
-            time_to_live_specification: &self.time_to_live_specification,
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
         }
-    }
-    pub fn build_body(&self) -> std::vec::Vec<u8> {
-        serde_json::to_vec(&self.body()).expect("serialization should succeed")
-    }
-    pub fn assemble(
-        builder: http::request::Builder,
-        body: std::vec::Vec<u8>,
-    ) -> http::request::Request<std::vec::Vec<u8>> {
-        builder
-            .header(http::header::CONTENT_LENGTH, body.len())
-            .body(body)
-            .expect("http request should be valid")
+        builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`UpdateTimeToLiveInput`](crate::input::UpdateTimeToLiveInput)
     pub fn builder() -> crate::input::update_time_to_live_input::Builder {

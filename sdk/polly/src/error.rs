@@ -815,7 +815,7 @@ pub mod text_length_exceeded_error {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        message: std::option::Option<std::string::String>,
+        pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
         pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
@@ -881,7 +881,7 @@ pub mod ssml_marks_not_supported_for_text_type_error {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        message: std::option::Option<std::string::String>,
+        pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
         pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
@@ -944,7 +944,7 @@ pub mod service_failure_error {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        message: std::option::Option<std::string::String>,
+        pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
         pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
@@ -1011,7 +1011,7 @@ pub mod marks_not_supported_for_format_error {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        message: std::option::Option<std::string::String>,
+        pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
         pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
@@ -1078,7 +1078,7 @@ pub mod lexicon_not_found_error {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        message: std::option::Option<std::string::String>,
+        pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
         pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
@@ -1144,7 +1144,7 @@ pub mod language_not_supported_error {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        message: std::option::Option<std::string::String>,
+        pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
         pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
@@ -1208,7 +1208,7 @@ pub mod invalid_ssml_error {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        message: std::option::Option<std::string::String>,
+        pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
         pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
@@ -1271,7 +1271,7 @@ pub mod invalid_sample_rate_error {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        message: std::option::Option<std::string::String>,
+        pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
         pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
@@ -1335,7 +1335,7 @@ pub mod engine_not_supported_error {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        message: std::option::Option<std::string::String>,
+        pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
         pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
@@ -1399,7 +1399,7 @@ pub mod invalid_sns_topic_arn_error {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        message: std::option::Option<std::string::String>,
+        pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
         pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
@@ -1463,7 +1463,7 @@ pub mod invalid_s3_key_error {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        message: std::option::Option<std::string::String>,
+        pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
         pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
@@ -1527,7 +1527,7 @@ pub mod invalid_s3_bucket_error {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        message: std::option::Option<std::string::String>,
+        pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
         pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
@@ -1595,7 +1595,7 @@ pub mod unsupported_pls_language_error {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        message: std::option::Option<std::string::String>,
+        pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
         pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
@@ -1662,7 +1662,7 @@ pub mod unsupported_pls_alphabet_error {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        message: std::option::Option<std::string::String>,
+        pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
         pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
@@ -1728,7 +1728,7 @@ pub mod max_lexicons_number_exceeded_error {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        message: std::option::Option<std::string::String>,
+        pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
         pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
@@ -1794,7 +1794,7 @@ pub mod max_lexeme_length_exceeded_error {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        message: std::option::Option<std::string::String>,
+        pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
         pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
@@ -1858,7 +1858,7 @@ pub mod lexicon_size_exceeded_error {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        message: std::option::Option<std::string::String>,
+        pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
         pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
@@ -1922,7 +1922,7 @@ pub mod invalid_lexicon_error {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        message: std::option::Option<std::string::String>,
+        pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
         pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
@@ -1986,7 +1986,7 @@ pub mod invalid_next_token_error {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        message: std::option::Option<std::string::String>,
+        pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
         pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
@@ -2052,7 +2052,7 @@ pub mod synthesis_task_not_found_error {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        message: std::option::Option<std::string::String>,
+        pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
         pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
@@ -2115,7 +2115,7 @@ pub mod invalid_task_id_error {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        message: std::option::Option<std::string::String>,
+        pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
         pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
