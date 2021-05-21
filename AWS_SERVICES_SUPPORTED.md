@@ -9,7 +9,10 @@ The alpha SDK for Rust currently supports the checked services below. If you wan
 - [x] Amazon KMS
 - [x] Amazon Polly
 - [x] Amazon Secrets Manager
-
+- [X] Amazon Qldb
+- [X] Amazon Qldb-Session
+- [X] Amazon Lambda
+------
 - [ ] Amazon Access Analyzer
 - [ ] Amazon ACM
 - [ ] Amazon Acm-Pca
@@ -176,8 +179,7 @@ The alpha SDK for Rust currently supports the checked services below. If you wan
 - [ ] Amazon Pinpoint
 - [ ] Amazon Pinpoint-Email
 - [ ] Amazon Pricing
-- [X] Amazon Qldb
-- [X] Amazon Qldb-Session
+
 - [ ] Amazon Quicksight
 - [ ] Amazon RAM
 - [ ] [Amazon RDS](https://github.com/awslabs/aws-sdk-rust/issues/36)
