@@ -59,7 +59,7 @@ impl CancelRotateSecretInput {
         Ok({
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_synthetic_cancel_rotate_secret_input_body(&self)
+                crate::operation_ser::serialize_operation_cancel_rotate_secret_input_body(&self)
                     .map_err(|err| {
                         smithy_http::operation::BuildError::SerializationError(err.into())
                     })?;
@@ -75,9 +75,10 @@ impl CancelRotateSecretInput {
                     crate::API_METADATA.clone(),
                 ));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -333,7 +334,7 @@ impl CreateSecretInput {
             }
 
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_synthetic_create_secret_input_body(&self)
+            let body = crate::operation_ser::serialize_operation_create_secret_input_body(&self)
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -349,9 +350,10 @@ impl CreateSecretInput {
                     crate::API_METADATA.clone(),
                 ));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -471,7 +473,7 @@ impl DeleteResourcePolicyInput {
         Ok({
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_synthetic_delete_resource_policy_input_body(&self)
+                crate::operation_ser::serialize_operation_delete_resource_policy_input_body(&self)
                     .map_err(|err| {
                         smithy_http::operation::BuildError::SerializationError(err.into())
                     })?;
@@ -487,9 +489,10 @@ impl DeleteResourcePolicyInput {
                     crate::API_METADATA.clone(),
                 ));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -645,7 +648,7 @@ impl DeleteSecretInput {
     > {
         Ok({
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_synthetic_delete_secret_input_body(&self)
+            let body = crate::operation_ser::serialize_operation_delete_secret_input_body(&self)
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -661,9 +664,10 @@ impl DeleteSecretInput {
                     crate::API_METADATA.clone(),
                 ));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -781,7 +785,7 @@ impl DescribeSecretInput {
     > {
         Ok({
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_synthetic_describe_secret_input_body(&self)
+            let body = crate::operation_ser::serialize_operation_describe_secret_input_body(&self)
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -797,9 +801,10 @@ impl DescribeSecretInput {
                     crate::API_METADATA.clone(),
                 ));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -1001,7 +1006,7 @@ impl GetRandomPasswordInput {
         Ok({
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_synthetic_get_random_password_input_body(&self)
+                crate::operation_ser::serialize_operation_get_random_password_input_body(&self)
                     .map_err(|err| {
                         smithy_http::operation::BuildError::SerializationError(err.into())
                     })?;
@@ -1017,9 +1022,10 @@ impl GetRandomPasswordInput {
                     crate::API_METADATA.clone(),
                 ));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -1139,7 +1145,7 @@ impl GetResourcePolicyInput {
         Ok({
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_synthetic_get_resource_policy_input_body(&self)
+                crate::operation_ser::serialize_operation_get_resource_policy_input_body(&self)
                     .map_err(|err| {
                         smithy_http::operation::BuildError::SerializationError(err.into())
                     })?;
@@ -1155,9 +1161,10 @@ impl GetResourcePolicyInput {
                     crate::API_METADATA.clone(),
                 ));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -1309,7 +1316,7 @@ impl GetSecretValueInput {
     > {
         Ok({
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_synthetic_get_secret_value_input_body(&self)
+            let body = crate::operation_ser::serialize_operation_get_secret_value_input_body(&self)
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -1325,9 +1332,10 @@ impl GetSecretValueInput {
                     crate::API_METADATA.clone(),
                 ));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -1480,7 +1488,7 @@ impl ListSecretsInput {
     > {
         Ok({
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_synthetic_list_secrets_input_body(&self)
+            let body = crate::operation_ser::serialize_operation_list_secrets_input_body(&self)
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -1496,9 +1504,10 @@ impl ListSecretsInput {
                     crate::API_METADATA.clone(),
                 ));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -1663,7 +1672,7 @@ impl ListSecretVersionIdsInput {
         Ok({
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_synthetic_list_secret_version_ids_input_body(&self)
+                crate::operation_ser::serialize_operation_list_secret_version_ids_input_body(&self)
                     .map_err(|err| {
                         smithy_http::operation::BuildError::SerializationError(err.into())
                     })?;
@@ -1679,9 +1688,10 @@ impl ListSecretVersionIdsInput {
                     crate::API_METADATA.clone(),
                 ));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -1830,7 +1840,7 @@ impl PutResourcePolicyInput {
         Ok({
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_synthetic_put_resource_policy_input_body(&self)
+                crate::operation_ser::serialize_operation_put_resource_policy_input_body(&self)
                     .map_err(|err| {
                         smithy_http::operation::BuildError::SerializationError(err.into())
                     })?;
@@ -1846,9 +1856,10 @@ impl PutResourcePolicyInput {
                     crate::API_METADATA.clone(),
                 ));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -2073,7 +2084,7 @@ impl PutSecretValueInput {
             }
 
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_synthetic_put_secret_value_input_body(&self)
+            let body = crate::operation_ser::serialize_operation_put_secret_value_input_body(&self)
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -2089,9 +2100,10 @@ impl PutSecretValueInput {
                     crate::API_METADATA.clone(),
                 ));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -2209,7 +2221,7 @@ impl RestoreSecretInput {
     > {
         Ok({
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_synthetic_restore_secret_input_body(&self)
+            let body = crate::operation_ser::serialize_operation_restore_secret_input_body(&self)
                 .map_err(|err| {
                 smithy_http::operation::BuildError::SerializationError(err.into())
             })?;
@@ -2225,9 +2237,10 @@ impl RestoreSecretInput {
                     crate::API_METADATA.clone(),
                 ));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -2404,7 +2417,7 @@ impl RotateSecretInput {
             }
 
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_synthetic_rotate_secret_input_body(&self)
+            let body = crate::operation_ser::serialize_operation_rotate_secret_input_body(&self)
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -2420,9 +2433,10 @@ impl RotateSecretInput {
                     crate::API_METADATA.clone(),
                 ));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -2555,7 +2569,7 @@ impl TagResourceInput {
     > {
         Ok({
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_synthetic_tag_resource_input_body(&self)
+            let body = crate::operation_ser::serialize_operation_tag_resource_input_body(&self)
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -2571,9 +2585,10 @@ impl TagResourceInput {
                     crate::API_METADATA.clone(),
                 ));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -2706,7 +2721,7 @@ impl UntagResourceInput {
     > {
         Ok({
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_synthetic_untag_resource_input_body(&self)
+            let body = crate::operation_ser::serialize_operation_untag_resource_input_body(&self)
                 .map_err(|err| {
                 smithy_http::operation::BuildError::SerializationError(err.into())
             })?;
@@ -2722,9 +2737,10 @@ impl UntagResourceInput {
                     crate::API_METADATA.clone(),
                 ));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -2968,7 +2984,7 @@ impl UpdateSecretInput {
             }
 
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_synthetic_update_secret_input_body(&self)
+            let body = crate::operation_ser::serialize_operation_update_secret_input_body(&self)
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -2984,9 +3000,10 @@ impl UpdateSecretInput {
                     crate::API_METADATA.clone(),
                 ));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -3153,7 +3170,7 @@ impl UpdateSecretVersionStageInput {
         Ok({
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_synthetic_update_secret_version_stage_input_body(
+                crate::operation_ser::serialize_operation_update_secret_version_stage_input_body(
                     &self,
                 )
                 .map_err(|err| {
@@ -3171,9 +3188,10 @@ impl UpdateSecretVersionStageInput {
                     crate::API_METADATA.clone(),
                 ));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -3307,7 +3325,7 @@ impl ValidateResourcePolicyInput {
         Ok({
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_synthetic_validate_resource_policy_input_body(
+                crate::operation_ser::serialize_operation_validate_resource_policy_input_body(
                     &self,
                 )
                 .map_err(|err| {
@@ -3325,9 +3343,10 @@ impl ValidateResourcePolicyInput {
                     crate::API_METADATA.clone(),
                 ));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(

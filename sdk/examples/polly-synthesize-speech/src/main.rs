@@ -10,7 +10,6 @@ use polly::{Client, Config, Region};
 
 use aws_types::region::{EnvironmentProvider, ProvideRegion};
 
-use bytes::Buf;
 use structopt::StructOpt;
 use tokio::io::AsyncWriteExt;
 use tracing_subscriber::fmt::format::FmtSpan;
@@ -90,9 +89,8 @@ async fn main() {
     let mut file = tokio::fs::File::create(out_file)
         .await
         .expect("failed to create file");
-    while blob.has_remaining() {
-        file.write_buf(&mut blob)
-            .await
-            .expect("failed to write to file");
-    }
+
+    file.write_all_buf(&mut blob)
+        .await
+        .expect("failed to write to file");
 }

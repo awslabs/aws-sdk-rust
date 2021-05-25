@@ -1041,6 +1041,7 @@ impl<'de> serde::Deserialize<'de> for UnauthorizedCacheControlHeaderStrategy {
     }
 }
 
+/// <p>Returns the status of the <b>CacheCluster</b>.</p>
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1120,6 +1121,7 @@ impl<'de> serde::Deserialize<'de> for CacheClusterStatus {
     }
 }
 
+/// <p>Returns the size of the <b>CacheCluster</b>.</p>
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1283,6 +1285,7 @@ impl EndpointConfiguration {
     }
 }
 
+/// <p>The endpoint type. The valid values are <code>EDGE</code> for edge-optimized API setup, most suitable for mobile applications; <code>REGIONAL</code> for regional API endpoint setup, most suitable for calling from AWS Region; and <code>PRIVATE</code> for private APIs.</p>
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2921,6 +2924,7 @@ impl<'de> serde::Deserialize<'de> for ConnectionType {
     }
 }
 
+/// <p>The integration type. The valid value is <code>HTTP</code> for integrating an API method with an HTTP backend; <code>AWS</code> with any AWS service endpoints; <code>MOCK</code> for testing without actually invoking the backend; <code>HTTP_PROXY</code> for integrating with the HTTP proxy integration; <code>AWS_PROXY</code> for integrating with the Lambda proxy integration. </p>
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -3813,6 +3817,7 @@ impl MethodSnapshot {
     }
 }
 
+/// <p>The authorizer type. Valid values are <code>TOKEN</code> for a Lambda function using a single authorization token submitted in a custom header, <code>REQUEST</code> for a Lambda function using incoming request parameters, and <code>COGNITO_USER_POOLS</code> for using an Amazon Cognito user pool.</p>
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,

@@ -145,7 +145,7 @@ impl SendCommandInput {
     > {
         Ok({
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_synthetic_send_command_input_body(&self)
+            let body = crate::operation_ser::serialize_operation_send_command_input_body(&self)
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -161,9 +161,10 @@ impl SendCommandInput {
                     crate::API_METADATA.clone(),
                 ));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(

@@ -8,6 +8,7 @@ use aws_http::user_agent::AwsUserAgent;
 use aws_hyper::test_connection::TestConnection;
 use aws_hyper::{Client, SdkError};
 use aws_sdk_kms as kms;
+use http::header::AUTHORIZATION;
 use http::Uri;
 use kms::error::GenerateRandomErrorKind;
 use kms::operation::GenerateRandom;
@@ -32,7 +33,7 @@ async fn generate_random() {
             .header("x-amz-target", "TrentService.GenerateRandom")
             .header("content-length", "20")
             .header("host", "kms.us-east-1.amazonaws.com")
-            .header("authorization", "AWS4-HMAC-SHA256 Credential=ANOTREAL/20210305/us-east-1/kms/aws4_request, SignedHeaders=content-length;content-type;host;x-amz-target, Signature=750c6333c96dcbe4c4c11a9af8483ff68ac40e0e8ba8244772d981aab3cda703")
+            .header("authorization", "AWS4-HMAC-SHA256 Credential=ANOTREAL/20210305/us-east-1/kms/aws4_request, SignedHeaders=content-length;content-type;host;x-amz-date;x-amz-security-token;x-amz-target;x-amz-user-agent, Signature=2e0dd7259fba92523d553173c452eba8a6ee7990fb5b1f8e2eccdeb75309e9e1")
             .header("x-amz-date", "20210305T134922Z")
             .header("x-amz-security-token", "notarealsessiontoken")
             .header("user-agent", "aws-sdk-rust/0.123.test os/windows/XPSP3 lang/rust/1.50.0")
@@ -165,6 +166,6 @@ async fn generate_random_keystore_not_found() {
     );
     assert_eq!(conn.requests().len(), 1);
     for validate_request in conn.requests().iter() {
-        validate_request.assert_matches(vec![]);
+        validate_request.assert_matches(vec![AUTHORIZATION]);
     }
 }

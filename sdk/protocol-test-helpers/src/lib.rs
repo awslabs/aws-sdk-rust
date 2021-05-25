@@ -34,7 +34,9 @@ pub enum ProtocolTestFailure {
     MissingHeader { expected: String },
     #[error("Header `{forbidden}` was forbidden but found: `{found}`")]
     ForbiddenHeader { forbidden: String, found: String },
-    #[error("body did not match. {comparison:?} \n == hint:\n{hint}.")]
+    #[error(
+        "body did not match. left=actual, right=expected\n{comparison:?} \n == hint:\n{hint}."
+    )]
     BodyDidNotMatch {
         // the comparison includes colorized escapes. PrettyString ensures that even during
         // debug printing, these appear

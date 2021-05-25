@@ -91,27 +91,13 @@ impl MapRequest for SigV4SigningStage {
     type Error = SigningStageError;
 
     fn apply(&self, req: Request) -> Result<Request, Self::Error> {
-        req.augment(|req, config| {
+        req.augment(|mut req, config| {
             let (operation_config, request_config, creds) = signing_config(config)?;
 
-            // A short dance is required to extract a signable body from an SdkBody, which
-            // amounts to verifying that it a strict body based on a `Bytes` and not a stream.
-            // Streams must be signed with a different signing mode. Separate support will be added for
-            // this at a later date.
-            let (parts, body) = req.into_parts();
-            let signable_body = body.bytes().ok_or(SigningStageError::InvalidBodyType)?;
-            let mut signable_request = http::Request::from_parts(parts, signable_body);
-
             self.signer
-                .sign(
-                    &operation_config,
-                    &request_config,
-                    &creds,
-                    &mut signable_request,
-                )
+                .sign(&operation_config, &request_config, &creds, &mut req)
                 .map_err(|err| SigningStageError::SigningFailure(err))?;
-            let (signed_parts, _) = signable_request.into_parts();
-            Ok(http::Request::from_parts(signed_parts, body))
+            Ok(req)
         })
     }
 }
@@ -157,8 +143,9 @@ mod test {
                 .apply(req.try_clone().expect("can clone"))
                 .expect_err("no signing config"),
         );
-        req.config_mut()
-            .insert(OperationSigningConfig::default_config());
+        let mut config = OperationSigningConfig::default_config();
+        config.signing_options.content_sha256_header = true;
+        req.config_mut().insert(config);
         errs.push(
             signer
                 .apply(req.try_clone().expect("can clone"))
@@ -185,6 +172,6 @@ mod test {
             .headers()
             .get(AUTHORIZATION)
             .expect("auth header must be present");
-        assert_eq!(auth_header, "AWS4-HMAC-SHA256 Credential=AKIAfoo/20210120/us-east-1/kinesis/aws4_request, SignedHeaders=host, Signature=c59f1b9040fe229bf924254d9ad71adaf0495db2ccda5eb6b1565529cdc2c120");
+        assert_eq!(auth_header, "AWS4-HMAC-SHA256 Credential=AKIAfoo/20210120/us-east-1/kinesis/aws4_request, SignedHeaders=host;x-amz-content-sha256;x-amz-date, Signature=af71a409f0229dfd6e88409cd1b11f5c2803868d6869888e53bbf9ee12a97ea0");
     }
 }

@@ -4,19 +4,13 @@
  */
 
 use crate::SendOperationError;
-use pin_project::pin_project;
 use smithy_http::body::SdkBody;
 use smithy_http::operation;
 use std::future::Future;
 use std::pin::Pin;
 use std::task::{Context, Poll};
 use tower::{BoxError, Layer, Service};
-
-#[pin_project]
-pub struct DispatchFuture<F> {
-    #[pin]
-    f: F,
-}
+use tracing::trace;
 
 /// Connects Operation driven middleware to an HTTP implementation.
 ///
@@ -27,29 +21,17 @@ pub struct DispatchService<S> {
     inner: S,
 }
 
-impl<F, T, E> Future for DispatchFuture<F>
-where
-    F: Future<Output = Result<T, E>>,
-    E: Into<BoxError>,
-{
-    type Output = Result<T, SendOperationError>;
-
-    fn poll(self: Pin<&mut Self>, cx: &mut Context<'_>) -> Poll<Self::Output> {
-        let this = self.project();
-        this.f
-            .poll(cx)
-            .map_err(|e| SendOperationError::RequestDispatchError(e.into()))
-    }
-}
+type BoxedResultFuture<T, E> = Pin<Box<dyn Future<Output = Result<T, E>> + Send>>;
 
 impl<S> Service<operation::Request> for DispatchService<S>
 where
-    S: Service<http::Request<SdkBody>>,
+    S: Service<http::Request<SdkBody>> + Clone + Send + 'static,
     S::Error: Into<BoxError>,
+    S::Future: Send + 'static,
 {
     type Response = S::Response;
     type Error = SendOperationError;
-    type Future = DispatchFuture<S::Future>;
+    type Future = BoxedResultFuture<Self::Response, Self::Error>;
 
     fn poll_ready(&mut self, cx: &mut Context<'_>) -> Poll<Result<(), Self::Error>> {
         self.inner
@@ -59,9 +41,15 @@ where
 
     fn call(&mut self, req: operation::Request) -> Self::Future {
         let (req, _property_bag) = req.into_parts();
-        DispatchFuture {
-            f: self.inner.call(req),
-        }
+        let mut inner = self.inner.clone();
+        let future = async move {
+            trace!(request = ?req);
+            inner
+                .call(req)
+                .await
+                .map_err(|e| SendOperationError::RequestDispatchError(e.into()))
+        };
+        Box::pin(future)
     }
 }
 

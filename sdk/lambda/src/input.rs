@@ -116,7 +116,7 @@ impl AddLayerVersionPermissionInput {
         Ok({
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_synthetic_add_layer_version_permission_input_body(
+                crate::operation_ser::serialize_operation_add_layer_version_permission_input_body(
                     &self,
                 )
                 .map_err(|err| {
@@ -134,9 +134,10 @@ impl AddLayerVersionPermissionInput {
                     crate::API_METADATA.clone(),
                 ));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -377,7 +378,7 @@ impl AddPermissionInput {
     > {
         Ok({
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_synthetic_add_permission_input_body(&self)
+            let body = crate::operation_ser::serialize_operation_add_permission_input_body(&self)
                 .map_err(|err| {
                 smithy_http::operation::BuildError::SerializationError(err.into())
             })?;
@@ -393,9 +394,10 @@ impl AddPermissionInput {
                     crate::API_METADATA.clone(),
                 ));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -589,7 +591,7 @@ impl CreateAliasInput {
     > {
         Ok({
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_synthetic_create_alias_input_body(&self)
+            let body = crate::operation_ser::serialize_operation_create_alias_input_body(&self)
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -605,9 +607,10 @@ impl CreateAliasInput {
                     crate::API_METADATA.clone(),
                 ));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -754,7 +757,7 @@ impl CreateCodeSigningConfigInput {
         Ok({
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_synthetic_create_code_signing_config_input_body(
+                crate::operation_ser::serialize_operation_create_code_signing_config_input_body(
                     &self,
                 )
                 .map_err(|err| {
@@ -772,9 +775,10 @@ impl CreateCodeSigningConfigInput {
                     crate::API_METADATA.clone(),
                 ));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -1189,7 +1193,7 @@ impl CreateEventSourceMappingInput {
         Ok({
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_synthetic_create_event_source_mapping_input_body(
+                crate::operation_ser::serialize_operation_create_event_source_mapping_input_body(
                     &self,
                 )
                 .map_err(|err| {
@@ -1207,9 +1211,10 @@ impl CreateEventSourceMappingInput {
                     crate::API_METADATA.clone(),
                 ));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -1603,7 +1608,7 @@ impl CreateFunctionInput {
     > {
         Ok({
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_synthetic_create_function_input_body(&self)
+            let body = crate::operation_ser::serialize_operation_create_function_input_body(&self)
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -1619,9 +1624,10 @@ impl CreateFunctionInput {
                     crate::API_METADATA.clone(),
                 ));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -1776,9 +1782,10 @@ impl DeleteAliasInput {
                     crate::API_METADATA.clone(),
                 ));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -1910,9 +1917,10 @@ impl DeleteCodeSigningConfigInput {
                     crate::API_METADATA.clone(),
                 ));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -2044,9 +2052,10 @@ impl DeleteEventSourceMappingInput {
                     crate::API_METADATA.clone(),
                 ));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -2206,9 +2215,10 @@ impl DeleteFunctionInput {
                     crate::API_METADATA.clone(),
                 ));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -2367,9 +2377,10 @@ impl DeleteFunctionCodeSigningConfigInput {
                     crate::API_METADATA.clone(),
                 ));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -2519,9 +2530,10 @@ impl DeleteFunctionConcurrencyInput {
                     crate::API_METADATA.clone(),
                 ));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -2684,9 +2696,10 @@ impl DeleteFunctionEventInvokeConfigInput {
                     crate::API_METADATA.clone(),
                 ));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -2835,9 +2848,10 @@ impl DeleteLayerVersionInput {
                     crate::API_METADATA.clone(),
                 ));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -3001,9 +3015,10 @@ impl DeleteProvisionedConcurrencyConfigInput {
                     crate::API_METADATA.clone(),
                 ));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -3128,9 +3143,10 @@ impl GetAccountSettingsInput {
                     crate::API_METADATA.clone(),
                 ));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -3285,9 +3301,10 @@ impl GetAliasInput {
                     crate::API_METADATA.clone(),
                 ));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -3414,9 +3431,10 @@ impl GetCodeSigningConfigInput {
                     crate::API_METADATA.clone(),
                 ));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -3548,9 +3566,10 @@ impl GetEventSourceMappingInput {
                     crate::API_METADATA.clone(),
                 ));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -3710,9 +3729,10 @@ impl GetFunctionInput {
                     crate::API_METADATA.clone(),
                 ));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -3871,9 +3891,10 @@ impl GetFunctionCodeSigningConfigInput {
                     crate::API_METADATA.clone(),
                 ));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -4023,9 +4044,10 @@ impl GetFunctionConcurrencyInput {
                     crate::API_METADATA.clone(),
                 ));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -4186,9 +4208,10 @@ impl GetFunctionConfigurationInput {
                     crate::API_METADATA.clone(),
                 ));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -4358,9 +4381,10 @@ impl GetFunctionEventInvokeConfigInput {
                     crate::API_METADATA.clone(),
                 ));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -4509,9 +4533,10 @@ impl GetLayerVersionInput {
                     crate::API_METADATA.clone(),
                 ));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -4641,9 +4666,10 @@ impl GetLayerVersionByArnInput {
                     crate::API_METADATA.clone(),
                 ));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -4788,9 +4814,10 @@ impl GetLayerVersionPolicyInput {
                     crate::API_METADATA.clone(),
                 ));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -4951,9 +4978,10 @@ impl GetPolicyInput {
                     crate::API_METADATA.clone(),
                 ));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -5118,9 +5146,10 @@ impl GetProvisionedConcurrencyConfigInput {
                     crate::API_METADATA.clone(),
                 ));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -5350,9 +5379,10 @@ impl InvokeInput {
                     crate::API_METADATA.clone(),
                 ));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -5575,9 +5605,10 @@ impl InvokeAsyncInput {
                     crate::API_METADATA.clone(),
                 ));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -5762,9 +5793,10 @@ impl ListAliasesInput {
                     crate::API_METADATA.clone(),
                 ));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -5922,9 +5954,10 @@ impl ListCodeSigningConfigsInput {
                     crate::API_METADATA.clone(),
                 ));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -6137,9 +6170,10 @@ impl ListEventSourceMappingsInput {
                     crate::API_METADATA.clone(),
                 ));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -6324,9 +6358,10 @@ impl ListFunctionEventInvokeConfigsInput {
                     crate::API_METADATA.clone(),
                 ));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -6505,9 +6540,10 @@ impl ListFunctionsInput {
                     crate::API_METADATA.clone(),
                 ));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -6676,9 +6712,10 @@ impl ListFunctionsByCodeSigningConfigInput {
                     crate::API_METADATA.clone(),
                 ));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -6844,9 +6881,10 @@ impl ListLayersInput {
                     crate::API_METADATA.clone(),
                 ));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -7024,9 +7062,10 @@ impl ListLayerVersionsInput {
                     crate::API_METADATA.clone(),
                 ));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -7216,9 +7255,10 @@ impl ListProvisionedConcurrencyConfigsInput {
                     crate::API_METADATA.clone(),
                 ));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -7359,9 +7399,10 @@ impl ListTagsInput {
                     crate::API_METADATA.clone(),
                 ));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -7528,9 +7569,10 @@ impl ListVersionsByFunctionInput {
                     crate::API_METADATA.clone(),
                 ));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -7723,7 +7765,7 @@ impl PublishLayerVersionInput {
         Ok({
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_synthetic_publish_layer_version_input_body(&self)
+                crate::operation_ser::serialize_operation_publish_layer_version_input_body(&self)
                     .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -7739,9 +7781,10 @@ impl PublishLayerVersionInput {
                     crate::API_METADATA.clone(),
                 ));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -7913,7 +7956,7 @@ impl PublishVersionInput {
     > {
         Ok({
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_synthetic_publish_version_input_body(&self)
+            let body = crate::operation_ser::serialize_operation_publish_version_input_body(&self)
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -7929,9 +7972,10 @@ impl PublishVersionInput {
                     crate::API_METADATA.clone(),
                 ));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -8085,7 +8129,7 @@ impl PutFunctionCodeSigningConfigInput {
         Ok({
             let request = self.request_builder_base()?;
             let body = 
-                crate::operation_ser::serialize_synthetic_put_function_code_signing_config_input_body(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+                crate::operation_ser::serialize_operation_put_function_code_signing_config_input_body(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
             ;
             let request = Self::assemble(request, body);
 
@@ -8099,9 +8143,10 @@ impl PutFunctionCodeSigningConfigInput {
                     crate::API_METADATA.clone(),
                 ));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -8250,7 +8295,7 @@ impl PutFunctionConcurrencyInput {
         Ok({
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_synthetic_put_function_concurrency_input_body(
+                crate::operation_ser::serialize_operation_put_function_concurrency_input_body(
                     &self,
                 )
                 .map_err(|err| {
@@ -8268,9 +8313,10 @@ impl PutFunctionConcurrencyInput {
                     crate::API_METADATA.clone(),
                 ));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -8478,7 +8524,7 @@ impl PutFunctionEventInvokeConfigInput {
         Ok({
             let request = self.request_builder_base()?;
             let body = 
-                crate::operation_ser::serialize_synthetic_put_function_event_invoke_config_input_body(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+                crate::operation_ser::serialize_operation_put_function_event_invoke_config_input_body(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
             ;
             let request = Self::assemble(request, body);
 
@@ -8492,9 +8538,10 @@ impl PutFunctionEventInvokeConfigInput {
                     crate::API_METADATA.clone(),
                 ));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -8666,7 +8713,7 @@ impl PutProvisionedConcurrencyConfigInput {
         Ok({
             let request = self.request_builder_base()?;
             let body = 
-                crate::operation_ser::serialize_synthetic_put_provisioned_concurrency_config_input_body(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+                crate::operation_ser::serialize_operation_put_provisioned_concurrency_config_input_body(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
             ;
             let request = Self::assemble(request, body);
 
@@ -8680,9 +8727,10 @@ impl PutProvisionedConcurrencyConfigInput {
                     crate::API_METADATA.clone(),
                 ));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -8856,9 +8904,10 @@ impl RemoveLayerVersionPermissionInput {
                     crate::API_METADATA.clone(),
                 ));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -9051,9 +9100,10 @@ impl RemovePermissionInput {
                     crate::API_METADATA.clone(),
                 ));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -9204,7 +9254,7 @@ impl TagResourceInput {
     > {
         Ok({
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_synthetic_tag_resource_input_body(&self)
+            let body = crate::operation_ser::serialize_operation_tag_resource_input_body(&self)
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -9220,9 +9270,10 @@ impl TagResourceInput {
                     crate::API_METADATA.clone(),
                 ));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -9367,9 +9418,10 @@ impl UntagResourceInput {
                     crate::API_METADATA.clone(),
                 ));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -9577,7 +9629,7 @@ impl UpdateAliasInput {
     > {
         Ok({
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_synthetic_update_alias_input_body(&self)
+            let body = crate::operation_ser::serialize_operation_update_alias_input_body(&self)
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -9593,9 +9645,10 @@ impl UpdateAliasInput {
                     crate::API_METADATA.clone(),
                 ));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -9754,7 +9807,7 @@ impl UpdateCodeSigningConfigInput {
         Ok({
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_synthetic_update_code_signing_config_input_body(
+                crate::operation_ser::serialize_operation_update_code_signing_config_input_body(
                     &self,
                 )
                 .map_err(|err| {
@@ -9772,9 +9825,10 @@ impl UpdateCodeSigningConfigInput {
                     crate::API_METADATA.clone(),
                 ));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -10096,7 +10150,7 @@ impl UpdateEventSourceMappingInput {
         Ok({
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_synthetic_update_event_source_mapping_input_body(
+                crate::operation_ser::serialize_operation_update_event_source_mapping_input_body(
                     &self,
                 )
                 .map_err(|err| {
@@ -10114,9 +10168,10 @@ impl UpdateEventSourceMappingInput {
                     crate::API_METADATA.clone(),
                 ));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -10349,7 +10404,7 @@ impl UpdateFunctionCodeInput {
         Ok({
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_synthetic_update_function_code_input_body(&self)
+                crate::operation_ser::serialize_operation_update_function_code_input_body(&self)
                     .map_err(|err| {
                         smithy_http::operation::BuildError::SerializationError(err.into())
                     })?;
@@ -10365,9 +10420,10 @@ impl UpdateFunctionCodeInput {
                     crate::API_METADATA.clone(),
                 ));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -10708,7 +10764,7 @@ impl UpdateFunctionConfigurationInput {
         Ok({
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_synthetic_update_function_configuration_input_body(
+                crate::operation_ser::serialize_operation_update_function_configuration_input_body(
                     &self,
                 )
                 .map_err(|err| {
@@ -10726,9 +10782,10 @@ impl UpdateFunctionConfigurationInput {
                     crate::API_METADATA.clone(),
                 ));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -10936,7 +10993,7 @@ impl UpdateFunctionEventInvokeConfigInput {
         Ok({
             let request = self.request_builder_base()?;
             let body = 
-                crate::operation_ser::serialize_synthetic_update_function_event_invoke_config_input_body(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+                crate::operation_ser::serialize_operation_update_function_event_invoke_config_input_body(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
             ;
             let request = Self::assemble(request, body);
 
@@ -10950,9 +11007,10 @@ impl UpdateFunctionEventInvokeConfigInput {
                     crate::API_METADATA.clone(),
                 ));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(

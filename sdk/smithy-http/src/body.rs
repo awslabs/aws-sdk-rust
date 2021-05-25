@@ -8,9 +8,9 @@ use http::{HeaderMap, HeaderValue};
 use http_body::{Body, SizeHint};
 use pin_project::pin_project;
 use std::error::Error as StdError;
-use std::fmt;
-use std::fmt::{Debug, Formatter};
+use std::fmt::{self, Debug, Formatter};
 use std::pin::Pin;
+use std::sync::Arc;
 use std::task::{Context, Poll};
 
 pub type Error = Box<dyn StdError + Send + Sync>;
@@ -24,8 +24,24 @@ pub type Error = Box<dyn StdError + Send + Sync>;
 /// TODO: Consider renaming to simply `Body`, although I'm concerned about naming headaches
 /// between hyper::Body and our Body
 #[pin_project]
-#[derive(Debug)]
-pub struct SdkBody(#[pin] Inner);
+pub struct SdkBody {
+    #[pin]
+    inner: Inner,
+    /// An optional function to recreate the inner body
+    ///
+    /// In the event of retry, this function will be called to generate a new body. See
+    /// [`try_clone()`](SdkBody::try_clone)
+    rebuild: Option<Arc<dyn (Fn() -> Inner) + Send + Sync>>,
+}
+
+impl Debug for SdkBody {
+    fn fmt(&self, f: &mut Formatter<'_>) -> fmt::Result {
+        f.debug_struct("SdkBody")
+            .field("inner", &self.inner)
+            .field("retryable", &self.rebuild.is_some())
+            .finish()
+    }
+}
 
 type BoxBody = http_body::combinators::BoxBody<Bytes, Error>;
 
@@ -55,22 +71,39 @@ impl Debug for Inner {
 impl SdkBody {
     /// Construct an SdkBody from a Boxed implementation of http::Body
     pub fn from_dyn(body: BoxBody) -> Self {
-        Self(Inner::Dyn(body))
+        Self {
+            inner: Inner::Dyn(body),
+            rebuild: None,
+        }
+    }
+
+    pub fn retryable(f: impl Fn() -> SdkBody + Send + Sync + 'static) -> Self {
+        let initial = f();
+        SdkBody {
+            inner: initial.inner,
+            rebuild: Some(Arc::new(move || f().inner)),
+        }
     }
 
     pub fn taken() -> Self {
-        Self(Inner::Taken)
+        Self {
+            inner: Inner::Taken,
+            rebuild: None,
+        }
     }
 
     pub fn empty() -> Self {
-        Self(Inner::Once(None))
+        Self {
+            inner: Inner::Once(None),
+            rebuild: None,
+        }
     }
 
     fn poll_inner(
         self: Pin<&mut Self>,
         cx: &mut Context<'_>,
     ) -> Poll<Option<Result<Bytes, Error>>> {
-        match self.project().0.project() {
+        match self.project().inner.project() {
             InnerProj::Once(ref mut opt) => {
                 let data = opt.take();
                 match data {
@@ -92,7 +125,7 @@ impl SdkBody {
     /// If this SdkBody is NOT streaming, this will return the byte slab
     /// If this SdkBody is streaming, this will return `None`
     pub fn bytes(&self) -> Option<&[u8]> {
-        match &self.0 {
+        match &self.inner {
             Inner::Once(Some(b)) => Some(&b),
             Inner::Once(None) => Some(&[]),
             _ => None,
@@ -100,10 +133,13 @@ impl SdkBody {
     }
 
     pub fn try_clone(&self) -> Option<Self> {
-        match &self.0 {
-            Inner::Once(bytes) => Some(SdkBody(Inner::Once(bytes.clone()))),
-            _ => None,
-        }
+        self.rebuild.as_ref().map(|rebuild| {
+            let next = rebuild();
+            SdkBody {
+                inner: next,
+                rebuild: self.rebuild.clone(),
+            }
+        })
     }
 
     pub fn content_length(&self) -> Option<u64> {
@@ -119,13 +155,19 @@ impl From<&str> for SdkBody {
 
 impl From<Bytes> for SdkBody {
     fn from(bytes: Bytes) -> Self {
-        SdkBody(Inner::Once(Some(bytes)))
+        SdkBody {
+            inner: Inner::Once(Some(bytes.clone())),
+            rebuild: Some(Arc::new(move || Inner::Once(Some(bytes.clone())))),
+        }
     }
 }
 
 impl From<hyper::Body> for SdkBody {
     fn from(body: hyper::Body) -> Self {
-        SdkBody(Inner::Streaming(body))
+        SdkBody {
+            inner: Inner::Streaming(body),
+            rebuild: None,
+        }
     }
 }
 
@@ -143,7 +185,7 @@ impl From<String> for SdkBody {
 
 impl From<&[u8]> for SdkBody {
     fn from(data: &[u8]) -> Self {
-        SdkBody(Inner::Once(Some(Bytes::copy_from_slice(data))))
+        Self::from(Bytes::copy_from_slice(data))
     }
 }
 
@@ -166,7 +208,7 @@ impl http_body::Body for SdkBody {
     }
 
     fn is_end_stream(&self) -> bool {
-        match &self.0 {
+        match &self.inner {
             Inner::Once(None) => true,
             Inner::Once(Some(bytes)) => bytes.is_empty(),
             Inner::Streaming(hyper_body) => hyper_body.is_end_stream(),
@@ -176,7 +218,7 @@ impl http_body::Body for SdkBody {
     }
 
     fn size_hint(&self) -> SizeHint {
-        match &self.0 {
+        match &self.inner {
             Inner::Once(None) => SizeHint::with_exact(0),
             Inner::Once(Some(bytes)) => SizeHint::with_exact(bytes.len() as u64),
             Inner::Streaming(hyper_body) => hyper_body.size_hint(),
@@ -244,5 +286,12 @@ mod test {
         let body = SdkBody::from(hyper_body);
         // actually don't really care what the debug impl is, just that it doesn't crash
         let _ = format!("{:?}", body);
+    }
+
+    fn is_send<T: Send + Sync>() {}
+
+    #[test]
+    fn sdk_body_is_send() {
+        is_send::<SdkBody>()
     }
 }
