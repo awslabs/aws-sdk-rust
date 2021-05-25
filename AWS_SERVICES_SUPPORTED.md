@@ -12,6 +12,9 @@ The alpha SDK for Rust currently supports the checked services below. If you wan
 - [X] Amazon Qldb
 - [X] Amazon Qldb-Session
 - [X] Amazon Lambda
+- [x] [Amazon S3](https://github.com/awslabs/aws-sdk-rust/issues/16)
+- [x] [Amazon SSM](https://github.com/awslabs/aws-sdk-rust/issues/22)
+
 ------
 - [ ] Amazon Access Analyzer
 - [ ] Amazon ACM
@@ -195,7 +198,7 @@ The alpha SDK for Rust currently supports the checked services below. If you wan
 - [ ] Amazon Route53Resolver
 - [ ] Amazon Runtime.Lex
 - [ ] Amazon Runtime.Sagemaker
-- [ ] [Amazon S3](https://github.com/awslabs/aws-sdk-rust/issues/16)
+
 - [ ] Amazon S3Control
 - [ ] Amazon S3Outposts
 - [ ] Amazon Sagemaker
@@ -216,7 +219,6 @@ The alpha SDK for Rust currently supports the checked services below. If you wan
 - [ ] Amazon Snowball
 - [ ] [Amazon SNS](https://github.com/awslabs/aws-sdk-rust/issues/26)
 - [ ] [Amazon SQS](https://github.com/awslabs/aws-sdk-rust/issues/19)
-- [ ] [Amazon SSM](https://github.com/awslabs/aws-sdk-rust/issues/22)
 - [ ] Amazon SSO
 - [ ] Amazon Sso-Admin
 - [ ] Amazon Sso-Oidc
