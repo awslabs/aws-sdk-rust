@@ -3,6 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
+#![cfg_attr(docsrs, feature(doc_cfg))]
+
 pub mod base64;
 pub mod body;
 pub mod byte_stream;

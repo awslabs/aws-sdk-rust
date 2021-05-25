@@ -28,9 +28,11 @@ pub fn deser_header_synthesize_speech_request_characters(
     let var_2: Vec<i32> = smithy_http::header::read_many(headers)?;
 
     if var_2.len() > 1 {
-        Err(smithy_http::header::ParseError)
-    } else {
-        let mut var_2 = var_2;
-        var_2.pop().ok_or(smithy_http::header::ParseError)
+        return Err(smithy_http::header::ParseError);
+    }
+    let mut var_2 = var_2;
+    match var_2.pop() {
+        None => Ok(Default::default()),
+        Some(item) => Ok(item),
     }
 }
