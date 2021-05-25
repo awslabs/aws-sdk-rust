@@ -136,7 +136,7 @@ impl CreateApiKeyInput {
     > {
         Ok({
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_synthetic_create_api_key_input_body(&self)
+            let body = crate::operation_ser::serialize_operation_create_api_key_input_body(&self)
                 .map_err(|err| {
                 smithy_http::operation::BuildError::SerializationError(err.into())
             })?;
@@ -157,9 +157,10 @@ impl CreateApiKeyInput {
                 .headers_mut()
                 .insert("Accept", http::HeaderValue::from_static("application/json"));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -391,7 +392,7 @@ impl CreateAuthorizerInput {
         Ok({
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_synthetic_create_authorizer_input_body(&self)
+                crate::operation_ser::serialize_operation_create_authorizer_input_body(&self)
                     .map_err(|err| {
                         smithy_http::operation::BuildError::SerializationError(err.into())
                     })?;
@@ -412,9 +413,10 @@ impl CreateAuthorizerInput {
                 .headers_mut()
                 .insert("Accept", http::HeaderValue::from_static("application/json"));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -566,7 +568,7 @@ impl CreateBasePathMappingInput {
         Ok({
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_synthetic_create_base_path_mapping_input_body(
+                crate::operation_ser::serialize_operation_create_base_path_mapping_input_body(
                     &self,
                 )
                 .map_err(|err| {
@@ -589,9 +591,10 @@ impl CreateBasePathMappingInput {
                 .headers_mut()
                 .insert("Accept", http::HeaderValue::from_static("application/json"));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -819,7 +822,7 @@ impl CreateDeploymentInput {
         Ok({
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_synthetic_create_deployment_input_body(&self)
+                crate::operation_ser::serialize_operation_create_deployment_input_body(&self)
                     .map_err(|err| {
                         smithy_http::operation::BuildError::SerializationError(err.into())
                     })?;
@@ -840,9 +843,10 @@ impl CreateDeploymentInput {
                 .headers_mut()
                 .insert("Accept", http::HeaderValue::from_static("application/json"));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -986,7 +990,7 @@ impl CreateDocumentationPartInput {
         Ok({
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_synthetic_create_documentation_part_input_body(
+                crate::operation_ser::serialize_operation_create_documentation_part_input_body(
                     &self,
                 )
                 .map_err(|err| {
@@ -1009,9 +1013,10 @@ impl CreateDocumentationPartInput {
                 .headers_mut()
                 .insert("Accept", http::HeaderValue::from_static("application/json"));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -1166,7 +1171,7 @@ impl CreateDocumentationVersionInput {
         Ok({
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_synthetic_create_documentation_version_input_body(
+                crate::operation_ser::serialize_operation_create_documentation_version_input_body(
                     &self,
                 )
                 .map_err(|err| {
@@ -1189,9 +1194,10 @@ impl CreateDocumentationVersionInput {
                 .headers_mut()
                 .insert("Accept", http::HeaderValue::from_static("application/json"));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -1477,7 +1483,7 @@ impl CreateDomainNameInput {
         Ok({
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_synthetic_create_domain_name_input_body(&self)
+                crate::operation_ser::serialize_operation_create_domain_name_input_body(&self)
                     .map_err(|err| {
                         smithy_http::operation::BuildError::SerializationError(err.into())
                     })?;
@@ -1498,9 +1504,10 @@ impl CreateDomainNameInput {
                 .headers_mut()
                 .insert("Accept", http::HeaderValue::from_static("application/json"));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -1656,7 +1663,7 @@ impl CreateModelInput {
     > {
         Ok({
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_synthetic_create_model_input_body(&self)
+            let body = crate::operation_ser::serialize_operation_create_model_input_body(&self)
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -1677,9 +1684,10 @@ impl CreateModelInput {
                 .headers_mut()
                 .insert("Accept", http::HeaderValue::from_static("application/json"));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -1831,7 +1839,7 @@ impl CreateRequestValidatorInput {
         Ok({
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_synthetic_create_request_validator_input_body(
+                crate::operation_ser::serialize_operation_create_request_validator_input_body(
                     &self,
                 )
                 .map_err(|err| {
@@ -1854,9 +1862,10 @@ impl CreateRequestValidatorInput {
                 .headers_mut()
                 .insert("Accept", http::HeaderValue::from_static("application/json"));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -1995,7 +2004,7 @@ impl CreateResourceInput {
     > {
         Ok({
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_synthetic_create_resource_input_body(&self)
+            let body = crate::operation_ser::serialize_operation_create_resource_input_body(&self)
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -2016,9 +2025,10 @@ impl CreateResourceInput {
                 .headers_mut()
                 .insert("Accept", http::HeaderValue::from_static("application/json"));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -2268,7 +2278,7 @@ impl CreateRestApiInput {
     > {
         Ok({
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_synthetic_create_rest_api_input_body(&self)
+            let body = crate::operation_ser::serialize_operation_create_rest_api_input_body(&self)
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -2289,9 +2299,10 @@ impl CreateRestApiInput {
                 .headers_mut()
                 .insert("Accept", http::HeaderValue::from_static("application/json"));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -2546,7 +2557,7 @@ impl CreateStageInput {
     > {
         Ok({
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_synthetic_create_stage_input_body(&self)
+            let body = crate::operation_ser::serialize_operation_create_stage_input_body(&self)
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -2567,9 +2578,10 @@ impl CreateStageInput {
                 .headers_mut()
                 .insert("Accept", http::HeaderValue::from_static("application/json"));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -2762,7 +2774,7 @@ impl CreateUsagePlanInput {
         Ok({
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_synthetic_create_usage_plan_input_body(&self)
+                crate::operation_ser::serialize_operation_create_usage_plan_input_body(&self)
                     .map_err(|err| {
                         smithy_http::operation::BuildError::SerializationError(err.into())
                     })?;
@@ -2783,9 +2795,10 @@ impl CreateUsagePlanInput {
                 .headers_mut()
                 .insert("Accept", http::HeaderValue::from_static("application/json"));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -2921,7 +2934,7 @@ impl CreateUsagePlanKeyInput {
         Ok({
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_synthetic_create_usage_plan_key_input_body(&self)
+                crate::operation_ser::serialize_operation_create_usage_plan_key_input_body(&self)
                     .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -2942,9 +2955,10 @@ impl CreateUsagePlanKeyInput {
                 .headers_mut()
                 .insert("Accept", http::HeaderValue::from_static("application/json"));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -3110,7 +3124,7 @@ impl CreateVpcLinkInput {
     > {
         Ok({
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_synthetic_create_vpc_link_input_body(&self)
+            let body = crate::operation_ser::serialize_operation_create_vpc_link_input_body(&self)
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -3131,9 +3145,10 @@ impl CreateVpcLinkInput {
                 .headers_mut()
                 .insert("Accept", http::HeaderValue::from_static("application/json"));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -3263,9 +3278,10 @@ impl DeleteApiKeyInput {
                 .headers_mut()
                 .insert("Accept", http::HeaderValue::from_static("application/json"));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -3412,9 +3428,10 @@ impl DeleteAuthorizerInput {
                 .headers_mut()
                 .insert("Accept", http::HeaderValue::from_static("application/json"));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -3563,9 +3580,10 @@ impl DeleteBasePathMappingInput {
                 .headers_mut()
                 .insert("Accept", http::HeaderValue::from_static("application/json"));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -3702,9 +3720,10 @@ impl DeleteClientCertificateInput {
                 .headers_mut()
                 .insert("Accept", http::HeaderValue::from_static("application/json"));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -3852,9 +3871,10 @@ impl DeleteDeploymentInput {
                 .headers_mut()
                 .insert("Accept", http::HeaderValue::from_static("application/json"));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -4002,9 +4022,10 @@ impl DeleteDocumentationPartInput {
                 .headers_mut()
                 .insert("Accept", http::HeaderValue::from_static("application/json"));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -4153,9 +4174,10 @@ impl DeleteDocumentationVersionInput {
                 .headers_mut()
                 .insert("Accept", http::HeaderValue::from_static("application/json"));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -4293,9 +4315,10 @@ impl DeleteDomainNameInput {
                 .headers_mut()
                 .insert("Accept", http::HeaderValue::from_static("application/json"));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -4450,9 +4473,10 @@ impl DeleteGatewayResponseInput {
                 .headers_mut()
                 .insert("Accept", http::HeaderValue::from_static("application/json"));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -4611,9 +4635,10 @@ impl DeleteIntegrationInput {
                 .headers_mut()
                 .insert("Accept", http::HeaderValue::from_static("application/json"));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -4784,9 +4809,10 @@ impl DeleteIntegrationResponseInput {
                 .headers_mut()
                 .insert("Accept", http::HeaderValue::from_static("application/json"));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -4938,9 +4964,10 @@ impl DeleteMethodInput {
                 .headers_mut()
                 .insert("Accept", http::HeaderValue::from_static("application/json"));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -5111,9 +5138,10 @@ impl DeleteMethodResponseInput {
                 .headers_mut()
                 .insert("Accept", http::HeaderValue::from_static("application/json"));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -5254,9 +5282,10 @@ impl DeleteModelInput {
                 .headers_mut()
                 .insert("Accept", http::HeaderValue::from_static("application/json"));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -5404,9 +5433,10 @@ impl DeleteRequestValidatorInput {
                 .headers_mut()
                 .insert("Accept", http::HeaderValue::from_static("application/json"));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -5553,9 +5583,10 @@ impl DeleteResourceInput {
                 .headers_mut()
                 .insert("Accept", http::HeaderValue::from_static("application/json"));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -5691,9 +5722,10 @@ impl DeleteRestApiInput {
                 .headers_mut()
                 .insert("Accept", http::HeaderValue::from_static("application/json"));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -5839,9 +5871,10 @@ impl DeleteStageInput {
                 .headers_mut()
                 .insert("Accept", http::HeaderValue::from_static("application/json"));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -5978,9 +6011,10 @@ impl DeleteUsagePlanInput {
                 .headers_mut()
                 .insert("Accept", http::HeaderValue::from_static("application/json"));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -6127,9 +6161,10 @@ impl DeleteUsagePlanKeyInput {
                 .headers_mut()
                 .insert("Accept", http::HeaderValue::from_static("application/json"));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -6265,9 +6300,10 @@ impl DeleteVpcLinkInput {
                 .headers_mut()
                 .insert("Accept", http::HeaderValue::from_static("application/json"));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -6414,9 +6450,10 @@ impl FlushStageAuthorizersCacheInput {
                 .headers_mut()
                 .insert("Accept", http::HeaderValue::from_static("application/json"));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -6564,9 +6601,10 @@ impl FlushStageCacheInput {
                 .headers_mut()
                 .insert("Accept", http::HeaderValue::from_static("application/json"));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -6709,7 +6747,7 @@ impl GenerateClientCertificateInput {
         Ok({
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_synthetic_generate_client_certificate_input_body(
+                crate::operation_ser::serialize_operation_generate_client_certificate_input_body(
                     &self,
                 )
                 .map_err(|err| {
@@ -6732,9 +6770,10 @@ impl GenerateClientCertificateInput {
                 .headers_mut()
                 .insert("Accept", http::HeaderValue::from_static("application/json"));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -6851,9 +6890,10 @@ impl GetAccountInput {
                 .headers_mut()
                 .insert("Accept", http::HeaderValue::from_static("application/json"));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -6994,9 +7034,10 @@ impl GetApiKeyInput {
                 .headers_mut()
                 .insert("Accept", http::HeaderValue::from_static("application/json"));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -7180,9 +7221,10 @@ impl GetApiKeysInput {
                 .headers_mut()
                 .insert("Accept", http::HeaderValue::from_static("application/json"));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -7342,9 +7384,10 @@ impl GetAuthorizerInput {
                 .headers_mut()
                 .insert("Accept", http::HeaderValue::from_static("application/json"));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -7502,9 +7545,10 @@ impl GetAuthorizersInput {
                 .headers_mut()
                 .insert("Accept", http::HeaderValue::from_static("application/json"));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -7661,9 +7705,10 @@ impl GetBasePathMappingInput {
                 .headers_mut()
                 .insert("Accept", http::HeaderValue::from_static("application/json"));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -7822,9 +7867,10 @@ impl GetBasePathMappingsInput {
                 .headers_mut()
                 .insert("Accept", http::HeaderValue::from_static("application/json"));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -7970,9 +8016,10 @@ impl GetClientCertificateInput {
                 .headers_mut()
                 .insert("Accept", http::HeaderValue::from_static("application/json"));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -8120,9 +8167,10 @@ impl GetClientCertificatesInput {
                 .headers_mut()
                 .insert("Accept", http::HeaderValue::from_static("application/json"));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -8288,9 +8336,10 @@ impl GetDeploymentInput {
                 .headers_mut()
                 .insert("Accept", http::HeaderValue::from_static("application/json"));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -8457,9 +8506,10 @@ impl GetDeploymentsInput {
                 .headers_mut()
                 .insert("Accept", http::HeaderValue::from_static("application/json"));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -8616,9 +8666,10 @@ impl GetDocumentationPartInput {
                 .headers_mut()
                 .insert("Accept", http::HeaderValue::from_static("application/json"));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -8828,9 +8879,10 @@ impl GetDocumentationPartsInput {
                 .headers_mut()
                 .insert("Accept", http::HeaderValue::from_static("application/json"));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -8999,9 +9051,10 @@ impl GetDocumentationVersionInput {
                 .headers_mut()
                 .insert("Accept", http::HeaderValue::from_static("application/json"));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -9161,9 +9214,10 @@ impl GetDocumentationVersionsInput {
                 .headers_mut()
                 .insert("Accept", http::HeaderValue::from_static("application/json"));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -9308,9 +9362,10 @@ impl GetDomainNameInput {
                 .headers_mut()
                 .insert("Accept", http::HeaderValue::from_static("application/json"));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -9456,9 +9511,10 @@ impl GetDomainNamesInput {
                 .headers_mut()
                 .insert("Accept", http::HeaderValue::from_static("application/json"));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -9654,9 +9710,10 @@ impl GetExportInput {
                 .headers_mut()
                 .insert("Accept", http::HeaderValue::from_static("application/json"));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -9836,9 +9893,10 @@ impl GetGatewayResponseInput {
                 .headers_mut()
                 .insert("Accept", http::HeaderValue::from_static("application/json"));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -9997,9 +10055,10 @@ impl GetGatewayResponsesInput {
                 .headers_mut()
                 .insert("Accept", http::HeaderValue::from_static("application/json"));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -10166,9 +10225,10 @@ impl GetIntegrationInput {
                 .headers_mut()
                 .insert("Accept", http::HeaderValue::from_static("application/json"));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -10339,9 +10399,10 @@ impl GetIntegrationResponseInput {
                 .headers_mut()
                 .insert("Accept", http::HeaderValue::from_static("application/json"));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -10493,9 +10554,10 @@ impl GetMethodInput {
                 .headers_mut()
                 .insert("Accept", http::HeaderValue::from_static("application/json"));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -10664,9 +10726,10 @@ impl GetMethodResponseInput {
                 .headers_mut()
                 .insert("Accept", http::HeaderValue::from_static("application/json"));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -10818,9 +10881,10 @@ impl GetModelInput {
                 .headers_mut()
                 .insert("Accept", http::HeaderValue::from_static("application/json"));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -10983,9 +11047,10 @@ impl GetModelsInput {
                 .headers_mut()
                 .insert("Accept", http::HeaderValue::from_static("application/json"));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -11140,9 +11205,10 @@ impl GetModelTemplateInput {
                 .headers_mut()
                 .insert("Accept", http::HeaderValue::from_static("application/json"));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -11290,9 +11356,10 @@ impl GetRequestValidatorInput {
                 .headers_mut()
                 .insert("Accept", http::HeaderValue::from_static("application/json"));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -11451,9 +11518,10 @@ impl GetRequestValidatorsInput {
                 .headers_mut()
                 .insert("Accept", http::HeaderValue::from_static("application/json"));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -11624,9 +11692,10 @@ impl GetResourceInput {
                 .headers_mut()
                 .insert("Accept", http::HeaderValue::from_static("application/json"));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -11808,9 +11877,10 @@ impl GetResourcesInput {
                 .headers_mut()
                 .insert("Accept", http::HeaderValue::from_static("application/json"));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -11960,9 +12030,10 @@ impl GetRestApiInput {
                 .headers_mut()
                 .insert("Accept", http::HeaderValue::from_static("application/json"));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -12108,9 +12179,10 @@ impl GetRestApisInput {
                 .headers_mut()
                 .insert("Accept", http::HeaderValue::from_static("application/json"));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -12292,9 +12364,10 @@ impl GetSdkInput {
                 .headers_mut()
                 .insert("Accept", http::HeaderValue::from_static("application/json"));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -12429,9 +12502,10 @@ impl GetSdkTypeInput {
                 .headers_mut()
                 .insert("Accept", http::HeaderValue::from_static("application/json"));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -12577,9 +12651,10 @@ impl GetSdkTypesInput {
                 .headers_mut()
                 .insert("Accept", http::HeaderValue::from_static("application/json"));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -12730,9 +12805,10 @@ impl GetStageInput {
                 .headers_mut()
                 .insert("Accept", http::HeaderValue::from_static("application/json"));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -12877,9 +12953,10 @@ impl GetStagesInput {
                 .headers_mut()
                 .insert("Accept", http::HeaderValue::from_static("application/json"));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -13038,9 +13115,10 @@ impl GetTagsInput {
                 .headers_mut()
                 .insert("Accept", http::HeaderValue::from_static("application/json"));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -13238,9 +13316,10 @@ impl GetUsageInput {
                 .headers_mut()
                 .insert("Accept", http::HeaderValue::from_static("application/json"));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -13392,9 +13471,10 @@ impl GetUsagePlanInput {
                 .headers_mut()
                 .insert("Accept", http::HeaderValue::from_static("application/json"));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -13541,9 +13621,10 @@ impl GetUsagePlanKeyInput {
                 .headers_mut()
                 .insert("Accept", http::HeaderValue::from_static("application/json"));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -13713,9 +13794,10 @@ impl GetUsagePlanKeysInput {
                 .headers_mut()
                 .insert("Accept", http::HeaderValue::from_static("application/json"));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -13885,9 +13967,10 @@ impl GetUsagePlansInput {
                 .headers_mut()
                 .insert("Accept", http::HeaderValue::from_static("application/json"));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -14030,9 +14113,10 @@ impl GetVpcLinkInput {
                 .headers_mut()
                 .insert("Accept", http::HeaderValue::from_static("application/json"));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -14178,9 +14262,10 @@ impl GetVpcLinksInput {
                 .headers_mut()
                 .insert("Accept", http::HeaderValue::from_static("application/json"));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -14342,9 +14427,10 @@ impl ImportApiKeysInput {
                 .headers_mut()
                 .insert("Accept", http::HeaderValue::from_static("application/json"));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -14523,9 +14609,10 @@ impl ImportDocumentationPartsInput {
                 .headers_mut()
                 .insert("Accept", http::HeaderValue::from_static("application/json"));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -14708,9 +14795,10 @@ impl ImportRestApiInput {
                 .headers_mut()
                 .insert("Accept", http::HeaderValue::from_static("application/json"));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -14925,7 +15013,7 @@ impl PutGatewayResponseInput {
         Ok({
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_synthetic_put_gateway_response_input_body(&self)
+                crate::operation_ser::serialize_operation_put_gateway_response_input_body(&self)
                     .map_err(|err| {
                         smithy_http::operation::BuildError::SerializationError(err.into())
                     })?;
@@ -14946,9 +15034,10 @@ impl PutGatewayResponseInput {
                 .headers_mut()
                 .insert("Accept", http::HeaderValue::from_static("application/json"));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -15300,7 +15389,7 @@ impl PutIntegrationInput {
     > {
         Ok({
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_synthetic_put_integration_input_body(&self)
+            let body = crate::operation_ser::serialize_operation_put_integration_input_body(&self)
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -15321,9 +15410,10 @@ impl PutIntegrationInput {
                 .headers_mut()
                 .insert("Accept", http::HeaderValue::from_static("application/json"));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -15556,7 +15646,7 @@ impl PutIntegrationResponseInput {
         Ok({
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_synthetic_put_integration_response_input_body(
+                crate::operation_ser::serialize_operation_put_integration_response_input_body(
                     &self,
                 )
                 .map_err(|err| {
@@ -15579,9 +15669,10 @@ impl PutIntegrationResponseInput {
                 .headers_mut()
                 .insert("Accept", http::HeaderValue::from_static("application/json"));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -15834,7 +15925,7 @@ impl PutMethodInput {
     > {
         Ok({
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_synthetic_put_method_input_body(&self)
+            let body = crate::operation_ser::serialize_operation_put_method_input_body(&self)
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -15855,9 +15946,10 @@ impl PutMethodInput {
                 .headers_mut()
                 .insert("Accept", http::HeaderValue::from_static("application/json"));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -16052,7 +16144,7 @@ impl PutMethodResponseInput {
         Ok({
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_synthetic_put_method_response_input_body(&self)
+                crate::operation_ser::serialize_operation_put_method_response_input_body(&self)
                     .map_err(|err| {
                         smithy_http::operation::BuildError::SerializationError(err.into())
                     })?;
@@ -16073,9 +16165,10 @@ impl PutMethodResponseInput {
                 .headers_mut()
                 .insert("Accept", http::HeaderValue::from_static("application/json"));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -16263,9 +16356,10 @@ impl PutRestApiInput {
                 .headers_mut()
                 .insert("Accept", http::HeaderValue::from_static("application/json"));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -16429,7 +16523,7 @@ impl TagResourceInput {
     > {
         Ok({
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_synthetic_tag_resource_input_body(&self)
+            let body = crate::operation_ser::serialize_operation_tag_resource_input_body(&self)
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -16450,9 +16544,10 @@ impl TagResourceInput {
                 .headers_mut()
                 .insert("Accept", http::HeaderValue::from_static("application/json"));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -16699,7 +16794,7 @@ impl TestInvokeAuthorizerInput {
         Ok({
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_synthetic_test_invoke_authorizer_input_body(&self)
+                crate::operation_ser::serialize_operation_test_invoke_authorizer_input_body(&self)
                     .map_err(|err| {
                         smithy_http::operation::BuildError::SerializationError(err.into())
                     })?;
@@ -16720,9 +16815,10 @@ impl TestInvokeAuthorizerInput {
                 .headers_mut()
                 .insert("Accept", http::HeaderValue::from_static("application/json"));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -16972,7 +17068,7 @@ impl TestInvokeMethodInput {
         Ok({
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_synthetic_test_invoke_method_input_body(&self)
+                crate::operation_ser::serialize_operation_test_invoke_method_input_body(&self)
                     .map_err(|err| {
                         smithy_http::operation::BuildError::SerializationError(err.into())
                     })?;
@@ -16993,9 +17089,10 @@ impl TestInvokeMethodInput {
                 .headers_mut()
                 .insert("Accept", http::HeaderValue::from_static("application/json"));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -17147,9 +17244,10 @@ impl UntagResourceInput {
                 .headers_mut()
                 .insert("Accept", http::HeaderValue::from_static("application/json"));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -17280,7 +17378,7 @@ impl UpdateAccountInput {
     > {
         Ok({
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_synthetic_update_account_input_body(&self)
+            let body = crate::operation_ser::serialize_operation_update_account_input_body(&self)
                 .map_err(|err| {
                 smithy_http::operation::BuildError::SerializationError(err.into())
             })?;
@@ -17301,9 +17399,10 @@ impl UpdateAccountInput {
                 .headers_mut()
                 .insert("Accept", http::HeaderValue::from_static("application/json"));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -17431,7 +17530,7 @@ impl UpdateApiKeyInput {
     > {
         Ok({
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_synthetic_update_api_key_input_body(&self)
+            let body = crate::operation_ser::serialize_operation_update_api_key_input_body(&self)
                 .map_err(|err| {
                 smithy_http::operation::BuildError::SerializationError(err.into())
             })?;
@@ -17452,9 +17551,10 @@ impl UpdateApiKeyInput {
                 .headers_mut()
                 .insert("Accept", http::HeaderValue::from_static("application/json"));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -17600,7 +17700,7 @@ impl UpdateAuthorizerInput {
         Ok({
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_synthetic_update_authorizer_input_body(&self)
+                crate::operation_ser::serialize_operation_update_authorizer_input_body(&self)
                     .map_err(|err| {
                         smithy_http::operation::BuildError::SerializationError(err.into())
                     })?;
@@ -17621,9 +17721,10 @@ impl UpdateAuthorizerInput {
                 .headers_mut()
                 .insert("Accept", http::HeaderValue::from_static("application/json"));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -17771,7 +17872,7 @@ impl UpdateBasePathMappingInput {
         Ok({
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_synthetic_update_base_path_mapping_input_body(
+                crate::operation_ser::serialize_operation_update_base_path_mapping_input_body(
                     &self,
                 )
                 .map_err(|err| {
@@ -17794,9 +17895,10 @@ impl UpdateBasePathMappingInput {
                 .headers_mut()
                 .insert("Accept", http::HeaderValue::from_static("application/json"));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -17932,7 +18034,7 @@ impl UpdateClientCertificateInput {
         Ok({
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_synthetic_update_client_certificate_input_body(
+                crate::operation_ser::serialize_operation_update_client_certificate_input_body(
                     &self,
                 )
                 .map_err(|err| {
@@ -17955,9 +18057,10 @@ impl UpdateClientCertificateInput {
                 .headers_mut()
                 .insert("Accept", http::HeaderValue::from_static("application/json"));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -18104,7 +18207,7 @@ impl UpdateDeploymentInput {
         Ok({
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_synthetic_update_deployment_input_body(&self)
+                crate::operation_ser::serialize_operation_update_deployment_input_body(&self)
                     .map_err(|err| {
                         smithy_http::operation::BuildError::SerializationError(err.into())
                     })?;
@@ -18125,9 +18228,10 @@ impl UpdateDeploymentInput {
                 .headers_mut()
                 .insert("Accept", http::HeaderValue::from_static("application/json"));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -18274,7 +18378,7 @@ impl UpdateDocumentationPartInput {
         Ok({
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_synthetic_update_documentation_part_input_body(
+                crate::operation_ser::serialize_operation_update_documentation_part_input_body(
                     &self,
                 )
                 .map_err(|err| {
@@ -18297,9 +18401,10 @@ impl UpdateDocumentationPartInput {
                 .headers_mut()
                 .insert("Accept", http::HeaderValue::from_static("application/json"));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -18447,7 +18552,7 @@ impl UpdateDocumentationVersionInput {
         Ok({
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_synthetic_update_documentation_version_input_body(
+                crate::operation_ser::serialize_operation_update_documentation_version_input_body(
                     &self,
                 )
                 .map_err(|err| {
@@ -18470,9 +18575,10 @@ impl UpdateDocumentationVersionInput {
                 .headers_mut()
                 .insert("Accept", http::HeaderValue::from_static("application/json"));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -18609,7 +18715,7 @@ impl UpdateDomainNameInput {
         Ok({
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_synthetic_update_domain_name_input_body(&self)
+                crate::operation_ser::serialize_operation_update_domain_name_input_body(&self)
                     .map_err(|err| {
                         smithy_http::operation::BuildError::SerializationError(err.into())
                     })?;
@@ -18630,9 +18736,10 @@ impl UpdateDomainNameInput {
                 .headers_mut()
                 .insert("Accept", http::HeaderValue::from_static("application/json"));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -18787,7 +18894,7 @@ impl UpdateGatewayResponseInput {
         Ok({
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_synthetic_update_gateway_response_input_body(&self)
+                crate::operation_ser::serialize_operation_update_gateway_response_input_body(&self)
                     .map_err(|err| {
                         smithy_http::operation::BuildError::SerializationError(err.into())
                     })?;
@@ -18808,9 +18915,10 @@ impl UpdateGatewayResponseInput {
                 .headers_mut()
                 .insert("Accept", http::HeaderValue::from_static("application/json"));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -18968,7 +19076,7 @@ impl UpdateIntegrationInput {
         Ok({
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_synthetic_update_integration_input_body(&self)
+                crate::operation_ser::serialize_operation_update_integration_input_body(&self)
                     .map_err(|err| {
                         smithy_http::operation::BuildError::SerializationError(err.into())
                     })?;
@@ -18989,9 +19097,10 @@ impl UpdateIntegrationInput {
                 .headers_mut()
                 .insert("Accept", http::HeaderValue::from_static("application/json"));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -19161,7 +19270,7 @@ impl UpdateIntegrationResponseInput {
         Ok({
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_synthetic_update_integration_response_input_body(
+                crate::operation_ser::serialize_operation_update_integration_response_input_body(
                     &self,
                 )
                 .map_err(|err| {
@@ -19184,9 +19293,10 @@ impl UpdateIntegrationResponseInput {
                 .headers_mut()
                 .insert("Accept", http::HeaderValue::from_static("application/json"));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -19336,7 +19446,7 @@ impl UpdateMethodInput {
     > {
         Ok({
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_synthetic_update_method_input_body(&self)
+            let body = crate::operation_ser::serialize_operation_update_method_input_body(&self)
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -19357,9 +19467,10 @@ impl UpdateMethodInput {
                 .headers_mut()
                 .insert("Accept", http::HeaderValue::from_static("application/json"));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -19529,7 +19640,7 @@ impl UpdateMethodResponseInput {
         Ok({
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_synthetic_update_method_response_input_body(&self)
+                crate::operation_ser::serialize_operation_update_method_response_input_body(&self)
                     .map_err(|err| {
                         smithy_http::operation::BuildError::SerializationError(err.into())
                     })?;
@@ -19550,9 +19661,10 @@ impl UpdateMethodResponseInput {
                 .headers_mut()
                 .insert("Accept", http::HeaderValue::from_static("application/json"));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -19691,7 +19803,7 @@ impl UpdateModelInput {
     > {
         Ok({
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_synthetic_update_model_input_body(&self)
+            let body = crate::operation_ser::serialize_operation_update_model_input_body(&self)
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -19712,9 +19824,10 @@ impl UpdateModelInput {
                 .headers_mut()
                 .insert("Accept", http::HeaderValue::from_static("application/json"));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -19861,7 +19974,7 @@ impl UpdateRequestValidatorInput {
         Ok({
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_synthetic_update_request_validator_input_body(
+                crate::operation_ser::serialize_operation_update_request_validator_input_body(
                     &self,
                 )
                 .map_err(|err| {
@@ -19884,9 +19997,10 @@ impl UpdateRequestValidatorInput {
                 .headers_mut()
                 .insert("Accept", http::HeaderValue::from_static("application/json"));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -20031,7 +20145,7 @@ impl UpdateResourceInput {
     > {
         Ok({
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_synthetic_update_resource_input_body(&self)
+            let body = crate::operation_ser::serialize_operation_update_resource_input_body(&self)
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -20052,9 +20166,10 @@ impl UpdateResourceInput {
                 .headers_mut()
                 .insert("Accept", http::HeaderValue::from_static("application/json"));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -20188,7 +20303,7 @@ impl UpdateRestApiInput {
     > {
         Ok({
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_synthetic_update_rest_api_input_body(&self)
+            let body = crate::operation_ser::serialize_operation_update_rest_api_input_body(&self)
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -20209,9 +20324,10 @@ impl UpdateRestApiInput {
                 .headers_mut()
                 .insert("Accept", http::HeaderValue::from_static("application/json"));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -20355,7 +20471,7 @@ impl UpdateStageInput {
     > {
         Ok({
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_synthetic_update_stage_input_body(&self)
+            let body = crate::operation_ser::serialize_operation_update_stage_input_body(&self)
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -20376,9 +20492,10 @@ impl UpdateStageInput {
                 .headers_mut()
                 .insert("Accept", http::HeaderValue::from_static("application/json"));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -20523,7 +20640,7 @@ impl UpdateUsageInput {
     > {
         Ok({
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_synthetic_update_usage_input_body(&self)
+            let body = crate::operation_ser::serialize_operation_update_usage_input_body(&self)
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -20544,9 +20661,10 @@ impl UpdateUsageInput {
                 .headers_mut()
                 .insert("Accept", http::HeaderValue::from_static("application/json"));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -20682,7 +20800,7 @@ impl UpdateUsagePlanInput {
         Ok({
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_synthetic_update_usage_plan_input_body(&self)
+                crate::operation_ser::serialize_operation_update_usage_plan_input_body(&self)
                     .map_err(|err| {
                         smithy_http::operation::BuildError::SerializationError(err.into())
                     })?;
@@ -20703,9 +20821,10 @@ impl UpdateUsagePlanInput {
                 .headers_mut()
                 .insert("Accept", http::HeaderValue::from_static("application/json"));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
@@ -20838,7 +20957,7 @@ impl UpdateVpcLinkInput {
     > {
         Ok({
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_synthetic_update_vpc_link_input_body(&self)
+            let body = crate::operation_ser::serialize_operation_update_vpc_link_input_body(&self)
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -20859,9 +20978,10 @@ impl UpdateVpcLinkInput {
                 .headers_mut()
                 .insert("Accept", http::HeaderValue::from_static("application/json"));
 
-            request
-                .config_mut()
-                .insert(aws_sig_auth::signer::OperationSigningConfig::default_config());
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+
+            request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(

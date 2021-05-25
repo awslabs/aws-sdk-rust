@@ -11,7 +11,6 @@
 //!
 //! ### Writing a ByteStream into a file:
 //! ```rust
-//! use bytes::Buf;
 //! use smithy_http::byte_stream::ByteStream;
 //! use std::error::Error;
 //! use tokio::fs::File;
@@ -25,9 +24,7 @@
 //! ) -> Result<(), Box<dyn Error + Send + Sync>> {
 //!     let mut buf = output.audio_stream.collect().await?;
 //!     let mut file = File::open("audio.mp3").await?;
-//!     while buf.has_remaining() {
-//!         file.write_buf(&mut buf).await?;
-//!     }
+//!     file.write_all_buf(&mut buf).await?;
 //!     Ok(())
 //! }
 //! ```
@@ -74,18 +71,39 @@
 //!     Ok(())
 //! }
 //! ```
+//!
+//! ### Create a ByteStream from a file
+//! **Note:** This is only available with `bytestream-util` enabled.
+//! ```rust
+//! use smithy_http::byte_stream::ByteStream;
+//! use std::path::Path;
+//! struct GetObjectInput {
+//!   body: ByteStream
+//! }
+//!
+//! async fn bytestream_from_file() -> GetObjectInput {
+//!     let f = Path::new("docs/some-large-file.csv");
+//!     let bytestream = ByteStream::from_path(&f).await.expect("valid path");
+//!     GetObjectInput { body: bytestream }
+//! }
+//! ```
 
 use crate::body::SdkBody;
 use bytes::Buf;
 use bytes::Bytes;
 use bytes_utils::SegmentedBuf;
+use http_body::combinators::BoxBody;
 use http_body::Body;
 use pin_project::pin_project;
 use std::error::Error as StdError;
 use std::fmt::{Debug, Formatter};
 use std::io::IoSlice;
+use std::path::Path;
 use std::pin::Pin;
 use std::task::{Context, Poll};
+
+#[cfg(feature = "bytestream-util")]
+mod bytestream_util;
 
 /// Stream of binary data
 ///
@@ -135,7 +153,6 @@ use std::task::{Context, Poll};
 ///     }
 ///     ```
 ///
-/// `ByteStream`
 #[pin_project]
 #[derive(Debug)]
 pub struct ByteStream(#[pin] Inner<SdkBody>);
@@ -176,6 +193,59 @@ impl ByteStream {
     pub async fn collect(self) -> Result<AggregatedBytes, Error> {
         self.0.collect().await.map_err(|err| Error(err))
     }
+
+    /// Create a ByteStream that streams data from the filesystem
+    ///
+    /// This function creates a retryable ByteStream for a given `path`. The returned ByteStream
+    /// will provide a size hint when used as an HTTP body. If the request fails, the read will
+    /// begin again by reloading the file handle.
+    ///
+    /// ## Warning
+    /// The contents of the file MUST not change during retries. The length & checksum of the file
+    /// will be cached. If the contents of the file change, the operation will almost certainly fail.
+    ///
+    /// Furthermore, a partial write MAY seek in the file and resume from the previous location.
+    ///
+    /// # Example
+    /// ```rust
+    /// use smithy_http::byte_stream::ByteStream;
+    /// use std::path::Path;
+    ///  async fn make_bytestream() -> ByteStream {
+    ///     ByteStream::from_path(&Path::new("docs/rows.csv")).await.expect("file should be readable")
+    /// }
+    /// ```
+    #[cfg(feature = "bytestream-util")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "bytestream-util")))]
+    pub async fn from_path(path: &Path) -> Result<Self, Error> {
+        let path_buf = path.to_path_buf();
+        let sz = tokio::fs::metadata(path)
+            .await
+            .map_err(|err| Error(err.into()))?
+            .len();
+        let body_loader = move || {
+            SdkBody::from_dyn(BoxBody::new(bytestream_util::PathBody::from_path(
+                path_buf.as_path(),
+                sz,
+            )))
+        };
+        Ok(ByteStream::new(SdkBody::retryable(body_loader)))
+    }
+
+    /// Create a ByteStream from a file
+    ///
+    /// NOTE: This will NOT result in a retryable ByteStream. For a ByteStream that can be retried in the case of
+    /// upstream failures, use [`ByteStream::from_path`](ByteStream::from_path)
+    #[cfg(feature = "bytestream-util")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "bytestream-util")))]
+    pub async fn from_file(file: tokio::fs::File) -> Result<Self, Error> {
+        let sz = file
+            .metadata()
+            .await
+            .map_err(|err| Error(err.into()))?
+            .len();
+        let body = SdkBody::from_dyn(BoxBody::new(bytestream_util::PathBody::from_file(file, sz)));
+        Ok(ByteStream::new(body))
+    }
 }
 
 impl Default for ByteStream {
@@ -189,6 +259,18 @@ impl Default for ByteStream {
 impl From<SdkBody> for ByteStream {
     fn from(inp: SdkBody) -> Self {
         ByteStream::new(inp)
+    }
+}
+
+impl From<Bytes> for ByteStream {
+    fn from(input: Bytes) -> Self {
+        ByteStream::new(SdkBody::from(input))
+    }
+}
+
+impl From<Vec<u8>> for ByteStream {
+    fn from(input: Vec<u8>) -> Self {
+        Self::from(Bytes::from(input))
     }
 }
 
@@ -321,8 +403,10 @@ where
 
 #[cfg(test)]
 mod tests {
-    use crate::byte_stream::Inner;
-    use bytes::Bytes;
+    use crate::byte_stream::{ByteStream, Inner};
+    use bytes::{Buf, Bytes};
+    use http_body::Body;
+    use std::error::Error;
 
     #[tokio::test]
     async fn read_from_string_body() {
@@ -350,5 +434,44 @@ mod tests {
             byte_stream.collect().await.expect("no errors").into_bytes(),
             Bytes::from("data 1data 2data 3")
         );
+    }
+
+    #[cfg(feature = "bytestream-util")]
+    #[tokio::test]
+    async fn path_based_bytestreams() -> Result<(), Box<dyn Error>> {
+        use std::io::Write;
+        use tempfile::NamedTempFile;
+        let mut file = NamedTempFile::new()?;
+
+        for i in 0..10000 {
+            writeln!(file, "Brian was here. Briefly. {}", i)?;
+        }
+        let body = ByteStream::from_path(file.path()).await?.into_inner();
+        // assert that a valid size hint is immediately ready
+        assert_eq!(body.size_hint().exact(), Some(298890));
+        let mut body1 = body.try_clone().expect("retryable bodies are cloneable");
+        // read a little bit from one of the clones
+        let some_data = body1
+            .data()
+            .await
+            .expect("should have some data")
+            .expect("read should not fail");
+        assert!(!some_data.is_empty());
+        // make some more clones
+        let body2 = body.try_clone().expect("retryable bodies are cloneable");
+        let body3 = body.try_clone().expect("retryable bodies are cloneable");
+        let body2 = ByteStream::new(body2).collect().await?.into_bytes();
+        let body3 = ByteStream::new(body3).collect().await?.into_bytes();
+        assert_eq!(body2, body3);
+        assert!(body2.starts_with(b"Brian was here."));
+        assert!(body2.ends_with(b"9999\n"));
+        assert_eq!(body2.len(), 298890);
+
+        assert_eq!(
+            ByteStream::new(body1).collect().await?.remaining(),
+            298890 - some_data.len()
+        );
+
+        Ok(())
     }
 }

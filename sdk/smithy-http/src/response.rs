@@ -94,7 +94,7 @@ mod test {
 
     #[test]
     fn supports_streaming_body() {
-        struct S3GetObject<B: Body> {
+        pub struct S3GetObject<B: Body> {
             pub body: B,
         }
 

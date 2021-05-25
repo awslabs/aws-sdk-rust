@@ -17,6 +17,7 @@ use bytes::{Buf, Bytes};
 use http::Response;
 use http_body::Body;
 use std::error::Error;
+use tracing::trace;
 
 type BoxError = Box<dyn Error + Send + Sync>;
 
@@ -78,8 +79,10 @@ where
     if let Some(parsed_response) = handler.parse_unloaded(&mut response) {
         return sdk_result(parsed_response, response);
     }
-    let (parts, body) = response.into_parts();
 
+    trace!(response = ?response);
+
+    let (parts, body) = response.into_parts();
     let body = match read_body(body).await {
         Ok(body) => body,
         Err(err) => {

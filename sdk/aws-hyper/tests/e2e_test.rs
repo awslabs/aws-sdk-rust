@@ -107,7 +107,7 @@ async fn e2e_test() {
         .header(USER_AGENT, "aws-sdk-rust/0.123.test os/windows/XPSP3 lang/rust/1.50.0")
         .header("x-amz-user-agent", "aws-sdk-rust/0.123.test api/test-service/0.123 os/windows/XPSP3 lang/rust/1.50.0")
         .header(HOST, "test-service.test-region.amazonaws.com")
-        .header(AUTHORIZATION, "AWS4-HMAC-SHA256 Credential=access_key/20210215/test-region/test-service-signing/aws4_request, SignedHeaders=host, Signature=5ebafc2fc4a104b63a1f87ffe829e6eb860a48db8c105a7921b82ee3dc02f1b8")
+        .header(AUTHORIZATION, "AWS4-HMAC-SHA256 Credential=access_key/20210215/test-region/test-service-signing/aws4_request, SignedHeaders=host;x-amz-date;x-amz-user-agent, Signature=da249491d7fe3da22c2e09cbf910f37aa5b079a3cedceff8403d0b18a7bfab75")
         .header("x-amz-date", "20210215T184017Z")
         .uri(Uri::from_static("https://test-service.test-region.amazonaws.com/"))
         .body(SdkBody::from("request body")).unwrap();

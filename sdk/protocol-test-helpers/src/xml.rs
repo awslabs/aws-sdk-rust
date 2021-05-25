@@ -11,13 +11,13 @@ use std::fmt::Write;
 ///
 /// This will normalize documents and attempts to determine if it is OK to sort members or not by
 /// using a heuristic to determine if the tag represents a list (which should not be reordered)
-pub fn try_xml_equivalent(d1: &str, d2: &str) -> Result<(), ProtocolTestFailure> {
-    let norm_1 = normalize_xml(d1).map_err(|e| ProtocolTestFailure::InvalidBodyFormat {
-        expected: "left document to be valid XML".to_string(),
-        found: format!("{}", e),
+pub fn try_xml_equivalent(actual: &str, expected: &str) -> Result<(), ProtocolTestFailure> {
+    let norm_1 = normalize_xml(actual).map_err(|e| ProtocolTestFailure::InvalidBodyFormat {
+        expected: "actual document to be valid XML".to_string(),
+        found: format!("{}\n{}", e, actual),
     })?;
-    let norm_2 = normalize_xml(d2).map_err(|e| ProtocolTestFailure::InvalidBodyFormat {
-        expected: "right document to be valid XML".to_string(),
+    let norm_2 = normalize_xml(expected).map_err(|e| ProtocolTestFailure::InvalidBodyFormat {
+        expected: "expected document to be valid XML".to_string(),
         found: format!("{}", e),
     })?;
     if norm_1 == norm_2 {
@@ -100,8 +100,12 @@ fn unparse_start_element(n: Node) -> String {
     let mut out = String::new();
     out.push('<');
     out.push_str(n.tag_name().name());
-    if let Some(ns) = n.tag_name().namespace() {
-        write!(&mut out, " xmlns=\"{}\"", ns).unwrap();
+    for ns in n.namespaces() {
+        out.push_str(" xmlns");
+        if let Some(ns_name) = ns.name() {
+            write!(&mut out, ":{}", ns_name).unwrap();
+        }
+        write!(&mut out, "={}", ns.uri()).unwrap();
     }
     let mut attributes: Vec<_> = n.attributes().iter().collect();
     attributes.sort_by_key(|attrib| (attrib.name(), attrib.value(), attrib.namespace()));
@@ -304,5 +308,12 @@ mod test {
             <Nested xmlns:xsi="https://example3.com" xsi:someName="nestedAttrValue"></Nested>
         </root>"#;
         try_xml_equivalent(d1, d2).expect_err("namespaces differ");
+    }
+
+    #[test]
+    fn namespace_with_prefix() {
+        let d1 = r#"<PayloadWithXmlNamespaceAndPrefix xmlns:baz="http://foo.com" />"#;
+        let d2 = r#"<PayloadWithXmlNamespaceAndPrefix xmlns:baz="http://foo.com"></PayloadWithXmlNamespaceAndPrefix>"#;
+        try_xml_equivalent(d1, d2).expect("match")
     }
 }
