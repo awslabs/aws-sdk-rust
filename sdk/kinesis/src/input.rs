@@ -66,47 +66,38 @@ impl AddTagsToStreamInput {
     > {
         Ok({
             let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_add_tags_to_stream_input_body(&self)
-                    .map_err(|err| {
-                        smithy_http::operation::BuildError::SerializationError(err.into())
-                    })?;
+            let body = crate::operation_ser::serialize_operation_add_tags_to_stream(&self)
+                .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
             let request = Self::assemble(request, body);
-
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
                 ));
-
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-
             request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
-
             aws_endpoint::set_endpoint_resolver(
                 &mut request.config_mut(),
                 _config.endpoint_resolver.clone(),
             );
-
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-
             aws_auth::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
-
             let op = smithy_http::operation::Operation::new(
                 request,
                 crate::operation::AddTagsToStream::new(),
@@ -115,7 +106,6 @@ impl AddTagsToStreamInput {
                 "AddTagsToStream",
                 "kinesis",
             ));
-
             let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
             op
         })
@@ -125,7 +115,6 @@ impl AddTagsToStreamInput {
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
-
         Ok(builder
             .method("POST")
             .header("Content-Type", "application/x-amz-json-1.1")
@@ -205,46 +194,38 @@ impl CreateStreamInput {
     > {
         Ok({
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_create_stream_input_body(&self)
-                .map_err(|err| {
+            let body =
+                crate::operation_ser::serialize_operation_create_stream(&self).map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
             let request = Self::assemble(request, body);
-
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
                 ));
-
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-
             request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
-
             aws_endpoint::set_endpoint_resolver(
                 &mut request.config_mut(),
                 _config.endpoint_resolver.clone(),
             );
-
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-
             aws_auth::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
-
             let op = smithy_http::operation::Operation::new(
                 request,
                 crate::operation::CreateStream::new(),
@@ -253,7 +234,6 @@ impl CreateStreamInput {
                 "CreateStream",
                 "kinesis",
             ));
-
             let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
             op
         })
@@ -263,7 +243,6 @@ impl CreateStreamInput {
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
-
         Ok(builder
             .method("POST")
             .header("Content-Type", "application/x-amz-json-1.1")
@@ -342,45 +321,39 @@ impl DecreaseStreamRetentionPeriodInput {
     > {
         Ok({
             let request = self.request_builder_base()?;
-            let body = 
-                crate::operation_ser::serialize_operation_decrease_stream_retention_period_input_body(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
-            ;
+            let body =
+                crate::operation_ser::serialize_operation_decrease_stream_retention_period(&self)
+                    .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
             let request = Self::assemble(request, body);
-
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
                 ));
-
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-
             request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
-
             aws_endpoint::set_endpoint_resolver(
                 &mut request.config_mut(),
                 _config.endpoint_resolver.clone(),
             );
-
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-
             aws_auth::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
-
             let op = smithy_http::operation::Operation::new(
                 request,
                 crate::operation::DecreaseStreamRetentionPeriod::new(),
@@ -389,7 +362,6 @@ impl DecreaseStreamRetentionPeriodInput {
                 "DecreaseStreamRetentionPeriod",
                 "kinesis",
             ));
-
             let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
             op
         })
@@ -399,7 +371,6 @@ impl DecreaseStreamRetentionPeriodInput {
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
-
         Ok(builder
             .method("POST")
             .header("Content-Type", "application/x-amz-json-1.1")
@@ -479,46 +450,38 @@ impl DeleteStreamInput {
     > {
         Ok({
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_delete_stream_input_body(&self)
-                .map_err(|err| {
+            let body =
+                crate::operation_ser::serialize_operation_delete_stream(&self).map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
             let request = Self::assemble(request, body);
-
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
                 ));
-
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-
             request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
-
             aws_endpoint::set_endpoint_resolver(
                 &mut request.config_mut(),
                 _config.endpoint_resolver.clone(),
             );
-
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-
             aws_auth::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
-
             let op = smithy_http::operation::Operation::new(
                 request,
                 crate::operation::DeleteStream::new(),
@@ -527,7 +490,6 @@ impl DeleteStreamInput {
                 "DeleteStream",
                 "kinesis",
             ));
-
             let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
             op
         })
@@ -537,7 +499,6 @@ impl DeleteStreamInput {
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
-
         Ok(builder
             .method("POST")
             .header("Content-Type", "application/x-amz-json-1.1")
@@ -629,49 +590,38 @@ impl DeregisterStreamConsumerInput {
     > {
         Ok({
             let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_deregister_stream_consumer_input_body(
-                    &self,
-                )
+            let body = crate::operation_ser::serialize_operation_deregister_stream_consumer(&self)
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
             let request = Self::assemble(request, body);
-
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
                 ));
-
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-
             request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
-
             aws_endpoint::set_endpoint_resolver(
                 &mut request.config_mut(),
                 _config.endpoint_resolver.clone(),
             );
-
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-
             aws_auth::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
-
             let op = smithy_http::operation::Operation::new(
                 request,
                 crate::operation::DeregisterStreamConsumer::new(),
@@ -680,7 +630,6 @@ impl DeregisterStreamConsumerInput {
                 "DeregisterStreamConsumer",
                 "kinesis",
             ));
-
             let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
             op
         })
@@ -690,7 +639,6 @@ impl DeregisterStreamConsumerInput {
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
-
         Ok(builder
             .method("POST")
             .header("Content-Type", "application/x-amz-json-1.1")
@@ -743,41 +691,33 @@ impl DescribeLimitsInput {
             let request = self.request_builder_base()?;
             let body = smithy_http::body::SdkBody::from("{}");
             let request = Self::assemble(request, body);
-
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
                 ));
-
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-
             request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
-
             aws_endpoint::set_endpoint_resolver(
                 &mut request.config_mut(),
                 _config.endpoint_resolver.clone(),
             );
-
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-
             aws_auth::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
-
             let op = smithy_http::operation::Operation::new(
                 request,
                 crate::operation::DescribeLimits::new(),
@@ -786,7 +726,6 @@ impl DescribeLimitsInput {
                 "DescribeLimits",
                 "kinesis",
             ));
-
             let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
             op
         })
@@ -796,7 +735,6 @@ impl DescribeLimitsInput {
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
-
         Ok(builder
             .method("POST")
             .header("Content-Type", "application/x-amz-json-1.1")
@@ -886,46 +824,37 @@ impl DescribeStreamInput {
     > {
         Ok({
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_describe_stream_input_body(&self)
-                .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            let body = crate::operation_ser::serialize_operation_describe_stream(&self).map_err(
+                |err| smithy_http::operation::BuildError::SerializationError(err.into()),
+            )?;
             let request = Self::assemble(request, body);
-
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
                 ));
-
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-
             request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
-
             aws_endpoint::set_endpoint_resolver(
                 &mut request.config_mut(),
                 _config.endpoint_resolver.clone(),
             );
-
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-
             aws_auth::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
-
             let op = smithy_http::operation::Operation::new(
                 request,
                 crate::operation::DescribeStream::new(),
@@ -934,7 +863,6 @@ impl DescribeStreamInput {
                 "DescribeStream",
                 "kinesis",
             ));
-
             let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
             op
         })
@@ -944,7 +872,6 @@ impl DescribeStreamInput {
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
-
         Ok(builder
             .method("POST")
             .header("Content-Type", "application/x-amz-json-1.1")
@@ -1032,49 +959,38 @@ impl DescribeStreamConsumerInput {
     > {
         Ok({
             let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_describe_stream_consumer_input_body(
-                    &self,
-                )
+            let body = crate::operation_ser::serialize_operation_describe_stream_consumer(&self)
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
             let request = Self::assemble(request, body);
-
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
                 ));
-
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-
             request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
-
             aws_endpoint::set_endpoint_resolver(
                 &mut request.config_mut(),
                 _config.endpoint_resolver.clone(),
             );
-
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-
             aws_auth::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
-
             let op = smithy_http::operation::Operation::new(
                 request,
                 crate::operation::DescribeStreamConsumer::new(),
@@ -1083,7 +999,6 @@ impl DescribeStreamConsumerInput {
                 "DescribeStreamConsumer",
                 "kinesis",
             ));
-
             let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
             op
         })
@@ -1093,7 +1008,6 @@ impl DescribeStreamConsumerInput {
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
-
         Ok(builder
             .method("POST")
             .header("Content-Type", "application/x-amz-json-1.1")
@@ -1158,47 +1072,38 @@ impl DescribeStreamSummaryInput {
     > {
         Ok({
             let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_describe_stream_summary_input_body(&self)
-                    .map_err(|err| {
-                        smithy_http::operation::BuildError::SerializationError(err.into())
-                    })?;
+            let body = crate::operation_ser::serialize_operation_describe_stream_summary(&self)
+                .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
             let request = Self::assemble(request, body);
-
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
                 ));
-
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-
             request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
-
             aws_endpoint::set_endpoint_resolver(
                 &mut request.config_mut(),
                 _config.endpoint_resolver.clone(),
             );
-
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-
             aws_auth::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
-
             let op = smithy_http::operation::Operation::new(
                 request,
                 crate::operation::DescribeStreamSummary::new(),
@@ -1207,7 +1112,6 @@ impl DescribeStreamSummaryInput {
                 "DescribeStreamSummary",
                 "kinesis",
             ));
-
             let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
             op
         })
@@ -1217,7 +1121,6 @@ impl DescribeStreamSummaryInput {
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
-
         Ok(builder
             .method("POST")
             .header("Content-Type", "application/x-amz-json-1.1")
@@ -1299,49 +1202,38 @@ impl DisableEnhancedMonitoringInput {
     > {
         Ok({
             let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_disable_enhanced_monitoring_input_body(
-                    &self,
-                )
+            let body = crate::operation_ser::serialize_operation_disable_enhanced_monitoring(&self)
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
             let request = Self::assemble(request, body);
-
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
                 ));
-
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-
             request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
-
             aws_endpoint::set_endpoint_resolver(
                 &mut request.config_mut(),
                 _config.endpoint_resolver.clone(),
             );
-
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-
             aws_auth::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
-
             let op = smithy_http::operation::Operation::new(
                 request,
                 crate::operation::DisableEnhancedMonitoring::new(),
@@ -1350,7 +1242,6 @@ impl DisableEnhancedMonitoringInput {
                 "DisableEnhancedMonitoring",
                 "kinesis",
             ));
-
             let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
             op
         })
@@ -1360,7 +1251,6 @@ impl DisableEnhancedMonitoringInput {
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
-
         Ok(builder
             .method("POST")
             .header("Content-Type", "application/x-amz-json-1.1")
@@ -1441,49 +1331,38 @@ impl EnableEnhancedMonitoringInput {
     > {
         Ok({
             let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_enable_enhanced_monitoring_input_body(
-                    &self,
-                )
+            let body = crate::operation_ser::serialize_operation_enable_enhanced_monitoring(&self)
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
             let request = Self::assemble(request, body);
-
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
                 ));
-
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-
             request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
-
             aws_endpoint::set_endpoint_resolver(
                 &mut request.config_mut(),
                 _config.endpoint_resolver.clone(),
             );
-
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-
             aws_auth::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
-
             let op = smithy_http::operation::Operation::new(
                 request,
                 crate::operation::EnableEnhancedMonitoring::new(),
@@ -1492,7 +1371,6 @@ impl EnableEnhancedMonitoringInput {
                 "EnableEnhancedMonitoring",
                 "kinesis",
             ));
-
             let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
             op
         })
@@ -1502,7 +1380,6 @@ impl EnableEnhancedMonitoringInput {
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
-
         Ok(builder
             .method("POST")
             .header("Content-Type", "application/x-amz-json-1.1")
@@ -1581,46 +1458,38 @@ impl GetRecordsInput {
     > {
         Ok({
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_get_records_input_body(&self)
-                .map_err(|err| {
+            let body =
+                crate::operation_ser::serialize_operation_get_records(&self).map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
             let request = Self::assemble(request, body);
-
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
                 ));
-
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-
             request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
-
             aws_endpoint::set_endpoint_resolver(
                 &mut request.config_mut(),
                 _config.endpoint_resolver.clone(),
             );
-
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-
             aws_auth::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
-
             let op = smithy_http::operation::Operation::new(
                 request,
                 crate::operation::GetRecords::new(),
@@ -1629,7 +1498,6 @@ impl GetRecordsInput {
                 "GetRecords",
                 "kinesis",
             ));
-
             let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
             op
         })
@@ -1639,7 +1507,6 @@ impl GetRecordsInput {
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
-
         Ok(builder
             .method("POST")
             .header("Content-Type", "application/x-amz-json-1.1")
@@ -1787,47 +1654,38 @@ impl GetShardIteratorInput {
     > {
         Ok({
             let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_get_shard_iterator_input_body(&self)
-                    .map_err(|err| {
-                        smithy_http::operation::BuildError::SerializationError(err.into())
-                    })?;
+            let body = crate::operation_ser::serialize_operation_get_shard_iterator(&self)
+                .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
             let request = Self::assemble(request, body);
-
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
                 ));
-
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-
             request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
-
             aws_endpoint::set_endpoint_resolver(
                 &mut request.config_mut(),
                 _config.endpoint_resolver.clone(),
             );
-
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-
             aws_auth::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
-
             let op = smithy_http::operation::Operation::new(
                 request,
                 crate::operation::GetShardIterator::new(),
@@ -1836,7 +1694,6 @@ impl GetShardIteratorInput {
                 "GetShardIterator",
                 "kinesis",
             ));
-
             let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
             op
         })
@@ -1846,7 +1703,6 @@ impl GetShardIteratorInput {
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
-
         Ok(builder
             .method("POST")
             .header("Content-Type", "application/x-amz-json-1.1")
@@ -1925,45 +1781,39 @@ impl IncreaseStreamRetentionPeriodInput {
     > {
         Ok({
             let request = self.request_builder_base()?;
-            let body = 
-                crate::operation_ser::serialize_operation_increase_stream_retention_period_input_body(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
-            ;
+            let body =
+                crate::operation_ser::serialize_operation_increase_stream_retention_period(&self)
+                    .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
             let request = Self::assemble(request, body);
-
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
                 ));
-
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-
             request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
-
             aws_endpoint::set_endpoint_resolver(
                 &mut request.config_mut(),
                 _config.endpoint_resolver.clone(),
             );
-
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-
             aws_auth::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
-
             let op = smithy_http::operation::Operation::new(
                 request,
                 crate::operation::IncreaseStreamRetentionPeriod::new(),
@@ -1972,7 +1822,6 @@ impl IncreaseStreamRetentionPeriodInput {
                 "IncreaseStreamRetentionPeriod",
                 "kinesis",
             ));
-
             let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
             op
         })
@@ -1982,7 +1831,6 @@ impl IncreaseStreamRetentionPeriodInput {
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
-
         Ok(builder
             .method("POST")
             .header("Content-Type", "application/x-amz-json-1.1")
@@ -2151,46 +1999,38 @@ impl ListShardsInput {
     > {
         Ok({
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_list_shards_input_body(&self)
-                .map_err(|err| {
+            let body =
+                crate::operation_ser::serialize_operation_list_shards(&self).map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
             let request = Self::assemble(request, body);
-
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
                 ));
-
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-
             request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
-
             aws_endpoint::set_endpoint_resolver(
                 &mut request.config_mut(),
                 _config.endpoint_resolver.clone(),
             );
-
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-
             aws_auth::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
-
             let op = smithy_http::operation::Operation::new(
                 request,
                 crate::operation::ListShards::new(),
@@ -2199,7 +2039,6 @@ impl ListShardsInput {
                 "ListShards",
                 "kinesis",
             ));
-
             let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
             op
         })
@@ -2209,7 +2048,6 @@ impl ListShardsInput {
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
-
         Ok(builder
             .method("POST")
             .header("Content-Type", "application/x-amz-json-1.1")
@@ -2338,47 +2176,38 @@ impl ListStreamConsumersInput {
     > {
         Ok({
             let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_list_stream_consumers_input_body(&self)
-                    .map_err(|err| {
+            let body = crate::operation_ser::serialize_operation_list_stream_consumers(&self)
+                .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
             let request = Self::assemble(request, body);
-
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
                 ));
-
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-
             request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
-
             aws_endpoint::set_endpoint_resolver(
                 &mut request.config_mut(),
                 _config.endpoint_resolver.clone(),
             );
-
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-
             aws_auth::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
-
             let op = smithy_http::operation::Operation::new(
                 request,
                 crate::operation::ListStreamConsumers::new(),
@@ -2387,7 +2216,6 @@ impl ListStreamConsumersInput {
                 "ListStreamConsumers",
                 "kinesis",
             ));
-
             let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
             op
         })
@@ -2397,7 +2225,6 @@ impl ListStreamConsumersInput {
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
-
         Ok(builder
             .method("POST")
             .header("Content-Type", "application/x-amz-json-1.1")
@@ -2475,46 +2302,38 @@ impl ListStreamsInput {
     > {
         Ok({
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_list_streams_input_body(&self)
-                .map_err(|err| {
+            let body =
+                crate::operation_ser::serialize_operation_list_streams(&self).map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
             let request = Self::assemble(request, body);
-
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
                 ));
-
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-
             request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
-
             aws_endpoint::set_endpoint_resolver(
                 &mut request.config_mut(),
                 _config.endpoint_resolver.clone(),
             );
-
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-
             aws_auth::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
-
             let op = smithy_http::operation::Operation::new(
                 request,
                 crate::operation::ListStreams::new(),
@@ -2523,7 +2342,6 @@ impl ListStreamsInput {
                 "ListStreams",
                 "kinesis",
             ));
-
             let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
             op
         })
@@ -2533,7 +2351,6 @@ impl ListStreamsInput {
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
-
         Ok(builder
             .method("POST")
             .header("Content-Type", "application/x-amz-json-1.1")
@@ -2628,47 +2445,38 @@ impl ListTagsForStreamInput {
     > {
         Ok({
             let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_list_tags_for_stream_input_body(&self)
-                    .map_err(|err| {
-                        smithy_http::operation::BuildError::SerializationError(err.into())
-                    })?;
+            let body = crate::operation_ser::serialize_operation_list_tags_for_stream(&self)
+                .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
             let request = Self::assemble(request, body);
-
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
                 ));
-
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-
             request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
-
             aws_endpoint::set_endpoint_resolver(
                 &mut request.config_mut(),
                 _config.endpoint_resolver.clone(),
             );
-
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-
             aws_auth::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
-
             let op = smithy_http::operation::Operation::new(
                 request,
                 crate::operation::ListTagsForStream::new(),
@@ -2677,7 +2485,6 @@ impl ListTagsForStreamInput {
                 "ListTagsForStream",
                 "kinesis",
             ));
-
             let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
             op
         })
@@ -2687,7 +2494,6 @@ impl ListTagsForStreamInput {
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
-
         Ok(builder
             .method("POST")
             .header("Content-Type", "application/x-amz-json-1.1")
@@ -2777,46 +2583,38 @@ impl MergeShardsInput {
     > {
         Ok({
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_merge_shards_input_body(&self)
-                .map_err(|err| {
+            let body =
+                crate::operation_ser::serialize_operation_merge_shards(&self).map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
             let request = Self::assemble(request, body);
-
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
                 ));
-
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-
             request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
-
             aws_endpoint::set_endpoint_resolver(
                 &mut request.config_mut(),
                 _config.endpoint_resolver.clone(),
             );
-
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-
             aws_auth::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
-
             let op = smithy_http::operation::Operation::new(
                 request,
                 crate::operation::MergeShards::new(),
@@ -2825,7 +2623,6 @@ impl MergeShardsInput {
                 "MergeShards",
                 "kinesis",
             ));
-
             let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
             op
         })
@@ -2835,7 +2632,6 @@ impl MergeShardsInput {
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
-
         Ok(builder
             .method("POST")
             .header("Content-Type", "application/x-amz-json-1.1")
@@ -2963,53 +2759,44 @@ impl PutRecordInput {
     > {
         Ok({
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_put_record_input_body(&self)
-                .map_err(|err| {
+            let body =
+                crate::operation_ser::serialize_operation_put_record(&self).map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
             let request = Self::assemble(request, body);
-
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
                 ));
-
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-
             request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
-
             aws_endpoint::set_endpoint_resolver(
                 &mut request.config_mut(),
                 _config.endpoint_resolver.clone(),
             );
-
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-
             aws_auth::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
-
             let op =
                 smithy_http::operation::Operation::new(request, crate::operation::PutRecord::new())
                     .with_metadata(smithy_http::operation::Metadata::new(
                         "PutRecord",
                         "kinesis",
                     ));
-
             let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
             op
         })
@@ -3019,7 +2806,6 @@ impl PutRecordInput {
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
-
         Ok(builder
             .method("POST")
             .header("Content-Type", "application/x-amz-json-1.1")
@@ -3099,46 +2885,38 @@ impl PutRecordsInput {
     > {
         Ok({
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_put_records_input_body(&self)
-                .map_err(|err| {
+            let body =
+                crate::operation_ser::serialize_operation_put_records(&self).map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
             let request = Self::assemble(request, body);
-
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
                 ));
-
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-
             request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
-
             aws_endpoint::set_endpoint_resolver(
                 &mut request.config_mut(),
                 _config.endpoint_resolver.clone(),
             );
-
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-
             aws_auth::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
-
             let op = smithy_http::operation::Operation::new(
                 request,
                 crate::operation::PutRecords::new(),
@@ -3147,7 +2925,6 @@ impl PutRecordsInput {
                 "PutRecords",
                 "kinesis",
             ));
-
             let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
             op
         })
@@ -3157,7 +2934,6 @@ impl PutRecordsInput {
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
-
         Ok(builder
             .method("POST")
             .header("Content-Type", "application/x-amz-json-1.1")
@@ -3235,49 +3011,38 @@ impl RegisterStreamConsumerInput {
     > {
         Ok({
             let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_register_stream_consumer_input_body(
-                    &self,
-                )
+            let body = crate::operation_ser::serialize_operation_register_stream_consumer(&self)
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
             let request = Self::assemble(request, body);
-
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
                 ));
-
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-
             request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
-
             aws_endpoint::set_endpoint_resolver(
                 &mut request.config_mut(),
                 _config.endpoint_resolver.clone(),
             );
-
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-
             aws_auth::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
-
             let op = smithy_http::operation::Operation::new(
                 request,
                 crate::operation::RegisterStreamConsumer::new(),
@@ -3286,7 +3051,6 @@ impl RegisterStreamConsumerInput {
                 "RegisterStreamConsumer",
                 "kinesis",
             ));
-
             let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
             op
         })
@@ -3296,7 +3060,6 @@ impl RegisterStreamConsumerInput {
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
-
         Ok(builder
             .method("POST")
             .header("Content-Type", "application/x-amz-json-1.1")
@@ -3376,47 +3139,38 @@ impl RemoveTagsFromStreamInput {
     > {
         Ok({
             let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_remove_tags_from_stream_input_body(&self)
-                    .map_err(|err| {
-                        smithy_http::operation::BuildError::SerializationError(err.into())
-                    })?;
+            let body = crate::operation_ser::serialize_operation_remove_tags_from_stream(&self)
+                .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
             let request = Self::assemble(request, body);
-
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
                 ));
-
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-
             request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
-
             aws_endpoint::set_endpoint_resolver(
                 &mut request.config_mut(),
                 _config.endpoint_resolver.clone(),
             );
-
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-
             aws_auth::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
-
             let op = smithy_http::operation::Operation::new(
                 request,
                 crate::operation::RemoveTagsFromStream::new(),
@@ -3425,7 +3179,6 @@ impl RemoveTagsFromStreamInput {
                 "RemoveTagsFromStream",
                 "kinesis",
             ));
-
             let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
             op
         })
@@ -3435,7 +3188,6 @@ impl RemoveTagsFromStreamInput {
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
-
         Ok(builder
             .method("POST")
             .header("Content-Type", "application/x-amz-json-1.1")
@@ -3530,46 +3282,38 @@ impl SplitShardInput {
     > {
         Ok({
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_split_shard_input_body(&self)
-                .map_err(|err| {
+            let body =
+                crate::operation_ser::serialize_operation_split_shard(&self).map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
             let request = Self::assemble(request, body);
-
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
                 ));
-
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-
             request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
-
             aws_endpoint::set_endpoint_resolver(
                 &mut request.config_mut(),
                 _config.endpoint_resolver.clone(),
             );
-
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-
             aws_auth::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
-
             let op = smithy_http::operation::Operation::new(
                 request,
                 crate::operation::SplitShard::new(),
@@ -3578,7 +3322,6 @@ impl SplitShardInput {
                 "SplitShard",
                 "kinesis",
             ));
-
             let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
             op
         })
@@ -3588,7 +3331,6 @@ impl SplitShardInput {
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
-
         Ok(builder
             .method("POST")
             .header("Content-Type", "application/x-amz-json-1.1")
@@ -3708,47 +3450,38 @@ impl StartStreamEncryptionInput {
     > {
         Ok({
             let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_start_stream_encryption_input_body(&self)
-                    .map_err(|err| {
-                        smithy_http::operation::BuildError::SerializationError(err.into())
-                    })?;
+            let body = crate::operation_ser::serialize_operation_start_stream_encryption(&self)
+                .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
             let request = Self::assemble(request, body);
-
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
                 ));
-
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-
             request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
-
             aws_endpoint::set_endpoint_resolver(
                 &mut request.config_mut(),
                 _config.endpoint_resolver.clone(),
             );
-
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-
             aws_auth::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
-
             let op = smithy_http::operation::Operation::new(
                 request,
                 crate::operation::StartStreamEncryption::new(),
@@ -3757,7 +3490,6 @@ impl StartStreamEncryptionInput {
                 "StartStreamEncryption",
                 "kinesis",
             ));
-
             let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
             op
         })
@@ -3767,7 +3499,6 @@ impl StartStreamEncryptionInput {
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
-
         Ok(builder
             .method("POST")
             .header("Content-Type", "application/x-amz-json-1.1")
@@ -3887,47 +3618,38 @@ impl StopStreamEncryptionInput {
     > {
         Ok({
             let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_stop_stream_encryption_input_body(&self)
-                    .map_err(|err| {
-                        smithy_http::operation::BuildError::SerializationError(err.into())
-                    })?;
+            let body = crate::operation_ser::serialize_operation_stop_stream_encryption(&self)
+                .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
             let request = Self::assemble(request, body);
-
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
                 ));
-
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-
             request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
-
             aws_endpoint::set_endpoint_resolver(
                 &mut request.config_mut(),
                 _config.endpoint_resolver.clone(),
             );
-
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-
             aws_auth::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
-
             let op = smithy_http::operation::Operation::new(
                 request,
                 crate::operation::StopStreamEncryption::new(),
@@ -3936,7 +3658,6 @@ impl StopStreamEncryptionInput {
                 "StopStreamEncryption",
                 "kinesis",
             ));
-
             let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
             op
         })
@@ -3946,7 +3667,6 @@ impl StopStreamEncryptionInput {
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
-
         Ok(builder
             .method("POST")
             .header("Content-Type", "application/x-amz-json-1.1")
@@ -4055,47 +3775,38 @@ impl UpdateShardCountInput {
     > {
         Ok({
             let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_update_shard_count_input_body(&self)
-                    .map_err(|err| {
-                        smithy_http::operation::BuildError::SerializationError(err.into())
-                    })?;
+            let body = crate::operation_ser::serialize_operation_update_shard_count(&self)
+                .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
             let request = Self::assemble(request, body);
-
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
                 ));
-
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-
             request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
-
             aws_endpoint::set_endpoint_resolver(
                 &mut request.config_mut(),
                 _config.endpoint_resolver.clone(),
             );
-
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-
             aws_auth::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
-
             let op = smithy_http::operation::Operation::new(
                 request,
                 crate::operation::UpdateShardCount::new(),
@@ -4104,7 +3815,6 @@ impl UpdateShardCountInput {
                 "UpdateShardCount",
                 "kinesis",
             ));
-
             let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
             op
         })
@@ -4114,7 +3824,6 @@ impl UpdateShardCountInput {
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
-
         Ok(builder
             .method("POST")
             .header("Content-Type", "application/x-amz-json-1.1")

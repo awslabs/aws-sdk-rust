@@ -18,12 +18,17 @@ pub struct Endpoint {
     immutable: bool,
 }
 
+#[derive(Clone, Debug, Eq, PartialEq)]
 pub struct EndpointPrefix(String);
 impl EndpointPrefix {
     pub fn new(prefix: impl Into<String>) -> Result<Self, InvalidUri> {
         let prefix = prefix.into();
         let _ = Authority::from_str(&prefix)?;
         Ok(EndpointPrefix(prefix))
+    }
+
+    pub fn as_str(&self) -> &str {
+        &self.0
     }
 }
 
@@ -32,10 +37,6 @@ impl EndpointPrefix {
 pub enum InvalidEndpoint {
     EndpointMustHaveAuthority,
 }
-
-// user gives: Endpoint Provider. Give endpoint. Is this endpoint extensible?
-// where endpoint discovery starts from.
-// endpoints can mutate a request, potentially with a
 
 impl Endpoint {
     /// Create a new endpoint from a URI

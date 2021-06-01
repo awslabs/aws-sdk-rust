@@ -8,7 +8,6 @@ pub fn parse_cancel_journal_kinesis_stream_error(
 > {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::CancelJournalKinesisStreamError::unhandled)?;
-
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -94,7 +93,6 @@ pub fn parse_create_ledger_error(
 ) -> Result<crate::output::CreateLedgerOutput, crate::error::CreateLedgerError> {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::CreateLedgerError::unhandled)?;
-
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::CreateLedgerError::unhandled(generic)),
@@ -176,7 +174,6 @@ pub fn parse_delete_ledger_error(
 ) -> Result<crate::output::DeleteLedgerOutput, crate::error::DeleteLedgerError> {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::DeleteLedgerError::unhandled)?;
-
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::DeleteLedgerError::unhandled(generic)),
@@ -262,7 +259,6 @@ pub fn parse_describe_journal_kinesis_stream_error(
 > {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::DescribeJournalKinesisStreamError::unhandled)?;
-
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -349,7 +345,6 @@ pub fn parse_describe_journal_s3_export_error(
 {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::DescribeJournalS3ExportError::unhandled)?;
-
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -401,7 +396,6 @@ pub fn parse_describe_ledger_error(
 ) -> Result<crate::output::DescribeLedgerOutput, crate::error::DescribeLedgerError> {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::DescribeLedgerError::unhandled)?;
-
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::DescribeLedgerError::unhandled(generic)),
@@ -460,7 +454,6 @@ pub fn parse_export_journal_to_s3_error(
 ) -> Result<crate::output::ExportJournalToS3Output, crate::error::ExportJournalToS3Error> {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::ExportJournalToS3Error::unhandled)?;
-
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::ExportJournalToS3Error::unhandled(generic)),
@@ -522,7 +515,6 @@ pub fn parse_get_block_error(
 ) -> Result<crate::output::GetBlockOutput, crate::error::GetBlockError> {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::GetBlockError::unhandled)?;
-
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::GetBlockError::unhandled(generic)),
@@ -595,7 +587,6 @@ pub fn parse_get_digest_error(
 ) -> Result<crate::output::GetDigestOutput, crate::error::GetDigestError> {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::GetDigestError::unhandled)?;
-
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::GetDigestError::unhandled(generic)),
@@ -668,7 +659,6 @@ pub fn parse_get_revision_error(
 ) -> Result<crate::output::GetRevisionOutput, crate::error::GetRevisionError> {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::GetRevisionError::unhandled)?;
-
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::GetRevisionError::unhandled(generic)),
@@ -744,7 +734,6 @@ pub fn parse_list_journal_kinesis_streams_for_ledger_error(
 > {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::ListJournalKinesisStreamsForLedgerError::unhandled)?;
-
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -885,7 +874,6 @@ pub fn parse_list_tags_for_resource_error(
 ) -> Result<crate::output::ListTagsForResourceOutput, crate::error::ListTagsForResourceError> {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::ListTagsForResourceError::unhandled)?;
-
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::ListTagsForResourceError::unhandled(generic)),
@@ -947,7 +935,6 @@ pub fn parse_stream_journal_to_kinesis_error(
 {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::StreamJournalToKinesisError::unhandled)?;
-
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -1028,7 +1015,6 @@ pub fn parse_tag_resource_error(
 ) -> Result<crate::output::TagResourceOutput, crate::error::TagResourceError> {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::TagResourceError::unhandled)?;
-
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::TagResourceError::unhandled(generic)),
@@ -1084,7 +1070,6 @@ pub fn parse_untag_resource_error(
 ) -> Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError> {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::UntagResourceError::unhandled)?;
-
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::UntagResourceError::unhandled(generic)),
@@ -1140,7 +1125,6 @@ pub fn parse_update_ledger_error(
 ) -> Result<crate::output::UpdateLedgerOutput, crate::error::UpdateLedgerError> {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::UpdateLedgerError::unhandled)?;
-
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::UpdateLedgerError::unhandled(generic)),

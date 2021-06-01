@@ -27,7 +27,6 @@ impl std::convert::From<&str> for VpcLinkStatus {
         }
     }
 }
-
 impl std::str::FromStr for VpcLinkStatus {
     type Err = std::convert::Infallible;
 
@@ -35,7 +34,6 @@ impl std::str::FromStr for VpcLinkStatus {
         Ok(VpcLinkStatus::from(s))
     }
 }
-
 impl VpcLinkStatus {
     pub fn as_str(&self) -> &str {
         match self {
@@ -52,19 +50,6 @@ impl AsRef<str> for VpcLinkStatus {
         self.as_str()
     }
 }
-
-impl serde::Serialize for VpcLinkStatus {
-    fn serialize<S>(
-        &self,
-        serializer: S,
-    ) -> Result<<S as serde::Serializer>::Ok, <S as serde::Serializer>::Error>
-    where
-        S: serde::Serializer,
-    {
-        serializer.serialize_str(self.as_str())
-    }
-}
-
 impl<'de> serde::Deserialize<'de> for VpcLinkStatus {
     fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
     where
@@ -78,26 +63,22 @@ impl<'de> serde::Deserialize<'de> for VpcLinkStatus {
 /// A single patch operation to apply to the specified resource. Please refer to
 /// http://tools.ietf.org/html/rfc6902#section-4 for an explanation of how each operation is used.
 #[non_exhaustive]
-#[derive(serde::Deserialize, serde::Serialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
 pub struct PatchOperation {
     /// <p> An update operation to be performed with this PATCH request. The valid value can be <code>add</code>, <code>remove</code>,  <code>replace</code> or <code>copy</code>. Not all valid operations are supported for a given resource. Support of the operations depends on specific operational contexts. Attempts to apply an unsupported operation on a resource will return an error message.</p>
     #[serde(rename = "op")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub op: std::option::Option<crate::model::Op>,
     /// <p>The <code>op</code> operation's target, as identified by a <a href="https://tools.ietf.org/html/draft-ietf-appsawg-json-pointer-08">JSON Pointer</a> value that references a location within the targeted resource. For example, if the target resource has an updateable property of <code>{"name":"value"}</code>, the path for this property is <code>/name</code>. If the <code>name</code> property value is a JSON object (e.g., <code>{"name": {"child/name": "child-value"}}</code>), the path for the <code>child/name</code> property will be <code>/name/child~1name</code>. Any slash ("/") character appearing in path names must be escaped with "~1", as shown in the example above. Each <code>op</code> operation can have only one <code>path</code> associated with it.</p>
     #[serde(rename = "path")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub path: std::option::Option<std::string::String>,
     /// <p>The new target value of the update operation. It is applicable for the <code>add</code> or <code>replace</code> operation. When using AWS CLI to update a property of a JSON value, enclose the JSON object with a pair of single quotes in a Linux shell, e.g., '{"a": ...}'. In a Windows shell, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using JSON for Parameters</a>.</p>
     #[serde(rename = "value")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub value: std::option::Option<std::string::String>,
     /// <p>The <code>copy</code> update operation's source as identified by a <code>JSON-Pointer</code> value referencing the location within the targeted resource to copy the value from. For example, to promote a canary deployment, you copy the canary deployment ID to the affiliated deployment ID by calling a PATCH request on a <a>Stage</a> resource with <code>"op":"copy"</code>, <code>"from":"/canarySettings/deploymentId"</code> and <code>"path":"/deploymentId"</code>.</p>
     #[serde(rename = "from")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub from: std::option::Option<std::string::String>,
 }
@@ -209,7 +190,6 @@ impl std::convert::From<&str> for Op {
         }
     }
 }
-
 impl std::str::FromStr for Op {
     type Err = std::convert::Infallible;
 
@@ -217,7 +197,6 @@ impl std::str::FromStr for Op {
         Ok(Op::from(s))
     }
 }
-
 impl Op {
     pub fn as_str(&self) -> &str {
         match self {
@@ -236,19 +215,6 @@ impl AsRef<str> for Op {
         self.as_str()
     }
 }
-
-impl serde::Serialize for Op {
-    fn serialize<S>(
-        &self,
-        serializer: S,
-    ) -> Result<<S as serde::Serializer>::Ok, <S as serde::Serializer>::Error>
-    where
-        S: serde::Serializer,
-    {
-        serializer.serialize_str(self.as_str())
-    }
-}
-
 impl<'de> serde::Deserialize<'de> for Op {
     fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
     where
@@ -261,7 +227,7 @@ impl<'de> serde::Deserialize<'de> for Op {
 
 /// <p>Quotas configured for a usage plan.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, serde::Serialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
 pub struct QuotaSettings {
     /// <p>The maximum number of requests that can be made in a given time period.</p>
     #[serde(rename = "limit")]
@@ -271,7 +237,6 @@ pub struct QuotaSettings {
     pub offset: i32,
     /// <p>The time period in which the limit applies. Valid values are "DAY", "WEEK" or "MONTH".</p>
     #[serde(rename = "period")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub period: std::option::Option<crate::model::QuotaPeriodType>,
 }
@@ -368,7 +333,6 @@ impl std::convert::From<&str> for QuotaPeriodType {
         }
     }
 }
-
 impl std::str::FromStr for QuotaPeriodType {
     type Err = std::convert::Infallible;
 
@@ -376,7 +340,6 @@ impl std::str::FromStr for QuotaPeriodType {
         Ok(QuotaPeriodType::from(s))
     }
 }
-
 impl QuotaPeriodType {
     pub fn as_str(&self) -> &str {
         match self {
@@ -392,19 +355,6 @@ impl AsRef<str> for QuotaPeriodType {
         self.as_str()
     }
 }
-
-impl serde::Serialize for QuotaPeriodType {
-    fn serialize<S>(
-        &self,
-        serializer: S,
-    ) -> Result<<S as serde::Serializer>::Ok, <S as serde::Serializer>::Error>
-    where
-        S: serde::Serializer,
-    {
-        serializer.serialize_str(self.as_str())
-    }
-}
-
 impl<'de> serde::Deserialize<'de> for QuotaPeriodType {
     fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
     where
@@ -417,7 +367,7 @@ impl<'de> serde::Deserialize<'de> for QuotaPeriodType {
 
 /// <p> The API request rate limits.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, serde::Serialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
 pub struct ThrottleSettings {
     /// <p>The API request burst limit, the maximum rate limit over a time ranging from one to a few seconds, depending upon whether the underlying token bucket is at its full capacity.</p>
     #[serde(rename = "burstLimit")]
@@ -480,21 +430,18 @@ impl ThrottleSettings {
 
 /// <p>API stage name of the associated API stage in a usage plan.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, serde::Serialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
 pub struct ApiStage {
     /// <p>API Id of the associated API stage in a usage plan.</p>
     #[serde(rename = "apiId")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub api_id: std::option::Option<std::string::String>,
     /// <p>API stage name of the associated API stage in a usage plan.</p>
     #[serde(rename = "stage")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub stage: std::option::Option<std::string::String>,
     /// <p>Map containing method level throttling information for API stage in a usage plan.</p>
     #[serde(rename = "throttle")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub throttle: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::ThrottleSettings>,
@@ -578,19 +525,17 @@ impl ApiStage {
 
 /// <p>Configuration settings of a canary deployment.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, serde::Serialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
 pub struct CanarySettings {
     /// <p>The percent (0-100) of traffic diverted to a canary deployment.</p>
     #[serde(rename = "percentTraffic")]
     pub percent_traffic: f64,
     /// <p>The ID of the canary deployment.</p>
     #[serde(rename = "deploymentId")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub deployment_id: std::option::Option<std::string::String>,
     /// <p>Stage variables overridden for a canary release deployment, including new stage variables introduced in the canary. These stage variables are represented as a string-to-string map between stage variable names and their values.</p>
     #[serde(rename = "stageVariableOverrides")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub stage_variable_overrides:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -688,16 +633,14 @@ impl CanarySettings {
 
 /// <p>Access log settings, including the access log format and access log destination ARN.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, serde::Serialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccessLogSettings {
     /// <p>A single line format of the access logs of data, as specified by selected <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-mapping-template-reference.html#context-variable-reference">$context variables</a>. The format must include at least <code>$context.requestId</code>.</p>
     #[serde(rename = "format")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub format: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the CloudWatch Logs log group or Kinesis Data Firehose delivery stream to receive access logs. If you specify a Kinesis Data Firehose delivery stream, the stream name must begin with <code>amazon-apigateway-</code>.</p>
     #[serde(rename = "destinationArn")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub destination_arn: std::option::Option<std::string::String>,
 }
@@ -758,14 +701,13 @@ impl AccessLogSettings {
 
 /// <p>Specifies the method setting properties.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, serde::Serialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
 pub struct MethodSetting {
     /// <p>Specifies whether Amazon CloudWatch metrics are enabled for this method. The PATCH path for this setting is <code>/{method_setting_key}/metrics/enabled</code>, and the value is a Boolean.</p>
     #[serde(rename = "metricsEnabled")]
     pub metrics_enabled: bool,
     /// <p>Specifies the logging level for this method, which affects the log entries pushed to Amazon CloudWatch Logs. The PATCH path for this setting is <code>/{method_setting_key}/logging/loglevel</code>, and the available levels are <code>OFF</code>, <code>ERROR</code>, and <code>INFO</code>. Choose <code>ERROR</code> to write only error-level entries to CloudWatch Logs, or choose <code>INFO</code> to include all <code>ERROR</code> events as well as extra informational events.</p>
     #[serde(rename = "loggingLevel")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub logging_level: std::option::Option<std::string::String>,
     /// <p>Specifies whether data trace logging is enabled for this method, which affects the log entries pushed to Amazon CloudWatch Logs. The PATCH path for this setting is <code>/{method_setting_key}/logging/dataTrace</code>, and the value is a Boolean.</p>
@@ -791,7 +733,6 @@ pub struct MethodSetting {
     pub require_authorization_for_cache_control: bool,
     /// <p>Specifies how to handle unauthorized requests for cache invalidation. The PATCH path for this setting is <code>/{method_setting_key}/caching/unauthorizedCacheControlHeaderStrategy</code>, and the available values are <code>FAIL_WITH_403</code>, <code>SUCCEED_WITH_RESPONSE_HEADER</code>, <code>SUCCEED_WITHOUT_RESPONSE_HEADER</code>.</p>
     #[serde(rename = "unauthorizedCacheControlHeaderStrategy")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub unauthorized_cache_control_header_strategy:
         std::option::Option<crate::model::UnauthorizedCacheControlHeaderStrategy>,
@@ -990,7 +931,6 @@ impl std::convert::From<&str> for UnauthorizedCacheControlHeaderStrategy {
         }
     }
 }
-
 impl std::str::FromStr for UnauthorizedCacheControlHeaderStrategy {
     type Err = std::convert::Infallible;
 
@@ -998,7 +938,6 @@ impl std::str::FromStr for UnauthorizedCacheControlHeaderStrategy {
         Ok(UnauthorizedCacheControlHeaderStrategy::from(s))
     }
 }
-
 impl UnauthorizedCacheControlHeaderStrategy {
     pub fn as_str(&self) -> &str {
         match self {
@@ -1018,19 +957,6 @@ impl AsRef<str> for UnauthorizedCacheControlHeaderStrategy {
         self.as_str()
     }
 }
-
-impl serde::Serialize for UnauthorizedCacheControlHeaderStrategy {
-    fn serialize<S>(
-        &self,
-        serializer: S,
-    ) -> Result<<S as serde::Serializer>::Ok, <S as serde::Serializer>::Error>
-    where
-        S: serde::Serializer,
-    {
-        serializer.serialize_str(self.as_str())
-    }
-}
-
 impl<'de> serde::Deserialize<'de> for UnauthorizedCacheControlHeaderStrategy {
     fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
     where
@@ -1072,7 +998,6 @@ impl std::convert::From<&str> for CacheClusterStatus {
         }
     }
 }
-
 impl std::str::FromStr for CacheClusterStatus {
     type Err = std::convert::Infallible;
 
@@ -1080,7 +1005,6 @@ impl std::str::FromStr for CacheClusterStatus {
         Ok(CacheClusterStatus::from(s))
     }
 }
-
 impl CacheClusterStatus {
     pub fn as_str(&self) -> &str {
         match self {
@@ -1098,19 +1022,6 @@ impl AsRef<str> for CacheClusterStatus {
         self.as_str()
     }
 }
-
-impl serde::Serialize for CacheClusterStatus {
-    fn serialize<S>(
-        &self,
-        serializer: S,
-    ) -> Result<<S as serde::Serializer>::Ok, <S as serde::Serializer>::Error>
-    where
-        S: serde::Serializer,
-    {
-        serializer.serialize_str(self.as_str())
-    }
-}
-
 impl<'de> serde::Deserialize<'de> for CacheClusterStatus {
     fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
     where
@@ -1158,7 +1069,6 @@ impl std::convert::From<&str> for CacheClusterSize {
         }
     }
 }
-
 impl std::str::FromStr for CacheClusterSize {
     type Err = std::convert::Infallible;
 
@@ -1166,7 +1076,6 @@ impl std::str::FromStr for CacheClusterSize {
         Ok(CacheClusterSize::from(s))
     }
 }
-
 impl CacheClusterSize {
     pub fn as_str(&self) -> &str {
         match self {
@@ -1187,19 +1096,6 @@ impl AsRef<str> for CacheClusterSize {
         self.as_str()
     }
 }
-
-impl serde::Serialize for CacheClusterSize {
-    fn serialize<S>(
-        &self,
-        serializer: S,
-    ) -> Result<<S as serde::Serializer>::Ok, <S as serde::Serializer>::Error>
-    where
-        S: serde::Serializer,
-    {
-        serializer.serialize_str(self.as_str())
-    }
-}
-
 impl<'de> serde::Deserialize<'de> for CacheClusterSize {
     fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
     where
@@ -1212,16 +1108,14 @@ impl<'de> serde::Deserialize<'de> for CacheClusterSize {
 
 /// <p>The endpoint configuration to indicate the types of endpoints an API (<a>RestApi</a>) or its custom domain name (<a>DomainName</a>) has. </p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, serde::Serialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
 pub struct EndpointConfiguration {
     /// <p>A list of endpoint types of an API (<a>RestApi</a>) or its custom domain name (<a>DomainName</a>). For an edge-optimized API and its custom domain name, the endpoint type is <code>"EDGE"</code>. For a regional API and its custom domain name, the endpoint type is <code>REGIONAL</code>. For a private API, the endpoint type is <code>PRIVATE</code>.</p>
     #[serde(rename = "types")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub types: std::option::Option<std::vec::Vec<crate::model::EndpointType>>,
     /// <p>A list of VpcEndpointIds of an API (<a>RestApi</a>) against which to create Route53 ALIASes. It is only supported for <code>PRIVATE</code> endpoint type.</p>
     #[serde(rename = "vpcEndpointIds")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub vpc_endpoint_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
@@ -1312,7 +1206,6 @@ impl std::convert::From<&str> for EndpointType {
         }
     }
 }
-
 impl std::str::FromStr for EndpointType {
     type Err = std::convert::Infallible;
 
@@ -1320,7 +1213,6 @@ impl std::str::FromStr for EndpointType {
         Ok(EndpointType::from(s))
     }
 }
-
 impl EndpointType {
     pub fn as_str(&self) -> &str {
         match self {
@@ -1336,19 +1228,6 @@ impl AsRef<str> for EndpointType {
         self.as_str()
     }
 }
-
-impl serde::Serialize for EndpointType {
-    fn serialize<S>(
-        &self,
-        serializer: S,
-    ) -> Result<<S as serde::Serializer>::Ok, <S as serde::Serializer>::Error>
-    where
-        S: serde::Serializer,
-    {
-        serializer.serialize_str(self.as_str())
-    }
-}
-
 impl<'de> serde::Deserialize<'de> for EndpointType {
     fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
     where
@@ -1383,7 +1262,6 @@ impl std::convert::From<&str> for ApiKeySourceType {
         }
     }
 }
-
 impl std::str::FromStr for ApiKeySourceType {
     type Err = std::convert::Infallible;
 
@@ -1391,7 +1269,6 @@ impl std::str::FromStr for ApiKeySourceType {
         Ok(ApiKeySourceType::from(s))
     }
 }
-
 impl ApiKeySourceType {
     pub fn as_str(&self) -> &str {
         match self {
@@ -1406,19 +1283,6 @@ impl AsRef<str> for ApiKeySourceType {
         self.as_str()
     }
 }
-
-impl serde::Serialize for ApiKeySourceType {
-    fn serialize<S>(
-        &self,
-        serializer: S,
-    ) -> Result<<S as serde::Serializer>::Ok, <S as serde::Serializer>::Error>
-    where
-        S: serde::Serializer,
-    {
-        serializer.serialize_str(self.as_str())
-    }
-}
-
 impl<'de> serde::Deserialize<'de> for ApiKeySourceType {
     fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
     where
@@ -1594,47 +1458,39 @@ impl<'de> serde::Deserialize<'de> for ApiKeySourceType {
 /// <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-method-settings.html">Set up an API's method</a>
 /// </div>
 #[non_exhaustive]
-#[derive(serde::Deserialize, serde::Serialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
 pub struct Method {
     /// <p>The method's HTTP verb.</p>
     #[serde(rename = "httpMethod")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub http_method: std::option::Option<std::string::String>,
     /// <p>The method's authorization type. Valid values are <code>NONE</code> for open access, <code>AWS_IAM</code> for using AWS IAM permissions, <code>CUSTOM</code> for using a custom authorizer, or <code>COGNITO_USER_POOLS</code> for using a Cognito user pool.</p>
     #[serde(rename = "authorizationType")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub authorization_type: std::option::Option<std::string::String>,
     /// <p>The identifier of an <a>Authorizer</a> to use on this method. The <code>authorizationType</code> must be <code>CUSTOM</code>.</p>
     #[serde(rename = "authorizerId")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub authorizer_id: std::option::Option<std::string::String>,
     /// <p>A boolean flag specifying whether a valid <a>ApiKey</a> is required to invoke this method.</p>
     #[serde(rename = "apiKeyRequired")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub api_key_required: std::option::Option<bool>,
     /// <p>The identifier of a <a>RequestValidator</a> for request validation.</p>
     #[serde(rename = "requestValidatorId")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub request_validator_id: std::option::Option<std::string::String>,
     /// <p>A human-friendly operation identifier for the method. For example, you can assign the <code>operationName</code> of <code>ListPets</code> for the <code>GET /pets</code> method in the <code>PetStore</code> example.</p>
     #[serde(rename = "operationName")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub operation_name: std::option::Option<std::string::String>,
     /// <p>A key-value map defining required or optional method request parameters that can be accepted by API Gateway. A key is a method request parameter name matching the pattern of  <code>method.request.{location}.{name}</code>, where <code>location</code> is <code>querystring</code>, <code>path</code>, or <code>header</code> and <code>name</code> is a valid and unique parameter name. The value associated with the key is a Boolean flag indicating whether the parameter is required (<code>true</code>) or optional (<code>false</code>).  The method request parameter names defined here are available in <a>Integration</a> to be mapped to integration request parameters or templates.</p>
     #[serde(rename = "requestParameters")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub request_parameters:
         std::option::Option<std::collections::HashMap<std::string::String, bool>>,
     /// <p>A key-value map specifying data schemas, represented by <a>Model</a> resources, (as the mapped value) of the request payloads of given content types (as the mapping key).</p>
     #[serde(rename = "requestModels")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub request_models:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -1686,7 +1542,6 @@ pub struct Method {
     /// <a href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-method-response.html">AWS CLI</a>
     /// </div>
     #[serde(rename = "methodResponses")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub method_responses: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::MethodResponse>,
@@ -1782,12 +1637,10 @@ pub struct Method {
     /// <a href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-integration.html">AWS CLI</a>
     /// </div>
     #[serde(rename = "methodIntegration")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub method_integration: std::option::Option<crate::model::Integration>,
     /// <p>A list of authorization scopes configured on the method. The scopes are used with a <code>COGNITO_USER_POOLS</code> authorizer to authorize the method invocation. The authorization works by matching the method scopes against the scopes parsed from the access token in the incoming request. The method invocation is authorized if any method scopes matches a claimed scope in the access token. Otherwise, the invocation is not authorized. When the method scope is configured, the client must provide an access token instead of an identity token for authorization purposes.</p>
     #[serde(rename = "authorizationScopes")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub authorization_scopes: std::option::Option<std::vec::Vec<std::string::String>>,
 }
@@ -2092,7 +1945,7 @@ impl Method {
 /// <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-create-api.html">Creating an API</a>
 /// </div>
 #[non_exhaustive]
-#[derive(serde::Deserialize, serde::Serialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
 pub struct Integration {
     /// <p>Specifies an API method integration type. The valid value is one of the following:</p>
     /// <ul>
@@ -2104,12 +1957,10 @@ pub struct Integration {
     /// </ul>
     /// <p>For the HTTP and HTTP proxy integrations, each integration can specify a protocol (<code>http/https</code>), port and path. Standard 80 and 443 ports are supported as well as custom ports above 1024. An HTTP or HTTP proxy integration with a <code>connectionType</code> of <code>VPC_LINK</code> is referred to as a private integration and uses a <a>VpcLink</a> to connect API Gateway to a network load balancer of a VPC.</p>
     #[serde(rename = "type")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub r#type: std::option::Option<crate::model::IntegrationType>,
     /// <p>Specifies the integration's HTTP method type.</p>
     #[serde(rename = "httpMethod")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub http_method: std::option::Option<std::string::String>,
     /// <p>Specifies Uniform Resource Identifier (URI) of the integration endpoint.</p>
@@ -2119,33 +1970,27 @@ pub struct Integration {
     /// <li><p> For <code>AWS</code> or <code>AWS_PROXY</code> integrations, the URI is of the form <code>arn:aws:apigateway:{region}:{subdomain.service|service}:path|action/{service_api}</code>. Here, <code>{Region}</code> is the API Gateway region (e.g., <code>us-east-1</code>); <code>{service}</code> is the name of the integrated AWS service (e.g., <code>s3</code>); and <code>{subdomain}</code> is a designated subdomain supported by certain AWS service for fast host-name lookup. <code>action</code> can be used for an AWS service action-based API, using an <code>Action={name}&{p1}={v1}&p2={v2}...</code> query string. The ensuing <code>{service_api}</code> refers to a supported action <code>{name}</code> plus any required input parameters. Alternatively, <code>path</code> can be used for an AWS service path-based API. The ensuing  <code>service_api</code> refers to the path to an AWS service resource, including the region of the integrated AWS service, if applicable. For example, for integration with the S3 API of <code><a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectGET.html">GetObject</a></code>, the <code>uri</code> can be either <code>arn:aws:apigateway:us-west-2:s3:action/GetObject&Bucket={bucket}&Key={key}</code> or  <code>arn:aws:apigateway:us-west-2:s3:path/{bucket}/{key}</code></p>
     /// </li></ul>
     #[serde(rename = "uri")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub uri: std::option::Option<std::string::String>,
     /// <p>The type of the network connection to the integration endpoint. The valid value is <code>INTERNET</code> for connections through the public routable internet or <code>VPC_LINK</code> for private connections between API Gateway and a network load balancer in a VPC. The default value is <code>INTERNET</code>.</p>
     #[serde(rename = "connectionType")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub connection_type: std::option::Option<crate::model::ConnectionType>,
     /// <p>The (<a href="https://docs.aws.amazon.com/apigateway/api-reference/resource/vpc-link/#id"><code>id</code></a>) of the <a>VpcLink</a> used for the integration when <code>connectionType=VPC_LINK</code> and undefined, otherwise.</p>
     #[serde(rename = "connectionId")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub connection_id: std::option::Option<std::string::String>,
     /// <p>Specifies the credentials required for the integration, if any. For AWS integrations, three options are available. To specify an IAM Role for API Gateway to assume, use the role's Amazon Resource Name (ARN). To require that the caller's identity be passed through from the request, specify the string <code>arn:aws:iam::\*:user/\*</code>. To use resource-based permissions on supported AWS services, specify null.</p>
     #[serde(rename = "credentials")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub credentials: std::option::Option<std::string::String>,
     /// <p>A key-value map specifying request parameters that are passed from the method request to the back end. The key is an integration request parameter name and the associated value is a method request parameter value or static value that must be enclosed within single quotes and pre-encoded as required by the back end. The method request parameter value must match the pattern of  <code>method.request.{location}.{name}</code>, where <code>location</code> is <code>querystring</code>, <code>path</code>, or <code>header</code> and <code>name</code> must be a valid and unique method request parameter name.</p>
     #[serde(rename = "requestParameters")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub request_parameters:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Represents a map of Velocity templates that are applied on the request payload based on the value of the Content-Type header sent by the client. The content type value is the key in this map, and the template (as a String) is the value.</p>
     #[serde(rename = "requestTemplates")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub request_templates:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -2174,7 +2019,6 @@ pub struct Integration {
     /// </ul>
     /// </div>
     #[serde(rename = "passthroughBehavior")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub passthrough_behavior: std::option::Option<std::string::String>,
     /// <p>Specifies how to handle request payload content type conversions. Supported values are <code>CONVERT_TO_BINARY</code> and <code>CONVERT_TO_TEXT</code>, with the following behaviors:</p>
@@ -2184,7 +2028,6 @@ pub struct Integration {
     /// </ul>
     /// <p>If this property is not defined, the request payload will be passed through from the method request to integration request without modification, provided that the <code>passthroughBehavior</code> is configured to support payload pass-through.</p>
     #[serde(rename = "contentHandling")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub content_handling: std::option::Option<crate::model::ContentHandlingStrategy>,
     /// <p>Custom timeout between 50 and 29,000 milliseconds. The default value is 29,000 milliseconds or 29 seconds.</p>
@@ -2192,12 +2035,10 @@ pub struct Integration {
     pub timeout_in_millis: i32,
     /// <p>Specifies a group of related cached parameters. By default, API Gateway uses the resource ID as the <code>cacheNamespace</code>. You can specify the same <code>cacheNamespace</code> across resources to return the same cached data for requests to different resources.</p>
     #[serde(rename = "cacheNamespace")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub cache_namespace: std::option::Option<std::string::String>,
     /// <p>A list of request parameters whose values API Gateway caches. To be valid values for <code>cacheKeyParameters</code>, these parameters must also be specified for <a>Method</a> <code>requestParameters</code>.</p>
     #[serde(rename = "cacheKeyParameters")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub cache_key_parameters: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Specifies the integration's responses.</p>
@@ -2246,14 +2087,12 @@ pub struct Integration {
     /// <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-create-api.html">Creating an API</a>
     /// </div>
     #[serde(rename = "integrationResponses")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub integration_responses: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::IntegrationResponse>,
     >,
     /// <p>Specifies the TLS configuration for an integration.</p>
     #[serde(rename = "tlsConfig")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub tls_config: std::option::Option<crate::model::TlsConfig>,
 }
@@ -2559,7 +2398,7 @@ impl Integration {
 }
 
 #[non_exhaustive]
-#[derive(serde::Deserialize, serde::Serialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
 pub struct TlsConfig {
     /// <p>Specifies whether or not API Gateway skips verification that the certificate for an integration endpoint is
     /// issued by a <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-supported-certificate-authorities-for-http-endpoints.html">supported certificate authority</a>. This isn’t recommended, but it enables you to
@@ -2625,28 +2464,24 @@ impl TlsConfig {
 /// <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-create-api.html">Creating an API</a>
 /// </div>
 #[non_exhaustive]
-#[derive(serde::Deserialize, serde::Serialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
 pub struct IntegrationResponse {
     /// <p>Specifies the status code that is used to map the integration response to an existing <a>MethodResponse</a>.</p>
     #[serde(rename = "statusCode")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub status_code: std::option::Option<std::string::String>,
     /// <p>Specifies the regular expression (regex) pattern used to choose an integration response based on the response from the back end. For example, if the success response returns nothing and the error response returns some string, you could use the <code>.+</code> regex to match error response. However, make sure that the error response does not contain any newline (<code>\n</code>) character in such cases. If the back end is an AWS Lambda function, the AWS Lambda function error header is matched. For all other HTTP and AWS back ends, the HTTP status code is matched.</p>
     #[serde(rename = "selectionPattern")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub selection_pattern: std::option::Option<std::string::String>,
     /// <p>A key-value map specifying response parameters that are passed to the method response from the back end.
     /// The key is a method response header parameter name and the mapped value is an integration response header value, a static value enclosed within a pair of single quotes, or a JSON expression from the integration response body. The mapping key must match the pattern of <code>method.response.header.{name}</code>, where <code>name</code> is a valid and unique header name. The mapped non-static value must match the pattern of <code>integration.response.header.{name}</code> or <code>integration.response.body.{JSON-expression}</code>, where <code>name</code> is a valid and unique response header name and <code>JSON-expression</code> is a valid JSON expression without the <code>$</code> prefix.</p>
     #[serde(rename = "responseParameters")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub response_parameters:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Specifies the templates used to transform the integration response body. Response templates are represented as a key/value map, with a content-type as the key and a template as the value.</p>
     #[serde(rename = "responseTemplates")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub response_templates:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -2657,7 +2492,6 @@ pub struct IntegrationResponse {
     /// </ul>
     /// <p>If this property is not defined, the response payload will be passed through from the integration response to the method response without modification.</p>
     #[serde(rename = "contentHandling")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub content_handling: std::option::Option<crate::model::ContentHandlingStrategy>,
 }
@@ -2808,7 +2642,6 @@ impl std::convert::From<&str> for ContentHandlingStrategy {
         }
     }
 }
-
 impl std::str::FromStr for ContentHandlingStrategy {
     type Err = std::convert::Infallible;
 
@@ -2816,7 +2649,6 @@ impl std::str::FromStr for ContentHandlingStrategy {
         Ok(ContentHandlingStrategy::from(s))
     }
 }
-
 impl ContentHandlingStrategy {
     pub fn as_str(&self) -> &str {
         match self {
@@ -2831,19 +2663,6 @@ impl AsRef<str> for ContentHandlingStrategy {
         self.as_str()
     }
 }
-
-impl serde::Serialize for ContentHandlingStrategy {
-    fn serialize<S>(
-        &self,
-        serializer: S,
-    ) -> Result<<S as serde::Serializer>::Ok, <S as serde::Serializer>::Error>
-    where
-        S: serde::Serializer,
-    {
-        serializer.serialize_str(self.as_str())
-    }
-}
-
 impl<'de> serde::Deserialize<'de> for ContentHandlingStrategy {
     fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
     where
@@ -2878,7 +2697,6 @@ impl std::convert::From<&str> for ConnectionType {
         }
     }
 }
-
 impl std::str::FromStr for ConnectionType {
     type Err = std::convert::Infallible;
 
@@ -2886,7 +2704,6 @@ impl std::str::FromStr for ConnectionType {
         Ok(ConnectionType::from(s))
     }
 }
-
 impl ConnectionType {
     pub fn as_str(&self) -> &str {
         match self {
@@ -2901,19 +2718,6 @@ impl AsRef<str> for ConnectionType {
         self.as_str()
     }
 }
-
-impl serde::Serialize for ConnectionType {
-    fn serialize<S>(
-        &self,
-        serializer: S,
-    ) -> Result<<S as serde::Serializer>::Ok, <S as serde::Serializer>::Error>
-    where
-        S: serde::Serializer,
-    {
-        serializer.serialize_str(self.as_str())
-    }
-}
-
 impl<'de> serde::Deserialize<'de> for ConnectionType {
     fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
     where
@@ -2955,7 +2759,6 @@ impl std::convert::From<&str> for IntegrationType {
         }
     }
 }
-
 impl std::str::FromStr for IntegrationType {
     type Err = std::convert::Infallible;
 
@@ -2963,7 +2766,6 @@ impl std::str::FromStr for IntegrationType {
         Ok(IntegrationType::from(s))
     }
 }
-
 impl IntegrationType {
     pub fn as_str(&self) -> &str {
         match self {
@@ -2981,19 +2783,6 @@ impl AsRef<str> for IntegrationType {
         self.as_str()
     }
 }
-
-impl serde::Serialize for IntegrationType {
-    fn serialize<S>(
-        &self,
-        serializer: S,
-    ) -> Result<<S as serde::Serializer>::Ok, <S as serde::Serializer>::Error>
-    where
-        S: serde::Serializer,
-    {
-        serializer.serialize_str(self.as_str())
-    }
-}
-
 impl<'de> serde::Deserialize<'de> for IntegrationType {
     fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
     where
@@ -3050,22 +2839,19 @@ impl<'de> serde::Deserialize<'de> for IntegrationType {
 /// <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-create-api.html">Creating an API</a>
 /// </div>
 #[non_exhaustive]
-#[derive(serde::Deserialize, serde::Serialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
 pub struct MethodResponse {
     /// <p>The method response's status code.</p>
     #[serde(rename = "statusCode")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub status_code: std::option::Option<std::string::String>,
     /// <p>A key-value map specifying required or optional response parameters that API Gateway can send back to the caller. A key defines a method response header and the value specifies whether the associated method response header is required or not. The expression of the key must match the pattern <code>method.response.header.{name}</code>, where <code>name</code> is a valid and unique header name. API Gateway passes certain integration response data to the method response headers specified here according to the mapping you prescribe in the API's <a>IntegrationResponse</a>. The integration response data that can be mapped include an integration response header expressed in <code>integration.response.header.{name}</code>, a static value enclosed within a pair of single quotes (e.g., <code>'application/json'</code>), or a JSON expression from the back-end response payload in the form of <code>integration.response.body.{JSON-expression}</code>, where <code>JSON-expression</code> is a valid JSON expression without the <code>$</code> prefix.)</p>
     #[serde(rename = "responseParameters")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub response_parameters:
         std::option::Option<std::collections::HashMap<std::string::String, bool>>,
     /// <p>Specifies the <a>Model</a> resources used for the response's content-type. Response models are represented as a key/value map, with a content-type as the key and a <a>Model</a> name as the value.</p>
     #[serde(rename = "responseModels")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub response_models:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -3215,7 +3001,6 @@ impl std::convert::From<&str> for GatewayResponseType {
         }
     }
 }
-
 impl std::str::FromStr for GatewayResponseType {
     type Err = std::convert::Infallible;
 
@@ -3223,7 +3008,6 @@ impl std::str::FromStr for GatewayResponseType {
         Ok(GatewayResponseType::from(s))
     }
 }
-
 impl GatewayResponseType {
     pub fn as_str(&self) -> &str {
         match self {
@@ -3256,19 +3040,6 @@ impl AsRef<str> for GatewayResponseType {
         self.as_str()
     }
 }
-
-impl serde::Serialize for GatewayResponseType {
-    fn serialize<S>(
-        &self,
-        serializer: S,
-    ) -> Result<<S as serde::Serializer>::Ok, <S as serde::Serializer>::Error>
-    where
-        S: serde::Serializer,
-    {
-        serializer.serialize_str(self.as_str())
-    }
-}
-
 impl<'de> serde::Deserialize<'de> for GatewayResponseType {
     fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
     where
@@ -3281,7 +3052,7 @@ impl<'de> serde::Deserialize<'de> for GatewayResponseType {
 
 /// <p>If specified, API Gateway performs two-way authentication between the client and the server. Clients must present a trusted certificate to access your custom domain name.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, serde::Serialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
 pub struct MutualTlsAuthentication {
     /// <p>An Amazon S3 URL that specifies the truststore for mutual TLS authentication,
     /// for example <code>s3://bucket-name/key-name</code>.
@@ -3290,13 +3061,11 @@ pub struct MutualTlsAuthentication {
     /// name to use the new version. To update the truststore, you must have permissions to
     /// access the S3 object.</p>
     #[serde(rename = "truststoreUri")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub truststore_uri: std::option::Option<std::string::String>,
     /// <p>The version of the S3 object that contains your truststore. To
     /// specify a version, you must have versioning enabled for the S3 bucket.</p>
     #[serde(rename = "truststoreVersion")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub truststore_version: std::option::Option<std::string::String>,
     /// <p>A list of warnings that API Gateway returns while processing your truststore. Invalid
@@ -3304,7 +3073,6 @@ pub struct MutualTlsAuthentication {
     /// be able to access your API. To resolve warnings, upload a new truststore to S3, and then
     /// update you domain name to use the new version.</p>
     #[serde(rename = "truststoreWarnings")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub truststore_warnings: std::option::Option<std::vec::Vec<std::string::String>>,
 }
@@ -3409,7 +3177,6 @@ impl std::convert::From<&str> for SecurityPolicy {
         }
     }
 }
-
 impl std::str::FromStr for SecurityPolicy {
     type Err = std::convert::Infallible;
 
@@ -3417,7 +3184,6 @@ impl std::str::FromStr for SecurityPolicy {
         Ok(SecurityPolicy::from(s))
     }
 }
-
 impl SecurityPolicy {
     pub fn as_str(&self) -> &str {
         match self {
@@ -3432,19 +3198,6 @@ impl AsRef<str> for SecurityPolicy {
         self.as_str()
     }
 }
-
-impl serde::Serialize for SecurityPolicy {
-    fn serialize<S>(
-        &self,
-        serializer: S,
-    ) -> Result<<S as serde::Serializer>::Ok, <S as serde::Serializer>::Error>
-    where
-        S: serde::Serializer,
-    {
-        serializer.serialize_str(self.as_str())
-    }
-}
-
 impl<'de> serde::Deserialize<'de> for SecurityPolicy {
     fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
     where
@@ -3481,7 +3234,6 @@ impl std::convert::From<&str> for DomainNameStatus {
         }
     }
 }
-
 impl std::str::FromStr for DomainNameStatus {
     type Err = std::convert::Infallible;
 
@@ -3489,7 +3241,6 @@ impl std::str::FromStr for DomainNameStatus {
         Ok(DomainNameStatus::from(s))
     }
 }
-
 impl DomainNameStatus {
     pub fn as_str(&self) -> &str {
         match self {
@@ -3505,19 +3256,6 @@ impl AsRef<str> for DomainNameStatus {
         self.as_str()
     }
 }
-
-impl serde::Serialize for DomainNameStatus {
-    fn serialize<S>(
-        &self,
-        serializer: S,
-    ) -> Result<<S as serde::Serializer>::Ok, <S as serde::Serializer>::Error>
-    where
-        S: serde::Serializer,
-    {
-        serializer.serialize_str(self.as_str())
-    }
-}
-
 impl<'de> serde::Deserialize<'de> for DomainNameStatus {
     fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
     where
@@ -3530,31 +3268,26 @@ impl<'de> serde::Deserialize<'de> for DomainNameStatus {
 
 /// <p>Specifies the target API entity to which the documentation applies.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, serde::Serialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
 pub struct DocumentationPartLocation {
     /// <p>[Required] The type of API entity to which the documentation content applies. Valid values are <code>API</code>, <code>AUTHORIZER</code>, <code>MODEL</code>, <code>RESOURCE</code>, <code>METHOD</code>, <code>PATH_PARAMETER</code>, <code>QUERY_PARAMETER</code>, <code>REQUEST_HEADER</code>,  <code>REQUEST_BODY</code>, <code>RESPONSE</code>, <code>RESPONSE_HEADER</code>, and <code>RESPONSE_BODY</code>. Content inheritance does not apply to any entity of the <code>API</code>, <code>AUTHORIZER</code>, <code>METHOD</code>,  <code>MODEL</code>, <code>REQUEST_BODY</code>, or <code>RESOURCE</code> type.</p>
     #[serde(rename = "type")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub r#type: std::option::Option<crate::model::DocumentationPartType>,
     /// <p>The URL path of the target. It is a valid field for the API entity types of <code>RESOURCE</code>, <code>METHOD</code>, <code>PATH_PARAMETER</code>, <code>QUERY_PARAMETER</code>, <code>REQUEST_HEADER</code>, <code>REQUEST_BODY</code>, <code>RESPONSE</code>, <code>RESPONSE_HEADER</code>, and <code>RESPONSE_BODY</code>. The default value is <code>/</code> for the root resource. When an applicable child entity inherits the content of another entity of the same type with more general specifications of the other <code>location</code> attributes,  the child entity's <code>path</code> attribute must match that of the parent entity as a prefix.</p>
     #[serde(rename = "path")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub path: std::option::Option<std::string::String>,
     /// <p>The HTTP verb of a method. It is a valid field for the API entity types of  <code>METHOD</code>, <code>PATH_PARAMETER</code>, <code>QUERY_PARAMETER</code>, <code>REQUEST_HEADER</code>,  <code>REQUEST_BODY</code>, <code>RESPONSE</code>, <code>RESPONSE_HEADER</code>, and <code>RESPONSE_BODY</code>. The default value is <code>*</code> for any method.  When an applicable child entity inherits the content of an entity of the same type with more general specifications of the other <code>location</code> attributes,  the child entity's <code>method</code> attribute must match that of the parent entity exactly.</p>
     #[serde(rename = "method")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub method: std::option::Option<std::string::String>,
     /// <p>The HTTP status code of a response. It is a valid field for the API entity types of <code>RESPONSE</code>, <code>RESPONSE_HEADER</code>, and <code>RESPONSE_BODY</code>. The default value is <code>*</code> for any status code. When an applicable child  entity inherits the content of an entity of the same type with more general specifications of the other <code>location</code> attributes, the child entity's <code>statusCode</code> attribute must match that of the parent entity exactly.</p>
     #[serde(rename = "statusCode")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub status_code: std::option::Option<std::string::String>,
     /// <p>The name of the targeted API entity. It is a valid and required field for the API entity types of <code>AUTHORIZER</code>, <code>MODEL</code>, <code>PATH_PARAMETER</code>, <code>QUERY_PARAMETER</code>, <code>REQUEST_HEADER</code>, <code>REQUEST_BODY</code> and <code>RESPONSE_HEADER</code>. It is an invalid field for any other entity type.</p>
     #[serde(rename = "name")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub name: std::option::Option<std::string::String>,
 }
@@ -3693,7 +3426,6 @@ impl std::convert::From<&str> for DocumentationPartType {
         }
     }
 }
-
 impl std::str::FromStr for DocumentationPartType {
     type Err = std::convert::Infallible;
 
@@ -3701,7 +3433,6 @@ impl std::str::FromStr for DocumentationPartType {
         Ok(DocumentationPartType::from(s))
     }
 }
-
 impl DocumentationPartType {
     pub fn as_str(&self) -> &str {
         match self {
@@ -3726,19 +3457,6 @@ impl AsRef<str> for DocumentationPartType {
         self.as_str()
     }
 }
-
-impl serde::Serialize for DocumentationPartType {
-    fn serialize<S>(
-        &self,
-        serializer: S,
-    ) -> Result<<S as serde::Serializer>::Ok, <S as serde::Serializer>::Error>
-    where
-        S: serde::Serializer,
-    {
-        serializer.serialize_str(self.as_str())
-    }
-}
-
 impl<'de> serde::Deserialize<'de> for DocumentationPartType {
     fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
     where
@@ -3751,11 +3469,10 @@ impl<'de> serde::Deserialize<'de> for DocumentationPartType {
 
 /// <p>Represents a summary of a <a>Method</a> resource, given a particular date and time.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, serde::Serialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
 pub struct MethodSnapshot {
     /// <p>The method's authorization type. Valid values are <code>NONE</code> for open access, <code>AWS_IAM</code> for using AWS IAM permissions, <code>CUSTOM</code> for using a custom authorizer, or <code>COGNITO_USER_POOLS</code> for using a Cognito user pool.</p>
     #[serde(rename = "authorizationType")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub authorization_type: std::option::Option<std::string::String>,
     /// <p>Specifies whether the method requires a valid <a>ApiKey</a>.</p>
@@ -3844,7 +3561,6 @@ impl std::convert::From<&str> for AuthorizerType {
         }
     }
 }
-
 impl std::str::FromStr for AuthorizerType {
     type Err = std::convert::Infallible;
 
@@ -3852,7 +3568,6 @@ impl std::str::FromStr for AuthorizerType {
         Ok(AuthorizerType::from(s))
     }
 }
-
 impl AuthorizerType {
     pub fn as_str(&self) -> &str {
         match self {
@@ -3868,19 +3583,6 @@ impl AsRef<str> for AuthorizerType {
         self.as_str()
     }
 }
-
-impl serde::Serialize for AuthorizerType {
-    fn serialize<S>(
-        &self,
-        serializer: S,
-    ) -> Result<<S as serde::Serializer>::Ok, <S as serde::Serializer>::Error>
-    where
-        S: serde::Serializer,
-    {
-        serializer.serialize_str(self.as_str())
-    }
-}
-
 impl<'de> serde::Deserialize<'de> for AuthorizerType {
     fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
     where
@@ -3915,7 +3617,6 @@ impl std::convert::From<&str> for PutMode {
         }
     }
 }
-
 impl std::str::FromStr for PutMode {
     type Err = std::convert::Infallible;
 
@@ -3923,7 +3624,6 @@ impl std::str::FromStr for PutMode {
         Ok(PutMode::from(s))
     }
 }
-
 impl PutMode {
     pub fn as_str(&self) -> &str {
         match self {
@@ -3938,19 +3638,6 @@ impl AsRef<str> for PutMode {
         self.as_str()
     }
 }
-
-impl serde::Serialize for PutMode {
-    fn serialize<S>(
-        &self,
-        serializer: S,
-    ) -> Result<<S as serde::Serializer>::Ok, <S as serde::Serializer>::Error>
-    where
-        S: serde::Serializer,
-    {
-        serializer.serialize_str(self.as_str())
-    }
-}
-
 impl<'de> serde::Deserialize<'de> for PutMode {
     fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
     where
@@ -3983,7 +3670,6 @@ impl std::convert::From<&str> for ApiKeysFormat {
         }
     }
 }
-
 impl std::str::FromStr for ApiKeysFormat {
     type Err = std::convert::Infallible;
 
@@ -3991,7 +3677,6 @@ impl std::str::FromStr for ApiKeysFormat {
         Ok(ApiKeysFormat::from(s))
     }
 }
-
 impl ApiKeysFormat {
     pub fn as_str(&self) -> &str {
         match self {
@@ -4005,19 +3690,6 @@ impl AsRef<str> for ApiKeysFormat {
         self.as_str()
     }
 }
-
-impl serde::Serialize for ApiKeysFormat {
-    fn serialize<S>(
-        &self,
-        serializer: S,
-    ) -> Result<<S as serde::Serializer>::Ok, <S as serde::Serializer>::Error>
-    where
-        S: serde::Serializer,
-    {
-        serializer.serialize_str(self.as_str())
-    }
-}
-
 impl<'de> serde::Deserialize<'de> for ApiKeysFormat {
     fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
     where
@@ -4033,41 +3705,34 @@ impl<'de> serde::Deserialize<'de> for ApiKeysFormat {
 /// <p><p>To enable access to a resource in an Amazon Virtual Private Cloud through Amazon API Gateway, you, as an API developer, create a <a>VpcLink</a> resource targeted for one or more network load balancers of the VPC and then integrate an API method with a private integration that uses the <a>VpcLink</a>. The private integration has an integration type of <code>HTTP</code> or <code>HTTP_PROXY</code> and has a connection type of <code>VPC_LINK</code>. The integration uses the <code>connectionId</code> property to identify the <a>VpcLink</a> used.</p></p>
 /// </div>
 #[non_exhaustive]
-#[derive(serde::Deserialize, serde::Serialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
 pub struct VpcLink {
     /// <p>The identifier of the  <a>VpcLink</a>. It is used in an <a>Integration</a> to reference this <a>VpcLink</a>.</p>
     #[serde(rename = "id")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The name used to label and identify the VPC link.</p>
     #[serde(rename = "name")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the VPC link.</p>
     #[serde(rename = "description")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The ARN of the network load balancer of the VPC targeted by the VPC link. The network load balancer must be owned by the same AWS account of the API owner.</p>
     #[serde(rename = "targetArns")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub target_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The status of the VPC link. The valid values are <code>AVAILABLE</code>, <code>PENDING</code>, <code>DELETING</code>, or <code>FAILED</code>. Deploying an API will wait if the status is <code>PENDING</code> and will fail if the status is <code>DELETING</code>.</p>
     #[serde(rename = "status")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub status: std::option::Option<crate::model::VpcLinkStatus>,
     /// <p>A description about the VPC link status.</p>
     #[serde(rename = "statusMessage")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub status_message: std::option::Option<std::string::String>,
     /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
     #[serde(rename = "tags")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -4208,46 +3873,38 @@ impl VpcLink {
 /// <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-api-usage-plans.html">Create and Use Usage Plans</a>
 /// </div>
 #[non_exhaustive]
-#[derive(serde::Deserialize, serde::Serialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
 pub struct UsagePlan {
     /// <p>The identifier of a <a>UsagePlan</a> resource.</p>
     #[serde(rename = "id")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The name of a usage plan.</p>
     #[serde(rename = "name")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of a usage plan.</p>
     #[serde(rename = "description")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The associated API stages of a usage plan.</p>
     #[serde(rename = "apiStages")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub api_stages: std::option::Option<std::vec::Vec<crate::model::ApiStage>>,
     /// <p>The request throttle limits of a usage plan.</p>
     #[serde(rename = "throttle")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub throttle: std::option::Option<crate::model::ThrottleSettings>,
     /// <p>The maximum number of permitted requests per a given unit time interval.</p>
     #[serde(rename = "quota")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub quota: std::option::Option<crate::model::QuotaSettings>,
     /// <p>The AWS Markeplace product identifier to associate with the usage plan as a SaaS product on AWS Marketplace.</p>
     #[serde(rename = "productCode")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub product_code: std::option::Option<std::string::String>,
     /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
     #[serde(rename = "tags")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -4403,26 +4060,22 @@ impl UsagePlan {
 /// <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-api-usage-plans.html">Create and Use Usage Plans</a>
 /// </div>
 #[non_exhaustive]
-#[derive(serde::Deserialize, serde::Serialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
 pub struct UsagePlanKey {
     /// <p>The Id of a usage plan key.</p>
     #[serde(rename = "id")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The type of a usage plan key. Currently, the valid key type is <code>API_KEY</code>.</p>
     #[serde(rename = "type")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub r#type: std::option::Option<std::string::String>,
     /// <p>The value of a usage plan key.</p>
     #[serde(rename = "value")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub value: std::option::Option<std::string::String>,
     /// <p>The name of a usage plan key.</p>
     #[serde(rename = "name")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub name: std::option::Option<std::string::String>,
 }
@@ -4507,26 +4160,22 @@ impl UsagePlanKey {
 /// <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-deploy-api.html">Deploy an API</a>
 /// </div>
 #[non_exhaustive]
-#[derive(serde::Deserialize, serde::Serialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
 pub struct Stage {
     /// <p>The identifier of the <a>Deployment</a> that the stage points to.</p>
     #[serde(rename = "deploymentId")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub deployment_id: std::option::Option<std::string::String>,
     /// <p>The identifier of a client certificate for an API stage.</p>
     #[serde(rename = "clientCertificateId")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub client_certificate_id: std::option::Option<std::string::String>,
     /// <p>The name of the stage is the first path segment in the Uniform Resource Identifier (URI) of a call to API Gateway. Stage names can only contain alphanumeric characters, hyphens, and underscores. Maximum length is 128 characters.</p>
     #[serde(rename = "stageName")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub stage_name: std::option::Option<std::string::String>,
     /// <p>The stage's description.</p>
     #[serde(rename = "description")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub description: std::option::Option<std::string::String>,
     /// <p>Specifies whether a cache cluster is enabled for the stage.</p>
@@ -4534,17 +4183,14 @@ pub struct Stage {
     pub cache_cluster_enabled: bool,
     /// <p>The size of the cache cluster for the stage, if enabled.</p>
     #[serde(rename = "cacheClusterSize")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub cache_cluster_size: std::option::Option<crate::model::CacheClusterSize>,
     /// <p>The status of the cache cluster for the stage, if enabled.</p>
     #[serde(rename = "cacheClusterStatus")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub cache_cluster_status: std::option::Option<crate::model::CacheClusterStatus>,
     /// <p>A map that defines the method settings for a <a>Stage</a> resource. Keys (designated as <code>/{method_setting_key</code> below) are method paths defined as <code>{resource_path}/{http_method}</code> for an individual method override, or <code>/\*/\*</code> for overriding all methods in the stage.  <!-- Any forward slash ("/") characters in the <code>resource_path</code> part must be encoded as "~1" as in, for example, <code>~1resource~1sub-resource/GET</code>.--></p>
     #[serde(rename = "methodSettings")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub method_settings: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::MethodSetting>,
@@ -4552,23 +4198,19 @@ pub struct Stage {
     /// <p>A map that defines the stage variables for a <a>Stage</a> resource. Variable names can
     /// have alphanumeric and underscore characters, and the values must match <code>[A-Za-z0-9-._~:/?#&=,]+</code>.</p>
     #[serde(rename = "variables")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub variables:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The version of the associated API documentation.</p>
     #[serde(rename = "documentationVersion")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub documentation_version: std::option::Option<std::string::String>,
     /// <p>Settings for logging access in this stage.</p>
     #[serde(rename = "accessLogSettings")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub access_log_settings: std::option::Option<crate::model::AccessLogSettings>,
     /// <p>Settings for the canary deployment in this stage.</p>
     #[serde(rename = "canarySettings")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub canary_settings: std::option::Option<crate::model::CanarySettings>,
     /// <p>Specifies whether active tracing with X-ray is enabled for the <a>Stage</a>.</p>
@@ -4576,21 +4218,15 @@ pub struct Stage {
     pub tracing_enabled: bool,
     /// <p>The ARN of the WebAcl associated with the <a>Stage</a>.</p>
     #[serde(rename = "webAclArn")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub web_acl_arn: std::option::Option<std::string::String>,
     /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
     #[serde(rename = "tags")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The timestamp when the stage was created.</p>
     #[serde(rename = "createdDate")]
-    #[serde(skip_serializing_if = "Option::is_none")]
-    #[serde(
-        serialize_with = "crate::serde_util::stdoptionoptionsmithytypesinstant_epoch_seconds_ser"
-    )]
     #[serde(
         deserialize_with = "crate::serde_util::stdoptionoptionsmithytypesinstant_epoch_seconds_deser"
     )]
@@ -4598,10 +4234,6 @@ pub struct Stage {
     pub created_date: std::option::Option<smithy_types::Instant>,
     /// <p>The timestamp when the stage last updated.</p>
     #[serde(rename = "lastUpdatedDate")]
-    #[serde(skip_serializing_if = "Option::is_none")]
-    #[serde(
-        serialize_with = "crate::serde_util::stdoptionoptionsmithytypesinstant_epoch_seconds_ser"
-    )]
     #[serde(
         deserialize_with = "crate::serde_util::stdoptionoptionsmithytypesinstant_epoch_seconds_deser"
     )]
@@ -4899,26 +4531,22 @@ impl Stage {
 
 /// <p>A type of SDK that API Gateway can generate.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, serde::Serialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
 pub struct SdkType {
     /// <p>The identifier of an <a>SdkType</a> instance.</p>
     #[serde(rename = "id")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The user-friendly name of an <a>SdkType</a> instance.</p>
     #[serde(rename = "friendlyName")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub friendly_name: std::option::Option<std::string::String>,
     /// <p>The description of an <a>SdkType</a>.</p>
     #[serde(rename = "description")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub description: std::option::Option<std::string::String>,
     /// <p>A list of configuration properties of an <a>SdkType</a>.</p>
     #[serde(rename = "configurationProperties")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub configuration_properties:
         std::option::Option<std::vec::Vec<crate::model::SdkConfigurationProperty>>,
@@ -5009,21 +4637,18 @@ impl SdkType {
 
 /// <p>A configuration property of an SDK type.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, serde::Serialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
 pub struct SdkConfigurationProperty {
     /// <p>The name of a an <a>SdkType</a> configuration property.</p>
     #[serde(rename = "name")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The user-friendly name of an <a>SdkType</a> configuration property.</p>
     #[serde(rename = "friendlyName")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub friendly_name: std::option::Option<std::string::String>,
     /// <p>The description of an <a>SdkType</a> configuration property.</p>
     #[serde(rename = "description")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub description: std::option::Option<std::string::String>,
     /// <p>A boolean flag of an <a>SdkType</a> configuration property to indicate if the associated SDK configuration property is required (<code>true</code>) or not (<code>false</code>).</p>
@@ -5031,7 +4656,6 @@ pub struct SdkConfigurationProperty {
     pub required: bool,
     /// <p>The default value of an <a>SdkType</a> configuration property.</p>
     #[serde(rename = "defaultValue")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub default_value: std::option::Option<std::string::String>,
 }
@@ -5128,29 +4752,22 @@ impl SdkConfigurationProperty {
 /// <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-create-api.html">Create an API</a>
 /// </div>
 #[non_exhaustive]
-#[derive(serde::Deserialize, serde::Serialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
 pub struct RestApi {
     /// <p>The API's identifier. This identifier is unique across all of your APIs in API Gateway.</p>
     #[serde(rename = "id")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The API's name.</p>
     #[serde(rename = "name")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The API's description.</p>
     #[serde(rename = "description")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The timestamp when the API was created.</p>
     #[serde(rename = "createdDate")]
-    #[serde(skip_serializing_if = "Option::is_none")]
-    #[serde(
-        serialize_with = "crate::serde_util::stdoptionoptionsmithytypesinstant_epoch_seconds_ser"
-    )]
     #[serde(
         deserialize_with = "crate::serde_util::stdoptionoptionsmithytypesinstant_epoch_seconds_deser"
     )]
@@ -5158,42 +4775,34 @@ pub struct RestApi {
     pub created_date: std::option::Option<smithy_types::Instant>,
     /// <p>A version identifier for the API.</p>
     #[serde(rename = "version")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub version: std::option::Option<std::string::String>,
     /// <p>The warning messages reported when <code>failonwarnings</code> is turned on during API import.</p>
     #[serde(rename = "warnings")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub warnings: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The list of binary media types supported by the <a>RestApi</a>. By default, the <a>RestApi</a> supports only UTF-8-encoded text payloads.</p>
     #[serde(rename = "binaryMediaTypes")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub binary_media_types: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A nullable integer that is used to enable compression (with non-negative between 0 and 10485760 (10M) bytes, inclusive) or disable compression (with a null value) on an API. When compression is enabled, compression or decompression is not applied on the payload if the payload size is smaller than this value. Setting it to zero allows compression for any payload size.</p>
     #[serde(rename = "minimumCompressionSize")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub minimum_compression_size: std::option::Option<i32>,
     /// <p>The source of the API key for metering requests according to a usage plan. Valid values are: <ul><li><code>HEADER</code> to read the API key from the <code>X-API-Key</code> header of a request. </li><li><code>AUTHORIZER</code> to read the API key from the <code>UsageIdentifierKey</code> from a custom authorizer.</li></ul></p>
     #[serde(rename = "apiKeySource")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub api_key_source: std::option::Option<crate::model::ApiKeySourceType>,
     /// <p>The endpoint configuration of this <a>RestApi</a> showing the endpoint types of the API.</p>
     #[serde(rename = "endpointConfiguration")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub endpoint_configuration: std::option::Option<crate::model::EndpointConfiguration>,
     /// <p>A stringified JSON policy document that applies to this RestApi regardless of the caller and <a>Method</a> configuration.</p>
     #[serde(rename = "policy")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub policy: std::option::Option<std::string::String>,
     /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
     #[serde(rename = "tags")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -5419,26 +5028,22 @@ impl RestApi {
 /// <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-create-api.html">Create an API</a>
 /// </div>
 #[non_exhaustive]
-#[derive(serde::Deserialize, serde::Serialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
 pub struct Resource {
     /// <p>The resource's identifier.</p>
     #[serde(rename = "id")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The parent resource's identifier.</p>
     #[serde(rename = "parentId")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub parent_id: std::option::Option<std::string::String>,
     /// <p>The last path segment for this resource.</p>
     #[serde(rename = "pathPart")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub path_part: std::option::Option<std::string::String>,
     /// <p>The full path for this resource.</p>
     #[serde(rename = "path")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub path: std::option::Option<std::string::String>,
     /// <p>Gets an API resource's method of a given HTTP verb.</p>
@@ -5595,7 +5200,6 @@ pub struct Resource {
     /// <div class="seeAlso">
     /// </div>
     #[serde(rename = "resourceMethods")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub resource_methods:
         std::option::Option<std::collections::HashMap<std::string::String, crate::model::Method>>,
@@ -5706,16 +5310,14 @@ impl Resource {
 /// </div>
 /// <div class="seeAlso"><a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-method-request-validation.html">Enable Basic Request Validation in API Gateway</a></div>
 #[non_exhaustive]
-#[derive(serde::Deserialize, serde::Serialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
 pub struct RequestValidator {
     /// <p>The identifier of this <a>RequestValidator</a>.</p>
     #[serde(rename = "id")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The name of this <a>RequestValidator</a></p>
     #[serde(rename = "name")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A Boolean flag to indicate whether to validate a request body according to the configured <a>Model</a> schema.</p>
@@ -5813,31 +5415,26 @@ impl RequestValidator {
 /// <a>Method</a>, <a>MethodResponse</a>, <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/models-mappings.html">Models and Mappings</a>
 /// </div>
 #[non_exhaustive]
-#[derive(serde::Deserialize, serde::Serialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
 pub struct Model {
     /// <p>The identifier for the model resource.</p>
     #[serde(rename = "id")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The name of the model. Must be an alphanumeric string.</p>
     #[serde(rename = "name")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the model.</p>
     #[serde(rename = "description")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The schema for the model. For <code>application/json</code> models, this should be <a target="_blank" href="https://tools.ietf.org/html/draft-zyp-json-schema-04">JSON schema draft 4</a> model. Do not include "\*/" characters in the description of any properties because such "\*/" characters may be interpreted as the closing marker for comments in some languages, such as Java or JavaScript, causing the installation of your API's SDK generated by API Gateway to fail.</p>
     #[serde(rename = "schema")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub schema: std::option::Option<std::string::String>,
     /// <p>The content-type for the model.</p>
     #[serde(rename = "contentType")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub content_type: std::option::Option<std::string::String>,
 }
@@ -5988,27 +5585,23 @@ impl Model {
 /// <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/customize-gateway-responses.html">Customize Gateway Responses</a>
 /// </div>
 #[non_exhaustive]
-#[derive(serde::Deserialize, serde::Serialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
 pub struct GatewayResponse {
     /// <p>The response type of the associated <a>GatewayResponse</a>. Valid values are <ul><li>ACCESS_DENIED</li><li>API_CONFIGURATION_ERROR</li><li>AUTHORIZER_FAILURE</li><li> AUTHORIZER_CONFIGURATION_ERROR</li><li>BAD_REQUEST_PARAMETERS</li><li>BAD_REQUEST_BODY</li><li>DEFAULT_4XX</li><li>DEFAULT_5XX</li><li>EXPIRED_TOKEN</li><li>INVALID_SIGNATURE</li><li>INTEGRATION_FAILURE</li><li>INTEGRATION_TIMEOUT</li><li>INVALID_API_KEY</li><li>MISSING_AUTHENTICATION_TOKEN</li><li> QUOTA_EXCEEDED</li><li>REQUEST_TOO_LARGE</li><li>RESOURCE_NOT_FOUND</li><li>THROTTLED</li><li>UNAUTHORIZED</li><li>UNSUPPORTED_MEDIA_TYPE</li></ul> </p>
     #[serde(rename = "responseType")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub response_type: std::option::Option<crate::model::GatewayResponseType>,
     /// <p>The HTTP status code for this <a>GatewayResponse</a>.</p>
     #[serde(rename = "statusCode")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub status_code: std::option::Option<std::string::String>,
     /// <p>Response parameters (paths, query strings and headers) of the <a>GatewayResponse</a> as a string-to-string map of key-value  pairs.</p>
     #[serde(rename = "responseParameters")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub response_parameters:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Response templates of the <a>GatewayResponse</a> as a string-to-string map of key-value pairs.</p>
     #[serde(rename = "responseTemplates")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub response_templates:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -6140,29 +5733,22 @@ impl GatewayResponse {
 /// <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-custom-domains.html">Set a Custom Host Name for an API</a>
 /// </div>
 #[non_exhaustive]
-#[derive(serde::Deserialize, serde::Serialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
 pub struct DomainName {
     /// <p>The custom domain name as an API host name, for example, <code>my-api.example.com</code>.</p>
     #[serde(rename = "domainName")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>The name of the certificate that will be used by edge-optimized endpoint for this domain name.</p>
     #[serde(rename = "certificateName")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub certificate_name: std::option::Option<std::string::String>,
     /// <p>The reference to an AWS-managed certificate that will be used by edge-optimized endpoint for this domain name. AWS Certificate Manager is the only supported source.</p>
     #[serde(rename = "certificateArn")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub certificate_arn: std::option::Option<std::string::String>,
     /// <p>The timestamp when the certificate that was used by edge-optimized endpoint for this domain name was uploaded.</p>
     #[serde(rename = "certificateUploadDate")]
-    #[serde(skip_serializing_if = "Option::is_none")]
-    #[serde(
-        serialize_with = "crate::serde_util::stdoptionoptionsmithytypesinstant_epoch_seconds_ser"
-    )]
     #[serde(
         deserialize_with = "crate::serde_util::stdoptionoptionsmithytypesinstant_epoch_seconds_deser"
     )]
@@ -6170,63 +5756,51 @@ pub struct DomainName {
     pub certificate_upload_date: std::option::Option<smithy_types::Instant>,
     /// <p>The domain name associated with the regional endpoint for this custom domain name. You set up this association by adding a DNS record that points the custom domain name to this regional domain name. The regional domain name is returned by API Gateway when you create a regional endpoint.</p>
     #[serde(rename = "regionalDomainName")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub regional_domain_name: std::option::Option<std::string::String>,
     /// <p>The region-specific Amazon Route 53 Hosted Zone ID of the regional endpoint. For more information, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html">Set up a Regional Custom Domain Name</a> and  <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS Regions and Endpoints for API Gateway</a>. </p>
     #[serde(rename = "regionalHostedZoneId")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub regional_hosted_zone_id: std::option::Option<std::string::String>,
     /// <p>The name of the certificate that will be used for validating the regional domain name.</p>
     #[serde(rename = "regionalCertificateName")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub regional_certificate_name: std::option::Option<std::string::String>,
     /// <p>The reference to an AWS-managed certificate that will be used for validating the regional domain name. AWS Certificate Manager is the only supported source.</p>
     #[serde(rename = "regionalCertificateArn")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub regional_certificate_arn: std::option::Option<std::string::String>,
     /// <p>The domain name of the Amazon CloudFront distribution associated with this custom domain name for an edge-optimized endpoint. You set up this association when adding a DNS record pointing the custom domain name to this distribution name. For more information about CloudFront distributions, see the <a target="_blank" href="https://aws.amazon.com/documentation/cloudfront/">Amazon CloudFront documentation</a>.</p>
     #[serde(rename = "distributionDomainName")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub distribution_domain_name: std::option::Option<std::string::String>,
     /// <p>The region-agnostic Amazon Route 53 Hosted Zone ID of the edge-optimized endpoint. The valid value is <code>Z2FDTNDATAQYW2</code> for all the regions. For more information, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html">Set up a Regional Custom Domain Name</a> and <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS Regions and Endpoints for API Gateway</a>. </p>
     #[serde(rename = "distributionHostedZoneId")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub distribution_hosted_zone_id: std::option::Option<std::string::String>,
     /// <p>The endpoint configuration of this <a>DomainName</a> showing the endpoint types of the domain name.</p>
     #[serde(rename = "endpointConfiguration")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub endpoint_configuration: std::option::Option<crate::model::EndpointConfiguration>,
     /// <p>The status of the <a>DomainName</a> migration. The valid values are <code>AVAILABLE</code> and <code>UPDATING</code>. If the status is <code>UPDATING</code>, the domain cannot be modified further until the existing operation is complete. If it is <code>AVAILABLE</code>, the domain can be updated.</p>
     #[serde(rename = "domainNameStatus")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub domain_name_status: std::option::Option<crate::model::DomainNameStatus>,
     /// <p>An optional text message containing detailed information about status of the <a>DomainName</a> migration.</p>
     #[serde(rename = "domainNameStatusMessage")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub domain_name_status_message: std::option::Option<std::string::String>,
     /// <p>The Transport Layer Security (TLS) version + cipher suite for this <a>DomainName</a>. The valid values are <code>TLS_1_0</code> and <code>TLS_1_2</code>.</p>
     #[serde(rename = "securityPolicy")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub security_policy: std::option::Option<crate::model::SecurityPolicy>,
     /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
     #[serde(rename = "tags")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The mutual TLS authentication configuration for a custom domain name. If specified, API Gateway performs two-way authentication between the client and the server. Clients must present a trusted certificate to access your API.</p>
     #[serde(rename = "mutualTlsAuthentication")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub mutual_tls_authentication: std::option::Option<crate::model::MutualTlsAuthentication>,
 }
@@ -6520,19 +6094,14 @@ impl DomainName {
 /// <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-documenting-api.html">Documenting an API</a>, <a>DocumentationPart</a>, <a>DocumentationVersions</a>
 /// </div>
 #[non_exhaustive]
-#[derive(serde::Deserialize, serde::Serialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
 pub struct DocumentationVersion {
     /// <p>The version identifier of the API documentation snapshot.</p>
     #[serde(rename = "version")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub version: std::option::Option<std::string::String>,
     /// <p>The date when the API documentation snapshot is created.</p>
     #[serde(rename = "createdDate")]
-    #[serde(skip_serializing_if = "Option::is_none")]
-    #[serde(
-        serialize_with = "crate::serde_util::stdoptionoptionsmithytypesinstant_epoch_seconds_ser"
-    )]
     #[serde(
         deserialize_with = "crate::serde_util::stdoptionoptionsmithytypesinstant_epoch_seconds_deser"
     )]
@@ -6540,7 +6109,6 @@ pub struct DocumentationVersion {
     pub created_date: std::option::Option<smithy_types::Instant>,
     /// <p>The description of the API documentation snapshot.</p>
     #[serde(rename = "description")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub description: std::option::Option<std::string::String>,
 }
@@ -6616,21 +6184,18 @@ impl DocumentationVersion {
 /// <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-documenting-api.html">Documenting an API</a>, <a>DocumentationParts</a>
 /// </div>
 #[non_exhaustive]
-#[derive(serde::Deserialize, serde::Serialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
 pub struct DocumentationPart {
     /// <p>The <a>DocumentationPart</a> identifier, generated by API Gateway when the <code>DocumentationPart</code> is created.</p>
     #[serde(rename = "id")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The location of the API entity to which the documentation applies. Valid fields depend on the targeted API entity type. All the valid location fields are not required. If not explicitly specified, a valid location field is treated as a wildcard and associated documentation content may be inherited by matching entities, unless overridden.</p>
     #[serde(rename = "location")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub location: std::option::Option<crate::model::DocumentationPartLocation>,
     /// <p>A content map of API-specific key-value pairs describing the targeted API entity. The map must be encoded as a JSON string, e.g., <code>"{ \"description\": \"The API does ...\" }"</code>.  Only OpenAPI-compliant documentation-related fields from the <literal>properties</literal> map are exported and, hence, published as part of the API entity definitions, while the original documentation parts are exported in a OpenAPI extension of <code>x-amazon-apigateway-documentation</code>.</p>
     #[serde(rename = "properties")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub properties: std::option::Option<std::string::String>,
 }
@@ -6725,7 +6290,6 @@ impl std::convert::From<&str> for LocationStatusType {
         }
     }
 }
-
 impl std::str::FromStr for LocationStatusType {
     type Err = std::convert::Infallible;
 
@@ -6733,7 +6297,6 @@ impl std::str::FromStr for LocationStatusType {
         Ok(LocationStatusType::from(s))
     }
 }
-
 impl LocationStatusType {
     pub fn as_str(&self) -> &str {
         match self {
@@ -6748,19 +6311,6 @@ impl AsRef<str> for LocationStatusType {
         self.as_str()
     }
 }
-
-impl serde::Serialize for LocationStatusType {
-    fn serialize<S>(
-        &self,
-        serializer: S,
-    ) -> Result<<S as serde::Serializer>::Ok, <S as serde::Serializer>::Error>
-    where
-        S: serde::Serializer,
-    {
-        serializer.serialize_str(self.as_str())
-    }
-}
-
 impl<'de> serde::Deserialize<'de> for LocationStatusType {
     fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
     where
@@ -6779,24 +6329,18 @@ impl<'de> serde::Deserialize<'de> for LocationStatusType {
 /// <a href="https://aws.amazon.com/tools/">AWS SDKs</a>
 /// </div>
 #[non_exhaustive]
-#[derive(serde::Deserialize, serde::Serialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
 pub struct Deployment {
     /// <p>The identifier for the deployment resource.</p>
     #[serde(rename = "id")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The description for the deployment resource.</p>
     #[serde(rename = "description")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The date and time that the deployment resource was created.</p>
     #[serde(rename = "createdDate")]
-    #[serde(skip_serializing_if = "Option::is_none")]
-    #[serde(
-        serialize_with = "crate::serde_util::stdoptionoptionsmithytypesinstant_epoch_seconds_ser"
-    )]
     #[serde(
         deserialize_with = "crate::serde_util::stdoptionoptionsmithytypesinstant_epoch_seconds_deser"
     )]
@@ -6804,7 +6348,6 @@ pub struct Deployment {
     pub created_date: std::option::Option<smithy_types::Instant>,
     /// <p>A summary of the <a>RestApi</a> at the date and time that the deployment resource was created.</p>
     #[serde(rename = "apiSummary")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub api_summary: std::option::Option<
         std::collections::HashMap<
@@ -6913,29 +6456,22 @@ impl Deployment {
 /// <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/getting-started-client-side-ssl-authentication.html">Use Client-Side Certificate</a>
 /// </div>
 #[non_exhaustive]
-#[derive(serde::Deserialize, serde::Serialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
 pub struct ClientCertificate {
     /// <p>The identifier of the client certificate.</p>
     #[serde(rename = "clientCertificateId")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub client_certificate_id: std::option::Option<std::string::String>,
     /// <p>The description of the client certificate.</p>
     #[serde(rename = "description")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The PEM-encoded public key of the client certificate, which can be used to configure certificate authentication in the integration endpoint .</p>
     #[serde(rename = "pemEncodedCertificate")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub pem_encoded_certificate: std::option::Option<std::string::String>,
     /// <p>The timestamp when the client certificate was created.</p>
     #[serde(rename = "createdDate")]
-    #[serde(skip_serializing_if = "Option::is_none")]
-    #[serde(
-        serialize_with = "crate::serde_util::stdoptionoptionsmithytypesinstant_epoch_seconds_ser"
-    )]
     #[serde(
         deserialize_with = "crate::serde_util::stdoptionoptionsmithytypesinstant_epoch_seconds_deser"
     )]
@@ -6943,10 +6479,6 @@ pub struct ClientCertificate {
     pub created_date: std::option::Option<smithy_types::Instant>,
     /// <p>The timestamp when the client certificate will expire.</p>
     #[serde(rename = "expirationDate")]
-    #[serde(skip_serializing_if = "Option::is_none")]
-    #[serde(
-        serialize_with = "crate::serde_util::stdoptionoptionsmithytypesinstant_epoch_seconds_ser"
-    )]
     #[serde(
         deserialize_with = "crate::serde_util::stdoptionoptionsmithytypesinstant_epoch_seconds_deser"
     )]
@@ -6954,7 +6486,6 @@ pub struct ClientCertificate {
     pub expiration_date: std::option::Option<smithy_types::Instant>,
     /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
     #[serde(rename = "tags")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -7086,21 +6617,18 @@ impl ClientCertificate {
 /// <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-custom-domains.html">Use Custom Domain Names</a>
 /// </div>
 #[non_exhaustive]
-#[derive(serde::Deserialize, serde::Serialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
 pub struct BasePathMapping {
     /// <p>The base path name that callers of the API must provide as part of the URL after the domain name.</p>
     #[serde(rename = "basePath")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub base_path: std::option::Option<std::string::String>,
     /// <p>The string identifier of the associated <a>RestApi</a>.</p>
     #[serde(rename = "restApiId")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub rest_api_id: std::option::Option<std::string::String>,
     /// <p>The name of the associated stage.</p>
     #[serde(rename = "stage")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub stage: std::option::Option<std::string::String>,
 }
@@ -7174,56 +6702,46 @@ impl BasePathMapping {
 /// <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-integrate-with-cognito.html">Use Cognito User Pool as Authorizer</a>
 /// </div>
 #[non_exhaustive]
-#[derive(serde::Deserialize, serde::Serialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
 pub struct Authorizer {
     /// <p>The identifier for the authorizer resource.</p>
     #[serde(rename = "id")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub id: std::option::Option<std::string::String>,
     /// <p>[Required] The name of the authorizer.</p>
     #[serde(rename = "name")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The authorizer type. Valid values are <code>TOKEN</code> for a Lambda function using a single authorization token submitted in a custom header, <code>REQUEST</code> for a Lambda function using incoming request parameters, and <code>COGNITO_USER_POOLS</code> for using an Amazon Cognito user pool.</p>
     #[serde(rename = "type")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub r#type: std::option::Option<crate::model::AuthorizerType>,
     /// <p>A list of the Amazon Cognito user pool ARNs for the <code>COGNITO_USER_POOLS</code> authorizer. Each element is of this format: <code>arn:aws:cognito-idp:{region}:{account_id}:userpool/{user_pool_id}</code>. For a <code>TOKEN</code> or <code>REQUEST</code> authorizer, this is not defined.</p>
     #[serde(rename = "providerARNs")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub provider_ar_ns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Optional customer-defined field, used in OpenAPI imports and exports without functional impact.</p>
     #[serde(rename = "authType")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub auth_type: std::option::Option<std::string::String>,
     /// <p>Specifies the authorizer's Uniform Resource Identifier (URI). For <code>TOKEN</code> or <code>REQUEST</code> authorizers, this must be a well-formed Lambda function URI, for example, <code>arn:aws:apigateway:us-west-2:lambda:path/2015-03-31/functions/arn:aws:lambda:us-west-2:{account_id}:function:{lambda_function_name}/invocations</code>. In general, the URI has this form  <code>arn:aws:apigateway:{region}:lambda:path/{service_api}</code>, where <code>{region}</code> is the same as the region hosting the Lambda function, <code>path</code> indicates that the remaining substring in the URI should be treated as the path to the resource, including the initial <code>/</code>. For Lambda functions, this is usually of the form <code>/2015-03-31/functions/[FunctionARN]/invocations</code>.</p>
     #[serde(rename = "authorizerUri")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub authorizer_uri: std::option::Option<std::string::String>,
     /// <p>Specifies the required credentials as an IAM role for API Gateway to invoke the authorizer. To specify an IAM role for API Gateway to assume, use the role's Amazon Resource Name (ARN). To use resource-based permissions on the Lambda function, specify null.</p>
     #[serde(rename = "authorizerCredentials")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub authorizer_credentials: std::option::Option<std::string::String>,
     /// <p>The identity source for which authorization is requested. <ul><li>For a <code>TOKEN</code> or <code>COGNITO_USER_POOLS</code> authorizer, this is required and specifies the request header mapping expression for the custom header holding the authorization token submitted by the client. For example, if the token header name is <code>Auth</code>, the header mapping expression is  <code>method.request.header.Auth</code>.</li><li>For the <code>REQUEST</code> authorizer, this is required when authorization caching is enabled. The value is a comma-separated string of one or more mapping expressions of the specified request parameters. For example, if an <code>Auth</code> header, a <code>Name</code> query string parameter are defined as identity sources, this value is <code>method.request.header.Auth, method.request.querystring.Name</code>.  These parameters will be used to derive the authorization caching key and to perform runtime validation of the <code>REQUEST</code> authorizer by verifying all of the identity-related request parameters are present, not null and non-empty. Only when this is true does the authorizer invoke the authorizer Lambda function, otherwise, it returns a 401 Unauthorized response without calling the Lambda function. The valid value is a string of comma-separated mapping expressions of the specified request parameters. When the authorization caching is not enabled, this property is optional.</li></ul></p>
     #[serde(rename = "identitySource")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub identity_source: std::option::Option<std::string::String>,
     /// <p>A validation expression for the incoming identity token. For <code>TOKEN</code> authorizers, this value is a regular expression. For <code>COGNITO_USER_POOLS</code> authorizers, API Gateway will match the <code>aud</code> field of the incoming token from the client against the specified regular expression. It will invoke the authorizer's Lambda function when there is a match. Otherwise, it will return a 401 Unauthorized response without calling the Lambda function. The validation expression does not apply to the <code>REQUEST</code> authorizer.</p>
     #[serde(rename = "identityValidationExpression")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub identity_validation_expression: std::option::Option<std::string::String>,
     /// <p>The TTL in seconds of cached authorizer results. If it equals 0, authorization caching is disabled. If it is greater than 0, API Gateway will cache authorizer responses. If this field is not set, the default value is 300. The maximum value is 3600, or 1 hour.</p>
     #[serde(rename = "authorizerResultTtlInSeconds")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub authorizer_result_ttl_in_seconds: std::option::Option<i32>,
 }
@@ -7405,31 +6923,26 @@ impl Authorizer {
 /// <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-api-keys.html">Use API Keys</a>
 /// </div>
 #[non_exhaustive]
-#[derive(serde::Deserialize, serde::Serialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
 pub struct ApiKey {
     /// <p>The identifier of the API Key.</p>
     #[serde(rename = "id")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The value of the API Key.</p>
     #[serde(rename = "value")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub value: std::option::Option<std::string::String>,
     /// <p>The name of the API Key.</p>
     #[serde(rename = "name")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub name: std::option::Option<std::string::String>,
     /// <p>An AWS Marketplace customer identifier , when integrating with the AWS SaaS Marketplace.</p>
     #[serde(rename = "customerId")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub customer_id: std::option::Option<std::string::String>,
     /// <p>The description of the API Key.</p>
     #[serde(rename = "description")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub description: std::option::Option<std::string::String>,
     /// <p>Specifies whether the API Key can be used by callers.</p>
@@ -7437,10 +6950,6 @@ pub struct ApiKey {
     pub enabled: bool,
     /// <p>The timestamp when the API Key was created.</p>
     #[serde(rename = "createdDate")]
-    #[serde(skip_serializing_if = "Option::is_none")]
-    #[serde(
-        serialize_with = "crate::serde_util::stdoptionoptionsmithytypesinstant_epoch_seconds_ser"
-    )]
     #[serde(
         deserialize_with = "crate::serde_util::stdoptionoptionsmithytypesinstant_epoch_seconds_deser"
     )]
@@ -7448,10 +6957,6 @@ pub struct ApiKey {
     pub created_date: std::option::Option<smithy_types::Instant>,
     /// <p>The timestamp when the API Key was last updated.</p>
     #[serde(rename = "lastUpdatedDate")]
-    #[serde(skip_serializing_if = "Option::is_none")]
-    #[serde(
-        serialize_with = "crate::serde_util::stdoptionoptionsmithytypesinstant_epoch_seconds_ser"
-    )]
     #[serde(
         deserialize_with = "crate::serde_util::stdoptionoptionsmithytypesinstant_epoch_seconds_deser"
     )]
@@ -7459,12 +6964,10 @@ pub struct ApiKey {
     pub last_updated_date: std::option::Option<smithy_types::Instant>,
     /// <p>A list of <a>Stage</a> resources that are associated with the <a>ApiKey</a> resource.</p>
     #[serde(rename = "stageKeys")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub stage_keys: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
     #[serde(rename = "tags")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -7638,7 +7141,7 @@ impl ApiKey {
 
 /// <p>If specified, API Gateway performs two-way authentication between the client and the server. Clients must present a trusted certificate to access your custom domain name.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, serde::Serialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
 pub struct MutualTlsAuthenticationInput {
     /// <p>An Amazon S3 resource ARN that specifies the truststore for mutual TLS authentication,
     /// for example,
@@ -7648,13 +7151,11 @@ pub struct MutualTlsAuthenticationInput {
     /// name to use the new version. To update the truststore, you must have permissions to
     /// access the S3 object.</p>
     #[serde(rename = "truststoreUri")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub truststore_uri: std::option::Option<std::string::String>,
     /// <p>The version of the S3 object that contains your truststore. To
     /// specify a version, you must have versioning enabled for the S3 bucket.</p>
     #[serde(rename = "truststoreVersion")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub truststore_version: std::option::Option<std::string::String>,
 }
@@ -7722,14 +7223,13 @@ impl MutualTlsAuthenticationInput {
 
 /// <p>The input configuration for a canary deployment.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, serde::Serialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeploymentCanarySettings {
     /// <p>The percentage (0.0-100.0) of traffic routed to the canary deployment.</p>
     #[serde(rename = "percentTraffic")]
     pub percent_traffic: f64,
     /// <p>A stage variable overrides used for the canary release deployment. They can override existing stage variables or add new stage variables for the canary release deployment. These stage variables are represented as a string-to-string map between stage variable names and their values.</p>
     #[serde(rename = "stageVariableOverrides")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub stage_variable_overrides:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -7815,16 +7315,14 @@ impl DeploymentCanarySettings {
 
 /// <p>A reference to a unique stage identified in the format <code>{restApiId}/{stage}</code>.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, serde::Serialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
 pub struct StageKey {
     /// <p>The string identifier of the associated <a>RestApi</a>.</p>
     #[serde(rename = "restApiId")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub rest_api_id: std::option::Option<std::string::String>,
     /// <p>The stage name associated with the stage key.</p>
     #[serde(rename = "stageName")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub stage_name: std::option::Option<std::string::String>,
 }

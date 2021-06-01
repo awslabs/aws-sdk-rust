@@ -12,7 +12,6 @@ pub fn deser_header_synthesize_speech_content_type(
 ) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
     let headers = header_map.get_all("Content-Type").iter();
     let var_1: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
-
     if var_1.len() > 1 {
         Err(smithy_http::header::ParseError)
     } else {
@@ -26,7 +25,6 @@ pub fn deser_header_synthesize_speech_request_characters(
 ) -> Result<i32, smithy_http::header::ParseError> {
     let headers = header_map.get_all("x-amzn-RequestCharacters").iter();
     let var_2: Vec<i32> = smithy_http::header::read_many(headers)?;
-
     if var_2.len() > 1 {
         return Err(smithy_http::header::ParseError);
     }

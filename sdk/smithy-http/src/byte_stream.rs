@@ -82,8 +82,9 @@
 //! }
 //!
 //! async fn bytestream_from_file() -> GetObjectInput {
-//!     let f = Path::new("docs/some-large-file.csv");
-//!     let bytestream = ByteStream::from_path(&f).await.expect("valid path");
+//!     let bytestream = ByteStream::from_path("docs/some-large-file.csv")
+//!         .await
+//!         .expect("valid path");
 //!     GetObjectInput { body: bytestream }
 //! }
 //! ```
@@ -108,6 +109,8 @@ mod bytestream_util;
 /// Stream of binary data
 ///
 /// `ByteStream` wraps a stream of binary data for ease of use.
+///
+/// ## Getting data out of a `ByteStream`
 ///
 /// `ByteStream` provides two primary mechanisms for accessing the data:
 /// 1. With `.collect()`:
@@ -143,7 +146,7 @@ mod bytestream_util;
 ///     use tokio_stream::StreamExt;
 ///
 ///     async fn example() -> Result<(), Error> {
-///        let mut stream = ByteStream::new(SdkBody::from("hello! This is some data"));
+///        let mut stream = ByteStream::from(vec![1, 2, 3, 4, 5, 99]);
 ///        let mut digest = crc32::Digest::new();
 ///        while let Some(bytes) = stream.try_next().await? {
 ///            digest.write(&bytes);
@@ -151,6 +154,38 @@ mod bytestream_util;
 ///        println!("digest: {}", digest.finish());
 ///        Ok(())
 ///     }
+///     ```
+///
+/// ## Getting data into a ByteStream
+/// ByteStreams can be created in one of three ways:
+/// 1. **From in-memory binary data**: ByteStreams created from in-memory data are always retryable. Data
+/// will be converted into `Bytes` enabling a cheap clone during retries.
+///     ```rust
+///     use bytes::Bytes;
+///     use smithy_http::byte_stream::ByteStream;
+///     let stream = ByteStream::from(vec![1,2,3]);
+///     let stream = ByteStream::from(Bytes::from_static(b"hello!"));
+///     ```
+///
+/// 2. **From a file**: ByteStreams created from a path can be retried. A new file descriptor will be opened if a retry occurs.
+///     ```rust
+///     use smithy_http::byte_stream::ByteStream;
+///     let stream = ByteStream::from_path("big_file.csv");
+///     ```
+///
+/// 3. **From an `SdkBody` directly**: For more advanced / custom use cases, a ByteStream can be created directly
+/// from an SdkBody. **When created from an SdkBody, care must be taken to ensure retriability.** An SdkBody is retryable
+/// when constructured from in-memory data or when using [`SdkBody::retryable`](crate::body::SdkBody::retryable).
+///     ```rust
+///     use smithy_http::byte_stream::ByteStream;
+///     use smithy_http::body::SdkBody;
+///     use bytes::Bytes;
+///     let (mut tx, channel_body) = hyper::Body::channel();
+///     // this will not be retryable because the SDK has no way to replay this stream
+///     let stream = ByteStream::new(SdkBody::from(channel_body));
+///     tx.send_data(Bytes::from_static(b"hello world!"));
+///     tx.send_data(Bytes::from_static(b"hello again!"));
+///     // NOTE! You must ensure that `tx` is dropped to ensure that EOF is sent
 ///     ```
 ///
 #[pin_project]
@@ -211,12 +246,13 @@ impl ByteStream {
     /// use smithy_http::byte_stream::ByteStream;
     /// use std::path::Path;
     ///  async fn make_bytestream() -> ByteStream {
-    ///     ByteStream::from_path(&Path::new("docs/rows.csv")).await.expect("file should be readable")
+    ///     ByteStream::from_path("docs/rows.csv").await.expect("file should be readable")
     /// }
     /// ```
     #[cfg(feature = "bytestream-util")]
     #[cfg_attr(docsrs, doc(cfg(feature = "bytestream-util")))]
-    pub async fn from_path(path: &Path) -> Result<Self, Error> {
+    pub async fn from_path(path: impl AsRef<Path>) -> Result<Self, Error> {
+        let path = path.as_ref();
         let path_buf = path.to_path_buf();
         let sz = tokio::fs::metadata(path)
             .await
@@ -262,12 +298,17 @@ impl From<SdkBody> for ByteStream {
     }
 }
 
+/// Construct a retryable ByteStream from [`bytes::Bytes`](bytes::Bytes)
 impl From<Bytes> for ByteStream {
     fn from(input: Bytes) -> Self {
         ByteStream::new(SdkBody::from(input))
     }
 }
 
+/// Construct a retryable ByteStream from a `Vec<u8>`.
+///
+/// This will convert the `Vec<u8>` into [`bytes::Bytes`](bytes::Bytes) to enable efficient
+/// retries.
 impl From<Vec<u8>> for ByteStream {
     fn from(input: Vec<u8>) -> Self {
         Self::from(Bytes::from(input))
@@ -446,7 +487,7 @@ mod tests {
         for i in 0..10000 {
             writeln!(file, "Brian was here. Briefly. {}", i)?;
         }
-        let body = ByteStream::from_path(file.path()).await?.into_inner();
+        let body = ByteStream::from_path(&file).await?.into_inner();
         // assert that a valid size hint is immediately ready
         assert_eq!(body.size_hint().exact(), Some(298890));
         let mut body1 = body.try_clone().expect("retryable bodies are cloneable");

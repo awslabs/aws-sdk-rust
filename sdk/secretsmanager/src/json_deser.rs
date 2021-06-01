@@ -11,7 +11,6 @@ pub fn cancel_rotate_secret_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_arn(parsed_body.arn);
     builder = builder.set_version_id(parsed_body.version_id);
     builder = builder.set_name(parsed_body.name);
@@ -30,7 +29,6 @@ pub fn create_secret_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_version_id(parsed_body.version_id);
     builder = builder.set_name(parsed_body.name);
     builder = builder.set_arn(parsed_body.arn);
@@ -49,7 +47,6 @@ pub fn delete_resource_policy_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_arn(parsed_body.arn);
     builder = builder.set_name(parsed_body.name);
     Ok(builder)
@@ -67,7 +64,6 @@ pub fn delete_secret_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_arn(parsed_body.arn);
     builder = builder.set_name(parsed_body.name);
     builder = builder.set_deletion_date(parsed_body.deletion_date);
@@ -86,7 +82,6 @@ pub fn describe_secret_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_last_rotated_date(parsed_body.last_rotated_date);
     builder = builder.set_description(parsed_body.description);
     builder = builder.set_kms_key_id(parsed_body.kms_key_id);
@@ -117,7 +112,6 @@ pub fn get_random_password_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_random_password(parsed_body.random_password);
     Ok(builder)
 }
@@ -134,7 +128,6 @@ pub fn get_resource_policy_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_resource_policy(parsed_body.resource_policy);
     builder = builder.set_name(parsed_body.name);
     builder = builder.set_arn(parsed_body.arn);
@@ -153,7 +146,6 @@ pub fn get_secret_value_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_version_id(parsed_body.version_id);
     builder = builder.set_created_date(parsed_body.created_date);
     builder = builder.set_secret_string(parsed_body.secret_string);
@@ -176,7 +168,6 @@ pub fn list_secrets_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_secret_list(parsed_body.secret_list);
     builder = builder.set_next_token(parsed_body.next_token);
     Ok(builder)
@@ -194,7 +185,6 @@ pub fn list_secret_version_ids_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_next_token(parsed_body.next_token);
     builder = builder.set_versions(parsed_body.versions);
     builder = builder.set_arn(parsed_body.arn);
@@ -214,7 +204,6 @@ pub fn put_resource_policy_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_arn(parsed_body.arn);
     builder = builder.set_name(parsed_body.name);
     Ok(builder)
@@ -232,7 +221,6 @@ pub fn put_secret_value_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_arn(parsed_body.arn);
     builder = builder.set_version_stages(parsed_body.version_stages);
     builder = builder.set_name(parsed_body.name);
@@ -252,7 +240,6 @@ pub fn restore_secret_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_arn(parsed_body.arn);
     builder = builder.set_name(parsed_body.name);
     Ok(builder)
@@ -270,7 +257,6 @@ pub fn rotate_secret_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_arn(parsed_body.arn);
     builder = builder.set_name(parsed_body.name);
     builder = builder.set_version_id(parsed_body.version_id);
@@ -289,7 +275,6 @@ pub fn update_secret_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_name(parsed_body.name);
     builder = builder.set_version_id(parsed_body.version_id);
     builder = builder.set_arn(parsed_body.arn);
@@ -308,7 +293,6 @@ pub fn update_secret_version_stage_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_arn(parsed_body.arn);
     builder = builder.set_name(parsed_body.name);
     Ok(builder)
@@ -326,7 +310,6 @@ pub fn validate_resource_policy_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_validation_errors(parsed_body.validation_errors);
     builder = builder.set_policy_validation_passed(parsed_body.policy_validation_passed);
     Ok(builder)

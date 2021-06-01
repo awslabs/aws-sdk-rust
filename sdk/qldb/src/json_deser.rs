@@ -21,7 +21,6 @@ pub fn invalid_parameter_exception(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_message(parsed_body.message);
     builder = builder.set_parameter_name(parsed_body.parameter_name);
     Ok(builder)
@@ -39,7 +38,6 @@ pub fn resource_not_found_exception(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_message(parsed_body.message);
     builder = builder.set_resource_type(parsed_body.resource_type);
     builder = builder.set_resource_name(parsed_body.resource_name);
@@ -58,7 +56,6 @@ pub fn resource_precondition_not_met_exception(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_message(parsed_body.message);
     builder = builder.set_resource_type(parsed_body.resource_type);
     builder = builder.set_resource_name(parsed_body.resource_name);
@@ -77,7 +74,6 @@ pub fn cancel_journal_kinesis_stream_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_stream_id(parsed_body.stream_id);
     Ok(builder)
 }
@@ -94,7 +90,6 @@ pub fn limit_exceeded_exception(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_message(parsed_body.message);
     builder = builder.set_resource_type(parsed_body.resource_type);
     Ok(builder)
@@ -112,7 +107,6 @@ pub fn resource_already_exists_exception(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_message(parsed_body.message);
     builder = builder.set_resource_type(parsed_body.resource_type);
     builder = builder.set_resource_name(parsed_body.resource_name);
@@ -131,7 +125,6 @@ pub fn resource_in_use_exception(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_message(parsed_body.message);
     builder = builder.set_resource_type(parsed_body.resource_type);
     builder = builder.set_resource_name(parsed_body.resource_name);
@@ -150,7 +143,6 @@ pub fn create_ledger_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_name(parsed_body.name);
     builder = builder.set_arn(parsed_body.arn);
     builder = builder.set_state(parsed_body.state);
@@ -171,7 +163,6 @@ pub fn describe_journal_kinesis_stream_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_stream(parsed_body.stream);
     Ok(builder)
 }
@@ -188,7 +179,6 @@ pub fn describe_journal_s3_export_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_export_description(parsed_body.export_description);
     Ok(builder)
 }
@@ -205,7 +195,6 @@ pub fn describe_ledger_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_name(parsed_body.name);
     builder = builder.set_arn(parsed_body.arn);
     builder = builder.set_state(parsed_body.state);
@@ -226,7 +215,6 @@ pub fn export_journal_to_s3_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_export_id(parsed_body.export_id);
     Ok(builder)
 }
@@ -243,7 +231,6 @@ pub fn get_block_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_block(parsed_body.block);
     builder = builder.set_proof(parsed_body.proof);
     Ok(builder)
@@ -261,7 +248,6 @@ pub fn get_digest_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_digest(parsed_body.digest);
     builder = builder.set_digest_tip_address(parsed_body.digest_tip_address);
     Ok(builder)
@@ -279,7 +265,6 @@ pub fn get_revision_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_proof(parsed_body.proof);
     builder = builder.set_revision(parsed_body.revision);
     Ok(builder)
@@ -299,7 +284,6 @@ pub fn list_journal_kinesis_streams_for_ledger_deser_operation(
         } else {
             serde_json::from_slice(inp)?
         };
-
     builder = builder.set_streams(parsed_body.streams);
     builder = builder.set_next_token(parsed_body.next_token);
     Ok(builder)
@@ -317,7 +301,6 @@ pub fn list_journal_s3_exports_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_journal_s3_exports(parsed_body.journal_s3_exports);
     builder = builder.set_next_token(parsed_body.next_token);
     Ok(builder)
@@ -336,7 +319,6 @@ pub fn list_journal_s3_exports_for_ledger_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_journal_s3_exports(parsed_body.journal_s3_exports);
     builder = builder.set_next_token(parsed_body.next_token);
     Ok(builder)
@@ -354,7 +336,6 @@ pub fn list_ledgers_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_ledgers(parsed_body.ledgers);
     builder = builder.set_next_token(parsed_body.next_token);
     Ok(builder)
@@ -372,7 +353,6 @@ pub fn list_tags_for_resource_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_tags(parsed_body.tags);
     Ok(builder)
 }
@@ -389,7 +369,6 @@ pub fn stream_journal_to_kinesis_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_stream_id(parsed_body.stream_id);
     Ok(builder)
 }
@@ -406,7 +385,6 @@ pub fn update_ledger_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_name(parsed_body.name);
     builder = builder.set_arn(parsed_body.arn);
     builder = builder.set_state(parsed_body.state);

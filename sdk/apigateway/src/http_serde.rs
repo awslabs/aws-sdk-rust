@@ -4,7 +4,6 @@ pub fn deser_header_create_api_key_retry_after_seconds(
 ) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
     let var_1: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
-
     if var_1.len() > 1 {
         Err(smithy_http::header::ParseError)
     } else {
@@ -18,7 +17,6 @@ pub fn deser_header_create_authorizer_retry_after_seconds(
 ) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
     let var_2: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
-
     if var_2.len() > 1 {
         Err(smithy_http::header::ParseError)
     } else {
@@ -32,7 +30,6 @@ pub fn deser_header_create_base_path_mapping_retry_after_seconds(
 ) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
     let var_3: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
-
     if var_3.len() > 1 {
         Err(smithy_http::header::ParseError)
     } else {
@@ -46,7 +43,6 @@ pub fn deser_header_create_deployment_retry_after_seconds(
 ) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
     let var_4: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
-
     if var_4.len() > 1 {
         Err(smithy_http::header::ParseError)
     } else {
@@ -60,7 +56,6 @@ pub fn deser_header_create_documentation_part_retry_after_seconds(
 ) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
     let var_5: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
-
     if var_5.len() > 1 {
         Err(smithy_http::header::ParseError)
     } else {
@@ -74,7 +69,6 @@ pub fn deser_header_create_documentation_version_retry_after_seconds(
 ) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
     let var_6: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
-
     if var_6.len() > 1 {
         Err(smithy_http::header::ParseError)
     } else {
@@ -88,7 +82,6 @@ pub fn deser_header_create_domain_name_retry_after_seconds(
 ) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
     let var_7: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
-
     if var_7.len() > 1 {
         Err(smithy_http::header::ParseError)
     } else {
@@ -102,7 +95,6 @@ pub fn deser_header_create_model_retry_after_seconds(
 ) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
     let var_8: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
-
     if var_8.len() > 1 {
         Err(smithy_http::header::ParseError)
     } else {
@@ -116,7 +108,6 @@ pub fn deser_header_create_request_validator_retry_after_seconds(
 ) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
     let var_9: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
-
     if var_9.len() > 1 {
         Err(smithy_http::header::ParseError)
     } else {
@@ -130,7 +121,6 @@ pub fn deser_header_create_resource_retry_after_seconds(
 ) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
     let var_10: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
-
     if var_10.len() > 1 {
         Err(smithy_http::header::ParseError)
     } else {
@@ -144,7 +134,6 @@ pub fn deser_header_create_rest_api_retry_after_seconds(
 ) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
     let var_11: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
-
     if var_11.len() > 1 {
         Err(smithy_http::header::ParseError)
     } else {
@@ -158,7 +147,6 @@ pub fn deser_header_create_stage_retry_after_seconds(
 ) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
     let var_12: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
-
     if var_12.len() > 1 {
         Err(smithy_http::header::ParseError)
     } else {
@@ -172,7 +160,6 @@ pub fn deser_header_create_usage_plan_retry_after_seconds(
 ) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
     let var_13: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
-
     if var_13.len() > 1 {
         Err(smithy_http::header::ParseError)
     } else {
@@ -186,7 +173,6 @@ pub fn deser_header_create_usage_plan_key_retry_after_seconds(
 ) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
     let var_14: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
-
     if var_14.len() > 1 {
         Err(smithy_http::header::ParseError)
     } else {
@@ -200,7 +186,6 @@ pub fn deser_header_create_vpc_link_retry_after_seconds(
 ) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
     let var_15: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
-
     if var_15.len() > 1 {
         Err(smithy_http::header::ParseError)
     } else {
@@ -214,7 +199,6 @@ pub fn deser_header_delete_api_key_retry_after_seconds(
 ) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
     let var_16: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
-
     if var_16.len() > 1 {
         Err(smithy_http::header::ParseError)
     } else {
@@ -228,7 +212,6 @@ pub fn deser_header_delete_authorizer_retry_after_seconds(
 ) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
     let var_17: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
-
     if var_17.len() > 1 {
         Err(smithy_http::header::ParseError)
     } else {
@@ -242,7 +225,6 @@ pub fn deser_header_delete_base_path_mapping_retry_after_seconds(
 ) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
     let var_18: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
-
     if var_18.len() > 1 {
         Err(smithy_http::header::ParseError)
     } else {
@@ -256,7 +238,6 @@ pub fn deser_header_delete_client_certificate_retry_after_seconds(
 ) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
     let var_19: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
-
     if var_19.len() > 1 {
         Err(smithy_http::header::ParseError)
     } else {
@@ -270,7 +251,6 @@ pub fn deser_header_delete_deployment_retry_after_seconds(
 ) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
     let var_20: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
-
     if var_20.len() > 1 {
         Err(smithy_http::header::ParseError)
     } else {
@@ -284,7 +264,6 @@ pub fn deser_header_delete_documentation_part_retry_after_seconds(
 ) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
     let var_21: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
-
     if var_21.len() > 1 {
         Err(smithy_http::header::ParseError)
     } else {
@@ -298,7 +277,6 @@ pub fn deser_header_delete_documentation_version_retry_after_seconds(
 ) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
     let var_22: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
-
     if var_22.len() > 1 {
         Err(smithy_http::header::ParseError)
     } else {
@@ -312,7 +290,6 @@ pub fn deser_header_delete_domain_name_retry_after_seconds(
 ) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
     let var_23: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
-
     if var_23.len() > 1 {
         Err(smithy_http::header::ParseError)
     } else {
@@ -326,7 +303,6 @@ pub fn deser_header_delete_gateway_response_retry_after_seconds(
 ) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
     let var_24: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
-
     if var_24.len() > 1 {
         Err(smithy_http::header::ParseError)
     } else {
@@ -340,7 +316,6 @@ pub fn deser_header_delete_integration_retry_after_seconds(
 ) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
     let var_25: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
-
     if var_25.len() > 1 {
         Err(smithy_http::header::ParseError)
     } else {
@@ -354,7 +329,6 @@ pub fn deser_header_delete_integration_response_retry_after_seconds(
 ) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
     let var_26: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
-
     if var_26.len() > 1 {
         Err(smithy_http::header::ParseError)
     } else {
@@ -368,7 +342,6 @@ pub fn deser_header_delete_method_retry_after_seconds(
 ) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
     let var_27: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
-
     if var_27.len() > 1 {
         Err(smithy_http::header::ParseError)
     } else {
@@ -382,7 +355,6 @@ pub fn deser_header_delete_method_response_retry_after_seconds(
 ) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
     let var_28: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
-
     if var_28.len() > 1 {
         Err(smithy_http::header::ParseError)
     } else {
@@ -396,7 +368,6 @@ pub fn deser_header_delete_model_retry_after_seconds(
 ) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
     let var_29: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
-
     if var_29.len() > 1 {
         Err(smithy_http::header::ParseError)
     } else {
@@ -410,7 +381,6 @@ pub fn deser_header_delete_request_validator_retry_after_seconds(
 ) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
     let var_30: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
-
     if var_30.len() > 1 {
         Err(smithy_http::header::ParseError)
     } else {
@@ -424,7 +394,6 @@ pub fn deser_header_delete_resource_retry_after_seconds(
 ) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
     let var_31: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
-
     if var_31.len() > 1 {
         Err(smithy_http::header::ParseError)
     } else {
@@ -438,7 +407,6 @@ pub fn deser_header_delete_rest_api_retry_after_seconds(
 ) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
     let var_32: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
-
     if var_32.len() > 1 {
         Err(smithy_http::header::ParseError)
     } else {
@@ -452,7 +420,6 @@ pub fn deser_header_delete_stage_retry_after_seconds(
 ) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
     let var_33: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
-
     if var_33.len() > 1 {
         Err(smithy_http::header::ParseError)
     } else {
@@ -466,7 +433,6 @@ pub fn deser_header_delete_usage_plan_retry_after_seconds(
 ) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
     let var_34: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
-
     if var_34.len() > 1 {
         Err(smithy_http::header::ParseError)
     } else {
@@ -480,7 +446,6 @@ pub fn deser_header_delete_usage_plan_key_retry_after_seconds(
 ) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
     let var_35: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
-
     if var_35.len() > 1 {
         Err(smithy_http::header::ParseError)
     } else {
@@ -494,7 +459,6 @@ pub fn deser_header_delete_vpc_link_retry_after_seconds(
 ) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
     let var_36: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
-
     if var_36.len() > 1 {
         Err(smithy_http::header::ParseError)
     } else {
@@ -508,7 +472,6 @@ pub fn deser_header_flush_stage_authorizers_cache_retry_after_seconds(
 ) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
     let var_37: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
-
     if var_37.len() > 1 {
         Err(smithy_http::header::ParseError)
     } else {
@@ -522,7 +485,6 @@ pub fn deser_header_flush_stage_cache_retry_after_seconds(
 ) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
     let var_38: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
-
     if var_38.len() > 1 {
         Err(smithy_http::header::ParseError)
     } else {
@@ -536,7 +498,6 @@ pub fn deser_header_generate_client_certificate_retry_after_seconds(
 ) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
     let var_39: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
-
     if var_39.len() > 1 {
         Err(smithy_http::header::ParseError)
     } else {
@@ -550,7 +511,6 @@ pub fn deser_header_get_account_retry_after_seconds(
 ) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
     let var_40: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
-
     if var_40.len() > 1 {
         Err(smithy_http::header::ParseError)
     } else {
@@ -564,7 +524,6 @@ pub fn deser_header_get_api_key_retry_after_seconds(
 ) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
     let var_41: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
-
     if var_41.len() > 1 {
         Err(smithy_http::header::ParseError)
     } else {
@@ -578,7 +537,6 @@ pub fn deser_header_get_api_keys_retry_after_seconds(
 ) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
     let var_42: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
-
     if var_42.len() > 1 {
         Err(smithy_http::header::ParseError)
     } else {
@@ -592,7 +550,6 @@ pub fn deser_header_get_authorizer_retry_after_seconds(
 ) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
     let var_43: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
-
     if var_43.len() > 1 {
         Err(smithy_http::header::ParseError)
     } else {
@@ -606,7 +563,6 @@ pub fn deser_header_get_authorizers_retry_after_seconds(
 ) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
     let var_44: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
-
     if var_44.len() > 1 {
         Err(smithy_http::header::ParseError)
     } else {
@@ -620,7 +576,6 @@ pub fn deser_header_get_base_path_mapping_retry_after_seconds(
 ) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
     let var_45: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
-
     if var_45.len() > 1 {
         Err(smithy_http::header::ParseError)
     } else {
@@ -634,7 +589,6 @@ pub fn deser_header_get_base_path_mappings_retry_after_seconds(
 ) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
     let var_46: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
-
     if var_46.len() > 1 {
         Err(smithy_http::header::ParseError)
     } else {
@@ -648,7 +602,6 @@ pub fn deser_header_get_client_certificate_retry_after_seconds(
 ) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
     let var_47: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
-
     if var_47.len() > 1 {
         Err(smithy_http::header::ParseError)
     } else {
@@ -662,7 +615,6 @@ pub fn deser_header_get_client_certificates_retry_after_seconds(
 ) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
     let var_48: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
-
     if var_48.len() > 1 {
         Err(smithy_http::header::ParseError)
     } else {
@@ -676,7 +628,6 @@ pub fn deser_header_get_deployment_retry_after_seconds(
 ) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
     let var_49: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
-
     if var_49.len() > 1 {
         Err(smithy_http::header::ParseError)
     } else {
@@ -690,7 +641,6 @@ pub fn deser_header_get_deployments_retry_after_seconds(
 ) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
     let var_50: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
-
     if var_50.len() > 1 {
         Err(smithy_http::header::ParseError)
     } else {
@@ -704,7 +654,6 @@ pub fn deser_header_get_documentation_part_retry_after_seconds(
 ) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
     let var_51: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
-
     if var_51.len() > 1 {
         Err(smithy_http::header::ParseError)
     } else {
@@ -718,7 +667,6 @@ pub fn deser_header_get_documentation_parts_retry_after_seconds(
 ) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
     let var_52: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
-
     if var_52.len() > 1 {
         Err(smithy_http::header::ParseError)
     } else {
@@ -732,7 +680,6 @@ pub fn deser_header_get_documentation_version_retry_after_seconds(
 ) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
     let var_53: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
-
     if var_53.len() > 1 {
         Err(smithy_http::header::ParseError)
     } else {
@@ -746,7 +693,6 @@ pub fn deser_header_get_documentation_versions_retry_after_seconds(
 ) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
     let var_54: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
-
     if var_54.len() > 1 {
         Err(smithy_http::header::ParseError)
     } else {
@@ -760,7 +706,6 @@ pub fn deser_header_get_domain_name_retry_after_seconds(
 ) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
     let var_55: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
-
     if var_55.len() > 1 {
         Err(smithy_http::header::ParseError)
     } else {
@@ -774,7 +719,6 @@ pub fn deser_header_get_domain_names_retry_after_seconds(
 ) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
     let var_56: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
-
     if var_56.len() > 1 {
         Err(smithy_http::header::ParseError)
     } else {
@@ -788,7 +732,6 @@ pub fn deser_header_get_export_retry_after_seconds(
 ) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
     let var_57: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
-
     if var_57.len() > 1 {
         Err(smithy_http::header::ParseError)
     } else {
@@ -802,7 +745,6 @@ pub fn deser_header_get_export_content_type(
 ) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
     let headers = header_map.get_all("Content-Type").iter();
     let var_58: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
-
     if var_58.len() > 1 {
         Err(smithy_http::header::ParseError)
     } else {
@@ -816,7 +758,6 @@ pub fn deser_header_get_export_content_disposition(
 ) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
     let headers = header_map.get_all("Content-Disposition").iter();
     let var_59: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
-
     if var_59.len() > 1 {
         Err(smithy_http::header::ParseError)
     } else {
@@ -838,7 +779,6 @@ pub fn deser_header_get_gateway_response_retry_after_seconds(
 ) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
     let var_60: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
-
     if var_60.len() > 1 {
         Err(smithy_http::header::ParseError)
     } else {
@@ -852,7 +792,6 @@ pub fn deser_header_get_gateway_responses_retry_after_seconds(
 ) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
     let var_61: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
-
     if var_61.len() > 1 {
         Err(smithy_http::header::ParseError)
     } else {
@@ -866,7 +805,6 @@ pub fn deser_header_get_integration_retry_after_seconds(
 ) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
     let var_62: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
-
     if var_62.len() > 1 {
         Err(smithy_http::header::ParseError)
     } else {
@@ -880,7 +818,6 @@ pub fn deser_header_get_integration_response_retry_after_seconds(
 ) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
     let var_63: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
-
     if var_63.len() > 1 {
         Err(smithy_http::header::ParseError)
     } else {
@@ -894,7 +831,6 @@ pub fn deser_header_get_method_retry_after_seconds(
 ) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
     let var_64: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
-
     if var_64.len() > 1 {
         Err(smithy_http::header::ParseError)
     } else {
@@ -908,7 +844,6 @@ pub fn deser_header_get_method_response_retry_after_seconds(
 ) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
     let var_65: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
-
     if var_65.len() > 1 {
         Err(smithy_http::header::ParseError)
     } else {
@@ -922,7 +857,6 @@ pub fn deser_header_get_model_retry_after_seconds(
 ) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
     let var_66: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
-
     if var_66.len() > 1 {
         Err(smithy_http::header::ParseError)
     } else {
@@ -936,7 +870,6 @@ pub fn deser_header_get_models_retry_after_seconds(
 ) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
     let var_67: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
-
     if var_67.len() > 1 {
         Err(smithy_http::header::ParseError)
     } else {
@@ -950,7 +883,6 @@ pub fn deser_header_get_model_template_retry_after_seconds(
 ) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
     let var_68: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
-
     if var_68.len() > 1 {
         Err(smithy_http::header::ParseError)
     } else {
@@ -964,7 +896,6 @@ pub fn deser_header_get_request_validator_retry_after_seconds(
 ) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
     let var_69: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
-
     if var_69.len() > 1 {
         Err(smithy_http::header::ParseError)
     } else {
@@ -978,7 +909,6 @@ pub fn deser_header_get_request_validators_retry_after_seconds(
 ) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
     let var_70: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
-
     if var_70.len() > 1 {
         Err(smithy_http::header::ParseError)
     } else {
@@ -992,7 +922,6 @@ pub fn deser_header_get_resource_retry_after_seconds(
 ) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
     let var_71: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
-
     if var_71.len() > 1 {
         Err(smithy_http::header::ParseError)
     } else {
@@ -1006,7 +935,6 @@ pub fn deser_header_get_resources_retry_after_seconds(
 ) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
     let var_72: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
-
     if var_72.len() > 1 {
         Err(smithy_http::header::ParseError)
     } else {
@@ -1020,7 +948,6 @@ pub fn deser_header_get_rest_api_retry_after_seconds(
 ) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
     let var_73: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
-
     if var_73.len() > 1 {
         Err(smithy_http::header::ParseError)
     } else {
@@ -1034,7 +961,6 @@ pub fn deser_header_get_rest_apis_retry_after_seconds(
 ) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
     let var_74: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
-
     if var_74.len() > 1 {
         Err(smithy_http::header::ParseError)
     } else {
@@ -1048,7 +974,6 @@ pub fn deser_header_get_sdk_retry_after_seconds(
 ) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
     let var_75: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
-
     if var_75.len() > 1 {
         Err(smithy_http::header::ParseError)
     } else {
@@ -1062,7 +987,6 @@ pub fn deser_header_get_sdk_content_type(
 ) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
     let headers = header_map.get_all("Content-Type").iter();
     let var_76: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
-
     if var_76.len() > 1 {
         Err(smithy_http::header::ParseError)
     } else {
@@ -1076,7 +1000,6 @@ pub fn deser_header_get_sdk_content_disposition(
 ) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
     let headers = header_map.get_all("Content-Disposition").iter();
     let var_77: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
-
     if var_77.len() > 1 {
         Err(smithy_http::header::ParseError)
     } else {
@@ -1098,7 +1021,6 @@ pub fn deser_header_get_sdk_type_retry_after_seconds(
 ) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
     let var_78: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
-
     if var_78.len() > 1 {
         Err(smithy_http::header::ParseError)
     } else {
@@ -1112,7 +1034,6 @@ pub fn deser_header_get_sdk_types_retry_after_seconds(
 ) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
     let var_79: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
-
     if var_79.len() > 1 {
         Err(smithy_http::header::ParseError)
     } else {
@@ -1126,7 +1047,6 @@ pub fn deser_header_get_stage_retry_after_seconds(
 ) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
     let var_80: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
-
     if var_80.len() > 1 {
         Err(smithy_http::header::ParseError)
     } else {
@@ -1140,7 +1060,6 @@ pub fn deser_header_get_stages_retry_after_seconds(
 ) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
     let var_81: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
-
     if var_81.len() > 1 {
         Err(smithy_http::header::ParseError)
     } else {
@@ -1154,7 +1073,6 @@ pub fn deser_header_get_tags_retry_after_seconds(
 ) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
     let var_82: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
-
     if var_82.len() > 1 {
         Err(smithy_http::header::ParseError)
     } else {
@@ -1168,7 +1086,6 @@ pub fn deser_header_get_usage_retry_after_seconds(
 ) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
     let var_83: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
-
     if var_83.len() > 1 {
         Err(smithy_http::header::ParseError)
     } else {
@@ -1182,7 +1099,6 @@ pub fn deser_header_get_usage_plan_retry_after_seconds(
 ) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
     let var_84: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
-
     if var_84.len() > 1 {
         Err(smithy_http::header::ParseError)
     } else {
@@ -1196,7 +1112,6 @@ pub fn deser_header_get_usage_plan_key_retry_after_seconds(
 ) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
     let var_85: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
-
     if var_85.len() > 1 {
         Err(smithy_http::header::ParseError)
     } else {
@@ -1210,7 +1125,6 @@ pub fn deser_header_get_usage_plan_keys_retry_after_seconds(
 ) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
     let var_86: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
-
     if var_86.len() > 1 {
         Err(smithy_http::header::ParseError)
     } else {
@@ -1224,7 +1138,6 @@ pub fn deser_header_get_usage_plans_retry_after_seconds(
 ) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
     let var_87: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
-
     if var_87.len() > 1 {
         Err(smithy_http::header::ParseError)
     } else {
@@ -1238,7 +1151,6 @@ pub fn deser_header_get_vpc_link_retry_after_seconds(
 ) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
     let var_88: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
-
     if var_88.len() > 1 {
         Err(smithy_http::header::ParseError)
     } else {
@@ -1252,7 +1164,6 @@ pub fn deser_header_get_vpc_links_retry_after_seconds(
 ) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
     let var_89: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
-
     if var_89.len() > 1 {
         Err(smithy_http::header::ParseError)
     } else {
@@ -1266,7 +1177,6 @@ pub fn deser_header_import_api_keys_retry_after_seconds(
 ) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
     let var_90: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
-
     if var_90.len() > 1 {
         Err(smithy_http::header::ParseError)
     } else {
@@ -1280,7 +1190,6 @@ pub fn deser_header_import_documentation_parts_retry_after_seconds(
 ) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
     let var_91: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
-
     if var_91.len() > 1 {
         Err(smithy_http::header::ParseError)
     } else {
@@ -1294,7 +1203,6 @@ pub fn deser_header_import_rest_api_retry_after_seconds(
 ) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
     let var_92: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
-
     if var_92.len() > 1 {
         Err(smithy_http::header::ParseError)
     } else {
@@ -1308,7 +1216,6 @@ pub fn deser_header_put_gateway_response_retry_after_seconds(
 ) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
     let var_93: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
-
     if var_93.len() > 1 {
         Err(smithy_http::header::ParseError)
     } else {
@@ -1322,7 +1229,6 @@ pub fn deser_header_put_integration_retry_after_seconds(
 ) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
     let var_94: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
-
     if var_94.len() > 1 {
         Err(smithy_http::header::ParseError)
     } else {
@@ -1336,7 +1242,6 @@ pub fn deser_header_put_integration_response_retry_after_seconds(
 ) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
     let var_95: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
-
     if var_95.len() > 1 {
         Err(smithy_http::header::ParseError)
     } else {
@@ -1350,7 +1255,6 @@ pub fn deser_header_put_method_retry_after_seconds(
 ) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
     let var_96: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
-
     if var_96.len() > 1 {
         Err(smithy_http::header::ParseError)
     } else {
@@ -1364,7 +1268,6 @@ pub fn deser_header_put_method_response_retry_after_seconds(
 ) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
     let var_97: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
-
     if var_97.len() > 1 {
         Err(smithy_http::header::ParseError)
     } else {
@@ -1378,7 +1281,6 @@ pub fn deser_header_put_rest_api_retry_after_seconds(
 ) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
     let var_98: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
-
     if var_98.len() > 1 {
         Err(smithy_http::header::ParseError)
     } else {
@@ -1392,7 +1294,6 @@ pub fn deser_header_tag_resource_retry_after_seconds(
 ) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
     let var_99: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
-
     if var_99.len() > 1 {
         Err(smithy_http::header::ParseError)
     } else {
@@ -1406,7 +1307,6 @@ pub fn deser_header_test_invoke_authorizer_retry_after_seconds(
 ) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
     let var_100: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
-
     if var_100.len() > 1 {
         Err(smithy_http::header::ParseError)
     } else {
@@ -1420,7 +1320,6 @@ pub fn deser_header_test_invoke_method_retry_after_seconds(
 ) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
     let var_101: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
-
     if var_101.len() > 1 {
         Err(smithy_http::header::ParseError)
     } else {
@@ -1434,7 +1333,6 @@ pub fn deser_header_untag_resource_retry_after_seconds(
 ) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
     let var_102: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
-
     if var_102.len() > 1 {
         Err(smithy_http::header::ParseError)
     } else {
@@ -1448,7 +1346,6 @@ pub fn deser_header_update_account_retry_after_seconds(
 ) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
     let var_103: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
-
     if var_103.len() > 1 {
         Err(smithy_http::header::ParseError)
     } else {
@@ -1462,7 +1359,6 @@ pub fn deser_header_update_api_key_retry_after_seconds(
 ) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
     let var_104: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
-
     if var_104.len() > 1 {
         Err(smithy_http::header::ParseError)
     } else {
@@ -1476,7 +1372,6 @@ pub fn deser_header_update_authorizer_retry_after_seconds(
 ) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
     let var_105: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
-
     if var_105.len() > 1 {
         Err(smithy_http::header::ParseError)
     } else {
@@ -1490,7 +1385,6 @@ pub fn deser_header_update_base_path_mapping_retry_after_seconds(
 ) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
     let var_106: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
-
     if var_106.len() > 1 {
         Err(smithy_http::header::ParseError)
     } else {
@@ -1504,7 +1398,6 @@ pub fn deser_header_update_client_certificate_retry_after_seconds(
 ) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
     let var_107: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
-
     if var_107.len() > 1 {
         Err(smithy_http::header::ParseError)
     } else {
@@ -1518,7 +1411,6 @@ pub fn deser_header_update_deployment_retry_after_seconds(
 ) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
     let var_108: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
-
     if var_108.len() > 1 {
         Err(smithy_http::header::ParseError)
     } else {
@@ -1532,7 +1424,6 @@ pub fn deser_header_update_documentation_part_retry_after_seconds(
 ) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
     let var_109: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
-
     if var_109.len() > 1 {
         Err(smithy_http::header::ParseError)
     } else {
@@ -1546,7 +1437,6 @@ pub fn deser_header_update_documentation_version_retry_after_seconds(
 ) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
     let var_110: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
-
     if var_110.len() > 1 {
         Err(smithy_http::header::ParseError)
     } else {
@@ -1560,7 +1450,6 @@ pub fn deser_header_update_domain_name_retry_after_seconds(
 ) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
     let var_111: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
-
     if var_111.len() > 1 {
         Err(smithy_http::header::ParseError)
     } else {
@@ -1574,7 +1463,6 @@ pub fn deser_header_update_gateway_response_retry_after_seconds(
 ) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
     let var_112: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
-
     if var_112.len() > 1 {
         Err(smithy_http::header::ParseError)
     } else {
@@ -1588,7 +1476,6 @@ pub fn deser_header_update_integration_retry_after_seconds(
 ) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
     let var_113: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
-
     if var_113.len() > 1 {
         Err(smithy_http::header::ParseError)
     } else {
@@ -1602,7 +1489,6 @@ pub fn deser_header_update_integration_response_retry_after_seconds(
 ) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
     let var_114: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
-
     if var_114.len() > 1 {
         Err(smithy_http::header::ParseError)
     } else {
@@ -1616,7 +1502,6 @@ pub fn deser_header_update_method_retry_after_seconds(
 ) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
     let var_115: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
-
     if var_115.len() > 1 {
         Err(smithy_http::header::ParseError)
     } else {
@@ -1630,7 +1515,6 @@ pub fn deser_header_update_method_response_retry_after_seconds(
 ) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
     let var_116: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
-
     if var_116.len() > 1 {
         Err(smithy_http::header::ParseError)
     } else {
@@ -1644,7 +1528,6 @@ pub fn deser_header_update_model_retry_after_seconds(
 ) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
     let var_117: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
-
     if var_117.len() > 1 {
         Err(smithy_http::header::ParseError)
     } else {
@@ -1658,7 +1541,6 @@ pub fn deser_header_update_request_validator_retry_after_seconds(
 ) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
     let var_118: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
-
     if var_118.len() > 1 {
         Err(smithy_http::header::ParseError)
     } else {
@@ -1672,7 +1554,6 @@ pub fn deser_header_update_resource_retry_after_seconds(
 ) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
     let var_119: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
-
     if var_119.len() > 1 {
         Err(smithy_http::header::ParseError)
     } else {
@@ -1686,7 +1567,6 @@ pub fn deser_header_update_rest_api_retry_after_seconds(
 ) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
     let var_120: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
-
     if var_120.len() > 1 {
         Err(smithy_http::header::ParseError)
     } else {
@@ -1700,7 +1580,6 @@ pub fn deser_header_update_stage_retry_after_seconds(
 ) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
     let var_121: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
-
     if var_121.len() > 1 {
         Err(smithy_http::header::ParseError)
     } else {
@@ -1714,7 +1593,6 @@ pub fn deser_header_update_usage_retry_after_seconds(
 ) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
     let var_122: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
-
     if var_122.len() > 1 {
         Err(smithy_http::header::ParseError)
     } else {
@@ -1728,7 +1606,6 @@ pub fn deser_header_update_usage_plan_retry_after_seconds(
 ) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
     let var_123: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
-
     if var_123.len() > 1 {
         Err(smithy_http::header::ParseError)
     } else {
@@ -1742,7 +1619,6 @@ pub fn deser_header_update_vpc_link_retry_after_seconds(
 ) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
     let var_124: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
-
     if var_124.len() > 1 {
         Err(smithy_http::header::ParseError)
     } else {

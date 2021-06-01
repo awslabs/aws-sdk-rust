@@ -127,10 +127,14 @@ where
             // Create a new request-scoped policy
             .retry(self.retry_handler.new_handler())
             .layer(ParseResponseLayer::<O, Retry>::new())
+            // These layers can be considered as occuring in order, that is:
+            // 1. Resolve an endpoint
+            // 2. Add a user agent
+            // 3. Sign
+            // 4. Dispatch over the wire
             .layer(endpoint_resolver)
             .layer(user_agent)
             .layer(signer)
-            // Apply the user agent _after signing_. We should not sign the user-agent header
             .layer(DispatchLayer::new())
             .service(inner);
         svc.ready().await?.call(input).await

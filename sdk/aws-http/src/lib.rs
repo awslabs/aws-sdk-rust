@@ -198,11 +198,7 @@ mod test {
 
     #[test]
     fn classify_generic() {
-        let err = smithy_types::Error {
-            code: Some("SlowDown".to_string()),
-            message: None,
-            request_id: None,
-        };
+        let err = smithy_types::Error::builder().code("SlowDown").build();
         let test_response = http::Response::new("OK");
         let policy = AwsErrorRetryPolicy::new();
         assert_eq!(

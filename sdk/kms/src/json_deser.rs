@@ -11,7 +11,6 @@ pub fn cancel_key_deletion_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_key_id(parsed_body.key_id);
     Ok(builder)
 }
@@ -28,7 +27,6 @@ pub fn create_custom_key_store_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_custom_key_store_id(parsed_body.custom_key_store_id);
     Ok(builder)
 }
@@ -45,7 +43,6 @@ pub fn create_grant_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_grant_token(parsed_body.grant_token);
     builder = builder.set_grant_id(parsed_body.grant_id);
     Ok(builder)
@@ -63,7 +60,6 @@ pub fn create_key_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_key_metadata(parsed_body.key_metadata);
     Ok(builder)
 }
@@ -80,7 +76,6 @@ pub fn decrypt_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_key_id(parsed_body.key_id);
     builder = builder.set_plaintext(parsed_body.plaintext);
     builder = builder.set_encryption_algorithm(parsed_body.encryption_algorithm);
@@ -99,7 +94,6 @@ pub fn describe_custom_key_stores_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_custom_key_stores(parsed_body.custom_key_stores);
     builder = builder.set_next_marker(parsed_body.next_marker);
     builder = builder.set_truncated(parsed_body.truncated);
@@ -118,7 +112,6 @@ pub fn describe_key_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_key_metadata(parsed_body.key_metadata);
     Ok(builder)
 }
@@ -135,7 +128,6 @@ pub fn encrypt_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_ciphertext_blob(parsed_body.ciphertext_blob);
     builder = builder.set_key_id(parsed_body.key_id);
     builder = builder.set_encryption_algorithm(parsed_body.encryption_algorithm);
@@ -154,7 +146,6 @@ pub fn generate_data_key_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_ciphertext_blob(parsed_body.ciphertext_blob);
     builder = builder.set_plaintext(parsed_body.plaintext);
     builder = builder.set_key_id(parsed_body.key_id);
@@ -173,7 +164,6 @@ pub fn generate_data_key_pair_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_private_key_ciphertext_blob(parsed_body.private_key_ciphertext_blob);
     builder = builder.set_private_key_plaintext(parsed_body.private_key_plaintext);
     builder = builder.set_public_key(parsed_body.public_key);
@@ -198,7 +188,6 @@ pub fn generate_data_key_pair_without_plaintext_deser_operation(
         } else {
             serde_json::from_slice(inp)?
         };
-
     builder = builder.set_private_key_ciphertext_blob(parsed_body.private_key_ciphertext_blob);
     builder = builder.set_public_key(parsed_body.public_key);
     builder = builder.set_key_id(parsed_body.key_id);
@@ -219,7 +208,6 @@ pub fn generate_data_key_without_plaintext_deser_operation(
         } else {
             serde_json::from_slice(inp)?
         };
-
     builder = builder.set_ciphertext_blob(parsed_body.ciphertext_blob);
     builder = builder.set_key_id(parsed_body.key_id);
     Ok(builder)
@@ -237,7 +225,6 @@ pub fn generate_random_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_plaintext(parsed_body.plaintext);
     Ok(builder)
 }
@@ -254,7 +241,6 @@ pub fn get_key_policy_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_policy(parsed_body.policy);
     Ok(builder)
 }
@@ -271,7 +257,6 @@ pub fn get_key_rotation_status_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_key_rotation_enabled(parsed_body.key_rotation_enabled);
     Ok(builder)
 }
@@ -288,7 +273,6 @@ pub fn get_parameters_for_import_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_key_id(parsed_body.key_id);
     builder = builder.set_import_token(parsed_body.import_token);
     builder = builder.set_public_key(parsed_body.public_key);
@@ -308,7 +292,6 @@ pub fn get_public_key_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_key_id(parsed_body.key_id);
     builder = builder.set_public_key(parsed_body.public_key);
     builder = builder.set_customer_master_key_spec(parsed_body.customer_master_key_spec);
@@ -330,7 +313,6 @@ pub fn list_aliases_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_aliases(parsed_body.aliases);
     builder = builder.set_next_marker(parsed_body.next_marker);
     builder = builder.set_truncated(parsed_body.truncated);
@@ -349,7 +331,6 @@ pub fn list_grants_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_grants(parsed_body.grants);
     builder = builder.set_next_marker(parsed_body.next_marker);
     builder = builder.set_truncated(parsed_body.truncated);
@@ -368,7 +349,6 @@ pub fn list_key_policies_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_policy_names(parsed_body.policy_names);
     builder = builder.set_next_marker(parsed_body.next_marker);
     builder = builder.set_truncated(parsed_body.truncated);
@@ -387,7 +367,6 @@ pub fn list_keys_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_keys(parsed_body.keys);
     builder = builder.set_next_marker(parsed_body.next_marker);
     builder = builder.set_truncated(parsed_body.truncated);
@@ -406,7 +385,6 @@ pub fn list_resource_tags_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_tags(parsed_body.tags);
     builder = builder.set_next_marker(parsed_body.next_marker);
     builder = builder.set_truncated(parsed_body.truncated);
@@ -425,7 +403,6 @@ pub fn list_retirable_grants_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_grants(parsed_body.grants);
     builder = builder.set_next_marker(parsed_body.next_marker);
     builder = builder.set_truncated(parsed_body.truncated);
@@ -444,7 +421,6 @@ pub fn re_encrypt_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_ciphertext_blob(parsed_body.ciphertext_blob);
     builder = builder.set_source_key_id(parsed_body.source_key_id);
     builder = builder.set_key_id(parsed_body.key_id);
@@ -466,7 +442,6 @@ pub fn schedule_key_deletion_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_key_id(parsed_body.key_id);
     builder = builder.set_deletion_date(parsed_body.deletion_date);
     Ok(builder)
@@ -484,7 +459,6 @@ pub fn sign_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_key_id(parsed_body.key_id);
     builder = builder.set_signature(parsed_body.signature);
     builder = builder.set_signing_algorithm(parsed_body.signing_algorithm);
@@ -503,7 +477,6 @@ pub fn verify_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_key_id(parsed_body.key_id);
     builder = builder.set_signature_valid(parsed_body.signature_valid);
     builder = builder.set_signing_algorithm(parsed_body.signing_algorithm);

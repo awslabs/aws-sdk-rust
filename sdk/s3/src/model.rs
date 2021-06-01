@@ -35,7 +35,6 @@ impl std::convert::From<&str> for StorageClass {
         }
     }
 }
-
 impl std::str::FromStr for StorageClass {
     type Err = std::convert::Infallible;
 
@@ -43,7 +42,6 @@ impl std::str::FromStr for StorageClass {
         Ok(StorageClass::from(s))
     }
 }
-
 impl StorageClass {
     pub fn as_str(&self) -> &str {
         match self {
@@ -64,19 +62,6 @@ impl AsRef<str> for StorageClass {
         self.as_str()
     }
 }
-
-impl serde::Serialize for StorageClass {
-    fn serialize<S>(
-        &self,
-        serializer: S,
-    ) -> Result<<S as serde::Serializer>::Ok, <S as serde::Serializer>::Error>
-    where
-        S: serde::Serializer,
-    {
-        serializer.serialize_str(self.as_str())
-    }
-}
-
 impl<'de> serde::Deserialize<'de> for StorageClass {
     fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
     where
@@ -111,7 +96,6 @@ impl std::convert::From<&str> for ServerSideEncryption {
         }
     }
 }
-
 impl std::str::FromStr for ServerSideEncryption {
     type Err = std::convert::Infallible;
 
@@ -119,7 +103,6 @@ impl std::str::FromStr for ServerSideEncryption {
         Ok(ServerSideEncryption::from(s))
     }
 }
-
 impl ServerSideEncryption {
     pub fn as_str(&self) -> &str {
         match self {
@@ -134,19 +117,6 @@ impl AsRef<str> for ServerSideEncryption {
         self.as_str()
     }
 }
-
-impl serde::Serialize for ServerSideEncryption {
-    fn serialize<S>(
-        &self,
-        serializer: S,
-    ) -> Result<<S as serde::Serializer>::Ok, <S as serde::Serializer>::Error>
-    where
-        S: serde::Serializer,
-    {
-        serializer.serialize_str(self.as_str())
-    }
-}
-
 impl<'de> serde::Deserialize<'de> for ServerSideEncryption {
     fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
     where
@@ -181,7 +151,6 @@ impl std::convert::From<&str> for RequestCharged {
         }
     }
 }
-
 impl std::str::FromStr for RequestCharged {
     type Err = std::convert::Infallible;
 
@@ -189,7 +158,6 @@ impl std::str::FromStr for RequestCharged {
         Ok(RequestCharged::from(s))
     }
 }
-
 impl RequestCharged {
     pub fn as_str(&self) -> &str {
         match self {
@@ -203,19 +171,6 @@ impl AsRef<str> for RequestCharged {
         self.as_str()
     }
 }
-
-impl serde::Serialize for RequestCharged {
-    fn serialize<S>(
-        &self,
-        serializer: S,
-    ) -> Result<<S as serde::Serializer>::Ok, <S as serde::Serializer>::Error>
-    where
-        S: serde::Serializer,
-    {
-        serializer.serialize_str(self.as_str())
-    }
-}
-
 impl<'de> serde::Deserialize<'de> for RequestCharged {
     fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
     where
@@ -254,7 +209,6 @@ impl std::convert::From<&str> for ReplicationStatus {
         }
     }
 }
-
 impl std::str::FromStr for ReplicationStatus {
     type Err = std::convert::Infallible;
 
@@ -262,7 +216,6 @@ impl std::str::FromStr for ReplicationStatus {
         Ok(ReplicationStatus::from(s))
     }
 }
-
 impl ReplicationStatus {
     pub fn as_str(&self) -> &str {
         match self {
@@ -279,19 +232,6 @@ impl AsRef<str> for ReplicationStatus {
         self.as_str()
     }
 }
-
-impl serde::Serialize for ReplicationStatus {
-    fn serialize<S>(
-        &self,
-        serializer: S,
-    ) -> Result<<S as serde::Serializer>::Ok, <S as serde::Serializer>::Error>
-    where
-        S: serde::Serializer,
-    {
-        serializer.serialize_str(self.as_str())
-    }
-}
-
 impl<'de> serde::Deserialize<'de> for ReplicationStatus {
     fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
     where
@@ -326,7 +266,6 @@ impl std::convert::From<&str> for ObjectLockLegalHoldStatus {
         }
     }
 }
-
 impl std::str::FromStr for ObjectLockLegalHoldStatus {
     type Err = std::convert::Infallible;
 
@@ -334,7 +273,6 @@ impl std::str::FromStr for ObjectLockLegalHoldStatus {
         Ok(ObjectLockLegalHoldStatus::from(s))
     }
 }
-
 impl ObjectLockLegalHoldStatus {
     pub fn as_str(&self) -> &str {
         match self {
@@ -349,19 +287,6 @@ impl AsRef<str> for ObjectLockLegalHoldStatus {
         self.as_str()
     }
 }
-
-impl serde::Serialize for ObjectLockLegalHoldStatus {
-    fn serialize<S>(
-        &self,
-        serializer: S,
-    ) -> Result<<S as serde::Serializer>::Ok, <S as serde::Serializer>::Error>
-    where
-        S: serde::Serializer,
-    {
-        serializer.serialize_str(self.as_str())
-    }
-}
-
 impl<'de> serde::Deserialize<'de> for ObjectLockLegalHoldStatus {
     fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
     where
@@ -396,7 +321,6 @@ impl std::convert::From<&str> for ObjectLockMode {
         }
     }
 }
-
 impl std::str::FromStr for ObjectLockMode {
     type Err = std::convert::Infallible;
 
@@ -404,7 +328,6 @@ impl std::str::FromStr for ObjectLockMode {
         Ok(ObjectLockMode::from(s))
     }
 }
-
 impl ObjectLockMode {
     pub fn as_str(&self) -> &str {
         match self {
@@ -419,19 +342,6 @@ impl AsRef<str> for ObjectLockMode {
         self.as_str()
     }
 }
-
-impl serde::Serialize for ObjectLockMode {
-    fn serialize<S>(
-        &self,
-        serializer: S,
-    ) -> Result<<S as serde::Serializer>::Ok, <S as serde::Serializer>::Error>
-    where
-        S: serde::Serializer,
-    {
-        serializer.serialize_str(self.as_str())
-    }
-}
-
 impl<'de> serde::Deserialize<'de> for ObjectLockMode {
     fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
     where
@@ -532,7 +442,6 @@ impl std::convert::From<&str> for RequestPayer {
         }
     }
 }
-
 impl std::str::FromStr for RequestPayer {
     type Err = std::convert::Infallible;
 
@@ -540,7 +449,6 @@ impl std::str::FromStr for RequestPayer {
         Ok(RequestPayer::from(s))
     }
 }
-
 impl RequestPayer {
     pub fn as_str(&self) -> &str {
         match self {
@@ -554,19 +462,6 @@ impl AsRef<str> for RequestPayer {
         self.as_str()
     }
 }
-
-impl serde::Serialize for RequestPayer {
-    fn serialize<S>(
-        &self,
-        serializer: S,
-    ) -> Result<<S as serde::Serializer>::Ok, <S as serde::Serializer>::Error>
-    where
-        S: serde::Serializer,
-    {
-        serializer.serialize_str(self.as_str())
-    }
-}
-
 impl<'de> serde::Deserialize<'de> for RequestPayer {
     fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
     where
@@ -1202,7 +1097,6 @@ impl std::convert::From<&str> for Permission {
         }
     }
 }
-
 impl std::str::FromStr for Permission {
     type Err = std::convert::Infallible;
 
@@ -1210,7 +1104,6 @@ impl std::str::FromStr for Permission {
         Ok(Permission::from(s))
     }
 }
-
 impl Permission {
     pub fn as_str(&self) -> &str {
         match self {
@@ -1228,19 +1121,6 @@ impl AsRef<str> for Permission {
         self.as_str()
     }
 }
-
-impl serde::Serialize for Permission {
-    fn serialize<S>(
-        &self,
-        serializer: S,
-    ) -> Result<<S as serde::Serializer>::Ok, <S as serde::Serializer>::Error>
-    where
-        S: serde::Serializer,
-    {
-        serializer.serialize_str(self.as_str())
-    }
-}
-
 impl<'de> serde::Deserialize<'de> for Permission {
     fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
     where
@@ -1440,7 +1320,6 @@ impl std::convert::From<&str> for Type {
         }
     }
 }
-
 impl std::str::FromStr for Type {
     type Err = std::convert::Infallible;
 
@@ -1448,7 +1327,6 @@ impl std::str::FromStr for Type {
         Ok(Type::from(s))
     }
 }
-
 impl Type {
     pub fn as_str(&self) -> &str {
         match self {
@@ -1464,19 +1342,6 @@ impl AsRef<str> for Type {
         self.as_str()
     }
 }
-
-impl serde::Serialize for Type {
-    fn serialize<S>(
-        &self,
-        serializer: S,
-    ) -> Result<<S as serde::Serializer>::Ok, <S as serde::Serializer>::Error>
-    where
-        S: serde::Serializer,
-    {
-        serializer.serialize_str(self.as_str())
-    }
-}
-
 impl<'de> serde::Deserialize<'de> for Type {
     fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
     where
@@ -1521,7 +1386,6 @@ impl std::convert::From<&str> for ObjectCannedACL {
         }
     }
 }
-
 impl std::str::FromStr for ObjectCannedACL {
     type Err = std::convert::Infallible;
 
@@ -1529,7 +1393,6 @@ impl std::str::FromStr for ObjectCannedACL {
         Ok(ObjectCannedACL::from(s))
     }
 }
-
 impl ObjectCannedACL {
     pub fn as_str(&self) -> &str {
         match self {
@@ -1549,19 +1412,6 @@ impl AsRef<str> for ObjectCannedACL {
         self.as_str()
     }
 }
-
-impl serde::Serialize for ObjectCannedACL {
-    fn serialize<S>(
-        &self,
-        serializer: S,
-    ) -> Result<<S as serde::Serializer>::Ok, <S as serde::Serializer>::Error>
-    where
-        S: serde::Serializer,
-    {
-        serializer.serialize_str(self.as_str())
-    }
-}
-
 impl<'de> serde::Deserialize<'de> for ObjectCannedACL {
     fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
     where
@@ -2044,7 +1894,6 @@ impl std::convert::From<&str> for QuoteFields {
         }
     }
 }
-
 impl std::str::FromStr for QuoteFields {
     type Err = std::convert::Infallible;
 
@@ -2052,7 +1901,6 @@ impl std::str::FromStr for QuoteFields {
         Ok(QuoteFields::from(s))
     }
 }
-
 impl QuoteFields {
     pub fn as_str(&self) -> &str {
         match self {
@@ -2067,19 +1915,6 @@ impl AsRef<str> for QuoteFields {
         self.as_str()
     }
 }
-
-impl serde::Serialize for QuoteFields {
-    fn serialize<S>(
-        &self,
-        serializer: S,
-    ) -> Result<<S as serde::Serializer>::Ok, <S as serde::Serializer>::Error>
-    where
-        S: serde::Serializer,
-    {
-        serializer.serialize_str(self.as_str())
-    }
-}
-
 impl<'de> serde::Deserialize<'de> for QuoteFields {
     fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
     where
@@ -2112,7 +1947,6 @@ impl std::convert::From<&str> for ExpressionType {
         }
     }
 }
-
 impl std::str::FromStr for ExpressionType {
     type Err = std::convert::Infallible;
 
@@ -2120,7 +1954,6 @@ impl std::str::FromStr for ExpressionType {
         Ok(ExpressionType::from(s))
     }
 }
-
 impl ExpressionType {
     pub fn as_str(&self) -> &str {
         match self {
@@ -2134,19 +1967,6 @@ impl AsRef<str> for ExpressionType {
         self.as_str()
     }
 }
-
-impl serde::Serialize for ExpressionType {
-    fn serialize<S>(
-        &self,
-        serializer: S,
-    ) -> Result<<S as serde::Serializer>::Ok, <S as serde::Serializer>::Error>
-    where
-        S: serde::Serializer,
-    {
-        serializer.serialize_str(self.as_str())
-    }
-}
-
 impl<'de> serde::Deserialize<'de> for ExpressionType {
     fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
     where
@@ -2352,7 +2172,6 @@ impl std::convert::From<&str> for JSONType {
         }
     }
 }
-
 impl std::str::FromStr for JSONType {
     type Err = std::convert::Infallible;
 
@@ -2360,7 +2179,6 @@ impl std::str::FromStr for JSONType {
         Ok(JSONType::from(s))
     }
 }
-
 impl JSONType {
     pub fn as_str(&self) -> &str {
         match self {
@@ -2375,19 +2193,6 @@ impl AsRef<str> for JSONType {
         self.as_str()
     }
 }
-
-impl serde::Serialize for JSONType {
-    fn serialize<S>(
-        &self,
-        serializer: S,
-    ) -> Result<<S as serde::Serializer>::Ok, <S as serde::Serializer>::Error>
-    where
-        S: serde::Serializer,
-    {
-        serializer.serialize_str(self.as_str())
-    }
-}
-
 impl<'de> serde::Deserialize<'de> for JSONType {
     fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
     where
@@ -2424,7 +2229,6 @@ impl std::convert::From<&str> for CompressionType {
         }
     }
 }
-
 impl std::str::FromStr for CompressionType {
     type Err = std::convert::Infallible;
 
@@ -2432,7 +2236,6 @@ impl std::str::FromStr for CompressionType {
         Ok(CompressionType::from(s))
     }
 }
-
 impl CompressionType {
     pub fn as_str(&self) -> &str {
         match self {
@@ -2448,19 +2251,6 @@ impl AsRef<str> for CompressionType {
         self.as_str()
     }
 }
-
-impl serde::Serialize for CompressionType {
-    fn serialize<S>(
-        &self,
-        serializer: S,
-    ) -> Result<<S as serde::Serializer>::Ok, <S as serde::Serializer>::Error>
-    where
-        S: serde::Serializer,
-    {
-        serializer.serialize_str(self.as_str())
-    }
-}
-
 impl<'de> serde::Deserialize<'de> for CompressionType {
     fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
     where
@@ -2711,7 +2501,6 @@ impl std::convert::From<&str> for FileHeaderInfo {
         }
     }
 }
-
 impl std::str::FromStr for FileHeaderInfo {
     type Err = std::convert::Infallible;
 
@@ -2719,7 +2508,6 @@ impl std::str::FromStr for FileHeaderInfo {
         Ok(FileHeaderInfo::from(s))
     }
 }
-
 impl FileHeaderInfo {
     pub fn as_str(&self) -> &str {
         match self {
@@ -2735,19 +2523,6 @@ impl AsRef<str> for FileHeaderInfo {
         self.as_str()
     }
 }
-
-impl serde::Serialize for FileHeaderInfo {
-    fn serialize<S>(
-        &self,
-        serializer: S,
-    ) -> Result<<S as serde::Serializer>::Ok, <S as serde::Serializer>::Error>
-    where
-        S: serde::Serializer,
-    {
-        serializer.serialize_str(self.as_str())
-    }
-}
-
 impl<'de> serde::Deserialize<'de> for FileHeaderInfo {
     fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
     where
@@ -2784,7 +2559,6 @@ impl std::convert::From<&str> for Tier {
         }
     }
 }
-
 impl std::str::FromStr for Tier {
     type Err = std::convert::Infallible;
 
@@ -2792,7 +2566,6 @@ impl std::str::FromStr for Tier {
         Ok(Tier::from(s))
     }
 }
-
 impl Tier {
     pub fn as_str(&self) -> &str {
         match self {
@@ -2808,19 +2581,6 @@ impl AsRef<str> for Tier {
         self.as_str()
     }
 }
-
-impl serde::Serialize for Tier {
-    fn serialize<S>(
-        &self,
-        serializer: S,
-    ) -> Result<<S as serde::Serializer>::Ok, <S as serde::Serializer>::Error>
-    where
-        S: serde::Serializer,
-    {
-        serializer.serialize_str(self.as_str())
-    }
-}
-
 impl<'de> serde::Deserialize<'de> for Tier {
     fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
     where
@@ -2853,7 +2613,6 @@ impl std::convert::From<&str> for RestoreRequestType {
         }
     }
 }
-
 impl std::str::FromStr for RestoreRequestType {
     type Err = std::convert::Infallible;
 
@@ -2861,7 +2620,6 @@ impl std::str::FromStr for RestoreRequestType {
         Ok(RestoreRequestType::from(s))
     }
 }
-
 impl RestoreRequestType {
     pub fn as_str(&self) -> &str {
         match self {
@@ -2875,19 +2633,6 @@ impl AsRef<str> for RestoreRequestType {
         self.as_str()
     }
 }
-
-impl serde::Serialize for RestoreRequestType {
-    fn serialize<S>(
-        &self,
-        serializer: S,
-    ) -> Result<<S as serde::Serializer>::Ok, <S as serde::Serializer>::Error>
-    where
-        S: serde::Serializer,
-    {
-        serializer.serialize_str(self.as_str())
-    }
-}
-
 impl<'de> serde::Deserialize<'de> for RestoreRequestType {
     fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
     where
@@ -3181,7 +2926,6 @@ impl std::convert::From<&str> for ObjectLockRetentionMode {
         }
     }
 }
-
 impl std::str::FromStr for ObjectLockRetentionMode {
     type Err = std::convert::Infallible;
 
@@ -3189,7 +2933,6 @@ impl std::str::FromStr for ObjectLockRetentionMode {
         Ok(ObjectLockRetentionMode::from(s))
     }
 }
-
 impl ObjectLockRetentionMode {
     pub fn as_str(&self) -> &str {
         match self {
@@ -3204,19 +2947,6 @@ impl AsRef<str> for ObjectLockRetentionMode {
         self.as_str()
     }
 }
-
-impl serde::Serialize for ObjectLockRetentionMode {
-    fn serialize<S>(
-        &self,
-        serializer: S,
-    ) -> Result<<S as serde::Serializer>::Ok, <S as serde::Serializer>::Error>
-    where
-        S: serde::Serializer,
-    {
-        serializer.serialize_str(self.as_str())
-    }
-}
-
 impl<'de> serde::Deserialize<'de> for ObjectLockRetentionMode {
     fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
     where
@@ -3477,7 +3207,6 @@ impl std::convert::From<&str> for ObjectLockEnabled {
         }
     }
 }
-
 impl std::str::FromStr for ObjectLockEnabled {
     type Err = std::convert::Infallible;
 
@@ -3485,7 +3214,6 @@ impl std::str::FromStr for ObjectLockEnabled {
         Ok(ObjectLockEnabled::from(s))
     }
 }
-
 impl ObjectLockEnabled {
     pub fn as_str(&self) -> &str {
         match self {
@@ -3499,19 +3227,6 @@ impl AsRef<str> for ObjectLockEnabled {
         self.as_str()
     }
 }
-
-impl serde::Serialize for ObjectLockEnabled {
-    fn serialize<S>(
-        &self,
-        serializer: S,
-    ) -> Result<<S as serde::Serializer>::Ok, <S as serde::Serializer>::Error>
-    where
-        S: serde::Serializer,
-    {
-        serializer.serialize_str(self.as_str())
-    }
-}
-
 impl<'de> serde::Deserialize<'de> for ObjectLockEnabled {
     fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
     where
@@ -4058,7 +3773,6 @@ impl std::convert::From<&str> for Protocol {
         }
     }
 }
-
 impl std::str::FromStr for Protocol {
     type Err = std::convert::Infallible;
 
@@ -4066,7 +3780,6 @@ impl std::str::FromStr for Protocol {
         Ok(Protocol::from(s))
     }
 }
-
 impl Protocol {
     pub fn as_str(&self) -> &str {
         match self {
@@ -4081,19 +3794,6 @@ impl AsRef<str> for Protocol {
         self.as_str()
     }
 }
-
-impl serde::Serialize for Protocol {
-    fn serialize<S>(
-        &self,
-        serializer: S,
-    ) -> Result<<S as serde::Serializer>::Ok, <S as serde::Serializer>::Error>
-    where
-        S: serde::Serializer,
-    {
-        serializer.serialize_str(self.as_str())
-    }
-}
-
 impl<'de> serde::Deserialize<'de> for Protocol {
     fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
     where
@@ -4487,7 +4187,6 @@ impl std::convert::From<&str> for BucketVersioningStatus {
         }
     }
 }
-
 impl std::str::FromStr for BucketVersioningStatus {
     type Err = std::convert::Infallible;
 
@@ -4495,7 +4194,6 @@ impl std::str::FromStr for BucketVersioningStatus {
         Ok(BucketVersioningStatus::from(s))
     }
 }
-
 impl BucketVersioningStatus {
     pub fn as_str(&self) -> &str {
         match self {
@@ -4510,19 +4208,6 @@ impl AsRef<str> for BucketVersioningStatus {
         self.as_str()
     }
 }
-
-impl serde::Serialize for BucketVersioningStatus {
-    fn serialize<S>(
-        &self,
-        serializer: S,
-    ) -> Result<<S as serde::Serializer>::Ok, <S as serde::Serializer>::Error>
-    where
-        S: serde::Serializer,
-    {
-        serializer.serialize_str(self.as_str())
-    }
-}
-
 impl<'de> serde::Deserialize<'de> for BucketVersioningStatus {
     fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
     where
@@ -4557,7 +4242,6 @@ impl std::convert::From<&str> for MFADelete {
         }
     }
 }
-
 impl std::str::FromStr for MFADelete {
     type Err = std::convert::Infallible;
 
@@ -4565,7 +4249,6 @@ impl std::str::FromStr for MFADelete {
         Ok(MFADelete::from(s))
     }
 }
-
 impl MFADelete {
     pub fn as_str(&self) -> &str {
         match self {
@@ -4580,19 +4263,6 @@ impl AsRef<str> for MFADelete {
         self.as_str()
     }
 }
-
-impl serde::Serialize for MFADelete {
-    fn serialize<S>(
-        &self,
-        serializer: S,
-    ) -> Result<<S as serde::Serializer>::Ok, <S as serde::Serializer>::Error>
-    where
-        S: serde::Serializer,
-    {
-        serializer.serialize_str(self.as_str())
-    }
-}
-
 impl<'de> serde::Deserialize<'de> for MFADelete {
     fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
     where
@@ -4672,7 +4342,6 @@ impl std::convert::From<&str> for Payer {
         }
     }
 }
-
 impl std::str::FromStr for Payer {
     type Err = std::convert::Infallible;
 
@@ -4680,7 +4349,6 @@ impl std::str::FromStr for Payer {
         Ok(Payer::from(s))
     }
 }
-
 impl Payer {
     pub fn as_str(&self) -> &str {
         match self {
@@ -4695,19 +4363,6 @@ impl AsRef<str> for Payer {
         self.as_str()
     }
 }
-
-impl serde::Serialize for Payer {
-    fn serialize<S>(
-        &self,
-        serializer: S,
-    ) -> Result<<S as serde::Serializer>::Ok, <S as serde::Serializer>::Error>
-    where
-        S: serde::Serializer,
-    {
-        serializer.serialize_str(self.as_str())
-    }
-}
-
 impl<'de> serde::Deserialize<'de> for Payer {
     fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
     where
@@ -5134,7 +4789,6 @@ impl std::convert::From<&str> for DeleteMarkerReplicationStatus {
         }
     }
 }
-
 impl std::str::FromStr for DeleteMarkerReplicationStatus {
     type Err = std::convert::Infallible;
 
@@ -5142,7 +4796,6 @@ impl std::str::FromStr for DeleteMarkerReplicationStatus {
         Ok(DeleteMarkerReplicationStatus::from(s))
     }
 }
-
 impl DeleteMarkerReplicationStatus {
     pub fn as_str(&self) -> &str {
         match self {
@@ -5157,19 +4810,6 @@ impl AsRef<str> for DeleteMarkerReplicationStatus {
         self.as_str()
     }
 }
-
-impl serde::Serialize for DeleteMarkerReplicationStatus {
-    fn serialize<S>(
-        &self,
-        serializer: S,
-    ) -> Result<<S as serde::Serializer>::Ok, <S as serde::Serializer>::Error>
-    where
-        S: serde::Serializer,
-    {
-        serializer.serialize_str(self.as_str())
-    }
-}
-
 impl<'de> serde::Deserialize<'de> for DeleteMarkerReplicationStatus {
     fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
     where
@@ -5506,7 +5146,6 @@ impl std::convert::From<&str> for MetricsStatus {
         }
     }
 }
-
 impl std::str::FromStr for MetricsStatus {
     type Err = std::convert::Infallible;
 
@@ -5514,7 +5153,6 @@ impl std::str::FromStr for MetricsStatus {
         Ok(MetricsStatus::from(s))
     }
 }
-
 impl MetricsStatus {
     pub fn as_str(&self) -> &str {
         match self {
@@ -5529,19 +5167,6 @@ impl AsRef<str> for MetricsStatus {
         self.as_str()
     }
 }
-
-impl serde::Serialize for MetricsStatus {
-    fn serialize<S>(
-        &self,
-        serializer: S,
-    ) -> Result<<S as serde::Serializer>::Ok, <S as serde::Serializer>::Error>
-    where
-        S: serde::Serializer,
-    {
-        serializer.serialize_str(self.as_str())
-    }
-}
-
 impl<'de> serde::Deserialize<'de> for MetricsStatus {
     fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
     where
@@ -5647,7 +5272,6 @@ impl std::convert::From<&str> for ReplicationTimeStatus {
         }
     }
 }
-
 impl std::str::FromStr for ReplicationTimeStatus {
     type Err = std::convert::Infallible;
 
@@ -5655,7 +5279,6 @@ impl std::str::FromStr for ReplicationTimeStatus {
         Ok(ReplicationTimeStatus::from(s))
     }
 }
-
 impl ReplicationTimeStatus {
     pub fn as_str(&self) -> &str {
         match self {
@@ -5670,19 +5293,6 @@ impl AsRef<str> for ReplicationTimeStatus {
         self.as_str()
     }
 }
-
-impl serde::Serialize for ReplicationTimeStatus {
-    fn serialize<S>(
-        &self,
-        serializer: S,
-    ) -> Result<<S as serde::Serializer>::Ok, <S as serde::Serializer>::Error>
-    where
-        S: serde::Serializer,
-    {
-        serializer.serialize_str(self.as_str())
-    }
-}
-
 impl<'de> serde::Deserialize<'de> for ReplicationTimeStatus {
     fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
     where
@@ -5821,7 +5431,6 @@ impl std::convert::From<&str> for OwnerOverride {
         }
     }
 }
-
 impl std::str::FromStr for OwnerOverride {
     type Err = std::convert::Infallible;
 
@@ -5829,7 +5438,6 @@ impl std::str::FromStr for OwnerOverride {
         Ok(OwnerOverride::from(s))
     }
 }
-
 impl OwnerOverride {
     pub fn as_str(&self) -> &str {
         match self {
@@ -5843,19 +5451,6 @@ impl AsRef<str> for OwnerOverride {
         self.as_str()
     }
 }
-
-impl serde::Serialize for OwnerOverride {
-    fn serialize<S>(
-        &self,
-        serializer: S,
-    ) -> Result<<S as serde::Serializer>::Ok, <S as serde::Serializer>::Error>
-    where
-        S: serde::Serializer,
-    {
-        serializer.serialize_str(self.as_str())
-    }
-}
-
 impl<'de> serde::Deserialize<'de> for OwnerOverride {
     fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
     where
@@ -5942,7 +5537,6 @@ impl std::convert::From<&str> for ExistingObjectReplicationStatus {
         }
     }
 }
-
 impl std::str::FromStr for ExistingObjectReplicationStatus {
     type Err = std::convert::Infallible;
 
@@ -5950,7 +5544,6 @@ impl std::str::FromStr for ExistingObjectReplicationStatus {
         Ok(ExistingObjectReplicationStatus::from(s))
     }
 }
-
 impl ExistingObjectReplicationStatus {
     pub fn as_str(&self) -> &str {
         match self {
@@ -5965,19 +5558,6 @@ impl AsRef<str> for ExistingObjectReplicationStatus {
         self.as_str()
     }
 }
-
-impl serde::Serialize for ExistingObjectReplicationStatus {
-    fn serialize<S>(
-        &self,
-        serializer: S,
-    ) -> Result<<S as serde::Serializer>::Ok, <S as serde::Serializer>::Error>
-    where
-        S: serde::Serializer,
-    {
-        serializer.serialize_str(self.as_str())
-    }
-}
-
 impl<'de> serde::Deserialize<'de> for ExistingObjectReplicationStatus {
     fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
     where
@@ -6165,7 +5745,6 @@ impl std::convert::From<&str> for ReplicaModificationsStatus {
         }
     }
 }
-
 impl std::str::FromStr for ReplicaModificationsStatus {
     type Err = std::convert::Infallible;
 
@@ -6173,7 +5752,6 @@ impl std::str::FromStr for ReplicaModificationsStatus {
         Ok(ReplicaModificationsStatus::from(s))
     }
 }
-
 impl ReplicaModificationsStatus {
     pub fn as_str(&self) -> &str {
         match self {
@@ -6188,19 +5766,6 @@ impl AsRef<str> for ReplicaModificationsStatus {
         self.as_str()
     }
 }
-
-impl serde::Serialize for ReplicaModificationsStatus {
-    fn serialize<S>(
-        &self,
-        serializer: S,
-    ) -> Result<<S as serde::Serializer>::Ok, <S as serde::Serializer>::Error>
-    where
-        S: serde::Serializer,
-    {
-        serializer.serialize_str(self.as_str())
-    }
-}
-
 impl<'de> serde::Deserialize<'de> for ReplicaModificationsStatus {
     fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
     where
@@ -6288,7 +5853,6 @@ impl std::convert::From<&str> for SseKmsEncryptedObjectsStatus {
         }
     }
 }
-
 impl std::str::FromStr for SseKmsEncryptedObjectsStatus {
     type Err = std::convert::Infallible;
 
@@ -6296,7 +5860,6 @@ impl std::str::FromStr for SseKmsEncryptedObjectsStatus {
         Ok(SseKmsEncryptedObjectsStatus::from(s))
     }
 }
-
 impl SseKmsEncryptedObjectsStatus {
     pub fn as_str(&self) -> &str {
         match self {
@@ -6311,19 +5874,6 @@ impl AsRef<str> for SseKmsEncryptedObjectsStatus {
         self.as_str()
     }
 }
-
-impl serde::Serialize for SseKmsEncryptedObjectsStatus {
-    fn serialize<S>(
-        &self,
-        serializer: S,
-    ) -> Result<<S as serde::Serializer>::Ok, <S as serde::Serializer>::Error>
-    where
-        S: serde::Serializer,
-    {
-        serializer.serialize_str(self.as_str())
-    }
-}
-
 impl<'de> serde::Deserialize<'de> for SseKmsEncryptedObjectsStatus {
     fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
     where
@@ -6358,7 +5908,6 @@ impl std::convert::From<&str> for ReplicationRuleStatus {
         }
     }
 }
-
 impl std::str::FromStr for ReplicationRuleStatus {
     type Err = std::convert::Infallible;
 
@@ -6366,7 +5915,6 @@ impl std::str::FromStr for ReplicationRuleStatus {
         Ok(ReplicationRuleStatus::from(s))
     }
 }
-
 impl ReplicationRuleStatus {
     pub fn as_str(&self) -> &str {
         match self {
@@ -6381,19 +5929,6 @@ impl AsRef<str> for ReplicationRuleStatus {
         self.as_str()
     }
 }
-
-impl serde::Serialize for ReplicationRuleStatus {
-    fn serialize<S>(
-        &self,
-        serializer: S,
-    ) -> Result<<S as serde::Serializer>::Ok, <S as serde::Serializer>::Error>
-    where
-        S: serde::Serializer,
-    {
-        serializer.serialize_str(self.as_str())
-    }
-}
-
 impl<'de> serde::Deserialize<'de> for ReplicationRuleStatus {
     fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
     where
@@ -6684,7 +6219,6 @@ impl std::convert::From<&str> for ObjectOwnership {
         }
     }
 }
-
 impl std::str::FromStr for ObjectOwnership {
     type Err = std::convert::Infallible;
 
@@ -6692,7 +6226,6 @@ impl std::str::FromStr for ObjectOwnership {
         Ok(ObjectOwnership::from(s))
     }
 }
-
 impl ObjectOwnership {
     pub fn as_str(&self) -> &str {
         match self {
@@ -6707,19 +6240,6 @@ impl AsRef<str> for ObjectOwnership {
         self.as_str()
     }
 }
-
-impl serde::Serialize for ObjectOwnership {
-    fn serialize<S>(
-        &self,
-        serializer: S,
-    ) -> Result<<S as serde::Serializer>::Ok, <S as serde::Serializer>::Error>
-    where
-        S: serde::Serializer,
-    {
-        serializer.serialize_str(self.as_str())
-    }
-}
-
 impl<'de> serde::Deserialize<'de> for ObjectOwnership {
     fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
     where
@@ -7137,7 +6657,6 @@ impl std::convert::From<&str> for FilterRuleName {
         }
     }
 }
-
 impl std::str::FromStr for FilterRuleName {
     type Err = std::convert::Infallible;
 
@@ -7145,7 +6664,6 @@ impl std::str::FromStr for FilterRuleName {
         Ok(FilterRuleName::from(s))
     }
 }
-
 impl FilterRuleName {
     pub fn as_str(&self) -> &str {
         match self {
@@ -7160,19 +6678,6 @@ impl AsRef<str> for FilterRuleName {
         self.as_str()
     }
 }
-
-impl serde::Serialize for FilterRuleName {
-    fn serialize<S>(
-        &self,
-        serializer: S,
-    ) -> Result<<S as serde::Serializer>::Ok, <S as serde::Serializer>::Error>
-    where
-        S: serde::Serializer,
-    {
-        serializer.serialize_str(self.as_str())
-    }
-}
-
 impl<'de> serde::Deserialize<'de> for FilterRuleName {
     fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
     where
@@ -7229,19 +6734,6 @@ where
         Event(s.as_ref().to_owned())
     }
 }
-
-impl serde::Serialize for Event {
-    fn serialize<S>(
-        &self,
-        serializer: S,
-    ) -> Result<<S as serde::Serializer>::Ok, <S as serde::Serializer>::Error>
-    where
-        S: serde::Serializer,
-    {
-        serializer.serialize_str(self.as_str())
-    }
-}
-
 impl<'de> serde::Deserialize<'de> for Event {
     fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
     where
@@ -7883,7 +7375,6 @@ impl std::convert::From<&str> for BucketLogsPermission {
         }
     }
 }
-
 impl std::str::FromStr for BucketLogsPermission {
     type Err = std::convert::Infallible;
 
@@ -7891,7 +7382,6 @@ impl std::str::FromStr for BucketLogsPermission {
         Ok(BucketLogsPermission::from(s))
     }
 }
-
 impl BucketLogsPermission {
     pub fn as_str(&self) -> &str {
         match self {
@@ -7907,19 +7397,6 @@ impl AsRef<str> for BucketLogsPermission {
         self.as_str()
     }
 }
-
-impl serde::Serialize for BucketLogsPermission {
-    fn serialize<S>(
-        &self,
-        serializer: S,
-    ) -> Result<<S as serde::Serializer>::Ok, <S as serde::Serializer>::Error>
-    where
-        S: serde::Serializer,
-    {
-        serializer.serialize_str(self.as_str())
-    }
-}
-
 impl<'de> serde::Deserialize<'de> for BucketLogsPermission {
     fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
     where
@@ -8438,7 +7915,6 @@ impl std::convert::From<&str> for TransitionStorageClass {
         }
     }
 }
-
 impl std::str::FromStr for TransitionStorageClass {
     type Err = std::convert::Infallible;
 
@@ -8446,7 +7922,6 @@ impl std::str::FromStr for TransitionStorageClass {
         Ok(TransitionStorageClass::from(s))
     }
 }
-
 impl TransitionStorageClass {
     pub fn as_str(&self) -> &str {
         match self {
@@ -8464,19 +7939,6 @@ impl AsRef<str> for TransitionStorageClass {
         self.as_str()
     }
 }
-
-impl serde::Serialize for TransitionStorageClass {
-    fn serialize<S>(
-        &self,
-        serializer: S,
-    ) -> Result<<S as serde::Serializer>::Ok, <S as serde::Serializer>::Error>
-    where
-        S: serde::Serializer,
-    {
-        serializer.serialize_str(self.as_str())
-    }
-}
-
 impl<'de> serde::Deserialize<'de> for TransitionStorageClass {
     fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
     where
@@ -8595,7 +8057,6 @@ impl std::convert::From<&str> for ExpirationStatus {
         }
     }
 }
-
 impl std::str::FromStr for ExpirationStatus {
     type Err = std::convert::Infallible;
 
@@ -8603,7 +8064,6 @@ impl std::str::FromStr for ExpirationStatus {
         Ok(ExpirationStatus::from(s))
     }
 }
-
 impl ExpirationStatus {
     pub fn as_str(&self) -> &str {
         match self {
@@ -8618,19 +8078,6 @@ impl AsRef<str> for ExpirationStatus {
         self.as_str()
     }
 }
-
-impl serde::Serialize for ExpirationStatus {
-    fn serialize<S>(
-        &self,
-        serializer: S,
-    ) -> Result<<S as serde::Serializer>::Ok, <S as serde::Serializer>::Error>
-    where
-        S: serde::Serializer,
-    {
-        serializer.serialize_str(self.as_str())
-    }
-}
-
 impl<'de> serde::Deserialize<'de> for ExpirationStatus {
     fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
     where
@@ -9091,7 +8538,6 @@ impl std::convert::From<&str> for InventoryFrequency {
         }
     }
 }
-
 impl std::str::FromStr for InventoryFrequency {
     type Err = std::convert::Infallible;
 
@@ -9099,7 +8545,6 @@ impl std::str::FromStr for InventoryFrequency {
         Ok(InventoryFrequency::from(s))
     }
 }
-
 impl InventoryFrequency {
     pub fn as_str(&self) -> &str {
         match self {
@@ -9114,19 +8559,6 @@ impl AsRef<str> for InventoryFrequency {
         self.as_str()
     }
 }
-
-impl serde::Serialize for InventoryFrequency {
-    fn serialize<S>(
-        &self,
-        serializer: S,
-    ) -> Result<<S as serde::Serializer>::Ok, <S as serde::Serializer>::Error>
-    where
-        S: serde::Serializer,
-    {
-        serializer.serialize_str(self.as_str())
-    }
-}
-
 impl<'de> serde::Deserialize<'de> for InventoryFrequency {
     fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
     where
@@ -9179,7 +8611,6 @@ impl std::convert::From<&str> for InventoryOptionalField {
         }
     }
 }
-
 impl std::str::FromStr for InventoryOptionalField {
     type Err = std::convert::Infallible;
 
@@ -9187,7 +8618,6 @@ impl std::str::FromStr for InventoryOptionalField {
         Ok(InventoryOptionalField::from(s))
     }
 }
-
 impl InventoryOptionalField {
     pub fn as_str(&self) -> &str {
         match self {
@@ -9211,19 +8641,6 @@ impl AsRef<str> for InventoryOptionalField {
         self.as_str()
     }
 }
-
-impl serde::Serialize for InventoryOptionalField {
-    fn serialize<S>(
-        &self,
-        serializer: S,
-    ) -> Result<<S as serde::Serializer>::Ok, <S as serde::Serializer>::Error>
-    where
-        S: serde::Serializer,
-    {
-        serializer.serialize_str(self.as_str())
-    }
-}
-
 impl<'de> serde::Deserialize<'de> for InventoryOptionalField {
     fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
     where
@@ -9258,7 +8675,6 @@ impl std::convert::From<&str> for InventoryIncludedObjectVersions {
         }
     }
 }
-
 impl std::str::FromStr for InventoryIncludedObjectVersions {
     type Err = std::convert::Infallible;
 
@@ -9266,7 +8682,6 @@ impl std::str::FromStr for InventoryIncludedObjectVersions {
         Ok(InventoryIncludedObjectVersions::from(s))
     }
 }
-
 impl InventoryIncludedObjectVersions {
     pub fn as_str(&self) -> &str {
         match self {
@@ -9281,19 +8696,6 @@ impl AsRef<str> for InventoryIncludedObjectVersions {
         self.as_str()
     }
 }
-
-impl serde::Serialize for InventoryIncludedObjectVersions {
-    fn serialize<S>(
-        &self,
-        serializer: S,
-    ) -> Result<<S as serde::Serializer>::Ok, <S as serde::Serializer>::Error>
-    where
-        S: serde::Serializer,
-    {
-        serializer.serialize_str(self.as_str())
-    }
-}
-
 impl<'de> serde::Deserialize<'de> for InventoryIncludedObjectVersions {
     fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
     where
@@ -9699,7 +9101,6 @@ impl std::convert::From<&str> for InventoryFormat {
         }
     }
 }
-
 impl std::str::FromStr for InventoryFormat {
     type Err = std::convert::Infallible;
 
@@ -9707,7 +9108,6 @@ impl std::str::FromStr for InventoryFormat {
         Ok(InventoryFormat::from(s))
     }
 }
-
 impl InventoryFormat {
     pub fn as_str(&self) -> &str {
         match self {
@@ -9723,19 +9123,6 @@ impl AsRef<str> for InventoryFormat {
         self.as_str()
     }
 }
-
-impl serde::Serialize for InventoryFormat {
-    fn serialize<S>(
-        &self,
-        serializer: S,
-    ) -> Result<<S as serde::Serializer>::Ok, <S as serde::Serializer>::Error>
-    where
-        S: serde::Serializer,
-    {
-        serializer.serialize_str(self.as_str())
-    }
-}
-
 impl<'de> serde::Deserialize<'de> for InventoryFormat {
     fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
     where
@@ -9949,7 +9336,6 @@ impl std::convert::From<&str> for IntelligentTieringAccessTier {
         }
     }
 }
-
 impl std::str::FromStr for IntelligentTieringAccessTier {
     type Err = std::convert::Infallible;
 
@@ -9957,7 +9343,6 @@ impl std::str::FromStr for IntelligentTieringAccessTier {
         Ok(IntelligentTieringAccessTier::from(s))
     }
 }
-
 impl IntelligentTieringAccessTier {
     pub fn as_str(&self) -> &str {
         match self {
@@ -9972,19 +9357,6 @@ impl AsRef<str> for IntelligentTieringAccessTier {
         self.as_str()
     }
 }
-
-impl serde::Serialize for IntelligentTieringAccessTier {
-    fn serialize<S>(
-        &self,
-        serializer: S,
-    ) -> Result<<S as serde::Serializer>::Ok, <S as serde::Serializer>::Error>
-    where
-        S: serde::Serializer,
-    {
-        serializer.serialize_str(self.as_str())
-    }
-}
-
 impl<'de> serde::Deserialize<'de> for IntelligentTieringAccessTier {
     fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
     where
@@ -10019,7 +9391,6 @@ impl std::convert::From<&str> for IntelligentTieringStatus {
         }
     }
 }
-
 impl std::str::FromStr for IntelligentTieringStatus {
     type Err = std::convert::Infallible;
 
@@ -10027,7 +9398,6 @@ impl std::str::FromStr for IntelligentTieringStatus {
         Ok(IntelligentTieringStatus::from(s))
     }
 }
-
 impl IntelligentTieringStatus {
     pub fn as_str(&self) -> &str {
         match self {
@@ -10042,19 +9412,6 @@ impl AsRef<str> for IntelligentTieringStatus {
         self.as_str()
     }
 }
-
-impl serde::Serialize for IntelligentTieringStatus {
-    fn serialize<S>(
-        &self,
-        serializer: S,
-    ) -> Result<<S as serde::Serializer>::Ok, <S as serde::Serializer>::Error>
-    where
-        S: serde::Serializer,
-    {
-        serializer.serialize_str(self.as_str())
-    }
-}
-
 impl<'de> serde::Deserialize<'de> for IntelligentTieringStatus {
     fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
     where
@@ -11066,7 +10423,6 @@ impl std::convert::From<&str> for AnalyticsS3ExportFileFormat {
         }
     }
 }
-
 impl std::str::FromStr for AnalyticsS3ExportFileFormat {
     type Err = std::convert::Infallible;
 
@@ -11074,7 +10430,6 @@ impl std::str::FromStr for AnalyticsS3ExportFileFormat {
         Ok(AnalyticsS3ExportFileFormat::from(s))
     }
 }
-
 impl AnalyticsS3ExportFileFormat {
     pub fn as_str(&self) -> &str {
         match self {
@@ -11088,19 +10443,6 @@ impl AsRef<str> for AnalyticsS3ExportFileFormat {
         self.as_str()
     }
 }
-
-impl serde::Serialize for AnalyticsS3ExportFileFormat {
-    fn serialize<S>(
-        &self,
-        serializer: S,
-    ) -> Result<<S as serde::Serializer>::Ok, <S as serde::Serializer>::Error>
-    where
-        S: serde::Serializer,
-    {
-        serializer.serialize_str(self.as_str())
-    }
-}
-
 impl<'de> serde::Deserialize<'de> for AnalyticsS3ExportFileFormat {
     fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
     where
@@ -11133,7 +10475,6 @@ impl std::convert::From<&str> for StorageClassAnalysisSchemaVersion {
         }
     }
 }
-
 impl std::str::FromStr for StorageClassAnalysisSchemaVersion {
     type Err = std::convert::Infallible;
 
@@ -11141,7 +10482,6 @@ impl std::str::FromStr for StorageClassAnalysisSchemaVersion {
         Ok(StorageClassAnalysisSchemaVersion::from(s))
     }
 }
-
 impl StorageClassAnalysisSchemaVersion {
     pub fn as_str(&self) -> &str {
         match self {
@@ -11155,19 +10495,6 @@ impl AsRef<str> for StorageClassAnalysisSchemaVersion {
         self.as_str()
     }
 }
-
-impl serde::Serialize for StorageClassAnalysisSchemaVersion {
-    fn serialize<S>(
-        &self,
-        serializer: S,
-    ) -> Result<<S as serde::Serializer>::Ok, <S as serde::Serializer>::Error>
-    where
-        S: serde::Serializer,
-    {
-        serializer.serialize_str(self.as_str())
-    }
-}
-
 impl<'de> serde::Deserialize<'de> for StorageClassAnalysisSchemaVersion {
     fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
     where
@@ -11319,7 +10646,6 @@ impl std::convert::From<&str> for BucketCannedACL {
         }
     }
 }
-
 impl std::str::FromStr for BucketCannedACL {
     type Err = std::convert::Infallible;
 
@@ -11327,7 +10653,6 @@ impl std::str::FromStr for BucketCannedACL {
         Ok(BucketCannedACL::from(s))
     }
 }
-
 impl BucketCannedACL {
     pub fn as_str(&self) -> &str {
         match self {
@@ -11344,19 +10669,6 @@ impl AsRef<str> for BucketCannedACL {
         self.as_str()
     }
 }
-
-impl serde::Serialize for BucketCannedACL {
-    fn serialize<S>(
-        &self,
-        serializer: S,
-    ) -> Result<<S as serde::Serializer>::Ok, <S as serde::Serializer>::Error>
-    where
-        S: serde::Serializer,
-    {
-        serializer.serialize_str(self.as_str())
-    }
-}
-
 impl<'de> serde::Deserialize<'de> for BucketCannedACL {
     fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
     where
@@ -11443,7 +10755,6 @@ impl std::convert::From<&str> for BucketAccelerateStatus {
         }
     }
 }
-
 impl std::str::FromStr for BucketAccelerateStatus {
     type Err = std::convert::Infallible;
 
@@ -11451,7 +10762,6 @@ impl std::str::FromStr for BucketAccelerateStatus {
         Ok(BucketAccelerateStatus::from(s))
     }
 }
-
 impl BucketAccelerateStatus {
     pub fn as_str(&self) -> &str {
         match self {
@@ -11466,19 +10776,6 @@ impl AsRef<str> for BucketAccelerateStatus {
         self.as_str()
     }
 }
-
-impl serde::Serialize for BucketAccelerateStatus {
-    fn serialize<S>(
-        &self,
-        serializer: S,
-    ) -> Result<<S as serde::Serializer>::Ok, <S as serde::Serializer>::Error>
-    where
-        S: serde::Serializer,
-    {
-        serializer.serialize_str(self.as_str())
-    }
-}
-
 impl<'de> serde::Deserialize<'de> for BucketAccelerateStatus {
     fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
     where
@@ -11673,7 +10970,6 @@ impl std::convert::From<&str> for EncodingType {
         }
     }
 }
-
 impl std::str::FromStr for EncodingType {
     type Err = std::convert::Infallible;
 
@@ -11681,7 +10977,6 @@ impl std::str::FromStr for EncodingType {
         Ok(EncodingType::from(s))
     }
 }
-
 impl EncodingType {
     pub fn as_str(&self) -> &str {
         match self {
@@ -11695,19 +10990,6 @@ impl AsRef<str> for EncodingType {
         self.as_str()
     }
 }
-
-impl serde::Serialize for EncodingType {
-    fn serialize<S>(
-        &self,
-        serializer: S,
-    ) -> Result<<S as serde::Serializer>::Ok, <S as serde::Serializer>::Error>
-    where
-        S: serde::Serializer,
-    {
-        serializer.serialize_str(self.as_str())
-    }
-}
-
 impl<'de> serde::Deserialize<'de> for EncodingType {
     fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
     where
@@ -12051,7 +11333,6 @@ impl std::convert::From<&str> for ObjectVersionStorageClass {
         }
     }
 }
-
 impl std::str::FromStr for ObjectVersionStorageClass {
     type Err = std::convert::Infallible;
 
@@ -12059,7 +11340,6 @@ impl std::str::FromStr for ObjectVersionStorageClass {
         Ok(ObjectVersionStorageClass::from(s))
     }
 }
-
 impl ObjectVersionStorageClass {
     pub fn as_str(&self) -> &str {
         match self {
@@ -12073,19 +11353,6 @@ impl AsRef<str> for ObjectVersionStorageClass {
         self.as_str()
     }
 }
-
-impl serde::Serialize for ObjectVersionStorageClass {
-    fn serialize<S>(
-        &self,
-        serializer: S,
-    ) -> Result<<S as serde::Serializer>::Ok, <S as serde::Serializer>::Error>
-    where
-        S: serde::Serializer,
-    {
-        serializer.serialize_str(self.as_str())
-    }
-}
-
 impl<'de> serde::Deserialize<'de> for ObjectVersionStorageClass {
     fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
     where
@@ -12295,7 +11562,6 @@ impl std::convert::From<&str> for ObjectStorageClass {
         }
     }
 }
-
 impl std::str::FromStr for ObjectStorageClass {
     type Err = std::convert::Infallible;
 
@@ -12303,7 +11569,6 @@ impl std::str::FromStr for ObjectStorageClass {
         Ok(ObjectStorageClass::from(s))
     }
 }
-
 impl ObjectStorageClass {
     pub fn as_str(&self) -> &str {
         match self {
@@ -12324,19 +11589,6 @@ impl AsRef<str> for ObjectStorageClass {
         self.as_str()
     }
 }
-
-impl serde::Serialize for ObjectStorageClass {
-    fn serialize<S>(
-        &self,
-        serializer: S,
-    ) -> Result<<S as serde::Serializer>::Ok, <S as serde::Serializer>::Error>
-    where
-        S: serde::Serializer,
-    {
-        serializer.serialize_str(self.as_str())
-    }
-}
-
 impl<'de> serde::Deserialize<'de> for ObjectStorageClass {
     fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
     where
@@ -12556,7 +11808,6 @@ impl std::convert::From<&str> for ArchiveStatus {
         }
     }
 }
-
 impl std::str::FromStr for ArchiveStatus {
     type Err = std::convert::Infallible;
 
@@ -12564,7 +11815,6 @@ impl std::str::FromStr for ArchiveStatus {
         Ok(ArchiveStatus::from(s))
     }
 }
-
 impl ArchiveStatus {
     pub fn as_str(&self) -> &str {
         match self {
@@ -12579,19 +11829,6 @@ impl AsRef<str> for ArchiveStatus {
         self.as_str()
     }
 }
-
-impl serde::Serialize for ArchiveStatus {
-    fn serialize<S>(
-        &self,
-        serializer: S,
-    ) -> Result<<S as serde::Serializer>::Ok, <S as serde::Serializer>::Error>
-    where
-        S: serde::Serializer,
-    {
-        serializer.serialize_str(self.as_str())
-    }
-}
-
 impl<'de> serde::Deserialize<'de> for ArchiveStatus {
     fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
     where
@@ -12626,7 +11863,6 @@ impl std::convert::From<&str> for MFADeleteStatus {
         }
     }
 }
-
 impl std::str::FromStr for MFADeleteStatus {
     type Err = std::convert::Infallible;
 
@@ -12634,7 +11870,6 @@ impl std::str::FromStr for MFADeleteStatus {
         Ok(MFADeleteStatus::from(s))
     }
 }
-
 impl MFADeleteStatus {
     pub fn as_str(&self) -> &str {
         match self {
@@ -12649,19 +11884,6 @@ impl AsRef<str> for MFADeleteStatus {
         self.as_str()
     }
 }
-
-impl serde::Serialize for MFADeleteStatus {
-    fn serialize<S>(
-        &self,
-        serializer: S,
-    ) -> Result<<S as serde::Serializer>::Ok, <S as serde::Serializer>::Error>
-    where
-        S: serde::Serializer,
-    {
-        serializer.serialize_str(self.as_str())
-    }
-}
-
 impl<'de> serde::Deserialize<'de> for MFADeleteStatus {
     fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
     where
@@ -12791,7 +12013,6 @@ impl std::convert::From<&str> for BucketLocationConstraint {
         }
     }
 }
-
 impl std::str::FromStr for BucketLocationConstraint {
     type Err = std::convert::Infallible;
 
@@ -12799,7 +12020,6 @@ impl std::str::FromStr for BucketLocationConstraint {
         Ok(BucketLocationConstraint::from(s))
     }
 }
-
 impl BucketLocationConstraint {
     pub fn as_str(&self) -> &str {
         match self {
@@ -12837,19 +12057,6 @@ impl AsRef<str> for BucketLocationConstraint {
         self.as_str()
     }
 }
-
-impl serde::Serialize for BucketLocationConstraint {
-    fn serialize<S>(
-        &self,
-        serializer: S,
-    ) -> Result<<S as serde::Serializer>::Ok, <S as serde::Serializer>::Error>
-    where
-        S: serde::Serializer,
-    {
-        serializer.serialize_str(self.as_str())
-    }
-}
-
 impl<'de> serde::Deserialize<'de> for BucketLocationConstraint {
     fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
     where
@@ -17063,7 +16270,6 @@ impl std::convert::From<&str> for TaggingDirective {
         }
     }
 }
-
 impl std::str::FromStr for TaggingDirective {
     type Err = std::convert::Infallible;
 
@@ -17071,7 +16277,6 @@ impl std::str::FromStr for TaggingDirective {
         Ok(TaggingDirective::from(s))
     }
 }
-
 impl TaggingDirective {
     pub fn as_str(&self) -> &str {
         match self {
@@ -17086,19 +16291,6 @@ impl AsRef<str> for TaggingDirective {
         self.as_str()
     }
 }
-
-impl serde::Serialize for TaggingDirective {
-    fn serialize<S>(
-        &self,
-        serializer: S,
-    ) -> Result<<S as serde::Serializer>::Ok, <S as serde::Serializer>::Error>
-    where
-        S: serde::Serializer,
-    {
-        serializer.serialize_str(self.as_str())
-    }
-}
-
 impl<'de> serde::Deserialize<'de> for TaggingDirective {
     fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
     where
@@ -17133,7 +16325,6 @@ impl std::convert::From<&str> for MetadataDirective {
         }
     }
 }
-
 impl std::str::FromStr for MetadataDirective {
     type Err = std::convert::Infallible;
 
@@ -17141,7 +16332,6 @@ impl std::str::FromStr for MetadataDirective {
         Ok(MetadataDirective::from(s))
     }
 }
-
 impl MetadataDirective {
     pub fn as_str(&self) -> &str {
         match self {
@@ -17156,19 +16346,6 @@ impl AsRef<str> for MetadataDirective {
         self.as_str()
     }
 }
-
-impl serde::Serialize for MetadataDirective {
-    fn serialize<S>(
-        &self,
-        serializer: S,
-    ) -> Result<<S as serde::Serializer>::Ok, <S as serde::Serializer>::Error>
-    where
-        S: serde::Serializer,
-    {
-        serializer.serialize_str(self.as_str())
-    }
-}
-
 impl<'de> serde::Deserialize<'de> for MetadataDirective {
     fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
     where

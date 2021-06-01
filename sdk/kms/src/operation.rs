@@ -13,7 +13,7 @@
 /// <p>
 /// <b>Related operations</b>: <a>ScheduleKeyDeletion</a>
 /// </p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct CancelKeyDeletion {
     _private: (),
 }
@@ -32,7 +32,6 @@ impl CancelKeyDeletion {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => return Err(crate::error::CancelKeyDeletionError::unhandled(generic)),
@@ -91,7 +90,6 @@ impl CancelKeyDeletion {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for CancelKeyDeletion {
     type Output =
         Result<crate::output::CancelKeyDeletionOutput, crate::error::CancelKeyDeletionError>;
@@ -161,7 +159,7 @@ impl smithy_http::response::ParseStrictResponse for CancelKeyDeletion {
 /// </p>
 /// </li>
 /// </ul>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct ConnectCustomKeyStore {
     _private: (),
 }
@@ -181,7 +179,6 @@ impl ConnectCustomKeyStore {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => return Err(crate::error::ConnectCustomKeyStoreError::unhandled(generic)),
@@ -218,7 +215,6 @@ impl ConnectCustomKeyStore {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for ConnectCustomKeyStore {
     type Output = Result<
         crate::output::ConnectCustomKeyStoreOutput,
@@ -281,7 +277,7 @@ impl smithy_http::response::ParseStrictResponse for ConnectCustomKeyStore {
 /// </p>
 /// </li>
 /// </ul>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct CreateAlias {
     _private: (),
 }
@@ -300,7 +296,6 @@ impl CreateAlias {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => return Err(crate::error::CreateAliasError::unhandled(generic)),
@@ -366,7 +361,6 @@ impl CreateAlias {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for CreateAlias {
     type Output = Result<crate::output::CreateAliasOutput, crate::error::CreateAliasError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -424,7 +418,7 @@ impl smithy_http::response::ParseStrictResponse for CreateAlias {
 /// </p>
 /// </li>
 /// </ul>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct CreateCustomKeyStore {
     _private: (),
 }
@@ -444,7 +438,6 @@ impl CreateCustomKeyStore {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => return Err(crate::error::CreateCustomKeyStoreError::unhandled(generic)),
@@ -494,7 +487,6 @@ impl CreateCustomKeyStore {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for CreateCustomKeyStore {
     type Output =
         Result<crate::output::CreateCustomKeyStoreOutput, crate::error::CreateCustomKeyStoreError>;
@@ -572,7 +564,7 @@ impl smithy_http::response::ParseStrictResponse for CreateCustomKeyStore {
 /// </p>
 /// </li>
 /// </ul>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct CreateGrant {
     _private: (),
 }
@@ -591,7 +583,6 @@ impl CreateGrant {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => return Err(crate::error::CreateGrantError::unhandled(generic)),
@@ -667,7 +658,6 @@ impl CreateGrant {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for CreateGrant {
     type Output = Result<crate::output::CreateGrantOutput, crate::error::CreateGrantError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -774,7 +764,7 @@ impl smithy_http::response::ParseStrictResponse for CreateGrant {
 /// </p>
 /// </li>
 /// </ul>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct CreateKey {
     _private: (),
 }
@@ -793,7 +783,6 @@ impl CreateKey {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => return Err(crate::error::CreateKeyError::unhandled(generic)),
@@ -852,7 +841,6 @@ impl CreateKey {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for CreateKey {
     type Output = Result<crate::output::CreateKeyOutput, crate::error::CreateKeyError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -945,7 +933,7 @@ impl smithy_http::response::ParseStrictResponse for CreateKey {
 /// </p>
 /// </li>
 /// </ul>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct Decrypt {
     _private: (),
 }
@@ -964,7 +952,6 @@ impl Decrypt {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => return Err(crate::error::DecryptError::unhandled(generic)),
@@ -1053,7 +1040,6 @@ impl Decrypt {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for Decrypt {
     type Output = Result<crate::output::DecryptOutput, crate::error::DecryptError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -1103,7 +1089,7 @@ impl smithy_http::response::ParseStrictResponse for Decrypt {
 /// </p>
 /// </li>
 /// </ul>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteAlias {
     _private: (),
 }
@@ -1122,7 +1108,6 @@ impl DeleteAlias {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => return Err(crate::error::DeleteAliasError::unhandled(generic)),
@@ -1167,7 +1152,6 @@ impl DeleteAlias {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for DeleteAlias {
     type Output = Result<crate::output::DeleteAliasOutput, crate::error::DeleteAliasError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -1229,7 +1213,7 @@ impl smithy_http::response::ParseStrictResponse for DeleteAlias {
 /// </p>
 /// </li>
 /// </ul>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteCustomKeyStore {
     _private: (),
 }
@@ -1249,7 +1233,6 @@ impl DeleteCustomKeyStore {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => return Err(crate::error::DeleteCustomKeyStoreError::unhandled(generic)),
@@ -1282,7 +1265,6 @@ impl DeleteCustomKeyStore {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for DeleteCustomKeyStore {
     type Output =
         Result<crate::output::DeleteCustomKeyStoreOutput, crate::error::DeleteCustomKeyStoreError>;
@@ -1322,7 +1304,7 @@ impl smithy_http::response::ParseStrictResponse for DeleteCustomKeyStore {
 /// </p>
 /// </li>
 /// </ul>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteImportedKeyMaterial {
     _private: (),
 }
@@ -1344,7 +1326,6 @@ impl DeleteImportedKeyMaterial {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => {
@@ -1389,7 +1370,6 @@ impl DeleteImportedKeyMaterial {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for DeleteImportedKeyMaterial {
     type Output = Result<
         crate::output::DeleteImportedKeyMaterialOutput,
@@ -1454,7 +1434,7 @@ impl smithy_http::response::ParseStrictResponse for DeleteImportedKeyMaterial {
 /// </p>
 /// </li>
 /// </ul>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeCustomKeyStores {
     _private: (),
 }
@@ -1476,7 +1456,6 @@ impl DescribeCustomKeyStores {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => {
@@ -1510,7 +1489,6 @@ impl DescribeCustomKeyStores {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for DescribeCustomKeyStores {
     type Output = Result<
         crate::output::DescribeCustomKeyStoresOutput,
@@ -1599,7 +1577,7 @@ impl smithy_http::response::ParseStrictResponse for DescribeCustomKeyStores {
 /// </p>
 /// </li>
 /// </ul>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeKey {
     _private: (),
 }
@@ -1618,7 +1596,6 @@ impl DescribeKey {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => return Err(crate::error::DescribeKeyError::unhandled(generic)),
@@ -1666,7 +1643,6 @@ impl DescribeKey {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for DescribeKey {
     type Output = Result<crate::output::DescribeKeyOutput, crate::error::DescribeKeyError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -1690,7 +1666,7 @@ impl smithy_http::response::ParseStrictResponse for DescribeKey {
 /// <p>
 /// <b>Related operations</b>: <a>EnableKey</a>
 /// </p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DisableKey {
     _private: (),
 }
@@ -1709,7 +1685,6 @@ impl DisableKey {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => return Err(crate::error::DisableKeyError::unhandled(generic)),
@@ -1761,7 +1736,6 @@ impl DisableKey {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for DisableKey {
     type Output = Result<crate::output::DisableKeyOutput, crate::error::DisableKeyError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -1795,7 +1769,7 @@ impl smithy_http::response::ParseStrictResponse for DisableKey {
 /// </p>
 /// </li>
 /// </ul>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DisableKeyRotation {
     _private: (),
 }
@@ -1815,7 +1789,6 @@ impl DisableKeyRotation {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => return Err(crate::error::DisableKeyRotationError::unhandled(generic)),
@@ -1885,7 +1858,6 @@ impl DisableKeyRotation {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for DisableKeyRotation {
     type Output =
         Result<crate::output::DisableKeyRotationOutput, crate::error::DisableKeyRotationError>;
@@ -1945,7 +1917,7 @@ impl smithy_http::response::ParseStrictResponse for DisableKeyRotation {
 /// </p>
 /// </li>
 /// </ul>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DisconnectCustomKeyStore {
     _private: (),
 }
@@ -1967,7 +1939,6 @@ impl DisconnectCustomKeyStore {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => {
@@ -2000,7 +1971,6 @@ impl DisconnectCustomKeyStore {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for DisconnectCustomKeyStore {
     type Output = Result<
         crate::output::DisconnectCustomKeyStoreOutput,
@@ -2023,7 +1993,7 @@ impl smithy_http::response::ParseStrictResponse for DisconnectCustomKeyStore {
 /// <p>
 /// <b>Related operations</b>: <a>DisableKey</a>
 /// </p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct EnableKey {
     _private: (),
 }
@@ -2042,7 +2012,6 @@ impl EnableKey {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => return Err(crate::error::EnableKeyError::unhandled(generic)),
@@ -2101,7 +2070,6 @@ impl EnableKey {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for EnableKey {
     type Output = Result<crate::output::EnableKeyOutput, crate::error::EnableKeyError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -2134,7 +2102,7 @@ impl smithy_http::response::ParseStrictResponse for EnableKey {
 /// </p>
 /// </li>
 /// </ul>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct EnableKeyRotation {
     _private: (),
 }
@@ -2153,7 +2121,6 @@ impl EnableKeyRotation {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => return Err(crate::error::EnableKeyRotationError::unhandled(generic)),
@@ -2223,7 +2190,6 @@ impl EnableKeyRotation {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for EnableKeyRotation {
     type Output =
         Result<crate::output::EnableKeyRotationOutput, crate::error::EnableKeyRotationError>;
@@ -2351,7 +2317,7 @@ impl smithy_http::response::ParseStrictResponse for EnableKeyRotation {
 /// </p>
 /// </li>
 /// </ul>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct Encrypt {
     _private: (),
 }
@@ -2370,7 +2336,6 @@ impl Encrypt {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => return Err(crate::error::EncryptError::unhandled(generic)),
@@ -2445,7 +2410,6 @@ impl Encrypt {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for Encrypt {
     type Output = Result<crate::output::EncryptOutput, crate::error::EncryptError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -2543,7 +2507,7 @@ impl smithy_http::response::ParseStrictResponse for Encrypt {
 /// </p>
 /// </li>
 /// </ul>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct GenerateDataKey {
     _private: (),
 }
@@ -2562,7 +2526,6 @@ impl GenerateDataKey {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => return Err(crate::error::GenerateDataKeyError::unhandled(generic)),
@@ -2638,7 +2601,6 @@ impl GenerateDataKey {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for GenerateDataKey {
     type Output = Result<crate::output::GenerateDataKeyOutput, crate::error::GenerateDataKeyError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -2710,7 +2672,7 @@ impl smithy_http::response::ParseStrictResponse for GenerateDataKey {
 /// </p>
 /// </li>
 /// </ul>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct GenerateDataKeyPair {
     _private: (),
 }
@@ -2730,7 +2692,6 @@ impl GenerateDataKeyPair {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => return Err(crate::error::GenerateDataKeyPairError::unhandled(generic)),
@@ -2825,7 +2786,6 @@ impl GenerateDataKeyPair {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for GenerateDataKeyPair {
     type Output =
         Result<crate::output::GenerateDataKeyPairOutput, crate::error::GenerateDataKeyPairError>;
@@ -2893,7 +2853,7 @@ impl smithy_http::response::ParseStrictResponse for GenerateDataKeyPair {
 /// </p>
 /// </li>
 /// </ul>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct GenerateDataKeyPairWithoutPlaintext {
     _private: (),
 }
@@ -2915,7 +2875,6 @@ impl GenerateDataKeyPairWithoutPlaintext {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => {
@@ -2978,7 +2937,6 @@ impl GenerateDataKeyPairWithoutPlaintext {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for GenerateDataKeyPairWithoutPlaintext {
     type Output = Result<
         crate::output::GenerateDataKeyPairWithoutPlaintextOutput,
@@ -3056,7 +3014,7 @@ impl smithy_http::response::ParseStrictResponse for GenerateDataKeyPairWithoutPl
 /// </p>
 /// </li>
 /// </ul>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct GenerateDataKeyWithoutPlaintext {
     _private: (),
 }
@@ -3078,7 +3036,6 @@ impl GenerateDataKeyWithoutPlaintext {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => {
@@ -3137,7 +3094,6 @@ impl GenerateDataKeyWithoutPlaintext {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for GenerateDataKeyWithoutPlaintext {
     type Output = Result<
         crate::output::GenerateDataKeyWithoutPlaintextOutput,
@@ -3156,7 +3112,7 @@ impl smithy_http::response::ParseStrictResponse for GenerateDataKeyWithoutPlaint
 /// Cryptographic Details</a> whitepaper.</p>
 /// <p>
 /// <b>Required permissions</b>: <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:GenerateRandom</a> (IAM policy)</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct GenerateRandom {
     _private: (),
 }
@@ -3175,7 +3131,6 @@ impl GenerateRandom {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => return Err(crate::error::GenerateRandomError::unhandled(generic)),
@@ -3228,7 +3183,6 @@ impl GenerateRandom {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for GenerateRandom {
     type Output = Result<crate::output::GenerateRandomOutput, crate::error::GenerateRandomError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -3244,7 +3198,7 @@ impl smithy_http::response::ParseStrictResponse for GenerateRandom {
 /// <p>
 /// <b>Related operations</b>: <a>PutKeyPolicy</a>
 /// </p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct GetKeyPolicy {
     _private: (),
 }
@@ -3263,7 +3217,6 @@ impl GetKeyPolicy {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => return Err(crate::error::GetKeyPolicyError::unhandled(generic)),
@@ -3318,7 +3271,6 @@ impl GetKeyPolicy {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for GetKeyPolicy {
     type Output = Result<crate::output::GetKeyPolicyOutput, crate::error::GetKeyPolicyError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -3363,7 +3315,7 @@ impl smithy_http::response::ParseStrictResponse for GetKeyPolicy {
 /// </p>
 /// </li>
 /// </ul>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct GetKeyRotationStatus {
     _private: (),
 }
@@ -3383,7 +3335,6 @@ impl GetKeyRotationStatus {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => return Err(crate::error::GetKeyRotationStatusError::unhandled(generic)),
@@ -3454,7 +3405,6 @@ impl GetKeyRotationStatus {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for GetKeyRotationStatus {
     type Output =
         Result<crate::output::GetKeyRotationStatusOutput, crate::error::GetKeyRotationStatusError>;
@@ -3499,7 +3449,7 @@ impl smithy_http::response::ParseStrictResponse for GetKeyRotationStatus {
 /// </p>
 /// </li>
 /// </ul>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct GetParametersForImport {
     _private: (),
 }
@@ -3521,7 +3471,6 @@ impl GetParametersForImport {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => {
@@ -3596,7 +3545,6 @@ impl GetParametersForImport {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for GetParametersForImport {
     type Output = Result<
         crate::output::GetParametersForImportOutput,
@@ -3652,7 +3600,7 @@ impl smithy_http::response::ParseStrictResponse for GetParametersForImport {
 /// <p>
 /// <b>Related operations</b>: <a>CreateKey</a>
 /// </p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct GetPublicKey {
     _private: (),
 }
@@ -3671,7 +3619,6 @@ impl GetPublicKey {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => return Err(crate::error::GetPublicKeyError::unhandled(generic)),
@@ -3761,7 +3708,6 @@ impl GetPublicKey {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for GetPublicKey {
     type Output = Result<crate::output::GetPublicKeyOutput, crate::error::GetPublicKeyError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -3833,7 +3779,7 @@ impl smithy_http::response::ParseStrictResponse for GetPublicKey {
 /// </p>
 /// </li>
 /// </ul>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct ImportKeyMaterial {
     _private: (),
 }
@@ -3852,7 +3798,6 @@ impl ImportKeyMaterial {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => return Err(crate::error::ImportKeyMaterialError::unhandled(generic)),
@@ -3951,7 +3896,6 @@ impl ImportKeyMaterial {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for ImportKeyMaterial {
     type Output =
         Result<crate::output::ImportKeyMaterialOutput, crate::error::ImportKeyMaterialError>;
@@ -4000,7 +3944,7 @@ impl smithy_http::response::ParseStrictResponse for ImportKeyMaterial {
 /// </p>
 /// </li>
 /// </ul>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct ListAliases {
     _private: (),
 }
@@ -4019,7 +3963,6 @@ impl ListAliases {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => return Err(crate::error::ListAliasesError::unhandled(generic)),
@@ -4074,7 +4017,6 @@ impl ListAliases {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for ListAliases {
     type Output = Result<crate::output::ListAliasesOutput, crate::error::ListAliasesError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -4120,7 +4062,7 @@ impl smithy_http::response::ParseStrictResponse for ListAliases {
 /// </p>
 /// </li>
 /// </ul>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct ListGrants {
     _private: (),
 }
@@ -4139,7 +4081,6 @@ impl ListGrants {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => return Err(crate::error::ListGrantsError::unhandled(generic)),
@@ -4200,7 +4141,6 @@ impl ListGrants {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for ListGrants {
     type Output = Result<crate::output::ListGrantsOutput, crate::error::ListGrantsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -4230,7 +4170,7 @@ impl smithy_http::response::ParseStrictResponse for ListGrants {
 /// </p>
 /// </li>
 /// </ul>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct ListKeyPolicies {
     _private: (),
 }
@@ -4249,7 +4189,6 @@ impl ListKeyPolicies {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => return Err(crate::error::ListKeyPoliciesError::unhandled(generic)),
@@ -4304,7 +4243,6 @@ impl ListKeyPolicies {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for ListKeyPolicies {
     type Output = Result<crate::output::ListKeyPoliciesOutput, crate::error::ListKeyPoliciesError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -4343,7 +4281,7 @@ impl smithy_http::response::ParseStrictResponse for ListKeyPolicies {
 /// </p>
 /// </li>
 /// </ul>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct ListKeys {
     _private: (),
 }
@@ -4362,7 +4300,6 @@ impl ListKeys {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => return Err(crate::error::ListKeysError::unhandled(generic)),
@@ -4402,7 +4339,6 @@ impl ListKeys {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for ListKeys {
     type Output = Result<crate::output::ListKeysOutput, crate::error::ListKeysError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -4434,7 +4370,7 @@ impl smithy_http::response::ParseStrictResponse for ListKeys {
 /// </p>
 /// </li>
 /// </ul>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct ListResourceTags {
     _private: (),
 }
@@ -4453,7 +4389,6 @@ impl ListResourceTags {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => return Err(crate::error::ListResourceTagsError::unhandled(generic)),
@@ -4503,7 +4438,6 @@ impl ListResourceTags {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for ListResourceTags {
     type Output =
         Result<crate::output::ListResourceTagsOutput, crate::error::ListResourceTagsError>;
@@ -4551,7 +4485,7 @@ impl smithy_http::response::ParseStrictResponse for ListResourceTags {
 /// </p>
 /// </li>
 /// </ul>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct ListRetirableGrants {
     _private: (),
 }
@@ -4571,7 +4505,6 @@ impl ListRetirableGrants {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => return Err(crate::error::ListRetirableGrantsError::unhandled(generic)),
@@ -4630,7 +4563,6 @@ impl ListRetirableGrants {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for ListRetirableGrants {
     type Output =
         Result<crate::output::ListRetirableGrantsOutput, crate::error::ListRetirableGrantsError>;
@@ -4652,7 +4584,7 @@ impl smithy_http::response::ParseStrictResponse for ListRetirableGrants {
 /// <p>
 /// <b>Related operations</b>: <a>GetKeyPolicy</a>
 /// </p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct PutKeyPolicy {
     _private: (),
 }
@@ -4671,7 +4603,6 @@ impl PutKeyPolicy {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => return Err(crate::error::PutKeyPolicyError::unhandled(generic)),
@@ -4746,7 +4677,6 @@ impl PutKeyPolicy {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for PutKeyPolicy {
     type Output = Result<crate::output::PutKeyPolicyOutput, crate::error::PutKeyPolicyError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -4844,7 +4774,7 @@ impl smithy_http::response::ParseStrictResponse for PutKeyPolicy {
 /// </p>
 /// </li>
 /// </ul>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct ReEncrypt {
     _private: (),
 }
@@ -4863,7 +4793,6 @@ impl ReEncrypt {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => return Err(crate::error::ReEncryptError::unhandled(generic)),
@@ -4952,7 +4881,6 @@ impl ReEncrypt {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for ReEncrypt {
     type Output = Result<crate::output::ReEncryptOutput, crate::error::ReEncryptError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -5012,7 +4940,7 @@ impl smithy_http::response::ParseStrictResponse for ReEncrypt {
 /// </p>
 /// </li>
 /// </ul>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct RetireGrant {
     _private: (),
 }
@@ -5031,7 +4959,6 @@ impl RetireGrant {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => return Err(crate::error::RetireGrantError::unhandled(generic)),
@@ -5097,7 +5024,6 @@ impl RetireGrant {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for RetireGrant {
     type Output = Result<crate::output::RetireGrantOutput, crate::error::RetireGrantError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -5137,7 +5063,7 @@ impl smithy_http::response::ParseStrictResponse for RetireGrant {
 /// </p>
 /// </li>
 /// </ul>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct RevokeGrant {
     _private: (),
 }
@@ -5156,7 +5082,6 @@ impl RevokeGrant {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => return Err(crate::error::RevokeGrantError::unhandled(generic)),
@@ -5215,7 +5140,6 @@ impl RevokeGrant {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for RevokeGrant {
     type Output = Result<crate::output::RevokeGrantOutput, crate::error::RevokeGrantError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -5263,7 +5187,7 @@ impl smithy_http::response::ParseStrictResponse for RevokeGrant {
 /// </p>
 /// </li>
 /// </ul>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct ScheduleKeyDeletion {
     _private: (),
 }
@@ -5283,7 +5207,6 @@ impl ScheduleKeyDeletion {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => return Err(crate::error::ScheduleKeyDeletionError::unhandled(generic)),
@@ -5344,7 +5267,6 @@ impl ScheduleKeyDeletion {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for ScheduleKeyDeletion {
     type Output =
         Result<crate::output::ScheduleKeyDeletionOutput, crate::error::ScheduleKeyDeletionError>;
@@ -5399,7 +5321,7 @@ impl smithy_http::response::ParseStrictResponse for ScheduleKeyDeletion {
 /// <p>
 /// <b>Related operations</b>: <a>Verify</a>
 /// </p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct Sign {
     _private: (),
 }
@@ -5418,7 +5340,6 @@ impl Sign {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => return Err(crate::error::SignError::unhandled(generic)),
@@ -5493,7 +5414,6 @@ impl Sign {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for Sign {
     type Output = Result<crate::output::SignOutput, crate::error::SignError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -5535,7 +5455,7 @@ impl smithy_http::response::ParseStrictResponse for Sign {
 /// </p>
 /// </li>
 /// </ul>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct TagResource {
     _private: (),
 }
@@ -5554,7 +5474,6 @@ impl TagResource {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => return Err(crate::error::TagResourceError::unhandled(generic)),
@@ -5613,7 +5532,6 @@ impl TagResource {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for TagResource {
     type Output = Result<crate::output::TagResourceOutput, crate::error::TagResourceError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -5652,7 +5570,7 @@ impl smithy_http::response::ParseStrictResponse for TagResource {
 /// </p>
 /// </li>
 /// </ul>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct UntagResource {
     _private: (),
 }
@@ -5671,7 +5589,6 @@ impl UntagResource {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => return Err(crate::error::UntagResourceError::unhandled(generic)),
@@ -5723,7 +5640,6 @@ impl UntagResource {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for UntagResource {
     type Output = Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -5788,7 +5704,7 @@ impl smithy_http::response::ParseStrictResponse for UntagResource {
 /// </p>
 /// </li>
 /// </ul>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateAlias {
     _private: (),
 }
@@ -5807,7 +5723,6 @@ impl UpdateAlias {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => return Err(crate::error::UpdateAliasError::unhandled(generic)),
@@ -5859,7 +5774,6 @@ impl UpdateAlias {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for UpdateAlias {
     type Output = Result<crate::output::UpdateAliasOutput, crate::error::UpdateAliasError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -5939,7 +5853,7 @@ impl smithy_http::response::ParseStrictResponse for UpdateAlias {
 /// </p>
 /// </li>
 /// </ul>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateCustomKeyStore {
     _private: (),
 }
@@ -5959,7 +5873,6 @@ impl UpdateCustomKeyStore {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => return Err(crate::error::UpdateCustomKeyStoreError::unhandled(generic)),
@@ -6008,7 +5921,6 @@ impl UpdateCustomKeyStore {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for UpdateCustomKeyStore {
     type Output =
         Result<crate::output::UpdateCustomKeyStoreOutput, crate::error::UpdateCustomKeyStoreError>;
@@ -6041,7 +5953,7 @@ impl smithy_http::response::ParseStrictResponse for UpdateCustomKeyStore {
 /// </p>
 /// </li>
 /// </ul>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateKeyDescription {
     _private: (),
 }
@@ -6061,7 +5973,6 @@ impl UpdateKeyDescription {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => return Err(crate::error::UpdateKeyDescriptionError::unhandled(generic)),
@@ -6117,7 +6028,6 @@ impl UpdateKeyDescription {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for UpdateKeyDescription {
     type Output =
         Result<crate::output::UpdateKeyDescriptionOutput, crate::error::UpdateKeyDescriptionError>;
@@ -6157,7 +6067,7 @@ impl smithy_http::response::ParseStrictResponse for UpdateKeyDescription {
 /// <p>
 /// <b>Related operations</b>: <a>Sign</a>
 /// </p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct Verify {
     _private: (),
 }
@@ -6176,7 +6086,6 @@ impl Verify {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => return Err(crate::error::VerifyError::unhandled(generic)),
@@ -6258,7 +6167,6 @@ impl Verify {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for Verify {
     type Output = Result<crate::output::VerifyOutput, crate::error::VerifyError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {

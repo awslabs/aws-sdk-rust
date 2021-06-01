@@ -21,7 +21,6 @@ pub fn bad_request_exception(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_message(parsed_body.message);
     Ok(builder)
 }
@@ -38,7 +37,6 @@ pub fn conflict_exception(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_message(parsed_body.message);
     Ok(builder)
 }
@@ -55,7 +53,6 @@ pub fn limit_exceeded_exception(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_retry_after_seconds(parsed_body.retry_after_seconds);
     builder = builder.set_message(parsed_body.message);
     Ok(builder)
@@ -73,7 +70,6 @@ pub fn not_found_exception(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_message(parsed_body.message);
     Ok(builder)
 }
@@ -90,7 +86,6 @@ pub fn too_many_requests_exception(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_retry_after_seconds(parsed_body.retry_after_seconds);
     builder = builder.set_message(parsed_body.message);
     Ok(builder)
@@ -108,7 +103,6 @@ pub fn unauthorized_exception(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_message(parsed_body.message);
     Ok(builder)
 }
@@ -125,7 +119,6 @@ pub fn create_api_key_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_id(parsed_body.id);
     builder = builder.set_value(parsed_body.value);
     builder = builder.set_name(parsed_body.name);
@@ -151,7 +144,6 @@ pub fn create_authorizer_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_id(parsed_body.id);
     builder = builder.set_name(parsed_body.name);
     builder = builder.set_type(parsed_body.r#type);
@@ -179,7 +171,6 @@ pub fn create_base_path_mapping_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_base_path(parsed_body.base_path);
     builder = builder.set_rest_api_id(parsed_body.rest_api_id);
     builder = builder.set_stage(parsed_body.stage);
@@ -198,7 +189,6 @@ pub fn service_unavailable_exception(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_retry_after_seconds(parsed_body.retry_after_seconds);
     builder = builder.set_message(parsed_body.message);
     Ok(builder)
@@ -216,7 +206,6 @@ pub fn create_deployment_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_id(parsed_body.id);
     builder = builder.set_description(parsed_body.description);
     builder = builder.set_created_date(parsed_body.created_date);
@@ -236,7 +225,6 @@ pub fn create_documentation_part_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_id(parsed_body.id);
     builder = builder.set_location(parsed_body.location);
     builder = builder.set_properties(parsed_body.properties);
@@ -255,7 +243,6 @@ pub fn create_documentation_version_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_version(parsed_body.version);
     builder = builder.set_created_date(parsed_body.created_date);
     builder = builder.set_description(parsed_body.description);
@@ -274,7 +261,6 @@ pub fn create_domain_name_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_domain_name(parsed_body.domain_name);
     builder = builder.set_certificate_name(parsed_body.certificate_name);
     builder = builder.set_certificate_arn(parsed_body.certificate_arn);
@@ -306,7 +292,6 @@ pub fn create_model_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_id(parsed_body.id);
     builder = builder.set_name(parsed_body.name);
     builder = builder.set_description(parsed_body.description);
@@ -327,7 +312,6 @@ pub fn create_request_validator_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_id(parsed_body.id);
     builder = builder.set_name(parsed_body.name);
     builder = builder.set_validate_request_body(parsed_body.validate_request_body);
@@ -347,7 +331,6 @@ pub fn create_resource_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_id(parsed_body.id);
     builder = builder.set_parent_id(parsed_body.parent_id);
     builder = builder.set_path_part(parsed_body.path_part);
@@ -368,7 +351,6 @@ pub fn create_rest_api_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_id(parsed_body.id);
     builder = builder.set_name(parsed_body.name);
     builder = builder.set_description(parsed_body.description);
@@ -397,7 +379,6 @@ pub fn create_stage_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_deployment_id(parsed_body.deployment_id);
     builder = builder.set_client_certificate_id(parsed_body.client_certificate_id);
     builder = builder.set_stage_name(parsed_body.stage_name);
@@ -430,7 +411,6 @@ pub fn create_usage_plan_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_id(parsed_body.id);
     builder = builder.set_name(parsed_body.name);
     builder = builder.set_description(parsed_body.description);
@@ -454,7 +434,6 @@ pub fn create_usage_plan_key_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_id(parsed_body.id);
     builder = builder.set_type(parsed_body.r#type);
     builder = builder.set_value(parsed_body.value);
@@ -474,7 +453,6 @@ pub fn create_vpc_link_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_id(parsed_body.id);
     builder = builder.set_name(parsed_body.name);
     builder = builder.set_description(parsed_body.description);
@@ -497,7 +475,6 @@ pub fn generate_client_certificate_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_client_certificate_id(parsed_body.client_certificate_id);
     builder = builder.set_description(parsed_body.description);
     builder = builder.set_pem_encoded_certificate(parsed_body.pem_encoded_certificate);
@@ -519,7 +496,6 @@ pub fn get_account_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_cloudwatch_role_arn(parsed_body.cloudwatch_role_arn);
     builder = builder.set_throttle_settings(parsed_body.throttle_settings);
     builder = builder.set_features(parsed_body.features);
@@ -539,7 +515,6 @@ pub fn get_api_key_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_id(parsed_body.id);
     builder = builder.set_value(parsed_body.value);
     builder = builder.set_name(parsed_body.name);
@@ -565,7 +540,6 @@ pub fn get_api_keys_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_warnings(parsed_body.warnings);
     builder = builder.set_items(parsed_body.items);
     builder = builder.set_position(parsed_body.position);
@@ -584,7 +558,6 @@ pub fn get_authorizer_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_id(parsed_body.id);
     builder = builder.set_name(parsed_body.name);
     builder = builder.set_type(parsed_body.r#type);
@@ -612,7 +585,6 @@ pub fn get_authorizers_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_items(parsed_body.items);
     builder = builder.set_position(parsed_body.position);
     Ok(builder)
@@ -630,7 +602,6 @@ pub fn get_base_path_mapping_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_base_path(parsed_body.base_path);
     builder = builder.set_rest_api_id(parsed_body.rest_api_id);
     builder = builder.set_stage(parsed_body.stage);
@@ -649,7 +620,6 @@ pub fn get_base_path_mappings_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_items(parsed_body.items);
     builder = builder.set_position(parsed_body.position);
     Ok(builder)
@@ -667,7 +637,6 @@ pub fn get_client_certificate_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_client_certificate_id(parsed_body.client_certificate_id);
     builder = builder.set_description(parsed_body.description);
     builder = builder.set_pem_encoded_certificate(parsed_body.pem_encoded_certificate);
@@ -689,7 +658,6 @@ pub fn get_client_certificates_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_items(parsed_body.items);
     builder = builder.set_position(parsed_body.position);
     Ok(builder)
@@ -707,7 +675,6 @@ pub fn get_deployment_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_id(parsed_body.id);
     builder = builder.set_description(parsed_body.description);
     builder = builder.set_created_date(parsed_body.created_date);
@@ -727,7 +694,6 @@ pub fn get_deployments_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_items(parsed_body.items);
     builder = builder.set_position(parsed_body.position);
     Ok(builder)
@@ -745,7 +711,6 @@ pub fn get_documentation_part_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_id(parsed_body.id);
     builder = builder.set_location(parsed_body.location);
     builder = builder.set_properties(parsed_body.properties);
@@ -764,7 +729,6 @@ pub fn get_documentation_parts_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_items(parsed_body.items);
     builder = builder.set_position(parsed_body.position);
     Ok(builder)
@@ -782,7 +746,6 @@ pub fn get_documentation_version_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_version(parsed_body.version);
     builder = builder.set_created_date(parsed_body.created_date);
     builder = builder.set_description(parsed_body.description);
@@ -801,7 +764,6 @@ pub fn get_documentation_versions_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_items(parsed_body.items);
     builder = builder.set_position(parsed_body.position);
     Ok(builder)
@@ -819,7 +781,6 @@ pub fn get_domain_name_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_domain_name(parsed_body.domain_name);
     builder = builder.set_certificate_name(parsed_body.certificate_name);
     builder = builder.set_certificate_arn(parsed_body.certificate_arn);
@@ -851,7 +812,6 @@ pub fn get_domain_names_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_items(parsed_body.items);
     builder = builder.set_position(parsed_body.position);
     Ok(builder)
@@ -869,7 +829,6 @@ pub fn get_gateway_response_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_response_type(parsed_body.response_type);
     builder = builder.set_status_code(parsed_body.status_code);
     builder = builder.set_response_parameters(parsed_body.response_parameters);
@@ -890,7 +849,6 @@ pub fn get_gateway_responses_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_items(parsed_body.items);
     builder = builder.set_position(parsed_body.position);
     Ok(builder)
@@ -908,7 +866,6 @@ pub fn get_integration_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_type(parsed_body.r#type);
     builder = builder.set_http_method(parsed_body.http_method);
     builder = builder.set_uri(parsed_body.uri);
@@ -939,7 +896,6 @@ pub fn get_integration_response_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_status_code(parsed_body.status_code);
     builder = builder.set_selection_pattern(parsed_body.selection_pattern);
     builder = builder.set_response_parameters(parsed_body.response_parameters);
@@ -960,7 +916,6 @@ pub fn get_method_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_http_method(parsed_body.http_method);
     builder = builder.set_authorization_type(parsed_body.authorization_type);
     builder = builder.set_authorizer_id(parsed_body.authorizer_id);
@@ -987,7 +942,6 @@ pub fn get_method_response_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_status_code(parsed_body.status_code);
     builder = builder.set_response_parameters(parsed_body.response_parameters);
     builder = builder.set_response_models(parsed_body.response_models);
@@ -1006,7 +960,6 @@ pub fn get_model_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_id(parsed_body.id);
     builder = builder.set_name(parsed_body.name);
     builder = builder.set_description(parsed_body.description);
@@ -1027,7 +980,6 @@ pub fn get_models_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_items(parsed_body.items);
     builder = builder.set_position(parsed_body.position);
     Ok(builder)
@@ -1045,7 +997,6 @@ pub fn get_model_template_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_value(parsed_body.value);
     Ok(builder)
 }
@@ -1062,7 +1013,6 @@ pub fn get_request_validator_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_id(parsed_body.id);
     builder = builder.set_name(parsed_body.name);
     builder = builder.set_validate_request_body(parsed_body.validate_request_body);
@@ -1082,7 +1032,6 @@ pub fn get_request_validators_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_items(parsed_body.items);
     builder = builder.set_position(parsed_body.position);
     Ok(builder)
@@ -1100,7 +1049,6 @@ pub fn get_resource_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_id(parsed_body.id);
     builder = builder.set_parent_id(parsed_body.parent_id);
     builder = builder.set_path_part(parsed_body.path_part);
@@ -1121,7 +1069,6 @@ pub fn get_resources_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_items(parsed_body.items);
     builder = builder.set_position(parsed_body.position);
     Ok(builder)
@@ -1139,7 +1086,6 @@ pub fn get_rest_api_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_id(parsed_body.id);
     builder = builder.set_name(parsed_body.name);
     builder = builder.set_description(parsed_body.description);
@@ -1168,7 +1114,6 @@ pub fn get_rest_apis_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_items(parsed_body.items);
     builder = builder.set_position(parsed_body.position);
     Ok(builder)
@@ -1186,7 +1131,6 @@ pub fn get_sdk_type_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_id(parsed_body.id);
     builder = builder.set_friendly_name(parsed_body.friendly_name);
     builder = builder.set_description(parsed_body.description);
@@ -1206,7 +1150,6 @@ pub fn get_sdk_types_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_items(parsed_body.items);
     Ok(builder)
 }
@@ -1223,7 +1166,6 @@ pub fn get_stage_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_deployment_id(parsed_body.deployment_id);
     builder = builder.set_client_certificate_id(parsed_body.client_certificate_id);
     builder = builder.set_stage_name(parsed_body.stage_name);
@@ -1256,7 +1198,6 @@ pub fn get_stages_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_item(parsed_body.item);
     Ok(builder)
 }
@@ -1273,7 +1214,6 @@ pub fn get_tags_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_tags(parsed_body.tags);
     Ok(builder)
 }
@@ -1290,7 +1230,6 @@ pub fn get_usage_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_usage_plan_id(parsed_body.usage_plan_id);
     builder = builder.set_start_date(parsed_body.start_date);
     builder = builder.set_end_date(parsed_body.end_date);
@@ -1311,7 +1250,6 @@ pub fn get_usage_plan_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_id(parsed_body.id);
     builder = builder.set_name(parsed_body.name);
     builder = builder.set_description(parsed_body.description);
@@ -1335,7 +1273,6 @@ pub fn get_usage_plan_key_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_id(parsed_body.id);
     builder = builder.set_type(parsed_body.r#type);
     builder = builder.set_value(parsed_body.value);
@@ -1355,7 +1292,6 @@ pub fn get_usage_plan_keys_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_items(parsed_body.items);
     builder = builder.set_position(parsed_body.position);
     Ok(builder)
@@ -1373,7 +1309,6 @@ pub fn get_usage_plans_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_items(parsed_body.items);
     builder = builder.set_position(parsed_body.position);
     Ok(builder)
@@ -1391,7 +1326,6 @@ pub fn get_vpc_link_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_id(parsed_body.id);
     builder = builder.set_name(parsed_body.name);
     builder = builder.set_description(parsed_body.description);
@@ -1414,7 +1348,6 @@ pub fn get_vpc_links_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_items(parsed_body.items);
     builder = builder.set_position(parsed_body.position);
     Ok(builder)
@@ -1432,7 +1365,6 @@ pub fn import_api_keys_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_ids(parsed_body.ids);
     builder = builder.set_warnings(parsed_body.warnings);
     Ok(builder)
@@ -1450,7 +1382,6 @@ pub fn import_documentation_parts_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_ids(parsed_body.ids);
     builder = builder.set_warnings(parsed_body.warnings);
     Ok(builder)
@@ -1468,7 +1399,6 @@ pub fn import_rest_api_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_id(parsed_body.id);
     builder = builder.set_name(parsed_body.name);
     builder = builder.set_description(parsed_body.description);
@@ -1497,7 +1427,6 @@ pub fn put_gateway_response_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_response_type(parsed_body.response_type);
     builder = builder.set_status_code(parsed_body.status_code);
     builder = builder.set_response_parameters(parsed_body.response_parameters);
@@ -1518,7 +1447,6 @@ pub fn put_integration_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_type(parsed_body.r#type);
     builder = builder.set_http_method(parsed_body.http_method);
     builder = builder.set_uri(parsed_body.uri);
@@ -1549,7 +1477,6 @@ pub fn put_integration_response_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_status_code(parsed_body.status_code);
     builder = builder.set_selection_pattern(parsed_body.selection_pattern);
     builder = builder.set_response_parameters(parsed_body.response_parameters);
@@ -1570,7 +1497,6 @@ pub fn put_method_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_http_method(parsed_body.http_method);
     builder = builder.set_authorization_type(parsed_body.authorization_type);
     builder = builder.set_authorizer_id(parsed_body.authorizer_id);
@@ -1597,7 +1523,6 @@ pub fn put_method_response_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_status_code(parsed_body.status_code);
     builder = builder.set_response_parameters(parsed_body.response_parameters);
     builder = builder.set_response_models(parsed_body.response_models);
@@ -1616,7 +1541,6 @@ pub fn put_rest_api_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_id(parsed_body.id);
     builder = builder.set_name(parsed_body.name);
     builder = builder.set_description(parsed_body.description);
@@ -1645,7 +1569,6 @@ pub fn test_invoke_authorizer_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_client_status(parsed_body.client_status);
     builder = builder.set_log(parsed_body.log);
     builder = builder.set_latency(parsed_body.latency);
@@ -1668,7 +1591,6 @@ pub fn test_invoke_method_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_status(parsed_body.status);
     builder = builder.set_body(parsed_body.body);
     builder = builder.set_headers(parsed_body.headers);
@@ -1690,7 +1612,6 @@ pub fn update_account_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_cloudwatch_role_arn(parsed_body.cloudwatch_role_arn);
     builder = builder.set_throttle_settings(parsed_body.throttle_settings);
     builder = builder.set_features(parsed_body.features);
@@ -1710,7 +1631,6 @@ pub fn update_api_key_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_id(parsed_body.id);
     builder = builder.set_value(parsed_body.value);
     builder = builder.set_name(parsed_body.name);
@@ -1736,7 +1656,6 @@ pub fn update_authorizer_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_id(parsed_body.id);
     builder = builder.set_name(parsed_body.name);
     builder = builder.set_type(parsed_body.r#type);
@@ -1764,7 +1683,6 @@ pub fn update_base_path_mapping_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_base_path(parsed_body.base_path);
     builder = builder.set_rest_api_id(parsed_body.rest_api_id);
     builder = builder.set_stage(parsed_body.stage);
@@ -1783,7 +1701,6 @@ pub fn update_client_certificate_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_client_certificate_id(parsed_body.client_certificate_id);
     builder = builder.set_description(parsed_body.description);
     builder = builder.set_pem_encoded_certificate(parsed_body.pem_encoded_certificate);
@@ -1805,7 +1722,6 @@ pub fn update_deployment_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_id(parsed_body.id);
     builder = builder.set_description(parsed_body.description);
     builder = builder.set_created_date(parsed_body.created_date);
@@ -1825,7 +1741,6 @@ pub fn update_documentation_part_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_id(parsed_body.id);
     builder = builder.set_location(parsed_body.location);
     builder = builder.set_properties(parsed_body.properties);
@@ -1844,7 +1759,6 @@ pub fn update_documentation_version_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_version(parsed_body.version);
     builder = builder.set_created_date(parsed_body.created_date);
     builder = builder.set_description(parsed_body.description);
@@ -1863,7 +1777,6 @@ pub fn update_domain_name_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_domain_name(parsed_body.domain_name);
     builder = builder.set_certificate_name(parsed_body.certificate_name);
     builder = builder.set_certificate_arn(parsed_body.certificate_arn);
@@ -1895,7 +1808,6 @@ pub fn update_gateway_response_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_response_type(parsed_body.response_type);
     builder = builder.set_status_code(parsed_body.status_code);
     builder = builder.set_response_parameters(parsed_body.response_parameters);
@@ -1916,7 +1828,6 @@ pub fn update_integration_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_type(parsed_body.r#type);
     builder = builder.set_http_method(parsed_body.http_method);
     builder = builder.set_uri(parsed_body.uri);
@@ -1947,7 +1858,6 @@ pub fn update_integration_response_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_status_code(parsed_body.status_code);
     builder = builder.set_selection_pattern(parsed_body.selection_pattern);
     builder = builder.set_response_parameters(parsed_body.response_parameters);
@@ -1968,7 +1878,6 @@ pub fn update_method_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_http_method(parsed_body.http_method);
     builder = builder.set_authorization_type(parsed_body.authorization_type);
     builder = builder.set_authorizer_id(parsed_body.authorizer_id);
@@ -1995,7 +1904,6 @@ pub fn update_method_response_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_status_code(parsed_body.status_code);
     builder = builder.set_response_parameters(parsed_body.response_parameters);
     builder = builder.set_response_models(parsed_body.response_models);
@@ -2014,7 +1922,6 @@ pub fn update_model_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_id(parsed_body.id);
     builder = builder.set_name(parsed_body.name);
     builder = builder.set_description(parsed_body.description);
@@ -2035,7 +1942,6 @@ pub fn update_request_validator_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_id(parsed_body.id);
     builder = builder.set_name(parsed_body.name);
     builder = builder.set_validate_request_body(parsed_body.validate_request_body);
@@ -2055,7 +1961,6 @@ pub fn update_resource_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_id(parsed_body.id);
     builder = builder.set_parent_id(parsed_body.parent_id);
     builder = builder.set_path_part(parsed_body.path_part);
@@ -2076,7 +1981,6 @@ pub fn update_rest_api_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_id(parsed_body.id);
     builder = builder.set_name(parsed_body.name);
     builder = builder.set_description(parsed_body.description);
@@ -2105,7 +2009,6 @@ pub fn update_stage_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_deployment_id(parsed_body.deployment_id);
     builder = builder.set_client_certificate_id(parsed_body.client_certificate_id);
     builder = builder.set_stage_name(parsed_body.stage_name);
@@ -2138,7 +2041,6 @@ pub fn update_usage_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_usage_plan_id(parsed_body.usage_plan_id);
     builder = builder.set_start_date(parsed_body.start_date);
     builder = builder.set_end_date(parsed_body.end_date);
@@ -2159,7 +2061,6 @@ pub fn update_usage_plan_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_id(parsed_body.id);
     builder = builder.set_name(parsed_body.name);
     builder = builder.set_description(parsed_body.description);
@@ -2183,7 +2084,6 @@ pub fn update_vpc_link_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_id(parsed_body.id);
     builder = builder.set_name(parsed_body.name);
     builder = builder.set_description(parsed_body.description);

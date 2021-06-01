@@ -11,7 +11,6 @@ pub fn batch_execute_statement_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_responses(parsed_body.responses);
     Ok(builder)
 }
@@ -28,7 +27,6 @@ pub fn batch_get_item_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_responses(parsed_body.responses);
     builder = builder.set_unprocessed_keys(parsed_body.unprocessed_keys);
     builder = builder.set_consumed_capacity(parsed_body.consumed_capacity);
@@ -47,7 +45,6 @@ pub fn batch_write_item_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_unprocessed_items(parsed_body.unprocessed_items);
     builder = builder.set_item_collection_metrics(parsed_body.item_collection_metrics);
     builder = builder.set_consumed_capacity(parsed_body.consumed_capacity);
@@ -66,7 +63,6 @@ pub fn create_backup_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_backup_details(parsed_body.backup_details);
     Ok(builder)
 }
@@ -83,7 +79,6 @@ pub fn create_global_table_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_global_table_description(parsed_body.global_table_description);
     Ok(builder)
 }
@@ -100,7 +95,6 @@ pub fn create_table_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_table_description(parsed_body.table_description);
     Ok(builder)
 }
@@ -117,7 +111,6 @@ pub fn delete_backup_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_backup_description(parsed_body.backup_description);
     Ok(builder)
 }
@@ -134,7 +127,6 @@ pub fn delete_item_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_attributes(parsed_body.attributes);
     builder = builder.set_consumed_capacity(parsed_body.consumed_capacity);
     builder = builder.set_item_collection_metrics(parsed_body.item_collection_metrics);
@@ -153,7 +145,6 @@ pub fn delete_table_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_table_description(parsed_body.table_description);
     Ok(builder)
 }
@@ -170,7 +161,6 @@ pub fn describe_backup_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_backup_description(parsed_body.backup_description);
     Ok(builder)
 }
@@ -187,7 +177,6 @@ pub fn describe_continuous_backups_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder =
         builder.set_continuous_backups_description(parsed_body.continuous_backups_description);
     Ok(builder)
@@ -205,7 +194,6 @@ pub fn describe_contributor_insights_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_table_name(parsed_body.table_name);
     builder = builder.set_index_name(parsed_body.index_name);
     builder =
@@ -228,7 +216,6 @@ pub fn describe_endpoints_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_endpoints(parsed_body.endpoints);
     Ok(builder)
 }
@@ -245,7 +232,6 @@ pub fn describe_export_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_export_description(parsed_body.export_description);
     Ok(builder)
 }
@@ -262,7 +248,6 @@ pub fn describe_global_table_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_global_table_description(parsed_body.global_table_description);
     Ok(builder)
 }
@@ -279,7 +264,6 @@ pub fn describe_global_table_settings_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_global_table_name(parsed_body.global_table_name);
     builder = builder.set_replica_settings(parsed_body.replica_settings);
     Ok(builder)
@@ -299,7 +283,6 @@ pub fn describe_kinesis_streaming_destination_deser_operation(
         } else {
             serde_json::from_slice(inp)?
         };
-
     builder = builder.set_table_name(parsed_body.table_name);
     builder =
         builder.set_kinesis_data_stream_destinations(parsed_body.kinesis_data_stream_destinations);
@@ -318,7 +301,6 @@ pub fn describe_limits_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder =
         builder.set_account_max_read_capacity_units(parsed_body.account_max_read_capacity_units);
     builder =
@@ -341,7 +323,6 @@ pub fn describe_table_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_table(parsed_body.table);
     Ok(builder)
 }
@@ -359,7 +340,6 @@ pub fn describe_table_replica_auto_scaling_deser_operation(
         } else {
             serde_json::from_slice(inp)?
         };
-
     builder =
         builder.set_table_auto_scaling_description(parsed_body.table_auto_scaling_description);
     Ok(builder)
@@ -377,7 +357,6 @@ pub fn describe_time_to_live_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_time_to_live_description(parsed_body.time_to_live_description);
     Ok(builder)
 }
@@ -396,7 +375,6 @@ pub fn disable_kinesis_streaming_destination_deser_operation(
         } else {
             serde_json::from_slice(inp)?
         };
-
     builder = builder.set_table_name(parsed_body.table_name);
     builder = builder.set_stream_arn(parsed_body.stream_arn);
     builder = builder.set_destination_status(parsed_body.destination_status);
@@ -417,7 +395,6 @@ pub fn enable_kinesis_streaming_destination_deser_operation(
         } else {
             serde_json::from_slice(inp)?
         };
-
     builder = builder.set_table_name(parsed_body.table_name);
     builder = builder.set_stream_arn(parsed_body.stream_arn);
     builder = builder.set_destination_status(parsed_body.destination_status);
@@ -436,7 +413,6 @@ pub fn execute_statement_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_items(parsed_body.items);
     builder = builder.set_next_token(parsed_body.next_token);
     Ok(builder)
@@ -454,7 +430,6 @@ pub fn execute_transaction_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_responses(parsed_body.responses);
     Ok(builder)
 }
@@ -471,7 +446,6 @@ pub fn export_table_to_point_in_time_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_export_description(parsed_body.export_description);
     Ok(builder)
 }
@@ -488,7 +462,6 @@ pub fn get_item_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_item(parsed_body.item);
     builder = builder.set_consumed_capacity(parsed_body.consumed_capacity);
     Ok(builder)
@@ -506,7 +479,6 @@ pub fn list_backups_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_backup_summaries(parsed_body.backup_summaries);
     builder = builder.set_last_evaluated_backup_arn(parsed_body.last_evaluated_backup_arn);
     Ok(builder)
@@ -524,7 +496,6 @@ pub fn list_contributor_insights_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder =
         builder.set_contributor_insights_summaries(parsed_body.contributor_insights_summaries);
     builder = builder.set_next_token(parsed_body.next_token);
@@ -543,7 +514,6 @@ pub fn list_exports_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_export_summaries(parsed_body.export_summaries);
     builder = builder.set_next_token(parsed_body.next_token);
     Ok(builder)
@@ -561,7 +531,6 @@ pub fn list_global_tables_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_global_tables(parsed_body.global_tables);
     builder =
         builder.set_last_evaluated_global_table_name(parsed_body.last_evaluated_global_table_name);
@@ -580,7 +549,6 @@ pub fn list_tables_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_table_names(parsed_body.table_names);
     builder = builder.set_last_evaluated_table_name(parsed_body.last_evaluated_table_name);
     Ok(builder)
@@ -598,7 +566,6 @@ pub fn list_tags_of_resource_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_tags(parsed_body.tags);
     builder = builder.set_next_token(parsed_body.next_token);
     Ok(builder)
@@ -616,7 +583,6 @@ pub fn put_item_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_attributes(parsed_body.attributes);
     builder = builder.set_consumed_capacity(parsed_body.consumed_capacity);
     builder = builder.set_item_collection_metrics(parsed_body.item_collection_metrics);
@@ -635,7 +601,6 @@ pub fn query_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_items(parsed_body.items);
     builder = builder.set_count(parsed_body.count);
     builder = builder.set_scanned_count(parsed_body.scanned_count);
@@ -656,7 +621,6 @@ pub fn restore_table_from_backup_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_table_description(parsed_body.table_description);
     Ok(builder)
 }
@@ -673,7 +637,6 @@ pub fn restore_table_to_point_in_time_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_table_description(parsed_body.table_description);
     Ok(builder)
 }
@@ -690,7 +653,6 @@ pub fn scan_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_items(parsed_body.items);
     builder = builder.set_count(parsed_body.count);
     builder = builder.set_scanned_count(parsed_body.scanned_count);
@@ -711,7 +673,6 @@ pub fn transact_get_items_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_consumed_capacity(parsed_body.consumed_capacity);
     builder = builder.set_responses(parsed_body.responses);
     Ok(builder)
@@ -729,7 +690,6 @@ pub fn transact_write_items_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_consumed_capacity(parsed_body.consumed_capacity);
     builder = builder.set_item_collection_metrics(parsed_body.item_collection_metrics);
     Ok(builder)
@@ -747,7 +707,6 @@ pub fn update_continuous_backups_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder =
         builder.set_continuous_backups_description(parsed_body.continuous_backups_description);
     Ok(builder)
@@ -765,7 +724,6 @@ pub fn update_contributor_insights_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_table_name(parsed_body.table_name);
     builder = builder.set_index_name(parsed_body.index_name);
     builder = builder.set_contributor_insights_status(parsed_body.contributor_insights_status);
@@ -784,7 +742,6 @@ pub fn update_global_table_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_global_table_description(parsed_body.global_table_description);
     Ok(builder)
 }
@@ -801,7 +758,6 @@ pub fn update_global_table_settings_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_global_table_name(parsed_body.global_table_name);
     builder = builder.set_replica_settings(parsed_body.replica_settings);
     Ok(builder)
@@ -819,7 +775,6 @@ pub fn update_item_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_attributes(parsed_body.attributes);
     builder = builder.set_consumed_capacity(parsed_body.consumed_capacity);
     builder = builder.set_item_collection_metrics(parsed_body.item_collection_metrics);
@@ -838,7 +793,6 @@ pub fn update_table_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_table_description(parsed_body.table_description);
     Ok(builder)
 }
@@ -856,7 +810,6 @@ pub fn update_table_replica_auto_scaling_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder =
         builder.set_table_auto_scaling_description(parsed_body.table_auto_scaling_description);
     Ok(builder)
@@ -874,7 +827,6 @@ pub fn update_time_to_live_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_time_to_live_specification(parsed_body.time_to_live_specification);
     Ok(builder)
 }

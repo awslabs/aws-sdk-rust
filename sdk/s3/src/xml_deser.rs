@@ -2,7 +2,8 @@
 pub fn parse_generic_error(
     response: &http::Response<bytes::Bytes>,
 ) -> Result<smithy_types::Error, smithy_xml::decode::XmlError> {
-    crate::rest_xml_unwrapped_errors::parse_generic_error(response.body().as_ref())
+    let base_err = crate::rest_xml_unwrapped_errors::parse_generic_error(response.body().as_ref())?;
+    Ok(crate::s3_errors::parse_extended_error(base_err, &response))
 }
 
 #[allow(unused_mut)]
@@ -15,13 +16,14 @@ pub fn no_such_upload(
 }
 
 #[allow(unused_mut)]
-pub fn complete_multipart_upload_deser_operation(
+pub fn deser_operation_complete_multipart_upload(
     inp: &[u8],
     mut builder: crate::output::complete_multipart_upload_output::Builder,
 ) -> Result<crate::output::complete_multipart_upload_output::Builder, smithy_xml::decode::XmlError>
 {
     use std::convert::TryFrom;
     let mut doc = smithy_xml::decode::Document::try_from(inp)?;
+
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
     let start_el = decoder.start_el();
@@ -31,11 +33,10 @@ pub fn complete_multipart_upload_deser_operation(
             start_el
         )));
     }
-
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Bucket") /* Bucket com.amazonaws.s3#CompleteMultipartUploadOutput$Bucket */ =>  {
-                let var_1 = 
+                let var_1 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -48,7 +49,7 @@ pub fn complete_multipart_upload_deser_operation(
             }
             ,
             s if s.matches("ETag") /* ETag com.amazonaws.s3#CompleteMultipartUploadOutput$ETag */ =>  {
-                let var_2 = 
+                let var_2 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -61,7 +62,7 @@ pub fn complete_multipart_upload_deser_operation(
             }
             ,
             s if s.matches("Key") /* Key com.amazonaws.s3#CompleteMultipartUploadOutput$Key */ =>  {
-                let var_3 = 
+                let var_3 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -74,7 +75,7 @@ pub fn complete_multipart_upload_deser_operation(
             }
             ,
             s if s.matches("Location") /* Location com.amazonaws.s3#CompleteMultipartUploadOutput$Location */ =>  {
-                let var_4 = 
+                let var_4 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -120,12 +121,13 @@ pub fn bucket_already_exists(
 }
 
 #[allow(unused_mut)]
-pub fn create_multipart_upload_deser_operation(
+pub fn deser_operation_create_multipart_upload(
     inp: &[u8],
     mut builder: crate::output::create_multipart_upload_output::Builder,
 ) -> Result<crate::output::create_multipart_upload_output::Builder, smithy_xml::decode::XmlError> {
     use std::convert::TryFrom;
     let mut doc = smithy_xml::decode::Document::try_from(inp)?;
+
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
     let start_el = decoder.start_el();
@@ -135,11 +137,10 @@ pub fn create_multipart_upload_deser_operation(
             start_el
         )));
     }
-
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Bucket") /* Bucket com.amazonaws.s3#CreateMultipartUploadOutput$Bucket */ =>  {
-                let var_5 = 
+                let var_5 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -152,7 +153,7 @@ pub fn create_multipart_upload_deser_operation(
             }
             ,
             s if s.matches("Key") /* Key com.amazonaws.s3#CreateMultipartUploadOutput$Key */ =>  {
-                let var_6 = 
+                let var_6 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -165,7 +166,7 @@ pub fn create_multipart_upload_deser_operation(
             }
             ,
             s if s.matches("UploadId") /* UploadId com.amazonaws.s3#CreateMultipartUploadOutput$UploadId */ =>  {
-                let var_7 = 
+                let var_7 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -184,12 +185,13 @@ pub fn create_multipart_upload_deser_operation(
 }
 
 #[allow(unused_mut)]
-pub fn delete_objects_deser_operation(
+pub fn deser_operation_delete_objects(
     inp: &[u8],
     mut builder: crate::output::delete_objects_output::Builder,
 ) -> Result<crate::output::delete_objects_output::Builder, smithy_xml::decode::XmlError> {
     use std::convert::TryFrom;
     let mut doc = smithy_xml::decode::Document::try_from(inp)?;
+
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
     let start_el = decoder.start_el();
@@ -199,11 +201,10 @@ pub fn delete_objects_deser_operation(
             start_el
         )));
     }
-
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Error") /* Errors com.amazonaws.s3#DeleteObjectsOutput$Errors */ =>  {
-                let var_8 = 
+                let var_8 =
                     Some(
                         Result::<std::vec::Vec<crate::model::Error>, smithy_xml::decode::XmlError>::Ok({
                             let mut list_9 = builder.errors.take().unwrap_or_default();
@@ -220,7 +221,7 @@ pub fn delete_objects_deser_operation(
             }
             ,
             s if s.matches("Deleted") /* Deleted com.amazonaws.s3#DeleteObjectsOutput$Deleted */ =>  {
-                let var_10 = 
+                let var_10 =
                     Some(
                         Result::<std::vec::Vec<crate::model::DeletedObject>, smithy_xml::decode::XmlError>::Ok({
                             let mut list_11 = builder.deleted.take().unwrap_or_default();
@@ -243,7 +244,7 @@ pub fn delete_objects_deser_operation(
 }
 
 #[allow(unused_mut)]
-pub fn get_bucket_accelerate_configuration_deser_operation(
+pub fn deser_operation_get_bucket_accelerate_configuration(
     inp: &[u8],
     mut builder: crate::output::get_bucket_accelerate_configuration_output::Builder,
 ) -> Result<
@@ -252,6 +253,7 @@ pub fn get_bucket_accelerate_configuration_deser_operation(
 > {
     use std::convert::TryFrom;
     let mut doc = smithy_xml::decode::Document::try_from(inp)?;
+
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
     let start_el = decoder.start_el();
@@ -261,11 +263,10 @@ pub fn get_bucket_accelerate_configuration_deser_operation(
             start_el
         )));
     }
-
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Status") /* Status com.amazonaws.s3#GetBucketAccelerateConfigurationOutput$Status */ =>  {
-                let var_12 = 
+                let var_12 =
                     Some(
                         Result::<crate::model::BucketAccelerateStatus, smithy_xml::decode::XmlError>::Ok(
                             crate::model::BucketAccelerateStatus::from(
@@ -285,12 +286,13 @@ pub fn get_bucket_accelerate_configuration_deser_operation(
 }
 
 #[allow(unused_mut)]
-pub fn get_bucket_acl_deser_operation(
+pub fn deser_operation_get_bucket_acl(
     inp: &[u8],
     mut builder: crate::output::get_bucket_acl_output::Builder,
 ) -> Result<crate::output::get_bucket_acl_output::Builder, smithy_xml::decode::XmlError> {
     use std::convert::TryFrom;
     let mut doc = smithy_xml::decode::Document::try_from(inp)?;
+
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
     let start_el = decoder.start_el();
@@ -300,11 +302,10 @@ pub fn get_bucket_acl_deser_operation(
             start_el
         )));
     }
-
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Owner") /* Owner com.amazonaws.s3#GetBucketAclOutput$Owner */ =>  {
-                let var_13 = 
+                let var_13 =
                     Some(
                         crate::xml_deser::owner_inner(&mut tag)
                         ?
@@ -314,7 +315,7 @@ pub fn get_bucket_acl_deser_operation(
             }
             ,
             s if s.matches("AccessControlList") /* Grants com.amazonaws.s3#GetBucketAclOutput$Grants */ =>  {
-                let var_14 = 
+                let var_14 =
                     Some(
                         crate::xml_deser::deserialize_grants(&mut tag)
                         ?
@@ -330,12 +331,13 @@ pub fn get_bucket_acl_deser_operation(
 }
 
 #[allow(unused_mut)]
-pub fn get_bucket_cors_deser_operation(
+pub fn deser_operation_get_bucket_cors(
     inp: &[u8],
     mut builder: crate::output::get_bucket_cors_output::Builder,
 ) -> Result<crate::output::get_bucket_cors_output::Builder, smithy_xml::decode::XmlError> {
     use std::convert::TryFrom;
     let mut doc = smithy_xml::decode::Document::try_from(inp)?;
+
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
     let start_el = decoder.start_el();
@@ -345,11 +347,10 @@ pub fn get_bucket_cors_deser_operation(
             start_el
         )));
     }
-
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("CORSRule") /* CORSRules com.amazonaws.s3#GetBucketCorsOutput$CORSRules */ =>  {
-                let var_15 = 
+                let var_15 =
                     Some(
                         Result::<std::vec::Vec<crate::model::CORSRule>, smithy_xml::decode::XmlError>::Ok({
                             let mut list_16 = builder.cors_rules.take().unwrap_or_default();
@@ -372,7 +373,7 @@ pub fn get_bucket_cors_deser_operation(
 }
 
 #[allow(unused_mut)]
-pub fn get_bucket_lifecycle_configuration_deser_operation(
+pub fn deser_operation_get_bucket_lifecycle_configuration(
     inp: &[u8],
     mut builder: crate::output::get_bucket_lifecycle_configuration_output::Builder,
 ) -> Result<
@@ -381,6 +382,7 @@ pub fn get_bucket_lifecycle_configuration_deser_operation(
 > {
     use std::convert::TryFrom;
     let mut doc = smithy_xml::decode::Document::try_from(inp)?;
+
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
     let start_el = decoder.start_el();
@@ -390,11 +392,10 @@ pub fn get_bucket_lifecycle_configuration_deser_operation(
             start_el
         )));
     }
-
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Rule") /* Rules com.amazonaws.s3#GetBucketLifecycleConfigurationOutput$Rules */ =>  {
-                let var_17 = 
+                let var_17 =
                     Some(
                         Result::<std::vec::Vec<crate::model::LifecycleRule>, smithy_xml::decode::XmlError>::Ok({
                             let mut list_18 = builder.rules.take().unwrap_or_default();
@@ -417,12 +418,13 @@ pub fn get_bucket_lifecycle_configuration_deser_operation(
 }
 
 #[allow(unused_mut)]
-pub fn get_bucket_location_deser_operation(
+pub fn deser_operation_get_bucket_location(
     inp: &[u8],
     mut builder: crate::output::get_bucket_location_output::Builder,
 ) -> Result<crate::output::get_bucket_location_output::Builder, smithy_xml::decode::XmlError> {
     use std::convert::TryFrom;
     let mut doc = smithy_xml::decode::Document::try_from(inp)?;
+
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
     let start_el = decoder.start_el();
@@ -432,11 +434,10 @@ pub fn get_bucket_location_deser_operation(
             start_el
         )));
     }
-
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("LocationConstraint") /* LocationConstraint com.amazonaws.s3#GetBucketLocationOutput$LocationConstraint */ =>  {
-                let var_19 = 
+                let var_19 =
                     Some(
                         Result::<crate::model::BucketLocationConstraint, smithy_xml::decode::XmlError>::Ok(
                             crate::model::BucketLocationConstraint::from(
@@ -456,12 +457,13 @@ pub fn get_bucket_location_deser_operation(
 }
 
 #[allow(unused_mut)]
-pub fn get_bucket_logging_deser_operation(
+pub fn deser_operation_get_bucket_logging(
     inp: &[u8],
     mut builder: crate::output::get_bucket_logging_output::Builder,
 ) -> Result<crate::output::get_bucket_logging_output::Builder, smithy_xml::decode::XmlError> {
     use std::convert::TryFrom;
     let mut doc = smithy_xml::decode::Document::try_from(inp)?;
+
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
     let start_el = decoder.start_el();
@@ -471,11 +473,10 @@ pub fn get_bucket_logging_deser_operation(
             start_el
         )));
     }
-
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("LoggingEnabled") /* LoggingEnabled com.amazonaws.s3#GetBucketLoggingOutput$LoggingEnabled */ =>  {
-                let var_20 = 
+                let var_20 =
                     Some(
                         crate::xml_deser::logging_enabled_inner(&mut tag)
                         ?
@@ -491,7 +492,7 @@ pub fn get_bucket_logging_deser_operation(
 }
 
 #[allow(unused_mut)]
-pub fn get_bucket_notification_configuration_deser_operation(
+pub fn deser_operation_get_bucket_notification_configuration(
     inp: &[u8],
     mut builder: crate::output::get_bucket_notification_configuration_output::Builder,
 ) -> Result<
@@ -500,6 +501,7 @@ pub fn get_bucket_notification_configuration_deser_operation(
 > {
     use std::convert::TryFrom;
     let mut doc = smithy_xml::decode::Document::try_from(inp)?;
+
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
     let start_el = decoder.start_el();
@@ -509,11 +511,10 @@ pub fn get_bucket_notification_configuration_deser_operation(
             start_el
         )));
     }
-
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("CloudFunctionConfiguration") /* LambdaFunctionConfigurations com.amazonaws.s3#GetBucketNotificationConfigurationOutput$LambdaFunctionConfigurations */ =>  {
-                let var_21 = 
+                let var_21 =
                     Some(
                         Result::<std::vec::Vec<crate::model::LambdaFunctionConfiguration>, smithy_xml::decode::XmlError>::Ok({
                             let mut list_22 = builder.lambda_function_configurations.take().unwrap_or_default();
@@ -530,7 +531,7 @@ pub fn get_bucket_notification_configuration_deser_operation(
             }
             ,
             s if s.matches("TopicConfiguration") /* TopicConfigurations com.amazonaws.s3#GetBucketNotificationConfigurationOutput$TopicConfigurations */ =>  {
-                let var_23 = 
+                let var_23 =
                     Some(
                         Result::<std::vec::Vec<crate::model::TopicConfiguration>, smithy_xml::decode::XmlError>::Ok({
                             let mut list_24 = builder.topic_configurations.take().unwrap_or_default();
@@ -547,7 +548,7 @@ pub fn get_bucket_notification_configuration_deser_operation(
             }
             ,
             s if s.matches("QueueConfiguration") /* QueueConfigurations com.amazonaws.s3#GetBucketNotificationConfigurationOutput$QueueConfigurations */ =>  {
-                let var_25 = 
+                let var_25 =
                     Some(
                         Result::<std::vec::Vec<crate::model::QueueConfiguration>, smithy_xml::decode::XmlError>::Ok({
                             let mut list_26 = builder.queue_configurations.take().unwrap_or_default();
@@ -570,13 +571,14 @@ pub fn get_bucket_notification_configuration_deser_operation(
 }
 
 #[allow(unused_mut)]
-pub fn get_bucket_request_payment_deser_operation(
+pub fn deser_operation_get_bucket_request_payment(
     inp: &[u8],
     mut builder: crate::output::get_bucket_request_payment_output::Builder,
 ) -> Result<crate::output::get_bucket_request_payment_output::Builder, smithy_xml::decode::XmlError>
 {
     use std::convert::TryFrom;
     let mut doc = smithy_xml::decode::Document::try_from(inp)?;
+
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
     let start_el = decoder.start_el();
@@ -586,11 +588,10 @@ pub fn get_bucket_request_payment_deser_operation(
             start_el
         )));
     }
-
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Payer") /* Payer com.amazonaws.s3#GetBucketRequestPaymentOutput$Payer */ =>  {
-                let var_27 = 
+                let var_27 =
                     Some(
                         Result::<crate::model::Payer, smithy_xml::decode::XmlError>::Ok(
                             crate::model::Payer::from(
@@ -610,12 +611,13 @@ pub fn get_bucket_request_payment_deser_operation(
 }
 
 #[allow(unused_mut)]
-pub fn get_bucket_tagging_deser_operation(
+pub fn deser_operation_get_bucket_tagging(
     inp: &[u8],
     mut builder: crate::output::get_bucket_tagging_output::Builder,
 ) -> Result<crate::output::get_bucket_tagging_output::Builder, smithy_xml::decode::XmlError> {
     use std::convert::TryFrom;
     let mut doc = smithy_xml::decode::Document::try_from(inp)?;
+
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
     let start_el = decoder.start_el();
@@ -625,11 +627,10 @@ pub fn get_bucket_tagging_deser_operation(
             start_el
         )));
     }
-
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("TagSet") /* TagSet com.amazonaws.s3#GetBucketTaggingOutput$TagSet */ =>  {
-                let var_28 = 
+                let var_28 =
                     Some(
                         crate::xml_deser::deserialize_tag_set(&mut tag)
                         ?
@@ -645,12 +646,13 @@ pub fn get_bucket_tagging_deser_operation(
 }
 
 #[allow(unused_mut)]
-pub fn get_bucket_versioning_deser_operation(
+pub fn deser_operation_get_bucket_versioning(
     inp: &[u8],
     mut builder: crate::output::get_bucket_versioning_output::Builder,
 ) -> Result<crate::output::get_bucket_versioning_output::Builder, smithy_xml::decode::XmlError> {
     use std::convert::TryFrom;
     let mut doc = smithy_xml::decode::Document::try_from(inp)?;
+
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
     let start_el = decoder.start_el();
@@ -660,11 +662,10 @@ pub fn get_bucket_versioning_deser_operation(
             start_el
         )));
     }
-
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Status") /* Status com.amazonaws.s3#GetBucketVersioningOutput$Status */ =>  {
-                let var_29 = 
+                let var_29 =
                     Some(
                         Result::<crate::model::BucketVersioningStatus, smithy_xml::decode::XmlError>::Ok(
                             crate::model::BucketVersioningStatus::from(
@@ -678,7 +679,7 @@ pub fn get_bucket_versioning_deser_operation(
             }
             ,
             s if s.matches("MfaDelete") /* MFADelete com.amazonaws.s3#GetBucketVersioningOutput$MFADelete */ =>  {
-                let var_30 = 
+                let var_30 =
                     Some(
                         Result::<crate::model::MFADeleteStatus, smithy_xml::decode::XmlError>::Ok(
                             crate::model::MFADeleteStatus::from(
@@ -698,12 +699,13 @@ pub fn get_bucket_versioning_deser_operation(
 }
 
 #[allow(unused_mut)]
-pub fn get_bucket_website_deser_operation(
+pub fn deser_operation_get_bucket_website(
     inp: &[u8],
     mut builder: crate::output::get_bucket_website_output::Builder,
 ) -> Result<crate::output::get_bucket_website_output::Builder, smithy_xml::decode::XmlError> {
     use std::convert::TryFrom;
     let mut doc = smithy_xml::decode::Document::try_from(inp)?;
+
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
     let start_el = decoder.start_el();
@@ -713,11 +715,10 @@ pub fn get_bucket_website_deser_operation(
             start_el
         )));
     }
-
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("IndexDocument") /* IndexDocument com.amazonaws.s3#GetBucketWebsiteOutput$IndexDocument */ =>  {
-                let var_31 = 
+                let var_31 =
                     Some(
                         crate::xml_deser::index_document_inner(&mut tag)
                         ?
@@ -727,7 +728,7 @@ pub fn get_bucket_website_deser_operation(
             }
             ,
             s if s.matches("RedirectAllRequestsTo") /* RedirectAllRequestsTo com.amazonaws.s3#GetBucketWebsiteOutput$RedirectAllRequestsTo */ =>  {
-                let var_32 = 
+                let var_32 =
                     Some(
                         crate::xml_deser::redirect_all_requests_to_inner(&mut tag)
                         ?
@@ -737,7 +738,7 @@ pub fn get_bucket_website_deser_operation(
             }
             ,
             s if s.matches("RoutingRules") /* RoutingRules com.amazonaws.s3#GetBucketWebsiteOutput$RoutingRules */ =>  {
-                let var_33 = 
+                let var_33 =
                     Some(
                         crate::xml_deser::deserialize_routing_rules(&mut tag)
                         ?
@@ -747,7 +748,7 @@ pub fn get_bucket_website_deser_operation(
             }
             ,
             s if s.matches("ErrorDocument") /* ErrorDocument com.amazonaws.s3#GetBucketWebsiteOutput$ErrorDocument */ =>  {
-                let var_34 = 
+                let var_34 =
                     Some(
                         crate::xml_deser::error_document_inner(&mut tag)
                         ?
@@ -780,11 +781,10 @@ pub fn invalid_object_state(
     let mut document = smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
     let mut error_decoder = crate::rest_xml_unwrapped_errors::error_scope(&mut document)?;
-
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("StorageClass") /* StorageClass com.amazonaws.s3#InvalidObjectState$StorageClass */ =>  {
-                let var_35 = 
+                let var_35 =
                     Some(
                         Result::<crate::model::StorageClass, smithy_xml::decode::XmlError>::Ok(
                             crate::model::StorageClass::from(
@@ -798,7 +798,7 @@ pub fn invalid_object_state(
             }
             ,
             s if s.matches("AccessTier") /* AccessTier com.amazonaws.s3#InvalidObjectState$AccessTier */ =>  {
-                let var_36 = 
+                let var_36 =
                     Some(
                         Result::<crate::model::IntelligentTieringAccessTier, smithy_xml::decode::XmlError>::Ok(
                             crate::model::IntelligentTieringAccessTier::from(
@@ -818,12 +818,13 @@ pub fn invalid_object_state(
 }
 
 #[allow(unused_mut)]
-pub fn get_object_acl_deser_operation(
+pub fn deser_operation_get_object_acl(
     inp: &[u8],
     mut builder: crate::output::get_object_acl_output::Builder,
 ) -> Result<crate::output::get_object_acl_output::Builder, smithy_xml::decode::XmlError> {
     use std::convert::TryFrom;
     let mut doc = smithy_xml::decode::Document::try_from(inp)?;
+
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
     let start_el = decoder.start_el();
@@ -833,11 +834,10 @@ pub fn get_object_acl_deser_operation(
             start_el
         )));
     }
-
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Owner") /* Owner com.amazonaws.s3#GetObjectAclOutput$Owner */ =>  {
-                let var_37 = 
+                let var_37 =
                     Some(
                         crate::xml_deser::owner_inner(&mut tag)
                         ?
@@ -847,7 +847,7 @@ pub fn get_object_acl_deser_operation(
             }
             ,
             s if s.matches("AccessControlList") /* Grants com.amazonaws.s3#GetObjectAclOutput$Grants */ =>  {
-                let var_38 = 
+                let var_38 =
                     Some(
                         crate::xml_deser::deserialize_grants(&mut tag)
                         ?
@@ -863,12 +863,13 @@ pub fn get_object_acl_deser_operation(
 }
 
 #[allow(unused_mut)]
-pub fn get_object_tagging_deser_operation(
+pub fn deser_operation_get_object_tagging(
     inp: &[u8],
     mut builder: crate::output::get_object_tagging_output::Builder,
 ) -> Result<crate::output::get_object_tagging_output::Builder, smithy_xml::decode::XmlError> {
     use std::convert::TryFrom;
     let mut doc = smithy_xml::decode::Document::try_from(inp)?;
+
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
     let start_el = decoder.start_el();
@@ -878,11 +879,10 @@ pub fn get_object_tagging_deser_operation(
             start_el
         )));
     }
-
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("TagSet") /* TagSet com.amazonaws.s3#GetObjectTaggingOutput$TagSet */ =>  {
-                let var_39 = 
+                let var_39 =
                     Some(
                         crate::xml_deser::deserialize_tag_set(&mut tag)
                         ?
@@ -907,7 +907,7 @@ pub fn not_found(
 }
 
 #[allow(unused_mut)]
-pub fn list_bucket_analytics_configurations_deser_operation(
+pub fn deser_operation_list_bucket_analytics_configurations(
     inp: &[u8],
     mut builder: crate::output::list_bucket_analytics_configurations_output::Builder,
 ) -> Result<
@@ -916,6 +916,7 @@ pub fn list_bucket_analytics_configurations_deser_operation(
 > {
     use std::convert::TryFrom;
     let mut doc = smithy_xml::decode::Document::try_from(inp)?;
+
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
     let start_el = decoder.start_el();
@@ -925,11 +926,10 @@ pub fn list_bucket_analytics_configurations_deser_operation(
             start_el
         )));
     }
-
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("NextContinuationToken") /* NextContinuationToken com.amazonaws.s3#ListBucketAnalyticsConfigurationsOutput$NextContinuationToken */ =>  {
-                let var_40 = 
+                let var_40 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -942,7 +942,7 @@ pub fn list_bucket_analytics_configurations_deser_operation(
             }
             ,
             s if s.matches("ContinuationToken") /* ContinuationToken com.amazonaws.s3#ListBucketAnalyticsConfigurationsOutput$ContinuationToken */ =>  {
-                let var_41 = 
+                let var_41 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -955,7 +955,7 @@ pub fn list_bucket_analytics_configurations_deser_operation(
             }
             ,
             s if s.matches("IsTruncated") /* IsTruncated com.amazonaws.s3#ListBucketAnalyticsConfigurationsOutput$IsTruncated */ =>  {
-                let var_42 = 
+                let var_42 =
                      {
                         use std::str::FromStr;
                         bool::from_str(
@@ -969,7 +969,7 @@ pub fn list_bucket_analytics_configurations_deser_operation(
             }
             ,
             s if s.matches("AnalyticsConfiguration") /* AnalyticsConfigurationList com.amazonaws.s3#ListBucketAnalyticsConfigurationsOutput$AnalyticsConfigurationList */ =>  {
-                let var_43 = 
+                let var_43 =
                     Some(
                         Result::<std::vec::Vec<crate::model::AnalyticsConfiguration>, smithy_xml::decode::XmlError>::Ok({
                             let mut list_44 = builder.analytics_configuration_list.take().unwrap_or_default();
@@ -992,7 +992,7 @@ pub fn list_bucket_analytics_configurations_deser_operation(
 }
 
 #[allow(unused_mut)]
-pub fn list_bucket_intelligent_tiering_configurations_deser_operation(
+pub fn deser_operation_list_bucket_intelligent_tiering_configurations(
     inp: &[u8],
     mut builder: crate::output::list_bucket_intelligent_tiering_configurations_output::Builder,
 ) -> Result<
@@ -1001,6 +1001,7 @@ pub fn list_bucket_intelligent_tiering_configurations_deser_operation(
 > {
     use std::convert::TryFrom;
     let mut doc = smithy_xml::decode::Document::try_from(inp)?;
+
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
     let start_el = decoder.start_el();
@@ -1010,11 +1011,10 @@ pub fn list_bucket_intelligent_tiering_configurations_deser_operation(
             start_el
         )));
     }
-
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("IntelligentTieringConfiguration") /* IntelligentTieringConfigurationList com.amazonaws.s3#ListBucketIntelligentTieringConfigurationsOutput$IntelligentTieringConfigurationList */ =>  {
-                let var_45 = 
+                let var_45 =
                     Some(
                         Result::<std::vec::Vec<crate::model::IntelligentTieringConfiguration>, smithy_xml::decode::XmlError>::Ok({
                             let mut list_46 = builder.intelligent_tiering_configuration_list.take().unwrap_or_default();
@@ -1031,7 +1031,7 @@ pub fn list_bucket_intelligent_tiering_configurations_deser_operation(
             }
             ,
             s if s.matches("NextContinuationToken") /* NextContinuationToken com.amazonaws.s3#ListBucketIntelligentTieringConfigurationsOutput$NextContinuationToken */ =>  {
-                let var_47 = 
+                let var_47 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -1044,7 +1044,7 @@ pub fn list_bucket_intelligent_tiering_configurations_deser_operation(
             }
             ,
             s if s.matches("ContinuationToken") /* ContinuationToken com.amazonaws.s3#ListBucketIntelligentTieringConfigurationsOutput$ContinuationToken */ =>  {
-                let var_48 = 
+                let var_48 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -1057,7 +1057,7 @@ pub fn list_bucket_intelligent_tiering_configurations_deser_operation(
             }
             ,
             s if s.matches("IsTruncated") /* IsTruncated com.amazonaws.s3#ListBucketIntelligentTieringConfigurationsOutput$IsTruncated */ =>  {
-                let var_49 = 
+                let var_49 =
                      {
                         use std::str::FromStr;
                         bool::from_str(
@@ -1077,7 +1077,7 @@ pub fn list_bucket_intelligent_tiering_configurations_deser_operation(
 }
 
 #[allow(unused_mut)]
-pub fn list_bucket_inventory_configurations_deser_operation(
+pub fn deser_operation_list_bucket_inventory_configurations(
     inp: &[u8],
     mut builder: crate::output::list_bucket_inventory_configurations_output::Builder,
 ) -> Result<
@@ -1086,6 +1086,7 @@ pub fn list_bucket_inventory_configurations_deser_operation(
 > {
     use std::convert::TryFrom;
     let mut doc = smithy_xml::decode::Document::try_from(inp)?;
+
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
     let start_el = decoder.start_el();
@@ -1095,11 +1096,10 @@ pub fn list_bucket_inventory_configurations_deser_operation(
             start_el
         )));
     }
-
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("NextContinuationToken") /* NextContinuationToken com.amazonaws.s3#ListBucketInventoryConfigurationsOutput$NextContinuationToken */ =>  {
-                let var_50 = 
+                let var_50 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -1112,7 +1112,7 @@ pub fn list_bucket_inventory_configurations_deser_operation(
             }
             ,
             s if s.matches("ContinuationToken") /* ContinuationToken com.amazonaws.s3#ListBucketInventoryConfigurationsOutput$ContinuationToken */ =>  {
-                let var_51 = 
+                let var_51 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -1125,7 +1125,7 @@ pub fn list_bucket_inventory_configurations_deser_operation(
             }
             ,
             s if s.matches("IsTruncated") /* IsTruncated com.amazonaws.s3#ListBucketInventoryConfigurationsOutput$IsTruncated */ =>  {
-                let var_52 = 
+                let var_52 =
                      {
                         use std::str::FromStr;
                         bool::from_str(
@@ -1139,7 +1139,7 @@ pub fn list_bucket_inventory_configurations_deser_operation(
             }
             ,
             s if s.matches("InventoryConfiguration") /* InventoryConfigurationList com.amazonaws.s3#ListBucketInventoryConfigurationsOutput$InventoryConfigurationList */ =>  {
-                let var_53 = 
+                let var_53 =
                     Some(
                         Result::<std::vec::Vec<crate::model::InventoryConfiguration>, smithy_xml::decode::XmlError>::Ok({
                             let mut list_54 = builder.inventory_configuration_list.take().unwrap_or_default();
@@ -1162,7 +1162,7 @@ pub fn list_bucket_inventory_configurations_deser_operation(
 }
 
 #[allow(unused_mut)]
-pub fn list_bucket_metrics_configurations_deser_operation(
+pub fn deser_operation_list_bucket_metrics_configurations(
     inp: &[u8],
     mut builder: crate::output::list_bucket_metrics_configurations_output::Builder,
 ) -> Result<
@@ -1171,6 +1171,7 @@ pub fn list_bucket_metrics_configurations_deser_operation(
 > {
     use std::convert::TryFrom;
     let mut doc = smithy_xml::decode::Document::try_from(inp)?;
+
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
     let start_el = decoder.start_el();
@@ -1180,11 +1181,10 @@ pub fn list_bucket_metrics_configurations_deser_operation(
             start_el
         )));
     }
-
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("NextContinuationToken") /* NextContinuationToken com.amazonaws.s3#ListBucketMetricsConfigurationsOutput$NextContinuationToken */ =>  {
-                let var_55 = 
+                let var_55 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -1197,7 +1197,7 @@ pub fn list_bucket_metrics_configurations_deser_operation(
             }
             ,
             s if s.matches("ContinuationToken") /* ContinuationToken com.amazonaws.s3#ListBucketMetricsConfigurationsOutput$ContinuationToken */ =>  {
-                let var_56 = 
+                let var_56 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -1210,7 +1210,7 @@ pub fn list_bucket_metrics_configurations_deser_operation(
             }
             ,
             s if s.matches("MetricsConfiguration") /* MetricsConfigurationList com.amazonaws.s3#ListBucketMetricsConfigurationsOutput$MetricsConfigurationList */ =>  {
-                let var_57 = 
+                let var_57 =
                     Some(
                         Result::<std::vec::Vec<crate::model::MetricsConfiguration>, smithy_xml::decode::XmlError>::Ok({
                             let mut list_58 = builder.metrics_configuration_list.take().unwrap_or_default();
@@ -1227,7 +1227,7 @@ pub fn list_bucket_metrics_configurations_deser_operation(
             }
             ,
             s if s.matches("IsTruncated") /* IsTruncated com.amazonaws.s3#ListBucketMetricsConfigurationsOutput$IsTruncated */ =>  {
-                let var_59 = 
+                let var_59 =
                      {
                         use std::str::FromStr;
                         bool::from_str(
@@ -1247,12 +1247,13 @@ pub fn list_bucket_metrics_configurations_deser_operation(
 }
 
 #[allow(unused_mut)]
-pub fn list_buckets_deser_operation(
+pub fn deser_operation_list_buckets(
     inp: &[u8],
     mut builder: crate::output::list_buckets_output::Builder,
 ) -> Result<crate::output::list_buckets_output::Builder, smithy_xml::decode::XmlError> {
     use std::convert::TryFrom;
     let mut doc = smithy_xml::decode::Document::try_from(inp)?;
+
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
     let start_el = decoder.start_el();
@@ -1262,11 +1263,10 @@ pub fn list_buckets_deser_operation(
             start_el
         )));
     }
-
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Owner") /* Owner com.amazonaws.s3#ListBucketsOutput$Owner */ =>  {
-                let var_60 = 
+                let var_60 =
                     Some(
                         crate::xml_deser::owner_inner(&mut tag)
                         ?
@@ -1276,7 +1276,7 @@ pub fn list_buckets_deser_operation(
             }
             ,
             s if s.matches("Buckets") /* Buckets com.amazonaws.s3#ListBucketsOutput$Buckets */ =>  {
-                let var_61 = 
+                let var_61 =
                     Some(
                         crate::xml_deser::deserialize_buckets(&mut tag)
                         ?
@@ -1292,12 +1292,13 @@ pub fn list_buckets_deser_operation(
 }
 
 #[allow(unused_mut)]
-pub fn list_multipart_uploads_deser_operation(
+pub fn deser_operation_list_multipart_uploads(
     inp: &[u8],
     mut builder: crate::output::list_multipart_uploads_output::Builder,
 ) -> Result<crate::output::list_multipart_uploads_output::Builder, smithy_xml::decode::XmlError> {
     use std::convert::TryFrom;
     let mut doc = smithy_xml::decode::Document::try_from(inp)?;
+
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
     let start_el = decoder.start_el();
@@ -1307,11 +1308,10 @@ pub fn list_multipart_uploads_deser_operation(
             start_el
         )));
     }
-
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("CommonPrefixes") /* CommonPrefixes com.amazonaws.s3#ListMultipartUploadsOutput$CommonPrefixes */ =>  {
-                let var_62 = 
+                let var_62 =
                     Some(
                         Result::<std::vec::Vec<crate::model::CommonPrefix>, smithy_xml::decode::XmlError>::Ok({
                             let mut list_63 = builder.common_prefixes.take().unwrap_or_default();
@@ -1328,7 +1328,7 @@ pub fn list_multipart_uploads_deser_operation(
             }
             ,
             s if s.matches("UploadIdMarker") /* UploadIdMarker com.amazonaws.s3#ListMultipartUploadsOutput$UploadIdMarker */ =>  {
-                let var_64 = 
+                let var_64 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -1341,7 +1341,7 @@ pub fn list_multipart_uploads_deser_operation(
             }
             ,
             s if s.matches("NextKeyMarker") /* NextKeyMarker com.amazonaws.s3#ListMultipartUploadsOutput$NextKeyMarker */ =>  {
-                let var_65 = 
+                let var_65 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -1354,7 +1354,7 @@ pub fn list_multipart_uploads_deser_operation(
             }
             ,
             s if s.matches("NextUploadIdMarker") /* NextUploadIdMarker com.amazonaws.s3#ListMultipartUploadsOutput$NextUploadIdMarker */ =>  {
-                let var_66 = 
+                let var_66 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -1367,7 +1367,7 @@ pub fn list_multipart_uploads_deser_operation(
             }
             ,
             s if s.matches("Delimiter") /* Delimiter com.amazonaws.s3#ListMultipartUploadsOutput$Delimiter */ =>  {
-                let var_67 = 
+                let var_67 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -1380,7 +1380,7 @@ pub fn list_multipart_uploads_deser_operation(
             }
             ,
             s if s.matches("Upload") /* Uploads com.amazonaws.s3#ListMultipartUploadsOutput$Uploads */ =>  {
-                let var_68 = 
+                let var_68 =
                     Some(
                         Result::<std::vec::Vec<crate::model::MultipartUpload>, smithy_xml::decode::XmlError>::Ok({
                             let mut list_69 = builder.uploads.take().unwrap_or_default();
@@ -1397,7 +1397,7 @@ pub fn list_multipart_uploads_deser_operation(
             }
             ,
             s if s.matches("Bucket") /* Bucket com.amazonaws.s3#ListMultipartUploadsOutput$Bucket */ =>  {
-                let var_70 = 
+                let var_70 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -1410,7 +1410,7 @@ pub fn list_multipart_uploads_deser_operation(
             }
             ,
             s if s.matches("MaxUploads") /* MaxUploads com.amazonaws.s3#ListMultipartUploadsOutput$MaxUploads */ =>  {
-                let var_71 = 
+                let var_71 =
                      {
                         use std::str::FromStr;
                         i32::from_str(
@@ -1424,7 +1424,7 @@ pub fn list_multipart_uploads_deser_operation(
             }
             ,
             s if s.matches("EncodingType") /* EncodingType com.amazonaws.s3#ListMultipartUploadsOutput$EncodingType */ =>  {
-                let var_72 = 
+                let var_72 =
                     Some(
                         Result::<crate::model::EncodingType, smithy_xml::decode::XmlError>::Ok(
                             crate::model::EncodingType::from(
@@ -1438,7 +1438,7 @@ pub fn list_multipart_uploads_deser_operation(
             }
             ,
             s if s.matches("IsTruncated") /* IsTruncated com.amazonaws.s3#ListMultipartUploadsOutput$IsTruncated */ =>  {
-                let var_73 = 
+                let var_73 =
                      {
                         use std::str::FromStr;
                         bool::from_str(
@@ -1452,7 +1452,7 @@ pub fn list_multipart_uploads_deser_operation(
             }
             ,
             s if s.matches("Prefix") /* Prefix com.amazonaws.s3#ListMultipartUploadsOutput$Prefix */ =>  {
-                let var_74 = 
+                let var_74 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -1465,7 +1465,7 @@ pub fn list_multipart_uploads_deser_operation(
             }
             ,
             s if s.matches("KeyMarker") /* KeyMarker com.amazonaws.s3#ListMultipartUploadsOutput$KeyMarker */ =>  {
-                let var_75 = 
+                let var_75 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -1493,12 +1493,13 @@ pub fn no_such_bucket(
 }
 
 #[allow(unused_mut)]
-pub fn list_objects_deser_operation(
+pub fn deser_operation_list_objects(
     inp: &[u8],
     mut builder: crate::output::list_objects_output::Builder,
 ) -> Result<crate::output::list_objects_output::Builder, smithy_xml::decode::XmlError> {
     use std::convert::TryFrom;
     let mut doc = smithy_xml::decode::Document::try_from(inp)?;
+
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
     let start_el = decoder.start_el();
@@ -1508,11 +1509,10 @@ pub fn list_objects_deser_operation(
             start_el
         )));
     }
-
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("CommonPrefixes") /* CommonPrefixes com.amazonaws.s3#ListObjectsOutput$CommonPrefixes */ =>  {
-                let var_76 = 
+                let var_76 =
                     Some(
                         Result::<std::vec::Vec<crate::model::CommonPrefix>, smithy_xml::decode::XmlError>::Ok({
                             let mut list_77 = builder.common_prefixes.take().unwrap_or_default();
@@ -1529,7 +1529,7 @@ pub fn list_objects_deser_operation(
             }
             ,
             s if s.matches("Contents") /* Contents com.amazonaws.s3#ListObjectsOutput$Contents */ =>  {
-                let var_78 = 
+                let var_78 =
                     Some(
                         Result::<std::vec::Vec<crate::model::Object>, smithy_xml::decode::XmlError>::Ok({
                             let mut list_79 = builder.contents.take().unwrap_or_default();
@@ -1546,7 +1546,7 @@ pub fn list_objects_deser_operation(
             }
             ,
             s if s.matches("Delimiter") /* Delimiter com.amazonaws.s3#ListObjectsOutput$Delimiter */ =>  {
-                let var_80 = 
+                let var_80 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -1559,7 +1559,7 @@ pub fn list_objects_deser_operation(
             }
             ,
             s if s.matches("EncodingType") /* EncodingType com.amazonaws.s3#ListObjectsOutput$EncodingType */ =>  {
-                let var_81 = 
+                let var_81 =
                     Some(
                         Result::<crate::model::EncodingType, smithy_xml::decode::XmlError>::Ok(
                             crate::model::EncodingType::from(
@@ -1573,7 +1573,7 @@ pub fn list_objects_deser_operation(
             }
             ,
             s if s.matches("IsTruncated") /* IsTruncated com.amazonaws.s3#ListObjectsOutput$IsTruncated */ =>  {
-                let var_82 = 
+                let var_82 =
                      {
                         use std::str::FromStr;
                         bool::from_str(
@@ -1587,7 +1587,7 @@ pub fn list_objects_deser_operation(
             }
             ,
             s if s.matches("Marker") /* Marker com.amazonaws.s3#ListObjectsOutput$Marker */ =>  {
-                let var_83 = 
+                let var_83 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -1600,7 +1600,7 @@ pub fn list_objects_deser_operation(
             }
             ,
             s if s.matches("Prefix") /* Prefix com.amazonaws.s3#ListObjectsOutput$Prefix */ =>  {
-                let var_84 = 
+                let var_84 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -1613,7 +1613,7 @@ pub fn list_objects_deser_operation(
             }
             ,
             s if s.matches("NextMarker") /* NextMarker com.amazonaws.s3#ListObjectsOutput$NextMarker */ =>  {
-                let var_85 = 
+                let var_85 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -1626,7 +1626,7 @@ pub fn list_objects_deser_operation(
             }
             ,
             s if s.matches("MaxKeys") /* MaxKeys com.amazonaws.s3#ListObjectsOutput$MaxKeys */ =>  {
-                let var_86 = 
+                let var_86 =
                      {
                         use std::str::FromStr;
                         i32::from_str(
@@ -1640,7 +1640,7 @@ pub fn list_objects_deser_operation(
             }
             ,
             s if s.matches("Name") /* Name com.amazonaws.s3#ListObjectsOutput$Name */ =>  {
-                let var_87 = 
+                let var_87 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -1659,12 +1659,13 @@ pub fn list_objects_deser_operation(
 }
 
 #[allow(unused_mut)]
-pub fn list_objects_v2_deser_operation(
+pub fn deser_operation_list_objects_v2(
     inp: &[u8],
     mut builder: crate::output::list_objects_v2_output::Builder,
 ) -> Result<crate::output::list_objects_v2_output::Builder, smithy_xml::decode::XmlError> {
     use std::convert::TryFrom;
     let mut doc = smithy_xml::decode::Document::try_from(inp)?;
+
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
     let start_el = decoder.start_el();
@@ -1674,11 +1675,10 @@ pub fn list_objects_v2_deser_operation(
             start_el
         )));
     }
-
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("CommonPrefixes") /* CommonPrefixes com.amazonaws.s3#ListObjectsV2Output$CommonPrefixes */ =>  {
-                let var_88 = 
+                let var_88 =
                     Some(
                         Result::<std::vec::Vec<crate::model::CommonPrefix>, smithy_xml::decode::XmlError>::Ok({
                             let mut list_89 = builder.common_prefixes.take().unwrap_or_default();
@@ -1695,7 +1695,7 @@ pub fn list_objects_v2_deser_operation(
             }
             ,
             s if s.matches("NextContinuationToken") /* NextContinuationToken com.amazonaws.s3#ListObjectsV2Output$NextContinuationToken */ =>  {
-                let var_90 = 
+                let var_90 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -1708,7 +1708,7 @@ pub fn list_objects_v2_deser_operation(
             }
             ,
             s if s.matches("Contents") /* Contents com.amazonaws.s3#ListObjectsV2Output$Contents */ =>  {
-                let var_91 = 
+                let var_91 =
                     Some(
                         Result::<std::vec::Vec<crate::model::Object>, smithy_xml::decode::XmlError>::Ok({
                             let mut list_92 = builder.contents.take().unwrap_or_default();
@@ -1725,7 +1725,7 @@ pub fn list_objects_v2_deser_operation(
             }
             ,
             s if s.matches("ContinuationToken") /* ContinuationToken com.amazonaws.s3#ListObjectsV2Output$ContinuationToken */ =>  {
-                let var_93 = 
+                let var_93 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -1738,7 +1738,7 @@ pub fn list_objects_v2_deser_operation(
             }
             ,
             s if s.matches("Delimiter") /* Delimiter com.amazonaws.s3#ListObjectsV2Output$Delimiter */ =>  {
-                let var_94 = 
+                let var_94 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -1751,7 +1751,7 @@ pub fn list_objects_v2_deser_operation(
             }
             ,
             s if s.matches("EncodingType") /* EncodingType com.amazonaws.s3#ListObjectsV2Output$EncodingType */ =>  {
-                let var_95 = 
+                let var_95 =
                     Some(
                         Result::<crate::model::EncodingType, smithy_xml::decode::XmlError>::Ok(
                             crate::model::EncodingType::from(
@@ -1765,7 +1765,7 @@ pub fn list_objects_v2_deser_operation(
             }
             ,
             s if s.matches("IsTruncated") /* IsTruncated com.amazonaws.s3#ListObjectsV2Output$IsTruncated */ =>  {
-                let var_96 = 
+                let var_96 =
                      {
                         use std::str::FromStr;
                         bool::from_str(
@@ -1779,7 +1779,7 @@ pub fn list_objects_v2_deser_operation(
             }
             ,
             s if s.matches("StartAfter") /* StartAfter com.amazonaws.s3#ListObjectsV2Output$StartAfter */ =>  {
-                let var_97 = 
+                let var_97 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -1792,7 +1792,7 @@ pub fn list_objects_v2_deser_operation(
             }
             ,
             s if s.matches("Prefix") /* Prefix com.amazonaws.s3#ListObjectsV2Output$Prefix */ =>  {
-                let var_98 = 
+                let var_98 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -1805,7 +1805,7 @@ pub fn list_objects_v2_deser_operation(
             }
             ,
             s if s.matches("MaxKeys") /* MaxKeys com.amazonaws.s3#ListObjectsV2Output$MaxKeys */ =>  {
-                let var_99 = 
+                let var_99 =
                      {
                         use std::str::FromStr;
                         i32::from_str(
@@ -1819,7 +1819,7 @@ pub fn list_objects_v2_deser_operation(
             }
             ,
             s if s.matches("KeyCount") /* KeyCount com.amazonaws.s3#ListObjectsV2Output$KeyCount */ =>  {
-                let var_100 = 
+                let var_100 =
                      {
                         use std::str::FromStr;
                         i32::from_str(
@@ -1833,7 +1833,7 @@ pub fn list_objects_v2_deser_operation(
             }
             ,
             s if s.matches("Name") /* Name com.amazonaws.s3#ListObjectsV2Output$Name */ =>  {
-                let var_101 = 
+                let var_101 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -1852,12 +1852,13 @@ pub fn list_objects_v2_deser_operation(
 }
 
 #[allow(unused_mut)]
-pub fn list_object_versions_deser_operation(
+pub fn deser_operation_list_object_versions(
     inp: &[u8],
     mut builder: crate::output::list_object_versions_output::Builder,
 ) -> Result<crate::output::list_object_versions_output::Builder, smithy_xml::decode::XmlError> {
     use std::convert::TryFrom;
     let mut doc = smithy_xml::decode::Document::try_from(inp)?;
+
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
     let start_el = decoder.start_el();
@@ -1867,11 +1868,10 @@ pub fn list_object_versions_deser_operation(
             start_el
         )));
     }
-
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("CommonPrefixes") /* CommonPrefixes com.amazonaws.s3#ListObjectVersionsOutput$CommonPrefixes */ =>  {
-                let var_102 = 
+                let var_102 =
                     Some(
                         Result::<std::vec::Vec<crate::model::CommonPrefix>, smithy_xml::decode::XmlError>::Ok({
                             let mut list_103 = builder.common_prefixes.take().unwrap_or_default();
@@ -1888,7 +1888,7 @@ pub fn list_object_versions_deser_operation(
             }
             ,
             s if s.matches("NextKeyMarker") /* NextKeyMarker com.amazonaws.s3#ListObjectVersionsOutput$NextKeyMarker */ =>  {
-                let var_104 = 
+                let var_104 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -1901,7 +1901,7 @@ pub fn list_object_versions_deser_operation(
             }
             ,
             s if s.matches("Delimiter") /* Delimiter com.amazonaws.s3#ListObjectVersionsOutput$Delimiter */ =>  {
-                let var_105 = 
+                let var_105 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -1914,7 +1914,7 @@ pub fn list_object_versions_deser_operation(
             }
             ,
             s if s.matches("EncodingType") /* EncodingType com.amazonaws.s3#ListObjectVersionsOutput$EncodingType */ =>  {
-                let var_106 = 
+                let var_106 =
                     Some(
                         Result::<crate::model::EncodingType, smithy_xml::decode::XmlError>::Ok(
                             crate::model::EncodingType::from(
@@ -1928,7 +1928,7 @@ pub fn list_object_versions_deser_operation(
             }
             ,
             s if s.matches("IsTruncated") /* IsTruncated com.amazonaws.s3#ListObjectVersionsOutput$IsTruncated */ =>  {
-                let var_107 = 
+                let var_107 =
                      {
                         use std::str::FromStr;
                         bool::from_str(
@@ -1942,7 +1942,7 @@ pub fn list_object_versions_deser_operation(
             }
             ,
             s if s.matches("NextVersionIdMarker") /* NextVersionIdMarker com.amazonaws.s3#ListObjectVersionsOutput$NextVersionIdMarker */ =>  {
-                let var_108 = 
+                let var_108 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -1955,7 +1955,7 @@ pub fn list_object_versions_deser_operation(
             }
             ,
             s if s.matches("Prefix") /* Prefix com.amazonaws.s3#ListObjectVersionsOutput$Prefix */ =>  {
-                let var_109 = 
+                let var_109 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -1968,7 +1968,7 @@ pub fn list_object_versions_deser_operation(
             }
             ,
             s if s.matches("Name") /* Name com.amazonaws.s3#ListObjectVersionsOutput$Name */ =>  {
-                let var_110 = 
+                let var_110 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -1981,7 +1981,7 @@ pub fn list_object_versions_deser_operation(
             }
             ,
             s if s.matches("VersionIdMarker") /* VersionIdMarker com.amazonaws.s3#ListObjectVersionsOutput$VersionIdMarker */ =>  {
-                let var_111 = 
+                let var_111 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -1994,7 +1994,7 @@ pub fn list_object_versions_deser_operation(
             }
             ,
             s if s.matches("Version") /* Versions com.amazonaws.s3#ListObjectVersionsOutput$Versions */ =>  {
-                let var_112 = 
+                let var_112 =
                     Some(
                         Result::<std::vec::Vec<crate::model::ObjectVersion>, smithy_xml::decode::XmlError>::Ok({
                             let mut list_113 = builder.versions.take().unwrap_or_default();
@@ -2011,7 +2011,7 @@ pub fn list_object_versions_deser_operation(
             }
             ,
             s if s.matches("MaxKeys") /* MaxKeys com.amazonaws.s3#ListObjectVersionsOutput$MaxKeys */ =>  {
-                let var_114 = 
+                let var_114 =
                      {
                         use std::str::FromStr;
                         i32::from_str(
@@ -2025,7 +2025,7 @@ pub fn list_object_versions_deser_operation(
             }
             ,
             s if s.matches("DeleteMarker") /* DeleteMarkers com.amazonaws.s3#ListObjectVersionsOutput$DeleteMarkers */ =>  {
-                let var_115 = 
+                let var_115 =
                     Some(
                         Result::<std::vec::Vec<crate::model::DeleteMarkerEntry>, smithy_xml::decode::XmlError>::Ok({
                             let mut list_116 = builder.delete_markers.take().unwrap_or_default();
@@ -2042,7 +2042,7 @@ pub fn list_object_versions_deser_operation(
             }
             ,
             s if s.matches("KeyMarker") /* KeyMarker com.amazonaws.s3#ListObjectVersionsOutput$KeyMarker */ =>  {
-                let var_117 = 
+                let var_117 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -2061,12 +2061,13 @@ pub fn list_object_versions_deser_operation(
 }
 
 #[allow(unused_mut)]
-pub fn list_parts_deser_operation(
+pub fn deser_operation_list_parts(
     inp: &[u8],
     mut builder: crate::output::list_parts_output::Builder,
 ) -> Result<crate::output::list_parts_output::Builder, smithy_xml::decode::XmlError> {
     use std::convert::TryFrom;
     let mut doc = smithy_xml::decode::Document::try_from(inp)?;
+
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
     let start_el = decoder.start_el();
@@ -2076,11 +2077,10 @@ pub fn list_parts_deser_operation(
             start_el
         )));
     }
-
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Owner") /* Owner com.amazonaws.s3#ListPartsOutput$Owner */ =>  {
-                let var_118 = 
+                let var_118 =
                     Some(
                         crate::xml_deser::owner_inner(&mut tag)
                         ?
@@ -2090,7 +2090,7 @@ pub fn list_parts_deser_operation(
             }
             ,
             s if s.matches("NextPartNumberMarker") /* NextPartNumberMarker com.amazonaws.s3#ListPartsOutput$NextPartNumberMarker */ =>  {
-                let var_119 = 
+                let var_119 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -2103,7 +2103,7 @@ pub fn list_parts_deser_operation(
             }
             ,
             s if s.matches("StorageClass") /* StorageClass com.amazonaws.s3#ListPartsOutput$StorageClass */ =>  {
-                let var_120 = 
+                let var_120 =
                     Some(
                         Result::<crate::model::StorageClass, smithy_xml::decode::XmlError>::Ok(
                             crate::model::StorageClass::from(
@@ -2117,7 +2117,7 @@ pub fn list_parts_deser_operation(
             }
             ,
             s if s.matches("IsTruncated") /* IsTruncated com.amazonaws.s3#ListPartsOutput$IsTruncated */ =>  {
-                let var_121 = 
+                let var_121 =
                      {
                         use std::str::FromStr;
                         bool::from_str(
@@ -2131,7 +2131,7 @@ pub fn list_parts_deser_operation(
             }
             ,
             s if s.matches("MaxParts") /* MaxParts com.amazonaws.s3#ListPartsOutput$MaxParts */ =>  {
-                let var_122 = 
+                let var_122 =
                      {
                         use std::str::FromStr;
                         i32::from_str(
@@ -2145,7 +2145,7 @@ pub fn list_parts_deser_operation(
             }
             ,
             s if s.matches("UploadId") /* UploadId com.amazonaws.s3#ListPartsOutput$UploadId */ =>  {
-                let var_123 = 
+                let var_123 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -2158,7 +2158,7 @@ pub fn list_parts_deser_operation(
             }
             ,
             s if s.matches("PartNumberMarker") /* PartNumberMarker com.amazonaws.s3#ListPartsOutput$PartNumberMarker */ =>  {
-                let var_124 = 
+                let var_124 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -2171,7 +2171,7 @@ pub fn list_parts_deser_operation(
             }
             ,
             s if s.matches("Bucket") /* Bucket com.amazonaws.s3#ListPartsOutput$Bucket */ =>  {
-                let var_125 = 
+                let var_125 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -2184,7 +2184,7 @@ pub fn list_parts_deser_operation(
             }
             ,
             s if s.matches("Part") /* Parts com.amazonaws.s3#ListPartsOutput$Parts */ =>  {
-                let var_126 = 
+                let var_126 =
                     Some(
                         Result::<std::vec::Vec<crate::model::Part>, smithy_xml::decode::XmlError>::Ok({
                             let mut list_127 = builder.parts.take().unwrap_or_default();
@@ -2201,7 +2201,7 @@ pub fn list_parts_deser_operation(
             }
             ,
             s if s.matches("Initiator") /* Initiator com.amazonaws.s3#ListPartsOutput$Initiator */ =>  {
-                let var_128 = 
+                let var_128 =
                     Some(
                         crate::xml_deser::initiator_inner(&mut tag)
                         ?
@@ -2211,7 +2211,7 @@ pub fn list_parts_deser_operation(
             }
             ,
             s if s.matches("Key") /* Key com.amazonaws.s3#ListPartsOutput$Key */ =>  {
-                let var_129 = 
+                let var_129 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -2239,7 +2239,7 @@ pub fn object_already_in_active_tier_error(
     Ok(builder)
 }
 
-pub fn parse_payload_copy_object_resultcopy_object_output(
+pub fn deser_payload_copy_object_result_copy_object_output(
     inp: &[u8],
 ) -> Result<crate::model::CopyObjectResult, smithy_xml::decode::XmlError> {
     use std::convert::TryFrom;
@@ -2253,11 +2253,10 @@ pub fn parse_payload_copy_object_resultcopy_object_output(
             start_el
         )));
     }
-
     crate::xml_deser::copy_object_result_inner(&mut decoder)
 }
 
-pub fn parse_payload_analytics_configurationget_bucket_analytics_configuration_output(
+pub fn deser_payload_analytics_configuration_get_bucket_analytics_configuration_output(
     inp: &[u8],
 ) -> Result<crate::model::AnalyticsConfiguration, smithy_xml::decode::XmlError> {
     use std::convert::TryFrom;
@@ -2271,11 +2270,10 @@ pub fn parse_payload_analytics_configurationget_bucket_analytics_configuration_o
             start_el
         )));
     }
-
     crate::xml_deser::analytics_configuration_inner(&mut decoder)
 }
 
-pub fn parse_payload_server_side_encryption_configurationget_bucket_encryption_output(
+pub fn deser_payload_server_side_encryption_configuration_get_bucket_encryption_output(
     inp: &[u8],
 ) -> Result<crate::model::ServerSideEncryptionConfiguration, smithy_xml::decode::XmlError> {
     use std::convert::TryFrom;
@@ -2289,11 +2287,10 @@ pub fn parse_payload_server_side_encryption_configurationget_bucket_encryption_o
             start_el
         )));
     }
-
     crate::xml_deser::server_side_encryption_configuration_inner(&mut decoder)
 }
 
-pub fn parse_payload_intelligent_tiering_configurationget_bucket_intelligent_tiering_configuration_output(
+pub fn deser_payload_intelligent_tiering_configuration_get_bucket_intelligent_tiering_configuration_output(
     inp: &[u8],
 ) -> Result<crate::model::IntelligentTieringConfiguration, smithy_xml::decode::XmlError> {
     use std::convert::TryFrom;
@@ -2307,11 +2304,10 @@ pub fn parse_payload_intelligent_tiering_configurationget_bucket_intelligent_tie
             start_el
         )));
     }
-
     crate::xml_deser::intelligent_tiering_configuration_inner(&mut decoder)
 }
 
-pub fn parse_payload_inventory_configurationget_bucket_inventory_configuration_output(
+pub fn deser_payload_inventory_configuration_get_bucket_inventory_configuration_output(
     inp: &[u8],
 ) -> Result<crate::model::InventoryConfiguration, smithy_xml::decode::XmlError> {
     use std::convert::TryFrom;
@@ -2325,11 +2321,10 @@ pub fn parse_payload_inventory_configurationget_bucket_inventory_configuration_o
             start_el
         )));
     }
-
     crate::xml_deser::inventory_configuration_inner(&mut decoder)
 }
 
-pub fn parse_payload_metrics_configurationget_bucket_metrics_configuration_output(
+pub fn deser_payload_metrics_configuration_get_bucket_metrics_configuration_output(
     inp: &[u8],
 ) -> Result<crate::model::MetricsConfiguration, smithy_xml::decode::XmlError> {
     use std::convert::TryFrom;
@@ -2343,11 +2338,10 @@ pub fn parse_payload_metrics_configurationget_bucket_metrics_configuration_outpu
             start_el
         )));
     }
-
     crate::xml_deser::metrics_configuration_inner(&mut decoder)
 }
 
-pub fn parse_payload_ownership_controlsget_bucket_ownership_controls_output(
+pub fn deser_payload_ownership_controls_get_bucket_ownership_controls_output(
     inp: &[u8],
 ) -> Result<crate::model::OwnershipControls, smithy_xml::decode::XmlError> {
     use std::convert::TryFrom;
@@ -2361,11 +2355,10 @@ pub fn parse_payload_ownership_controlsget_bucket_ownership_controls_output(
             start_el
         )));
     }
-
     crate::xml_deser::ownership_controls_inner(&mut decoder)
 }
 
-pub fn parse_payload_policy_statusget_bucket_policy_status_output(
+pub fn deser_payload_policy_status_get_bucket_policy_status_output(
     inp: &[u8],
 ) -> Result<crate::model::PolicyStatus, smithy_xml::decode::XmlError> {
     use std::convert::TryFrom;
@@ -2379,11 +2372,10 @@ pub fn parse_payload_policy_statusget_bucket_policy_status_output(
             start_el
         )));
     }
-
     crate::xml_deser::policy_status_inner(&mut decoder)
 }
 
-pub fn parse_payload_replication_configurationget_bucket_replication_output(
+pub fn deser_payload_replication_configuration_get_bucket_replication_output(
     inp: &[u8],
 ) -> Result<crate::model::ReplicationConfiguration, smithy_xml::decode::XmlError> {
     use std::convert::TryFrom;
@@ -2397,11 +2389,10 @@ pub fn parse_payload_replication_configurationget_bucket_replication_output(
             start_el
         )));
     }
-
     crate::xml_deser::replication_configuration_inner(&mut decoder)
 }
 
-pub fn parse_payload_object_lock_legal_holdget_object_legal_hold_output(
+pub fn deser_payload_object_lock_legal_hold_get_object_legal_hold_output(
     inp: &[u8],
 ) -> Result<crate::model::ObjectLockLegalHold, smithy_xml::decode::XmlError> {
     use std::convert::TryFrom;
@@ -2415,11 +2406,10 @@ pub fn parse_payload_object_lock_legal_holdget_object_legal_hold_output(
             start_el
         )));
     }
-
     crate::xml_deser::object_lock_legal_hold_inner(&mut decoder)
 }
 
-pub fn parse_payload_object_lock_configurationget_object_lock_configuration_output(
+pub fn deser_payload_object_lock_configuration_get_object_lock_configuration_output(
     inp: &[u8],
 ) -> Result<crate::model::ObjectLockConfiguration, smithy_xml::decode::XmlError> {
     use std::convert::TryFrom;
@@ -2433,11 +2423,10 @@ pub fn parse_payload_object_lock_configurationget_object_lock_configuration_outp
             start_el
         )));
     }
-
     crate::xml_deser::object_lock_configuration_inner(&mut decoder)
 }
 
-pub fn parse_payload_object_lock_retentionget_object_retention_output(
+pub fn deser_payload_object_lock_retention_get_object_retention_output(
     inp: &[u8],
 ) -> Result<crate::model::ObjectLockRetention, smithy_xml::decode::XmlError> {
     use std::convert::TryFrom;
@@ -2451,11 +2440,10 @@ pub fn parse_payload_object_lock_retentionget_object_retention_output(
             start_el
         )));
     }
-
     crate::xml_deser::object_lock_retention_inner(&mut decoder)
 }
 
-pub fn parse_payload_public_access_block_configurationget_public_access_block_output(
+pub fn deser_payload_public_access_block_configuration_get_public_access_block_output(
     inp: &[u8],
 ) -> Result<crate::model::PublicAccessBlockConfiguration, smithy_xml::decode::XmlError> {
     use std::convert::TryFrom;
@@ -2469,11 +2457,10 @@ pub fn parse_payload_public_access_block_configurationget_public_access_block_ou
             start_el
         )));
     }
-
     crate::xml_deser::public_access_block_configuration_inner(&mut decoder)
 }
 
-pub fn parse_payload_copy_part_resultupload_part_copy_output(
+pub fn deser_payload_copy_part_result_upload_part_copy_output(
     inp: &[u8],
 ) -> Result<crate::model::CopyPartResult, smithy_xml::decode::XmlError> {
     use std::convert::TryFrom;
@@ -2487,7 +2474,6 @@ pub fn parse_payload_copy_part_resultupload_part_copy_output(
             start_el
         )));
     }
-
     crate::xml_deser::copy_part_result_inner(&mut decoder)
 }
 
@@ -2496,11 +2482,10 @@ pub fn error_inner(
 ) -> Result<crate::model::Error, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
     let mut builder = crate::model::Error::builder();
-
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Key") /* Key com.amazonaws.s3#Error$Key */ =>  {
-                let var_130 = 
+                let var_130 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -2513,7 +2498,7 @@ pub fn error_inner(
             }
             ,
             s if s.matches("VersionId") /* VersionId com.amazonaws.s3#Error$VersionId */ =>  {
-                let var_131 = 
+                let var_131 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -2526,7 +2511,7 @@ pub fn error_inner(
             }
             ,
             s if s.matches("Code") /* Code com.amazonaws.s3#Error$Code */ =>  {
-                let var_132 = 
+                let var_132 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -2539,7 +2524,7 @@ pub fn error_inner(
             }
             ,
             s if s.matches("Message") /* Message com.amazonaws.s3#Error$Message */ =>  {
-                let var_133 = 
+                let var_133 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -2562,11 +2547,10 @@ pub fn deleted_object_inner(
 ) -> Result<crate::model::DeletedObject, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
     let mut builder = crate::model::DeletedObject::builder();
-
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Key") /* Key com.amazonaws.s3#DeletedObject$Key */ =>  {
-                let var_134 = 
+                let var_134 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -2579,7 +2563,7 @@ pub fn deleted_object_inner(
             }
             ,
             s if s.matches("VersionId") /* VersionId com.amazonaws.s3#DeletedObject$VersionId */ =>  {
-                let var_135 = 
+                let var_135 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -2592,7 +2576,7 @@ pub fn deleted_object_inner(
             }
             ,
             s if s.matches("DeleteMarker") /* DeleteMarker com.amazonaws.s3#DeletedObject$DeleteMarker */ =>  {
-                let var_136 = 
+                let var_136 =
                      {
                         use std::str::FromStr;
                         bool::from_str(
@@ -2606,7 +2590,7 @@ pub fn deleted_object_inner(
             }
             ,
             s if s.matches("DeleteMarkerVersionId") /* DeleteMarkerVersionId com.amazonaws.s3#DeletedObject$DeleteMarkerVersionId */ =>  {
-                let var_137 = 
+                let var_137 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -2629,11 +2613,10 @@ pub fn owner_inner(
 ) -> Result<crate::model::Owner, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
     let mut builder = crate::model::Owner::builder();
-
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("DisplayName") /* DisplayName com.amazonaws.s3#Owner$DisplayName */ =>  {
-                let var_138 = 
+                let var_138 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -2646,7 +2629,7 @@ pub fn owner_inner(
             }
             ,
             s if s.matches("ID") /* ID com.amazonaws.s3#Owner$ID */ =>  {
-                let var_139 = 
+                let var_139 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -2688,11 +2671,10 @@ pub fn cors_rule_inner(
 ) -> Result<crate::model::CORSRule, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
     let mut builder = crate::model::CORSRule::builder();
-
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("ID") /* ID com.amazonaws.s3#CORSRule$ID */ =>  {
-                let var_140 = 
+                let var_140 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -2705,7 +2687,7 @@ pub fn cors_rule_inner(
             }
             ,
             s if s.matches("AllowedHeader") /* AllowedHeaders com.amazonaws.s3#CORSRule$AllowedHeaders */ =>  {
-                let var_141 = 
+                let var_141 =
                     Some(
                         Result::<std::vec::Vec<std::string::String>, smithy_xml::decode::XmlError>::Ok({
                             let mut list_142 = builder.allowed_headers.take().unwrap_or_default();
@@ -2725,7 +2707,7 @@ pub fn cors_rule_inner(
             }
             ,
             s if s.matches("AllowedMethod") /* AllowedMethods com.amazonaws.s3#CORSRule$AllowedMethods */ =>  {
-                let var_143 = 
+                let var_143 =
                     Some(
                         Result::<std::vec::Vec<std::string::String>, smithy_xml::decode::XmlError>::Ok({
                             let mut list_144 = builder.allowed_methods.take().unwrap_or_default();
@@ -2745,7 +2727,7 @@ pub fn cors_rule_inner(
             }
             ,
             s if s.matches("AllowedOrigin") /* AllowedOrigins com.amazonaws.s3#CORSRule$AllowedOrigins */ =>  {
-                let var_145 = 
+                let var_145 =
                     Some(
                         Result::<std::vec::Vec<std::string::String>, smithy_xml::decode::XmlError>::Ok({
                             let mut list_146 = builder.allowed_origins.take().unwrap_or_default();
@@ -2765,7 +2747,7 @@ pub fn cors_rule_inner(
             }
             ,
             s if s.matches("ExposeHeader") /* ExposeHeaders com.amazonaws.s3#CORSRule$ExposeHeaders */ =>  {
-                let var_147 = 
+                let var_147 =
                     Some(
                         Result::<std::vec::Vec<std::string::String>, smithy_xml::decode::XmlError>::Ok({
                             let mut list_148 = builder.expose_headers.take().unwrap_or_default();
@@ -2785,7 +2767,7 @@ pub fn cors_rule_inner(
             }
             ,
             s if s.matches("MaxAgeSeconds") /* MaxAgeSeconds com.amazonaws.s3#CORSRule$MaxAgeSeconds */ =>  {
-                let var_149 = 
+                let var_149 =
                      {
                         use std::str::FromStr;
                         i32::from_str(
@@ -2809,11 +2791,10 @@ pub fn lifecycle_rule_inner(
 ) -> Result<crate::model::LifecycleRule, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
     let mut builder = crate::model::LifecycleRule::builder();
-
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Expiration") /* Expiration com.amazonaws.s3#LifecycleRule$Expiration */ =>  {
-                let var_150 = 
+                let var_150 =
                     Some(
                         crate::xml_deser::lifecycle_expiration_inner(&mut tag)
                         ?
@@ -2823,7 +2804,7 @@ pub fn lifecycle_rule_inner(
             }
             ,
             s if s.matches("ID") /* ID com.amazonaws.s3#LifecycleRule$ID */ =>  {
-                let var_151 = 
+                let var_151 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -2836,7 +2817,7 @@ pub fn lifecycle_rule_inner(
             }
             ,
             s if s.matches("Prefix") /* Prefix com.amazonaws.s3#LifecycleRule$Prefix */ =>  {
-                let var_152 = 
+                let var_152 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -2849,7 +2830,7 @@ pub fn lifecycle_rule_inner(
             }
             ,
             s if s.matches("Filter") /* Filter com.amazonaws.s3#LifecycleRule$Filter */ =>  {
-                let var_153 = 
+                let var_153 =
                     Some(
                         crate::xml_deser::lifecycle_rule_filter_inner(&mut tag)
                         ?
@@ -2859,7 +2840,7 @@ pub fn lifecycle_rule_inner(
             }
             ,
             s if s.matches("Status") /* Status com.amazonaws.s3#LifecycleRule$Status */ =>  {
-                let var_154 = 
+                let var_154 =
                     Some(
                         Result::<crate::model::ExpirationStatus, smithy_xml::decode::XmlError>::Ok(
                             crate::model::ExpirationStatus::from(
@@ -2873,7 +2854,7 @@ pub fn lifecycle_rule_inner(
             }
             ,
             s if s.matches("Transition") /* Transitions com.amazonaws.s3#LifecycleRule$Transitions */ =>  {
-                let var_155 = 
+                let var_155 =
                     Some(
                         Result::<std::vec::Vec<crate::model::Transition>, smithy_xml::decode::XmlError>::Ok({
                             let mut list_156 = builder.transitions.take().unwrap_or_default();
@@ -2890,7 +2871,7 @@ pub fn lifecycle_rule_inner(
             }
             ,
             s if s.matches("NoncurrentVersionTransition") /* NoncurrentVersionTransitions com.amazonaws.s3#LifecycleRule$NoncurrentVersionTransitions */ =>  {
-                let var_157 = 
+                let var_157 =
                     Some(
                         Result::<std::vec::Vec<crate::model::NoncurrentVersionTransition>, smithy_xml::decode::XmlError>::Ok({
                             let mut list_158 = builder.noncurrent_version_transitions.take().unwrap_or_default();
@@ -2907,7 +2888,7 @@ pub fn lifecycle_rule_inner(
             }
             ,
             s if s.matches("NoncurrentVersionExpiration") /* NoncurrentVersionExpiration com.amazonaws.s3#LifecycleRule$NoncurrentVersionExpiration */ =>  {
-                let var_159 = 
+                let var_159 =
                     Some(
                         crate::xml_deser::noncurrent_version_expiration_inner(&mut tag)
                         ?
@@ -2917,7 +2898,7 @@ pub fn lifecycle_rule_inner(
             }
             ,
             s if s.matches("AbortIncompleteMultipartUpload") /* AbortIncompleteMultipartUpload com.amazonaws.s3#LifecycleRule$AbortIncompleteMultipartUpload */ =>  {
-                let var_160 = 
+                let var_160 =
                     Some(
                         crate::xml_deser::abort_incomplete_multipart_upload_inner(&mut tag)
                         ?
@@ -2937,11 +2918,10 @@ pub fn logging_enabled_inner(
 ) -> Result<crate::model::LoggingEnabled, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
     let mut builder = crate::model::LoggingEnabled::builder();
-
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("TargetBucket") /* TargetBucket com.amazonaws.s3#LoggingEnabled$TargetBucket */ =>  {
-                let var_161 = 
+                let var_161 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -2954,7 +2934,7 @@ pub fn logging_enabled_inner(
             }
             ,
             s if s.matches("TargetGrants") /* TargetGrants com.amazonaws.s3#LoggingEnabled$TargetGrants */ =>  {
-                let var_162 = 
+                let var_162 =
                     Some(
                         crate::xml_deser::deserialize_target_grants(&mut tag)
                         ?
@@ -2964,7 +2944,7 @@ pub fn logging_enabled_inner(
             }
             ,
             s if s.matches("TargetPrefix") /* TargetPrefix com.amazonaws.s3#LoggingEnabled$TargetPrefix */ =>  {
-                let var_163 = 
+                let var_163 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -2987,11 +2967,10 @@ pub fn lambda_function_configuration_inner(
 ) -> Result<crate::model::LambdaFunctionConfiguration, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
     let mut builder = crate::model::LambdaFunctionConfiguration::builder();
-
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Id") /* Id com.amazonaws.s3#LambdaFunctionConfiguration$Id */ =>  {
-                let var_164 = 
+                let var_164 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -3004,7 +2983,7 @@ pub fn lambda_function_configuration_inner(
             }
             ,
             s if s.matches("CloudFunction") /* LambdaFunctionArn com.amazonaws.s3#LambdaFunctionConfiguration$LambdaFunctionArn */ =>  {
-                let var_165 = 
+                let var_165 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -3017,7 +2996,7 @@ pub fn lambda_function_configuration_inner(
             }
             ,
             s if s.matches("Event") /* Events com.amazonaws.s3#LambdaFunctionConfiguration$Events */ =>  {
-                let var_166 = 
+                let var_166 =
                     Some(
                         Result::<std::vec::Vec<crate::model::Event>, smithy_xml::decode::XmlError>::Ok({
                             let mut list_167 = builder.events.take().unwrap_or_default();
@@ -3038,7 +3017,7 @@ pub fn lambda_function_configuration_inner(
             }
             ,
             s if s.matches("Filter") /* Filter com.amazonaws.s3#LambdaFunctionConfiguration$Filter */ =>  {
-                let var_168 = 
+                let var_168 =
                     Some(
                         crate::xml_deser::notification_configuration_filter_inner(&mut tag)
                         ?
@@ -3058,11 +3037,10 @@ pub fn topic_configuration_inner(
 ) -> Result<crate::model::TopicConfiguration, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
     let mut builder = crate::model::TopicConfiguration::builder();
-
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Id") /* Id com.amazonaws.s3#TopicConfiguration$Id */ =>  {
-                let var_169 = 
+                let var_169 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -3075,7 +3053,7 @@ pub fn topic_configuration_inner(
             }
             ,
             s if s.matches("Topic") /* TopicArn com.amazonaws.s3#TopicConfiguration$TopicArn */ =>  {
-                let var_170 = 
+                let var_170 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -3088,7 +3066,7 @@ pub fn topic_configuration_inner(
             }
             ,
             s if s.matches("Event") /* Events com.amazonaws.s3#TopicConfiguration$Events */ =>  {
-                let var_171 = 
+                let var_171 =
                     Some(
                         Result::<std::vec::Vec<crate::model::Event>, smithy_xml::decode::XmlError>::Ok({
                             let mut list_172 = builder.events.take().unwrap_or_default();
@@ -3109,7 +3087,7 @@ pub fn topic_configuration_inner(
             }
             ,
             s if s.matches("Filter") /* Filter com.amazonaws.s3#TopicConfiguration$Filter */ =>  {
-                let var_173 = 
+                let var_173 =
                     Some(
                         crate::xml_deser::notification_configuration_filter_inner(&mut tag)
                         ?
@@ -3129,11 +3107,10 @@ pub fn queue_configuration_inner(
 ) -> Result<crate::model::QueueConfiguration, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
     let mut builder = crate::model::QueueConfiguration::builder();
-
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Id") /* Id com.amazonaws.s3#QueueConfiguration$Id */ =>  {
-                let var_174 = 
+                let var_174 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -3146,7 +3123,7 @@ pub fn queue_configuration_inner(
             }
             ,
             s if s.matches("Queue") /* QueueArn com.amazonaws.s3#QueueConfiguration$QueueArn */ =>  {
-                let var_175 = 
+                let var_175 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -3159,7 +3136,7 @@ pub fn queue_configuration_inner(
             }
             ,
             s if s.matches("Event") /* Events com.amazonaws.s3#QueueConfiguration$Events */ =>  {
-                let var_176 = 
+                let var_176 =
                     Some(
                         Result::<std::vec::Vec<crate::model::Event>, smithy_xml::decode::XmlError>::Ok({
                             let mut list_177 = builder.events.take().unwrap_or_default();
@@ -3180,7 +3157,7 @@ pub fn queue_configuration_inner(
             }
             ,
             s if s.matches("Filter") /* Filter com.amazonaws.s3#QueueConfiguration$Filter */ =>  {
-                let var_178 = 
+                let var_178 =
                     Some(
                         crate::xml_deser::notification_configuration_filter_inner(&mut tag)
                         ?
@@ -3219,11 +3196,10 @@ pub fn index_document_inner(
 ) -> Result<crate::model::IndexDocument, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
     let mut builder = crate::model::IndexDocument::builder();
-
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Suffix") /* Suffix com.amazonaws.s3#IndexDocument$Suffix */ =>  {
-                let var_179 = 
+                let var_179 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -3246,11 +3222,10 @@ pub fn redirect_all_requests_to_inner(
 ) -> Result<crate::model::RedirectAllRequestsTo, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
     let mut builder = crate::model::RedirectAllRequestsTo::builder();
-
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("HostName") /* HostName com.amazonaws.s3#RedirectAllRequestsTo$HostName */ =>  {
-                let var_180 = 
+                let var_180 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -3263,7 +3238,7 @@ pub fn redirect_all_requests_to_inner(
             }
             ,
             s if s.matches("Protocol") /* Protocol com.amazonaws.s3#RedirectAllRequestsTo$Protocol */ =>  {
-                let var_181 = 
+                let var_181 =
                     Some(
                         Result::<crate::model::Protocol, smithy_xml::decode::XmlError>::Ok(
                             crate::model::Protocol::from(
@@ -3306,11 +3281,10 @@ pub fn error_document_inner(
 ) -> Result<crate::model::ErrorDocument, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
     let mut builder = crate::model::ErrorDocument::builder();
-
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Key") /* Key com.amazonaws.s3#ErrorDocument$Key */ =>  {
-                let var_182 = 
+                let var_182 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -3333,11 +3307,10 @@ pub fn analytics_configuration_inner(
 ) -> Result<crate::model::AnalyticsConfiguration, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
     let mut builder = crate::model::AnalyticsConfiguration::builder();
-
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Id") /* Id com.amazonaws.s3#AnalyticsConfiguration$Id */ =>  {
-                let var_183 = 
+                let var_183 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -3350,7 +3323,7 @@ pub fn analytics_configuration_inner(
             }
             ,
             s if s.matches("Filter") /* Filter com.amazonaws.s3#AnalyticsConfiguration$Filter */ =>  {
-                let var_184 = 
+                let var_184 =
                     Some(
                         crate::xml_deser::analytics_filter_inner(&mut tag)
                         ?
@@ -3360,7 +3333,7 @@ pub fn analytics_configuration_inner(
             }
             ,
             s if s.matches("StorageClassAnalysis") /* StorageClassAnalysis com.amazonaws.s3#AnalyticsConfiguration$StorageClassAnalysis */ =>  {
-                let var_185 = 
+                let var_185 =
                     Some(
                         crate::xml_deser::storage_class_analysis_inner(&mut tag)
                         ?
@@ -3380,11 +3353,10 @@ pub fn intelligent_tiering_configuration_inner(
 ) -> Result<crate::model::IntelligentTieringConfiguration, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
     let mut builder = crate::model::IntelligentTieringConfiguration::builder();
-
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Id") /* Id com.amazonaws.s3#IntelligentTieringConfiguration$Id */ =>  {
-                let var_186 = 
+                let var_186 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -3397,7 +3369,7 @@ pub fn intelligent_tiering_configuration_inner(
             }
             ,
             s if s.matches("Filter") /* Filter com.amazonaws.s3#IntelligentTieringConfiguration$Filter */ =>  {
-                let var_187 = 
+                let var_187 =
                     Some(
                         crate::xml_deser::intelligent_tiering_filter_inner(&mut tag)
                         ?
@@ -3407,7 +3379,7 @@ pub fn intelligent_tiering_configuration_inner(
             }
             ,
             s if s.matches("Status") /* Status com.amazonaws.s3#IntelligentTieringConfiguration$Status */ =>  {
-                let var_188 = 
+                let var_188 =
                     Some(
                         Result::<crate::model::IntelligentTieringStatus, smithy_xml::decode::XmlError>::Ok(
                             crate::model::IntelligentTieringStatus::from(
@@ -3421,7 +3393,7 @@ pub fn intelligent_tiering_configuration_inner(
             }
             ,
             s if s.matches("Tiering") /* Tierings com.amazonaws.s3#IntelligentTieringConfiguration$Tierings */ =>  {
-                let var_189 = 
+                let var_189 =
                     Some(
                         Result::<std::vec::Vec<crate::model::Tiering>, smithy_xml::decode::XmlError>::Ok({
                             let mut list_190 = builder.tierings.take().unwrap_or_default();
@@ -3448,11 +3420,10 @@ pub fn inventory_configuration_inner(
 ) -> Result<crate::model::InventoryConfiguration, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
     let mut builder = crate::model::InventoryConfiguration::builder();
-
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Destination") /* Destination com.amazonaws.s3#InventoryConfiguration$Destination */ =>  {
-                let var_191 = 
+                let var_191 =
                     Some(
                         crate::xml_deser::inventory_destination_inner(&mut tag)
                         ?
@@ -3462,7 +3433,7 @@ pub fn inventory_configuration_inner(
             }
             ,
             s if s.matches("IsEnabled") /* IsEnabled com.amazonaws.s3#InventoryConfiguration$IsEnabled */ =>  {
-                let var_192 = 
+                let var_192 =
                      {
                         use std::str::FromStr;
                         bool::from_str(
@@ -3476,7 +3447,7 @@ pub fn inventory_configuration_inner(
             }
             ,
             s if s.matches("Filter") /* Filter com.amazonaws.s3#InventoryConfiguration$Filter */ =>  {
-                let var_193 = 
+                let var_193 =
                     Some(
                         crate::xml_deser::inventory_filter_inner(&mut tag)
                         ?
@@ -3486,7 +3457,7 @@ pub fn inventory_configuration_inner(
             }
             ,
             s if s.matches("Id") /* Id com.amazonaws.s3#InventoryConfiguration$Id */ =>  {
-                let var_194 = 
+                let var_194 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -3499,7 +3470,7 @@ pub fn inventory_configuration_inner(
             }
             ,
             s if s.matches("IncludedObjectVersions") /* IncludedObjectVersions com.amazonaws.s3#InventoryConfiguration$IncludedObjectVersions */ =>  {
-                let var_195 = 
+                let var_195 =
                     Some(
                         Result::<crate::model::InventoryIncludedObjectVersions, smithy_xml::decode::XmlError>::Ok(
                             crate::model::InventoryIncludedObjectVersions::from(
@@ -3513,7 +3484,7 @@ pub fn inventory_configuration_inner(
             }
             ,
             s if s.matches("OptionalFields") /* OptionalFields com.amazonaws.s3#InventoryConfiguration$OptionalFields */ =>  {
-                let var_196 = 
+                let var_196 =
                     Some(
                         crate::xml_deser::deserialize_inventory_optional_fields(&mut tag)
                         ?
@@ -3523,7 +3494,7 @@ pub fn inventory_configuration_inner(
             }
             ,
             s if s.matches("Schedule") /* Schedule com.amazonaws.s3#InventoryConfiguration$Schedule */ =>  {
-                let var_197 = 
+                let var_197 =
                     Some(
                         crate::xml_deser::inventory_schedule_inner(&mut tag)
                         ?
@@ -3543,11 +3514,10 @@ pub fn metrics_configuration_inner(
 ) -> Result<crate::model::MetricsConfiguration, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
     let mut builder = crate::model::MetricsConfiguration::builder();
-
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Id") /* Id com.amazonaws.s3#MetricsConfiguration$Id */ =>  {
-                let var_198 = 
+                let var_198 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -3560,7 +3530,7 @@ pub fn metrics_configuration_inner(
             }
             ,
             s if s.matches("Filter") /* Filter com.amazonaws.s3#MetricsConfiguration$Filter */ =>  {
-                let var_199 = 
+                let var_199 =
                     Some(
                         crate::xml_deser::metrics_filter_inner(&mut tag)
                         ?
@@ -3599,11 +3569,10 @@ pub fn common_prefix_inner(
 ) -> Result<crate::model::CommonPrefix, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
     let mut builder = crate::model::CommonPrefix::builder();
-
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Prefix") /* Prefix com.amazonaws.s3#CommonPrefix$Prefix */ =>  {
-                let var_200 = 
+                let var_200 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -3626,11 +3595,10 @@ pub fn multipart_upload_inner(
 ) -> Result<crate::model::MultipartUpload, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
     let mut builder = crate::model::MultipartUpload::builder();
-
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("UploadId") /* UploadId com.amazonaws.s3#MultipartUpload$UploadId */ =>  {
-                let var_201 = 
+                let var_201 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -3643,7 +3611,7 @@ pub fn multipart_upload_inner(
             }
             ,
             s if s.matches("Key") /* Key com.amazonaws.s3#MultipartUpload$Key */ =>  {
-                let var_202 = 
+                let var_202 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -3656,7 +3624,7 @@ pub fn multipart_upload_inner(
             }
             ,
             s if s.matches("Initiated") /* Initiated com.amazonaws.s3#MultipartUpload$Initiated */ =>  {
-                let var_203 = 
+                let var_203 =
                     Some(
                         smithy_types::Instant::from_str(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -3670,7 +3638,7 @@ pub fn multipart_upload_inner(
             }
             ,
             s if s.matches("StorageClass") /* StorageClass com.amazonaws.s3#MultipartUpload$StorageClass */ =>  {
-                let var_204 = 
+                let var_204 =
                     Some(
                         Result::<crate::model::StorageClass, smithy_xml::decode::XmlError>::Ok(
                             crate::model::StorageClass::from(
@@ -3684,7 +3652,7 @@ pub fn multipart_upload_inner(
             }
             ,
             s if s.matches("Owner") /* Owner com.amazonaws.s3#MultipartUpload$Owner */ =>  {
-                let var_205 = 
+                let var_205 =
                     Some(
                         crate::xml_deser::owner_inner(&mut tag)
                         ?
@@ -3694,7 +3662,7 @@ pub fn multipart_upload_inner(
             }
             ,
             s if s.matches("Initiator") /* Initiator com.amazonaws.s3#MultipartUpload$Initiator */ =>  {
-                let var_206 = 
+                let var_206 =
                     Some(
                         crate::xml_deser::initiator_inner(&mut tag)
                         ?
@@ -3714,11 +3682,10 @@ pub fn object_inner(
 ) -> Result<crate::model::Object, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
     let mut builder = crate::model::Object::builder();
-
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Key") /* Key com.amazonaws.s3#Object$Key */ =>  {
-                let var_207 = 
+                let var_207 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -3731,7 +3698,7 @@ pub fn object_inner(
             }
             ,
             s if s.matches("LastModified") /* LastModified com.amazonaws.s3#Object$LastModified */ =>  {
-                let var_208 = 
+                let var_208 =
                     Some(
                         smithy_types::Instant::from_str(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -3745,7 +3712,7 @@ pub fn object_inner(
             }
             ,
             s if s.matches("ETag") /* ETag com.amazonaws.s3#Object$ETag */ =>  {
-                let var_209 = 
+                let var_209 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -3758,7 +3725,7 @@ pub fn object_inner(
             }
             ,
             s if s.matches("Size") /* Size com.amazonaws.s3#Object$Size */ =>  {
-                let var_210 = 
+                let var_210 =
                      {
                         use std::str::FromStr;
                         i32::from_str(
@@ -3772,7 +3739,7 @@ pub fn object_inner(
             }
             ,
             s if s.matches("StorageClass") /* StorageClass com.amazonaws.s3#Object$StorageClass */ =>  {
-                let var_211 = 
+                let var_211 =
                     Some(
                         Result::<crate::model::ObjectStorageClass, smithy_xml::decode::XmlError>::Ok(
                             crate::model::ObjectStorageClass::from(
@@ -3786,7 +3753,7 @@ pub fn object_inner(
             }
             ,
             s if s.matches("Owner") /* Owner com.amazonaws.s3#Object$Owner */ =>  {
-                let var_212 = 
+                let var_212 =
                     Some(
                         crate::xml_deser::owner_inner(&mut tag)
                         ?
@@ -3806,11 +3773,10 @@ pub fn object_version_inner(
 ) -> Result<crate::model::ObjectVersion, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
     let mut builder = crate::model::ObjectVersion::builder();
-
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("ETag") /* ETag com.amazonaws.s3#ObjectVersion$ETag */ =>  {
-                let var_213 = 
+                let var_213 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -3823,7 +3789,7 @@ pub fn object_version_inner(
             }
             ,
             s if s.matches("Size") /* Size com.amazonaws.s3#ObjectVersion$Size */ =>  {
-                let var_214 = 
+                let var_214 =
                      {
                         use std::str::FromStr;
                         i32::from_str(
@@ -3837,7 +3803,7 @@ pub fn object_version_inner(
             }
             ,
             s if s.matches("StorageClass") /* StorageClass com.amazonaws.s3#ObjectVersion$StorageClass */ =>  {
-                let var_215 = 
+                let var_215 =
                     Some(
                         Result::<crate::model::ObjectVersionStorageClass, smithy_xml::decode::XmlError>::Ok(
                             crate::model::ObjectVersionStorageClass::from(
@@ -3851,7 +3817,7 @@ pub fn object_version_inner(
             }
             ,
             s if s.matches("Key") /* Key com.amazonaws.s3#ObjectVersion$Key */ =>  {
-                let var_216 = 
+                let var_216 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -3864,7 +3830,7 @@ pub fn object_version_inner(
             }
             ,
             s if s.matches("VersionId") /* VersionId com.amazonaws.s3#ObjectVersion$VersionId */ =>  {
-                let var_217 = 
+                let var_217 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -3877,7 +3843,7 @@ pub fn object_version_inner(
             }
             ,
             s if s.matches("IsLatest") /* IsLatest com.amazonaws.s3#ObjectVersion$IsLatest */ =>  {
-                let var_218 = 
+                let var_218 =
                      {
                         use std::str::FromStr;
                         bool::from_str(
@@ -3891,7 +3857,7 @@ pub fn object_version_inner(
             }
             ,
             s if s.matches("LastModified") /* LastModified com.amazonaws.s3#ObjectVersion$LastModified */ =>  {
-                let var_219 = 
+                let var_219 =
                     Some(
                         smithy_types::Instant::from_str(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -3905,7 +3871,7 @@ pub fn object_version_inner(
             }
             ,
             s if s.matches("Owner") /* Owner com.amazonaws.s3#ObjectVersion$Owner */ =>  {
-                let var_220 = 
+                let var_220 =
                     Some(
                         crate::xml_deser::owner_inner(&mut tag)
                         ?
@@ -3925,11 +3891,10 @@ pub fn delete_marker_entry_inner(
 ) -> Result<crate::model::DeleteMarkerEntry, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
     let mut builder = crate::model::DeleteMarkerEntry::builder();
-
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Owner") /* Owner com.amazonaws.s3#DeleteMarkerEntry$Owner */ =>  {
-                let var_221 = 
+                let var_221 =
                     Some(
                         crate::xml_deser::owner_inner(&mut tag)
                         ?
@@ -3939,7 +3904,7 @@ pub fn delete_marker_entry_inner(
             }
             ,
             s if s.matches("Key") /* Key com.amazonaws.s3#DeleteMarkerEntry$Key */ =>  {
-                let var_222 = 
+                let var_222 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -3952,7 +3917,7 @@ pub fn delete_marker_entry_inner(
             }
             ,
             s if s.matches("VersionId") /* VersionId com.amazonaws.s3#DeleteMarkerEntry$VersionId */ =>  {
-                let var_223 = 
+                let var_223 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -3965,7 +3930,7 @@ pub fn delete_marker_entry_inner(
             }
             ,
             s if s.matches("IsLatest") /* IsLatest com.amazonaws.s3#DeleteMarkerEntry$IsLatest */ =>  {
-                let var_224 = 
+                let var_224 =
                      {
                         use std::str::FromStr;
                         bool::from_str(
@@ -3979,7 +3944,7 @@ pub fn delete_marker_entry_inner(
             }
             ,
             s if s.matches("LastModified") /* LastModified com.amazonaws.s3#DeleteMarkerEntry$LastModified */ =>  {
-                let var_225 = 
+                let var_225 =
                     Some(
                         smithy_types::Instant::from_str(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -4003,11 +3968,10 @@ pub fn part_inner(
 ) -> Result<crate::model::Part, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
     let mut builder = crate::model::Part::builder();
-
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("PartNumber") /* PartNumber com.amazonaws.s3#Part$PartNumber */ =>  {
-                let var_226 = 
+                let var_226 =
                      {
                         use std::str::FromStr;
                         i32::from_str(
@@ -4021,7 +3985,7 @@ pub fn part_inner(
             }
             ,
             s if s.matches("LastModified") /* LastModified com.amazonaws.s3#Part$LastModified */ =>  {
-                let var_227 = 
+                let var_227 =
                     Some(
                         smithy_types::Instant::from_str(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -4035,7 +3999,7 @@ pub fn part_inner(
             }
             ,
             s if s.matches("ETag") /* ETag com.amazonaws.s3#Part$ETag */ =>  {
-                let var_228 = 
+                let var_228 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -4048,7 +4012,7 @@ pub fn part_inner(
             }
             ,
             s if s.matches("Size") /* Size com.amazonaws.s3#Part$Size */ =>  {
-                let var_229 = 
+                let var_229 =
                      {
                         use std::str::FromStr;
                         i32::from_str(
@@ -4072,11 +4036,10 @@ pub fn initiator_inner(
 ) -> Result<crate::model::Initiator, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
     let mut builder = crate::model::Initiator::builder();
-
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("ID") /* ID com.amazonaws.s3#Initiator$ID */ =>  {
-                let var_230 = 
+                let var_230 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -4089,7 +4052,7 @@ pub fn initiator_inner(
             }
             ,
             s if s.matches("DisplayName") /* DisplayName com.amazonaws.s3#Initiator$DisplayName */ =>  {
-                let var_231 = 
+                let var_231 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -4112,11 +4075,10 @@ pub fn copy_object_result_inner(
 ) -> Result<crate::model::CopyObjectResult, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
     let mut builder = crate::model::CopyObjectResult::builder();
-
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("ETag") /* ETag com.amazonaws.s3#CopyObjectResult$ETag */ =>  {
-                let var_232 = 
+                let var_232 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -4129,7 +4091,7 @@ pub fn copy_object_result_inner(
             }
             ,
             s if s.matches("LastModified") /* LastModified com.amazonaws.s3#CopyObjectResult$LastModified */ =>  {
-                let var_233 = 
+                let var_233 =
                     Some(
                         smithy_types::Instant::from_str(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -4153,11 +4115,10 @@ pub fn server_side_encryption_configuration_inner(
 ) -> Result<crate::model::ServerSideEncryptionConfiguration, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
     let mut builder = crate::model::ServerSideEncryptionConfiguration::builder();
-
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Rule") /* Rules com.amazonaws.s3#ServerSideEncryptionConfiguration$Rules */ =>  {
-                let var_234 = 
+                let var_234 =
                     Some(
                         Result::<std::vec::Vec<crate::model::ServerSideEncryptionRule>, smithy_xml::decode::XmlError>::Ok({
                             let mut list_235 = builder.rules.take().unwrap_or_default();
@@ -4184,11 +4145,10 @@ pub fn ownership_controls_inner(
 ) -> Result<crate::model::OwnershipControls, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
     let mut builder = crate::model::OwnershipControls::builder();
-
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Rule") /* Rules com.amazonaws.s3#OwnershipControls$Rules */ =>  {
-                let var_236 = 
+                let var_236 =
                     Some(
                         Result::<std::vec::Vec<crate::model::OwnershipControlsRule>, smithy_xml::decode::XmlError>::Ok({
                             let mut list_237 = builder.rules.take().unwrap_or_default();
@@ -4215,11 +4175,10 @@ pub fn policy_status_inner(
 ) -> Result<crate::model::PolicyStatus, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
     let mut builder = crate::model::PolicyStatus::builder();
-
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("IsPublic") /* IsPublic com.amazonaws.s3#PolicyStatus$IsPublic */ =>  {
-                let var_238 = 
+                let var_238 =
                      {
                         use std::str::FromStr;
                         bool::from_str(
@@ -4243,11 +4202,10 @@ pub fn replication_configuration_inner(
 ) -> Result<crate::model::ReplicationConfiguration, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
     let mut builder = crate::model::ReplicationConfiguration::builder();
-
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Role") /* Role com.amazonaws.s3#ReplicationConfiguration$Role */ =>  {
-                let var_239 = 
+                let var_239 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -4260,7 +4218,7 @@ pub fn replication_configuration_inner(
             }
             ,
             s if s.matches("Rule") /* Rules com.amazonaws.s3#ReplicationConfiguration$Rules */ =>  {
-                let var_240 = 
+                let var_240 =
                     Some(
                         Result::<std::vec::Vec<crate::model::ReplicationRule>, smithy_xml::decode::XmlError>::Ok({
                             let mut list_241 = builder.rules.take().unwrap_or_default();
@@ -4287,11 +4245,10 @@ pub fn object_lock_legal_hold_inner(
 ) -> Result<crate::model::ObjectLockLegalHold, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
     let mut builder = crate::model::ObjectLockLegalHold::builder();
-
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Status") /* Status com.amazonaws.s3#ObjectLockLegalHold$Status */ =>  {
-                let var_242 = 
+                let var_242 =
                     Some(
                         Result::<crate::model::ObjectLockLegalHoldStatus, smithy_xml::decode::XmlError>::Ok(
                             crate::model::ObjectLockLegalHoldStatus::from(
@@ -4315,11 +4272,10 @@ pub fn object_lock_configuration_inner(
 ) -> Result<crate::model::ObjectLockConfiguration, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
     let mut builder = crate::model::ObjectLockConfiguration::builder();
-
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("ObjectLockEnabled") /* ObjectLockEnabled com.amazonaws.s3#ObjectLockConfiguration$ObjectLockEnabled */ =>  {
-                let var_243 = 
+                let var_243 =
                     Some(
                         Result::<crate::model::ObjectLockEnabled, smithy_xml::decode::XmlError>::Ok(
                             crate::model::ObjectLockEnabled::from(
@@ -4333,7 +4289,7 @@ pub fn object_lock_configuration_inner(
             }
             ,
             s if s.matches("Rule") /* Rule com.amazonaws.s3#ObjectLockConfiguration$Rule */ =>  {
-                let var_244 = 
+                let var_244 =
                     Some(
                         crate::xml_deser::object_lock_rule_inner(&mut tag)
                         ?
@@ -4353,11 +4309,10 @@ pub fn object_lock_retention_inner(
 ) -> Result<crate::model::ObjectLockRetention, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
     let mut builder = crate::model::ObjectLockRetention::builder();
-
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Mode") /* Mode com.amazonaws.s3#ObjectLockRetention$Mode */ =>  {
-                let var_245 = 
+                let var_245 =
                     Some(
                         Result::<crate::model::ObjectLockRetentionMode, smithy_xml::decode::XmlError>::Ok(
                             crate::model::ObjectLockRetentionMode::from(
@@ -4371,7 +4326,7 @@ pub fn object_lock_retention_inner(
             }
             ,
             s if s.matches("RetainUntilDate") /* RetainUntilDate com.amazonaws.s3#ObjectLockRetention$RetainUntilDate */ =>  {
-                let var_246 = 
+                let var_246 =
                     Some(
                         smithy_types::Instant::from_str(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -4395,11 +4350,10 @@ pub fn public_access_block_configuration_inner(
 ) -> Result<crate::model::PublicAccessBlockConfiguration, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
     let mut builder = crate::model::PublicAccessBlockConfiguration::builder();
-
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("BlockPublicAcls") /* BlockPublicAcls com.amazonaws.s3#PublicAccessBlockConfiguration$BlockPublicAcls */ =>  {
-                let var_247 = 
+                let var_247 =
                      {
                         use std::str::FromStr;
                         bool::from_str(
@@ -4413,7 +4367,7 @@ pub fn public_access_block_configuration_inner(
             }
             ,
             s if s.matches("IgnorePublicAcls") /* IgnorePublicAcls com.amazonaws.s3#PublicAccessBlockConfiguration$IgnorePublicAcls */ =>  {
-                let var_248 = 
+                let var_248 =
                      {
                         use std::str::FromStr;
                         bool::from_str(
@@ -4427,7 +4381,7 @@ pub fn public_access_block_configuration_inner(
             }
             ,
             s if s.matches("BlockPublicPolicy") /* BlockPublicPolicy com.amazonaws.s3#PublicAccessBlockConfiguration$BlockPublicPolicy */ =>  {
-                let var_249 = 
+                let var_249 =
                      {
                         use std::str::FromStr;
                         bool::from_str(
@@ -4441,7 +4395,7 @@ pub fn public_access_block_configuration_inner(
             }
             ,
             s if s.matches("RestrictPublicBuckets") /* RestrictPublicBuckets com.amazonaws.s3#PublicAccessBlockConfiguration$RestrictPublicBuckets */ =>  {
-                let var_250 = 
+                let var_250 =
                      {
                         use std::str::FromStr;
                         bool::from_str(
@@ -4465,11 +4419,10 @@ pub fn copy_part_result_inner(
 ) -> Result<crate::model::CopyPartResult, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
     let mut builder = crate::model::CopyPartResult::builder();
-
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("ETag") /* ETag com.amazonaws.s3#CopyPartResult$ETag */ =>  {
-                let var_251 = 
+                let var_251 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -4482,7 +4435,7 @@ pub fn copy_part_result_inner(
             }
             ,
             s if s.matches("LastModified") /* LastModified com.amazonaws.s3#CopyPartResult$LastModified */ =>  {
-                let var_252 = 
+                let var_252 =
                     Some(
                         smithy_types::Instant::from_str(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -4506,11 +4459,10 @@ pub fn grant_inner(
 ) -> Result<crate::model::Grant, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
     let mut builder = crate::model::Grant::builder();
-
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Grantee") /* Grantee com.amazonaws.s3#Grant$Grantee */ =>  {
-                let var_253 = 
+                let var_253 =
                     Some(
                         crate::xml_deser::grantee_inner(&mut tag)
                         ?
@@ -4520,7 +4472,7 @@ pub fn grant_inner(
             }
             ,
             s if s.matches("Permission") /* Permission com.amazonaws.s3#Grant$Permission */ =>  {
-                let var_254 = 
+                let var_254 =
                     Some(
                         Result::<crate::model::Permission, smithy_xml::decode::XmlError>::Ok(
                             crate::model::Permission::from(
@@ -4544,11 +4496,10 @@ pub fn lifecycle_expiration_inner(
 ) -> Result<crate::model::LifecycleExpiration, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
     let mut builder = crate::model::LifecycleExpiration::builder();
-
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Date") /* Date com.amazonaws.s3#LifecycleExpiration$Date */ =>  {
-                let var_255 = 
+                let var_255 =
                     Some(
                         smithy_types::Instant::from_str(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -4562,7 +4513,7 @@ pub fn lifecycle_expiration_inner(
             }
             ,
             s if s.matches("Days") /* Days com.amazonaws.s3#LifecycleExpiration$Days */ =>  {
-                let var_256 = 
+                let var_256 =
                      {
                         use std::str::FromStr;
                         i32::from_str(
@@ -4576,7 +4527,7 @@ pub fn lifecycle_expiration_inner(
             }
             ,
             s if s.matches("ExpiredObjectDeleteMarker") /* ExpiredObjectDeleteMarker com.amazonaws.s3#LifecycleExpiration$ExpiredObjectDeleteMarker */ =>  {
-                let var_257 = 
+                let var_257 =
                      {
                         use std::str::FromStr;
                         bool::from_str(
@@ -4602,7 +4553,7 @@ pub fn lifecycle_rule_filter_inner(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Prefix") /* Prefix com.amazonaws.s3#LifecycleRuleFilter$Prefix */ =>  {
-                let tmp = 
+                let tmp =
                     Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                         smithy_xml::decode::try_data(&mut tag)?.as_ref()
                         .into()
@@ -4613,7 +4564,7 @@ pub fn lifecycle_rule_filter_inner(
             }
             ,
             s if s.matches("Tag") /* Tag com.amazonaws.s3#LifecycleRuleFilter$Tag */ =>  {
-                let tmp = 
+                let tmp =
                     crate::xml_deser::tag_inner(&mut tag)
                     ?
                 ;
@@ -4621,7 +4572,7 @@ pub fn lifecycle_rule_filter_inner(
             }
             ,
             s if s.matches("And") /* And com.amazonaws.s3#LifecycleRuleFilter$And */ =>  {
-                let tmp = 
+                let tmp =
                     crate::xml_deser::lifecycle_rule_and_operator_inner(&mut tag)
                     ?
                 ;
@@ -4639,11 +4590,10 @@ pub fn transition_inner(
 ) -> Result<crate::model::Transition, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
     let mut builder = crate::model::Transition::builder();
-
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Date") /* Date com.amazonaws.s3#Transition$Date */ =>  {
-                let var_258 = 
+                let var_258 =
                     Some(
                         smithy_types::Instant::from_str(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -4657,7 +4607,7 @@ pub fn transition_inner(
             }
             ,
             s if s.matches("Days") /* Days com.amazonaws.s3#Transition$Days */ =>  {
-                let var_259 = 
+                let var_259 =
                      {
                         use std::str::FromStr;
                         i32::from_str(
@@ -4671,7 +4621,7 @@ pub fn transition_inner(
             }
             ,
             s if s.matches("StorageClass") /* StorageClass com.amazonaws.s3#Transition$StorageClass */ =>  {
-                let var_260 = 
+                let var_260 =
                     Some(
                         Result::<crate::model::TransitionStorageClass, smithy_xml::decode::XmlError>::Ok(
                             crate::model::TransitionStorageClass::from(
@@ -4695,11 +4645,10 @@ pub fn noncurrent_version_transition_inner(
 ) -> Result<crate::model::NoncurrentVersionTransition, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
     let mut builder = crate::model::NoncurrentVersionTransition::builder();
-
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("NoncurrentDays") /* NoncurrentDays com.amazonaws.s3#NoncurrentVersionTransition$NoncurrentDays */ =>  {
-                let var_261 = 
+                let var_261 =
                      {
                         use std::str::FromStr;
                         i32::from_str(
@@ -4713,7 +4662,7 @@ pub fn noncurrent_version_transition_inner(
             }
             ,
             s if s.matches("StorageClass") /* StorageClass com.amazonaws.s3#NoncurrentVersionTransition$StorageClass */ =>  {
-                let var_262 = 
+                let var_262 =
                     Some(
                         Result::<crate::model::TransitionStorageClass, smithy_xml::decode::XmlError>::Ok(
                             crate::model::TransitionStorageClass::from(
@@ -4737,11 +4686,10 @@ pub fn noncurrent_version_expiration_inner(
 ) -> Result<crate::model::NoncurrentVersionExpiration, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
     let mut builder = crate::model::NoncurrentVersionExpiration::builder();
-
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("NoncurrentDays") /* NoncurrentDays com.amazonaws.s3#NoncurrentVersionExpiration$NoncurrentDays */ =>  {
-                let var_263 = 
+                let var_263 =
                      {
                         use std::str::FromStr;
                         i32::from_str(
@@ -4765,11 +4713,10 @@ pub fn abort_incomplete_multipart_upload_inner(
 ) -> Result<crate::model::AbortIncompleteMultipartUpload, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
     let mut builder = crate::model::AbortIncompleteMultipartUpload::builder();
-
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("DaysAfterInitiation") /* DaysAfterInitiation com.amazonaws.s3#AbortIncompleteMultipartUpload$DaysAfterInitiation */ =>  {
-                let var_264 = 
+                let var_264 =
                      {
                         use std::str::FromStr;
                         i32::from_str(
@@ -4812,11 +4759,10 @@ pub fn notification_configuration_filter_inner(
 ) -> Result<crate::model::NotificationConfigurationFilter, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
     let mut builder = crate::model::NotificationConfigurationFilter::builder();
-
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("S3Key") /* Key com.amazonaws.s3#NotificationConfigurationFilter$Key */ =>  {
-                let var_265 = 
+                let var_265 =
                     Some(
                         crate::xml_deser::s3_key_filter_inner(&mut tag)
                         ?
@@ -4836,11 +4782,10 @@ pub fn tag_inner(
 ) -> Result<crate::model::Tag, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
     let mut builder = crate::model::Tag::builder();
-
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Key") /* Key com.amazonaws.s3#Tag$Key */ =>  {
-                let var_266 = 
+                let var_266 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -4853,7 +4798,7 @@ pub fn tag_inner(
             }
             ,
             s if s.matches("Value") /* Value com.amazonaws.s3#Tag$Value */ =>  {
-                let var_267 = 
+                let var_267 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -4876,11 +4821,10 @@ pub fn routing_rule_inner(
 ) -> Result<crate::model::RoutingRule, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
     let mut builder = crate::model::RoutingRule::builder();
-
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Condition") /* Condition com.amazonaws.s3#RoutingRule$Condition */ =>  {
-                let var_268 = 
+                let var_268 =
                     Some(
                         crate::xml_deser::condition_inner(&mut tag)
                         ?
@@ -4890,7 +4834,7 @@ pub fn routing_rule_inner(
             }
             ,
             s if s.matches("Redirect") /* Redirect com.amazonaws.s3#RoutingRule$Redirect */ =>  {
-                let var_269 = 
+                let var_269 =
                     Some(
                         crate::xml_deser::redirect_inner(&mut tag)
                         ?
@@ -4912,7 +4856,7 @@ pub fn analytics_filter_inner(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Prefix") /* Prefix com.amazonaws.s3#AnalyticsFilter$Prefix */ =>  {
-                let tmp = 
+                let tmp =
                     Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                         smithy_xml::decode::try_data(&mut tag)?.as_ref()
                         .into()
@@ -4923,7 +4867,7 @@ pub fn analytics_filter_inner(
             }
             ,
             s if s.matches("Tag") /* Tag com.amazonaws.s3#AnalyticsFilter$Tag */ =>  {
-                let tmp = 
+                let tmp =
                     crate::xml_deser::tag_inner(&mut tag)
                     ?
                 ;
@@ -4931,7 +4875,7 @@ pub fn analytics_filter_inner(
             }
             ,
             s if s.matches("And") /* And com.amazonaws.s3#AnalyticsFilter$And */ =>  {
-                let tmp = 
+                let tmp =
                     crate::xml_deser::analytics_and_operator_inner(&mut tag)
                     ?
                 ;
@@ -4949,11 +4893,10 @@ pub fn storage_class_analysis_inner(
 ) -> Result<crate::model::StorageClassAnalysis, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
     let mut builder = crate::model::StorageClassAnalysis::builder();
-
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("DataExport") /* DataExport com.amazonaws.s3#StorageClassAnalysis$DataExport */ =>  {
-                let var_270 = 
+                let var_270 =
                     Some(
                         crate::xml_deser::storage_class_analysis_data_export_inner(&mut tag)
                         ?
@@ -4973,11 +4916,10 @@ pub fn intelligent_tiering_filter_inner(
 ) -> Result<crate::model::IntelligentTieringFilter, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
     let mut builder = crate::model::IntelligentTieringFilter::builder();
-
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Prefix") /* Prefix com.amazonaws.s3#IntelligentTieringFilter$Prefix */ =>  {
-                let var_271 = 
+                let var_271 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -4990,7 +4932,7 @@ pub fn intelligent_tiering_filter_inner(
             }
             ,
             s if s.matches("Tag") /* Tag com.amazonaws.s3#IntelligentTieringFilter$Tag */ =>  {
-                let var_272 = 
+                let var_272 =
                     Some(
                         crate::xml_deser::tag_inner(&mut tag)
                         ?
@@ -5000,7 +4942,7 @@ pub fn intelligent_tiering_filter_inner(
             }
             ,
             s if s.matches("And") /* And com.amazonaws.s3#IntelligentTieringFilter$And */ =>  {
-                let var_273 = 
+                let var_273 =
                     Some(
                         crate::xml_deser::intelligent_tiering_and_operator_inner(&mut tag)
                         ?
@@ -5020,11 +4962,10 @@ pub fn tiering_inner(
 ) -> Result<crate::model::Tiering, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
     let mut builder = crate::model::Tiering::builder();
-
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Days") /* Days com.amazonaws.s3#Tiering$Days */ =>  {
-                let var_274 = 
+                let var_274 =
                      {
                         use std::str::FromStr;
                         i32::from_str(
@@ -5038,7 +4979,7 @@ pub fn tiering_inner(
             }
             ,
             s if s.matches("AccessTier") /* AccessTier com.amazonaws.s3#Tiering$AccessTier */ =>  {
-                let var_275 = 
+                let var_275 =
                     Some(
                         Result::<crate::model::IntelligentTieringAccessTier, smithy_xml::decode::XmlError>::Ok(
                             crate::model::IntelligentTieringAccessTier::from(
@@ -5062,11 +5003,10 @@ pub fn inventory_destination_inner(
 ) -> Result<crate::model::InventoryDestination, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
     let mut builder = crate::model::InventoryDestination::builder();
-
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("S3BucketDestination") /* S3BucketDestination com.amazonaws.s3#InventoryDestination$S3BucketDestination */ =>  {
-                let var_276 = 
+                let var_276 =
                     Some(
                         crate::xml_deser::inventory_s3_bucket_destination_inner(&mut tag)
                         ?
@@ -5086,11 +5026,10 @@ pub fn inventory_filter_inner(
 ) -> Result<crate::model::InventoryFilter, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
     let mut builder = crate::model::InventoryFilter::builder();
-
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Prefix") /* Prefix com.amazonaws.s3#InventoryFilter$Prefix */ =>  {
-                let var_277 = 
+                let var_277 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -5136,11 +5075,10 @@ pub fn inventory_schedule_inner(
 ) -> Result<crate::model::InventorySchedule, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
     let mut builder = crate::model::InventorySchedule::builder();
-
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Frequency") /* Frequency com.amazonaws.s3#InventorySchedule$Frequency */ =>  {
-                let var_278 = 
+                let var_278 =
                     Some(
                         Result::<crate::model::InventoryFrequency, smithy_xml::decode::XmlError>::Ok(
                             crate::model::InventoryFrequency::from(
@@ -5166,7 +5104,7 @@ pub fn metrics_filter_inner(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Prefix") /* Prefix com.amazonaws.s3#MetricsFilter$Prefix */ =>  {
-                let tmp = 
+                let tmp =
                     Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                         smithy_xml::decode::try_data(&mut tag)?.as_ref()
                         .into()
@@ -5177,7 +5115,7 @@ pub fn metrics_filter_inner(
             }
             ,
             s if s.matches("Tag") /* Tag com.amazonaws.s3#MetricsFilter$Tag */ =>  {
-                let tmp = 
+                let tmp =
                     crate::xml_deser::tag_inner(&mut tag)
                     ?
                 ;
@@ -5185,7 +5123,7 @@ pub fn metrics_filter_inner(
             }
             ,
             s if s.matches("And") /* And com.amazonaws.s3#MetricsFilter$And */ =>  {
-                let tmp = 
+                let tmp =
                     crate::xml_deser::metrics_and_operator_inner(&mut tag)
                     ?
                 ;
@@ -5203,11 +5141,10 @@ pub fn bucket_inner(
 ) -> Result<crate::model::Bucket, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
     let mut builder = crate::model::Bucket::builder();
-
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Name") /* Name com.amazonaws.s3#Bucket$Name */ =>  {
-                let var_279 = 
+                let var_279 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -5220,7 +5157,7 @@ pub fn bucket_inner(
             }
             ,
             s if s.matches("CreationDate") /* CreationDate com.amazonaws.s3#Bucket$CreationDate */ =>  {
-                let var_280 = 
+                let var_280 =
                     Some(
                         smithy_types::Instant::from_str(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -5244,11 +5181,10 @@ pub fn server_side_encryption_rule_inner(
 ) -> Result<crate::model::ServerSideEncryptionRule, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
     let mut builder = crate::model::ServerSideEncryptionRule::builder();
-
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("ApplyServerSideEncryptionByDefault") /* ApplyServerSideEncryptionByDefault com.amazonaws.s3#ServerSideEncryptionRule$ApplyServerSideEncryptionByDefault */ =>  {
-                let var_281 = 
+                let var_281 =
                     Some(
                         crate::xml_deser::server_side_encryption_by_default_inner(&mut tag)
                         ?
@@ -5258,7 +5194,7 @@ pub fn server_side_encryption_rule_inner(
             }
             ,
             s if s.matches("BucketKeyEnabled") /* BucketKeyEnabled com.amazonaws.s3#ServerSideEncryptionRule$BucketKeyEnabled */ =>  {
-                let var_282 = 
+                let var_282 =
                      {
                         use std::str::FromStr;
                         bool::from_str(
@@ -5282,11 +5218,10 @@ pub fn ownership_controls_rule_inner(
 ) -> Result<crate::model::OwnershipControlsRule, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
     let mut builder = crate::model::OwnershipControlsRule::builder();
-
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("ObjectOwnership") /* ObjectOwnership com.amazonaws.s3#OwnershipControlsRule$ObjectOwnership */ =>  {
-                let var_283 = 
+                let var_283 =
                     Some(
                         Result::<crate::model::ObjectOwnership, smithy_xml::decode::XmlError>::Ok(
                             crate::model::ObjectOwnership::from(
@@ -5310,11 +5245,10 @@ pub fn replication_rule_inner(
 ) -> Result<crate::model::ReplicationRule, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
     let mut builder = crate::model::ReplicationRule::builder();
-
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("ID") /* ID com.amazonaws.s3#ReplicationRule$ID */ =>  {
-                let var_284 = 
+                let var_284 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -5327,7 +5261,7 @@ pub fn replication_rule_inner(
             }
             ,
             s if s.matches("Priority") /* Priority com.amazonaws.s3#ReplicationRule$Priority */ =>  {
-                let var_285 = 
+                let var_285 =
                      {
                         use std::str::FromStr;
                         i32::from_str(
@@ -5341,7 +5275,7 @@ pub fn replication_rule_inner(
             }
             ,
             s if s.matches("Prefix") /* Prefix com.amazonaws.s3#ReplicationRule$Prefix */ =>  {
-                let var_286 = 
+                let var_286 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -5354,7 +5288,7 @@ pub fn replication_rule_inner(
             }
             ,
             s if s.matches("Filter") /* Filter com.amazonaws.s3#ReplicationRule$Filter */ =>  {
-                let var_287 = 
+                let var_287 =
                     Some(
                         crate::xml_deser::replication_rule_filter_inner(&mut tag)
                         ?
@@ -5364,7 +5298,7 @@ pub fn replication_rule_inner(
             }
             ,
             s if s.matches("Status") /* Status com.amazonaws.s3#ReplicationRule$Status */ =>  {
-                let var_288 = 
+                let var_288 =
                     Some(
                         Result::<crate::model::ReplicationRuleStatus, smithy_xml::decode::XmlError>::Ok(
                             crate::model::ReplicationRuleStatus::from(
@@ -5378,7 +5312,7 @@ pub fn replication_rule_inner(
             }
             ,
             s if s.matches("SourceSelectionCriteria") /* SourceSelectionCriteria com.amazonaws.s3#ReplicationRule$SourceSelectionCriteria */ =>  {
-                let var_289 = 
+                let var_289 =
                     Some(
                         crate::xml_deser::source_selection_criteria_inner(&mut tag)
                         ?
@@ -5388,7 +5322,7 @@ pub fn replication_rule_inner(
             }
             ,
             s if s.matches("ExistingObjectReplication") /* ExistingObjectReplication com.amazonaws.s3#ReplicationRule$ExistingObjectReplication */ =>  {
-                let var_290 = 
+                let var_290 =
                     Some(
                         crate::xml_deser::existing_object_replication_inner(&mut tag)
                         ?
@@ -5398,7 +5332,7 @@ pub fn replication_rule_inner(
             }
             ,
             s if s.matches("Destination") /* Destination com.amazonaws.s3#ReplicationRule$Destination */ =>  {
-                let var_291 = 
+                let var_291 =
                     Some(
                         crate::xml_deser::destination_inner(&mut tag)
                         ?
@@ -5408,7 +5342,7 @@ pub fn replication_rule_inner(
             }
             ,
             s if s.matches("DeleteMarkerReplication") /* DeleteMarkerReplication com.amazonaws.s3#ReplicationRule$DeleteMarkerReplication */ =>  {
-                let var_292 = 
+                let var_292 =
                     Some(
                         crate::xml_deser::delete_marker_replication_inner(&mut tag)
                         ?
@@ -5428,11 +5362,10 @@ pub fn object_lock_rule_inner(
 ) -> Result<crate::model::ObjectLockRule, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
     let mut builder = crate::model::ObjectLockRule::builder();
-
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("DefaultRetention") /* DefaultRetention com.amazonaws.s3#ObjectLockRule$DefaultRetention */ =>  {
-                let var_293 = 
+                let var_293 =
                     Some(
                         crate::xml_deser::default_retention_inner(&mut tag)
                         ?
@@ -5452,7 +5385,6 @@ pub fn grantee_inner(
 ) -> Result<crate::model::Grantee, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
     let mut builder = crate::model::Grantee::builder();
-
     let attrib_294 = {
         let s = decoder.start_el().attr("xsi:type");
         match s {
@@ -5468,7 +5400,7 @@ pub fn grantee_inner(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("DisplayName") /* DisplayName com.amazonaws.s3#Grantee$DisplayName */ =>  {
-                let var_295 = 
+                let var_295 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -5481,7 +5413,7 @@ pub fn grantee_inner(
             }
             ,
             s if s.matches("EmailAddress") /* EmailAddress com.amazonaws.s3#Grantee$EmailAddress */ =>  {
-                let var_296 = 
+                let var_296 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -5494,7 +5426,7 @@ pub fn grantee_inner(
             }
             ,
             s if s.matches("ID") /* ID com.amazonaws.s3#Grantee$ID */ =>  {
-                let var_297 = 
+                let var_297 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -5507,7 +5439,7 @@ pub fn grantee_inner(
             }
             ,
             s if s.matches("URI") /* URI com.amazonaws.s3#Grantee$URI */ =>  {
-                let var_298 = 
+                let var_298 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -5530,11 +5462,10 @@ pub fn lifecycle_rule_and_operator_inner(
 ) -> Result<crate::model::LifecycleRuleAndOperator, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
     let mut builder = crate::model::LifecycleRuleAndOperator::builder();
-
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Prefix") /* Prefix com.amazonaws.s3#LifecycleRuleAndOperator$Prefix */ =>  {
-                let var_299 = 
+                let var_299 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -5547,7 +5478,7 @@ pub fn lifecycle_rule_and_operator_inner(
             }
             ,
             s if s.matches("Tag") /* Tags com.amazonaws.s3#LifecycleRuleAndOperator$Tags */ =>  {
-                let var_300 = 
+                let var_300 =
                     Some(
                         Result::<std::vec::Vec<crate::model::Tag>, smithy_xml::decode::XmlError>::Ok({
                             let mut list_301 = builder.tags.take().unwrap_or_default();
@@ -5574,11 +5505,10 @@ pub fn target_grant_inner(
 ) -> Result<crate::model::TargetGrant, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
     let mut builder = crate::model::TargetGrant::builder();
-
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Grantee") /* Grantee com.amazonaws.s3#TargetGrant$Grantee */ =>  {
-                let var_302 = 
+                let var_302 =
                     Some(
                         crate::xml_deser::grantee_inner(&mut tag)
                         ?
@@ -5588,7 +5518,7 @@ pub fn target_grant_inner(
             }
             ,
             s if s.matches("Permission") /* Permission com.amazonaws.s3#TargetGrant$Permission */ =>  {
-                let var_303 = 
+                let var_303 =
                     Some(
                         Result::<crate::model::BucketLogsPermission, smithy_xml::decode::XmlError>::Ok(
                             crate::model::BucketLogsPermission::from(
@@ -5612,11 +5542,10 @@ pub fn s3_key_filter_inner(
 ) -> Result<crate::model::S3KeyFilter, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
     let mut builder = crate::model::S3KeyFilter::builder();
-
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("FilterRule") /* FilterRules com.amazonaws.s3#S3KeyFilter$FilterRules */ =>  {
-                let var_304 = 
+                let var_304 =
                     Some(
                         Result::<std::vec::Vec<crate::model::FilterRule>, smithy_xml::decode::XmlError>::Ok({
                             let mut list_305 = builder.filter_rules.take().unwrap_or_default();
@@ -5643,11 +5572,10 @@ pub fn condition_inner(
 ) -> Result<crate::model::Condition, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
     let mut builder = crate::model::Condition::builder();
-
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("HttpErrorCodeReturnedEquals") /* HttpErrorCodeReturnedEquals com.amazonaws.s3#Condition$HttpErrorCodeReturnedEquals */ =>  {
-                let var_306 = 
+                let var_306 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -5660,7 +5588,7 @@ pub fn condition_inner(
             }
             ,
             s if s.matches("KeyPrefixEquals") /* KeyPrefixEquals com.amazonaws.s3#Condition$KeyPrefixEquals */ =>  {
-                let var_307 = 
+                let var_307 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -5683,11 +5611,10 @@ pub fn redirect_inner(
 ) -> Result<crate::model::Redirect, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
     let mut builder = crate::model::Redirect::builder();
-
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("HostName") /* HostName com.amazonaws.s3#Redirect$HostName */ =>  {
-                let var_308 = 
+                let var_308 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -5700,7 +5627,7 @@ pub fn redirect_inner(
             }
             ,
             s if s.matches("HttpRedirectCode") /* HttpRedirectCode com.amazonaws.s3#Redirect$HttpRedirectCode */ =>  {
-                let var_309 = 
+                let var_309 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -5713,7 +5640,7 @@ pub fn redirect_inner(
             }
             ,
             s if s.matches("Protocol") /* Protocol com.amazonaws.s3#Redirect$Protocol */ =>  {
-                let var_310 = 
+                let var_310 =
                     Some(
                         Result::<crate::model::Protocol, smithy_xml::decode::XmlError>::Ok(
                             crate::model::Protocol::from(
@@ -5727,7 +5654,7 @@ pub fn redirect_inner(
             }
             ,
             s if s.matches("ReplaceKeyPrefixWith") /* ReplaceKeyPrefixWith com.amazonaws.s3#Redirect$ReplaceKeyPrefixWith */ =>  {
-                let var_311 = 
+                let var_311 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -5740,7 +5667,7 @@ pub fn redirect_inner(
             }
             ,
             s if s.matches("ReplaceKeyWith") /* ReplaceKeyWith com.amazonaws.s3#Redirect$ReplaceKeyWith */ =>  {
-                let var_312 = 
+                let var_312 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -5763,11 +5690,10 @@ pub fn analytics_and_operator_inner(
 ) -> Result<crate::model::AnalyticsAndOperator, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
     let mut builder = crate::model::AnalyticsAndOperator::builder();
-
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Prefix") /* Prefix com.amazonaws.s3#AnalyticsAndOperator$Prefix */ =>  {
-                let var_313 = 
+                let var_313 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -5780,7 +5706,7 @@ pub fn analytics_and_operator_inner(
             }
             ,
             s if s.matches("Tag") /* Tags com.amazonaws.s3#AnalyticsAndOperator$Tags */ =>  {
-                let var_314 = 
+                let var_314 =
                     Some(
                         Result::<std::vec::Vec<crate::model::Tag>, smithy_xml::decode::XmlError>::Ok({
                             let mut list_315 = builder.tags.take().unwrap_or_default();
@@ -5807,11 +5733,10 @@ pub fn storage_class_analysis_data_export_inner(
 ) -> Result<crate::model::StorageClassAnalysisDataExport, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
     let mut builder = crate::model::StorageClassAnalysisDataExport::builder();
-
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("OutputSchemaVersion") /* OutputSchemaVersion com.amazonaws.s3#StorageClassAnalysisDataExport$OutputSchemaVersion */ =>  {
-                let var_316 = 
+                let var_316 =
                     Some(
                         Result::<crate::model::StorageClassAnalysisSchemaVersion, smithy_xml::decode::XmlError>::Ok(
                             crate::model::StorageClassAnalysisSchemaVersion::from(
@@ -5825,7 +5750,7 @@ pub fn storage_class_analysis_data_export_inner(
             }
             ,
             s if s.matches("Destination") /* Destination com.amazonaws.s3#StorageClassAnalysisDataExport$Destination */ =>  {
-                let var_317 = 
+                let var_317 =
                     Some(
                         crate::xml_deser::analytics_export_destination_inner(&mut tag)
                         ?
@@ -5845,11 +5770,10 @@ pub fn intelligent_tiering_and_operator_inner(
 ) -> Result<crate::model::IntelligentTieringAndOperator, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
     let mut builder = crate::model::IntelligentTieringAndOperator::builder();
-
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Prefix") /* Prefix com.amazonaws.s3#IntelligentTieringAndOperator$Prefix */ =>  {
-                let var_318 = 
+                let var_318 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -5862,7 +5786,7 @@ pub fn intelligent_tiering_and_operator_inner(
             }
             ,
             s if s.matches("Tag") /* Tags com.amazonaws.s3#IntelligentTieringAndOperator$Tags */ =>  {
-                let var_319 = 
+                let var_319 =
                     Some(
                         Result::<std::vec::Vec<crate::model::Tag>, smithy_xml::decode::XmlError>::Ok({
                             let mut list_320 = builder.tags.take().unwrap_or_default();
@@ -5889,11 +5813,10 @@ pub fn inventory_s3_bucket_destination_inner(
 ) -> Result<crate::model::InventoryS3BucketDestination, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
     let mut builder = crate::model::InventoryS3BucketDestination::builder();
-
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("AccountId") /* AccountId com.amazonaws.s3#InventoryS3BucketDestination$AccountId */ =>  {
-                let var_321 = 
+                let var_321 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -5906,7 +5829,7 @@ pub fn inventory_s3_bucket_destination_inner(
             }
             ,
             s if s.matches("Bucket") /* Bucket com.amazonaws.s3#InventoryS3BucketDestination$Bucket */ =>  {
-                let var_322 = 
+                let var_322 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -5919,7 +5842,7 @@ pub fn inventory_s3_bucket_destination_inner(
             }
             ,
             s if s.matches("Format") /* Format com.amazonaws.s3#InventoryS3BucketDestination$Format */ =>  {
-                let var_323 = 
+                let var_323 =
                     Some(
                         Result::<crate::model::InventoryFormat, smithy_xml::decode::XmlError>::Ok(
                             crate::model::InventoryFormat::from(
@@ -5933,7 +5856,7 @@ pub fn inventory_s3_bucket_destination_inner(
             }
             ,
             s if s.matches("Prefix") /* Prefix com.amazonaws.s3#InventoryS3BucketDestination$Prefix */ =>  {
-                let var_324 = 
+                let var_324 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -5946,7 +5869,7 @@ pub fn inventory_s3_bucket_destination_inner(
             }
             ,
             s if s.matches("Encryption") /* Encryption com.amazonaws.s3#InventoryS3BucketDestination$Encryption */ =>  {
-                let var_325 = 
+                let var_325 =
                     Some(
                         crate::xml_deser::inventory_encryption_inner(&mut tag)
                         ?
@@ -5966,11 +5889,10 @@ pub fn metrics_and_operator_inner(
 ) -> Result<crate::model::MetricsAndOperator, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
     let mut builder = crate::model::MetricsAndOperator::builder();
-
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Prefix") /* Prefix com.amazonaws.s3#MetricsAndOperator$Prefix */ =>  {
-                let var_326 = 
+                let var_326 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -5983,7 +5905,7 @@ pub fn metrics_and_operator_inner(
             }
             ,
             s if s.matches("Tag") /* Tags com.amazonaws.s3#MetricsAndOperator$Tags */ =>  {
-                let var_327 = 
+                let var_327 =
                     Some(
                         Result::<std::vec::Vec<crate::model::Tag>, smithy_xml::decode::XmlError>::Ok({
                             let mut list_328 = builder.tags.take().unwrap_or_default();
@@ -6010,11 +5932,10 @@ pub fn server_side_encryption_by_default_inner(
 ) -> Result<crate::model::ServerSideEncryptionByDefault, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
     let mut builder = crate::model::ServerSideEncryptionByDefault::builder();
-
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("SSEAlgorithm") /* SSEAlgorithm com.amazonaws.s3#ServerSideEncryptionByDefault$SSEAlgorithm */ =>  {
-                let var_329 = 
+                let var_329 =
                     Some(
                         Result::<crate::model::ServerSideEncryption, smithy_xml::decode::XmlError>::Ok(
                             crate::model::ServerSideEncryption::from(
@@ -6028,7 +5949,7 @@ pub fn server_side_encryption_by_default_inner(
             }
             ,
             s if s.matches("KMSMasterKeyID") /* KMSMasterKeyID com.amazonaws.s3#ServerSideEncryptionByDefault$KMSMasterKeyID */ =>  {
-                let var_330 = 
+                let var_330 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -6053,7 +5974,7 @@ pub fn replication_rule_filter_inner(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Prefix") /* Prefix com.amazonaws.s3#ReplicationRuleFilter$Prefix */ =>  {
-                let tmp = 
+                let tmp =
                     Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                         smithy_xml::decode::try_data(&mut tag)?.as_ref()
                         .into()
@@ -6064,7 +5985,7 @@ pub fn replication_rule_filter_inner(
             }
             ,
             s if s.matches("Tag") /* Tag com.amazonaws.s3#ReplicationRuleFilter$Tag */ =>  {
-                let tmp = 
+                let tmp =
                     crate::xml_deser::tag_inner(&mut tag)
                     ?
                 ;
@@ -6072,7 +5993,7 @@ pub fn replication_rule_filter_inner(
             }
             ,
             s if s.matches("And") /* And com.amazonaws.s3#ReplicationRuleFilter$And */ =>  {
-                let tmp = 
+                let tmp =
                     crate::xml_deser::replication_rule_and_operator_inner(&mut tag)
                     ?
                 ;
@@ -6090,11 +6011,10 @@ pub fn source_selection_criteria_inner(
 ) -> Result<crate::model::SourceSelectionCriteria, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
     let mut builder = crate::model::SourceSelectionCriteria::builder();
-
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("SseKmsEncryptedObjects") /* SseKmsEncryptedObjects com.amazonaws.s3#SourceSelectionCriteria$SseKmsEncryptedObjects */ =>  {
-                let var_331 = 
+                let var_331 =
                     Some(
                         crate::xml_deser::sse_kms_encrypted_objects_inner(&mut tag)
                         ?
@@ -6104,7 +6024,7 @@ pub fn source_selection_criteria_inner(
             }
             ,
             s if s.matches("ReplicaModifications") /* ReplicaModifications com.amazonaws.s3#SourceSelectionCriteria$ReplicaModifications */ =>  {
-                let var_332 = 
+                let var_332 =
                     Some(
                         crate::xml_deser::replica_modifications_inner(&mut tag)
                         ?
@@ -6124,11 +6044,10 @@ pub fn existing_object_replication_inner(
 ) -> Result<crate::model::ExistingObjectReplication, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
     let mut builder = crate::model::ExistingObjectReplication::builder();
-
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Status") /* Status com.amazonaws.s3#ExistingObjectReplication$Status */ =>  {
-                let var_333 = 
+                let var_333 =
                     Some(
                         Result::<crate::model::ExistingObjectReplicationStatus, smithy_xml::decode::XmlError>::Ok(
                             crate::model::ExistingObjectReplicationStatus::from(
@@ -6152,11 +6071,10 @@ pub fn destination_inner(
 ) -> Result<crate::model::Destination, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
     let mut builder = crate::model::Destination::builder();
-
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Bucket") /* Bucket com.amazonaws.s3#Destination$Bucket */ =>  {
-                let var_334 = 
+                let var_334 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -6169,7 +6087,7 @@ pub fn destination_inner(
             }
             ,
             s if s.matches("Account") /* Account com.amazonaws.s3#Destination$Account */ =>  {
-                let var_335 = 
+                let var_335 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -6182,7 +6100,7 @@ pub fn destination_inner(
             }
             ,
             s if s.matches("StorageClass") /* StorageClass com.amazonaws.s3#Destination$StorageClass */ =>  {
-                let var_336 = 
+                let var_336 =
                     Some(
                         Result::<crate::model::StorageClass, smithy_xml::decode::XmlError>::Ok(
                             crate::model::StorageClass::from(
@@ -6196,7 +6114,7 @@ pub fn destination_inner(
             }
             ,
             s if s.matches("AccessControlTranslation") /* AccessControlTranslation com.amazonaws.s3#Destination$AccessControlTranslation */ =>  {
-                let var_337 = 
+                let var_337 =
                     Some(
                         crate::xml_deser::access_control_translation_inner(&mut tag)
                         ?
@@ -6206,7 +6124,7 @@ pub fn destination_inner(
             }
             ,
             s if s.matches("EncryptionConfiguration") /* EncryptionConfiguration com.amazonaws.s3#Destination$EncryptionConfiguration */ =>  {
-                let var_338 = 
+                let var_338 =
                     Some(
                         crate::xml_deser::encryption_configuration_inner(&mut tag)
                         ?
@@ -6216,7 +6134,7 @@ pub fn destination_inner(
             }
             ,
             s if s.matches("ReplicationTime") /* ReplicationTime com.amazonaws.s3#Destination$ReplicationTime */ =>  {
-                let var_339 = 
+                let var_339 =
                     Some(
                         crate::xml_deser::replication_time_inner(&mut tag)
                         ?
@@ -6226,7 +6144,7 @@ pub fn destination_inner(
             }
             ,
             s if s.matches("Metrics") /* Metrics com.amazonaws.s3#Destination$Metrics */ =>  {
-                let var_340 = 
+                let var_340 =
                     Some(
                         crate::xml_deser::metrics_inner(&mut tag)
                         ?
@@ -6246,11 +6164,10 @@ pub fn delete_marker_replication_inner(
 ) -> Result<crate::model::DeleteMarkerReplication, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
     let mut builder = crate::model::DeleteMarkerReplication::builder();
-
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Status") /* Status com.amazonaws.s3#DeleteMarkerReplication$Status */ =>  {
-                let var_341 = 
+                let var_341 =
                     Some(
                         Result::<crate::model::DeleteMarkerReplicationStatus, smithy_xml::decode::XmlError>::Ok(
                             crate::model::DeleteMarkerReplicationStatus::from(
@@ -6274,11 +6191,10 @@ pub fn default_retention_inner(
 ) -> Result<crate::model::DefaultRetention, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
     let mut builder = crate::model::DefaultRetention::builder();
-
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Mode") /* Mode com.amazonaws.s3#DefaultRetention$Mode */ =>  {
-                let var_342 = 
+                let var_342 =
                     Some(
                         Result::<crate::model::ObjectLockRetentionMode, smithy_xml::decode::XmlError>::Ok(
                             crate::model::ObjectLockRetentionMode::from(
@@ -6292,7 +6208,7 @@ pub fn default_retention_inner(
             }
             ,
             s if s.matches("Days") /* Days com.amazonaws.s3#DefaultRetention$Days */ =>  {
-                let var_343 = 
+                let var_343 =
                      {
                         use std::str::FromStr;
                         i32::from_str(
@@ -6306,7 +6222,7 @@ pub fn default_retention_inner(
             }
             ,
             s if s.matches("Years") /* Years com.amazonaws.s3#DefaultRetention$Years */ =>  {
-                let var_344 = 
+                let var_344 =
                      {
                         use std::str::FromStr;
                         i32::from_str(
@@ -6330,11 +6246,10 @@ pub fn filter_rule_inner(
 ) -> Result<crate::model::FilterRule, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
     let mut builder = crate::model::FilterRule::builder();
-
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Name") /* Name com.amazonaws.s3#FilterRule$Name */ =>  {
-                let var_345 = 
+                let var_345 =
                     Some(
                         Result::<crate::model::FilterRuleName, smithy_xml::decode::XmlError>::Ok(
                             crate::model::FilterRuleName::from(
@@ -6348,7 +6263,7 @@ pub fn filter_rule_inner(
             }
             ,
             s if s.matches("Value") /* Value com.amazonaws.s3#FilterRule$Value */ =>  {
-                let var_346 = 
+                let var_346 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -6371,11 +6286,10 @@ pub fn analytics_export_destination_inner(
 ) -> Result<crate::model::AnalyticsExportDestination, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
     let mut builder = crate::model::AnalyticsExportDestination::builder();
-
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("S3BucketDestination") /* S3BucketDestination com.amazonaws.s3#AnalyticsExportDestination$S3BucketDestination */ =>  {
-                let var_347 = 
+                let var_347 =
                     Some(
                         crate::xml_deser::analytics_s3_bucket_destination_inner(&mut tag)
                         ?
@@ -6395,11 +6309,10 @@ pub fn inventory_encryption_inner(
 ) -> Result<crate::model::InventoryEncryption, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
     let mut builder = crate::model::InventoryEncryption::builder();
-
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("SSE-S3") /* SSES3 com.amazonaws.s3#InventoryEncryption$SSES3 */ =>  {
-                let var_348 = 
+                let var_348 =
                     Some(
                         crate::xml_deser::sses3_inner(&mut tag)
                         ?
@@ -6409,7 +6322,7 @@ pub fn inventory_encryption_inner(
             }
             ,
             s if s.matches("SSE-KMS") /* SSEKMS com.amazonaws.s3#InventoryEncryption$SSEKMS */ =>  {
-                let var_349 = 
+                let var_349 =
                     Some(
                         crate::xml_deser::ssekms_inner(&mut tag)
                         ?
@@ -6429,11 +6342,10 @@ pub fn replication_rule_and_operator_inner(
 ) -> Result<crate::model::ReplicationRuleAndOperator, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
     let mut builder = crate::model::ReplicationRuleAndOperator::builder();
-
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Prefix") /* Prefix com.amazonaws.s3#ReplicationRuleAndOperator$Prefix */ =>  {
-                let var_350 = 
+                let var_350 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -6446,7 +6358,7 @@ pub fn replication_rule_and_operator_inner(
             }
             ,
             s if s.matches("Tag") /* Tags com.amazonaws.s3#ReplicationRuleAndOperator$Tags */ =>  {
-                let var_351 = 
+                let var_351 =
                     Some(
                         Result::<std::vec::Vec<crate::model::Tag>, smithy_xml::decode::XmlError>::Ok({
                             let mut list_352 = builder.tags.take().unwrap_or_default();
@@ -6473,11 +6385,10 @@ pub fn sse_kms_encrypted_objects_inner(
 ) -> Result<crate::model::SseKmsEncryptedObjects, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
     let mut builder = crate::model::SseKmsEncryptedObjects::builder();
-
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Status") /* Status com.amazonaws.s3#SseKmsEncryptedObjects$Status */ =>  {
-                let var_353 = 
+                let var_353 =
                     Some(
                         Result::<crate::model::SseKmsEncryptedObjectsStatus, smithy_xml::decode::XmlError>::Ok(
                             crate::model::SseKmsEncryptedObjectsStatus::from(
@@ -6501,11 +6412,10 @@ pub fn replica_modifications_inner(
 ) -> Result<crate::model::ReplicaModifications, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
     let mut builder = crate::model::ReplicaModifications::builder();
-
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Status") /* Status com.amazonaws.s3#ReplicaModifications$Status */ =>  {
-                let var_354 = 
+                let var_354 =
                     Some(
                         Result::<crate::model::ReplicaModificationsStatus, smithy_xml::decode::XmlError>::Ok(
                             crate::model::ReplicaModificationsStatus::from(
@@ -6529,11 +6439,10 @@ pub fn access_control_translation_inner(
 ) -> Result<crate::model::AccessControlTranslation, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
     let mut builder = crate::model::AccessControlTranslation::builder();
-
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Owner") /* Owner com.amazonaws.s3#AccessControlTranslation$Owner */ =>  {
-                let var_355 = 
+                let var_355 =
                     Some(
                         Result::<crate::model::OwnerOverride, smithy_xml::decode::XmlError>::Ok(
                             crate::model::OwnerOverride::from(
@@ -6557,11 +6466,10 @@ pub fn encryption_configuration_inner(
 ) -> Result<crate::model::EncryptionConfiguration, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
     let mut builder = crate::model::EncryptionConfiguration::builder();
-
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("ReplicaKmsKeyID") /* ReplicaKmsKeyID com.amazonaws.s3#EncryptionConfiguration$ReplicaKmsKeyID */ =>  {
-                let var_356 = 
+                let var_356 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -6584,11 +6492,10 @@ pub fn replication_time_inner(
 ) -> Result<crate::model::ReplicationTime, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
     let mut builder = crate::model::ReplicationTime::builder();
-
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Status") /* Status com.amazonaws.s3#ReplicationTime$Status */ =>  {
-                let var_357 = 
+                let var_357 =
                     Some(
                         Result::<crate::model::ReplicationTimeStatus, smithy_xml::decode::XmlError>::Ok(
                             crate::model::ReplicationTimeStatus::from(
@@ -6602,7 +6509,7 @@ pub fn replication_time_inner(
             }
             ,
             s if s.matches("Time") /* Time com.amazonaws.s3#ReplicationTime$Time */ =>  {
-                let var_358 = 
+                let var_358 =
                     Some(
                         crate::xml_deser::replication_time_value_inner(&mut tag)
                         ?
@@ -6622,11 +6529,10 @@ pub fn metrics_inner(
 ) -> Result<crate::model::Metrics, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
     let mut builder = crate::model::Metrics::builder();
-
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Status") /* Status com.amazonaws.s3#Metrics$Status */ =>  {
-                let var_359 = 
+                let var_359 =
                     Some(
                         Result::<crate::model::MetricsStatus, smithy_xml::decode::XmlError>::Ok(
                             crate::model::MetricsStatus::from(
@@ -6640,7 +6546,7 @@ pub fn metrics_inner(
             }
             ,
             s if s.matches("EventThreshold") /* EventThreshold com.amazonaws.s3#Metrics$EventThreshold */ =>  {
-                let var_360 = 
+                let var_360 =
                     Some(
                         crate::xml_deser::replication_time_value_inner(&mut tag)
                         ?
@@ -6660,11 +6566,10 @@ pub fn analytics_s3_bucket_destination_inner(
 ) -> Result<crate::model::AnalyticsS3BucketDestination, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
     let mut builder = crate::model::AnalyticsS3BucketDestination::builder();
-
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Format") /* Format com.amazonaws.s3#AnalyticsS3BucketDestination$Format */ =>  {
-                let var_361 = 
+                let var_361 =
                     Some(
                         Result::<crate::model::AnalyticsS3ExportFileFormat, smithy_xml::decode::XmlError>::Ok(
                             crate::model::AnalyticsS3ExportFileFormat::from(
@@ -6678,7 +6583,7 @@ pub fn analytics_s3_bucket_destination_inner(
             }
             ,
             s if s.matches("BucketAccountId") /* BucketAccountId com.amazonaws.s3#AnalyticsS3BucketDestination$BucketAccountId */ =>  {
-                let var_362 = 
+                let var_362 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -6691,7 +6596,7 @@ pub fn analytics_s3_bucket_destination_inner(
             }
             ,
             s if s.matches("Bucket") /* Bucket com.amazonaws.s3#AnalyticsS3BucketDestination$Bucket */ =>  {
-                let var_363 = 
+                let var_363 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -6704,7 +6609,7 @@ pub fn analytics_s3_bucket_destination_inner(
             }
             ,
             s if s.matches("Prefix") /* Prefix com.amazonaws.s3#AnalyticsS3BucketDestination$Prefix */ =>  {
-                let var_364 = 
+                let var_364 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -6727,7 +6632,6 @@ pub fn sses3_inner(
 ) -> Result<crate::model::SSES3, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
     let mut builder = crate::model::SSES3::builder();
-
     let _ = decoder;
     Ok(builder.build())
 }
@@ -6737,11 +6641,10 @@ pub fn ssekms_inner(
 ) -> Result<crate::model::SSEKMS, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
     let mut builder = crate::model::SSEKMS::builder();
-
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("KeyId") /* KeyId com.amazonaws.s3#SSEKMS$KeyId */ =>  {
-                let var_365 = 
+                let var_365 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -6764,11 +6667,10 @@ pub fn replication_time_value_inner(
 ) -> Result<crate::model::ReplicationTimeValue, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
     let mut builder = crate::model::ReplicationTimeValue::builder();
-
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Minutes") /* Minutes com.amazonaws.s3#ReplicationTimeValue$Minutes */ =>  {
-                let var_366 = 
+                let var_366 =
                      {
                         use std::str::FromStr;
                         i32::from_str(

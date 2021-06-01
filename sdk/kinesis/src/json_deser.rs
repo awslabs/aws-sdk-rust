@@ -11,7 +11,6 @@ pub fn describe_limits_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_open_shard_count(parsed_body.open_shard_count);
     builder = builder.set_shard_limit(parsed_body.shard_limit);
     Ok(builder)
@@ -29,7 +28,6 @@ pub fn describe_stream_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_stream_description(parsed_body.stream_description);
     Ok(builder)
 }
@@ -46,7 +44,6 @@ pub fn describe_stream_consumer_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_consumer_description(parsed_body.consumer_description);
     Ok(builder)
 }
@@ -63,7 +60,6 @@ pub fn describe_stream_summary_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_stream_description_summary(parsed_body.stream_description_summary);
     Ok(builder)
 }
@@ -80,7 +76,6 @@ pub fn disable_enhanced_monitoring_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_desired_shard_level_metrics(parsed_body.desired_shard_level_metrics);
     builder = builder.set_stream_name(parsed_body.stream_name);
     builder = builder.set_current_shard_level_metrics(parsed_body.current_shard_level_metrics);
@@ -99,7 +94,6 @@ pub fn enable_enhanced_monitoring_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_desired_shard_level_metrics(parsed_body.desired_shard_level_metrics);
     builder = builder.set_stream_name(parsed_body.stream_name);
     builder = builder.set_current_shard_level_metrics(parsed_body.current_shard_level_metrics);
@@ -118,7 +112,6 @@ pub fn get_records_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_next_shard_iterator(parsed_body.next_shard_iterator);
     builder = builder.set_records(parsed_body.records);
     builder = builder.set_millis_behind_latest(parsed_body.millis_behind_latest);
@@ -138,7 +131,6 @@ pub fn get_shard_iterator_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_shard_iterator(parsed_body.shard_iterator);
     Ok(builder)
 }
@@ -155,7 +147,6 @@ pub fn list_shards_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_next_token(parsed_body.next_token);
     builder = builder.set_shards(parsed_body.shards);
     Ok(builder)
@@ -173,7 +164,6 @@ pub fn list_stream_consumers_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_consumers(parsed_body.consumers);
     builder = builder.set_next_token(parsed_body.next_token);
     Ok(builder)
@@ -191,7 +181,6 @@ pub fn list_streams_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_stream_names(parsed_body.stream_names);
     builder = builder.set_has_more_streams(parsed_body.has_more_streams);
     Ok(builder)
@@ -209,7 +198,6 @@ pub fn list_tags_for_stream_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_tags(parsed_body.tags);
     builder = builder.set_has_more_tags(parsed_body.has_more_tags);
     Ok(builder)
@@ -227,7 +215,6 @@ pub fn put_record_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_shard_id(parsed_body.shard_id);
     builder = builder.set_sequence_number(parsed_body.sequence_number);
     builder = builder.set_encryption_type(parsed_body.encryption_type);
@@ -246,7 +233,6 @@ pub fn put_records_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_records(parsed_body.records);
     builder = builder.set_encryption_type(parsed_body.encryption_type);
     builder = builder.set_failed_record_count(parsed_body.failed_record_count);
@@ -265,7 +251,6 @@ pub fn register_stream_consumer_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_consumer(parsed_body.consumer);
     Ok(builder)
 }
@@ -282,7 +267,6 @@ pub fn update_shard_count_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_stream_name(parsed_body.stream_name);
     builder = builder.set_target_shard_count(parsed_body.target_shard_count);
     builder = builder.set_current_shard_count(parsed_body.current_shard_count);

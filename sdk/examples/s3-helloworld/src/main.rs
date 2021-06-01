@@ -1,5 +1,5 @@
+use s3::ByteStream;
 use s3::Region;
-use smithy_http::byte_stream::ByteStream;
 use std::error::Error;
 use std::path::Path;
 use tracing_subscriber::fmt::format::FmtSpan;

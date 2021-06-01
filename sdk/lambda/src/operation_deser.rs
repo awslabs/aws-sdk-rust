@@ -8,7 +8,6 @@ pub fn parse_add_layer_version_permission_error(
 > {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::AddLayerVersionPermissionError::unhandled)?;
-
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -111,10 +110,8 @@ pub fn parse_add_layer_version_permission_error(
                 )
                 .map_err(crate::error::AddLayerVersionPermissionError::unhandled)?;
                 output = output.set_retry_after_seconds(
-                
-                                        crate::http_serde::deser_header_add_layer_version_permission_retry_after_seconds(response.headers())
+                crate::http_serde::deser_header_add_layer_version_permission_retry_after_seconds(response.headers())
                                             .map_err(|_|crate::error::AddLayerVersionPermissionError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
-                                        
             );
                 output.build()
             }),
@@ -149,7 +146,6 @@ pub fn parse_add_permission_error(
 ) -> Result<crate::output::AddPermissionOutput, crate::error::AddPermissionError> {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::AddPermissionError::unhandled)?;
-
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::AddPermissionError::unhandled(generic)),
@@ -285,7 +281,6 @@ pub fn parse_create_alias_error(
 ) -> Result<crate::output::CreateAliasOutput, crate::error::CreateAliasError> {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::CreateAliasError::unhandled)?;
-
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::CreateAliasError::unhandled(generic)),
@@ -393,7 +388,6 @@ pub fn parse_create_code_signing_config_error(
 {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::CreateCodeSigningConfigError::unhandled)?;
-
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -459,7 +453,6 @@ pub fn parse_create_event_source_mapping_error(
 > {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::CreateEventSourceMappingError::unhandled)?;
-
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -534,10 +527,8 @@ pub fn parse_create_event_source_mapping_error(
                 )
                 .map_err(crate::error::CreateEventSourceMappingError::unhandled)?;
                 output = output.set_retry_after_seconds(
-                
-                                        crate::http_serde::deser_header_create_event_source_mapping_retry_after_seconds(response.headers())
+                crate::http_serde::deser_header_create_event_source_mapping_retry_after_seconds(response.headers())
                                             .map_err(|_|crate::error::CreateEventSourceMappingError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
-                                        
             );
                 output.build()
             }),
@@ -572,7 +563,6 @@ pub fn parse_create_function_error(
 ) -> Result<crate::output::CreateFunctionOutput, crate::error::CreateFunctionError> {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::CreateFunctionError::unhandled)?;
-
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::CreateFunctionError::unhandled(generic)),
@@ -737,7 +727,6 @@ pub fn parse_delete_alias_error(
 ) -> Result<crate::output::DeleteAliasOutput, crate::error::DeleteAliasError> {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::DeleteAliasError::unhandled)?;
-
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::DeleteAliasError::unhandled(generic)),
@@ -829,7 +818,6 @@ pub fn parse_delete_code_signing_config_error(
 {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::DeleteCodeSigningConfigError::unhandled)?;
-
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -918,7 +906,6 @@ pub fn parse_delete_event_source_mapping_error(
 > {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::DeleteEventSourceMappingError::unhandled)?;
-
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -991,10 +978,8 @@ pub fn parse_delete_event_source_mapping_error(
                 )
                 .map_err(crate::error::DeleteEventSourceMappingError::unhandled)?;
                 output = output.set_retry_after_seconds(
-                
-                                        crate::http_serde::deser_header_delete_event_source_mapping_retry_after_seconds(response.headers())
+                crate::http_serde::deser_header_delete_event_source_mapping_retry_after_seconds(response.headers())
                                             .map_err(|_|crate::error::DeleteEventSourceMappingError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
-                                        
             );
                 output.build()
             }),
@@ -1029,7 +1014,6 @@ pub fn parse_delete_function_error(
 ) -> Result<crate::output::DeleteFunctionOutput, crate::error::DeleteFunctionError> {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::DeleteFunctionError::unhandled)?;
-
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::DeleteFunctionError::unhandled(generic)),
@@ -1137,7 +1121,6 @@ pub fn parse_delete_function_code_signing_config_error(
 > {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::DeleteFunctionCodeSigningConfigError::unhandled)?;
-
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::DeleteFunctionCodeSigningConfigError::unhandled(generic)),
@@ -1178,10 +1161,8 @@ pub fn parse_delete_function_code_signing_config_error(
             let _ = response;
             output = crate::json_deser::too_many_requests_exception(response.body().as_ref(), output).map_err(crate::error::DeleteFunctionCodeSigningConfigError::unhandled)?;
             output = output.set_retry_after_seconds(
-                
-                                        crate::http_serde::deser_header_delete_function_code_signing_config_retry_after_seconds(response.headers())
+                crate::http_serde::deser_header_delete_function_code_signing_config_retry_after_seconds(response.headers())
                                             .map_err(|_|crate::error::DeleteFunctionCodeSigningConfigError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
-                                        
             );
             output.build()
         })},
@@ -1214,7 +1195,6 @@ pub fn parse_delete_function_concurrency_error(
 > {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::DeleteFunctionConcurrencyError::unhandled)?;
-
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -1289,10 +1269,8 @@ pub fn parse_delete_function_concurrency_error(
                 )
                 .map_err(crate::error::DeleteFunctionConcurrencyError::unhandled)?;
                 output = output.set_retry_after_seconds(
-                
-                                        crate::http_serde::deser_header_delete_function_concurrency_retry_after_seconds(response.headers())
+                crate::http_serde::deser_header_delete_function_concurrency_retry_after_seconds(response.headers())
                                             .map_err(|_|crate::error::DeleteFunctionConcurrencyError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
-                                        
             );
                 output.build()
             }),
@@ -1325,7 +1303,6 @@ pub fn parse_delete_function_event_invoke_config_error(
 > {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::DeleteFunctionEventInvokeConfigError::unhandled)?;
-
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::DeleteFunctionEventInvokeConfigError::unhandled(generic)),
@@ -1386,10 +1363,8 @@ pub fn parse_delete_function_event_invoke_config_error(
                 )
                 .map_err(crate::error::DeleteFunctionEventInvokeConfigError::unhandled)?;
                 output = output.set_retry_after_seconds(
-                
-                                        crate::http_serde::deser_header_delete_function_event_invoke_config_retry_after_seconds(response.headers())
+                crate::http_serde::deser_header_delete_function_event_invoke_config_retry_after_seconds(response.headers())
                                             .map_err(|_|crate::error::DeleteFunctionEventInvokeConfigError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
-                                        
             );
                 output.build()
             }),
@@ -1420,7 +1395,6 @@ pub fn parse_delete_layer_version_error(
 ) -> Result<crate::output::DeleteLayerVersionOutput, crate::error::DeleteLayerVersionError> {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::DeleteLayerVersionError::unhandled)?;
-
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::DeleteLayerVersionError::unhandled(generic)),
@@ -1486,7 +1460,6 @@ pub fn parse_delete_provisioned_concurrency_config_error(
 > {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::DeleteProvisionedConcurrencyConfigError::unhandled)?;
-
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -1523,10 +1496,8 @@ pub fn parse_delete_provisioned_concurrency_config_error(
             let _ = response;
             output = crate::json_deser::too_many_requests_exception(response.body().as_ref(), output).map_err(crate::error::DeleteProvisionedConcurrencyConfigError::unhandled)?;
             output = output.set_retry_after_seconds(
-                
-                                        crate::http_serde::deser_header_delete_provisioned_concurrency_config_retry_after_seconds(response.headers())
+                crate::http_serde::deser_header_delete_provisioned_concurrency_config_retry_after_seconds(response.headers())
                                             .map_err(|_|crate::error::DeleteProvisionedConcurrencyConfigError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
-                                        
             );
             output.build()
         })},
@@ -1556,7 +1527,6 @@ pub fn parse_get_account_settings_error(
 ) -> Result<crate::output::GetAccountSettingsOutput, crate::error::GetAccountSettingsError> {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::GetAccountSettingsError::unhandled)?;
-
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::GetAccountSettingsError::unhandled(generic)),
@@ -1624,7 +1594,6 @@ pub fn parse_get_alias_error(
 ) -> Result<crate::output::GetAliasOutput, crate::error::GetAliasError> {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::GetAliasError::unhandled)?;
-
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::GetAliasError::unhandled(generic)),
@@ -1717,7 +1686,6 @@ pub fn parse_get_code_signing_config_error(
 ) -> Result<crate::output::GetCodeSigningConfigOutput, crate::error::GetCodeSigningConfigError> {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::GetCodeSigningConfigError::unhandled)?;
-
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::GetCodeSigningConfigError::unhandled(generic)),
@@ -1789,7 +1757,6 @@ pub fn parse_get_event_source_mapping_error(
 ) -> Result<crate::output::GetEventSourceMappingOutput, crate::error::GetEventSourceMappingError> {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::GetEventSourceMappingError::unhandled)?;
-
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::GetEventSourceMappingError::unhandled(generic)),
@@ -1847,10 +1814,8 @@ pub fn parse_get_event_source_mapping_error(
                     )
                     .map_err(crate::error::GetEventSourceMappingError::unhandled)?;
                     output = output.set_retry_after_seconds(
-                
-                                        crate::http_serde::deser_header_get_event_source_mapping_retry_after_seconds(response.headers())
+                crate::http_serde::deser_header_get_event_source_mapping_retry_after_seconds(response.headers())
                                             .map_err(|_|crate::error::GetEventSourceMappingError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
-                                        
             );
                     output.build()
                 }),
@@ -1883,7 +1848,6 @@ pub fn parse_get_function_error(
 ) -> Result<crate::output::GetFunctionOutput, crate::error::GetFunctionError> {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::GetFunctionError::unhandled)?;
-
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::GetFunctionError::unhandled(generic)),
@@ -1979,7 +1943,6 @@ pub fn parse_get_function_code_signing_config_error(
 > {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::GetFunctionCodeSigningConfigError::unhandled)?;
-
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -2043,10 +2006,8 @@ pub fn parse_get_function_code_signing_config_error(
                 )
                 .map_err(crate::error::GetFunctionCodeSigningConfigError::unhandled)?;
                 output = output.set_retry_after_seconds(
-                
-                                        crate::http_serde::deser_header_get_function_code_signing_config_retry_after_seconds(response.headers())
+                crate::http_serde::deser_header_get_function_code_signing_config_retry_after_seconds(response.headers())
                                             .map_err(|_|crate::error::GetFunctionCodeSigningConfigError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
-                                        
             );
                 output.build()
             }),
@@ -2082,7 +2043,6 @@ pub fn parse_get_function_concurrency_error(
 {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::GetFunctionConcurrencyError::unhandled)?;
-
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -2144,10 +2104,8 @@ pub fn parse_get_function_concurrency_error(
                     )
                     .map_err(crate::error::GetFunctionConcurrencyError::unhandled)?;
                     output = output.set_retry_after_seconds(
-                
-                                        crate::http_serde::deser_header_get_function_concurrency_retry_after_seconds(response.headers())
+                crate::http_serde::deser_header_get_function_concurrency_retry_after_seconds(response.headers())
                                             .map_err(|_|crate::error::GetFunctionConcurrencyError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
-                                        
             );
                     output.build()
                 }),
@@ -2184,7 +2142,6 @@ pub fn parse_get_function_configuration_error(
 > {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::GetFunctionConfigurationError::unhandled)?;
-
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -2246,10 +2203,8 @@ pub fn parse_get_function_configuration_error(
                     )
                     .map_err(crate::error::GetFunctionConfigurationError::unhandled)?;
                     output = output.set_retry_after_seconds(
-                
-                                        crate::http_serde::deser_header_get_function_configuration_retry_after_seconds(response.headers())
+                crate::http_serde::deser_header_get_function_configuration_retry_after_seconds(response.headers())
                                             .map_err(|_|crate::error::GetFunctionConfigurationError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
-                                        
             );
                     output.build()
                 }),
@@ -2288,7 +2243,6 @@ pub fn parse_get_function_event_invoke_config_error(
 > {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::GetFunctionEventInvokeConfigError::unhandled)?;
-
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -2352,10 +2306,8 @@ pub fn parse_get_function_event_invoke_config_error(
                 )
                 .map_err(crate::error::GetFunctionEventInvokeConfigError::unhandled)?;
                 output = output.set_retry_after_seconds(
-                
-                                        crate::http_serde::deser_header_get_function_event_invoke_config_retry_after_seconds(response.headers())
+                crate::http_serde::deser_header_get_function_event_invoke_config_retry_after_seconds(response.headers())
                                             .map_err(|_|crate::error::GetFunctionEventInvokeConfigError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
-                                        
             );
                 output.build()
             }),
@@ -2390,7 +2342,6 @@ pub fn parse_get_layer_version_error(
 ) -> Result<crate::output::GetLayerVersionOutput, crate::error::GetLayerVersionError> {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::GetLayerVersionError::unhandled)?;
-
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::GetLayerVersionError::unhandled(generic)),
@@ -2484,7 +2435,6 @@ pub fn parse_get_layer_version_by_arn_error(
 ) -> Result<crate::output::GetLayerVersionByArnOutput, crate::error::GetLayerVersionByArnError> {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::GetLayerVersionByArnError::unhandled)?;
-
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::GetLayerVersionByArnError::unhandled(generic)),
@@ -2542,10 +2492,8 @@ pub fn parse_get_layer_version_by_arn_error(
                     )
                     .map_err(crate::error::GetLayerVersionByArnError::unhandled)?;
                     output = output.set_retry_after_seconds(
-                
-                                        crate::http_serde::deser_header_get_layer_version_by_arn_retry_after_seconds(response.headers())
+                crate::http_serde::deser_header_get_layer_version_by_arn_retry_after_seconds(response.headers())
                                             .map_err(|_|crate::error::GetLayerVersionByArnError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
-                                        
             );
                     output.build()
                 }),
@@ -2578,7 +2526,6 @@ pub fn parse_get_layer_version_policy_error(
 ) -> Result<crate::output::GetLayerVersionPolicyOutput, crate::error::GetLayerVersionPolicyError> {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::GetLayerVersionPolicyError::unhandled)?;
-
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::GetLayerVersionPolicyError::unhandled(generic)),
@@ -2636,10 +2583,8 @@ pub fn parse_get_layer_version_policy_error(
                     )
                     .map_err(crate::error::GetLayerVersionPolicyError::unhandled)?;
                     output = output.set_retry_after_seconds(
-                
-                                        crate::http_serde::deser_header_get_layer_version_policy_retry_after_seconds(response.headers())
+                crate::http_serde::deser_header_get_layer_version_policy_retry_after_seconds(response.headers())
                                             .map_err(|_|crate::error::GetLayerVersionPolicyError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
-                                        
             );
                     output.build()
                 }),
@@ -2672,7 +2617,6 @@ pub fn parse_get_policy_error(
 ) -> Result<crate::output::GetPolicyOutput, crate::error::GetPolicyError> {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::GetPolicyError::unhandled)?;
-
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::GetPolicyError::unhandled(generic)),
@@ -2768,7 +2712,6 @@ pub fn parse_get_provisioned_concurrency_config_error(
 > {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::GetProvisionedConcurrencyConfigError::unhandled)?;
-
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::GetProvisionedConcurrencyConfigError::unhandled(generic)),
@@ -2803,10 +2746,8 @@ pub fn parse_get_provisioned_concurrency_config_error(
             let _ = response;
             output = crate::json_deser::too_many_requests_exception(response.body().as_ref(), output).map_err(crate::error::GetProvisionedConcurrencyConfigError::unhandled)?;
             output = output.set_retry_after_seconds(
-                
-                                        crate::http_serde::deser_header_get_provisioned_concurrency_config_retry_after_seconds(response.headers())
+                crate::http_serde::deser_header_get_provisioned_concurrency_config_retry_after_seconds(response.headers())
                                             .map_err(|_|crate::error::GetProvisionedConcurrencyConfigError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
-                                        
             );
             output.build()
         })},
@@ -2841,7 +2782,6 @@ pub fn parse_invoke_error(
 ) -> Result<crate::output::InvokeOutput, crate::error::InvokeError> {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::InvokeError::unhandled)?;
-
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::InvokeError::unhandled(generic)),
@@ -3255,7 +3195,6 @@ pub fn parse_invoke_async_error(
 ) -> Result<crate::output::InvokeAsyncOutput, crate::error::InvokeAsyncError> {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::InvokeAsyncError::unhandled)?;
-
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::InvokeAsyncError::unhandled(generic)),
@@ -3349,7 +3288,6 @@ pub fn parse_list_aliases_error(
 ) -> Result<crate::output::ListAliasesOutput, crate::error::ListAliasesError> {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::ListAliasesError::unhandled)?;
-
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::ListAliasesError::unhandled(generic)),
@@ -3443,7 +3381,6 @@ pub fn parse_list_code_signing_configs_error(
 {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::ListCodeSigningConfigsError::unhandled)?;
-
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -3507,7 +3444,6 @@ pub fn parse_list_event_source_mappings_error(
 {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::ListEventSourceMappingsError::unhandled)?;
-
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -3569,10 +3505,8 @@ pub fn parse_list_event_source_mappings_error(
                     )
                     .map_err(crate::error::ListEventSourceMappingsError::unhandled)?;
                     output = output.set_retry_after_seconds(
-                
-                                        crate::http_serde::deser_header_list_event_source_mappings_retry_after_seconds(response.headers())
+                crate::http_serde::deser_header_list_event_source_mappings_retry_after_seconds(response.headers())
                                             .map_err(|_|crate::error::ListEventSourceMappingsError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
-                                        
             );
                     output.build()
                 }),
@@ -3609,7 +3543,6 @@ pub fn parse_list_function_event_invoke_configs_error(
 > {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::ListFunctionEventInvokeConfigsError::unhandled)?;
-
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::ListFunctionEventInvokeConfigsError::unhandled(generic)),
@@ -3669,10 +3602,8 @@ pub fn parse_list_function_event_invoke_configs_error(
                 )
                 .map_err(crate::error::ListFunctionEventInvokeConfigsError::unhandled)?;
                 output = output.set_retry_after_seconds(
-                
-                                        crate::http_serde::deser_header_list_function_event_invoke_configs_retry_after_seconds(response.headers())
+                crate::http_serde::deser_header_list_function_event_invoke_configs_retry_after_seconds(response.headers())
                                             .map_err(|_|crate::error::ListFunctionEventInvokeConfigsError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
-                                        
             );
                 output.build()
             }),
@@ -3708,7 +3639,6 @@ pub fn parse_list_functions_error(
 ) -> Result<crate::output::ListFunctionsOutput, crate::error::ListFunctionsError> {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::ListFunctionsError::unhandled)?;
-
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::ListFunctionsError::unhandled(generic)),
@@ -3791,7 +3721,6 @@ pub fn parse_list_functions_by_code_signing_config_error(
 > {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::ListFunctionsByCodeSigningConfigError::unhandled)?;
-
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -3873,7 +3802,6 @@ pub fn parse_list_layers_error(
 ) -> Result<crate::output::ListLayersOutput, crate::error::ListLayersError> {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::ListLayersError::unhandled)?;
-
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::ListLayersError::unhandled(generic)),
@@ -3952,7 +3880,6 @@ pub fn parse_list_layer_versions_error(
 ) -> Result<crate::output::ListLayerVersionsOutput, crate::error::ListLayerVersionsError> {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::ListLayerVersionsError::unhandled)?;
-
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::ListLayerVersionsError::unhandled(generic)),
@@ -4051,7 +3978,6 @@ pub fn parse_list_provisioned_concurrency_configs_error(
 > {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::ListProvisionedConcurrencyConfigsError::unhandled)?;
-
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -4116,10 +4042,8 @@ pub fn parse_list_provisioned_concurrency_configs_error(
                 )
                 .map_err(crate::error::ListProvisionedConcurrencyConfigsError::unhandled)?;
                 output = output.set_retry_after_seconds(
-                
-                                        crate::http_serde::deser_header_list_provisioned_concurrency_configs_retry_after_seconds(response.headers())
+                crate::http_serde::deser_header_list_provisioned_concurrency_configs_retry_after_seconds(response.headers())
                                             .map_err(|_|crate::error::ListProvisionedConcurrencyConfigsError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
-                                        
             );
                 output.build()
             }),
@@ -4155,7 +4079,6 @@ pub fn parse_list_tags_error(
 ) -> Result<crate::output::ListTagsOutput, crate::error::ListTagsError> {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::ListTagsError::unhandled)?;
-
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::ListTagsError::unhandled(generic)),
@@ -4249,7 +4172,6 @@ pub fn parse_list_versions_by_function_error(
 {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::ListVersionsByFunctionError::unhandled)?;
-
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -4311,10 +4233,8 @@ pub fn parse_list_versions_by_function_error(
                     )
                     .map_err(crate::error::ListVersionsByFunctionError::unhandled)?;
                     output = output.set_retry_after_seconds(
-                
-                                        crate::http_serde::deser_header_list_versions_by_function_retry_after_seconds(response.headers())
+                crate::http_serde::deser_header_list_versions_by_function_retry_after_seconds(response.headers())
                                             .map_err(|_|crate::error::ListVersionsByFunctionError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
-                                        
             );
                     output.build()
                 }),
@@ -4348,7 +4268,6 @@ pub fn parse_publish_layer_version_error(
 ) -> Result<crate::output::PublishLayerVersionOutput, crate::error::PublishLayerVersionError> {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::PublishLayerVersionError::unhandled)?;
-
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::PublishLayerVersionError::unhandled(generic)),
@@ -4458,7 +4377,6 @@ pub fn parse_publish_version_error(
 ) -> Result<crate::output::PublishVersionOutput, crate::error::PublishVersionError> {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::PublishVersionError::unhandled)?;
-
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::PublishVersionError::unhandled(generic)),
@@ -4597,7 +4515,6 @@ pub fn parse_put_function_code_signing_config_error(
 > {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::PutFunctionCodeSigningConfigError::unhandled)?;
-
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -4693,10 +4610,8 @@ pub fn parse_put_function_code_signing_config_error(
                 )
                 .map_err(crate::error::PutFunctionCodeSigningConfigError::unhandled)?;
                 output = output.set_retry_after_seconds(
-                
-                                        crate::http_serde::deser_header_put_function_code_signing_config_retry_after_seconds(response.headers())
+                crate::http_serde::deser_header_put_function_code_signing_config_retry_after_seconds(response.headers())
                                             .map_err(|_|crate::error::PutFunctionCodeSigningConfigError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
-                                        
             );
                 output.build()
             }),
@@ -4732,7 +4647,6 @@ pub fn parse_put_function_concurrency_error(
 {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::PutFunctionConcurrencyError::unhandled)?;
-
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -4808,10 +4722,8 @@ pub fn parse_put_function_concurrency_error(
                     )
                     .map_err(crate::error::PutFunctionConcurrencyError::unhandled)?;
                     output = output.set_retry_after_seconds(
-                
-                                        crate::http_serde::deser_header_put_function_concurrency_retry_after_seconds(response.headers())
+                crate::http_serde::deser_header_put_function_concurrency_retry_after_seconds(response.headers())
                                             .map_err(|_|crate::error::PutFunctionConcurrencyError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
-                                        
             );
                     output.build()
                 }),
@@ -4848,7 +4760,6 @@ pub fn parse_put_function_event_invoke_config_error(
 > {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::PutFunctionEventInvokeConfigError::unhandled)?;
-
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -4912,10 +4823,8 @@ pub fn parse_put_function_event_invoke_config_error(
                 )
                 .map_err(crate::error::PutFunctionEventInvokeConfigError::unhandled)?;
                 output = output.set_retry_after_seconds(
-                
-                                        crate::http_serde::deser_header_put_function_event_invoke_config_retry_after_seconds(response.headers())
+                crate::http_serde::deser_header_put_function_event_invoke_config_retry_after_seconds(response.headers())
                                             .map_err(|_|crate::error::PutFunctionEventInvokeConfigError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
-                                        
             );
                 output.build()
             }),
@@ -4953,7 +4862,6 @@ pub fn parse_put_provisioned_concurrency_config_error(
 > {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::PutProvisionedConcurrencyConfigError::unhandled)?;
-
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::PutProvisionedConcurrencyConfigError::unhandled(generic)),
@@ -5028,10 +4936,8 @@ pub fn parse_put_provisioned_concurrency_config_error(
                 )
                 .map_err(crate::error::PutProvisionedConcurrencyConfigError::unhandled)?;
                 output = output.set_retry_after_seconds(
-                
-                                        crate::http_serde::deser_header_put_provisioned_concurrency_config_retry_after_seconds(response.headers())
+                crate::http_serde::deser_header_put_provisioned_concurrency_config_retry_after_seconds(response.headers())
                                             .map_err(|_|crate::error::PutProvisionedConcurrencyConfigError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
-                                        
             );
                 output.build()
             }),
@@ -5070,7 +4976,6 @@ pub fn parse_remove_layer_version_permission_error(
 > {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::RemoveLayerVersionPermissionError::unhandled)?;
-
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -5148,10 +5053,8 @@ pub fn parse_remove_layer_version_permission_error(
                 )
                 .map_err(crate::error::RemoveLayerVersionPermissionError::unhandled)?;
                 output = output.set_retry_after_seconds(
-                
-                                        crate::http_serde::deser_header_remove_layer_version_permission_retry_after_seconds(response.headers())
+                crate::http_serde::deser_header_remove_layer_version_permission_retry_after_seconds(response.headers())
                                             .map_err(|_|crate::error::RemoveLayerVersionPermissionError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
-                                        
             );
                 output.build()
             }),
@@ -5181,7 +5084,6 @@ pub fn parse_remove_permission_error(
 ) -> Result<crate::output::RemovePermissionOutput, crate::error::RemovePermissionError> {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::RemovePermissionError::unhandled)?;
-
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::RemovePermissionError::unhandled(generic)),
@@ -5286,7 +5188,6 @@ pub fn parse_tag_resource_error(
 ) -> Result<crate::output::TagResourceOutput, crate::error::TagResourceError> {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::TagResourceError::unhandled)?;
-
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::TagResourceError::unhandled(generic)),
@@ -5391,7 +5292,6 @@ pub fn parse_untag_resource_error(
 ) -> Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError> {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::UntagResourceError::unhandled)?;
-
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::UntagResourceError::unhandled(generic)),
@@ -5496,7 +5396,6 @@ pub fn parse_update_alias_error(
 ) -> Result<crate::output::UpdateAliasOutput, crate::error::UpdateAliasError> {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::UpdateAliasError::unhandled)?;
-
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::UpdateAliasError::unhandled(generic)),
@@ -5618,7 +5517,6 @@ pub fn parse_update_code_signing_config_error(
 {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::UpdateCodeSigningConfigError::unhandled)?;
-
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -5698,7 +5596,6 @@ pub fn parse_update_event_source_mapping_error(
 > {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::UpdateEventSourceMappingError::unhandled)?;
-
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -5785,10 +5682,8 @@ pub fn parse_update_event_source_mapping_error(
                 )
                 .map_err(crate::error::UpdateEventSourceMappingError::unhandled)?;
                 output = output.set_retry_after_seconds(
-                
-                                        crate::http_serde::deser_header_update_event_source_mapping_retry_after_seconds(response.headers())
+                crate::http_serde::deser_header_update_event_source_mapping_retry_after_seconds(response.headers())
                                             .map_err(|_|crate::error::UpdateEventSourceMappingError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
-                                        
             );
                 output.build()
             }),
@@ -5823,7 +5718,6 @@ pub fn parse_update_function_code_error(
 ) -> Result<crate::output::UpdateFunctionCodeOutput, crate::error::UpdateFunctionCodeError> {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::UpdateFunctionCodeError::unhandled)?;
-
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::UpdateFunctionCodeError::unhandled(generic)),
@@ -6007,7 +5901,6 @@ pub fn parse_update_function_configuration_error(
 > {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::UpdateFunctionConfigurationError::unhandled)?;
-
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -6145,10 +6038,8 @@ pub fn parse_update_function_configuration_error(
                 )
                 .map_err(crate::error::UpdateFunctionConfigurationError::unhandled)?;
                 output = output.set_retry_after_seconds(
-                
-                                        crate::http_serde::deser_header_update_function_configuration_retry_after_seconds(response.headers())
+                crate::http_serde::deser_header_update_function_configuration_retry_after_seconds(response.headers())
                                             .map_err(|_|crate::error::UpdateFunctionConfigurationError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
-                                        
             );
                 output.build()
             }),
@@ -6186,7 +6077,6 @@ pub fn parse_update_function_event_invoke_config_error(
 > {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::UpdateFunctionEventInvokeConfigError::unhandled)?;
-
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::UpdateFunctionEventInvokeConfigError::unhandled(generic)),
@@ -6247,10 +6137,8 @@ pub fn parse_update_function_event_invoke_config_error(
                 )
                 .map_err(crate::error::UpdateFunctionEventInvokeConfigError::unhandled)?;
                 output = output.set_retry_after_seconds(
-                
-                                        crate::http_serde::deser_header_update_function_event_invoke_config_retry_after_seconds(response.headers())
+                crate::http_serde::deser_header_update_function_event_invoke_config_retry_after_seconds(response.headers())
                                             .map_err(|_|crate::error::UpdateFunctionEventInvokeConfigError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
-                                        
             );
                 output.build()
             }),

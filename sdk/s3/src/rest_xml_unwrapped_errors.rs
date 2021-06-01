@@ -28,16 +28,22 @@ pub fn error_scope<'a, 'b>(doc: &'a mut Document<'b>) -> Result<ScopedDecoder<'b
 pub fn parse_generic_error(body: &[u8]) -> Result<smithy_types::Error, XmlError> {
     let mut doc = Document::try_from(body)?;
     let mut root = doc.root_element()?;
-    let mut err = smithy_types::Error::default();
+    let mut err = smithy_types::Error::builder();
     while let Some(mut tag) = root.next_tag() {
         match tag.start_el().local() {
-            "Code" => err.code = Some(String::from(try_data(&mut tag)?)),
-            "Message" => err.message = Some(String::from(try_data(&mut tag)?)),
-            "RequestId" => err.request_id = Some(String::from(try_data(&mut tag)?)),
+            "Code" => {
+                err.code(try_data(&mut tag)?);
+            }
+            "Message" => {
+                err.message(try_data(&mut tag)?);
+            }
+            "RequestId" => {
+                err.request_id(try_data(&mut tag)?);
+            }
             _ => {}
         }
     }
-    Ok(err)
+    Ok(err.build())
 }
 
 #[cfg(test)]

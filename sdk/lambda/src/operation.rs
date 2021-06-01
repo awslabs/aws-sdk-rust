@@ -5,7 +5,7 @@
 /// accounts in an organization.</p>
 /// <p>To revoke permission, call <a>RemoveLayerVersionPermission</a> with the statement ID that you
 /// specified when you added it.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct AddLayerVersionPermission {
     _private: (),
 }
@@ -18,7 +18,6 @@ impl AddLayerVersionPermission {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for AddLayerVersionPermission {
     type Output = Result<
         crate::output::AddLayerVersionPermissionOutput,
@@ -43,7 +42,7 @@ impl smithy_http::response::ParseStrictResponse for AddLayerVersionPermission {
 /// accounts could potentially configure resources in their account to invoke your Lambda function.</p>
 /// <p>This action adds a statement to a resource-based permissions policy for the function. For more information
 /// about function policies, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/access-control-resource-based.html">Lambda Function Policies</a>. </p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct AddPermission {
     _private: (),
 }
@@ -56,7 +55,6 @@ impl AddPermission {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for AddPermission {
     type Output = Result<crate::output::AddPermissionOutput, crate::error::AddPermissionError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -74,7 +72,7 @@ impl smithy_http::response::ParseStrictResponse for AddPermission {
 /// <p>You can also map an alias to split invocation requests between two versions. Use the
 /// <code>RoutingConfig</code> parameter to specify a second version and the percentage of invocation requests that
 /// it receives.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct CreateAlias {
     _private: (),
 }
@@ -87,7 +85,6 @@ impl CreateAlias {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for CreateAlias {
     type Output = Result<crate::output::CreateAliasOutput, crate::error::CreateAliasError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -102,7 +99,7 @@ impl smithy_http::response::ParseStrictResponse for CreateAlias {
 /// <p>Creates a code signing configuration. A <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-trustedcode.html">code signing configuration</a> defines a list of
 /// allowed signing profiles and defines the code-signing validation policy (action to be taken if deployment
 /// validation checks fail). </p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct CreateCodeSigningConfig {
     _private: (),
 }
@@ -115,7 +112,6 @@ impl CreateCodeSigningConfig {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for CreateCodeSigningConfig {
     type Output = Result<
         crate::output::CreateCodeSigningConfigOutput,
@@ -192,7 +188,7 @@ impl smithy_http::response::ParseStrictResponse for CreateCodeSigningConfig {
 /// <code>ParallelizationFactor</code> - Process multiple batches from each shard concurrently.</p>
 /// </li>
 /// </ul>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct CreateEventSourceMapping {
     _private: (),
 }
@@ -205,7 +201,6 @@ impl CreateEventSourceMapping {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for CreateEventSourceMapping {
     type Output = Result<
         crate::output::CreateEventSourceMappingOutput,
@@ -249,7 +244,7 @@ impl smithy_http::response::ParseStrictResponse for CreateEventSourceMapping {
 /// <p>To invoke your function directly, use <a>Invoke</a>. To invoke your function in response to events
 /// in other AWS services, create an event source mapping (<a>CreateEventSourceMapping</a>), or configure a
 /// function trigger in the other service. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-invocation.html">Invoking Functions</a>.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct CreateFunction {
     _private: (),
 }
@@ -262,7 +257,6 @@ impl CreateFunction {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for CreateFunction {
     type Output = Result<crate::output::CreateFunctionOutput, crate::error::CreateFunctionError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -275,7 +269,7 @@ impl smithy_http::response::ParseStrictResponse for CreateFunction {
 }
 
 /// <p>Deletes a Lambda function <a href="https://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">alias</a>.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteAlias {
     _private: (),
 }
@@ -288,7 +282,6 @@ impl DeleteAlias {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for DeleteAlias {
     type Output = Result<crate::output::DeleteAliasOutput, crate::error::DeleteAliasError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -302,7 +295,7 @@ impl smithy_http::response::ParseStrictResponse for DeleteAlias {
 
 /// <p>Deletes the code signing configuration. You can delete the code signing configuration only if no function is
 /// using it. </p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteCodeSigningConfig {
     _private: (),
 }
@@ -315,7 +308,6 @@ impl DeleteCodeSigningConfig {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for DeleteCodeSigningConfig {
     type Output = Result<
         crate::output::DeleteCodeSigningConfigOutput,
@@ -333,7 +325,7 @@ impl smithy_http::response::ParseStrictResponse for DeleteCodeSigningConfig {
 /// <p>Deletes an <a href="https://docs.aws.amazon.com/lambda/latest/dg/intro-invocation-modes.html">event source
 /// mapping</a>. You can get the identifier of a mapping from the output of <a>ListEventSourceMappings</a>.</p>
 /// <p>When you delete an event source mapping, it enters a <code>Deleting</code> state and might not be completely deleted for several seconds.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteEventSourceMapping {
     _private: (),
 }
@@ -346,7 +338,6 @@ impl DeleteEventSourceMapping {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for DeleteEventSourceMapping {
     type Output = Result<
         crate::output::DeleteEventSourceMappingOutput,
@@ -366,7 +357,7 @@ impl smithy_http::response::ParseStrictResponse for DeleteEventSourceMapping {
 /// <p>To delete Lambda event source mappings that invoke a function, use <a>DeleteEventSourceMapping</a>.
 /// For AWS services and resources that invoke your function directly, delete the trigger in the service where you
 /// originally configured it.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteFunction {
     _private: (),
 }
@@ -379,7 +370,6 @@ impl DeleteFunction {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for DeleteFunction {
     type Output = Result<crate::output::DeleteFunctionOutput, crate::error::DeleteFunctionError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -392,7 +382,7 @@ impl smithy_http::response::ParseStrictResponse for DeleteFunction {
 }
 
 /// <p>Removes the code signing configuration from the function.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteFunctionCodeSigningConfig {
     _private: (),
 }
@@ -405,7 +395,6 @@ impl DeleteFunctionCodeSigningConfig {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for DeleteFunctionCodeSigningConfig {
     type Output = Result<
         crate::output::DeleteFunctionCodeSigningConfigOutput,
@@ -421,7 +410,7 @@ impl smithy_http::response::ParseStrictResponse for DeleteFunctionCodeSigningCon
 }
 
 /// <p>Removes a concurrent execution limit from a function.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteFunctionConcurrency {
     _private: (),
 }
@@ -434,7 +423,6 @@ impl DeleteFunctionConcurrency {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for DeleteFunctionConcurrency {
     type Output = Result<
         crate::output::DeleteFunctionConcurrencyOutput,
@@ -451,7 +439,7 @@ impl smithy_http::response::ParseStrictResponse for DeleteFunctionConcurrency {
 
 /// <p>Deletes the configuration for asynchronous invocation for a function, version, or alias.</p>
 /// <p>To configure options for asynchronous invocation, use <a>PutFunctionEventInvokeConfig</a>.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteFunctionEventInvokeConfig {
     _private: (),
 }
@@ -464,7 +452,6 @@ impl DeleteFunctionEventInvokeConfig {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for DeleteFunctionEventInvokeConfig {
     type Output = Result<
         crate::output::DeleteFunctionEventInvokeConfigOutput,
@@ -482,7 +469,7 @@ impl smithy_http::response::ParseStrictResponse for DeleteFunctionEventInvokeCon
 /// <p>Deletes a version of an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">AWS Lambda
 /// layer</a>. Deleted versions can no longer be viewed or added to functions. To avoid
 /// breaking functions, a copy of the version remains in Lambda until no functions refer to it.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteLayerVersion {
     _private: (),
 }
@@ -495,7 +482,6 @@ impl DeleteLayerVersion {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for DeleteLayerVersion {
     type Output =
         Result<crate::output::DeleteLayerVersionOutput, crate::error::DeleteLayerVersionError>;
@@ -509,7 +495,7 @@ impl smithy_http::response::ParseStrictResponse for DeleteLayerVersion {
 }
 
 /// <p>Deletes the provisioned concurrency configuration for a function.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteProvisionedConcurrencyConfig {
     _private: (),
 }
@@ -522,7 +508,6 @@ impl DeleteProvisionedConcurrencyConfig {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for DeleteProvisionedConcurrencyConfig {
     type Output = Result<
         crate::output::DeleteProvisionedConcurrencyConfigOutput,
@@ -538,7 +523,7 @@ impl smithy_http::response::ParseStrictResponse for DeleteProvisionedConcurrency
 }
 
 /// <p>Retrieves details about your account's <a href="https://docs.aws.amazon.com/lambda/latest/dg/limits.html">limits</a> and usage in an AWS Region.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct GetAccountSettings {
     _private: (),
 }
@@ -551,7 +536,6 @@ impl GetAccountSettings {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for GetAccountSettings {
     type Output =
         Result<crate::output::GetAccountSettingsOutput, crate::error::GetAccountSettingsError>;
@@ -565,7 +549,7 @@ impl smithy_http::response::ParseStrictResponse for GetAccountSettings {
 }
 
 /// <p>Returns details about a Lambda function <a href="https://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">alias</a>.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct GetAlias {
     _private: (),
 }
@@ -578,7 +562,6 @@ impl GetAlias {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for GetAlias {
     type Output = Result<crate::output::GetAliasOutput, crate::error::GetAliasError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -591,7 +574,7 @@ impl smithy_http::response::ParseStrictResponse for GetAlias {
 }
 
 /// <p>Returns information about the specified code signing configuration.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct GetCodeSigningConfig {
     _private: (),
 }
@@ -604,7 +587,6 @@ impl GetCodeSigningConfig {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for GetCodeSigningConfig {
     type Output =
         Result<crate::output::GetCodeSigningConfigOutput, crate::error::GetCodeSigningConfigError>;
@@ -618,7 +600,7 @@ impl smithy_http::response::ParseStrictResponse for GetCodeSigningConfig {
 }
 
 /// <p>Returns details about an event source mapping. You can get the identifier of a mapping from the output of <a>ListEventSourceMappings</a>.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct GetEventSourceMapping {
     _private: (),
 }
@@ -631,7 +613,6 @@ impl GetEventSourceMapping {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for GetEventSourceMapping {
     type Output = Result<
         crate::output::GetEventSourceMappingOutput,
@@ -649,7 +630,7 @@ impl smithy_http::response::ParseStrictResponse for GetEventSourceMapping {
 /// <p>Returns information about the function or function version, with a link to download the deployment package
 /// that's valid for 10 minutes. If you specify a function version, only details that are specific to that version are
 /// returned.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct GetFunction {
     _private: (),
 }
@@ -662,7 +643,6 @@ impl GetFunction {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for GetFunction {
     type Output = Result<crate::output::GetFunctionOutput, crate::error::GetFunctionError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -675,7 +655,7 @@ impl smithy_http::response::ParseStrictResponse for GetFunction {
 }
 
 /// <p>Returns the code signing configuration for the specified function.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct GetFunctionCodeSigningConfig {
     _private: (),
 }
@@ -688,7 +668,6 @@ impl GetFunctionCodeSigningConfig {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for GetFunctionCodeSigningConfig {
     type Output = Result<
         crate::output::GetFunctionCodeSigningConfigOutput,
@@ -705,7 +684,7 @@ impl smithy_http::response::ParseStrictResponse for GetFunctionCodeSigningConfig
 
 /// <p>Returns details about the reserved concurrency configuration for a function. To set a concurrency limit for a
 /// function, use <a>PutFunctionConcurrency</a>.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct GetFunctionConcurrency {
     _private: (),
 }
@@ -718,7 +697,6 @@ impl GetFunctionConcurrency {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for GetFunctionConcurrency {
     type Output = Result<
         crate::output::GetFunctionConcurrencyOutput,
@@ -736,7 +714,7 @@ impl smithy_http::response::ParseStrictResponse for GetFunctionConcurrency {
 /// <p>Returns the version-specific settings of a Lambda function or version. The output includes only options that
 /// can vary between versions of a function. To modify these settings, use <a>UpdateFunctionConfiguration</a>.</p>
 /// <p>To get all of a function's details, including function-level settings, use <a>GetFunction</a>.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct GetFunctionConfiguration {
     _private: (),
 }
@@ -749,7 +727,6 @@ impl GetFunctionConfiguration {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for GetFunctionConfiguration {
     type Output = Result<
         crate::output::GetFunctionConfigurationOutput,
@@ -766,7 +743,7 @@ impl smithy_http::response::ParseStrictResponse for GetFunctionConfiguration {
 
 /// <p>Retrieves the configuration for asynchronous invocation for a function, version, or alias.</p>
 /// <p>To configure options for asynchronous invocation, use <a>PutFunctionEventInvokeConfig</a>.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct GetFunctionEventInvokeConfig {
     _private: (),
 }
@@ -779,7 +756,6 @@ impl GetFunctionEventInvokeConfig {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for GetFunctionEventInvokeConfig {
     type Output = Result<
         crate::output::GetFunctionEventInvokeConfigOutput,
@@ -797,7 +773,7 @@ impl smithy_http::response::ParseStrictResponse for GetFunctionEventInvokeConfig
 /// <p>Returns information about a version of an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">AWS Lambda
 /// layer</a>, with a link to download the layer archive
 /// that's valid for 10 minutes.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct GetLayerVersion {
     _private: (),
 }
@@ -810,7 +786,6 @@ impl GetLayerVersion {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for GetLayerVersion {
     type Output = Result<crate::output::GetLayerVersionOutput, crate::error::GetLayerVersionError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -825,7 +800,7 @@ impl smithy_http::response::ParseStrictResponse for GetLayerVersion {
 /// <p>Returns information about a version of an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">AWS Lambda
 /// layer</a>, with a link to download the layer archive
 /// that's valid for 10 minutes.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct GetLayerVersionByArn {
     _private: (),
 }
@@ -838,7 +813,6 @@ impl GetLayerVersionByArn {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for GetLayerVersionByArn {
     type Output =
         Result<crate::output::GetLayerVersionByArnOutput, crate::error::GetLayerVersionByArnError>;
@@ -853,7 +827,7 @@ impl smithy_http::response::ParseStrictResponse for GetLayerVersionByArn {
 
 /// <p>Returns the permission policy for a version of an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">AWS Lambda
 /// layer</a>. For more information, see <a>AddLayerVersionPermission</a>.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct GetLayerVersionPolicy {
     _private: (),
 }
@@ -866,7 +840,6 @@ impl GetLayerVersionPolicy {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for GetLayerVersionPolicy {
     type Output = Result<
         crate::output::GetLayerVersionPolicyOutput,
@@ -882,7 +855,7 @@ impl smithy_http::response::ParseStrictResponse for GetLayerVersionPolicy {
 }
 
 /// <p>Returns the <a href="https://docs.aws.amazon.com/lambda/latest/dg/access-control-resource-based.html">resource-based IAM policy</a> for a function, version, or alias.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct GetPolicy {
     _private: (),
 }
@@ -895,7 +868,6 @@ impl GetPolicy {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for GetPolicy {
     type Output = Result<crate::output::GetPolicyOutput, crate::error::GetPolicyError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -908,7 +880,7 @@ impl smithy_http::response::ParseStrictResponse for GetPolicy {
 }
 
 /// <p>Retrieves the provisioned concurrency configuration for a function's alias or version.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct GetProvisionedConcurrencyConfig {
     _private: (),
 }
@@ -921,7 +893,6 @@ impl GetProvisionedConcurrencyConfig {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for GetProvisionedConcurrencyConfig {
     type Output = Result<
         crate::output::GetProvisionedConcurrencyConfigOutput,
@@ -957,7 +928,7 @@ impl smithy_http::response::ParseStrictResponse for GetProvisionedConcurrencyCon
 /// waits for a response. Configure your HTTP client, SDK, firewall, proxy, or operating system to allow for long
 /// connections with timeout or keep-alive settings.</p>
 /// <p>This operation requires permission for the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awslambda.html">lambda:InvokeFunction</a> action.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct Invoke {
     _private: (),
 }
@@ -970,7 +941,6 @@ impl Invoke {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for Invoke {
     type Output = Result<crate::output::InvokeOutput, crate::error::InvokeError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -986,7 +956,7 @@ impl smithy_http::response::ParseStrictResponse for Invoke {
 /// <p>For asynchronous function invocation, use <a>Invoke</a>.</p>
 /// </important>
 /// <p>Invokes a function asynchronously.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct InvokeAsync {
     _private: (),
 }
@@ -999,7 +969,6 @@ impl InvokeAsync {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for InvokeAsync {
     type Output = Result<crate::output::InvokeAsyncOutput, crate::error::InvokeAsyncError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -1013,7 +982,7 @@ impl smithy_http::response::ParseStrictResponse for InvokeAsync {
 
 /// <p>Returns a list of <a href="https://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">aliases</a>
 /// for a Lambda function.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct ListAliases {
     _private: (),
 }
@@ -1026,7 +995,6 @@ impl ListAliases {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for ListAliases {
     type Output = Result<crate::output::ListAliasesOutput, crate::error::ListAliasesError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -1041,7 +1009,7 @@ impl smithy_http::response::ParseStrictResponse for ListAliases {
 /// <p>Returns a list of <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuring-codesigning.html">code
 /// signing configurations</a>. A request returns up to 10,000 configurations per
 /// call. You can use the <code>MaxItems</code> parameter to return fewer configurations per call. </p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct ListCodeSigningConfigs {
     _private: (),
 }
@@ -1054,7 +1022,6 @@ impl ListCodeSigningConfigs {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for ListCodeSigningConfigs {
     type Output = Result<
         crate::output::ListCodeSigningConfigsOutput,
@@ -1071,7 +1038,7 @@ impl smithy_http::response::ParseStrictResponse for ListCodeSigningConfigs {
 
 /// <p>Lists event source mappings. Specify an <code>EventSourceArn</code> to only show event source mappings for a
 /// single event source.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct ListEventSourceMappings {
     _private: (),
 }
@@ -1084,7 +1051,6 @@ impl ListEventSourceMappings {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for ListEventSourceMappings {
     type Output = Result<
         crate::output::ListEventSourceMappingsOutput,
@@ -1101,7 +1067,7 @@ impl smithy_http::response::ParseStrictResponse for ListEventSourceMappings {
 
 /// <p>Retrieves a list of configurations for asynchronous invocation for a function.</p>
 /// <p>To configure options for asynchronous invocation, use <a>PutFunctionEventInvokeConfig</a>.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct ListFunctionEventInvokeConfigs {
     _private: (),
 }
@@ -1114,7 +1080,6 @@ impl ListFunctionEventInvokeConfigs {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for ListFunctionEventInvokeConfigs {
     type Output = Result<
         crate::output::ListFunctionEventInvokeConfigsOutput,
@@ -1138,7 +1103,7 @@ impl smithy_http::response::ParseStrictResponse for ListFunctionEventInvokeConfi
 /// To get the additional fields (State, StateReasonCode, StateReason, LastUpdateStatus, LastUpdateStatusReason, LastUpdateStatusReasonCode)
 /// for a function or version, use <a>GetFunction</a>.</p>
 /// </note>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct ListFunctions {
     _private: (),
 }
@@ -1151,7 +1116,6 @@ impl ListFunctions {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for ListFunctions {
     type Output = Result<crate::output::ListFunctionsOutput, crate::error::ListFunctionsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -1165,7 +1129,7 @@ impl smithy_http::response::ParseStrictResponse for ListFunctions {
 
 /// <p>List the functions that use the specified code signing configuration. You can use this method prior to deleting a
 /// code signing configuration, to verify that no functions are using it.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct ListFunctionsByCodeSigningConfig {
     _private: (),
 }
@@ -1178,7 +1142,6 @@ impl ListFunctionsByCodeSigningConfig {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for ListFunctionsByCodeSigningConfig {
     type Output = Result<
         crate::output::ListFunctionsByCodeSigningConfigOutput,
@@ -1196,7 +1159,7 @@ impl smithy_http::response::ParseStrictResponse for ListFunctionsByCodeSigningCo
 /// <p>Lists <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">AWS Lambda
 /// layers</a> and shows information about the latest version of each. Specify a <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime identifier</a> to list only layers
 /// that indicate that they're compatible with that runtime.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct ListLayers {
     _private: (),
 }
@@ -1209,7 +1172,6 @@ impl ListLayers {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for ListLayers {
     type Output = Result<crate::output::ListLayersOutput, crate::error::ListLayersError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -1224,7 +1186,7 @@ impl smithy_http::response::ParseStrictResponse for ListLayers {
 /// <p>Lists the versions of an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">AWS Lambda
 /// layer</a>. Versions that have been deleted aren't listed. Specify a <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime identifier</a> to list only
 /// versions that indicate that they're compatible with that runtime.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct ListLayerVersions {
     _private: (),
 }
@@ -1237,7 +1199,6 @@ impl ListLayerVersions {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for ListLayerVersions {
     type Output =
         Result<crate::output::ListLayerVersionsOutput, crate::error::ListLayerVersionsError>;
@@ -1251,7 +1212,7 @@ impl smithy_http::response::ParseStrictResponse for ListLayerVersions {
 }
 
 /// <p>Retrieves a list of provisioned concurrency configurations for a function.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct ListProvisionedConcurrencyConfigs {
     _private: (),
 }
@@ -1264,7 +1225,6 @@ impl ListProvisionedConcurrencyConfigs {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for ListProvisionedConcurrencyConfigs {
     type Output = Result<
         crate::output::ListProvisionedConcurrencyConfigsOutput,
@@ -1281,7 +1241,7 @@ impl smithy_http::response::ParseStrictResponse for ListProvisionedConcurrencyCo
 
 /// <p>Returns a function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/tagging.html">tags</a>. You can
 /// also view tags with <a>GetFunction</a>.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct ListTags {
     _private: (),
 }
@@ -1294,7 +1254,6 @@ impl ListTags {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for ListTags {
     type Output = Result<crate::output::ListTagsOutput, crate::error::ListTagsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -1308,7 +1267,7 @@ impl smithy_http::response::ParseStrictResponse for ListTags {
 
 /// <p>Returns a list of <a href="https://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">versions</a>,
 /// with the version-specific configuration of each. Lambda returns up to 50 versions per call.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct ListVersionsByFunction {
     _private: (),
 }
@@ -1321,7 +1280,6 @@ impl ListVersionsByFunction {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for ListVersionsByFunction {
     type Output = Result<
         crate::output::ListVersionsByFunctionOutput,
@@ -1340,7 +1298,7 @@ impl smithy_http::response::ParseStrictResponse for ListVersionsByFunction {
 /// layer</a> from a ZIP archive. Each time you call <code>PublishLayerVersion</code> with the same
 /// layer name, a new version is created.</p>
 /// <p>Add layers to your function with <a>CreateFunction</a> or <a>UpdateFunctionConfiguration</a>.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct PublishLayerVersion {
     _private: (),
 }
@@ -1353,7 +1311,6 @@ impl PublishLayerVersion {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for PublishLayerVersion {
     type Output =
         Result<crate::output::PublishLayerVersionOutput, crate::error::PublishLayerVersionError>;
@@ -1373,7 +1330,7 @@ impl smithy_http::response::ParseStrictResponse for PublishLayerVersion {
 /// version. Use <a>UpdateFunctionCode</a> or <a>UpdateFunctionConfiguration</a> to update the
 /// function before publishing a version.</p>
 /// <p>Clients can invoke versions directly or with an alias. To create an alias, use <a>CreateAlias</a>.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct PublishVersion {
     _private: (),
 }
@@ -1386,7 +1343,6 @@ impl PublishVersion {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for PublishVersion {
     type Output = Result<crate::output::PublishVersionOutput, crate::error::PublishVersionError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -1400,7 +1356,7 @@ impl smithy_http::response::ParseStrictResponse for PublishVersion {
 
 /// <p>Update the code signing configuration for the function. Changes to the code signing configuration take effect the
 /// next time a user tries to deploy a code package to the function. </p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct PutFunctionCodeSigningConfig {
     _private: (),
 }
@@ -1413,7 +1369,6 @@ impl PutFunctionCodeSigningConfig {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for PutFunctionCodeSigningConfig {
     type Output = Result<
         crate::output::PutFunctionCodeSigningConfigOutput,
@@ -1437,7 +1392,7 @@ impl smithy_http::response::ParseStrictResponse for PutFunctionCodeSigningConfig
 /// <p>Use <a>GetAccountSettings</a> to see your Regional concurrency limit. You can reserve concurrency
 /// for as many functions as you like, as long as you leave at least 100 simultaneous executions unreserved for
 /// functions that aren't configured with a per-function limit. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html">Managing Concurrency</a>.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct PutFunctionConcurrency {
     _private: (),
 }
@@ -1450,7 +1405,6 @@ impl PutFunctionConcurrency {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for PutFunctionConcurrency {
     type Output = Result<
         crate::output::PutFunctionConcurrencyOutput,
@@ -1476,7 +1430,7 @@ impl smithy_http::response::ParseStrictResponse for PutFunctionConcurrency {
 /// <p>To send an invocation record to a queue, topic, function, or event bus, specify a <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html#invocation-async-destinations">destination</a>. You can configure separate destinations for successful invocations (on-success) and events
 /// that fail all processing attempts (on-failure). You can configure destinations in addition to or instead of a
 /// dead-letter queue.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct PutFunctionEventInvokeConfig {
     _private: (),
 }
@@ -1489,7 +1443,6 @@ impl PutFunctionEventInvokeConfig {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for PutFunctionEventInvokeConfig {
     type Output = Result<
         crate::output::PutFunctionEventInvokeConfigOutput,
@@ -1505,7 +1458,7 @@ impl smithy_http::response::ParseStrictResponse for PutFunctionEventInvokeConfig
 }
 
 /// <p>Adds a provisioned concurrency configuration to a function's alias or version.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct PutProvisionedConcurrencyConfig {
     _private: (),
 }
@@ -1518,7 +1471,6 @@ impl PutProvisionedConcurrencyConfig {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for PutProvisionedConcurrencyConfig {
     type Output = Result<
         crate::output::PutProvisionedConcurrencyConfigOutput,
@@ -1536,7 +1488,7 @@ impl smithy_http::response::ParseStrictResponse for PutProvisionedConcurrencyCon
 /// <p>Removes a statement from the permissions policy for a version of an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">AWS Lambda
 /// layer</a>. For more information, see
 /// <a>AddLayerVersionPermission</a>.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct RemoveLayerVersionPermission {
     _private: (),
 }
@@ -1549,7 +1501,6 @@ impl RemoveLayerVersionPermission {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for RemoveLayerVersionPermission {
     type Output = Result<
         crate::output::RemoveLayerVersionPermissionOutput,
@@ -1566,7 +1517,7 @@ impl smithy_http::response::ParseStrictResponse for RemoveLayerVersionPermission
 
 /// <p>Revokes function-use permission from an AWS service or another account. You can get the ID of the statement
 /// from the output of <a>GetPolicy</a>.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct RemovePermission {
     _private: (),
 }
@@ -1579,7 +1530,6 @@ impl RemovePermission {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for RemovePermission {
     type Output =
         Result<crate::output::RemovePermissionOutput, crate::error::RemovePermissionError>;
@@ -1593,7 +1543,7 @@ impl smithy_http::response::ParseStrictResponse for RemovePermission {
 }
 
 /// <p>Adds <a href="https://docs.aws.amazon.com/lambda/latest/dg/tagging.html">tags</a> to a function.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct TagResource {
     _private: (),
 }
@@ -1606,7 +1556,6 @@ impl TagResource {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for TagResource {
     type Output = Result<crate::output::TagResourceOutput, crate::error::TagResourceError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -1619,7 +1568,7 @@ impl smithy_http::response::ParseStrictResponse for TagResource {
 }
 
 /// <p>Removes <a href="https://docs.aws.amazon.com/lambda/latest/dg/tagging.html">tags</a> from a function.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct UntagResource {
     _private: (),
 }
@@ -1632,7 +1581,6 @@ impl UntagResource {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for UntagResource {
     type Output = Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -1645,7 +1593,7 @@ impl smithy_http::response::ParseStrictResponse for UntagResource {
 }
 
 /// <p>Updates the configuration of a Lambda function <a href="https://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">alias</a>.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateAlias {
     _private: (),
 }
@@ -1658,7 +1606,6 @@ impl UpdateAlias {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for UpdateAlias {
     type Output = Result<crate::output::UpdateAliasOutput, crate::error::UpdateAliasError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -1672,7 +1619,7 @@ impl smithy_http::response::ParseStrictResponse for UpdateAlias {
 
 /// <p>Update the code signing configuration. Changes to the code signing configuration take effect the next time a
 /// user tries to deploy a code package to the function. </p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateCodeSigningConfig {
     _private: (),
 }
@@ -1685,7 +1632,6 @@ impl UpdateCodeSigningConfig {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for UpdateCodeSigningConfig {
     type Output = Result<
         crate::output::UpdateCodeSigningConfigOutput,
@@ -1724,7 +1670,7 @@ impl smithy_http::response::ParseStrictResponse for UpdateCodeSigningConfig {
 /// <code>ParallelizationFactor</code> - Process multiple batches from each shard concurrently.</p>
 /// </li>
 /// </ul>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateEventSourceMapping {
     _private: (),
 }
@@ -1737,7 +1683,6 @@ impl UpdateEventSourceMapping {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for UpdateEventSourceMapping {
     type Output = Result<
         crate::output::UpdateEventSourceMappingOutput,
@@ -1760,7 +1705,7 @@ impl smithy_http::response::ParseStrictResponse for UpdateEventSourceMapping {
 /// <p>For a function defined as a container image, Lambda resolves the image tag to an image digest. In Amazon ECR, if
 /// you update the image tag to a new image, Lambda does not automatically update the function.</p>
 /// </note>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateFunctionCode {
     _private: (),
 }
@@ -1773,7 +1718,6 @@ impl UpdateFunctionCode {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for UpdateFunctionCode {
     type Output =
         Result<crate::output::UpdateFunctionCodeOutput, crate::error::UpdateFunctionCodeError>;
@@ -1798,7 +1742,7 @@ impl smithy_http::response::ParseStrictResponse for UpdateFunctionCode {
 /// modify the configuration of a published version, only the unpublished version.</p>
 /// <p>To configure function concurrency, use <a>PutFunctionConcurrency</a>. To grant invoke permissions
 /// to an account or AWS service, use <a>AddPermission</a>.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateFunctionConfiguration {
     _private: (),
 }
@@ -1811,7 +1755,6 @@ impl UpdateFunctionConfiguration {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for UpdateFunctionConfiguration {
     type Output = Result<
         crate::output::UpdateFunctionConfigurationOutput,
@@ -1828,7 +1771,7 @@ impl smithy_http::response::ParseStrictResponse for UpdateFunctionConfiguration 
 
 /// <p>Updates the configuration for asynchronous invocation for a function, version, or alias.</p>
 /// <p>To configure options for asynchronous invocation, use <a>PutFunctionEventInvokeConfig</a>.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateFunctionEventInvokeConfig {
     _private: (),
 }
@@ -1841,7 +1784,6 @@ impl UpdateFunctionEventInvokeConfig {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for UpdateFunctionEventInvokeConfig {
     type Output = Result<
         crate::output::UpdateFunctionEventInvokeConfigOutput,

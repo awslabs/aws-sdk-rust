@@ -2,7 +2,7 @@
 /// <p>
 /// This operation allows you to perform batch reads and writes on data stored in DynamoDB, using PartiQL.
 /// </p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct BatchExecuteStatement {
     _private: (),
 }
@@ -22,7 +22,6 @@ impl BatchExecuteStatement {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => return Err(crate::error::BatchExecuteStatementError::unhandled(generic)),
@@ -62,7 +61,6 @@ impl BatchExecuteStatement {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for BatchExecuteStatement {
     type Output = Result<
         crate::output::BatchExecuteStatementOutput,
@@ -119,7 +117,7 @@ impl smithy_http::response::ParseStrictResponse for BatchExecuteStatement {
 /// nonexistent items consume the minimum read capacity units according to the type of read.
 /// For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#CapacityUnitCalculations">Working with Tables</a> in the <i>Amazon DynamoDB Developer
 /// Guide</i>.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct BatchGetItem {
     _private: (),
 }
@@ -138,7 +136,6 @@ impl BatchGetItem {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => return Err(crate::error::BatchGetItemError::unhandled(generic)),
@@ -196,7 +193,6 @@ impl BatchGetItem {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for BatchGetItem {
     type Output = Result<crate::output::BatchGetItemOutput, crate::error::BatchGetItemError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -278,7 +274,7 @@ impl smithy_http::response::ParseStrictResponse for BatchGetItem {
 /// <p>The total request size exceeds 16 MB.</p>
 /// </li>
 /// </ul>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct BatchWriteItem {
     _private: (),
 }
@@ -297,7 +293,6 @@ impl BatchWriteItem {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => return Err(crate::error::BatchWriteItemError::unhandled(generic)),
@@ -341,7 +336,6 @@ impl BatchWriteItem {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for BatchWriteItem {
     type Output = Result<crate::output::BatchWriteItemOutput, crate::error::BatchWriteItemError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -379,7 +373,7 @@ impl smithy_http::response::ParseStrictResponse for BatchWriteItem {
 /// <p>Provisioned read and write capacity</p>
 /// </li>
 /// </ul>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct CreateBackup {
     _private: (),
 }
@@ -398,7 +392,6 @@ impl CreateBackup {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => return Err(crate::error::CreateBackupError::unhandled(generic)),
@@ -470,7 +463,6 @@ impl CreateBackup {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for CreateBackup {
     type Output = Result<crate::output::CreateBackupOutput, crate::error::CreateBackupError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -544,7 +536,7 @@ impl smithy_http::response::ParseStrictResponse for CreateBackup {
 /// your global table.
 /// </p>
 /// </important>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct CreateGlobalTable {
     _private: (),
 }
@@ -563,7 +555,6 @@ impl CreateGlobalTable {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => return Err(crate::error::CreateGlobalTableError::unhandled(generic)),
@@ -623,7 +614,6 @@ impl CreateGlobalTable {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for CreateGlobalTable {
     type Output =
         Result<crate::output::CreateGlobalTableOutput, crate::error::CreateGlobalTableError>;
@@ -645,7 +635,7 @@ impl smithy_http::response::ParseStrictResponse for CreateGlobalTable {
 /// tables sequentially. Only one table with secondary indexes can be in the <code>CREATING</code> state at
 /// any given time.</p>
 /// <p>You can use the <code>DescribeTable</code> action to check the table status.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct CreateTable {
     _private: (),
 }
@@ -664,7 +654,6 @@ impl CreateTable {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => return Err(crate::error::CreateTableError::unhandled(generic)),
@@ -712,7 +701,6 @@ impl CreateTable {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for CreateTable {
     type Output = Result<crate::output::CreateTableOutput, crate::error::CreateTableError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -722,7 +710,7 @@ impl smithy_http::response::ParseStrictResponse for CreateTable {
 
 /// <p>Deletes an existing backup of a table.</p>
 /// <p>You can call <code>DeleteBackup</code> at a maximum rate of 10 times per second.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteBackup {
     _private: (),
 }
@@ -741,7 +729,6 @@ impl DeleteBackup {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => return Err(crate::error::DeleteBackupError::unhandled(generic)),
@@ -796,7 +783,6 @@ impl DeleteBackup {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for DeleteBackup {
     type Output = Result<crate::output::DeleteBackupOutput, crate::error::DeleteBackupError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -810,7 +796,7 @@ impl smithy_http::response::ParseStrictResponse for DeleteBackup {
 /// <p>Unless you specify conditions, the <code>DeleteItem</code> is an idempotent operation; running it
 /// multiple times on the same item or attribute does <i>not</i> result in an error response.</p>
 /// <p>Conditional deletes are useful for deleting items only if specific conditions are met. If those conditions are met, DynamoDB performs the delete. Otherwise, the item is not deleted.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteItem {
     _private: (),
 }
@@ -829,7 +815,6 @@ impl DeleteItem {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => return Err(crate::error::DeleteItemError::unhandled(generic)),
@@ -909,7 +894,6 @@ impl DeleteItem {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for DeleteItem {
     type Output = Result<crate::output::DeleteItemOutput, crate::error::DeleteItemError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -933,7 +917,7 @@ impl smithy_http::response::ParseStrictResponse for DeleteItem {
 /// <p>If you have DynamoDB Streams enabled on the table, then the corresponding stream on that table goes
 /// into the <code>DISABLED</code> state, and the stream is automatically deleted after 24 hours.</p>
 /// <p>Use the <code>DescribeTable</code> action to check the status of the table. </p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteTable {
     _private: (),
 }
@@ -952,7 +936,6 @@ impl DeleteTable {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => return Err(crate::error::DeleteTableError::unhandled(generic)),
@@ -1007,7 +990,6 @@ impl DeleteTable {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for DeleteTable {
     type Output = Result<crate::output::DeleteTableOutput, crate::error::DeleteTableError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -1017,7 +999,7 @@ impl smithy_http::response::ParseStrictResponse for DeleteTable {
 
 /// <p>Describes an existing backup of a table.</p>
 /// <p>You can call <code>DescribeBackup</code> at a maximum rate of 10 times per second.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeBackup {
     _private: (),
 }
@@ -1036,7 +1018,6 @@ impl DescribeBackup {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => return Err(crate::error::DescribeBackupError::unhandled(generic)),
@@ -1077,7 +1058,6 @@ impl DescribeBackup {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for DescribeBackup {
     type Output = Result<crate::output::DescribeBackupOutput, crate::error::DescribeBackupError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -1096,7 +1076,7 @@ impl smithy_http::response::ParseStrictResponse for DescribeBackup {
 /// in time during the last 35 days.
 /// </p>
 /// <p>You can call <code>DescribeContinuousBackups</code> at a maximum rate of 10 times per second.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeContinuousBackups {
     _private: (),
 }
@@ -1118,7 +1098,6 @@ impl DescribeContinuousBackups {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => {
@@ -1172,7 +1151,6 @@ impl DescribeContinuousBackups {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for DescribeContinuousBackups {
     type Output = Result<
         crate::output::DescribeContinuousBackupsOutput,
@@ -1184,7 +1162,7 @@ impl smithy_http::response::ParseStrictResponse for DescribeContinuousBackups {
 }
 
 /// <p>Returns information about contributor insights, for a given table or global secondary index.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeContributorInsights {
     _private: (),
 }
@@ -1206,7 +1184,6 @@ impl DescribeContributorInsights {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => {
@@ -1240,7 +1217,6 @@ impl DescribeContributorInsights {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for DescribeContributorInsights {
     type Output = Result<
         crate::output::DescribeContributorInsightsOutput,
@@ -1252,7 +1228,7 @@ impl smithy_http::response::ParseStrictResponse for DescribeContributorInsights 
 }
 
 /// <p>Returns the regional endpoint information.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeEndpoints {
     _private: (),
 }
@@ -1271,7 +1247,6 @@ impl DescribeEndpoints {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             return Err(crate::error::DescribeEndpointsError::generic(generic));
         }
         #[allow(unused_mut)]
@@ -1287,7 +1262,6 @@ impl DescribeEndpoints {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for DescribeEndpoints {
     type Output =
         Result<crate::output::DescribeEndpointsOutput, crate::error::DescribeEndpointsError>;
@@ -1297,7 +1271,7 @@ impl smithy_http::response::ParseStrictResponse for DescribeEndpoints {
 }
 
 /// <p>Describes an existing table export.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeExport {
     _private: (),
 }
@@ -1316,7 +1290,6 @@ impl DescribeExport {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => return Err(crate::error::DescribeExportError::unhandled(generic)),
@@ -1357,7 +1330,6 @@ impl DescribeExport {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for DescribeExport {
     type Output = Result<crate::output::DescribeExportOutput, crate::error::DescribeExportError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -1370,7 +1342,7 @@ impl smithy_http::response::ParseStrictResponse for DescribeExport {
 /// <p>This operation only applies to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V1.html">Version 2017.11.29</a> of global tables.
 /// If you are using global tables <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version 2019.11.21</a> you can use <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_DescribeTable.html">DescribeTable</a> instead.</p>
 /// </note>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeGlobalTable {
     _private: (),
 }
@@ -1390,7 +1362,6 @@ impl DescribeGlobalTable {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => return Err(crate::error::DescribeGlobalTableError::unhandled(generic)),
@@ -1437,7 +1408,6 @@ impl DescribeGlobalTable {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for DescribeGlobalTable {
     type Output =
         Result<crate::output::DescribeGlobalTableOutput, crate::error::DescribeGlobalTableError>;
@@ -1450,7 +1420,7 @@ impl smithy_http::response::ParseStrictResponse for DescribeGlobalTable {
 /// <note>
 /// <p>This operation only applies to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V1.html">Version 2017.11.29</a> of global tables.</p>
 /// </note>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeGlobalTableSettings {
     _private: (),
 }
@@ -1472,7 +1442,6 @@ impl DescribeGlobalTableSettings {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => {
@@ -1510,7 +1479,6 @@ impl DescribeGlobalTableSettings {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for DescribeGlobalTableSettings {
     type Output = Result<
         crate::output::DescribeGlobalTableSettingsOutput,
@@ -1522,7 +1490,7 @@ impl smithy_http::response::ParseStrictResponse for DescribeGlobalTableSettings 
 }
 
 /// <p>Returns information about the status of Kinesis streaming.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeKinesisStreamingDestination {
     _private: (),
 }
@@ -1544,7 +1512,6 @@ impl DescribeKinesisStreamingDestination {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => {
@@ -1583,7 +1550,6 @@ impl DescribeKinesisStreamingDestination {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for DescribeKinesisStreamingDestination {
     type Output = Result<
         crate::output::DescribeKinesisStreamingDestinationOutput,
@@ -1654,7 +1620,7 @@ impl smithy_http::response::ParseStrictResponse for DescribeKinesisStreamingDest
 /// errors if you call it more than once in a minute.</p>
 /// </note>
 /// <p>The <code>DescribeLimits</code> Request element has no content.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeLimits {
     _private: (),
 }
@@ -1673,7 +1639,6 @@ impl DescribeLimits {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => return Err(crate::error::DescribeLimitsError::unhandled(generic)),
@@ -1707,7 +1672,6 @@ impl DescribeLimits {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for DescribeLimits {
     type Output = Result<crate::output::DescribeLimitsOutput, crate::error::DescribeLimitsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -1722,7 +1686,7 @@ impl smithy_http::response::ParseStrictResponse for DescribeLimits {
 /// consistent query, and the metadata for your table might not be available at that moment.
 /// Wait for a few seconds, and then try the <code>DescribeTable</code> request again.</p>
 /// </note>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeTable {
     _private: (),
 }
@@ -1741,7 +1705,6 @@ impl DescribeTable {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => return Err(crate::error::DescribeTableError::unhandled(generic)),
@@ -1782,7 +1745,6 @@ impl DescribeTable {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for DescribeTable {
     type Output = Result<crate::output::DescribeTableOutput, crate::error::DescribeTableError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -1794,7 +1756,7 @@ impl smithy_http::response::ParseStrictResponse for DescribeTable {
 /// <note>
 /// <p>This operation only applies to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version 2019.11.21</a> of global tables.</p>
 /// </note>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeTableReplicaAutoScaling {
     _private: (),
 }
@@ -1816,7 +1778,6 @@ impl DescribeTableReplicaAutoScaling {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => {
@@ -1851,7 +1812,6 @@ impl DescribeTableReplicaAutoScaling {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for DescribeTableReplicaAutoScaling {
     type Output = Result<
         crate::output::DescribeTableReplicaAutoScalingOutput,
@@ -1863,7 +1823,7 @@ impl smithy_http::response::ParseStrictResponse for DescribeTableReplicaAutoScal
 }
 
 /// <p>Gives a description of the Time to Live (TTL) status on the specified table. </p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeTimeToLive {
     _private: (),
 }
@@ -1883,7 +1843,6 @@ impl DescribeTimeToLive {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => return Err(crate::error::DescribeTimeToLiveError::unhandled(generic)),
@@ -1928,7 +1887,6 @@ impl DescribeTimeToLive {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for DescribeTimeToLive {
     type Output =
         Result<crate::output::DescribeTimeToLiveOutput, crate::error::DescribeTimeToLiveError>;
@@ -1939,7 +1897,7 @@ impl smithy_http::response::ParseStrictResponse for DescribeTimeToLive {
 
 /// <p>Stops replication from the DynamoDB table to the Kinesis data stream. This is done
 /// without deleting either of the resources.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DisableKinesisStreamingDestination {
     _private: (),
 }
@@ -1961,7 +1919,6 @@ impl DisableKinesisStreamingDestination {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => {
@@ -2008,7 +1965,6 @@ impl DisableKinesisStreamingDestination {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for DisableKinesisStreamingDestination {
     type Output = Result<
         crate::output::DisableKinesisStreamingDestinationOutput,
@@ -2023,7 +1979,7 @@ impl smithy_http::response::ParseStrictResponse for DisableKinesisStreamingDesti
 /// during the enable workflow. If this operation doesn't return results immediately, use
 /// DescribeKinesisStreamingDestination to check if streaming to the Kinesis data stream is
 /// ACTIVE.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct EnableKinesisStreamingDestination {
     _private: (),
 }
@@ -2045,7 +2001,6 @@ impl EnableKinesisStreamingDestination {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => {
@@ -2092,7 +2047,6 @@ impl EnableKinesisStreamingDestination {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for EnableKinesisStreamingDestination {
     type Output = Result<
         crate::output::EnableKinesisStreamingDestinationOutput,
@@ -2106,7 +2060,7 @@ impl smithy_http::response::ParseStrictResponse for EnableKinesisStreamingDestin
 /// <p>
 /// This operation allows you to perform reads and singleton writes on data stored in DynamoDB, using PartiQL.
 /// </p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct ExecuteStatement {
     _private: (),
 }
@@ -2125,7 +2079,6 @@ impl ExecuteStatement {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => return Err(crate::error::ExecuteStatementError::unhandled(generic)),
@@ -2177,7 +2130,6 @@ impl ExecuteStatement {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for ExecuteStatement {
     type Output =
         Result<crate::output::ExecuteStatementOutput, crate::error::ExecuteStatementError>;
@@ -2189,7 +2141,7 @@ impl smithy_http::response::ParseStrictResponse for ExecuteStatement {
 /// <p>
 /// This operation allows you to perform transactional reads or writes on data stored in DynamoDB, using PartiQL.
 /// </p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct ExecuteTransaction {
     _private: (),
 }
@@ -2209,7 +2161,6 @@ impl ExecuteTransaction {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => return Err(crate::error::ExecuteTransactionError::unhandled(generic)),
@@ -2259,7 +2210,6 @@ impl ExecuteTransaction {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for ExecuteTransaction {
     type Output =
         Result<crate::output::ExecuteTransactionOutput, crate::error::ExecuteTransactionError>;
@@ -2271,7 +2221,7 @@ impl smithy_http::response::ParseStrictResponse for ExecuteTransaction {
 /// <p>Exports table data to an S3 bucket. The table must have point in time recovery
 /// enabled, and you can export data from any time within the point in time recovery
 /// window.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct ExportTableToPointInTime {
     _private: (),
 }
@@ -2293,7 +2243,6 @@ impl ExportTableToPointInTime {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => {
@@ -2343,7 +2292,6 @@ impl ExportTableToPointInTime {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for ExportTableToPointInTime {
     type Output = Result<
         crate::output::ExportTableToPointInTimeOutput,
@@ -2361,7 +2309,7 @@ impl smithy_http::response::ParseStrictResponse for ExportTableToPointInTime {
 /// requires a strongly consistent read, set <code>ConsistentRead</code> to <code>true</code>. Although
 /// a strongly consistent read might take more time than an eventually consistent read, it always
 /// returns the last updated value.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct GetItem {
     _private: (),
 }
@@ -2380,7 +2328,6 @@ impl GetItem {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => return Err(crate::error::GetItemError::unhandled(generic)),
@@ -2436,7 +2383,6 @@ impl GetItem {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for GetItem {
     type Output = Result<crate::output::GetItemOutput, crate::error::GetItemError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -2451,7 +2397,7 @@ impl smithy_http::response::ParseStrictResponse for GetItem {
 /// <p>In the request, start time is inclusive, but end time is exclusive. Note that these
 /// boundaries are for the time at which the original backup was requested.</p>
 /// <p>You can call <code>ListBackups</code> a maximum of five times per second.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct ListBackups {
     _private: (),
 }
@@ -2470,7 +2416,6 @@ impl ListBackups {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => return Err(crate::error::ListBackupsError::unhandled(generic)),
@@ -2504,7 +2449,6 @@ impl ListBackups {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for ListBackups {
     type Output = Result<crate::output::ListBackupsOutput, crate::error::ListBackupsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -2513,7 +2457,7 @@ impl smithy_http::response::ParseStrictResponse for ListBackups {
 }
 
 /// <p>Returns a list of ContributorInsightsSummary for a table and all its global secondary indexes.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct ListContributorInsights {
     _private: (),
 }
@@ -2535,7 +2479,6 @@ impl ListContributorInsights {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => {
@@ -2579,7 +2522,6 @@ impl ListContributorInsights {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for ListContributorInsights {
     type Output = Result<
         crate::output::ListContributorInsightsOutput,
@@ -2591,7 +2533,7 @@ impl smithy_http::response::ParseStrictResponse for ListContributorInsights {
 }
 
 /// <p>Lists completed exports within the past 90 days.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct ListExports {
     _private: (),
 }
@@ -2610,7 +2552,6 @@ impl ListExports {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => return Err(crate::error::ListExportsError::unhandled(generic)),
@@ -2644,7 +2585,6 @@ impl ListExports {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for ListExports {
     type Output = Result<crate::output::ListExportsOutput, crate::error::ListExportsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -2656,7 +2596,7 @@ impl smithy_http::response::ParseStrictResponse for ListExports {
 /// <note>
 /// <p>This operation only applies to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V1.html">Version 2017.11.29</a> of global tables.</p>
 /// </note>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct ListGlobalTables {
     _private: (),
 }
@@ -2675,7 +2615,6 @@ impl ListGlobalTables {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => return Err(crate::error::ListGlobalTablesError::unhandled(generic)),
@@ -2711,7 +2650,6 @@ impl ListGlobalTables {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for ListGlobalTables {
     type Output =
         Result<crate::output::ListGlobalTablesOutput, crate::error::ListGlobalTablesError>;
@@ -2723,7 +2661,7 @@ impl smithy_http::response::ParseStrictResponse for ListGlobalTables {
 /// <p>Returns an array of table names associated with the current account and endpoint. The output
 /// from <code>ListTables</code> is paginated, with each page returning a maximum of 100 table
 /// names.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct ListTables {
     _private: (),
 }
@@ -2742,7 +2680,6 @@ impl ListTables {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => return Err(crate::error::ListTablesError::unhandled(generic)),
@@ -2775,7 +2712,6 @@ impl ListTables {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for ListTables {
     type Output = Result<crate::output::ListTablesOutput, crate::error::ListTablesError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -2787,7 +2723,7 @@ impl smithy_http::response::ParseStrictResponse for ListTables {
 /// <p>For an overview on tagging DynamoDB resources, see
 /// <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Tagging.html">Tagging for DynamoDB</a>
 /// in the <i>Amazon DynamoDB Developer Guide</i>.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct ListTagsOfResource {
     _private: (),
 }
@@ -2807,7 +2743,6 @@ impl ListTagsOfResource {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => return Err(crate::error::ListTagsOfResourceError::unhandled(generic)),
@@ -2852,7 +2787,6 @@ impl ListTagsOfResource {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for ListTagsOfResource {
     type Output =
         Result<crate::output::ListTagsOfResourceOutput, crate::error::ListTagsOfResourceError>;
@@ -2928,7 +2862,7 @@ impl smithy_http::response::ParseStrictResponse for ListTagsOfResource {
 /// no matching item exists.</p>
 /// </note>
 /// <p>For more information about <code>PutItem</code>, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithItems.html">Working with Items</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct PutItem {
     _private: (),
 }
@@ -2947,7 +2881,6 @@ impl PutItem {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => return Err(crate::error::PutItemError::unhandled(generic)),
@@ -3026,7 +2959,6 @@ impl PutItem {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for PutItem {
     type Output = Result<crate::output::PutItemOutput, crate::error::PutItemError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -3090,7 +3022,7 @@ impl smithy_http::response::ParseStrictResponse for PutItem {
 /// strongly consistent result. Global secondary indexes support eventually consistent reads
 /// only, so do not specify <code>ConsistentRead</code> when querying a global
 /// secondary index.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct Query {
     _private: (),
 }
@@ -3109,7 +3041,6 @@ impl Query {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => return Err(crate::error::QueryError::unhandled(generic)),
@@ -3165,7 +3096,6 @@ impl Query {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for Query {
     type Output = Result<crate::output::QueryOutput, crate::error::QueryError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -3198,7 +3128,7 @@ impl smithy_http::response::ParseStrictResponse for Query {
 /// <p>Time to Live (TTL) settings</p>
 /// </li>
 /// </ul>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct RestoreTableFromBackup {
     _private: (),
 }
@@ -3220,7 +3150,6 @@ impl RestoreTableFromBackup {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => {
@@ -3306,7 +3235,6 @@ impl RestoreTableFromBackup {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for RestoreTableFromBackup {
     type Output = Result<
         crate::output::RestoreTableFromBackupOutput,
@@ -3372,7 +3300,7 @@ impl smithy_http::response::ParseStrictResponse for RestoreTableFromBackup {
 /// <p>Point in time recovery settings</p>
 /// </li>
 /// </ul>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct RestoreTableToPointInTime {
     _private: (),
 }
@@ -3394,7 +3322,6 @@ impl RestoreTableToPointInTime {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => {
@@ -3452,7 +3379,6 @@ impl RestoreTableToPointInTime {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for RestoreTableToPointInTime {
     type Output = Result<
         crate::output::RestoreTableToPointInTimeOutput,
@@ -3488,7 +3414,7 @@ impl smithy_http::response::ParseStrictResponse for RestoreTableToPointInTime {
 /// immediately before the operation began. If you need a consistent copy of the data, as of
 /// the time that the <code>Scan</code> begins, you can set the <code>ConsistentRead</code>
 /// parameter to <code>true</code>.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct Scan {
     _private: (),
 }
@@ -3507,7 +3433,6 @@ impl Scan {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => return Err(crate::error::ScanError::unhandled(generic)),
@@ -3561,7 +3486,6 @@ impl Scan {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for Scan {
     type Output = Result<crate::output::ScanOutput, crate::error::ScanError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -3576,7 +3500,7 @@ impl smithy_http::response::ParseStrictResponse for Scan {
 /// <p>For an overview on tagging DynamoDB resources, see
 /// <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Tagging.html">Tagging for DynamoDB</a>
 /// in the <i>Amazon DynamoDB Developer Guide</i>.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct TagResource {
     _private: (),
 }
@@ -3595,7 +3519,6 @@ impl TagResource {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => return Err(crate::error::TagResourceError::unhandled(generic)),
@@ -3647,7 +3570,6 @@ impl TagResource {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for TagResource {
     type Output = Result<crate::output::TagResourceOutput, crate::error::TagResourceError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -3681,7 +3603,7 @@ impl smithy_http::response::ParseStrictResponse for TagResource {
 /// <p>The aggregate size of the items in the transaction cannot exceed 4 MB.</p>
 /// </li>
 /// </ul>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct TransactGetItems {
     _private: (),
 }
@@ -3700,7 +3622,6 @@ impl TransactGetItems {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => return Err(crate::error::TransactGetItemsError::unhandled(generic)),
@@ -3746,7 +3667,6 @@ impl TransactGetItems {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for TransactGetItems {
     type Output =
         Result<crate::output::TransactGetItemsOutput, crate::error::TransactGetItemsError>;
@@ -3826,7 +3746,7 @@ impl smithy_http::response::ParseStrictResponse for TransactGetItems {
 /// <p>There  is a user error, such as an invalid data format.</p>
 /// </li>
 /// </ul>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct TransactWriteItems {
     _private: (),
 }
@@ -3846,7 +3766,6 @@ impl TransactWriteItems {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => return Err(crate::error::TransactWriteItemsError::unhandled(generic)),
@@ -3900,7 +3819,6 @@ impl TransactWriteItems {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for TransactWriteItems {
     type Output =
         Result<crate::output::TransactWriteItemsOutput, crate::error::TransactWriteItemsError>;
@@ -3914,7 +3832,7 @@ impl smithy_http::response::ParseStrictResponse for TransactWriteItems {
 /// <p>For an overview on tagging DynamoDB resources, see
 /// <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Tagging.html">Tagging for DynamoDB</a>
 /// in the <i>Amazon DynamoDB Developer Guide</i>.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct UntagResource {
     _private: (),
 }
@@ -3933,7 +3851,6 @@ impl UntagResource {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => return Err(crate::error::UntagResourceError::unhandled(generic)),
@@ -3985,7 +3902,6 @@ impl UntagResource {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for UntagResource {
     type Output = Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -4005,7 +3921,7 @@ impl smithy_http::response::ParseStrictResponse for UntagResource {
 /// <p>
 /// <code>LatestRestorableDateTime</code> is typically 5 minutes before the current time.
 /// You can restore your table to any point in time during the last 35 days. </p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateContinuousBackups {
     _private: (),
 }
@@ -4027,7 +3943,6 @@ impl UpdateContinuousBackups {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => {
@@ -4069,7 +3984,6 @@ impl UpdateContinuousBackups {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for UpdateContinuousBackups {
     type Output = Result<
         crate::output::UpdateContinuousBackupsOutput,
@@ -4081,7 +3995,7 @@ impl smithy_http::response::ParseStrictResponse for UpdateContinuousBackups {
 }
 
 /// <p>Updates the status for contributor insights for a specific table or index.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateContributorInsights {
     _private: (),
 }
@@ -4103,7 +4017,6 @@ impl UpdateContributorInsights {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => {
@@ -4148,7 +4061,6 @@ impl UpdateContributorInsights {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for UpdateContributorInsights {
     type Output = Result<
         crate::output::UpdateContributorInsightsOutput,
@@ -4188,7 +4100,7 @@ impl smithy_http::response::ParseStrictResponse for UpdateContributorInsights {
 /// </p>
 /// </li>
 /// </ul>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateGlobalTable {
     _private: (),
 }
@@ -4207,7 +4119,6 @@ impl UpdateGlobalTable {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => return Err(crate::error::UpdateGlobalTableError::unhandled(generic)),
@@ -4275,7 +4186,6 @@ impl UpdateGlobalTable {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for UpdateGlobalTable {
     type Output =
         Result<crate::output::UpdateGlobalTableOutput, crate::error::UpdateGlobalTableError>;
@@ -4285,7 +4195,7 @@ impl smithy_http::response::ParseStrictResponse for UpdateGlobalTable {
 }
 
 /// <p>Updates settings for a global table.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateGlobalTableSettings {
     _private: (),
 }
@@ -4307,7 +4217,6 @@ impl UpdateGlobalTableSettings {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => {
@@ -4361,7 +4270,6 @@ impl UpdateGlobalTableSettings {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for UpdateGlobalTableSettings {
     type Output = Result<
         crate::output::UpdateGlobalTableSettingsOutput,
@@ -4375,7 +4283,7 @@ impl smithy_http::response::ParseStrictResponse for UpdateGlobalTableSettings {
 /// <p>Edits an existing item's attributes, or adds a new item to the table if it does not already exist. You can put, delete, or add attribute values. You can also perform a conditional update on an existing item (insert a new attribute name-value pair if it doesn't exist, or replace an existing name-value pair if it has certain expected attribute values).</p>
 /// <p>You can also return the item's attribute values in the same <code>UpdateItem</code>
 /// operation using the <code>ReturnValues</code> parameter.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateItem {
     _private: (),
 }
@@ -4394,7 +4302,6 @@ impl UpdateItem {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => return Err(crate::error::UpdateItemError::unhandled(generic)),
@@ -4474,7 +4381,6 @@ impl UpdateItem {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for UpdateItem {
     type Output = Result<crate::output::UpdateItemOutput, crate::error::UpdateItemError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -4505,7 +4411,7 @@ impl smithy_http::response::ParseStrictResponse for UpdateItem {
 /// changes from <code>ACTIVE</code> to <code>UPDATING</code>. While it is <code>UPDATING</code>,
 /// you cannot issue another <code>UpdateTable</code> request. When the table returns to the
 /// <code>ACTIVE</code> state, the <code>UpdateTable</code> operation is complete.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateTable {
     _private: (),
 }
@@ -4524,7 +4430,6 @@ impl UpdateTable {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => return Err(crate::error::UpdateTableError::unhandled(generic)),
@@ -4579,7 +4484,6 @@ impl UpdateTable {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for UpdateTable {
     type Output = Result<crate::output::UpdateTableOutput, crate::error::UpdateTableError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -4591,7 +4495,7 @@ impl smithy_http::response::ParseStrictResponse for UpdateTable {
 /// <note>
 /// <p>This operation only applies to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version 2019.11.21</a> of global tables.</p>
 /// </note>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateTableReplicaAutoScaling {
     _private: (),
 }
@@ -4613,7 +4517,6 @@ impl UpdateTableReplicaAutoScaling {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => {
@@ -4656,7 +4559,6 @@ impl UpdateTableReplicaAutoScaling {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for UpdateTableReplicaAutoScaling {
     type Output = Result<
         crate::output::UpdateTableReplicaAutoScalingOutput,
@@ -4692,7 +4594,7 @@ impl smithy_http::response::ParseStrictResponse for UpdateTableReplicaAutoScalin
 /// secondary index immediately in the same eventually consistent way as a standard delete
 /// operation.</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/TTL.html">Time To Live</a> in the Amazon DynamoDB Developer Guide. </p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateTimeToLive {
     _private: (),
 }
@@ -4711,7 +4613,6 @@ impl UpdateTimeToLive {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => return Err(crate::error::UpdateTimeToLiveError::unhandled(generic)),
@@ -4768,7 +4669,6 @@ impl UpdateTimeToLive {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for UpdateTimeToLive {
     type Output =
         Result<crate::output::UpdateTimeToLiveOutput, crate::error::UpdateTimeToLiveError>;

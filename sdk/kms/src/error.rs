@@ -13,7 +13,6 @@ pub enum CancelKeyDeletionErrorKind {
     KMSInternalError(crate::error::KMSInternalError),
     KMSInvalidStateError(crate::error::KMSInvalidStateError),
     NotFoundError(crate::error::NotFoundError),
-
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -37,7 +36,6 @@ impl smithy_types::retry::ProvideErrorKind for CancelKeyDeletionError {
         None
     }
 }
-
 impl CancelKeyDeletionError {
     pub fn new(kind: CancelKeyDeletionErrorKind, meta: smithy_types::Error) -> Self {
         Self { kind, meta }
@@ -60,18 +58,21 @@ impl CancelKeyDeletionError {
     // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
     // by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
-        self.meta.message.as_deref()
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
     }
 
     pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id.as_deref()
+        self.meta.request_id()
     }
 
     pub fn code(&self) -> Option<&str> {
-        self.meta.code.as_deref()
+        self.meta.code()
     }
 }
-
 impl std::error::Error for CancelKeyDeletionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
@@ -101,7 +102,6 @@ pub enum ConnectCustomKeyStoreErrorKind {
     CustomKeyStoreInvalidStateError(crate::error::CustomKeyStoreInvalidStateError),
     CustomKeyStoreNotFoundError(crate::error::CustomKeyStoreNotFoundError),
     KMSInternalError(crate::error::KMSInternalError),
-
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -129,7 +129,6 @@ impl smithy_types::retry::ProvideErrorKind for ConnectCustomKeyStoreError {
         None
     }
 }
-
 impl ConnectCustomKeyStoreError {
     pub fn new(kind: ConnectCustomKeyStoreErrorKind, meta: smithy_types::Error) -> Self {
         Self { kind, meta }
@@ -152,18 +151,21 @@ impl ConnectCustomKeyStoreError {
     // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
     // by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
-        self.meta.message.as_deref()
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
     }
 
     pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id.as_deref()
+        self.meta.request_id()
     }
 
     pub fn code(&self) -> Option<&str> {
-        self.meta.code.as_deref()
+        self.meta.code()
     }
 }
-
 impl std::error::Error for ConnectCustomKeyStoreError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
@@ -195,7 +197,6 @@ pub enum CreateAliasErrorKind {
     KMSInvalidStateError(crate::error::KMSInvalidStateError),
     LimitExceededError(crate::error::LimitExceededError),
     NotFoundError(crate::error::NotFoundError),
-
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -221,7 +222,6 @@ impl smithy_types::retry::ProvideErrorKind for CreateAliasError {
         None
     }
 }
-
 impl CreateAliasError {
     pub fn new(kind: CreateAliasErrorKind, meta: smithy_types::Error) -> Self {
         Self { kind, meta }
@@ -244,18 +244,21 @@ impl CreateAliasError {
     // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
     // by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
-        self.meta.message.as_deref()
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
     }
 
     pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id.as_deref()
+        self.meta.request_id()
     }
 
     pub fn code(&self) -> Option<&str> {
-        self.meta.code.as_deref()
+        self.meta.code()
     }
 }
-
 impl std::error::Error for CreateAliasError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
@@ -289,7 +292,6 @@ pub enum CreateCustomKeyStoreErrorKind {
     CustomKeyStoreNameInUseError(crate::error::CustomKeyStoreNameInUseError),
     IncorrectTrustAnchorError(crate::error::IncorrectTrustAnchorError),
     KMSInternalError(crate::error::KMSInternalError),
-
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -317,7 +319,6 @@ impl smithy_types::retry::ProvideErrorKind for CreateCustomKeyStoreError {
         None
     }
 }
-
 impl CreateCustomKeyStoreError {
     pub fn new(kind: CreateCustomKeyStoreErrorKind, meta: smithy_types::Error) -> Self {
         Self { kind, meta }
@@ -340,18 +341,21 @@ impl CreateCustomKeyStoreError {
     // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
     // by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
-        self.meta.message.as_deref()
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
     }
 
     pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id.as_deref()
+        self.meta.request_id()
     }
 
     pub fn code(&self) -> Option<&str> {
-        self.meta.code.as_deref()
+        self.meta.code()
     }
 }
-
 impl std::error::Error for CreateCustomKeyStoreError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
@@ -386,7 +390,6 @@ pub enum CreateGrantErrorKind {
     KMSInvalidStateError(crate::error::KMSInvalidStateError),
     LimitExceededError(crate::error::LimitExceededError),
     NotFoundError(crate::error::NotFoundError),
-
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -413,7 +416,6 @@ impl smithy_types::retry::ProvideErrorKind for CreateGrantError {
         None
     }
 }
-
 impl CreateGrantError {
     pub fn new(kind: CreateGrantErrorKind, meta: smithy_types::Error) -> Self {
         Self { kind, meta }
@@ -436,18 +438,21 @@ impl CreateGrantError {
     // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
     // by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
-        self.meta.message.as_deref()
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
     }
 
     pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id.as_deref()
+        self.meta.request_id()
     }
 
     pub fn code(&self) -> Option<&str> {
-        self.meta.code.as_deref()
+        self.meta.code()
     }
 }
-
 impl std::error::Error for CreateGrantError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
@@ -485,7 +490,6 @@ pub enum CreateKeyErrorKind {
     MalformedPolicyDocumentError(crate::error::MalformedPolicyDocumentError),
     TagError(crate::error::TagError),
     UnsupportedOperationError(crate::error::UnsupportedOperationError),
-
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -514,7 +518,6 @@ impl smithy_types::retry::ProvideErrorKind for CreateKeyError {
         None
     }
 }
-
 impl CreateKeyError {
     pub fn new(kind: CreateKeyErrorKind, meta: smithy_types::Error) -> Self {
         Self { kind, meta }
@@ -537,18 +540,21 @@ impl CreateKeyError {
     // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
     // by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
-        self.meta.message.as_deref()
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
     }
 
     pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id.as_deref()
+        self.meta.request_id()
     }
 
     pub fn code(&self) -> Option<&str> {
-        self.meta.code.as_deref()
+        self.meta.code()
     }
 }
-
 impl std::error::Error for CreateKeyError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
@@ -586,7 +592,6 @@ pub enum DecryptErrorKind {
     KMSInternalError(crate::error::KMSInternalError),
     KMSInvalidStateError(crate::error::KMSInvalidStateError),
     NotFoundError(crate::error::NotFoundError),
-
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -615,7 +620,6 @@ impl smithy_types::retry::ProvideErrorKind for DecryptError {
         None
     }
 }
-
 impl DecryptError {
     pub fn new(kind: DecryptErrorKind, meta: smithy_types::Error) -> Self {
         Self { kind, meta }
@@ -638,18 +642,21 @@ impl DecryptError {
     // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
     // by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
-        self.meta.message.as_deref()
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
     }
 
     pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id.as_deref()
+        self.meta.request_id()
     }
 
     pub fn code(&self) -> Option<&str> {
-        self.meta.code.as_deref()
+        self.meta.code()
     }
 }
-
 impl std::error::Error for DecryptError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
@@ -681,7 +688,6 @@ pub enum DeleteAliasErrorKind {
     KMSInternalError(crate::error::KMSInternalError),
     KMSInvalidStateError(crate::error::KMSInvalidStateError),
     NotFoundError(crate::error::NotFoundError),
-
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -704,7 +710,6 @@ impl smithy_types::retry::ProvideErrorKind for DeleteAliasError {
         None
     }
 }
-
 impl DeleteAliasError {
     pub fn new(kind: DeleteAliasErrorKind, meta: smithy_types::Error) -> Self {
         Self { kind, meta }
@@ -727,18 +732,21 @@ impl DeleteAliasError {
     // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
     // by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
-        self.meta.message.as_deref()
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
     }
 
     pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id.as_deref()
+        self.meta.request_id()
     }
 
     pub fn code(&self) -> Option<&str> {
-        self.meta.code.as_deref()
+        self.meta.code()
     }
 }
-
 impl std::error::Error for DeleteAliasError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
@@ -764,7 +772,6 @@ pub enum DeleteCustomKeyStoreErrorKind {
     CustomKeyStoreInvalidStateError(crate::error::CustomKeyStoreInvalidStateError),
     CustomKeyStoreNotFoundError(crate::error::CustomKeyStoreNotFoundError),
     KMSInternalError(crate::error::KMSInternalError),
-
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -787,7 +794,6 @@ impl smithy_types::retry::ProvideErrorKind for DeleteCustomKeyStoreError {
         None
     }
 }
-
 impl DeleteCustomKeyStoreError {
     pub fn new(kind: DeleteCustomKeyStoreErrorKind, meta: smithy_types::Error) -> Self {
         Self { kind, meta }
@@ -810,18 +816,21 @@ impl DeleteCustomKeyStoreError {
     // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
     // by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
-        self.meta.message.as_deref()
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
     }
 
     pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id.as_deref()
+        self.meta.request_id()
     }
 
     pub fn code(&self) -> Option<&str> {
-        self.meta.code.as_deref()
+        self.meta.code()
     }
 }
-
 impl std::error::Error for DeleteCustomKeyStoreError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
@@ -849,7 +858,6 @@ pub enum DeleteImportedKeyMaterialErrorKind {
     KMSInvalidStateError(crate::error::KMSInvalidStateError),
     NotFoundError(crate::error::NotFoundError),
     UnsupportedOperationError(crate::error::UnsupportedOperationError),
-
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -874,7 +882,6 @@ impl smithy_types::retry::ProvideErrorKind for DeleteImportedKeyMaterialError {
         None
     }
 }
-
 impl DeleteImportedKeyMaterialError {
     pub fn new(kind: DeleteImportedKeyMaterialErrorKind, meta: smithy_types::Error) -> Self {
         Self { kind, meta }
@@ -897,18 +904,21 @@ impl DeleteImportedKeyMaterialError {
     // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
     // by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
-        self.meta.message.as_deref()
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
     }
 
     pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id.as_deref()
+        self.meta.request_id()
     }
 
     pub fn code(&self) -> Option<&str> {
-        self.meta.code.as_deref()
+        self.meta.code()
     }
 }
-
 impl std::error::Error for DeleteImportedKeyMaterialError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
@@ -934,7 +944,6 @@ pub struct DescribeCustomKeyStoresError {
 pub enum DescribeCustomKeyStoresErrorKind {
     CustomKeyStoreNotFoundError(crate::error::CustomKeyStoreNotFoundError),
     KMSInternalError(crate::error::KMSInternalError),
-
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -955,7 +964,6 @@ impl smithy_types::retry::ProvideErrorKind for DescribeCustomKeyStoresError {
         None
     }
 }
-
 impl DescribeCustomKeyStoresError {
     pub fn new(kind: DescribeCustomKeyStoresErrorKind, meta: smithy_types::Error) -> Self {
         Self { kind, meta }
@@ -978,18 +986,21 @@ impl DescribeCustomKeyStoresError {
     // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
     // by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
-        self.meta.message.as_deref()
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
     }
 
     pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id.as_deref()
+        self.meta.request_id()
     }
 
     pub fn code(&self) -> Option<&str> {
-        self.meta.code.as_deref()
+        self.meta.code()
     }
 }
-
 impl std::error::Error for DescribeCustomKeyStoresError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
@@ -1013,7 +1024,6 @@ pub enum DescribeKeyErrorKind {
     InvalidArnError(crate::error::InvalidArnError),
     KMSInternalError(crate::error::KMSInternalError),
     NotFoundError(crate::error::NotFoundError),
-
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -1036,7 +1046,6 @@ impl smithy_types::retry::ProvideErrorKind for DescribeKeyError {
         None
     }
 }
-
 impl DescribeKeyError {
     pub fn new(kind: DescribeKeyErrorKind, meta: smithy_types::Error) -> Self {
         Self { kind, meta }
@@ -1059,18 +1068,21 @@ impl DescribeKeyError {
     // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
     // by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
-        self.meta.message.as_deref()
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
     }
 
     pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id.as_deref()
+        self.meta.request_id()
     }
 
     pub fn code(&self) -> Option<&str> {
-        self.meta.code.as_deref()
+        self.meta.code()
     }
 }
-
 impl std::error::Error for DescribeKeyError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
@@ -1097,7 +1109,6 @@ pub enum DisableKeyErrorKind {
     KMSInternalError(crate::error::KMSInternalError),
     KMSInvalidStateError(crate::error::KMSInvalidStateError),
     NotFoundError(crate::error::NotFoundError),
-
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -1121,7 +1132,6 @@ impl smithy_types::retry::ProvideErrorKind for DisableKeyError {
         None
     }
 }
-
 impl DisableKeyError {
     pub fn new(kind: DisableKeyErrorKind, meta: smithy_types::Error) -> Self {
         Self { kind, meta }
@@ -1144,18 +1154,21 @@ impl DisableKeyError {
     // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
     // by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
-        self.meta.message.as_deref()
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
     }
 
     pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id.as_deref()
+        self.meta.request_id()
     }
 
     pub fn code(&self) -> Option<&str> {
-        self.meta.code.as_deref()
+        self.meta.code()
     }
 }
-
 impl std::error::Error for DisableKeyError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
@@ -1185,7 +1198,6 @@ pub enum DisableKeyRotationErrorKind {
     KMSInvalidStateError(crate::error::KMSInvalidStateError),
     NotFoundError(crate::error::NotFoundError),
     UnsupportedOperationError(crate::error::UnsupportedOperationError),
-
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -1211,7 +1223,6 @@ impl smithy_types::retry::ProvideErrorKind for DisableKeyRotationError {
         None
     }
 }
-
 impl DisableKeyRotationError {
     pub fn new(kind: DisableKeyRotationErrorKind, meta: smithy_types::Error) -> Self {
         Self { kind, meta }
@@ -1234,18 +1245,21 @@ impl DisableKeyRotationError {
     // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
     // by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
-        self.meta.message.as_deref()
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
     }
 
     pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id.as_deref()
+        self.meta.request_id()
     }
 
     pub fn code(&self) -> Option<&str> {
-        self.meta.code.as_deref()
+        self.meta.code()
     }
 }
-
 impl std::error::Error for DisableKeyRotationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
@@ -1273,7 +1287,6 @@ pub enum DisconnectCustomKeyStoreErrorKind {
     CustomKeyStoreInvalidStateError(crate::error::CustomKeyStoreInvalidStateError),
     CustomKeyStoreNotFoundError(crate::error::CustomKeyStoreNotFoundError),
     KMSInternalError(crate::error::KMSInternalError),
-
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -1297,7 +1310,6 @@ impl smithy_types::retry::ProvideErrorKind for DisconnectCustomKeyStoreError {
         None
     }
 }
-
 impl DisconnectCustomKeyStoreError {
     pub fn new(kind: DisconnectCustomKeyStoreErrorKind, meta: smithy_types::Error) -> Self {
         Self { kind, meta }
@@ -1320,18 +1332,21 @@ impl DisconnectCustomKeyStoreError {
     // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
     // by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
-        self.meta.message.as_deref()
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
     }
 
     pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id.as_deref()
+        self.meta.request_id()
     }
 
     pub fn code(&self) -> Option<&str> {
-        self.meta.code.as_deref()
+        self.meta.code()
     }
 }
-
 impl std::error::Error for DisconnectCustomKeyStoreError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
@@ -1360,7 +1375,6 @@ pub enum EnableKeyErrorKind {
     KMSInvalidStateError(crate::error::KMSInvalidStateError),
     LimitExceededError(crate::error::LimitExceededError),
     NotFoundError(crate::error::NotFoundError),
-
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -1385,7 +1399,6 @@ impl smithy_types::retry::ProvideErrorKind for EnableKeyError {
         None
     }
 }
-
 impl EnableKeyError {
     pub fn new(kind: EnableKeyErrorKind, meta: smithy_types::Error) -> Self {
         Self { kind, meta }
@@ -1408,18 +1421,21 @@ impl EnableKeyError {
     // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
     // by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
-        self.meta.message.as_deref()
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
     }
 
     pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id.as_deref()
+        self.meta.request_id()
     }
 
     pub fn code(&self) -> Option<&str> {
-        self.meta.code.as_deref()
+        self.meta.code()
     }
 }
-
 impl std::error::Error for EnableKeyError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
@@ -1450,7 +1466,6 @@ pub enum EnableKeyRotationErrorKind {
     KMSInvalidStateError(crate::error::KMSInvalidStateError),
     NotFoundError(crate::error::NotFoundError),
     UnsupportedOperationError(crate::error::UnsupportedOperationError),
-
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -1476,7 +1491,6 @@ impl smithy_types::retry::ProvideErrorKind for EnableKeyRotationError {
         None
     }
 }
-
 impl EnableKeyRotationError {
     pub fn new(kind: EnableKeyRotationErrorKind, meta: smithy_types::Error) -> Self {
         Self { kind, meta }
@@ -1499,18 +1513,21 @@ impl EnableKeyRotationError {
     // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
     // by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
-        self.meta.message.as_deref()
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
     }
 
     pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id.as_deref()
+        self.meta.request_id()
     }
 
     pub fn code(&self) -> Option<&str> {
-        self.meta.code.as_deref()
+        self.meta.code()
     }
 }
-
 impl std::error::Error for EnableKeyRotationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
@@ -1543,7 +1560,6 @@ pub enum EncryptErrorKind {
     KMSInternalError(crate::error::KMSInternalError),
     KMSInvalidStateError(crate::error::KMSInvalidStateError),
     NotFoundError(crate::error::NotFoundError),
-
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -1570,7 +1586,6 @@ impl smithy_types::retry::ProvideErrorKind for EncryptError {
         None
     }
 }
-
 impl EncryptError {
     pub fn new(kind: EncryptErrorKind, meta: smithy_types::Error) -> Self {
         Self { kind, meta }
@@ -1593,18 +1608,21 @@ impl EncryptError {
     // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
     // by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
-        self.meta.message.as_deref()
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
     }
 
     pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id.as_deref()
+        self.meta.request_id()
     }
 
     pub fn code(&self) -> Option<&str> {
-        self.meta.code.as_deref()
+        self.meta.code()
     }
 }
-
 impl std::error::Error for EncryptError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
@@ -1638,7 +1656,6 @@ pub enum GenerateDataKeyErrorKind {
     KMSInternalError(crate::error::KMSInternalError),
     KMSInvalidStateError(crate::error::KMSInvalidStateError),
     NotFoundError(crate::error::NotFoundError),
-
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -1665,7 +1682,6 @@ impl smithy_types::retry::ProvideErrorKind for GenerateDataKeyError {
         None
     }
 }
-
 impl GenerateDataKeyError {
     pub fn new(kind: GenerateDataKeyErrorKind, meta: smithy_types::Error) -> Self {
         Self { kind, meta }
@@ -1688,18 +1704,21 @@ impl GenerateDataKeyError {
     // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
     // by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
-        self.meta.message.as_deref()
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
     }
 
     pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id.as_deref()
+        self.meta.request_id()
     }
 
     pub fn code(&self) -> Option<&str> {
-        self.meta.code.as_deref()
+        self.meta.code()
     }
 }
-
 impl std::error::Error for GenerateDataKeyError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
@@ -1734,7 +1753,6 @@ pub enum GenerateDataKeyPairErrorKind {
     KMSInvalidStateError(crate::error::KMSInvalidStateError),
     NotFoundError(crate::error::NotFoundError),
     UnsupportedOperationError(crate::error::UnsupportedOperationError),
-
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -1762,7 +1780,6 @@ impl smithy_types::retry::ProvideErrorKind for GenerateDataKeyPairError {
         None
     }
 }
-
 impl GenerateDataKeyPairError {
     pub fn new(kind: GenerateDataKeyPairErrorKind, meta: smithy_types::Error) -> Self {
         Self { kind, meta }
@@ -1785,18 +1802,21 @@ impl GenerateDataKeyPairError {
     // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
     // by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
-        self.meta.message.as_deref()
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
     }
 
     pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id.as_deref()
+        self.meta.request_id()
     }
 
     pub fn code(&self) -> Option<&str> {
-        self.meta.code.as_deref()
+        self.meta.code()
     }
 }
-
 impl std::error::Error for GenerateDataKeyPairError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
@@ -1832,7 +1852,6 @@ pub enum GenerateDataKeyPairWithoutPlaintextErrorKind {
     KMSInvalidStateError(crate::error::KMSInvalidStateError),
     NotFoundError(crate::error::NotFoundError),
     UnsupportedOperationError(crate::error::UnsupportedOperationError),
-
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -1872,7 +1891,6 @@ impl smithy_types::retry::ProvideErrorKind for GenerateDataKeyPairWithoutPlainte
         None
     }
 }
-
 impl GenerateDataKeyPairWithoutPlaintextError {
     pub fn new(
         kind: GenerateDataKeyPairWithoutPlaintextErrorKind,
@@ -1898,18 +1916,21 @@ impl GenerateDataKeyPairWithoutPlaintextError {
     // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
     // by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
-        self.meta.message.as_deref()
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
     }
 
     pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id.as_deref()
+        self.meta.request_id()
     }
 
     pub fn code(&self) -> Option<&str> {
-        self.meta.code.as_deref()
+        self.meta.code()
     }
 }
-
 impl std::error::Error for GenerateDataKeyPairWithoutPlaintextError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
@@ -1958,7 +1979,6 @@ pub enum GenerateDataKeyWithoutPlaintextErrorKind {
     KMSInternalError(crate::error::KMSInternalError),
     KMSInvalidStateError(crate::error::KMSInvalidStateError),
     NotFoundError(crate::error::NotFoundError),
-
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -1989,7 +2009,6 @@ impl smithy_types::retry::ProvideErrorKind for GenerateDataKeyWithoutPlaintextEr
         None
     }
 }
-
 impl GenerateDataKeyWithoutPlaintextError {
     pub fn new(kind: GenerateDataKeyWithoutPlaintextErrorKind, meta: smithy_types::Error) -> Self {
         Self { kind, meta }
@@ -2012,18 +2031,21 @@ impl GenerateDataKeyWithoutPlaintextError {
     // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
     // by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
-        self.meta.message.as_deref()
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
     }
 
     pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id.as_deref()
+        self.meta.request_id()
     }
 
     pub fn code(&self) -> Option<&str> {
-        self.meta.code.as_deref()
+        self.meta.code()
     }
 }
-
 impl std::error::Error for GenerateDataKeyWithoutPlaintextError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
@@ -2057,7 +2079,6 @@ pub enum GenerateRandomErrorKind {
     CustomKeyStoreNotFoundError(crate::error::CustomKeyStoreNotFoundError),
     DependencyTimeoutError(crate::error::DependencyTimeoutError),
     KMSInternalError(crate::error::KMSInternalError),
-
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -2080,7 +2101,6 @@ impl smithy_types::retry::ProvideErrorKind for GenerateRandomError {
         None
     }
 }
-
 impl GenerateRandomError {
     pub fn new(kind: GenerateRandomErrorKind, meta: smithy_types::Error) -> Self {
         Self { kind, meta }
@@ -2103,18 +2123,21 @@ impl GenerateRandomError {
     // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
     // by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
-        self.meta.message.as_deref()
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
     }
 
     pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id.as_deref()
+        self.meta.request_id()
     }
 
     pub fn code(&self) -> Option<&str> {
-        self.meta.code.as_deref()
+        self.meta.code()
     }
 }
-
 impl std::error::Error for GenerateRandomError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
@@ -2141,7 +2164,6 @@ pub enum GetKeyPolicyErrorKind {
     KMSInternalError(crate::error::KMSInternalError),
     KMSInvalidStateError(crate::error::KMSInvalidStateError),
     NotFoundError(crate::error::NotFoundError),
-
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -2165,7 +2187,6 @@ impl smithy_types::retry::ProvideErrorKind for GetKeyPolicyError {
         None
     }
 }
-
 impl GetKeyPolicyError {
     pub fn new(kind: GetKeyPolicyErrorKind, meta: smithy_types::Error) -> Self {
         Self { kind, meta }
@@ -2188,18 +2209,21 @@ impl GetKeyPolicyError {
     // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
     // by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
-        self.meta.message.as_deref()
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
     }
 
     pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id.as_deref()
+        self.meta.request_id()
     }
 
     pub fn code(&self) -> Option<&str> {
-        self.meta.code.as_deref()
+        self.meta.code()
     }
 }
-
 impl std::error::Error for GetKeyPolicyError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
@@ -2228,7 +2252,6 @@ pub enum GetKeyRotationStatusErrorKind {
     KMSInvalidStateError(crate::error::KMSInvalidStateError),
     NotFoundError(crate::error::NotFoundError),
     UnsupportedOperationError(crate::error::UnsupportedOperationError),
-
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -2253,7 +2276,6 @@ impl smithy_types::retry::ProvideErrorKind for GetKeyRotationStatusError {
         None
     }
 }
-
 impl GetKeyRotationStatusError {
     pub fn new(kind: GetKeyRotationStatusErrorKind, meta: smithy_types::Error) -> Self {
         Self { kind, meta }
@@ -2276,18 +2298,21 @@ impl GetKeyRotationStatusError {
     // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
     // by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
-        self.meta.message.as_deref()
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
     }
 
     pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id.as_deref()
+        self.meta.request_id()
     }
 
     pub fn code(&self) -> Option<&str> {
-        self.meta.code.as_deref()
+        self.meta.code()
     }
 }
-
 impl std::error::Error for GetKeyRotationStatusError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
@@ -2317,7 +2342,6 @@ pub enum GetParametersForImportErrorKind {
     KMSInvalidStateError(crate::error::KMSInvalidStateError),
     NotFoundError(crate::error::NotFoundError),
     UnsupportedOperationError(crate::error::UnsupportedOperationError),
-
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -2342,7 +2366,6 @@ impl smithy_types::retry::ProvideErrorKind for GetParametersForImportError {
         None
     }
 }
-
 impl GetParametersForImportError {
     pub fn new(kind: GetParametersForImportErrorKind, meta: smithy_types::Error) -> Self {
         Self { kind, meta }
@@ -2365,18 +2388,21 @@ impl GetParametersForImportError {
     // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
     // by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
-        self.meta.message.as_deref()
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
     }
 
     pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id.as_deref()
+        self.meta.request_id()
     }
 
     pub fn code(&self) -> Option<&str> {
-        self.meta.code.as_deref()
+        self.meta.code()
     }
 }
-
 impl std::error::Error for GetParametersForImportError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
@@ -2410,7 +2436,6 @@ pub enum GetPublicKeyErrorKind {
     KMSInvalidStateError(crate::error::KMSInvalidStateError),
     NotFoundError(crate::error::NotFoundError),
     UnsupportedOperationError(crate::error::UnsupportedOperationError),
-
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -2439,7 +2464,6 @@ impl smithy_types::retry::ProvideErrorKind for GetPublicKeyError {
         None
     }
 }
-
 impl GetPublicKeyError {
     pub fn new(kind: GetPublicKeyErrorKind, meta: smithy_types::Error) -> Self {
         Self { kind, meta }
@@ -2462,18 +2486,21 @@ impl GetPublicKeyError {
     // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
     // by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
-        self.meta.message.as_deref()
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
     }
 
     pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id.as_deref()
+        self.meta.request_id()
     }
 
     pub fn code(&self) -> Option<&str> {
-        self.meta.code.as_deref()
+        self.meta.code()
     }
 }
-
 impl std::error::Error for GetPublicKeyError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
@@ -2511,7 +2538,6 @@ pub enum ImportKeyMaterialErrorKind {
     KMSInvalidStateError(crate::error::KMSInvalidStateError),
     NotFoundError(crate::error::NotFoundError),
     UnsupportedOperationError(crate::error::UnsupportedOperationError),
-
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -2540,7 +2566,6 @@ impl smithy_types::retry::ProvideErrorKind for ImportKeyMaterialError {
         None
     }
 }
-
 impl ImportKeyMaterialError {
     pub fn new(kind: ImportKeyMaterialErrorKind, meta: smithy_types::Error) -> Self {
         Self { kind, meta }
@@ -2563,18 +2588,21 @@ impl ImportKeyMaterialError {
     // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
     // by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
-        self.meta.message.as_deref()
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
     }
 
     pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id.as_deref()
+        self.meta.request_id()
     }
 
     pub fn code(&self) -> Option<&str> {
-        self.meta.code.as_deref()
+        self.meta.code()
     }
 }
-
 impl std::error::Error for ImportKeyMaterialError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
@@ -2607,7 +2635,6 @@ pub enum ListAliasesErrorKind {
     InvalidMarkerError(crate::error::InvalidMarkerError),
     KMSInternalError(crate::error::KMSInternalError),
     NotFoundError(crate::error::NotFoundError),
-
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -2631,7 +2658,6 @@ impl smithy_types::retry::ProvideErrorKind for ListAliasesError {
         None
     }
 }
-
 impl ListAliasesError {
     pub fn new(kind: ListAliasesErrorKind, meta: smithy_types::Error) -> Self {
         Self { kind, meta }
@@ -2654,18 +2680,21 @@ impl ListAliasesError {
     // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
     // by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
-        self.meta.message.as_deref()
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
     }
 
     pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id.as_deref()
+        self.meta.request_id()
     }
 
     pub fn code(&self) -> Option<&str> {
-        self.meta.code.as_deref()
+        self.meta.code()
     }
 }
-
 impl std::error::Error for ListAliasesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
@@ -2694,7 +2723,6 @@ pub enum ListGrantsErrorKind {
     KMSInternalError(crate::error::KMSInternalError),
     KMSInvalidStateError(crate::error::KMSInvalidStateError),
     NotFoundError(crate::error::NotFoundError),
-
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -2719,7 +2747,6 @@ impl smithy_types::retry::ProvideErrorKind for ListGrantsError {
         None
     }
 }
-
 impl ListGrantsError {
     pub fn new(kind: ListGrantsErrorKind, meta: smithy_types::Error) -> Self {
         Self { kind, meta }
@@ -2742,18 +2769,21 @@ impl ListGrantsError {
     // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
     // by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
-        self.meta.message.as_deref()
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
     }
 
     pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id.as_deref()
+        self.meta.request_id()
     }
 
     pub fn code(&self) -> Option<&str> {
-        self.meta.code.as_deref()
+        self.meta.code()
     }
 }
-
 impl std::error::Error for ListGrantsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
@@ -2782,7 +2812,6 @@ pub enum ListKeyPoliciesErrorKind {
     KMSInternalError(crate::error::KMSInternalError),
     KMSInvalidStateError(crate::error::KMSInvalidStateError),
     NotFoundError(crate::error::NotFoundError),
-
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -2806,7 +2835,6 @@ impl smithy_types::retry::ProvideErrorKind for ListKeyPoliciesError {
         None
     }
 }
-
 impl ListKeyPoliciesError {
     pub fn new(kind: ListKeyPoliciesErrorKind, meta: smithy_types::Error) -> Self {
         Self { kind, meta }
@@ -2829,18 +2857,21 @@ impl ListKeyPoliciesError {
     // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
     // by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
-        self.meta.message.as_deref()
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
     }
 
     pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id.as_deref()
+        self.meta.request_id()
     }
 
     pub fn code(&self) -> Option<&str> {
-        self.meta.code.as_deref()
+        self.meta.code()
     }
 }
-
 impl std::error::Error for ListKeyPoliciesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
@@ -2866,7 +2897,6 @@ pub enum ListKeysErrorKind {
     DependencyTimeoutError(crate::error::DependencyTimeoutError),
     InvalidMarkerError(crate::error::InvalidMarkerError),
     KMSInternalError(crate::error::KMSInternalError),
-
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -2888,7 +2918,6 @@ impl smithy_types::retry::ProvideErrorKind for ListKeysError {
         None
     }
 }
-
 impl ListKeysError {
     pub fn new(kind: ListKeysErrorKind, meta: smithy_types::Error) -> Self {
         Self { kind, meta }
@@ -2911,18 +2940,21 @@ impl ListKeysError {
     // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
     // by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
-        self.meta.message.as_deref()
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
     }
 
     pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id.as_deref()
+        self.meta.request_id()
     }
 
     pub fn code(&self) -> Option<&str> {
-        self.meta.code.as_deref()
+        self.meta.code()
     }
 }
-
 impl std::error::Error for ListKeysError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
@@ -2947,7 +2979,6 @@ pub enum ListResourceTagsErrorKind {
     InvalidMarkerError(crate::error::InvalidMarkerError),
     KMSInternalError(crate::error::KMSInternalError),
     NotFoundError(crate::error::NotFoundError),
-
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -2970,7 +3001,6 @@ impl smithy_types::retry::ProvideErrorKind for ListResourceTagsError {
         None
     }
 }
-
 impl ListResourceTagsError {
     pub fn new(kind: ListResourceTagsErrorKind, meta: smithy_types::Error) -> Self {
         Self { kind, meta }
@@ -2993,18 +3023,21 @@ impl ListResourceTagsError {
     // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
     // by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
-        self.meta.message.as_deref()
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
     }
 
     pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id.as_deref()
+        self.meta.request_id()
     }
 
     pub fn code(&self) -> Option<&str> {
-        self.meta.code.as_deref()
+        self.meta.code()
     }
 }
-
 impl std::error::Error for ListResourceTagsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
@@ -3031,7 +3064,6 @@ pub enum ListRetirableGrantsErrorKind {
     InvalidMarkerError(crate::error::InvalidMarkerError),
     KMSInternalError(crate::error::KMSInternalError),
     NotFoundError(crate::error::NotFoundError),
-
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -3055,7 +3087,6 @@ impl smithy_types::retry::ProvideErrorKind for ListRetirableGrantsError {
         None
     }
 }
-
 impl ListRetirableGrantsError {
     pub fn new(kind: ListRetirableGrantsErrorKind, meta: smithy_types::Error) -> Self {
         Self { kind, meta }
@@ -3078,18 +3109,21 @@ impl ListRetirableGrantsError {
     // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
     // by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
-        self.meta.message.as_deref()
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
     }
 
     pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id.as_deref()
+        self.meta.request_id()
     }
 
     pub fn code(&self) -> Option<&str> {
-        self.meta.code.as_deref()
+        self.meta.code()
     }
 }
-
 impl std::error::Error for ListRetirableGrantsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
@@ -3120,7 +3154,6 @@ pub enum PutKeyPolicyErrorKind {
     MalformedPolicyDocumentError(crate::error::MalformedPolicyDocumentError),
     NotFoundError(crate::error::NotFoundError),
     UnsupportedOperationError(crate::error::UnsupportedOperationError),
-
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -3147,7 +3180,6 @@ impl smithy_types::retry::ProvideErrorKind for PutKeyPolicyError {
         None
     }
 }
-
 impl PutKeyPolicyError {
     pub fn new(kind: PutKeyPolicyErrorKind, meta: smithy_types::Error) -> Self {
         Self { kind, meta }
@@ -3170,18 +3202,21 @@ impl PutKeyPolicyError {
     // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
     // by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
-        self.meta.message.as_deref()
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
     }
 
     pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id.as_deref()
+        self.meta.request_id()
     }
 
     pub fn code(&self) -> Option<&str> {
-        self.meta.code.as_deref()
+        self.meta.code()
     }
 }
-
 impl std::error::Error for PutKeyPolicyError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
@@ -3217,7 +3252,6 @@ pub enum ReEncryptErrorKind {
     KMSInternalError(crate::error::KMSInternalError),
     KMSInvalidStateError(crate::error::KMSInvalidStateError),
     NotFoundError(crate::error::NotFoundError),
-
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -3246,7 +3280,6 @@ impl smithy_types::retry::ProvideErrorKind for ReEncryptError {
         None
     }
 }
-
 impl ReEncryptError {
     pub fn new(kind: ReEncryptErrorKind, meta: smithy_types::Error) -> Self {
         Self { kind, meta }
@@ -3269,18 +3302,21 @@ impl ReEncryptError {
     // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
     // by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
-        self.meta.message.as_deref()
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
     }
 
     pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id.as_deref()
+        self.meta.request_id()
     }
 
     pub fn code(&self) -> Option<&str> {
-        self.meta.code.as_deref()
+        self.meta.code()
     }
 }
-
 impl std::error::Error for ReEncryptError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
@@ -3315,7 +3351,6 @@ pub enum RetireGrantErrorKind {
     KMSInternalError(crate::error::KMSInternalError),
     KMSInvalidStateError(crate::error::KMSInvalidStateError),
     NotFoundError(crate::error::NotFoundError),
-
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -3341,7 +3376,6 @@ impl smithy_types::retry::ProvideErrorKind for RetireGrantError {
         None
     }
 }
-
 impl RetireGrantError {
     pub fn new(kind: RetireGrantErrorKind, meta: smithy_types::Error) -> Self {
         Self { kind, meta }
@@ -3364,18 +3398,21 @@ impl RetireGrantError {
     // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
     // by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
-        self.meta.message.as_deref()
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
     }
 
     pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id.as_deref()
+        self.meta.request_id()
     }
 
     pub fn code(&self) -> Option<&str> {
-        self.meta.code.as_deref()
+        self.meta.code()
     }
 }
-
 impl std::error::Error for RetireGrantError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
@@ -3406,7 +3443,6 @@ pub enum RevokeGrantErrorKind {
     KMSInternalError(crate::error::KMSInternalError),
     KMSInvalidStateError(crate::error::KMSInvalidStateError),
     NotFoundError(crate::error::NotFoundError),
-
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -3431,7 +3467,6 @@ impl smithy_types::retry::ProvideErrorKind for RevokeGrantError {
         None
     }
 }
-
 impl RevokeGrantError {
     pub fn new(kind: RevokeGrantErrorKind, meta: smithy_types::Error) -> Self {
         Self { kind, meta }
@@ -3454,18 +3489,21 @@ impl RevokeGrantError {
     // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
     // by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
-        self.meta.message.as_deref()
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
     }
 
     pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id.as_deref()
+        self.meta.request_id()
     }
 
     pub fn code(&self) -> Option<&str> {
-        self.meta.code.as_deref()
+        self.meta.code()
     }
 }
-
 impl std::error::Error for RevokeGrantError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
@@ -3494,7 +3532,6 @@ pub enum ScheduleKeyDeletionErrorKind {
     KMSInternalError(crate::error::KMSInternalError),
     KMSInvalidStateError(crate::error::KMSInvalidStateError),
     NotFoundError(crate::error::NotFoundError),
-
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -3518,7 +3555,6 @@ impl smithy_types::retry::ProvideErrorKind for ScheduleKeyDeletionError {
         None
     }
 }
-
 impl ScheduleKeyDeletionError {
     pub fn new(kind: ScheduleKeyDeletionErrorKind, meta: smithy_types::Error) -> Self {
         Self { kind, meta }
@@ -3541,18 +3577,21 @@ impl ScheduleKeyDeletionError {
     // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
     // by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
-        self.meta.message.as_deref()
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
     }
 
     pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id.as_deref()
+        self.meta.request_id()
     }
 
     pub fn code(&self) -> Option<&str> {
-        self.meta.code.as_deref()
+        self.meta.code()
     }
 }
-
 impl std::error::Error for ScheduleKeyDeletionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
@@ -3583,7 +3622,6 @@ pub enum SignErrorKind {
     KMSInternalError(crate::error::KMSInternalError),
     KMSInvalidStateError(crate::error::KMSInvalidStateError),
     NotFoundError(crate::error::NotFoundError),
-
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -3610,7 +3648,6 @@ impl smithy_types::retry::ProvideErrorKind for SignError {
         None
     }
 }
-
 impl SignError {
     pub fn new(kind: SignErrorKind, meta: smithy_types::Error) -> Self {
         Self { kind, meta }
@@ -3633,18 +3670,21 @@ impl SignError {
     // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
     // by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
-        self.meta.message.as_deref()
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
     }
 
     pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id.as_deref()
+        self.meta.request_id()
     }
 
     pub fn code(&self) -> Option<&str> {
-        self.meta.code.as_deref()
+        self.meta.code()
     }
 }
-
 impl std::error::Error for SignError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
@@ -3676,7 +3716,6 @@ pub enum TagResourceErrorKind {
     LimitExceededError(crate::error::LimitExceededError),
     NotFoundError(crate::error::NotFoundError),
     TagError(crate::error::TagError),
-
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -3701,7 +3740,6 @@ impl smithy_types::retry::ProvideErrorKind for TagResourceError {
         None
     }
 }
-
 impl TagResourceError {
     pub fn new(kind: TagResourceErrorKind, meta: smithy_types::Error) -> Self {
         Self { kind, meta }
@@ -3724,18 +3762,21 @@ impl TagResourceError {
     // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
     // by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
-        self.meta.message.as_deref()
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
     }
 
     pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id.as_deref()
+        self.meta.request_id()
     }
 
     pub fn code(&self) -> Option<&str> {
-        self.meta.code.as_deref()
+        self.meta.code()
     }
 }
-
 impl std::error::Error for TagResourceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
@@ -3764,7 +3805,6 @@ pub enum UntagResourceErrorKind {
     KMSInvalidStateError(crate::error::KMSInvalidStateError),
     NotFoundError(crate::error::NotFoundError),
     TagError(crate::error::TagError),
-
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -3788,7 +3828,6 @@ impl smithy_types::retry::ProvideErrorKind for UntagResourceError {
         None
     }
 }
-
 impl UntagResourceError {
     pub fn new(kind: UntagResourceErrorKind, meta: smithy_types::Error) -> Self {
         Self { kind, meta }
@@ -3811,18 +3850,21 @@ impl UntagResourceError {
     // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
     // by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
-        self.meta.message.as_deref()
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
     }
 
     pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id.as_deref()
+        self.meta.request_id()
     }
 
     pub fn code(&self) -> Option<&str> {
-        self.meta.code.as_deref()
+        self.meta.code()
     }
 }
-
 impl std::error::Error for UntagResourceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
@@ -3850,7 +3892,6 @@ pub enum UpdateAliasErrorKind {
     KMSInvalidStateError(crate::error::KMSInvalidStateError),
     LimitExceededError(crate::error::LimitExceededError),
     NotFoundError(crate::error::NotFoundError),
-
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -3874,7 +3915,6 @@ impl smithy_types::retry::ProvideErrorKind for UpdateAliasError {
         None
     }
 }
-
 impl UpdateAliasError {
     pub fn new(kind: UpdateAliasErrorKind, meta: smithy_types::Error) -> Self {
         Self { kind, meta }
@@ -3897,18 +3937,21 @@ impl UpdateAliasError {
     // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
     // by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
-        self.meta.message.as_deref()
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
     }
 
     pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id.as_deref()
+        self.meta.request_id()
     }
 
     pub fn code(&self) -> Option<&str> {
-        self.meta.code.as_deref()
+        self.meta.code()
     }
 }
-
 impl std::error::Error for UpdateAliasError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
@@ -3941,7 +3984,6 @@ pub enum UpdateCustomKeyStoreErrorKind {
     CustomKeyStoreNameInUseError(crate::error::CustomKeyStoreNameInUseError),
     CustomKeyStoreNotFoundError(crate::error::CustomKeyStoreNotFoundError),
     KMSInternalError(crate::error::KMSInternalError),
-
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -3970,7 +4012,6 @@ impl smithy_types::retry::ProvideErrorKind for UpdateCustomKeyStoreError {
         None
     }
 }
-
 impl UpdateCustomKeyStoreError {
     pub fn new(kind: UpdateCustomKeyStoreErrorKind, meta: smithy_types::Error) -> Self {
         Self { kind, meta }
@@ -3993,18 +4034,21 @@ impl UpdateCustomKeyStoreError {
     // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
     // by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
-        self.meta.message.as_deref()
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
     }
 
     pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id.as_deref()
+        self.meta.request_id()
     }
 
     pub fn code(&self) -> Option<&str> {
-        self.meta.code.as_deref()
+        self.meta.code()
     }
 }
-
 impl std::error::Error for UpdateCustomKeyStoreError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
@@ -4037,7 +4081,6 @@ pub enum UpdateKeyDescriptionErrorKind {
     KMSInternalError(crate::error::KMSInternalError),
     KMSInvalidStateError(crate::error::KMSInvalidStateError),
     NotFoundError(crate::error::NotFoundError),
-
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -4061,7 +4104,6 @@ impl smithy_types::retry::ProvideErrorKind for UpdateKeyDescriptionError {
         None
     }
 }
-
 impl UpdateKeyDescriptionError {
     pub fn new(kind: UpdateKeyDescriptionErrorKind, meta: smithy_types::Error) -> Self {
         Self { kind, meta }
@@ -4084,18 +4126,21 @@ impl UpdateKeyDescriptionError {
     // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
     // by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
-        self.meta.message.as_deref()
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
     }
 
     pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id.as_deref()
+        self.meta.request_id()
     }
 
     pub fn code(&self) -> Option<&str> {
-        self.meta.code.as_deref()
+        self.meta.code()
     }
 }
-
 impl std::error::Error for UpdateKeyDescriptionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
@@ -4127,7 +4172,6 @@ pub enum VerifyErrorKind {
     KMSInvalidSignatureError(crate::error::KMSInvalidSignatureError),
     KMSInvalidStateError(crate::error::KMSInvalidStateError),
     NotFoundError(crate::error::NotFoundError),
-
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -4155,7 +4199,6 @@ impl smithy_types::retry::ProvideErrorKind for VerifyError {
         None
     }
 }
-
 impl VerifyError {
     pub fn new(kind: VerifyErrorKind, meta: smithy_types::Error) -> Self {
         Self { kind, meta }
@@ -4178,18 +4221,21 @@ impl VerifyError {
     // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
     // by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
-        self.meta.message.as_deref()
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
     }
 
     pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id.as_deref()
+        self.meta.request_id()
     }
 
     pub fn code(&self) -> Option<&str> {
-        self.meta.code.as_deref()
+        self.meta.code()
     }
 }
-
 impl std::error::Error for VerifyError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
@@ -4210,10 +4256,9 @@ impl std::error::Error for VerifyError {
 /// <p>The request was rejected because the specified entity or resource could not be
 /// found.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, serde::Serialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
 pub struct NotFoundError {
     #[serde(rename = "message")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub message: std::option::Option<std::string::String>,
 }
@@ -4278,10 +4323,9 @@ impl NotFoundError {
 /// <i>AWS Key Management Service Developer Guide</i>
 /// </i>.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, serde::Serialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
 pub struct KMSInvalidStateError {
     #[serde(rename = "message")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub message: std::option::Option<std::string::String>,
 }
@@ -4343,10 +4387,9 @@ impl KMSInvalidStateError {
 /// verification fails when it cannot confirm that signature was produced by signing the specified
 /// message with the specified CMK and signing algorithm.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, serde::Serialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
 pub struct KMSInvalidSignatureError {
     #[serde(rename = "message")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub message: std::option::Option<std::string::String>,
 }
@@ -4407,10 +4450,9 @@ impl KMSInvalidSignatureError {
 /// <p>The request was rejected because an internal exception occurred. The request can be
 /// retried.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, serde::Serialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
 pub struct KMSInternalError {
     #[serde(rename = "message")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub message: std::option::Option<std::string::String>,
 }
@@ -4471,10 +4513,9 @@ impl KMSInternalError {
 /// <p>The request was rejected because the specified CMK was not available. You can retry the
 /// request.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, serde::Serialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
 pub struct KeyUnavailableError {
     #[serde(rename = "message")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub message: std::option::Option<std::string::String>,
 }
@@ -4550,10 +4591,9 @@ impl KeyUnavailableError {
 /// a CMK, use the <a>DescribeKey</a> operation.</p>
 /// <p>To find the encryption or signing algorithms supported for a particular CMK, use the <a>DescribeKey</a> operation.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, serde::Serialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidKeyUsageError {
     #[serde(rename = "message")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub message: std::option::Option<std::string::String>,
 }
@@ -4613,10 +4653,9 @@ impl InvalidKeyUsageError {
 
 /// <p>The request was rejected because the specified grant token is not valid.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, serde::Serialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidGrantTokenError {
     #[serde(rename = "message")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub message: std::option::Option<std::string::String>,
 }
@@ -4676,10 +4715,9 @@ impl InvalidGrantTokenError {
 
 /// <p>The request was rejected because the specified CMK is not enabled.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, serde::Serialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisabledError {
     #[serde(rename = "message")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub message: std::option::Option<std::string::String>,
 }
@@ -4740,10 +4778,9 @@ impl DisabledError {
 /// <p>The system timed out while trying to fulfill the request. The request can be
 /// retried.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, serde::Serialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
 pub struct DependencyTimeoutError {
     #[serde(rename = "message")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub message: std::option::Option<std::string::String>,
 }
@@ -4804,10 +4841,9 @@ impl DependencyTimeoutError {
 /// <p>The request was rejected because a specified ARN, or an ARN in a key policy, is not
 /// valid.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, serde::Serialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidArnError {
     #[serde(rename = "message")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub message: std::option::Option<std::string::String>,
 }
@@ -4868,10 +4904,9 @@ impl InvalidArnError {
 /// <p>The request was rejected because AWS KMS cannot find a custom key store with the specified
 /// key store name or ID.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, serde::Serialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
 pub struct CustomKeyStoreNotFoundError {
     #[serde(rename = "message")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub message: std::option::Option<std::string::String>,
 }
@@ -4936,10 +4971,9 @@ impl CustomKeyStoreNotFoundError {
 /// to another custom key store in the account. Try again with a custom key store name that is
 /// unique in the account.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, serde::Serialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
 pub struct CustomKeyStoreNameInUseError {
     #[serde(rename = "message")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub message: std::option::Option<std::string::String>,
 }
@@ -5022,10 +5056,9 @@ impl CustomKeyStoreNameInUseError {
 /// </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(serde::Deserialize, serde::Serialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
 pub struct CustomKeyStoreInvalidStateError {
     #[serde(rename = "message")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub message: std::option::Option<std::string::String>,
 }
@@ -5095,10 +5128,9 @@ impl CustomKeyStoreInvalidStateError {
 /// <p>Clusters that share a backup history have the same cluster certificate. To view the
 /// cluster certificate of a cluster, use the <a href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_DescribeClusters.html">DescribeClusters</a> operation.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, serde::Serialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
 pub struct CloudHsmClusterNotRelatedError {
     #[serde(rename = "message")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub message: std::option::Option<std::string::String>,
 }
@@ -5162,10 +5194,9 @@ impl CloudHsmClusterNotRelatedError {
 /// <p>The request was rejected because AWS KMS cannot find the AWS CloudHSM cluster with the specified
 /// cluster ID. Retry the request with a different cluster ID.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, serde::Serialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
 pub struct CloudHsmClusterNotFoundError {
     #[serde(rename = "message")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub message: std::option::Option<std::string::String>,
 }
@@ -5230,10 +5261,9 @@ impl CloudHsmClusterNotFoundError {
 /// store is not active. Initialize and activate the cluster and try the command again. For
 /// detailed instructions, see <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/getting-started.html">Getting Started</a> in the <i>AWS CloudHSM User Guide</i>.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, serde::Serialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
 pub struct CloudHsmClusterNotActiveError {
     #[serde(rename = "message")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub message: std::option::Option<std::string::String>,
 }
@@ -5327,10 +5357,9 @@ impl CloudHsmClusterNotActiveError {
 /// <i>AWS CloudHSM User Guide</i>
 /// </i>. </p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, serde::Serialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
 pub struct CloudHsmClusterInvalidConfigurationError {
     #[serde(rename = "message")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub message: std::option::Option<std::string::String>,
 }
@@ -5391,10 +5420,9 @@ impl CloudHsmClusterInvalidConfigurationError {
 /// <p>The request was rejected because a quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html">Quotas</a> in the
 /// <i>AWS Key Management Service Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, serde::Serialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
 pub struct LimitExceededError {
     #[serde(rename = "message")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub message: std::option::Option<std::string::String>,
 }
@@ -5454,10 +5482,9 @@ impl LimitExceededError {
 
 /// <p>The request was rejected because one or more tags are not valid.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, serde::Serialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagError {
     #[serde(rename = "message")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub message: std::option::Option<std::string::String>,
 }
@@ -5517,10 +5544,9 @@ impl TagError {
 
 /// <p>The request was rejected because the specified <code>GrantId</code> is not valid.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, serde::Serialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidGrantIdError {
     #[serde(rename = "message")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub message: std::option::Option<std::string::String>,
 }
@@ -5585,10 +5611,9 @@ impl InvalidGrantIdError {
 /// <p>From the <a>ImportKeyMaterial</a> operation, the request was rejected because
 /// AWS KMS could not decrypt the encrypted (wrapped) key material. </p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, serde::Serialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidCiphertextError {
     #[serde(rename = "message")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub message: std::option::Option<std::string::String>,
 }
@@ -5651,10 +5676,9 @@ impl InvalidCiphertextError {
 /// in a <a>ReEncrypt</a> request must identify the same CMK that was used to encrypt
 /// the ciphertext.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, serde::Serialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
 pub struct IncorrectKeyError {
     #[serde(rename = "message")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub message: std::option::Option<std::string::String>,
 }
@@ -5715,10 +5739,9 @@ impl IncorrectKeyError {
 /// <p>The request was rejected because a specified parameter is not supported or a specified
 /// resource is not valid for this operation.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, serde::Serialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnsupportedOperationError {
     #[serde(rename = "message")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub message: std::option::Option<std::string::String>,
 }
@@ -5782,10 +5805,9 @@ impl UnsupportedOperationError {
 /// <p>The request was rejected because the specified policy is not syntactically or semantically
 /// correct.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, serde::Serialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
 pub struct MalformedPolicyDocumentError {
     #[serde(rename = "message")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub message: std::option::Option<std::string::String>,
 }
@@ -5849,10 +5871,9 @@ impl MalformedPolicyDocumentError {
 /// <p>The request was rejected because the marker that specifies where pagination should next
 /// begin is not valid.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, serde::Serialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidMarkerError {
     #[serde(rename = "message")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub message: std::option::Option<std::string::String>,
 }
@@ -5913,10 +5934,9 @@ impl InvalidMarkerError {
 /// <p>The request was rejected because the provided import token is invalid or is associated
 /// with a different customer master key (CMK).</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, serde::Serialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidImportTokenError {
     #[serde(rename = "message")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub message: std::option::Option<std::string::String>,
 }
@@ -5978,10 +5998,9 @@ impl InvalidImportTokenError {
 /// is not the same key material that was previously imported into this customer master key
 /// (CMK).</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, serde::Serialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
 pub struct IncorrectKeyMaterialError {
     #[serde(rename = "message")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub message: std::option::Option<std::string::String>,
 }
@@ -6045,10 +6064,9 @@ impl IncorrectKeyMaterialError {
 /// <p>The request was rejected because the specified import token is expired. Use <a>GetParametersForImport</a> to get a new import token and public key, use the new
 /// public key to encrypt the key material, and then try the request again.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, serde::Serialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExpiredImportTokenError {
     #[serde(rename = "message")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub message: std::option::Option<std::string::String>,
 }
@@ -6110,10 +6128,9 @@ impl ExpiredImportTokenError {
 /// (CMKs). After verifying that you do not need to use the CMKs, use the <a>ScheduleKeyDeletion</a> operation to delete the CMKs. After they are deleted, you
 /// can delete the custom key store.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, serde::Serialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
 pub struct CustomKeyStoreHasCMKsError {
     #[serde(rename = "message")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub message: std::option::Option<std::string::String>,
 }
@@ -6179,10 +6196,9 @@ impl CustomKeyStoreHasCMKsError {
 /// <p>When you <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/initialize-cluster.html#sign-csr">initialize the cluster</a>, you create the trust anchor certificate and save it in the
 /// <code>customerCA.crt</code> file.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, serde::Serialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
 pub struct IncorrectTrustAnchorError {
     #[serde(rename = "message")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub message: std::option::Option<std::string::String>,
 }
@@ -6249,10 +6265,9 @@ impl IncorrectTrustAnchorError {
 /// <p>Clusters that share a backup history have the same cluster certificate. To view the
 /// cluster certificate of a cluster, use the <a href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_DescribeClusters.html">DescribeClusters</a> operation.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, serde::Serialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
 pub struct CloudHsmClusterInUseError {
     #[serde(rename = "message")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub message: std::option::Option<std::string::String>,
 }
@@ -6315,10 +6330,9 @@ impl CloudHsmClusterInUseError {
 
 /// <p>The request was rejected because the specified alias name is not valid.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, serde::Serialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidAliasNameError {
     #[serde(rename = "message")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub message: std::option::Option<std::string::String>,
 }
@@ -6379,10 +6393,9 @@ impl InvalidAliasNameError {
 /// <p>The request was rejected because it attempted to create a resource that already
 /// exists.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, serde::Serialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
 pub struct AlreadyExistsError {
     #[serde(rename = "message")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub message: std::option::Option<std::string::String>,
 }

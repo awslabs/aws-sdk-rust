@@ -9,7 +9,6 @@ pub fn serialize_payload_completed_multipart_upload_complete_multipart_upload_in
         let mut root = writer
             .start_el("CompleteMultipartUpload")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
-
         crate::xml_ser::serialize_structure_completed_multipart_upload(&&input, root)
     }
     Ok(smithy_http::body::SdkBody::from(out))
@@ -25,7 +24,6 @@ pub fn serialize_payload_create_bucket_configuration_create_bucket_input(
         let mut root = writer
             .start_el("CreateBucketConfiguration")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
-
         crate::xml_ser::serialize_structure_create_bucket_configuration(&&input, root)
     }
     Ok(smithy_http::body::SdkBody::from(out))
@@ -41,7 +39,6 @@ pub fn serialize_payload_delete_delete_objects_input(
         let mut root = writer
             .start_el("Delete")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
-
         crate::xml_ser::serialize_structure_delete(&&input, root)
     }
     Ok(smithy_http::body::SdkBody::from(out))
@@ -57,7 +54,6 @@ pub fn serialize_payload_accelerate_configuration_put_bucket_accelerate_configur
         let mut root = writer
             .start_el("AccelerateConfiguration")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
-
         crate::xml_ser::serialize_structure_accelerate_configuration(&&input, root)
     }
     Ok(smithy_http::body::SdkBody::from(out))
@@ -73,7 +69,6 @@ pub fn serialize_payload_access_control_policy_put_bucket_acl_input(
         let mut root = writer
             .start_el("AccessControlPolicy")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
-
         crate::xml_ser::serialize_structure_access_control_policy(&&input, root)
     }
     Ok(smithy_http::body::SdkBody::from(out))
@@ -89,7 +84,6 @@ pub fn serialize_payload_analytics_configuration_put_bucket_analytics_configurat
         let mut root = writer
             .start_el("AnalyticsConfiguration")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
-
         crate::xml_ser::serialize_structure_analytics_configuration(&&input, root)
     }
     Ok(smithy_http::body::SdkBody::from(out))
@@ -105,7 +99,6 @@ pub fn serialize_payload_cors_configuration_put_bucket_cors_input(
         let mut root = writer
             .start_el("CORSConfiguration")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
-
         crate::xml_ser::serialize_structure_cors_configuration(&&input, root)
     }
     Ok(smithy_http::body::SdkBody::from(out))
@@ -121,7 +114,6 @@ pub fn serialize_payload_server_side_encryption_configuration_put_bucket_encrypt
         let mut root = writer
             .start_el("ServerSideEncryptionConfiguration")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
-
         crate::xml_ser::serialize_structure_server_side_encryption_configuration(&&input, root)
     }
     Ok(smithy_http::body::SdkBody::from(out))
@@ -137,7 +129,6 @@ pub fn serialize_payload_intelligent_tiering_configuration_put_bucket_intelligen
         let mut root = writer
             .start_el("IntelligentTieringConfiguration")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
-
         crate::xml_ser::serialize_structure_intelligent_tiering_configuration(&&input, root)
     }
     Ok(smithy_http::body::SdkBody::from(out))
@@ -153,7 +144,6 @@ pub fn serialize_payload_inventory_configuration_put_bucket_inventory_configurat
         let mut root = writer
             .start_el("InventoryConfiguration")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
-
         crate::xml_ser::serialize_structure_inventory_configuration(&&input, root)
     }
     Ok(smithy_http::body::SdkBody::from(out))
@@ -169,7 +159,6 @@ pub fn serialize_payload_bucket_lifecycle_configuration_put_bucket_lifecycle_con
         let mut root = writer
             .start_el("LifecycleConfiguration")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
-
         crate::xml_ser::serialize_structure_bucket_lifecycle_configuration(&&input, root)
     }
     Ok(smithy_http::body::SdkBody::from(out))
@@ -185,7 +174,6 @@ pub fn serialize_payload_bucket_logging_status_put_bucket_logging_input(
         let mut root = writer
             .start_el("BucketLoggingStatus")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
-
         crate::xml_ser::serialize_structure_bucket_logging_status(&&input, root)
     }
     Ok(smithy_http::body::SdkBody::from(out))
@@ -201,7 +189,6 @@ pub fn serialize_payload_metrics_configuration_put_bucket_metrics_configuration_
         let mut root = writer
             .start_el("MetricsConfiguration")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
-
         crate::xml_ser::serialize_structure_metrics_configuration(&&input, root)
     }
     Ok(smithy_http::body::SdkBody::from(out))
@@ -217,7 +204,6 @@ pub fn serialize_payload_notification_configuration_put_bucket_notification_conf
         let mut root = writer
             .start_el("NotificationConfiguration")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
-
         crate::xml_ser::serialize_structure_notification_configuration(&&input, root)
     }
     Ok(smithy_http::body::SdkBody::from(out))
@@ -233,7 +219,6 @@ pub fn serialize_payload_ownership_controls_put_bucket_ownership_controls_input(
         let mut root = writer
             .start_el("OwnershipControls")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
-
         crate::xml_ser::serialize_structure_ownership_controls(&&input, root)
     }
     Ok(smithy_http::body::SdkBody::from(out))
@@ -249,7 +234,6 @@ pub fn serialize_payload_replication_configuration_put_bucket_replication_input(
         let mut root = writer
             .start_el("ReplicationConfiguration")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
-
         crate::xml_ser::serialize_structure_replication_configuration(&&input, root)
     }
     Ok(smithy_http::body::SdkBody::from(out))
@@ -265,7 +249,6 @@ pub fn serialize_payload_request_payment_configuration_put_bucket_request_paymen
         let mut root = writer
             .start_el("RequestPaymentConfiguration")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
-
         crate::xml_ser::serialize_structure_request_payment_configuration(&&input, root)
     }
     Ok(smithy_http::body::SdkBody::from(out))
@@ -281,7 +264,6 @@ pub fn serialize_payload_tagging_put_bucket_tagging_input(
         let mut root = writer
             .start_el("Tagging")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
-
         crate::xml_ser::serialize_structure_tagging(&&input, root)
     }
     Ok(smithy_http::body::SdkBody::from(out))
@@ -297,7 +279,6 @@ pub fn serialize_payload_versioning_configuration_put_bucket_versioning_input(
         let mut root = writer
             .start_el("VersioningConfiguration")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
-
         crate::xml_ser::serialize_structure_versioning_configuration(&&input, root)
     }
     Ok(smithy_http::body::SdkBody::from(out))
@@ -313,7 +294,6 @@ pub fn serialize_payload_website_configuration_put_bucket_website_input(
         let mut root = writer
             .start_el("WebsiteConfiguration")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
-
         crate::xml_ser::serialize_structure_website_configuration(&&input, root)
     }
     Ok(smithy_http::body::SdkBody::from(out))
@@ -329,7 +309,6 @@ pub fn serialize_payload_access_control_policy_put_object_acl_input(
         let mut root = writer
             .start_el("AccessControlPolicy")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
-
         crate::xml_ser::serialize_structure_access_control_policy(&&input, root)
     }
     Ok(smithy_http::body::SdkBody::from(out))
@@ -345,7 +324,6 @@ pub fn serialize_payload_object_lock_legal_hold_put_object_legal_hold_input(
         let mut root = writer
             .start_el("LegalHold")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
-
         crate::xml_ser::serialize_structure_object_lock_legal_hold(&&input, root)
     }
     Ok(smithy_http::body::SdkBody::from(out))
@@ -361,7 +339,6 @@ pub fn serialize_payload_object_lock_configuration_put_object_lock_configuration
         let mut root = writer
             .start_el("ObjectLockConfiguration")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
-
         crate::xml_ser::serialize_structure_object_lock_configuration(&&input, root)
     }
     Ok(smithy_http::body::SdkBody::from(out))
@@ -377,7 +354,6 @@ pub fn serialize_payload_object_lock_retention_put_object_retention_input(
         let mut root = writer
             .start_el("Retention")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
-
         crate::xml_ser::serialize_structure_object_lock_retention(&&input, root)
     }
     Ok(smithy_http::body::SdkBody::from(out))
@@ -393,7 +369,6 @@ pub fn serialize_payload_tagging_put_object_tagging_input(
         let mut root = writer
             .start_el("Tagging")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
-
         crate::xml_ser::serialize_structure_tagging(&&input, root)
     }
     Ok(smithy_http::body::SdkBody::from(out))
@@ -409,7 +384,6 @@ pub fn serialize_payload_public_access_block_configuration_put_public_access_blo
         let mut root = writer
             .start_el("PublicAccessBlockConfiguration")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
-
         crate::xml_ser::serialize_structure_public_access_block_configuration(&&input, root)
     }
     Ok(smithy_http::body::SdkBody::from(out))
@@ -425,7 +399,6 @@ pub fn serialize_payload_restore_request_restore_object_input(
         let mut root = writer
             .start_el("RestoreRequest")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
-
         crate::xml_ser::serialize_structure_restore_request(&&input, root)
     }
     Ok(smithy_http::body::SdkBody::from(out))
