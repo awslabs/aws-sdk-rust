@@ -51,7 +51,7 @@
 /// <p>To list all of the versions currently associated with a secret, use <a>ListSecretVersionIds</a>.</p>
 /// </li>
 /// </ul>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct CancelRotateSecret {
     _private: (),
 }
@@ -71,7 +71,6 @@ impl CancelRotateSecret {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => return Err(crate::error::CancelRotateSecretError::unhandled(generic)),
@@ -125,7 +124,6 @@ impl CancelRotateSecret {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for CancelRotateSecret {
     type Output =
         Result<crate::output::CancelRotateSecretOutput, crate::error::CancelRotateSecretError>;
@@ -222,7 +220,7 @@ impl smithy_http::response::ParseStrictResponse for CancelRotateSecret {
 /// value.</p>
 /// </li>
 /// </ul>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct CreateSecret {
     _private: (),
 }
@@ -241,7 +239,6 @@ impl CreateSecret {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => return Err(crate::error::CreateSecretError::unhandled(generic)),
@@ -326,7 +323,6 @@ impl CreateSecret {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for CreateSecret {
     type Output = Result<crate::output::CreateSecretOutput, crate::error::CreateSecretError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -358,7 +354,7 @@ impl smithy_http::response::ParseStrictResponse for CreateSecret {
 /// <p>To list all of the currently available secrets, use <a>ListSecrets</a>.</p>
 /// </li>
 /// </ul>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteResourcePolicy {
     _private: (),
 }
@@ -378,7 +374,6 @@ impl DeleteResourcePolicy {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => return Err(crate::error::DeleteResourcePolicyError::unhandled(generic)),
@@ -427,7 +422,6 @@ impl DeleteResourcePolicy {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for DeleteResourcePolicy {
     type Output =
         Result<crate::output::DeleteResourcePolicyOutput, crate::error::DeleteResourcePolicyError>;
@@ -482,7 +476,7 @@ impl smithy_http::response::ParseStrictResponse for DeleteResourcePolicy {
 /// use <a>RestoreSecret</a>.</p>
 /// </li>
 /// </ul>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteSecret {
     _private: (),
 }
@@ -501,7 +495,6 @@ impl DeleteSecret {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => return Err(crate::error::DeleteSecretError::unhandled(generic)),
@@ -549,7 +542,6 @@ impl DeleteSecret {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for DeleteSecret {
     type Output = Result<crate::output::DeleteSecretOutput, crate::error::DeleteSecretError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -585,7 +577,7 @@ impl smithy_http::response::ParseStrictResponse for DeleteSecret {
 /// <p>To list all of the secrets in the AWS account, use <a>ListSecrets</a>.</p>
 /// </li>
 /// </ul>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeSecret {
     _private: (),
 }
@@ -604,7 +596,6 @@ impl DescribeSecret {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => return Err(crate::error::DescribeSecretError::unhandled(generic)),
@@ -638,7 +629,6 @@ impl DescribeSecret {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for DescribeSecret {
     type Output = Result<crate::output::DescribeSecretOutput, crate::error::DescribeSecretError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -659,7 +649,7 @@ impl smithy_http::response::ParseStrictResponse for DescribeSecret {
 /// <p>secretsmanager:GetRandomPassword</p>
 /// </li>
 /// </ul>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct GetRandomPassword {
     _private: (),
 }
@@ -678,7 +668,6 @@ impl GetRandomPassword {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => return Err(crate::error::GetRandomPasswordError::unhandled(generic)),
@@ -721,7 +710,6 @@ impl GetRandomPassword {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for GetRandomPassword {
     type Output =
         Result<crate::output::GetRandomPasswordOutput, crate::error::GetRandomPasswordError>;
@@ -757,7 +745,7 @@ impl smithy_http::response::ParseStrictResponse for GetRandomPassword {
 /// <p>To list all of the currently available secrets, use <a>ListSecrets</a>.</p>
 /// </li>
 /// </ul>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct GetResourcePolicy {
     _private: (),
 }
@@ -776,7 +764,6 @@ impl GetResourcePolicy {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => return Err(crate::error::GetResourcePolicyError::unhandled(generic)),
@@ -819,7 +806,6 @@ impl GetResourcePolicy {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for GetResourcePolicy {
     type Output =
         Result<crate::output::GetResourcePolicyOutput, crate::error::GetResourcePolicyError>;
@@ -856,7 +842,7 @@ impl smithy_http::response::ParseStrictResponse for GetResourcePolicy {
 /// <p>To retrieve the non-encrypted details for the secret, use <a>DescribeSecret</a>.</p>
 /// </li>
 /// </ul>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct GetSecretValue {
     _private: (),
 }
@@ -875,7 +861,6 @@ impl GetSecretValue {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => return Err(crate::error::GetSecretValueError::unhandled(generic)),
@@ -930,7 +915,6 @@ impl GetSecretValue {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for GetSecretValue {
     type Output = Result<crate::output::GetSecretValueOutput, crate::error::GetSecretValueError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -968,7 +952,7 @@ impl smithy_http::response::ParseStrictResponse for GetSecretValue {
 /// <p>To list the versions attached to a secret, use <a>ListSecretVersionIds</a>.</p>
 /// </li>
 /// </ul>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct ListSecrets {
     _private: (),
 }
@@ -987,7 +971,6 @@ impl ListSecrets {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => return Err(crate::error::ListSecretsError::unhandled(generic)),
@@ -1028,7 +1011,6 @@ impl ListSecrets {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for ListSecrets {
     type Output = Result<crate::output::ListSecretsOutput, crate::error::ListSecretsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -1065,7 +1047,7 @@ impl smithy_http::response::ParseStrictResponse for ListSecrets {
 /// <p>To list the secrets in an account, use <a>ListSecrets</a>.</p>
 /// </li>
 /// </ul>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct ListSecretVersionIds {
     _private: (),
 }
@@ -1085,7 +1067,6 @@ impl ListSecretVersionIds {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => return Err(crate::error::ListSecretVersionIdsError::unhandled(generic)),
@@ -1134,7 +1115,6 @@ impl ListSecretVersionIds {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for ListSecretVersionIds {
     type Output =
         Result<crate::output::ListSecretVersionIdsOutput, crate::error::ListSecretVersionIdsError>;
@@ -1175,7 +1155,7 @@ impl smithy_http::response::ParseStrictResponse for ListSecretVersionIds {
 /// <p>To list all of the currently available secrets, use <a>ListSecrets</a>.</p>
 /// </li>
 /// </ul>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct PutResourcePolicy {
     _private: (),
 }
@@ -1194,7 +1174,6 @@ impl PutResourcePolicy {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => return Err(crate::error::PutResourcePolicyError::unhandled(generic)),
@@ -1261,7 +1240,6 @@ impl PutResourcePolicy {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for PutResourcePolicy {
     type Output =
         Result<crate::output::PutResourcePolicyOutput, crate::error::PutResourcePolicyError>;
@@ -1360,7 +1338,7 @@ impl smithy_http::response::ParseStrictResponse for PutResourcePolicy {
 /// <p>To list the versions attached to a secret, use <a>ListSecretVersionIds</a>.</p>
 /// </li>
 /// </ul>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct PutSecretValue {
     _private: (),
 }
@@ -1379,7 +1357,6 @@ impl PutSecretValue {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => return Err(crate::error::PutSecretValueError::unhandled(generic)),
@@ -1448,7 +1425,6 @@ impl PutSecretValue {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for PutSecretValue {
     type Output = Result<crate::output::PutSecretValueOutput, crate::error::PutSecretValueError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -1475,7 +1451,7 @@ impl smithy_http::response::ParseStrictResponse for PutSecretValue {
 /// <p>To delete a secret, use <a>DeleteSecret</a>.</p>
 /// </li>
 /// </ul>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct RestoreSecret {
     _private: (),
 }
@@ -1494,7 +1470,6 @@ impl RestoreSecret {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => return Err(crate::error::RestoreSecretError::unhandled(generic)),
@@ -1542,7 +1517,6 @@ impl RestoreSecret {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for RestoreSecret {
     type Output = Result<crate::output::RestoreSecretOutput, crate::error::RestoreSecretError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -1612,7 +1586,7 @@ impl smithy_http::response::ParseStrictResponse for RestoreSecret {
 /// <a>UpdateSecretVersionStage</a>.</p>
 /// </li>
 /// </ul>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct RotateSecret {
     _private: (),
 }
@@ -1631,7 +1605,6 @@ impl RotateSecret {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => return Err(crate::error::RotateSecretError::unhandled(generic)),
@@ -1679,7 +1652,6 @@ impl RotateSecret {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for RotateSecret {
     type Output = Result<crate::output::RotateSecretOutput, crate::error::RotateSecretError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -1743,7 +1715,7 @@ impl smithy_http::response::ParseStrictResponse for RotateSecret {
 /// <p>To view the list of tags attached to a secret, use <a>DescribeSecret</a>.</p>
 /// </li>
 /// </ul>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct TagResource {
     _private: (),
 }
@@ -1762,7 +1734,6 @@ impl TagResource {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => return Err(crate::error::TagResourceError::unhandled(generic)),
@@ -1807,7 +1778,6 @@ impl TagResource {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for TagResource {
     type Output = Result<crate::output::TagResourceOutput, crate::error::TagResourceError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -1844,7 +1814,7 @@ impl smithy_http::response::ParseStrictResponse for TagResource {
 /// <p>To view the list of tags attached to a secret, use <a>DescribeSecret</a>.</p>
 /// </li>
 /// </ul>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct UntagResource {
     _private: (),
 }
@@ -1863,7 +1833,6 @@ impl UntagResource {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => return Err(crate::error::UntagResourceError::unhandled(generic)),
@@ -1908,7 +1877,6 @@ impl UntagResource {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for UntagResource {
     type Output = Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -2001,7 +1969,7 @@ impl smithy_http::response::ParseStrictResponse for UntagResource {
 /// <p>To list the versions contained in a secret, use <a>ListSecretVersionIds</a>.</p>
 /// </li>
 /// </ul>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateSecret {
     _private: (),
 }
@@ -2020,7 +1988,6 @@ impl UpdateSecret {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => return Err(crate::error::UpdateSecretError::unhandled(generic)),
@@ -2105,7 +2072,6 @@ impl UpdateSecret {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for UpdateSecret {
     type Output = Result<crate::output::UpdateSecretOutput, crate::error::UpdateSecretError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -2150,7 +2116,7 @@ impl smithy_http::response::ParseStrictResponse for UpdateSecret {
 /// <code>SecretVersionsToStages</code> response value. </p>
 /// </li>
 /// </ul>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateSecretVersionStage {
     _private: (),
 }
@@ -2172,7 +2138,6 @@ impl UpdateSecretVersionStage {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => {
@@ -2245,7 +2210,6 @@ impl UpdateSecretVersionStage {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for UpdateSecretVersionStage {
     type Output = Result<
         crate::output::UpdateSecretVersionStageOutput,
@@ -2261,7 +2225,7 @@ impl smithy_http::response::ParseStrictResponse for UpdateSecretVersionStage {
 /// with white space and line breaks for better readability. Submit your input as a single line
 /// JSON string. A resource-based
 /// policy is optional.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct ValidateResourcePolicy {
     _private: (),
 }
@@ -2283,7 +2247,6 @@ impl ValidateResourcePolicy {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => {
@@ -2329,7 +2292,6 @@ impl ValidateResourcePolicy {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for ValidateResourcePolicy {
     type Output = Result<
         crate::output::ValidateResourcePolicyOutput,

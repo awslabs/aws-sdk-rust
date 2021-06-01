@@ -101,44 +101,35 @@ impl AbortMultipartUploadInput {
             let request = self.request_builder_base()?;
             let body = smithy_http::body::SdkBody::from("");
             let request = Self::assemble(request, body);
-
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
                 ));
-
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-
             signing_config.signing_options.content_sha256_header = true;
             signing_config.signing_options.double_uri_encode = false;
-
             request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
-
             aws_endpoint::set_endpoint_resolver(
                 &mut request.config_mut(),
                 _config.endpoint_resolver.clone(),
             );
-
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-
             aws_auth::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
-
             let op = smithy_http::operation::Operation::new(
                 request,
                 crate::operation::AbortMultipartUpload::new(),
@@ -147,7 +138,6 @@ impl AbortMultipartUploadInput {
                 "AbortMultipartUpload",
                 "s3",
             ));
-
             let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
             op
         })
@@ -359,44 +349,35 @@ impl CompleteMultipartUploadInput {
                 &self.multipart_upload,
             )?;
             let request = Self::assemble(request, body);
-
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
                 ));
-
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-
             signing_config.signing_options.content_sha256_header = true;
             signing_config.signing_options.double_uri_encode = false;
-
             request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
-
             aws_endpoint::set_endpoint_resolver(
                 &mut request.config_mut(),
                 _config.endpoint_resolver.clone(),
             );
-
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-
             aws_auth::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
-
             let op = smithy_http::operation::Operation::new(
                 request,
                 crate::operation::CompleteMultipartUpload::new(),
@@ -405,7 +386,6 @@ impl CompleteMultipartUploadInput {
                 "CompleteMultipartUpload",
                 "s3",
             ));
-
             let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
             op
         })
@@ -1146,50 +1126,40 @@ impl CopyObjectInput {
             let request = self.request_builder_base()?;
             let body = smithy_http::body::SdkBody::from("");
             let request = Self::assemble(request, body);
-
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
                 ));
-
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-
             signing_config.signing_options.content_sha256_header = true;
             signing_config.signing_options.double_uri_encode = false;
-
             request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
-
             aws_endpoint::set_endpoint_resolver(
                 &mut request.config_mut(),
                 _config.endpoint_resolver.clone(),
             );
-
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-
             aws_auth::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
-
             let op = smithy_http::operation::Operation::new(
                 request,
                 crate::operation::CopyObject::new(),
             )
             .with_metadata(smithy_http::operation::Metadata::new("CopyObject", "s3"));
-
             let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
             op
         })
@@ -2105,50 +2075,40 @@ impl CreateBucketInput {
                 &self.create_bucket_configuration,
             )?;
             let request = Self::assemble(request, body);
-
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
                 ));
-
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-
             signing_config.signing_options.content_sha256_header = true;
             signing_config.signing_options.double_uri_encode = false;
-
             request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
-
             aws_endpoint::set_endpoint_resolver(
                 &mut request.config_mut(),
                 _config.endpoint_resolver.clone(),
             );
-
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-
             aws_auth::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
-
             let op = smithy_http::operation::Operation::new(
                 request,
                 crate::operation::CreateBucket::new(),
             )
             .with_metadata(smithy_http::operation::Metadata::new("CreateBucket", "s3"));
-
             let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
             op
         })
@@ -2783,44 +2743,35 @@ impl CreateMultipartUploadInput {
             let request = self.request_builder_base()?;
             let body = smithy_http::body::SdkBody::from("");
             let request = Self::assemble(request, body);
-
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
                 ));
-
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-
             signing_config.signing_options.content_sha256_header = true;
             signing_config.signing_options.double_uri_encode = false;
-
             request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
-
             aws_endpoint::set_endpoint_resolver(
                 &mut request.config_mut(),
                 _config.endpoint_resolver.clone(),
             );
-
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-
             aws_auth::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
-
             let op = smithy_http::operation::Operation::new(
                 request,
                 crate::operation::CreateMultipartUpload::new(),
@@ -2829,7 +2780,6 @@ impl CreateMultipartUploadInput {
                 "CreateMultipartUpload",
                 "s3",
             ));
-
             let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
             op
         })
@@ -3446,50 +3396,40 @@ impl DeleteBucketInput {
             let request = self.request_builder_base()?;
             let body = smithy_http::body::SdkBody::from("");
             let request = Self::assemble(request, body);
-
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
                 ));
-
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-
             signing_config.signing_options.content_sha256_header = true;
             signing_config.signing_options.double_uri_encode = false;
-
             request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
-
             aws_endpoint::set_endpoint_resolver(
                 &mut request.config_mut(),
                 _config.endpoint_resolver.clone(),
             );
-
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-
             aws_auth::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
-
             let op = smithy_http::operation::Operation::new(
                 request,
                 crate::operation::DeleteBucket::new(),
             )
             .with_metadata(smithy_http::operation::Metadata::new("DeleteBucket", "s3"));
-
             let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
             op
         })
@@ -3632,44 +3572,35 @@ impl DeleteBucketAnalyticsConfigurationInput {
             let request = self.request_builder_base()?;
             let body = smithy_http::body::SdkBody::from("");
             let request = Self::assemble(request, body);
-
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
                 ));
-
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-
             signing_config.signing_options.content_sha256_header = true;
             signing_config.signing_options.double_uri_encode = false;
-
             request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
-
             aws_endpoint::set_endpoint_resolver(
                 &mut request.config_mut(),
                 _config.endpoint_resolver.clone(),
             );
-
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-
             aws_auth::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
-
             let op = smithy_http::operation::Operation::new(
                 request,
                 crate::operation::DeleteBucketAnalyticsConfiguration::new(),
@@ -3678,7 +3609,6 @@ impl DeleteBucketAnalyticsConfigurationInput {
                 "DeleteBucketAnalyticsConfiguration",
                 "s3",
             ));
-
             let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
             op
         })
@@ -3816,44 +3746,35 @@ impl DeleteBucketCorsInput {
             let request = self.request_builder_base()?;
             let body = smithy_http::body::SdkBody::from("");
             let request = Self::assemble(request, body);
-
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
                 ));
-
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-
             signing_config.signing_options.content_sha256_header = true;
             signing_config.signing_options.double_uri_encode = false;
-
             request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
-
             aws_endpoint::set_endpoint_resolver(
                 &mut request.config_mut(),
                 _config.endpoint_resolver.clone(),
             );
-
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-
             aws_auth::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
-
             let op = smithy_http::operation::Operation::new(
                 request,
                 crate::operation::DeleteBucketCors::new(),
@@ -3862,7 +3783,6 @@ impl DeleteBucketCorsInput {
                 "DeleteBucketCors",
                 "s3",
             ));
-
             let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
             op
         })
@@ -3998,44 +3918,35 @@ impl DeleteBucketEncryptionInput {
             let request = self.request_builder_base()?;
             let body = smithy_http::body::SdkBody::from("");
             let request = Self::assemble(request, body);
-
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
                 ));
-
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-
             signing_config.signing_options.content_sha256_header = true;
             signing_config.signing_options.double_uri_encode = false;
-
             request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
-
             aws_endpoint::set_endpoint_resolver(
                 &mut request.config_mut(),
                 _config.endpoint_resolver.clone(),
             );
-
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-
             aws_auth::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
-
             let op = smithy_http::operation::Operation::new(
                 request,
                 crate::operation::DeleteBucketEncryption::new(),
@@ -4044,7 +3955,6 @@ impl DeleteBucketEncryptionInput {
                 "DeleteBucketEncryption",
                 "s3",
             ));
-
             let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
             op
         })
@@ -4180,44 +4090,35 @@ impl DeleteBucketIntelligentTieringConfigurationInput {
             let request = self.request_builder_base()?;
             let body = smithy_http::body::SdkBody::from("");
             let request = Self::assemble(request, body);
-
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
                 ));
-
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-
             signing_config.signing_options.content_sha256_header = true;
             signing_config.signing_options.double_uri_encode = false;
-
             request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
-
             aws_endpoint::set_endpoint_resolver(
                 &mut request.config_mut(),
                 _config.endpoint_resolver.clone(),
             );
-
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-
             aws_auth::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
-
             let op = smithy_http::operation::Operation::new(
                 request,
                 crate::operation::DeleteBucketIntelligentTieringConfiguration::new(),
@@ -4226,7 +4127,6 @@ impl DeleteBucketIntelligentTieringConfigurationInput {
                 "DeleteBucketIntelligentTieringConfiguration",
                 "s3",
             ));
-
             let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
             op
         })
@@ -4353,44 +4253,35 @@ impl DeleteBucketInventoryConfigurationInput {
             let request = self.request_builder_base()?;
             let body = smithy_http::body::SdkBody::from("");
             let request = Self::assemble(request, body);
-
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
                 ));
-
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-
             signing_config.signing_options.content_sha256_header = true;
             signing_config.signing_options.double_uri_encode = false;
-
             request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
-
             aws_endpoint::set_endpoint_resolver(
                 &mut request.config_mut(),
                 _config.endpoint_resolver.clone(),
             );
-
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-
             aws_auth::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
-
             let op = smithy_http::operation::Operation::new(
                 request,
                 crate::operation::DeleteBucketInventoryConfiguration::new(),
@@ -4399,7 +4290,6 @@ impl DeleteBucketInventoryConfigurationInput {
                 "DeleteBucketInventoryConfiguration",
                 "s3",
             ));
-
             let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
             op
         })
@@ -4537,44 +4427,35 @@ impl DeleteBucketLifecycleInput {
             let request = self.request_builder_base()?;
             let body = smithy_http::body::SdkBody::from("");
             let request = Self::assemble(request, body);
-
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
                 ));
-
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-
             signing_config.signing_options.content_sha256_header = true;
             signing_config.signing_options.double_uri_encode = false;
-
             request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
-
             aws_endpoint::set_endpoint_resolver(
                 &mut request.config_mut(),
                 _config.endpoint_resolver.clone(),
             );
-
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-
             aws_auth::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
-
             let op = smithy_http::operation::Operation::new(
                 request,
                 crate::operation::DeleteBucketLifecycle::new(),
@@ -4583,7 +4464,6 @@ impl DeleteBucketLifecycleInput {
                 "DeleteBucketLifecycle",
                 "s3",
             ));
-
             let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
             op
         })
@@ -4731,44 +4611,35 @@ impl DeleteBucketMetricsConfigurationInput {
             let request = self.request_builder_base()?;
             let body = smithy_http::body::SdkBody::from("");
             let request = Self::assemble(request, body);
-
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
                 ));
-
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-
             signing_config.signing_options.content_sha256_header = true;
             signing_config.signing_options.double_uri_encode = false;
-
             request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
-
             aws_endpoint::set_endpoint_resolver(
                 &mut request.config_mut(),
                 _config.endpoint_resolver.clone(),
             );
-
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-
             aws_auth::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
-
             let op = smithy_http::operation::Operation::new(
                 request,
                 crate::operation::DeleteBucketMetricsConfiguration::new(),
@@ -4777,7 +4648,6 @@ impl DeleteBucketMetricsConfigurationInput {
                 "DeleteBucketMetricsConfiguration",
                 "s3",
             ));
-
             let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
             op
         })
@@ -4917,44 +4787,35 @@ impl DeleteBucketOwnershipControlsInput {
             let request = self.request_builder_base()?;
             let body = smithy_http::body::SdkBody::from("");
             let request = Self::assemble(request, body);
-
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
                 ));
-
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-
             signing_config.signing_options.content_sha256_header = true;
             signing_config.signing_options.double_uri_encode = false;
-
             request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
-
             aws_endpoint::set_endpoint_resolver(
                 &mut request.config_mut(),
                 _config.endpoint_resolver.clone(),
             );
-
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-
             aws_auth::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
-
             let op = smithy_http::operation::Operation::new(
                 request,
                 crate::operation::DeleteBucketOwnershipControls::new(),
@@ -4963,7 +4824,6 @@ impl DeleteBucketOwnershipControlsInput {
                 "DeleteBucketOwnershipControls",
                 "s3",
             ));
-
             let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
             op
         })
@@ -5098,44 +4958,35 @@ impl DeleteBucketPolicyInput {
             let request = self.request_builder_base()?;
             let body = smithy_http::body::SdkBody::from("");
             let request = Self::assemble(request, body);
-
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
                 ));
-
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-
             signing_config.signing_options.content_sha256_header = true;
             signing_config.signing_options.double_uri_encode = false;
-
             request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
-
             aws_endpoint::set_endpoint_resolver(
                 &mut request.config_mut(),
                 _config.endpoint_resolver.clone(),
             );
-
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-
             aws_auth::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
-
             let op = smithy_http::operation::Operation::new(
                 request,
                 crate::operation::DeleteBucketPolicy::new(),
@@ -5144,7 +4995,6 @@ impl DeleteBucketPolicyInput {
                 "DeleteBucketPolicy",
                 "s3",
             ));
-
             let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
             op
         })
@@ -5279,44 +5129,35 @@ impl DeleteBucketReplicationInput {
             let request = self.request_builder_base()?;
             let body = smithy_http::body::SdkBody::from("");
             let request = Self::assemble(request, body);
-
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
                 ));
-
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-
             signing_config.signing_options.content_sha256_header = true;
             signing_config.signing_options.double_uri_encode = false;
-
             request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
-
             aws_endpoint::set_endpoint_resolver(
                 &mut request.config_mut(),
                 _config.endpoint_resolver.clone(),
             );
-
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-
             aws_auth::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
-
             let op = smithy_http::operation::Operation::new(
                 request,
                 crate::operation::DeleteBucketReplication::new(),
@@ -5325,7 +5166,6 @@ impl DeleteBucketReplicationInput {
                 "DeleteBucketReplication",
                 "s3",
             ));
-
             let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
             op
         })
@@ -5460,44 +5300,35 @@ impl DeleteBucketTaggingInput {
             let request = self.request_builder_base()?;
             let body = smithy_http::body::SdkBody::from("");
             let request = Self::assemble(request, body);
-
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
                 ));
-
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-
             signing_config.signing_options.content_sha256_header = true;
             signing_config.signing_options.double_uri_encode = false;
-
             request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
-
             aws_endpoint::set_endpoint_resolver(
                 &mut request.config_mut(),
                 _config.endpoint_resolver.clone(),
             );
-
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-
             aws_auth::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
-
             let op = smithy_http::operation::Operation::new(
                 request,
                 crate::operation::DeleteBucketTagging::new(),
@@ -5506,7 +5337,6 @@ impl DeleteBucketTaggingInput {
                 "DeleteBucketTagging",
                 "s3",
             ));
-
             let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
             op
         })
@@ -5641,44 +5471,35 @@ impl DeleteBucketWebsiteInput {
             let request = self.request_builder_base()?;
             let body = smithy_http::body::SdkBody::from("");
             let request = Self::assemble(request, body);
-
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
                 ));
-
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-
             signing_config.signing_options.content_sha256_header = true;
             signing_config.signing_options.double_uri_encode = false;
-
             request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
-
             aws_endpoint::set_endpoint_resolver(
                 &mut request.config_mut(),
                 _config.endpoint_resolver.clone(),
             );
-
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-
             aws_auth::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
-
             let op = smithy_http::operation::Operation::new(
                 request,
                 crate::operation::DeleteBucketWebsite::new(),
@@ -5687,7 +5508,6 @@ impl DeleteBucketWebsiteInput {
                 "DeleteBucketWebsite",
                 "s3",
             ));
-
             let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
             op
         })
@@ -5887,50 +5707,40 @@ impl DeleteObjectInput {
             let request = self.request_builder_base()?;
             let body = smithy_http::body::SdkBody::from("");
             let request = Self::assemble(request, body);
-
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
                 ));
-
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-
             signing_config.signing_options.content_sha256_header = true;
             signing_config.signing_options.double_uri_encode = false;
-
             request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
-
             aws_endpoint::set_endpoint_resolver(
                 &mut request.config_mut(),
                 _config.endpoint_resolver.clone(),
             );
-
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-
             aws_auth::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
-
             let op = smithy_http::operation::Operation::new(
                 request,
                 crate::operation::DeleteObject::new(),
             )
             .with_metadata(smithy_http::operation::Metadata::new("DeleteObject", "s3"));
-
             let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
             op
         })
@@ -6177,50 +5987,40 @@ impl DeleteObjectsInput {
             let request = self.request_builder_base()?;
             let body = crate::operation_ser::ser_payload_delete_objects_input(&self.delete)?;
             let request = Self::assemble(request, body);
-
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
                 ));
-
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-
             signing_config.signing_options.content_sha256_header = true;
             signing_config.signing_options.double_uri_encode = false;
-
             request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
-
             aws_endpoint::set_endpoint_resolver(
                 &mut request.config_mut(),
                 _config.endpoint_resolver.clone(),
             );
-
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-
             aws_auth::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
-
             let op = smithy_http::operation::Operation::new(
                 request,
                 crate::operation::DeleteObjects::new(),
             )
             .with_metadata(smithy_http::operation::Metadata::new("DeleteObjects", "s3"));
-
             let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
             op
         })
@@ -6434,44 +6234,35 @@ impl DeleteObjectTaggingInput {
             let request = self.request_builder_base()?;
             let body = smithy_http::body::SdkBody::from("");
             let request = Self::assemble(request, body);
-
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
                 ));
-
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-
             signing_config.signing_options.content_sha256_header = true;
             signing_config.signing_options.double_uri_encode = false;
-
             request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
-
             aws_endpoint::set_endpoint_resolver(
                 &mut request.config_mut(),
                 _config.endpoint_resolver.clone(),
             );
-
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-
             aws_auth::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
-
             let op = smithy_http::operation::Operation::new(
                 request,
                 crate::operation::DeleteObjectTagging::new(),
@@ -6480,7 +6271,6 @@ impl DeleteObjectTaggingInput {
                 "DeleteObjectTagging",
                 "s3",
             ));
-
             let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
             op
         })
@@ -6620,44 +6410,35 @@ impl DeletePublicAccessBlockInput {
             let request = self.request_builder_base()?;
             let body = smithy_http::body::SdkBody::from("");
             let request = Self::assemble(request, body);
-
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
                 ));
-
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-
             signing_config.signing_options.content_sha256_header = true;
             signing_config.signing_options.double_uri_encode = false;
-
             request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
-
             aws_endpoint::set_endpoint_resolver(
                 &mut request.config_mut(),
                 _config.endpoint_resolver.clone(),
             );
-
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-
             aws_auth::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
-
             let op = smithy_http::operation::Operation::new(
                 request,
                 crate::operation::DeletePublicAccessBlock::new(),
@@ -6666,7 +6447,6 @@ impl DeletePublicAccessBlockInput {
                 "DeletePublicAccessBlock",
                 "s3",
             ));
-
             let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
             op
         })
@@ -6803,44 +6583,35 @@ impl GetBucketAccelerateConfigurationInput {
             let request = self.request_builder_base()?;
             let body = smithy_http::body::SdkBody::from("");
             let request = Self::assemble(request, body);
-
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
                 ));
-
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-
             signing_config.signing_options.content_sha256_header = true;
             signing_config.signing_options.double_uri_encode = false;
-
             request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
-
             aws_endpoint::set_endpoint_resolver(
                 &mut request.config_mut(),
                 _config.endpoint_resolver.clone(),
             );
-
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-
             aws_auth::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
-
             let op = smithy_http::operation::Operation::new(
                 request,
                 crate::operation::GetBucketAccelerateConfiguration::new(),
@@ -6849,7 +6620,6 @@ impl GetBucketAccelerateConfigurationInput {
                 "GetBucketAccelerateConfiguration",
                 "s3",
             ));
-
             let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
             op
         })
@@ -6983,50 +6753,40 @@ impl GetBucketAclInput {
             let request = self.request_builder_base()?;
             let body = smithy_http::body::SdkBody::from("");
             let request = Self::assemble(request, body);
-
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
                 ));
-
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-
             signing_config.signing_options.content_sha256_header = true;
             signing_config.signing_options.double_uri_encode = false;
-
             request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
-
             aws_endpoint::set_endpoint_resolver(
                 &mut request.config_mut(),
                 _config.endpoint_resolver.clone(),
             );
-
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-
             aws_auth::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
-
             let op = smithy_http::operation::Operation::new(
                 request,
                 crate::operation::GetBucketAcl::new(),
             )
             .with_metadata(smithy_http::operation::Metadata::new("GetBucketAcl", "s3"));
-
             let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
             op
         })
@@ -7174,44 +6934,35 @@ impl GetBucketAnalyticsConfigurationInput {
             let request = self.request_builder_base()?;
             let body = smithy_http::body::SdkBody::from("");
             let request = Self::assemble(request, body);
-
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
                 ));
-
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-
             signing_config.signing_options.content_sha256_header = true;
             signing_config.signing_options.double_uri_encode = false;
-
             request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
-
             aws_endpoint::set_endpoint_resolver(
                 &mut request.config_mut(),
                 _config.endpoint_resolver.clone(),
             );
-
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-
             aws_auth::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
-
             let op = smithy_http::operation::Operation::new(
                 request,
                 crate::operation::GetBucketAnalyticsConfiguration::new(),
@@ -7220,7 +6971,6 @@ impl GetBucketAnalyticsConfigurationInput {
                 "GetBucketAnalyticsConfiguration",
                 "s3",
             ));
-
             let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
             op
         })
@@ -7358,50 +7108,40 @@ impl GetBucketCorsInput {
             let request = self.request_builder_base()?;
             let body = smithy_http::body::SdkBody::from("");
             let request = Self::assemble(request, body);
-
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
                 ));
-
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-
             signing_config.signing_options.content_sha256_header = true;
             signing_config.signing_options.double_uri_encode = false;
-
             request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
-
             aws_endpoint::set_endpoint_resolver(
                 &mut request.config_mut(),
                 _config.endpoint_resolver.clone(),
             );
-
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-
             aws_auth::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
-
             let op = smithy_http::operation::Operation::new(
                 request,
                 crate::operation::GetBucketCors::new(),
             )
             .with_metadata(smithy_http::operation::Metadata::new("GetBucketCors", "s3"));
-
             let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
             op
         })
@@ -7537,44 +7277,35 @@ impl GetBucketEncryptionInput {
             let request = self.request_builder_base()?;
             let body = smithy_http::body::SdkBody::from("");
             let request = Self::assemble(request, body);
-
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
                 ));
-
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-
             signing_config.signing_options.content_sha256_header = true;
             signing_config.signing_options.double_uri_encode = false;
-
             request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
-
             aws_endpoint::set_endpoint_resolver(
                 &mut request.config_mut(),
                 _config.endpoint_resolver.clone(),
             );
-
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-
             aws_auth::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
-
             let op = smithy_http::operation::Operation::new(
                 request,
                 crate::operation::GetBucketEncryption::new(),
@@ -7583,7 +7314,6 @@ impl GetBucketEncryptionInput {
                 "GetBucketEncryption",
                 "s3",
             ));
-
             let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
             op
         })
@@ -7719,44 +7449,35 @@ impl GetBucketIntelligentTieringConfigurationInput {
             let request = self.request_builder_base()?;
             let body = smithy_http::body::SdkBody::from("");
             let request = Self::assemble(request, body);
-
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
                 ));
-
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-
             signing_config.signing_options.content_sha256_header = true;
             signing_config.signing_options.double_uri_encode = false;
-
             request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
-
             aws_endpoint::set_endpoint_resolver(
                 &mut request.config_mut(),
                 _config.endpoint_resolver.clone(),
             );
-
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-
             aws_auth::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
-
             let op = smithy_http::operation::Operation::new(
                 request,
                 crate::operation::GetBucketIntelligentTieringConfiguration::new(),
@@ -7765,7 +7486,6 @@ impl GetBucketIntelligentTieringConfigurationInput {
                 "GetBucketIntelligentTieringConfiguration",
                 "s3",
             ));
-
             let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
             op
         })
@@ -7892,44 +7612,35 @@ impl GetBucketInventoryConfigurationInput {
             let request = self.request_builder_base()?;
             let body = smithy_http::body::SdkBody::from("");
             let request = Self::assemble(request, body);
-
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
                 ));
-
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-
             signing_config.signing_options.content_sha256_header = true;
             signing_config.signing_options.double_uri_encode = false;
-
             request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
-
             aws_endpoint::set_endpoint_resolver(
                 &mut request.config_mut(),
                 _config.endpoint_resolver.clone(),
             );
-
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-
             aws_auth::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
-
             let op = smithy_http::operation::Operation::new(
                 request,
                 crate::operation::GetBucketInventoryConfiguration::new(),
@@ -7938,7 +7649,6 @@ impl GetBucketInventoryConfigurationInput {
                 "GetBucketInventoryConfiguration",
                 "s3",
             ));
-
             let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
             op
         })
@@ -8079,44 +7789,35 @@ impl GetBucketLifecycleConfigurationInput {
             let request = self.request_builder_base()?;
             let body = smithy_http::body::SdkBody::from("");
             let request = Self::assemble(request, body);
-
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
                 ));
-
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-
             signing_config.signing_options.content_sha256_header = true;
             signing_config.signing_options.double_uri_encode = false;
-
             request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
-
             aws_endpoint::set_endpoint_resolver(
                 &mut request.config_mut(),
                 _config.endpoint_resolver.clone(),
             );
-
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-
             aws_auth::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
-
             let op = smithy_http::operation::Operation::new(
                 request,
                 crate::operation::GetBucketLifecycleConfiguration::new(),
@@ -8125,7 +7826,6 @@ impl GetBucketLifecycleConfigurationInput {
                 "GetBucketLifecycleConfiguration",
                 "s3",
             ));
-
             let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
             op
         })
@@ -8260,44 +7960,35 @@ impl GetBucketLocationInput {
             let request = self.request_builder_base()?;
             let body = smithy_http::body::SdkBody::from("");
             let request = Self::assemble(request, body);
-
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
                 ));
-
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-
             signing_config.signing_options.content_sha256_header = true;
             signing_config.signing_options.double_uri_encode = false;
-
             request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
-
             aws_endpoint::set_endpoint_resolver(
                 &mut request.config_mut(),
                 _config.endpoint_resolver.clone(),
             );
-
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-
             aws_auth::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
-
             let op = smithy_http::operation::Operation::new(
                 request,
                 crate::operation::GetBucketLocation::new(),
@@ -8306,7 +7997,6 @@ impl GetBucketLocationInput {
                 "GetBucketLocation",
                 "s3",
             ));
-
             let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
             op
         })
@@ -8441,44 +8131,35 @@ impl GetBucketLoggingInput {
             let request = self.request_builder_base()?;
             let body = smithy_http::body::SdkBody::from("");
             let request = Self::assemble(request, body);
-
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
                 ));
-
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-
             signing_config.signing_options.content_sha256_header = true;
             signing_config.signing_options.double_uri_encode = false;
-
             request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
-
             aws_endpoint::set_endpoint_resolver(
                 &mut request.config_mut(),
                 _config.endpoint_resolver.clone(),
             );
-
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-
             aws_auth::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
-
             let op = smithy_http::operation::Operation::new(
                 request,
                 crate::operation::GetBucketLogging::new(),
@@ -8487,7 +8168,6 @@ impl GetBucketLoggingInput {
                 "GetBucketLogging",
                 "s3",
             ));
-
             let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
             op
         })
@@ -8635,44 +8315,35 @@ impl GetBucketMetricsConfigurationInput {
             let request = self.request_builder_base()?;
             let body = smithy_http::body::SdkBody::from("");
             let request = Self::assemble(request, body);
-
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
                 ));
-
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-
             signing_config.signing_options.content_sha256_header = true;
             signing_config.signing_options.double_uri_encode = false;
-
             request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
-
             aws_endpoint::set_endpoint_resolver(
                 &mut request.config_mut(),
                 _config.endpoint_resolver.clone(),
             );
-
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-
             aws_auth::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
-
             let op = smithy_http::operation::Operation::new(
                 request,
                 crate::operation::GetBucketMetricsConfiguration::new(),
@@ -8681,7 +8352,6 @@ impl GetBucketMetricsConfigurationInput {
                 "GetBucketMetricsConfiguration",
                 "s3",
             ));
-
             let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
             op
         })
@@ -8822,44 +8492,35 @@ impl GetBucketNotificationConfigurationInput {
             let request = self.request_builder_base()?;
             let body = smithy_http::body::SdkBody::from("");
             let request = Self::assemble(request, body);
-
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
                 ));
-
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-
             signing_config.signing_options.content_sha256_header = true;
             signing_config.signing_options.double_uri_encode = false;
-
             request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
-
             aws_endpoint::set_endpoint_resolver(
                 &mut request.config_mut(),
                 _config.endpoint_resolver.clone(),
             );
-
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-
             aws_auth::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
-
             let op = smithy_http::operation::Operation::new(
                 request,
                 crate::operation::GetBucketNotificationConfiguration::new(),
@@ -8868,7 +8529,6 @@ impl GetBucketNotificationConfigurationInput {
                 "GetBucketNotificationConfiguration",
                 "s3",
             ));
-
             let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
             op
         })
@@ -9004,44 +8664,35 @@ impl GetBucketOwnershipControlsInput {
             let request = self.request_builder_base()?;
             let body = smithy_http::body::SdkBody::from("");
             let request = Self::assemble(request, body);
-
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
                 ));
-
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-
             signing_config.signing_options.content_sha256_header = true;
             signing_config.signing_options.double_uri_encode = false;
-
             request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
-
             aws_endpoint::set_endpoint_resolver(
                 &mut request.config_mut(),
                 _config.endpoint_resolver.clone(),
             );
-
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-
             aws_auth::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
-
             let op = smithy_http::operation::Operation::new(
                 request,
                 crate::operation::GetBucketOwnershipControls::new(),
@@ -9050,7 +8701,6 @@ impl GetBucketOwnershipControlsInput {
                 "GetBucketOwnershipControls",
                 "s3",
             ));
-
             let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
             op
         })
@@ -9185,44 +8835,35 @@ impl GetBucketPolicyInput {
             let request = self.request_builder_base()?;
             let body = smithy_http::body::SdkBody::from("");
             let request = Self::assemble(request, body);
-
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
                 ));
-
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-
             signing_config.signing_options.content_sha256_header = true;
             signing_config.signing_options.double_uri_encode = false;
-
             request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
-
             aws_endpoint::set_endpoint_resolver(
                 &mut request.config_mut(),
                 _config.endpoint_resolver.clone(),
             );
-
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-
             aws_auth::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
-
             let op = smithy_http::operation::Operation::new(
                 request,
                 crate::operation::GetBucketPolicy::new(),
@@ -9231,7 +8872,6 @@ impl GetBucketPolicyInput {
                 "GetBucketPolicy",
                 "s3",
             ));
-
             let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
             op
         })
@@ -9366,44 +9006,35 @@ impl GetBucketPolicyStatusInput {
             let request = self.request_builder_base()?;
             let body = smithy_http::body::SdkBody::from("");
             let request = Self::assemble(request, body);
-
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
                 ));
-
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-
             signing_config.signing_options.content_sha256_header = true;
             signing_config.signing_options.double_uri_encode = false;
-
             request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
-
             aws_endpoint::set_endpoint_resolver(
                 &mut request.config_mut(),
                 _config.endpoint_resolver.clone(),
             );
-
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-
             aws_auth::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
-
             let op = smithy_http::operation::Operation::new(
                 request,
                 crate::operation::GetBucketPolicyStatus::new(),
@@ -9412,7 +9043,6 @@ impl GetBucketPolicyStatusInput {
                 "GetBucketPolicyStatus",
                 "s3",
             ));
-
             let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
             op
         })
@@ -9547,44 +9177,35 @@ impl GetBucketReplicationInput {
             let request = self.request_builder_base()?;
             let body = smithy_http::body::SdkBody::from("");
             let request = Self::assemble(request, body);
-
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
                 ));
-
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-
             signing_config.signing_options.content_sha256_header = true;
             signing_config.signing_options.double_uri_encode = false;
-
             request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
-
             aws_endpoint::set_endpoint_resolver(
                 &mut request.config_mut(),
                 _config.endpoint_resolver.clone(),
             );
-
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-
             aws_auth::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
-
             let op = smithy_http::operation::Operation::new(
                 request,
                 crate::operation::GetBucketReplication::new(),
@@ -9593,7 +9214,6 @@ impl GetBucketReplicationInput {
                 "GetBucketReplication",
                 "s3",
             ));
-
             let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
             op
         })
@@ -9728,44 +9348,35 @@ impl GetBucketRequestPaymentInput {
             let request = self.request_builder_base()?;
             let body = smithy_http::body::SdkBody::from("");
             let request = Self::assemble(request, body);
-
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
                 ));
-
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-
             signing_config.signing_options.content_sha256_header = true;
             signing_config.signing_options.double_uri_encode = false;
-
             request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
-
             aws_endpoint::set_endpoint_resolver(
                 &mut request.config_mut(),
                 _config.endpoint_resolver.clone(),
             );
-
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-
             aws_auth::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
-
             let op = smithy_http::operation::Operation::new(
                 request,
                 crate::operation::GetBucketRequestPayment::new(),
@@ -9774,7 +9385,6 @@ impl GetBucketRequestPaymentInput {
                 "GetBucketRequestPayment",
                 "s3",
             ));
-
             let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
             op
         })
@@ -9909,44 +9519,35 @@ impl GetBucketTaggingInput {
             let request = self.request_builder_base()?;
             let body = smithy_http::body::SdkBody::from("");
             let request = Self::assemble(request, body);
-
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
                 ));
-
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-
             signing_config.signing_options.content_sha256_header = true;
             signing_config.signing_options.double_uri_encode = false;
-
             request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
-
             aws_endpoint::set_endpoint_resolver(
                 &mut request.config_mut(),
                 _config.endpoint_resolver.clone(),
             );
-
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-
             aws_auth::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
-
             let op = smithy_http::operation::Operation::new(
                 request,
                 crate::operation::GetBucketTagging::new(),
@@ -9955,7 +9556,6 @@ impl GetBucketTaggingInput {
                 "GetBucketTagging",
                 "s3",
             ));
-
             let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
             op
         })
@@ -10090,44 +9690,35 @@ impl GetBucketVersioningInput {
             let request = self.request_builder_base()?;
             let body = smithy_http::body::SdkBody::from("");
             let request = Self::assemble(request, body);
-
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
                 ));
-
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-
             signing_config.signing_options.content_sha256_header = true;
             signing_config.signing_options.double_uri_encode = false;
-
             request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
-
             aws_endpoint::set_endpoint_resolver(
                 &mut request.config_mut(),
                 _config.endpoint_resolver.clone(),
             );
-
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-
             aws_auth::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
-
             let op = smithy_http::operation::Operation::new(
                 request,
                 crate::operation::GetBucketVersioning::new(),
@@ -10136,7 +9727,6 @@ impl GetBucketVersioningInput {
                 "GetBucketVersioning",
                 "s3",
             ));
-
             let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
             op
         })
@@ -10271,44 +9861,35 @@ impl GetBucketWebsiteInput {
             let request = self.request_builder_base()?;
             let body = smithy_http::body::SdkBody::from("");
             let request = Self::assemble(request, body);
-
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
                 ));
-
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-
             signing_config.signing_options.content_sha256_header = true;
             signing_config.signing_options.double_uri_encode = false;
-
             request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
-
             aws_endpoint::set_endpoint_resolver(
                 &mut request.config_mut(),
                 _config.endpoint_resolver.clone(),
             );
-
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-
             aws_auth::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
-
             let op = smithy_http::operation::Operation::new(
                 request,
                 crate::operation::GetBucketWebsite::new(),
@@ -10317,7 +9898,6 @@ impl GetBucketWebsiteInput {
                 "GetBucketWebsite",
                 "s3",
             ));
-
             let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
             op
         })
@@ -10707,48 +10287,38 @@ impl GetObjectInput {
             let request = self.request_builder_base()?;
             let body = smithy_http::body::SdkBody::from("");
             let request = Self::assemble(request, body);
-
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
                 ));
-
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-
             signing_config.signing_options.content_sha256_header = true;
             signing_config.signing_options.double_uri_encode = false;
-
             request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
-
             aws_endpoint::set_endpoint_resolver(
                 &mut request.config_mut(),
                 _config.endpoint_resolver.clone(),
             );
-
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-
             aws_auth::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
-
             let op =
                 smithy_http::operation::Operation::new(request, crate::operation::GetObject::new())
                     .with_metadata(smithy_http::operation::Metadata::new("GetObject", "s3"));
-
             let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
             op
         })
@@ -11139,50 +10709,40 @@ impl GetObjectAclInput {
             let request = self.request_builder_base()?;
             let body = smithy_http::body::SdkBody::from("");
             let request = Self::assemble(request, body);
-
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
                 ));
-
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-
             signing_config.signing_options.content_sha256_header = true;
             signing_config.signing_options.double_uri_encode = false;
-
             request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
-
             aws_endpoint::set_endpoint_resolver(
                 &mut request.config_mut(),
                 _config.endpoint_resolver.clone(),
             );
-
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-
             aws_auth::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
-
             let op = smithy_http::operation::Operation::new(
                 request,
                 crate::operation::GetObjectAcl::new(),
             )
             .with_metadata(smithy_http::operation::Metadata::new("GetObjectAcl", "s3"));
-
             let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
             op
         })
@@ -11379,44 +10939,35 @@ impl GetObjectLegalHoldInput {
             let request = self.request_builder_base()?;
             let body = smithy_http::body::SdkBody::from("");
             let request = Self::assemble(request, body);
-
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
                 ));
-
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-
             signing_config.signing_options.content_sha256_header = true;
             signing_config.signing_options.double_uri_encode = false;
-
             request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
-
             aws_endpoint::set_endpoint_resolver(
                 &mut request.config_mut(),
                 _config.endpoint_resolver.clone(),
             );
-
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-
             aws_auth::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
-
             let op = smithy_http::operation::Operation::new(
                 request,
                 crate::operation::GetObjectLegalHold::new(),
@@ -11425,7 +10976,6 @@ impl GetObjectLegalHoldInput {
                 "GetObjectLegalHold",
                 "s3",
             ));
-
             let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
             op
         })
@@ -11583,44 +11133,35 @@ impl GetObjectLockConfigurationInput {
             let request = self.request_builder_base()?;
             let body = smithy_http::body::SdkBody::from("");
             let request = Self::assemble(request, body);
-
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
                 ));
-
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-
             signing_config.signing_options.content_sha256_header = true;
             signing_config.signing_options.double_uri_encode = false;
-
             request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
-
             aws_endpoint::set_endpoint_resolver(
                 &mut request.config_mut(),
                 _config.endpoint_resolver.clone(),
             );
-
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-
             aws_auth::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
-
             let op = smithy_http::operation::Operation::new(
                 request,
                 crate::operation::GetObjectLockConfiguration::new(),
@@ -11629,7 +11170,6 @@ impl GetObjectLockConfigurationInput {
                 "GetObjectLockConfiguration",
                 "s3",
             ));
-
             let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
             op
         })
@@ -11804,44 +11344,35 @@ impl GetObjectRetentionInput {
             let request = self.request_builder_base()?;
             let body = smithy_http::body::SdkBody::from("");
             let request = Self::assemble(request, body);
-
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
                 ));
-
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-
             signing_config.signing_options.content_sha256_header = true;
             signing_config.signing_options.double_uri_encode = false;
-
             request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
-
             aws_endpoint::set_endpoint_resolver(
                 &mut request.config_mut(),
                 _config.endpoint_resolver.clone(),
             );
-
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-
             aws_auth::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
-
             let op = smithy_http::operation::Operation::new(
                 request,
                 crate::operation::GetObjectRetention::new(),
@@ -11850,7 +11381,6 @@ impl GetObjectRetentionInput {
                 "GetObjectRetention",
                 "s3",
             ));
-
             let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
             op
         })
@@ -12048,44 +11578,35 @@ impl GetObjectTaggingInput {
             let request = self.request_builder_base()?;
             let body = smithy_http::body::SdkBody::from("");
             let request = Self::assemble(request, body);
-
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
                 ));
-
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-
             signing_config.signing_options.content_sha256_header = true;
             signing_config.signing_options.double_uri_encode = false;
-
             request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
-
             aws_endpoint::set_endpoint_resolver(
                 &mut request.config_mut(),
                 _config.endpoint_resolver.clone(),
             );
-
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-
             aws_auth::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
-
             let op = smithy_http::operation::Operation::new(
                 request,
                 crate::operation::GetObjectTagging::new(),
@@ -12094,7 +11615,6 @@ impl GetObjectTaggingInput {
                 "GetObjectTagging",
                 "s3",
             ));
-
             let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
             op
         })
@@ -12279,44 +11799,35 @@ impl GetObjectTorrentInput {
             let request = self.request_builder_base()?;
             let body = smithy_http::body::SdkBody::from("");
             let request = Self::assemble(request, body);
-
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
                 ));
-
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-
             signing_config.signing_options.content_sha256_header = true;
             signing_config.signing_options.double_uri_encode = false;
-
             request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
-
             aws_endpoint::set_endpoint_resolver(
                 &mut request.config_mut(),
                 _config.endpoint_resolver.clone(),
             );
-
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-
             aws_auth::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
-
             let op = smithy_http::operation::Operation::new(
                 request,
                 crate::operation::GetObjectTorrent::new(),
@@ -12325,7 +11836,6 @@ impl GetObjectTorrentInput {
                 "GetObjectTorrent",
                 "s3",
             ));
-
             let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
             op
         })
@@ -12480,44 +11990,35 @@ impl GetPublicAccessBlockInput {
             let request = self.request_builder_base()?;
             let body = smithy_http::body::SdkBody::from("");
             let request = Self::assemble(request, body);
-
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
                 ));
-
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-
             signing_config.signing_options.content_sha256_header = true;
             signing_config.signing_options.double_uri_encode = false;
-
             request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
-
             aws_endpoint::set_endpoint_resolver(
                 &mut request.config_mut(),
                 _config.endpoint_resolver.clone(),
             );
-
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-
             aws_auth::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
-
             let op = smithy_http::operation::Operation::new(
                 request,
                 crate::operation::GetPublicAccessBlock::new(),
@@ -12526,7 +12027,6 @@ impl GetPublicAccessBlockInput {
                 "GetPublicAccessBlock",
                 "s3",
             ));
-
             let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
             op
         })
@@ -12662,50 +12162,40 @@ impl HeadBucketInput {
             let request = self.request_builder_base()?;
             let body = smithy_http::body::SdkBody::from("");
             let request = Self::assemble(request, body);
-
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
                 ));
-
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-
             signing_config.signing_options.content_sha256_header = true;
             signing_config.signing_options.double_uri_encode = false;
-
             request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
-
             aws_endpoint::set_endpoint_resolver(
                 &mut request.config_mut(),
                 _config.endpoint_resolver.clone(),
             );
-
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-
             aws_auth::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
-
             let op = smithy_http::operation::Operation::new(
                 request,
                 crate::operation::HeadBucket::new(),
             )
             .with_metadata(smithy_http::operation::Metadata::new("HeadBucket", "s3"));
-
             let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
             op
         })
@@ -13006,50 +12496,40 @@ impl HeadObjectInput {
             let request = self.request_builder_base()?;
             let body = smithy_http::body::SdkBody::from("");
             let request = Self::assemble(request, body);
-
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
                 ));
-
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-
             signing_config.signing_options.content_sha256_header = true;
             signing_config.signing_options.double_uri_encode = false;
-
             request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
-
             aws_endpoint::set_endpoint_resolver(
                 &mut request.config_mut(),
                 _config.endpoint_resolver.clone(),
             );
-
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-
             aws_auth::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
-
             let op = smithy_http::operation::Operation::new(
                 request,
                 crate::operation::HeadObject::new(),
             )
             .with_metadata(smithy_http::operation::Metadata::new("HeadObject", "s3"));
-
             let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
             op
         })
@@ -13378,44 +12858,35 @@ impl ListBucketAnalyticsConfigurationsInput {
             let request = self.request_builder_base()?;
             let body = smithy_http::body::SdkBody::from("");
             let request = Self::assemble(request, body);
-
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
                 ));
-
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-
             signing_config.signing_options.content_sha256_header = true;
             signing_config.signing_options.double_uri_encode = false;
-
             request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
-
             aws_endpoint::set_endpoint_resolver(
                 &mut request.config_mut(),
                 _config.endpoint_resolver.clone(),
             );
-
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-
             aws_auth::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
-
             let op = smithy_http::operation::Operation::new(
                 request,
                 crate::operation::ListBucketAnalyticsConfigurations::new(),
@@ -13424,7 +12895,6 @@ impl ListBucketAnalyticsConfigurationsInput {
                 "ListBucketAnalyticsConfigurations",
                 "s3",
             ));
-
             let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
             op
         })
@@ -13571,44 +13041,35 @@ impl ListBucketIntelligentTieringConfigurationsInput {
             let request = self.request_builder_base()?;
             let body = smithy_http::body::SdkBody::from("");
             let request = Self::assemble(request, body);
-
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
                 ));
-
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-
             signing_config.signing_options.content_sha256_header = true;
             signing_config.signing_options.double_uri_encode = false;
-
             request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
-
             aws_endpoint::set_endpoint_resolver(
                 &mut request.config_mut(),
                 _config.endpoint_resolver.clone(),
             );
-
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-
             aws_auth::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
-
             let op = smithy_http::operation::Operation::new(
                 request,
                 crate::operation::ListBucketIntelligentTieringConfigurations::new(),
@@ -13617,7 +13078,6 @@ impl ListBucketIntelligentTieringConfigurationsInput {
                 "ListBucketIntelligentTieringConfigurations",
                 "s3",
             ));
-
             let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
             op
         })
@@ -13753,44 +13213,35 @@ impl ListBucketInventoryConfigurationsInput {
             let request = self.request_builder_base()?;
             let body = smithy_http::body::SdkBody::from("");
             let request = Self::assemble(request, body);
-
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
                 ));
-
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-
             signing_config.signing_options.content_sha256_header = true;
             signing_config.signing_options.double_uri_encode = false;
-
             request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
-
             aws_endpoint::set_endpoint_resolver(
                 &mut request.config_mut(),
                 _config.endpoint_resolver.clone(),
             );
-
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-
             aws_auth::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
-
             let op = smithy_http::operation::Operation::new(
                 request,
                 crate::operation::ListBucketInventoryConfigurations::new(),
@@ -13799,7 +13250,6 @@ impl ListBucketInventoryConfigurationsInput {
                 "ListBucketInventoryConfigurations",
                 "s3",
             ));
-
             let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
             op
         })
@@ -13960,44 +13410,35 @@ impl ListBucketMetricsConfigurationsInput {
             let request = self.request_builder_base()?;
             let body = smithy_http::body::SdkBody::from("");
             let request = Self::assemble(request, body);
-
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
                 ));
-
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-
             signing_config.signing_options.content_sha256_header = true;
             signing_config.signing_options.double_uri_encode = false;
-
             request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
-
             aws_endpoint::set_endpoint_resolver(
                 &mut request.config_mut(),
                 _config.endpoint_resolver.clone(),
             );
-
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-
             aws_auth::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
-
             let op = smithy_http::operation::Operation::new(
                 request,
                 crate::operation::ListBucketMetricsConfigurations::new(),
@@ -14006,7 +13447,6 @@ impl ListBucketMetricsConfigurationsInput {
                 "ListBucketMetricsConfigurations",
                 "s3",
             ));
-
             let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
             op
         })
@@ -14120,50 +13560,40 @@ impl ListBucketsInput {
             let request = self.request_builder_base()?;
             let body = smithy_http::body::SdkBody::from("");
             let request = Self::assemble(request, body);
-
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
                 ));
-
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-
             signing_config.signing_options.content_sha256_header = true;
             signing_config.signing_options.double_uri_encode = false;
-
             request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
-
             aws_endpoint::set_endpoint_resolver(
                 &mut request.config_mut(),
                 _config.endpoint_resolver.clone(),
             );
-
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-
             aws_auth::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
-
             let op = smithy_http::operation::Operation::new(
                 request,
                 crate::operation::ListBuckets::new(),
             )
             .with_metadata(smithy_http::operation::Metadata::new("ListBuckets", "s3"));
-
             let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
             op
         })
@@ -14361,44 +13791,35 @@ impl ListMultipartUploadsInput {
             let request = self.request_builder_base()?;
             let body = smithy_http::body::SdkBody::from("");
             let request = Self::assemble(request, body);
-
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
                 ));
-
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-
             signing_config.signing_options.content_sha256_header = true;
             signing_config.signing_options.double_uri_encode = false;
-
             request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
-
             aws_endpoint::set_endpoint_resolver(
                 &mut request.config_mut(),
                 _config.endpoint_resolver.clone(),
             );
-
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-
             aws_auth::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
-
             let op = smithy_http::operation::Operation::new(
                 request,
                 crate::operation::ListMultipartUploads::new(),
@@ -14407,7 +13828,6 @@ impl ListMultipartUploadsInput {
                 "ListMultipartUploads",
                 "s3",
             ));
-
             let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
             op
         })
@@ -14646,50 +14066,40 @@ impl ListObjectsInput {
             let request = self.request_builder_base()?;
             let body = smithy_http::body::SdkBody::from("");
             let request = Self::assemble(request, body);
-
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
                 ));
-
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-
             signing_config.signing_options.content_sha256_header = true;
             signing_config.signing_options.double_uri_encode = false;
-
             request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
-
             aws_endpoint::set_endpoint_resolver(
                 &mut request.config_mut(),
                 _config.endpoint_resolver.clone(),
             );
-
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-
             aws_auth::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
-
             let op = smithy_http::operation::Operation::new(
                 request,
                 crate::operation::ListObjects::new(),
             )
             .with_metadata(smithy_http::operation::Metadata::new("ListObjects", "s3"));
-
             let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
             op
         })
@@ -14964,50 +14374,40 @@ impl ListObjectsV2Input {
             let request = self.request_builder_base()?;
             let body = smithy_http::body::SdkBody::from("");
             let request = Self::assemble(request, body);
-
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
                 ));
-
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-
             signing_config.signing_options.content_sha256_header = true;
             signing_config.signing_options.double_uri_encode = false;
-
             request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
-
             aws_endpoint::set_endpoint_resolver(
                 &mut request.config_mut(),
                 _config.endpoint_resolver.clone(),
             );
-
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-
             aws_auth::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
-
             let op = smithy_http::operation::Operation::new(
                 request,
                 crate::operation::ListObjectsV2::new(),
             )
             .with_metadata(smithy_http::operation::Metadata::new("ListObjectsV2", "s3"));
-
             let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
             op
         })
@@ -15278,44 +14678,35 @@ impl ListObjectVersionsInput {
             let request = self.request_builder_base()?;
             let body = smithy_http::body::SdkBody::from("");
             let request = Self::assemble(request, body);
-
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
                 ));
-
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-
             signing_config.signing_options.content_sha256_header = true;
             signing_config.signing_options.double_uri_encode = false;
-
             request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
-
             aws_endpoint::set_endpoint_resolver(
                 &mut request.config_mut(),
                 _config.endpoint_resolver.clone(),
             );
-
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-
             aws_auth::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
-
             let op = smithy_http::operation::Operation::new(
                 request,
                 crate::operation::ListObjectVersions::new(),
@@ -15324,7 +14715,6 @@ impl ListObjectVersionsInput {
                 "ListObjectVersions",
                 "s3",
             ));
-
             let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
             op
         })
@@ -15549,48 +14939,38 @@ impl ListPartsInput {
             let request = self.request_builder_base()?;
             let body = smithy_http::body::SdkBody::from("");
             let request = Self::assemble(request, body);
-
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
                 ));
-
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-
             signing_config.signing_options.content_sha256_header = true;
             signing_config.signing_options.double_uri_encode = false;
-
             request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
-
             aws_endpoint::set_endpoint_resolver(
                 &mut request.config_mut(),
                 _config.endpoint_resolver.clone(),
             );
-
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-
             aws_auth::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
-
             let op =
                 smithy_http::operation::Operation::new(request, crate::operation::ListParts::new())
                     .with_metadata(smithy_http::operation::Metadata::new("ListParts", "s3"));
-
             let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
             op
         })
@@ -15781,44 +15161,35 @@ impl PutBucketAccelerateConfigurationInput {
                 &self.accelerate_configuration,
             )?;
             let request = Self::assemble(request, body);
-
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
                 ));
-
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-
             signing_config.signing_options.content_sha256_header = true;
             signing_config.signing_options.double_uri_encode = false;
-
             request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
-
             aws_endpoint::set_endpoint_resolver(
                 &mut request.config_mut(),
                 _config.endpoint_resolver.clone(),
             );
-
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-
             aws_auth::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
-
             let op = smithy_http::operation::Operation::new(
                 request,
                 crate::operation::PutBucketAccelerateConfiguration::new(),
@@ -15827,7 +15198,6 @@ impl PutBucketAccelerateConfigurationInput {
                 "PutBucketAccelerateConfiguration",
                 "s3",
             ));
-
             let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
             op
         })
@@ -16067,50 +15437,40 @@ impl PutBucketAclInput {
                 &self.access_control_policy,
             )?;
             let request = Self::assemble(request, body);
-
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
                 ));
-
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-
             signing_config.signing_options.content_sha256_header = true;
             signing_config.signing_options.double_uri_encode = false;
-
             request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
-
             aws_endpoint::set_endpoint_resolver(
                 &mut request.config_mut(),
                 _config.endpoint_resolver.clone(),
             );
-
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-
             aws_auth::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
-
             let op = smithy_http::operation::Operation::new(
                 request,
                 crate::operation::PutBucketAcl::new(),
             )
             .with_metadata(smithy_http::operation::Metadata::new("PutBucketAcl", "s3"));
-
             let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
             op
         })
@@ -16404,44 +15764,35 @@ impl PutBucketAnalyticsConfigurationInput {
                 &self.analytics_configuration,
             )?;
             let request = Self::assemble(request, body);
-
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
                 ));
-
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-
             signing_config.signing_options.content_sha256_header = true;
             signing_config.signing_options.double_uri_encode = false;
-
             request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
-
             aws_endpoint::set_endpoint_resolver(
                 &mut request.config_mut(),
                 _config.endpoint_resolver.clone(),
             );
-
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-
             aws_auth::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
-
             let op = smithy_http::operation::Operation::new(
                 request,
                 crate::operation::PutBucketAnalyticsConfiguration::new(),
@@ -16450,7 +15801,6 @@ impl PutBucketAnalyticsConfigurationInput {
                 "PutBucketAnalyticsConfiguration",
                 "s3",
             ));
-
             let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
             op
         })
@@ -16620,50 +15970,40 @@ impl PutBucketCorsInput {
             let body =
                 crate::operation_ser::ser_payload_put_bucket_cors_input(&self.cors_configuration)?;
             let request = Self::assemble(request, body);
-
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
                 ));
-
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-
             signing_config.signing_options.content_sha256_header = true;
             signing_config.signing_options.double_uri_encode = false;
-
             request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
-
             aws_endpoint::set_endpoint_resolver(
                 &mut request.config_mut(),
                 _config.endpoint_resolver.clone(),
             );
-
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-
             aws_auth::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
-
             let op = smithy_http::operation::Operation::new(
                 request,
                 crate::operation::PutBucketCors::new(),
             )
             .with_metadata(smithy_http::operation::Metadata::new("PutBucketCors", "s3"));
-
             let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
             op
         })
@@ -16851,44 +16191,35 @@ impl PutBucketEncryptionInput {
                 &self.server_side_encryption_configuration,
             )?;
             let request = Self::assemble(request, body);
-
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
                 ));
-
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-
             signing_config.signing_options.content_sha256_header = true;
             signing_config.signing_options.double_uri_encode = false;
-
             request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
-
             aws_endpoint::set_endpoint_resolver(
                 &mut request.config_mut(),
                 _config.endpoint_resolver.clone(),
             );
-
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-
             aws_auth::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
-
             let op = smithy_http::operation::Operation::new(
                 request,
                 crate::operation::PutBucketEncryption::new(),
@@ -16897,7 +16228,6 @@ impl PutBucketEncryptionInput {
                 "PutBucketEncryption",
                 "s3",
             ));
-
             let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
             op
         })
@@ -17067,48 +16397,39 @@ impl PutBucketIntelligentTieringConfigurationInput {
     > {
         Ok({
             let request = self.request_builder_base()?;
-            let body = 
+            let body =
                 crate::operation_ser::ser_payload_put_bucket_intelligent_tiering_configuration_input(& self.intelligent_tiering_configuration)?
             ;
             let request = Self::assemble(request, body);
-
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
                 ));
-
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-
             signing_config.signing_options.content_sha256_header = true;
             signing_config.signing_options.double_uri_encode = false;
-
             request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
-
             aws_endpoint::set_endpoint_resolver(
                 &mut request.config_mut(),
                 _config.endpoint_resolver.clone(),
             );
-
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-
             aws_auth::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
-
             let op = smithy_http::operation::Operation::new(
                 request,
                 crate::operation::PutBucketIntelligentTieringConfiguration::new(),
@@ -17117,7 +16438,6 @@ impl PutBucketIntelligentTieringConfigurationInput {
                 "PutBucketIntelligentTieringConfiguration",
                 "s3",
             ));
-
             let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
             op
         })
@@ -17263,44 +16583,35 @@ impl PutBucketInventoryConfigurationInput {
                 &self.inventory_configuration,
             )?;
             let request = Self::assemble(request, body);
-
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
                 ));
-
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-
             signing_config.signing_options.content_sha256_header = true;
             signing_config.signing_options.double_uri_encode = false;
-
             request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
-
             aws_endpoint::set_endpoint_resolver(
                 &mut request.config_mut(),
                 _config.endpoint_resolver.clone(),
             );
-
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-
             aws_auth::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
-
             let op = smithy_http::operation::Operation::new(
                 request,
                 crate::operation::PutBucketInventoryConfiguration::new(),
@@ -17309,7 +16620,6 @@ impl PutBucketInventoryConfigurationInput {
                 "PutBucketInventoryConfiguration",
                 "s3",
             ));
-
             let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
             op
         })
@@ -17469,44 +16779,35 @@ impl PutBucketLifecycleConfigurationInput {
                 &self.lifecycle_configuration,
             )?;
             let request = Self::assemble(request, body);
-
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
                 ));
-
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-
             signing_config.signing_options.content_sha256_header = true;
             signing_config.signing_options.double_uri_encode = false;
-
             request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
-
             aws_endpoint::set_endpoint_resolver(
                 &mut request.config_mut(),
                 _config.endpoint_resolver.clone(),
             );
-
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-
             aws_auth::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
-
             let op = smithy_http::operation::Operation::new(
                 request,
                 crate::operation::PutBucketLifecycleConfiguration::new(),
@@ -17515,7 +16816,6 @@ impl PutBucketLifecycleConfigurationInput {
                 "PutBucketLifecycleConfiguration",
                 "s3",
             ));
-
             let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
             op
         })
@@ -17678,44 +16978,35 @@ impl PutBucketLoggingInput {
                 &self.bucket_logging_status,
             )?;
             let request = Self::assemble(request, body);
-
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
                 ));
-
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-
             signing_config.signing_options.content_sha256_header = true;
             signing_config.signing_options.double_uri_encode = false;
-
             request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
-
             aws_endpoint::set_endpoint_resolver(
                 &mut request.config_mut(),
                 _config.endpoint_resolver.clone(),
             );
-
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-
             aws_auth::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
-
             let op = smithy_http::operation::Operation::new(
                 request,
                 crate::operation::PutBucketLogging::new(),
@@ -17724,7 +17015,6 @@ impl PutBucketLoggingInput {
                 "PutBucketLogging",
                 "s3",
             ));
-
             let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
             op
         })
@@ -17906,44 +17196,35 @@ impl PutBucketMetricsConfigurationInput {
                 &self.metrics_configuration,
             )?;
             let request = Self::assemble(request, body);
-
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
                 ));
-
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-
             signing_config.signing_options.content_sha256_header = true;
             signing_config.signing_options.double_uri_encode = false;
-
             request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
-
             aws_endpoint::set_endpoint_resolver(
                 &mut request.config_mut(),
                 _config.endpoint_resolver.clone(),
             );
-
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-
             aws_auth::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
-
             let op = smithy_http::operation::Operation::new(
                 request,
                 crate::operation::PutBucketMetricsConfiguration::new(),
@@ -17952,7 +17233,6 @@ impl PutBucketMetricsConfigurationInput {
                 "PutBucketMetricsConfiguration",
                 "s3",
             ));
-
             let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
             op
         })
@@ -18114,44 +17394,35 @@ impl PutBucketNotificationConfigurationInput {
                     &self.notification_configuration,
                 )?;
             let request = Self::assemble(request, body);
-
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
                 ));
-
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-
             signing_config.signing_options.content_sha256_header = true;
             signing_config.signing_options.double_uri_encode = false;
-
             request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
-
             aws_endpoint::set_endpoint_resolver(
                 &mut request.config_mut(),
                 _config.endpoint_resolver.clone(),
             );
-
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-
             aws_auth::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
-
             let op = smithy_http::operation::Operation::new(
                 request,
                 crate::operation::PutBucketNotificationConfiguration::new(),
@@ -18160,7 +17431,6 @@ impl PutBucketNotificationConfigurationInput {
                 "PutBucketNotificationConfiguration",
                 "s3",
             ));
-
             let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
             op
         })
@@ -18324,44 +17594,35 @@ impl PutBucketOwnershipControlsInput {
                 &self.ownership_controls,
             )?;
             let request = Self::assemble(request, body);
-
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
                 ));
-
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-
             signing_config.signing_options.content_sha256_header = true;
             signing_config.signing_options.double_uri_encode = false;
-
             request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
-
             aws_endpoint::set_endpoint_resolver(
                 &mut request.config_mut(),
                 _config.endpoint_resolver.clone(),
             );
-
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-
             aws_auth::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
-
             let op = smithy_http::operation::Operation::new(
                 request,
                 crate::operation::PutBucketOwnershipControls::new(),
@@ -18370,7 +17631,6 @@ impl PutBucketOwnershipControlsInput {
                 "PutBucketOwnershipControls",
                 "s3",
             ));
-
             let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
             op
         })
@@ -18560,44 +17820,35 @@ impl PutBucketPolicyInput {
             let request = self.request_builder_base()?;
             let body = crate::operation_ser::ser_payload_put_bucket_policy_input(&self.policy)?;
             let request = Self::assemble(request, body);
-
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
                 ));
-
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-
             signing_config.signing_options.content_sha256_header = true;
             signing_config.signing_options.double_uri_encode = false;
-
             request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
-
             aws_endpoint::set_endpoint_resolver(
                 &mut request.config_mut(),
                 _config.endpoint_resolver.clone(),
             );
-
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-
             aws_auth::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
-
             let op = smithy_http::operation::Operation::new(
                 request,
                 crate::operation::PutBucketPolicy::new(),
@@ -18606,7 +17857,6 @@ impl PutBucketPolicyInput {
                 "PutBucketPolicy",
                 "s3",
             ));
-
             let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
             op
         })
@@ -18824,44 +18074,35 @@ impl PutBucketReplicationInput {
                 &self.replication_configuration,
             )?;
             let request = Self::assemble(request, body);
-
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
                 ));
-
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-
             signing_config.signing_options.content_sha256_header = true;
             signing_config.signing_options.double_uri_encode = false;
-
             request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
-
             aws_endpoint::set_endpoint_resolver(
                 &mut request.config_mut(),
                 _config.endpoint_resolver.clone(),
             );
-
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-
             aws_auth::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
-
             let op = smithy_http::operation::Operation::new(
                 request,
                 crate::operation::PutBucketReplication::new(),
@@ -18870,7 +18111,6 @@ impl PutBucketReplicationInput {
                 "PutBucketReplication",
                 "s3",
             ));
-
             let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
             op
         })
@@ -19076,44 +18316,35 @@ impl PutBucketRequestPaymentInput {
                 &self.request_payment_configuration,
             )?;
             let request = Self::assemble(request, body);
-
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
                 ));
-
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-
             signing_config.signing_options.content_sha256_header = true;
             signing_config.signing_options.double_uri_encode = false;
-
             request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
-
             aws_endpoint::set_endpoint_resolver(
                 &mut request.config_mut(),
                 _config.endpoint_resolver.clone(),
             );
-
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-
             aws_auth::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
-
             let op = smithy_http::operation::Operation::new(
                 request,
                 crate::operation::PutBucketRequestPayment::new(),
@@ -19122,7 +18353,6 @@ impl PutBucketRequestPaymentInput {
                 "PutBucketRequestPayment",
                 "s3",
             ));
-
             let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
             op
         })
@@ -19300,44 +18530,35 @@ impl PutBucketTaggingInput {
             let request = self.request_builder_base()?;
             let body = crate::operation_ser::ser_payload_put_bucket_tagging_input(&self.tagging)?;
             let request = Self::assemble(request, body);
-
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
                 ));
-
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-
             signing_config.signing_options.content_sha256_header = true;
             signing_config.signing_options.double_uri_encode = false;
-
             request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
-
             aws_endpoint::set_endpoint_resolver(
                 &mut request.config_mut(),
                 _config.endpoint_resolver.clone(),
             );
-
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-
             aws_auth::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
-
             let op = smithy_http::operation::Operation::new(
                 request,
                 crate::operation::PutBucketTagging::new(),
@@ -19346,7 +18567,6 @@ impl PutBucketTaggingInput {
                 "PutBucketTagging",
                 "s3",
             ));
-
             let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
             op
         })
@@ -19546,44 +18766,35 @@ impl PutBucketVersioningInput {
                 &self.versioning_configuration,
             )?;
             let request = Self::assemble(request, body);
-
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
                 ));
-
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-
             signing_config.signing_options.content_sha256_header = true;
             signing_config.signing_options.double_uri_encode = false;
-
             request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
-
             aws_endpoint::set_endpoint_resolver(
                 &mut request.config_mut(),
                 _config.endpoint_resolver.clone(),
             );
-
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-
             aws_auth::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
-
             let op = smithy_http::operation::Operation::new(
                 request,
                 crate::operation::PutBucketVersioning::new(),
@@ -19592,7 +18803,6 @@ impl PutBucketVersioningInput {
                 "PutBucketVersioning",
                 "s3",
             ));
-
             let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
             op
         })
@@ -19793,44 +19003,35 @@ impl PutBucketWebsiteInput {
                 &self.website_configuration,
             )?;
             let request = Self::assemble(request, body);
-
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
                 ));
-
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-
             signing_config.signing_options.content_sha256_header = true;
             signing_config.signing_options.double_uri_encode = false;
-
             request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
-
             aws_endpoint::set_endpoint_resolver(
                 &mut request.config_mut(),
                 _config.endpoint_resolver.clone(),
             );
-
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-
             aws_auth::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
-
             let op = smithy_http::operation::Operation::new(
                 request,
                 crate::operation::PutBucketWebsite::new(),
@@ -19839,7 +19040,6 @@ impl PutBucketWebsiteInput {
                 "PutBucketWebsite",
                 "s3",
             ));
-
             let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
             op
         })
@@ -20448,48 +19648,38 @@ impl PutObjectInput {
             let request = self.request_builder_base()?;
             let body = crate::operation_ser::ser_payload_put_object_input(self.body)?;
             let request = Self::assemble(request, body);
-
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
                 ));
-
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-
             signing_config.signing_options.content_sha256_header = true;
             signing_config.signing_options.double_uri_encode = false;
-
             request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
-
             aws_endpoint::set_endpoint_resolver(
                 &mut request.config_mut(),
                 _config.endpoint_resolver.clone(),
             );
-
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-
             aws_auth::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
-
             let op =
                 smithy_http::operation::Operation::new(request, crate::operation::PutObject::new())
                     .with_metadata(smithy_http::operation::Metadata::new("PutObject", "s3"));
-
             let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
             op
         })
@@ -21295,50 +20485,40 @@ impl PutObjectAclInput {
                 &self.access_control_policy,
             )?;
             let request = Self::assemble(request, body);
-
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
                 ));
-
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-
             signing_config.signing_options.content_sha256_header = true;
             signing_config.signing_options.double_uri_encode = false;
-
             request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
-
             aws_endpoint::set_endpoint_resolver(
                 &mut request.config_mut(),
                 _config.endpoint_resolver.clone(),
             );
-
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-
             aws_auth::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
-
             let op = smithy_http::operation::Operation::new(
                 request,
                 crate::operation::PutObjectAcl::new(),
             )
             .with_metadata(smithy_http::operation::Metadata::new("PutObjectAcl", "s3"));
-
             let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
             op
         })
@@ -21689,44 +20869,35 @@ impl PutObjectLegalHoldInput {
             let body =
                 crate::operation_ser::ser_payload_put_object_legal_hold_input(&self.legal_hold)?;
             let request = Self::assemble(request, body);
-
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
                 ));
-
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-
             signing_config.signing_options.content_sha256_header = true;
             signing_config.signing_options.double_uri_encode = false;
-
             request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
-
             aws_endpoint::set_endpoint_resolver(
                 &mut request.config_mut(),
                 _config.endpoint_resolver.clone(),
             );
-
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-
             aws_auth::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
-
             let op = smithy_http::operation::Operation::new(
                 request,
                 crate::operation::PutObjectLegalHold::new(),
@@ -21735,7 +20906,6 @@ impl PutObjectLegalHoldInput {
                 "PutObjectLegalHold",
                 "s3",
             ));
-
             let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
             op
         })
@@ -21970,44 +21140,35 @@ impl PutObjectLockConfigurationInput {
                 &self.object_lock_configuration,
             )?;
             let request = Self::assemble(request, body);
-
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
                 ));
-
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-
             signing_config.signing_options.content_sha256_header = true;
             signing_config.signing_options.double_uri_encode = false;
-
             request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
-
             aws_endpoint::set_endpoint_resolver(
                 &mut request.config_mut(),
                 _config.endpoint_resolver.clone(),
             );
-
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-
             aws_auth::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
-
             let op = smithy_http::operation::Operation::new(
                 request,
                 crate::operation::PutObjectLockConfiguration::new(),
@@ -22016,7 +21177,6 @@ impl PutObjectLockConfigurationInput {
                 "PutObjectLockConfiguration",
                 "s3",
             ));
-
             let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
             op
         })
@@ -22286,44 +21446,35 @@ impl PutObjectRetentionInput {
             let body =
                 crate::operation_ser::ser_payload_put_object_retention_input(&self.retention)?;
             let request = Self::assemble(request, body);
-
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
                 ));
-
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-
             signing_config.signing_options.content_sha256_header = true;
             signing_config.signing_options.double_uri_encode = false;
-
             request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
-
             aws_endpoint::set_endpoint_resolver(
                 &mut request.config_mut(),
                 _config.endpoint_resolver.clone(),
             );
-
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-
             aws_auth::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
-
             let op = smithy_http::operation::Operation::new(
                 request,
                 crate::operation::PutObjectRetention::new(),
@@ -22332,7 +21483,6 @@ impl PutObjectRetentionInput {
                 "PutObjectRetention",
                 "s3",
             ));
-
             let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
             op
         })
@@ -22589,44 +21739,35 @@ impl PutObjectTaggingInput {
             let request = self.request_builder_base()?;
             let body = crate::operation_ser::ser_payload_put_object_tagging_input(&self.tagging)?;
             let request = Self::assemble(request, body);
-
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
                 ));
-
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-
             signing_config.signing_options.content_sha256_header = true;
             signing_config.signing_options.double_uri_encode = false;
-
             request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
-
             aws_endpoint::set_endpoint_resolver(
                 &mut request.config_mut(),
                 _config.endpoint_resolver.clone(),
             );
-
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-
             aws_auth::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
-
             let op = smithy_http::operation::Operation::new(
                 request,
                 crate::operation::PutObjectTagging::new(),
@@ -22635,7 +21776,6 @@ impl PutObjectTaggingInput {
                 "PutObjectTagging",
                 "s3",
             ));
-
             let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
             op
         })
@@ -22845,44 +21985,35 @@ impl PutPublicAccessBlockInput {
                 &self.public_access_block_configuration,
             )?;
             let request = Self::assemble(request, body);
-
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
                 ));
-
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-
             signing_config.signing_options.content_sha256_header = true;
             signing_config.signing_options.double_uri_encode = false;
-
             request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
-
             aws_endpoint::set_endpoint_resolver(
                 &mut request.config_mut(),
                 _config.endpoint_resolver.clone(),
             );
-
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-
             aws_auth::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
-
             let op = smithy_http::operation::Operation::new(
                 request,
                 crate::operation::PutPublicAccessBlock::new(),
@@ -22891,7 +22022,6 @@ impl PutPublicAccessBlockInput {
                 "PutPublicAccessBlock",
                 "s3",
             ));
-
             let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
             op
         })
@@ -23099,50 +22229,40 @@ impl RestoreObjectInput {
             let body =
                 crate::operation_ser::ser_payload_restore_object_input(&self.restore_request)?;
             let request = Self::assemble(request, body);
-
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
                 ));
-
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-
             signing_config.signing_options.content_sha256_header = true;
             signing_config.signing_options.double_uri_encode = false;
-
             request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
-
             aws_endpoint::set_endpoint_resolver(
                 &mut request.config_mut(),
                 _config.endpoint_resolver.clone(),
             );
-
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-
             aws_auth::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
-
             let op = smithy_http::operation::Operation::new(
                 request,
                 crate::operation::RestoreObject::new(),
             )
             .with_metadata(smithy_http::operation::Metadata::new("RestoreObject", "s3"));
-
             let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
             op
         })
@@ -23437,50 +22557,40 @@ impl UploadPartInput {
             let request = self.request_builder_base()?;
             let body = crate::operation_ser::ser_payload_upload_part_input(self.body)?;
             let request = Self::assemble(request, body);
-
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
                 ));
-
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-
             signing_config.signing_options.content_sha256_header = true;
             signing_config.signing_options.double_uri_encode = false;
-
             request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
-
             aws_endpoint::set_endpoint_resolver(
                 &mut request.config_mut(),
                 _config.endpoint_resolver.clone(),
             );
-
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-
             aws_auth::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
-
             let op = smithy_http::operation::Operation::new(
                 request,
                 crate::operation::UploadPart::new(),
             )
             .with_metadata(smithy_http::operation::Metadata::new("UploadPart", "s3"));
-
             let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
             op
         })
@@ -24014,44 +23124,35 @@ impl UploadPartCopyInput {
             let request = self.request_builder_base()?;
             let body = smithy_http::body::SdkBody::from("");
             let request = Self::assemble(request, body);
-
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
                 ));
-
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-
             signing_config.signing_options.content_sha256_header = true;
             signing_config.signing_options.double_uri_encode = false;
-
             request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
-
             aws_endpoint::set_endpoint_resolver(
                 &mut request.config_mut(),
                 _config.endpoint_resolver.clone(),
             );
-
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-
             aws_auth::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
-
             let op = smithy_http::operation::Operation::new(
                 request,
                 crate::operation::UploadPartCopy::new(),
@@ -24060,7 +23161,6 @@ impl UploadPartCopyInput {
                 "UploadPartCopy",
                 "s3",
             ));
-
             let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
             op
         })
@@ -24997,44 +24097,55 @@ impl WriteGetObjectResponseInput {
             let body =
                 crate::operation_ser::ser_payload_write_get_object_response_input(self.body)?;
             let request = Self::assemble(request, body);
-
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-
+            let endpoint_prefix = {
+                let request_route = self.request_route.as_deref().unwrap_or_default();
+                if request_route.is_empty() {
+                    return Err(smithy_http::operation::BuildError::InvalidField { field: "request_route", details: "request_route was unset or empty but must be set as part of the endpoint prefix".to_string() });
+                }
+                smithy_http::endpoint::EndpointPrefix::new(format!(
+                    "{RequestRoute}.",
+                    RequestRoute = request_route
+                ))
+            };
+            match endpoint_prefix {
+                Ok(prefix) => {
+                    request.config_mut().insert(prefix);
+                }
+                Err(err) => {
+                    return Err(smithy_http::operation::BuildError::SerializationError(
+                        err.into(),
+                    ))
+                }
+            }
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
                 ));
-
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-
             signing_config.signing_options.content_sha256_header = true;
             signing_config.signing_options.double_uri_encode = false;
-
             request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
-
             aws_endpoint::set_endpoint_resolver(
                 &mut request.config_mut(),
                 _config.endpoint_resolver.clone(),
             );
-
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-
             aws_auth::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
-
             let op = smithy_http::operation::Operation::new(
                 request,
                 crate::operation::WriteGetObjectResponse::new(),
@@ -25043,7 +24154,6 @@ impl WriteGetObjectResponseInput {
                 "WriteGetObjectResponse",
                 "s3",
             ));
-
             let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
             op
         })

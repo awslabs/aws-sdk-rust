@@ -21,7 +21,6 @@ pub fn invalid_parameter_value_exception(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_type(parsed_body.r#type);
     builder = builder.set_message(parsed_body.message);
     Ok(builder)
@@ -39,7 +38,6 @@ pub fn policy_length_exceeded_exception(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_type(parsed_body.r#type);
     builder = builder.set_message(parsed_body.message);
     Ok(builder)
@@ -57,7 +55,6 @@ pub fn precondition_failed_exception(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_type(parsed_body.r#type);
     builder = builder.set_message(parsed_body.message);
     Ok(builder)
@@ -75,7 +72,6 @@ pub fn resource_conflict_exception(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_type(parsed_body.r#type);
     builder = builder.set_message(parsed_body.message);
     Ok(builder)
@@ -93,7 +89,6 @@ pub fn resource_not_found_exception(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_type(parsed_body.r#type);
     builder = builder.set_message(parsed_body.message);
     Ok(builder)
@@ -111,7 +106,6 @@ pub fn service_exception(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_type(parsed_body.r#type);
     builder = builder.set_message(parsed_body.message);
     Ok(builder)
@@ -129,7 +123,6 @@ pub fn too_many_requests_exception(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_retry_after_seconds(parsed_body.retry_after_seconds);
     builder = builder.set_type(parsed_body.r#type);
     builder = builder.set_message(parsed_body.message);
@@ -149,7 +142,6 @@ pub fn add_layer_version_permission_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_statement(parsed_body.statement);
     builder = builder.set_revision_id(parsed_body.revision_id);
     Ok(builder)
@@ -167,7 +159,6 @@ pub fn add_permission_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_statement(parsed_body.statement);
     Ok(builder)
 }
@@ -184,7 +175,6 @@ pub fn create_alias_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_alias_arn(parsed_body.alias_arn);
     builder = builder.set_name(parsed_body.name);
     builder = builder.set_function_version(parsed_body.function_version);
@@ -206,7 +196,6 @@ pub fn create_code_signing_config_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_code_signing_config(parsed_body.code_signing_config);
     Ok(builder)
 }
@@ -223,7 +212,6 @@ pub fn create_event_source_mapping_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_uuid(parsed_body.uuid);
     builder = builder.set_starting_position(parsed_body.starting_position);
     builder = builder.set_starting_position_timestamp(parsed_body.starting_position_timestamp);
@@ -263,7 +251,6 @@ pub fn code_signing_config_not_found_exception(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_type(parsed_body.r#type);
     builder = builder.set_message(parsed_body.message);
     Ok(builder)
@@ -281,7 +268,6 @@ pub fn code_storage_exceeded_exception(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_type(parsed_body.r#type);
     builder = builder.set_message(parsed_body.message);
     Ok(builder)
@@ -299,7 +285,6 @@ pub fn code_verification_failed_exception(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_type(parsed_body.r#type);
     builder = builder.set_message(parsed_body.message);
     Ok(builder)
@@ -317,7 +302,6 @@ pub fn invalid_code_signature_exception(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_type(parsed_body.r#type);
     builder = builder.set_message(parsed_body.message);
     Ok(builder)
@@ -335,7 +319,6 @@ pub fn create_function_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_function_name(parsed_body.function_name);
     builder = builder.set_function_arn(parsed_body.function_arn);
     builder = builder.set_runtime(parsed_body.runtime);
@@ -383,7 +366,6 @@ pub fn resource_in_use_exception(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_type(parsed_body.r#type);
     builder = builder.set_message(parsed_body.message);
     Ok(builder)
@@ -401,7 +383,6 @@ pub fn delete_event_source_mapping_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_uuid(parsed_body.uuid);
     builder = builder.set_starting_position(parsed_body.starting_position);
     builder = builder.set_starting_position_timestamp(parsed_body.starting_position_timestamp);
@@ -441,7 +422,6 @@ pub fn get_account_settings_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_account_limit(parsed_body.account_limit);
     builder = builder.set_account_usage(parsed_body.account_usage);
     Ok(builder)
@@ -459,7 +439,6 @@ pub fn get_alias_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_alias_arn(parsed_body.alias_arn);
     builder = builder.set_name(parsed_body.name);
     builder = builder.set_function_version(parsed_body.function_version);
@@ -481,7 +460,6 @@ pub fn get_code_signing_config_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_code_signing_config(parsed_body.code_signing_config);
     Ok(builder)
 }
@@ -498,7 +476,6 @@ pub fn get_event_source_mapping_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_uuid(parsed_body.uuid);
     builder = builder.set_starting_position(parsed_body.starting_position);
     builder = builder.set_starting_position_timestamp(parsed_body.starting_position_timestamp);
@@ -538,7 +515,6 @@ pub fn get_function_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_configuration(parsed_body.configuration);
     builder = builder.set_code(parsed_body.code);
     builder = builder.set_tags(parsed_body.tags);
@@ -558,7 +534,6 @@ pub fn get_function_code_signing_config_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_code_signing_config_arn(parsed_body.code_signing_config_arn);
     builder = builder.set_function_name(parsed_body.function_name);
     Ok(builder)
@@ -576,7 +551,6 @@ pub fn get_function_concurrency_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder =
         builder.set_reserved_concurrent_executions(parsed_body.reserved_concurrent_executions);
     Ok(builder)
@@ -594,7 +568,6 @@ pub fn get_function_configuration_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_function_name(parsed_body.function_name);
     builder = builder.set_function_arn(parsed_body.function_arn);
     builder = builder.set_runtime(parsed_body.runtime);
@@ -642,7 +615,6 @@ pub fn get_function_event_invoke_config_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_last_modified(parsed_body.last_modified);
     builder = builder.set_function_arn(parsed_body.function_arn);
     builder = builder.set_maximum_retry_attempts(parsed_body.maximum_retry_attempts);
@@ -663,7 +635,6 @@ pub fn get_layer_version_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_content(parsed_body.content);
     builder = builder.set_layer_arn(parsed_body.layer_arn);
     builder = builder.set_layer_version_arn(parsed_body.layer_version_arn);
@@ -687,7 +658,6 @@ pub fn get_layer_version_by_arn_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_content(parsed_body.content);
     builder = builder.set_layer_arn(parsed_body.layer_arn);
     builder = builder.set_layer_version_arn(parsed_body.layer_version_arn);
@@ -711,7 +681,6 @@ pub fn get_layer_version_policy_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_policy(parsed_body.policy);
     builder = builder.set_revision_id(parsed_body.revision_id);
     Ok(builder)
@@ -729,7 +698,6 @@ pub fn get_policy_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_policy(parsed_body.policy);
     builder = builder.set_revision_id(parsed_body.revision_id);
     Ok(builder)
@@ -748,7 +716,6 @@ pub fn provisioned_concurrency_config_not_found_exception(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_type(parsed_body.r#type);
     builder = builder.set_message(parsed_body.message);
     Ok(builder)
@@ -767,7 +734,6 @@ pub fn get_provisioned_concurrency_config_deser_operation(
         } else {
             serde_json::from_slice(inp)?
         };
-
     builder = builder.set_requested_provisioned_concurrent_executions(
         parsed_body.requested_provisioned_concurrent_executions,
     );
@@ -795,7 +761,6 @@ pub fn ec2_access_denied_exception(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_type(parsed_body.r#type);
     builder = builder.set_message(parsed_body.message);
     Ok(builder)
@@ -813,7 +778,6 @@ pub fn ec2_throttled_exception(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_type(parsed_body.r#type);
     builder = builder.set_message(parsed_body.message);
     Ok(builder)
@@ -831,7 +795,6 @@ pub fn ec2_unexpected_exception(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_type(parsed_body.r#type);
     builder = builder.set_message(parsed_body.message);
     builder = builder.set_ec2_error_code(parsed_body.ec2_error_code);
@@ -850,7 +813,6 @@ pub fn efsio_exception(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_type(parsed_body.r#type);
     builder = builder.set_message(parsed_body.message);
     Ok(builder)
@@ -868,7 +830,6 @@ pub fn efs_mount_connectivity_exception(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_type(parsed_body.r#type);
     builder = builder.set_message(parsed_body.message);
     Ok(builder)
@@ -886,7 +847,6 @@ pub fn efs_mount_failure_exception(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_type(parsed_body.r#type);
     builder = builder.set_message(parsed_body.message);
     Ok(builder)
@@ -904,7 +864,6 @@ pub fn efs_mount_timeout_exception(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_type(parsed_body.r#type);
     builder = builder.set_message(parsed_body.message);
     Ok(builder)
@@ -922,7 +881,6 @@ pub fn eni_limit_reached_exception(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_type(parsed_body.r#type);
     builder = builder.set_message(parsed_body.message);
     Ok(builder)
@@ -940,7 +898,6 @@ pub fn invalid_request_content_exception(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_type(parsed_body.r#type);
     builder = builder.set_message(parsed_body.message);
     Ok(builder)
@@ -958,7 +915,6 @@ pub fn invalid_runtime_exception(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_type(parsed_body.r#type);
     builder = builder.set_message(parsed_body.message);
     Ok(builder)
@@ -976,7 +932,6 @@ pub fn invalid_security_group_id_exception(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_type(parsed_body.r#type);
     builder = builder.set_message(parsed_body.message);
     Ok(builder)
@@ -994,7 +949,6 @@ pub fn invalid_subnet_id_exception(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_type(parsed_body.r#type);
     builder = builder.set_message(parsed_body.message);
     Ok(builder)
@@ -1012,7 +966,6 @@ pub fn invalid_zip_file_exception(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_type(parsed_body.r#type);
     builder = builder.set_message(parsed_body.message);
     Ok(builder)
@@ -1030,7 +983,6 @@ pub fn kms_access_denied_exception(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_type(parsed_body.r#type);
     builder = builder.set_message(parsed_body.message);
     Ok(builder)
@@ -1048,7 +1000,6 @@ pub fn kms_disabled_exception(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_type(parsed_body.r#type);
     builder = builder.set_message(parsed_body.message);
     Ok(builder)
@@ -1066,7 +1017,6 @@ pub fn kms_invalid_state_exception(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_type(parsed_body.r#type);
     builder = builder.set_message(parsed_body.message);
     Ok(builder)
@@ -1084,7 +1034,6 @@ pub fn kms_not_found_exception(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_type(parsed_body.r#type);
     builder = builder.set_message(parsed_body.message);
     Ok(builder)
@@ -1102,7 +1051,6 @@ pub fn request_too_large_exception(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_type(parsed_body.r#type);
     builder = builder.set_message(parsed_body.message);
     Ok(builder)
@@ -1120,7 +1068,6 @@ pub fn resource_not_ready_exception(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_type(parsed_body.r#type);
     builder = builder.set_message(parsed_body.message);
     Ok(builder)
@@ -1138,7 +1085,6 @@ pub fn subnet_ip_address_limit_reached_exception(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_type(parsed_body.r#type);
     builder = builder.set_message(parsed_body.message);
     Ok(builder)
@@ -1156,7 +1102,6 @@ pub fn unsupported_media_type_exception(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_type(parsed_body.r#type);
     builder = builder.set_message(parsed_body.message);
     Ok(builder)
@@ -1174,7 +1119,6 @@ pub fn list_aliases_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_next_marker(parsed_body.next_marker);
     builder = builder.set_aliases(parsed_body.aliases);
     Ok(builder)
@@ -1192,7 +1136,6 @@ pub fn list_code_signing_configs_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_next_marker(parsed_body.next_marker);
     builder = builder.set_code_signing_configs(parsed_body.code_signing_configs);
     Ok(builder)
@@ -1210,7 +1153,6 @@ pub fn list_event_source_mappings_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_next_marker(parsed_body.next_marker);
     builder = builder.set_event_source_mappings(parsed_body.event_source_mappings);
     Ok(builder)
@@ -1229,7 +1171,6 @@ pub fn list_function_event_invoke_configs_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_function_event_invoke_configs(parsed_body.function_event_invoke_configs);
     builder = builder.set_next_marker(parsed_body.next_marker);
     Ok(builder)
@@ -1247,7 +1188,6 @@ pub fn list_functions_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_next_marker(parsed_body.next_marker);
     builder = builder.set_functions(parsed_body.functions);
     Ok(builder)
@@ -1267,7 +1207,6 @@ pub fn list_functions_by_code_signing_config_deser_operation(
         } else {
             serde_json::from_slice(inp)?
         };
-
     builder = builder.set_next_marker(parsed_body.next_marker);
     builder = builder.set_function_arns(parsed_body.function_arns);
     Ok(builder)
@@ -1285,7 +1224,6 @@ pub fn list_layers_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_next_marker(parsed_body.next_marker);
     builder = builder.set_layers(parsed_body.layers);
     Ok(builder)
@@ -1303,7 +1241,6 @@ pub fn list_layer_versions_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_next_marker(parsed_body.next_marker);
     builder = builder.set_layer_versions(parsed_body.layer_versions);
     Ok(builder)
@@ -1323,7 +1260,6 @@ pub fn list_provisioned_concurrency_configs_deser_operation(
         } else {
             serde_json::from_slice(inp)?
         };
-
     builder =
         builder.set_provisioned_concurrency_configs(parsed_body.provisioned_concurrency_configs);
     builder = builder.set_next_marker(parsed_body.next_marker);
@@ -1342,7 +1278,6 @@ pub fn list_tags_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_tags(parsed_body.tags);
     Ok(builder)
 }
@@ -1359,7 +1294,6 @@ pub fn list_versions_by_function_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_next_marker(parsed_body.next_marker);
     builder = builder.set_versions(parsed_body.versions);
     Ok(builder)
@@ -1377,7 +1311,6 @@ pub fn publish_layer_version_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_content(parsed_body.content);
     builder = builder.set_layer_arn(parsed_body.layer_arn);
     builder = builder.set_layer_version_arn(parsed_body.layer_version_arn);
@@ -1401,7 +1334,6 @@ pub fn publish_version_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_function_name(parsed_body.function_name);
     builder = builder.set_function_arn(parsed_body.function_arn);
     builder = builder.set_runtime(parsed_body.runtime);
@@ -1449,7 +1381,6 @@ pub fn put_function_code_signing_config_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_code_signing_config_arn(parsed_body.code_signing_config_arn);
     builder = builder.set_function_name(parsed_body.function_name);
     Ok(builder)
@@ -1467,7 +1398,6 @@ pub fn put_function_concurrency_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder =
         builder.set_reserved_concurrent_executions(parsed_body.reserved_concurrent_executions);
     Ok(builder)
@@ -1485,7 +1415,6 @@ pub fn put_function_event_invoke_config_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_last_modified(parsed_body.last_modified);
     builder = builder.set_function_arn(parsed_body.function_arn);
     builder = builder.set_maximum_retry_attempts(parsed_body.maximum_retry_attempts);
@@ -1507,7 +1436,6 @@ pub fn put_provisioned_concurrency_config_deser_operation(
         } else {
             serde_json::from_slice(inp)?
         };
-
     builder = builder.set_requested_provisioned_concurrent_executions(
         parsed_body.requested_provisioned_concurrent_executions,
     );
@@ -1535,7 +1463,6 @@ pub fn update_alias_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_alias_arn(parsed_body.alias_arn);
     builder = builder.set_name(parsed_body.name);
     builder = builder.set_function_version(parsed_body.function_version);
@@ -1557,7 +1484,6 @@ pub fn update_code_signing_config_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_code_signing_config(parsed_body.code_signing_config);
     Ok(builder)
 }
@@ -1574,7 +1500,6 @@ pub fn update_event_source_mapping_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_uuid(parsed_body.uuid);
     builder = builder.set_starting_position(parsed_body.starting_position);
     builder = builder.set_starting_position_timestamp(parsed_body.starting_position_timestamp);
@@ -1614,7 +1539,6 @@ pub fn update_function_code_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_function_name(parsed_body.function_name);
     builder = builder.set_function_arn(parsed_body.function_arn);
     builder = builder.set_runtime(parsed_body.runtime);
@@ -1662,7 +1586,6 @@ pub fn update_function_configuration_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_function_name(parsed_body.function_name);
     builder = builder.set_function_arn(parsed_body.function_arn);
     builder = builder.set_runtime(parsed_body.runtime);
@@ -1711,7 +1634,6 @@ pub fn update_function_event_invoke_config_deser_operation(
         } else {
             serde_json::from_slice(inp)?
         };
-
     builder = builder.set_last_modified(parsed_body.last_modified);
     builder = builder.set_function_arn(parsed_body.function_arn);
     builder = builder.set_maximum_retry_attempts(parsed_body.maximum_retry_attempts);

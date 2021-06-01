@@ -5,7 +5,6 @@ pub fn parse_delete_lexicon_error(
 ) -> Result<crate::output::DeleteLexiconOutput, crate::error::DeleteLexiconError> {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::DeleteLexiconError::unhandled)?;
-
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::DeleteLexiconError::unhandled(generic)),
@@ -59,7 +58,6 @@ pub fn parse_describe_voices_error(
 ) -> Result<crate::output::DescribeVoicesOutput, crate::error::DescribeVoicesError> {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::DescribeVoicesError::unhandled)?;
-
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::DescribeVoicesError::unhandled(generic)),
@@ -116,7 +114,6 @@ pub fn parse_get_lexicon_error(
 ) -> Result<crate::output::GetLexiconOutput, crate::error::GetLexiconError> {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::GetLexiconError::unhandled)?;
-
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::GetLexiconError::unhandled(generic)),
@@ -173,7 +170,6 @@ pub fn parse_get_speech_synthesis_task_error(
 {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::GetSpeechSynthesisTaskError::unhandled)?;
-
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -249,7 +245,6 @@ pub fn parse_list_lexicons_error(
 ) -> Result<crate::output::ListLexiconsOutput, crate::error::ListLexiconsError> {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::ListLexiconsError::unhandled)?;
-
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::ListLexiconsError::unhandled(generic)),
@@ -308,7 +303,6 @@ pub fn parse_list_speech_synthesis_tasks_error(
 > {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::ListSpeechSynthesisTasksError::unhandled)?;
-
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -374,7 +368,6 @@ pub fn parse_put_lexicon_error(
 ) -> Result<crate::output::PutLexiconOutput, crate::error::PutLexiconError> {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::PutLexiconError::unhandled)?;
-
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::PutLexiconError::unhandled(generic)),
@@ -500,7 +493,6 @@ pub fn parse_start_speech_synthesis_task_error(
 > {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::StartSpeechSynthesisTaskError::unhandled)?;
-
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -645,7 +637,6 @@ pub fn parse_synthesize_speech_error(
 ) -> Result<crate::output::SynthesizeSpeechOutput, crate::error::SynthesizeSpeechError> {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::SynthesizeSpeechError::unhandled)?;
-
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::SynthesizeSpeechError::unhandled(generic)),

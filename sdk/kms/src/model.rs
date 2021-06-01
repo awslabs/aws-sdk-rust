@@ -37,7 +37,6 @@ impl std::convert::From<&str> for SigningAlgorithmSpec {
         }
     }
 }
-
 impl std::str::FromStr for SigningAlgorithmSpec {
     type Err = std::convert::Infallible;
 
@@ -45,7 +44,6 @@ impl std::str::FromStr for SigningAlgorithmSpec {
         Ok(SigningAlgorithmSpec::from(s))
     }
 }
-
 impl SigningAlgorithmSpec {
     pub fn as_str(&self) -> &str {
         match self {
@@ -67,19 +65,6 @@ impl AsRef<str> for SigningAlgorithmSpec {
         self.as_str()
     }
 }
-
-impl serde::Serialize for SigningAlgorithmSpec {
-    fn serialize<S>(
-        &self,
-        serializer: S,
-    ) -> Result<<S as serde::Serializer>::Ok, <S as serde::Serializer>::Error>
-    where
-        S: serde::Serializer,
-    {
-        serializer.serialize_str(self.as_str())
-    }
-}
-
 impl<'de> serde::Deserialize<'de> for SigningAlgorithmSpec {
     fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
     where
@@ -114,7 +99,6 @@ impl std::convert::From<&str> for MessageType {
         }
     }
 }
-
 impl std::str::FromStr for MessageType {
     type Err = std::convert::Infallible;
 
@@ -122,7 +106,6 @@ impl std::str::FromStr for MessageType {
         Ok(MessageType::from(s))
     }
 }
-
 impl MessageType {
     pub fn as_str(&self) -> &str {
         match self {
@@ -137,19 +120,6 @@ impl AsRef<str> for MessageType {
         self.as_str()
     }
 }
-
-impl serde::Serialize for MessageType {
-    fn serialize<S>(
-        &self,
-        serializer: S,
-    ) -> Result<<S as serde::Serializer>::Ok, <S as serde::Serializer>::Error>
-    where
-        S: serde::Serializer,
-    {
-        serializer.serialize_str(self.as_str())
-    }
-}
-
 impl<'de> serde::Deserialize<'de> for MessageType {
     fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
     where
@@ -165,16 +135,14 @@ impl<'de> serde::Deserialize<'de> for MessageType {
 /// <p>For information about the rules that apply to tag keys and tag values, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/allocation-tag-restrictions.html">User-Defined Tag Restrictions</a> in the <i>AWS Billing and Cost Management User
 /// Guide</i>.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, serde::Serialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
 pub struct Tag {
     /// <p>The key of the tag.</p>
     #[serde(rename = "TagKey")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub tag_key: std::option::Option<std::string::String>,
     /// <p>The value of the tag.</p>
     #[serde(rename = "TagValue")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub tag_value: std::option::Option<std::string::String>,
 }
@@ -256,7 +224,6 @@ impl std::convert::From<&str> for EncryptionAlgorithmSpec {
         }
     }
 }
-
 impl std::str::FromStr for EncryptionAlgorithmSpec {
     type Err = std::convert::Infallible;
 
@@ -264,7 +231,6 @@ impl std::str::FromStr for EncryptionAlgorithmSpec {
         Ok(EncryptionAlgorithmSpec::from(s))
     }
 }
-
 impl EncryptionAlgorithmSpec {
     pub fn as_str(&self) -> &str {
         match self {
@@ -280,19 +246,6 @@ impl AsRef<str> for EncryptionAlgorithmSpec {
         self.as_str()
     }
 }
-
-impl serde::Serialize for EncryptionAlgorithmSpec {
-    fn serialize<S>(
-        &self,
-        serializer: S,
-    ) -> Result<<S as serde::Serializer>::Ok, <S as serde::Serializer>::Error>
-    where
-        S: serde::Serializer,
-    {
-        serializer.serialize_str(self.as_str())
-    }
-}
-
 impl<'de> serde::Deserialize<'de> for EncryptionAlgorithmSpec {
     fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
     where
@@ -305,29 +258,22 @@ impl<'de> serde::Deserialize<'de> for EncryptionAlgorithmSpec {
 
 /// <p>Contains information about a grant.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, serde::Serialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
 pub struct GrantListEntry {
     /// <p>The unique identifier for the customer master key (CMK) to which the grant applies.</p>
     #[serde(rename = "KeyId")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub key_id: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the grant.</p>
     #[serde(rename = "GrantId")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub grant_id: std::option::Option<std::string::String>,
     /// <p>The friendly name that identifies the grant. If a name was provided in the <a>CreateGrant</a> request, that name is returned. Otherwise this value is null.</p>
     #[serde(rename = "Name")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The date and time when the grant was created.</p>
     #[serde(rename = "CreationDate")]
-    #[serde(skip_serializing_if = "Option::is_none")]
-    #[serde(
-        serialize_with = "crate::serde_util::stdoptionoptionsmithytypesinstant_epoch_seconds_ser"
-    )]
     #[serde(
         deserialize_with = "crate::serde_util::stdoptionoptionsmithytypesinstant_epoch_seconds_deser"
     )]
@@ -340,28 +286,23 @@ pub struct GrantListEntry {
     /// the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#principal-services">service
     /// principal</a>, which might represent several different grantee principals.</p>
     #[serde(rename = "GranteePrincipal")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub grantee_principal: std::option::Option<std::string::String>,
     /// <p>The principal that can retire the grant.</p>
     #[serde(rename = "RetiringPrincipal")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub retiring_principal: std::option::Option<std::string::String>,
     /// <p>The AWS account under which the grant was issued.</p>
     #[serde(rename = "IssuingAccount")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub issuing_account: std::option::Option<std::string::String>,
     /// <p>The list of operations permitted by the grant.</p>
     #[serde(rename = "Operations")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub operations: std::option::Option<std::vec::Vec<crate::model::GrantOperation>>,
     /// <p>A list of key-value pairs that must be present in the encryption context of certain
     /// subsequent operations that the grant allows.</p>
     #[serde(rename = "Constraints")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub constraints: std::option::Option<crate::model::GrantConstraints>,
 }
@@ -546,21 +487,19 @@ impl GrantListEntry {
 /// </i>.</p>
 /// </important>
 #[non_exhaustive]
-#[derive(serde::Deserialize, serde::Serialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
 pub struct GrantConstraints {
     /// <p>A list of key-value pairs that must be included in the encryption context of the
     /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic operation</a> request. The grant allows the cryptographic operation only when the
     /// encryption context in the request includes the key-value pairs specified in this constraint,
     /// although it can include additional key-value pairs.</p>
     #[serde(rename = "EncryptionContextSubset")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub encryption_context_subset:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>A list of key-value pairs that must match the encryption context in the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic operation</a> request. The grant allows the operation only when the encryption context in the
     /// request is the same as the encryption context specified in this constraint.</p>
     #[serde(rename = "EncryptionContextEquals")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub encryption_context_equals:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -691,7 +630,6 @@ impl std::convert::From<&str> for GrantOperation {
         }
     }
 }
-
 impl std::str::FromStr for GrantOperation {
     type Err = std::convert::Infallible;
 
@@ -699,7 +637,6 @@ impl std::str::FromStr for GrantOperation {
         Ok(GrantOperation::from(s))
     }
 }
-
 impl GrantOperation {
     pub fn as_str(&self) -> &str {
         match self {
@@ -728,19 +665,6 @@ impl AsRef<str> for GrantOperation {
         self.as_str()
     }
 }
-
-impl serde::Serialize for GrantOperation {
-    fn serialize<S>(
-        &self,
-        serializer: S,
-    ) -> Result<<S as serde::Serializer>::Ok, <S as serde::Serializer>::Error>
-    where
-        S: serde::Serializer,
-    {
-        serializer.serialize_str(self.as_str())
-    }
-}
-
 impl<'de> serde::Deserialize<'de> for GrantOperation {
     fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
     where
@@ -753,16 +677,14 @@ impl<'de> serde::Deserialize<'de> for GrantOperation {
 
 /// <p>Contains information about each entry in the key list.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, serde::Serialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
 pub struct KeyListEntry {
     /// <p>Unique identifier of the key.</p>
     #[serde(rename = "KeyId")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub key_id: std::option::Option<std::string::String>,
     /// <p>ARN of the key.</p>
     #[serde(rename = "KeyArn")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub key_arn: std::option::Option<std::string::String>,
 }
@@ -820,29 +742,22 @@ impl KeyListEntry {
 
 /// <p>Contains information about an alias.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, serde::Serialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
 pub struct AliasListEntry {
     /// <p>String that contains the alias. This value begins with <code>alias/</code>.</p>
     #[serde(rename = "AliasName")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub alias_name: std::option::Option<std::string::String>,
     /// <p>String that contains the key ARN.</p>
     #[serde(rename = "AliasArn")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub alias_arn: std::option::Option<std::string::String>,
     /// <p>String that contains the key identifier of the CMK associated with the alias.</p>
     #[serde(rename = "TargetKeyId")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub target_key_id: std::option::Option<std::string::String>,
     /// <p>Date and time that the alias was most recently created in the account and Region. Formatted as Unix time.</p>
     #[serde(rename = "CreationDate")]
-    #[serde(skip_serializing_if = "Option::is_none")]
-    #[serde(
-        serialize_with = "crate::serde_util::stdoptionoptionsmithytypesinstant_epoch_seconds_ser"
-    )]
     #[serde(
         deserialize_with = "crate::serde_util::stdoptionoptionsmithytypesinstant_epoch_seconds_deser"
     )]
@@ -850,10 +765,6 @@ pub struct AliasListEntry {
     pub creation_date: std::option::Option<smithy_types::Instant>,
     /// <p>Date and time that the alias was most recently associated with a CMK in the account and Region. Formatted as Unix time.</p>
     #[serde(rename = "LastUpdatedDate")]
-    #[serde(skip_serializing_if = "Option::is_none")]
-    #[serde(
-        serialize_with = "crate::serde_util::stdoptionoptionsmithytypesinstant_epoch_seconds_ser"
-    )]
     #[serde(
         deserialize_with = "crate::serde_util::stdoptionoptionsmithytypesinstant_epoch_seconds_deser"
     )]
@@ -978,7 +889,6 @@ impl std::convert::From<&str> for ExpirationModelType {
         }
     }
 }
-
 impl std::str::FromStr for ExpirationModelType {
     type Err = std::convert::Infallible;
 
@@ -986,7 +896,6 @@ impl std::str::FromStr for ExpirationModelType {
         Ok(ExpirationModelType::from(s))
     }
 }
-
 impl ExpirationModelType {
     pub fn as_str(&self) -> &str {
         match self {
@@ -1001,19 +910,6 @@ impl AsRef<str> for ExpirationModelType {
         self.as_str()
     }
 }
-
-impl serde::Serialize for ExpirationModelType {
-    fn serialize<S>(
-        &self,
-        serializer: S,
-    ) -> Result<<S as serde::Serializer>::Ok, <S as serde::Serializer>::Error>
-    where
-        S: serde::Serializer,
-    {
-        serializer.serialize_str(self.as_str())
-    }
-}
-
 impl<'de> serde::Deserialize<'de> for ExpirationModelType {
     fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
     where
@@ -1048,7 +944,6 @@ impl std::convert::From<&str> for KeyUsageType {
         }
     }
 }
-
 impl std::str::FromStr for KeyUsageType {
     type Err = std::convert::Infallible;
 
@@ -1056,7 +951,6 @@ impl std::str::FromStr for KeyUsageType {
         Ok(KeyUsageType::from(s))
     }
 }
-
 impl KeyUsageType {
     pub fn as_str(&self) -> &str {
         match self {
@@ -1071,19 +965,6 @@ impl AsRef<str> for KeyUsageType {
         self.as_str()
     }
 }
-
-impl serde::Serialize for KeyUsageType {
-    fn serialize<S>(
-        &self,
-        serializer: S,
-    ) -> Result<<S as serde::Serializer>::Ok, <S as serde::Serializer>::Error>
-    where
-        S: serde::Serializer,
-    {
-        serializer.serialize_str(self.as_str())
-    }
-}
-
 impl<'de> serde::Deserialize<'de> for KeyUsageType {
     fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
     where
@@ -1130,7 +1011,6 @@ impl std::convert::From<&str> for CustomerMasterKeySpec {
         }
     }
 }
-
 impl std::str::FromStr for CustomerMasterKeySpec {
     type Err = std::convert::Infallible;
 
@@ -1138,7 +1018,6 @@ impl std::str::FromStr for CustomerMasterKeySpec {
         Ok(CustomerMasterKeySpec::from(s))
     }
 }
-
 impl CustomerMasterKeySpec {
     pub fn as_str(&self) -> &str {
         match self {
@@ -1159,19 +1038,6 @@ impl AsRef<str> for CustomerMasterKeySpec {
         self.as_str()
     }
 }
-
-impl serde::Serialize for CustomerMasterKeySpec {
-    fn serialize<S>(
-        &self,
-        serializer: S,
-    ) -> Result<<S as serde::Serializer>::Ok, <S as serde::Serializer>::Error>
-    where
-        S: serde::Serializer,
-    {
-        serializer.serialize_str(self.as_str())
-    }
-}
-
 impl<'de> serde::Deserialize<'de> for CustomerMasterKeySpec {
     fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
     where
@@ -1204,7 +1070,6 @@ impl std::convert::From<&str> for WrappingKeySpec {
         }
     }
 }
-
 impl std::str::FromStr for WrappingKeySpec {
     type Err = std::convert::Infallible;
 
@@ -1212,7 +1077,6 @@ impl std::str::FromStr for WrappingKeySpec {
         Ok(WrappingKeySpec::from(s))
     }
 }
-
 impl WrappingKeySpec {
     pub fn as_str(&self) -> &str {
         match self {
@@ -1226,19 +1090,6 @@ impl AsRef<str> for WrappingKeySpec {
         self.as_str()
     }
 }
-
-impl serde::Serialize for WrappingKeySpec {
-    fn serialize<S>(
-        &self,
-        serializer: S,
-    ) -> Result<<S as serde::Serializer>::Ok, <S as serde::Serializer>::Error>
-    where
-        S: serde::Serializer,
-    {
-        serializer.serialize_str(self.as_str())
-    }
-}
-
 impl<'de> serde::Deserialize<'de> for WrappingKeySpec {
     fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
     where
@@ -1275,7 +1126,6 @@ impl std::convert::From<&str> for AlgorithmSpec {
         }
     }
 }
-
 impl std::str::FromStr for AlgorithmSpec {
     type Err = std::convert::Infallible;
 
@@ -1283,7 +1133,6 @@ impl std::str::FromStr for AlgorithmSpec {
         Ok(AlgorithmSpec::from(s))
     }
 }
-
 impl AlgorithmSpec {
     pub fn as_str(&self) -> &str {
         match self {
@@ -1299,19 +1148,6 @@ impl AsRef<str> for AlgorithmSpec {
         self.as_str()
     }
 }
-
-impl serde::Serialize for AlgorithmSpec {
-    fn serialize<S>(
-        &self,
-        serializer: S,
-    ) -> Result<<S as serde::Serializer>::Ok, <S as serde::Serializer>::Error>
-    where
-        S: serde::Serializer,
-    {
-        serializer.serialize_str(self.as_str())
-    }
-}
-
 impl<'de> serde::Deserialize<'de> for AlgorithmSpec {
     fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
     where
@@ -1346,7 +1182,6 @@ impl std::convert::From<&str> for DataKeySpec {
         }
     }
 }
-
 impl std::str::FromStr for DataKeySpec {
     type Err = std::convert::Infallible;
 
@@ -1354,7 +1189,6 @@ impl std::str::FromStr for DataKeySpec {
         Ok(DataKeySpec::from(s))
     }
 }
-
 impl DataKeySpec {
     pub fn as_str(&self) -> &str {
         match self {
@@ -1369,19 +1203,6 @@ impl AsRef<str> for DataKeySpec {
         self.as_str()
     }
 }
-
-impl serde::Serialize for DataKeySpec {
-    fn serialize<S>(
-        &self,
-        serializer: S,
-    ) -> Result<<S as serde::Serializer>::Ok, <S as serde::Serializer>::Error>
-    where
-        S: serde::Serializer,
-    {
-        serializer.serialize_str(self.as_str())
-    }
-}
-
 impl<'de> serde::Deserialize<'de> for DataKeySpec {
     fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
     where
@@ -1426,7 +1247,6 @@ impl std::convert::From<&str> for DataKeyPairSpec {
         }
     }
 }
-
 impl std::str::FromStr for DataKeyPairSpec {
     type Err = std::convert::Infallible;
 
@@ -1434,7 +1254,6 @@ impl std::str::FromStr for DataKeyPairSpec {
         Ok(DataKeyPairSpec::from(s))
     }
 }
-
 impl DataKeyPairSpec {
     pub fn as_str(&self) -> &str {
         match self {
@@ -1454,19 +1273,6 @@ impl AsRef<str> for DataKeyPairSpec {
         self.as_str()
     }
 }
-
-impl serde::Serialize for DataKeyPairSpec {
-    fn serialize<S>(
-        &self,
-        serializer: S,
-    ) -> Result<<S as serde::Serializer>::Ok, <S as serde::Serializer>::Error>
-    where
-        S: serde::Serializer,
-    {
-        serializer.serialize_str(self.as_str())
-    }
-}
-
 impl<'de> serde::Deserialize<'de> for DataKeyPairSpec {
     fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
     where
@@ -1480,31 +1286,24 @@ impl<'de> serde::Deserialize<'de> for DataKeyPairSpec {
 /// <p>Contains metadata about a customer master key (CMK).</p>
 /// <p>This data type is used as a response element for the <a>CreateKey</a> and <a>DescribeKey</a> operations.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, serde::Serialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
 pub struct KeyMetadata {
     /// <p>The twelve-digit account ID of the AWS account that owns the CMK.</p>
     #[serde(rename = "AWSAccountId")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The globally unique identifier for the CMK.</p>
     #[serde(rename = "KeyId")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub key_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the CMK. For examples, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">AWS Key Management Service
     /// (AWS KMS)</a> in the Example ARNs section of the <i>AWS General
     /// Reference</i>.</p>
     #[serde(rename = "Arn")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The date and time when the CMK was created.</p>
     #[serde(rename = "CreationDate")]
-    #[serde(skip_serializing_if = "Option::is_none")]
-    #[serde(
-        serialize_with = "crate::serde_util::stdoptionoptionsmithytypesinstant_epoch_seconds_ser"
-    )]
     #[serde(
         deserialize_with = "crate::serde_util::stdoptionoptionsmithytypesinstant_epoch_seconds_deser"
     )]
@@ -1516,27 +1315,20 @@ pub struct KeyMetadata {
     pub enabled: bool,
     /// <p>The description of the CMK.</p>
     #[serde(rename = "Description")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic operations</a> for which you can use the CMK.</p>
     #[serde(rename = "KeyUsage")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub key_usage: std::option::Option<crate::model::KeyUsageType>,
     /// <p>The current status of the CMK.</p>
     /// <p>For more information about how key state affects the use of a CMK, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key state: Effect on your CMK</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
     #[serde(rename = "KeyState")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub key_state: std::option::Option<crate::model::KeyState>,
     /// <p>The date and time after which AWS KMS deletes the CMK. This value is present only when
     /// <code>KeyState</code> is <code>PendingDeletion</code>.</p>
     #[serde(rename = "DeletionDate")]
-    #[serde(skip_serializing_if = "Option::is_none")]
-    #[serde(
-        serialize_with = "crate::serde_util::stdoptionoptionsmithytypesinstant_epoch_seconds_ser"
-    )]
     #[serde(
         deserialize_with = "crate::serde_util::stdoptionoptionsmithytypesinstant_epoch_seconds_deser"
     )]
@@ -1547,10 +1339,6 @@ pub struct KeyMetadata {
     /// whose <code>Origin</code> is <code>EXTERNAL</code> and whose <code>ExpirationModel</code> is
     /// <code>KEY_MATERIAL_EXPIRES</code>, otherwise this value is omitted.</p>
     #[serde(rename = "ValidTo")]
-    #[serde(skip_serializing_if = "Option::is_none")]
-    #[serde(
-        serialize_with = "crate::serde_util::stdoptionoptionsmithytypesinstant_epoch_seconds_ser"
-    )]
     #[serde(
         deserialize_with = "crate::serde_util::stdoptionoptionsmithytypesinstant_epoch_seconds_deser"
     )]
@@ -1562,13 +1350,11 @@ pub struct KeyMetadata {
     /// this value is <code>AWS_CLOUDHSM</code>, the key material was created in the AWS CloudHSM cluster
     /// associated with a custom key store.</p>
     #[serde(rename = "Origin")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub origin: std::option::Option<crate::model::OriginType>,
     /// <p>A unique identifier for the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key store</a> that contains the CMK. This value is present
     /// only when the CMK is created in a custom key store.</p>
     #[serde(rename = "CustomKeyStoreId")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub custom_key_store_id: std::option::Option<std::string::String>,
     /// <p>The cluster ID of the AWS CloudHSM cluster that contains the key material for the CMK. When you
@@ -1576,25 +1362,21 @@ pub struct KeyMetadata {
     /// associated AWS CloudHSM cluster. This value is present only when the CMK is created in a custom key
     /// store.</p>
     #[serde(rename = "CloudHsmClusterId")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub cloud_hsm_cluster_id: std::option::Option<std::string::String>,
     /// <p>Specifies whether the CMK's key material expires. This value is present only when
     /// <code>Origin</code> is <code>EXTERNAL</code>, otherwise this value is omitted.</p>
     #[serde(rename = "ExpirationModel")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub expiration_model: std::option::Option<crate::model::ExpirationModelType>,
     /// <p>The manager of the CMK. CMKs in your AWS account are either customer managed or AWS
     /// managed. For more information about the difference, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">Customer Master Keys</a> in the
     /// <i>AWS Key Management Service Developer Guide</i>.</p>
     #[serde(rename = "KeyManager")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub key_manager: std::option::Option<crate::model::KeyManagerType>,
     /// <p>Describes the type of key material in the CMK.</p>
     #[serde(rename = "CustomerMasterKeySpec")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub customer_master_key_spec: std::option::Option<crate::model::CustomerMasterKeySpec>,
     /// <p>The encryption algorithms that the CMK supports. You cannot use the CMK with other
@@ -1602,7 +1384,6 @@ pub struct KeyMetadata {
     /// <p>This field appears only when the <code>KeyUsage</code> of the CMK is
     /// <code>ENCRYPT_DECRYPT</code>.</p>
     #[serde(rename = "EncryptionAlgorithms")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub encryption_algorithms:
         std::option::Option<std::vec::Vec<crate::model::EncryptionAlgorithmSpec>>,
@@ -1611,7 +1392,6 @@ pub struct KeyMetadata {
     /// <p>This field appears only when the <code>KeyUsage</code> of the CMK is
     /// <code>SIGN_VERIFY</code>.</p>
     #[serde(rename = "SigningAlgorithms")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub signing_algorithms: std::option::Option<std::vec::Vec<crate::model::SigningAlgorithmSpec>>,
 }
@@ -1946,7 +1726,6 @@ impl std::convert::From<&str> for KeyManagerType {
         }
     }
 }
-
 impl std::str::FromStr for KeyManagerType {
     type Err = std::convert::Infallible;
 
@@ -1954,7 +1733,6 @@ impl std::str::FromStr for KeyManagerType {
         Ok(KeyManagerType::from(s))
     }
 }
-
 impl KeyManagerType {
     pub fn as_str(&self) -> &str {
         match self {
@@ -1969,19 +1747,6 @@ impl AsRef<str> for KeyManagerType {
         self.as_str()
     }
 }
-
-impl serde::Serialize for KeyManagerType {
-    fn serialize<S>(
-        &self,
-        serializer: S,
-    ) -> Result<<S as serde::Serializer>::Ok, <S as serde::Serializer>::Error>
-    where
-        S: serde::Serializer,
-    {
-        serializer.serialize_str(self.as_str())
-    }
-}
-
 impl<'de> serde::Deserialize<'de> for KeyManagerType {
     fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
     where
@@ -2018,7 +1783,6 @@ impl std::convert::From<&str> for OriginType {
         }
     }
 }
-
 impl std::str::FromStr for OriginType {
     type Err = std::convert::Infallible;
 
@@ -2026,7 +1790,6 @@ impl std::str::FromStr for OriginType {
         Ok(OriginType::from(s))
     }
 }
-
 impl OriginType {
     pub fn as_str(&self) -> &str {
         match self {
@@ -2042,19 +1805,6 @@ impl AsRef<str> for OriginType {
         self.as_str()
     }
 }
-
-impl serde::Serialize for OriginType {
-    fn serialize<S>(
-        &self,
-        serializer: S,
-    ) -> Result<<S as serde::Serializer>::Ok, <S as serde::Serializer>::Error>
-    where
-        S: serde::Serializer,
-    {
-        serializer.serialize_str(self.as_str())
-    }
-}
-
 impl<'de> serde::Deserialize<'de> for OriginType {
     fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
     where
@@ -2095,7 +1845,6 @@ impl std::convert::From<&str> for KeyState {
         }
     }
 }
-
 impl std::str::FromStr for KeyState {
     type Err = std::convert::Infallible;
 
@@ -2103,7 +1852,6 @@ impl std::str::FromStr for KeyState {
         Ok(KeyState::from(s))
     }
 }
-
 impl KeyState {
     pub fn as_str(&self) -> &str {
         match self {
@@ -2121,19 +1869,6 @@ impl AsRef<str> for KeyState {
         self.as_str()
     }
 }
-
-impl serde::Serialize for KeyState {
-    fn serialize<S>(
-        &self,
-        serializer: S,
-    ) -> Result<<S as serde::Serializer>::Ok, <S as serde::Serializer>::Error>
-    where
-        S: serde::Serializer,
-    {
-        serializer.serialize_str(self.as_str())
-    }
-}
-
 impl<'de> serde::Deserialize<'de> for KeyState {
     fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
     where
@@ -2146,29 +1881,25 @@ impl<'de> serde::Deserialize<'de> for KeyState {
 
 /// <p>Contains information about each custom key store in the custom key store list.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, serde::Serialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
 pub struct CustomKeyStoresListEntry {
     /// <p>A unique identifier for the custom key store.</p>
     #[serde(rename = "CustomKeyStoreId")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub custom_key_store_id: std::option::Option<std::string::String>,
     /// <p>The user-specified friendly name for the custom key store.</p>
     #[serde(rename = "CustomKeyStoreName")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub custom_key_store_name: std::option::Option<std::string::String>,
     /// <p>A unique identifier for the AWS CloudHSM cluster that is associated with the custom key
     /// store.</p>
     #[serde(rename = "CloudHsmClusterId")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub cloud_hsm_cluster_id: std::option::Option<std::string::String>,
     /// <p>The trust anchor certificate of the associated AWS CloudHSM cluster. When you <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/initialize-cluster.html#sign-csr">initialize the
     /// cluster</a>, you create this certificate and save it in the <code>customerCA.crt</code>
     /// file.</p>
     #[serde(rename = "TrustAnchorCertificate")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub trust_anchor_certificate: std::option::Option<std::string::String>,
     /// <p>Indicates whether the custom key store is connected to its AWS CloudHSM cluster.</p>
@@ -2182,7 +1913,6 @@ pub struct CustomKeyStoresListEntry {
     /// help resolving a connection failure, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html">Troubleshooting a Custom Key Store</a> in the
     /// <i>AWS Key Management Service Developer Guide</i>.</p>
     #[serde(rename = "ConnectionState")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub connection_state: std::option::Option<crate::model::ConnectionStateType>,
     /// <p>Describes the connection error. This field appears in the response only when the <code>ConnectionState</code> is <code>FAILED</code>. For help resolving these errors, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html#fix-keystore-failed">How to Fix a Connection Failure</a> in <i>AWS Key Management Service Developer Guide</i>.</p>
@@ -2246,15 +1976,10 @@ pub struct CustomKeyStoresListEntry {
     /// </li>
     /// </ul>
     #[serde(rename = "ConnectionErrorCode")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub connection_error_code: std::option::Option<crate::model::ConnectionErrorCodeType>,
     /// <p>The date and time when the custom key store was created.</p>
     #[serde(rename = "CreationDate")]
-    #[serde(skip_serializing_if = "Option::is_none")]
-    #[serde(
-        serialize_with = "crate::serde_util::stdoptionoptionsmithytypesinstant_epoch_seconds_ser"
-    )]
     #[serde(
         deserialize_with = "crate::serde_util::stdoptionoptionsmithytypesinstant_epoch_seconds_deser"
     )]
@@ -2504,7 +2229,6 @@ impl std::convert::From<&str> for ConnectionErrorCodeType {
         }
     }
 }
-
 impl std::str::FromStr for ConnectionErrorCodeType {
     type Err = std::convert::Infallible;
 
@@ -2512,7 +2236,6 @@ impl std::str::FromStr for ConnectionErrorCodeType {
         Ok(ConnectionErrorCodeType::from(s))
     }
 }
-
 impl ConnectionErrorCodeType {
     pub fn as_str(&self) -> &str {
         match self {
@@ -2534,19 +2257,6 @@ impl AsRef<str> for ConnectionErrorCodeType {
         self.as_str()
     }
 }
-
-impl serde::Serialize for ConnectionErrorCodeType {
-    fn serialize<S>(
-        &self,
-        serializer: S,
-    ) -> Result<<S as serde::Serializer>::Ok, <S as serde::Serializer>::Error>
-    where
-        S: serde::Serializer,
-    {
-        serializer.serialize_str(self.as_str())
-    }
-}
-
 impl<'de> serde::Deserialize<'de> for ConnectionErrorCodeType {
     fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
     where
@@ -2587,7 +2297,6 @@ impl std::convert::From<&str> for ConnectionStateType {
         }
     }
 }
-
 impl std::str::FromStr for ConnectionStateType {
     type Err = std::convert::Infallible;
 
@@ -2595,7 +2304,6 @@ impl std::str::FromStr for ConnectionStateType {
         Ok(ConnectionStateType::from(s))
     }
 }
-
 impl ConnectionStateType {
     pub fn as_str(&self) -> &str {
         match self {
@@ -2613,19 +2321,6 @@ impl AsRef<str> for ConnectionStateType {
         self.as_str()
     }
 }
-
-impl serde::Serialize for ConnectionStateType {
-    fn serialize<S>(
-        &self,
-        serializer: S,
-    ) -> Result<<S as serde::Serializer>::Ok, <S as serde::Serializer>::Error>
-    where
-        S: serde::Serializer,
-    {
-        serializer.serialize_str(self.as_str())
-    }
-}
-
 impl<'de> serde::Deserialize<'de> for ConnectionStateType {
     fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
     where

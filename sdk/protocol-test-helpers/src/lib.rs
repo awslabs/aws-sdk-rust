@@ -3,6 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
+mod urlencoded;
 mod xml;
 
 use crate::xml::try_xml_equivalent;
@@ -10,7 +11,9 @@ use assert_json_diff::assert_json_eq_no_panic;
 use http::{Request, Uri};
 use pretty_assertions::Comparison;
 use std::collections::HashSet;
+use std::fmt::{self, Debug};
 use thiserror::Error;
+use urlencoded::try_url_encoded_form_equivalent;
 
 #[derive(Debug, PartialEq, Eq, Error)]
 pub enum ProtocolTestFailure {
@@ -220,6 +223,8 @@ pub enum MediaType {
     Json,
     /// XML media types are normalized and compared
     Xml,
+    /// For x-www-form-urlencoded, do some map order comparison shenanigans
+    UrlEncodedForm,
     /// Other media types are compared literally
     Other(String),
 }
@@ -229,6 +234,7 @@ impl<T: AsRef<str>> From<T> for MediaType {
         match inp.as_ref() {
             "application/json" => MediaType::Json,
             "application/xml" => MediaType::Xml,
+            "application/x-www-form-urlencoded" => MediaType::UrlEncodedForm,
             other => MediaType::Other(other.to_string()),
         }
     }
@@ -251,6 +257,13 @@ pub fn validate_body<T: AsRef<[u8]>>(
             expected: "XML".to_owned(),
             found: "input was not valid UTF-8".to_owned(),
         }),
+        (MediaType::UrlEncodedForm, Ok(actual_body)) => {
+            try_url_encoded_form_equivalent(actual_body, expected_body)
+        }
+        (MediaType::UrlEncodedForm, Err(_)) => Err(ProtocolTestFailure::InvalidBodyFormat {
+            expected: "x-www-form-urlencoded".to_owned(),
+            found: "input was not valid UTF-8".to_owned(),
+        }),
         (MediaType::Other(media_type), Ok(actual_body)) => {
             if actual_body != expected_body {
                 Err(ProtocolTestFailure::BodyDidNotMatch {
@@ -269,7 +282,6 @@ pub fn validate_body<T: AsRef<[u8]>>(
     }
 }
 
-use std::fmt::{self, Debug};
 #[derive(Eq, PartialEq)]
 struct PrettyStr<'a>(&'a str);
 impl Debug for PrettyStr<'_> {

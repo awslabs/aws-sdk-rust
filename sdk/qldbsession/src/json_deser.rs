@@ -11,7 +11,6 @@ pub fn send_command_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_start_session(parsed_body.start_session);
     builder = builder.set_start_transaction(parsed_body.start_transaction);
     builder = builder.set_end_session(parsed_body.end_session);

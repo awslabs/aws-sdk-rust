@@ -46,26 +46,30 @@ pub fn parse_generic_error<B>(
     response: &http::Response<B>,
     body: &serde_json::Value,
 ) -> smithy_types::Error {
+    let mut err_builder = smithy_types::Error::builder();
     let code = error_type_from_header(&response)
         .unwrap_or(Some("header was not valid UTF-8"))
         .or_else(|| error_type_from_body(body))
-        .map(|s| sanitize_error_code(s).to_string());
+        .map(|s| sanitize_error_code(s));
+    if let Some(code) = code {
+        err_builder.code(code);
+    }
     let message = body
         .get("message")
         .or_else(|| body.get("Message"))
         .or_else(|| body.get("errorMessage"))
-        .and_then(|v| v.as_str())
-        .map(|s| s.to_string());
+        .and_then(|v| v.as_str());
+    if let Some(message) = message {
+        err_builder.message(message);
+    }
     let request_id = response
         .headers()
         .get("X-Amzn-Requestid")
-        .and_then(|v| v.to_str().ok())
-        .map(|s| s.to_string());
-    smithy_types::Error {
-        code,
-        message,
-        request_id,
+        .and_then(|v| v.to_str().ok());
+    if let Some(request_id) = request_id {
+        err_builder.request_id(request_id);
     }
+    err_builder.build()
 }
 
 #[cfg(test)]
@@ -85,11 +89,11 @@ mod test {
             .unwrap();
         assert_eq!(
             parse_generic_error(&response, response.body()),
-            Error {
-                code: Some("FooError".to_string()),
-                message: Some("Go to foo".to_string()),
-                request_id: Some("1234".to_string()),
-            }
+            Error::builder()
+                .code("FooError")
+                .message("Go to foo")
+                .request_id("1234")
+                .build()
         )
     }
 
@@ -152,13 +156,10 @@ mod test {
             .unwrap();
         assert_eq!(
             parse_generic_error(&response, response.body()),
-            Error {
-                code: Some("ResourceNotFoundException".to_string()),
-                message: Some(
-                    "Functions from 'us-west-2' are not reachable from us-east-1".to_string()
-                ),
-                request_id: None,
-            }
-        )
+            Error::builder()
+                .code("ResourceNotFoundException")
+                .message("Functions from 'us-west-2' are not reachable from us-east-1")
+                .build()
+        );
     }
 }

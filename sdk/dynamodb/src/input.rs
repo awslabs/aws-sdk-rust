@@ -48,47 +48,38 @@ impl BatchExecuteStatementInput {
     > {
         Ok({
             let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_batch_execute_statement_input_body(&self)
-                    .map_err(|err| {
-                        smithy_http::operation::BuildError::SerializationError(err.into())
-                    })?;
+            let body = crate::operation_ser::serialize_operation_batch_execute_statement(&self)
+                .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
             let request = Self::assemble(request, body);
-
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
                 ));
-
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-
             request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
-
             aws_endpoint::set_endpoint_resolver(
                 &mut request.config_mut(),
                 _config.endpoint_resolver.clone(),
             );
-
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-
             aws_auth::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
-
             let op = smithy_http::operation::Operation::new(
                 request,
                 crate::operation::BatchExecuteStatement::new(),
@@ -97,7 +88,6 @@ impl BatchExecuteStatementInput {
                 "BatchExecuteStatement",
                 "dynamodb",
             ));
-
             let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
             op
         })
@@ -107,7 +97,6 @@ impl BatchExecuteStatementInput {
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
-
         Ok(builder
             .method("POST")
             .header("Content-Type", "application/x-amz-json-1.0")
@@ -216,46 +205,38 @@ impl BatchGetItemInput {
     > {
         Ok({
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_batch_get_item_input_body(&self)
-                .map_err(|err| {
-                smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            let body =
+                crate::operation_ser::serialize_operation_batch_get_item(&self).map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
             let request = Self::assemble(request, body);
-
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
                 ));
-
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-
             request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
-
             aws_endpoint::set_endpoint_resolver(
                 &mut request.config_mut(),
                 _config.endpoint_resolver.clone(),
             );
-
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-
             aws_auth::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
-
             let op = smithy_http::operation::Operation::new(
                 request,
                 crate::operation::BatchGetItem::new(),
@@ -264,7 +245,6 @@ impl BatchGetItemInput {
                 "BatchGetItem",
                 "dynamodb",
             ));
-
             let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
             op
         })
@@ -274,7 +254,6 @@ impl BatchGetItemInput {
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
-
         Ok(builder
             .method("POST")
             .header("Content-Type", "application/x-amz-json-1.0")
@@ -408,46 +387,37 @@ impl BatchWriteItemInput {
     > {
         Ok({
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_batch_write_item_input_body(&self)
-                .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            let body = crate::operation_ser::serialize_operation_batch_write_item(&self).map_err(
+                |err| smithy_http::operation::BuildError::SerializationError(err.into()),
+            )?;
             let request = Self::assemble(request, body);
-
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
                 ));
-
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-
             request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
-
             aws_endpoint::set_endpoint_resolver(
                 &mut request.config_mut(),
                 _config.endpoint_resolver.clone(),
             );
-
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-
             aws_auth::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
-
             let op = smithy_http::operation::Operation::new(
                 request,
                 crate::operation::BatchWriteItem::new(),
@@ -456,7 +426,6 @@ impl BatchWriteItemInput {
                 "BatchWriteItem",
                 "dynamodb",
             ));
-
             let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
             op
         })
@@ -466,7 +435,6 @@ impl BatchWriteItemInput {
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
-
         Ok(builder
             .method("POST")
             .header("Content-Type", "application/x-amz-json-1.0")
@@ -541,46 +509,38 @@ impl CreateBackupInput {
     > {
         Ok({
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_create_backup_input_body(&self)
-                .map_err(|err| {
+            let body =
+                crate::operation_ser::serialize_operation_create_backup(&self).map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
             let request = Self::assemble(request, body);
-
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
                 ));
-
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-
             request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
-
             aws_endpoint::set_endpoint_resolver(
                 &mut request.config_mut(),
                 _config.endpoint_resolver.clone(),
             );
-
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-
             aws_auth::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
-
             let op = smithy_http::operation::Operation::new(
                 request,
                 crate::operation::CreateBackup::new(),
@@ -589,7 +549,6 @@ impl CreateBackupInput {
                 "CreateBackup",
                 "dynamodb",
             ));
-
             let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
             op
         })
@@ -599,7 +558,6 @@ impl CreateBackupInput {
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
-
         Ok(builder
             .method("POST")
             .header("Content-Type", "application/x-amz-json-1.0")
@@ -682,47 +640,38 @@ impl CreateGlobalTableInput {
     > {
         Ok({
             let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_create_global_table_input_body(&self)
-                    .map_err(|err| {
-                        smithy_http::operation::BuildError::SerializationError(err.into())
-                    })?;
+            let body = crate::operation_ser::serialize_operation_create_global_table(&self)
+                .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
             let request = Self::assemble(request, body);
-
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
                 ));
-
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-
             request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
-
             aws_endpoint::set_endpoint_resolver(
                 &mut request.config_mut(),
                 _config.endpoint_resolver.clone(),
             );
-
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-
             aws_auth::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
-
             let op = smithy_http::operation::Operation::new(
                 request,
                 crate::operation::CreateGlobalTable::new(),
@@ -731,7 +680,6 @@ impl CreateGlobalTableInput {
                 "CreateGlobalTable",
                 "dynamodb",
             ));
-
             let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
             op
         })
@@ -741,7 +689,6 @@ impl CreateGlobalTableInput {
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
-
         Ok(builder
             .method("POST")
             .header("Content-Type", "application/x-amz-json-1.0")
@@ -1001,46 +948,38 @@ impl CreateTableInput {
     > {
         Ok({
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_create_table_input_body(&self)
-                .map_err(|err| {
+            let body =
+                crate::operation_ser::serialize_operation_create_table(&self).map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
             let request = Self::assemble(request, body);
-
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
                 ));
-
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-
             request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
-
             aws_endpoint::set_endpoint_resolver(
                 &mut request.config_mut(),
                 _config.endpoint_resolver.clone(),
             );
-
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-
             aws_auth::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
-
             let op = smithy_http::operation::Operation::new(
                 request,
                 crate::operation::CreateTable::new(),
@@ -1049,7 +988,6 @@ impl CreateTableInput {
                 "CreateTable",
                 "dynamodb",
             ));
-
             let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
             op
         })
@@ -1059,7 +997,6 @@ impl CreateTableInput {
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
-
         Ok(builder
             .method("POST")
             .header("Content-Type", "application/x-amz-json-1.0")
@@ -1123,46 +1060,38 @@ impl DeleteBackupInput {
     > {
         Ok({
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_delete_backup_input_body(&self)
-                .map_err(|err| {
+            let body =
+                crate::operation_ser::serialize_operation_delete_backup(&self).map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
             let request = Self::assemble(request, body);
-
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
                 ));
-
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-
             request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
-
             aws_endpoint::set_endpoint_resolver(
                 &mut request.config_mut(),
                 _config.endpoint_resolver.clone(),
             );
-
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-
             aws_auth::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
-
             let op = smithy_http::operation::Operation::new(
                 request,
                 crate::operation::DeleteBackup::new(),
@@ -1171,7 +1100,6 @@ impl DeleteBackupInput {
                 "DeleteBackup",
                 "dynamodb",
             ));
-
             let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
             op
         })
@@ -1181,7 +1109,6 @@ impl DeleteBackupInput {
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
-
         Ok(builder
             .method("POST")
             .header("Content-Type", "application/x-amz-json-1.0")
@@ -1474,46 +1401,38 @@ impl DeleteItemInput {
     > {
         Ok({
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_delete_item_input_body(&self)
-                .map_err(|err| {
+            let body =
+                crate::operation_ser::serialize_operation_delete_item(&self).map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
             let request = Self::assemble(request, body);
-
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
                 ));
-
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-
             request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
-
             aws_endpoint::set_endpoint_resolver(
                 &mut request.config_mut(),
                 _config.endpoint_resolver.clone(),
             );
-
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-
             aws_auth::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
-
             let op = smithy_http::operation::Operation::new(
                 request,
                 crate::operation::DeleteItem::new(),
@@ -1522,7 +1441,6 @@ impl DeleteItemInput {
                 "DeleteItem",
                 "dynamodb",
             ));
-
             let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
             op
         })
@@ -1532,7 +1450,6 @@ impl DeleteItemInput {
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
-
         Ok(builder
             .method("POST")
             .header("Content-Type", "application/x-amz-json-1.0")
@@ -1596,46 +1513,38 @@ impl DeleteTableInput {
     > {
         Ok({
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_delete_table_input_body(&self)
-                .map_err(|err| {
+            let body =
+                crate::operation_ser::serialize_operation_delete_table(&self).map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
             let request = Self::assemble(request, body);
-
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
                 ));
-
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-
             request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
-
             aws_endpoint::set_endpoint_resolver(
                 &mut request.config_mut(),
                 _config.endpoint_resolver.clone(),
             );
-
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-
             aws_auth::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
-
             let op = smithy_http::operation::Operation::new(
                 request,
                 crate::operation::DeleteTable::new(),
@@ -1644,7 +1553,6 @@ impl DeleteTableInput {
                 "DeleteTable",
                 "dynamodb",
             ));
-
             let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
             op
         })
@@ -1654,7 +1562,6 @@ impl DeleteTableInput {
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
-
         Ok(builder
             .method("POST")
             .header("Content-Type", "application/x-amz-json-1.0")
@@ -1718,46 +1625,37 @@ impl DescribeBackupInput {
     > {
         Ok({
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_describe_backup_input_body(&self)
-                .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            let body = crate::operation_ser::serialize_operation_describe_backup(&self).map_err(
+                |err| smithy_http::operation::BuildError::SerializationError(err.into()),
+            )?;
             let request = Self::assemble(request, body);
-
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
                 ));
-
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-
             request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
-
             aws_endpoint::set_endpoint_resolver(
                 &mut request.config_mut(),
                 _config.endpoint_resolver.clone(),
             );
-
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-
             aws_auth::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
-
             let op = smithy_http::operation::Operation::new(
                 request,
                 crate::operation::DescribeBackup::new(),
@@ -1766,7 +1664,6 @@ impl DescribeBackupInput {
                 "DescribeBackup",
                 "dynamodb",
             ));
-
             let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
             op
         })
@@ -1776,7 +1673,6 @@ impl DescribeBackupInput {
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
-
         Ok(builder
             .method("POST")
             .header("Content-Type", "application/x-amz-json-1.0")
@@ -1841,49 +1737,38 @@ impl DescribeContinuousBackupsInput {
     > {
         Ok({
             let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_describe_continuous_backups_input_body(
-                    &self,
-                )
+            let body = crate::operation_ser::serialize_operation_describe_continuous_backups(&self)
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
             let request = Self::assemble(request, body);
-
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
                 ));
-
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-
             request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
-
             aws_endpoint::set_endpoint_resolver(
                 &mut request.config_mut(),
                 _config.endpoint_resolver.clone(),
             );
-
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-
             aws_auth::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
-
             let op = smithy_http::operation::Operation::new(
                 request,
                 crate::operation::DescribeContinuousBackups::new(),
@@ -1892,7 +1777,6 @@ impl DescribeContinuousBackupsInput {
                 "DescribeContinuousBackups",
                 "dynamodb",
             ));
-
             let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
             op
         })
@@ -1902,7 +1786,6 @@ impl DescribeContinuousBackupsInput {
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
-
         Ok(builder
             .method("POST")
             .header("Content-Type", "application/x-amz-json-1.0")
@@ -1984,48 +1867,38 @@ impl DescribeContributorInsightsInput {
         Ok({
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_describe_contributor_insights_input_body(
-                    &self,
-                )
-                .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+                crate::operation_ser::serialize_operation_describe_contributor_insights(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
-
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
                 ));
-
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-
             request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
-
             aws_endpoint::set_endpoint_resolver(
                 &mut request.config_mut(),
                 _config.endpoint_resolver.clone(),
             );
-
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-
             aws_auth::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
-
             let op = smithy_http::operation::Operation::new(
                 request,
                 crate::operation::DescribeContributorInsights::new(),
@@ -2034,7 +1907,6 @@ impl DescribeContributorInsightsInput {
                 "DescribeContributorInsights",
                 "dynamodb",
             ));
-
             let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
             op
         })
@@ -2044,7 +1916,6 @@ impl DescribeContributorInsightsInput {
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
-
         Ok(builder
             .method("POST")
             .header("Content-Type", "application/x-amz-json-1.0")
@@ -2101,41 +1972,33 @@ impl DescribeEndpointsInput {
             let request = self.request_builder_base()?;
             let body = smithy_http::body::SdkBody::from("{}");
             let request = Self::assemble(request, body);
-
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
                 ));
-
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-
             request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
-
             aws_endpoint::set_endpoint_resolver(
                 &mut request.config_mut(),
                 _config.endpoint_resolver.clone(),
             );
-
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-
             aws_auth::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
-
             let op = smithy_http::operation::Operation::new(
                 request,
                 crate::operation::DescribeEndpoints::new(),
@@ -2144,7 +2007,6 @@ impl DescribeEndpointsInput {
                 "DescribeEndpoints",
                 "dynamodb",
             ));
-
             let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
             op
         })
@@ -2154,7 +2016,6 @@ impl DescribeEndpointsInput {
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
-
         Ok(builder
             .method("POST")
             .header("Content-Type", "application/x-amz-json-1.0")
@@ -2218,46 +2079,37 @@ impl DescribeExportInput {
     > {
         Ok({
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_describe_export_input_body(&self)
-                .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            let body = crate::operation_ser::serialize_operation_describe_export(&self).map_err(
+                |err| smithy_http::operation::BuildError::SerializationError(err.into()),
+            )?;
             let request = Self::assemble(request, body);
-
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
                 ));
-
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-
             request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
-
             aws_endpoint::set_endpoint_resolver(
                 &mut request.config_mut(),
                 _config.endpoint_resolver.clone(),
             );
-
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-
             aws_auth::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
-
             let op = smithy_http::operation::Operation::new(
                 request,
                 crate::operation::DescribeExport::new(),
@@ -2266,7 +2118,6 @@ impl DescribeExportInput {
                 "DescribeExport",
                 "dynamodb",
             ));
-
             let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
             op
         })
@@ -2276,7 +2127,6 @@ impl DescribeExportInput {
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
-
         Ok(builder
             .method("POST")
             .header("Content-Type", "application/x-amz-json-1.0")
@@ -2344,47 +2194,38 @@ impl DescribeGlobalTableInput {
     > {
         Ok({
             let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_describe_global_table_input_body(&self)
-                    .map_err(|err| {
+            let body = crate::operation_ser::serialize_operation_describe_global_table(&self)
+                .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
             let request = Self::assemble(request, body);
-
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
                 ));
-
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-
             request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
-
             aws_endpoint::set_endpoint_resolver(
                 &mut request.config_mut(),
                 _config.endpoint_resolver.clone(),
             );
-
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-
             aws_auth::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
-
             let op = smithy_http::operation::Operation::new(
                 request,
                 crate::operation::DescribeGlobalTable::new(),
@@ -2393,7 +2234,6 @@ impl DescribeGlobalTableInput {
                 "DescribeGlobalTable",
                 "dynamodb",
             ));
-
             let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
             op
         })
@@ -2403,7 +2243,6 @@ impl DescribeGlobalTableInput {
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
-
         Ok(builder
             .method("POST")
             .header("Content-Type", "application/x-amz-json-1.0")
@@ -2473,45 +2312,39 @@ impl DescribeGlobalTableSettingsInput {
     > {
         Ok({
             let request = self.request_builder_base()?;
-            let body = 
-                crate::operation_ser::serialize_operation_describe_global_table_settings_input_body(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
-            ;
+            let body =
+                crate::operation_ser::serialize_operation_describe_global_table_settings(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
-
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
                 ));
-
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-
             request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
-
             aws_endpoint::set_endpoint_resolver(
                 &mut request.config_mut(),
                 _config.endpoint_resolver.clone(),
             );
-
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-
             aws_auth::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
-
             let op = smithy_http::operation::Operation::new(
                 request,
                 crate::operation::DescribeGlobalTableSettings::new(),
@@ -2520,7 +2353,6 @@ impl DescribeGlobalTableSettingsInput {
                 "DescribeGlobalTableSettings",
                 "dynamodb",
             ));
-
             let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
             op
         })
@@ -2530,7 +2362,6 @@ impl DescribeGlobalTableSettingsInput {
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
-
         Ok(builder
             .method("POST")
             .header("Content-Type", "application/x-amz-json-1.0")
@@ -2600,45 +2431,41 @@ impl DescribeKinesisStreamingDestinationInput {
     > {
         Ok({
             let request = self.request_builder_base()?;
-            let body = 
-                crate::operation_ser::serialize_operation_describe_kinesis_streaming_destination_input_body(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
-            ;
+            let body =
+                crate::operation_ser::serialize_operation_describe_kinesis_streaming_destination(
+                    &self,
+                )
+                .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
             let request = Self::assemble(request, body);
-
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
                 ));
-
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-
             request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
-
             aws_endpoint::set_endpoint_resolver(
                 &mut request.config_mut(),
                 _config.endpoint_resolver.clone(),
             );
-
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-
             aws_auth::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
-
             let op = smithy_http::operation::Operation::new(
                 request,
                 crate::operation::DescribeKinesisStreamingDestination::new(),
@@ -2647,7 +2474,6 @@ impl DescribeKinesisStreamingDestinationInput {
                 "DescribeKinesisStreamingDestination",
                 "dynamodb",
             ));
-
             let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
             op
         })
@@ -2657,7 +2483,6 @@ impl DescribeKinesisStreamingDestinationInput {
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
-
         Ok(builder
             .method("POST")
             .header("Content-Type", "application/x-amz-json-1.0")
@@ -2713,41 +2538,33 @@ impl DescribeLimitsInput {
             let request = self.request_builder_base()?;
             let body = smithy_http::body::SdkBody::from("{}");
             let request = Self::assemble(request, body);
-
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
                 ));
-
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-
             request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
-
             aws_endpoint::set_endpoint_resolver(
                 &mut request.config_mut(),
                 _config.endpoint_resolver.clone(),
             );
-
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-
             aws_auth::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
-
             let op = smithy_http::operation::Operation::new(
                 request,
                 crate::operation::DescribeLimits::new(),
@@ -2756,7 +2573,6 @@ impl DescribeLimitsInput {
                 "DescribeLimits",
                 "dynamodb",
             ));
-
             let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
             op
         })
@@ -2766,7 +2582,6 @@ impl DescribeLimitsInput {
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
-
         Ok(builder
             .method("POST")
             .header("Content-Type", "application/x-amz-json-1.0")
@@ -2830,46 +2645,38 @@ impl DescribeTableInput {
     > {
         Ok({
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_describe_table_input_body(&self)
-                .map_err(|err| {
-                smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            let body =
+                crate::operation_ser::serialize_operation_describe_table(&self).map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
             let request = Self::assemble(request, body);
-
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
                 ));
-
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-
             request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
-
             aws_endpoint::set_endpoint_resolver(
                 &mut request.config_mut(),
                 _config.endpoint_resolver.clone(),
             );
-
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-
             aws_auth::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
-
             let op = smithy_http::operation::Operation::new(
                 request,
                 crate::operation::DescribeTable::new(),
@@ -2878,7 +2685,6 @@ impl DescribeTableInput {
                 "DescribeTable",
                 "dynamodb",
             ));
-
             let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
             op
         })
@@ -2888,7 +2694,6 @@ impl DescribeTableInput {
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
-
         Ok(builder
             .method("POST")
             .header("Content-Type", "application/x-amz-json-1.0")
@@ -2955,45 +2760,41 @@ impl DescribeTableReplicaAutoScalingInput {
     > {
         Ok({
             let request = self.request_builder_base()?;
-            let body = 
-                crate::operation_ser::serialize_operation_describe_table_replica_auto_scaling_input_body(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
-            ;
+            let body =
+                crate::operation_ser::serialize_operation_describe_table_replica_auto_scaling(
+                    &self,
+                )
+                .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
             let request = Self::assemble(request, body);
-
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
                 ));
-
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-
             request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
-
             aws_endpoint::set_endpoint_resolver(
                 &mut request.config_mut(),
                 _config.endpoint_resolver.clone(),
             );
-
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-
             aws_auth::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
-
             let op = smithy_http::operation::Operation::new(
                 request,
                 crate::operation::DescribeTableReplicaAutoScaling::new(),
@@ -3002,7 +2803,6 @@ impl DescribeTableReplicaAutoScalingInput {
                 "DescribeTableReplicaAutoScaling",
                 "dynamodb",
             ));
-
             let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
             op
         })
@@ -3012,7 +2812,6 @@ impl DescribeTableReplicaAutoScalingInput {
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
-
         Ok(builder
             .method("POST")
             .header("Content-Type", "application/x-amz-json-1.0")
@@ -3080,47 +2879,38 @@ impl DescribeTimeToLiveInput {
     > {
         Ok({
             let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_describe_time_to_live_input_body(&self)
-                    .map_err(|err| {
+            let body = crate::operation_ser::serialize_operation_describe_time_to_live(&self)
+                .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
             let request = Self::assemble(request, body);
-
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
                 ));
-
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-
             request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
-
             aws_endpoint::set_endpoint_resolver(
                 &mut request.config_mut(),
                 _config.endpoint_resolver.clone(),
             );
-
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-
             aws_auth::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
-
             let op = smithy_http::operation::Operation::new(
                 request,
                 crate::operation::DescribeTimeToLive::new(),
@@ -3129,7 +2919,6 @@ impl DescribeTimeToLiveInput {
                 "DescribeTimeToLive",
                 "dynamodb",
             ));
-
             let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
             op
         })
@@ -3139,7 +2928,6 @@ impl DescribeTimeToLiveInput {
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
-
         Ok(builder
             .method("POST")
             .header("Content-Type", "application/x-amz-json-1.0")
@@ -3217,45 +3005,41 @@ impl DisableKinesisStreamingDestinationInput {
     > {
         Ok({
             let request = self.request_builder_base()?;
-            let body = 
-                crate::operation_ser::serialize_operation_disable_kinesis_streaming_destination_input_body(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
-            ;
+            let body =
+                crate::operation_ser::serialize_operation_disable_kinesis_streaming_destination(
+                    &self,
+                )
+                .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
             let request = Self::assemble(request, body);
-
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
                 ));
-
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-
             request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
-
             aws_endpoint::set_endpoint_resolver(
                 &mut request.config_mut(),
                 _config.endpoint_resolver.clone(),
             );
-
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-
             aws_auth::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
-
             let op = smithy_http::operation::Operation::new(
                 request,
                 crate::operation::DisableKinesisStreamingDestination::new(),
@@ -3264,7 +3048,6 @@ impl DisableKinesisStreamingDestinationInput {
                 "DisableKinesisStreamingDestination",
                 "dynamodb",
             ));
-
             let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
             op
         })
@@ -3274,7 +3057,6 @@ impl DisableKinesisStreamingDestinationInput {
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
-
         Ok(builder
             .method("POST")
             .header("Content-Type", "application/x-amz-json-1.0")
@@ -3355,45 +3137,41 @@ impl EnableKinesisStreamingDestinationInput {
     > {
         Ok({
             let request = self.request_builder_base()?;
-            let body = 
-                crate::operation_ser::serialize_operation_enable_kinesis_streaming_destination_input_body(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
-            ;
+            let body =
+                crate::operation_ser::serialize_operation_enable_kinesis_streaming_destination(
+                    &self,
+                )
+                .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
             let request = Self::assemble(request, body);
-
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
                 ));
-
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-
             request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
-
             aws_endpoint::set_endpoint_resolver(
                 &mut request.config_mut(),
                 _config.endpoint_resolver.clone(),
             );
-
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-
             aws_auth::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
-
             let op = smithy_http::operation::Operation::new(
                 request,
                 crate::operation::EnableKinesisStreamingDestination::new(),
@@ -3402,7 +3180,6 @@ impl EnableKinesisStreamingDestinationInput {
                 "EnableKinesisStreamingDestination",
                 "dynamodb",
             ));
-
             let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
             op
         })
@@ -3412,7 +3189,6 @@ impl EnableKinesisStreamingDestinationInput {
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
-
         Ok(builder
             .method("POST")
             .header("Content-Type", "application/x-amz-json-1.0")
@@ -3523,47 +3299,37 @@ impl ExecuteStatementInput {
     > {
         Ok({
             let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_execute_statement_input_body(&self)
-                    .map_err(|err| {
-                        smithy_http::operation::BuildError::SerializationError(err.into())
-                    })?;
+            let body = crate::operation_ser::serialize_operation_execute_statement(&self).map_err(
+                |err| smithy_http::operation::BuildError::SerializationError(err.into()),
+            )?;
             let request = Self::assemble(request, body);
-
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
                 ));
-
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-
             request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
-
             aws_endpoint::set_endpoint_resolver(
                 &mut request.config_mut(),
                 _config.endpoint_resolver.clone(),
             );
-
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-
             aws_auth::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
-
             let op = smithy_http::operation::Operation::new(
                 request,
                 crate::operation::ExecuteStatement::new(),
@@ -3572,7 +3338,6 @@ impl ExecuteStatementInput {
                 "ExecuteStatement",
                 "dynamodb",
             ));
-
             let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
             op
         })
@@ -3582,7 +3347,6 @@ impl ExecuteStatementInput {
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
-
         Ok(builder
             .method("POST")
             .header("Content-Type", "application/x-amz-json-1.0")
@@ -3673,49 +3437,39 @@ impl ExecuteTransactionInput {
             if self.client_request_token.is_none() {
                 self.client_request_token = Some(_config.make_token.make_idempotency_token());
             }
-
             let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_execute_transaction_input_body(&self)
-                    .map_err(|err| {
-                        smithy_http::operation::BuildError::SerializationError(err.into())
-                    })?;
+            let body = crate::operation_ser::serialize_operation_execute_transaction(&self)
+                .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
             let request = Self::assemble(request, body);
-
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
                 ));
-
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-
             request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
-
             aws_endpoint::set_endpoint_resolver(
                 &mut request.config_mut(),
                 _config.endpoint_resolver.clone(),
             );
-
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-
             aws_auth::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
-
             let op = smithy_http::operation::Operation::new(
                 request,
                 crate::operation::ExecuteTransaction::new(),
@@ -3724,7 +3478,6 @@ impl ExecuteTransactionInput {
                 "ExecuteTransaction",
                 "dynamodb",
             ));
-
             let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
             op
         })
@@ -3734,7 +3487,6 @@ impl ExecuteTransactionInput {
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
-
         Ok(builder
             .method("POST")
             .header("Content-Type", "application/x-amz-json-1.0")
@@ -3925,51 +3677,40 @@ impl ExportTableToPointInTimeInput {
             if self.client_token.is_none() {
                 self.client_token = Some(_config.make_token.make_idempotency_token());
             }
-
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_export_table_to_point_in_time_input_body(
-                    &self,
-                )
-                .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+                crate::operation_ser::serialize_operation_export_table_to_point_in_time(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
-
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
                 ));
-
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-
             request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
-
             aws_endpoint::set_endpoint_resolver(
                 &mut request.config_mut(),
                 _config.endpoint_resolver.clone(),
             );
-
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-
             aws_auth::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
-
             let op = smithy_http::operation::Operation::new(
                 request,
                 crate::operation::ExportTableToPointInTime::new(),
@@ -3978,7 +3719,6 @@ impl ExportTableToPointInTimeInput {
                 "ExportTableToPointInTime",
                 "dynamodb",
             ));
-
             let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
             op
         })
@@ -3988,7 +3728,6 @@ impl ExportTableToPointInTimeInput {
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
-
         Ok(builder
             .method("POST")
             .header("Content-Type", "application/x-amz-json-1.0")
@@ -4172,50 +3911,41 @@ impl GetItemInput {
     > {
         Ok({
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_get_item_input_body(&self)
-                .map_err(|err| {
+            let body =
+                crate::operation_ser::serialize_operation_get_item(&self).map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
             let request = Self::assemble(request, body);
-
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
                 ));
-
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-
             request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
-
             aws_endpoint::set_endpoint_resolver(
                 &mut request.config_mut(),
                 _config.endpoint_resolver.clone(),
             );
-
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-
             aws_auth::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
-
             let op =
                 smithy_http::operation::Operation::new(request, crate::operation::GetItem::new())
                     .with_metadata(smithy_http::operation::Metadata::new("GetItem", "dynamodb"));
-
             let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
             op
         })
@@ -4225,7 +3955,6 @@ impl GetItemInput {
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
-
         Ok(builder
             .method("POST")
             .header("Content-Type", "application/x-amz-json-1.0")
@@ -4376,46 +4105,38 @@ impl ListBackupsInput {
     > {
         Ok({
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_list_backups_input_body(&self)
-                .map_err(|err| {
+            let body =
+                crate::operation_ser::serialize_operation_list_backups(&self).map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
             let request = Self::assemble(request, body);
-
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
                 ));
-
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-
             request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
-
             aws_endpoint::set_endpoint_resolver(
                 &mut request.config_mut(),
                 _config.endpoint_resolver.clone(),
             );
-
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-
             aws_auth::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
-
             let op = smithy_http::operation::Operation::new(
                 request,
                 crate::operation::ListBackups::new(),
@@ -4424,7 +4145,6 @@ impl ListBackupsInput {
                 "ListBackups",
                 "dynamodb",
             ));
-
             let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
             op
         })
@@ -4434,7 +4154,6 @@ impl ListBackupsInput {
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
-
         Ok(builder
             .method("POST")
             .header("Content-Type", "application/x-amz-json-1.0")
@@ -4521,49 +4240,38 @@ impl ListContributorInsightsInput {
     > {
         Ok({
             let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_list_contributor_insights_input_body(
-                    &self,
-                )
+            let body = crate::operation_ser::serialize_operation_list_contributor_insights(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+                smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
             let request = Self::assemble(request, body);
-
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
                 ));
-
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-
             request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
-
             aws_endpoint::set_endpoint_resolver(
                 &mut request.config_mut(),
                 _config.endpoint_resolver.clone(),
             );
-
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-
             aws_auth::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
-
             let op = smithy_http::operation::Operation::new(
                 request,
                 crate::operation::ListContributorInsights::new(),
@@ -4572,7 +4280,6 @@ impl ListContributorInsightsInput {
                 "ListContributorInsights",
                 "dynamodb",
             ));
-
             let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
             op
         })
@@ -4582,7 +4289,6 @@ impl ListContributorInsightsInput {
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
-
         Ok(builder
             .method("POST")
             .header("Content-Type", "application/x-amz-json-1.0")
@@ -4670,46 +4376,38 @@ impl ListExportsInput {
     > {
         Ok({
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_list_exports_input_body(&self)
-                .map_err(|err| {
+            let body =
+                crate::operation_ser::serialize_operation_list_exports(&self).map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
             let request = Self::assemble(request, body);
-
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
                 ));
-
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-
             request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
-
             aws_endpoint::set_endpoint_resolver(
                 &mut request.config_mut(),
                 _config.endpoint_resolver.clone(),
             );
-
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-
             aws_auth::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
-
             let op = smithy_http::operation::Operation::new(
                 request,
                 crate::operation::ListExports::new(),
@@ -4718,7 +4416,6 @@ impl ListExportsInput {
                 "ListExports",
                 "dynamodb",
             ));
-
             let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
             op
         })
@@ -4728,7 +4425,6 @@ impl ListExportsInput {
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
-
         Ok(builder
             .method("POST")
             .header("Content-Type", "application/x-amz-json-1.0")
@@ -4823,47 +4519,38 @@ impl ListGlobalTablesInput {
     > {
         Ok({
             let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_list_global_tables_input_body(&self)
-                    .map_err(|err| {
-                        smithy_http::operation::BuildError::SerializationError(err.into())
-                    })?;
+            let body = crate::operation_ser::serialize_operation_list_global_tables(&self)
+                .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
             let request = Self::assemble(request, body);
-
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
                 ));
-
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-
             request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
-
             aws_endpoint::set_endpoint_resolver(
                 &mut request.config_mut(),
                 _config.endpoint_resolver.clone(),
             );
-
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-
             aws_auth::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
-
             let op = smithy_http::operation::Operation::new(
                 request,
                 crate::operation::ListGlobalTables::new(),
@@ -4872,7 +4559,6 @@ impl ListGlobalTablesInput {
                 "ListGlobalTables",
                 "dynamodb",
             ));
-
             let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
             op
         })
@@ -4882,7 +4568,6 @@ impl ListGlobalTablesInput {
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
-
         Ok(builder
             .method("POST")
             .header("Content-Type", "application/x-amz-json-1.0")
@@ -4962,46 +4647,38 @@ impl ListTablesInput {
     > {
         Ok({
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_list_tables_input_body(&self)
-                .map_err(|err| {
+            let body =
+                crate::operation_ser::serialize_operation_list_tables(&self).map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
             let request = Self::assemble(request, body);
-
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
                 ));
-
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-
             request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
-
             aws_endpoint::set_endpoint_resolver(
                 &mut request.config_mut(),
                 _config.endpoint_resolver.clone(),
             );
-
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-
             aws_auth::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
-
             let op = smithy_http::operation::Operation::new(
                 request,
                 crate::operation::ListTables::new(),
@@ -5010,7 +4687,6 @@ impl ListTablesInput {
                 "ListTables",
                 "dynamodb",
             ));
-
             let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
             op
         })
@@ -5020,7 +4696,6 @@ impl ListTablesInput {
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
-
         Ok(builder
             .method("POST")
             .header("Content-Type", "application/x-amz-json-1.0")
@@ -5097,47 +4772,38 @@ impl ListTagsOfResourceInput {
     > {
         Ok({
             let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_list_tags_of_resource_input_body(&self)
-                    .map_err(|err| {
+            let body = crate::operation_ser::serialize_operation_list_tags_of_resource(&self)
+                .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
             let request = Self::assemble(request, body);
-
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
                 ));
-
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-
             request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
-
             aws_endpoint::set_endpoint_resolver(
                 &mut request.config_mut(),
                 _config.endpoint_resolver.clone(),
             );
-
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-
             aws_auth::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
-
             let op = smithy_http::operation::Operation::new(
                 request,
                 crate::operation::ListTagsOfResource::new(),
@@ -5146,7 +4812,6 @@ impl ListTagsOfResourceInput {
                 "ListTagsOfResource",
                 "dynamodb",
             ));
-
             let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
             op
         })
@@ -5156,7 +4821,6 @@ impl ListTagsOfResourceInput {
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
-
         Ok(builder
             .method("POST")
             .header("Content-Type", "application/x-amz-json-1.0")
@@ -5447,50 +5111,41 @@ impl PutItemInput {
     > {
         Ok({
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_put_item_input_body(&self)
-                .map_err(|err| {
+            let body =
+                crate::operation_ser::serialize_operation_put_item(&self).map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
             let request = Self::assemble(request, body);
-
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
                 ));
-
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-
             request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
-
             aws_endpoint::set_endpoint_resolver(
                 &mut request.config_mut(),
                 _config.endpoint_resolver.clone(),
             );
-
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-
             aws_auth::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
-
             let op =
                 smithy_http::operation::Operation::new(request, crate::operation::PutItem::new())
                     .with_metadata(smithy_http::operation::Metadata::new("PutItem", "dynamodb"));
-
             let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
             op
         })
@@ -5500,7 +5155,6 @@ impl PutItemInput {
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
-
         Ok(builder
             .method("POST")
             .header("Content-Type", "application/x-amz-json-1.0")
@@ -6019,49 +5673,40 @@ impl QueryInput {
     > {
         Ok({
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_query_input_body(&self).map_err(
-                |err| smithy_http::operation::BuildError::SerializationError(err.into()),
-            )?;
+            let body = crate::operation_ser::serialize_operation_query(&self).map_err(|err| {
+                smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
             let request = Self::assemble(request, body);
-
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
                 ));
-
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-
             request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
-
             aws_endpoint::set_endpoint_resolver(
                 &mut request.config_mut(),
                 _config.endpoint_resolver.clone(),
             );
-
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-
             aws_auth::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
-
             let op =
                 smithy_http::operation::Operation::new(request, crate::operation::Query::new())
                     .with_metadata(smithy_http::operation::Metadata::new("Query", "dynamodb"));
-
             let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
             op
         })
@@ -6071,7 +5716,6 @@ impl QueryInput {
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
-
         Ok(builder
             .method("POST")
             .header("Content-Type", "application/x-amz-json-1.0")
@@ -6234,49 +5878,38 @@ impl RestoreTableFromBackupInput {
     > {
         Ok({
             let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_restore_table_from_backup_input_body(
-                    &self,
-                )
+            let body = crate::operation_ser::serialize_operation_restore_table_from_backup(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+                smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
             let request = Self::assemble(request, body);
-
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
                 ));
-
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-
             request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
-
             aws_endpoint::set_endpoint_resolver(
                 &mut request.config_mut(),
                 _config.endpoint_resolver.clone(),
             );
-
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-
             aws_auth::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
-
             let op = smithy_http::operation::Operation::new(
                 request,
                 crate::operation::RestoreTableFromBackup::new(),
@@ -6285,7 +5918,6 @@ impl RestoreTableFromBackupInput {
                 "RestoreTableFromBackup",
                 "dynamodb",
             ));
-
             let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
             op
         })
@@ -6295,7 +5927,6 @@ impl RestoreTableFromBackupInput {
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
-
         Ok(builder
             .method("POST")
             .header("Content-Type", "application/x-amz-json-1.0")
@@ -6502,45 +6133,39 @@ impl RestoreTableToPointInTimeInput {
     > {
         Ok({
             let request = self.request_builder_base()?;
-            let body = 
-                crate::operation_ser::serialize_operation_restore_table_to_point_in_time_input_body(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
-            ;
+            let body =
+                crate::operation_ser::serialize_operation_restore_table_to_point_in_time(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
-
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
                 ));
-
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-
             request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
-
             aws_endpoint::set_endpoint_resolver(
                 &mut request.config_mut(),
                 _config.endpoint_resolver.clone(),
             );
-
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-
             aws_auth::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
-
             let op = smithy_http::operation::Operation::new(
                 request,
                 crate::operation::RestoreTableToPointInTime::new(),
@@ -6549,7 +6174,6 @@ impl RestoreTableToPointInTimeInput {
                 "RestoreTableToPointInTime",
                 "dynamodb",
             ));
-
             let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
             op
         })
@@ -6559,7 +6183,6 @@ impl RestoreTableToPointInTimeInput {
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
-
         Ok(builder
             .method("POST")
             .header("Content-Type", "application/x-amz-json-1.0")
@@ -6976,48 +6599,39 @@ impl ScanInput {
     > {
         Ok({
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_scan_input_body(&self).map_err(
-                |err| smithy_http::operation::BuildError::SerializationError(err.into()),
-            )?;
+            let body = crate::operation_ser::serialize_operation_scan(&self).map_err(|err| {
+                smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
             let request = Self::assemble(request, body);
-
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
                 ));
-
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-
             request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
-
             aws_endpoint::set_endpoint_resolver(
                 &mut request.config_mut(),
                 _config.endpoint_resolver.clone(),
             );
-
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-
             aws_auth::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
-
             let op = smithy_http::operation::Operation::new(request, crate::operation::Scan::new())
                 .with_metadata(smithy_http::operation::Metadata::new("Scan", "dynamodb"));
-
             let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
             op
         })
@@ -7027,7 +6641,6 @@ impl ScanInput {
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
-
         Ok(builder
             .method("POST")
             .header("Content-Type", "application/x-amz-json-1.0")
@@ -7106,46 +6719,38 @@ impl TagResourceInput {
     > {
         Ok({
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_tag_resource_input_body(&self)
-                .map_err(|err| {
+            let body =
+                crate::operation_ser::serialize_operation_tag_resource(&self).map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
             let request = Self::assemble(request, body);
-
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
                 ));
-
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-
             request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
-
             aws_endpoint::set_endpoint_resolver(
                 &mut request.config_mut(),
                 _config.endpoint_resolver.clone(),
             );
-
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-
             aws_auth::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
-
             let op = smithy_http::operation::Operation::new(
                 request,
                 crate::operation::TagResource::new(),
@@ -7154,7 +6759,6 @@ impl TagResourceInput {
                 "TagResource",
                 "dynamodb",
             ));
-
             let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
             op
         })
@@ -7164,7 +6768,6 @@ impl TagResourceInput {
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
-
         Ok(builder
             .method("POST")
             .header("Content-Type", "application/x-amz-json-1.0")
@@ -7254,47 +6857,38 @@ impl TransactGetItemsInput {
     > {
         Ok({
             let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_transact_get_items_input_body(&self)
-                    .map_err(|err| {
-                        smithy_http::operation::BuildError::SerializationError(err.into())
-                    })?;
+            let body = crate::operation_ser::serialize_operation_transact_get_items(&self)
+                .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
             let request = Self::assemble(request, body);
-
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
                 ));
-
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-
             request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
-
             aws_endpoint::set_endpoint_resolver(
                 &mut request.config_mut(),
                 _config.endpoint_resolver.clone(),
             );
-
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-
             aws_auth::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
-
             let op = smithy_http::operation::Operation::new(
                 request,
                 crate::operation::TransactGetItems::new(),
@@ -7303,7 +6897,6 @@ impl TransactGetItemsInput {
                 "TransactGetItems",
                 "dynamodb",
             ));
-
             let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
             op
         })
@@ -7313,7 +6906,6 @@ impl TransactGetItemsInput {
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
-
         Ok(builder
             .method("POST")
             .header("Content-Type", "application/x-amz-json-1.0")
@@ -7469,49 +7061,39 @@ impl TransactWriteItemsInput {
             if self.client_request_token.is_none() {
                 self.client_request_token = Some(_config.make_token.make_idempotency_token());
             }
-
             let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_transact_write_items_input_body(&self)
-                    .map_err(|err| {
-                        smithy_http::operation::BuildError::SerializationError(err.into())
-                    })?;
+            let body = crate::operation_ser::serialize_operation_transact_write_items(&self)
+                .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
             let request = Self::assemble(request, body);
-
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
                 ));
-
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-
             request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
-
             aws_endpoint::set_endpoint_resolver(
                 &mut request.config_mut(),
                 _config.endpoint_resolver.clone(),
             );
-
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-
             aws_auth::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
-
             let op = smithy_http::operation::Operation::new(
                 request,
                 crate::operation::TransactWriteItems::new(),
@@ -7520,7 +7102,6 @@ impl TransactWriteItemsInput {
                 "TransactWriteItems",
                 "dynamodb",
             ));
-
             let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
             op
         })
@@ -7530,7 +7111,6 @@ impl TransactWriteItemsInput {
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
-
         Ok(builder
             .method("POST")
             .header("Content-Type", "application/x-amz-json-1.0")
@@ -7610,46 +7190,38 @@ impl UntagResourceInput {
     > {
         Ok({
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_untag_resource_input_body(&self)
-                .map_err(|err| {
-                smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            let body =
+                crate::operation_ser::serialize_operation_untag_resource(&self).map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
             let request = Self::assemble(request, body);
-
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
                 ));
-
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-
             request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
-
             aws_endpoint::set_endpoint_resolver(
                 &mut request.config_mut(),
                 _config.endpoint_resolver.clone(),
             );
-
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-
             aws_auth::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
-
             let op = smithy_http::operation::Operation::new(
                 request,
                 crate::operation::UntagResource::new(),
@@ -7658,7 +7230,6 @@ impl UntagResourceInput {
                 "UntagResource",
                 "dynamodb",
             ));
-
             let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
             op
         })
@@ -7668,7 +7239,6 @@ impl UntagResourceInput {
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
-
         Ok(builder
             .method("POST")
             .header("Content-Type", "application/x-amz-json-1.0")
@@ -7751,49 +7321,38 @@ impl UpdateContinuousBackupsInput {
     > {
         Ok({
             let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_update_continuous_backups_input_body(
-                    &self,
-                )
+            let body = crate::operation_ser::serialize_operation_update_continuous_backups(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+                smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
             let request = Self::assemble(request, body);
-
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
                 ));
-
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-
             request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
-
             aws_endpoint::set_endpoint_resolver(
                 &mut request.config_mut(),
                 _config.endpoint_resolver.clone(),
             );
-
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-
             aws_auth::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
-
             let op = smithy_http::operation::Operation::new(
                 request,
                 crate::operation::UpdateContinuousBackups::new(),
@@ -7802,7 +7361,6 @@ impl UpdateContinuousBackupsInput {
                 "UpdateContinuousBackups",
                 "dynamodb",
             ));
-
             let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
             op
         })
@@ -7812,7 +7370,6 @@ impl UpdateContinuousBackupsInput {
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
-
         Ok(builder
             .method("POST")
             .header("Content-Type", "application/x-amz-json-1.0")
@@ -7906,49 +7463,38 @@ impl UpdateContributorInsightsInput {
     > {
         Ok({
             let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_update_contributor_insights_input_body(
-                    &self,
-                )
+            let body = crate::operation_ser::serialize_operation_update_contributor_insights(&self)
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
             let request = Self::assemble(request, body);
-
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
                 ));
-
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-
             request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
-
             aws_endpoint::set_endpoint_resolver(
                 &mut request.config_mut(),
                 _config.endpoint_resolver.clone(),
             );
-
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-
             aws_auth::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
-
             let op = smithy_http::operation::Operation::new(
                 request,
                 crate::operation::UpdateContributorInsights::new(),
@@ -7957,7 +7503,6 @@ impl UpdateContributorInsightsInput {
                 "UpdateContributorInsights",
                 "dynamodb",
             ));
-
             let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
             op
         })
@@ -7967,7 +7512,6 @@ impl UpdateContributorInsightsInput {
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
-
         Ok(builder
             .method("POST")
             .header("Content-Type", "application/x-amz-json-1.0")
@@ -8053,47 +7597,38 @@ impl UpdateGlobalTableInput {
     > {
         Ok({
             let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_update_global_table_input_body(&self)
-                    .map_err(|err| {
-                        smithy_http::operation::BuildError::SerializationError(err.into())
-                    })?;
+            let body = crate::operation_ser::serialize_operation_update_global_table(&self)
+                .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
             let request = Self::assemble(request, body);
-
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
                 ));
-
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-
             request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
-
             aws_endpoint::set_endpoint_resolver(
                 &mut request.config_mut(),
                 _config.endpoint_resolver.clone(),
             );
-
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-
             aws_auth::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
-
             let op = smithy_http::operation::Operation::new(
                 request,
                 crate::operation::UpdateGlobalTable::new(),
@@ -8102,7 +7637,6 @@ impl UpdateGlobalTableInput {
                 "UpdateGlobalTable",
                 "dynamodb",
             ));
-
             let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
             op
         })
@@ -8112,7 +7646,6 @@ impl UpdateGlobalTableInput {
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
-
         Ok(builder
             .method("POST")
             .header("Content-Type", "application/x-amz-json-1.0")
@@ -8286,48 +7819,38 @@ impl UpdateGlobalTableSettingsInput {
         Ok({
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_update_global_table_settings_input_body(
-                    &self,
-                )
-                .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+                crate::operation_ser::serialize_operation_update_global_table_settings(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
-
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
                 ));
-
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-
             request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
-
             aws_endpoint::set_endpoint_resolver(
                 &mut request.config_mut(),
                 _config.endpoint_resolver.clone(),
             );
-
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-
             aws_auth::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
-
             let op = smithy_http::operation::Operation::new(
                 request,
                 crate::operation::UpdateGlobalTableSettings::new(),
@@ -8336,7 +7859,6 @@ impl UpdateGlobalTableSettingsInput {
                 "UpdateGlobalTableSettings",
                 "dynamodb",
             ));
-
             let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
             op
         })
@@ -8346,7 +7868,6 @@ impl UpdateGlobalTableSettingsInput {
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
-
         Ok(builder
             .method("POST")
             .header("Content-Type", "application/x-amz-json-1.0")
@@ -8777,46 +8298,38 @@ impl UpdateItemInput {
     > {
         Ok({
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_update_item_input_body(&self)
-                .map_err(|err| {
+            let body =
+                crate::operation_ser::serialize_operation_update_item(&self).map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
             let request = Self::assemble(request, body);
-
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
                 ));
-
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-
             request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
-
             aws_endpoint::set_endpoint_resolver(
                 &mut request.config_mut(),
                 _config.endpoint_resolver.clone(),
             );
-
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-
             aws_auth::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
-
             let op = smithy_http::operation::Operation::new(
                 request,
                 crate::operation::UpdateItem::new(),
@@ -8825,7 +8338,6 @@ impl UpdateItemInput {
                 "UpdateItem",
                 "dynamodb",
             ));
-
             let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
             op
         })
@@ -8835,7 +8347,6 @@ impl UpdateItemInput {
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
-
         Ok(builder
             .method("POST")
             .header("Content-Type", "application/x-amz-json-1.0")
@@ -9031,46 +8542,38 @@ impl UpdateTableInput {
     > {
         Ok({
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_update_table_input_body(&self)
-                .map_err(|err| {
+            let body =
+                crate::operation_ser::serialize_operation_update_table(&self).map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
             let request = Self::assemble(request, body);
-
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
                 ));
-
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-
             request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
-
             aws_endpoint::set_endpoint_resolver(
                 &mut request.config_mut(),
                 _config.endpoint_resolver.clone(),
             );
-
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-
             aws_auth::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
-
             let op = smithy_http::operation::Operation::new(
                 request,
                 crate::operation::UpdateTable::new(),
@@ -9079,7 +8582,6 @@ impl UpdateTableInput {
                 "UpdateTable",
                 "dynamodb",
             ));
-
             let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
             op
         })
@@ -9089,7 +8591,6 @@ impl UpdateTableInput {
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
-
         Ok(builder
             .method("POST")
             .header("Content-Type", "application/x-amz-json-1.0")
@@ -9216,45 +8717,39 @@ impl UpdateTableReplicaAutoScalingInput {
     > {
         Ok({
             let request = self.request_builder_base()?;
-            let body = 
-                crate::operation_ser::serialize_operation_update_table_replica_auto_scaling_input_body(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
-            ;
+            let body =
+                crate::operation_ser::serialize_operation_update_table_replica_auto_scaling(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
-
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
                 ));
-
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-
             request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
-
             aws_endpoint::set_endpoint_resolver(
                 &mut request.config_mut(),
                 _config.endpoint_resolver.clone(),
             );
-
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-
             aws_auth::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
-
             let op = smithy_http::operation::Operation::new(
                 request,
                 crate::operation::UpdateTableReplicaAutoScaling::new(),
@@ -9263,7 +8758,6 @@ impl UpdateTableReplicaAutoScalingInput {
                 "UpdateTableReplicaAutoScaling",
                 "dynamodb",
             ));
-
             let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
             op
         })
@@ -9273,7 +8767,6 @@ impl UpdateTableReplicaAutoScalingInput {
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
-
         Ok(builder
             .method("POST")
             .header("Content-Type", "application/x-amz-json-1.0")
@@ -9359,47 +8852,38 @@ impl UpdateTimeToLiveInput {
     > {
         Ok({
             let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_update_time_to_live_input_body(&self)
-                    .map_err(|err| {
-                        smithy_http::operation::BuildError::SerializationError(err.into())
-                    })?;
+            let body = crate::operation_ser::serialize_operation_update_time_to_live(&self)
+                .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
             let request = Self::assemble(request, body);
-
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-
             request
                 .config_mut()
                 .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
                 ));
-
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-
             request.config_mut().insert(signing_config);
             request
                 .config_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
-
             aws_endpoint::set_endpoint_resolver(
                 &mut request.config_mut(),
                 _config.endpoint_resolver.clone(),
             );
-
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-
             aws_auth::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
-
             let op = smithy_http::operation::Operation::new(
                 request,
                 crate::operation::UpdateTimeToLive::new(),
@@ -9408,7 +8892,6 @@ impl UpdateTimeToLiveInput {
                 "UpdateTimeToLive",
                 "dynamodb",
             ));
-
             let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
             op
         })
@@ -9418,7 +8901,6 @@ impl UpdateTimeToLiveInput {
         &self,
     ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
-
         Ok(builder
             .method("POST")
             .header("Content-Type", "application/x-amz-json-1.0")

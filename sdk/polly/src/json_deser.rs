@@ -21,7 +21,6 @@ pub fn lexicon_not_found_exception(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_message(parsed_body.message);
     Ok(builder)
 }
@@ -38,7 +37,6 @@ pub fn service_failure_exception(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_message(parsed_body.message);
     Ok(builder)
 }
@@ -55,7 +53,6 @@ pub fn invalid_next_token_exception(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_message(parsed_body.message);
     Ok(builder)
 }
@@ -72,7 +69,6 @@ pub fn describe_voices_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_voices(parsed_body.voices);
     builder = builder.set_next_token(parsed_body.next_token);
     Ok(builder)
@@ -90,7 +86,6 @@ pub fn get_lexicon_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_lexicon(parsed_body.lexicon);
     builder = builder.set_lexicon_attributes(parsed_body.lexicon_attributes);
     Ok(builder)
@@ -108,7 +103,6 @@ pub fn invalid_task_id_exception(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_message(parsed_body.message);
     Ok(builder)
 }
@@ -125,7 +119,6 @@ pub fn synthesis_task_not_found_exception(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_message(parsed_body.message);
     Ok(builder)
 }
@@ -142,7 +135,6 @@ pub fn get_speech_synthesis_task_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_synthesis_task(parsed_body.synthesis_task);
     Ok(builder)
 }
@@ -159,7 +151,6 @@ pub fn list_lexicons_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_lexicons(parsed_body.lexicons);
     builder = builder.set_next_token(parsed_body.next_token);
     Ok(builder)
@@ -177,7 +168,6 @@ pub fn list_speech_synthesis_tasks_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_next_token(parsed_body.next_token);
     builder = builder.set_synthesis_tasks(parsed_body.synthesis_tasks);
     Ok(builder)
@@ -195,7 +185,6 @@ pub fn invalid_lexicon_exception(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_message(parsed_body.message);
     Ok(builder)
 }
@@ -212,7 +201,6 @@ pub fn lexicon_size_exceeded_exception(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_message(parsed_body.message);
     Ok(builder)
 }
@@ -229,7 +217,6 @@ pub fn max_lexeme_length_exceeded_exception(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_message(parsed_body.message);
     Ok(builder)
 }
@@ -246,7 +233,6 @@ pub fn max_lexicons_number_exceeded_exception(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_message(parsed_body.message);
     Ok(builder)
 }
@@ -263,7 +249,6 @@ pub fn unsupported_pls_alphabet_exception(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_message(parsed_body.message);
     Ok(builder)
 }
@@ -280,7 +265,6 @@ pub fn unsupported_pls_language_exception(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_message(parsed_body.message);
     Ok(builder)
 }
@@ -297,7 +281,6 @@ pub fn engine_not_supported_exception(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_message(parsed_body.message);
     Ok(builder)
 }
@@ -314,7 +297,6 @@ pub fn invalid_s3_bucket_exception(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_message(parsed_body.message);
     Ok(builder)
 }
@@ -331,7 +313,6 @@ pub fn invalid_s3_key_exception(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_message(parsed_body.message);
     Ok(builder)
 }
@@ -348,7 +329,6 @@ pub fn invalid_sample_rate_exception(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_message(parsed_body.message);
     Ok(builder)
 }
@@ -365,7 +345,6 @@ pub fn invalid_sns_topic_arn_exception(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_message(parsed_body.message);
     Ok(builder)
 }
@@ -382,7 +361,6 @@ pub fn invalid_ssml_exception(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_message(parsed_body.message);
     Ok(builder)
 }
@@ -399,7 +377,6 @@ pub fn language_not_supported_exception(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_message(parsed_body.message);
     Ok(builder)
 }
@@ -416,7 +393,6 @@ pub fn marks_not_supported_for_format_exception(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_message(parsed_body.message);
     Ok(builder)
 }
@@ -434,7 +410,6 @@ pub fn ssml_marks_not_supported_for_text_type_exception(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_message(parsed_body.message);
     Ok(builder)
 }
@@ -451,7 +426,6 @@ pub fn text_length_exceeded_exception(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_message(parsed_body.message);
     Ok(builder)
 }
@@ -468,7 +442,6 @@ pub fn start_speech_synthesis_task_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-
     builder = builder.set_synthesis_task(parsed_body.synthesis_task);
     Ok(builder)
 }

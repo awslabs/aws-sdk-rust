@@ -118,13 +118,20 @@ impl Instant {
                 let rfc3339 = self
                     .to_chrono()
                     .to_rfc3339_opts(SecondsFormat::AutoSi, true);
-                // There's a bug(?) where trailing 0s aren't trimmed
-                let mut rfc3339 = rfc3339
-                    .trim_end_matches('Z')
-                    .trim_end_matches('0')
-                    .to_owned();
-                rfc3339.push('Z');
-                rfc3339
+                // If the date ends in `:00` eg. 2019-12-16T23:48:00Z we don't want to strip
+                // those 0s. We only need to strip subsecond zeros when they appear
+                let fixed_date = if !rfc3339.ends_with(":00Z") {
+                    // There's a bug(?) where trailing 0s aren't trimmed
+                    let mut trimmed = rfc3339
+                        .trim_end_matches('Z')
+                        .trim_end_matches('0')
+                        .to_owned();
+                    trimmed.push('Z');
+                    trimmed
+                } else {
+                    rfc3339
+                };
+                fixed_date
             }
             Format::EpochSeconds => {
                 if self.subsecond_nanos == 0 {
@@ -167,6 +174,17 @@ mod test {
         assert_eq!(
             instant.fmt(Format::HttpDate),
             "Mon, 16 Dec 2019 23:48:18.520 GMT"
+        );
+    }
+
+    #[test]
+    fn test_instant_fmt_zero_seconds() {
+        let instant = Instant::from_epoch_seconds(1576540080);
+        assert_eq!(instant.fmt(Format::DateTime), "2019-12-16T23:48:00Z");
+        assert_eq!(instant.fmt(Format::EpochSeconds), "1576540080");
+        assert_eq!(
+            instant.fmt(Format::HttpDate),
+            "Mon, 16 Dec 2019 23:48:00 GMT"
         );
     }
 

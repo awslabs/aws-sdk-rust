@@ -4,7 +4,7 @@
 /// using either the <code>GetLexicon</code> or <code>ListLexicon</code> APIs.</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html">Managing
 /// Lexicons</a>.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteLexicon {
     _private: (),
 }
@@ -17,7 +17,6 @@ impl DeleteLexicon {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for DeleteLexicon {
     type Output = Result<crate::output::DeleteLexiconOutput, crate::error::DeleteLexiconError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -43,7 +42,7 @@ impl smithy_http::response::ParseStrictResponse for DeleteLexicon {
 /// English voices. </p>
 /// <p>This operation requires permissions to perform the <code>polly:DescribeVoices</code>
 /// action.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeVoices {
     _private: (),
 }
@@ -56,7 +55,6 @@ impl DescribeVoices {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for DescribeVoices {
     type Output = Result<crate::output::DescribeVoicesOutput, crate::error::DescribeVoicesError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -71,7 +69,7 @@ impl smithy_http::response::ParseStrictResponse for DescribeVoices {
 /// <p>Returns the content of the specified pronunciation lexicon stored in an AWS Region. For
 /// more information, see <a href="https://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html">Managing
 /// Lexicons</a>.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct GetLexicon {
     _private: (),
 }
@@ -84,7 +82,6 @@ impl GetLexicon {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for GetLexicon {
     type Output = Result<crate::output::GetLexiconOutput, crate::error::GetLexiconError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -99,7 +96,7 @@ impl smithy_http::response::ParseStrictResponse for GetLexicon {
 /// <p>Retrieves a specific SpeechSynthesisTask object based on its TaskID. This object contains
 /// information about the given speech synthesis task, including the status of the task, and a
 /// link to the S3 bucket containing the output of the task.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct GetSpeechSynthesisTask {
     _private: (),
 }
@@ -112,7 +109,6 @@ impl GetSpeechSynthesisTask {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for GetSpeechSynthesisTask {
     type Output = Result<
         crate::output::GetSpeechSynthesisTaskOutput,
@@ -130,7 +126,7 @@ impl smithy_http::response::ParseStrictResponse for GetSpeechSynthesisTask {
 /// <p>Returns a list of pronunciation lexicons stored in an AWS Region. For more information,
 /// see <a href="https://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html">Managing
 /// Lexicons</a>.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct ListLexicons {
     _private: (),
 }
@@ -143,7 +139,6 @@ impl ListLexicons {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for ListLexicons {
     type Output = Result<crate::output::ListLexiconsOutput, crate::error::ListLexiconsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -158,7 +153,7 @@ impl smithy_http::response::ParseStrictResponse for ListLexicons {
 /// <p>Returns a list of SpeechSynthesisTask objects ordered by their creation date. This
 /// operation can filter the tasks by their status, for example, allowing users to list only tasks
 /// that are completed.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct ListSpeechSynthesisTasks {
     _private: (),
 }
@@ -171,7 +166,6 @@ impl ListSpeechSynthesisTasks {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for ListSpeechSynthesisTasks {
     type Output = Result<
         crate::output::ListSpeechSynthesisTasksOutput,
@@ -192,7 +186,7 @@ impl smithy_http::response::ParseStrictResponse for ListSpeechSynthesisTasks {
 /// the SynthesizeSpeech operation.</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html">Managing
 /// Lexicons</a>.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct PutLexicon {
     _private: (),
 }
@@ -205,7 +199,6 @@ impl PutLexicon {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for PutLexicon {
     type Output = Result<crate::output::PutLexiconOutput, crate::error::PutLexiconError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -223,7 +216,7 @@ impl smithy_http::response::ParseStrictResponse for PutLexicon {
 /// output of the synthesis task and two optional parameters (OutputS3KeyPrefix and SnsTopicArn).
 /// Once the synthesis task is created, this operation will return a SpeechSynthesisTask object,
 /// which will include an identifier of this task as well as the current status.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct StartSpeechSynthesisTask {
     _private: (),
 }
@@ -236,7 +229,6 @@ impl StartSpeechSynthesisTask {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for StartSpeechSynthesisTask {
     type Output = Result<
         crate::output::StartSpeechSynthesisTaskOutput,
@@ -256,7 +248,7 @@ impl smithy_http::response::ParseStrictResponse for StartSpeechSynthesisTask {
 /// example, Cyrillic might not be read at all by English voices) unless phoneme mapping is used.
 /// For more information, see <a href="https://docs.aws.amazon.com/polly/latest/dg/how-text-to-speech-works.html">How it
 /// Works</a>.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct SynthesizeSpeech {
     _private: (),
 }
@@ -269,7 +261,6 @@ impl SynthesizeSpeech {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseHttpResponse<smithy_http::body::SdkBody> for SynthesizeSpeech {
     type Output =
         Result<crate::output::SynthesizeSpeechOutput, crate::error::SynthesizeSpeechError>;

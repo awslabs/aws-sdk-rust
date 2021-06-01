@@ -14,7 +14,7 @@
 /// to and are interpreted strictly as a string of characters. </p>
 /// <p>For more information about using tags with EC2 instances, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging your Amazon EC2 resources</a> in the
 /// <i>Amazon EC2 User Guide</i>.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct AddTagsToResource {
     _private: (),
 }
@@ -33,7 +33,6 @@ impl AddTagsToResource {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => return Err(crate::error::AddTagsToResourceError::unhandled(generic)),
@@ -85,7 +84,6 @@ impl AddTagsToResource {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for AddTagsToResource {
     type Output =
         Result<crate::output::AddTagsToResourceOutput, crate::error::AddTagsToResourceError>;
@@ -97,7 +95,7 @@ impl smithy_http::response::ParseStrictResponse for AddTagsToResource {
 /// <p>Associates a related resource to a Systems Manager OpsCenter OpsItem. For example, you can
 /// associate an Incident Manager incident or analysis with an OpsItem. Incident Manager is a
 /// capability of AWS Systems Manager.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct AssociateOpsItemRelatedItem {
     _private: (),
 }
@@ -119,7 +117,6 @@ impl AssociateOpsItemRelatedItem {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => {
@@ -165,7 +162,6 @@ impl AssociateOpsItemRelatedItem {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for AssociateOpsItemRelatedItem {
     type Output = Result<
         crate::output::AssociateOpsItemRelatedItemOutput,
@@ -178,7 +174,7 @@ impl smithy_http::response::ParseStrictResponse for AssociateOpsItemRelatedItem 
 
 /// <p>Attempts to cancel the command specified by the Command ID. There is no guarantee that the
 /// command will be terminated and the underlying process stopped.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct CancelCommand {
     _private: (),
 }
@@ -197,7 +193,6 @@ impl CancelCommand {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => return Err(crate::error::CancelCommandError::unhandled(generic)),
@@ -242,7 +237,6 @@ impl CancelCommand {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for CancelCommand {
     type Output = Result<crate::output::CancelCommandOutput, crate::error::CancelCommandError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -253,7 +247,7 @@ impl smithy_http::response::ParseStrictResponse for CancelCommand {
 /// <p>Stops a maintenance window execution that is already in progress and cancels any tasks in
 /// the window that have not already starting running. (Tasks already in progress will continue to
 /// completion.)</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct CancelMaintenanceWindowExecution {
     _private: (),
 }
@@ -275,7 +269,6 @@ impl CancelMaintenanceWindowExecution {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => {
@@ -310,7 +303,6 @@ impl CancelMaintenanceWindowExecution {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for CancelMaintenanceWindowExecution {
     type Output = Result<
         crate::output::CancelMaintenanceWindowExecutionOutput,
@@ -331,7 +323,7 @@ impl smithy_http::response::ParseStrictResponse for CancelMaintenanceWindowExecu
 /// <p>On-premises servers or VMs that are registered with Systems Manager and EC2 instances that you manage
 /// with Systems Manager are all called <i>managed instances</i>.</p>
 /// </note>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct CreateActivation {
     _private: (),
 }
@@ -350,7 +342,6 @@ impl CreateActivation {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => return Err(crate::error::CreateActivationError::unhandled(generic)),
@@ -377,7 +368,6 @@ impl CreateActivation {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for CreateActivation {
     type Output =
         Result<crate::output::CreateActivationOutput, crate::error::CreateActivationError>;
@@ -396,7 +386,7 @@ impl smithy_http::response::ParseStrictResponse for CreateActivation {
 /// the software is not installed, then State Manager installs it. If the software is installed, but
 /// the service is not running, then the association might instruct State Manager to start the
 /// service. </p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct CreateAssociation {
     _private: (),
 }
@@ -415,7 +405,6 @@ impl CreateAssociation {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => return Err(crate::error::CreateAssociationError::unhandled(generic)),
@@ -522,7 +511,6 @@ impl CreateAssociation {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for CreateAssociation {
     type Output =
         Result<crate::output::CreateAssociationOutput, crate::error::CreateAssociationError>;
@@ -537,7 +525,7 @@ impl smithy_http::response::ParseStrictResponse for CreateAssociation {
 /// specified.</p>
 /// <p>If you associate a document with an instance that already has an associated document, the
 /// system returns the AssociationAlreadyExists exception.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct CreateAssociationBatch {
     _private: (),
 }
@@ -559,7 +547,6 @@ impl CreateAssociationBatch {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => {
@@ -680,7 +667,6 @@ impl CreateAssociationBatch {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for CreateAssociationBatch {
     type Output = Result<
         crate::output::CreateAssociationBatchOutput,
@@ -695,7 +681,7 @@ impl smithy_http::response::ParseStrictResponse for CreateAssociationBatch {
 /// your managed instances. For more information about SSM documents, including information about
 /// supported schemas, features, and syntax, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-ssm-docs.html">AWS Systems Manager Documents</a> in the
 /// <i>AWS Systems Manager User Guide</i>.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct CreateDocument {
     _private: (),
 }
@@ -714,7 +700,6 @@ impl CreateDocument {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => return Err(crate::error::CreateDocumentError::unhandled(generic)),
@@ -778,7 +763,6 @@ impl CreateDocument {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for CreateDocument {
     type Output = Result<crate::output::CreateDocumentOutput, crate::error::CreateDocumentError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -795,7 +779,7 @@ impl smithy_http::response::ParseStrictResponse for CreateDocument {
 /// value you specify for <code>Cutoff</code> is one hour, no maintenance window tasks can start
 /// after 5 PM.</p>
 /// </note>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct CreateMaintenanceWindow {
     _private: (),
 }
@@ -817,7 +801,6 @@ impl CreateMaintenanceWindow {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => {
@@ -855,7 +838,6 @@ impl CreateMaintenanceWindow {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for CreateMaintenanceWindow {
     type Output = Result<
         crate::output::CreateMaintenanceWindowOutput,
@@ -873,7 +855,7 @@ impl smithy_http::response::ParseStrictResponse for CreateMaintenanceWindow {
 /// operational issues impacting the performance and health of their AWS resources. For more
 /// information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">AWS Systems Manager OpsCenter</a> in the
 /// <i>AWS Systems Manager User Guide</i>. </p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct CreateOpsItem {
     _private: (),
 }
@@ -892,7 +874,6 @@ impl CreateOpsItem {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => return Err(crate::error::CreateOpsItemError::unhandled(generic)),
@@ -942,7 +923,6 @@ impl CreateOpsItem {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for CreateOpsItem {
     type Output = Result<crate::output::CreateOpsItemOutput, crate::error::CreateOpsItemError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -952,7 +932,7 @@ impl smithy_http::response::ParseStrictResponse for CreateOpsItem {
 
 /// <p>If you create a new application in Application Manager, Systems Manager calls this API action to specify
 /// information about the new application, including the application type.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct CreateOpsMetadata {
     _private: (),
 }
@@ -971,7 +951,6 @@ impl CreateOpsMetadata {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => return Err(crate::error::CreateOpsMetadataError::unhandled(generic)),
@@ -1013,7 +992,6 @@ impl CreateOpsMetadata {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for CreateOpsMetadata {
     type Output =
         Result<crate::output::CreateOpsMetadataOutput, crate::error::CreateOpsMetadataError>;
@@ -1027,7 +1005,7 @@ impl smithy_http::response::ParseStrictResponse for CreateOpsMetadata {
 /// <p>For information about valid key and value pairs in <code>PatchFilters</code> for each
 /// supported operating system type, see <a href="http://docs.aws.amazon.com/systems-manager/latest/APIReference/API_PatchFilter.html">PatchFilter</a>.</p>
 /// </note>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct CreatePatchBaseline {
     _private: (),
 }
@@ -1047,7 +1025,6 @@ impl CreatePatchBaseline {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => return Err(crate::error::CreatePatchBaselineError::unhandled(generic)),
@@ -1096,7 +1073,6 @@ impl CreatePatchBaseline {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for CreatePatchBaseline {
     type Output =
         Result<crate::output::CreatePatchBaselineOutput, crate::error::CreatePatchBaselineError>;
@@ -1125,7 +1101,7 @@ impl smithy_http::response::ParseStrictResponse for CreatePatchBaseline {
 /// in Amazon S3 to ensure secure data storage. We also recommend that you secure access to the Amazon S3
 /// bucket by creating a restrictive bucket policy. </p>
 /// </note>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct CreateResourceDataSync {
     _private: (),
 }
@@ -1147,7 +1123,6 @@ impl CreateResourceDataSync {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => {
@@ -1184,7 +1159,6 @@ impl CreateResourceDataSync {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for CreateResourceDataSync {
     type Output = Result<
         crate::output::CreateResourceDataSyncOutput,
@@ -1199,7 +1173,7 @@ impl smithy_http::response::ParseStrictResponse for CreateResourceDataSync {
 /// activation, you can no longer use it to register additional managed instances. Deleting an
 /// activation does not de-register managed instances. You must manually de-register managed
 /// instances.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteActivation {
     _private: (),
 }
@@ -1218,7 +1192,6 @@ impl DeleteActivation {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => return Err(crate::error::DeleteActivationError::unhandled(generic)),
@@ -1263,7 +1236,6 @@ impl DeleteActivation {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for DeleteActivation {
     type Output =
         Result<crate::output::DeleteActivationOutput, crate::error::DeleteActivationError>;
@@ -1277,7 +1249,7 @@ impl smithy_http::response::ParseStrictResponse for DeleteActivation {
 /// the instance. To change the configuration state of an instance after you disassociate a document,
 /// you must create a new document with the desired configuration and associate it with the
 /// instance.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteAssociation {
     _private: (),
 }
@@ -1296,7 +1268,6 @@ impl DeleteAssociation {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => return Err(crate::error::DeleteAssociationError::unhandled(generic)),
@@ -1350,7 +1321,6 @@ impl DeleteAssociation {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for DeleteAssociation {
     type Output =
         Result<crate::output::DeleteAssociationOutput, crate::error::DeleteAssociationError>;
@@ -1361,7 +1331,7 @@ impl smithy_http::response::ParseStrictResponse for DeleteAssociation {
 
 /// <p>Deletes the Systems Manager document and all instance associations to the document.</p>
 /// <p>Before you delete the document, we recommend that you use <a>DeleteAssociation</a> to disassociate all instances that are associated with the document.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteDocument {
     _private: (),
 }
@@ -1380,7 +1350,6 @@ impl DeleteDocument {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => return Err(crate::error::DeleteDocumentError::unhandled(generic)),
@@ -1425,7 +1394,6 @@ impl DeleteDocument {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for DeleteDocument {
     type Output = Result<crate::output::DeleteDocumentOutput, crate::error::DeleteDocumentError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -1435,7 +1403,7 @@ impl smithy_http::response::ParseStrictResponse for DeleteDocument {
 
 /// <p>Delete a custom inventory type or the data associated with a custom Inventory type. Deleting
 /// a custom inventory type is also referred to as deleting a custom inventory schema.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteInventory {
     _private: (),
 }
@@ -1454,7 +1422,6 @@ impl DeleteInventory {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => return Err(crate::error::DeleteInventoryError::unhandled(generic)),
@@ -1494,7 +1461,6 @@ impl DeleteInventory {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for DeleteInventory {
     type Output = Result<crate::output::DeleteInventoryOutput, crate::error::DeleteInventoryError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -1503,7 +1469,7 @@ impl smithy_http::response::ParseStrictResponse for DeleteInventory {
 }
 
 /// <p>Deletes a maintenance window.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteMaintenanceWindow {
     _private: (),
 }
@@ -1525,7 +1491,6 @@ impl DeleteMaintenanceWindow {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => {
@@ -1560,7 +1525,6 @@ impl DeleteMaintenanceWindow {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for DeleteMaintenanceWindow {
     type Output = Result<
         crate::output::DeleteMaintenanceWindowOutput,
@@ -1572,7 +1536,7 @@ impl smithy_http::response::ParseStrictResponse for DeleteMaintenanceWindow {
 }
 
 /// <p>Delete OpsMetadata related to an application.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteOpsMetadata {
     _private: (),
 }
@@ -1591,7 +1555,6 @@ impl DeleteOpsMetadata {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => return Err(crate::error::DeleteOpsMetadataError::unhandled(generic)),
@@ -1620,7 +1583,6 @@ impl DeleteOpsMetadata {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for DeleteOpsMetadata {
     type Output =
         Result<crate::output::DeleteOpsMetadataOutput, crate::error::DeleteOpsMetadataError>;
@@ -1630,7 +1592,7 @@ impl smithy_http::response::ParseStrictResponse for DeleteOpsMetadata {
 }
 
 /// <p>Delete a parameter from the system.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteParameter {
     _private: (),
 }
@@ -1649,7 +1611,6 @@ impl DeleteParameter {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => return Err(crate::error::DeleteParameterError::unhandled(generic)),
@@ -1680,7 +1641,6 @@ impl DeleteParameter {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for DeleteParameter {
     type Output = Result<crate::output::DeleteParameterOutput, crate::error::DeleteParameterError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -1689,7 +1649,7 @@ impl smithy_http::response::ParseStrictResponse for DeleteParameter {
 }
 
 /// <p>Delete a list of parameters.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteParameters {
     _private: (),
 }
@@ -1708,7 +1668,6 @@ impl DeleteParameters {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => return Err(crate::error::DeleteParametersError::unhandled(generic)),
@@ -1735,7 +1694,6 @@ impl DeleteParameters {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for DeleteParameters {
     type Output =
         Result<crate::output::DeleteParametersOutput, crate::error::DeleteParametersError>;
@@ -1745,7 +1703,7 @@ impl smithy_http::response::ParseStrictResponse for DeleteParameters {
 }
 
 /// <p>Deletes a patch baseline.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DeletePatchBaseline {
     _private: (),
 }
@@ -1765,7 +1723,6 @@ impl DeletePatchBaseline {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => return Err(crate::error::DeletePatchBaselineError::unhandled(generic)),
@@ -1801,7 +1758,6 @@ impl DeletePatchBaseline {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for DeletePatchBaseline {
     type Output =
         Result<crate::output::DeletePatchBaselineOutput, crate::error::DeletePatchBaselineError>;
@@ -1813,7 +1769,7 @@ impl smithy_http::response::ParseStrictResponse for DeletePatchBaseline {
 /// <p>Deletes a Resource Data Sync configuration. After the configuration is deleted, changes to
 /// data on managed instances are no longer synced to or from the target. Deleting a sync
 /// configuration does not delete data.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteResourceDataSync {
     _private: (),
 }
@@ -1835,7 +1791,6 @@ impl DeleteResourceDataSync {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => {
@@ -1868,7 +1823,6 @@ impl DeleteResourceDataSync {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for DeleteResourceDataSync {
     type Output = Result<
         crate::output::DeleteResourceDataSyncOutput,
@@ -1882,7 +1836,7 @@ impl smithy_http::response::ParseStrictResponse for DeleteResourceDataSync {
 /// <p>Removes the server or virtual machine from the list of registered servers. You can
 /// reregister the instance again at any time. If you don't plan to use Run Command on the server, we
 /// suggest uninstalling SSM Agent first.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DeregisterManagedInstance {
     _private: (),
 }
@@ -1904,7 +1858,6 @@ impl DeregisterManagedInstance {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => {
@@ -1943,7 +1896,6 @@ impl DeregisterManagedInstance {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for DeregisterManagedInstance {
     type Output = Result<
         crate::output::DeregisterManagedInstanceOutput,
@@ -1955,7 +1907,7 @@ impl smithy_http::response::ParseStrictResponse for DeregisterManagedInstance {
 }
 
 /// <p>Removes a patch group from a patch baseline.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DeregisterPatchBaselineForPatchGroup {
     _private: (),
 }
@@ -1977,7 +1929,6 @@ impl DeregisterPatchBaselineForPatchGroup {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => {
@@ -2012,7 +1963,6 @@ impl DeregisterPatchBaselineForPatchGroup {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for DeregisterPatchBaselineForPatchGroup {
     type Output = Result<
         crate::output::DeregisterPatchBaselineForPatchGroupOutput,
@@ -2024,7 +1974,7 @@ impl smithy_http::response::ParseStrictResponse for DeregisterPatchBaselineForPa
 }
 
 /// <p>Removes a target from a maintenance window.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DeregisterTargetFromMaintenanceWindow {
     _private: (),
 }
@@ -2046,7 +1996,6 @@ impl DeregisterTargetFromMaintenanceWindow {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => {
@@ -2087,7 +2036,6 @@ impl DeregisterTargetFromMaintenanceWindow {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for DeregisterTargetFromMaintenanceWindow {
     type Output = Result<
         crate::output::DeregisterTargetFromMaintenanceWindowOutput,
@@ -2099,7 +2047,7 @@ impl smithy_http::response::ParseStrictResponse for DeregisterTargetFromMaintena
 }
 
 /// <p>Removes a task from a maintenance window.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DeregisterTaskFromMaintenanceWindow {
     _private: (),
 }
@@ -2121,7 +2069,6 @@ impl DeregisterTaskFromMaintenanceWindow {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => {
@@ -2156,7 +2103,6 @@ impl DeregisterTaskFromMaintenanceWindow {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for DeregisterTaskFromMaintenanceWindow {
     type Output = Result<
         crate::output::DeregisterTaskFromMaintenanceWindowOutput,
@@ -2170,7 +2116,7 @@ impl smithy_http::response::ParseStrictResponse for DeregisterTaskFromMaintenanc
 /// <p>Describes details about the activation, such as the date and time the activation was
 /// created, its expiration date, the IAM role assigned to the instances in the activation, and the
 /// number of instances registered by using this activation.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeActivations {
     _private: (),
 }
@@ -2190,7 +2136,6 @@ impl DescribeActivations {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => return Err(crate::error::DescribeActivationsError::unhandled(generic)),
@@ -2233,7 +2178,6 @@ impl DescribeActivations {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for DescribeActivations {
     type Output =
         Result<crate::output::DescribeActivationsOutput, crate::error::DescribeActivationsError>;
@@ -2247,7 +2191,7 @@ impl smithy_http::response::ParseStrictResponse for DescribeActivations {
 /// by using the association ID. If you created the association by specifying an instance ID and a
 /// Systems Manager document, then you retrieve the association by specifying the document name and the
 /// instance ID. </p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeAssociation {
     _private: (),
 }
@@ -2267,7 +2211,6 @@ impl DescribeAssociation {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => return Err(crate::error::DescribeAssociationError::unhandled(generic)),
@@ -2328,7 +2271,6 @@ impl DescribeAssociation {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for DescribeAssociation {
     type Output =
         Result<crate::output::DescribeAssociationOutput, crate::error::DescribeAssociationError>;
@@ -2338,7 +2280,7 @@ impl smithy_http::response::ParseStrictResponse for DescribeAssociation {
 }
 
 /// <p>Use this API action to view all executions for a specific association ID. </p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeAssociationExecutions {
     _private: (),
 }
@@ -2360,7 +2302,6 @@ impl DescribeAssociationExecutions {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => {
@@ -2398,7 +2339,6 @@ impl DescribeAssociationExecutions {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for DescribeAssociationExecutions {
     type Output = Result<
         crate::output::DescribeAssociationExecutionsOutput,
@@ -2411,7 +2351,7 @@ impl smithy_http::response::ParseStrictResponse for DescribeAssociationExecution
 
 /// <p>Use this API action to view information about a specific execution of a specific
 /// association.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeAssociationExecutionTargets {
     _private: (),
 }
@@ -2433,7 +2373,6 @@ impl DescribeAssociationExecutionTargets {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => {
@@ -2476,7 +2415,6 @@ impl DescribeAssociationExecutionTargets {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for DescribeAssociationExecutionTargets {
     type Output = Result<
         crate::output::DescribeAssociationExecutionTargetsOutput,
@@ -2488,7 +2426,7 @@ impl smithy_http::response::ParseStrictResponse for DescribeAssociationExecution
 }
 
 /// <p>Provides details about all active and terminated Automation executions.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeAutomationExecutions {
     _private: (),
 }
@@ -2510,7 +2448,6 @@ impl DescribeAutomationExecutions {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => {
@@ -2574,7 +2511,6 @@ impl DescribeAutomationExecutions {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for DescribeAutomationExecutions {
     type Output = Result<
         crate::output::DescribeAutomationExecutionsOutput,
@@ -2587,7 +2523,7 @@ impl smithy_http::response::ParseStrictResponse for DescribeAutomationExecutions
 
 /// <p>Information about all active and terminated step executions in an Automation
 /// workflow.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeAutomationStepExecutions {
     _private: (),
 }
@@ -2609,7 +2545,6 @@ impl DescribeAutomationStepExecutions {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => {
@@ -2656,7 +2591,6 @@ impl DescribeAutomationStepExecutions {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for DescribeAutomationStepExecutions {
     type Output = Result<
         crate::output::DescribeAutomationStepExecutionsOutput,
@@ -2668,7 +2602,7 @@ impl smithy_http::response::ParseStrictResponse for DescribeAutomationStepExecut
 }
 
 /// <p>Lists all patches eligible to be included in a patch baseline.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeAvailablePatches {
     _private: (),
 }
@@ -2690,7 +2624,6 @@ impl DescribeAvailablePatches {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => {
@@ -2725,7 +2658,6 @@ impl DescribeAvailablePatches {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for DescribeAvailablePatches {
     type Output = Result<
         crate::output::DescribeAvailablePatchesOutput,
@@ -2737,7 +2669,7 @@ impl smithy_http::response::ParseStrictResponse for DescribeAvailablePatches {
 }
 
 /// <p>Describes the specified Systems Manager document.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeDocument {
     _private: (),
 }
@@ -2756,7 +2688,6 @@ impl DescribeDocument {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => return Err(crate::error::DescribeDocumentError::unhandled(generic)),
@@ -2797,7 +2728,6 @@ impl DescribeDocument {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for DescribeDocument {
     type Output =
         Result<crate::output::DescribeDocumentOutput, crate::error::DescribeDocumentError>;
@@ -2809,7 +2739,7 @@ impl smithy_http::response::ParseStrictResponse for DescribeDocument {
 /// <p>Describes the permissions for a Systems Manager document. If you created the document, you are the
 /// owner. If a document is shared, it can either be shared privately (by specifying a user's AWS
 /// account ID) or publicly (<i>All</i>). </p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeDocumentPermission {
     _private: (),
 }
@@ -2831,7 +2761,6 @@ impl DescribeDocumentPermission {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => {
@@ -2877,7 +2806,6 @@ impl DescribeDocumentPermission {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for DescribeDocumentPermission {
     type Output = Result<
         crate::output::DescribeDocumentPermissionOutput,
@@ -2889,7 +2817,7 @@ impl smithy_http::response::ParseStrictResponse for DescribeDocumentPermission {
 }
 
 /// <p>All associations for the instance(s).</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeEffectiveInstanceAssociations {
     _private: (),
 }
@@ -2911,7 +2839,6 @@ impl DescribeEffectiveInstanceAssociations {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => {
@@ -2952,7 +2879,6 @@ impl DescribeEffectiveInstanceAssociations {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for DescribeEffectiveInstanceAssociations {
     type Output = Result<
         crate::output::DescribeEffectiveInstanceAssociationsOutput,
@@ -2965,7 +2891,7 @@ impl smithy_http::response::ParseStrictResponse for DescribeEffectiveInstanceAss
 
 /// <p>Retrieves the current effective patches (the patch and the approval state) for the specified
 /// patch baseline. Note that this API applies only to Windows patch baselines.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeEffectivePatchesForPatchBaseline {
     _private: (),
 }
@@ -2987,7 +2913,6 @@ impl DescribeEffectivePatchesForPatchBaseline {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => {
@@ -3032,7 +2957,6 @@ impl DescribeEffectivePatchesForPatchBaseline {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for DescribeEffectivePatchesForPatchBaseline {
     type Output = Result<
         crate::output::DescribeEffectivePatchesForPatchBaselineOutput,
@@ -3044,7 +2968,7 @@ impl smithy_http::response::ParseStrictResponse for DescribeEffectivePatchesForP
 }
 
 /// <p>The status of the associations for the instance(s).</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeInstanceAssociationsStatus {
     _private: (),
 }
@@ -3066,7 +2990,6 @@ impl DescribeInstanceAssociationsStatus {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => {
@@ -3105,7 +3028,6 @@ impl DescribeInstanceAssociationsStatus {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for DescribeInstanceAssociationsStatus {
     type Output = Result<
         crate::output::DescribeInstanceAssociationsStatusOutput,
@@ -3126,7 +3048,7 @@ impl smithy_http::response::ParseStrictResponse for DescribeInstanceAssociations
 /// role assigned to on-premises instances. This call does not return the IAM role for EC2
 /// instances.</p>
 /// </note>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeInstanceInformation {
     _private: (),
 }
@@ -3148,7 +3070,6 @@ impl DescribeInstanceInformation {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => {
@@ -3194,7 +3115,6 @@ impl DescribeInstanceInformation {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for DescribeInstanceInformation {
     type Output = Result<
         crate::output::DescribeInstanceInformationOutput,
@@ -3207,7 +3127,7 @@ impl smithy_http::response::ParseStrictResponse for DescribeInstanceInformation 
 
 /// <p>Retrieves information about the patches on the specified instance and their state relative
 /// to the patch baseline being used for the instance.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeInstancePatches {
     _private: (),
 }
@@ -3229,7 +3149,6 @@ impl DescribeInstancePatches {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => {
@@ -3289,7 +3208,6 @@ impl DescribeInstancePatches {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for DescribeInstancePatches {
     type Output = Result<
         crate::output::DescribeInstancePatchesOutput,
@@ -3301,7 +3219,7 @@ impl smithy_http::response::ParseStrictResponse for DescribeInstancePatches {
 }
 
 /// <p>Retrieves the high-level patch state of one or more instances.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeInstancePatchStates {
     _private: (),
 }
@@ -3323,7 +3241,6 @@ impl DescribeInstancePatchStates {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => {
@@ -3368,7 +3285,6 @@ impl DescribeInstancePatchStates {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for DescribeInstancePatchStates {
     type Output = Result<
         crate::output::DescribeInstancePatchStatesOutput,
@@ -3380,7 +3296,7 @@ impl smithy_http::response::ParseStrictResponse for DescribeInstancePatchStates 
 }
 
 /// <p>Retrieves the high-level patch state for the instances in the specified patch group.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeInstancePatchStatesForPatchGroup {
     _private: (),
 }
@@ -3403,7 +3319,6 @@ impl DescribeInstancePatchStatesForPatchGroup {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => {
@@ -3446,7 +3361,6 @@ impl DescribeInstancePatchStatesForPatchGroup {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for DescribeInstancePatchStatesForPatchGroup {
     type Output = Result<
         crate::output::DescribeInstancePatchStatesForPatchGroupOutput,
@@ -3458,7 +3372,7 @@ impl smithy_http::response::ParseStrictResponse for DescribeInstancePatchStatesF
 }
 
 /// <p>Describes a specific delete inventory operation.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeInventoryDeletions {
     _private: (),
 }
@@ -3480,7 +3394,6 @@ impl DescribeInventoryDeletions {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => {
@@ -3518,7 +3431,6 @@ impl DescribeInventoryDeletions {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for DescribeInventoryDeletions {
     type Output = Result<
         crate::output::DescribeInventoryDeletionsOutput,
@@ -3532,7 +3444,7 @@ impl smithy_http::response::ParseStrictResponse for DescribeInventoryDeletions {
 /// <p>Lists the executions of a maintenance window. This includes information about when the
 /// maintenance window was scheduled to be active, and information about tasks registered and run
 /// with the maintenance window.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeMaintenanceWindowExecutions {
     _private: (),
 }
@@ -3554,7 +3466,6 @@ impl DescribeMaintenanceWindowExecutions {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => {
@@ -3585,7 +3496,6 @@ impl DescribeMaintenanceWindowExecutions {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for DescribeMaintenanceWindowExecutions {
     type Output = Result<
         crate::output::DescribeMaintenanceWindowExecutionsOutput,
@@ -3598,7 +3508,7 @@ impl smithy_http::response::ParseStrictResponse for DescribeMaintenanceWindowExe
 
 /// <p>Retrieves the individual task executions (one per target) for a particular task run as part
 /// of a maintenance window execution.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeMaintenanceWindowExecutionTaskInvocations {
     _private: (),
 }
@@ -3622,7 +3532,6 @@ impl DescribeMaintenanceWindowExecutionTaskInvocations {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => return Err(
@@ -3651,7 +3560,6 @@ impl DescribeMaintenanceWindowExecutionTaskInvocations {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse
     for DescribeMaintenanceWindowExecutionTaskInvocations
 {
@@ -3665,7 +3573,7 @@ impl smithy_http::response::ParseStrictResponse
 }
 
 /// <p>For a given maintenance window execution, lists the tasks that were run.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeMaintenanceWindowExecutionTasks {
     _private: (),
 }
@@ -3687,7 +3595,6 @@ impl DescribeMaintenanceWindowExecutionTasks {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => {
@@ -3724,7 +3631,6 @@ impl DescribeMaintenanceWindowExecutionTasks {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for DescribeMaintenanceWindowExecutionTasks {
     type Output = Result<
         crate::output::DescribeMaintenanceWindowExecutionTasksOutput,
@@ -3736,7 +3642,7 @@ impl smithy_http::response::ParseStrictResponse for DescribeMaintenanceWindowExe
 }
 
 /// <p>Retrieves the maintenance windows in an AWS account.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeMaintenanceWindows {
     _private: (),
 }
@@ -3758,7 +3664,6 @@ impl DescribeMaintenanceWindows {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => {
@@ -3794,7 +3699,6 @@ impl DescribeMaintenanceWindows {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for DescribeMaintenanceWindows {
     type Output = Result<
         crate::output::DescribeMaintenanceWindowsOutput,
@@ -3806,7 +3710,7 @@ impl smithy_http::response::ParseStrictResponse for DescribeMaintenanceWindows {
 }
 
 /// <p>Retrieves information about upcoming executions of a maintenance window.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeMaintenanceWindowSchedule {
     _private: (),
 }
@@ -3828,7 +3732,6 @@ impl DescribeMaintenanceWindowSchedule {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => {
@@ -3863,7 +3766,6 @@ impl DescribeMaintenanceWindowSchedule {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for DescribeMaintenanceWindowSchedule {
     type Output = Result<
         crate::output::DescribeMaintenanceWindowScheduleOutput,
@@ -3876,7 +3778,7 @@ impl smithy_http::response::ParseStrictResponse for DescribeMaintenanceWindowSch
 
 /// <p>Retrieves information about the maintenance window targets or tasks that an instance is
 /// associated with.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeMaintenanceWindowsForTarget {
     _private: (),
 }
@@ -3898,7 +3800,6 @@ impl DescribeMaintenanceWindowsForTarget {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => {
@@ -3929,7 +3830,6 @@ impl DescribeMaintenanceWindowsForTarget {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for DescribeMaintenanceWindowsForTarget {
     type Output = Result<
         crate::output::DescribeMaintenanceWindowsForTargetOutput,
@@ -3941,7 +3841,7 @@ impl smithy_http::response::ParseStrictResponse for DescribeMaintenanceWindowsFo
 }
 
 /// <p>Lists the targets registered with the maintenance window.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeMaintenanceWindowTargets {
     _private: (),
 }
@@ -3963,7 +3863,6 @@ impl DescribeMaintenanceWindowTargets {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => {
@@ -3998,7 +3897,6 @@ impl DescribeMaintenanceWindowTargets {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for DescribeMaintenanceWindowTargets {
     type Output = Result<
         crate::output::DescribeMaintenanceWindowTargetsOutput,
@@ -4016,7 +3914,7 @@ impl smithy_http::response::ParseStrictResponse for DescribeMaintenanceWindowTar
 /// placeholder value of <code>1</code>, which may be reported in the response to this command.
 /// These values do not affect the running of your task and can be ignored.</p>
 /// </note>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeMaintenanceWindowTasks {
     _private: (),
 }
@@ -4038,7 +3936,6 @@ impl DescribeMaintenanceWindowTasks {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => {
@@ -4073,7 +3970,6 @@ impl DescribeMaintenanceWindowTasks {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for DescribeMaintenanceWindowTasks {
     type Output = Result<
         crate::output::DescribeMaintenanceWindowTasksOutput,
@@ -4091,7 +3987,7 @@ impl smithy_http::response::ParseStrictResponse for DescribeMaintenanceWindowTas
 /// operational issues impacting the performance and health of their AWS resources. For more
 /// information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">AWS Systems Manager OpsCenter</a> in the
 /// <i>AWS Systems Manager User Guide</i>. </p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeOpsItems {
     _private: (),
 }
@@ -4110,7 +4006,6 @@ impl DescribeOpsItems {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => return Err(crate::error::DescribeOpsItemsError::unhandled(generic)),
@@ -4139,7 +4034,6 @@ impl DescribeOpsItems {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for DescribeOpsItems {
     type Output =
         Result<crate::output::DescribeOpsItemsOutput, crate::error::DescribeOpsItemsError>;
@@ -4157,7 +4051,7 @@ impl smithy_http::response::ParseStrictResponse for DescribeOpsItems {
 /// matching values up to that point and a <code>NextToken</code>. You can specify the
 /// <code>NextToken</code> in a subsequent call to get the next set of results.</p>
 /// </note>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeParameters {
     _private: (),
 }
@@ -4177,7 +4071,6 @@ impl DescribeParameters {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => return Err(crate::error::DescribeParametersError::unhandled(generic)),
@@ -4234,7 +4127,6 @@ impl DescribeParameters {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for DescribeParameters {
     type Output =
         Result<crate::output::DescribeParametersOutput, crate::error::DescribeParametersError>;
@@ -4244,7 +4136,7 @@ impl smithy_http::response::ParseStrictResponse for DescribeParameters {
 }
 
 /// <p>Lists the patch baselines in your AWS account.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DescribePatchBaselines {
     _private: (),
 }
@@ -4266,7 +4158,6 @@ impl DescribePatchBaselines {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => {
@@ -4301,7 +4192,6 @@ impl DescribePatchBaselines {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for DescribePatchBaselines {
     type Output = Result<
         crate::output::DescribePatchBaselinesOutput,
@@ -4313,7 +4203,7 @@ impl smithy_http::response::ParseStrictResponse for DescribePatchBaselines {
 }
 
 /// <p>Lists all patch groups that have been registered with patch baselines.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DescribePatchGroups {
     _private: (),
 }
@@ -4333,7 +4223,6 @@ impl DescribePatchGroups {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => return Err(crate::error::DescribePatchGroupsError::unhandled(generic)),
@@ -4362,7 +4251,6 @@ impl DescribePatchGroups {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for DescribePatchGroups {
     type Output =
         Result<crate::output::DescribePatchGroupsOutput, crate::error::DescribePatchGroupsError>;
@@ -4372,7 +4260,7 @@ impl smithy_http::response::ParseStrictResponse for DescribePatchGroups {
 }
 
 /// <p>Returns high-level aggregated patch compliance state for a patch group.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DescribePatchGroupState {
     _private: (),
 }
@@ -4394,7 +4282,6 @@ impl DescribePatchGroupState {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => {
@@ -4438,7 +4325,6 @@ impl DescribePatchGroupState {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for DescribePatchGroupState {
     type Output = Result<
         crate::output::DescribePatchGroupStateOutput,
@@ -4496,7 +4382,7 @@ impl smithy_http::response::ParseStrictResponse for DescribePatchGroupState {
 /// <p>Valid properties: PRODUCT, PRODUCT_FAMILY, CLASSIFICATION, MSRC_SEVERITY</p>
 /// </dd>
 /// </dl>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DescribePatchProperties {
     _private: (),
 }
@@ -4518,7 +4404,6 @@ impl DescribePatchProperties {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => {
@@ -4553,7 +4438,6 @@ impl DescribePatchProperties {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for DescribePatchProperties {
     type Output = Result<
         crate::output::DescribePatchPropertiesOutput,
@@ -4566,7 +4450,7 @@ impl smithy_http::response::ParseStrictResponse for DescribePatchProperties {
 
 /// <p>Retrieves a list of all active sessions (both connected and disconnected) or terminated
 /// sessions from the past 30 days.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeSessions {
     _private: (),
 }
@@ -4585,7 +4469,6 @@ impl DescribeSessions {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => return Err(crate::error::DescribeSessionsError::unhandled(generic)),
@@ -4626,7 +4509,6 @@ impl DescribeSessions {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for DescribeSessions {
     type Output =
         Result<crate::output::DescribeSessionsOutput, crate::error::DescribeSessionsError>;
@@ -4638,7 +4520,7 @@ impl smithy_http::response::ParseStrictResponse for DescribeSessions {
 /// <p>Deletes the association between an OpsItem and a related resource. For example, this API
 /// action can delete an Incident Manager incident from an OpsItem. Incident Manager is a capability
 /// of AWS Systems Manager.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DisassociateOpsItemRelatedItem {
     _private: (),
 }
@@ -4660,7 +4542,6 @@ impl DisassociateOpsItemRelatedItem {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => {
@@ -4698,7 +4579,6 @@ impl DisassociateOpsItemRelatedItem {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for DisassociateOpsItemRelatedItem {
     type Output = Result<
         crate::output::DisassociateOpsItemRelatedItemOutput,
@@ -4710,7 +4590,7 @@ impl smithy_http::response::ParseStrictResponse for DisassociateOpsItemRelatedIt
 }
 
 /// <p>Get detailed information about a particular Automation execution.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct GetAutomationExecution {
     _private: (),
 }
@@ -4732,7 +4612,6 @@ impl GetAutomationExecution {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => {
@@ -4766,7 +4645,6 @@ impl GetAutomationExecution {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for GetAutomationExecution {
     type Output = Result<
         crate::output::GetAutomationExecutionOutput,
@@ -4787,7 +4665,7 @@ impl smithy_http::response::ParseStrictResponse for GetAutomationExecution {
 /// request are closed, the status returned is <code>CLOSED</code>.</p>
 /// <p>For more information about Systems Manager Change Calendar, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar.html">AWS Systems Manager Change
 /// Calendar</a> in the <i>AWS Systems Manager User Guide</i>.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct GetCalendarState {
     _private: (),
 }
@@ -4806,7 +4684,6 @@ impl GetCalendarState {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => return Err(crate::error::GetCalendarStateError::unhandled(generic)),
@@ -4858,7 +4735,6 @@ impl GetCalendarState {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for GetCalendarState {
     type Output =
         Result<crate::output::GetCalendarStateOutput, crate::error::GetCalendarStateError>;
@@ -4872,7 +4748,7 @@ impl smithy_http::response::ParseStrictResponse for GetCalendarState {
 /// <code>GetCommandInvocation</code> only gives the execution status of a plugin in a document.
 /// To get the command execution status on a specific instance, use <a>ListCommandInvocations</a>. To get the command execution status across instances, use
 /// <a>ListCommands</a>.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct GetCommandInvocation {
     _private: (),
 }
@@ -4892,7 +4768,6 @@ impl GetCommandInvocation {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => return Err(crate::error::GetCommandInvocationError::unhandled(generic)),
@@ -4953,7 +4828,6 @@ impl GetCommandInvocation {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for GetCommandInvocation {
     type Output =
         Result<crate::output::GetCommandInvocationOutput, crate::error::GetCommandInvocationError>;
@@ -4964,7 +4838,7 @@ impl smithy_http::response::ParseStrictResponse for GetCommandInvocation {
 
 /// <p>Retrieves the Session Manager connection status for an instance to determine whether it is running and
 /// ready to receive Session Manager connections.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct GetConnectionStatus {
     _private: (),
 }
@@ -4984,7 +4858,6 @@ impl GetConnectionStatus {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => return Err(crate::error::GetConnectionStatusError::unhandled(generic)),
@@ -5013,7 +4886,6 @@ impl GetConnectionStatus {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for GetConnectionStatus {
     type Output =
         Result<crate::output::GetConnectionStatusOutput, crate::error::GetConnectionStatusError>;
@@ -5027,7 +4899,7 @@ impl smithy_http::response::ParseStrictResponse for GetConnectionStatus {
 /// system.</p>
 /// <p>If you do not specify an operating system value, the default patch baseline for Windows is
 /// returned.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct GetDefaultPatchBaseline {
     _private: (),
 }
@@ -5049,7 +4921,6 @@ impl GetDefaultPatchBaseline {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => {
@@ -5084,7 +4955,6 @@ impl GetDefaultPatchBaseline {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for GetDefaultPatchBaseline {
     type Output = Result<
         crate::output::GetDefaultPatchBaselineOutput,
@@ -5097,7 +4967,7 @@ impl smithy_http::response::ParseStrictResponse for GetDefaultPatchBaseline {
 
 /// <p>Retrieves the current snapshot for the patch baseline the instance uses. This API is
 /// primarily used by the AWS-RunPatchBaseline Systems Manager document. </p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct GetDeployablePatchSnapshotForInstance {
     _private: (),
 }
@@ -5119,7 +4989,6 @@ impl GetDeployablePatchSnapshotForInstance {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => {
@@ -5160,7 +5029,6 @@ impl GetDeployablePatchSnapshotForInstance {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for GetDeployablePatchSnapshotForInstance {
     type Output = Result<
         crate::output::GetDeployablePatchSnapshotForInstanceOutput,
@@ -5172,7 +5040,7 @@ impl smithy_http::response::ParseStrictResponse for GetDeployablePatchSnapshotFo
 }
 
 /// <p>Gets the contents of the specified Systems Manager document.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct GetDocument {
     _private: (),
 }
@@ -5191,7 +5059,6 @@ impl GetDocument {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => return Err(crate::error::GetDocumentError::unhandled(generic)),
@@ -5232,7 +5099,6 @@ impl GetDocument {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for GetDocument {
     type Output = Result<crate::output::GetDocumentOutput, crate::error::GetDocumentError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -5241,7 +5107,7 @@ impl smithy_http::response::ParseStrictResponse for GetDocument {
 }
 
 /// <p>Query inventory information.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct GetInventory {
     _private: (),
 }
@@ -5260,7 +5126,6 @@ impl GetInventory {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => return Err(crate::error::GetInventoryError::unhandled(generic)),
@@ -5331,7 +5196,6 @@ impl GetInventory {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for GetInventory {
     type Output = Result<crate::output::GetInventoryOutput, crate::error::GetInventoryError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -5341,7 +5205,7 @@ impl smithy_http::response::ParseStrictResponse for GetInventory {
 
 /// <p>Return a list of inventory type names for the account, or return a list of attribute names
 /// for a specific Inventory item type.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct GetInventorySchema {
     _private: (),
 }
@@ -5361,7 +5225,6 @@ impl GetInventorySchema {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => return Err(crate::error::GetInventorySchemaError::unhandled(generic)),
@@ -5404,7 +5267,6 @@ impl GetInventorySchema {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for GetInventorySchema {
     type Output =
         Result<crate::output::GetInventorySchemaOutput, crate::error::GetInventorySchemaError>;
@@ -5414,7 +5276,7 @@ impl smithy_http::response::ParseStrictResponse for GetInventorySchema {
 }
 
 /// <p>Retrieves a maintenance window.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct GetMaintenanceWindow {
     _private: (),
 }
@@ -5434,7 +5296,6 @@ impl GetMaintenanceWindow {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => return Err(crate::error::GetMaintenanceWindowError::unhandled(generic)),
@@ -5472,7 +5333,6 @@ impl GetMaintenanceWindow {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for GetMaintenanceWindow {
     type Output =
         Result<crate::output::GetMaintenanceWindowOutput, crate::error::GetMaintenanceWindowError>;
@@ -5482,7 +5342,7 @@ impl smithy_http::response::ParseStrictResponse for GetMaintenanceWindow {
 }
 
 /// <p>Retrieves details about a specific a maintenance window execution.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct GetMaintenanceWindowExecution {
     _private: (),
 }
@@ -5504,7 +5364,6 @@ impl GetMaintenanceWindowExecution {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => {
@@ -5539,7 +5398,6 @@ impl GetMaintenanceWindowExecution {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for GetMaintenanceWindowExecution {
     type Output = Result<
         crate::output::GetMaintenanceWindowExecutionOutput,
@@ -5552,7 +5410,7 @@ impl smithy_http::response::ParseStrictResponse for GetMaintenanceWindowExecutio
 
 /// <p>Retrieves the details about a specific task run as part of a maintenance window
 /// execution.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct GetMaintenanceWindowExecutionTask {
     _private: (),
 }
@@ -5574,7 +5432,6 @@ impl GetMaintenanceWindowExecutionTask {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => {
@@ -5609,7 +5466,6 @@ impl GetMaintenanceWindowExecutionTask {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for GetMaintenanceWindowExecutionTask {
     type Output = Result<
         crate::output::GetMaintenanceWindowExecutionTaskOutput,
@@ -5621,7 +5477,7 @@ impl smithy_http::response::ParseStrictResponse for GetMaintenanceWindowExecutio
 }
 
 /// <p>Retrieves information about a specific task running on a specific target.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct GetMaintenanceWindowExecutionTaskInvocation {
     _private: (),
 }
@@ -5644,7 +5500,6 @@ impl GetMaintenanceWindowExecutionTaskInvocation {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code =
                 match generic.code() {
                     Some(code) => code,
@@ -5679,7 +5534,6 @@ impl GetMaintenanceWindowExecutionTaskInvocation {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for GetMaintenanceWindowExecutionTaskInvocation {
     type Output = Result<
         crate::output::GetMaintenanceWindowExecutionTaskInvocationOutput,
@@ -5697,7 +5551,7 @@ impl smithy_http::response::ParseStrictResponse for GetMaintenanceWindowExecutio
 /// placeholder value of <code>1</code>, which may be reported in the response to this command.
 /// These values do not affect the running of your task and can be ignored.</p>
 /// </note>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct GetMaintenanceWindowTask {
     _private: (),
 }
@@ -5719,7 +5573,6 @@ impl GetMaintenanceWindowTask {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => {
@@ -5763,7 +5616,6 @@ impl GetMaintenanceWindowTask {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for GetMaintenanceWindowTask {
     type Output = Result<
         crate::output::GetMaintenanceWindowTaskOutput,
@@ -5782,7 +5634,7 @@ impl smithy_http::response::ParseStrictResponse for GetMaintenanceWindowTask {
 /// operational issues impacting the performance and health of their AWS resources. For more
 /// information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">AWS Systems Manager OpsCenter</a> in the
 /// <i>AWS Systems Manager User Guide</i>. </p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct GetOpsItem {
     _private: (),
 }
@@ -5801,7 +5653,6 @@ impl GetOpsItem {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => return Err(crate::error::GetOpsItemError::unhandled(generic)),
@@ -5835,7 +5686,6 @@ impl GetOpsItem {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for GetOpsItem {
     type Output = Result<crate::output::GetOpsItemOutput, crate::error::GetOpsItemError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -5844,7 +5694,7 @@ impl smithy_http::response::ParseStrictResponse for GetOpsItem {
 }
 
 /// <p>View operational metadata related to an application in Application Manager.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct GetOpsMetadata {
     _private: (),
 }
@@ -5863,7 +5713,6 @@ impl GetOpsMetadata {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => return Err(crate::error::GetOpsMetadataError::unhandled(generic)),
@@ -5907,7 +5756,6 @@ impl GetOpsMetadata {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for GetOpsMetadata {
     type Output = Result<crate::output::GetOpsMetadataOutput, crate::error::GetOpsMetadataError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -5916,7 +5764,7 @@ impl smithy_http::response::ParseStrictResponse for GetOpsMetadata {
 }
 
 /// <p>View a summary of OpsItems based on specified filters and aggregators.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct GetOpsSummary {
     _private: (),
 }
@@ -5935,7 +5783,6 @@ impl GetOpsSummary {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => return Err(crate::error::GetOpsSummaryError::unhandled(generic)),
@@ -5999,7 +5846,6 @@ impl GetOpsSummary {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for GetOpsSummary {
     type Output = Result<crate::output::GetOpsSummaryOutput, crate::error::GetOpsSummaryError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -6009,7 +5855,7 @@ impl smithy_http::response::ParseStrictResponse for GetOpsSummary {
 
 /// <p>Get information about a parameter by using the parameter name. Don't confuse this API action
 /// with the <a>GetParameters</a> API action.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct GetParameter {
     _private: (),
 }
@@ -6028,7 +5874,6 @@ impl GetParameter {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => return Err(crate::error::GetParameterError::unhandled(generic)),
@@ -6076,7 +5921,6 @@ impl GetParameter {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for GetParameter {
     type Output = Result<crate::output::GetParameterOutput, crate::error::GetParameterError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -6085,7 +5929,7 @@ impl smithy_http::response::ParseStrictResponse for GetParameter {
 }
 
 /// <p>Retrieves the history of all changes to a parameter.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct GetParameterHistory {
     _private: (),
 }
@@ -6105,7 +5949,6 @@ impl GetParameterHistory {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => return Err(crate::error::GetParameterHistoryError::unhandled(generic)),
@@ -6155,7 +5998,6 @@ impl GetParameterHistory {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for GetParameterHistory {
     type Output =
         Result<crate::output::GetParameterHistoryOutput, crate::error::GetParameterHistoryError>;
@@ -6165,7 +6007,7 @@ impl smithy_http::response::ParseStrictResponse for GetParameterHistory {
 }
 
 /// <p>Get details of a parameter. Don't confuse this API action with the <a>GetParameter</a> API action.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct GetParameters {
     _private: (),
 }
@@ -6184,7 +6026,6 @@ impl GetParameters {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => return Err(crate::error::GetParametersError::unhandled(generic)),
@@ -6218,7 +6059,6 @@ impl GetParameters {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for GetParameters {
     type Output = Result<crate::output::GetParametersOutput, crate::error::GetParametersError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -6235,7 +6075,7 @@ impl smithy_http::response::ParseStrictResponse for GetParameters {
 /// matching values up to that point and a <code>NextToken</code>. You can specify the
 /// <code>NextToken</code> in a subsequent call to get the next set of results.</p>
 /// </note>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct GetParametersByPath {
     _private: (),
 }
@@ -6255,7 +6095,6 @@ impl GetParametersByPath {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => return Err(crate::error::GetParametersByPathError::unhandled(generic)),
@@ -6319,7 +6158,6 @@ impl GetParametersByPath {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for GetParametersByPath {
     type Output =
         Result<crate::output::GetParametersByPathOutput, crate::error::GetParametersByPathError>;
@@ -6329,7 +6167,7 @@ impl smithy_http::response::ParseStrictResponse for GetParametersByPath {
 }
 
 /// <p>Retrieves information about a patch baseline.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct GetPatchBaseline {
     _private: (),
 }
@@ -6348,7 +6186,6 @@ impl GetPatchBaseline {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => return Err(crate::error::GetPatchBaselineError::unhandled(generic)),
@@ -6391,7 +6228,6 @@ impl GetPatchBaseline {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for GetPatchBaseline {
     type Output =
         Result<crate::output::GetPatchBaselineOutput, crate::error::GetPatchBaselineError>;
@@ -6401,7 +6237,7 @@ impl smithy_http::response::ParseStrictResponse for GetPatchBaseline {
 }
 
 /// <p>Retrieves the patch baseline that should be used for the specified patch group.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct GetPatchBaselineForPatchGroup {
     _private: (),
 }
@@ -6423,7 +6259,6 @@ impl GetPatchBaselineForPatchGroup {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => {
@@ -6454,7 +6289,6 @@ impl GetPatchBaselineForPatchGroup {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for GetPatchBaselineForPatchGroup {
     type Output = Result<
         crate::output::GetPatchBaselineForPatchGroupOutput,
@@ -6478,7 +6312,7 @@ impl smithy_http::response::ParseStrictResponse for GetPatchBaselineForPatchGrou
 /// the default setting. Or use the <a>ResetServiceSetting</a> to change the value back to
 /// the original value defined by the AWS service team.</p>
 /// <p>Query the current service setting for the account. </p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct GetServiceSetting {
     _private: (),
 }
@@ -6497,7 +6331,6 @@ impl GetServiceSetting {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => return Err(crate::error::GetServiceSettingError::unhandled(generic)),
@@ -6535,7 +6368,6 @@ impl GetServiceSetting {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for GetServiceSetting {
     type Output =
         Result<crate::output::GetServiceSettingOutput, crate::error::GetServiceSettingError>;
@@ -6581,7 +6413,7 @@ impl smithy_http::response::ParseStrictResponse for GetServiceSetting {
 /// displays it in the list of InvalidLabels.</p>
 /// </li>
 /// </ul>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct LabelParameterVersion {
     _private: (),
 }
@@ -6601,7 +6433,6 @@ impl LabelParameterVersion {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => return Err(crate::error::LabelParameterVersionError::unhandled(generic)),
@@ -6643,7 +6474,6 @@ impl LabelParameterVersion {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for LabelParameterVersion {
     type Output = Result<
         crate::output::LabelParameterVersionOutput,
@@ -6657,7 +6487,7 @@ impl smithy_http::response::ParseStrictResponse for LabelParameterVersion {
 /// <p>Returns all State Manager associations in the current AWS account and Region. You can limit
 /// the results to a specific State Manager association document or instance by specifying a
 /// filter.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct ListAssociations {
     _private: (),
 }
@@ -6676,7 +6506,6 @@ impl ListAssociations {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => return Err(crate::error::ListAssociationsError::unhandled(generic)),
@@ -6710,7 +6539,6 @@ impl ListAssociations {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for ListAssociations {
     type Output =
         Result<crate::output::ListAssociationsOutput, crate::error::ListAssociationsError>;
@@ -6720,7 +6548,7 @@ impl smithy_http::response::ParseStrictResponse for ListAssociations {
 }
 
 /// <p>Retrieves all versions of an association for a specific association ID.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct ListAssociationVersions {
     _private: (),
 }
@@ -6742,7 +6570,6 @@ impl ListAssociationVersions {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => {
@@ -6796,7 +6623,6 @@ impl ListAssociationVersions {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for ListAssociationVersions {
     type Output = Result<
         crate::output::ListAssociationVersionsOutput,
@@ -6811,7 +6637,7 @@ impl smithy_http::response::ParseStrictResponse for ListAssociationVersions {
 /// or more instances. A command invocation applies to one instance. For example, if a user runs
 /// SendCommand against three instances, then a command invocation is created for each requested
 /// instance ID. ListCommandInvocations provide status about command execution.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct ListCommandInvocations {
     _private: (),
 }
@@ -6833,7 +6659,6 @@ impl ListCommandInvocations {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => {
@@ -6898,7 +6723,6 @@ impl ListCommandInvocations {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for ListCommandInvocations {
     type Output = Result<
         crate::output::ListCommandInvocationsOutput,
@@ -6910,7 +6734,7 @@ impl smithy_http::response::ParseStrictResponse for ListCommandInvocations {
 }
 
 /// <p>Lists the commands requested by users of the AWS account.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct ListCommands {
     _private: (),
 }
@@ -6929,7 +6753,6 @@ impl ListCommands {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => return Err(crate::error::ListCommandsError::unhandled(generic)),
@@ -6984,7 +6807,6 @@ impl ListCommands {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for ListCommands {
     type Output = Result<crate::output::ListCommandsOutput, crate::error::ListCommandsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -6995,7 +6817,7 @@ impl smithy_http::response::ParseStrictResponse for ListCommands {
 /// <p>For a specified resource ID, this API action returns a list of compliance statuses for
 /// different resource types. Currently, you can only specify one resource ID per call. List results
 /// depend on the criteria specified in the filter.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct ListComplianceItems {
     _private: (),
 }
@@ -7015,7 +6837,6 @@ impl ListComplianceItems {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => return Err(crate::error::ListComplianceItemsError::unhandled(generic)),
@@ -7072,7 +6893,6 @@ impl ListComplianceItems {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for ListComplianceItems {
     type Output =
         Result<crate::output::ListComplianceItemsOutput, crate::error::ListComplianceItemsError>;
@@ -7084,7 +6904,7 @@ impl smithy_http::response::ParseStrictResponse for ListComplianceItems {
 /// <p>Returns a summary count of compliant and non-compliant resources for a compliance type. For
 /// example, this call can return State Manager associations, patches, or custom compliance types
 /// according to the filter criteria that you specify.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct ListComplianceSummaries {
     _private: (),
 }
@@ -7106,7 +6926,6 @@ impl ListComplianceSummaries {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => {
@@ -7157,7 +6976,6 @@ impl ListComplianceSummaries {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for ListComplianceSummaries {
     type Output = Result<
         crate::output::ListComplianceSummariesOutput,
@@ -7169,7 +6987,7 @@ impl smithy_http::response::ParseStrictResponse for ListComplianceSummaries {
 }
 
 /// <p>Information about approval reviews for a version of an SSM document.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct ListDocumentMetadataHistory {
     _private: (),
 }
@@ -7191,7 +7009,6 @@ impl ListDocumentMetadataHistory {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => {
@@ -7233,7 +7050,6 @@ impl ListDocumentMetadataHistory {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for ListDocumentMetadataHistory {
     type Output = Result<
         crate::output::ListDocumentMetadataHistoryOutput,
@@ -7246,7 +7062,7 @@ impl smithy_http::response::ParseStrictResponse for ListDocumentMetadataHistory 
 
 /// <p>Returns all Systems Manager (SSM) documents in the current AWS account and Region. You can limit the
 /// results of this request by using a filter.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct ListDocuments {
     _private: (),
 }
@@ -7265,7 +7081,6 @@ impl ListDocuments {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => return Err(crate::error::ListDocumentsError::unhandled(generic)),
@@ -7306,7 +7121,6 @@ impl ListDocuments {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for ListDocuments {
     type Output = Result<crate::output::ListDocumentsOutput, crate::error::ListDocumentsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -7315,7 +7129,7 @@ impl smithy_http::response::ParseStrictResponse for ListDocuments {
 }
 
 /// <p>List all versions for a document.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct ListDocumentVersions {
     _private: (),
 }
@@ -7335,7 +7149,6 @@ impl ListDocumentVersions {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => return Err(crate::error::ListDocumentVersionsError::unhandled(generic)),
@@ -7380,7 +7193,6 @@ impl ListDocumentVersions {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for ListDocumentVersions {
     type Output =
         Result<crate::output::ListDocumentVersionsOutput, crate::error::ListDocumentVersionsError>;
@@ -7390,7 +7202,7 @@ impl smithy_http::response::ParseStrictResponse for ListDocumentVersions {
 }
 
 /// <p>A list of inventory items returned by the request.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct ListInventoryEntries {
     _private: (),
 }
@@ -7410,7 +7222,6 @@ impl ListInventoryEntries {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => return Err(crate::error::ListInventoryEntriesError::unhandled(generic)),
@@ -7471,7 +7282,6 @@ impl ListInventoryEntries {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for ListInventoryEntries {
     type Output =
         Result<crate::output::ListInventoryEntriesOutput, crate::error::ListInventoryEntriesError>;
@@ -7482,7 +7292,7 @@ impl smithy_http::response::ParseStrictResponse for ListInventoryEntries {
 
 /// <p>Returns a list of all OpsItem events in the current AWS account and Region. You can limit
 /// the results to events associated with specific OpsItems by specifying a filter.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct ListOpsItemEvents {
     _private: (),
 }
@@ -7501,7 +7311,6 @@ impl ListOpsItemEvents {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => return Err(crate::error::ListOpsItemEventsError::unhandled(generic)),
@@ -7556,7 +7365,6 @@ impl ListOpsItemEvents {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for ListOpsItemEvents {
     type Output =
         Result<crate::output::ListOpsItemEventsOutput, crate::error::ListOpsItemEventsError>;
@@ -7566,7 +7374,7 @@ impl smithy_http::response::ParseStrictResponse for ListOpsItemEvents {
 }
 
 /// <p>Lists all related-item resources associated with an OpsItem.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct ListOpsItemRelatedItems {
     _private: (),
 }
@@ -7588,7 +7396,6 @@ impl ListOpsItemRelatedItems {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => {
@@ -7622,7 +7429,6 @@ impl ListOpsItemRelatedItems {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for ListOpsItemRelatedItems {
     type Output = Result<
         crate::output::ListOpsItemRelatedItemsOutput,
@@ -7635,7 +7441,7 @@ impl smithy_http::response::ParseStrictResponse for ListOpsItemRelatedItems {
 
 /// <p>Systems Manager calls this API action when displaying all Application Manager OpsMetadata objects or
 /// blobs.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct ListOpsMetadata {
     _private: (),
 }
@@ -7654,7 +7460,6 @@ impl ListOpsMetadata {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => return Err(crate::error::ListOpsMetadataError::unhandled(generic)),
@@ -7691,7 +7496,6 @@ impl ListOpsMetadata {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for ListOpsMetadata {
     type Output = Result<crate::output::ListOpsMetadataOutput, crate::error::ListOpsMetadataError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -7702,7 +7506,7 @@ impl smithy_http::response::ParseStrictResponse for ListOpsMetadata {
 /// <p>Returns a resource-level summary count. The summary includes information about compliant and
 /// non-compliant statuses and detailed compliance-item severity counts, according to the filter
 /// criteria you specify.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct ListResourceComplianceSummaries {
     _private: (),
 }
@@ -7724,7 +7528,6 @@ impl ListResourceComplianceSummaries {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => {
@@ -7763,7 +7566,6 @@ impl ListResourceComplianceSummaries {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for ListResourceComplianceSummaries {
     type Output = Result<
         crate::output::ListResourceComplianceSummariesOutput,
@@ -7783,7 +7585,7 @@ impl smithy_http::response::ParseStrictResponse for ListResourceComplianceSummar
 /// configurations to list, check the value of <code>NextToken</code> in the output. If there are
 /// more sync configurations to list, you can request them by specifying the <code>NextToken</code>
 /// returned in the call to the parameter of a subsequent call. </p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct ListResourceDataSync {
     _private: (),
 }
@@ -7803,7 +7605,6 @@ impl ListResourceDataSync {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => return Err(crate::error::ListResourceDataSyncError::unhandled(generic)),
@@ -7837,7 +7638,6 @@ impl ListResourceDataSync {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for ListResourceDataSync {
     type Output =
         Result<crate::output::ListResourceDataSyncOutput, crate::error::ListResourceDataSyncError>;
@@ -7847,7 +7647,7 @@ impl smithy_http::response::ParseStrictResponse for ListResourceDataSync {
 }
 
 /// <p>Returns a list of the tags assigned to the specified resource.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct ListTagsForResource {
     _private: (),
 }
@@ -7867,7 +7667,6 @@ impl ListTagsForResource {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => return Err(crate::error::ListTagsForResourceError::unhandled(generic)),
@@ -7910,7 +7709,6 @@ impl ListTagsForResource {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for ListTagsForResource {
     type Output =
         Result<crate::output::ListTagsForResourceOutput, crate::error::ListTagsForResourceError>;
@@ -7922,7 +7720,7 @@ impl smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// <p>Shares a Systems Manager document publicly or privately. If you share a document privately, you must
 /// specify the AWS user account IDs for those people who can use the document. If you share a
 /// document publicly, you must specify <i>All</i> as the account ID.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct ModifyDocumentPermission {
     _private: (),
 }
@@ -7944,7 +7742,6 @@ impl ModifyDocumentPermission {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => {
@@ -8013,7 +7810,6 @@ impl ModifyDocumentPermission {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for ModifyDocumentPermission {
     type Output = Result<
         crate::output::ModifyDocumentPermissionOutput,
@@ -8080,7 +7876,7 @@ impl smithy_http::response::ParseStrictResponse for ModifyDocumentPermission {
 /// the resource. Specify the time by using the following format: yyyy-MM-dd'T'HH:mm:ss'Z'</p>
 /// </li>
 /// </ul>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct PutComplianceItems {
     _private: (),
 }
@@ -8100,7 +7896,6 @@ impl PutComplianceItems {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => return Err(crate::error::PutComplianceItemsError::unhandled(generic)),
@@ -8145,7 +7940,6 @@ impl PutComplianceItems {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for PutComplianceItems {
     type Output =
         Result<crate::output::PutComplianceItemsOutput, crate::error::PutComplianceItemsError>;
@@ -8156,7 +7950,7 @@ impl smithy_http::response::ParseStrictResponse for PutComplianceItems {
 
 /// <p>Bulk update custom inventory items on one more instance. The request adds an inventory item,
 /// if it doesn't already exist, or updates an inventory item, if it does exist.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct PutInventory {
     _private: (),
 }
@@ -8175,7 +7969,6 @@ impl PutInventory {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => return Err(crate::error::PutInventoryError::unhandled(generic)),
@@ -8243,7 +8036,6 @@ impl PutInventory {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for PutInventory {
     type Output = Result<crate::output::PutInventoryOutput, crate::error::PutInventoryError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -8252,7 +8044,7 @@ impl smithy_http::response::ParseStrictResponse for PutInventory {
 }
 
 /// <p>Add a parameter to the system.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct PutParameter {
     _private: (),
 }
@@ -8271,7 +8063,6 @@ impl PutParameter {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => return Err(crate::error::PutParameterError::unhandled(generic)),
@@ -8404,7 +8195,6 @@ impl PutParameter {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for PutParameter {
     type Output = Result<crate::output::PutParameterOutput, crate::error::PutParameterError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -8417,7 +8207,7 @@ impl smithy_http::response::ParseStrictResponse for PutParameter {
 /// ARN as the baseline ID value. For example, for CentOS, specify
 /// <code>arn:aws:ssm:us-east-2:733109147000:patchbaseline/pb-0574b43a65ea646ed</code> instead of
 /// <code>pb-0574b43a65ea646ed</code>.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct RegisterDefaultPatchBaseline {
     _private: (),
 }
@@ -8439,7 +8229,6 @@ impl RegisterDefaultPatchBaseline {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => {
@@ -8495,7 +8284,6 @@ impl RegisterDefaultPatchBaseline {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for RegisterDefaultPatchBaseline {
     type Output = Result<
         crate::output::RegisterDefaultPatchBaselineOutput,
@@ -8507,7 +8295,7 @@ impl smithy_http::response::ParseStrictResponse for RegisterDefaultPatchBaseline
 }
 
 /// <p>Registers a patch baseline for a patch group.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct RegisterPatchBaselineForPatchGroup {
     _private: (),
 }
@@ -8529,7 +8317,6 @@ impl RegisterPatchBaselineForPatchGroup {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => {
@@ -8576,7 +8363,6 @@ impl RegisterPatchBaselineForPatchGroup {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for RegisterPatchBaselineForPatchGroup {
     type Output = Result<
         crate::output::RegisterPatchBaselineForPatchGroupOutput,
@@ -8588,7 +8374,7 @@ impl smithy_http::response::ParseStrictResponse for RegisterPatchBaselineForPatc
 }
 
 /// <p>Registers a target with a maintenance window.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct RegisterTargetWithMaintenanceWindow {
     _private: (),
 }
@@ -8610,7 +8396,6 @@ impl RegisterTargetWithMaintenanceWindow {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => {
@@ -8653,7 +8438,6 @@ impl RegisterTargetWithMaintenanceWindow {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for RegisterTargetWithMaintenanceWindow {
     type Output = Result<
         crate::output::RegisterTargetWithMaintenanceWindowOutput,
@@ -8665,7 +8449,7 @@ impl smithy_http::response::ParseStrictResponse for RegisterTargetWithMaintenanc
 }
 
 /// <p>Adds a new task to a maintenance window.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct RegisterTaskWithMaintenanceWindow {
     _private: (),
 }
@@ -8687,7 +8471,6 @@ impl RegisterTaskWithMaintenanceWindow {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => {
@@ -8734,7 +8517,6 @@ impl RegisterTaskWithMaintenanceWindow {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for RegisterTaskWithMaintenanceWindow {
     type Output = Result<
         crate::output::RegisterTaskWithMaintenanceWindowOutput,
@@ -8746,7 +8528,7 @@ impl smithy_http::response::ParseStrictResponse for RegisterTaskWithMaintenanceW
 }
 
 /// <p>Removes tag keys from the specified resource.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct RemoveTagsFromResource {
     _private: (),
 }
@@ -8768,7 +8550,6 @@ impl RemoveTagsFromResource {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => {
@@ -8823,7 +8604,6 @@ impl RemoveTagsFromResource {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for RemoveTagsFromResource {
     type Output = Result<
         crate::output::RemoveTagsFromResourceOutput,
@@ -8848,7 +8628,7 @@ impl smithy_http::response::ParseStrictResponse for RemoveTagsFromResource {
 /// setting. </p>
 /// <p>Reset the service setting for the account to the default value as provisioned by the AWS
 /// service team. </p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct ResetServiceSetting {
     _private: (),
 }
@@ -8868,7 +8648,6 @@ impl ResetServiceSetting {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => return Err(crate::error::ResetServiceSettingError::unhandled(generic)),
@@ -8913,7 +8692,6 @@ impl ResetServiceSetting {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for ResetServiceSetting {
     type Output =
         Result<crate::output::ResetServiceSettingOutput, crate::error::ResetServiceSettingError>;
@@ -8928,7 +8706,7 @@ impl smithy_http::response::ParseStrictResponse for ResetServiceSetting {
 /// <p>This command is primarily for use by client machines to automatically reconnect during
 /// intermittent network issues. It is not intended for any other use.</p>
 /// </note>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct ResumeSession {
     _private: (),
 }
@@ -8947,7 +8725,6 @@ impl ResumeSession {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => return Err(crate::error::ResumeSessionError::unhandled(generic)),
@@ -8981,7 +8758,6 @@ impl ResumeSession {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for ResumeSession {
     type Output = Result<crate::output::ResumeSessionOutput, crate::error::ResumeSessionError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -8991,7 +8767,7 @@ impl smithy_http::response::ParseStrictResponse for ResumeSession {
 
 /// <p>Sends a signal to an Automation execution to change the current behavior or status of the
 /// execution. </p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct SendAutomationSignal {
     _private: (),
 }
@@ -9011,7 +8787,6 @@ impl SendAutomationSignal {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => return Err(crate::error::SendAutomationSignalError::unhandled(generic)),
@@ -9044,7 +8819,6 @@ impl SendAutomationSignal {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for SendAutomationSignal {
     type Output =
         Result<crate::output::SendAutomationSignalOutput, crate::error::SendAutomationSignalError>;
@@ -9054,7 +8828,7 @@ impl smithy_http::response::ParseStrictResponse for SendAutomationSignal {
 }
 
 /// <p>Runs commands on one or more managed instances.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct SendCommand {
     _private: (),
 }
@@ -9073,7 +8847,6 @@ impl SendCommand {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => return Err(crate::error::SendCommandError::unhandled(generic)),
@@ -9170,7 +8943,6 @@ impl SendCommand {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for SendCommand {
     type Output = Result<crate::output::SendCommandOutput, crate::error::SendCommandError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -9180,7 +8952,7 @@ impl smithy_http::response::ParseStrictResponse for SendCommand {
 
 /// <p>Use this API action to run an association immediately and only one time. This action can be
 /// helpful when troubleshooting associations.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct StartAssociationsOnce {
     _private: (),
 }
@@ -9200,7 +8972,6 @@ impl StartAssociationsOnce {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => return Err(crate::error::StartAssociationsOnceError::unhandled(generic)),
@@ -9235,7 +9006,6 @@ impl StartAssociationsOnce {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for StartAssociationsOnce {
     type Output = Result<
         crate::output::StartAssociationsOnceOutput,
@@ -9247,7 +9017,7 @@ impl smithy_http::response::ParseStrictResponse for StartAssociationsOnce {
 }
 
 /// <p>Initiates execution of an Automation document.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct StartAutomationExecution {
     _private: (),
 }
@@ -9269,7 +9039,6 @@ impl StartAutomationExecution {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => {
@@ -9323,7 +9092,6 @@ impl StartAutomationExecution {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for StartAutomationExecution {
     type Output = Result<
         crate::output::StartAutomationExecutionOutput,
@@ -9337,7 +9105,7 @@ impl smithy_http::response::ParseStrictResponse for StartAutomationExecution {
 /// <p>Creates a change request for Change Manager. The runbooks (Automation documents) specified in the
 /// change request run only after all required approvals for the change request have been
 /// received.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct StartChangeRequestExecution {
     _private: (),
 }
@@ -9359,7 +9127,6 @@ impl StartChangeRequestExecution {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => {
@@ -9413,7 +9180,6 @@ impl StartChangeRequestExecution {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for StartChangeRequestExecution {
     type Output = Result<
         crate::output::StartChangeRequestExecutionOutput,
@@ -9434,7 +9200,7 @@ impl smithy_http::response::ParseStrictResponse for StartChangeRequestExecution 
 /// <p>AWS Tools for PowerShell usage: Start-SSMSession is not currently supported by AWS Tools
 /// for PowerShell on Windows local machines.</p>
 /// </note>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct StartSession {
     _private: (),
 }
@@ -9453,7 +9219,6 @@ impl StartSession {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => return Err(crate::error::StartSessionError::unhandled(generic)),
@@ -9494,7 +9259,6 @@ impl StartSession {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for StartSession {
     type Output = Result<crate::output::StartSessionOutput, crate::error::StartSessionError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -9503,7 +9267,7 @@ impl smithy_http::response::ParseStrictResponse for StartSession {
 }
 
 /// <p>Stop an Automation that is currently running.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct StopAutomationExecution {
     _private: (),
 }
@@ -9525,7 +9289,6 @@ impl StopAutomationExecution {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => {
@@ -9558,7 +9321,6 @@ impl StopAutomationExecution {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for StopAutomationExecution {
     type Output = Result<
         crate::output::StopAutomationExecutionOutput,
@@ -9571,7 +9333,7 @@ impl smithy_http::response::ParseStrictResponse for StopAutomationExecution {
 
 /// <p>Permanently ends a session and closes the data connection between the Session Manager client and
 /// SSM Agent on the instance. A terminated session cannot be resumed.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct TerminateSession {
     _private: (),
 }
@@ -9590,7 +9352,6 @@ impl TerminateSession {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => return Err(crate::error::TerminateSessionError::unhandled(generic)),
@@ -9624,7 +9385,6 @@ impl TerminateSession {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for TerminateSession {
     type Output =
         Result<crate::output::TerminateSessionOutput, crate::error::TerminateSessionError>;
@@ -9634,7 +9394,7 @@ impl smithy_http::response::ParseStrictResponse for TerminateSession {
 }
 
 /// <p>Remove a label or labels from a parameter.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct UnlabelParameterVersion {
     _private: (),
 }
@@ -9656,7 +9416,6 @@ impl UnlabelParameterVersion {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => {
@@ -9717,7 +9476,6 @@ impl UnlabelParameterVersion {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for UnlabelParameterVersion {
     type Output = Result<
         crate::output::UnlabelParameterVersionOutput,
@@ -9741,7 +9499,7 @@ impl smithy_http::response::ParseStrictResponse for UnlabelParameterVersion {
 /// <p>When you update an association, the association immediately runs against the specified
 /// targets.</p>
 /// </important>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateAssociation {
     _private: (),
 }
@@ -9760,7 +9518,6 @@ impl UpdateAssociation {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => return Err(crate::error::UpdateAssociationError::unhandled(generic)),
@@ -9830,7 +9587,6 @@ impl UpdateAssociation {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for UpdateAssociation {
     type Output =
         Result<crate::output::UpdateAssociationOutput, crate::error::UpdateAssociationError>;
@@ -9840,7 +9596,7 @@ impl smithy_http::response::ParseStrictResponse for UpdateAssociation {
 }
 
 /// <p>Updates the status of the Systems Manager document associated with the specified instance.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateAssociationStatus {
     _private: (),
 }
@@ -9862,7 +9618,6 @@ impl UpdateAssociationStatus {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => {
@@ -9937,7 +9692,6 @@ impl UpdateAssociationStatus {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for UpdateAssociationStatus {
     type Output = Result<
         crate::output::UpdateAssociationStatusOutput,
@@ -9949,7 +9703,7 @@ impl smithy_http::response::ParseStrictResponse for UpdateAssociationStatus {
 }
 
 /// <p>Updates one or more values for an SSM document.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateDocument {
     _private: (),
 }
@@ -9968,7 +9722,6 @@ impl UpdateDocument {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => return Err(crate::error::UpdateDocumentError::unhandled(generic)),
@@ -10064,7 +9817,6 @@ impl UpdateDocument {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for UpdateDocument {
     type Output = Result<crate::output::UpdateDocumentOutput, crate::error::UpdateDocumentError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -10073,7 +9825,7 @@ impl smithy_http::response::ParseStrictResponse for UpdateDocument {
 }
 
 /// <p>Set the default version of a document. </p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateDocumentDefaultVersion {
     _private: (),
 }
@@ -10095,7 +9847,6 @@ impl UpdateDocumentDefaultVersion {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => {
@@ -10137,7 +9888,6 @@ impl UpdateDocumentDefaultVersion {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for UpdateDocumentDefaultVersion {
     type Output = Result<
         crate::output::UpdateDocumentDefaultVersionOutput,
@@ -10149,7 +9899,7 @@ impl smithy_http::response::ParseStrictResponse for UpdateDocumentDefaultVersion
 }
 
 /// <p>Updates information related to approval reviews for a specific version of a document.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateDocumentMetadata {
     _private: (),
 }
@@ -10171,7 +9921,6 @@ impl UpdateDocumentMetadata {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => {
@@ -10227,7 +9976,6 @@ impl UpdateDocumentMetadata {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for UpdateDocumentMetadata {
     type Output = Result<
         crate::output::UpdateDocumentMetadataOutput,
@@ -10247,7 +9995,7 @@ impl smithy_http::response::ParseStrictResponse for UpdateDocumentMetadata {
 /// value you specify for <code>Cutoff</code> is one hour, no maintenance window tasks can start
 /// after 5 PM.</p>
 /// </note>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateMaintenanceWindow {
     _private: (),
 }
@@ -10269,7 +10017,6 @@ impl UpdateMaintenanceWindow {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => {
@@ -10313,7 +10060,6 @@ impl UpdateMaintenanceWindow {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for UpdateMaintenanceWindow {
     type Output = Result<
         crate::output::UpdateMaintenanceWindowOutput,
@@ -10350,7 +10096,7 @@ impl smithy_http::response::ParseStrictResponse for UpdateMaintenanceWindow {
 /// <note>
 /// <p>If a parameter is null, then the corresponding field is not modified.</p>
 /// </note>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateMaintenanceWindowTarget {
     _private: (),
 }
@@ -10372,7 +10118,6 @@ impl UpdateMaintenanceWindowTarget {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => {
@@ -10407,7 +10152,6 @@ impl UpdateMaintenanceWindowTarget {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for UpdateMaintenanceWindowTarget {
     type Output = Result<
         crate::output::UpdateMaintenanceWindowTargetOutput,
@@ -10463,7 +10207,7 @@ impl smithy_http::response::ParseStrictResponse for UpdateMaintenanceWindowTarge
 /// maintenance window task and specify only a different <code>OutputS3BucketName</code> value, the
 /// values for <code>Comment</code> and <code>NotificationConfig</code> are removed.</p>
 /// </important>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateMaintenanceWindowTask {
     _private: (),
 }
@@ -10485,7 +10229,6 @@ impl UpdateMaintenanceWindowTask {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => {
@@ -10530,7 +10273,6 @@ impl UpdateMaintenanceWindowTask {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for UpdateMaintenanceWindowTask {
     type Output = Result<
         crate::output::UpdateMaintenanceWindowTaskOutput,
@@ -10544,7 +10286,7 @@ impl smithy_http::response::ParseStrictResponse for UpdateMaintenanceWindowTask 
 /// <p>Changes the Amazon Identity and Access Management (IAM) role that is assigned to the
 /// on-premises instance or virtual machines (VM). IAM roles are first assigned to these hybrid
 /// instances during the activation process. For more information, see <a>CreateActivation</a>.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateManagedInstanceRole {
     _private: (),
 }
@@ -10566,7 +10308,6 @@ impl UpdateManagedInstanceRole {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => {
@@ -10605,7 +10346,6 @@ impl UpdateManagedInstanceRole {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for UpdateManagedInstanceRole {
     type Output = Result<
         crate::output::UpdateManagedInstanceRoleOutput,
@@ -10623,7 +10363,7 @@ impl smithy_http::response::ParseStrictResponse for UpdateManagedInstanceRole {
 /// operational issues impacting the performance and health of their AWS resources. For more
 /// information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">AWS Systems Manager OpsCenter</a> in the
 /// <i>AWS Systems Manager User Guide</i>. </p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateOpsItem {
     _private: (),
 }
@@ -10642,7 +10382,6 @@ impl UpdateOpsItem {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => return Err(crate::error::UpdateOpsItemError::unhandled(generic)),
@@ -10696,7 +10435,6 @@ impl UpdateOpsItem {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for UpdateOpsItem {
     type Output = Result<crate::output::UpdateOpsItemOutput, crate::error::UpdateOpsItemError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -10705,7 +10443,7 @@ impl smithy_http::response::ParseStrictResponse for UpdateOpsItem {
 }
 
 /// <p>Systems Manager calls this API action when you edit OpsMetadata in Application Manager.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateOpsMetadata {
     _private: (),
 }
@@ -10724,7 +10462,6 @@ impl UpdateOpsMetadata {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => return Err(crate::error::UpdateOpsMetadataError::unhandled(generic)),
@@ -10766,7 +10503,6 @@ impl UpdateOpsMetadata {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for UpdateOpsMetadata {
     type Output =
         Result<crate::output::UpdateOpsMetadataOutput, crate::error::UpdateOpsMetadataError>;
@@ -10781,7 +10517,7 @@ impl smithy_http::response::ParseStrictResponse for UpdateOpsMetadata {
 /// <p>For information about valid key and value pairs in <code>PatchFilters</code> for each
 /// supported operating system type, see <a href="http://docs.aws.amazon.com/systems-manager/latest/APIReference/API_PatchFilter.html">PatchFilter</a>.</p>
 /// </note>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct UpdatePatchBaseline {
     _private: (),
 }
@@ -10801,7 +10537,6 @@ impl UpdatePatchBaseline {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => return Err(crate::error::UpdatePatchBaselineError::unhandled(generic)),
@@ -10837,7 +10572,6 @@ impl UpdatePatchBaseline {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for UpdatePatchBaseline {
     type Output =
         Result<crate::output::UpdatePatchBaselineOutput, crate::error::UpdatePatchBaselineError>;
@@ -10855,7 +10589,7 @@ impl smithy_http::response::ParseStrictResponse for UpdatePatchBaseline {
 /// <p>This API action only supports a resource data sync that was created with a SyncFromSource
 /// <code>SyncType</code>.</p>
 /// </note>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateResourceDataSync {
     _private: (),
 }
@@ -10877,7 +10611,6 @@ impl UpdateResourceDataSync {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => {
@@ -10914,7 +10647,6 @@ impl UpdateResourceDataSync {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for UpdateResourceDataSync {
     type Output = Result<
         crate::output::UpdateResourceDataSyncOutput,
@@ -10938,7 +10670,7 @@ impl smithy_http::response::ParseStrictResponse for UpdateResourceDataSync {
 /// current value. Or, use the <a>ResetServiceSetting</a> to change the value back to the
 /// original value defined by the AWS service team.</p>
 /// <p>Update the service setting for the account. </p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateServiceSetting {
     _private: (),
 }
@@ -10958,7 +10690,6 @@ impl UpdateServiceSetting {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => return Err(crate::error::UpdateServiceSettingError::unhandled(generic)),
@@ -11000,7 +10731,6 @@ impl UpdateServiceSetting {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for UpdateServiceSetting {
     type Output =
         Result<crate::output::UpdateServiceSettingOutput, crate::error::UpdateServiceSettingError>;

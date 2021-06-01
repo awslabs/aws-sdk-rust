@@ -15,7 +15,6 @@ impl Config {
     pub fn builder() -> Builder {
         Builder::default()
     }
-
     /// The signature version 4 service signing name to use in the credential scope when signing requests.
     ///
     /// The signing service may be overidden by the `Endpoint`, or by specifying a custom [`SigningService`](aws_types::SigningService) during
@@ -35,7 +34,6 @@ impl Builder {
     pub fn new() -> Self {
         Self::default()
     }
-
     pub fn make_token(
         mut self,
         make_token: impl crate::idempotency_token::MakeIdempotencyToken + 'static,
@@ -43,7 +41,6 @@ impl Builder {
         self.make_token = Some(Box::new(make_token));
         self
     }
-
     pub fn endpoint_resolver(
         mut self,
         endpoint_resolver: impl aws_endpoint::ResolveAwsEndpoint + 'static,
@@ -51,14 +48,11 @@ impl Builder {
         self.endpoint_resolver = Some(::std::sync::Arc::new(endpoint_resolver));
         self
     }
-
     pub fn region(mut self, region_provider: impl aws_types::region::ProvideRegion) -> Self {
         self.region = region_provider.region();
         self
     }
-
     /// Set the credentials provider for this service
-
     pub fn credentials_provider(
         mut self,
         credentials_provider: impl aws_auth::ProvideCredentials + 'static,
@@ -66,7 +60,6 @@ impl Builder {
         self.credentials_provider = Some(std::sync::Arc::new(credentials_provider));
         self
     }
-
     pub fn build(self) -> Config {
         Config {
             make_token: self

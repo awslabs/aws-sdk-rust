@@ -7,11 +7,11 @@ use crate::body::SdkBody;
 use crate::property_bag::PropertyBag;
 use std::borrow::Cow;
 use std::error::Error;
-use std::ops::DerefMut;
+use std::ops::{Deref, DerefMut};
 use std::sync::{Arc, Mutex, MutexGuard};
 use thiserror::Error;
 
-#[derive(Clone)]
+#[derive(Clone, Debug)]
 pub struct Metadata {
     operation: Cow<'static, str>,
     service: Cow<'static, str>,
@@ -38,7 +38,7 @@ impl Metadata {
 }
 
 #[non_exhaustive]
-#[derive(Clone)]
+#[derive(Clone, Debug)]
 pub struct Parts<H, R> {
     pub response_handler: H,
     pub retry_policy: R,
@@ -67,6 +67,7 @@ pub enum BuildError {
     SerializationError(#[from] Box<dyn Error + Send + Sync + 'static>),
 }
 
+#[derive(Debug)]
 pub struct Operation<H, R> {
     request: Request,
     parts: Parts<H, R>,
@@ -82,6 +83,10 @@ impl<H, R> Operation<H, R> {
 
     pub fn config_mut(&mut self) -> impl DerefMut<Target = PropertyBag> + '_ {
         self.request.config_mut()
+    }
+
+    pub fn config(&self) -> impl Deref<Target = PropertyBag> + '_ {
+        self.request.config()
     }
 
     pub fn with_metadata(mut self, metadata: Metadata) -> Self {

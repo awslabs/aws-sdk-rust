@@ -38,7 +38,7 @@
 /// </p>
 /// </li>
 /// </ul>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct AbortMultipartUpload {
     _private: (),
 }
@@ -51,7 +51,6 @@ impl AbortMultipartUpload {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for AbortMultipartUpload {
     type Output =
         Result<crate::output::AbortMultipartUploadOutput, crate::error::AbortMultipartUploadError>;
@@ -171,7 +170,7 @@ impl smithy_http::response::ParseStrictResponse for AbortMultipartUpload {
 /// </p>
 /// </li>
 /// </ul>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct CompleteMultipartUpload {
     _private: (),
 }
@@ -184,7 +183,6 @@ impl CompleteMultipartUpload {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for CompleteMultipartUpload {
     type Output = Result<
         crate::output::CompleteMultipartUploadOutput,
@@ -366,7 +364,7 @@ impl smithy_http::response::ParseStrictResponse for CompleteMultipartUpload {
 /// </ul>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/CopyingObjectsExamples.html">Copying
 /// Objects</a>.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct CopyObject {
     _private: (),
 }
@@ -379,7 +377,6 @@ impl CopyObject {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for CopyObject {
     type Output = Result<crate::output::CopyObjectOutput, crate::error::CopyObjectError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -500,7 +497,7 @@ impl smithy_http::response::ParseStrictResponse for CopyObject {
 /// </p>
 /// </li>
 /// </ul>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct CreateBucket {
     _private: (),
 }
@@ -513,7 +510,6 @@ impl CreateBucket {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for CreateBucket {
     type Output = Result<crate::output::CreateBucketOutput, crate::error::CreateBucketError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -775,7 +771,7 @@ impl smithy_http::response::ParseStrictResponse for CreateBucket {
 /// </p>
 /// </li>
 /// </ul>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct CreateMultipartUpload {
     _private: (),
 }
@@ -788,7 +784,6 @@ impl CreateMultipartUpload {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for CreateMultipartUpload {
     type Output = Result<
         crate::output::CreateMultipartUploadOutput,
@@ -820,7 +815,7 @@ impl smithy_http::response::ParseStrictResponse for CreateMultipartUpload {
 /// </p>
 /// </li>
 /// </ul>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteBucket {
     _private: (),
 }
@@ -833,7 +828,6 @@ impl DeleteBucket {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for DeleteBucket {
     type Output = Result<crate::output::DeleteBucketOutput, crate::error::DeleteBucketError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -873,7 +867,7 @@ impl smithy_http::response::ParseStrictResponse for DeleteBucket {
 /// </p>
 /// </li>
 /// </ul>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteBucketAnalyticsConfiguration {
     _private: (),
 }
@@ -886,7 +880,6 @@ impl DeleteBucketAnalyticsConfiguration {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for DeleteBucketAnalyticsConfiguration {
     type Output = Result<
         crate::output::DeleteBucketAnalyticsConfigurationOutput,
@@ -922,7 +915,7 @@ impl smithy_http::response::ParseStrictResponse for DeleteBucketAnalyticsConfigu
 /// </p>
 /// </li>
 /// </ul>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteBucketCors {
     _private: (),
 }
@@ -935,7 +928,6 @@ impl DeleteBucketCors {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for DeleteBucketCors {
     type Output =
         Result<crate::output::DeleteBucketCorsOutput, crate::error::DeleteBucketCorsError>;
@@ -971,7 +963,7 @@ impl smithy_http::response::ParseStrictResponse for DeleteBucketCors {
 /// </p>
 /// </li>
 /// </ul>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteBucketEncryption {
     _private: (),
 }
@@ -984,7 +976,6 @@ impl DeleteBucketEncryption {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for DeleteBucketEncryption {
     type Output = Result<
         crate::output::DeleteBucketEncryptionOutput,
@@ -1022,7 +1013,7 @@ impl smithy_http::response::ParseStrictResponse for DeleteBucketEncryption {
 /// </p>
 /// </li>
 /// </ul>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteBucketIntelligentTieringConfiguration {
     _private: (),
 }
@@ -1036,7 +1027,6 @@ impl DeleteBucketIntelligentTieringConfiguration {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for DeleteBucketIntelligentTieringConfiguration {
     type Output = Result<
         crate::output::DeleteBucketIntelligentTieringConfigurationOutput,
@@ -1081,7 +1071,7 @@ impl smithy_http::response::ParseStrictResponse for DeleteBucketIntelligentTieri
 /// </p>
 /// </li>
 /// </ul>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteBucketInventoryConfiguration {
     _private: (),
 }
@@ -1094,7 +1084,6 @@ impl DeleteBucketInventoryConfiguration {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for DeleteBucketInventoryConfiguration {
     type Output = Result<
         crate::output::DeleteBucketInventoryConfigurationOutput,
@@ -1133,7 +1122,7 @@ impl smithy_http::response::ParseStrictResponse for DeleteBucketInventoryConfigu
 /// </p>
 /// </li>
 /// </ul>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteBucketLifecycle {
     _private: (),
 }
@@ -1146,7 +1135,6 @@ impl DeleteBucketLifecycle {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for DeleteBucketLifecycle {
     type Output = Result<
         crate::output::DeleteBucketLifecycleOutput,
@@ -1195,7 +1183,7 @@ impl smithy_http::response::ParseStrictResponse for DeleteBucketLifecycle {
 /// </p>
 /// </li>
 /// </ul>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteBucketMetricsConfiguration {
     _private: (),
 }
@@ -1208,7 +1196,6 @@ impl DeleteBucketMetricsConfiguration {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for DeleteBucketMetricsConfiguration {
     type Output = Result<
         crate::output::DeleteBucketMetricsConfigurationOutput,
@@ -1242,7 +1229,7 @@ impl smithy_http::response::ParseStrictResponse for DeleteBucketMetricsConfigura
 /// </p>
 /// </li>
 /// </ul>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteBucketOwnershipControls {
     _private: (),
 }
@@ -1255,7 +1242,6 @@ impl DeleteBucketOwnershipControls {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for DeleteBucketOwnershipControls {
     type Output = Result<
         crate::output::DeleteBucketOwnershipControlsOutput,
@@ -1300,7 +1286,7 @@ impl smithy_http::response::ParseStrictResponse for DeleteBucketOwnershipControl
 /// </p>
 /// </li>
 /// </ul>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteBucketPolicy {
     _private: (),
 }
@@ -1313,7 +1299,6 @@ impl DeleteBucketPolicy {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for DeleteBucketPolicy {
     type Output =
         Result<crate::output::DeleteBucketPolicyOutput, crate::error::DeleteBucketPolicyError>;
@@ -1350,7 +1335,7 @@ impl smithy_http::response::ParseStrictResponse for DeleteBucketPolicy {
 /// </p>
 /// </li>
 /// </ul>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteBucketReplication {
     _private: (),
 }
@@ -1363,7 +1348,6 @@ impl DeleteBucketReplication {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for DeleteBucketReplication {
     type Output = Result<
         crate::output::DeleteBucketReplicationOutput,
@@ -1395,7 +1379,7 @@ impl smithy_http::response::ParseStrictResponse for DeleteBucketReplication {
 /// </p>
 /// </li>
 /// </ul>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteBucketTagging {
     _private: (),
 }
@@ -1408,7 +1392,6 @@ impl DeleteBucketTagging {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for DeleteBucketTagging {
     type Output =
         Result<crate::output::DeleteBucketTaggingOutput, crate::error::DeleteBucketTaggingError>;
@@ -1445,7 +1428,7 @@ impl smithy_http::response::ParseStrictResponse for DeleteBucketTagging {
 /// </p>
 /// </li>
 /// </ul>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteBucketWebsite {
     _private: (),
 }
@@ -1458,7 +1441,6 @@ impl DeleteBucketWebsite {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for DeleteBucketWebsite {
     type Output =
         Result<crate::output::DeleteBucketWebsiteOutput, crate::error::DeleteBucketWebsiteError>;
@@ -1497,7 +1479,7 @@ impl smithy_http::response::ParseStrictResponse for DeleteBucketWebsite {
 /// </p>
 /// </li>
 /// </ul>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteObject {
     _private: (),
 }
@@ -1510,7 +1492,6 @@ impl DeleteObject {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for DeleteObject {
     type Output = Result<crate::output::DeleteObjectOutput, crate::error::DeleteObjectError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -1574,7 +1555,7 @@ impl smithy_http::response::ParseStrictResponse for DeleteObject {
 /// </p>
 /// </li>
 /// </ul>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteObjects {
     _private: (),
 }
@@ -1587,7 +1568,6 @@ impl DeleteObjects {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for DeleteObjects {
     type Output = Result<crate::output::DeleteObjectsOutput, crate::error::DeleteObjectsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -1621,7 +1601,7 @@ impl smithy_http::response::ParseStrictResponse for DeleteObjects {
 /// </p>
 /// </li>
 /// </ul>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteObjectTagging {
     _private: (),
 }
@@ -1634,7 +1614,6 @@ impl DeleteObjectTagging {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for DeleteObjectTagging {
     type Output =
         Result<crate::output::DeleteObjectTaggingOutput, crate::error::DeleteObjectTaggingError>;
@@ -1675,7 +1654,7 @@ impl smithy_http::response::ParseStrictResponse for DeleteObjectTagging {
 /// </p>
 /// </li>
 /// </ul>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DeletePublicAccessBlock {
     _private: (),
 }
@@ -1688,7 +1667,6 @@ impl DeletePublicAccessBlock {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for DeletePublicAccessBlock {
     type Output = Result<
         crate::output::DeletePublicAccessBlockOutput,
@@ -1729,7 +1707,7 @@ impl smithy_http::response::ParseStrictResponse for DeletePublicAccessBlock {
 /// </p>
 /// </li>
 /// </ul>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct GetBucketAccelerateConfiguration {
     _private: (),
 }
@@ -1742,7 +1720,6 @@ impl GetBucketAccelerateConfiguration {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for GetBucketAccelerateConfiguration {
     type Output = Result<
         crate::output::GetBucketAccelerateConfigurationOutput,
@@ -1772,7 +1749,7 @@ impl smithy_http::response::ParseStrictResponse for GetBucketAccelerateConfigura
 /// </p>
 /// </li>
 /// </ul>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct GetBucketAcl {
     _private: (),
 }
@@ -1785,7 +1762,6 @@ impl GetBucketAcl {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for GetBucketAcl {
     type Output = Result<crate::output::GetBucketAclOutput, crate::error::GetBucketAclError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -1826,7 +1802,7 @@ impl smithy_http::response::ParseStrictResponse for GetBucketAcl {
 /// </p>
 /// </li>
 /// </ul>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct GetBucketAnalyticsConfiguration {
     _private: (),
 }
@@ -1839,7 +1815,6 @@ impl GetBucketAnalyticsConfiguration {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for GetBucketAnalyticsConfiguration {
     type Output = Result<
         crate::output::GetBucketAnalyticsConfigurationOutput,
@@ -1872,7 +1847,7 @@ impl smithy_http::response::ParseStrictResponse for GetBucketAnalyticsConfigurat
 /// </p>
 /// </li>
 /// </ul>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct GetBucketCors {
     _private: (),
 }
@@ -1885,7 +1860,6 @@ impl GetBucketCors {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for GetBucketCors {
     type Output = Result<crate::output::GetBucketCorsOutput, crate::error::GetBucketCorsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -1919,7 +1893,7 @@ impl smithy_http::response::ParseStrictResponse for GetBucketCors {
 /// </p>
 /// </li>
 /// </ul>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct GetBucketEncryption {
     _private: (),
 }
@@ -1932,7 +1906,6 @@ impl GetBucketEncryption {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for GetBucketEncryption {
     type Output =
         Result<crate::output::GetBucketEncryptionOutput, crate::error::GetBucketEncryptionError>;
@@ -1968,7 +1941,7 @@ impl smithy_http::response::ParseStrictResponse for GetBucketEncryption {
 /// </p>
 /// </li>
 /// </ul>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct GetBucketIntelligentTieringConfiguration {
     _private: (),
 }
@@ -1981,7 +1954,6 @@ impl GetBucketIntelligentTieringConfiguration {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for GetBucketIntelligentTieringConfiguration {
     type Output = Result<
         crate::output::GetBucketIntelligentTieringConfigurationOutput,
@@ -2027,7 +1999,7 @@ impl smithy_http::response::ParseStrictResponse for GetBucketIntelligentTieringC
 /// </p>
 /// </li>
 /// </ul>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct GetBucketInventoryConfiguration {
     _private: (),
 }
@@ -2040,7 +2012,6 @@ impl GetBucketInventoryConfiguration {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for GetBucketInventoryConfiguration {
     type Output = Result<
         crate::output::GetBucketInventoryConfigurationOutput,
@@ -2109,7 +2080,7 @@ impl smithy_http::response::ParseStrictResponse for GetBucketInventoryConfigurat
 /// </p>
 /// </li>
 /// </ul>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct GetBucketLifecycleConfiguration {
     _private: (),
 }
@@ -2122,7 +2093,6 @@ impl GetBucketLifecycleConfiguration {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for GetBucketLifecycleConfiguration {
     type Output = Result<
         crate::output::GetBucketLifecycleConfigurationOutput,
@@ -2154,7 +2124,7 @@ impl smithy_http::response::ParseStrictResponse for GetBucketLifecycleConfigurat
 /// </p>
 /// </li>
 /// </ul>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct GetBucketLocation {
     _private: (),
 }
@@ -2167,7 +2137,6 @@ impl GetBucketLocation {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for GetBucketLocation {
     type Output =
         Result<crate::output::GetBucketLocationOutput, crate::error::GetBucketLocationError>;
@@ -2195,7 +2164,7 @@ impl smithy_http::response::ParseStrictResponse for GetBucketLocation {
 /// </p>
 /// </li>
 /// </ul>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct GetBucketLogging {
     _private: (),
 }
@@ -2208,7 +2177,6 @@ impl GetBucketLogging {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for GetBucketLogging {
     type Output =
         Result<crate::output::GetBucketLoggingOutput, crate::error::GetBucketLoggingError>;
@@ -2255,7 +2223,7 @@ impl smithy_http::response::ParseStrictResponse for GetBucketLogging {
 /// </p>
 /// </li>
 /// </ul>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct GetBucketMetricsConfiguration {
     _private: (),
 }
@@ -2268,7 +2236,6 @@ impl GetBucketMetricsConfiguration {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for GetBucketMetricsConfiguration {
     type Output = Result<
         crate::output::GetBucketMetricsConfigurationOutput,
@@ -2301,7 +2268,7 @@ impl smithy_http::response::ParseStrictResponse for GetBucketMetricsConfiguratio
 /// </p>
 /// </li>
 /// </ul>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct GetBucketNotificationConfiguration {
     _private: (),
 }
@@ -2314,7 +2281,6 @@ impl GetBucketNotificationConfiguration {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for GetBucketNotificationConfiguration {
     type Output = Result<
         crate::output::GetBucketNotificationConfigurationOutput,
@@ -2347,7 +2313,7 @@ impl smithy_http::response::ParseStrictResponse for GetBucketNotificationConfigu
 /// </p>
 /// </li>
 /// </ul>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct GetBucketOwnershipControls {
     _private: (),
 }
@@ -2360,7 +2326,6 @@ impl GetBucketOwnershipControls {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for GetBucketOwnershipControls {
     type Output = Result<
         crate::output::GetBucketOwnershipControlsOutput,
@@ -2398,7 +2363,7 @@ impl smithy_http::response::ParseStrictResponse for GetBucketOwnershipControls {
 /// </p>
 /// </li>
 /// </ul>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct GetBucketPolicy {
     _private: (),
 }
@@ -2411,7 +2376,6 @@ impl GetBucketPolicy {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for GetBucketPolicy {
     type Output = Result<crate::output::GetBucketPolicyOutput, crate::error::GetBucketPolicyError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -2452,7 +2416,7 @@ impl smithy_http::response::ParseStrictResponse for GetBucketPolicy {
 /// </p>
 /// </li>
 /// </ul>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct GetBucketPolicyStatus {
     _private: (),
 }
@@ -2465,7 +2429,6 @@ impl GetBucketPolicyStatus {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for GetBucketPolicyStatus {
     type Output = Result<
         crate::output::GetBucketPolicyStatusOutput,
@@ -2510,7 +2473,7 @@ impl smithy_http::response::ParseStrictResponse for GetBucketPolicyStatus {
 /// </p>
 /// </li>
 /// </ul>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct GetBucketReplication {
     _private: (),
 }
@@ -2523,7 +2486,6 @@ impl GetBucketReplication {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for GetBucketReplication {
     type Output =
         Result<crate::output::GetBucketReplicationOutput, crate::error::GetBucketReplicationError>;
@@ -2546,7 +2508,7 @@ impl smithy_http::response::ParseStrictResponse for GetBucketReplication {
 /// </p>
 /// </li>
 /// </ul>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct GetBucketRequestPayment {
     _private: (),
 }
@@ -2559,7 +2521,6 @@ impl GetBucketRequestPayment {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for GetBucketRequestPayment {
     type Output = Result<
         crate::output::GetBucketRequestPaymentOutput,
@@ -2604,7 +2565,7 @@ impl smithy_http::response::ParseStrictResponse for GetBucketRequestPayment {
 /// </p>
 /// </li>
 /// </ul>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct GetBucketTagging {
     _private: (),
 }
@@ -2617,7 +2578,6 @@ impl GetBucketTagging {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for GetBucketTagging {
     type Output =
         Result<crate::output::GetBucketTaggingOutput, crate::error::GetBucketTaggingError>;
@@ -2653,7 +2613,7 @@ impl smithy_http::response::ParseStrictResponse for GetBucketTagging {
 /// </p>
 /// </li>
 /// </ul>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct GetBucketVersioning {
     _private: (),
 }
@@ -2666,7 +2626,6 @@ impl GetBucketVersioning {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for GetBucketVersioning {
     type Output =
         Result<crate::output::GetBucketVersioningOutput, crate::error::GetBucketVersioningError>;
@@ -2700,7 +2659,7 @@ impl smithy_http::response::ParseStrictResponse for GetBucketVersioning {
 /// </p>
 /// </li>
 /// </ul>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct GetBucketWebsite {
     _private: (),
 }
@@ -2713,7 +2672,6 @@ impl GetBucketWebsite {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for GetBucketWebsite {
     type Output =
         Result<crate::output::GetBucketWebsiteOutput, crate::error::GetBucketWebsiteError>;
@@ -2880,7 +2838,7 @@ impl smithy_http::response::ParseStrictResponse for GetBucketWebsite {
 /// </p>
 /// </li>
 /// </ul>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct GetObject {
     _private: (),
 }
@@ -2893,7 +2851,6 @@ impl GetObject {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseHttpResponse<smithy_http::body::SdkBody> for GetObject {
     type Output = Result<crate::output::GetObjectOutput, crate::error::GetObjectError>;
     fn parse_unloaded(
@@ -2938,7 +2895,7 @@ impl smithy_http::response::ParseHttpResponse<smithy_http::body::SdkBody> for Ge
 /// </p>
 /// </li>
 /// </ul>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct GetObjectAcl {
     _private: (),
 }
@@ -2951,7 +2908,6 @@ impl GetObjectAcl {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for GetObjectAcl {
     type Output = Result<crate::output::GetObjectAclOutput, crate::error::GetObjectAclError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -2965,7 +2921,7 @@ impl smithy_http::response::ParseStrictResponse for GetObjectAcl {
 
 /// <p>Gets an object's current Legal Hold status. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock.html">Locking Objects</a>.</p>
 /// <p>This action is not supported by Amazon S3 on Outposts.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct GetObjectLegalHold {
     _private: (),
 }
@@ -2978,7 +2934,6 @@ impl GetObjectLegalHold {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for GetObjectLegalHold {
     type Output =
         Result<crate::output::GetObjectLegalHoldOutput, crate::error::GetObjectLegalHoldError>;
@@ -2995,7 +2950,7 @@ impl smithy_http::response::ParseStrictResponse for GetObjectLegalHold {
 /// configuration will be applied by default to every new object placed in the specified
 /// bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock.html">Locking
 /// Objects</a>.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct GetObjectLockConfiguration {
     _private: (),
 }
@@ -3008,7 +2963,6 @@ impl GetObjectLockConfiguration {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for GetObjectLockConfiguration {
     type Output = Result<
         crate::output::GetObjectLockConfigurationOutput,
@@ -3025,7 +2979,7 @@ impl smithy_http::response::ParseStrictResponse for GetObjectLockConfiguration {
 
 /// <p>Retrieves an object's retention settings. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock.html">Locking Objects</a>.</p>
 /// <p>This action is not supported by Amazon S3 on Outposts.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct GetObjectRetention {
     _private: (),
 }
@@ -3038,7 +2992,6 @@ impl GetObjectRetention {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for GetObjectRetention {
     type Output =
         Result<crate::output::GetObjectRetentionOutput, crate::error::GetObjectRetentionError>;
@@ -3075,7 +3028,7 @@ impl smithy_http::response::ParseStrictResponse for GetObjectRetention {
 /// </p>
 /// </li>
 /// </ul>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct GetObjectTagging {
     _private: (),
 }
@@ -3088,7 +3041,6 @@ impl GetObjectTagging {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for GetObjectTagging {
     type Output =
         Result<crate::output::GetObjectTaggingOutput, crate::error::GetObjectTaggingError>;
@@ -3118,7 +3070,7 @@ impl smithy_http::response::ParseStrictResponse for GetObjectTagging {
 /// </p>
 /// </li>
 /// </ul>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct GetObjectTorrent {
     _private: (),
 }
@@ -3131,7 +3083,6 @@ impl GetObjectTorrent {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseHttpResponse<smithy_http::body::SdkBody> for GetObjectTorrent {
     type Output =
         Result<crate::output::GetObjectTorrentOutput, crate::error::GetObjectTorrentError>;
@@ -3188,7 +3139,7 @@ impl smithy_http::response::ParseHttpResponse<smithy_http::body::SdkBody> for Ge
 /// </p>
 /// </li>
 /// </ul>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct GetPublicAccessBlock {
     _private: (),
 }
@@ -3201,7 +3152,6 @@ impl GetPublicAccessBlock {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for GetPublicAccessBlock {
     type Output =
         Result<crate::output::GetPublicAccessBlockOutput, crate::error::GetPublicAccessBlockError>;
@@ -3224,7 +3174,7 @@ impl smithy_http::response::ParseStrictResponse for GetPublicAccessBlock {
 /// <code>s3:ListBucket</code> action. The bucket owner has this permission by default and
 /// can grant this permission to others. For more information about permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-with-s3-actions.html#using-with-s3-actions-related-to-bucket-subresources">Permissions Related to Bucket Subresource Operations</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-access-control.html">Managing Access Permissions to Your Amazon S3
 /// Resources</a>.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct HeadBucket {
     _private: (),
 }
@@ -3237,7 +3187,6 @@ impl HeadBucket {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for HeadBucket {
     type Output = Result<crate::output::HeadBucketOutput, crate::error::HeadBucketError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -3354,7 +3303,7 @@ impl smithy_http::response::ParseStrictResponse for HeadBucket {
 /// </p>
 /// </li>
 /// </ul>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct HeadObject {
     _private: (),
 }
@@ -3367,7 +3316,6 @@ impl HeadObject {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for HeadObject {
     type Output = Result<crate::output::HeadObjectOutput, crate::error::HeadObjectError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -3415,7 +3363,7 @@ impl smithy_http::response::ParseStrictResponse for HeadObject {
 /// </p>
 /// </li>
 /// </ul>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct ListBucketAnalyticsConfigurations {
     _private: (),
 }
@@ -3428,7 +3376,6 @@ impl ListBucketAnalyticsConfigurations {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for ListBucketAnalyticsConfigurations {
     type Output = Result<
         crate::output::ListBucketAnalyticsConfigurationsOutput,
@@ -3466,7 +3413,7 @@ impl smithy_http::response::ParseStrictResponse for ListBucketAnalyticsConfigura
 /// </p>
 /// </li>
 /// </ul>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct ListBucketIntelligentTieringConfigurations {
     _private: (),
 }
@@ -3480,7 +3427,6 @@ impl ListBucketIntelligentTieringConfigurations {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for ListBucketIntelligentTieringConfigurations {
     type Output = Result<
         crate::output::ListBucketIntelligentTieringConfigurationsOutput,
@@ -3534,7 +3480,7 @@ impl smithy_http::response::ParseStrictResponse for ListBucketIntelligentTiering
 /// </p>
 /// </li>
 /// </ul>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct ListBucketInventoryConfigurations {
     _private: (),
 }
@@ -3547,7 +3493,6 @@ impl ListBucketInventoryConfigurations {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for ListBucketInventoryConfigurations {
     type Output = Result<
         crate::output::ListBucketInventoryConfigurationsOutput,
@@ -3599,7 +3544,7 @@ impl smithy_http::response::ParseStrictResponse for ListBucketInventoryConfigura
 /// </p>
 /// </li>
 /// </ul>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct ListBucketMetricsConfigurations {
     _private: (),
 }
@@ -3612,7 +3557,6 @@ impl ListBucketMetricsConfigurations {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for ListBucketMetricsConfigurations {
     type Output = Result<
         crate::output::ListBucketMetricsConfigurationsOutput,
@@ -3628,7 +3572,7 @@ impl smithy_http::response::ParseStrictResponse for ListBucketMetricsConfigurati
 }
 
 /// <p>Returns a list of all buckets owned by the authenticated sender of the request.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct ListBuckets {
     _private: (),
 }
@@ -3641,7 +3585,6 @@ impl ListBuckets {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for ListBuckets {
     type Output = Result<crate::output::ListBucketsOutput, crate::error::ListBucketsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -3699,7 +3642,7 @@ impl smithy_http::response::ParseStrictResponse for ListBuckets {
 /// </p>
 /// </li>
 /// </ul>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct ListMultipartUploads {
     _private: (),
 }
@@ -3712,7 +3655,6 @@ impl ListMultipartUploads {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for ListMultipartUploads {
     type Output =
         Result<crate::output::ListMultipartUploadsOutput, crate::error::ListMultipartUploadsError>;
@@ -3761,7 +3703,7 @@ impl smithy_http::response::ParseStrictResponse for ListMultipartUploads {
 /// </p>
 /// </li>
 /// </ul>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct ListObjects {
     _private: (),
 }
@@ -3774,7 +3716,6 @@ impl ListObjects {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for ListObjects {
     type Output = Result<crate::output::ListObjectsOutput, crate::error::ListObjectsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -3824,7 +3765,7 @@ impl smithy_http::response::ParseStrictResponse for ListObjects {
 /// </p>
 /// </li>
 /// </ul>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct ListObjectsV2 {
     _private: (),
 }
@@ -3837,7 +3778,6 @@ impl ListObjectsV2 {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for ListObjectsV2 {
     type Output = Result<crate::output::ListObjectsV2Output, crate::error::ListObjectsV2Error>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -3888,7 +3828,7 @@ impl smithy_http::response::ParseStrictResponse for ListObjectsV2 {
 /// </p>
 /// </li>
 /// </ul>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct ListObjectVersions {
     _private: (),
 }
@@ -3901,7 +3841,6 @@ impl ListObjectVersions {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for ListObjectVersions {
     type Output =
         Result<crate::output::ListObjectVersionsOutput, crate::error::ListObjectVersionsError>;
@@ -3956,7 +3895,7 @@ impl smithy_http::response::ParseStrictResponse for ListObjectVersions {
 /// </p>
 /// </li>
 /// </ul>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct ListParts {
     _private: (),
 }
@@ -3969,7 +3908,6 @@ impl ListParts {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for ListParts {
     type Output = Result<crate::output::ListPartsOutput, crate::error::ListPartsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -4019,7 +3957,7 @@ impl smithy_http::response::ParseStrictResponse for ListParts {
 /// </p>
 /// </li>
 /// </ul>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct PutBucketAccelerateConfiguration {
     _private: (),
 }
@@ -4032,7 +3970,6 @@ impl PutBucketAccelerateConfiguration {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for PutBucketAccelerateConfiguration {
     type Output = Result<
         crate::output::PutBucketAccelerateConfigurationOutput,
@@ -4230,7 +4167,7 @@ impl smithy_http::response::ParseStrictResponse for PutBucketAccelerateConfigura
 /// </p>
 /// </li>
 /// </ul>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct PutBucketAcl {
     _private: (),
 }
@@ -4243,7 +4180,6 @@ impl PutBucketAcl {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for PutBucketAcl {
     type Output = Result<crate::output::PutBucketAclOutput, crate::error::PutBucketAclError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -4360,7 +4296,7 @@ impl smithy_http::response::ParseStrictResponse for PutBucketAcl {
 /// </p>
 /// </li>
 /// </ul>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct PutBucketAnalyticsConfiguration {
     _private: (),
 }
@@ -4373,7 +4309,6 @@ impl PutBucketAnalyticsConfiguration {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for PutBucketAnalyticsConfiguration {
     type Output = Result<
         crate::output::PutBucketAnalyticsConfigurationOutput,
@@ -4444,7 +4379,7 @@ impl smithy_http::response::ParseStrictResponse for PutBucketAnalyticsConfigurat
 /// </p>
 /// </li>
 /// </ul>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct PutBucketCors {
     _private: (),
 }
@@ -4457,7 +4392,6 @@ impl PutBucketCors {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for PutBucketCors {
     type Output = Result<crate::output::PutBucketCorsOutput, crate::error::PutBucketCorsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -4501,7 +4435,7 @@ impl smithy_http::response::ParseStrictResponse for PutBucketCors {
 /// </p>
 /// </li>
 /// </ul>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct PutBucketEncryption {
     _private: (),
 }
@@ -4514,7 +4448,6 @@ impl PutBucketEncryption {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for PutBucketEncryption {
     type Output =
         Result<crate::output::PutBucketEncryptionOutput, crate::error::PutBucketEncryptionError>;
@@ -4609,7 +4542,7 @@ impl smithy_http::response::ParseStrictResponse for PutBucketEncryption {
 /// </ul>
 /// </li>
 /// </ul>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct PutBucketIntelligentTieringConfiguration {
     _private: (),
 }
@@ -4622,7 +4555,6 @@ impl PutBucketIntelligentTieringConfiguration {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for PutBucketIntelligentTieringConfiguration {
     type Output = Result<
         crate::output::PutBucketIntelligentTieringConfigurationOutput,
@@ -4740,7 +4672,7 @@ impl smithy_http::response::ParseStrictResponse for PutBucketIntelligentTieringC
 /// </p>
 /// </li>
 /// </ul>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct PutBucketInventoryConfiguration {
     _private: (),
 }
@@ -4753,7 +4685,6 @@ impl PutBucketInventoryConfiguration {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for PutBucketInventoryConfiguration {
     type Output = Result<
         crate::output::PutBucketInventoryConfigurationOutput,
@@ -4847,7 +4778,7 @@ impl smithy_http::response::ParseStrictResponse for PutBucketInventoryConfigurat
 /// </p>
 /// </li>
 /// </ul>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct PutBucketLifecycleConfiguration {
     _private: (),
 }
@@ -4860,7 +4791,6 @@ impl PutBucketLifecycleConfiguration {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for PutBucketLifecycleConfiguration {
     type Output = Result<
         crate::output::PutBucketLifecycleConfigurationOutput,
@@ -4946,7 +4876,7 @@ impl smithy_http::response::ParseStrictResponse for PutBucketLifecycleConfigurat
 /// </p>
 /// </li>
 /// </ul>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct PutBucketLogging {
     _private: (),
 }
@@ -4959,7 +4889,6 @@ impl PutBucketLogging {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for PutBucketLogging {
     type Output =
         Result<crate::output::PutBucketLoggingOutput, crate::error::PutBucketLoggingError>;
@@ -5019,7 +4948,7 @@ impl smithy_http::response::ParseStrictResponse for PutBucketLogging {
 /// </ul>
 /// </li>
 /// </ul>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct PutBucketMetricsConfiguration {
     _private: (),
 }
@@ -5032,7 +4961,6 @@ impl PutBucketMetricsConfiguration {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for PutBucketMetricsConfiguration {
     type Output = Result<
         crate::output::PutBucketMetricsConfigurationOutput,
@@ -5100,7 +5028,7 @@ impl smithy_http::response::ParseStrictResponse for PutBucketMetricsConfiguratio
 /// </p>
 /// </li>
 /// </ul>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct PutBucketNotificationConfiguration {
     _private: (),
 }
@@ -5113,7 +5041,6 @@ impl PutBucketNotificationConfiguration {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for PutBucketNotificationConfiguration {
     type Output = Result<
         crate::output::PutBucketNotificationConfigurationOutput,
@@ -5145,7 +5072,7 @@ impl smithy_http::response::ParseStrictResponse for PutBucketNotificationConfigu
 /// </p>
 /// </li>
 /// </ul>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct PutBucketOwnershipControls {
     _private: (),
 }
@@ -5158,7 +5085,6 @@ impl PutBucketOwnershipControls {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for PutBucketOwnershipControls {
     type Output = Result<
         crate::output::PutBucketOwnershipControlsOutput,
@@ -5201,7 +5127,7 @@ impl smithy_http::response::ParseStrictResponse for PutBucketOwnershipControls {
 /// </p>
 /// </li>
 /// </ul>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct PutBucketPolicy {
     _private: (),
 }
@@ -5214,7 +5140,6 @@ impl PutBucketPolicy {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for PutBucketPolicy {
     type Output = Result<crate::output::PutBucketPolicyOutput, crate::error::PutBucketPolicyError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -5282,7 +5207,7 @@ impl smithy_http::response::ParseStrictResponse for PutBucketPolicy {
 /// </p>
 /// </li>
 /// </ul>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct PutBucketReplication {
     _private: (),
 }
@@ -5295,7 +5220,6 @@ impl PutBucketReplication {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for PutBucketReplication {
     type Output =
         Result<crate::output::PutBucketReplicationOutput, crate::error::PutBucketReplicationError>;
@@ -5326,7 +5250,7 @@ impl smithy_http::response::ParseStrictResponse for PutBucketReplication {
 /// </p>
 /// </li>
 /// </ul>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct PutBucketRequestPayment {
     _private: (),
 }
@@ -5339,7 +5263,6 @@ impl PutBucketRequestPayment {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for PutBucketRequestPayment {
     type Output = Result<
         crate::output::PutBucketRequestPaymentOutput,
@@ -5428,7 +5351,7 @@ impl smithy_http::response::ParseStrictResponse for PutBucketRequestPayment {
 /// </p>
 /// </li>
 /// </ul>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct PutBucketTagging {
     _private: (),
 }
@@ -5441,7 +5364,6 @@ impl PutBucketTagging {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for PutBucketTagging {
     type Output =
         Result<crate::output::PutBucketTaggingOutput, crate::error::PutBucketTaggingError>;
@@ -5497,7 +5419,7 @@ impl smithy_http::response::ParseStrictResponse for PutBucketTagging {
 /// </p>
 /// </li>
 /// </ul>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct PutBucketVersioning {
     _private: (),
 }
@@ -5510,7 +5432,6 @@ impl PutBucketVersioning {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for PutBucketVersioning {
     type Output =
         Result<crate::output::PutBucketVersioningOutput, crate::error::PutBucketVersioningError>;
@@ -5645,7 +5566,7 @@ impl smithy_http::response::ParseStrictResponse for PutBucketVersioning {
 /// <p>Amazon S3 has a limitation of 50 routing rules per website configuration. If you require more
 /// than 50 routing rules, you can use object redirect. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/how-to-page-redirect.html">Configuring an
 /// Object Redirect</a> in the <i>Amazon S3 User Guide</i>.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct PutBucketWebsite {
     _private: (),
 }
@@ -5658,7 +5579,6 @@ impl PutBucketWebsite {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for PutBucketWebsite {
     type Output =
         Result<crate::output::PutBucketWebsiteOutput, crate::error::PutBucketWebsiteError>;
@@ -5744,7 +5664,7 @@ impl smithy_http::response::ParseStrictResponse for PutBucketWebsite {
 /// </p>
 /// </li>
 /// </ul>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct PutObject {
     _private: (),
 }
@@ -5757,7 +5677,6 @@ impl PutObject {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for PutObject {
     type Output = Result<crate::output::PutObjectOutput, crate::error::PutObjectError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -5942,7 +5861,7 @@ impl smithy_http::response::ParseStrictResponse for PutObject {
 /// </p>
 /// </li>
 /// </ul>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct PutObjectAcl {
     _private: (),
 }
@@ -5955,7 +5874,6 @@ impl PutObjectAcl {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for PutObjectAcl {
     type Output = Result<crate::output::PutObjectAclOutput, crate::error::PutObjectAclError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -5971,7 +5889,7 @@ impl smithy_http::response::ParseStrictResponse for PutObjectAcl {
 /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock.html">Locking
 /// Objects</a>.</p>
 /// <p>This action is not supported by Amazon S3 on Outposts.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct PutObjectLegalHold {
     _private: (),
 }
@@ -5984,7 +5902,6 @@ impl PutObjectLegalHold {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for PutObjectLegalHold {
     type Output =
         Result<crate::output::PutObjectLegalHoldOutput, crate::error::PutObjectLegalHoldError>;
@@ -6018,7 +5935,7 @@ impl smithy_http::response::ParseStrictResponse for PutObjectLegalHold {
 /// </li>
 /// </ul>
 /// </note>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct PutObjectLockConfiguration {
     _private: (),
 }
@@ -6031,7 +5948,6 @@ impl PutObjectLockConfiguration {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for PutObjectLockConfiguration {
     type Output = Result<
         crate::output::PutObjectLockConfigurationOutput,
@@ -6049,7 +5965,7 @@ impl smithy_http::response::ParseStrictResponse for PutObjectLockConfiguration {
 /// <p>Places an Object Retention configuration on an object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock.html">Locking Objects</a>.
 /// </p>
 /// <p>This action is not supported by Amazon S3 on Outposts.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct PutObjectRetention {
     _private: (),
 }
@@ -6062,7 +5978,6 @@ impl PutObjectRetention {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for PutObjectRetention {
     type Output =
         Result<crate::output::PutObjectRetentionOutput, crate::error::PutObjectRetentionError>;
@@ -6167,7 +6082,7 @@ impl smithy_http::response::ParseStrictResponse for PutObjectRetention {
 /// </p>
 /// </li>
 /// </ul>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct PutObjectTagging {
     _private: (),
 }
@@ -6180,7 +6095,6 @@ impl PutObjectTagging {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for PutObjectTagging {
     type Output =
         Result<crate::output::PutObjectTaggingOutput, crate::error::PutObjectTaggingError>;
@@ -6232,7 +6146,7 @@ impl smithy_http::response::ParseStrictResponse for PutObjectTagging {
 /// </p>
 /// </li>
 /// </ul>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct PutPublicAccessBlock {
     _private: (),
 }
@@ -6245,7 +6159,6 @@ impl PutPublicAccessBlock {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for PutPublicAccessBlock {
     type Output =
         Result<crate::output::PutPublicAccessBlockOutput, crate::error::PutPublicAccessBlockError>;
@@ -6549,7 +6462,7 @@ impl smithy_http::response::ParseStrictResponse for PutPublicAccessBlock {
 /// </p>
 /// </li>
 /// </ul>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct RestoreObject {
     _private: (),
 }
@@ -6562,7 +6475,6 @@ impl RestoreObject {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for RestoreObject {
     type Output = Result<crate::output::RestoreObjectOutput, crate::error::RestoreObjectError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -6694,7 +6606,7 @@ impl smithy_http::response::ParseStrictResponse for RestoreObject {
 /// </p>
 /// </li>
 /// </ul>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct UploadPart {
     _private: (),
 }
@@ -6707,7 +6619,6 @@ impl UploadPart {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for UploadPart {
     type Output = Result<crate::output::UploadPartOutput, crate::error::UploadPartError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -6888,7 +6799,7 @@ impl smithy_http::response::ParseStrictResponse for UploadPart {
 /// </p>
 /// </li>
 /// </ul>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct UploadPartCopy {
     _private: (),
 }
@@ -6901,7 +6812,6 @@ impl UploadPartCopy {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for UploadPartCopy {
     type Output = Result<crate::output::UploadPartCopyOutput, crate::error::UploadPartCopyError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -6933,7 +6843,7 @@ impl smithy_http::response::ParseStrictResponse for UploadPartCopy {
 /// <p>Example 2: PII Redaction - This Lambda function uses Amazon Comprehend, a natural language processing (NLP) service using machine learning to find insights and relationships in text. It automatically redacts personally identifiable information (PII) such as names, addresses, dates, credit card numbers, and social security numbers from documents in your Amazon S3 bucket. </p>
 /// <p>Example 3: Decompression - The Lambda function S3ObjectLambdaDecompression, is equipped to decompress objects stored in S3 in one of six compressed file formats including bzip2, gzip, snappy, zlib, zstandard and ZIP. </p>
 /// <p>For information on how to view and use these functions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/olap-examples.html">Using AWS built Lambda functions</a> in the <i>Amazon S3 User Guide</i>.</p>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct WriteGetObjectResponse {
     _private: (),
 }
@@ -6946,7 +6856,6 @@ impl WriteGetObjectResponse {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for WriteGetObjectResponse {
     type Output = Result<
         crate::output::WriteGetObjectResponseOutput,

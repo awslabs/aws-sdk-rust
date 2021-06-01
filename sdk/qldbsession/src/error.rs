@@ -14,7 +14,6 @@ pub enum SendCommandErrorKind {
     LimitExceededError(crate::error::LimitExceededError),
     OccConflictError(crate::error::OccConflictError),
     RateExceededError(crate::error::RateExceededError),
-
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -39,7 +38,6 @@ impl smithy_types::retry::ProvideErrorKind for SendCommandError {
         None
     }
 }
-
 impl SendCommandError {
     pub fn new(kind: SendCommandErrorKind, meta: smithy_types::Error) -> Self {
         Self { kind, meta }
@@ -62,18 +60,21 @@ impl SendCommandError {
     // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
     // by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
-        self.meta.message.as_deref()
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
     }
 
     pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id.as_deref()
+        self.meta.request_id()
     }
 
     pub fn code(&self) -> Option<&str> {
-        self.meta.code.as_deref()
+        self.meta.code()
     }
 }
-
 impl std::error::Error for SendCommandError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
@@ -90,10 +91,9 @@ impl std::error::Error for SendCommandError {
 
 /// <p>Returned when the rate of requests exceeds the allowed throughput.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, serde::Serialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
 pub struct RateExceededError {
     #[serde(rename = "Message")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub message: std::option::Option<std::string::String>,
 }
@@ -154,10 +154,9 @@ impl RateExceededError {
 /// <p>Returned when a transaction cannot be written to the journal due to a failure in the
 /// verification phase of <i>optimistic concurrency control</i> (OCC).</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, serde::Serialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
 pub struct OccConflictError {
     #[serde(rename = "Message")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub message: std::option::Option<std::string::String>,
 }
@@ -217,10 +216,9 @@ impl OccConflictError {
 
 /// <p>Returned if a resource limit such as number of active sessions is exceeded.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, serde::Serialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
 pub struct LimitExceededError {
     #[serde(rename = "Message")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub message: std::option::Option<std::string::String>,
 }
@@ -280,14 +278,12 @@ impl LimitExceededError {
 
 /// <p>Returned if the session doesn't exist anymore because it timed out or expired.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, serde::Serialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidSessionError {
     #[serde(rename = "Message")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub message: std::option::Option<std::string::String>,
     #[serde(rename = "Code")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub code: std::option::Option<std::string::String>,
 }
@@ -358,10 +354,9 @@ impl InvalidSessionError {
 
 /// <p>Returned when the request exceeds the processing capacity of the ledger.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, serde::Serialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
 pub struct CapacityExceededError {
     #[serde(rename = "Message")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub message: std::option::Option<std::string::String>,
 }
@@ -422,14 +417,12 @@ impl CapacityExceededError {
 /// <p>Returned if the request is malformed or contains an error such as an invalid parameter
 /// value or a missing required parameter.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, serde::Serialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
 pub struct BadRequestError {
     #[serde(rename = "Message")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub message: std::option::Option<std::string::String>,
     #[serde(rename = "Code")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub code: std::option::Option<std::string::String>,
 }

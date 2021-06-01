@@ -10,7 +10,6 @@ pub struct DeleteLexiconError {
 pub enum DeleteLexiconErrorKind {
     LexiconNotFoundError(crate::error::LexiconNotFoundError),
     ServiceFailureError(crate::error::ServiceFailureError),
-
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -31,7 +30,6 @@ impl smithy_types::retry::ProvideErrorKind for DeleteLexiconError {
         None
     }
 }
-
 impl DeleteLexiconError {
     pub fn new(kind: DeleteLexiconErrorKind, meta: smithy_types::Error) -> Self {
         Self { kind, meta }
@@ -54,18 +52,21 @@ impl DeleteLexiconError {
     // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
     // by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
-        self.meta.message.as_deref()
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
     }
 
     pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id.as_deref()
+        self.meta.request_id()
     }
 
     pub fn code(&self) -> Option<&str> {
-        self.meta.code.as_deref()
+        self.meta.code()
     }
 }
-
 impl std::error::Error for DeleteLexiconError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
@@ -87,7 +88,6 @@ pub struct DescribeVoicesError {
 pub enum DescribeVoicesErrorKind {
     InvalidNextTokenError(crate::error::InvalidNextTokenError),
     ServiceFailureError(crate::error::ServiceFailureError),
-
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -108,7 +108,6 @@ impl smithy_types::retry::ProvideErrorKind for DescribeVoicesError {
         None
     }
 }
-
 impl DescribeVoicesError {
     pub fn new(kind: DescribeVoicesErrorKind, meta: smithy_types::Error) -> Self {
         Self { kind, meta }
@@ -131,18 +130,21 @@ impl DescribeVoicesError {
     // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
     // by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
-        self.meta.message.as_deref()
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
     }
 
     pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id.as_deref()
+        self.meta.request_id()
     }
 
     pub fn code(&self) -> Option<&str> {
-        self.meta.code.as_deref()
+        self.meta.code()
     }
 }
-
 impl std::error::Error for DescribeVoicesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
@@ -164,7 +166,6 @@ pub struct GetLexiconError {
 pub enum GetLexiconErrorKind {
     LexiconNotFoundError(crate::error::LexiconNotFoundError),
     ServiceFailureError(crate::error::ServiceFailureError),
-
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -185,7 +186,6 @@ impl smithy_types::retry::ProvideErrorKind for GetLexiconError {
         None
     }
 }
-
 impl GetLexiconError {
     pub fn new(kind: GetLexiconErrorKind, meta: smithy_types::Error) -> Self {
         Self { kind, meta }
@@ -208,18 +208,21 @@ impl GetLexiconError {
     // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
     // by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
-        self.meta.message.as_deref()
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
     }
 
     pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id.as_deref()
+        self.meta.request_id()
     }
 
     pub fn code(&self) -> Option<&str> {
-        self.meta.code.as_deref()
+        self.meta.code()
     }
 }
-
 impl std::error::Error for GetLexiconError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
@@ -242,7 +245,6 @@ pub enum GetSpeechSynthesisTaskErrorKind {
     InvalidTaskIdError(crate::error::InvalidTaskIdError),
     ServiceFailureError(crate::error::ServiceFailureError),
     SynthesisTaskNotFoundError(crate::error::SynthesisTaskNotFoundError),
-
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -264,7 +266,6 @@ impl smithy_types::retry::ProvideErrorKind for GetSpeechSynthesisTaskError {
         None
     }
 }
-
 impl GetSpeechSynthesisTaskError {
     pub fn new(kind: GetSpeechSynthesisTaskErrorKind, meta: smithy_types::Error) -> Self {
         Self { kind, meta }
@@ -287,18 +288,21 @@ impl GetSpeechSynthesisTaskError {
     // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
     // by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
-        self.meta.message.as_deref()
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
     }
 
     pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id.as_deref()
+        self.meta.request_id()
     }
 
     pub fn code(&self) -> Option<&str> {
-        self.meta.code.as_deref()
+        self.meta.code()
     }
 }
-
 impl std::error::Error for GetSpeechSynthesisTaskError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
@@ -321,7 +325,6 @@ pub struct ListLexiconsError {
 pub enum ListLexiconsErrorKind {
     InvalidNextTokenError(crate::error::InvalidNextTokenError),
     ServiceFailureError(crate::error::ServiceFailureError),
-
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -342,7 +345,6 @@ impl smithy_types::retry::ProvideErrorKind for ListLexiconsError {
         None
     }
 }
-
 impl ListLexiconsError {
     pub fn new(kind: ListLexiconsErrorKind, meta: smithy_types::Error) -> Self {
         Self { kind, meta }
@@ -365,18 +367,21 @@ impl ListLexiconsError {
     // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
     // by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
-        self.meta.message.as_deref()
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
     }
 
     pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id.as_deref()
+        self.meta.request_id()
     }
 
     pub fn code(&self) -> Option<&str> {
-        self.meta.code.as_deref()
+        self.meta.code()
     }
 }
-
 impl std::error::Error for ListLexiconsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
@@ -398,7 +403,6 @@ pub struct ListSpeechSynthesisTasksError {
 pub enum ListSpeechSynthesisTasksErrorKind {
     InvalidNextTokenError(crate::error::InvalidNextTokenError),
     ServiceFailureError(crate::error::ServiceFailureError),
-
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -419,7 +423,6 @@ impl smithy_types::retry::ProvideErrorKind for ListSpeechSynthesisTasksError {
         None
     }
 }
-
 impl ListSpeechSynthesisTasksError {
     pub fn new(kind: ListSpeechSynthesisTasksErrorKind, meta: smithy_types::Error) -> Self {
         Self { kind, meta }
@@ -442,18 +445,21 @@ impl ListSpeechSynthesisTasksError {
     // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
     // by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
-        self.meta.message.as_deref()
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
     }
 
     pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id.as_deref()
+        self.meta.request_id()
     }
 
     pub fn code(&self) -> Option<&str> {
-        self.meta.code.as_deref()
+        self.meta.code()
     }
 }
-
 impl std::error::Error for ListSpeechSynthesisTasksError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
@@ -480,7 +486,6 @@ pub enum PutLexiconErrorKind {
     ServiceFailureError(crate::error::ServiceFailureError),
     UnsupportedPlsAlphabetError(crate::error::UnsupportedPlsAlphabetError),
     UnsupportedPlsLanguageError(crate::error::UnsupportedPlsLanguageError),
-
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -506,7 +511,6 @@ impl smithy_types::retry::ProvideErrorKind for PutLexiconError {
         None
     }
 }
-
 impl PutLexiconError {
     pub fn new(kind: PutLexiconErrorKind, meta: smithy_types::Error) -> Self {
         Self { kind, meta }
@@ -529,18 +533,21 @@ impl PutLexiconError {
     // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
     // by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
-        self.meta.message.as_deref()
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
     }
 
     pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id.as_deref()
+        self.meta.request_id()
     }
 
     pub fn code(&self) -> Option<&str> {
-        self.meta.code.as_deref()
+        self.meta.code()
     }
 }
-
 impl std::error::Error for PutLexiconError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
@@ -577,7 +584,6 @@ pub enum StartSpeechSynthesisTaskErrorKind {
     ServiceFailureError(crate::error::ServiceFailureError),
     SsmlMarksNotSupportedForTextTypeError(crate::error::SsmlMarksNotSupportedForTextTypeError),
     TextLengthExceededError(crate::error::TextLengthExceededError),
-
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -612,7 +618,6 @@ impl smithy_types::retry::ProvideErrorKind for StartSpeechSynthesisTaskError {
         None
     }
 }
-
 impl StartSpeechSynthesisTaskError {
     pub fn new(kind: StartSpeechSynthesisTaskErrorKind, meta: smithy_types::Error) -> Self {
         Self { kind, meta }
@@ -635,18 +640,21 @@ impl StartSpeechSynthesisTaskError {
     // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
     // by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
-        self.meta.message.as_deref()
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
     }
 
     pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id.as_deref()
+        self.meta.request_id()
     }
 
     pub fn code(&self) -> Option<&str> {
-        self.meta.code.as_deref()
+        self.meta.code()
     }
 }
-
 impl std::error::Error for StartSpeechSynthesisTaskError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
@@ -689,7 +697,6 @@ pub enum SynthesizeSpeechErrorKind {
     ServiceFailureError(crate::error::ServiceFailureError),
     SsmlMarksNotSupportedForTextTypeError(crate::error::SsmlMarksNotSupportedForTextTypeError),
     TextLengthExceededError(crate::error::TextLengthExceededError),
-
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -719,7 +726,6 @@ impl smithy_types::retry::ProvideErrorKind for SynthesizeSpeechError {
         None
     }
 }
-
 impl SynthesizeSpeechError {
     pub fn new(kind: SynthesizeSpeechErrorKind, meta: smithy_types::Error) -> Self {
         Self { kind, meta }
@@ -742,18 +748,21 @@ impl SynthesizeSpeechError {
     // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
     // by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
-        self.meta.message.as_deref()
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
     }
 
     pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id.as_deref()
+        self.meta.request_id()
     }
 
     pub fn code(&self) -> Option<&str> {
-        self.meta.code.as_deref()
+        self.meta.code()
     }
 }
-
 impl std::error::Error for SynthesizeSpeechError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
@@ -780,10 +789,9 @@ impl std::error::Error for SynthesizeSpeechError {
 /// more than 100,000 can be billed characters. SSML tags are not counted as billed
 /// characters.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, serde::Serialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
 pub struct TextLengthExceededError {
     #[serde(rename = "message")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub message: std::option::Option<std::string::String>,
 }
@@ -843,10 +851,9 @@ impl TextLengthExceededError {
 
 /// <p>SSML speech marks are not supported for plain text-type input.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, serde::Serialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
 pub struct SsmlMarksNotSupportedForTextTypeError {
     #[serde(rename = "message")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub message: std::option::Option<std::string::String>,
 }
@@ -909,10 +916,9 @@ impl SsmlMarksNotSupportedForTextTypeError {
 
 /// <p>An unknown condition has caused a service failure.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, serde::Serialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceFailureError {
     #[serde(rename = "message")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub message: std::option::Option<std::string::String>,
 }
@@ -973,10 +979,9 @@ impl ServiceFailureError {
 /// <p>Speech marks are not supported for the <code>OutputFormat</code> selected. Speech marks
 /// are only available for content in <code>json</code> format.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, serde::Serialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
 pub struct MarksNotSupportedForFormatError {
     #[serde(rename = "message")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub message: std::option::Option<std::string::String>,
 }
@@ -1043,10 +1048,9 @@ impl MarksNotSupportedForFormatError {
 /// <p>Verify that the lexicon exists, is in the region (see <a>ListLexicons</a>)
 /// and that you spelled its name is spelled correctly. Then try again.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, serde::Serialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
 pub struct LexiconNotFoundError {
     #[serde(rename = "message")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub message: std::option::Option<std::string::String>,
 }
@@ -1106,10 +1110,9 @@ impl LexiconNotFoundError {
 
 /// <p>The language specified is not currently supported by Amazon Polly in this capacity.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, serde::Serialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
 pub struct LanguageNotSupportedError {
     #[serde(rename = "message")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub message: std::option::Option<std::string::String>,
 }
@@ -1173,10 +1176,9 @@ impl LanguageNotSupportedError {
 /// <p>The SSML you provided is invalid. Verify the SSML syntax, spelling of tags and values,
 /// and then try again.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, serde::Serialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidSsmlError {
     #[serde(rename = "message")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub message: std::option::Option<std::string::String>,
 }
@@ -1236,10 +1238,9 @@ impl InvalidSsmlError {
 
 /// <p>The specified sample rate is not valid.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, serde::Serialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidSampleRateError {
     #[serde(rename = "message")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub message: std::option::Option<std::string::String>,
 }
@@ -1300,10 +1301,9 @@ impl InvalidSampleRateError {
 /// <p>This engine is not compatible with the voice that you have designated. Choose a new voice
 /// that is compatible with the engine or change the engine and restart the operation.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, serde::Serialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
 pub struct EngineNotSupportedError {
     #[serde(rename = "message")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub message: std::option::Option<std::string::String>,
 }
@@ -1364,10 +1364,9 @@ impl EngineNotSupportedError {
 /// <p>The provided SNS topic ARN is invalid. Please provide a valid SNS topic ARN and try
 /// again.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, serde::Serialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidSnsTopicArnError {
     #[serde(rename = "message")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub message: std::option::Option<std::string::String>,
 }
@@ -1428,10 +1427,9 @@ impl InvalidSnsTopicArnError {
 /// <p>The provided Amazon S3 key prefix is invalid. Please provide a valid S3 object key
 /// name.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, serde::Serialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidS3KeyError {
     #[serde(rename = "message")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub message: std::option::Option<std::string::String>,
 }
@@ -1492,10 +1490,9 @@ impl InvalidS3KeyError {
 /// <p>The provided Amazon S3 bucket name is invalid. Please check your input with S3 bucket
 /// naming requirements and try again.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, serde::Serialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidS3BucketError {
     #[serde(rename = "message")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub message: std::option::Option<std::string::String>,
 }
@@ -1557,10 +1554,9 @@ impl InvalidS3BucketError {
 /// languages, see <a href="https://docs.aws.amazon.com/polly/latest/dg/API_LexiconAttributes.html">Lexicon
 /// Attributes</a>.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, serde::Serialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnsupportedPlsLanguageError {
     #[serde(rename = "message")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub message: std::option::Option<std::string::String>,
 }
@@ -1624,10 +1620,9 @@ impl UnsupportedPlsLanguageError {
 /// <p>The alphabet specified by the lexicon is not a supported alphabet. Valid values are
 /// <code>x-sampa</code> and <code>ipa</code>.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, serde::Serialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnsupportedPlsAlphabetError {
     #[serde(rename = "message")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub message: std::option::Option<std::string::String>,
 }
@@ -1690,10 +1685,9 @@ impl UnsupportedPlsAlphabetError {
 
 /// <p>The maximum number of lexicons would be exceeded by this operation.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, serde::Serialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
 pub struct MaxLexiconsNumberExceededError {
     #[serde(rename = "message")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub message: std::option::Option<std::string::String>,
 }
@@ -1756,10 +1750,9 @@ impl MaxLexiconsNumberExceededError {
 
 /// <p>The maximum size of the lexeme would be exceeded by this operation.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, serde::Serialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
 pub struct MaxLexemeLengthExceededError {
     #[serde(rename = "message")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub message: std::option::Option<std::string::String>,
 }
@@ -1823,10 +1816,9 @@ impl MaxLexemeLengthExceededError {
 /// <p>The maximum size of the specified lexicon would be exceeded by this
 /// operation.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, serde::Serialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
 pub struct LexiconSizeExceededError {
     #[serde(rename = "message")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub message: std::option::Option<std::string::String>,
 }
@@ -1887,10 +1879,9 @@ impl LexiconSizeExceededError {
 /// <p>Amazon Polly can't find the specified lexicon. Verify that the lexicon's name is
 /// spelled correctly, and then try again.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, serde::Serialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidLexiconError {
     #[serde(rename = "message")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub message: std::option::Option<std::string::String>,
 }
@@ -1951,10 +1942,9 @@ impl InvalidLexiconError {
 /// <p>The NextToken is invalid. Verify that it's spelled correctly, and then try
 /// again.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, serde::Serialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidNextTokenError {
     #[serde(rename = "message")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub message: std::option::Option<std::string::String>,
 }
@@ -2014,10 +2004,9 @@ impl InvalidNextTokenError {
 
 /// <p>The Speech Synthesis task with requested Task ID cannot be found.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, serde::Serialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
 pub struct SynthesisTaskNotFoundError {
     #[serde(rename = "message")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub message: std::option::Option<std::string::String>,
 }
@@ -2080,10 +2069,9 @@ impl SynthesisTaskNotFoundError {
 
 /// <p>The provided Task ID is not valid. Please provide a valid Task ID and try again.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, serde::Serialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidTaskIdError {
     #[serde(rename = "message")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub message: std::option::Option<std::string::String>,
 }

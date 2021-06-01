@@ -143,7 +143,6 @@ impl std::convert::From<&str> for VoiceId {
         }
     }
 }
-
 impl std::str::FromStr for VoiceId {
     type Err = std::convert::Infallible;
 
@@ -151,7 +150,6 @@ impl std::str::FromStr for VoiceId {
         Ok(VoiceId::from(s))
     }
 }
-
 impl VoiceId {
     pub fn as_str(&self) -> &str {
         match self {
@@ -226,19 +224,6 @@ impl AsRef<str> for VoiceId {
         self.as_str()
     }
 }
-
-impl serde::Serialize for VoiceId {
-    fn serialize<S>(
-        &self,
-        serializer: S,
-    ) -> Result<<S as serde::Serializer>::Ok, <S as serde::Serializer>::Error>
-    where
-        S: serde::Serializer,
-    {
-        serializer.serialize_str(self.as_str())
-    }
-}
-
 impl<'de> serde::Deserialize<'de> for VoiceId {
     fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
     where
@@ -273,7 +258,6 @@ impl std::convert::From<&str> for TextType {
         }
     }
 }
-
 impl std::str::FromStr for TextType {
     type Err = std::convert::Infallible;
 
@@ -281,7 +265,6 @@ impl std::str::FromStr for TextType {
         Ok(TextType::from(s))
     }
 }
-
 impl TextType {
     pub fn as_str(&self) -> &str {
         match self {
@@ -296,19 +279,6 @@ impl AsRef<str> for TextType {
         self.as_str()
     }
 }
-
-impl serde::Serialize for TextType {
-    fn serialize<S>(
-        &self,
-        serializer: S,
-    ) -> Result<<S as serde::Serializer>::Ok, <S as serde::Serializer>::Error>
-    where
-        S: serde::Serializer,
-    {
-        serializer.serialize_str(self.as_str())
-    }
-}
-
 impl<'de> serde::Deserialize<'de> for TextType {
     fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
     where
@@ -347,7 +317,6 @@ impl std::convert::From<&str> for SpeechMarkType {
         }
     }
 }
-
 impl std::str::FromStr for SpeechMarkType {
     type Err = std::convert::Infallible;
 
@@ -355,7 +324,6 @@ impl std::str::FromStr for SpeechMarkType {
         Ok(SpeechMarkType::from(s))
     }
 }
-
 impl SpeechMarkType {
     pub fn as_str(&self) -> &str {
         match self {
@@ -372,19 +340,6 @@ impl AsRef<str> for SpeechMarkType {
         self.as_str()
     }
 }
-
-impl serde::Serialize for SpeechMarkType {
-    fn serialize<S>(
-        &self,
-        serializer: S,
-    ) -> Result<<S as serde::Serializer>::Ok, <S as serde::Serializer>::Error>
-    where
-        S: serde::Serializer,
-    {
-        serializer.serialize_str(self.as_str())
-    }
-}
-
 impl<'de> serde::Deserialize<'de> for SpeechMarkType {
     fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
     where
@@ -423,7 +378,6 @@ impl std::convert::From<&str> for OutputFormat {
         }
     }
 }
-
 impl std::str::FromStr for OutputFormat {
     type Err = std::convert::Infallible;
 
@@ -431,7 +385,6 @@ impl std::str::FromStr for OutputFormat {
         Ok(OutputFormat::from(s))
     }
 }
-
 impl OutputFormat {
     pub fn as_str(&self) -> &str {
         match self {
@@ -448,19 +401,6 @@ impl AsRef<str> for OutputFormat {
         self.as_str()
     }
 }
-
-impl serde::Serialize for OutputFormat {
-    fn serialize<S>(
-        &self,
-        serializer: S,
-    ) -> Result<<S as serde::Serializer>::Ok, <S as serde::Serializer>::Error>
-    where
-        S: serde::Serializer,
-    {
-        serializer.serialize_str(self.as_str())
-    }
-}
-
 impl<'de> serde::Deserialize<'de> for OutputFormat {
     fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
     where
@@ -549,7 +489,6 @@ impl std::convert::From<&str> for LanguageCode {
         }
     }
 }
-
 impl std::str::FromStr for LanguageCode {
     type Err = std::convert::Infallible;
 
@@ -557,7 +496,6 @@ impl std::str::FromStr for LanguageCode {
         Ok(LanguageCode::from(s))
     }
 }
-
 impl LanguageCode {
     pub fn as_str(&self) -> &str {
         match self {
@@ -599,19 +537,6 @@ impl AsRef<str> for LanguageCode {
         self.as_str()
     }
 }
-
-impl serde::Serialize for LanguageCode {
-    fn serialize<S>(
-        &self,
-        serializer: S,
-    ) -> Result<<S as serde::Serializer>::Ok, <S as serde::Serializer>::Error>
-    where
-        S: serde::Serializer,
-    {
-        serializer.serialize_str(self.as_str())
-    }
-}
-
 impl<'de> serde::Deserialize<'de> for LanguageCode {
     fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
     where
@@ -646,7 +571,6 @@ impl std::convert::From<&str> for Engine {
         }
     }
 }
-
 impl std::str::FromStr for Engine {
     type Err = std::convert::Infallible;
 
@@ -654,7 +578,6 @@ impl std::str::FromStr for Engine {
         Ok(Engine::from(s))
     }
 }
-
 impl Engine {
     pub fn as_str(&self) -> &str {
         match self {
@@ -669,19 +592,6 @@ impl AsRef<str> for Engine {
         self.as_str()
     }
 }
-
-impl serde::Serialize for Engine {
-    fn serialize<S>(
-        &self,
-        serializer: S,
-    ) -> Result<<S as serde::Serializer>::Ok, <S as serde::Serializer>::Error>
-    where
-        S: serde::Serializer,
-    {
-        serializer.serialize_str(self.as_str())
-    }
-}
-
 impl<'de> serde::Deserialize<'de> for Engine {
     fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
     where
@@ -694,42 +604,33 @@ impl<'de> serde::Deserialize<'de> for Engine {
 
 /// <p>SynthesisTask object that provides information about a speech synthesis task.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, serde::Serialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
 pub struct SynthesisTask {
     /// <p>Specifies the engine (<code>standard</code> or <code>neural</code>) for Amazon Polly to
     /// use when processing input text for speech synthesis. Using a voice that is not supported for
     /// the engine selected will result in an error.</p>
     #[serde(rename = "Engine")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub engine: std::option::Option<crate::model::Engine>,
     /// <p>The Amazon Polly generated identifier for a speech synthesis task.</p>
     #[serde(rename = "TaskId")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub task_id: std::option::Option<std::string::String>,
     /// <p>Current status of the individual speech synthesis task.</p>
     #[serde(rename = "TaskStatus")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub task_status: std::option::Option<crate::model::TaskStatus>,
     /// <p>Reason for the current status of a specific speech synthesis task, including errors if the
     /// task has failed.</p>
     #[serde(rename = "TaskStatusReason")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub task_status_reason: std::option::Option<std::string::String>,
     /// <p>Pathway for the output speech file.</p>
     #[serde(rename = "OutputUri")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub output_uri: std::option::Option<std::string::String>,
     /// <p>Timestamp for the time the synthesis task was started.</p>
     #[serde(rename = "CreationTime")]
-    #[serde(skip_serializing_if = "Option::is_none")]
-    #[serde(
-        serialize_with = "crate::serde_util::stdoptionoptionsmithytypesinstant_epoch_seconds_ser"
-    )]
     #[serde(
         deserialize_with = "crate::serde_util::stdoptionoptionsmithytypesinstant_epoch_seconds_deser"
     )]
@@ -741,20 +642,17 @@ pub struct SynthesisTask {
     /// <p>ARN for the SNS topic optionally used for providing status notification for a speech
     /// synthesis task.</p>
     #[serde(rename = "SnsTopicArn")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub sns_topic_arn: std::option::Option<std::string::String>,
     /// <p>List of one or more pronunciation lexicon names you want the service to apply during
     /// synthesis. Lexicons are applied only if the language of the lexicon is the same as the
     /// language of the voice. </p>
     #[serde(rename = "LexiconNames")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub lexicon_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The format in which the returned output will be encoded. For audio stream, this will be
     /// mp3, ogg_vorbis, or pcm. For speech marks, this will be json. </p>
     #[serde(rename = "OutputFormat")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub output_format: std::option::Option<crate::model::OutputFormat>,
     /// <p>The audio frequency specified in Hz.</p>
@@ -763,23 +661,19 @@ pub struct SynthesisTask {
     /// "24000".</p>
     /// <p>Valid values for pcm are "8000" and "16000" The default value is "16000". </p>
     #[serde(rename = "SampleRate")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub sample_rate: std::option::Option<std::string::String>,
     /// <p>The type of speech marks returned for the input text.</p>
     #[serde(rename = "SpeechMarkTypes")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub speech_mark_types: std::option::Option<std::vec::Vec<crate::model::SpeechMarkType>>,
     /// <p>Specifies whether the input text is plain text or SSML. The default value is plain text.
     /// </p>
     #[serde(rename = "TextType")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub text_type: std::option::Option<crate::model::TextType>,
     /// <p>Voice ID to use for the synthesis. </p>
     #[serde(rename = "VoiceId")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub voice_id: std::option::Option<crate::model::VoiceId>,
     /// <p>Optional language code for a synthesis task. This is only necessary if using a bilingual
@@ -789,7 +683,6 @@ pub struct SynthesisTask {
     /// returned by the <a href="https://docs.aws.amazon.com/polly/latest/dg/API_DescribeVoices.html">DescribeVoices</a> operation for the <code>LanguageCode</code> parameter. For example,
     /// if no language code is specified, Aditi will use Indian English rather than Hindi.</p>
     #[serde(rename = "LanguageCode")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub language_code: std::option::Option<crate::model::LanguageCode>,
 }
@@ -1068,7 +961,6 @@ impl std::convert::From<&str> for TaskStatus {
         }
     }
 }
-
 impl std::str::FromStr for TaskStatus {
     type Err = std::convert::Infallible;
 
@@ -1076,7 +968,6 @@ impl std::str::FromStr for TaskStatus {
         Ok(TaskStatus::from(s))
     }
 }
-
 impl TaskStatus {
     pub fn as_str(&self) -> &str {
         match self {
@@ -1093,19 +984,6 @@ impl AsRef<str> for TaskStatus {
         self.as_str()
     }
 }
-
-impl serde::Serialize for TaskStatus {
-    fn serialize<S>(
-        &self,
-        serializer: S,
-    ) -> Result<<S as serde::Serializer>::Ok, <S as serde::Serializer>::Error>
-    where
-        S: serde::Serializer,
-    {
-        serializer.serialize_str(self.as_str())
-    }
-}
-
 impl<'de> serde::Deserialize<'de> for TaskStatus {
     fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
     where
@@ -1118,16 +996,14 @@ impl<'de> serde::Deserialize<'de> for TaskStatus {
 
 /// <p>Describes the content of the lexicon.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, serde::Serialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
 pub struct LexiconDescription {
     /// <p>Name of the lexicon.</p>
     #[serde(rename = "Name")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Provides lexicon metadata.</p>
     #[serde(rename = "Attributes")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub attributes: std::option::Option<crate::model::LexiconAttributes>,
 }
@@ -1190,26 +1066,20 @@ impl LexiconDescription {
 /// and so on. For more information, see <a href="https://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html">Managing
 /// Lexicons</a>.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, serde::Serialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
 pub struct LexiconAttributes {
     /// <p>Phonetic alphabet used in the lexicon. Valid values are <code>ipa</code> and
     /// <code>x-sampa</code>.</p>
     #[serde(rename = "Alphabet")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub alphabet: std::option::Option<std::string::String>,
     /// <p>Language code that the lexicon applies to. A lexicon with a language code such as "en"
     /// would be applied to all English languages (en-GB, en-US, en-AUS, en-WLS, and so on.</p>
     #[serde(rename = "LanguageCode")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub language_code: std::option::Option<crate::model::LanguageCode>,
     /// <p>Date lexicon was last modified (a timestamp value).</p>
     #[serde(rename = "LastModified")]
-    #[serde(skip_serializing_if = "Option::is_none")]
-    #[serde(
-        serialize_with = "crate::serde_util::stdoptionoptionsmithytypesinstant_epoch_seconds_ser"
-    )]
     #[serde(
         deserialize_with = "crate::serde_util::stdoptionoptionsmithytypesinstant_epoch_seconds_deser"
     )]
@@ -1217,7 +1087,6 @@ pub struct LexiconAttributes {
     pub last_modified: std::option::Option<smithy_types::Instant>,
     /// <p>Amazon Resource Name (ARN) of the lexicon.</p>
     #[serde(rename = "LexiconArn")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub lexicon_arn: std::option::Option<std::string::String>,
     /// <p>Number of lexemes in the lexicon.</p>
@@ -1339,17 +1208,15 @@ impl LexiconAttributes {
 /// <a href="https://www.w3.org/TR/pronunciation-lexicon/">Pronunciation Lexicon
 /// Specification (PLS) Version 1.0</a>.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, serde::Serialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
 pub struct Lexicon {
     /// <p>Lexicon content in string format. The content of a lexicon must be in PLS
     /// format.</p>
     #[serde(rename = "Content")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub content: std::option::Option<std::string::String>,
     /// <p>Name of the lexicon.</p>
     #[serde(rename = "Name")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub name: std::option::Option<std::string::String>,
 }
@@ -1408,33 +1275,28 @@ impl Lexicon {
 
 /// <p>Description of the voice.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, serde::Serialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
 pub struct Voice {
     /// <p>Gender of the voice.</p>
     #[serde(rename = "Gender")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub gender: std::option::Option<crate::model::Gender>,
     /// <p>Amazon Polly assigned voice ID. This is the ID that you specify when calling the
     /// <code>SynthesizeSpeech</code> operation.</p>
     #[serde(rename = "Id")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub id: std::option::Option<crate::model::VoiceId>,
     /// <p>Language code of the voice.</p>
     #[serde(rename = "LanguageCode")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub language_code: std::option::Option<crate::model::LanguageCode>,
     /// <p>Human readable name of the language in English.</p>
     #[serde(rename = "LanguageName")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub language_name: std::option::Option<std::string::String>,
     /// <p>Name of the voice (for example, Salli, Kendra, etc.). This provides a human readable
     /// voice name that you might display in your application.</p>
     #[serde(rename = "Name")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Additional codes for languages available for the specified voice in addition to its
@@ -1443,13 +1305,11 @@ pub struct Voice {
     /// used for that language. Since Aditi is bilingual and fluent in both Indian English and Hindi,
     /// this parameter would show the code <code>hi-IN</code>.</p>
     #[serde(rename = "AdditionalLanguageCodes")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub additional_language_codes: std::option::Option<std::vec::Vec<crate::model::LanguageCode>>,
     /// <p>Specifies which engines (<code>standard</code> or <code>neural</code>) that are supported
     /// by a given voice.</p>
     #[serde(rename = "SupportedEngines")]
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(default)]
     pub supported_engines: std::option::Option<std::vec::Vec<crate::model::Engine>>,
 }
@@ -1606,7 +1466,6 @@ impl std::convert::From<&str> for Gender {
         }
     }
 }
-
 impl std::str::FromStr for Gender {
     type Err = std::convert::Infallible;
 
@@ -1614,7 +1473,6 @@ impl std::str::FromStr for Gender {
         Ok(Gender::from(s))
     }
 }
-
 impl Gender {
     pub fn as_str(&self) -> &str {
         match self {
@@ -1629,19 +1487,6 @@ impl AsRef<str> for Gender {
         self.as_str()
     }
 }
-
-impl serde::Serialize for Gender {
-    fn serialize<S>(
-        &self,
-        serializer: S,
-    ) -> Result<<S as serde::Serializer>::Ok, <S as serde::Serializer>::Error>
-    where
-        S: serde::Serializer,
-    {
-        serializer.serialize_str(self.as_str())
-    }
-}
-
 impl<'de> serde::Deserialize<'de> for Gender {
     fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
     where

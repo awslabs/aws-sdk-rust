@@ -9,7 +9,6 @@ pub struct AbortMultipartUploadError {
 #[derive(std::fmt::Debug)]
 pub enum AbortMultipartUploadErrorKind {
     NoSuchUpload(crate::error::NoSuchUpload),
-
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -29,7 +28,6 @@ impl smithy_types::retry::ProvideErrorKind for AbortMultipartUploadError {
         None
     }
 }
-
 impl AbortMultipartUploadError {
     pub fn new(kind: AbortMultipartUploadErrorKind, meta: smithy_types::Error) -> Self {
         Self { kind, meta }
@@ -52,18 +50,21 @@ impl AbortMultipartUploadError {
     // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
     // by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
-        self.meta.message.as_deref()
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
     }
 
     pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id.as_deref()
+        self.meta.request_id()
     }
 
     pub fn code(&self) -> Option<&str> {
-        self.meta.code.as_deref()
+        self.meta.code()
     }
 }
-
 impl std::error::Error for AbortMultipartUploadError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
@@ -100,7 +101,6 @@ impl smithy_types::retry::ProvideErrorKind for CompleteMultipartUploadError {
         None
     }
 }
-
 impl CompleteMultipartUploadError {
     pub fn new(kind: CompleteMultipartUploadErrorKind, meta: smithy_types::Error) -> Self {
         Self { kind, meta }
@@ -123,18 +123,21 @@ impl CompleteMultipartUploadError {
     // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
     // by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
-        self.meta.message.as_deref()
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
     }
 
     pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id.as_deref()
+        self.meta.request_id()
     }
 
     pub fn code(&self) -> Option<&str> {
-        self.meta.code.as_deref()
+        self.meta.code()
     }
 }
-
 impl std::error::Error for CompleteMultipartUploadError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
@@ -153,7 +156,6 @@ pub struct CopyObjectError {
 #[derive(std::fmt::Debug)]
 pub enum CopyObjectErrorKind {
     ObjectNotInActiveTierError(crate::error::ObjectNotInActiveTierError),
-
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -173,7 +175,6 @@ impl smithy_types::retry::ProvideErrorKind for CopyObjectError {
         None
     }
 }
-
 impl CopyObjectError {
     pub fn new(kind: CopyObjectErrorKind, meta: smithy_types::Error) -> Self {
         Self { kind, meta }
@@ -196,18 +197,21 @@ impl CopyObjectError {
     // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
     // by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
-        self.meta.message.as_deref()
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
     }
 
     pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id.as_deref()
+        self.meta.request_id()
     }
 
     pub fn code(&self) -> Option<&str> {
-        self.meta.code.as_deref()
+        self.meta.code()
     }
 }
-
 impl std::error::Error for CopyObjectError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
@@ -228,7 +232,6 @@ pub struct CreateBucketError {
 pub enum CreateBucketErrorKind {
     BucketAlreadyOwnedByYou(crate::error::BucketAlreadyOwnedByYou),
     BucketAlreadyExists(crate::error::BucketAlreadyExists),
-
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -249,7 +252,6 @@ impl smithy_types::retry::ProvideErrorKind for CreateBucketError {
         None
     }
 }
-
 impl CreateBucketError {
     pub fn new(kind: CreateBucketErrorKind, meta: smithy_types::Error) -> Self {
         Self { kind, meta }
@@ -272,18 +274,21 @@ impl CreateBucketError {
     // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
     // by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
-        self.meta.message.as_deref()
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
     }
 
     pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id.as_deref()
+        self.meta.request_id()
     }
 
     pub fn code(&self) -> Option<&str> {
-        self.meta.code.as_deref()
+        self.meta.code()
     }
 }
-
 impl std::error::Error for CreateBucketError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
@@ -321,7 +326,6 @@ impl smithy_types::retry::ProvideErrorKind for CreateMultipartUploadError {
         None
     }
 }
-
 impl CreateMultipartUploadError {
     pub fn new(kind: CreateMultipartUploadErrorKind, meta: smithy_types::Error) -> Self {
         Self { kind, meta }
@@ -344,18 +348,21 @@ impl CreateMultipartUploadError {
     // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
     // by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
-        self.meta.message.as_deref()
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
     }
 
     pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id.as_deref()
+        self.meta.request_id()
     }
 
     pub fn code(&self) -> Option<&str> {
-        self.meta.code.as_deref()
+        self.meta.code()
     }
 }
-
 impl std::error::Error for CreateMultipartUploadError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
@@ -391,7 +398,6 @@ impl smithy_types::retry::ProvideErrorKind for DeleteBucketError {
         None
     }
 }
-
 impl DeleteBucketError {
     pub fn new(kind: DeleteBucketErrorKind, meta: smithy_types::Error) -> Self {
         Self { kind, meta }
@@ -414,18 +420,21 @@ impl DeleteBucketError {
     // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
     // by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
-        self.meta.message.as_deref()
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
     }
 
     pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id.as_deref()
+        self.meta.request_id()
     }
 
     pub fn code(&self) -> Option<&str> {
-        self.meta.code.as_deref()
+        self.meta.code()
     }
 }
-
 impl std::error::Error for DeleteBucketError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
@@ -461,7 +470,6 @@ impl smithy_types::retry::ProvideErrorKind for DeleteBucketAnalyticsConfiguratio
         None
     }
 }
-
 impl DeleteBucketAnalyticsConfigurationError {
     pub fn new(
         kind: DeleteBucketAnalyticsConfigurationErrorKind,
@@ -487,18 +495,21 @@ impl DeleteBucketAnalyticsConfigurationError {
     // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
     // by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
-        self.meta.message.as_deref()
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
     }
 
     pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id.as_deref()
+        self.meta.request_id()
     }
 
     pub fn code(&self) -> Option<&str> {
-        self.meta.code.as_deref()
+        self.meta.code()
     }
 }
-
 impl std::error::Error for DeleteBucketAnalyticsConfigurationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
@@ -534,7 +545,6 @@ impl smithy_types::retry::ProvideErrorKind for DeleteBucketCorsError {
         None
     }
 }
-
 impl DeleteBucketCorsError {
     pub fn new(kind: DeleteBucketCorsErrorKind, meta: smithy_types::Error) -> Self {
         Self { kind, meta }
@@ -557,18 +567,21 @@ impl DeleteBucketCorsError {
     // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
     // by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
-        self.meta.message.as_deref()
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
     }
 
     pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id.as_deref()
+        self.meta.request_id()
     }
 
     pub fn code(&self) -> Option<&str> {
-        self.meta.code.as_deref()
+        self.meta.code()
     }
 }
-
 impl std::error::Error for DeleteBucketCorsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
@@ -604,7 +617,6 @@ impl smithy_types::retry::ProvideErrorKind for DeleteBucketEncryptionError {
         None
     }
 }
-
 impl DeleteBucketEncryptionError {
     pub fn new(kind: DeleteBucketEncryptionErrorKind, meta: smithy_types::Error) -> Self {
         Self { kind, meta }
@@ -627,18 +639,21 @@ impl DeleteBucketEncryptionError {
     // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
     // by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
-        self.meta.message.as_deref()
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
     }
 
     pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id.as_deref()
+        self.meta.request_id()
     }
 
     pub fn code(&self) -> Option<&str> {
-        self.meta.code.as_deref()
+        self.meta.code()
     }
 }
-
 impl std::error::Error for DeleteBucketEncryptionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
@@ -676,7 +691,6 @@ impl smithy_types::retry::ProvideErrorKind for DeleteBucketIntelligentTieringCon
         None
     }
 }
-
 impl DeleteBucketIntelligentTieringConfigurationError {
     pub fn new(
         kind: DeleteBucketIntelligentTieringConfigurationErrorKind,
@@ -702,18 +716,21 @@ impl DeleteBucketIntelligentTieringConfigurationError {
     // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
     // by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
-        self.meta.message.as_deref()
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
     }
 
     pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id.as_deref()
+        self.meta.request_id()
     }
 
     pub fn code(&self) -> Option<&str> {
-        self.meta.code.as_deref()
+        self.meta.code()
     }
 }
-
 impl std::error::Error for DeleteBucketIntelligentTieringConfigurationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
@@ -751,7 +768,6 @@ impl smithy_types::retry::ProvideErrorKind for DeleteBucketInventoryConfiguratio
         None
     }
 }
-
 impl DeleteBucketInventoryConfigurationError {
     pub fn new(
         kind: DeleteBucketInventoryConfigurationErrorKind,
@@ -777,18 +793,21 @@ impl DeleteBucketInventoryConfigurationError {
     // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
     // by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
-        self.meta.message.as_deref()
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
     }
 
     pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id.as_deref()
+        self.meta.request_id()
     }
 
     pub fn code(&self) -> Option<&str> {
-        self.meta.code.as_deref()
+        self.meta.code()
     }
 }
-
 impl std::error::Error for DeleteBucketInventoryConfigurationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
@@ -824,7 +843,6 @@ impl smithy_types::retry::ProvideErrorKind for DeleteBucketLifecycleError {
         None
     }
 }
-
 impl DeleteBucketLifecycleError {
     pub fn new(kind: DeleteBucketLifecycleErrorKind, meta: smithy_types::Error) -> Self {
         Self { kind, meta }
@@ -847,18 +865,21 @@ impl DeleteBucketLifecycleError {
     // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
     // by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
-        self.meta.message.as_deref()
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
     }
 
     pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id.as_deref()
+        self.meta.request_id()
     }
 
     pub fn code(&self) -> Option<&str> {
-        self.meta.code.as_deref()
+        self.meta.code()
     }
 }
-
 impl std::error::Error for DeleteBucketLifecycleError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
@@ -894,7 +915,6 @@ impl smithy_types::retry::ProvideErrorKind for DeleteBucketMetricsConfigurationE
         None
     }
 }
-
 impl DeleteBucketMetricsConfigurationError {
     pub fn new(kind: DeleteBucketMetricsConfigurationErrorKind, meta: smithy_types::Error) -> Self {
         Self { kind, meta }
@@ -917,18 +937,21 @@ impl DeleteBucketMetricsConfigurationError {
     // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
     // by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
-        self.meta.message.as_deref()
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
     }
 
     pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id.as_deref()
+        self.meta.request_id()
     }
 
     pub fn code(&self) -> Option<&str> {
-        self.meta.code.as_deref()
+        self.meta.code()
     }
 }
-
 impl std::error::Error for DeleteBucketMetricsConfigurationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
@@ -964,7 +987,6 @@ impl smithy_types::retry::ProvideErrorKind for DeleteBucketOwnershipControlsErro
         None
     }
 }
-
 impl DeleteBucketOwnershipControlsError {
     pub fn new(kind: DeleteBucketOwnershipControlsErrorKind, meta: smithy_types::Error) -> Self {
         Self { kind, meta }
@@ -987,18 +1009,21 @@ impl DeleteBucketOwnershipControlsError {
     // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
     // by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
-        self.meta.message.as_deref()
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
     }
 
     pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id.as_deref()
+        self.meta.request_id()
     }
 
     pub fn code(&self) -> Option<&str> {
-        self.meta.code.as_deref()
+        self.meta.code()
     }
 }
-
 impl std::error::Error for DeleteBucketOwnershipControlsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
@@ -1034,7 +1059,6 @@ impl smithy_types::retry::ProvideErrorKind for DeleteBucketPolicyError {
         None
     }
 }
-
 impl DeleteBucketPolicyError {
     pub fn new(kind: DeleteBucketPolicyErrorKind, meta: smithy_types::Error) -> Self {
         Self { kind, meta }
@@ -1057,18 +1081,21 @@ impl DeleteBucketPolicyError {
     // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
     // by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
-        self.meta.message.as_deref()
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
     }
 
     pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id.as_deref()
+        self.meta.request_id()
     }
 
     pub fn code(&self) -> Option<&str> {
-        self.meta.code.as_deref()
+        self.meta.code()
     }
 }
-
 impl std::error::Error for DeleteBucketPolicyError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
@@ -1104,7 +1131,6 @@ impl smithy_types::retry::ProvideErrorKind for DeleteBucketReplicationError {
         None
     }
 }
-
 impl DeleteBucketReplicationError {
     pub fn new(kind: DeleteBucketReplicationErrorKind, meta: smithy_types::Error) -> Self {
         Self { kind, meta }
@@ -1127,18 +1153,21 @@ impl DeleteBucketReplicationError {
     // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
     // by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
-        self.meta.message.as_deref()
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
     }
 
     pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id.as_deref()
+        self.meta.request_id()
     }
 
     pub fn code(&self) -> Option<&str> {
-        self.meta.code.as_deref()
+        self.meta.code()
     }
 }
-
 impl std::error::Error for DeleteBucketReplicationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
@@ -1174,7 +1203,6 @@ impl smithy_types::retry::ProvideErrorKind for DeleteBucketTaggingError {
         None
     }
 }
-
 impl DeleteBucketTaggingError {
     pub fn new(kind: DeleteBucketTaggingErrorKind, meta: smithy_types::Error) -> Self {
         Self { kind, meta }
@@ -1197,18 +1225,21 @@ impl DeleteBucketTaggingError {
     // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
     // by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
-        self.meta.message.as_deref()
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
     }
 
     pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id.as_deref()
+        self.meta.request_id()
     }
 
     pub fn code(&self) -> Option<&str> {
-        self.meta.code.as_deref()
+        self.meta.code()
     }
 }
-
 impl std::error::Error for DeleteBucketTaggingError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
@@ -1244,7 +1275,6 @@ impl smithy_types::retry::ProvideErrorKind for DeleteBucketWebsiteError {
         None
     }
 }
-
 impl DeleteBucketWebsiteError {
     pub fn new(kind: DeleteBucketWebsiteErrorKind, meta: smithy_types::Error) -> Self {
         Self { kind, meta }
@@ -1267,18 +1297,21 @@ impl DeleteBucketWebsiteError {
     // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
     // by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
-        self.meta.message.as_deref()
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
     }
 
     pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id.as_deref()
+        self.meta.request_id()
     }
 
     pub fn code(&self) -> Option<&str> {
-        self.meta.code.as_deref()
+        self.meta.code()
     }
 }
-
 impl std::error::Error for DeleteBucketWebsiteError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
@@ -1314,7 +1347,6 @@ impl smithy_types::retry::ProvideErrorKind for DeleteObjectError {
         None
     }
 }
-
 impl DeleteObjectError {
     pub fn new(kind: DeleteObjectErrorKind, meta: smithy_types::Error) -> Self {
         Self { kind, meta }
@@ -1337,18 +1369,21 @@ impl DeleteObjectError {
     // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
     // by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
-        self.meta.message.as_deref()
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
     }
 
     pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id.as_deref()
+        self.meta.request_id()
     }
 
     pub fn code(&self) -> Option<&str> {
-        self.meta.code.as_deref()
+        self.meta.code()
     }
 }
-
 impl std::error::Error for DeleteObjectError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
@@ -1384,7 +1419,6 @@ impl smithy_types::retry::ProvideErrorKind for DeleteObjectsError {
         None
     }
 }
-
 impl DeleteObjectsError {
     pub fn new(kind: DeleteObjectsErrorKind, meta: smithy_types::Error) -> Self {
         Self { kind, meta }
@@ -1407,18 +1441,21 @@ impl DeleteObjectsError {
     // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
     // by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
-        self.meta.message.as_deref()
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
     }
 
     pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id.as_deref()
+        self.meta.request_id()
     }
 
     pub fn code(&self) -> Option<&str> {
-        self.meta.code.as_deref()
+        self.meta.code()
     }
 }
-
 impl std::error::Error for DeleteObjectsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
@@ -1454,7 +1491,6 @@ impl smithy_types::retry::ProvideErrorKind for DeleteObjectTaggingError {
         None
     }
 }
-
 impl DeleteObjectTaggingError {
     pub fn new(kind: DeleteObjectTaggingErrorKind, meta: smithy_types::Error) -> Self {
         Self { kind, meta }
@@ -1477,18 +1513,21 @@ impl DeleteObjectTaggingError {
     // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
     // by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
-        self.meta.message.as_deref()
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
     }
 
     pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id.as_deref()
+        self.meta.request_id()
     }
 
     pub fn code(&self) -> Option<&str> {
-        self.meta.code.as_deref()
+        self.meta.code()
     }
 }
-
 impl std::error::Error for DeleteObjectTaggingError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
@@ -1524,7 +1563,6 @@ impl smithy_types::retry::ProvideErrorKind for DeletePublicAccessBlockError {
         None
     }
 }
-
 impl DeletePublicAccessBlockError {
     pub fn new(kind: DeletePublicAccessBlockErrorKind, meta: smithy_types::Error) -> Self {
         Self { kind, meta }
@@ -1547,18 +1585,21 @@ impl DeletePublicAccessBlockError {
     // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
     // by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
-        self.meta.message.as_deref()
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
     }
 
     pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id.as_deref()
+        self.meta.request_id()
     }
 
     pub fn code(&self) -> Option<&str> {
-        self.meta.code.as_deref()
+        self.meta.code()
     }
 }
-
 impl std::error::Error for DeletePublicAccessBlockError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
@@ -1594,7 +1635,6 @@ impl smithy_types::retry::ProvideErrorKind for GetBucketAccelerateConfigurationE
         None
     }
 }
-
 impl GetBucketAccelerateConfigurationError {
     pub fn new(kind: GetBucketAccelerateConfigurationErrorKind, meta: smithy_types::Error) -> Self {
         Self { kind, meta }
@@ -1617,18 +1657,21 @@ impl GetBucketAccelerateConfigurationError {
     // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
     // by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
-        self.meta.message.as_deref()
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
     }
 
     pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id.as_deref()
+        self.meta.request_id()
     }
 
     pub fn code(&self) -> Option<&str> {
-        self.meta.code.as_deref()
+        self.meta.code()
     }
 }
-
 impl std::error::Error for GetBucketAccelerateConfigurationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
@@ -1664,7 +1707,6 @@ impl smithy_types::retry::ProvideErrorKind for GetBucketAclError {
         None
     }
 }
-
 impl GetBucketAclError {
     pub fn new(kind: GetBucketAclErrorKind, meta: smithy_types::Error) -> Self {
         Self { kind, meta }
@@ -1687,18 +1729,21 @@ impl GetBucketAclError {
     // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
     // by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
-        self.meta.message.as_deref()
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
     }
 
     pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id.as_deref()
+        self.meta.request_id()
     }
 
     pub fn code(&self) -> Option<&str> {
-        self.meta.code.as_deref()
+        self.meta.code()
     }
 }
-
 impl std::error::Error for GetBucketAclError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
@@ -1734,7 +1779,6 @@ impl smithy_types::retry::ProvideErrorKind for GetBucketAnalyticsConfigurationEr
         None
     }
 }
-
 impl GetBucketAnalyticsConfigurationError {
     pub fn new(kind: GetBucketAnalyticsConfigurationErrorKind, meta: smithy_types::Error) -> Self {
         Self { kind, meta }
@@ -1757,18 +1801,21 @@ impl GetBucketAnalyticsConfigurationError {
     // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
     // by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
-        self.meta.message.as_deref()
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
     }
 
     pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id.as_deref()
+        self.meta.request_id()
     }
 
     pub fn code(&self) -> Option<&str> {
-        self.meta.code.as_deref()
+        self.meta.code()
     }
 }
-
 impl std::error::Error for GetBucketAnalyticsConfigurationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
@@ -1804,7 +1851,6 @@ impl smithy_types::retry::ProvideErrorKind for GetBucketCorsError {
         None
     }
 }
-
 impl GetBucketCorsError {
     pub fn new(kind: GetBucketCorsErrorKind, meta: smithy_types::Error) -> Self {
         Self { kind, meta }
@@ -1827,18 +1873,21 @@ impl GetBucketCorsError {
     // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
     // by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
-        self.meta.message.as_deref()
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
     }
 
     pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id.as_deref()
+        self.meta.request_id()
     }
 
     pub fn code(&self) -> Option<&str> {
-        self.meta.code.as_deref()
+        self.meta.code()
     }
 }
-
 impl std::error::Error for GetBucketCorsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
@@ -1874,7 +1923,6 @@ impl smithy_types::retry::ProvideErrorKind for GetBucketEncryptionError {
         None
     }
 }
-
 impl GetBucketEncryptionError {
     pub fn new(kind: GetBucketEncryptionErrorKind, meta: smithy_types::Error) -> Self {
         Self { kind, meta }
@@ -1897,18 +1945,21 @@ impl GetBucketEncryptionError {
     // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
     // by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
-        self.meta.message.as_deref()
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
     }
 
     pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id.as_deref()
+        self.meta.request_id()
     }
 
     pub fn code(&self) -> Option<&str> {
-        self.meta.code.as_deref()
+        self.meta.code()
     }
 }
-
 impl std::error::Error for GetBucketEncryptionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
@@ -1944,7 +1995,6 @@ impl smithy_types::retry::ProvideErrorKind for GetBucketIntelligentTieringConfig
         None
     }
 }
-
 impl GetBucketIntelligentTieringConfigurationError {
     pub fn new(
         kind: GetBucketIntelligentTieringConfigurationErrorKind,
@@ -1970,18 +2020,21 @@ impl GetBucketIntelligentTieringConfigurationError {
     // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
     // by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
-        self.meta.message.as_deref()
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
     }
 
     pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id.as_deref()
+        self.meta.request_id()
     }
 
     pub fn code(&self) -> Option<&str> {
-        self.meta.code.as_deref()
+        self.meta.code()
     }
 }
-
 impl std::error::Error for GetBucketIntelligentTieringConfigurationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
@@ -2019,7 +2072,6 @@ impl smithy_types::retry::ProvideErrorKind for GetBucketInventoryConfigurationEr
         None
     }
 }
-
 impl GetBucketInventoryConfigurationError {
     pub fn new(kind: GetBucketInventoryConfigurationErrorKind, meta: smithy_types::Error) -> Self {
         Self { kind, meta }
@@ -2042,18 +2094,21 @@ impl GetBucketInventoryConfigurationError {
     // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
     // by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
-        self.meta.message.as_deref()
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
     }
 
     pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id.as_deref()
+        self.meta.request_id()
     }
 
     pub fn code(&self) -> Option<&str> {
-        self.meta.code.as_deref()
+        self.meta.code()
     }
 }
-
 impl std::error::Error for GetBucketInventoryConfigurationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
@@ -2089,7 +2144,6 @@ impl smithy_types::retry::ProvideErrorKind for GetBucketLifecycleConfigurationEr
         None
     }
 }
-
 impl GetBucketLifecycleConfigurationError {
     pub fn new(kind: GetBucketLifecycleConfigurationErrorKind, meta: smithy_types::Error) -> Self {
         Self { kind, meta }
@@ -2112,18 +2166,21 @@ impl GetBucketLifecycleConfigurationError {
     // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
     // by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
-        self.meta.message.as_deref()
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
     }
 
     pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id.as_deref()
+        self.meta.request_id()
     }
 
     pub fn code(&self) -> Option<&str> {
-        self.meta.code.as_deref()
+        self.meta.code()
     }
 }
-
 impl std::error::Error for GetBucketLifecycleConfigurationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
@@ -2159,7 +2216,6 @@ impl smithy_types::retry::ProvideErrorKind for GetBucketLocationError {
         None
     }
 }
-
 impl GetBucketLocationError {
     pub fn new(kind: GetBucketLocationErrorKind, meta: smithy_types::Error) -> Self {
         Self { kind, meta }
@@ -2182,18 +2238,21 @@ impl GetBucketLocationError {
     // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
     // by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
-        self.meta.message.as_deref()
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
     }
 
     pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id.as_deref()
+        self.meta.request_id()
     }
 
     pub fn code(&self) -> Option<&str> {
-        self.meta.code.as_deref()
+        self.meta.code()
     }
 }
-
 impl std::error::Error for GetBucketLocationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
@@ -2229,7 +2288,6 @@ impl smithy_types::retry::ProvideErrorKind for GetBucketLoggingError {
         None
     }
 }
-
 impl GetBucketLoggingError {
     pub fn new(kind: GetBucketLoggingErrorKind, meta: smithy_types::Error) -> Self {
         Self { kind, meta }
@@ -2252,18 +2310,21 @@ impl GetBucketLoggingError {
     // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
     // by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
-        self.meta.message.as_deref()
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
     }
 
     pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id.as_deref()
+        self.meta.request_id()
     }
 
     pub fn code(&self) -> Option<&str> {
-        self.meta.code.as_deref()
+        self.meta.code()
     }
 }
-
 impl std::error::Error for GetBucketLoggingError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
@@ -2299,7 +2360,6 @@ impl smithy_types::retry::ProvideErrorKind for GetBucketMetricsConfigurationErro
         None
     }
 }
-
 impl GetBucketMetricsConfigurationError {
     pub fn new(kind: GetBucketMetricsConfigurationErrorKind, meta: smithy_types::Error) -> Self {
         Self { kind, meta }
@@ -2322,18 +2382,21 @@ impl GetBucketMetricsConfigurationError {
     // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
     // by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
-        self.meta.message.as_deref()
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
     }
 
     pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id.as_deref()
+        self.meta.request_id()
     }
 
     pub fn code(&self) -> Option<&str> {
-        self.meta.code.as_deref()
+        self.meta.code()
     }
 }
-
 impl std::error::Error for GetBucketMetricsConfigurationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
@@ -2369,7 +2432,6 @@ impl smithy_types::retry::ProvideErrorKind for GetBucketNotificationConfiguratio
         None
     }
 }
-
 impl GetBucketNotificationConfigurationError {
     pub fn new(
         kind: GetBucketNotificationConfigurationErrorKind,
@@ -2395,18 +2457,21 @@ impl GetBucketNotificationConfigurationError {
     // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
     // by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
-        self.meta.message.as_deref()
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
     }
 
     pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id.as_deref()
+        self.meta.request_id()
     }
 
     pub fn code(&self) -> Option<&str> {
-        self.meta.code.as_deref()
+        self.meta.code()
     }
 }
-
 impl std::error::Error for GetBucketNotificationConfigurationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
@@ -2442,7 +2507,6 @@ impl smithy_types::retry::ProvideErrorKind for GetBucketOwnershipControlsError {
         None
     }
 }
-
 impl GetBucketOwnershipControlsError {
     pub fn new(kind: GetBucketOwnershipControlsErrorKind, meta: smithy_types::Error) -> Self {
         Self { kind, meta }
@@ -2465,18 +2529,21 @@ impl GetBucketOwnershipControlsError {
     // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
     // by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
-        self.meta.message.as_deref()
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
     }
 
     pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id.as_deref()
+        self.meta.request_id()
     }
 
     pub fn code(&self) -> Option<&str> {
-        self.meta.code.as_deref()
+        self.meta.code()
     }
 }
-
 impl std::error::Error for GetBucketOwnershipControlsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
@@ -2512,7 +2579,6 @@ impl smithy_types::retry::ProvideErrorKind for GetBucketPolicyError {
         None
     }
 }
-
 impl GetBucketPolicyError {
     pub fn new(kind: GetBucketPolicyErrorKind, meta: smithy_types::Error) -> Self {
         Self { kind, meta }
@@ -2535,18 +2601,21 @@ impl GetBucketPolicyError {
     // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
     // by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
-        self.meta.message.as_deref()
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
     }
 
     pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id.as_deref()
+        self.meta.request_id()
     }
 
     pub fn code(&self) -> Option<&str> {
-        self.meta.code.as_deref()
+        self.meta.code()
     }
 }
-
 impl std::error::Error for GetBucketPolicyError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
@@ -2582,7 +2651,6 @@ impl smithy_types::retry::ProvideErrorKind for GetBucketPolicyStatusError {
         None
     }
 }
-
 impl GetBucketPolicyStatusError {
     pub fn new(kind: GetBucketPolicyStatusErrorKind, meta: smithy_types::Error) -> Self {
         Self { kind, meta }
@@ -2605,18 +2673,21 @@ impl GetBucketPolicyStatusError {
     // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
     // by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
-        self.meta.message.as_deref()
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
     }
 
     pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id.as_deref()
+        self.meta.request_id()
     }
 
     pub fn code(&self) -> Option<&str> {
-        self.meta.code.as_deref()
+        self.meta.code()
     }
 }
-
 impl std::error::Error for GetBucketPolicyStatusError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
@@ -2652,7 +2723,6 @@ impl smithy_types::retry::ProvideErrorKind for GetBucketReplicationError {
         None
     }
 }
-
 impl GetBucketReplicationError {
     pub fn new(kind: GetBucketReplicationErrorKind, meta: smithy_types::Error) -> Self {
         Self { kind, meta }
@@ -2675,18 +2745,21 @@ impl GetBucketReplicationError {
     // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
     // by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
-        self.meta.message.as_deref()
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
     }
 
     pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id.as_deref()
+        self.meta.request_id()
     }
 
     pub fn code(&self) -> Option<&str> {
-        self.meta.code.as_deref()
+        self.meta.code()
     }
 }
-
 impl std::error::Error for GetBucketReplicationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
@@ -2722,7 +2795,6 @@ impl smithy_types::retry::ProvideErrorKind for GetBucketRequestPaymentError {
         None
     }
 }
-
 impl GetBucketRequestPaymentError {
     pub fn new(kind: GetBucketRequestPaymentErrorKind, meta: smithy_types::Error) -> Self {
         Self { kind, meta }
@@ -2745,18 +2817,21 @@ impl GetBucketRequestPaymentError {
     // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
     // by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
-        self.meta.message.as_deref()
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
     }
 
     pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id.as_deref()
+        self.meta.request_id()
     }
 
     pub fn code(&self) -> Option<&str> {
-        self.meta.code.as_deref()
+        self.meta.code()
     }
 }
-
 impl std::error::Error for GetBucketRequestPaymentError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
@@ -2792,7 +2867,6 @@ impl smithy_types::retry::ProvideErrorKind for GetBucketTaggingError {
         None
     }
 }
-
 impl GetBucketTaggingError {
     pub fn new(kind: GetBucketTaggingErrorKind, meta: smithy_types::Error) -> Self {
         Self { kind, meta }
@@ -2815,18 +2889,21 @@ impl GetBucketTaggingError {
     // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
     // by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
-        self.meta.message.as_deref()
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
     }
 
     pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id.as_deref()
+        self.meta.request_id()
     }
 
     pub fn code(&self) -> Option<&str> {
-        self.meta.code.as_deref()
+        self.meta.code()
     }
 }
-
 impl std::error::Error for GetBucketTaggingError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
@@ -2862,7 +2939,6 @@ impl smithy_types::retry::ProvideErrorKind for GetBucketVersioningError {
         None
     }
 }
-
 impl GetBucketVersioningError {
     pub fn new(kind: GetBucketVersioningErrorKind, meta: smithy_types::Error) -> Self {
         Self { kind, meta }
@@ -2885,18 +2961,21 @@ impl GetBucketVersioningError {
     // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
     // by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
-        self.meta.message.as_deref()
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
     }
 
     pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id.as_deref()
+        self.meta.request_id()
     }
 
     pub fn code(&self) -> Option<&str> {
-        self.meta.code.as_deref()
+        self.meta.code()
     }
 }
-
 impl std::error::Error for GetBucketVersioningError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
@@ -2932,7 +3011,6 @@ impl smithy_types::retry::ProvideErrorKind for GetBucketWebsiteError {
         None
     }
 }
-
 impl GetBucketWebsiteError {
     pub fn new(kind: GetBucketWebsiteErrorKind, meta: smithy_types::Error) -> Self {
         Self { kind, meta }
@@ -2955,18 +3033,21 @@ impl GetBucketWebsiteError {
     // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
     // by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
-        self.meta.message.as_deref()
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
     }
 
     pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id.as_deref()
+        self.meta.request_id()
     }
 
     pub fn code(&self) -> Option<&str> {
-        self.meta.code.as_deref()
+        self.meta.code()
     }
 }
-
 impl std::error::Error for GetBucketWebsiteError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
@@ -2986,7 +3067,6 @@ pub struct GetObjectError {
 pub enum GetObjectErrorKind {
     NoSuchKey(crate::error::NoSuchKey),
     InvalidObjectState(crate::error::InvalidObjectState),
-
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -3007,7 +3087,6 @@ impl smithy_types::retry::ProvideErrorKind for GetObjectError {
         None
     }
 }
-
 impl GetObjectError {
     pub fn new(kind: GetObjectErrorKind, meta: smithy_types::Error) -> Self {
         Self { kind, meta }
@@ -3030,18 +3109,21 @@ impl GetObjectError {
     // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
     // by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
-        self.meta.message.as_deref()
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
     }
 
     pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id.as_deref()
+        self.meta.request_id()
     }
 
     pub fn code(&self) -> Option<&str> {
-        self.meta.code.as_deref()
+        self.meta.code()
     }
 }
-
 impl std::error::Error for GetObjectError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
@@ -3062,7 +3144,6 @@ pub struct GetObjectAclError {
 #[derive(std::fmt::Debug)]
 pub enum GetObjectAclErrorKind {
     NoSuchKey(crate::error::NoSuchKey),
-
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -3082,7 +3163,6 @@ impl smithy_types::retry::ProvideErrorKind for GetObjectAclError {
         None
     }
 }
-
 impl GetObjectAclError {
     pub fn new(kind: GetObjectAclErrorKind, meta: smithy_types::Error) -> Self {
         Self { kind, meta }
@@ -3105,18 +3185,21 @@ impl GetObjectAclError {
     // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
     // by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
-        self.meta.message.as_deref()
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
     }
 
     pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id.as_deref()
+        self.meta.request_id()
     }
 
     pub fn code(&self) -> Option<&str> {
-        self.meta.code.as_deref()
+        self.meta.code()
     }
 }
-
 impl std::error::Error for GetObjectAclError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
@@ -3153,7 +3236,6 @@ impl smithy_types::retry::ProvideErrorKind for GetObjectLegalHoldError {
         None
     }
 }
-
 impl GetObjectLegalHoldError {
     pub fn new(kind: GetObjectLegalHoldErrorKind, meta: smithy_types::Error) -> Self {
         Self { kind, meta }
@@ -3176,18 +3258,21 @@ impl GetObjectLegalHoldError {
     // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
     // by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
-        self.meta.message.as_deref()
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
     }
 
     pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id.as_deref()
+        self.meta.request_id()
     }
 
     pub fn code(&self) -> Option<&str> {
-        self.meta.code.as_deref()
+        self.meta.code()
     }
 }
-
 impl std::error::Error for GetObjectLegalHoldError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
@@ -3223,7 +3308,6 @@ impl smithy_types::retry::ProvideErrorKind for GetObjectLockConfigurationError {
         None
     }
 }
-
 impl GetObjectLockConfigurationError {
     pub fn new(kind: GetObjectLockConfigurationErrorKind, meta: smithy_types::Error) -> Self {
         Self { kind, meta }
@@ -3246,18 +3330,21 @@ impl GetObjectLockConfigurationError {
     // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
     // by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
-        self.meta.message.as_deref()
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
     }
 
     pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id.as_deref()
+        self.meta.request_id()
     }
 
     pub fn code(&self) -> Option<&str> {
-        self.meta.code.as_deref()
+        self.meta.code()
     }
 }
-
 impl std::error::Error for GetObjectLockConfigurationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
@@ -3293,7 +3380,6 @@ impl smithy_types::retry::ProvideErrorKind for GetObjectRetentionError {
         None
     }
 }
-
 impl GetObjectRetentionError {
     pub fn new(kind: GetObjectRetentionErrorKind, meta: smithy_types::Error) -> Self {
         Self { kind, meta }
@@ -3316,18 +3402,21 @@ impl GetObjectRetentionError {
     // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
     // by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
-        self.meta.message.as_deref()
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
     }
 
     pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id.as_deref()
+        self.meta.request_id()
     }
 
     pub fn code(&self) -> Option<&str> {
-        self.meta.code.as_deref()
+        self.meta.code()
     }
 }
-
 impl std::error::Error for GetObjectRetentionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
@@ -3363,7 +3452,6 @@ impl smithy_types::retry::ProvideErrorKind for GetObjectTaggingError {
         None
     }
 }
-
 impl GetObjectTaggingError {
     pub fn new(kind: GetObjectTaggingErrorKind, meta: smithy_types::Error) -> Self {
         Self { kind, meta }
@@ -3386,18 +3474,21 @@ impl GetObjectTaggingError {
     // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
     // by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
-        self.meta.message.as_deref()
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
     }
 
     pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id.as_deref()
+        self.meta.request_id()
     }
 
     pub fn code(&self) -> Option<&str> {
-        self.meta.code.as_deref()
+        self.meta.code()
     }
 }
-
 impl std::error::Error for GetObjectTaggingError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
@@ -3433,7 +3524,6 @@ impl smithy_types::retry::ProvideErrorKind for GetObjectTorrentError {
         None
     }
 }
-
 impl GetObjectTorrentError {
     pub fn new(kind: GetObjectTorrentErrorKind, meta: smithy_types::Error) -> Self {
         Self { kind, meta }
@@ -3456,18 +3546,21 @@ impl GetObjectTorrentError {
     // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
     // by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
-        self.meta.message.as_deref()
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
     }
 
     pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id.as_deref()
+        self.meta.request_id()
     }
 
     pub fn code(&self) -> Option<&str> {
-        self.meta.code.as_deref()
+        self.meta.code()
     }
 }
-
 impl std::error::Error for GetObjectTorrentError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
@@ -3503,7 +3596,6 @@ impl smithy_types::retry::ProvideErrorKind for GetPublicAccessBlockError {
         None
     }
 }
-
 impl GetPublicAccessBlockError {
     pub fn new(kind: GetPublicAccessBlockErrorKind, meta: smithy_types::Error) -> Self {
         Self { kind, meta }
@@ -3526,18 +3618,21 @@ impl GetPublicAccessBlockError {
     // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
     // by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
-        self.meta.message.as_deref()
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
     }
 
     pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id.as_deref()
+        self.meta.request_id()
     }
 
     pub fn code(&self) -> Option<&str> {
-        self.meta.code.as_deref()
+        self.meta.code()
     }
 }
-
 impl std::error::Error for GetPublicAccessBlockError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
@@ -3556,7 +3651,6 @@ pub struct HeadBucketError {
 #[derive(std::fmt::Debug)]
 pub enum HeadBucketErrorKind {
     NotFound(crate::error::NotFound),
-
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -3576,7 +3670,6 @@ impl smithy_types::retry::ProvideErrorKind for HeadBucketError {
         None
     }
 }
-
 impl HeadBucketError {
     pub fn new(kind: HeadBucketErrorKind, meta: smithy_types::Error) -> Self {
         Self { kind, meta }
@@ -3599,18 +3692,21 @@ impl HeadBucketError {
     // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
     // by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
-        self.meta.message.as_deref()
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
     }
 
     pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id.as_deref()
+        self.meta.request_id()
     }
 
     pub fn code(&self) -> Option<&str> {
-        self.meta.code.as_deref()
+        self.meta.code()
     }
 }
-
 impl std::error::Error for HeadBucketError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
@@ -3630,7 +3726,6 @@ pub struct HeadObjectError {
 #[derive(std::fmt::Debug)]
 pub enum HeadObjectErrorKind {
     NotFound(crate::error::NotFound),
-
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -3650,7 +3745,6 @@ impl smithy_types::retry::ProvideErrorKind for HeadObjectError {
         None
     }
 }
-
 impl HeadObjectError {
     pub fn new(kind: HeadObjectErrorKind, meta: smithy_types::Error) -> Self {
         Self { kind, meta }
@@ -3673,18 +3767,21 @@ impl HeadObjectError {
     // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
     // by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
-        self.meta.message.as_deref()
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
     }
 
     pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id.as_deref()
+        self.meta.request_id()
     }
 
     pub fn code(&self) -> Option<&str> {
-        self.meta.code.as_deref()
+        self.meta.code()
     }
 }
-
 impl std::error::Error for HeadObjectError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
@@ -3721,7 +3818,6 @@ impl smithy_types::retry::ProvideErrorKind for ListBucketAnalyticsConfigurations
         None
     }
 }
-
 impl ListBucketAnalyticsConfigurationsError {
     pub fn new(
         kind: ListBucketAnalyticsConfigurationsErrorKind,
@@ -3747,18 +3843,21 @@ impl ListBucketAnalyticsConfigurationsError {
     // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
     // by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
-        self.meta.message.as_deref()
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
     }
 
     pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id.as_deref()
+        self.meta.request_id()
     }
 
     pub fn code(&self) -> Option<&str> {
-        self.meta.code.as_deref()
+        self.meta.code()
     }
 }
-
 impl std::error::Error for ListBucketAnalyticsConfigurationsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
@@ -3794,7 +3893,6 @@ impl smithy_types::retry::ProvideErrorKind for ListBucketIntelligentTieringConfi
         None
     }
 }
-
 impl ListBucketIntelligentTieringConfigurationsError {
     pub fn new(
         kind: ListBucketIntelligentTieringConfigurationsErrorKind,
@@ -3820,18 +3918,21 @@ impl ListBucketIntelligentTieringConfigurationsError {
     // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
     // by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
-        self.meta.message.as_deref()
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
     }
 
     pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id.as_deref()
+        self.meta.request_id()
     }
 
     pub fn code(&self) -> Option<&str> {
-        self.meta.code.as_deref()
+        self.meta.code()
     }
 }
-
 impl std::error::Error for ListBucketIntelligentTieringConfigurationsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
@@ -3869,7 +3970,6 @@ impl smithy_types::retry::ProvideErrorKind for ListBucketInventoryConfigurations
         None
     }
 }
-
 impl ListBucketInventoryConfigurationsError {
     pub fn new(
         kind: ListBucketInventoryConfigurationsErrorKind,
@@ -3895,18 +3995,21 @@ impl ListBucketInventoryConfigurationsError {
     // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
     // by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
-        self.meta.message.as_deref()
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
     }
 
     pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id.as_deref()
+        self.meta.request_id()
     }
 
     pub fn code(&self) -> Option<&str> {
-        self.meta.code.as_deref()
+        self.meta.code()
     }
 }
-
 impl std::error::Error for ListBucketInventoryConfigurationsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
@@ -3942,7 +4045,6 @@ impl smithy_types::retry::ProvideErrorKind for ListBucketMetricsConfigurationsEr
         None
     }
 }
-
 impl ListBucketMetricsConfigurationsError {
     pub fn new(kind: ListBucketMetricsConfigurationsErrorKind, meta: smithy_types::Error) -> Self {
         Self { kind, meta }
@@ -3965,18 +4067,21 @@ impl ListBucketMetricsConfigurationsError {
     // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
     // by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
-        self.meta.message.as_deref()
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
     }
 
     pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id.as_deref()
+        self.meta.request_id()
     }
 
     pub fn code(&self) -> Option<&str> {
-        self.meta.code.as_deref()
+        self.meta.code()
     }
 }
-
 impl std::error::Error for ListBucketMetricsConfigurationsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
@@ -4012,7 +4117,6 @@ impl smithy_types::retry::ProvideErrorKind for ListBucketsError {
         None
     }
 }
-
 impl ListBucketsError {
     pub fn new(kind: ListBucketsErrorKind, meta: smithy_types::Error) -> Self {
         Self { kind, meta }
@@ -4035,18 +4139,21 @@ impl ListBucketsError {
     // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
     // by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
-        self.meta.message.as_deref()
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
     }
 
     pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id.as_deref()
+        self.meta.request_id()
     }
 
     pub fn code(&self) -> Option<&str> {
-        self.meta.code.as_deref()
+        self.meta.code()
     }
 }
-
 impl std::error::Error for ListBucketsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
@@ -4082,7 +4189,6 @@ impl smithy_types::retry::ProvideErrorKind for ListMultipartUploadsError {
         None
     }
 }
-
 impl ListMultipartUploadsError {
     pub fn new(kind: ListMultipartUploadsErrorKind, meta: smithy_types::Error) -> Self {
         Self { kind, meta }
@@ -4105,18 +4211,21 @@ impl ListMultipartUploadsError {
     // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
     // by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
-        self.meta.message.as_deref()
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
     }
 
     pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id.as_deref()
+        self.meta.request_id()
     }
 
     pub fn code(&self) -> Option<&str> {
-        self.meta.code.as_deref()
+        self.meta.code()
     }
 }
-
 impl std::error::Error for ListMultipartUploadsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
@@ -4135,7 +4244,6 @@ pub struct ListObjectsError {
 #[derive(std::fmt::Debug)]
 pub enum ListObjectsErrorKind {
     NoSuchBucket(crate::error::NoSuchBucket),
-
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -4155,7 +4263,6 @@ impl smithy_types::retry::ProvideErrorKind for ListObjectsError {
         None
     }
 }
-
 impl ListObjectsError {
     pub fn new(kind: ListObjectsErrorKind, meta: smithy_types::Error) -> Self {
         Self { kind, meta }
@@ -4178,18 +4285,21 @@ impl ListObjectsError {
     // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
     // by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
-        self.meta.message.as_deref()
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
     }
 
     pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id.as_deref()
+        self.meta.request_id()
     }
 
     pub fn code(&self) -> Option<&str> {
-        self.meta.code.as_deref()
+        self.meta.code()
     }
 }
-
 impl std::error::Error for ListObjectsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
@@ -4209,7 +4319,6 @@ pub struct ListObjectsV2Error {
 #[derive(std::fmt::Debug)]
 pub enum ListObjectsV2ErrorKind {
     NoSuchBucket(crate::error::NoSuchBucket),
-
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -4229,7 +4338,6 @@ impl smithy_types::retry::ProvideErrorKind for ListObjectsV2Error {
         None
     }
 }
-
 impl ListObjectsV2Error {
     pub fn new(kind: ListObjectsV2ErrorKind, meta: smithy_types::Error) -> Self {
         Self { kind, meta }
@@ -4252,18 +4360,21 @@ impl ListObjectsV2Error {
     // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
     // by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
-        self.meta.message.as_deref()
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
     }
 
     pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id.as_deref()
+        self.meta.request_id()
     }
 
     pub fn code(&self) -> Option<&str> {
-        self.meta.code.as_deref()
+        self.meta.code()
     }
 }
-
 impl std::error::Error for ListObjectsV2Error {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
@@ -4300,7 +4411,6 @@ impl smithy_types::retry::ProvideErrorKind for ListObjectVersionsError {
         None
     }
 }
-
 impl ListObjectVersionsError {
     pub fn new(kind: ListObjectVersionsErrorKind, meta: smithy_types::Error) -> Self {
         Self { kind, meta }
@@ -4323,18 +4433,21 @@ impl ListObjectVersionsError {
     // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
     // by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
-        self.meta.message.as_deref()
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
     }
 
     pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id.as_deref()
+        self.meta.request_id()
     }
 
     pub fn code(&self) -> Option<&str> {
-        self.meta.code.as_deref()
+        self.meta.code()
     }
 }
-
 impl std::error::Error for ListObjectVersionsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
@@ -4370,7 +4483,6 @@ impl smithy_types::retry::ProvideErrorKind for ListPartsError {
         None
     }
 }
-
 impl ListPartsError {
     pub fn new(kind: ListPartsErrorKind, meta: smithy_types::Error) -> Self {
         Self { kind, meta }
@@ -4393,18 +4505,21 @@ impl ListPartsError {
     // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
     // by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
-        self.meta.message.as_deref()
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
     }
 
     pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id.as_deref()
+        self.meta.request_id()
     }
 
     pub fn code(&self) -> Option<&str> {
-        self.meta.code.as_deref()
+        self.meta.code()
     }
 }
-
 impl std::error::Error for ListPartsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
@@ -4440,7 +4555,6 @@ impl smithy_types::retry::ProvideErrorKind for PutBucketAccelerateConfigurationE
         None
     }
 }
-
 impl PutBucketAccelerateConfigurationError {
     pub fn new(kind: PutBucketAccelerateConfigurationErrorKind, meta: smithy_types::Error) -> Self {
         Self { kind, meta }
@@ -4463,18 +4577,21 @@ impl PutBucketAccelerateConfigurationError {
     // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
     // by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
-        self.meta.message.as_deref()
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
     }
 
     pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id.as_deref()
+        self.meta.request_id()
     }
 
     pub fn code(&self) -> Option<&str> {
-        self.meta.code.as_deref()
+        self.meta.code()
     }
 }
-
 impl std::error::Error for PutBucketAccelerateConfigurationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
@@ -4510,7 +4627,6 @@ impl smithy_types::retry::ProvideErrorKind for PutBucketAclError {
         None
     }
 }
-
 impl PutBucketAclError {
     pub fn new(kind: PutBucketAclErrorKind, meta: smithy_types::Error) -> Self {
         Self { kind, meta }
@@ -4533,18 +4649,21 @@ impl PutBucketAclError {
     // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
     // by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
-        self.meta.message.as_deref()
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
     }
 
     pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id.as_deref()
+        self.meta.request_id()
     }
 
     pub fn code(&self) -> Option<&str> {
-        self.meta.code.as_deref()
+        self.meta.code()
     }
 }
-
 impl std::error::Error for PutBucketAclError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
@@ -4580,7 +4699,6 @@ impl smithy_types::retry::ProvideErrorKind for PutBucketAnalyticsConfigurationEr
         None
     }
 }
-
 impl PutBucketAnalyticsConfigurationError {
     pub fn new(kind: PutBucketAnalyticsConfigurationErrorKind, meta: smithy_types::Error) -> Self {
         Self { kind, meta }
@@ -4603,18 +4721,21 @@ impl PutBucketAnalyticsConfigurationError {
     // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
     // by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
-        self.meta.message.as_deref()
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
     }
 
     pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id.as_deref()
+        self.meta.request_id()
     }
 
     pub fn code(&self) -> Option<&str> {
-        self.meta.code.as_deref()
+        self.meta.code()
     }
 }
-
 impl std::error::Error for PutBucketAnalyticsConfigurationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
@@ -4650,7 +4771,6 @@ impl smithy_types::retry::ProvideErrorKind for PutBucketCorsError {
         None
     }
 }
-
 impl PutBucketCorsError {
     pub fn new(kind: PutBucketCorsErrorKind, meta: smithy_types::Error) -> Self {
         Self { kind, meta }
@@ -4673,18 +4793,21 @@ impl PutBucketCorsError {
     // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
     // by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
-        self.meta.message.as_deref()
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
     }
 
     pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id.as_deref()
+        self.meta.request_id()
     }
 
     pub fn code(&self) -> Option<&str> {
-        self.meta.code.as_deref()
+        self.meta.code()
     }
 }
-
 impl std::error::Error for PutBucketCorsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
@@ -4720,7 +4843,6 @@ impl smithy_types::retry::ProvideErrorKind for PutBucketEncryptionError {
         None
     }
 }
-
 impl PutBucketEncryptionError {
     pub fn new(kind: PutBucketEncryptionErrorKind, meta: smithy_types::Error) -> Self {
         Self { kind, meta }
@@ -4743,18 +4865,21 @@ impl PutBucketEncryptionError {
     // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
     // by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
-        self.meta.message.as_deref()
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
     }
 
     pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id.as_deref()
+        self.meta.request_id()
     }
 
     pub fn code(&self) -> Option<&str> {
-        self.meta.code.as_deref()
+        self.meta.code()
     }
 }
-
 impl std::error::Error for PutBucketEncryptionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
@@ -4790,7 +4915,6 @@ impl smithy_types::retry::ProvideErrorKind for PutBucketIntelligentTieringConfig
         None
     }
 }
-
 impl PutBucketIntelligentTieringConfigurationError {
     pub fn new(
         kind: PutBucketIntelligentTieringConfigurationErrorKind,
@@ -4816,18 +4940,21 @@ impl PutBucketIntelligentTieringConfigurationError {
     // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
     // by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
-        self.meta.message.as_deref()
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
     }
 
     pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id.as_deref()
+        self.meta.request_id()
     }
 
     pub fn code(&self) -> Option<&str> {
-        self.meta.code.as_deref()
+        self.meta.code()
     }
 }
-
 impl std::error::Error for PutBucketIntelligentTieringConfigurationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
@@ -4865,7 +4992,6 @@ impl smithy_types::retry::ProvideErrorKind for PutBucketInventoryConfigurationEr
         None
     }
 }
-
 impl PutBucketInventoryConfigurationError {
     pub fn new(kind: PutBucketInventoryConfigurationErrorKind, meta: smithy_types::Error) -> Self {
         Self { kind, meta }
@@ -4888,18 +5014,21 @@ impl PutBucketInventoryConfigurationError {
     // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
     // by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
-        self.meta.message.as_deref()
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
     }
 
     pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id.as_deref()
+        self.meta.request_id()
     }
 
     pub fn code(&self) -> Option<&str> {
-        self.meta.code.as_deref()
+        self.meta.code()
     }
 }
-
 impl std::error::Error for PutBucketInventoryConfigurationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
@@ -4935,7 +5064,6 @@ impl smithy_types::retry::ProvideErrorKind for PutBucketLifecycleConfigurationEr
         None
     }
 }
-
 impl PutBucketLifecycleConfigurationError {
     pub fn new(kind: PutBucketLifecycleConfigurationErrorKind, meta: smithy_types::Error) -> Self {
         Self { kind, meta }
@@ -4958,18 +5086,21 @@ impl PutBucketLifecycleConfigurationError {
     // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
     // by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
-        self.meta.message.as_deref()
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
     }
 
     pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id.as_deref()
+        self.meta.request_id()
     }
 
     pub fn code(&self) -> Option<&str> {
-        self.meta.code.as_deref()
+        self.meta.code()
     }
 }
-
 impl std::error::Error for PutBucketLifecycleConfigurationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
@@ -5005,7 +5136,6 @@ impl smithy_types::retry::ProvideErrorKind for PutBucketLoggingError {
         None
     }
 }
-
 impl PutBucketLoggingError {
     pub fn new(kind: PutBucketLoggingErrorKind, meta: smithy_types::Error) -> Self {
         Self { kind, meta }
@@ -5028,18 +5158,21 @@ impl PutBucketLoggingError {
     // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
     // by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
-        self.meta.message.as_deref()
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
     }
 
     pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id.as_deref()
+        self.meta.request_id()
     }
 
     pub fn code(&self) -> Option<&str> {
-        self.meta.code.as_deref()
+        self.meta.code()
     }
 }
-
 impl std::error::Error for PutBucketLoggingError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
@@ -5075,7 +5208,6 @@ impl smithy_types::retry::ProvideErrorKind for PutBucketMetricsConfigurationErro
         None
     }
 }
-
 impl PutBucketMetricsConfigurationError {
     pub fn new(kind: PutBucketMetricsConfigurationErrorKind, meta: smithy_types::Error) -> Self {
         Self { kind, meta }
@@ -5098,18 +5230,21 @@ impl PutBucketMetricsConfigurationError {
     // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
     // by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
-        self.meta.message.as_deref()
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
     }
 
     pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id.as_deref()
+        self.meta.request_id()
     }
 
     pub fn code(&self) -> Option<&str> {
-        self.meta.code.as_deref()
+        self.meta.code()
     }
 }
-
 impl std::error::Error for PutBucketMetricsConfigurationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
@@ -5145,7 +5280,6 @@ impl smithy_types::retry::ProvideErrorKind for PutBucketNotificationConfiguratio
         None
     }
 }
-
 impl PutBucketNotificationConfigurationError {
     pub fn new(
         kind: PutBucketNotificationConfigurationErrorKind,
@@ -5171,18 +5305,21 @@ impl PutBucketNotificationConfigurationError {
     // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
     // by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
-        self.meta.message.as_deref()
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
     }
 
     pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id.as_deref()
+        self.meta.request_id()
     }
 
     pub fn code(&self) -> Option<&str> {
-        self.meta.code.as_deref()
+        self.meta.code()
     }
 }
-
 impl std::error::Error for PutBucketNotificationConfigurationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
@@ -5218,7 +5355,6 @@ impl smithy_types::retry::ProvideErrorKind for PutBucketOwnershipControlsError {
         None
     }
 }
-
 impl PutBucketOwnershipControlsError {
     pub fn new(kind: PutBucketOwnershipControlsErrorKind, meta: smithy_types::Error) -> Self {
         Self { kind, meta }
@@ -5241,18 +5377,21 @@ impl PutBucketOwnershipControlsError {
     // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
     // by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
-        self.meta.message.as_deref()
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
     }
 
     pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id.as_deref()
+        self.meta.request_id()
     }
 
     pub fn code(&self) -> Option<&str> {
-        self.meta.code.as_deref()
+        self.meta.code()
     }
 }
-
 impl std::error::Error for PutBucketOwnershipControlsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
@@ -5288,7 +5427,6 @@ impl smithy_types::retry::ProvideErrorKind for PutBucketPolicyError {
         None
     }
 }
-
 impl PutBucketPolicyError {
     pub fn new(kind: PutBucketPolicyErrorKind, meta: smithy_types::Error) -> Self {
         Self { kind, meta }
@@ -5311,18 +5449,21 @@ impl PutBucketPolicyError {
     // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
     // by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
-        self.meta.message.as_deref()
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
     }
 
     pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id.as_deref()
+        self.meta.request_id()
     }
 
     pub fn code(&self) -> Option<&str> {
-        self.meta.code.as_deref()
+        self.meta.code()
     }
 }
-
 impl std::error::Error for PutBucketPolicyError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
@@ -5358,7 +5499,6 @@ impl smithy_types::retry::ProvideErrorKind for PutBucketReplicationError {
         None
     }
 }
-
 impl PutBucketReplicationError {
     pub fn new(kind: PutBucketReplicationErrorKind, meta: smithy_types::Error) -> Self {
         Self { kind, meta }
@@ -5381,18 +5521,21 @@ impl PutBucketReplicationError {
     // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
     // by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
-        self.meta.message.as_deref()
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
     }
 
     pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id.as_deref()
+        self.meta.request_id()
     }
 
     pub fn code(&self) -> Option<&str> {
-        self.meta.code.as_deref()
+        self.meta.code()
     }
 }
-
 impl std::error::Error for PutBucketReplicationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
@@ -5428,7 +5571,6 @@ impl smithy_types::retry::ProvideErrorKind for PutBucketRequestPaymentError {
         None
     }
 }
-
 impl PutBucketRequestPaymentError {
     pub fn new(kind: PutBucketRequestPaymentErrorKind, meta: smithy_types::Error) -> Self {
         Self { kind, meta }
@@ -5451,18 +5593,21 @@ impl PutBucketRequestPaymentError {
     // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
     // by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
-        self.meta.message.as_deref()
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
     }
 
     pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id.as_deref()
+        self.meta.request_id()
     }
 
     pub fn code(&self) -> Option<&str> {
-        self.meta.code.as_deref()
+        self.meta.code()
     }
 }
-
 impl std::error::Error for PutBucketRequestPaymentError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
@@ -5498,7 +5643,6 @@ impl smithy_types::retry::ProvideErrorKind for PutBucketTaggingError {
         None
     }
 }
-
 impl PutBucketTaggingError {
     pub fn new(kind: PutBucketTaggingErrorKind, meta: smithy_types::Error) -> Self {
         Self { kind, meta }
@@ -5521,18 +5665,21 @@ impl PutBucketTaggingError {
     // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
     // by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
-        self.meta.message.as_deref()
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
     }
 
     pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id.as_deref()
+        self.meta.request_id()
     }
 
     pub fn code(&self) -> Option<&str> {
-        self.meta.code.as_deref()
+        self.meta.code()
     }
 }
-
 impl std::error::Error for PutBucketTaggingError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
@@ -5568,7 +5715,6 @@ impl smithy_types::retry::ProvideErrorKind for PutBucketVersioningError {
         None
     }
 }
-
 impl PutBucketVersioningError {
     pub fn new(kind: PutBucketVersioningErrorKind, meta: smithy_types::Error) -> Self {
         Self { kind, meta }
@@ -5591,18 +5737,21 @@ impl PutBucketVersioningError {
     // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
     // by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
-        self.meta.message.as_deref()
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
     }
 
     pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id.as_deref()
+        self.meta.request_id()
     }
 
     pub fn code(&self) -> Option<&str> {
-        self.meta.code.as_deref()
+        self.meta.code()
     }
 }
-
 impl std::error::Error for PutBucketVersioningError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
@@ -5638,7 +5787,6 @@ impl smithy_types::retry::ProvideErrorKind for PutBucketWebsiteError {
         None
     }
 }
-
 impl PutBucketWebsiteError {
     pub fn new(kind: PutBucketWebsiteErrorKind, meta: smithy_types::Error) -> Self {
         Self { kind, meta }
@@ -5661,18 +5809,21 @@ impl PutBucketWebsiteError {
     // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
     // by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
-        self.meta.message.as_deref()
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
     }
 
     pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id.as_deref()
+        self.meta.request_id()
     }
 
     pub fn code(&self) -> Option<&str> {
-        self.meta.code.as_deref()
+        self.meta.code()
     }
 }
-
 impl std::error::Error for PutBucketWebsiteError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
@@ -5708,7 +5859,6 @@ impl smithy_types::retry::ProvideErrorKind for PutObjectError {
         None
     }
 }
-
 impl PutObjectError {
     pub fn new(kind: PutObjectErrorKind, meta: smithy_types::Error) -> Self {
         Self { kind, meta }
@@ -5731,18 +5881,21 @@ impl PutObjectError {
     // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
     // by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
-        self.meta.message.as_deref()
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
     }
 
     pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id.as_deref()
+        self.meta.request_id()
     }
 
     pub fn code(&self) -> Option<&str> {
-        self.meta.code.as_deref()
+        self.meta.code()
     }
 }
-
 impl std::error::Error for PutObjectError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
@@ -5761,7 +5914,6 @@ pub struct PutObjectAclError {
 #[derive(std::fmt::Debug)]
 pub enum PutObjectAclErrorKind {
     NoSuchKey(crate::error::NoSuchKey),
-
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -5781,7 +5933,6 @@ impl smithy_types::retry::ProvideErrorKind for PutObjectAclError {
         None
     }
 }
-
 impl PutObjectAclError {
     pub fn new(kind: PutObjectAclErrorKind, meta: smithy_types::Error) -> Self {
         Self { kind, meta }
@@ -5804,18 +5955,21 @@ impl PutObjectAclError {
     // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
     // by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
-        self.meta.message.as_deref()
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
     }
 
     pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id.as_deref()
+        self.meta.request_id()
     }
 
     pub fn code(&self) -> Option<&str> {
-        self.meta.code.as_deref()
+        self.meta.code()
     }
 }
-
 impl std::error::Error for PutObjectAclError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
@@ -5852,7 +6006,6 @@ impl smithy_types::retry::ProvideErrorKind for PutObjectLegalHoldError {
         None
     }
 }
-
 impl PutObjectLegalHoldError {
     pub fn new(kind: PutObjectLegalHoldErrorKind, meta: smithy_types::Error) -> Self {
         Self { kind, meta }
@@ -5875,18 +6028,21 @@ impl PutObjectLegalHoldError {
     // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
     // by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
-        self.meta.message.as_deref()
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
     }
 
     pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id.as_deref()
+        self.meta.request_id()
     }
 
     pub fn code(&self) -> Option<&str> {
-        self.meta.code.as_deref()
+        self.meta.code()
     }
 }
-
 impl std::error::Error for PutObjectLegalHoldError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
@@ -5922,7 +6078,6 @@ impl smithy_types::retry::ProvideErrorKind for PutObjectLockConfigurationError {
         None
     }
 }
-
 impl PutObjectLockConfigurationError {
     pub fn new(kind: PutObjectLockConfigurationErrorKind, meta: smithy_types::Error) -> Self {
         Self { kind, meta }
@@ -5945,18 +6100,21 @@ impl PutObjectLockConfigurationError {
     // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
     // by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
-        self.meta.message.as_deref()
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
     }
 
     pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id.as_deref()
+        self.meta.request_id()
     }
 
     pub fn code(&self) -> Option<&str> {
-        self.meta.code.as_deref()
+        self.meta.code()
     }
 }
-
 impl std::error::Error for PutObjectLockConfigurationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
@@ -5992,7 +6150,6 @@ impl smithy_types::retry::ProvideErrorKind for PutObjectRetentionError {
         None
     }
 }
-
 impl PutObjectRetentionError {
     pub fn new(kind: PutObjectRetentionErrorKind, meta: smithy_types::Error) -> Self {
         Self { kind, meta }
@@ -6015,18 +6172,21 @@ impl PutObjectRetentionError {
     // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
     // by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
-        self.meta.message.as_deref()
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
     }
 
     pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id.as_deref()
+        self.meta.request_id()
     }
 
     pub fn code(&self) -> Option<&str> {
-        self.meta.code.as_deref()
+        self.meta.code()
     }
 }
-
 impl std::error::Error for PutObjectRetentionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
@@ -6062,7 +6222,6 @@ impl smithy_types::retry::ProvideErrorKind for PutObjectTaggingError {
         None
     }
 }
-
 impl PutObjectTaggingError {
     pub fn new(kind: PutObjectTaggingErrorKind, meta: smithy_types::Error) -> Self {
         Self { kind, meta }
@@ -6085,18 +6244,21 @@ impl PutObjectTaggingError {
     // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
     // by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
-        self.meta.message.as_deref()
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
     }
 
     pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id.as_deref()
+        self.meta.request_id()
     }
 
     pub fn code(&self) -> Option<&str> {
-        self.meta.code.as_deref()
+        self.meta.code()
     }
 }
-
 impl std::error::Error for PutObjectTaggingError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
@@ -6132,7 +6294,6 @@ impl smithy_types::retry::ProvideErrorKind for PutPublicAccessBlockError {
         None
     }
 }
-
 impl PutPublicAccessBlockError {
     pub fn new(kind: PutPublicAccessBlockErrorKind, meta: smithy_types::Error) -> Self {
         Self { kind, meta }
@@ -6155,18 +6316,21 @@ impl PutPublicAccessBlockError {
     // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
     // by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
-        self.meta.message.as_deref()
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
     }
 
     pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id.as_deref()
+        self.meta.request_id()
     }
 
     pub fn code(&self) -> Option<&str> {
-        self.meta.code.as_deref()
+        self.meta.code()
     }
 }
-
 impl std::error::Error for PutPublicAccessBlockError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
@@ -6185,7 +6349,6 @@ pub struct RestoreObjectError {
 #[derive(std::fmt::Debug)]
 pub enum RestoreObjectErrorKind {
     ObjectAlreadyInActiveTierError(crate::error::ObjectAlreadyInActiveTierError),
-
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -6205,7 +6368,6 @@ impl smithy_types::retry::ProvideErrorKind for RestoreObjectError {
         None
     }
 }
-
 impl RestoreObjectError {
     pub fn new(kind: RestoreObjectErrorKind, meta: smithy_types::Error) -> Self {
         Self { kind, meta }
@@ -6228,18 +6390,21 @@ impl RestoreObjectError {
     // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
     // by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
-        self.meta.message.as_deref()
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
     }
 
     pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id.as_deref()
+        self.meta.request_id()
     }
 
     pub fn code(&self) -> Option<&str> {
-        self.meta.code.as_deref()
+        self.meta.code()
     }
 }
-
 impl std::error::Error for RestoreObjectError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
@@ -6276,7 +6441,6 @@ impl smithy_types::retry::ProvideErrorKind for UploadPartError {
         None
     }
 }
-
 impl UploadPartError {
     pub fn new(kind: UploadPartErrorKind, meta: smithy_types::Error) -> Self {
         Self { kind, meta }
@@ -6299,18 +6463,21 @@ impl UploadPartError {
     // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
     // by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
-        self.meta.message.as_deref()
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
     }
 
     pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id.as_deref()
+        self.meta.request_id()
     }
 
     pub fn code(&self) -> Option<&str> {
-        self.meta.code.as_deref()
+        self.meta.code()
     }
 }
-
 impl std::error::Error for UploadPartError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
@@ -6346,7 +6513,6 @@ impl smithy_types::retry::ProvideErrorKind for UploadPartCopyError {
         None
     }
 }
-
 impl UploadPartCopyError {
     pub fn new(kind: UploadPartCopyErrorKind, meta: smithy_types::Error) -> Self {
         Self { kind, meta }
@@ -6369,18 +6535,21 @@ impl UploadPartCopyError {
     // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
     // by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
-        self.meta.message.as_deref()
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
     }
 
     pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id.as_deref()
+        self.meta.request_id()
     }
 
     pub fn code(&self) -> Option<&str> {
-        self.meta.code.as_deref()
+        self.meta.code()
     }
 }
-
 impl std::error::Error for UploadPartCopyError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
@@ -6416,7 +6585,6 @@ impl smithy_types::retry::ProvideErrorKind for WriteGetObjectResponseError {
         None
     }
 }
-
 impl WriteGetObjectResponseError {
     pub fn new(kind: WriteGetObjectResponseErrorKind, meta: smithy_types::Error) -> Self {
         Self { kind, meta }
@@ -6439,18 +6607,21 @@ impl WriteGetObjectResponseError {
     // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
     // by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
-        self.meta.message.as_deref()
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
     }
 
     pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id.as_deref()
+        self.meta.request_id()
     }
 
     pub fn code(&self) -> Option<&str> {
-        self.meta.code.as_deref()
+        self.meta.code()
     }
 }
-
 impl std::error::Error for WriteGetObjectResponseError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {

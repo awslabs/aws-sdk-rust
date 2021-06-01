@@ -5,7 +5,6 @@ pub fn parse_abort_multipart_upload_error(
 ) -> Result<crate::output::AbortMultipartUploadOutput, crate::error::AbortMultipartUploadError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::AbortMultipartUploadError::unhandled)?;
-
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::AbortMultipartUploadError::unhandled(generic)),
@@ -67,7 +66,7 @@ pub fn parse_complete_multipart_upload_response(
         #[allow(unused_mut)]
         let mut output = crate::output::complete_multipart_upload_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::complete_multipart_upload_deser_operation(
+        output = crate::xml_deser::deser_operation_complete_multipart_upload(
             response.body().as_ref(),
             output,
         )
@@ -83,10 +82,8 @@ pub fn parse_complete_multipart_upload_response(
             })?,
         );
         output = output.set_server_side_encryption(
-            
-                                    crate::http_serde::deser_header_complete_multipart_upload_server_side_encryption(response.headers())
+            crate::http_serde::deser_header_complete_multipart_upload_server_side_encryption(response.headers())
                                         .map_err(|_|crate::error::CompleteMultipartUploadError::unhandled("Failed to parse ServerSideEncryption from header `x-amz-server-side-encryption"))?
-                                    
         );
         output = output.set_version_id(
             crate::http_serde::deser_header_complete_multipart_upload_version_id(
@@ -99,16 +96,12 @@ pub fn parse_complete_multipart_upload_response(
             })?,
         );
         output = output.set_ssekms_key_id(
-            
-                                    crate::http_serde::deser_header_complete_multipart_upload_ssekms_key_id(response.headers())
+            crate::http_serde::deser_header_complete_multipart_upload_ssekms_key_id(response.headers())
                                         .map_err(|_|crate::error::CompleteMultipartUploadError::unhandled("Failed to parse SSEKMSKeyId from header `x-amz-server-side-encryption-aws-kms-key-id"))?
-                                    
         );
         output = output.set_bucket_key_enabled(
-            
-                                    crate::http_serde::deser_header_complete_multipart_upload_bucket_key_enabled(response.headers())
+            crate::http_serde::deser_header_complete_multipart_upload_bucket_key_enabled(response.headers())
                                         .map_err(|_|crate::error::CompleteMultipartUploadError::unhandled("Failed to parse BucketKeyEnabled from header `x-amz-server-side-encryption-bucket-key-enabled"))?
-                                    
         );
         output = output.set_request_charged(
             crate::http_serde::deser_header_complete_multipart_upload_request_charged(
@@ -130,7 +123,6 @@ pub fn parse_copy_object_error(
 ) -> Result<crate::output::CopyObjectOutput, crate::error::CopyObjectError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::CopyObjectError::unhandled)?;
-
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::CopyObjectError::unhandled(generic)),
@@ -177,10 +169,8 @@ pub fn parse_copy_object_response(
             )?,
         );
         output = output.set_copy_source_version_id(
-            
-                                    crate::http_serde::deser_header_copy_object_copy_source_version_id(response.headers())
+            crate::http_serde::deser_header_copy_object_copy_source_version_id(response.headers())
                                         .map_err(|_|crate::error::CopyObjectError::unhandled("Failed to parse CopySourceVersionId from header `x-amz-copy-source-version-id"))?
-                                    
         );
         output = output.set_version_id(
             crate::http_serde::deser_header_copy_object_version_id(response.headers()).map_err(
@@ -192,40 +182,28 @@ pub fn parse_copy_object_response(
             )?,
         );
         output = output.set_server_side_encryption(
-            
-                                    crate::http_serde::deser_header_copy_object_server_side_encryption(response.headers())
+            crate::http_serde::deser_header_copy_object_server_side_encryption(response.headers())
                                         .map_err(|_|crate::error::CopyObjectError::unhandled("Failed to parse ServerSideEncryption from header `x-amz-server-side-encryption"))?
-                                    
         );
         output = output.set_sse_customer_algorithm(
-            
-                                    crate::http_serde::deser_header_copy_object_sse_customer_algorithm(response.headers())
+            crate::http_serde::deser_header_copy_object_sse_customer_algorithm(response.headers())
                                         .map_err(|_|crate::error::CopyObjectError::unhandled("Failed to parse SSECustomerAlgorithm from header `x-amz-server-side-encryption-customer-algorithm"))?
-                                    
         );
         output = output.set_sse_customer_key_md5(
-            
-                                    crate::http_serde::deser_header_copy_object_sse_customer_key_md5(response.headers())
+            crate::http_serde::deser_header_copy_object_sse_customer_key_md5(response.headers())
                                         .map_err(|_|crate::error::CopyObjectError::unhandled("Failed to parse SSECustomerKeyMD5 from header `x-amz-server-side-encryption-customer-key-MD5"))?
-                                    
         );
         output = output.set_ssekms_key_id(
-            
-                                    crate::http_serde::deser_header_copy_object_ssekms_key_id(response.headers())
+            crate::http_serde::deser_header_copy_object_ssekms_key_id(response.headers())
                                         .map_err(|_|crate::error::CopyObjectError::unhandled("Failed to parse SSEKMSKeyId from header `x-amz-server-side-encryption-aws-kms-key-id"))?
-                                    
         );
         output = output.set_ssekms_encryption_context(
-            
-                                    crate::http_serde::deser_header_copy_object_ssekms_encryption_context(response.headers())
+            crate::http_serde::deser_header_copy_object_ssekms_encryption_context(response.headers())
                                         .map_err(|_|crate::error::CopyObjectError::unhandled("Failed to parse SSEKMSEncryptionContext from header `x-amz-server-side-encryption-context"))?
-                                    
         );
         output = output.set_bucket_key_enabled(
-            
-                                    crate::http_serde::deser_header_copy_object_bucket_key_enabled(response.headers())
+            crate::http_serde::deser_header_copy_object_bucket_key_enabled(response.headers())
                                         .map_err(|_|crate::error::CopyObjectError::unhandled("Failed to parse BucketKeyEnabled from header `x-amz-server-side-encryption-bucket-key-enabled"))?
-                                    
         );
         output = output.set_request_charged(
             crate::http_serde::deser_header_copy_object_request_charged(response.headers())
@@ -245,7 +223,6 @@ pub fn parse_create_bucket_error(
 ) -> Result<crate::output::CreateBucketOutput, crate::error::CreateBucketError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::CreateBucketError::unhandled)?;
-
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::CreateBucketError::unhandled(generic)),
@@ -316,7 +293,7 @@ pub fn parse_create_multipart_upload_response(
         #[allow(unused_mut)]
         let mut output = crate::output::create_multipart_upload_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::create_multipart_upload_deser_operation(
+        output = crate::xml_deser::deser_operation_create_multipart_upload(
             response.body().as_ref(),
             output,
         )
@@ -340,40 +317,28 @@ pub fn parse_create_multipart_upload_response(
             })?,
         );
         output = output.set_server_side_encryption(
-            
-                                    crate::http_serde::deser_header_create_multipart_upload_server_side_encryption(response.headers())
+            crate::http_serde::deser_header_create_multipart_upload_server_side_encryption(response.headers())
                                         .map_err(|_|crate::error::CreateMultipartUploadError::unhandled("Failed to parse ServerSideEncryption from header `x-amz-server-side-encryption"))?
-                                    
         );
         output = output.set_sse_customer_algorithm(
-            
-                                    crate::http_serde::deser_header_create_multipart_upload_sse_customer_algorithm(response.headers())
+            crate::http_serde::deser_header_create_multipart_upload_sse_customer_algorithm(response.headers())
                                         .map_err(|_|crate::error::CreateMultipartUploadError::unhandled("Failed to parse SSECustomerAlgorithm from header `x-amz-server-side-encryption-customer-algorithm"))?
-                                    
         );
         output = output.set_sse_customer_key_md5(
-            
-                                    crate::http_serde::deser_header_create_multipart_upload_sse_customer_key_md5(response.headers())
+            crate::http_serde::deser_header_create_multipart_upload_sse_customer_key_md5(response.headers())
                                         .map_err(|_|crate::error::CreateMultipartUploadError::unhandled("Failed to parse SSECustomerKeyMD5 from header `x-amz-server-side-encryption-customer-key-MD5"))?
-                                    
         );
         output = output.set_ssekms_key_id(
-            
-                                    crate::http_serde::deser_header_create_multipart_upload_ssekms_key_id(response.headers())
+            crate::http_serde::deser_header_create_multipart_upload_ssekms_key_id(response.headers())
                                         .map_err(|_|crate::error::CreateMultipartUploadError::unhandled("Failed to parse SSEKMSKeyId from header `x-amz-server-side-encryption-aws-kms-key-id"))?
-                                    
         );
         output = output.set_ssekms_encryption_context(
-            
-                                    crate::http_serde::deser_header_create_multipart_upload_ssekms_encryption_context(response.headers())
+            crate::http_serde::deser_header_create_multipart_upload_ssekms_encryption_context(response.headers())
                                         .map_err(|_|crate::error::CreateMultipartUploadError::unhandled("Failed to parse SSEKMSEncryptionContext from header `x-amz-server-side-encryption-context"))?
-                                    
         );
         output = output.set_bucket_key_enabled(
-            
-                                    crate::http_serde::deser_header_create_multipart_upload_bucket_key_enabled(response.headers())
+            crate::http_serde::deser_header_create_multipart_upload_bucket_key_enabled(response.headers())
                                         .map_err(|_|crate::error::CreateMultipartUploadError::unhandled("Failed to parse BucketKeyEnabled from header `x-amz-server-side-encryption-bucket-key-enabled"))?
-                                    
         );
         output = output.set_request_charged(
             crate::http_serde::deser_header_create_multipart_upload_request_charged(
@@ -766,7 +731,7 @@ pub fn parse_delete_objects_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_objects_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::delete_objects_deser_operation(response.body().as_ref(), output)
+        output = crate::xml_deser::deser_operation_delete_objects(response.body().as_ref(), output)
             .map_err(crate::error::DeleteObjectsError::unhandled)?;
         output = output.set_request_charged(
             crate::http_serde::deser_header_delete_objects_request_charged(response.headers())
@@ -856,7 +821,7 @@ pub fn parse_get_bucket_accelerate_configuration_response(
         let mut output =
             crate::output::get_bucket_accelerate_configuration_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::get_bucket_accelerate_configuration_deser_operation(
+        output = crate::xml_deser::deser_operation_get_bucket_accelerate_configuration(
             response.body().as_ref(),
             output,
         )
@@ -882,7 +847,7 @@ pub fn parse_get_bucket_acl_response(
         #[allow(unused_mut)]
         let mut output = crate::output::get_bucket_acl_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::get_bucket_acl_deser_operation(response.body().as_ref(), output)
+        output = crate::xml_deser::deser_operation_get_bucket_acl(response.body().as_ref(), output)
             .map_err(crate::error::GetBucketAclError::unhandled)?;
         output.build()
     })
@@ -939,7 +904,7 @@ pub fn parse_get_bucket_cors_response(
         let mut output = crate::output::get_bucket_cors_output::Builder::default();
         let _ = response;
         output =
-            crate::xml_deser::get_bucket_cors_deser_operation(response.body().as_ref(), output)
+            crate::xml_deser::deser_operation_get_bucket_cors(response.body().as_ref(), output)
                 .map_err(crate::error::GetBucketCorsError::unhandled)?;
         output.build()
     })
@@ -1059,7 +1024,7 @@ pub fn parse_get_bucket_lifecycle_configuration_response(
         let mut output =
             crate::output::get_bucket_lifecycle_configuration_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::get_bucket_lifecycle_configuration_deser_operation(
+        output = crate::xml_deser::deser_operation_get_bucket_lifecycle_configuration(
             response.body().as_ref(),
             output,
         )
@@ -1086,7 +1051,7 @@ pub fn parse_get_bucket_location_response(
         let mut output = crate::output::get_bucket_location_output::Builder::default();
         let _ = response;
         output =
-            crate::xml_deser::get_bucket_location_deser_operation(response.body().as_ref(), output)
+            crate::xml_deser::deser_operation_get_bucket_location(response.body().as_ref(), output)
                 .map_err(crate::error::GetBucketLocationError::unhandled)?;
         output.build()
     })
@@ -1110,7 +1075,7 @@ pub fn parse_get_bucket_logging_response(
         let mut output = crate::output::get_bucket_logging_output::Builder::default();
         let _ = response;
         output =
-            crate::xml_deser::get_bucket_logging_deser_operation(response.body().as_ref(), output)
+            crate::xml_deser::deser_operation_get_bucket_logging(response.body().as_ref(), output)
                 .map_err(crate::error::GetBucketLoggingError::unhandled)?;
         output.build()
     })
@@ -1172,7 +1137,7 @@ pub fn parse_get_bucket_notification_configuration_response(
         let mut output =
             crate::output::get_bucket_notification_configuration_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::get_bucket_notification_configuration_deser_operation(
+        output = crate::xml_deser::deser_operation_get_bucket_notification_configuration(
             response.body().as_ref(),
             output,
         )
@@ -1310,7 +1275,7 @@ pub fn parse_get_bucket_request_payment_response(
         #[allow(unused_mut)]
         let mut output = crate::output::get_bucket_request_payment_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::get_bucket_request_payment_deser_operation(
+        output = crate::xml_deser::deser_operation_get_bucket_request_payment(
             response.body().as_ref(),
             output,
         )
@@ -1337,7 +1302,7 @@ pub fn parse_get_bucket_tagging_response(
         let mut output = crate::output::get_bucket_tagging_output::Builder::default();
         let _ = response;
         output =
-            crate::xml_deser::get_bucket_tagging_deser_operation(response.body().as_ref(), output)
+            crate::xml_deser::deser_operation_get_bucket_tagging(response.body().as_ref(), output)
                 .map_err(crate::error::GetBucketTaggingError::unhandled)?;
         output.build()
     })
@@ -1360,7 +1325,7 @@ pub fn parse_get_bucket_versioning_response(
         #[allow(unused_mut)]
         let mut output = crate::output::get_bucket_versioning_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::get_bucket_versioning_deser_operation(
+        output = crate::xml_deser::deser_operation_get_bucket_versioning(
             response.body().as_ref(),
             output,
         )
@@ -1387,7 +1352,7 @@ pub fn parse_get_bucket_website_response(
         let mut output = crate::output::get_bucket_website_output::Builder::default();
         let _ = response;
         output =
-            crate::xml_deser::get_bucket_website_deser_operation(response.body().as_ref(), output)
+            crate::xml_deser::deser_operation_get_bucket_website(response.body().as_ref(), output)
                 .map_err(crate::error::GetBucketWebsiteError::unhandled)?;
         output.build()
     })
@@ -1542,16 +1507,12 @@ pub fn parse_get_object(
             )?,
         );
         output = output.set_website_redirect_location(
-            
-                                    crate::http_serde::deser_header_get_object_website_redirect_location(response.headers())
+            crate::http_serde::deser_header_get_object_website_redirect_location(response.headers())
                                         .map_err(|_|crate::error::GetObjectError::unhandled("Failed to parse WebsiteRedirectLocation from header `x-amz-website-redirect-location"))?
-                                    
         );
         output = output.set_server_side_encryption(
-            
-                                    crate::http_serde::deser_header_get_object_server_side_encryption(response.headers())
+            crate::http_serde::deser_header_get_object_server_side_encryption(response.headers())
                                         .map_err(|_|crate::error::GetObjectError::unhandled("Failed to parse ServerSideEncryption from header `x-amz-server-side-encryption"))?
-                                    
         );
         output = output.set_metadata(
             crate::http_serde::deser_prefix_header_get_object_metadata(response.headers())
@@ -1562,28 +1523,20 @@ pub fn parse_get_object(
                 })?,
         );
         output = output.set_sse_customer_algorithm(
-            
-                                    crate::http_serde::deser_header_get_object_sse_customer_algorithm(response.headers())
+            crate::http_serde::deser_header_get_object_sse_customer_algorithm(response.headers())
                                         .map_err(|_|crate::error::GetObjectError::unhandled("Failed to parse SSECustomerAlgorithm from header `x-amz-server-side-encryption-customer-algorithm"))?
-                                    
         );
         output = output.set_sse_customer_key_md5(
-            
-                                    crate::http_serde::deser_header_get_object_sse_customer_key_md5(response.headers())
+            crate::http_serde::deser_header_get_object_sse_customer_key_md5(response.headers())
                                         .map_err(|_|crate::error::GetObjectError::unhandled("Failed to parse SSECustomerKeyMD5 from header `x-amz-server-side-encryption-customer-key-MD5"))?
-                                    
         );
         output = output.set_ssekms_key_id(
-            
-                                    crate::http_serde::deser_header_get_object_ssekms_key_id(response.headers())
+            crate::http_serde::deser_header_get_object_ssekms_key_id(response.headers())
                                         .map_err(|_|crate::error::GetObjectError::unhandled("Failed to parse SSEKMSKeyId from header `x-amz-server-side-encryption-aws-kms-key-id"))?
-                                    
         );
         output = output.set_bucket_key_enabled(
-            
-                                    crate::http_serde::deser_header_get_object_bucket_key_enabled(response.headers())
+            crate::http_serde::deser_header_get_object_bucket_key_enabled(response.headers())
                                         .map_err(|_|crate::error::GetObjectError::unhandled("Failed to parse BucketKeyEnabled from header `x-amz-server-side-encryption-bucket-key-enabled"))?
-                                    
         );
         output = output.set_storage_class(
             crate::http_serde::deser_header_get_object_storage_class(response.headers()).map_err(
@@ -1637,16 +1590,12 @@ pub fn parse_get_object(
                 })?,
         );
         output = output.set_object_lock_retain_until_date(
-            
-                                    crate::http_serde::deser_header_get_object_object_lock_retain_until_date(response.headers())
+            crate::http_serde::deser_header_get_object_object_lock_retain_until_date(response.headers())
                                         .map_err(|_|crate::error::GetObjectError::unhandled("Failed to parse ObjectLockRetainUntilDate from header `x-amz-object-lock-retain-until-date"))?
-                                    
         );
         output = output.set_object_lock_legal_hold_status(
-            
-                                    crate::http_serde::deser_header_get_object_object_lock_legal_hold_status(response.headers())
+            crate::http_serde::deser_header_get_object_object_lock_legal_hold_status(response.headers())
                                         .map_err(|_|crate::error::GetObjectError::unhandled("Failed to parse ObjectLockLegalHoldStatus from header `x-amz-object-lock-legal-hold"))?
-                                    
         );
         output.build()
     })
@@ -1658,7 +1607,6 @@ pub fn parse_get_object_error(
 ) -> Result<crate::output::GetObjectOutput, crate::error::GetObjectError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::GetObjectError::unhandled)?;
-
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::GetObjectError::unhandled(generic)),
@@ -1696,7 +1644,6 @@ pub fn parse_get_object_acl_error(
 ) -> Result<crate::output::GetObjectAclOutput, crate::error::GetObjectAclError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::GetObjectAclError::unhandled)?;
-
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::GetObjectAclError::unhandled(generic)),
@@ -1725,7 +1672,7 @@ pub fn parse_get_object_acl_response(
         #[allow(unused_mut)]
         let mut output = crate::output::get_object_acl_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::get_object_acl_deser_operation(response.body().as_ref(), output)
+        output = crate::xml_deser::deser_operation_get_object_acl(response.body().as_ref(), output)
             .map_err(crate::error::GetObjectAclError::unhandled)?;
         output = output.set_request_charged(
             crate::http_serde::deser_header_get_object_acl_request_charged(response.headers())
@@ -1841,7 +1788,7 @@ pub fn parse_get_object_tagging_response(
         let mut output = crate::output::get_object_tagging_output::Builder::default();
         let _ = response;
         output =
-            crate::xml_deser::get_object_tagging_deser_operation(response.body().as_ref(), output)
+            crate::xml_deser::deser_operation_get_object_tagging(response.body().as_ref(), output)
                 .map_err(crate::error::GetObjectTaggingError::unhandled)?;
         output = output.set_version_id(
             crate::http_serde::deser_header_get_object_tagging_version_id(response.headers())
@@ -1917,7 +1864,6 @@ pub fn parse_head_bucket_error(
 ) -> Result<crate::output::HeadBucketOutput, crate::error::HeadBucketError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::HeadBucketError::unhandled)?;
-
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::HeadBucketError::unhandled(generic)),
@@ -1956,7 +1902,6 @@ pub fn parse_head_object_error(
 ) -> Result<crate::output::HeadObjectOutput, crate::error::HeadObjectError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::HeadObjectError::unhandled)?;
-
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::HeadObjectError::unhandled(generic)),
@@ -2125,16 +2070,12 @@ pub fn parse_head_object_response(
             )?,
         );
         output = output.set_website_redirect_location(
-            
-                                    crate::http_serde::deser_header_head_object_website_redirect_location(response.headers())
+            crate::http_serde::deser_header_head_object_website_redirect_location(response.headers())
                                         .map_err(|_|crate::error::HeadObjectError::unhandled("Failed to parse WebsiteRedirectLocation from header `x-amz-website-redirect-location"))?
-                                    
         );
         output = output.set_server_side_encryption(
-            
-                                    crate::http_serde::deser_header_head_object_server_side_encryption(response.headers())
+            crate::http_serde::deser_header_head_object_server_side_encryption(response.headers())
                                         .map_err(|_|crate::error::HeadObjectError::unhandled("Failed to parse ServerSideEncryption from header `x-amz-server-side-encryption"))?
-                                    
         );
         output = output.set_metadata(
             crate::http_serde::deser_prefix_header_head_object_metadata(response.headers())
@@ -2145,28 +2086,20 @@ pub fn parse_head_object_response(
                 })?,
         );
         output = output.set_sse_customer_algorithm(
-            
-                                    crate::http_serde::deser_header_head_object_sse_customer_algorithm(response.headers())
+            crate::http_serde::deser_header_head_object_sse_customer_algorithm(response.headers())
                                         .map_err(|_|crate::error::HeadObjectError::unhandled("Failed to parse SSECustomerAlgorithm from header `x-amz-server-side-encryption-customer-algorithm"))?
-                                    
         );
         output = output.set_sse_customer_key_md5(
-            
-                                    crate::http_serde::deser_header_head_object_sse_customer_key_md5(response.headers())
+            crate::http_serde::deser_header_head_object_sse_customer_key_md5(response.headers())
                                         .map_err(|_|crate::error::HeadObjectError::unhandled("Failed to parse SSECustomerKeyMD5 from header `x-amz-server-side-encryption-customer-key-MD5"))?
-                                    
         );
         output = output.set_ssekms_key_id(
-            
-                                    crate::http_serde::deser_header_head_object_ssekms_key_id(response.headers())
+            crate::http_serde::deser_header_head_object_ssekms_key_id(response.headers())
                                         .map_err(|_|crate::error::HeadObjectError::unhandled("Failed to parse SSEKMSKeyId from header `x-amz-server-side-encryption-aws-kms-key-id"))?
-                                    
         );
         output = output.set_bucket_key_enabled(
-            
-                                    crate::http_serde::deser_header_head_object_bucket_key_enabled(response.headers())
+            crate::http_serde::deser_header_head_object_bucket_key_enabled(response.headers())
                                         .map_err(|_|crate::error::HeadObjectError::unhandled("Failed to parse BucketKeyEnabled from header `x-amz-server-side-encryption-bucket-key-enabled"))?
-                                    
         );
         output = output.set_storage_class(
             crate::http_serde::deser_header_head_object_storage_class(response.headers()).map_err(
@@ -2211,16 +2144,12 @@ pub fn parse_head_object_response(
                 })?,
         );
         output = output.set_object_lock_retain_until_date(
-            
-                                    crate::http_serde::deser_header_head_object_object_lock_retain_until_date(response.headers())
+            crate::http_serde::deser_header_head_object_object_lock_retain_until_date(response.headers())
                                         .map_err(|_|crate::error::HeadObjectError::unhandled("Failed to parse ObjectLockRetainUntilDate from header `x-amz-object-lock-retain-until-date"))?
-                                    
         );
         output = output.set_object_lock_legal_hold_status(
-            
-                                    crate::http_serde::deser_header_head_object_object_lock_legal_hold_status(response.headers())
+            crate::http_serde::deser_header_head_object_object_lock_legal_hold_status(response.headers())
                                         .map_err(|_|crate::error::HeadObjectError::unhandled("Failed to parse ObjectLockLegalHoldStatus from header `x-amz-object-lock-legal-hold"))?
-                                    
         );
         output.build()
     })
@@ -2250,7 +2179,7 @@ pub fn parse_list_bucket_analytics_configurations_response(
         let mut output =
             crate::output::list_bucket_analytics_configurations_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::list_bucket_analytics_configurations_deser_operation(
+        output = crate::xml_deser::deser_operation_list_bucket_analytics_configurations(
             response.body().as_ref(),
             output,
         )
@@ -2284,7 +2213,7 @@ pub fn parse_list_bucket_intelligent_tiering_configurations_response(
             crate::output::list_bucket_intelligent_tiering_configurations_output::Builder::default(
             );
         let _ = response;
-        output = crate::xml_deser::list_bucket_intelligent_tiering_configurations_deser_operation(
+        output = crate::xml_deser::deser_operation_list_bucket_intelligent_tiering_configurations(
             response.body().as_ref(),
             output,
         )
@@ -2317,7 +2246,7 @@ pub fn parse_list_bucket_inventory_configurations_response(
         let mut output =
             crate::output::list_bucket_inventory_configurations_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::list_bucket_inventory_configurations_deser_operation(
+        output = crate::xml_deser::deser_operation_list_bucket_inventory_configurations(
             response.body().as_ref(),
             output,
         )
@@ -2352,7 +2281,7 @@ pub fn parse_list_bucket_metrics_configurations_response(
         let mut output =
             crate::output::list_bucket_metrics_configurations_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::list_bucket_metrics_configurations_deser_operation(
+        output = crate::xml_deser::deser_operation_list_bucket_metrics_configurations(
             response.body().as_ref(),
             output,
         )
@@ -2378,7 +2307,7 @@ pub fn parse_list_buckets_response(
         #[allow(unused_mut)]
         let mut output = crate::output::list_buckets_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::list_buckets_deser_operation(response.body().as_ref(), output)
+        output = crate::xml_deser::deser_operation_list_buckets(response.body().as_ref(), output)
             .map_err(crate::error::ListBucketsError::unhandled)?;
         output.build()
     })
@@ -2401,7 +2330,7 @@ pub fn parse_list_multipart_uploads_response(
         #[allow(unused_mut)]
         let mut output = crate::output::list_multipart_uploads_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::list_multipart_uploads_deser_operation(
+        output = crate::xml_deser::deser_operation_list_multipart_uploads(
             response.body().as_ref(),
             output,
         )
@@ -2416,7 +2345,6 @@ pub fn parse_list_objects_error(
 ) -> Result<crate::output::ListObjectsOutput, crate::error::ListObjectsError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::ListObjectsError::unhandled)?;
-
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::ListObjectsError::unhandled(generic)),
@@ -2445,7 +2373,7 @@ pub fn parse_list_objects_response(
         #[allow(unused_mut)]
         let mut output = crate::output::list_objects_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::list_objects_deser_operation(response.body().as_ref(), output)
+        output = crate::xml_deser::deser_operation_list_objects(response.body().as_ref(), output)
             .map_err(crate::error::ListObjectsError::unhandled)?;
         output.build()
     })
@@ -2457,7 +2385,6 @@ pub fn parse_list_objects_v2_error(
 ) -> Result<crate::output::ListObjectsV2Output, crate::error::ListObjectsV2Error> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::ListObjectsV2Error::unhandled)?;
-
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::ListObjectsV2Error::unhandled(generic)),
@@ -2487,7 +2414,7 @@ pub fn parse_list_objects_v2_response(
         let mut output = crate::output::list_objects_v2_output::Builder::default();
         let _ = response;
         output =
-            crate::xml_deser::list_objects_v2_deser_operation(response.body().as_ref(), output)
+            crate::xml_deser::deser_operation_list_objects_v2(response.body().as_ref(), output)
                 .map_err(crate::error::ListObjectsV2Error::unhandled)?;
         output.build()
     })
@@ -2510,7 +2437,7 @@ pub fn parse_list_object_versions_response(
         #[allow(unused_mut)]
         let mut output = crate::output::list_object_versions_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::list_object_versions_deser_operation(
+        output = crate::xml_deser::deser_operation_list_object_versions(
             response.body().as_ref(),
             output,
         )
@@ -2536,7 +2463,7 @@ pub fn parse_list_parts_response(
         #[allow(unused_mut)]
         let mut output = crate::output::list_parts_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::list_parts_deser_operation(response.body().as_ref(), output)
+        output = crate::xml_deser::deser_operation_list_parts(response.body().as_ref(), output)
             .map_err(crate::error::ListPartsError::unhandled)?;
         output = output.set_abort_date(
             crate::http_serde::deser_header_list_parts_abort_date(response.headers()).map_err(
@@ -3044,10 +2971,8 @@ pub fn parse_put_object_response(
             })?,
         );
         output = output.set_server_side_encryption(
-            
-                                    crate::http_serde::deser_header_put_object_server_side_encryption(response.headers())
+            crate::http_serde::deser_header_put_object_server_side_encryption(response.headers())
                                         .map_err(|_|crate::error::PutObjectError::unhandled("Failed to parse ServerSideEncryption from header `x-amz-server-side-encryption"))?
-                                    
         );
         output = output.set_version_id(
             crate::http_serde::deser_header_put_object_version_id(response.headers()).map_err(
@@ -3059,34 +2984,24 @@ pub fn parse_put_object_response(
             )?,
         );
         output = output.set_sse_customer_algorithm(
-            
-                                    crate::http_serde::deser_header_put_object_sse_customer_algorithm(response.headers())
+            crate::http_serde::deser_header_put_object_sse_customer_algorithm(response.headers())
                                         .map_err(|_|crate::error::PutObjectError::unhandled("Failed to parse SSECustomerAlgorithm from header `x-amz-server-side-encryption-customer-algorithm"))?
-                                    
         );
         output = output.set_sse_customer_key_md5(
-            
-                                    crate::http_serde::deser_header_put_object_sse_customer_key_md5(response.headers())
+            crate::http_serde::deser_header_put_object_sse_customer_key_md5(response.headers())
                                         .map_err(|_|crate::error::PutObjectError::unhandled("Failed to parse SSECustomerKeyMD5 from header `x-amz-server-side-encryption-customer-key-MD5"))?
-                                    
         );
         output = output.set_ssekms_key_id(
-            
-                                    crate::http_serde::deser_header_put_object_ssekms_key_id(response.headers())
+            crate::http_serde::deser_header_put_object_ssekms_key_id(response.headers())
                                         .map_err(|_|crate::error::PutObjectError::unhandled("Failed to parse SSEKMSKeyId from header `x-amz-server-side-encryption-aws-kms-key-id"))?
-                                    
         );
         output = output.set_ssekms_encryption_context(
-            
-                                    crate::http_serde::deser_header_put_object_ssekms_encryption_context(response.headers())
+            crate::http_serde::deser_header_put_object_ssekms_encryption_context(response.headers())
                                         .map_err(|_|crate::error::PutObjectError::unhandled("Failed to parse SSEKMSEncryptionContext from header `x-amz-server-side-encryption-context"))?
-                                    
         );
         output = output.set_bucket_key_enabled(
-            
-                                    crate::http_serde::deser_header_put_object_bucket_key_enabled(response.headers())
+            crate::http_serde::deser_header_put_object_bucket_key_enabled(response.headers())
                                         .map_err(|_|crate::error::PutObjectError::unhandled("Failed to parse BucketKeyEnabled from header `x-amz-server-side-encryption-bucket-key-enabled"))?
-                                    
         );
         output = output.set_request_charged(
             crate::http_serde::deser_header_put_object_request_charged(response.headers())
@@ -3106,7 +3021,6 @@ pub fn parse_put_object_acl_error(
 ) -> Result<crate::output::PutObjectAclOutput, crate::error::PutObjectAclError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::PutObjectAclError::unhandled)?;
-
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::PutObjectAclError::unhandled(generic)),
@@ -3304,7 +3218,6 @@ pub fn parse_restore_object_error(
 ) -> Result<crate::output::RestoreObjectOutput, crate::error::RestoreObjectError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::RestoreObjectError::unhandled)?;
-
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::RestoreObjectError::unhandled(generic)),
@@ -3375,10 +3288,8 @@ pub fn parse_upload_part_response(
         let mut output = crate::output::upload_part_output::Builder::default();
         let _ = response;
         output = output.set_server_side_encryption(
-            
-                                    crate::http_serde::deser_header_upload_part_server_side_encryption(response.headers())
+            crate::http_serde::deser_header_upload_part_server_side_encryption(response.headers())
                                         .map_err(|_|crate::error::UploadPartError::unhandled("Failed to parse ServerSideEncryption from header `x-amz-server-side-encryption"))?
-                                    
         );
         output = output.set_e_tag(
             crate::http_serde::deser_header_upload_part_e_tag(response.headers()).map_err(
@@ -3390,28 +3301,20 @@ pub fn parse_upload_part_response(
             )?,
         );
         output = output.set_sse_customer_algorithm(
-            
-                                    crate::http_serde::deser_header_upload_part_sse_customer_algorithm(response.headers())
+            crate::http_serde::deser_header_upload_part_sse_customer_algorithm(response.headers())
                                         .map_err(|_|crate::error::UploadPartError::unhandled("Failed to parse SSECustomerAlgorithm from header `x-amz-server-side-encryption-customer-algorithm"))?
-                                    
         );
         output = output.set_sse_customer_key_md5(
-            
-                                    crate::http_serde::deser_header_upload_part_sse_customer_key_md5(response.headers())
+            crate::http_serde::deser_header_upload_part_sse_customer_key_md5(response.headers())
                                         .map_err(|_|crate::error::UploadPartError::unhandled("Failed to parse SSECustomerKeyMD5 from header `x-amz-server-side-encryption-customer-key-MD5"))?
-                                    
         );
         output = output.set_ssekms_key_id(
-            
-                                    crate::http_serde::deser_header_upload_part_ssekms_key_id(response.headers())
+            crate::http_serde::deser_header_upload_part_ssekms_key_id(response.headers())
                                         .map_err(|_|crate::error::UploadPartError::unhandled("Failed to parse SSEKMSKeyId from header `x-amz-server-side-encryption-aws-kms-key-id"))?
-                                    
         );
         output = output.set_bucket_key_enabled(
-            
-                                    crate::http_serde::deser_header_upload_part_bucket_key_enabled(response.headers())
+            crate::http_serde::deser_header_upload_part_bucket_key_enabled(response.headers())
                                         .map_err(|_|crate::error::UploadPartError::unhandled("Failed to parse BucketKeyEnabled from header `x-amz-server-side-encryption-bucket-key-enabled"))?
-                                    
         );
         output = output.set_request_charged(
             crate::http_serde::deser_header_upload_part_request_charged(response.headers())
@@ -3458,34 +3361,24 @@ pub fn parse_upload_part_copy_response(
             )?,
         );
         output = output.set_server_side_encryption(
-            
-                                    crate::http_serde::deser_header_upload_part_copy_server_side_encryption(response.headers())
+            crate::http_serde::deser_header_upload_part_copy_server_side_encryption(response.headers())
                                         .map_err(|_|crate::error::UploadPartCopyError::unhandled("Failed to parse ServerSideEncryption from header `x-amz-server-side-encryption"))?
-                                    
         );
         output = output.set_sse_customer_algorithm(
-            
-                                    crate::http_serde::deser_header_upload_part_copy_sse_customer_algorithm(response.headers())
+            crate::http_serde::deser_header_upload_part_copy_sse_customer_algorithm(response.headers())
                                         .map_err(|_|crate::error::UploadPartCopyError::unhandled("Failed to parse SSECustomerAlgorithm from header `x-amz-server-side-encryption-customer-algorithm"))?
-                                    
         );
         output = output.set_sse_customer_key_md5(
-            
-                                    crate::http_serde::deser_header_upload_part_copy_sse_customer_key_md5(response.headers())
+            crate::http_serde::deser_header_upload_part_copy_sse_customer_key_md5(response.headers())
                                         .map_err(|_|crate::error::UploadPartCopyError::unhandled("Failed to parse SSECustomerKeyMD5 from header `x-amz-server-side-encryption-customer-key-MD5"))?
-                                    
         );
         output = output.set_ssekms_key_id(
-            
-                                    crate::http_serde::deser_header_upload_part_copy_ssekms_key_id(response.headers())
+            crate::http_serde::deser_header_upload_part_copy_ssekms_key_id(response.headers())
                                         .map_err(|_|crate::error::UploadPartCopyError::unhandled("Failed to parse SSEKMSKeyId from header `x-amz-server-side-encryption-aws-kms-key-id"))?
-                                    
         );
         output = output.set_bucket_key_enabled(
-            
-                                    crate::http_serde::deser_header_upload_part_copy_bucket_key_enabled(response.headers())
+            crate::http_serde::deser_header_upload_part_copy_bucket_key_enabled(response.headers())
                                         .map_err(|_|crate::error::UploadPartCopyError::unhandled("Failed to parse BucketKeyEnabled from header `x-amz-server-side-encryption-bucket-key-enabled"))?
-                                    
         );
         output = output.set_request_charged(
             crate::http_serde::deser_header_upload_part_copy_request_charged(response.headers())

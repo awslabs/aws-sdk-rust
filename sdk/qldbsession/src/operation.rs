@@ -20,7 +20,7 @@
 /// </li>
 /// </ul>
 /// </note>
-#[derive(std::default::Default, std::clone::Clone)]
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct SendCommand {
     _private: (),
 }
@@ -39,7 +39,6 @@ impl SendCommand {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
             let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-
             let error_code = match generic.code() {
                 Some(code) => code,
                 None => return Err(crate::error::SendCommandError::unhandled(generic)),
@@ -101,7 +100,6 @@ impl SendCommand {
         Self { _private: () }
     }
 }
-
 impl smithy_http::response::ParseStrictResponse for SendCommand {
     type Output = Result<crate::output::SendCommandOutput, crate::error::SendCommandError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
