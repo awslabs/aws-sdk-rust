@@ -14,6 +14,8 @@ The alpha SDK for Rust currently supports the checked services below. If you wan
 - [X] Amazon Lambda
 - [x] [Amazon S3](https://github.com/awslabs/aws-sdk-rust/issues/16)
 - [x] [Amazon SSM](https://github.com/awslabs/aws-sdk-rust/issues/22)
+- [x] [Amazon SQS](https://github.com/awslabs/aws-sdk-rust/issues/19)
+- [x] [Amazon ECS](https://github.com/awslabs/aws-sdk-rust/issues/28)
 
 ------
 - [ ] Amazon Access Analyzer
@@ -88,7 +90,6 @@ The alpha SDK for Rust currently supports the checked services below. If you wan
 - [ ] [Amazon Ec2](https://github.com/awslabs/aws-sdk-rust/issues/18)
 - [ ] Amazon Ec2-Instance-Connect
 - [ ] [Amazon ECR](https://github.com/awslabs/aws-sdk-rust/issues/34)
-- [ ] [Amazon ECS](https://github.com/awslabs/aws-sdk-rust/issues/28)
 - [ ] Amazon Eks
 - [ ] Amazon Elasticache
 - [ ] Amazon Elastic Beanstalk
@@ -218,7 +219,6 @@ The alpha SDK for Rust currently supports the checked services below. If you wan
 - [ ] Amazon Sms-Voice
 - [ ] Amazon Snowball
 - [ ] [Amazon SNS](https://github.com/awslabs/aws-sdk-rust/issues/26)
-- [ ] [Amazon SQS](https://github.com/awslabs/aws-sdk-rust/issues/19)
 - [ ] Amazon SSO
 - [ ] Amazon Sso-Admin
 - [ ] Amazon Sso-Oidc
