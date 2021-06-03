@@ -34,6 +34,18 @@ pub struct AwsEndpoint {
 }
 
 impl AwsEndpoint {
+    pub fn new(
+        endpoint: Endpoint,
+        signing_service: impl Into<Option<SigningService>>,
+        signing_region: impl Into<Option<SigningRegion>>,
+    ) -> Self {
+        AwsEndpoint {
+            endpoint,
+            signing_service: signing_service.into(),
+            signing_region: signing_region.into(),
+        }
+    }
+
     pub fn set_endpoint(&self, mut uri: &mut http::Uri, endpoint_prefix: Option<&EndpointPrefix>) {
         self.endpoint.set_endpoint(&mut uri, endpoint_prefix);
     }
