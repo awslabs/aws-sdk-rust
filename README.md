@@ -1,4 +1,4 @@
-# The AWS SDK for Rust [![Docs](https://img.shields.io/badge/docs-v0.0.6--alpha-blue)](https://github.io/awslabs/aws-sdk-rust)
+# The AWS SDK for Rust [![Docs](https://img.shields.io/badge/docs-v0.0.6--alpha-blue)](https://awslabs.github.io/aws-sdk-rust/)
 
 This repo contains the new AWS SDK for Rust and its [public roadmap](https://github.com/awslabs/aws-sdk-rust/projects/1)
 
