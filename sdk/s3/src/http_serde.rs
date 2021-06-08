@@ -12,25 +12,28 @@ pub fn deser_header_abort_multipart_upload_request_charged(
     }
 }
 
+pub fn deser_header_complete_multipart_upload_bucket_key_enabled(
+    header_map: &http::HeaderMap,
+) -> Result<bool, smithy_http::header::ParseError> {
+    let headers = header_map
+        .get_all("x-amz-server-side-encryption-bucket-key-enabled")
+        .iter();
+    let var_2: Vec<bool> = smithy_http::header::read_many(headers)?;
+    if var_2.len() > 1 {
+        return Err(smithy_http::header::ParseError);
+    }
+    let mut var_2 = var_2;
+    match var_2.pop() {
+        None => Ok(Default::default()),
+        Some(item) => Ok(item),
+    }
+}
+
 pub fn deser_header_complete_multipart_upload_expiration(
     header_map: &http::HeaderMap,
 ) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
     let headers = header_map.get_all("x-amz-expiration").iter();
-    let var_2: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
-    if var_2.len() > 1 {
-        Err(smithy_http::header::ParseError)
-    } else {
-        let mut var_2 = var_2;
-        Ok(var_2.pop())
-    }
-}
-
-pub fn deser_header_complete_multipart_upload_server_side_encryption(
-    header_map: &http::HeaderMap,
-) -> Result<std::option::Option<crate::model::ServerSideEncryption>, smithy_http::header::ParseError>
-{
-    let headers = header_map.get_all("x-amz-server-side-encryption").iter();
-    let var_3: Vec<crate::model::ServerSideEncryption> = smithy_http::header::read_many(headers)?;
+    let var_3: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
     if var_3.len() > 1 {
         Err(smithy_http::header::ParseError)
     } else {
@@ -39,11 +42,11 @@ pub fn deser_header_complete_multipart_upload_server_side_encryption(
     }
 }
 
-pub fn deser_header_complete_multipart_upload_version_id(
+pub fn deser_header_complete_multipart_upload_request_charged(
     header_map: &http::HeaderMap,
-) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
-    let headers = header_map.get_all("x-amz-version-id").iter();
-    let var_4: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
+) -> Result<std::option::Option<crate::model::RequestCharged>, smithy_http::header::ParseError> {
+    let headers = header_map.get_all("x-amz-request-charged").iter();
+    let var_4: Vec<crate::model::RequestCharged> = smithy_http::header::read_many(headers)?;
     if var_4.len() > 1 {
         Err(smithy_http::header::ParseError)
     } else {
@@ -67,33 +70,47 @@ pub fn deser_header_complete_multipart_upload_ssekms_key_id(
     }
 }
 
-pub fn deser_header_complete_multipart_upload_bucket_key_enabled(
+pub fn deser_header_complete_multipart_upload_server_side_encryption(
     header_map: &http::HeaderMap,
-) -> Result<bool, smithy_http::header::ParseError> {
-    let headers = header_map
-        .get_all("x-amz-server-side-encryption-bucket-key-enabled")
-        .iter();
-    let var_6: Vec<bool> = smithy_http::header::read_many(headers)?;
+) -> Result<std::option::Option<crate::model::ServerSideEncryption>, smithy_http::header::ParseError>
+{
+    let headers = header_map.get_all("x-amz-server-side-encryption").iter();
+    let var_6: Vec<crate::model::ServerSideEncryption> = smithy_http::header::read_many(headers)?;
     if var_6.len() > 1 {
-        return Err(smithy_http::header::ParseError);
-    }
-    let mut var_6 = var_6;
-    match var_6.pop() {
-        None => Ok(Default::default()),
-        Some(item) => Ok(item),
+        Err(smithy_http::header::ParseError)
+    } else {
+        let mut var_6 = var_6;
+        Ok(var_6.pop())
     }
 }
 
-pub fn deser_header_complete_multipart_upload_request_charged(
+pub fn deser_header_complete_multipart_upload_version_id(
     header_map: &http::HeaderMap,
-) -> Result<std::option::Option<crate::model::RequestCharged>, smithy_http::header::ParseError> {
-    let headers = header_map.get_all("x-amz-request-charged").iter();
-    let var_7: Vec<crate::model::RequestCharged> = smithy_http::header::read_many(headers)?;
+) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
+    let headers = header_map.get_all("x-amz-version-id").iter();
+    let var_7: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
     if var_7.len() > 1 {
         Err(smithy_http::header::ParseError)
     } else {
         let mut var_7 = var_7;
         Ok(var_7.pop())
+    }
+}
+
+pub fn deser_header_copy_object_bucket_key_enabled(
+    header_map: &http::HeaderMap,
+) -> Result<bool, smithy_http::header::ParseError> {
+    let headers = header_map
+        .get_all("x-amz-server-side-encryption-bucket-key-enabled")
+        .iter();
+    let var_8: Vec<bool> = smithy_http::header::read_many(headers)?;
+    if var_8.len() > 1 {
+        return Err(smithy_http::header::ParseError);
+    }
+    let mut var_8 = var_8;
+    match var_8.pop() {
+        None => Ok(Default::default()),
+        Some(item) => Ok(item),
     }
 }
 
@@ -106,19 +123,6 @@ pub fn deser_payload_copy_object_copy_object_result(
                 .map_err(crate::error::CopyObjectError::unhandled)
         })
         .transpose()
-}
-
-pub fn deser_header_copy_object_expiration(
-    header_map: &http::HeaderMap,
-) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
-    let headers = header_map.get_all("x-amz-expiration").iter();
-    let var_8: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
-    if var_8.len() > 1 {
-        Err(smithy_http::header::ParseError)
-    } else {
-        let mut var_8 = var_8;
-        Ok(var_8.pop())
-    }
 }
 
 pub fn deser_header_copy_object_copy_source_version_id(
@@ -134,10 +138,10 @@ pub fn deser_header_copy_object_copy_source_version_id(
     }
 }
 
-pub fn deser_header_copy_object_version_id(
+pub fn deser_header_copy_object_expiration(
     header_map: &http::HeaderMap,
 ) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
-    let headers = header_map.get_all("x-amz-version-id").iter();
+    let headers = header_map.get_all("x-amz-expiration").iter();
     let var_10: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
     if var_10.len() > 1 {
         Err(smithy_http::header::ParseError)
@@ -147,12 +151,11 @@ pub fn deser_header_copy_object_version_id(
     }
 }
 
-pub fn deser_header_copy_object_server_side_encryption(
+pub fn deser_header_copy_object_request_charged(
     header_map: &http::HeaderMap,
-) -> Result<std::option::Option<crate::model::ServerSideEncryption>, smithy_http::header::ParseError>
-{
-    let headers = header_map.get_all("x-amz-server-side-encryption").iter();
-    let var_11: Vec<crate::model::ServerSideEncryption> = smithy_http::header::read_many(headers)?;
+) -> Result<std::option::Option<crate::model::RequestCharged>, smithy_http::header::ParseError> {
+    let headers = header_map.get_all("x-amz-request-charged").iter();
+    let var_11: Vec<crate::model::RequestCharged> = smithy_http::header::read_many(headers)?;
     if var_11.len() > 1 {
         Err(smithy_http::header::ParseError)
     } else {
@@ -191,11 +194,11 @@ pub fn deser_header_copy_object_sse_customer_key_md5(
     }
 }
 
-pub fn deser_header_copy_object_ssekms_key_id(
+pub fn deser_header_copy_object_ssekms_encryption_context(
     header_map: &http::HeaderMap,
 ) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
     let headers = header_map
-        .get_all("x-amz-server-side-encryption-aws-kms-key-id")
+        .get_all("x-amz-server-side-encryption-context")
         .iter();
     let var_14: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
     if var_14.len() > 1 {
@@ -206,11 +209,11 @@ pub fn deser_header_copy_object_ssekms_key_id(
     }
 }
 
-pub fn deser_header_copy_object_ssekms_encryption_context(
+pub fn deser_header_copy_object_ssekms_key_id(
     header_map: &http::HeaderMap,
 ) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
     let headers = header_map
-        .get_all("x-amz-server-side-encryption-context")
+        .get_all("x-amz-server-side-encryption-aws-kms-key-id")
         .iter();
     let var_15: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
     if var_15.len() > 1 {
@@ -221,28 +224,25 @@ pub fn deser_header_copy_object_ssekms_encryption_context(
     }
 }
 
-pub fn deser_header_copy_object_bucket_key_enabled(
+pub fn deser_header_copy_object_server_side_encryption(
     header_map: &http::HeaderMap,
-) -> Result<bool, smithy_http::header::ParseError> {
-    let headers = header_map
-        .get_all("x-amz-server-side-encryption-bucket-key-enabled")
-        .iter();
-    let var_16: Vec<bool> = smithy_http::header::read_many(headers)?;
+) -> Result<std::option::Option<crate::model::ServerSideEncryption>, smithy_http::header::ParseError>
+{
+    let headers = header_map.get_all("x-amz-server-side-encryption").iter();
+    let var_16: Vec<crate::model::ServerSideEncryption> = smithy_http::header::read_many(headers)?;
     if var_16.len() > 1 {
-        return Err(smithy_http::header::ParseError);
-    }
-    let mut var_16 = var_16;
-    match var_16.pop() {
-        None => Ok(Default::default()),
-        Some(item) => Ok(item),
+        Err(smithy_http::header::ParseError)
+    } else {
+        let mut var_16 = var_16;
+        Ok(var_16.pop())
     }
 }
 
-pub fn deser_header_copy_object_request_charged(
+pub fn deser_header_copy_object_version_id(
     header_map: &http::HeaderMap,
-) -> Result<std::option::Option<crate::model::RequestCharged>, smithy_http::header::ParseError> {
-    let headers = header_map.get_all("x-amz-request-charged").iter();
-    let var_17: Vec<crate::model::RequestCharged> = smithy_http::header::read_many(headers)?;
+) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
+    let headers = header_map.get_all("x-amz-version-id").iter();
+    let var_17: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
     if var_17.len() > 1 {
         Err(smithy_http::header::ParseError)
     } else {
@@ -291,27 +291,28 @@ pub fn deser_header_create_multipart_upload_abort_rule_id(
     }
 }
 
-pub fn deser_header_create_multipart_upload_server_side_encryption(
+pub fn deser_header_create_multipart_upload_bucket_key_enabled(
     header_map: &http::HeaderMap,
-) -> Result<std::option::Option<crate::model::ServerSideEncryption>, smithy_http::header::ParseError>
-{
-    let headers = header_map.get_all("x-amz-server-side-encryption").iter();
-    let var_21: Vec<crate::model::ServerSideEncryption> = smithy_http::header::read_many(headers)?;
+) -> Result<bool, smithy_http::header::ParseError> {
+    let headers = header_map
+        .get_all("x-amz-server-side-encryption-bucket-key-enabled")
+        .iter();
+    let var_21: Vec<bool> = smithy_http::header::read_many(headers)?;
     if var_21.len() > 1 {
-        Err(smithy_http::header::ParseError)
-    } else {
-        let mut var_21 = var_21;
-        Ok(var_21.pop())
+        return Err(smithy_http::header::ParseError);
+    }
+    let mut var_21 = var_21;
+    match var_21.pop() {
+        None => Ok(Default::default()),
+        Some(item) => Ok(item),
     }
 }
 
-pub fn deser_header_create_multipart_upload_sse_customer_algorithm(
+pub fn deser_header_create_multipart_upload_request_charged(
     header_map: &http::HeaderMap,
-) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
-    let headers = header_map
-        .get_all("x-amz-server-side-encryption-customer-algorithm")
-        .iter();
-    let var_22: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
+) -> Result<std::option::Option<crate::model::RequestCharged>, smithy_http::header::ParseError> {
+    let headers = header_map.get_all("x-amz-request-charged").iter();
+    let var_22: Vec<crate::model::RequestCharged> = smithy_http::header::read_many(headers)?;
     if var_22.len() > 1 {
         Err(smithy_http::header::ParseError)
     } else {
@@ -320,11 +321,11 @@ pub fn deser_header_create_multipart_upload_sse_customer_algorithm(
     }
 }
 
-pub fn deser_header_create_multipart_upload_sse_customer_key_md5(
+pub fn deser_header_create_multipart_upload_sse_customer_algorithm(
     header_map: &http::HeaderMap,
 ) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
     let headers = header_map
-        .get_all("x-amz-server-side-encryption-customer-key-MD5")
+        .get_all("x-amz-server-side-encryption-customer-algorithm")
         .iter();
     let var_23: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
     if var_23.len() > 1 {
@@ -335,11 +336,11 @@ pub fn deser_header_create_multipart_upload_sse_customer_key_md5(
     }
 }
 
-pub fn deser_header_create_multipart_upload_ssekms_key_id(
+pub fn deser_header_create_multipart_upload_sse_customer_key_md5(
     header_map: &http::HeaderMap,
 ) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
     let headers = header_map
-        .get_all("x-amz-server-side-encryption-aws-kms-key-id")
+        .get_all("x-amz-server-side-encryption-customer-key-MD5")
         .iter();
     let var_24: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
     if var_24.len() > 1 {
@@ -365,28 +366,27 @@ pub fn deser_header_create_multipart_upload_ssekms_encryption_context(
     }
 }
 
-pub fn deser_header_create_multipart_upload_bucket_key_enabled(
+pub fn deser_header_create_multipart_upload_ssekms_key_id(
     header_map: &http::HeaderMap,
-) -> Result<bool, smithy_http::header::ParseError> {
+) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
     let headers = header_map
-        .get_all("x-amz-server-side-encryption-bucket-key-enabled")
+        .get_all("x-amz-server-side-encryption-aws-kms-key-id")
         .iter();
-    let var_26: Vec<bool> = smithy_http::header::read_many(headers)?;
+    let var_26: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
     if var_26.len() > 1 {
-        return Err(smithy_http::header::ParseError);
-    }
-    let mut var_26 = var_26;
-    match var_26.pop() {
-        None => Ok(Default::default()),
-        Some(item) => Ok(item),
+        Err(smithy_http::header::ParseError)
+    } else {
+        let mut var_26 = var_26;
+        Ok(var_26.pop())
     }
 }
 
-pub fn deser_header_create_multipart_upload_request_charged(
+pub fn deser_header_create_multipart_upload_server_side_encryption(
     header_map: &http::HeaderMap,
-) -> Result<std::option::Option<crate::model::RequestCharged>, smithy_http::header::ParseError> {
-    let headers = header_map.get_all("x-amz-request-charged").iter();
-    let var_27: Vec<crate::model::RequestCharged> = smithy_http::header::read_many(headers)?;
+) -> Result<std::option::Option<crate::model::ServerSideEncryption>, smithy_http::header::ParseError>
+{
+    let headers = header_map.get_all("x-amz-server-side-encryption").iter();
+    let var_27: Vec<crate::model::ServerSideEncryption> = smithy_http::header::read_many(headers)?;
     if var_27.len() > 1 {
         Err(smithy_http::header::ParseError)
     } else {
@@ -410,11 +410,11 @@ pub fn deser_header_delete_object_delete_marker(
     }
 }
 
-pub fn deser_header_delete_object_version_id(
+pub fn deser_header_delete_object_request_charged(
     header_map: &http::HeaderMap,
-) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
-    let headers = header_map.get_all("x-amz-version-id").iter();
-    let var_29: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
+) -> Result<std::option::Option<crate::model::RequestCharged>, smithy_http::header::ParseError> {
+    let headers = header_map.get_all("x-amz-request-charged").iter();
+    let var_29: Vec<crate::model::RequestCharged> = smithy_http::header::read_many(headers)?;
     if var_29.len() > 1 {
         Err(smithy_http::header::ParseError)
     } else {
@@ -423,11 +423,11 @@ pub fn deser_header_delete_object_version_id(
     }
 }
 
-pub fn deser_header_delete_object_request_charged(
+pub fn deser_header_delete_object_version_id(
     header_map: &http::HeaderMap,
-) -> Result<std::option::Option<crate::model::RequestCharged>, smithy_http::header::ParseError> {
-    let headers = header_map.get_all("x-amz-request-charged").iter();
-    let var_30: Vec<crate::model::RequestCharged> = smithy_http::header::read_many(headers)?;
+) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
+    let headers = header_map.get_all("x-amz-version-id").iter();
+    let var_30: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
     if var_30.len() > 1 {
         Err(smithy_http::header::ParseError)
     } else {
@@ -573,6 +573,19 @@ pub fn deser_payload_get_bucket_replication_replication_configuration(
         .transpose()
 }
 
+pub fn deser_header_get_object_accept_ranges(
+    header_map: &http::HeaderMap,
+) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
+    let headers = header_map.get_all("accept-ranges").iter();
+    let var_33: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
+    if var_33.len() > 1 {
+        Err(smithy_http::header::ParseError)
+    } else {
+        let mut var_33 = var_33;
+        Ok(var_33.pop())
+    }
+}
+
 pub fn deser_payload_get_object_body(
     body: &mut smithy_http::body::SdkBody,
 ) -> Result<smithy_http::byte_stream::ByteStream, crate::error::GetObjectError> {
@@ -581,38 +594,27 @@ pub fn deser_payload_get_object_body(
     Ok(smithy_http::byte_stream::ByteStream::new(body))
 }
 
-pub fn deser_header_get_object_delete_marker(
+pub fn deser_header_get_object_bucket_key_enabled(
     header_map: &http::HeaderMap,
 ) -> Result<bool, smithy_http::header::ParseError> {
-    let headers = header_map.get_all("x-amz-delete-marker").iter();
-    let var_33: Vec<bool> = smithy_http::header::read_many(headers)?;
-    if var_33.len() > 1 {
+    let headers = header_map
+        .get_all("x-amz-server-side-encryption-bucket-key-enabled")
+        .iter();
+    let var_34: Vec<bool> = smithy_http::header::read_many(headers)?;
+    if var_34.len() > 1 {
         return Err(smithy_http::header::ParseError);
     }
-    let mut var_33 = var_33;
-    match var_33.pop() {
+    let mut var_34 = var_34;
+    match var_34.pop() {
         None => Ok(Default::default()),
         Some(item) => Ok(item),
     }
 }
 
-pub fn deser_header_get_object_accept_ranges(
+pub fn deser_header_get_object_cache_control(
     header_map: &http::HeaderMap,
 ) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
-    let headers = header_map.get_all("accept-ranges").iter();
-    let var_34: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
-    if var_34.len() > 1 {
-        Err(smithy_http::header::ParseError)
-    } else {
-        let mut var_34 = var_34;
-        Ok(var_34.pop())
-    }
-}
-
-pub fn deser_header_get_object_expiration(
-    header_map: &http::HeaderMap,
-) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
-    let headers = header_map.get_all("x-amz-expiration").iter();
+    let headers = header_map.get_all("Cache-Control").iter();
     let var_35: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
     if var_35.len() > 1 {
         Err(smithy_http::header::ParseError)
@@ -622,10 +624,10 @@ pub fn deser_header_get_object_expiration(
     }
 }
 
-pub fn deser_header_get_object_restore(
+pub fn deser_header_get_object_content_disposition(
     header_map: &http::HeaderMap,
 ) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
-    let headers = header_map.get_all("x-amz-restore").iter();
+    let headers = header_map.get_all("Content-Disposition").iter();
     let var_36: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
     if var_36.len() > 1 {
         Err(smithy_http::header::ParseError)
@@ -635,12 +637,11 @@ pub fn deser_header_get_object_restore(
     }
 }
 
-pub fn deser_header_get_object_last_modified(
+pub fn deser_header_get_object_content_encoding(
     header_map: &http::HeaderMap,
-) -> Result<std::option::Option<smithy_types::Instant>, smithy_http::header::ParseError> {
-    let headers = header_map.get_all("Last-Modified").iter();
-    let var_37: Vec<smithy_types::Instant> =
-        smithy_http::header::many_dates(headers, smithy_types::instant::Format::HttpDate)?;
+) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
+    let headers = header_map.get_all("Content-Encoding").iter();
+    let var_37: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
     if var_37.len() > 1 {
         Err(smithy_http::header::ParseError)
     } else {
@@ -649,53 +650,51 @@ pub fn deser_header_get_object_last_modified(
     }
 }
 
+pub fn deser_header_get_object_content_language(
+    header_map: &http::HeaderMap,
+) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
+    let headers = header_map.get_all("Content-Language").iter();
+    let var_38: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
+    if var_38.len() > 1 {
+        Err(smithy_http::header::ParseError)
+    } else {
+        let mut var_38 = var_38;
+        Ok(var_38.pop())
+    }
+}
+
 pub fn deser_header_get_object_content_length(
     header_map: &http::HeaderMap,
 ) -> Result<i64, smithy_http::header::ParseError> {
     let headers = header_map.get_all("Content-Length").iter();
-    let var_38: Vec<i64> = smithy_http::header::read_many(headers)?;
-    if var_38.len() > 1 {
+    let var_39: Vec<i64> = smithy_http::header::read_many(headers)?;
+    if var_39.len() > 1 {
         return Err(smithy_http::header::ParseError);
     }
-    let mut var_38 = var_38;
-    match var_38.pop() {
+    let mut var_39 = var_39;
+    match var_39.pop() {
         None => Ok(Default::default()),
         Some(item) => Ok(item),
     }
 }
 
-pub fn deser_header_get_object_e_tag(
+pub fn deser_header_get_object_content_range(
     header_map: &http::HeaderMap,
 ) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
-    let headers = header_map.get_all("ETag").iter();
-    let var_39: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
-    if var_39.len() > 1 {
+    let headers = header_map.get_all("Content-Range").iter();
+    let var_40: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
+    if var_40.len() > 1 {
         Err(smithy_http::header::ParseError)
     } else {
-        let mut var_39 = var_39;
-        Ok(var_39.pop())
+        let mut var_40 = var_40;
+        Ok(var_40.pop())
     }
 }
 
-pub fn deser_header_get_object_missing_meta(
-    header_map: &http::HeaderMap,
-) -> Result<i32, smithy_http::header::ParseError> {
-    let headers = header_map.get_all("x-amz-missing-meta").iter();
-    let var_40: Vec<i32> = smithy_http::header::read_many(headers)?;
-    if var_40.len() > 1 {
-        return Err(smithy_http::header::ParseError);
-    }
-    let mut var_40 = var_40;
-    match var_40.pop() {
-        None => Ok(Default::default()),
-        Some(item) => Ok(item),
-    }
-}
-
-pub fn deser_header_get_object_version_id(
+pub fn deser_header_get_object_content_type(
     header_map: &http::HeaderMap,
 ) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
-    let headers = header_map.get_all("x-amz-version-id").iter();
+    let headers = header_map.get_all("Content-Type").iter();
     let var_41: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
     if var_41.len() > 1 {
         Err(smithy_http::header::ParseError)
@@ -705,23 +704,25 @@ pub fn deser_header_get_object_version_id(
     }
 }
 
-pub fn deser_header_get_object_cache_control(
+pub fn deser_header_get_object_delete_marker(
     header_map: &http::HeaderMap,
-) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
-    let headers = header_map.get_all("Cache-Control").iter();
-    let var_42: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
+) -> Result<bool, smithy_http::header::ParseError> {
+    let headers = header_map.get_all("x-amz-delete-marker").iter();
+    let var_42: Vec<bool> = smithy_http::header::read_many(headers)?;
     if var_42.len() > 1 {
-        Err(smithy_http::header::ParseError)
-    } else {
-        let mut var_42 = var_42;
-        Ok(var_42.pop())
+        return Err(smithy_http::header::ParseError);
+    }
+    let mut var_42 = var_42;
+    match var_42.pop() {
+        None => Ok(Default::default()),
+        Some(item) => Ok(item),
     }
 }
 
-pub fn deser_header_get_object_content_disposition(
+pub fn deser_header_get_object_e_tag(
     header_map: &http::HeaderMap,
 ) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
-    let headers = header_map.get_all("Content-Disposition").iter();
+    let headers = header_map.get_all("ETag").iter();
     let var_43: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
     if var_43.len() > 1 {
         Err(smithy_http::header::ParseError)
@@ -731,10 +732,10 @@ pub fn deser_header_get_object_content_disposition(
     }
 }
 
-pub fn deser_header_get_object_content_encoding(
+pub fn deser_header_get_object_expiration(
     header_map: &http::HeaderMap,
 ) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
-    let headers = header_map.get_all("Content-Encoding").iter();
+    let headers = header_map.get_all("x-amz-expiration").iter();
     let var_44: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
     if var_44.len() > 1 {
         Err(smithy_http::header::ParseError)
@@ -744,11 +745,12 @@ pub fn deser_header_get_object_content_encoding(
     }
 }
 
-pub fn deser_header_get_object_content_language(
+pub fn deser_header_get_object_expires(
     header_map: &http::HeaderMap,
-) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
-    let headers = header_map.get_all("Content-Language").iter();
-    let var_45: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
+) -> Result<std::option::Option<smithy_types::Instant>, smithy_http::header::ParseError> {
+    let headers = header_map.get_all("Expires").iter();
+    let var_45: Vec<smithy_types::Instant> =
+        smithy_http::header::many_dates(headers, smithy_types::instant::Format::HttpDate)?;
     if var_45.len() > 1 {
         Err(smithy_http::header::ParseError)
     } else {
@@ -757,70 +759,17 @@ pub fn deser_header_get_object_content_language(
     }
 }
 
-pub fn deser_header_get_object_content_range(
+pub fn deser_header_get_object_last_modified(
     header_map: &http::HeaderMap,
-) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
-    let headers = header_map.get_all("Content-Range").iter();
-    let var_46: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
+) -> Result<std::option::Option<smithy_types::Instant>, smithy_http::header::ParseError> {
+    let headers = header_map.get_all("Last-Modified").iter();
+    let var_46: Vec<smithy_types::Instant> =
+        smithy_http::header::many_dates(headers, smithy_types::instant::Format::HttpDate)?;
     if var_46.len() > 1 {
         Err(smithy_http::header::ParseError)
     } else {
         let mut var_46 = var_46;
         Ok(var_46.pop())
-    }
-}
-
-pub fn deser_header_get_object_content_type(
-    header_map: &http::HeaderMap,
-) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
-    let headers = header_map.get_all("Content-Type").iter();
-    let var_47: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
-    if var_47.len() > 1 {
-        Err(smithy_http::header::ParseError)
-    } else {
-        let mut var_47 = var_47;
-        Ok(var_47.pop())
-    }
-}
-
-pub fn deser_header_get_object_expires(
-    header_map: &http::HeaderMap,
-) -> Result<std::option::Option<smithy_types::Instant>, smithy_http::header::ParseError> {
-    let headers = header_map.get_all("Expires").iter();
-    let var_48: Vec<smithy_types::Instant> =
-        smithy_http::header::many_dates(headers, smithy_types::instant::Format::HttpDate)?;
-    if var_48.len() > 1 {
-        Err(smithy_http::header::ParseError)
-    } else {
-        let mut var_48 = var_48;
-        Ok(var_48.pop())
-    }
-}
-
-pub fn deser_header_get_object_website_redirect_location(
-    header_map: &http::HeaderMap,
-) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
-    let headers = header_map.get_all("x-amz-website-redirect-location").iter();
-    let var_49: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
-    if var_49.len() > 1 {
-        Err(smithy_http::header::ParseError)
-    } else {
-        let mut var_49 = var_49;
-        Ok(var_49.pop())
-    }
-}
-
-pub fn deser_header_get_object_server_side_encryption(
-    header_map: &http::HeaderMap,
-) -> Result<std::option::Option<crate::model::ServerSideEncryption>, smithy_http::header::ParseError>
-{
-    let headers = header_map.get_all("x-amz-server-side-encryption").iter();
-    let var_50: Vec<crate::model::ServerSideEncryption> = smithy_http::header::read_many(headers)?;
-    if var_50.len() > 1 {
-        Err(smithy_http::header::ParseError)
-    } else {
-        let mut var_50 = var_50;
-        Ok(var_50.pop())
     }
 }
 
@@ -841,163 +790,18 @@ pub fn deser_prefix_header_get_object_metadata(
     out.map(Some)
 }
 
-pub fn deser_header_get_object_sse_customer_algorithm(
-    header_map: &http::HeaderMap,
-) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
-    let headers = header_map
-        .get_all("x-amz-server-side-encryption-customer-algorithm")
-        .iter();
-    let var_51: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
-    if var_51.len() > 1 {
-        Err(smithy_http::header::ParseError)
-    } else {
-        let mut var_51 = var_51;
-        Ok(var_51.pop())
-    }
-}
-
-pub fn deser_header_get_object_sse_customer_key_md5(
-    header_map: &http::HeaderMap,
-) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
-    let headers = header_map
-        .get_all("x-amz-server-side-encryption-customer-key-MD5")
-        .iter();
-    let var_52: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
-    if var_52.len() > 1 {
-        Err(smithy_http::header::ParseError)
-    } else {
-        let mut var_52 = var_52;
-        Ok(var_52.pop())
-    }
-}
-
-pub fn deser_header_get_object_ssekms_key_id(
-    header_map: &http::HeaderMap,
-) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
-    let headers = header_map
-        .get_all("x-amz-server-side-encryption-aws-kms-key-id")
-        .iter();
-    let var_53: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
-    if var_53.len() > 1 {
-        Err(smithy_http::header::ParseError)
-    } else {
-        let mut var_53 = var_53;
-        Ok(var_53.pop())
-    }
-}
-
-pub fn deser_header_get_object_bucket_key_enabled(
-    header_map: &http::HeaderMap,
-) -> Result<bool, smithy_http::header::ParseError> {
-    let headers = header_map
-        .get_all("x-amz-server-side-encryption-bucket-key-enabled")
-        .iter();
-    let var_54: Vec<bool> = smithy_http::header::read_many(headers)?;
-    if var_54.len() > 1 {
-        return Err(smithy_http::header::ParseError);
-    }
-    let mut var_54 = var_54;
-    match var_54.pop() {
-        None => Ok(Default::default()),
-        Some(item) => Ok(item),
-    }
-}
-
-pub fn deser_header_get_object_storage_class(
-    header_map: &http::HeaderMap,
-) -> Result<std::option::Option<crate::model::StorageClass>, smithy_http::header::ParseError> {
-    let headers = header_map.get_all("x-amz-storage-class").iter();
-    let var_55: Vec<crate::model::StorageClass> = smithy_http::header::read_many(headers)?;
-    if var_55.len() > 1 {
-        Err(smithy_http::header::ParseError)
-    } else {
-        let mut var_55 = var_55;
-        Ok(var_55.pop())
-    }
-}
-
-pub fn deser_header_get_object_request_charged(
-    header_map: &http::HeaderMap,
-) -> Result<std::option::Option<crate::model::RequestCharged>, smithy_http::header::ParseError> {
-    let headers = header_map.get_all("x-amz-request-charged").iter();
-    let var_56: Vec<crate::model::RequestCharged> = smithy_http::header::read_many(headers)?;
-    if var_56.len() > 1 {
-        Err(smithy_http::header::ParseError)
-    } else {
-        let mut var_56 = var_56;
-        Ok(var_56.pop())
-    }
-}
-
-pub fn deser_header_get_object_replication_status(
-    header_map: &http::HeaderMap,
-) -> Result<std::option::Option<crate::model::ReplicationStatus>, smithy_http::header::ParseError> {
-    let headers = header_map.get_all("x-amz-replication-status").iter();
-    let var_57: Vec<crate::model::ReplicationStatus> = smithy_http::header::read_many(headers)?;
-    if var_57.len() > 1 {
-        Err(smithy_http::header::ParseError)
-    } else {
-        let mut var_57 = var_57;
-        Ok(var_57.pop())
-    }
-}
-
-pub fn deser_header_get_object_parts_count(
+pub fn deser_header_get_object_missing_meta(
     header_map: &http::HeaderMap,
 ) -> Result<i32, smithy_http::header::ParseError> {
-    let headers = header_map.get_all("x-amz-mp-parts-count").iter();
-    let var_58: Vec<i32> = smithy_http::header::read_many(headers)?;
-    if var_58.len() > 1 {
+    let headers = header_map.get_all("x-amz-missing-meta").iter();
+    let var_47: Vec<i32> = smithy_http::header::read_many(headers)?;
+    if var_47.len() > 1 {
         return Err(smithy_http::header::ParseError);
     }
-    let mut var_58 = var_58;
-    match var_58.pop() {
+    let mut var_47 = var_47;
+    match var_47.pop() {
         None => Ok(Default::default()),
         Some(item) => Ok(item),
-    }
-}
-
-pub fn deser_header_get_object_tag_count(
-    header_map: &http::HeaderMap,
-) -> Result<i32, smithy_http::header::ParseError> {
-    let headers = header_map.get_all("x-amz-tagging-count").iter();
-    let var_59: Vec<i32> = smithy_http::header::read_many(headers)?;
-    if var_59.len() > 1 {
-        return Err(smithy_http::header::ParseError);
-    }
-    let mut var_59 = var_59;
-    match var_59.pop() {
-        None => Ok(Default::default()),
-        Some(item) => Ok(item),
-    }
-}
-
-pub fn deser_header_get_object_object_lock_mode(
-    header_map: &http::HeaderMap,
-) -> Result<std::option::Option<crate::model::ObjectLockMode>, smithy_http::header::ParseError> {
-    let headers = header_map.get_all("x-amz-object-lock-mode").iter();
-    let var_60: Vec<crate::model::ObjectLockMode> = smithy_http::header::read_many(headers)?;
-    if var_60.len() > 1 {
-        Err(smithy_http::header::ParseError)
-    } else {
-        let mut var_60 = var_60;
-        Ok(var_60.pop())
-    }
-}
-
-pub fn deser_header_get_object_object_lock_retain_until_date(
-    header_map: &http::HeaderMap,
-) -> Result<std::option::Option<smithy_types::Instant>, smithy_http::header::ParseError> {
-    let headers = header_map
-        .get_all("x-amz-object-lock-retain-until-date")
-        .iter();
-    let var_61: Vec<smithy_types::Instant> =
-        smithy_http::header::many_dates(headers, smithy_types::instant::Format::DateTime)?;
-    if var_61.len() > 1 {
-        Err(smithy_http::header::ParseError)
-    } else {
-        let mut var_61 = var_61;
-        Ok(var_61.pop())
     }
 }
 
@@ -1008,8 +812,204 @@ pub fn deser_header_get_object_object_lock_legal_hold_status(
     smithy_http::header::ParseError,
 > {
     let headers = header_map.get_all("x-amz-object-lock-legal-hold").iter();
-    let var_62: Vec<crate::model::ObjectLockLegalHoldStatus> =
+    let var_48: Vec<crate::model::ObjectLockLegalHoldStatus> =
         smithy_http::header::read_many(headers)?;
+    if var_48.len() > 1 {
+        Err(smithy_http::header::ParseError)
+    } else {
+        let mut var_48 = var_48;
+        Ok(var_48.pop())
+    }
+}
+
+pub fn deser_header_get_object_object_lock_mode(
+    header_map: &http::HeaderMap,
+) -> Result<std::option::Option<crate::model::ObjectLockMode>, smithy_http::header::ParseError> {
+    let headers = header_map.get_all("x-amz-object-lock-mode").iter();
+    let var_49: Vec<crate::model::ObjectLockMode> = smithy_http::header::read_many(headers)?;
+    if var_49.len() > 1 {
+        Err(smithy_http::header::ParseError)
+    } else {
+        let mut var_49 = var_49;
+        Ok(var_49.pop())
+    }
+}
+
+pub fn deser_header_get_object_object_lock_retain_until_date(
+    header_map: &http::HeaderMap,
+) -> Result<std::option::Option<smithy_types::Instant>, smithy_http::header::ParseError> {
+    let headers = header_map
+        .get_all("x-amz-object-lock-retain-until-date")
+        .iter();
+    let var_50: Vec<smithy_types::Instant> =
+        smithy_http::header::many_dates(headers, smithy_types::instant::Format::DateTime)?;
+    if var_50.len() > 1 {
+        Err(smithy_http::header::ParseError)
+    } else {
+        let mut var_50 = var_50;
+        Ok(var_50.pop())
+    }
+}
+
+pub fn deser_header_get_object_parts_count(
+    header_map: &http::HeaderMap,
+) -> Result<i32, smithy_http::header::ParseError> {
+    let headers = header_map.get_all("x-amz-mp-parts-count").iter();
+    let var_51: Vec<i32> = smithy_http::header::read_many(headers)?;
+    if var_51.len() > 1 {
+        return Err(smithy_http::header::ParseError);
+    }
+    let mut var_51 = var_51;
+    match var_51.pop() {
+        None => Ok(Default::default()),
+        Some(item) => Ok(item),
+    }
+}
+
+pub fn deser_header_get_object_replication_status(
+    header_map: &http::HeaderMap,
+) -> Result<std::option::Option<crate::model::ReplicationStatus>, smithy_http::header::ParseError> {
+    let headers = header_map.get_all("x-amz-replication-status").iter();
+    let var_52: Vec<crate::model::ReplicationStatus> = smithy_http::header::read_many(headers)?;
+    if var_52.len() > 1 {
+        Err(smithy_http::header::ParseError)
+    } else {
+        let mut var_52 = var_52;
+        Ok(var_52.pop())
+    }
+}
+
+pub fn deser_header_get_object_request_charged(
+    header_map: &http::HeaderMap,
+) -> Result<std::option::Option<crate::model::RequestCharged>, smithy_http::header::ParseError> {
+    let headers = header_map.get_all("x-amz-request-charged").iter();
+    let var_53: Vec<crate::model::RequestCharged> = smithy_http::header::read_many(headers)?;
+    if var_53.len() > 1 {
+        Err(smithy_http::header::ParseError)
+    } else {
+        let mut var_53 = var_53;
+        Ok(var_53.pop())
+    }
+}
+
+pub fn deser_header_get_object_restore(
+    header_map: &http::HeaderMap,
+) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
+    let headers = header_map.get_all("x-amz-restore").iter();
+    let var_54: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
+    if var_54.len() > 1 {
+        Err(smithy_http::header::ParseError)
+    } else {
+        let mut var_54 = var_54;
+        Ok(var_54.pop())
+    }
+}
+
+pub fn deser_header_get_object_sse_customer_algorithm(
+    header_map: &http::HeaderMap,
+) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
+    let headers = header_map
+        .get_all("x-amz-server-side-encryption-customer-algorithm")
+        .iter();
+    let var_55: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
+    if var_55.len() > 1 {
+        Err(smithy_http::header::ParseError)
+    } else {
+        let mut var_55 = var_55;
+        Ok(var_55.pop())
+    }
+}
+
+pub fn deser_header_get_object_sse_customer_key_md5(
+    header_map: &http::HeaderMap,
+) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
+    let headers = header_map
+        .get_all("x-amz-server-side-encryption-customer-key-MD5")
+        .iter();
+    let var_56: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
+    if var_56.len() > 1 {
+        Err(smithy_http::header::ParseError)
+    } else {
+        let mut var_56 = var_56;
+        Ok(var_56.pop())
+    }
+}
+
+pub fn deser_header_get_object_ssekms_key_id(
+    header_map: &http::HeaderMap,
+) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
+    let headers = header_map
+        .get_all("x-amz-server-side-encryption-aws-kms-key-id")
+        .iter();
+    let var_57: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
+    if var_57.len() > 1 {
+        Err(smithy_http::header::ParseError)
+    } else {
+        let mut var_57 = var_57;
+        Ok(var_57.pop())
+    }
+}
+
+pub fn deser_header_get_object_server_side_encryption(
+    header_map: &http::HeaderMap,
+) -> Result<std::option::Option<crate::model::ServerSideEncryption>, smithy_http::header::ParseError>
+{
+    let headers = header_map.get_all("x-amz-server-side-encryption").iter();
+    let var_58: Vec<crate::model::ServerSideEncryption> = smithy_http::header::read_many(headers)?;
+    if var_58.len() > 1 {
+        Err(smithy_http::header::ParseError)
+    } else {
+        let mut var_58 = var_58;
+        Ok(var_58.pop())
+    }
+}
+
+pub fn deser_header_get_object_storage_class(
+    header_map: &http::HeaderMap,
+) -> Result<std::option::Option<crate::model::StorageClass>, smithy_http::header::ParseError> {
+    let headers = header_map.get_all("x-amz-storage-class").iter();
+    let var_59: Vec<crate::model::StorageClass> = smithy_http::header::read_many(headers)?;
+    if var_59.len() > 1 {
+        Err(smithy_http::header::ParseError)
+    } else {
+        let mut var_59 = var_59;
+        Ok(var_59.pop())
+    }
+}
+
+pub fn deser_header_get_object_tag_count(
+    header_map: &http::HeaderMap,
+) -> Result<i32, smithy_http::header::ParseError> {
+    let headers = header_map.get_all("x-amz-tagging-count").iter();
+    let var_60: Vec<i32> = smithy_http::header::read_many(headers)?;
+    if var_60.len() > 1 {
+        return Err(smithy_http::header::ParseError);
+    }
+    let mut var_60 = var_60;
+    match var_60.pop() {
+        None => Ok(Default::default()),
+        Some(item) => Ok(item),
+    }
+}
+
+pub fn deser_header_get_object_version_id(
+    header_map: &http::HeaderMap,
+) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
+    let headers = header_map.get_all("x-amz-version-id").iter();
+    let var_61: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
+    if var_61.len() > 1 {
+        Err(smithy_http::header::ParseError)
+    } else {
+        let mut var_61 = var_61;
+        Ok(var_61.pop())
+    }
+}
+
+pub fn deser_header_get_object_website_redirect_location(
+    header_map: &http::HeaderMap,
+) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
+    let headers = header_map.get_all("x-amz-website-redirect-location").iter();
+    let var_62: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
     if var_62.len() > 1 {
         Err(smithy_http::header::ParseError)
     } else {
@@ -1117,26 +1117,24 @@ pub fn deser_payload_get_public_access_block_public_access_block_configuration(
     }).transpose()
 }
 
-pub fn deser_header_head_object_delete_marker(
-    header_map: &http::HeaderMap,
-) -> Result<bool, smithy_http::header::ParseError> {
-    let headers = header_map.get_all("x-amz-delete-marker").iter();
-    let var_66: Vec<bool> = smithy_http::header::read_many(headers)?;
-    if var_66.len() > 1 {
-        return Err(smithy_http::header::ParseError);
-    }
-    let mut var_66 = var_66;
-    match var_66.pop() {
-        None => Ok(Default::default()),
-        Some(item) => Ok(item),
-    }
-}
-
 pub fn deser_header_head_object_accept_ranges(
     header_map: &http::HeaderMap,
 ) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
     let headers = header_map.get_all("accept-ranges").iter();
-    let var_67: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
+    let var_66: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
+    if var_66.len() > 1 {
+        Err(smithy_http::header::ParseError)
+    } else {
+        let mut var_66 = var_66;
+        Ok(var_66.pop())
+    }
+}
+
+pub fn deser_header_head_object_archive_status(
+    header_map: &http::HeaderMap,
+) -> Result<std::option::Option<crate::model::ArchiveStatus>, smithy_http::header::ParseError> {
+    let headers = header_map.get_all("x-amz-archive-status").iter();
+    let var_67: Vec<crate::model::ArchiveStatus> = smithy_http::header::read_many(headers)?;
     if var_67.len() > 1 {
         Err(smithy_http::header::ParseError)
     } else {
@@ -1145,23 +1143,27 @@ pub fn deser_header_head_object_accept_ranges(
     }
 }
 
-pub fn deser_header_head_object_expiration(
+pub fn deser_header_head_object_bucket_key_enabled(
     header_map: &http::HeaderMap,
-) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
-    let headers = header_map.get_all("x-amz-expiration").iter();
-    let var_68: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
+) -> Result<bool, smithy_http::header::ParseError> {
+    let headers = header_map
+        .get_all("x-amz-server-side-encryption-bucket-key-enabled")
+        .iter();
+    let var_68: Vec<bool> = smithy_http::header::read_many(headers)?;
     if var_68.len() > 1 {
-        Err(smithy_http::header::ParseError)
-    } else {
-        let mut var_68 = var_68;
-        Ok(var_68.pop())
+        return Err(smithy_http::header::ParseError);
+    }
+    let mut var_68 = var_68;
+    match var_68.pop() {
+        None => Ok(Default::default()),
+        Some(item) => Ok(item),
     }
 }
 
-pub fn deser_header_head_object_restore(
+pub fn deser_header_head_object_cache_control(
     header_map: &http::HeaderMap,
 ) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
-    let headers = header_map.get_all("x-amz-restore").iter();
+    let headers = header_map.get_all("Cache-Control").iter();
     let var_69: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
     if var_69.len() > 1 {
         Err(smithy_http::header::ParseError)
@@ -1171,11 +1173,11 @@ pub fn deser_header_head_object_restore(
     }
 }
 
-pub fn deser_header_head_object_archive_status(
+pub fn deser_header_head_object_content_disposition(
     header_map: &http::HeaderMap,
-) -> Result<std::option::Option<crate::model::ArchiveStatus>, smithy_http::header::ParseError> {
-    let headers = header_map.get_all("x-amz-archive-status").iter();
-    let var_70: Vec<crate::model::ArchiveStatus> = smithy_http::header::read_many(headers)?;
+) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
+    let headers = header_map.get_all("Content-Disposition").iter();
+    let var_70: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
     if var_70.len() > 1 {
         Err(smithy_http::header::ParseError)
     } else {
@@ -1184,12 +1186,11 @@ pub fn deser_header_head_object_archive_status(
     }
 }
 
-pub fn deser_header_head_object_last_modified(
+pub fn deser_header_head_object_content_encoding(
     header_map: &http::HeaderMap,
-) -> Result<std::option::Option<smithy_types::Instant>, smithy_http::header::ParseError> {
-    let headers = header_map.get_all("Last-Modified").iter();
-    let var_71: Vec<smithy_types::Instant> =
-        smithy_http::header::many_dates(headers, smithy_types::instant::Format::HttpDate)?;
+) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
+    let headers = header_map.get_all("Content-Encoding").iter();
+    let var_71: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
     if var_71.len() > 1 {
         Err(smithy_http::header::ParseError)
     } else {
@@ -1198,16 +1199,57 @@ pub fn deser_header_head_object_last_modified(
     }
 }
 
+pub fn deser_header_head_object_content_language(
+    header_map: &http::HeaderMap,
+) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
+    let headers = header_map.get_all("Content-Language").iter();
+    let var_72: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
+    if var_72.len() > 1 {
+        Err(smithy_http::header::ParseError)
+    } else {
+        let mut var_72 = var_72;
+        Ok(var_72.pop())
+    }
+}
+
 pub fn deser_header_head_object_content_length(
     header_map: &http::HeaderMap,
 ) -> Result<i64, smithy_http::header::ParseError> {
     let headers = header_map.get_all("Content-Length").iter();
-    let var_72: Vec<i64> = smithy_http::header::read_many(headers)?;
-    if var_72.len() > 1 {
+    let var_73: Vec<i64> = smithy_http::header::read_many(headers)?;
+    if var_73.len() > 1 {
         return Err(smithy_http::header::ParseError);
     }
-    let mut var_72 = var_72;
-    match var_72.pop() {
+    let mut var_73 = var_73;
+    match var_73.pop() {
+        None => Ok(Default::default()),
+        Some(item) => Ok(item),
+    }
+}
+
+pub fn deser_header_head_object_content_type(
+    header_map: &http::HeaderMap,
+) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
+    let headers = header_map.get_all("Content-Type").iter();
+    let var_74: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
+    if var_74.len() > 1 {
+        Err(smithy_http::header::ParseError)
+    } else {
+        let mut var_74 = var_74;
+        Ok(var_74.pop())
+    }
+}
+
+pub fn deser_header_head_object_delete_marker(
+    header_map: &http::HeaderMap,
+) -> Result<bool, smithy_http::header::ParseError> {
+    let headers = header_map.get_all("x-amz-delete-marker").iter();
+    let var_75: Vec<bool> = smithy_http::header::read_many(headers)?;
+    if var_75.len() > 1 {
+        return Err(smithy_http::header::ParseError);
+    }
+    let mut var_75 = var_75;
+    match var_75.pop() {
         None => Ok(Default::default()),
         Some(item) => Ok(item),
     }
@@ -1217,47 +1259,6 @@ pub fn deser_header_head_object_e_tag(
     header_map: &http::HeaderMap,
 ) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
     let headers = header_map.get_all("ETag").iter();
-    let var_73: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
-    if var_73.len() > 1 {
-        Err(smithy_http::header::ParseError)
-    } else {
-        let mut var_73 = var_73;
-        Ok(var_73.pop())
-    }
-}
-
-pub fn deser_header_head_object_missing_meta(
-    header_map: &http::HeaderMap,
-) -> Result<i32, smithy_http::header::ParseError> {
-    let headers = header_map.get_all("x-amz-missing-meta").iter();
-    let var_74: Vec<i32> = smithy_http::header::read_many(headers)?;
-    if var_74.len() > 1 {
-        return Err(smithy_http::header::ParseError);
-    }
-    let mut var_74 = var_74;
-    match var_74.pop() {
-        None => Ok(Default::default()),
-        Some(item) => Ok(item),
-    }
-}
-
-pub fn deser_header_head_object_version_id(
-    header_map: &http::HeaderMap,
-) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
-    let headers = header_map.get_all("x-amz-version-id").iter();
-    let var_75: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
-    if var_75.len() > 1 {
-        Err(smithy_http::header::ParseError)
-    } else {
-        let mut var_75 = var_75;
-        Ok(var_75.pop())
-    }
-}
-
-pub fn deser_header_head_object_cache_control(
-    header_map: &http::HeaderMap,
-) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
-    let headers = header_map.get_all("Cache-Control").iter();
     let var_76: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
     if var_76.len() > 1 {
         Err(smithy_http::header::ParseError)
@@ -1267,10 +1268,10 @@ pub fn deser_header_head_object_cache_control(
     }
 }
 
-pub fn deser_header_head_object_content_disposition(
+pub fn deser_header_head_object_expiration(
     header_map: &http::HeaderMap,
 ) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
-    let headers = header_map.get_all("Content-Disposition").iter();
+    let headers = header_map.get_all("x-amz-expiration").iter();
     let var_77: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
     if var_77.len() > 1 {
         Err(smithy_http::header::ParseError)
@@ -1280,11 +1281,12 @@ pub fn deser_header_head_object_content_disposition(
     }
 }
 
-pub fn deser_header_head_object_content_encoding(
+pub fn deser_header_head_object_expires(
     header_map: &http::HeaderMap,
-) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
-    let headers = header_map.get_all("Content-Encoding").iter();
-    let var_78: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
+) -> Result<std::option::Option<smithy_types::Instant>, smithy_http::header::ParseError> {
+    let headers = header_map.get_all("Expires").iter();
+    let var_78: Vec<smithy_types::Instant> =
+        smithy_http::header::many_dates(headers, smithy_types::instant::Format::HttpDate)?;
     if var_78.len() > 1 {
         Err(smithy_http::header::ParseError)
     } else {
@@ -1293,70 +1295,17 @@ pub fn deser_header_head_object_content_encoding(
     }
 }
 
-pub fn deser_header_head_object_content_language(
+pub fn deser_header_head_object_last_modified(
     header_map: &http::HeaderMap,
-) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
-    let headers = header_map.get_all("Content-Language").iter();
-    let var_79: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
+) -> Result<std::option::Option<smithy_types::Instant>, smithy_http::header::ParseError> {
+    let headers = header_map.get_all("Last-Modified").iter();
+    let var_79: Vec<smithy_types::Instant> =
+        smithy_http::header::many_dates(headers, smithy_types::instant::Format::HttpDate)?;
     if var_79.len() > 1 {
         Err(smithy_http::header::ParseError)
     } else {
         let mut var_79 = var_79;
         Ok(var_79.pop())
-    }
-}
-
-pub fn deser_header_head_object_content_type(
-    header_map: &http::HeaderMap,
-) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
-    let headers = header_map.get_all("Content-Type").iter();
-    let var_80: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
-    if var_80.len() > 1 {
-        Err(smithy_http::header::ParseError)
-    } else {
-        let mut var_80 = var_80;
-        Ok(var_80.pop())
-    }
-}
-
-pub fn deser_header_head_object_expires(
-    header_map: &http::HeaderMap,
-) -> Result<std::option::Option<smithy_types::Instant>, smithy_http::header::ParseError> {
-    let headers = header_map.get_all("Expires").iter();
-    let var_81: Vec<smithy_types::Instant> =
-        smithy_http::header::many_dates(headers, smithy_types::instant::Format::HttpDate)?;
-    if var_81.len() > 1 {
-        Err(smithy_http::header::ParseError)
-    } else {
-        let mut var_81 = var_81;
-        Ok(var_81.pop())
-    }
-}
-
-pub fn deser_header_head_object_website_redirect_location(
-    header_map: &http::HeaderMap,
-) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
-    let headers = header_map.get_all("x-amz-website-redirect-location").iter();
-    let var_82: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
-    if var_82.len() > 1 {
-        Err(smithy_http::header::ParseError)
-    } else {
-        let mut var_82 = var_82;
-        Ok(var_82.pop())
-    }
-}
-
-pub fn deser_header_head_object_server_side_encryption(
-    header_map: &http::HeaderMap,
-) -> Result<std::option::Option<crate::model::ServerSideEncryption>, smithy_http::header::ParseError>
-{
-    let headers = header_map.get_all("x-amz-server-side-encryption").iter();
-    let var_83: Vec<crate::model::ServerSideEncryption> = smithy_http::header::read_many(headers)?;
-    if var_83.len() > 1 {
-        Err(smithy_http::header::ParseError)
-    } else {
-        let mut var_83 = var_83;
-        Ok(var_83.pop())
     }
 }
 
@@ -1377,148 +1326,18 @@ pub fn deser_prefix_header_head_object_metadata(
     out.map(Some)
 }
 
-pub fn deser_header_head_object_sse_customer_algorithm(
-    header_map: &http::HeaderMap,
-) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
-    let headers = header_map
-        .get_all("x-amz-server-side-encryption-customer-algorithm")
-        .iter();
-    let var_84: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
-    if var_84.len() > 1 {
-        Err(smithy_http::header::ParseError)
-    } else {
-        let mut var_84 = var_84;
-        Ok(var_84.pop())
-    }
-}
-
-pub fn deser_header_head_object_sse_customer_key_md5(
-    header_map: &http::HeaderMap,
-) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
-    let headers = header_map
-        .get_all("x-amz-server-side-encryption-customer-key-MD5")
-        .iter();
-    let var_85: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
-    if var_85.len() > 1 {
-        Err(smithy_http::header::ParseError)
-    } else {
-        let mut var_85 = var_85;
-        Ok(var_85.pop())
-    }
-}
-
-pub fn deser_header_head_object_ssekms_key_id(
-    header_map: &http::HeaderMap,
-) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
-    let headers = header_map
-        .get_all("x-amz-server-side-encryption-aws-kms-key-id")
-        .iter();
-    let var_86: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
-    if var_86.len() > 1 {
-        Err(smithy_http::header::ParseError)
-    } else {
-        let mut var_86 = var_86;
-        Ok(var_86.pop())
-    }
-}
-
-pub fn deser_header_head_object_bucket_key_enabled(
-    header_map: &http::HeaderMap,
-) -> Result<bool, smithy_http::header::ParseError> {
-    let headers = header_map
-        .get_all("x-amz-server-side-encryption-bucket-key-enabled")
-        .iter();
-    let var_87: Vec<bool> = smithy_http::header::read_many(headers)?;
-    if var_87.len() > 1 {
-        return Err(smithy_http::header::ParseError);
-    }
-    let mut var_87 = var_87;
-    match var_87.pop() {
-        None => Ok(Default::default()),
-        Some(item) => Ok(item),
-    }
-}
-
-pub fn deser_header_head_object_storage_class(
-    header_map: &http::HeaderMap,
-) -> Result<std::option::Option<crate::model::StorageClass>, smithy_http::header::ParseError> {
-    let headers = header_map.get_all("x-amz-storage-class").iter();
-    let var_88: Vec<crate::model::StorageClass> = smithy_http::header::read_many(headers)?;
-    if var_88.len() > 1 {
-        Err(smithy_http::header::ParseError)
-    } else {
-        let mut var_88 = var_88;
-        Ok(var_88.pop())
-    }
-}
-
-pub fn deser_header_head_object_request_charged(
-    header_map: &http::HeaderMap,
-) -> Result<std::option::Option<crate::model::RequestCharged>, smithy_http::header::ParseError> {
-    let headers = header_map.get_all("x-amz-request-charged").iter();
-    let var_89: Vec<crate::model::RequestCharged> = smithy_http::header::read_many(headers)?;
-    if var_89.len() > 1 {
-        Err(smithy_http::header::ParseError)
-    } else {
-        let mut var_89 = var_89;
-        Ok(var_89.pop())
-    }
-}
-
-pub fn deser_header_head_object_replication_status(
-    header_map: &http::HeaderMap,
-) -> Result<std::option::Option<crate::model::ReplicationStatus>, smithy_http::header::ParseError> {
-    let headers = header_map.get_all("x-amz-replication-status").iter();
-    let var_90: Vec<crate::model::ReplicationStatus> = smithy_http::header::read_many(headers)?;
-    if var_90.len() > 1 {
-        Err(smithy_http::header::ParseError)
-    } else {
-        let mut var_90 = var_90;
-        Ok(var_90.pop())
-    }
-}
-
-pub fn deser_header_head_object_parts_count(
+pub fn deser_header_head_object_missing_meta(
     header_map: &http::HeaderMap,
 ) -> Result<i32, smithy_http::header::ParseError> {
-    let headers = header_map.get_all("x-amz-mp-parts-count").iter();
-    let var_91: Vec<i32> = smithy_http::header::read_many(headers)?;
-    if var_91.len() > 1 {
+    let headers = header_map.get_all("x-amz-missing-meta").iter();
+    let var_80: Vec<i32> = smithy_http::header::read_many(headers)?;
+    if var_80.len() > 1 {
         return Err(smithy_http::header::ParseError);
     }
-    let mut var_91 = var_91;
-    match var_91.pop() {
+    let mut var_80 = var_80;
+    match var_80.pop() {
         None => Ok(Default::default()),
         Some(item) => Ok(item),
-    }
-}
-
-pub fn deser_header_head_object_object_lock_mode(
-    header_map: &http::HeaderMap,
-) -> Result<std::option::Option<crate::model::ObjectLockMode>, smithy_http::header::ParseError> {
-    let headers = header_map.get_all("x-amz-object-lock-mode").iter();
-    let var_92: Vec<crate::model::ObjectLockMode> = smithy_http::header::read_many(headers)?;
-    if var_92.len() > 1 {
-        Err(smithy_http::header::ParseError)
-    } else {
-        let mut var_92 = var_92;
-        Ok(var_92.pop())
-    }
-}
-
-pub fn deser_header_head_object_object_lock_retain_until_date(
-    header_map: &http::HeaderMap,
-) -> Result<std::option::Option<smithy_types::Instant>, smithy_http::header::ParseError> {
-    let headers = header_map
-        .get_all("x-amz-object-lock-retain-until-date")
-        .iter();
-    let var_93: Vec<smithy_types::Instant> =
-        smithy_http::header::many_dates(headers, smithy_types::instant::Format::DateTime)?;
-    if var_93.len() > 1 {
-        Err(smithy_http::header::ParseError)
-    } else {
-        let mut var_93 = var_93;
-        Ok(var_93.pop())
     }
 }
 
@@ -1529,8 +1348,189 @@ pub fn deser_header_head_object_object_lock_legal_hold_status(
     smithy_http::header::ParseError,
 > {
     let headers = header_map.get_all("x-amz-object-lock-legal-hold").iter();
-    let var_94: Vec<crate::model::ObjectLockLegalHoldStatus> =
+    let var_81: Vec<crate::model::ObjectLockLegalHoldStatus> =
         smithy_http::header::read_many(headers)?;
+    if var_81.len() > 1 {
+        Err(smithy_http::header::ParseError)
+    } else {
+        let mut var_81 = var_81;
+        Ok(var_81.pop())
+    }
+}
+
+pub fn deser_header_head_object_object_lock_mode(
+    header_map: &http::HeaderMap,
+) -> Result<std::option::Option<crate::model::ObjectLockMode>, smithy_http::header::ParseError> {
+    let headers = header_map.get_all("x-amz-object-lock-mode").iter();
+    let var_82: Vec<crate::model::ObjectLockMode> = smithy_http::header::read_many(headers)?;
+    if var_82.len() > 1 {
+        Err(smithy_http::header::ParseError)
+    } else {
+        let mut var_82 = var_82;
+        Ok(var_82.pop())
+    }
+}
+
+pub fn deser_header_head_object_object_lock_retain_until_date(
+    header_map: &http::HeaderMap,
+) -> Result<std::option::Option<smithy_types::Instant>, smithy_http::header::ParseError> {
+    let headers = header_map
+        .get_all("x-amz-object-lock-retain-until-date")
+        .iter();
+    let var_83: Vec<smithy_types::Instant> =
+        smithy_http::header::many_dates(headers, smithy_types::instant::Format::DateTime)?;
+    if var_83.len() > 1 {
+        Err(smithy_http::header::ParseError)
+    } else {
+        let mut var_83 = var_83;
+        Ok(var_83.pop())
+    }
+}
+
+pub fn deser_header_head_object_parts_count(
+    header_map: &http::HeaderMap,
+) -> Result<i32, smithy_http::header::ParseError> {
+    let headers = header_map.get_all("x-amz-mp-parts-count").iter();
+    let var_84: Vec<i32> = smithy_http::header::read_many(headers)?;
+    if var_84.len() > 1 {
+        return Err(smithy_http::header::ParseError);
+    }
+    let mut var_84 = var_84;
+    match var_84.pop() {
+        None => Ok(Default::default()),
+        Some(item) => Ok(item),
+    }
+}
+
+pub fn deser_header_head_object_replication_status(
+    header_map: &http::HeaderMap,
+) -> Result<std::option::Option<crate::model::ReplicationStatus>, smithy_http::header::ParseError> {
+    let headers = header_map.get_all("x-amz-replication-status").iter();
+    let var_85: Vec<crate::model::ReplicationStatus> = smithy_http::header::read_many(headers)?;
+    if var_85.len() > 1 {
+        Err(smithy_http::header::ParseError)
+    } else {
+        let mut var_85 = var_85;
+        Ok(var_85.pop())
+    }
+}
+
+pub fn deser_header_head_object_request_charged(
+    header_map: &http::HeaderMap,
+) -> Result<std::option::Option<crate::model::RequestCharged>, smithy_http::header::ParseError> {
+    let headers = header_map.get_all("x-amz-request-charged").iter();
+    let var_86: Vec<crate::model::RequestCharged> = smithy_http::header::read_many(headers)?;
+    if var_86.len() > 1 {
+        Err(smithy_http::header::ParseError)
+    } else {
+        let mut var_86 = var_86;
+        Ok(var_86.pop())
+    }
+}
+
+pub fn deser_header_head_object_restore(
+    header_map: &http::HeaderMap,
+) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
+    let headers = header_map.get_all("x-amz-restore").iter();
+    let var_87: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
+    if var_87.len() > 1 {
+        Err(smithy_http::header::ParseError)
+    } else {
+        let mut var_87 = var_87;
+        Ok(var_87.pop())
+    }
+}
+
+pub fn deser_header_head_object_sse_customer_algorithm(
+    header_map: &http::HeaderMap,
+) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
+    let headers = header_map
+        .get_all("x-amz-server-side-encryption-customer-algorithm")
+        .iter();
+    let var_88: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
+    if var_88.len() > 1 {
+        Err(smithy_http::header::ParseError)
+    } else {
+        let mut var_88 = var_88;
+        Ok(var_88.pop())
+    }
+}
+
+pub fn deser_header_head_object_sse_customer_key_md5(
+    header_map: &http::HeaderMap,
+) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
+    let headers = header_map
+        .get_all("x-amz-server-side-encryption-customer-key-MD5")
+        .iter();
+    let var_89: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
+    if var_89.len() > 1 {
+        Err(smithy_http::header::ParseError)
+    } else {
+        let mut var_89 = var_89;
+        Ok(var_89.pop())
+    }
+}
+
+pub fn deser_header_head_object_ssekms_key_id(
+    header_map: &http::HeaderMap,
+) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
+    let headers = header_map
+        .get_all("x-amz-server-side-encryption-aws-kms-key-id")
+        .iter();
+    let var_90: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
+    if var_90.len() > 1 {
+        Err(smithy_http::header::ParseError)
+    } else {
+        let mut var_90 = var_90;
+        Ok(var_90.pop())
+    }
+}
+
+pub fn deser_header_head_object_server_side_encryption(
+    header_map: &http::HeaderMap,
+) -> Result<std::option::Option<crate::model::ServerSideEncryption>, smithy_http::header::ParseError>
+{
+    let headers = header_map.get_all("x-amz-server-side-encryption").iter();
+    let var_91: Vec<crate::model::ServerSideEncryption> = smithy_http::header::read_many(headers)?;
+    if var_91.len() > 1 {
+        Err(smithy_http::header::ParseError)
+    } else {
+        let mut var_91 = var_91;
+        Ok(var_91.pop())
+    }
+}
+
+pub fn deser_header_head_object_storage_class(
+    header_map: &http::HeaderMap,
+) -> Result<std::option::Option<crate::model::StorageClass>, smithy_http::header::ParseError> {
+    let headers = header_map.get_all("x-amz-storage-class").iter();
+    let var_92: Vec<crate::model::StorageClass> = smithy_http::header::read_many(headers)?;
+    if var_92.len() > 1 {
+        Err(smithy_http::header::ParseError)
+    } else {
+        let mut var_92 = var_92;
+        Ok(var_92.pop())
+    }
+}
+
+pub fn deser_header_head_object_version_id(
+    header_map: &http::HeaderMap,
+) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
+    let headers = header_map.get_all("x-amz-version-id").iter();
+    let var_93: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
+    if var_93.len() > 1 {
+        Err(smithy_http::header::ParseError)
+    } else {
+        let mut var_93 = var_93;
+        Ok(var_93.pop())
+    }
+}
+
+pub fn deser_header_head_object_website_redirect_location(
+    header_map: &http::HeaderMap,
+) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
+    let headers = header_map.get_all("x-amz-website-redirect-location").iter();
+    let var_94: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
     if var_94.len() > 1 {
         Err(smithy_http::header::ParseError)
     } else {
@@ -1579,16 +1579,20 @@ pub fn deser_header_list_parts_request_charged(
     }
 }
 
-pub fn deser_header_put_object_expiration(
+pub fn deser_header_put_object_bucket_key_enabled(
     header_map: &http::HeaderMap,
-) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
-    let headers = header_map.get_all("x-amz-expiration").iter();
-    let var_98: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
+) -> Result<bool, smithy_http::header::ParseError> {
+    let headers = header_map
+        .get_all("x-amz-server-side-encryption-bucket-key-enabled")
+        .iter();
+    let var_98: Vec<bool> = smithy_http::header::read_many(headers)?;
     if var_98.len() > 1 {
-        Err(smithy_http::header::ParseError)
-    } else {
-        let mut var_98 = var_98;
-        Ok(var_98.pop())
+        return Err(smithy_http::header::ParseError);
+    }
+    let mut var_98 = var_98;
+    match var_98.pop() {
+        None => Ok(Default::default()),
+        Some(item) => Ok(item),
     }
 }
 
@@ -1605,12 +1609,11 @@ pub fn deser_header_put_object_e_tag(
     }
 }
 
-pub fn deser_header_put_object_server_side_encryption(
+pub fn deser_header_put_object_expiration(
     header_map: &http::HeaderMap,
-) -> Result<std::option::Option<crate::model::ServerSideEncryption>, smithy_http::header::ParseError>
-{
-    let headers = header_map.get_all("x-amz-server-side-encryption").iter();
-    let var_100: Vec<crate::model::ServerSideEncryption> = smithy_http::header::read_many(headers)?;
+) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
+    let headers = header_map.get_all("x-amz-expiration").iter();
+    let var_100: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
     if var_100.len() > 1 {
         Err(smithy_http::header::ParseError)
     } else {
@@ -1619,11 +1622,11 @@ pub fn deser_header_put_object_server_side_encryption(
     }
 }
 
-pub fn deser_header_put_object_version_id(
+pub fn deser_header_put_object_request_charged(
     header_map: &http::HeaderMap,
-) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
-    let headers = header_map.get_all("x-amz-version-id").iter();
-    let var_101: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
+) -> Result<std::option::Option<crate::model::RequestCharged>, smithy_http::header::ParseError> {
+    let headers = header_map.get_all("x-amz-request-charged").iter();
+    let var_101: Vec<crate::model::RequestCharged> = smithy_http::header::read_many(headers)?;
     if var_101.len() > 1 {
         Err(smithy_http::header::ParseError)
     } else {
@@ -1662,11 +1665,11 @@ pub fn deser_header_put_object_sse_customer_key_md5(
     }
 }
 
-pub fn deser_header_put_object_ssekms_key_id(
+pub fn deser_header_put_object_ssekms_encryption_context(
     header_map: &http::HeaderMap,
 ) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
     let headers = header_map
-        .get_all("x-amz-server-side-encryption-aws-kms-key-id")
+        .get_all("x-amz-server-side-encryption-context")
         .iter();
     let var_104: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
     if var_104.len() > 1 {
@@ -1677,11 +1680,11 @@ pub fn deser_header_put_object_ssekms_key_id(
     }
 }
 
-pub fn deser_header_put_object_ssekms_encryption_context(
+pub fn deser_header_put_object_ssekms_key_id(
     header_map: &http::HeaderMap,
 ) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
     let headers = header_map
-        .get_all("x-amz-server-side-encryption-context")
+        .get_all("x-amz-server-side-encryption-aws-kms-key-id")
         .iter();
     let var_105: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
     if var_105.len() > 1 {
@@ -1692,28 +1695,25 @@ pub fn deser_header_put_object_ssekms_encryption_context(
     }
 }
 
-pub fn deser_header_put_object_bucket_key_enabled(
+pub fn deser_header_put_object_server_side_encryption(
     header_map: &http::HeaderMap,
-) -> Result<bool, smithy_http::header::ParseError> {
-    let headers = header_map
-        .get_all("x-amz-server-side-encryption-bucket-key-enabled")
-        .iter();
-    let var_106: Vec<bool> = smithy_http::header::read_many(headers)?;
+) -> Result<std::option::Option<crate::model::ServerSideEncryption>, smithy_http::header::ParseError>
+{
+    let headers = header_map.get_all("x-amz-server-side-encryption").iter();
+    let var_106: Vec<crate::model::ServerSideEncryption> = smithy_http::header::read_many(headers)?;
     if var_106.len() > 1 {
-        return Err(smithy_http::header::ParseError);
-    }
-    let mut var_106 = var_106;
-    match var_106.pop() {
-        None => Ok(Default::default()),
-        Some(item) => Ok(item),
+        Err(smithy_http::header::ParseError)
+    } else {
+        let mut var_106 = var_106;
+        Ok(var_106.pop())
     }
 }
 
-pub fn deser_header_put_object_request_charged(
+pub fn deser_header_put_object_version_id(
     header_map: &http::HeaderMap,
-) -> Result<std::option::Option<crate::model::RequestCharged>, smithy_http::header::ParseError> {
-    let headers = header_map.get_all("x-amz-request-charged").iter();
-    let var_107: Vec<crate::model::RequestCharged> = smithy_http::header::read_many(headers)?;
+) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
+    let headers = header_map.get_all("x-amz-version-id").iter();
+    let var_107: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
     if var_107.len() > 1 {
         Err(smithy_http::header::ParseError)
     } else {
@@ -1813,17 +1813,20 @@ pub fn deser_header_restore_object_restore_output_path(
     }
 }
 
-pub fn deser_header_upload_part_server_side_encryption(
+pub fn deser_header_upload_part_bucket_key_enabled(
     header_map: &http::HeaderMap,
-) -> Result<std::option::Option<crate::model::ServerSideEncryption>, smithy_http::header::ParseError>
-{
-    let headers = header_map.get_all("x-amz-server-side-encryption").iter();
-    let var_115: Vec<crate::model::ServerSideEncryption> = smithy_http::header::read_many(headers)?;
+) -> Result<bool, smithy_http::header::ParseError> {
+    let headers = header_map
+        .get_all("x-amz-server-side-encryption-bucket-key-enabled")
+        .iter();
+    let var_115: Vec<bool> = smithy_http::header::read_many(headers)?;
     if var_115.len() > 1 {
-        Err(smithy_http::header::ParseError)
-    } else {
-        let mut var_115 = var_115;
-        Ok(var_115.pop())
+        return Err(smithy_http::header::ParseError);
+    }
+    let mut var_115 = var_115;
+    match var_115.pop() {
+        None => Ok(Default::default()),
+        Some(item) => Ok(item),
     }
 }
 
@@ -1840,13 +1843,11 @@ pub fn deser_header_upload_part_e_tag(
     }
 }
 
-pub fn deser_header_upload_part_sse_customer_algorithm(
+pub fn deser_header_upload_part_request_charged(
     header_map: &http::HeaderMap,
-) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
-    let headers = header_map
-        .get_all("x-amz-server-side-encryption-customer-algorithm")
-        .iter();
-    let var_117: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
+) -> Result<std::option::Option<crate::model::RequestCharged>, smithy_http::header::ParseError> {
+    let headers = header_map.get_all("x-amz-request-charged").iter();
+    let var_117: Vec<crate::model::RequestCharged> = smithy_http::header::read_many(headers)?;
     if var_117.len() > 1 {
         Err(smithy_http::header::ParseError)
     } else {
@@ -1855,11 +1856,11 @@ pub fn deser_header_upload_part_sse_customer_algorithm(
     }
 }
 
-pub fn deser_header_upload_part_sse_customer_key_md5(
+pub fn deser_header_upload_part_sse_customer_algorithm(
     header_map: &http::HeaderMap,
 ) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
     let headers = header_map
-        .get_all("x-amz-server-side-encryption-customer-key-MD5")
+        .get_all("x-amz-server-side-encryption-customer-algorithm")
         .iter();
     let var_118: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
     if var_118.len() > 1 {
@@ -1870,11 +1871,11 @@ pub fn deser_header_upload_part_sse_customer_key_md5(
     }
 }
 
-pub fn deser_header_upload_part_ssekms_key_id(
+pub fn deser_header_upload_part_sse_customer_key_md5(
     header_map: &http::HeaderMap,
 ) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
     let headers = header_map
-        .get_all("x-amz-server-side-encryption-aws-kms-key-id")
+        .get_all("x-amz-server-side-encryption-customer-key-MD5")
         .iter();
     let var_119: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
     if var_119.len() > 1 {
@@ -1885,28 +1886,27 @@ pub fn deser_header_upload_part_ssekms_key_id(
     }
 }
 
-pub fn deser_header_upload_part_bucket_key_enabled(
+pub fn deser_header_upload_part_ssekms_key_id(
     header_map: &http::HeaderMap,
-) -> Result<bool, smithy_http::header::ParseError> {
+) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
     let headers = header_map
-        .get_all("x-amz-server-side-encryption-bucket-key-enabled")
+        .get_all("x-amz-server-side-encryption-aws-kms-key-id")
         .iter();
-    let var_120: Vec<bool> = smithy_http::header::read_many(headers)?;
+    let var_120: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
     if var_120.len() > 1 {
-        return Err(smithy_http::header::ParseError);
-    }
-    let mut var_120 = var_120;
-    match var_120.pop() {
-        None => Ok(Default::default()),
-        Some(item) => Ok(item),
+        Err(smithy_http::header::ParseError)
+    } else {
+        let mut var_120 = var_120;
+        Ok(var_120.pop())
     }
 }
 
-pub fn deser_header_upload_part_request_charged(
+pub fn deser_header_upload_part_server_side_encryption(
     header_map: &http::HeaderMap,
-) -> Result<std::option::Option<crate::model::RequestCharged>, smithy_http::header::ParseError> {
-    let headers = header_map.get_all("x-amz-request-charged").iter();
-    let var_121: Vec<crate::model::RequestCharged> = smithy_http::header::read_many(headers)?;
+) -> Result<std::option::Option<crate::model::ServerSideEncryption>, smithy_http::header::ParseError>
+{
+    let headers = header_map.get_all("x-amz-server-side-encryption").iter();
+    let var_121: Vec<crate::model::ServerSideEncryption> = smithy_http::header::read_many(headers)?;
     if var_121.len() > 1 {
         Err(smithy_http::header::ParseError)
     } else {
@@ -1915,16 +1915,20 @@ pub fn deser_header_upload_part_request_charged(
     }
 }
 
-pub fn deser_header_upload_part_copy_copy_source_version_id(
+pub fn deser_header_upload_part_copy_bucket_key_enabled(
     header_map: &http::HeaderMap,
-) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
-    let headers = header_map.get_all("x-amz-copy-source-version-id").iter();
-    let var_122: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
+) -> Result<bool, smithy_http::header::ParseError> {
+    let headers = header_map
+        .get_all("x-amz-server-side-encryption-bucket-key-enabled")
+        .iter();
+    let var_122: Vec<bool> = smithy_http::header::read_many(headers)?;
     if var_122.len() > 1 {
-        Err(smithy_http::header::ParseError)
-    } else {
-        let mut var_122 = var_122;
-        Ok(var_122.pop())
+        return Err(smithy_http::header::ParseError);
+    }
+    let mut var_122 = var_122;
+    match var_122.pop() {
+        None => Ok(Default::default()),
+        Some(item) => Ok(item),
     }
 }
 
@@ -1939,12 +1943,11 @@ pub fn deser_payload_upload_part_copy_copy_part_result(
         .transpose()
 }
 
-pub fn deser_header_upload_part_copy_server_side_encryption(
+pub fn deser_header_upload_part_copy_copy_source_version_id(
     header_map: &http::HeaderMap,
-) -> Result<std::option::Option<crate::model::ServerSideEncryption>, smithy_http::header::ParseError>
-{
-    let headers = header_map.get_all("x-amz-server-side-encryption").iter();
-    let var_123: Vec<crate::model::ServerSideEncryption> = smithy_http::header::read_many(headers)?;
+) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
+    let headers = header_map.get_all("x-amz-copy-source-version-id").iter();
+    let var_123: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
     if var_123.len() > 1 {
         Err(smithy_http::header::ParseError)
     } else {
@@ -1953,13 +1956,11 @@ pub fn deser_header_upload_part_copy_server_side_encryption(
     }
 }
 
-pub fn deser_header_upload_part_copy_sse_customer_algorithm(
+pub fn deser_header_upload_part_copy_request_charged(
     header_map: &http::HeaderMap,
-) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
-    let headers = header_map
-        .get_all("x-amz-server-side-encryption-customer-algorithm")
-        .iter();
-    let var_124: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
+) -> Result<std::option::Option<crate::model::RequestCharged>, smithy_http::header::ParseError> {
+    let headers = header_map.get_all("x-amz-request-charged").iter();
+    let var_124: Vec<crate::model::RequestCharged> = smithy_http::header::read_many(headers)?;
     if var_124.len() > 1 {
         Err(smithy_http::header::ParseError)
     } else {
@@ -1968,11 +1969,11 @@ pub fn deser_header_upload_part_copy_sse_customer_algorithm(
     }
 }
 
-pub fn deser_header_upload_part_copy_sse_customer_key_md5(
+pub fn deser_header_upload_part_copy_sse_customer_algorithm(
     header_map: &http::HeaderMap,
 ) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
     let headers = header_map
-        .get_all("x-amz-server-side-encryption-customer-key-MD5")
+        .get_all("x-amz-server-side-encryption-customer-algorithm")
         .iter();
     let var_125: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
     if var_125.len() > 1 {
@@ -1983,11 +1984,11 @@ pub fn deser_header_upload_part_copy_sse_customer_key_md5(
     }
 }
 
-pub fn deser_header_upload_part_copy_ssekms_key_id(
+pub fn deser_header_upload_part_copy_sse_customer_key_md5(
     header_map: &http::HeaderMap,
 ) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
     let headers = header_map
-        .get_all("x-amz-server-side-encryption-aws-kms-key-id")
+        .get_all("x-amz-server-side-encryption-customer-key-MD5")
         .iter();
     let var_126: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
     if var_126.len() > 1 {
@@ -1998,28 +1999,27 @@ pub fn deser_header_upload_part_copy_ssekms_key_id(
     }
 }
 
-pub fn deser_header_upload_part_copy_bucket_key_enabled(
+pub fn deser_header_upload_part_copy_ssekms_key_id(
     header_map: &http::HeaderMap,
-) -> Result<bool, smithy_http::header::ParseError> {
+) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
     let headers = header_map
-        .get_all("x-amz-server-side-encryption-bucket-key-enabled")
+        .get_all("x-amz-server-side-encryption-aws-kms-key-id")
         .iter();
-    let var_127: Vec<bool> = smithy_http::header::read_many(headers)?;
+    let var_127: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
     if var_127.len() > 1 {
-        return Err(smithy_http::header::ParseError);
-    }
-    let mut var_127 = var_127;
-    match var_127.pop() {
-        None => Ok(Default::default()),
-        Some(item) => Ok(item),
+        Err(smithy_http::header::ParseError)
+    } else {
+        let mut var_127 = var_127;
+        Ok(var_127.pop())
     }
 }
 
-pub fn deser_header_upload_part_copy_request_charged(
+pub fn deser_header_upload_part_copy_server_side_encryption(
     header_map: &http::HeaderMap,
-) -> Result<std::option::Option<crate::model::RequestCharged>, smithy_http::header::ParseError> {
-    let headers = header_map.get_all("x-amz-request-charged").iter();
-    let var_128: Vec<crate::model::RequestCharged> = smithy_http::header::read_many(headers)?;
+) -> Result<std::option::Option<crate::model::ServerSideEncryption>, smithy_http::header::ParseError>
+{
+    let headers = header_map.get_all("x-amz-server-side-encryption").iter();
+    let var_128: Vec<crate::model::ServerSideEncryption> = smithy_http::header::read_many(headers)?;
     if var_128.len() > 1 {
         Err(smithy_http::header::ParseError)
     } else {

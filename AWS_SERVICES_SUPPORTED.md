@@ -1,4 +1,3 @@
-
 # AWS Services Supported
 
 The alpha SDK for Rust currently supports the checked services below. If you want to see a particular service added, please add your "+1" to the GitHub issue corresponding to the service. If the Issue doesn't exist yet, feel free to create one! This will help us prioritize adding new services to the SDK. 
@@ -16,6 +15,15 @@ The alpha SDK for Rust currently supports the checked services below. If you wan
 - [x] [Amazon SSM](https://github.com/awslabs/aws-sdk-rust/issues/22)
 - [x] [Amazon SQS](https://github.com/awslabs/aws-sdk-rust/issues/19)
 - [x] [Amazon ECS](https://github.com/awslabs/aws-sdk-rust/issues/28)
+- [x] Amazon Batch
+- [x] [Amazon Route 53](https://github.com/awslabs/aws-sdk-rust/issues/35)
+- [x] [Amazon RDS](https://github.com/awslabs/aws-sdk-rust/issues/36)
+- [x] Amazon Rds-Data
+- [x] [Amazon IAM](https://github.com/awslabs/aws-sdk-rust/issues/21)
+- [x] [Amazon SNS](https://github.com/awslabs/aws-sdk-rust/issues/26)
+- [x] [Amazon Sts](https://github.com/awslabs/aws-sdk-rust/issues/17)
+- [x] Amazon Medialive
+- [x] Amazon Mediapackage
 
 ------
 - [ ] Amazon Access Analyzer
@@ -37,7 +45,6 @@ The alpha SDK for Rust currently supports the checked services below. If you wan
 - [ ] Amazon Autoscaling-Plans
 - [ ] Amazon Awsmigrationhub
 - [ ] Amazon Backup
-- [ ] Amazon Batch
 - [ ] Amazon Braket
 - [ ] Amazon Budgets
 - [ ] Amazon Ce
@@ -119,7 +126,6 @@ The alpha SDK for Rust currently supports the checked services below. If you wan
 - [ ] Amazon Guardduty
 - [ ] Amazon Health
 - [ ] Amazon Honeycode
-- [ ] [Amazon IAM](https://github.com/awslabs/aws-sdk-rust/issues/21)
 - [ ] Amazon Identitystore
 - [ ] Amazon Imagebuilder
 - [ ] Amazon Inspector
@@ -157,8 +163,6 @@ The alpha SDK for Rust currently supports the checked services below. If you wan
 - [ ] Amazon Marketplacecommerceanalytics
 - [ ] Amazon Mediaconnect
 - [ ] Amazon Mediaconvert
-- [ ] Amazon Medialive
-- [ ] Amazon Mediapackage
 - [ ] Amazon Mediapackage-Vod
 - [ ] Amazon Mediastore
 - [ ] Amazon Mediastore-Data
@@ -183,23 +187,18 @@ The alpha SDK for Rust currently supports the checked services below. If you wan
 - [ ] Amazon Pinpoint
 - [ ] Amazon Pinpoint-Email
 - [ ] Amazon Pricing
-
 - [ ] Amazon Quicksight
 - [ ] Amazon RAM
-- [ ] [Amazon RDS](https://github.com/awslabs/aws-sdk-rust/issues/36)
-- [ ] Amazon Rds-Data
 - [ ] Amazon Redshift
 - [ ] Amazon Redshift-Data
 - [ ] Amazon Rekognition
 - [ ] Amazon Resource-Groups
 - [ ] Amazon Resourcegroupstaggingapi
 - [ ] Amazon Robomaker
-- [ ] [Amazon Route 53](https://github.com/awslabs/aws-sdk-rust/issues/35)
 - [ ] Amazon Route53Domains
 - [ ] Amazon Route53Resolver
 - [ ] Amazon Runtime.Lex
 - [ ] Amazon Runtime.Sagemaker
-
 - [ ] Amazon S3Control
 - [ ] Amazon S3Outposts
 - [ ] Amazon Sagemaker
@@ -218,14 +217,12 @@ The alpha SDK for Rust currently supports the checked services below. If you wan
 - [ ] Amazon SMS
 - [ ] Amazon Sms-Voice
 - [ ] Amazon Snowball
-- [ ] [Amazon SNS](https://github.com/awslabs/aws-sdk-rust/issues/26)
 - [ ] Amazon SSO
 - [ ] Amazon Sso-Admin
 - [ ] Amazon Sso-Oidc
 - [ ] Amazon States
 - [ ] Amazon Storagegateway
 - [ ] Amazon Streams.Dynamodb
-- [ ] [Amazon Sts](https://github.com/awslabs/aws-sdk-rust/issues/17)
 - [ ] Amazon Support
 - [ ] Amazon Swf
 - [ ] Amazon Synthetics

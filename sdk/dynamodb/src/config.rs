@@ -65,11 +65,9 @@ impl Builder {
             make_token: self
                 .make_token
                 .unwrap_or_else(|| Box::new(crate::idempotency_token::default_provider())),
-            endpoint_resolver: self.endpoint_resolver.unwrap_or_else(|| {
-                ::std::sync::Arc::new(aws_endpoint::DefaultAwsEndpointResolver::for_service(
-                    "dynamodb",
-                ))
-            }),
+            endpoint_resolver: self
+                .endpoint_resolver
+                .unwrap_or_else(|| ::std::sync::Arc::new(crate::aws_endpoint::endpoint_resolver())),
             region: {
                 use aws_types::region::ProvideRegion;
                 self.region

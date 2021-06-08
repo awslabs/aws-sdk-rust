@@ -1808,9 +1808,11 @@ pub struct TableDescription {
     pub provisioned_throughput: std::option::Option<crate::model::ProvisionedThroughputDescription>,
     /// <p>The total size of the specified table, in bytes. DynamoDB updates this value approximately every six hours. Recent changes might not be reflected in this value.</p>
     #[serde(rename = "TableSizeBytes")]
+    #[serde(default)]
     pub table_size_bytes: i64,
     /// <p>The number of items in the specified table. DynamoDB updates this value approximately every six hours. Recent changes might not be reflected in this value.</p>
     #[serde(rename = "ItemCount")]
+    #[serde(default)]
     pub item_count: i64,
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the table.</p>
     #[serde(rename = "TableArn")]
@@ -2588,7 +2590,7 @@ pub struct SSEDescription {
     /// </ul>
     #[serde(rename = "Status")]
     #[serde(default)]
-    pub status: std::option::Option<crate::model::SSEStatus>,
+    pub status: std::option::Option<crate::model::SseStatus>,
     /// <p>Server-side encryption type. The only supported value is:</p>
     /// <ul>
     /// <li>
@@ -2600,7 +2602,7 @@ pub struct SSEDescription {
     /// </ul>
     #[serde(rename = "SSEType")]
     #[serde(default)]
-    pub sse_type: std::option::Option<crate::model::SSEType>,
+    pub sse_type: std::option::Option<crate::model::SseType>,
     /// <p>The AWS KMS customer master key (CMK) ARN used for the AWS KMS encryption.</p>
     #[serde(rename = "KMSMasterKeyArn")]
     #[serde(default)]
@@ -2636,8 +2638,8 @@ pub mod sse_description {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) status: std::option::Option<crate::model::SSEStatus>,
-        pub(crate) sse_type: std::option::Option<crate::model::SSEType>,
+        pub(crate) status: std::option::Option<crate::model::SseStatus>,
+        pub(crate) sse_type: std::option::Option<crate::model::SseType>,
         pub(crate) kms_master_key_arn: std::option::Option<std::string::String>,
         pub(crate) inaccessible_encryption_date_time: std::option::Option<smithy_types::Instant>,
     }
@@ -2653,11 +2655,11 @@ pub mod sse_description {
         /// <code>UPDATING</code> - Server-side encryption is being updated.</p>
         /// </li>
         /// </ul>
-        pub fn status(mut self, inp: crate::model::SSEStatus) -> Self {
+        pub fn status(mut self, inp: crate::model::SseStatus) -> Self {
             self.status = Some(inp);
             self
         }
-        pub fn set_status(mut self, inp: std::option::Option<crate::model::SSEStatus>) -> Self {
+        pub fn set_status(mut self, inp: std::option::Option<crate::model::SseStatus>) -> Self {
             self.status = inp;
             self
         }
@@ -2670,11 +2672,11 @@ pub mod sse_description {
         /// apply).</p>
         /// </li>
         /// </ul>
-        pub fn sse_type(mut self, inp: crate::model::SSEType) -> Self {
+        pub fn sse_type(mut self, inp: crate::model::SseType) -> Self {
             self.sse_type = Some(inp);
             self
         }
-        pub fn set_sse_type(mut self, inp: std::option::Option<crate::model::SSEType>) -> Self {
+        pub fn set_sse_type(mut self, inp: std::option::Option<crate::model::SseType>) -> Self {
             self.sse_type = inp;
             self
         }
@@ -2734,42 +2736,42 @@ impl SSEDescription {
     std::fmt::Debug,
     std::hash::Hash,
 )]
-pub enum SSEType {
+pub enum SseType {
     Aes256,
     Kms,
     Unknown(String),
 }
-impl std::convert::From<&str> for SSEType {
+impl std::convert::From<&str> for SseType {
     fn from(s: &str) -> Self {
         match s {
-            "AES256" => SSEType::Aes256,
-            "KMS" => SSEType::Kms,
-            other => SSEType::Unknown(other.to_owned()),
+            "AES256" => SseType::Aes256,
+            "KMS" => SseType::Kms,
+            other => SseType::Unknown(other.to_owned()),
         }
     }
 }
-impl std::str::FromStr for SSEType {
+impl std::str::FromStr for SseType {
     type Err = std::convert::Infallible;
 
     fn from_str(s: &str) -> Result<Self, Self::Err> {
-        Ok(SSEType::from(s))
+        Ok(SseType::from(s))
     }
 }
-impl SSEType {
+impl SseType {
     pub fn as_str(&self) -> &str {
         match self {
-            SSEType::Aes256 => "AES256",
-            SSEType::Kms => "KMS",
-            SSEType::Unknown(s) => s.as_ref(),
+            SseType::Aes256 => "AES256",
+            SseType::Kms => "KMS",
+            SseType::Unknown(s) => s.as_ref(),
         }
     }
 }
-impl AsRef<str> for SSEType {
+impl AsRef<str> for SseType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }
 }
-impl<'de> serde::Deserialize<'de> for SSEType {
+impl<'de> serde::Deserialize<'de> for SseType {
     fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
     where
         D: serde::Deserializer<'de>,
@@ -2789,7 +2791,7 @@ impl<'de> serde::Deserialize<'de> for SSEType {
     std::fmt::Debug,
     std::hash::Hash,
 )]
-pub enum SSEStatus {
+pub enum SseStatus {
     Disabled,
     Disabling,
     Enabled,
@@ -2797,43 +2799,43 @@ pub enum SSEStatus {
     Updating,
     Unknown(String),
 }
-impl std::convert::From<&str> for SSEStatus {
+impl std::convert::From<&str> for SseStatus {
     fn from(s: &str) -> Self {
         match s {
-            "DISABLED" => SSEStatus::Disabled,
-            "DISABLING" => SSEStatus::Disabling,
-            "ENABLED" => SSEStatus::Enabled,
-            "ENABLING" => SSEStatus::Enabling,
-            "UPDATING" => SSEStatus::Updating,
-            other => SSEStatus::Unknown(other.to_owned()),
+            "DISABLED" => SseStatus::Disabled,
+            "DISABLING" => SseStatus::Disabling,
+            "ENABLED" => SseStatus::Enabled,
+            "ENABLING" => SseStatus::Enabling,
+            "UPDATING" => SseStatus::Updating,
+            other => SseStatus::Unknown(other.to_owned()),
         }
     }
 }
-impl std::str::FromStr for SSEStatus {
+impl std::str::FromStr for SseStatus {
     type Err = std::convert::Infallible;
 
     fn from_str(s: &str) -> Result<Self, Self::Err> {
-        Ok(SSEStatus::from(s))
+        Ok(SseStatus::from(s))
     }
 }
-impl SSEStatus {
+impl SseStatus {
     pub fn as_str(&self) -> &str {
         match self {
-            SSEStatus::Disabled => "DISABLED",
-            SSEStatus::Disabling => "DISABLING",
-            SSEStatus::Enabled => "ENABLED",
-            SSEStatus::Enabling => "ENABLING",
-            SSEStatus::Updating => "UPDATING",
-            SSEStatus::Unknown(s) => s.as_ref(),
+            SseStatus::Disabled => "DISABLED",
+            SseStatus::Disabling => "DISABLING",
+            SseStatus::Enabled => "ENABLED",
+            SseStatus::Enabling => "ENABLING",
+            SseStatus::Updating => "UPDATING",
+            SseStatus::Unknown(s) => s.as_ref(),
         }
     }
 }
-impl AsRef<str> for SSEStatus {
+impl AsRef<str> for SseStatus {
     fn as_ref(&self) -> &str {
         self.as_str()
     }
 }
-impl<'de> serde::Deserialize<'de> for SSEStatus {
+impl<'de> serde::Deserialize<'de> for SseStatus {
     fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
     where
         D: serde::Deserializer<'de>,
@@ -3620,9 +3622,11 @@ pub struct GlobalSecondaryIndexDescription {
     pub provisioned_throughput: std::option::Option<crate::model::ProvisionedThroughputDescription>,
     /// <p>The total size of the specified index, in bytes. DynamoDB updates this value approximately every six hours. Recent changes might not be reflected in this value.</p>
     #[serde(rename = "IndexSizeBytes")]
+    #[serde(default)]
     pub index_size_bytes: i64,
     /// <p>The number of items in the specified index. DynamoDB updates this value approximately every six hours. Recent changes might not be reflected in this value.</p>
     #[serde(rename = "ItemCount")]
+    #[serde(default)]
     pub item_count: i64,
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the index.</p>
     #[serde(rename = "IndexArn")]
@@ -4311,9 +4315,11 @@ pub struct LocalSecondaryIndexDescription {
     pub projection: std::option::Option<crate::model::Projection>,
     /// <p>The total size of the specified index, in bytes. DynamoDB updates this value approximately every six hours. Recent changes might not be reflected in this value.</p>
     #[serde(rename = "IndexSizeBytes")]
+    #[serde(default)]
     pub index_size_bytes: i64,
     /// <p>The number of items in the specified index. DynamoDB updates this value approximately every six hours. Recent changes might not be reflected in this value.</p>
     #[serde(rename = "ItemCount")]
+    #[serde(default)]
     pub item_count: i64,
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the index.</p>
     #[serde(rename = "IndexArn")]
@@ -5252,7 +5258,7 @@ pub struct SSESpecification {
     /// </ul>
     #[serde(rename = "SSEType")]
     #[serde(default)]
-    pub sse_type: std::option::Option<crate::model::SSEType>,
+    pub sse_type: std::option::Option<crate::model::SseType>,
     /// <p>The AWS KMS customer master key (CMK) that should be used for the AWS KMS encryption. To
     /// specify a CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. Note
     /// that you should only provide this parameter if the key is different from the default
@@ -5277,7 +5283,7 @@ pub mod sse_specification {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) enabled: std::option::Option<bool>,
-        pub(crate) sse_type: std::option::Option<crate::model::SSEType>,
+        pub(crate) sse_type: std::option::Option<crate::model::SseType>,
         pub(crate) kms_master_key_id: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -5301,11 +5307,11 @@ pub mod sse_specification {
         /// apply).</p>
         /// </li>
         /// </ul>
-        pub fn sse_type(mut self, inp: crate::model::SSEType) -> Self {
+        pub fn sse_type(mut self, inp: crate::model::SseType) -> Self {
             self.sse_type = Some(inp);
             self
         }
-        pub fn set_sse_type(mut self, inp: std::option::Option<crate::model::SSEType>) -> Self {
+        pub fn set_sse_type(mut self, inp: std::option::Option<crate::model::SseType>) -> Self {
             self.sse_type = inp;
             self
         }
@@ -12955,6 +12961,7 @@ pub struct Endpoint {
     pub address: std::option::Option<std::string::String>,
     /// <p>Endpoint cache time to live (TTL) value.</p>
     #[serde(rename = "CachePeriodInMinutes")]
+    #[serde(default)]
     pub cache_period_in_minutes: i64,
 }
 impl std::fmt::Debug for Endpoint {
@@ -13577,6 +13584,7 @@ pub struct SourceTableDetails {
     pub table_arn: std::option::Option<std::string::String>,
     /// <p>Size of the table in bytes. Note that this is an approximate value.</p>
     #[serde(rename = "TableSizeBytes")]
+    #[serde(default)]
     pub table_size_bytes: i64,
     /// <p>Schema of the table. </p>
     #[serde(rename = "KeySchema")]

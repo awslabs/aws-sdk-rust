@@ -18,9 +18,11 @@ pub fn serialize_structure_create_secret_input(
     if let Some(var_3) = &input.tags {
         let mut array_4 = object.key("Tags").start_array();
         for item_5 in var_3 {
-            let mut object_6 = array_4.value().start_object();
-            crate::json_ser::serialize_structure_tag(&mut object_6, item_5);
-            object_6.finish();
+            {
+                let mut object_6 = array_4.value().start_object();
+                crate::json_ser::serialize_structure_tag(&mut object_6, item_5);
+                object_6.finish();
+            }
         }
         array_4.finish();
     }
@@ -155,9 +157,11 @@ pub fn serialize_structure_list_secrets_input(
     if let Some(var_32) = &input.filters {
         let mut array_33 = object.key("Filters").start_array();
         for item_34 in var_32 {
-            let mut object_35 = array_33.value().start_object();
-            crate::json_ser::serialize_structure_filter(&mut object_35, item_34);
-            object_35.finish();
+            {
+                let mut object_35 = array_33.value().start_object();
+                crate::json_ser::serialize_structure_filter(&mut object_35, item_34);
+                object_35.finish();
+            }
         }
         array_33.finish();
     }
@@ -220,7 +224,9 @@ pub fn serialize_structure_put_secret_value_input(
     if let Some(var_47) = &input.version_stages {
         let mut array_48 = object.key("VersionStages").start_array();
         for item_49 in var_47 {
-            array_48.value().string(item_49);
+            {
+                array_48.value().string(item_49);
+            }
         }
         array_48.finish();
     }
@@ -265,9 +271,11 @@ pub fn serialize_structure_tag_resource_input(
     if let Some(var_57) = &input.tags {
         let mut array_58 = object.key("Tags").start_array();
         for item_59 in var_57 {
-            let mut object_60 = array_58.value().start_object();
-            crate::json_ser::serialize_structure_tag(&mut object_60, item_59);
-            object_60.finish();
+            {
+                let mut object_60 = array_58.value().start_object();
+                crate::json_ser::serialize_structure_tag(&mut object_60, item_59);
+                object_60.finish();
+            }
         }
         array_58.finish();
     }
@@ -280,7 +288,9 @@ pub fn serialize_structure_untag_resource_input(
     if let Some(var_61) = &input.tag_keys {
         let mut array_62 = object.key("TagKeys").start_array();
         for item_63 in var_61 {
-            array_62.value().string(item_63);
+            {
+                array_62.value().string(item_63);
+            }
         }
         array_62.finish();
     }
@@ -367,7 +377,9 @@ pub fn serialize_structure_filter(
     if let Some(var_80) = &input.values {
         let mut array_81 = object.key("Values").start_array();
         for item_82 in var_80 {
-            array_81.value().string(item_82);
+            {
+                array_81.value().string(item_82);
+            }
         }
         array_81.finish();
     }

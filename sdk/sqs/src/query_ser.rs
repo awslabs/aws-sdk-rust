@@ -16,10 +16,12 @@ pub fn serialize_structure_change_message_visibility_batch_request_entry(
     }
     #[allow(unused_mut)]
     let mut scope_5 = writer.prefix("VisibilityTimeout");
-    scope_5.number(
-        #[allow(clippy::useless_conversion)]
-        smithy_types::Number::NegInt((input.visibility_timeout).into()),
-    );
+    if input.visibility_timeout != 0 {
+        scope_5.number(
+            #[allow(clippy::useless_conversion)]
+            smithy_types::Number::NegInt((input.visibility_timeout).into()),
+        );
+    }
 }
 
 #[allow(unused_mut)]
@@ -144,10 +146,12 @@ pub fn serialize_structure_send_message_batch_request_entry(
     }
     #[allow(unused_mut)]
     let mut scope_46 = writer.prefix("DelaySeconds");
-    scope_46.number(
-        #[allow(clippy::useless_conversion)]
-        smithy_types::Number::NegInt((input.delay_seconds).into()),
-    );
+    if input.delay_seconds != 0 {
+        scope_46.number(
+            #[allow(clippy::useless_conversion)]
+            smithy_types::Number::NegInt((input.delay_seconds).into()),
+        );
+    }
     #[allow(unused_mut)]
     let mut scope_47 = writer.prefix("MessageAttribute");
     if let Some(var_48) = &input.message_attributes {
@@ -155,7 +159,9 @@ pub fn serialize_structure_send_message_batch_request_entry(
         for (key_50, value_51) in var_48 {
             #[allow(unused_mut)]
             let mut entry_52 = map_49.entry(key_50);
-            crate::query_ser::serialize_structure_message_attribute_value(entry_52, value_51);
+            {
+                crate::query_ser::serialize_structure_message_attribute_value(entry_52, value_51);
+            }
         }
         map_49.finish();
     }
@@ -166,9 +172,11 @@ pub fn serialize_structure_send_message_batch_request_entry(
         for (key_56, value_57) in var_54 {
             #[allow(unused_mut)]
             let mut entry_58 = map_55.entry(key_56.as_str());
-            crate::query_ser::serialize_structure_message_system_attribute_value(
-                entry_58, value_57,
-            );
+            {
+                crate::query_ser::serialize_structure_message_system_attribute_value(
+                    entry_58, value_57,
+                );
+            }
         }
         map_55.finish();
     }

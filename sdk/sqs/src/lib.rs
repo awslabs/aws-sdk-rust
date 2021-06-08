@@ -77,6 +77,7 @@ pub use error_meta::Error;
 
 pub use config::Config;
 
+mod aws_endpoint;
 #[cfg(feature = "client")]
 pub mod client;
 pub mod config;

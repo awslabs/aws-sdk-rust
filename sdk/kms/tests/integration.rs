@@ -20,6 +20,41 @@ use std::time::{Duration, UNIX_EPOCH};
 // like https://github.com/davidbarsky/sigv4/blob/master/aws-sigv4/src/lib.rs#L283-L315 to store
 // the requests/responses externally
 
+/// Validate that for CN regions we set the URI correctly
+#[tokio::test]
+async fn generate_random_cn() {
+    let creds = Credentials::from_keys(
+        "ANOTREAL",
+        "notrealrnrELgWzOk3IfjzDKtFBhDby",
+        Some("notarealsessiontoken".to_string()),
+    );
+    let conn = TestConnection::new(vec![(
+        http::Request::builder()
+            .header("host", "kms.cn-north-1.amazonaws.com.cn")
+            .uri(Uri::from_static("https://kms.cn-north-1.amazonaws.com.cn/"))
+            .body(SdkBody::from(r#"{"NumberOfBytes":64}"#)).unwrap(),
+        http::Response::builder()
+            .status(http::StatusCode::from_u16(200).unwrap())
+            .body(r#"{"Plaintext":"6CG0fbzzhg5G2VcFCPmJMJ8Njv3voYCgrGlp3+BZe7eDweCXgiyDH9BnkKvLmS7gQhnYDUlyES3fZVGwv5+CxA=="}"#).unwrap())
+    ]);
+    let conf = Config::builder()
+        .region(Region::new("cn-north-1"))
+        .credentials_provider(creds)
+        .build();
+    let client = kms::Client::from_conf_conn(conf, aws_hyper::conn::Standard::new(conn.clone()));
+    let _ = client
+        .generate_random()
+        .number_of_bytes(64)
+        .send()
+        .await
+        .expect("success");
+
+    assert_eq!(conn.requests().len(), 1);
+    for validate_request in conn.requests().iter() {
+        validate_request.assert_matches(vec![]);
+    }
+}
+
 #[tokio::test]
 async fn generate_random() {
     let creds = Credentials::from_keys(

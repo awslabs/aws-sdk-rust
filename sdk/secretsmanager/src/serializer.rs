@@ -1580,6 +1580,7 @@ pub struct ValidateResourcePolicyOutputBody {
     pub validation_errors: std::option::Option<std::vec::Vec<crate::model::ValidationErrorsEntry>>,
     /// <p>Returns a message stating that your Reource Policy passed validation. </p>
     #[serde(rename = "PolicyValidationPassed")]
+    #[serde(default)]
     pub policy_validation_passed: bool,
 }
 impl std::fmt::Debug for ValidateResourcePolicyOutputBody {

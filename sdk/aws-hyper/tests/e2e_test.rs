@@ -4,7 +4,8 @@
  */
 
 use aws_auth::Credentials;
-use aws_endpoint::{set_endpoint_resolver, DefaultAwsEndpointResolver};
+use aws_endpoint::partition::endpoint::{Protocol, SignatureVersion};
+use aws_endpoint::set_endpoint_resolver;
 use aws_http::user_agent::AwsUserAgent;
 use aws_http::AwsErrorRetryPolicy;
 use aws_hyper::test_connection::TestConnection;
@@ -77,7 +78,12 @@ fn test_operation() -> Operation<TestOperationParser, AwsErrorRetryPolicy> {
         .augment(|req, mut conf| {
             set_endpoint_resolver(
                 &mut conf,
-                Arc::new(DefaultAwsEndpointResolver::for_service("test-service")),
+                Arc::new(aws_endpoint::partition::endpoint::Metadata {
+                    uri_template: "test-service.{region}.amazonaws.com",
+                    protocol: Protocol::Https,
+                    credential_scope: Default::default(),
+                    signature_versions: SignatureVersion::V4,
+                }),
             );
             aws_auth::set_provider(
                 &mut conf,

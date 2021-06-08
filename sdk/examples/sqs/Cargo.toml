@@ -12,4 +12,4 @@ tokio = { version = "1", features = ["full"] }
 tracing-subscriber = "0.2.18"
 
 [[bin]]
-name = "hello-world"
+name = "sqs-hello-world"

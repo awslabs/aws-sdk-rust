@@ -3018,6 +3018,7 @@ pub struct ExecuteCommandOutputBody {
     /// supports initiating interactive sessions, so you must specify <code>true</code> for this
     /// value.</p>
     #[serde(rename = "interactive")]
+    #[serde(default)]
     pub interactive: bool,
     /// <p>The details of the SSM session that was created for this instance of
     /// execute-command.</p>

@@ -896,6 +896,7 @@ pub struct Layer {
     pub arn: std::option::Option<std::string::String>,
     /// <p>The size of the layer archive in bytes.</p>
     #[serde(rename = "CodeSize")]
+    #[serde(default)]
     pub code_size: i64,
     /// <p>The Amazon Resource Name (ARN) for a signing profile version.</p>
     #[serde(rename = "SigningProfileVersionArn")]
@@ -2547,6 +2548,7 @@ pub struct LayerVersionContentOutput {
     pub code_sha256: std::option::Option<std::string::String>,
     /// <p>The size of the layer archive in bytes.</p>
     #[serde(rename = "CodeSize")]
+    #[serde(default)]
     pub code_size: i64,
     /// <p>The Amazon Resource Name (ARN) for a signing profile version.</p>
     #[serde(rename = "SigningProfileVersionArn")]
@@ -2785,6 +2787,7 @@ pub struct FunctionConfiguration {
     pub handler: std::option::Option<std::string::String>,
     /// <p>The size of the function's deployment package, in bytes.</p>
     #[serde(rename = "CodeSize")]
+    #[serde(default)]
     pub code_size: i64,
     /// <p>The function's description.</p>
     #[serde(rename = "Description")]
@@ -3535,6 +3538,7 @@ pub struct LayerVersionsListItem {
     pub layer_version_arn: std::option::Option<std::string::String>,
     /// <p>The version number.</p>
     #[serde(rename = "Version")]
+    #[serde(default)]
     pub version: i64,
     /// <p>The description of the version.</p>
     #[serde(rename = "Description")]
@@ -4855,9 +4859,11 @@ impl FunctionCodeLocation {
 pub struct AccountUsage {
     /// <p>The amount of storage space, in bytes, that's being used by deployment packages and layer archives.</p>
     #[serde(rename = "TotalCodeSize")]
+    #[serde(default)]
     pub total_code_size: i64,
     /// <p>The number of Lambda functions.</p>
     #[serde(rename = "FunctionCount")]
+    #[serde(default)]
     pub function_count: i64,
 }
 impl std::fmt::Debug for AccountUsage {
@@ -4918,16 +4924,20 @@ impl AccountUsage {
 pub struct AccountLimit {
     /// <p>The amount of storage space that you can use for all deployment packages and layer archives.</p>
     #[serde(rename = "TotalCodeSize")]
+    #[serde(default)]
     pub total_code_size: i64,
     /// <p>The maximum size of a function's deployment package and layers when they're extracted.</p>
     #[serde(rename = "CodeSizeUnzipped")]
+    #[serde(default)]
     pub code_size_unzipped: i64,
     /// <p>The maximum size of a deployment package when it's uploaded directly to AWS Lambda. Use Amazon S3 for larger
     /// files.</p>
     #[serde(rename = "CodeSizeZipped")]
+    #[serde(default)]
     pub code_size_zipped: i64,
     /// <p>The maximum number of simultaneous function executions.</p>
     #[serde(rename = "ConcurrentExecutions")]
+    #[serde(default)]
     pub concurrent_executions: i32,
     /// <p>The maximum number of simultaneous function executions, minus the capacity that's reserved for individual
     /// functions with <a>PutFunctionConcurrency</a>.</p>

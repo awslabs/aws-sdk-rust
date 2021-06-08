@@ -1114,6 +1114,7 @@ pub struct CreateFunctionOutputBody {
     pub handler: std::option::Option<std::string::String>,
     /// <p>The size of the function's deployment package, in bytes.</p>
     #[serde(rename = "CodeSize")]
+    #[serde(default)]
     pub code_size: i64,
     /// <p>The function's description.</p>
     #[serde(rename = "Description")]
@@ -1774,6 +1775,7 @@ pub struct GetFunctionConfigurationOutputBody {
     pub handler: std::option::Option<std::string::String>,
     /// <p>The size of the function's deployment package, in bytes.</p>
     #[serde(rename = "CodeSize")]
+    #[serde(default)]
     pub code_size: i64,
     /// <p>The function's description.</p>
     #[serde(rename = "Description")]
@@ -2014,6 +2016,7 @@ pub struct GetLayerVersionOutputBody {
     pub created_date: std::option::Option<std::string::String>,
     /// <p>The version number.</p>
     #[serde(rename = "Version")]
+    #[serde(default)]
     pub version: i64,
     /// <p>The layer's compatible runtimes.</p>
     #[serde(rename = "CompatibleRuntimes")]
@@ -2064,6 +2067,7 @@ pub struct GetLayerVersionByArnOutputBody {
     pub created_date: std::option::Option<std::string::String>,
     /// <p>The version number.</p>
     #[serde(rename = "Version")]
+    #[serde(default)]
     pub version: i64,
     /// <p>The layer's compatible runtimes.</p>
     #[serde(rename = "CompatibleRuntimes")]
@@ -2443,6 +2447,7 @@ pub struct PublishLayerVersionOutputBody {
     pub created_date: std::option::Option<std::string::String>,
     /// <p>The version number.</p>
     #[serde(rename = "Version")]
+    #[serde(default)]
     pub version: i64,
     /// <p>The layer's compatible runtimes.</p>
     #[serde(rename = "CompatibleRuntimes")]
@@ -2494,6 +2499,7 @@ pub struct PublishVersionOutputBody {
     pub handler: std::option::Option<std::string::String>,
     /// <p>The size of the function's deployment package, in bytes.</p>
     #[serde(rename = "CodeSize")]
+    #[serde(default)]
     pub code_size: i64,
     /// <p>The function's description.</p>
     #[serde(rename = "Description")]
@@ -3058,6 +3064,7 @@ pub struct UpdateFunctionCodeOutputBody {
     pub handler: std::option::Option<std::string::String>,
     /// <p>The size of the function's deployment package, in bytes.</p>
     #[serde(rename = "CodeSize")]
+    #[serde(default)]
     pub code_size: i64,
     /// <p>The function's description.</p>
     #[serde(rename = "Description")]
@@ -3236,6 +3243,7 @@ pub struct UpdateFunctionConfigurationOutputBody {
     pub handler: std::option::Option<std::string::String>,
     /// <p>The size of the function's deployment package, in bytes.</p>
     #[serde(rename = "CodeSize")]
+    #[serde(default)]
     pub code_size: i64,
     /// <p>The function's description.</p>
     #[serde(rename = "Description")]

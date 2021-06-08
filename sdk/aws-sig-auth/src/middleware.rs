@@ -107,7 +107,8 @@ mod test {
     use crate::middleware::{SigV4SigningStage, SigningStageError};
     use crate::signer::{OperationSigningConfig, SigV4Signer};
     use aws_auth::CredentialsProvider;
-    use aws_endpoint::{set_endpoint_resolver, AwsEndpointStage, DefaultAwsEndpointResolver};
+    use aws_endpoint::partition::endpoint::{Protocol, SignatureVersion};
+    use aws_endpoint::{set_endpoint_resolver, AwsEndpointStage};
     use aws_types::region::Region;
     use aws_types::SigningService;
     use http::header::AUTHORIZATION;
@@ -121,7 +122,12 @@ mod test {
     // check that the endpoint middleware followed by signing middleware produce the expected result
     #[test]
     fn endpoint_plus_signer() {
-        let provider = Arc::new(DefaultAwsEndpointResolver::for_service("kinesis"));
+        let provider = Arc::new(aws_endpoint::partition::endpoint::Metadata {
+            uri_template: "kinesis.{region}.amazonaws.com",
+            protocol: Protocol::Https,
+            credential_scope: Default::default(),
+            signature_versions: SignatureVersion::V4,
+        });
         let req = http::Request::new(SdkBody::from(""));
         let region = Region::new("us-east-1");
         let req = operation::Request::new(req)

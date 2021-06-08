@@ -12410,6 +12410,7 @@ pub struct OpsItemLimitExceededError {
     #[serde(default)]
     pub resource_types: std::option::Option<std::vec::Vec<std::string::String>>,
     #[serde(rename = "Limit")]
+    #[serde(default)]
     pub limit: i32,
     #[serde(rename = "LimitType")]
     #[serde(default)]

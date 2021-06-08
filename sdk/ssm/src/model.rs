@@ -22,12 +22,14 @@ pub struct ResourceDataSyncSource {
     /// <p>Whether to automatically synchronize and aggregate data from new AWS Regions when those
     /// Regions come online.</p>
     #[serde(rename = "IncludeFutureRegions")]
+    #[serde(default)]
     pub include_future_regions: bool,
     /// <p>When you create a resource data sync, if you choose one of the AWS Organizations options, then Systems Manager
     /// automatically enables all OpsData sources in the selected AWS Regions for all AWS accounts in
     /// your organization (or in the selected organization units). For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/Explorer-resouce-data-sync-multiple-accounts-and-regions.html">About multiple account and Region resource data syncs</a> in the
     /// <i>AWS Systems Manager User Guide</i>.</p>
     #[serde(rename = "EnableAllOpsDataSources")]
+    #[serde(default)]
     pub enable_all_ops_data_sources: bool,
 }
 impl std::fmt::Debug for ResourceDataSyncSource {
@@ -2476,6 +2478,7 @@ pub struct CloudWatchOutputConfig {
     pub cloud_watch_log_group_name: std::option::Option<std::string::String>,
     /// <p>Enables Systems Manager to send command output to CloudWatch Logs.</p>
     #[serde(rename = "CloudWatchOutputEnabled")]
+    #[serde(default)]
     pub cloud_watch_output_enabled: bool,
 }
 impl std::fmt::Debug for CloudWatchOutputConfig {
@@ -4758,6 +4761,7 @@ pub struct AssociationDescription {
     /// an association to run immediately after you create it. This parameter is not supported for rate
     /// expressions.</p>
     #[serde(rename = "ApplyOnlyAtCronInterval")]
+    #[serde(default)]
     pub apply_only_at_cron_interval: bool,
     /// <p>The names or Amazon Resource Names (ARNs) of the Systems Manager Change Calendar type
     /// documents your associations are gated under. The associations only run when that Change
@@ -6335,17 +6339,21 @@ pub struct Command {
     pub max_errors: std::option::Option<std::string::String>,
     /// <p>The number of targets for the command.</p>
     #[serde(rename = "TargetCount")]
+    #[serde(default)]
     pub target_count: i32,
     /// <p>The number of targets for which the command invocation reached a terminal state. Terminal
     /// states include the following: Success, Failed, Execution Timed Out, Delivery Timed Out, Canceled,
     /// Terminated, or Undeliverable.</p>
     #[serde(rename = "CompletedCount")]
+    #[serde(default)]
     pub completed_count: i32,
     /// <p>The number of targets for which the status is Failed or Execution Timed Out.</p>
     #[serde(rename = "ErrorCount")]
+    #[serde(default)]
     pub error_count: i32,
     /// <p>The number of targets for which the status is Delivery Timed Out.</p>
     #[serde(rename = "DeliveryTimedOutCount")]
+    #[serde(default)]
     pub delivery_timed_out_count: i32,
     /// <p>The IAM service role that Run Command uses to act on your behalf when sending notifications
     /// about command status changes. </p>
@@ -6362,6 +6370,7 @@ pub struct Command {
     pub cloud_watch_output_config: std::option::Option<crate::model::CloudWatchOutputConfig>,
     /// <p>The <code>TimeoutSeconds</code> value specified for a command.</p>
     #[serde(rename = "TimeoutSeconds")]
+    #[serde(default)]
     pub timeout_seconds: i32,
 }
 impl std::fmt::Debug for Command {
@@ -8615,6 +8624,7 @@ pub struct ResourceDataSyncSourceWithState {
     /// <p>Whether to automatically synchronize and aggregate data from new AWS Regions when those
     /// Regions come online.</p>
     #[serde(rename = "IncludeFutureRegions")]
+    #[serde(default)]
     pub include_future_regions: bool,
     /// <p>The data type name for including resource data sync state. There are four sync
     /// states:</p>
@@ -8637,6 +8647,7 @@ pub struct ResourceDataSyncSourceWithState {
     /// your organization (or in the selected organization units). For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/Explorer-resouce-data-sync-multiple-accounts-and-regions.html">About multiple account and Region resource data syncs</a> in the
     /// <i>AWS Systems Manager User Guide</i>.</p>
     #[serde(rename = "EnableAllOpsDataSources")]
+    #[serde(default)]
     pub enable_all_ops_data_sources: bool,
 }
 impl std::fmt::Debug for ResourceDataSyncSourceWithState {
@@ -8960,6 +8971,7 @@ impl ResourceComplianceSummaryItem {
 pub struct NonCompliantSummary {
     /// <p>The total number of compliance items that are not compliant.</p>
     #[serde(rename = "NonCompliantCount")]
+    #[serde(default)]
     pub non_compliant_count: i32,
     /// <p>A summary of the non-compliance severity by compliance type</p>
     #[serde(rename = "SeveritySummary")]
@@ -9029,28 +9041,34 @@ pub struct SeveritySummary {
     /// <p>The total number of resources or compliance items that have a severity level of critical.
     /// Critical severity is determined by the organization that published the compliance items.</p>
     #[serde(rename = "CriticalCount")]
+    #[serde(default)]
     pub critical_count: i32,
     /// <p>The total number of resources or compliance items that have a severity level of high. High
     /// severity is determined by the organization that published the compliance items.</p>
     #[serde(rename = "HighCount")]
+    #[serde(default)]
     pub high_count: i32,
     /// <p>The total number of resources or compliance items that have a severity level of medium.
     /// Medium severity is determined by the organization that published the compliance items.</p>
     #[serde(rename = "MediumCount")]
+    #[serde(default)]
     pub medium_count: i32,
     /// <p>The total number of resources or compliance items that have a severity level of low. Low
     /// severity is determined by the organization that published the compliance items.</p>
     #[serde(rename = "LowCount")]
+    #[serde(default)]
     pub low_count: i32,
     /// <p>The total number of resources or compliance items that have a severity level of
     /// informational. Informational severity is determined by the organization that published the
     /// compliance items.</p>
     #[serde(rename = "InformationalCount")]
+    #[serde(default)]
     pub informational_count: i32,
     /// <p>The total number of resources or compliance items that have a severity level of unspecified.
     /// Unspecified severity is determined by the organization that published the compliance
     /// items.</p>
     #[serde(rename = "UnspecifiedCount")]
+    #[serde(default)]
     pub unspecified_count: i32,
 }
 impl std::fmt::Debug for SeveritySummary {
@@ -9168,6 +9186,7 @@ impl SeveritySummary {
 pub struct CompliantSummary {
     /// <p>The total number of resources that are compliant.</p>
     #[serde(rename = "CompliantCount")]
+    #[serde(default)]
     pub compliant_count: i32,
     /// <p>A summary of the compliance severity by compliance type.</p>
     #[serde(rename = "SeveritySummary")]
@@ -10580,6 +10599,7 @@ pub struct DocumentVersionInfo {
     pub created_date: std::option::Option<smithy_types::Instant>,
     /// <p>An identifier for the default version of the document.</p>
     #[serde(rename = "IsDefaultVersion")]
+    #[serde(default)]
     pub is_default_version: bool,
     /// <p>The document format, either JSON or YAML.</p>
     #[serde(rename = "DocumentFormat")]
@@ -12731,6 +12751,7 @@ pub struct CommandPlugin {
     pub status_details: std::option::Option<std::string::String>,
     /// <p>A numeric response code generated after running the plugin. </p>
     #[serde(rename = "ResponseCode")]
+    #[serde(default)]
     pub response_code: i32,
     /// <p>The time the plugin started running. </p>
     #[serde(rename = "ResponseStartDateTime")]
@@ -13288,6 +13309,7 @@ pub struct AssociationVersionInfo {
     /// an association to run immediately after you create it. This parameter is not supported for rate
     /// expressions.</p>
     #[serde(rename = "ApplyOnlyAtCronInterval")]
+    #[serde(default)]
     pub apply_only_at_cron_interval: bool,
     /// <p>The names or Amazon Resource Names (ARNs) of the Systems Manager Change Calendar type
     /// documents your associations are gated under. The associations for this version only run when
@@ -14014,6 +14036,7 @@ pub struct Parameter {
     pub value: std::option::Option<std::string::String>,
     /// <p>The parameter version.</p>
     #[serde(rename = "Version")]
+    #[serde(default)]
     pub version: i64,
     /// <p>Either the version number or the label used to retrieve the parameter value. Specify
     /// selectors by using one of the following formats:</p>
@@ -14352,6 +14375,7 @@ pub struct ParameterHistory {
     pub allowed_pattern: std::option::Option<std::string::String>,
     /// <p>The parameter version.</p>
     #[serde(rename = "Version")]
+    #[serde(default)]
     pub version: i64,
     /// <p>Labels assigned to the parameter version.</p>
     #[serde(rename = "Labels")]
@@ -16396,6 +16420,7 @@ pub struct AttachmentContent {
     pub name: std::option::Option<std::string::String>,
     /// <p>The size of an attachment in bytes.</p>
     #[serde(rename = "Size")]
+    #[serde(default)]
     pub size: i64,
     /// <p>The cryptographic hash value of the document content.</p>
     #[serde(rename = "Hash")]
@@ -16597,6 +16622,7 @@ pub struct BaselineOverride {
     /// <p>Indicates whether the list of approved patches includes non-security updates that should be
     /// applied to the instances. The default value is 'false'. Applies to Linux instances only.</p>
     #[serde(rename = "ApprovedPatchesEnableNonSecurity")]
+    #[serde(default)]
     pub approved_patches_enable_non_security: bool,
     /// <p>Information about the patches to use to update the instances, including target operating
     /// systems and source repositories. Applies to Linux instances only.</p>
@@ -16936,6 +16962,7 @@ pub struct AutomationExecution {
     /// executions. If true, use the DescribeAutomationStepExecutions API action to get the full list of
     /// step executions.</p>
     #[serde(rename = "StepExecutionsTruncated")]
+    #[serde(default)]
     pub step_executions_truncated: bool,
     /// <p>The key-value map of execution parameters, which were supplied when calling
     /// StartAutomationExecution.</p>
@@ -17633,22 +17660,27 @@ pub struct ProgressCounters {
     /// <p>The total number of steps run in all specified AWS Regions and accounts for the current
     /// Automation execution.</p>
     #[serde(rename = "TotalSteps")]
+    #[serde(default)]
     pub total_steps: i32,
     /// <p>The total number of steps that successfully completed in all specified AWS Regions and
     /// accounts for the current Automation execution.</p>
     #[serde(rename = "SuccessSteps")]
+    #[serde(default)]
     pub success_steps: i32,
     /// <p>The total number of steps that failed to run in all specified AWS Regions and accounts for
     /// the current Automation execution.</p>
     #[serde(rename = "FailedSteps")]
+    #[serde(default)]
     pub failed_steps: i32,
     /// <p>The total number of steps that the system cancelled in all specified AWS Regions and
     /// accounts for the current Automation execution.</p>
     #[serde(rename = "CancelledSteps")]
+    #[serde(default)]
     pub cancelled_steps: i32,
     /// <p>The total number of steps that timed out in all specified AWS Regions and accounts for the
     /// current Automation execution.</p>
     #[serde(rename = "TimedOutSteps")]
+    #[serde(default)]
     pub timed_out_steps: i32,
 }
 impl std::fmt::Debug for ProgressCounters {
@@ -17755,6 +17787,7 @@ pub struct ResolvedTargets {
     pub parameter_values: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A boolean value indicating whether the resolved target list is truncated.</p>
     #[serde(rename = "Truncated")]
+    #[serde(default)]
     pub truncated: bool,
 }
 impl std::fmt::Debug for ResolvedTargets {
@@ -19313,6 +19346,7 @@ pub struct PatchBaselineIdentity {
     /// patch baselines. For example, you can create a default patch baseline for each operating
     /// system.</p>
     #[serde(rename = "DefaultBaseline")]
+    #[serde(default)]
     pub default_baseline: bool,
 }
 impl std::fmt::Debug for PatchBaselineIdentity {
@@ -19521,6 +19555,7 @@ pub struct ParameterMetadata {
     pub allowed_pattern: std::option::Option<std::string::String>,
     /// <p>The parameter version.</p>
     #[serde(rename = "Version")]
+    #[serde(default)]
     pub version: i64,
     /// <p>The parameter tier.</p>
     #[serde(rename = "Tier")]
@@ -20539,6 +20574,7 @@ pub struct MaintenanceWindowTask {
     /// <p>The priority of the task in the maintenance window. The lower the number, the higher the
     /// priority. Tasks that have the same priority are scheduled in parallel.</p>
     #[serde(rename = "Priority")]
+    #[serde(default)]
     pub priority: i32,
     /// <p>Information about an S3 bucket to write task-level logs to.</p>
     /// <note>
@@ -21205,13 +21241,16 @@ pub struct MaintenanceWindowIdentity {
     pub description: std::option::Option<std::string::String>,
     /// <p>Indicates whether the maintenance window is enabled.</p>
     #[serde(rename = "Enabled")]
+    #[serde(default)]
     pub enabled: bool,
     /// <p>The duration of the maintenance window in hours.</p>
     #[serde(rename = "Duration")]
+    #[serde(default)]
     pub duration: i32,
     /// <p>The number of hours before the end of the maintenance window that Systems Manager stops scheduling new
     /// tasks for execution.</p>
     #[serde(rename = "Cutoff")]
+    #[serde(default)]
     pub cutoff: i32,
     /// <p>The schedule of the maintenance window in the form of a cron or rate expression.</p>
     #[serde(rename = "Schedule")]
@@ -22184,9 +22223,11 @@ pub struct InventoryDeletionSummary {
     /// <p>The total number of items to delete. This count does not change during the delete
     /// operation.</p>
     #[serde(rename = "TotalCount")]
+    #[serde(default)]
     pub total_count: i32,
     /// <p>Remaining number of items to delete.</p>
     #[serde(rename = "RemainingCount")]
+    #[serde(default)]
     pub remaining_count: i32,
     /// <p>A list of counts and versions for deleted items.</p>
     #[serde(rename = "SummaryItems")]
@@ -22277,9 +22318,11 @@ pub struct InventoryDeletionSummaryItem {
     pub version: std::option::Option<std::string::String>,
     /// <p>A count of the number of deleted items.</p>
     #[serde(rename = "Count")]
+    #[serde(default)]
     pub count: i32,
     /// <p>The remaining number of items to delete.</p>
     #[serde(rename = "RemainingCount")]
+    #[serde(default)]
     pub remaining_count: i32,
 }
 impl std::fmt::Debug for InventoryDeletionSummaryItem {
@@ -22441,10 +22484,12 @@ pub struct InstancePatchState {
     pub owner_information: std::option::Option<std::string::String>,
     /// <p>The number of patches from the patch baseline that are installed on the instance.</p>
     #[serde(rename = "InstalledCount")]
+    #[serde(default)]
     pub installed_count: i32,
     /// <p>The number of patches not specified in the patch baseline that are installed on the
     /// instance.</p>
     #[serde(rename = "InstalledOtherCount")]
+    #[serde(default)]
     pub installed_other_count: i32,
     /// <p>The number of patches installed by Patch Manager since the last time the instance was
     /// rebooted.</p>
@@ -22466,10 +22511,12 @@ pub struct InstancePatchState {
     /// <p>The number of patches from the patch baseline that are applicable for the instance but
     /// aren't currently installed.</p>
     #[serde(rename = "MissingCount")]
+    #[serde(default)]
     pub missing_count: i32,
     /// <p>The number of patches from the patch baseline that were attempted to be installed during the
     /// last patching operation, but failed to install.</p>
     #[serde(rename = "FailedCount")]
+    #[serde(default)]
     pub failed_count: i32,
     /// <p>The number of patches beyond the supported limit of <code>NotApplicableCount</code> that are
     /// not reported by name to Systems Manager Inventory.</p>
@@ -22481,6 +22528,7 @@ pub struct InstancePatchState {
     /// names is very large. The number of patches beyond this limit are reported in
     /// <code>UnreportedNotApplicableCount</code>.</p>
     #[serde(rename = "NotApplicableCount")]
+    #[serde(default)]
     pub not_applicable_count: i32,
     /// <p>The time the most recent patching operation was started on the instance.</p>
     #[serde(rename = "OperationStartTime")]
@@ -24977,6 +25025,7 @@ pub struct Patch {
     /// <code>pkg-example-EE-20180914-2.2.amzn1.noarch</code>, the epoch value is
     /// <code>20180914-2</code>. Applies to Linux-based instances only.</p>
     #[serde(rename = "Epoch")]
+    #[serde(default)]
     pub epoch: i32,
     /// <p>The version number of the patch. For example, in
     /// <code>example-pkg-1.710.10-2.7.abcd.x86_64</code>, the version number is indicated by
@@ -27273,9 +27322,11 @@ pub struct Activation {
     pub iam_role: std::option::Option<std::string::String>,
     /// <p>The maximum number of managed instances that can be registered using this activation.</p>
     #[serde(rename = "RegistrationLimit")]
+    #[serde(default)]
     pub registration_limit: i32,
     /// <p>The number of managed instances already registered with this activation.</p>
     #[serde(rename = "RegistrationsCount")]
+    #[serde(default)]
     pub registrations_count: i32,
     /// <p>The date when this activation can no longer be used to register managed instances.</p>
     #[serde(rename = "ExpirationDate")]
@@ -27286,6 +27337,7 @@ pub struct Activation {
     pub expiration_date: std::option::Option<smithy_types::Instant>,
     /// <p>Whether or not the activation is expired.</p>
     #[serde(rename = "Expired")]
+    #[serde(default)]
     pub expired: bool,
     /// <p>The date the activation was created.</p>
     #[serde(rename = "CreatedDate")]
@@ -27891,6 +27943,7 @@ pub struct CreateAssociationBatchRequestEntry {
     /// an association to run immediately after you create it. This parameter is not supported for rate
     /// expressions.</p>
     #[serde(rename = "ApplyOnlyAtCronInterval")]
+    #[serde(default)]
     pub apply_only_at_cron_interval: bool,
     /// <p>The names or Amazon Resource Names (ARNs) of the Systems Manager Change Calendar type
     /// documents your associations are gated under. The associations only run when that Change

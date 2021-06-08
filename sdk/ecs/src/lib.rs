@@ -22,6 +22,7 @@ pub use error_meta::Error;
 
 pub use config::Config;
 
+mod aws_endpoint;
 mod aws_json_errors;
 #[cfg(feature = "client")]
 pub mod client;

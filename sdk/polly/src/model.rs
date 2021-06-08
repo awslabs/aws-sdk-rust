@@ -638,6 +638,7 @@ pub struct SynthesisTask {
     pub creation_time: std::option::Option<smithy_types::Instant>,
     /// <p>Number of billable characters synthesized.</p>
     #[serde(rename = "RequestCharacters")]
+    #[serde(default)]
     pub request_characters: i32,
     /// <p>ARN for the SNS topic optionally used for providing status notification for a speech
     /// synthesis task.</p>
@@ -1091,9 +1092,11 @@ pub struct LexiconAttributes {
     pub lexicon_arn: std::option::Option<std::string::String>,
     /// <p>Number of lexemes in the lexicon.</p>
     #[serde(rename = "LexemesCount")]
+    #[serde(default)]
     pub lexemes_count: i32,
     /// <p>Total size of the lexicon, in characters.</p>
     #[serde(rename = "Size")]
+    #[serde(default)]
     pub size: i32,
 }
 impl std::fmt::Debug for LexiconAttributes {

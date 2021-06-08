@@ -5725,13 +5725,16 @@ impl std::fmt::Debug for DescribePatchGroupsOutputBody {
 pub struct DescribePatchGroupStateOutputBody {
     /// <p>The number of instances in the patch group.</p>
     #[serde(rename = "Instances")]
+    #[serde(default)]
     pub instances: i32,
     /// <p>The number of instances with installed patches.</p>
     #[serde(rename = "InstancesWithInstalledPatches")]
+    #[serde(default)]
     pub instances_with_installed_patches: i32,
     /// <p>The number of instances with patches installed that aren't defined in the patch
     /// baseline.</p>
     #[serde(rename = "InstancesWithInstalledOtherPatches")]
+    #[serde(default)]
     pub instances_with_installed_other_patches: i32,
     /// <p>The number of instances with patches installed by Patch Manager that have not been rebooted
     /// after the patch installation. The status of these instances is NON_COMPLIANT.</p>
@@ -5750,12 +5753,15 @@ pub struct DescribePatchGroupStateOutputBody {
     pub instances_with_installed_rejected_patches: std::option::Option<i32>,
     /// <p>The number of instances with missing patches from the patch baseline.</p>
     #[serde(rename = "InstancesWithMissingPatches")]
+    #[serde(default)]
     pub instances_with_missing_patches: i32,
     /// <p>The number of instances with patches from the patch baseline that failed to install.</p>
     #[serde(rename = "InstancesWithFailedPatches")]
+    #[serde(default)]
     pub instances_with_failed_patches: i32,
     /// <p>The number of instances with patches that aren't applicable.</p>
     #[serde(rename = "InstancesWithNotApplicablePatches")]
+    #[serde(default)]
     pub instances_with_not_applicable_patches: i32,
     /// <p>The number of instances with <code>NotApplicable</code> patches beyond the supported limit,
     /// which are not reported by name to Systems Manager Inventory.</p>
@@ -5962,6 +5968,7 @@ pub struct GetCommandInvocationOutputBody {
     /// <code>-1</code>, then the command has not started running on the instance, or it was not received
     /// by the instance.</p>
     #[serde(rename = "ResponseCode")]
+    #[serde(default)]
     pub response_code: i32,
     /// <p>The date and time the plugin started running. Date and time are written in ISO 8601 format.
     /// For example, June 7, 2017 is represented as 2017-06-7. The following sample AWS CLI command uses
@@ -6357,17 +6364,21 @@ pub struct GetMaintenanceWindowOutputBody {
     pub next_execution_time: std::option::Option<std::string::String>,
     /// <p>The duration of the maintenance window in hours.</p>
     #[serde(rename = "Duration")]
+    #[serde(default)]
     pub duration: i32,
     /// <p>The number of hours before the end of the maintenance window that Systems Manager stops scheduling new
     /// tasks for execution.</p>
     #[serde(rename = "Cutoff")]
+    #[serde(default)]
     pub cutoff: i32,
     /// <p>Whether targets must be registered with the maintenance window before tasks can be defined
     /// for those targets.</p>
     #[serde(rename = "AllowUnassociatedTargets")]
+    #[serde(default)]
     pub allow_unassociated_targets: bool,
     /// <p>Indicates whether the maintenance window is enabled.</p>
     #[serde(rename = "Enabled")]
+    #[serde(default)]
     pub enabled: bool,
     /// <p>The date the maintenance window was created.</p>
     #[serde(rename = "CreatedDate")]
@@ -6503,6 +6514,7 @@ pub struct GetMaintenanceWindowExecutionTaskOutputBody {
     >,
     /// <p>The priority of the task.</p>
     #[serde(rename = "Priority")]
+    #[serde(default)]
     pub priority: i32,
     /// <p>The defined maximum number of task executions that could be run in parallel.</p>
     #[serde(rename = "MaxConcurrency")]
@@ -6690,6 +6702,7 @@ pub struct GetMaintenanceWindowTaskOutputBody {
     /// <p>The priority of the task when it runs. The lower the number, the higher the priority. Tasks
     /// that have the same priority are scheduled in parallel.</p>
     #[serde(rename = "Priority")]
+    #[serde(default)]
     pub priority: i32,
     /// <p>The maximum number of targets allowed to run this task in parallel.</p>
     /// <note>
@@ -7061,6 +7074,7 @@ pub struct LabelParameterVersionOutputBody {
     pub invalid_labels: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The version of the parameter that has been labeled.</p>
     #[serde(rename = "ParameterVersion")]
+    #[serde(default)]
     pub parameter_version: i64,
 }
 impl std::fmt::Debug for LabelParameterVersionOutputBody {
@@ -7491,6 +7505,7 @@ pub struct PutParameterOutputBody {
     /// don't specify a specific version, the system returns the latest parameter value when a parameter
     /// is called.</p>
     #[serde(rename = "Version")]
+    #[serde(default)]
     pub version: i64,
     /// <p>The tier assigned to the parameter.</p>
     #[serde(rename = "Tier")]
@@ -7860,17 +7875,21 @@ pub struct UpdateMaintenanceWindowOutputBody {
     pub schedule_offset: std::option::Option<i32>,
     /// <p>The duration of the maintenance window in hours.</p>
     #[serde(rename = "Duration")]
+    #[serde(default)]
     pub duration: i32,
     /// <p>The number of hours before the end of the maintenance window that Systems Manager stops scheduling new
     /// tasks for execution.</p>
     #[serde(rename = "Cutoff")]
+    #[serde(default)]
     pub cutoff: i32,
     /// <p>Whether targets must be registered with the maintenance window before tasks can be defined
     /// for those targets.</p>
     #[serde(rename = "AllowUnassociatedTargets")]
+    #[serde(default)]
     pub allow_unassociated_targets: bool,
     /// <p>Whether the maintenance window is enabled.</p>
     #[serde(rename = "Enabled")]
+    #[serde(default)]
     pub enabled: bool,
 }
 impl std::fmt::Debug for UpdateMaintenanceWindowOutputBody {
@@ -7983,6 +8002,7 @@ pub struct UpdateMaintenanceWindowTaskOutputBody {
         std::option::Option<crate::model::MaintenanceWindowTaskInvocationParameters>,
     /// <p>The updated priority value.</p>
     #[serde(rename = "Priority")]
+    #[serde(default)]
     pub priority: i32,
     /// <p>The updated MaxConcurrency value.</p>
     #[serde(rename = "MaxConcurrency")]

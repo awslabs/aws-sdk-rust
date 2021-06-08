@@ -455,7 +455,7 @@ pub fn serialize_structure_delete(
             }
         }
     }
-    {
+    if input.quiet {
         let mut inner_writer = scope
             .start_el("Quiet")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None)
@@ -997,7 +997,7 @@ pub fn serialize_structure_public_access_block_configuration(
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    {
+    if input.block_public_acls {
         let mut inner_writer = scope
             .start_el("BlockPublicAcls")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None)
@@ -1008,7 +1008,7 @@ pub fn serialize_structure_public_access_block_configuration(
             "false"
         });
     }
-    {
+    if input.ignore_public_acls {
         let mut inner_writer = scope
             .start_el("IgnorePublicAcls")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None)
@@ -1019,7 +1019,7 @@ pub fn serialize_structure_public_access_block_configuration(
             "false"
         });
     }
-    {
+    if input.block_public_policy {
         let mut inner_writer = scope
             .start_el("BlockPublicPolicy")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None)
@@ -1030,7 +1030,7 @@ pub fn serialize_structure_public_access_block_configuration(
             "false"
         });
     }
-    {
+    if input.restrict_public_buckets {
         let mut inner_writer = scope
             .start_el("RestrictPublicBuckets")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None)
@@ -1050,7 +1050,7 @@ pub fn serialize_structure_restore_request(
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    {
+    if input.days != 0 {
         let mut inner_writer = scope
             .start_el("Days")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None)
@@ -1112,7 +1112,7 @@ pub fn serialize_structure_completed_part(
             .finish();
         inner_writer.data(var_66.as_ref());
     }
-    {
+    if input.part_number != 0 {
         let mut inner_writer = scope
             .start_el("PartNumber")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None)
@@ -1293,7 +1293,7 @@ pub fn serialize_structure_cors_rule(
             }
         }
     }
-    {
+    if input.max_age_seconds != 0 {
         let mut inner_writer = scope
             .start_el("MaxAgeSeconds")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None)
@@ -1315,7 +1315,7 @@ pub fn serialize_structure_server_side_encryption_rule(
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
         crate::xml_ser::serialize_structure_server_side_encryption_by_default(&var_83, inner_writer)
     }
-    {
+    if input.bucket_key_enabled {
         let mut inner_writer = scope
             .start_el("BucketKeyEnabled")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None)
@@ -1730,7 +1730,7 @@ pub fn serialize_structure_replication_rule(
             .finish();
         inner_writer.data(var_122.as_ref());
     }
-    {
+    if input.priority != 0 {
         let mut inner_writer = scope
             .start_el("Priority")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None)
@@ -2159,14 +2159,14 @@ pub fn serialize_structure_lifecycle_expiration(
                 .as_ref(),
         );
     }
-    {
+    if input.days != 0 {
         let mut inner_writer = scope
             .start_el("Days")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None)
             .finish();
         inner_writer.data(&input.days.to_string().as_ref());
     }
-    {
+    if input.expired_object_delete_marker {
         let mut inner_writer = scope
             .start_el("ExpiredObjectDeleteMarker")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None)
@@ -2225,7 +2225,7 @@ pub fn serialize_structure_transition(
                 .as_ref(),
         );
     }
-    {
+    if input.days != 0 {
         let mut inner_writer = scope
             .start_el("Days")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None)
@@ -2248,7 +2248,7 @@ pub fn serialize_structure_noncurrent_version_transition(
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    {
+    if input.noncurrent_days != 0 {
         let mut inner_writer = scope
             .start_el("NoncurrentDays")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None)
@@ -2271,7 +2271,7 @@ pub fn serialize_structure_noncurrent_version_expiration(
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    {
+    if input.noncurrent_days != 0 {
         let mut inner_writer = scope
             .start_el("NoncurrentDays")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None)
@@ -2287,7 +2287,7 @@ pub fn serialize_structure_abort_incomplete_multipart_upload(
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    {
+    if input.days_after_initiation != 0 {
         let mut inner_writer = scope
             .start_el("DaysAfterInitiation")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None)
@@ -2575,14 +2575,14 @@ pub fn serialize_structure_default_retention(
             .finish();
         inner_writer.data(var_193.as_str());
     }
-    {
+    if input.days != 0 {
         let mut inner_writer = scope
             .start_el("Days")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None)
             .finish();
         inner_writer.data(&input.days.to_string().as_ref());
     }
-    {
+    if input.years != 0 {
         let mut inner_writer = scope
             .start_el("Years")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None)
@@ -2987,7 +2987,7 @@ pub fn serialize_structure_csv_input(
             .finish();
         inner_writer.data(var_234.as_ref());
     }
-    {
+    if input.allow_quoted_record_delimiter {
         let mut inner_writer = scope
             .start_el("AllowQuotedRecordDelimiter")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None)
@@ -3232,7 +3232,7 @@ pub fn serialize_structure_replication_time_value(
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    {
+    if input.minutes != 0 {
         let mut inner_writer = scope
             .start_el("Minutes")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None)

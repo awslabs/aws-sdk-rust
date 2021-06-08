@@ -100,9 +100,11 @@ pub fn serialize_structure_execute_statement_request(
     if let Some(var_21) = &input.parameters {
         let mut array_22 = object.key("Parameters").start_array();
         for item_23 in var_21 {
-            let mut object_24 = array_22.value().start_object();
-            crate::json_ser::serialize_structure_value_holder(&mut object_24, item_23);
-            object_24.finish();
+            {
+                let mut object_24 = array_22.value().start_object();
+                crate::json_ser::serialize_structure_value_holder(&mut object_24, item_23);
+                object_24.finish();
+            }
         }
         array_22.finish();
     }

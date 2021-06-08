@@ -5097,7 +5097,7 @@ pub struct GetBucketVersioningOutput {
     /// <p>Specifies whether MFA delete is enabled in the bucket versioning configuration. This
     /// element is only returned if the bucket has been configured with MFA delete. If the bucket
     /// has never been so configured, this element is not returned.</p>
-    pub mfa_delete: std::option::Option<crate::model::MFADeleteStatus>,
+    pub mfa_delete: std::option::Option<crate::model::MfaDeleteStatus>,
 }
 impl std::fmt::Debug for GetBucketVersioningOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5114,7 +5114,7 @@ pub mod get_bucket_versioning_output {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::BucketVersioningStatus>,
-        pub(crate) mfa_delete: std::option::Option<crate::model::MFADeleteStatus>,
+        pub(crate) mfa_delete: std::option::Option<crate::model::MfaDeleteStatus>,
     }
     impl Builder {
         /// <p>The versioning state of the bucket.</p>
@@ -5132,13 +5132,13 @@ pub mod get_bucket_versioning_output {
         /// <p>Specifies whether MFA delete is enabled in the bucket versioning configuration. This
         /// element is only returned if the bucket has been configured with MFA delete. If the bucket
         /// has never been so configured, this element is not returned.</p>
-        pub fn mfa_delete(mut self, inp: crate::model::MFADeleteStatus) -> Self {
+        pub fn mfa_delete(mut self, inp: crate::model::MfaDeleteStatus) -> Self {
             self.mfa_delete = Some(inp);
             self
         }
         pub fn set_mfa_delete(
             mut self,
-            inp: std::option::Option<crate::model::MFADeleteStatus>,
+            inp: std::option::Option<crate::model::MfaDeleteStatus>,
         ) -> Self {
             self.mfa_delete = inp;
             self

@@ -92,9 +92,11 @@ impl FetchPageResult {
 pub struct IOUsage {
     /// <p>The number of read I/O requests that the command made.</p>
     #[serde(rename = "ReadIOs")]
+    #[serde(default)]
     pub read_i_os: i64,
     /// <p>The number of write I/O requests that the command made.</p>
     #[serde(rename = "WriteIOs")]
+    #[serde(default)]
     pub write_i_os: i64,
 }
 impl std::fmt::Debug for IOUsage {
@@ -158,6 +160,7 @@ pub struct TimingInformation {
     /// <p>The amount of time that QLDB spent on processing the command, measured in
     /// milliseconds.</p>
     #[serde(rename = "ProcessingTimeMilliseconds")]
+    #[serde(default)]
     pub processing_time_milliseconds: i64,
 }
 impl std::fmt::Debug for TimingInformation {

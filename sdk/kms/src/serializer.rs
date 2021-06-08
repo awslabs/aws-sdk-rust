@@ -2120,6 +2120,7 @@ pub struct DescribeCustomKeyStoresOutputBody {
     /// the <code>NextMarker</code> element in thisresponse to the <code>Marker</code> parameter in a
     /// subsequent request.</p>
     #[serde(rename = "Truncated")]
+    #[serde(default)]
     pub truncated: bool,
 }
 impl std::fmt::Debug for DescribeCustomKeyStoresOutputBody {
@@ -2342,6 +2343,7 @@ impl std::fmt::Debug for GetKeyPolicyOutputBody {
 pub struct GetKeyRotationStatusOutputBody {
     /// <p>A Boolean value that specifies whether key rotation is enabled.</p>
     #[serde(rename = "KeyRotationEnabled")]
+    #[serde(default)]
     pub key_rotation_enabled: bool,
 }
 impl std::fmt::Debug for GetKeyRotationStatusOutputBody {
@@ -2465,6 +2467,7 @@ pub struct ListAliasesOutputBody {
     /// the <code>NextMarker</code> element in thisresponse to the <code>Marker</code> parameter in a
     /// subsequent request.</p>
     #[serde(rename = "Truncated")]
+    #[serde(default)]
     pub truncated: bool,
 }
 impl std::fmt::Debug for ListAliasesOutputBody {
@@ -2494,6 +2497,7 @@ pub struct ListGrantsOutputBody {
     /// the <code>NextMarker</code> element in thisresponse to the <code>Marker</code> parameter in a
     /// subsequent request.</p>
     #[serde(rename = "Truncated")]
+    #[serde(default)]
     pub truncated: bool,
 }
 impl std::fmt::Debug for ListGrantsOutputBody {
@@ -2523,6 +2527,7 @@ pub struct ListKeyPoliciesOutputBody {
     /// the <code>NextMarker</code> element in thisresponse to the <code>Marker</code> parameter in a
     /// subsequent request.</p>
     #[serde(rename = "Truncated")]
+    #[serde(default)]
     pub truncated: bool,
 }
 impl std::fmt::Debug for ListKeyPoliciesOutputBody {
@@ -2552,6 +2557,7 @@ pub struct ListKeysOutputBody {
     /// the <code>NextMarker</code> element in thisresponse to the <code>Marker</code> parameter in a
     /// subsequent request.</p>
     #[serde(rename = "Truncated")]
+    #[serde(default)]
     pub truncated: bool,
 }
 impl std::fmt::Debug for ListKeysOutputBody {
@@ -2582,6 +2588,7 @@ pub struct ListResourceTagsOutputBody {
     /// the <code>NextMarker</code> element in thisresponse to the <code>Marker</code> parameter in a
     /// subsequent request.</p>
     #[serde(rename = "Truncated")]
+    #[serde(default)]
     pub truncated: bool,
 }
 impl std::fmt::Debug for ListResourceTagsOutputBody {
@@ -2611,6 +2618,7 @@ pub struct ListRetirableGrantsOutputBody {
     /// the <code>NextMarker</code> element in thisresponse to the <code>Marker</code> parameter in a
     /// subsequent request.</p>
     #[serde(rename = "Truncated")]
+    #[serde(default)]
     pub truncated: bool,
 }
 impl std::fmt::Debug for ListRetirableGrantsOutputBody {
@@ -2748,6 +2756,7 @@ pub struct VerifyOutputBody {
     /// <code>SigningAlgorithm.</code> If the signature is not verified, the <code>Verify</code>
     /// operation fails with a <code>KMSInvalidSignatureException</code> exception. </p>
     #[serde(rename = "SignatureValid")]
+    #[serde(default)]
     pub signature_valid: bool,
     /// <p>The signing algorithm that was used to verify the signature.</p>
     #[serde(rename = "SigningAlgorithm")]

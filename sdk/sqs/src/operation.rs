@@ -120,6 +120,31 @@ impl smithy_http::response::ParseStrictResponse for ChangeMessageVisibility {
         }
     }
 }
+#[cfg(test)]
+#[allow(unreachable_code, unused_variables)]
+mod change_message_visibility_request_test {
+    /// This test case validates a bug found here: https://github.com/aws/aws-sdk-go-v2/issues/1087
+    /// Test ID: SqsSetVisibilityZero
+    #[tokio::test]
+    async fn sqs_set_visibility_zero_request() {
+        let config = crate::config::Config::builder().build();
+        let input = crate::input::ChangeMessageVisibilityInput::builder()
+            .set_queue_url(Some("http://somequeue.amazon.com".to_string()))
+            .set_receipt_handle(Some("handlehandle".to_string()))
+            .set_visibility_timeout(0)
+            .build()
+            .unwrap()
+            .make_operation(&config)
+            .expect("operation failed to build");
+        let (http_request, parts) = input.into_request_response().0.into_parts();
+        assert_eq!(http_request.method(), "POST");
+        assert_eq!(http_request.uri().path(), "/");
+        let body = http_request.body().bytes().expect("body should be strict");
+        protocol_test_helpers::assert_ok(
+        protocol_test_helpers::validate_body(&body, "Action=ChangeMessageVisibility&Version=2012-11-05&QueueUrl=http%3A%2F%2Fsomequeue.amazon.com&ReceiptHandle=handlehandle&VisibilityTimeout=0", protocol_test_helpers::MediaType::from("application/x-www-formurl-encoded"))
+        );
+    }
+}
 
 /// <p>Changes the visibility timeout of multiple messages. This is a batch version of <code>
 /// <a>ChangeMessageVisibility</a>.</code> The result of the action on each message is reported individually in the response.
