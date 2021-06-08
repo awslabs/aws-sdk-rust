@@ -5368,6 +5368,17 @@ pub fn parse_get_export_response(
         #[allow(unused_mut)]
         let mut output = crate::output::get_export_output::Builder::default();
         let _ = response;
+        output = output.set_body(crate::http_serde::deser_payload_get_export_body(
+            response.body().as_ref(),
+        )?);
+        output = output.set_content_disposition(
+            crate::http_serde::deser_header_get_export_content_disposition(response.headers())
+                .map_err(|_| {
+                    crate::error::GetExportError::unhandled(
+                        "Failed to parse contentDisposition from header `Content-Disposition",
+                    )
+                })?,
+        );
         output = output.set_content_type(
             crate::http_serde::deser_header_get_export_content_type(response.headers()).map_err(
                 |_| {
@@ -5377,17 +5388,6 @@ pub fn parse_get_export_response(
                 },
             )?,
         );
-        output = output.set_content_disposition(
-            crate::http_serde::deser_header_get_export_content_disposition(response.headers())
-                .map_err(|_| {
-                    crate::error::GetExportError::unhandled(
-                        "Failed to parse contentDisposition from header `Content-Disposition",
-                    )
-                })?,
-        );
-        output = output.set_body(crate::http_serde::deser_payload_get_export_body(
-            response.body().as_ref(),
-        )?);
         output.build()
     })
 }
@@ -6699,6 +6699,17 @@ pub fn parse_get_sdk_response(
         #[allow(unused_mut)]
         let mut output = crate::output::get_sdk_output::Builder::default();
         let _ = response;
+        output = output.set_body(crate::http_serde::deser_payload_get_sdk_body(
+            response.body().as_ref(),
+        )?);
+        output = output.set_content_disposition(
+            crate::http_serde::deser_header_get_sdk_content_disposition(response.headers())
+                .map_err(|_| {
+                    crate::error::GetSdkError::unhandled(
+                        "Failed to parse contentDisposition from header `Content-Disposition",
+                    )
+                })?,
+        );
         output = output.set_content_type(
             crate::http_serde::deser_header_get_sdk_content_type(response.headers()).map_err(
                 |_| {
@@ -6708,17 +6719,6 @@ pub fn parse_get_sdk_response(
                 },
             )?,
         );
-        output = output.set_content_disposition(
-            crate::http_serde::deser_header_get_sdk_content_disposition(response.headers())
-                .map_err(|_| {
-                    crate::error::GetSdkError::unhandled(
-                        "Failed to parse contentDisposition from header `Content-Disposition",
-                    )
-                })?,
-        );
-        output = output.set_body(crate::http_serde::deser_payload_get_sdk_body(
-            response.body().as_ref(),
-        )?);
         output.build()
     })
 }

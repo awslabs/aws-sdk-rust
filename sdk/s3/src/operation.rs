@@ -3197,6 +3197,47 @@ impl smithy_http::response::ParseStrictResponse for HeadBucket {
         }
     }
 }
+#[cfg(test)]
+#[allow(unreachable_code, unused_variables)]
+mod head_bucket_request_test {
+    /// This test case validates https://github.com/awslabs/smithy-rs/issues/456
+    /// Test ID: HeadObjectEmptyBody
+    #[tokio::test]
+    async fn head_object_empty_body_response() {
+        let expected_output = crate::error::NotFound::builder().build();
+        let mut http_response = http::response::Builder::new()
+            .header("content-type", "application/xml")
+            .header("date", "Thu, 03 Jun 2021 04:05:52 GMT")
+            .header("server", "AmazonS3")
+            .header(
+                "x-amz-id-2",
+                "UTniwu6QmCIjVeuK2ZfeWBOnu7SqMQOS3Vac6B/K4H2ZCawYUl+nDbhGTImuyhZ5DFiojR3Kcz4=",
+            )
+            .header("x-amz-request-id", "GRZ6BZ468DF52F2E")
+            .status(404)
+            .body(smithy_http::body::SdkBody::from(""))
+            .unwrap();
+        use smithy_http::response::ParseHttpResponse;
+        let parser = crate::operation::HeadBucket::new();
+        let parsed = parser.parse_unloaded(&mut http_response);
+        let parsed = parsed.unwrap_or_else(|| {
+            let http_response =
+                http_response.map(|body| bytes::Bytes::copy_from_slice(body.bytes().unwrap()));
+            <crate::operation::HeadBucket as smithy_http::response::ParseHttpResponse<
+                smithy_http::body::SdkBody,
+            >>::parse_loaded(&parser, &http_response)
+        });
+        let parsed = parsed.expect_err("should be error response");
+        if let crate::error::HeadBucketErrorKind::NotFound(actual_error) = parsed.kind {
+            assert_eq!(expected_output, actual_error);
+        } else {
+            panic!(
+                "wrong variant: Got: {:?}. Expected: {:?}",
+                parsed, expected_output
+            );
+        }
+    }
+}
 
 /// <p>The HEAD action retrieves metadata from an object without returning the object
 /// itself. This action is useful if you're only interested in an object's metadata. To use
@@ -3323,6 +3364,47 @@ impl smithy_http::response::ParseStrictResponse for HeadObject {
             crate::operation_deser::parse_head_object_error(response)
         } else {
             crate::operation_deser::parse_head_object_response(response)
+        }
+    }
+}
+#[cfg(test)]
+#[allow(unreachable_code, unused_variables)]
+mod head_object_request_test {
+    /// This test case validates https://github.com/awslabs/smithy-rs/issues/456
+    /// Test ID: HeadObjectEmptyBody
+    #[tokio::test]
+    async fn head_object_empty_body_response() {
+        let expected_output = crate::error::NotFound::builder().build();
+        let mut http_response = http::response::Builder::new()
+            .header("content-type", "application/xml")
+            .header("date", "Thu, 03 Jun 2021 04:05:52 GMT")
+            .header("server", "AmazonS3")
+            .header(
+                "x-amz-id-2",
+                "UTniwu6QmCIjVeuK2ZfeWBOnu7SqMQOS3Vac6B/K4H2ZCawYUl+nDbhGTImuyhZ5DFiojR3Kcz4=",
+            )
+            .header("x-amz-request-id", "GRZ6BZ468DF52F2E")
+            .status(404)
+            .body(smithy_http::body::SdkBody::from(""))
+            .unwrap();
+        use smithy_http::response::ParseHttpResponse;
+        let parser = crate::operation::HeadObject::new();
+        let parsed = parser.parse_unloaded(&mut http_response);
+        let parsed = parsed.unwrap_or_else(|| {
+            let http_response =
+                http_response.map(|body| bytes::Bytes::copy_from_slice(body.bytes().unwrap()));
+            <crate::operation::HeadObject as smithy_http::response::ParseHttpResponse<
+                smithy_http::body::SdkBody,
+            >>::parse_loaded(&parser, &http_response)
+        });
+        let parsed = parsed.expect_err("should be error response");
+        if let crate::error::HeadObjectErrorKind::NotFound(actual_error) = parsed.kind {
+            assert_eq!(expected_output, actual_error);
+        } else {
+            panic!(
+                "wrong variant: Got: {:?}. Expected: {:?}",
+                parsed, expected_output
+            );
         }
     }
 }

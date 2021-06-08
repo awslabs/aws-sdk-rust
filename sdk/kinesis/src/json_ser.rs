@@ -6,7 +6,9 @@ pub fn serialize_structure_add_tags_to_stream_input(
     if let Some(var_1) = &input.tags {
         let mut object_2 = object.key("Tags").start_object();
         for (key_3, value_4) in var_1 {
-            object_2.key(key_3).string(value_4);
+            {
+                object_2.key(key_3).string(value_4);
+            }
         }
         object_2.finish();
     }
@@ -121,7 +123,9 @@ pub fn serialize_structure_disable_enhanced_monitoring_input(
     if let Some(var_22) = &input.shard_level_metrics {
         let mut array_23 = object.key("ShardLevelMetrics").start_array();
         for item_24 in var_22 {
-            array_23.value().string(item_24.as_str());
+            {
+                array_23.value().string(item_24.as_str());
+            }
         }
         array_23.finish();
     }
@@ -140,7 +144,9 @@ pub fn serialize_structure_enable_enhanced_monitoring_input(
     if let Some(var_27) = &input.shard_level_metrics {
         let mut array_28 = object.key("ShardLevelMetrics").start_array();
         for item_29 in var_27 {
-            array_28.value().string(item_29.as_str());
+            {
+                array_28.value().string(item_29.as_str());
+            }
         }
         array_28.finish();
     }
@@ -331,9 +337,14 @@ pub fn serialize_structure_put_records_input(
     if let Some(var_63) = &input.records {
         let mut array_64 = object.key("Records").start_array();
         for item_65 in var_63 {
-            let mut object_66 = array_64.value().start_object();
-            crate::json_ser::serialize_structure_put_records_request_entry(&mut object_66, item_65);
-            object_66.finish();
+            {
+                let mut object_66 = array_64.value().start_object();
+                crate::json_ser::serialize_structure_put_records_request_entry(
+                    &mut object_66,
+                    item_65,
+                );
+                object_66.finish();
+            }
         }
         array_64.finish();
     }
@@ -361,7 +372,9 @@ pub fn serialize_structure_remove_tags_from_stream_input(
     if let Some(var_70) = &input.tag_keys {
         let mut array_71 = object.key("TagKeys").start_array();
         for item_72 in var_70 {
-            array_71.value().string(item_72);
+            {
+                array_71.value().string(item_72);
+            }
         }
         array_71.finish();
     }

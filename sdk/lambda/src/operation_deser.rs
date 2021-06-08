@@ -3154,7 +3154,15 @@ pub fn parse_invoke_response(
         #[allow(unused_mut)]
         let mut output = crate::output::invoke_output::Builder::default();
         let _ = response;
-        output = output.set_status_code(response.status().as_u16() as _);
+        output = output.set_executed_version(
+            crate::http_serde::deser_header_invoke_executed_version(response.headers()).map_err(
+                |_| {
+                    crate::error::InvokeError::unhandled(
+                        "Failed to parse ExecutedVersion from header `X-Amz-Executed-Version",
+                    )
+                },
+            )?,
+        );
         output = output.set_function_error(
             crate::http_serde::deser_header_invoke_function_error(response.headers()).map_err(
                 |_| {
@@ -3176,15 +3184,7 @@ pub fn parse_invoke_response(
         output = output.set_payload(crate::http_serde::deser_payload_invoke_payload(
             response.body().as_ref(),
         )?);
-        output = output.set_executed_version(
-            crate::http_serde::deser_header_invoke_executed_version(response.headers()).map_err(
-                |_| {
-                    crate::error::InvokeError::unhandled(
-                        "Failed to parse ExecutedVersion from header `X-Amz-Executed-Version",
-                    )
-                },
-            )?,
-        );
+        output = output.set_status_code(response.status().as_u16() as _);
         output.build()
     })
 }

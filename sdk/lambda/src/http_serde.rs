@@ -350,10 +350,10 @@ pub fn deser_header_invoke_retry_after_seconds(
     }
 }
 
-pub fn deser_header_invoke_function_error(
+pub fn deser_header_invoke_executed_version(
     header_map: &http::HeaderMap,
 ) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
-    let headers = header_map.get_all("X-Amz-Function-Error").iter();
+    let headers = header_map.get_all("X-Amz-Executed-Version").iter();
     let var_28: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
     if var_28.len() > 1 {
         Err(smithy_http::header::ParseError)
@@ -363,10 +363,10 @@ pub fn deser_header_invoke_function_error(
     }
 }
 
-pub fn deser_header_invoke_log_result(
+pub fn deser_header_invoke_function_error(
     header_map: &http::HeaderMap,
 ) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
-    let headers = header_map.get_all("X-Amz-Log-Result").iter();
+    let headers = header_map.get_all("X-Amz-Function-Error").iter();
     let var_29: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
     if var_29.len() > 1 {
         Err(smithy_http::header::ParseError)
@@ -376,18 +376,10 @@ pub fn deser_header_invoke_log_result(
     }
 }
 
-pub fn deser_payload_invoke_payload(
-    body: &[u8],
-) -> Result<std::option::Option<smithy_types::Blob>, crate::error::InvokeError> {
-    (!body.is_empty())
-        .then(|| Ok(smithy_types::Blob::new(body)))
-        .transpose()
-}
-
-pub fn deser_header_invoke_executed_version(
+pub fn deser_header_invoke_log_result(
     header_map: &http::HeaderMap,
 ) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
-    let headers = header_map.get_all("X-Amz-Executed-Version").iter();
+    let headers = header_map.get_all("X-Amz-Log-Result").iter();
     let var_30: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
     if var_30.len() > 1 {
         Err(smithy_http::header::ParseError)
@@ -395,6 +387,14 @@ pub fn deser_header_invoke_executed_version(
         let mut var_30 = var_30;
         Ok(var_30.pop())
     }
+}
+
+pub fn deser_payload_invoke_payload(
+    body: &[u8],
+) -> Result<std::option::Option<smithy_types::Blob>, crate::error::InvokeError> {
+    (!body.is_empty())
+        .then(|| Ok(smithy_types::Blob::new(body)))
+        .transpose()
 }
 
 pub fn deser_header_list_aliases_retry_after_seconds(

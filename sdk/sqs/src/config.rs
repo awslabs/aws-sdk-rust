@@ -53,9 +53,9 @@ impl Builder {
     }
     pub fn build(self) -> Config {
         Config {
-            endpoint_resolver: self.endpoint_resolver.unwrap_or_else(|| {
-                ::std::sync::Arc::new(aws_endpoint::DefaultAwsEndpointResolver::for_service("sqs"))
-            }),
+            endpoint_resolver: self
+                .endpoint_resolver
+                .unwrap_or_else(|| ::std::sync::Arc::new(crate::aws_endpoint::endpoint_resolver())),
             region: {
                 use aws_types::region::ProvideRegion;
                 self.region

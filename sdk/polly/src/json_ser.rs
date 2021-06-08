@@ -21,7 +21,9 @@ pub fn serialize_structure_start_speech_synthesis_task_input(
     if let Some(var_4) = &input.lexicon_names {
         let mut array_5 = object.key("LexiconNames").start_array();
         for item_6 in var_4 {
-            array_5.value().string(item_6);
+            {
+                array_5.value().string(item_6);
+            }
         }
         array_5.finish();
     }
@@ -43,7 +45,9 @@ pub fn serialize_structure_start_speech_synthesis_task_input(
     if let Some(var_12) = &input.speech_mark_types {
         let mut array_13 = object.key("SpeechMarkTypes").start_array();
         for item_14 in var_12 {
-            array_13.value().string(item_14.as_str());
+            {
+                array_13.value().string(item_14.as_str());
+            }
         }
         array_13.finish();
     }
@@ -71,7 +75,9 @@ pub fn serialize_structure_synthesize_speech_input(
     if let Some(var_20) = &input.lexicon_names {
         let mut array_21 = object.key("LexiconNames").start_array();
         for item_22 in var_20 {
-            array_21.value().string(item_22);
+            {
+                array_21.value().string(item_22);
+            }
         }
         array_21.finish();
     }
@@ -84,7 +90,9 @@ pub fn serialize_structure_synthesize_speech_input(
     if let Some(var_25) = &input.speech_mark_types {
         let mut array_26 = object.key("SpeechMarkTypes").start_array();
         for item_27 in var_25 {
-            array_26.value().string(item_27.as_str());
+            {
+                array_26.value().string(item_27.as_str());
+            }
         }
         array_26.finish();
     }

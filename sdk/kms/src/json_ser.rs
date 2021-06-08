@@ -63,7 +63,9 @@ pub fn serialize_structure_create_grant_input(
     if let Some(var_12) = &input.operations {
         let mut array_13 = object.key("Operations").start_array();
         for item_14 in var_12 {
-            array_13.value().string(item_14.as_str());
+            {
+                array_13.value().string(item_14.as_str());
+            }
         }
         array_13.finish();
     }
@@ -75,7 +77,9 @@ pub fn serialize_structure_create_grant_input(
     if let Some(var_17) = &input.grant_tokens {
         let mut array_18 = object.key("GrantTokens").start_array();
         for item_19 in var_17 {
-            array_18.value().string(item_19);
+            {
+                array_18.value().string(item_19);
+            }
         }
         array_18.finish();
     }
@@ -106,15 +110,19 @@ pub fn serialize_structure_create_key_input(
     if let Some(var_26) = &input.custom_key_store_id {
         object.key("CustomKeyStoreId").string(var_26);
     }
-    object
-        .key("BypassPolicyLockoutSafetyCheck")
-        .boolean(input.bypass_policy_lockout_safety_check);
+    if input.bypass_policy_lockout_safety_check {
+        object
+            .key("BypassPolicyLockoutSafetyCheck")
+            .boolean(input.bypass_policy_lockout_safety_check);
+    }
     if let Some(var_27) = &input.tags {
         let mut array_28 = object.key("Tags").start_array();
         for item_29 in var_27 {
-            let mut object_30 = array_28.value().start_object();
-            crate::json_ser::serialize_structure_tag(&mut object_30, item_29);
-            object_30.finish();
+            {
+                let mut object_30 = array_28.value().start_object();
+                crate::json_ser::serialize_structure_tag(&mut object_30, item_29);
+                object_30.finish();
+            }
         }
         array_28.finish();
     }
@@ -132,14 +140,18 @@ pub fn serialize_structure_decrypt_input(
     if let Some(var_32) = &input.encryption_context {
         let mut object_33 = object.key("EncryptionContext").start_object();
         for (key_34, value_35) in var_32 {
-            object_33.key(key_34).string(value_35);
+            {
+                object_33.key(key_34).string(value_35);
+            }
         }
         object_33.finish();
     }
     if let Some(var_36) = &input.grant_tokens {
         let mut array_37 = object.key("GrantTokens").start_array();
         for item_38 in var_36 {
-            array_37.value().string(item_38);
+            {
+                array_37.value().string(item_38);
+            }
         }
         array_37.finish();
     }
@@ -209,7 +221,9 @@ pub fn serialize_structure_describe_key_input(
     if let Some(var_49) = &input.grant_tokens {
         let mut array_50 = object.key("GrantTokens").start_array();
         for item_51 in var_49 {
-            array_50.value().string(item_51);
+            {
+                array_50.value().string(item_51);
+            }
         }
         array_50.finish();
     }
@@ -275,14 +289,18 @@ pub fn serialize_structure_encrypt_input(
     if let Some(var_59) = &input.encryption_context {
         let mut object_60 = object.key("EncryptionContext").start_object();
         for (key_61, value_62) in var_59 {
-            object_60.key(key_61).string(value_62);
+            {
+                object_60.key(key_61).string(value_62);
+            }
         }
         object_60.finish();
     }
     if let Some(var_63) = &input.grant_tokens {
         let mut array_64 = object.key("GrantTokens").start_array();
         for item_65 in var_63 {
-            array_64.value().string(item_65);
+            {
+                array_64.value().string(item_65);
+            }
         }
         array_64.finish();
     }
@@ -301,7 +319,9 @@ pub fn serialize_structure_generate_data_key_input(
     if let Some(var_68) = &input.encryption_context {
         let mut object_69 = object.key("EncryptionContext").start_object();
         for (key_70, value_71) in var_68 {
-            object_69.key(key_70).string(value_71);
+            {
+                object_69.key(key_70).string(value_71);
+            }
         }
         object_69.finish();
     }
@@ -317,7 +337,9 @@ pub fn serialize_structure_generate_data_key_input(
     if let Some(var_74) = &input.grant_tokens {
         let mut array_75 = object.key("GrantTokens").start_array();
         for item_76 in var_74 {
-            array_75.value().string(item_76);
+            {
+                array_75.value().string(item_76);
+            }
         }
         array_75.finish();
     }
@@ -330,7 +352,9 @@ pub fn serialize_structure_generate_data_key_pair_input(
     if let Some(var_77) = &input.encryption_context {
         let mut object_78 = object.key("EncryptionContext").start_object();
         for (key_79, value_80) in var_77 {
-            object_78.key(key_79).string(value_80);
+            {
+                object_78.key(key_79).string(value_80);
+            }
         }
         object_78.finish();
     }
@@ -343,7 +367,9 @@ pub fn serialize_structure_generate_data_key_pair_input(
     if let Some(var_83) = &input.grant_tokens {
         let mut array_84 = object.key("GrantTokens").start_array();
         for item_85 in var_83 {
-            array_84.value().string(item_85);
+            {
+                array_84.value().string(item_85);
+            }
         }
         array_84.finish();
     }
@@ -356,7 +382,9 @@ pub fn serialize_structure_generate_data_key_pair_without_plaintext_input(
     if let Some(var_86) = &input.encryption_context {
         let mut object_87 = object.key("EncryptionContext").start_object();
         for (key_88, value_89) in var_86 {
-            object_87.key(key_88).string(value_89);
+            {
+                object_87.key(key_88).string(value_89);
+            }
         }
         object_87.finish();
     }
@@ -369,7 +397,9 @@ pub fn serialize_structure_generate_data_key_pair_without_plaintext_input(
     if let Some(var_92) = &input.grant_tokens {
         let mut array_93 = object.key("GrantTokens").start_array();
         for item_94 in var_92 {
-            array_93.value().string(item_94);
+            {
+                array_93.value().string(item_94);
+            }
         }
         array_93.finish();
     }
@@ -385,7 +415,9 @@ pub fn serialize_structure_generate_data_key_without_plaintext_input(
     if let Some(var_96) = &input.encryption_context {
         let mut object_97 = object.key("EncryptionContext").start_object();
         for (key_98, value_99) in var_96 {
-            object_97.key(key_98).string(value_99);
+            {
+                object_97.key(key_98).string(value_99);
+            }
         }
         object_97.finish();
     }
@@ -401,7 +433,9 @@ pub fn serialize_structure_generate_data_key_without_plaintext_input(
     if let Some(var_102) = &input.grant_tokens {
         let mut array_103 = object.key("GrantTokens").start_array();
         for item_104 in var_102 {
-            array_103.value().string(item_104);
+            {
+                array_103.value().string(item_104);
+            }
         }
         array_103.finish();
     }
@@ -468,7 +502,9 @@ pub fn serialize_structure_get_public_key_input(
     if let Some(var_114) = &input.grant_tokens {
         let mut array_115 = object.key("GrantTokens").start_array();
         for item_116 in var_114 {
-            array_115.value().string(item_116);
+            {
+                array_115.value().string(item_116);
+            }
         }
         array_115.finish();
     }
@@ -619,9 +655,11 @@ pub fn serialize_structure_put_key_policy_input(
     if let Some(var_141) = &input.policy {
         object.key("Policy").string(var_141);
     }
-    object
-        .key("BypassPolicyLockoutSafetyCheck")
-        .boolean(input.bypass_policy_lockout_safety_check);
+    if input.bypass_policy_lockout_safety_check {
+        object
+            .key("BypassPolicyLockoutSafetyCheck")
+            .boolean(input.bypass_policy_lockout_safety_check);
+    }
 }
 
 pub fn serialize_structure_re_encrypt_input(
@@ -636,7 +674,9 @@ pub fn serialize_structure_re_encrypt_input(
     if let Some(var_143) = &input.source_encryption_context {
         let mut object_144 = object.key("SourceEncryptionContext").start_object();
         for (key_145, value_146) in var_143 {
-            object_144.key(key_145).string(value_146);
+            {
+                object_144.key(key_145).string(value_146);
+            }
         }
         object_144.finish();
     }
@@ -649,7 +689,9 @@ pub fn serialize_structure_re_encrypt_input(
     if let Some(var_149) = &input.destination_encryption_context {
         let mut object_150 = object.key("DestinationEncryptionContext").start_object();
         for (key_151, value_152) in var_149 {
-            object_150.key(key_151).string(value_152);
+            {
+                object_150.key(key_151).string(value_152);
+            }
         }
         object_150.finish();
     }
@@ -666,7 +708,9 @@ pub fn serialize_structure_re_encrypt_input(
     if let Some(var_155) = &input.grant_tokens {
         let mut array_156 = object.key("GrantTokens").start_array();
         for item_157 in var_155 {
-            array_156.value().string(item_157);
+            {
+                array_156.value().string(item_157);
+            }
         }
         array_156.finish();
     }
@@ -732,7 +776,9 @@ pub fn serialize_structure_sign_input(
     if let Some(var_168) = &input.grant_tokens {
         let mut array_169 = object.key("GrantTokens").start_array();
         for item_170 in var_168 {
-            array_169.value().string(item_170);
+            {
+                array_169.value().string(item_170);
+            }
         }
         array_169.finish();
     }
@@ -751,9 +797,11 @@ pub fn serialize_structure_tag_resource_input(
     if let Some(var_173) = &input.tags {
         let mut array_174 = object.key("Tags").start_array();
         for item_175 in var_173 {
-            let mut object_176 = array_174.value().start_object();
-            crate::json_ser::serialize_structure_tag(&mut object_176, item_175);
-            object_176.finish();
+            {
+                let mut object_176 = array_174.value().start_object();
+                crate::json_ser::serialize_structure_tag(&mut object_176, item_175);
+                object_176.finish();
+            }
         }
         array_174.finish();
     }
@@ -769,7 +817,9 @@ pub fn serialize_structure_untag_resource_input(
     if let Some(var_178) = &input.tag_keys {
         let mut array_179 = object.key("TagKeys").start_array();
         for item_180 in var_178 {
-            array_179.value().string(item_180);
+            {
+                array_179.value().string(item_180);
+            }
         }
         array_179.finish();
     }
@@ -843,7 +893,9 @@ pub fn serialize_structure_verify_input(
     if let Some(var_194) = &input.grant_tokens {
         let mut array_195 = object.key("GrantTokens").start_array();
         for item_196 in var_194 {
-            array_195.value().string(item_196);
+            {
+                array_195.value().string(item_196);
+            }
         }
         array_195.finish();
     }
@@ -856,14 +908,18 @@ pub fn serialize_structure_grant_constraints(
     if let Some(var_197) = &input.encryption_context_subset {
         let mut object_198 = object.key("EncryptionContextSubset").start_object();
         for (key_199, value_200) in var_197 {
-            object_198.key(key_199).string(value_200);
+            {
+                object_198.key(key_199).string(value_200);
+            }
         }
         object_198.finish();
     }
     if let Some(var_201) = &input.encryption_context_equals {
         let mut object_202 = object.key("EncryptionContextEquals").start_object();
         for (key_203, value_204) in var_201 {
-            object_202.key(key_203).string(value_204);
+            {
+                object_202.key(key_203).string(value_204);
+            }
         }
         object_202.finish();
     }

@@ -679,7 +679,7 @@ pub struct S3Location {
     /// <p>Contains the type of server-side encryption used.</p>
     pub encryption: std::option::Option<crate::model::Encryption>,
     /// <p>The canned ACL to apply to the restore results.</p>
-    pub canned_acl: std::option::Option<crate::model::ObjectCannedACL>,
+    pub canned_acl: std::option::Option<crate::model::ObjectCannedAcl>,
     /// <p>A list of grants that control access to the staged results.</p>
     pub access_control_list: std::option::Option<std::vec::Vec<crate::model::Grant>>,
     /// <p>The tag-set that is applied to the restore results.</p>
@@ -712,7 +712,7 @@ pub mod s3_location {
         pub(crate) bucket_name: std::option::Option<std::string::String>,
         pub(crate) prefix: std::option::Option<std::string::String>,
         pub(crate) encryption: std::option::Option<crate::model::Encryption>,
-        pub(crate) canned_acl: std::option::Option<crate::model::ObjectCannedACL>,
+        pub(crate) canned_acl: std::option::Option<crate::model::ObjectCannedAcl>,
         pub(crate) access_control_list: std::option::Option<std::vec::Vec<crate::model::Grant>>,
         pub(crate) tagging: std::option::Option<crate::model::Tagging>,
         pub(crate) user_metadata: std::option::Option<std::vec::Vec<crate::model::MetadataEntry>>,
@@ -750,13 +750,13 @@ pub mod s3_location {
             self
         }
         /// <p>The canned ACL to apply to the restore results.</p>
-        pub fn canned_acl(mut self, inp: crate::model::ObjectCannedACL) -> Self {
+        pub fn canned_acl(mut self, inp: crate::model::ObjectCannedAcl) -> Self {
             self.canned_acl = Some(inp);
             self
         }
         pub fn set_canned_acl(
             mut self,
-            inp: std::option::Option<crate::model::ObjectCannedACL>,
+            inp: std::option::Option<crate::model::ObjectCannedAcl>,
         ) -> Self {
             self.canned_acl = inp;
             self
@@ -1362,7 +1362,7 @@ impl<'de> serde::Deserialize<'de> for Type {
     std::fmt::Debug,
     std::hash::Hash,
 )]
-pub enum ObjectCannedACL {
+pub enum ObjectCannedAcl {
     AuthenticatedRead,
     AwsExecRead,
     BucketOwnerFullControl,
@@ -1372,47 +1372,47 @@ pub enum ObjectCannedACL {
     PublicReadWrite,
     Unknown(String),
 }
-impl std::convert::From<&str> for ObjectCannedACL {
+impl std::convert::From<&str> for ObjectCannedAcl {
     fn from(s: &str) -> Self {
         match s {
-            "authenticated-read" => ObjectCannedACL::AuthenticatedRead,
-            "aws-exec-read" => ObjectCannedACL::AwsExecRead,
-            "bucket-owner-full-control" => ObjectCannedACL::BucketOwnerFullControl,
-            "bucket-owner-read" => ObjectCannedACL::BucketOwnerRead,
-            "private" => ObjectCannedACL::Private,
-            "public-read" => ObjectCannedACL::PublicRead,
-            "public-read-write" => ObjectCannedACL::PublicReadWrite,
-            other => ObjectCannedACL::Unknown(other.to_owned()),
+            "authenticated-read" => ObjectCannedAcl::AuthenticatedRead,
+            "aws-exec-read" => ObjectCannedAcl::AwsExecRead,
+            "bucket-owner-full-control" => ObjectCannedAcl::BucketOwnerFullControl,
+            "bucket-owner-read" => ObjectCannedAcl::BucketOwnerRead,
+            "private" => ObjectCannedAcl::Private,
+            "public-read" => ObjectCannedAcl::PublicRead,
+            "public-read-write" => ObjectCannedAcl::PublicReadWrite,
+            other => ObjectCannedAcl::Unknown(other.to_owned()),
         }
     }
 }
-impl std::str::FromStr for ObjectCannedACL {
+impl std::str::FromStr for ObjectCannedAcl {
     type Err = std::convert::Infallible;
 
     fn from_str(s: &str) -> Result<Self, Self::Err> {
-        Ok(ObjectCannedACL::from(s))
+        Ok(ObjectCannedAcl::from(s))
     }
 }
-impl ObjectCannedACL {
+impl ObjectCannedAcl {
     pub fn as_str(&self) -> &str {
         match self {
-            ObjectCannedACL::AuthenticatedRead => "authenticated-read",
-            ObjectCannedACL::AwsExecRead => "aws-exec-read",
-            ObjectCannedACL::BucketOwnerFullControl => "bucket-owner-full-control",
-            ObjectCannedACL::BucketOwnerRead => "bucket-owner-read",
-            ObjectCannedACL::Private => "private",
-            ObjectCannedACL::PublicRead => "public-read",
-            ObjectCannedACL::PublicReadWrite => "public-read-write",
-            ObjectCannedACL::Unknown(s) => s.as_ref(),
+            ObjectCannedAcl::AuthenticatedRead => "authenticated-read",
+            ObjectCannedAcl::AwsExecRead => "aws-exec-read",
+            ObjectCannedAcl::BucketOwnerFullControl => "bucket-owner-full-control",
+            ObjectCannedAcl::BucketOwnerRead => "bucket-owner-read",
+            ObjectCannedAcl::Private => "private",
+            ObjectCannedAcl::PublicRead => "public-read",
+            ObjectCannedAcl::PublicReadWrite => "public-read-write",
+            ObjectCannedAcl::Unknown(s) => s.as_ref(),
         }
     }
 }
-impl AsRef<str> for ObjectCannedACL {
+impl AsRef<str> for ObjectCannedAcl {
     fn as_ref(&self) -> &str {
         self.as_str()
     }
 }
-impl<'de> serde::Deserialize<'de> for ObjectCannedACL {
+impl<'de> serde::Deserialize<'de> for ObjectCannedAcl {
     fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
     where
         D: serde::Deserializer<'de>,
@@ -2106,7 +2106,7 @@ impl ParquetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct JSONInput {
     /// <p>The type of JSON. Valid values: Document, Lines.</p>
-    pub r#type: std::option::Option<crate::model::JSONType>,
+    pub r#type: std::option::Option<crate::model::JsonType>,
 }
 impl std::fmt::Debug for JSONInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2121,15 +2121,15 @@ pub mod json_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) r#type: std::option::Option<crate::model::JSONType>,
+        pub(crate) r#type: std::option::Option<crate::model::JsonType>,
     }
     impl Builder {
         /// <p>The type of JSON. Valid values: Document, Lines.</p>
-        pub fn r#type(mut self, inp: crate::model::JSONType) -> Self {
+        pub fn r#type(mut self, inp: crate::model::JsonType) -> Self {
             self.r#type = Some(inp);
             self
         }
-        pub fn set_type(mut self, inp: std::option::Option<crate::model::JSONType>) -> Self {
+        pub fn set_type(mut self, inp: std::option::Option<crate::model::JsonType>) -> Self {
             self.r#type = inp;
             self
         }
@@ -2158,42 +2158,42 @@ impl JSONInput {
     std::fmt::Debug,
     std::hash::Hash,
 )]
-pub enum JSONType {
+pub enum JsonType {
     Document,
     Lines,
     Unknown(String),
 }
-impl std::convert::From<&str> for JSONType {
+impl std::convert::From<&str> for JsonType {
     fn from(s: &str) -> Self {
         match s {
-            "DOCUMENT" => JSONType::Document,
-            "LINES" => JSONType::Lines,
-            other => JSONType::Unknown(other.to_owned()),
+            "DOCUMENT" => JsonType::Document,
+            "LINES" => JsonType::Lines,
+            other => JsonType::Unknown(other.to_owned()),
         }
     }
 }
-impl std::str::FromStr for JSONType {
+impl std::str::FromStr for JsonType {
     type Err = std::convert::Infallible;
 
     fn from_str(s: &str) -> Result<Self, Self::Err> {
-        Ok(JSONType::from(s))
+        Ok(JsonType::from(s))
     }
 }
-impl JSONType {
+impl JsonType {
     pub fn as_str(&self) -> &str {
         match self {
-            JSONType::Document => "DOCUMENT",
-            JSONType::Lines => "LINES",
-            JSONType::Unknown(s) => s.as_ref(),
+            JsonType::Document => "DOCUMENT",
+            JsonType::Lines => "LINES",
+            JsonType::Unknown(s) => s.as_ref(),
         }
     }
 }
-impl AsRef<str> for JSONType {
+impl AsRef<str> for JsonType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }
 }
-impl<'de> serde::Deserialize<'de> for JSONType {
+impl<'de> serde::Deserialize<'de> for JsonType {
     fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
     where
         D: serde::Deserializer<'de>,
@@ -4102,7 +4102,7 @@ pub struct VersioningConfiguration {
     /// <p>Specifies whether MFA delete is enabled in the bucket versioning configuration. This
     /// element is only returned if the bucket has been configured with MFA delete. If the bucket
     /// has never been so configured, this element is not returned.</p>
-    pub mfa_delete: std::option::Option<crate::model::MFADelete>,
+    pub mfa_delete: std::option::Option<crate::model::MfaDelete>,
     /// <p>The versioning state of the bucket.</p>
     pub status: std::option::Option<crate::model::BucketVersioningStatus>,
 }
@@ -4120,18 +4120,18 @@ pub mod versioning_configuration {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) mfa_delete: std::option::Option<crate::model::MFADelete>,
+        pub(crate) mfa_delete: std::option::Option<crate::model::MfaDelete>,
         pub(crate) status: std::option::Option<crate::model::BucketVersioningStatus>,
     }
     impl Builder {
         /// <p>Specifies whether MFA delete is enabled in the bucket versioning configuration. This
         /// element is only returned if the bucket has been configured with MFA delete. If the bucket
         /// has never been so configured, this element is not returned.</p>
-        pub fn mfa_delete(mut self, inp: crate::model::MFADelete) -> Self {
+        pub fn mfa_delete(mut self, inp: crate::model::MfaDelete) -> Self {
             self.mfa_delete = Some(inp);
             self
         }
-        pub fn set_mfa_delete(mut self, inp: std::option::Option<crate::model::MFADelete>) -> Self {
+        pub fn set_mfa_delete(mut self, inp: std::option::Option<crate::model::MfaDelete>) -> Self {
             self.mfa_delete = inp;
             self
         }
@@ -4228,42 +4228,42 @@ impl<'de> serde::Deserialize<'de> for BucketVersioningStatus {
     std::fmt::Debug,
     std::hash::Hash,
 )]
-pub enum MFADelete {
+pub enum MfaDelete {
     Disabled,
     Enabled,
     Unknown(String),
 }
-impl std::convert::From<&str> for MFADelete {
+impl std::convert::From<&str> for MfaDelete {
     fn from(s: &str) -> Self {
         match s {
-            "Disabled" => MFADelete::Disabled,
-            "Enabled" => MFADelete::Enabled,
-            other => MFADelete::Unknown(other.to_owned()),
+            "Disabled" => MfaDelete::Disabled,
+            "Enabled" => MfaDelete::Enabled,
+            other => MfaDelete::Unknown(other.to_owned()),
         }
     }
 }
-impl std::str::FromStr for MFADelete {
+impl std::str::FromStr for MfaDelete {
     type Err = std::convert::Infallible;
 
     fn from_str(s: &str) -> Result<Self, Self::Err> {
-        Ok(MFADelete::from(s))
+        Ok(MfaDelete::from(s))
     }
 }
-impl MFADelete {
+impl MfaDelete {
     pub fn as_str(&self) -> &str {
         match self {
-            MFADelete::Disabled => "Disabled",
-            MFADelete::Enabled => "Enabled",
-            MFADelete::Unknown(s) => s.as_ref(),
+            MfaDelete::Disabled => "Disabled",
+            MfaDelete::Enabled => "Enabled",
+            MfaDelete::Unknown(s) => s.as_ref(),
         }
     }
 }
-impl AsRef<str> for MFADelete {
+impl AsRef<str> for MfaDelete {
     fn as_ref(&self) -> &str {
         self.as_str()
     }
 }
-impl<'de> serde::Deserialize<'de> for MFADelete {
+impl<'de> serde::Deserialize<'de> for MfaDelete {
     fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
     where
         D: serde::Deserializer<'de>,
@@ -10628,48 +10628,48 @@ impl AnalyticsAndOperator {
     std::fmt::Debug,
     std::hash::Hash,
 )]
-pub enum BucketCannedACL {
+pub enum BucketCannedAcl {
     AuthenticatedRead,
     Private,
     PublicRead,
     PublicReadWrite,
     Unknown(String),
 }
-impl std::convert::From<&str> for BucketCannedACL {
+impl std::convert::From<&str> for BucketCannedAcl {
     fn from(s: &str) -> Self {
         match s {
-            "authenticated-read" => BucketCannedACL::AuthenticatedRead,
-            "private" => BucketCannedACL::Private,
-            "public-read" => BucketCannedACL::PublicRead,
-            "public-read-write" => BucketCannedACL::PublicReadWrite,
-            other => BucketCannedACL::Unknown(other.to_owned()),
+            "authenticated-read" => BucketCannedAcl::AuthenticatedRead,
+            "private" => BucketCannedAcl::Private,
+            "public-read" => BucketCannedAcl::PublicRead,
+            "public-read-write" => BucketCannedAcl::PublicReadWrite,
+            other => BucketCannedAcl::Unknown(other.to_owned()),
         }
     }
 }
-impl std::str::FromStr for BucketCannedACL {
+impl std::str::FromStr for BucketCannedAcl {
     type Err = std::convert::Infallible;
 
     fn from_str(s: &str) -> Result<Self, Self::Err> {
-        Ok(BucketCannedACL::from(s))
+        Ok(BucketCannedAcl::from(s))
     }
 }
-impl BucketCannedACL {
+impl BucketCannedAcl {
     pub fn as_str(&self) -> &str {
         match self {
-            BucketCannedACL::AuthenticatedRead => "authenticated-read",
-            BucketCannedACL::Private => "private",
-            BucketCannedACL::PublicRead => "public-read",
-            BucketCannedACL::PublicReadWrite => "public-read-write",
-            BucketCannedACL::Unknown(s) => s.as_ref(),
+            BucketCannedAcl::AuthenticatedRead => "authenticated-read",
+            BucketCannedAcl::Private => "private",
+            BucketCannedAcl::PublicRead => "public-read",
+            BucketCannedAcl::PublicReadWrite => "public-read-write",
+            BucketCannedAcl::Unknown(s) => s.as_ref(),
         }
     }
 }
-impl AsRef<str> for BucketCannedACL {
+impl AsRef<str> for BucketCannedAcl {
     fn as_ref(&self) -> &str {
         self.as_str()
     }
 }
-impl<'de> serde::Deserialize<'de> for BucketCannedACL {
+impl<'de> serde::Deserialize<'de> for BucketCannedAcl {
     fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
     where
         D: serde::Deserializer<'de>,
@@ -11849,42 +11849,42 @@ impl<'de> serde::Deserialize<'de> for ArchiveStatus {
     std::fmt::Debug,
     std::hash::Hash,
 )]
-pub enum MFADeleteStatus {
+pub enum MfaDeleteStatus {
     Disabled,
     Enabled,
     Unknown(String),
 }
-impl std::convert::From<&str> for MFADeleteStatus {
+impl std::convert::From<&str> for MfaDeleteStatus {
     fn from(s: &str) -> Self {
         match s {
-            "Disabled" => MFADeleteStatus::Disabled,
-            "Enabled" => MFADeleteStatus::Enabled,
-            other => MFADeleteStatus::Unknown(other.to_owned()),
+            "Disabled" => MfaDeleteStatus::Disabled,
+            "Enabled" => MfaDeleteStatus::Enabled,
+            other => MfaDeleteStatus::Unknown(other.to_owned()),
         }
     }
 }
-impl std::str::FromStr for MFADeleteStatus {
+impl std::str::FromStr for MfaDeleteStatus {
     type Err = std::convert::Infallible;
 
     fn from_str(s: &str) -> Result<Self, Self::Err> {
-        Ok(MFADeleteStatus::from(s))
+        Ok(MfaDeleteStatus::from(s))
     }
 }
-impl MFADeleteStatus {
+impl MfaDeleteStatus {
     pub fn as_str(&self) -> &str {
         match self {
-            MFADeleteStatus::Disabled => "Disabled",
-            MFADeleteStatus::Enabled => "Enabled",
-            MFADeleteStatus::Unknown(s) => s.as_ref(),
+            MfaDeleteStatus::Disabled => "Disabled",
+            MfaDeleteStatus::Enabled => "Enabled",
+            MfaDeleteStatus::Unknown(s) => s.as_ref(),
         }
     }
 }
-impl AsRef<str> for MFADeleteStatus {
+impl AsRef<str> for MfaDeleteStatus {
     fn as_ref(&self) -> &str {
         self.as_str()
     }
 }
-impl<'de> serde::Deserialize<'de> for MFADeleteStatus {
+impl<'de> serde::Deserialize<'de> for MfaDeleteStatus {
     fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
     where
         D: serde::Deserializer<'de>,

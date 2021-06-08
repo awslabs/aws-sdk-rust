@@ -12,3 +12,4 @@ description = "AWS Endpoint Support"
 smithy-http = { path = "../smithy-http"}
 aws-types = { path = "../aws-types" }
 http = "0.2.3"
+regex = { version = "1", default-features = false, features = ["std"]}

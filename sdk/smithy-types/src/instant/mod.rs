@@ -6,7 +6,7 @@
 use crate::instant::format::DateParseError;
 use chrono::{DateTime, NaiveDateTime, SecondsFormat, Utc};
 use std::str::FromStr;
-use std::time::{SystemTime, UNIX_EPOCH};
+use std::time::{Duration, SystemTime, UNIX_EPOCH};
 
 mod format;
 
@@ -97,6 +97,22 @@ impl Instant {
             NaiveDateTime::from_timestamp(self.seconds, self.subsecond_nanos),
             Utc,
         )
+    }
+
+    /// Convert this `Instant` to a [`SystemTime`](std::time::SystemTime)
+    ///
+    /// Since SystemTime cannot represent times prior to the unix epoch, if this time is before
+    /// 1/1/1970, this function will return `None`.
+    pub fn to_system_time(&self) -> Option<SystemTime> {
+        if self.seconds < 0 {
+            None
+        } else {
+            Some(
+                UNIX_EPOCH
+                    + Duration::from_secs(self.seconds as u64)
+                    + Duration::from_nanos(self.subsecond_nanos as u64),
+            )
+        }
     }
 
     pub fn has_nanos(&self) -> bool {

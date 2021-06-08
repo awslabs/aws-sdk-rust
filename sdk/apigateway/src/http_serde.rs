@@ -740,10 +740,18 @@ pub fn deser_header_get_export_retry_after_seconds(
     }
 }
 
-pub fn deser_header_get_export_content_type(
+pub fn deser_payload_get_export_body(
+    body: &[u8],
+) -> Result<std::option::Option<smithy_types::Blob>, crate::error::GetExportError> {
+    (!body.is_empty())
+        .then(|| Ok(smithy_types::Blob::new(body)))
+        .transpose()
+}
+
+pub fn deser_header_get_export_content_disposition(
     header_map: &http::HeaderMap,
 ) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
-    let headers = header_map.get_all("Content-Type").iter();
+    let headers = header_map.get_all("Content-Disposition").iter();
     let var_58: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
     if var_58.len() > 1 {
         Err(smithy_http::header::ParseError)
@@ -753,10 +761,10 @@ pub fn deser_header_get_export_content_type(
     }
 }
 
-pub fn deser_header_get_export_content_disposition(
+pub fn deser_header_get_export_content_type(
     header_map: &http::HeaderMap,
 ) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
-    let headers = header_map.get_all("Content-Disposition").iter();
+    let headers = header_map.get_all("Content-Type").iter();
     let var_59: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
     if var_59.len() > 1 {
         Err(smithy_http::header::ParseError)
@@ -764,14 +772,6 @@ pub fn deser_header_get_export_content_disposition(
         let mut var_59 = var_59;
         Ok(var_59.pop())
     }
-}
-
-pub fn deser_payload_get_export_body(
-    body: &[u8],
-) -> Result<std::option::Option<smithy_types::Blob>, crate::error::GetExportError> {
-    (!body.is_empty())
-        .then(|| Ok(smithy_types::Blob::new(body)))
-        .transpose()
 }
 
 pub fn deser_header_get_gateway_response_retry_after_seconds(
@@ -982,10 +982,18 @@ pub fn deser_header_get_sdk_retry_after_seconds(
     }
 }
 
-pub fn deser_header_get_sdk_content_type(
+pub fn deser_payload_get_sdk_body(
+    body: &[u8],
+) -> Result<std::option::Option<smithy_types::Blob>, crate::error::GetSdkError> {
+    (!body.is_empty())
+        .then(|| Ok(smithy_types::Blob::new(body)))
+        .transpose()
+}
+
+pub fn deser_header_get_sdk_content_disposition(
     header_map: &http::HeaderMap,
 ) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
-    let headers = header_map.get_all("Content-Type").iter();
+    let headers = header_map.get_all("Content-Disposition").iter();
     let var_76: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
     if var_76.len() > 1 {
         Err(smithy_http::header::ParseError)
@@ -995,10 +1003,10 @@ pub fn deser_header_get_sdk_content_type(
     }
 }
 
-pub fn deser_header_get_sdk_content_disposition(
+pub fn deser_header_get_sdk_content_type(
     header_map: &http::HeaderMap,
 ) -> Result<std::option::Option<std::string::String>, smithy_http::header::ParseError> {
-    let headers = header_map.get_all("Content-Disposition").iter();
+    let headers = header_map.get_all("Content-Type").iter();
     let var_77: Vec<std::string::String> = smithy_http::header::read_many(headers)?;
     if var_77.len() > 1 {
         Err(smithy_http::header::ParseError)
@@ -1006,14 +1014,6 @@ pub fn deser_header_get_sdk_content_disposition(
         let mut var_77 = var_77;
         Ok(var_77.pop())
     }
-}
-
-pub fn deser_payload_get_sdk_body(
-    body: &[u8],
-) -> Result<std::option::Option<smithy_types::Blob>, crate::error::GetSdkError> {
-    (!body.is_empty())
-        .then(|| Ok(smithy_types::Blob::new(body)))
-        .transpose()
 }
 
 pub fn deser_header_get_sdk_type_retry_after_seconds(

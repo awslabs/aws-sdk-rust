@@ -231,9 +231,11 @@ impl<'de> serde::Deserialize<'de> for Op {
 pub struct QuotaSettings {
     /// <p>The maximum number of requests that can be made in a given time period.</p>
     #[serde(rename = "limit")]
+    #[serde(default)]
     pub limit: i32,
     /// <p>The day that a time period starts. For example, with a time period of <code>WEEK</code>, an offset of <code>0</code> starts on Sunday, and an offset of <code>1</code> starts on Monday.</p>
     #[serde(rename = "offset")]
+    #[serde(default)]
     pub offset: i32,
     /// <p>The time period in which the limit applies. Valid values are "DAY", "WEEK" or "MONTH".</p>
     #[serde(rename = "period")]
@@ -371,9 +373,11 @@ impl<'de> serde::Deserialize<'de> for QuotaPeriodType {
 pub struct ThrottleSettings {
     /// <p>The API request burst limit, the maximum rate limit over a time ranging from one to a few seconds, depending upon whether the underlying token bucket is at its full capacity.</p>
     #[serde(rename = "burstLimit")]
+    #[serde(default)]
     pub burst_limit: i32,
     /// <p>The API request steady-state rate limit.</p>
     #[serde(rename = "rateLimit")]
+    #[serde(default)]
     pub rate_limit: f64,
 }
 impl std::fmt::Debug for ThrottleSettings {
@@ -529,6 +533,7 @@ impl ApiStage {
 pub struct CanarySettings {
     /// <p>The percent (0-100) of traffic diverted to a canary deployment.</p>
     #[serde(rename = "percentTraffic")]
+    #[serde(default)]
     pub percent_traffic: f64,
     /// <p>The ID of the canary deployment.</p>
     #[serde(rename = "deploymentId")]
@@ -541,6 +546,7 @@ pub struct CanarySettings {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>A Boolean flag to indicate whether the canary deployment uses the stage cache or not.</p>
     #[serde(rename = "useStageCache")]
+    #[serde(default)]
     pub use_stage_cache: bool,
 }
 impl std::fmt::Debug for CanarySettings {
@@ -705,6 +711,7 @@ impl AccessLogSettings {
 pub struct MethodSetting {
     /// <p>Specifies whether Amazon CloudWatch metrics are enabled for this method. The PATCH path for this setting is <code>/{method_setting_key}/metrics/enabled</code>, and the value is a Boolean.</p>
     #[serde(rename = "metricsEnabled")]
+    #[serde(default)]
     pub metrics_enabled: bool,
     /// <p>Specifies the logging level for this method, which affects the log entries pushed to Amazon CloudWatch Logs. The PATCH path for this setting is <code>/{method_setting_key}/logging/loglevel</code>, and the available levels are <code>OFF</code>, <code>ERROR</code>, and <code>INFO</code>. Choose <code>ERROR</code> to write only error-level entries to CloudWatch Logs, or choose <code>INFO</code> to include all <code>ERROR</code> events as well as extra informational events.</p>
     #[serde(rename = "loggingLevel")]
@@ -712,24 +719,31 @@ pub struct MethodSetting {
     pub logging_level: std::option::Option<std::string::String>,
     /// <p>Specifies whether data trace logging is enabled for this method, which affects the log entries pushed to Amazon CloudWatch Logs. The PATCH path for this setting is <code>/{method_setting_key}/logging/dataTrace</code>, and the value is a Boolean.</p>
     #[serde(rename = "dataTraceEnabled")]
+    #[serde(default)]
     pub data_trace_enabled: bool,
     /// <p>Specifies the throttling burst limit. The PATCH path for this setting is <code>/{method_setting_key}/throttling/burstLimit</code>, and the value is an integer.</p>
     #[serde(rename = "throttlingBurstLimit")]
+    #[serde(default)]
     pub throttling_burst_limit: i32,
     /// <p>Specifies the throttling rate limit. The PATCH path for this setting is <code>/{method_setting_key}/throttling/rateLimit</code>, and the value is a double.</p>
     #[serde(rename = "throttlingRateLimit")]
+    #[serde(default)]
     pub throttling_rate_limit: f64,
     /// <p>Specifies whether responses should be cached and returned for requests. A cache cluster must be enabled on the stage for responses to be cached. The PATCH path for this setting is <code>/{method_setting_key}/caching/enabled</code>, and the value is a Boolean.</p>
     #[serde(rename = "cachingEnabled")]
+    #[serde(default)]
     pub caching_enabled: bool,
     /// <p>Specifies the time to live (TTL), in seconds, for cached responses. The higher the TTL, the longer the response will be cached. The PATCH path for this setting is <code>/{method_setting_key}/caching/ttlInSeconds</code>, and the value is an integer.</p>
     #[serde(rename = "cacheTtlInSeconds")]
+    #[serde(default)]
     pub cache_ttl_in_seconds: i32,
     /// <p>Specifies whether the cached responses are encrypted. The PATCH path for this setting is <code>/{method_setting_key}/caching/dataEncrypted</code>, and the value is a Boolean.</p>
     #[serde(rename = "cacheDataEncrypted")]
+    #[serde(default)]
     pub cache_data_encrypted: bool,
     /// <p>Specifies whether authorization is required for a cache invalidation request. The PATCH path for this setting is <code>/{method_setting_key}/caching/requireAuthorizationForCacheControl</code>, and the value is a Boolean.</p>
     #[serde(rename = "requireAuthorizationForCacheControl")]
+    #[serde(default)]
     pub require_authorization_for_cache_control: bool,
     /// <p>Specifies how to handle unauthorized requests for cache invalidation. The PATCH path for this setting is <code>/{method_setting_key}/caching/unauthorizedCacheControlHeaderStrategy</code>, and the available values are <code>FAIL_WITH_403</code>, <code>SUCCEED_WITH_RESPONSE_HEADER</code>, <code>SUCCEED_WITHOUT_RESPONSE_HEADER</code>.</p>
     #[serde(rename = "unauthorizedCacheControlHeaderStrategy")]
@@ -2032,6 +2046,7 @@ pub struct Integration {
     pub content_handling: std::option::Option<crate::model::ContentHandlingStrategy>,
     /// <p>Custom timeout between 50 and 29,000 milliseconds. The default value is 29,000 milliseconds or 29 seconds.</p>
     #[serde(rename = "timeoutInMillis")]
+    #[serde(default)]
     pub timeout_in_millis: i32,
     /// <p>Specifies a group of related cached parameters. By default, API Gateway uses the resource ID as the <code>cacheNamespace</code>. You can specify the same <code>cacheNamespace</code> across resources to return the same cached data for requests to different resources.</p>
     #[serde(rename = "cacheNamespace")]
@@ -2408,6 +2423,7 @@ pub struct TlsConfig {
     /// presence of a root certificate authority. Supported only for <code>HTTP</code> and
     /// <code>HTTP_PROXY</code> integrations.</p>
     #[serde(rename = "insecureSkipVerification")]
+    #[serde(default)]
     pub insecure_skip_verification: bool,
 }
 impl std::fmt::Debug for TlsConfig {
@@ -3477,6 +3493,7 @@ pub struct MethodSnapshot {
     pub authorization_type: std::option::Option<std::string::String>,
     /// <p>Specifies whether the method requires a valid <a>ApiKey</a>.</p>
     #[serde(rename = "apiKeyRequired")]
+    #[serde(default)]
     pub api_key_required: bool,
 }
 impl std::fmt::Debug for MethodSnapshot {
@@ -4180,6 +4197,7 @@ pub struct Stage {
     pub description: std::option::Option<std::string::String>,
     /// <p>Specifies whether a cache cluster is enabled for the stage.</p>
     #[serde(rename = "cacheClusterEnabled")]
+    #[serde(default)]
     pub cache_cluster_enabled: bool,
     /// <p>The size of the cache cluster for the stage, if enabled.</p>
     #[serde(rename = "cacheClusterSize")]
@@ -4215,6 +4233,7 @@ pub struct Stage {
     pub canary_settings: std::option::Option<crate::model::CanarySettings>,
     /// <p>Specifies whether active tracing with X-ray is enabled for the <a>Stage</a>.</p>
     #[serde(rename = "tracingEnabled")]
+    #[serde(default)]
     pub tracing_enabled: bool,
     /// <p>The ARN of the WebAcl associated with the <a>Stage</a>.</p>
     #[serde(rename = "webAclArn")]
@@ -4653,6 +4672,7 @@ pub struct SdkConfigurationProperty {
     pub description: std::option::Option<std::string::String>,
     /// <p>A boolean flag of an <a>SdkType</a> configuration property to indicate if the associated SDK configuration property is required (<code>true</code>) or not (<code>false</code>).</p>
     #[serde(rename = "required")]
+    #[serde(default)]
     pub required: bool,
     /// <p>The default value of an <a>SdkType</a> configuration property.</p>
     #[serde(rename = "defaultValue")]
@@ -4808,6 +4828,7 @@ pub struct RestApi {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Specifies whether clients can invoke your API by using the default <code>execute-api</code> endpoint. By default, clients can invoke your API with the default https://{api_id}.execute-api.{region}.amazonaws.com endpoint. To require that clients use a custom domain name to invoke your API, disable the default endpoint.</p>
     #[serde(rename = "disableExecuteApiEndpoint")]
+    #[serde(default)]
     pub disable_execute_api_endpoint: bool,
 }
 impl std::fmt::Debug for RestApi {
@@ -5322,9 +5343,11 @@ pub struct RequestValidator {
     pub name: std::option::Option<std::string::String>,
     /// <p>A Boolean flag to indicate whether to validate a request body according to the configured <a>Model</a> schema.</p>
     #[serde(rename = "validateRequestBody")]
+    #[serde(default)]
     pub validate_request_body: bool,
     /// <p>A Boolean flag to indicate whether to validate request parameters (<code>true</code>) or not (<code>false</code>).</p>
     #[serde(rename = "validateRequestParameters")]
+    #[serde(default)]
     pub validate_request_parameters: bool,
 }
 impl std::fmt::Debug for RequestValidator {
@@ -5607,6 +5630,7 @@ pub struct GatewayResponse {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>A Boolean flag to indicate whether this <a>GatewayResponse</a> is the default gateway response (<code>true</code>) or not (<code>false</code>). A default gateway response is one generated by API Gateway without any customization by an API developer. </p>
     #[serde(rename = "defaultResponse")]
+    #[serde(default)]
     pub default_response: bool,
 }
 impl std::fmt::Debug for GatewayResponse {
@@ -6947,6 +6971,7 @@ pub struct ApiKey {
     pub description: std::option::Option<std::string::String>,
     /// <p>Specifies whether the API Key can be used by callers.</p>
     #[serde(rename = "enabled")]
+    #[serde(default)]
     pub enabled: bool,
     /// <p>The timestamp when the API Key was created.</p>
     #[serde(rename = "createdDate")]
@@ -7227,6 +7252,7 @@ impl MutualTlsAuthenticationInput {
 pub struct DeploymentCanarySettings {
     /// <p>The percentage (0.0-100.0) of traffic routed to the canary deployment.</p>
     #[serde(rename = "percentTraffic")]
+    #[serde(default)]
     pub percent_traffic: f64,
     /// <p>A stage variable overrides used for the canary release deployment. They can override existing stage variables or add new stage variables for the canary release deployment. These stage variables are represented as a string-to-string map between stage variable names and their values.</p>
     #[serde(rename = "stageVariableOverrides")]
@@ -7235,6 +7261,7 @@ pub struct DeploymentCanarySettings {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>A Boolean flag to indicate whether the canary release deployment uses the stage cache or not.</p>
     #[serde(rename = "useStageCache")]
+    #[serde(default)]
     pub use_stage_cache: bool,
 }
 impl std::fmt::Debug for DeploymentCanarySettings {

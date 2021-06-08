@@ -564,11 +564,11 @@ pub mod fluent_builders {
         }
         /// <p>The canned ACL to apply to the object.</p>
         /// <p>This action is not supported by Amazon S3 on Outposts.</p>
-        pub fn acl(mut self, inp: crate::model::ObjectCannedACL) -> Self {
+        pub fn acl(mut self, inp: crate::model::ObjectCannedAcl) -> Self {
             self.inner = self.inner.acl(inp);
             self
         }
-        pub fn set_acl(mut self, inp: std::option::Option<crate::model::ObjectCannedACL>) -> Self {
+        pub fn set_acl(mut self, inp: std::option::Option<crate::model::ObjectCannedAcl>) -> Self {
             self.inner = self.inner.set_acl(inp);
             self
         }
@@ -1118,11 +1118,11 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The canned ACL to apply to the bucket.</p>
-        pub fn acl(mut self, inp: crate::model::BucketCannedACL) -> Self {
+        pub fn acl(mut self, inp: crate::model::BucketCannedAcl) -> Self {
             self.inner = self.inner.acl(inp);
             self
         }
-        pub fn set_acl(mut self, inp: std::option::Option<crate::model::BucketCannedACL>) -> Self {
+        pub fn set_acl(mut self, inp: std::option::Option<crate::model::BucketCannedAcl>) -> Self {
             self.inner = self.inner.set_acl(inp);
             self
         }
@@ -1243,11 +1243,11 @@ pub mod fluent_builders {
         }
         /// <p>The canned ACL to apply to the object.</p>
         /// <p>This action is not supported by Amazon S3 on Outposts.</p>
-        pub fn acl(mut self, inp: crate::model::ObjectCannedACL) -> Self {
+        pub fn acl(mut self, inp: crate::model::ObjectCannedAcl) -> Self {
             self.inner = self.inner.acl(inp);
             self
         }
-        pub fn set_acl(mut self, inp: std::option::Option<crate::model::ObjectCannedACL>) -> Self {
+        pub fn set_acl(mut self, inp: std::option::Option<crate::model::ObjectCannedAcl>) -> Self {
             self.inner = self.inner.set_acl(inp);
             self
         }
@@ -5659,11 +5659,11 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The canned ACL to apply to the bucket.</p>
-        pub fn acl(mut self, inp: crate::model::BucketCannedACL) -> Self {
+        pub fn acl(mut self, inp: crate::model::BucketCannedAcl) -> Self {
             self.inner = self.inner.acl(inp);
             self
         }
-        pub fn set_acl(mut self, inp: std::option::Option<crate::model::BucketCannedACL>) -> Self {
+        pub fn set_acl(mut self, inp: std::option::Option<crate::model::BucketCannedAcl>) -> Self {
             self.inner = self.inner.set_acl(inp);
             self
         }
@@ -6991,11 +6991,11 @@ pub mod fluent_builders {
         /// <p>The canned ACL to apply to the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#CannedACL">Canned
         /// ACL</a>.</p>
         /// <p>This action is not supported by Amazon S3 on Outposts.</p>
-        pub fn acl(mut self, inp: crate::model::ObjectCannedACL) -> Self {
+        pub fn acl(mut self, inp: crate::model::ObjectCannedAcl) -> Self {
             self.inner = self.inner.acl(inp);
             self
         }
-        pub fn set_acl(mut self, inp: std::option::Option<crate::model::ObjectCannedACL>) -> Self {
+        pub fn set_acl(mut self, inp: std::option::Option<crate::model::ObjectCannedAcl>) -> Self {
             self.inner = self.inner.set_acl(inp);
             self
         }
@@ -7432,11 +7432,11 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The canned ACL to apply to the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#CannedACL">Canned ACL</a>.</p>
-        pub fn acl(mut self, inp: crate::model::ObjectCannedACL) -> Self {
+        pub fn acl(mut self, inp: crate::model::ObjectCannedAcl) -> Self {
             self.inner = self.inner.acl(inp);
             self
         }
-        pub fn set_acl(mut self, inp: std::option::Option<crate::model::ObjectCannedACL>) -> Self {
+        pub fn set_acl(mut self, inp: std::option::Option<crate::model::ObjectCannedAcl>) -> Self {
             self.inner = self.inner.set_acl(inp);
             self
         }

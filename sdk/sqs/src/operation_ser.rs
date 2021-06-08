@@ -60,10 +60,12 @@ pub fn serialize_operation_change_message_visibility(
     }
     #[allow(unused_mut)]
     let mut scope_19 = writer.prefix("VisibilityTimeout");
-    scope_19.number(
-        #[allow(clippy::useless_conversion)]
-        smithy_types::Number::NegInt((input.visibility_timeout).into()),
-    );
+    {
+        scope_19.number(
+            #[allow(clippy::useless_conversion)]
+            smithy_types::Number::NegInt((input.visibility_timeout).into()),
+        );
+    }
     writer.finish();
     Ok(smithy_http::body::SdkBody::from(out))
 }
@@ -115,7 +117,9 @@ pub fn serialize_operation_create_queue(
         for (key_32, value_33) in var_30 {
             #[allow(unused_mut)]
             let mut entry_34 = map_31.entry(key_32);
-            entry_34.string(value_33);
+            {
+                entry_34.string(value_33);
+            }
         }
         map_31.finish();
     }
@@ -126,7 +130,9 @@ pub fn serialize_operation_create_queue(
         for (key_38, value_39) in var_36 {
             #[allow(unused_mut)]
             let mut entry_40 = map_37.entry(key_38.as_str());
-            entry_40.string(value_39);
+            {
+                entry_40.string(value_39);
+            }
         }
         map_37.finish();
     }
@@ -365,22 +371,28 @@ pub fn serialize_operation_receive_message(
     }
     #[allow(unused_mut)]
     let mut scope_93 = writer.prefix("MaxNumberOfMessages");
-    scope_93.number(
-        #[allow(clippy::useless_conversion)]
-        smithy_types::Number::NegInt((input.max_number_of_messages).into()),
-    );
+    if input.max_number_of_messages != 0 {
+        scope_93.number(
+            #[allow(clippy::useless_conversion)]
+            smithy_types::Number::NegInt((input.max_number_of_messages).into()),
+        );
+    }
     #[allow(unused_mut)]
     let mut scope_94 = writer.prefix("VisibilityTimeout");
-    scope_94.number(
-        #[allow(clippy::useless_conversion)]
-        smithy_types::Number::NegInt((input.visibility_timeout).into()),
-    );
+    if input.visibility_timeout != 0 {
+        scope_94.number(
+            #[allow(clippy::useless_conversion)]
+            smithy_types::Number::NegInt((input.visibility_timeout).into()),
+        );
+    }
     #[allow(unused_mut)]
     let mut scope_95 = writer.prefix("WaitTimeSeconds");
-    scope_95.number(
-        #[allow(clippy::useless_conversion)]
-        smithy_types::Number::NegInt((input.wait_time_seconds).into()),
-    );
+    if input.wait_time_seconds != 0 {
+        scope_95.number(
+            #[allow(clippy::useless_conversion)]
+            smithy_types::Number::NegInt((input.wait_time_seconds).into()),
+        );
+    }
     #[allow(unused_mut)]
     let mut scope_96 = writer.prefix("ReceiveRequestAttemptId");
     if let Some(var_97) = &input.receive_request_attempt_id {
@@ -428,10 +440,12 @@ pub fn serialize_operation_send_message(
     }
     #[allow(unused_mut)]
     let mut scope_106 = writer.prefix("DelaySeconds");
-    scope_106.number(
-        #[allow(clippy::useless_conversion)]
-        smithy_types::Number::NegInt((input.delay_seconds).into()),
-    );
+    if input.delay_seconds != 0 {
+        scope_106.number(
+            #[allow(clippy::useless_conversion)]
+            smithy_types::Number::NegInt((input.delay_seconds).into()),
+        );
+    }
     #[allow(unused_mut)]
     let mut scope_107 = writer.prefix("MessageAttribute");
     if let Some(var_108) = &input.message_attributes {
@@ -439,7 +453,9 @@ pub fn serialize_operation_send_message(
         for (key_110, value_111) in var_108 {
             #[allow(unused_mut)]
             let mut entry_112 = map_109.entry(key_110);
-            crate::query_ser::serialize_structure_message_attribute_value(entry_112, value_111);
+            {
+                crate::query_ser::serialize_structure_message_attribute_value(entry_112, value_111);
+            }
         }
         map_109.finish();
     }
@@ -450,9 +466,11 @@ pub fn serialize_operation_send_message(
         for (key_116, value_117) in var_114 {
             #[allow(unused_mut)]
             let mut entry_118 = map_115.entry(key_116.as_str());
-            crate::query_ser::serialize_structure_message_system_attribute_value(
-                entry_118, value_117,
-            );
+            {
+                crate::query_ser::serialize_structure_message_system_attribute_value(
+                    entry_118, value_117,
+                );
+            }
         }
         map_115.finish();
     }
@@ -516,7 +534,9 @@ pub fn serialize_operation_set_queue_attributes(
         for (key_135, value_136) in var_133 {
             #[allow(unused_mut)]
             let mut entry_137 = map_134.entry(key_135.as_str());
-            entry_137.string(value_136);
+            {
+                entry_137.string(value_136);
+            }
         }
         map_134.finish();
     }
@@ -542,7 +562,9 @@ pub fn serialize_operation_tag_queue(
         for (key_143, value_144) in var_141 {
             #[allow(unused_mut)]
             let mut entry_145 = map_142.entry(key_143);
-            entry_145.string(value_144);
+            {
+                entry_145.string(value_144);
+            }
         }
         map_142.finish();
     }

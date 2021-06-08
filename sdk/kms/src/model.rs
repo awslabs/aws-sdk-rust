@@ -1312,6 +1312,7 @@ pub struct KeyMetadata {
     /// <p>Specifies whether the CMK is enabled. When <code>KeyState</code> is <code>Enabled</code>
     /// this value is true, otherwise it is false.</p>
     #[serde(rename = "Enabled")]
+    #[serde(default)]
     pub enabled: bool,
     /// <p>The description of the CMK.</p>
     #[serde(rename = "Description")]

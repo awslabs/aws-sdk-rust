@@ -488,7 +488,7 @@ pub mod copy_object_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) acl: std::option::Option<crate::model::ObjectCannedACL>,
+        pub(crate) acl: std::option::Option<crate::model::ObjectCannedAcl>,
         pub(crate) bucket: std::option::Option<std::string::String>,
         pub(crate) cache_control: std::option::Option<std::string::String>,
         pub(crate) content_disposition: std::option::Option<std::string::String>,
@@ -535,11 +535,11 @@ pub mod copy_object_input {
     impl Builder {
         /// <p>The canned ACL to apply to the object.</p>
         /// <p>This action is not supported by Amazon S3 on Outposts.</p>
-        pub fn acl(mut self, inp: crate::model::ObjectCannedACL) -> Self {
+        pub fn acl(mut self, inp: crate::model::ObjectCannedAcl) -> Self {
             self.acl = Some(inp);
             self
         }
-        pub fn set_acl(mut self, inp: std::option::Option<crate::model::ObjectCannedACL>) -> Self {
+        pub fn set_acl(mut self, inp: std::option::Option<crate::model::ObjectCannedAcl>) -> Self {
             self.acl = inp;
             self
         }
@@ -1929,7 +1929,7 @@ pub mod create_bucket_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) acl: std::option::Option<crate::model::BucketCannedACL>,
+        pub(crate) acl: std::option::Option<crate::model::BucketCannedAcl>,
         pub(crate) bucket: std::option::Option<std::string::String>,
         pub(crate) grant_full_control: std::option::Option<std::string::String>,
         pub(crate) grant_read: std::option::Option<std::string::String>,
@@ -1942,11 +1942,11 @@ pub mod create_bucket_input {
     }
     impl Builder {
         /// <p>The canned ACL to apply to the bucket.</p>
-        pub fn acl(mut self, inp: crate::model::BucketCannedACL) -> Self {
+        pub fn acl(mut self, inp: crate::model::BucketCannedAcl) -> Self {
             self.acl = Some(inp);
             self
         }
-        pub fn set_acl(mut self, inp: std::option::Option<crate::model::BucketCannedACL>) -> Self {
+        pub fn set_acl(mut self, inp: std::option::Option<crate::model::BucketCannedAcl>) -> Self {
             self.acl = inp;
             self
         }
@@ -2293,7 +2293,7 @@ pub mod create_multipart_upload_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) acl: std::option::Option<crate::model::ObjectCannedACL>,
+        pub(crate) acl: std::option::Option<crate::model::ObjectCannedAcl>,
         pub(crate) bucket: std::option::Option<std::string::String>,
         pub(crate) cache_control: std::option::Option<std::string::String>,
         pub(crate) content_disposition: std::option::Option<std::string::String>,
@@ -2329,11 +2329,11 @@ pub mod create_multipart_upload_input {
     impl Builder {
         /// <p>The canned ACL to apply to the object.</p>
         /// <p>This action is not supported by Amazon S3 on Outposts.</p>
-        pub fn acl(mut self, inp: crate::model::ObjectCannedACL) -> Self {
+        pub fn acl(mut self, inp: crate::model::ObjectCannedAcl) -> Self {
             self.acl = Some(inp);
             self
         }
-        pub fn set_acl(mut self, inp: std::option::Option<crate::model::ObjectCannedACL>) -> Self {
+        pub fn set_acl(mut self, inp: std::option::Option<crate::model::ObjectCannedAcl>) -> Self {
             self.acl = inp;
             self
         }
@@ -15278,7 +15278,7 @@ pub mod put_bucket_acl_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) acl: std::option::Option<crate::model::BucketCannedACL>,
+        pub(crate) acl: std::option::Option<crate::model::BucketCannedAcl>,
         pub(crate) bucket: std::option::Option<std::string::String>,
         pub(crate) content_md5: std::option::Option<std::string::String>,
         pub(crate) grant_full_control: std::option::Option<std::string::String>,
@@ -15291,11 +15291,11 @@ pub mod put_bucket_acl_input {
     }
     impl Builder {
         /// <p>The canned ACL to apply to the bucket.</p>
-        pub fn acl(mut self, inp: crate::model::BucketCannedACL) -> Self {
+        pub fn acl(mut self, inp: crate::model::BucketCannedAcl) -> Self {
             self.acl = Some(inp);
             self
         }
-        pub fn set_acl(mut self, inp: std::option::Option<crate::model::BucketCannedACL>) -> Self {
+        pub fn set_acl(mut self, inp: std::option::Option<crate::model::BucketCannedAcl>) -> Self {
             self.acl = inp;
             self
         }
@@ -19138,7 +19138,7 @@ pub mod put_object_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) acl: std::option::Option<crate::model::ObjectCannedACL>,
+        pub(crate) acl: std::option::Option<crate::model::ObjectCannedAcl>,
         pub(crate) body: std::option::Option<smithy_http::byte_stream::ByteStream>,
         pub(crate) bucket: std::option::Option<std::string::String>,
         pub(crate) cache_control: std::option::Option<std::string::String>,
@@ -19178,11 +19178,11 @@ pub mod put_object_input {
         /// <p>The canned ACL to apply to the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#CannedACL">Canned
         /// ACL</a>.</p>
         /// <p>This action is not supported by Amazon S3 on Outposts.</p>
-        pub fn acl(mut self, inp: crate::model::ObjectCannedACL) -> Self {
+        pub fn acl(mut self, inp: crate::model::ObjectCannedAcl) -> Self {
             self.acl = Some(inp);
             self
         }
-        pub fn set_acl(mut self, inp: std::option::Option<crate::model::ObjectCannedACL>) -> Self {
+        pub fn set_acl(mut self, inp: std::option::Option<crate::model::ObjectCannedAcl>) -> Self {
             self.acl = inp;
             self
         }
@@ -20278,7 +20278,7 @@ pub mod put_object_acl_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) acl: std::option::Option<crate::model::ObjectCannedACL>,
+        pub(crate) acl: std::option::Option<crate::model::ObjectCannedAcl>,
         pub(crate) bucket: std::option::Option<std::string::String>,
         pub(crate) content_md5: std::option::Option<std::string::String>,
         pub(crate) grant_full_control: std::option::Option<std::string::String>,
@@ -20294,11 +20294,11 @@ pub mod put_object_acl_input {
     }
     impl Builder {
         /// <p>The canned ACL to apply to the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#CannedACL">Canned ACL</a>.</p>
-        pub fn acl(mut self, inp: crate::model::ObjectCannedACL) -> Self {
+        pub fn acl(mut self, inp: crate::model::ObjectCannedAcl) -> Self {
             self.acl = Some(inp);
             self
         }
-        pub fn set_acl(mut self, inp: std::option::Option<crate::model::ObjectCannedACL>) -> Self {
+        pub fn set_acl(mut self, inp: std::option::Option<crate::model::ObjectCannedAcl>) -> Self {
             self.acl = inp;
             self
         }
@@ -25498,7 +25498,7 @@ impl std::fmt::Debug for PutObjectLegalHoldInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutObjectAclInput {
     /// <p>The canned ACL to apply to the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#CannedACL">Canned ACL</a>.</p>
-    pub acl: std::option::Option<crate::model::ObjectCannedACL>,
+    pub acl: std::option::Option<crate::model::ObjectCannedAcl>,
     /// <p>The bucket name that contains the object to which you want to attach the ACL. </p>
     /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub bucket: std::string::String,
@@ -25568,7 +25568,7 @@ pub struct PutObjectInput {
     /// <p>The canned ACL to apply to the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#CannedACL">Canned
     /// ACL</a>.</p>
     /// <p>This action is not supported by Amazon S3 on Outposts.</p>
-    pub acl: std::option::Option<crate::model::ObjectCannedACL>,
+    pub acl: std::option::Option<crate::model::ObjectCannedAcl>,
     /// <p>Object data.</p>
     pub body: smithy_http::byte_stream::ByteStream,
     /// <p>The bucket name to which the PUT action was initiated. </p>
@@ -26168,7 +26168,7 @@ impl std::fmt::Debug for PutBucketAnalyticsConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutBucketAclInput {
     /// <p>The canned ACL to apply to the bucket.</p>
-    pub acl: std::option::Option<crate::model::BucketCannedACL>,
+    pub acl: std::option::Option<crate::model::BucketCannedAcl>,
     /// <p>The bucket to which to apply the ACL.</p>
     pub bucket: std::string::String,
     /// <p>The base64-encoded 128-bit MD5 digest of the data. This header must be used as a message
@@ -27656,7 +27656,7 @@ impl std::fmt::Debug for DeleteBucketInput {
 pub struct CreateMultipartUploadInput {
     /// <p>The canned ACL to apply to the object.</p>
     /// <p>This action is not supported by Amazon S3 on Outposts.</p>
-    pub acl: std::option::Option<crate::model::ObjectCannedACL>,
+    pub acl: std::option::Option<crate::model::ObjectCannedAcl>,
     /// <p>The name of the bucket to which to initiate the upload</p>
     /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the AWS SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
@@ -27798,7 +27798,7 @@ impl std::fmt::Debug for CreateMultipartUploadInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateBucketInput {
     /// <p>The canned ACL to apply to the bucket.</p>
-    pub acl: std::option::Option<crate::model::BucketCannedACL>,
+    pub acl: std::option::Option<crate::model::BucketCannedAcl>,
     /// <p>The name of the bucket to create.</p>
     pub bucket: std::string::String,
     /// <p>Allows grantee the read, write, read ACP, and write ACP permissions on the
@@ -27845,7 +27845,7 @@ impl std::fmt::Debug for CreateBucketInput {
 pub struct CopyObjectInput {
     /// <p>The canned ACL to apply to the object.</p>
     /// <p>This action is not supported by Amazon S3 on Outposts.</p>
-    pub acl: std::option::Option<crate::model::ObjectCannedACL>,
+    pub acl: std::option::Option<crate::model::ObjectCannedAcl>,
     /// <p>The name of the destination bucket.</p>
     /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the AWS SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>

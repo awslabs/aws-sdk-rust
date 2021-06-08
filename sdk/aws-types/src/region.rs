@@ -14,7 +14,7 @@ use std::env::VarError;
 ///
 /// See http://docs.aws.amazon.com/general/latest/gr/rande.html for
 /// information on AWS regions.
-#[derive(Clone, Debug, PartialEq, Eq)]
+#[derive(Clone, Debug, PartialEq, Eq, Hash)]
 pub struct Region(
     // Regions are almost always known statically. However, as an escape hatch for when they
     // are not, allow for an owned region
@@ -101,6 +101,12 @@ impl AsRef<str> for SigningRegion {
 impl From<Region> for SigningRegion {
     fn from(inp: Region) -> Self {
         SigningRegion(inp.0)
+    }
+}
+
+impl SigningRegion {
+    pub fn from_static(region: &'static str) -> Self {
+        SigningRegion(Cow::Borrowed(region))
     }
 }
 

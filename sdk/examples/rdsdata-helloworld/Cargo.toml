@@ -1,0 +1,12 @@
+[package]
+authors = ["LMJW <heysuperming@gmail.com>"]
+edition = "2018"
+name = "rdsdata-helloworld"
+version = "0.1.0"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+rdsdata = {package = "aws-sdk-rdsdata", path = "../../rdsdata"}
+
+tokio = {version = "1", features = ["full"]}

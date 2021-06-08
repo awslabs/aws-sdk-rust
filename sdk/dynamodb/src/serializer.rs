@@ -3804,6 +3804,7 @@ pub struct QueryOutputBody {
     /// <p>If you did not use a filter in the request, then <code>Count</code> and <code>ScannedCount</code> are the
     /// same.</p>
     #[serde(rename = "Count")]
+    #[serde(default)]
     pub count: i32,
     /// <p>The number of items evaluated, before any <code>QueryFilter</code> is applied. A high
     /// <code>ScannedCount</code> value with few, or no, <code>Count</code> results indicates an inefficient
@@ -3812,6 +3813,7 @@ pub struct QueryOutputBody {
     /// <p>If you did not use a filter in the request, then <code>ScannedCount</code> is the same as
     /// <code>Count</code>.</p>
     #[serde(rename = "ScannedCount")]
+    #[serde(default)]
     pub scanned_count: i32,
     /// <p>The primary key of the item where the operation stopped, inclusive of the previous result set. Use this value to start a new operation, excluding this value in the new request.</p>
     /// <p>If <code>LastEvaluatedKey</code> is empty, then the "last page" of results has been processed and there is no more data to be retrieved.</p>
@@ -3892,6 +3894,7 @@ pub struct ScanOutputBody {
     /// <p>If you did not use a filter in the request, then <code>Count</code> is the same as
     /// <code>ScannedCount</code>.</p>
     #[serde(rename = "Count")]
+    #[serde(default)]
     pub count: i32,
     /// <p>The number of items evaluated, before any <code>ScanFilter</code> is applied. A high
     /// <code>ScannedCount</code> value with few, or no, <code>Count</code> results indicates an inefficient
@@ -3900,6 +3903,7 @@ pub struct ScanOutputBody {
     /// <p>If you did not use a filter in the request, then <code>ScannedCount</code> is the same as
     /// <code>Count</code>.</p>
     #[serde(rename = "ScannedCount")]
+    #[serde(default)]
     pub scanned_count: i32,
     /// <p>The primary key of the item where the operation stopped, inclusive of the previous
     /// result set. Use this value to start a new operation, excluding this value in the new

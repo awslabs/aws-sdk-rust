@@ -65,6 +65,7 @@ pub struct TaskSet {
     /// result is always rounded up. For example, if the computed desired count is 1.2, it
     /// rounds up to 2 tasks.</p>
     #[serde(rename = "computedDesiredCount")]
+    #[serde(default)]
     pub computed_desired_count: i32,
     /// <p>The number of tasks in the task set that are in the <code>PENDING</code> status during
     /// a deployment. A task in the <code>PENDING</code> state is preparing to enter the
@@ -72,11 +73,13 @@ pub struct TaskSet {
     /// it launches for the first time or when it is restarted after being in the
     /// <code>STOPPED</code> state.</p>
     #[serde(rename = "pendingCount")]
+    #[serde(default)]
     pub pending_count: i32,
     /// <p>The number of tasks in the task set that are in the <code>RUNNING</code> status during
     /// a deployment. A task in the <code>RUNNING</code> state is running and ready for
     /// use.</p>
     #[serde(rename = "runningCount")]
+    #[serde(default)]
     pub running_count: i32,
     /// <p>The Unix timestamp for when the task set was created.</p>
     #[serde(rename = "createdAt")]
@@ -765,6 +768,7 @@ pub struct Scale {
     /// <p>The value, specified as a percent total of a service's <code>desiredCount</code>, to
     /// scale the task set. Accepted values are numbers between 0 and 100.</p>
     #[serde(rename = "value")]
+    #[serde(default)]
     pub value: f64,
     /// <p>The unit of measure for the scale value.</p>
     #[serde(rename = "unit")]
@@ -1418,12 +1422,14 @@ pub struct CapacityProviderStrategyItem {
     /// <i>capacityProviderA</i>, four tasks would use
     /// <i>capacityProviderB</i>.</p>
     #[serde(rename = "weight")]
+    #[serde(default)]
     pub weight: i32,
     /// <p>The <i>base</i> value designates how many tasks, at a minimum, to run on
     /// the specified capacity provider. Only one capacity provider in a capacity provider
     /// strategy can have a <i>base</i> defined. If no value is specified, the
     /// default value of <code>0</code> is used.</p>
     #[serde(rename = "base")]
+    #[serde(default)]
     pub base: i32,
 }
 impl std::fmt::Debug for CapacityProviderStrategyItem {
@@ -1610,12 +1616,15 @@ pub struct Service {
     /// <p>The desired number of instantiations of the task definition to keep running on the
     /// service. This value is specified when the service is created with <a>CreateService</a>, and it can be modified with <a>UpdateService</a>.</p>
     #[serde(rename = "desiredCount")]
+    #[serde(default)]
     pub desired_count: i32,
     /// <p>The number of tasks in the cluster that are in the <code>RUNNING</code> state.</p>
     #[serde(rename = "runningCount")]
+    #[serde(default)]
     pub running_count: i32,
     /// <p>The number of tasks in the cluster that are in the <code>PENDING</code> state.</p>
     #[serde(rename = "pendingCount")]
+    #[serde(default)]
     pub pending_count: i32,
     /// <p>The infrastructure on which your service is running. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS
     /// launch types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
@@ -1769,6 +1778,7 @@ pub struct Service {
     /// information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging Your Amazon ECS
     /// Resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     #[serde(rename = "enableECSManagedTags")]
+    #[serde(default)]
     pub enable_ecs_managed_tags: bool,
     /// <p>Specifies whether to propagate the tags from the task definition or the service to the
     /// task. If no value is specified, the tags are not propagated.</p>
@@ -1779,6 +1789,7 @@ pub struct Service {
     /// <code>true</code>, the execute command functionality is enabled for all containers
     /// in tasks as part of the service.</p>
     #[serde(rename = "enableExecuteCommand")]
+    #[serde(default)]
     pub enable_execute_command: bool,
 }
 impl std::fmt::Debug for Service {
@@ -2978,14 +2989,17 @@ pub struct Deployment {
     /// <p>The most recent desired count of tasks that was specified for the service to deploy or
     /// maintain.</p>
     #[serde(rename = "desiredCount")]
+    #[serde(default)]
     pub desired_count: i32,
     /// <p>The number of tasks in the deployment that are in the <code>PENDING</code>
     /// status.</p>
     #[serde(rename = "pendingCount")]
+    #[serde(default)]
     pub pending_count: i32,
     /// <p>The number of tasks in the deployment that are in the <code>RUNNING</code>
     /// status.</p>
     #[serde(rename = "runningCount")]
+    #[serde(default)]
     pub running_count: i32,
     /// <p>The number of consecutively failed tasks in the deployment. A task is considered a
     /// failure if the service scheduler can't launch the task, the task doesn't transition to a
@@ -2996,6 +3010,7 @@ pub struct Deployment {
     /// task count resets to zero and stops being evaluated.</p>
     /// </note>
     #[serde(rename = "failedTasks")]
+    #[serde(default)]
     pub failed_tasks: i32,
     /// <p>The Unix timestamp for when the service deployment was created.</p>
     #[serde(rename = "createdAt")]
@@ -3591,11 +3606,13 @@ impl DeploymentConfiguration {
 pub struct DeploymentCircuitBreaker {
     /// <p>Whether to enable the deployment circuit breaker logic for the service.</p>
     #[serde(rename = "enable")]
+    #[serde(default)]
     pub enable: bool,
     /// <p>Whether to enable Amazon ECS to roll back the service if a service deployment fails. If
     /// rollback is enabled, when a service deployment fails, the service is rolled back to the
     /// last deployment that completed successfully.</p>
     #[serde(rename = "rollback")]
+    #[serde(default)]
     pub rollback: bool,
 }
 impl std::fmt::Debug for DeploymentCircuitBreaker {
@@ -3759,6 +3776,7 @@ pub struct ContainerInstance {
     /// <code>detail</code> object) to verify that the version in your event stream is
     /// current.</p>
     #[serde(rename = "version")]
+    #[serde(default)]
     pub version: i64,
     /// <p>The version information for the Amazon ECS container agent and Docker daemon running on the
     /// container instance.</p>
@@ -3813,14 +3831,17 @@ pub struct ContainerInstance {
     /// <code>false</code>. Only instances connected to an agent can accept placement
     /// requests.</p>
     #[serde(rename = "agentConnected")]
+    #[serde(default)]
     pub agent_connected: bool,
     /// <p>The number of tasks on the container instance that are in the <code>RUNNING</code>
     /// status.</p>
     #[serde(rename = "runningTasksCount")]
+    #[serde(default)]
     pub running_tasks_count: i32,
     /// <p>The number of tasks on the container instance that are in the <code>PENDING</code>
     /// status.</p>
     #[serde(rename = "pendingTasksCount")]
+    #[serde(default)]
     pub pending_tasks_count: i32,
     /// <p>The status of the most recent agent update. If an update has never been requested,
     /// this value is <code>NULL</code>.</p>
@@ -4609,14 +4630,17 @@ pub struct Resource {
     /// <p>When the <code>doubleValue</code> type is set, the value of the resource must be a
     /// double precision floating-point type.</p>
     #[serde(rename = "doubleValue")]
+    #[serde(default)]
     pub double_value: f64,
     /// <p>When the <code>longValue</code> type is set, the value of the resource must be an
     /// extended precision floating-point type.</p>
     #[serde(rename = "longValue")]
+    #[serde(default)]
     pub long_value: i64,
     /// <p>When the <code>integerValue</code> type is set, the value of the resource must be an
     /// integer.</p>
     #[serde(rename = "integerValue")]
+    #[serde(default)]
     pub integer_value: i32,
     /// <p>When the <code>stringSetValue</code> type is set, the value of the resource must be a
     /// string type.</p>
@@ -4937,16 +4961,20 @@ pub struct Cluster {
     /// <p>The number of container instances registered into the cluster. This includes container
     /// instances in both <code>ACTIVE</code> and <code>DRAINING</code> status.</p>
     #[serde(rename = "registeredContainerInstancesCount")]
+    #[serde(default)]
     pub registered_container_instances_count: i32,
     /// <p>The number of tasks in the cluster that are in the <code>RUNNING</code> state.</p>
     #[serde(rename = "runningTasksCount")]
+    #[serde(default)]
     pub running_tasks_count: i32,
     /// <p>The number of tasks in the cluster that are in the <code>PENDING</code> state.</p>
     #[serde(rename = "pendingTasksCount")]
+    #[serde(default)]
     pub pending_tasks_count: i32,
     /// <p>The number of services that are running on the cluster in an <code>ACTIVE</code>
     /// state. You can view these services with <a>ListServices</a>.</p>
     #[serde(rename = "activeServicesCount")]
+    #[serde(default)]
     pub active_services_count: i32,
     /// <p>Additional information about your clusters that are separated by launch type,
     /// including:</p>
@@ -5700,6 +5728,7 @@ pub struct ExecuteCommandLogConfiguration {
     /// <p>Whether or not to enable encryption on the CloudWatch logs. If not specified,
     /// encryption will be disabled.</p>
     #[serde(rename = "cloudWatchEncryptionEnabled")]
+    #[serde(default)]
     pub cloud_watch_encryption_enabled: bool,
     /// <p>The name of the S3 bucket to send logs to.</p>
     /// <note>
@@ -5711,6 +5740,7 @@ pub struct ExecuteCommandLogConfiguration {
     /// <p>Whether or not to enable encryption on the CloudWatch logs. If not specified,
     /// encryption will be disabled.</p>
     #[serde(rename = "s3EncryptionEnabled")]
+    #[serde(default)]
     pub s3_encryption_enabled: bool,
     /// <p>An optional folder in the S3 bucket to place logs in.</p>
     #[serde(rename = "s3KeyPrefix")]
@@ -7341,6 +7371,7 @@ pub struct Task {
     /// <code>true</code>, this enables execute command functionality on all containers in
     /// the task.</p>
     #[serde(rename = "enableExecuteCommand")]
+    #[serde(default)]
     pub enable_execute_command: bool,
     /// <p>The Unix timestamp for when the task execution stopped.</p>
     #[serde(rename = "executionStoppedAt")]
@@ -7529,6 +7560,7 @@ pub struct Task {
     /// <code>detail</code> object) to verify that the version in your event stream is
     /// current.</p>
     #[serde(rename = "version")]
+    #[serde(default)]
     pub version: i64,
     /// <p>The ephemeral storage settings for the task.</p>
     #[serde(rename = "ephemeralStorage")]
@@ -8153,6 +8185,7 @@ pub struct EphemeralStorage {
     /// supported value is <code>21</code> GiB and the maximum supported value is
     /// <code>200</code> GiB.</p>
     #[serde(rename = "sizeInGiB")]
+    #[serde(default)]
     pub size_in_gi_b: i32,
 }
 impl std::fmt::Debug for EphemeralStorage {
@@ -9802,6 +9835,7 @@ pub struct TaskDefinition {
     /// definition in the same family, the revision value always increases by one, even if you
     /// have deregistered previous revisions in this family.</p>
     #[serde(rename = "revision")]
+    #[serde(default)]
     pub revision: i32,
     /// <p>The list of data volume definitions for the task. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_data_volumes.html">Using data volumes in tasks</a> in the
     /// <i>Amazon Elastic Container Service Developer Guide</i>.</p>
@@ -11453,7 +11487,7 @@ pub struct EFSVolumeConfiguration {
     /// the <i>Amazon Elastic File System User Guide</i>.</p>
     #[serde(rename = "transitEncryption")]
     #[serde(default)]
-    pub transit_encryption: std::option::Option<crate::model::EFSTransitEncryption>,
+    pub transit_encryption: std::option::Option<crate::model::EfsTransitEncryption>,
     /// <p>The port to use when sending encrypted data between the Amazon ECS host and the Amazon EFS
     /// server. If you do not specify a transit encryption port, it will use the port selection
     /// strategy that the Amazon EFS mount helper uses. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/efs-mount-helper.html">EFS Mount
@@ -11485,7 +11519,7 @@ pub mod efs_volume_configuration {
     pub struct Builder {
         pub(crate) file_system_id: std::option::Option<std::string::String>,
         pub(crate) root_directory: std::option::Option<std::string::String>,
-        pub(crate) transit_encryption: std::option::Option<crate::model::EFSTransitEncryption>,
+        pub(crate) transit_encryption: std::option::Option<crate::model::EfsTransitEncryption>,
         pub(crate) transit_encryption_port: std::option::Option<i32>,
         pub(crate) authorization_config: std::option::Option<crate::model::EFSAuthorizationConfig>,
     }
@@ -11520,13 +11554,13 @@ pub mod efs_volume_configuration {
         /// used. If this parameter is omitted, the default value of <code>DISABLED</code> is used.
         /// For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/encryption-in-transit.html">Encrypting Data in Transit</a> in
         /// the <i>Amazon Elastic File System User Guide</i>.</p>
-        pub fn transit_encryption(mut self, inp: crate::model::EFSTransitEncryption) -> Self {
+        pub fn transit_encryption(mut self, inp: crate::model::EfsTransitEncryption) -> Self {
             self.transit_encryption = Some(inp);
             self
         }
         pub fn set_transit_encryption(
             mut self,
-            inp: std::option::Option<crate::model::EFSTransitEncryption>,
+            inp: std::option::Option<crate::model::EfsTransitEncryption>,
         ) -> Self {
             self.transit_encryption = inp;
             self
@@ -11594,7 +11628,7 @@ pub struct EFSAuthorizationConfig {
     /// Amazon EFS Access Points</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     #[serde(rename = "iam")]
     #[serde(default)]
-    pub iam: std::option::Option<crate::model::EFSAuthorizationConfigIAM>,
+    pub iam: std::option::Option<crate::model::EfsAuthorizationConfigIam>,
 }
 impl std::fmt::Debug for EFSAuthorizationConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11611,7 +11645,7 @@ pub mod efs_authorization_config {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) access_point_id: std::option::Option<std::string::String>,
-        pub(crate) iam: std::option::Option<crate::model::EFSAuthorizationConfigIAM>,
+        pub(crate) iam: std::option::Option<crate::model::EfsAuthorizationConfigIam>,
     }
     impl Builder {
         /// <p>The Amazon EFS access point ID to use. If an access point is specified, the root directory
@@ -11636,13 +11670,13 @@ pub mod efs_authorization_config {
         /// <code>EFSVolumeConfiguration</code>. If this parameter is omitted, the default value
         /// of <code>DISABLED</code> is used. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/efs-volumes.html#efs-volume-accesspoints">Using
         /// Amazon EFS Access Points</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-        pub fn iam(mut self, inp: crate::model::EFSAuthorizationConfigIAM) -> Self {
+        pub fn iam(mut self, inp: crate::model::EfsAuthorizationConfigIam) -> Self {
             self.iam = Some(inp);
             self
         }
         pub fn set_iam(
             mut self,
-            inp: std::option::Option<crate::model::EFSAuthorizationConfigIAM>,
+            inp: std::option::Option<crate::model::EfsAuthorizationConfigIam>,
         ) -> Self {
             self.iam = inp;
             self
@@ -11673,42 +11707,42 @@ impl EFSAuthorizationConfig {
     std::fmt::Debug,
     std::hash::Hash,
 )]
-pub enum EFSAuthorizationConfigIAM {
+pub enum EfsAuthorizationConfigIam {
     Disabled,
     Enabled,
     Unknown(String),
 }
-impl std::convert::From<&str> for EFSAuthorizationConfigIAM {
+impl std::convert::From<&str> for EfsAuthorizationConfigIam {
     fn from(s: &str) -> Self {
         match s {
-            "DISABLED" => EFSAuthorizationConfigIAM::Disabled,
-            "ENABLED" => EFSAuthorizationConfigIAM::Enabled,
-            other => EFSAuthorizationConfigIAM::Unknown(other.to_owned()),
+            "DISABLED" => EfsAuthorizationConfigIam::Disabled,
+            "ENABLED" => EfsAuthorizationConfigIam::Enabled,
+            other => EfsAuthorizationConfigIam::Unknown(other.to_owned()),
         }
     }
 }
-impl std::str::FromStr for EFSAuthorizationConfigIAM {
+impl std::str::FromStr for EfsAuthorizationConfigIam {
     type Err = std::convert::Infallible;
 
     fn from_str(s: &str) -> Result<Self, Self::Err> {
-        Ok(EFSAuthorizationConfigIAM::from(s))
+        Ok(EfsAuthorizationConfigIam::from(s))
     }
 }
-impl EFSAuthorizationConfigIAM {
+impl EfsAuthorizationConfigIam {
     pub fn as_str(&self) -> &str {
         match self {
-            EFSAuthorizationConfigIAM::Disabled => "DISABLED",
-            EFSAuthorizationConfigIAM::Enabled => "ENABLED",
-            EFSAuthorizationConfigIAM::Unknown(s) => s.as_ref(),
+            EfsAuthorizationConfigIam::Disabled => "DISABLED",
+            EfsAuthorizationConfigIam::Enabled => "ENABLED",
+            EfsAuthorizationConfigIam::Unknown(s) => s.as_ref(),
         }
     }
 }
-impl AsRef<str> for EFSAuthorizationConfigIAM {
+impl AsRef<str> for EfsAuthorizationConfigIam {
     fn as_ref(&self) -> &str {
         self.as_str()
     }
 }
-impl<'de> serde::Deserialize<'de> for EFSAuthorizationConfigIAM {
+impl<'de> serde::Deserialize<'de> for EfsAuthorizationConfigIam {
     fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
     where
         D: serde::Deserializer<'de>,
@@ -11728,42 +11762,42 @@ impl<'de> serde::Deserialize<'de> for EFSAuthorizationConfigIAM {
     std::fmt::Debug,
     std::hash::Hash,
 )]
-pub enum EFSTransitEncryption {
+pub enum EfsTransitEncryption {
     Disabled,
     Enabled,
     Unknown(String),
 }
-impl std::convert::From<&str> for EFSTransitEncryption {
+impl std::convert::From<&str> for EfsTransitEncryption {
     fn from(s: &str) -> Self {
         match s {
-            "DISABLED" => EFSTransitEncryption::Disabled,
-            "ENABLED" => EFSTransitEncryption::Enabled,
-            other => EFSTransitEncryption::Unknown(other.to_owned()),
+            "DISABLED" => EfsTransitEncryption::Disabled,
+            "ENABLED" => EfsTransitEncryption::Enabled,
+            other => EfsTransitEncryption::Unknown(other.to_owned()),
         }
     }
 }
-impl std::str::FromStr for EFSTransitEncryption {
+impl std::str::FromStr for EfsTransitEncryption {
     type Err = std::convert::Infallible;
 
     fn from_str(s: &str) -> Result<Self, Self::Err> {
-        Ok(EFSTransitEncryption::from(s))
+        Ok(EfsTransitEncryption::from(s))
     }
 }
-impl EFSTransitEncryption {
+impl EfsTransitEncryption {
     pub fn as_str(&self) -> &str {
         match self {
-            EFSTransitEncryption::Disabled => "DISABLED",
-            EFSTransitEncryption::Enabled => "ENABLED",
-            EFSTransitEncryption::Unknown(s) => s.as_ref(),
+            EfsTransitEncryption::Disabled => "DISABLED",
+            EfsTransitEncryption::Enabled => "ENABLED",
+            EfsTransitEncryption::Unknown(s) => s.as_ref(),
         }
     }
 }
-impl AsRef<str> for EFSTransitEncryption {
+impl AsRef<str> for EfsTransitEncryption {
     fn as_ref(&self) -> &str {
         self.as_str()
     }
 }
-impl<'de> serde::Deserialize<'de> for EFSTransitEncryption {
+impl<'de> serde::Deserialize<'de> for EfsTransitEncryption {
     fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
     where
         D: serde::Deserializer<'de>,
@@ -12242,6 +12276,7 @@ pub struct ContainerDefinition {
     /// described in the task definition. A null or zero CPU value is passed to Docker as
     /// <code>0</code>, which Windows interprets as 1% of one CPU.</p>
     #[serde(rename = "cpu")]
+    #[serde(default)]
     pub cpu: i32,
     /// <p>The amount (in MiB) of memory to present to the container. If your container attempts
     /// to exceed the memory specified here, the container is killed. The total amount of memory
@@ -14440,9 +14475,11 @@ pub struct Ulimit {
     pub name: std::option::Option<crate::model::UlimitName>,
     /// <p>The soft limit for the ulimit type.</p>
     #[serde(rename = "softLimit")]
+    #[serde(default)]
     pub soft_limit: i32,
     /// <p>The hard limit for the ulimit type.</p>
     #[serde(rename = "hardLimit")]
+    #[serde(default)]
     pub hard_limit: i32,
 }
 impl std::fmt::Debug for Ulimit {
@@ -15124,6 +15161,7 @@ pub struct Tmpfs {
     pub container_path: std::option::Option<std::string::String>,
     /// <p>The maximum size (in MiB) of the tmpfs volume.</p>
     #[serde(rename = "size")]
+    #[serde(default)]
     pub size: i32,
     /// <p>The list of tmpfs volume mount options.</p>
     /// <p>Valid values: <code>"defaults" | "ro" | "rw" | "suid" | "nosuid" | "dev" | "nodev" |
