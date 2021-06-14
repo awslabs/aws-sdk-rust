@@ -1,0 +1,22 @@
+name: Security audit
+on:
+  schedule:
+    - cron: '0 0 * * *'
+  workflow_dispatch:
+  pull_request:
+env:
+  rust_version: 1.51.0
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions-rs/toolchain@v1
+        with:
+          toolchain: ${{ env.rust_version }}
+      - name: install cargo audit
+        run: cargo install cargo-audit
+      - name: Run audit
+        working-directory: sdk
+        run: cargo audit
