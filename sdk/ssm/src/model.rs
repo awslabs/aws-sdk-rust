@@ -5,7 +5,7 @@
 pub struct ResourceDataSyncSource {
     /// <p>The type of data source for the resource data sync. <code>SourceType</code> is either
     /// <code>AwsOrganizations</code> (if an organization is present in AWS Organizations) or
-    /// <code>singleAccountMultiRegions</code>.</p>
+    /// <code>SingleAccountMultiRegions</code>.</p>
     #[serde(rename = "SourceType")]
     #[serde(default)]
     pub source_type: std::option::Option<std::string::String>,
@@ -62,7 +62,7 @@ pub mod resource_data_sync_source {
     impl Builder {
         /// <p>The type of data source for the resource data sync. <code>SourceType</code> is either
         /// <code>AwsOrganizations</code> (if an organization is present in AWS Organizations) or
-        /// <code>singleAccountMultiRegions</code>.</p>
+        /// <code>SingleAccountMultiRegions</code>.</p>
         pub fn source_type(mut self, inp: impl Into<std::string::String>) -> Self {
             self.source_type = Some(inp.into());
             self
@@ -413,6 +413,7 @@ impl PatchSource {
 pub enum PatchAction {
     AllowAsDependency,
     Block,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for PatchAction {
@@ -472,6 +473,7 @@ pub enum PatchComplianceLevel {
     Low,
     Medium,
     Unspecified,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for PatchComplianceLevel {
@@ -881,6 +883,7 @@ pub enum PatchFilterKey {
     Security,
     Severity,
     Version,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for PatchFilterKey {
@@ -978,6 +981,7 @@ pub enum OperatingSystem {
     Suse,
     Ubuntu,
     Windows,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for OperatingSystem {
@@ -1112,6 +1116,7 @@ pub enum OpsItemStatus {
     RunbookInProgress,
     Scheduled,
     TimedOut,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for OpsItemStatus {
@@ -1366,6 +1371,7 @@ impl OpsItemDataValue {
 pub enum OpsItemDataType {
     SearchableString,
     String,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for OpsItemDataType {
@@ -2302,6 +2308,7 @@ impl NotificationConfig {
 pub enum NotificationType {
     Command,
     Invocation,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for NotificationType {
@@ -2361,6 +2368,7 @@ pub enum NotificationEvent {
     InProgress,
     Success,
     TimedOut,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for NotificationEvent {
@@ -2424,6 +2432,7 @@ impl<'de> serde::Deserialize<'de> for NotificationEvent {
 pub enum DocumentHashType {
     Sha1,
     Sha256,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for DocumentHashType {
@@ -2935,6 +2944,7 @@ impl DocumentReviewCommentSource {
 )]
 pub enum DocumentReviewCommentType {
     Comment,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for DocumentReviewCommentType {
@@ -2990,6 +3000,7 @@ pub enum DocumentReviewAction {
     Reject,
     SendForReview,
     UpdateReview,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for DocumentReviewAction {
@@ -3217,7 +3228,7 @@ pub struct DocumentDescription {
     #[serde(default)]
     pub document_format: std::option::Option<crate::model::DocumentFormat>,
     /// <p>The target type which defines the kinds of resources the document can run on. For example,
-    /// /AWS::EC2::Instance. For a list of valid resource types, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS resource and property types
+    /// /AWS::EC2::Instance. For a list of valid resource types, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS resource and property types
     /// reference</a> in the <i>AWS CloudFormation User Guide</i>. </p>
     #[serde(rename = "TargetType")]
     #[serde(default)]
@@ -3541,7 +3552,7 @@ pub mod document_description {
             self
         }
         /// <p>The target type which defines the kinds of resources the document can run on. For example,
-        /// /AWS::EC2::Instance. For a list of valid resource types, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS resource and property types
+        /// /AWS::EC2::Instance. For a list of valid resource types, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS resource and property types
         /// reference</a> in the <i>AWS CloudFormation User Guide</i>. </p>
         pub fn target_type(mut self, inp: impl Into<std::string::String>) -> Self {
             self.target_type = Some(inp.into());
@@ -3711,6 +3722,7 @@ pub enum ReviewStatus {
     NotReviewed,
     Pending,
     Rejected,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for ReviewStatus {
@@ -4038,6 +4050,7 @@ pub enum DocumentFormat {
     Json,
     Text,
     Yaml,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for DocumentFormat {
@@ -4105,6 +4118,7 @@ pub enum DocumentType {
     ProblemAnalysis,
     ProblemAnalysisTemplate,
     Session,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for DocumentType {
@@ -4180,6 +4194,7 @@ impl<'de> serde::Deserialize<'de> for DocumentType {
 pub enum PlatformType {
     Linux,
     Windows,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for PlatformType {
@@ -4340,6 +4355,7 @@ impl DocumentParameter {
 pub enum DocumentParameterType {
     String,
     StringList,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for DocumentParameterType {
@@ -4399,6 +4415,7 @@ pub enum DocumentStatus {
     Deleting,
     Failed,
     Updating,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for DocumentStatus {
@@ -4585,6 +4602,7 @@ pub enum AttachmentsSourceKey {
     AttachmentReference,
     S3FileUrl,
     SourceUrl,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for AttachmentsSourceKey {
@@ -5369,6 +5387,7 @@ impl TargetLocation {
 pub enum AssociationSyncCompliance {
     Auto,
     Manual,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for AssociationSyncCompliance {
@@ -5427,6 +5446,7 @@ pub enum AssociationComplianceSeverity {
     Low,
     Medium,
     Unspecified,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for AssociationComplianceSeverity {
@@ -5840,6 +5860,7 @@ pub enum AssociationStatusName {
     Failed,
     Pending,
     Success,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for AssociationStatusName {
@@ -5897,6 +5918,7 @@ impl<'de> serde::Deserialize<'de> for AssociationStatusName {
 pub enum StopType {
     Cancel,
     Complete,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for StopType {
@@ -6165,6 +6187,7 @@ impl Runbook {
 pub enum ExecutionMode {
     Auto,
     Interactive,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for ExecutionMode {
@@ -6814,6 +6837,7 @@ pub enum CommandStatus {
     Pending,
     Success,
     TimedOut,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for CommandStatus {
@@ -6882,6 +6906,7 @@ pub enum SignalType {
     Resume,
     StartStep,
     StopStep,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for SignalType {
@@ -7128,6 +7153,7 @@ pub enum ResourceTypeForTagging {
     Opsmetadata,
     Parameter,
     PatchBaseline,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for ResourceTypeForTagging {
@@ -7195,6 +7221,7 @@ pub enum MaintenanceWindowTaskType {
     Lambda,
     RunCommand,
     StepFunctions,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for MaintenanceWindowTaskType {
@@ -7254,6 +7281,7 @@ impl<'de> serde::Deserialize<'de> for MaintenanceWindowTaskType {
 pub enum MaintenanceWindowResourceType {
     Instance,
     ResourceGroup,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for MaintenanceWindowResourceType {
@@ -7310,6 +7338,7 @@ pub enum ParameterTier {
     Advanced,
     IntelligentTiering,
     Standard,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for ParameterTier {
@@ -7368,6 +7397,7 @@ pub enum ParameterType {
     SecureString,
     String,
     StringList,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for ParameterType {
@@ -7592,6 +7622,7 @@ impl InventoryItem {
 pub enum ComplianceUploadType {
     Complete,
     Partial,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for ComplianceUploadType {
@@ -7787,6 +7818,7 @@ impl ComplianceItemEntry {
 pub enum ComplianceStatus {
     Compliant,
     NonCompliant,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for ComplianceStatus {
@@ -7846,6 +7878,7 @@ pub enum ComplianceSeverity {
     Low,
     Medium,
     Unspecified,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for ComplianceSeverity {
@@ -8001,6 +8034,7 @@ impl ComplianceExecutionSummary {
 )]
 pub enum DocumentPermissionType {
     Share,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for DocumentPermissionType {
@@ -8291,6 +8325,7 @@ pub enum LastResourceDataSyncStatus {
     Failed,
     Inprogress,
     Successful,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for LastResourceDataSyncStatus {
@@ -8549,6 +8584,7 @@ impl ResourceDataSyncDestinationDataSharing {
 )]
 pub enum ResourceDataSyncS3Format {
     JsonSerde,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for ResourceDataSyncS3Format {
@@ -9354,6 +9390,7 @@ pub enum ComplianceQueryOperatorType {
     GreaterThan,
     LessThan,
     NotEqual,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for ComplianceQueryOperatorType {
@@ -9951,6 +9988,7 @@ impl OpsItemRelatedItemsFilter {
 )]
 pub enum OpsItemRelatedItemsFilterOperator {
     Equal,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for OpsItemRelatedItemsFilterOperator {
@@ -10005,6 +10043,7 @@ pub enum OpsItemRelatedItemsFilterKey {
     AssociationId,
     ResourceType,
     ResourceUri,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for OpsItemRelatedItemsFilterKey {
@@ -10309,6 +10348,7 @@ impl OpsItemEventFilter {
 )]
 pub enum OpsItemEventFilterOperator {
     Equal,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for OpsItemEventFilterOperator {
@@ -10361,6 +10401,7 @@ impl<'de> serde::Deserialize<'de> for OpsItemEventFilterOperator {
 )]
 pub enum OpsItemEventFilterKey {
     OpsitemId,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for OpsItemEventFilterKey {
@@ -10518,6 +10559,7 @@ pub enum InventoryQueryOperatorType {
     GreaterThan,
     LessThan,
     NotEqual,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for InventoryQueryOperatorType {
@@ -10840,7 +10882,7 @@ pub struct DocumentIdentifier {
     #[serde(default)]
     pub document_format: std::option::Option<crate::model::DocumentFormat>,
     /// <p>The target type which defines the kinds of resources the document can run on. For example,
-    /// /AWS::EC2::Instance. For a list of valid resource types, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS resource and property types
+    /// /AWS::EC2::Instance. For a list of valid resource types, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS resource and property types
     /// reference</a> in the <i>AWS CloudFormation User Guide</i>. </p>
     #[serde(rename = "TargetType")]
     #[serde(default)]
@@ -11015,7 +11057,7 @@ pub mod document_identifier {
             self
         }
         /// <p>The target type which defines the kinds of resources the document can run on. For example,
-        /// /AWS::EC2::Instance. For a list of valid resource types, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS resource and property types
+        /// /AWS::EC2::Instance. For a list of valid resource types, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS resource and property types
         /// reference</a> in the <i>AWS CloudFormation User Guide</i>. </p>
         pub fn target_type(mut self, inp: impl Into<std::string::String>) -> Self {
             self.target_type = Some(inp.into());
@@ -11180,7 +11222,7 @@ impl DocumentIdentifier {
 /// <code>aws ssm list-documents --filters Key=Name,Values=Te</code>
 /// </p>
 /// <p>You can also use the <code>TargetType</code> AWS-provided key. For a list of valid resource
-/// type values that can be used with this key, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS resource and property types
+/// type values that can be used with this key, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS resource and property types
 /// reference</a> in the <i>AWS CloudFormation User Guide</i>.</p>
 /// <p>If you specify more than two keys, only documents that are identified by all the tags are
 /// returned in the results. If you specify more than two values for a key, documents that are
@@ -11344,6 +11386,7 @@ pub enum DocumentFilterKey {
     Name,
     Owner,
     PlatformTypes,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for DocumentFilterKey {
@@ -11600,6 +11643,7 @@ impl DocumentReviewerResponseSource {
 )]
 pub enum DocumentMetadataEnum {
     DocumentReviews,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for DocumentMetadataEnum {
@@ -12197,6 +12241,7 @@ pub enum CommandFilterKey {
     InvokedAfter,
     InvokedBefore,
     Status,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for CommandFilterKey {
@@ -12359,6 +12404,7 @@ pub struct CommandInvocation {
     #[serde(rename = "StandardErrorUrl")]
     #[serde(default)]
     pub standard_error_url: std::option::Option<std::string::String>,
+    /// <p>Plugins processed by the command.</p>
     #[serde(rename = "CommandPlugins")]
     #[serde(default)]
     pub command_plugins: std::option::Option<std::vec::Vec<crate::model::CommandPlugin>>,
@@ -13089,6 +13135,7 @@ pub enum CommandPluginStatus {
     Pending,
     Success,
     TimedOut,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for CommandPluginStatus {
@@ -13158,6 +13205,7 @@ pub enum CommandInvocationStatus {
     Pending,
     Success,
     TimedOut,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for CommandInvocationStatus {
@@ -13963,6 +14011,7 @@ pub enum AssociationFilterKey {
     LastExecutedBefore,
     Name,
     ResourceGroupName,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for AssociationFilterKey {
@@ -15157,6 +15206,7 @@ pub enum OpsFilterOperatorType {
     GreaterThan,
     LessThan,
     NotEqual,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for OpsFilterOperatorType {
@@ -15695,6 +15745,7 @@ pub enum MaintenanceWindowExecutionStatus {
     SkippedOverlapping,
     Success,
     TimedOut,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for MaintenanceWindowExecutionStatus {
@@ -15940,6 +15991,7 @@ impl InventoryItemAttribute {
 pub enum InventoryAttributeDataType {
     Number,
     String,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for InventoryAttributeDataType {
@@ -16538,6 +16590,7 @@ impl AttachmentContent {
 )]
 pub enum AttachmentHashType {
     Sha256,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for AttachmentHashType {
@@ -16822,6 +16875,7 @@ impl BaselineOverride {
 pub enum ConnectionStatus {
     Connected,
     NotConnected,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for ConnectionStatus {
@@ -16877,6 +16931,7 @@ impl<'de> serde::Deserialize<'de> for ConnectionStatus {
 pub enum CalendarState {
     Closed,
     Open,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for CalendarState {
@@ -17612,6 +17667,7 @@ impl AutomationExecution {
 )]
 pub enum AutomationSubtype {
     ChangeRequest,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for AutomationSubtype {
@@ -18448,6 +18504,7 @@ pub enum AutomationExecutionStatus {
     Success,
     Timedout,
     Waiting,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for AutomationExecutionStatus {
@@ -18807,6 +18864,7 @@ pub enum SessionStatus {
     Failed,
     Terminated,
     Terminating,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for SessionStatus {
@@ -19025,6 +19083,7 @@ pub enum SessionFilterKey {
     SessionId,
     Status,
     TargetId,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for SessionFilterKey {
@@ -19088,6 +19147,7 @@ impl<'de> serde::Deserialize<'de> for SessionFilterKey {
 pub enum SessionState {
     Active,
     History,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for SessionState {
@@ -19143,6 +19203,7 @@ impl<'de> serde::Deserialize<'de> for SessionState {
 pub enum PatchSet {
     Application,
     Os,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for PatchSet {
@@ -19202,6 +19263,7 @@ pub enum PatchProperty {
     Product,
     PatchProductFamily,
     PatchSeverity,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for PatchProperty {
@@ -19834,6 +19896,7 @@ pub enum ParametersFilterKey {
     KeyId,
     Name,
     Type,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for ParametersFilterKey {
@@ -20349,6 +20412,7 @@ pub enum OpsItemFilterOperator {
     Equal,
     GreaterThan,
     LessThan,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for OpsItemFilterOperator {
@@ -20432,6 +20496,7 @@ pub enum OpsItemFilterKey {
     Source,
     Status,
     Title,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for OpsItemFilterKey {
@@ -22402,6 +22467,7 @@ impl InventoryDeletionSummaryItem {
 pub enum InventoryDeletionStatus {
     Complete,
     InProgress,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for InventoryDeletionStatus {
@@ -22999,6 +23065,7 @@ impl InstancePatchState {
 pub enum RebootOption {
     NoReboot,
     RebootIfNeeded,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for RebootOption {
@@ -23054,6 +23121,7 @@ impl<'de> serde::Deserialize<'de> for RebootOption {
 pub enum PatchOperationType {
     Install,
     Scan,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for PatchOperationType {
@@ -23204,6 +23272,7 @@ pub enum InstancePatchStateOperatorType {
     GreaterThan,
     LessThan,
     NotEqual,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for InstancePatchStateOperatorType {
@@ -23431,6 +23500,7 @@ pub enum PatchComplianceDataState {
     InstalledRejected,
     Missing,
     NotApplicable,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for PatchComplianceDataState {
@@ -23535,8 +23605,8 @@ pub struct InstanceInformation {
     /// <p>The Amazon Identity and Access Management (IAM) role assigned to the on-premises Systems Manager
     /// managed instance. This call does not return the IAM role for EC2 instances. To retrieve the IAM
     /// role for an EC2 instance, use the Amazon EC2 <code>DescribeInstances</code> action. For information,
-    /// see <a href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html">DescribeInstances</a> in the
-    /// <i>Amazon EC2 API Reference</i> or <a href="http://docs.aws.amazon.com/cli/latest/reference/ec2/describe-instances.html">describe-instances</a> in the <i>AWS CLI Command Reference</i>.</p>
+    /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html">DescribeInstances</a> in the
+    /// <i>Amazon EC2 API Reference</i> or <a href="https://docs.aws.amazon.com/cli/latest/ec2/describe-instances.html">describe-instances</a> in the <i>AWS CLI Command Reference</i>.</p>
     #[serde(rename = "IamRole")]
     #[serde(default)]
     pub iam_role: std::option::Option<std::string::String>,
@@ -23555,11 +23625,11 @@ pub struct InstanceInformation {
     /// Systems Manager managed instance. The name is specified as the <code>DefaultInstanceName</code> property
     /// using the <a>CreateActivation</a> command. It is applied to the managed instance by
     /// specifying the Activation Code and Activation ID when you install SSM Agent on the instance, as
-    /// explained in <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-install-managed-linux.html">Install SSM Agent for a
-    /// hybrid environment (Linux)</a> and <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-install-managed-win.html">Install SSM Agent for a hybrid environment
+    /// explained in <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-install-managed-linux.html">Install SSM Agent for a
+    /// hybrid environment (Linux)</a> and <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-install-managed-win.html">Install SSM Agent for a hybrid environment
     /// (Windows)</a>. To retrieve the Name tag of an EC2 instance, use the Amazon EC2
-    /// <code>DescribeInstances</code> action. For information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html">DescribeInstances</a> in the
-    /// <i>Amazon EC2 API Reference</i> or <a href="http://docs.aws.amazon.com/cli/latest/reference/ec2/describe-instances.html">describe-instances</a> in the <i>AWS CLI Command Reference</i>.</p>
+    /// <code>DescribeInstances</code> action. For information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html">DescribeInstances</a> in the
+    /// <i>Amazon EC2 API Reference</i> or <a href="https://docs.aws.amazon.com/cli/latest/ec2/describe-instances.html">describe-instances</a> in the <i>AWS CLI Command Reference</i>.</p>
     #[serde(rename = "Name")]
     #[serde(default)]
     pub name: std::option::Option<std::string::String>,
@@ -23757,8 +23827,8 @@ pub mod instance_information {
         /// <p>The Amazon Identity and Access Management (IAM) role assigned to the on-premises Systems Manager
         /// managed instance. This call does not return the IAM role for EC2 instances. To retrieve the IAM
         /// role for an EC2 instance, use the Amazon EC2 <code>DescribeInstances</code> action. For information,
-        /// see <a href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html">DescribeInstances</a> in the
-        /// <i>Amazon EC2 API Reference</i> or <a href="http://docs.aws.amazon.com/cli/latest/reference/ec2/describe-instances.html">describe-instances</a> in the <i>AWS CLI Command Reference</i>.</p>
+        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html">DescribeInstances</a> in the
+        /// <i>Amazon EC2 API Reference</i> or <a href="https://docs.aws.amazon.com/cli/latest/ec2/describe-instances.html">describe-instances</a> in the <i>AWS CLI Command Reference</i>.</p>
         pub fn iam_role(mut self, inp: impl Into<std::string::String>) -> Self {
             self.iam_role = Some(inp.into());
             self
@@ -23795,11 +23865,11 @@ pub mod instance_information {
         /// Systems Manager managed instance. The name is specified as the <code>DefaultInstanceName</code> property
         /// using the <a>CreateActivation</a> command. It is applied to the managed instance by
         /// specifying the Activation Code and Activation ID when you install SSM Agent on the instance, as
-        /// explained in <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-install-managed-linux.html">Install SSM Agent for a
-        /// hybrid environment (Linux)</a> and <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-install-managed-win.html">Install SSM Agent for a hybrid environment
+        /// explained in <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-install-managed-linux.html">Install SSM Agent for a
+        /// hybrid environment (Linux)</a> and <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-install-managed-win.html">Install SSM Agent for a hybrid environment
         /// (Windows)</a>. To retrieve the Name tag of an EC2 instance, use the Amazon EC2
-        /// <code>DescribeInstances</code> action. For information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html">DescribeInstances</a> in the
-        /// <i>Amazon EC2 API Reference</i> or <a href="http://docs.aws.amazon.com/cli/latest/reference/ec2/describe-instances.html">describe-instances</a> in the <i>AWS CLI Command Reference</i>.</p>
+        /// <code>DescribeInstances</code> action. For information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html">DescribeInstances</a> in the
+        /// <i>Amazon EC2 API Reference</i> or <a href="https://docs.aws.amazon.com/cli/latest/ec2/describe-instances.html">describe-instances</a> in the <i>AWS CLI Command Reference</i>.</p>
         pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
             self.name = Some(inp.into());
             self
@@ -24012,6 +24082,7 @@ pub enum ResourceType {
     Document,
     Ec2Instance,
     ManagedInstance,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for ResourceType {
@@ -24070,6 +24141,7 @@ pub enum PingStatus {
     ConnectionLost,
     Inactive,
     Online,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for PingStatus {
@@ -24296,6 +24368,7 @@ pub enum InstanceInformationFilterKey {
     PingStatus,
     PlatformTypes,
     ResourceType,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for InstanceInformationFilterKey {
@@ -24889,6 +24962,7 @@ pub enum PatchDeploymentStatus {
     ExplicitApproved,
     ExplicitRejected,
     PendingApproval,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for PatchDeploymentStatus {
@@ -25652,6 +25726,7 @@ pub enum StepExecutionFilterKey {
     StepExecutionId,
     StepExecutionStatus,
     StepName,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for StepExecutionFilterKey {
@@ -26324,6 +26399,7 @@ impl AutomationExecutionMetadata {
 pub enum AutomationType {
     CrossAccount,
     Local,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for AutomationType {
@@ -26462,6 +26538,7 @@ pub enum AutomationExecutionFilterKey {
     StartTimeBefore,
     TagKey,
     TargetResourceGroup,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for AutomationExecutionFilterKey {
@@ -26871,6 +26948,7 @@ pub enum AssociationExecutionTargetsFilterKey {
     ResourceId,
     ResourceType,
     Status,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for AssociationExecutionTargetsFilterKey {
@@ -27195,6 +27273,7 @@ pub enum AssociationFilterOperatorType {
     Equal,
     GreaterThan,
     LessThan,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for AssociationFilterOperatorType {
@@ -27253,6 +27332,7 @@ pub enum AssociationExecutionFilterKey {
     CreatedTime,
     ExecutionId,
     Status,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for AssociationExecutionFilterKey {
@@ -27596,6 +27676,7 @@ pub enum DescribeActivationsFilterKeys {
     ActivationIds,
     DefaultInstanceName,
     IamRole,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for DescribeActivationsFilterKeys {
@@ -27653,6 +27734,7 @@ impl<'de> serde::Deserialize<'de> for DescribeActivationsFilterKeys {
 pub enum InventorySchemaDeleteOption {
     DeleteSchema,
     DisableSchema,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for InventorySchemaDeleteOption {
@@ -27779,7 +27861,7 @@ impl FailedCreateAssociation {
     }
 }
 
-/// **NOTE:** `Fault::Unknown` has been renamed to `::UnknownValue`. `Fault::Unknown` refers to additional values that may have been added since this enum was generated.
+/// **NOTE:** `Fault::Unknown` has been renamed to `::UnknownValue`.
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -27793,8 +27875,9 @@ impl FailedCreateAssociation {
 pub enum Fault {
     Client,
     Server,
-    /// **NOTE:** `::Unknown` has been renamed to `::UnknownValue`. `::Unknown` refers to additional values that may have been added since this enum was generated.
+    /// **NOTE:** `::Unknown` has been renamed to `::UnknownValue`.
     UnknownValue,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for Fault {

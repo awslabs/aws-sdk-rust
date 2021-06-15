@@ -2719,6 +2719,7 @@ pub struct ListGrantsError {
 pub enum ListGrantsErrorKind {
     DependencyTimeoutError(crate::error::DependencyTimeoutError),
     InvalidArnError(crate::error::InvalidArnError),
+    InvalidGrantIdError(crate::error::InvalidGrantIdError),
     InvalidMarkerError(crate::error::InvalidMarkerError),
     KMSInternalError(crate::error::KMSInternalError),
     KMSInvalidStateError(crate::error::KMSInvalidStateError),
@@ -2731,6 +2732,7 @@ impl std::fmt::Display for ListGrantsError {
         match &self.kind {
             ListGrantsErrorKind::DependencyTimeoutError(_inner) => _inner.fmt(f),
             ListGrantsErrorKind::InvalidArnError(_inner) => _inner.fmt(f),
+            ListGrantsErrorKind::InvalidGrantIdError(_inner) => _inner.fmt(f),
             ListGrantsErrorKind::InvalidMarkerError(_inner) => _inner.fmt(f),
             ListGrantsErrorKind::KMSInternalError(_inner) => _inner.fmt(f),
             ListGrantsErrorKind::KMSInvalidStateError(_inner) => _inner.fmt(f),
@@ -2789,6 +2791,7 @@ impl std::error::Error for ListGrantsError {
         match &self.kind {
             ListGrantsErrorKind::DependencyTimeoutError(_inner) => Some(_inner),
             ListGrantsErrorKind::InvalidArnError(_inner) => Some(_inner),
+            ListGrantsErrorKind::InvalidGrantIdError(_inner) => Some(_inner),
             ListGrantsErrorKind::InvalidMarkerError(_inner) => Some(_inner),
             ListGrantsErrorKind::KMSInternalError(_inner) => Some(_inner),
             ListGrantsErrorKind::KMSInvalidStateError(_inner) => Some(_inner),

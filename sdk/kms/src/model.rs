@@ -19,6 +19,7 @@ pub enum SigningAlgorithmSpec {
     RsassaPssSha256,
     RsassaPssSha384,
     RsassaPssSha512,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for SigningAlgorithmSpec {
@@ -88,6 +89,7 @@ impl<'de> serde::Deserialize<'de> for SigningAlgorithmSpec {
 pub enum MessageType {
     Digest,
     Raw,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for MessageType {
@@ -212,6 +214,7 @@ pub enum EncryptionAlgorithmSpec {
     RsaesOaepSha1,
     RsaesOaepSha256,
     SymmetricDefault,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for EncryptionAlgorithmSpec {
@@ -605,6 +608,7 @@ pub enum GrantOperation {
     RetireGrant,
     Sign,
     Verify,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for GrantOperation {
@@ -752,18 +756,16 @@ pub struct AliasListEntry {
     #[serde(rename = "AliasArn")]
     #[serde(default)]
     pub alias_arn: std::option::Option<std::string::String>,
-    /// <p>String that contains the key identifier of the CMK associated with the alias.</p>
+    /// <p>String that contains the key identifier referred to by the alias.</p>
     #[serde(rename = "TargetKeyId")]
     #[serde(default)]
     pub target_key_id: std::option::Option<std::string::String>,
-    /// <p>Date and time that the alias was most recently created in the account and Region. Formatted as Unix time.</p>
     #[serde(rename = "CreationDate")]
     #[serde(
         deserialize_with = "crate::serde_util::stdoptionoptionsmithytypesinstant_epoch_seconds_deser"
     )]
     #[serde(default)]
     pub creation_date: std::option::Option<smithy_types::Instant>,
-    /// <p>Date and time that the alias was most recently associated with a CMK in the account and Region. Formatted as Unix time.</p>
     #[serde(rename = "LastUpdatedDate")]
     #[serde(
         deserialize_with = "crate::serde_util::stdoptionoptionsmithytypesinstant_epoch_seconds_deser"
@@ -813,7 +815,7 @@ pub mod alias_list_entry {
             self.alias_arn = inp;
             self
         }
-        /// <p>String that contains the key identifier of the CMK associated with the alias.</p>
+        /// <p>String that contains the key identifier referred to by the alias.</p>
         pub fn target_key_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.target_key_id = Some(inp.into());
             self
@@ -822,7 +824,6 @@ pub mod alias_list_entry {
             self.target_key_id = inp;
             self
         }
-        /// <p>Date and time that the alias was most recently created in the account and Region. Formatted as Unix time.</p>
         pub fn creation_date(mut self, inp: smithy_types::Instant) -> Self {
             self.creation_date = Some(inp);
             self
@@ -834,7 +835,6 @@ pub mod alias_list_entry {
             self.creation_date = inp;
             self
         }
-        /// <p>Date and time that the alias was most recently associated with a CMK in the account and Region. Formatted as Unix time.</p>
         pub fn last_updated_date(mut self, inp: smithy_types::Instant) -> Self {
             self.last_updated_date = Some(inp);
             self
@@ -878,6 +878,7 @@ impl AliasListEntry {
 pub enum ExpirationModelType {
     KeyMaterialDoesNotExpire,
     KeyMaterialExpires,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for ExpirationModelType {
@@ -933,6 +934,7 @@ impl<'de> serde::Deserialize<'de> for ExpirationModelType {
 pub enum KeyUsageType {
     EncryptDecrypt,
     SignVerify,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for KeyUsageType {
@@ -994,6 +996,7 @@ pub enum CustomerMasterKeySpec {
     Rsa3072,
     Rsa4096,
     SymmetricDefault,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for CustomerMasterKeySpec {
@@ -1060,6 +1063,7 @@ impl<'de> serde::Deserialize<'de> for CustomerMasterKeySpec {
 )]
 pub enum WrappingKeySpec {
     Rsa2048,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for WrappingKeySpec {
@@ -1114,6 +1118,7 @@ pub enum AlgorithmSpec {
     RsaesOaepSha1,
     RsaesOaepSha256,
     RsaesPkcs1V15,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for AlgorithmSpec {
@@ -1171,6 +1176,7 @@ impl<'de> serde::Deserialize<'de> for AlgorithmSpec {
 pub enum DataKeySpec {
     Aes128,
     Aes256,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for DataKeySpec {
@@ -1231,6 +1237,7 @@ pub enum DataKeyPairSpec {
     Rsa2048,
     Rsa3072,
     Rsa4096,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for DataKeyPairSpec {
@@ -1716,6 +1723,7 @@ impl KeyMetadata {
 pub enum KeyManagerType {
     Aws,
     Customer,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for KeyManagerType {
@@ -1772,6 +1780,7 @@ pub enum OriginType {
     AwsCloudhsm,
     AwsKms,
     External,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for OriginType {
@@ -1832,6 +1841,7 @@ pub enum KeyState {
     PendingDeletion,
     PendingImport,
     Unavailable,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for KeyState {
@@ -2212,6 +2222,7 @@ pub enum ConnectionErrorCodeType {
     UserLockedOut,
     UserLoggedIn,
     UserNotFound,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for ConnectionErrorCodeType {
@@ -2284,6 +2295,7 @@ pub enum ConnectionStateType {
     Disconnected,
     Disconnecting,
     Failed,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for ConnectionStateType {

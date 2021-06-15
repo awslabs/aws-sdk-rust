@@ -41,7 +41,7 @@ async fn generate_random_cn() {
         .region(Region::new("cn-north-1"))
         .credentials_provider(creds)
         .build();
-    let client = kms::Client::from_conf_conn(conf, aws_hyper::conn::Standard::new(conn.clone()));
+    let client = kms::Client::from_conf_conn(conf, conn.clone());
     let _ = client
         .generate_random()
         .number_of_bytes(64)

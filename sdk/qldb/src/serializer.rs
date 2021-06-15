@@ -12,14 +12,41 @@ pub struct CreateLedgerInputBody<'a> {
     pub tags: &'a std::option::Option<
         std::collections::HashMap<std::string::String, std::option::Option<std::string::String>>,
     >,
-    /// <p>The permissions mode to assign to the ledger that you want to create.</p>
+    /// <p>The permissions mode to assign to the ledger that you want to create. This parameter can
+    /// have one of the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>ALLOW_ALL</code>: A legacy permissions mode that enables access control with
+    /// API-level granularity for ledgers.</p>
+    /// <p>This mode allows users who have the <code>SendCommand</code> API permission for
+    /// this ledger to run all PartiQL commands (hence, <code>ALLOW_ALL</code>) on any tables
+    /// in the specified ledger. This mode disregards any table-level or command-level IAM
+    /// permissions policies that you create for the ledger.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>STANDARD</code>: (<i>Recommended</i>) A permissions mode that
+    /// enables access control with finer granularity for ledgers, tables, and PartiQL
+    /// commands.</p>
+    /// <p>By default, this mode denies all user requests to run any PartiQL commands on any
+    /// tables in this ledger. To allow PartiQL commands to run, you must create IAM
+    /// permissions policies for specific table resources and PartiQL actions, in addition to
+    /// the <code>SendCommand</code> API permission for the ledger. For information, see
+    /// <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/getting-started-standard-mode.html">Getting
+    /// started with the standard permissions mode</a> in the <i>Amazon QLDB
+    /// Developer Guide</i>.</p>
+    /// </li>
+    /// </ul>
+    /// <note>
+    /// <p>We strongly recommend using the <code>STANDARD</code> permissions mode to maximize
+    /// the security of your ledger data.</p>
+    /// </note>
     pub permissions_mode: &'a std::option::Option<crate::model::PermissionsMode>,
     /// <p>The flag that prevents a ledger from being deleted by any user. If not provided on
     /// ledger creation, this feature is enabled (<code>true</code>) by default.</p>
     /// <p>If deletion protection is enabled, you must first disable it before you can delete the
-    /// ledger using the QLDB API or the AWS Command Line Interface (AWS CLI). You can disable it by calling the
-    /// <code>UpdateLedger</code> operation to set the flag to <code>false</code>. The QLDB
-    /// console disables deletion protection for you when you use it to delete a ledger.</p>
+    /// ledger. You can disable it by calling the <code>UpdateLedger</code> operation to set the flag to <code>false</code>.</p>
     pub deletion_protection: &'a std::option::Option<bool>,
 }
 impl<'a> std::fmt::Debug for CreateLedgerInputBody<'a> {
@@ -36,23 +63,19 @@ impl<'a> std::fmt::Debug for CreateLedgerInputBody<'a> {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExportJournalToS3InputBody<'a> {
-    /// <p>The inclusive start date and time for the range of journal contents that you want to
-    /// export.</p>
+    /// <p>The inclusive start date and time for the range of journal contents to export.</p>
     /// <p>The <code>InclusiveStartTime</code> must be in <code>ISO 8601</code> date and time
     /// format and in Universal Coordinated Time (UTC). For example:
-    /// <code>2019-06-13T21:36:34Z</code>
-    /// </p>
+    /// <code>2019-06-13T21:36:34Z</code>.</p>
     /// <p>The <code>InclusiveStartTime</code> must be before <code>ExclusiveEndTime</code>.</p>
     /// <p>If you provide an <code>InclusiveStartTime</code> that is before the ledger's
     /// <code>CreationDateTime</code>, Amazon QLDB defaults it to the ledger's
     /// <code>CreationDateTime</code>.</p>
     pub inclusive_start_time: &'a std::option::Option<smithy_types::Instant>,
-    /// <p>The exclusive end date and time for the range of journal contents that you want to
-    /// export.</p>
+    /// <p>The exclusive end date and time for the range of journal contents to export.</p>
     /// <p>The <code>ExclusiveEndTime</code> must be in <code>ISO 8601</code> date and time format
     /// and in Universal Coordinated Time (UTC). For example:
-    /// <code>2019-06-13T21:36:34Z</code>
-    /// </p>
+    /// <code>2019-06-13T21:36:34Z</code>.</p>
     /// <p>The <code>ExclusiveEndTime</code> must be less than or equal to the current UTC date and
     /// time.</p>
     pub exclusive_end_time: &'a std::option::Option<smithy_types::Instant>,
@@ -88,14 +111,12 @@ impl<'a> std::fmt::Debug for ExportJournalToS3InputBody<'a> {
 pub struct GetBlockInputBody<'a> {
     /// <p>The location of the block that you want to request. An address is an Amazon Ion
     /// structure that has two fields: <code>strandId</code> and <code>sequenceNo</code>.</p>
-    /// <p>For example: <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:14}</code>
-    /// </p>
+    /// <p>For example: <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:14}</code>.</p>
     pub block_address: &'a std::option::Option<crate::model::ValueHolder>,
     /// <p>The latest block location covered by the digest for which to request a proof. An address
     /// is an Amazon Ion structure that has two fields: <code>strandId</code> and
     /// <code>sequenceNo</code>.</p>
-    /// <p>For example: <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:49}</code>
-    /// </p>
+    /// <p>For example: <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:49}</code>.</p>
     pub digest_tip_address: &'a std::option::Option<crate::model::ValueHolder>,
 }
 impl<'a> std::fmt::Debug for GetBlockInputBody<'a> {
@@ -112,16 +133,14 @@ impl<'a> std::fmt::Debug for GetBlockInputBody<'a> {
 pub struct GetRevisionInputBody<'a> {
     /// <p>The block location of the document revision to be verified. An address is an Amazon Ion
     /// structure that has two fields: <code>strandId</code> and <code>sequenceNo</code>.</p>
-    /// <p>For example: <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:14}</code>
-    /// </p>
+    /// <p>For example: <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:14}</code>.</p>
     pub block_address: &'a std::option::Option<crate::model::ValueHolder>,
-    /// <p>The unique ID of the document to be verified.</p>
+    /// <p>The UUID (represented in Base62-encoded text) of the document to be verified.</p>
     pub document_id: &'a std::option::Option<std::string::String>,
     /// <p>The latest block location covered by the digest for which to request a proof. An address
     /// is an Amazon Ion structure that has two fields: <code>strandId</code> and
     /// <code>sequenceNo</code>.</p>
-    /// <p>For example: <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:49}</code>
-    /// </p>
+    /// <p>For example: <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:49}</code>.</p>
     pub digest_tip_address: &'a std::option::Option<crate::model::ValueHolder>,
 }
 impl<'a> std::fmt::Debug for GetRevisionInputBody<'a> {
@@ -147,8 +166,7 @@ pub struct StreamJournalToKinesisInputBody<'a> {
     >,
     /// <p>The inclusive start date and time from which to start streaming journal data. This
     /// parameter must be in <code>ISO 8601</code> date and time format and in Universal
-    /// Coordinated Time (UTC). For example: <code>2019-06-13T21:36:34Z</code>
-    /// </p>
+    /// Coordinated Time (UTC). For example: <code>2019-06-13T21:36:34Z</code>.</p>
     /// <p>The <code>InclusiveStartTime</code> cannot be in the future and must be before
     /// <code>ExclusiveEndTime</code>.</p>
     /// <p>If you provide an <code>InclusiveStartTime</code> that is before the ledger's
@@ -159,8 +177,7 @@ pub struct StreamJournalToKinesisInputBody<'a> {
     /// this parameter, the stream runs indefinitely until you cancel it.</p>
     /// <p>The <code>ExclusiveEndTime</code> must be in <code>ISO 8601</code> date and time format
     /// and in Universal Coordinated Time (UTC). For example:
-    /// <code>2019-06-13T21:36:34Z</code>
-    /// </p>
+    /// <code>2019-06-13T21:36:34Z</code>.</p>
     pub exclusive_end_time: &'a std::option::Option<smithy_types::Instant>,
     /// <p>The configuration settings of the Kinesis Data Streams destination for your stream request.</p>
     pub kinesis_configuration: &'a std::option::Option<crate::model::KinesisConfiguration>,
@@ -209,9 +226,7 @@ pub struct UpdateLedgerInputBody<'a> {
     /// <p>The flag that prevents a ledger from being deleted by any user. If not provided on
     /// ledger creation, this feature is enabled (<code>true</code>) by default.</p>
     /// <p>If deletion protection is enabled, you must first disable it before you can delete the
-    /// ledger using the QLDB API or the AWS Command Line Interface (AWS CLI). You can disable it by calling the
-    /// <code>UpdateLedger</code> operation to set the flag to <code>false</code>. The QLDB
-    /// console disables deletion protection for you when you use it to delete a ledger.</p>
+    /// ledger. You can disable it by calling the <code>UpdateLedger</code> operation to set the flag to <code>false</code>.</p>
     pub deletion_protection: &'a std::option::Option<bool>,
 }
 impl<'a> std::fmt::Debug for UpdateLedgerInputBody<'a> {
@@ -223,9 +238,52 @@ impl<'a> std::fmt::Debug for UpdateLedgerInputBody<'a> {
 }
 
 #[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateLedgerPermissionsModeInputBody<'a> {
+    /// <p>The permissions mode to assign to the ledger. This parameter can have one of the
+    /// following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>ALLOW_ALL</code>: A legacy permissions mode that enables access control with
+    /// API-level granularity for ledgers.</p>
+    /// <p>This mode allows users who have the <code>SendCommand</code> API permission for
+    /// this ledger to run all PartiQL commands (hence, <code>ALLOW_ALL</code>) on any tables
+    /// in the specified ledger. This mode disregards any table-level or command-level IAM
+    /// permissions policies that you create for the ledger.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>STANDARD</code>: (<i>Recommended</i>) A permissions mode that
+    /// enables access control with finer granularity for ledgers, tables, and PartiQL
+    /// commands.</p>
+    /// <p>By default, this mode denies all user requests to run any PartiQL commands on any
+    /// tables in this ledger. To allow PartiQL commands to run, you must create IAM
+    /// permissions policies for specific table resources and PartiQL actions, in addition to
+    /// the <code>SendCommand</code> API permission for the ledger. For information, see
+    /// <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/getting-started-standard-mode.html">Getting
+    /// started with the standard permissions mode</a> in the <i>Amazon QLDB
+    /// Developer Guide</i>.</p>
+    /// </li>
+    /// </ul>
+    /// <note>
+    /// <p>We strongly recommend using the <code>STANDARD</code> permissions mode to maximize
+    /// the security of your ledger data.</p>
+    /// </note>
+    pub permissions_mode: &'a std::option::Option<crate::model::PermissionsMode>,
+}
+impl<'a> std::fmt::Debug for UpdateLedgerPermissionsModeInputBody<'a> {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateLedgerPermissionsModeInputBody");
+        formatter.field("permissions_mode", &self.permissions_mode);
+        formatter.finish()
+    }
+}
+
+#[non_exhaustive]
 #[derive(std::default::Default, serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
 pub struct CancelJournalKinesisStreamOutputBody {
-    /// <p>The unique ID that QLDB assigns to each QLDB journal stream.</p>
+    /// <p>The UUID (Base62-encoded text) of the canceled QLDB journal stream.</p>
     #[serde(rename = "StreamId")]
     #[serde(default)]
     pub stream_id: std::option::Option<std::string::String>,
@@ -261,12 +319,14 @@ pub struct CreateLedgerOutputBody {
     )]
     #[serde(default)]
     pub creation_date_time: std::option::Option<smithy_types::Instant>,
+    /// <p>The permissions mode of the ledger that you created.</p>
+    #[serde(rename = "PermissionsMode")]
+    #[serde(default)]
+    pub permissions_mode: std::option::Option<crate::model::PermissionsMode>,
     /// <p>The flag that prevents a ledger from being deleted by any user. If not provided on
     /// ledger creation, this feature is enabled (<code>true</code>) by default.</p>
     /// <p>If deletion protection is enabled, you must first disable it before you can delete the
-    /// ledger using the QLDB API or the AWS Command Line Interface (AWS CLI). You can disable it by calling the
-    /// <code>UpdateLedger</code> operation to set the flag to <code>false</code>. The QLDB
-    /// console disables deletion protection for you when you use it to delete a ledger.</p>
+    /// ledger. You can disable it by calling the <code>UpdateLedger</code> operation to set the flag to <code>false</code>.</p>
     #[serde(rename = "DeletionProtection")]
     #[serde(default)]
     pub deletion_protection: std::option::Option<bool>,
@@ -278,6 +338,7 @@ impl std::fmt::Debug for CreateLedgerOutputBody {
         formatter.field("arn", &self.arn);
         formatter.field("state", &self.state);
         formatter.field("creation_date_time", &self.creation_date_time);
+        formatter.field("permissions_mode", &self.permissions_mode);
         formatter.field("deletion_protection", &self.deletion_protection);
         formatter.finish()
     }
@@ -340,12 +401,14 @@ pub struct DescribeLedgerOutputBody {
     )]
     #[serde(default)]
     pub creation_date_time: std::option::Option<smithy_types::Instant>,
+    /// <p>The permissions mode of the ledger.</p>
+    #[serde(rename = "PermissionsMode")]
+    #[serde(default)]
+    pub permissions_mode: std::option::Option<crate::model::PermissionsMode>,
     /// <p>The flag that prevents a ledger from being deleted by any user. If not provided on
     /// ledger creation, this feature is enabled (<code>true</code>) by default.</p>
     /// <p>If deletion protection is enabled, you must first disable it before you can delete the
-    /// ledger using the QLDB API or the AWS Command Line Interface (AWS CLI). You can disable it by calling the
-    /// <code>UpdateLedger</code> operation to set the flag to <code>false</code>. The QLDB
-    /// console disables deletion protection for you when you use it to delete a ledger.</p>
+    /// ledger. You can disable it by calling the <code>UpdateLedger</code> operation to set the flag to <code>false</code>.</p>
     #[serde(rename = "DeletionProtection")]
     #[serde(default)]
     pub deletion_protection: std::option::Option<bool>,
@@ -357,6 +420,7 @@ impl std::fmt::Debug for DescribeLedgerOutputBody {
         formatter.field("arn", &self.arn);
         formatter.field("state", &self.state);
         formatter.field("creation_date_time", &self.creation_date_time);
+        formatter.field("permissions_mode", &self.permissions_mode);
         formatter.field("deletion_protection", &self.deletion_protection);
         formatter.finish()
     }
@@ -365,7 +429,8 @@ impl std::fmt::Debug for DescribeLedgerOutputBody {
 #[non_exhaustive]
 #[derive(std::default::Default, serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExportJournalToS3OutputBody {
-    /// <p>The unique ID that QLDB assigns to each journal export job.</p>
+    /// <p>The UUID (represented in Base62-encoded text) that QLDB assigns to each journal export
+    /// job.</p>
     /// <p>To describe your export request and check the status of the job, you can use
     /// <code>ExportId</code> to call <code>DescribeJournalS3Export</code>.</p>
     #[serde(rename = "ExportId")]
@@ -606,7 +671,8 @@ impl std::fmt::Debug for ListTagsForResourceOutputBody {
 #[non_exhaustive]
 #[derive(std::default::Default, serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
 pub struct StreamJournalToKinesisOutputBody {
-    /// <p>The unique ID that QLDB assigns to each QLDB journal stream.</p>
+    /// <p>The UUID (represented in Base62-encoded text) that QLDB assigns to each QLDB journal
+    /// stream.</p>
     #[serde(rename = "StreamId")]
     #[serde(default)]
     pub stream_id: std::option::Option<std::string::String>,
@@ -645,9 +711,7 @@ pub struct UpdateLedgerOutputBody {
     /// <p>The flag that prevents a ledger from being deleted by any user. If not provided on
     /// ledger creation, this feature is enabled (<code>true</code>) by default.</p>
     /// <p>If deletion protection is enabled, you must first disable it before you can delete the
-    /// ledger using the QLDB API or the AWS Command Line Interface (AWS CLI). You can disable it by calling the
-    /// <code>UpdateLedger</code> operation to set the flag to <code>false</code>. The QLDB
-    /// console disables deletion protection for you when you use it to delete a ledger.</p>
+    /// ledger. You can disable it by calling the <code>UpdateLedger</code> operation to set the flag to <code>false</code>.</p>
     #[serde(rename = "DeletionProtection")]
     #[serde(default)]
     pub deletion_protection: std::option::Option<bool>,
@@ -660,6 +724,32 @@ impl std::fmt::Debug for UpdateLedgerOutputBody {
         formatter.field("state", &self.state);
         formatter.field("creation_date_time", &self.creation_date_time);
         formatter.field("deletion_protection", &self.deletion_protection);
+        formatter.finish()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::default::Default, serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateLedgerPermissionsModeOutputBody {
+    /// <p>The name of the ledger.</p>
+    #[serde(rename = "Name")]
+    #[serde(default)]
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) for the ledger.</p>
+    #[serde(rename = "Arn")]
+    #[serde(default)]
+    pub arn: std::option::Option<std::string::String>,
+    /// <p>The current permissions mode of the ledger.</p>
+    #[serde(rename = "PermissionsMode")]
+    #[serde(default)]
+    pub permissions_mode: std::option::Option<crate::model::PermissionsMode>,
+}
+impl std::fmt::Debug for UpdateLedgerPermissionsModeOutputBody {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateLedgerPermissionsModeOutputBody");
+        formatter.field("name", &self.name);
+        formatter.field("arn", &self.arn);
+        formatter.field("permissions_mode", &self.permissions_mode);
         formatter.finish()
     }
 }

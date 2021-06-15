@@ -348,7 +348,7 @@ impl smithy_http::response::ParseStrictResponse for CreateSecret {
 /// <p>To attach a resource policy to a secret, use <a>PutResourcePolicy</a>.</p>
 /// </li>
 /// <li>
-/// <p>To retrieve the current resource-based policy that's attached to a secret, use <a>GetResourcePolicy</a>.</p>
+/// <p>To retrieve the current resource-based policy attached to a secret, use <a>GetResourcePolicy</a>.</p>
 /// </li>
 /// <li>
 /// <p>To list all of the currently available secrets, use <a>ListSecrets</a>.</p>
@@ -382,6 +382,15 @@ impl DeleteResourcePolicy {
                 "InternalServiceError" => match serde_json::from_value(body) {
                     Ok(body) => crate::error::DeleteResourcePolicyError {
                         kind: crate::error::DeleteResourcePolicyErrorKind::InternalServiceError(
+                            body,
+                        ),
+                        meta: generic,
+                    },
+                    Err(e) => crate::error::DeleteResourcePolicyError::unhandled(e),
+                },
+                "InvalidParameterException" => match serde_json::from_value(body) {
+                    Ok(body) => crate::error::DeleteResourcePolicyError {
+                        kind: crate::error::DeleteResourcePolicyErrorKind::InvalidParameterError(
                             body,
                         ),
                         meta: generic,
@@ -430,22 +439,22 @@ impl smithy_http::response::ParseStrictResponse for DeleteResourcePolicy {
     }
 }
 
-/// <p>Deletes an entire secret and all of its versions. You can optionally include a recovery
+/// <p>Deletes an entire secret and all of the versions. You can optionally include a recovery
 /// window during which you can restore the secret. If you don't specify a recovery window value,
 /// the operation defaults to 30 days. Secrets Manager attaches a <code>DeletionDate</code> stamp to
 /// the secret that specifies the end of the recovery window. At the end of the recovery window,
 /// Secrets Manager deletes the secret permanently.</p>
 /// <p>At any time before recovery window ends, you can use <a>RestoreSecret</a> to
 /// remove the <code>DeletionDate</code> and cancel the deletion of the secret.</p>
-/// <p>You cannot access the encrypted secret information in any secret that is scheduled for
-/// deletion. If you need to access that information, you must cancel the deletion with <a>RestoreSecret</a> and then retrieve the information.</p>
+/// <p>You cannot access the encrypted secret information in any secret scheduled for deletion.
+/// If you need to access that information, you must cancel the deletion with <a>RestoreSecret</a> and then retrieve the information.</p>
 /// <note>
 /// <ul>
 /// <li>
 /// <p>There is no explicit operation to delete a version of a secret. Instead, remove all
 /// staging labels from the <code>VersionStage</code> field of a version. That marks the
-/// version as deprecated and allows Secrets Manager to delete it as needed. Versions that do not have
-/// any staging labels do not show up in <a>ListSecretVersionIds</a> unless you
+/// version as deprecated and allows Secrets Manager to delete it as needed. Versions without any
+/// staging labels do not show up in <a>ListSecretVersionIds</a> unless you
 /// specify <code>IncludeDeprecated</code>.</p>
 /// </li>
 /// <li>
@@ -718,8 +727,8 @@ impl smithy_http::response::ParseStrictResponse for GetRandomPassword {
     }
 }
 
-/// <p>Retrieves the JSON text of the resource-based policy document attached to the
-/// specified secret. The JSON request string input and response output displays formatted code
+/// <p>Retrieves the JSON text of the resource-based policy document attached to the specified
+/// secret. The JSON request string input and response output displays formatted code
 /// with white space and line breaks for better readability. Submit your input as a single line
 /// JSON string.</p>
 /// <p>
@@ -1149,7 +1158,7 @@ impl smithy_http::response::ParseStrictResponse for ListSecretVersionIds {
 /// <p>To retrieve the resource policy attached to a secret, use <a>GetResourcePolicy</a>.</p>
 /// </li>
 /// <li>
-/// <p>To delete the resource-based policy that's attached to a secret, use <a>DeleteResourcePolicy</a>.</p>
+/// <p>To delete the resource-based policy attached to a secret, use <a>DeleteResourcePolicy</a>.</p>
 /// </li>
 /// <li>
 /// <p>To list all of the currently available secrets, use <a>ListSecrets</a>.</p>
@@ -1263,15 +1272,13 @@ impl smithy_http::response::ParseStrictResponse for PutResourcePolicy {
 /// automatically attaches the staging label <code>AWSCURRENT</code> to the new version.</p>
 /// </li>
 /// <li>
-/// <p>If another version of this secret already exists, then this operation does not
-/// automatically move any staging labels other than those that you explicitly specify in the
-/// <code>VersionStages</code> parameter.</p>
+/// <p>If you do not specify a value for VersionStages then Secrets Manager automatically
+/// moves the staging label <code>AWSCURRENT</code> to this new version.</p>
 /// </li>
 /// <li>
 /// <p>If this operation moves the staging label <code>AWSCURRENT</code> from another version to this
-/// version (because you included it in the <code>StagingLabels</code> parameter) then
-/// Secrets Manager also automatically moves the staging label <code>AWSPREVIOUS</code> to the version that
-/// <code>AWSCURRENT</code> was removed from.</p>
+/// version, then Secrets Manager also automatically moves the staging label <code>AWSPREVIOUS</code> to
+/// the version that <code>AWSCURRENT</code> was removed from.</p>
 /// </li>
 /// <li>
 /// <p>This operation is idempotent. If a version with a <code>VersionId</code> with the same
@@ -1427,6 +1434,177 @@ impl PutSecretValue {
 }
 impl smithy_http::response::ParseStrictResponse for PutSecretValue {
     type Output = Result<crate::output::PutSecretValueOutput, crate::error::PutSecretValueError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        self.parse_response(response)
+    }
+}
+
+/// <p>Remove regions from replication.</p>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct RemoveRegionsFromReplication {
+    _private: (),
+}
+impl RemoveRegionsFromReplication {
+    /// Creates a new builder-style object to manufacture [`RemoveRegionsFromReplicationInput`](crate::input::RemoveRegionsFromReplicationInput)
+    pub fn builder() -> crate::input::remove_regions_from_replication_input::Builder {
+        crate::input::remove_regions_from_replication_input::Builder::default()
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    #[allow(dead_code)]
+    fn parse_response(
+        &self,
+        response: &http::response::Response<bytes::Bytes>,
+    ) -> Result<
+        crate::output::RemoveRegionsFromReplicationOutput,
+        crate::error::RemoveRegionsFromReplicationError,
+    > {
+        if crate::aws_json_errors::is_error(&response) {
+            let body = serde_json::from_slice(response.body().as_ref())
+                .unwrap_or_else(|_| serde_json::json!({}));
+            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
+            let error_code = match generic.code() {
+                Some(code) => code,
+                None => {
+                    return Err(crate::error::RemoveRegionsFromReplicationError::unhandled(
+                        generic,
+                    ))
+                }
+            };
+            return Err(match error_code {
+                "InternalServiceError" => match serde_json::from_value(body) {
+                    Ok(body) => crate::error::RemoveRegionsFromReplicationError { kind: crate::error::RemoveRegionsFromReplicationErrorKind::InternalServiceError(body), meta: generic },
+                    Err(e) => crate::error::RemoveRegionsFromReplicationError::unhandled(e)
+                }
+                "InvalidParameterException" => match serde_json::from_value(body) {
+                    Ok(body) => crate::error::RemoveRegionsFromReplicationError { kind: crate::error::RemoveRegionsFromReplicationErrorKind::InvalidParameterError(body), meta: generic },
+                    Err(e) => crate::error::RemoveRegionsFromReplicationError::unhandled(e)
+                }
+                "InvalidRequestException" => match serde_json::from_value(body) {
+                    Ok(body) => crate::error::RemoveRegionsFromReplicationError { kind: crate::error::RemoveRegionsFromReplicationErrorKind::InvalidRequestError(body), meta: generic },
+                    Err(e) => crate::error::RemoveRegionsFromReplicationError::unhandled(e)
+                }
+                "ResourceNotFoundException" => match serde_json::from_value(body) {
+                    Ok(body) => crate::error::RemoveRegionsFromReplicationError { kind: crate::error::RemoveRegionsFromReplicationErrorKind::ResourceNotFoundError(body), meta: generic },
+                    Err(e) => crate::error::RemoveRegionsFromReplicationError::unhandled(e)
+                }
+                _ => crate::error::RemoveRegionsFromReplicationError::generic(generic)
+            });
+        }
+        #[allow(unused_mut)]
+        let mut builder = crate::output::remove_regions_from_replication_output::Builder::default();
+        builder = crate::json_deser::remove_regions_from_replication_deser_operation(
+            response.body().as_ref(),
+            builder,
+        )
+        .map_err(crate::error::RemoveRegionsFromReplicationError::unhandled)?;
+        Ok(builder.build())
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for RemoveRegionsFromReplication {
+    type Output = Result<
+        crate::output::RemoveRegionsFromReplicationOutput,
+        crate::error::RemoveRegionsFromReplicationError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        self.parse_response(response)
+    }
+}
+
+/// <p>Converts an existing secret to a multi-Region secret and begins replication the secret to a
+/// list of new regions. </p>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ReplicateSecretToRegions {
+    _private: (),
+}
+impl ReplicateSecretToRegions {
+    /// Creates a new builder-style object to manufacture [`ReplicateSecretToRegionsInput`](crate::input::ReplicateSecretToRegionsInput)
+    pub fn builder() -> crate::input::replicate_secret_to_regions_input::Builder {
+        crate::input::replicate_secret_to_regions_input::Builder::default()
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    #[allow(dead_code)]
+    fn parse_response(
+        &self,
+        response: &http::response::Response<bytes::Bytes>,
+    ) -> Result<
+        crate::output::ReplicateSecretToRegionsOutput,
+        crate::error::ReplicateSecretToRegionsError,
+    > {
+        if crate::aws_json_errors::is_error(&response) {
+            let body = serde_json::from_slice(response.body().as_ref())
+                .unwrap_or_else(|_| serde_json::json!({}));
+            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
+            let error_code = match generic.code() {
+                Some(code) => code,
+                None => {
+                    return Err(crate::error::ReplicateSecretToRegionsError::unhandled(
+                        generic,
+                    ))
+                }
+            };
+            return Err(match error_code {
+                "InternalServiceError" => match serde_json::from_value(body) {
+                    Ok(body) => crate::error::ReplicateSecretToRegionsError {
+                        kind: crate::error::ReplicateSecretToRegionsErrorKind::InternalServiceError(
+                            body,
+                        ),
+                        meta: generic,
+                    },
+                    Err(e) => crate::error::ReplicateSecretToRegionsError::unhandled(e),
+                },
+                "InvalidParameterException" => match serde_json::from_value(body) {
+                    Ok(body) => crate::error::ReplicateSecretToRegionsError {
+                        kind:
+                            crate::error::ReplicateSecretToRegionsErrorKind::InvalidParameterError(
+                                body,
+                            ),
+                        meta: generic,
+                    },
+                    Err(e) => crate::error::ReplicateSecretToRegionsError::unhandled(e),
+                },
+                "InvalidRequestException" => match serde_json::from_value(body) {
+                    Ok(body) => crate::error::ReplicateSecretToRegionsError {
+                        kind: crate::error::ReplicateSecretToRegionsErrorKind::InvalidRequestError(
+                            body,
+                        ),
+                        meta: generic,
+                    },
+                    Err(e) => crate::error::ReplicateSecretToRegionsError::unhandled(e),
+                },
+                "ResourceNotFoundException" => match serde_json::from_value(body) {
+                    Ok(body) => crate::error::ReplicateSecretToRegionsError {
+                        kind:
+                            crate::error::ReplicateSecretToRegionsErrorKind::ResourceNotFoundError(
+                                body,
+                            ),
+                        meta: generic,
+                    },
+                    Err(e) => crate::error::ReplicateSecretToRegionsError::unhandled(e),
+                },
+                _ => crate::error::ReplicateSecretToRegionsError::generic(generic),
+            });
+        }
+        #[allow(unused_mut)]
+        let mut builder = crate::output::replicate_secret_to_regions_output::Builder::default();
+        builder = crate::json_deser::replicate_secret_to_regions_deser_operation(
+            response.body().as_ref(),
+            builder,
+        )
+        .map_err(crate::error::ReplicateSecretToRegionsError::unhandled)?;
+        Ok(builder.build())
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for ReplicateSecretToRegions {
+    type Output = Result<
+        crate::output::ReplicateSecretToRegionsOutput,
+        crate::error::ReplicateSecretToRegionsError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         self.parse_response(response)
     }
@@ -1654,6 +1832,102 @@ impl RotateSecret {
 }
 impl smithy_http::response::ParseStrictResponse for RotateSecret {
     type Output = Result<crate::output::RotateSecretOutput, crate::error::RotateSecretError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        self.parse_response(response)
+    }
+}
+
+/// <p>Removes the secret from replication and promotes the secret to a regional secret in the replica Region.</p>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct StopReplicationToReplica {
+    _private: (),
+}
+impl StopReplicationToReplica {
+    /// Creates a new builder-style object to manufacture [`StopReplicationToReplicaInput`](crate::input::StopReplicationToReplicaInput)
+    pub fn builder() -> crate::input::stop_replication_to_replica_input::Builder {
+        crate::input::stop_replication_to_replica_input::Builder::default()
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    #[allow(dead_code)]
+    fn parse_response(
+        &self,
+        response: &http::response::Response<bytes::Bytes>,
+    ) -> Result<
+        crate::output::StopReplicationToReplicaOutput,
+        crate::error::StopReplicationToReplicaError,
+    > {
+        if crate::aws_json_errors::is_error(&response) {
+            let body = serde_json::from_slice(response.body().as_ref())
+                .unwrap_or_else(|_| serde_json::json!({}));
+            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
+            let error_code = match generic.code() {
+                Some(code) => code,
+                None => {
+                    return Err(crate::error::StopReplicationToReplicaError::unhandled(
+                        generic,
+                    ))
+                }
+            };
+            return Err(match error_code {
+                "InternalServiceError" => match serde_json::from_value(body) {
+                    Ok(body) => crate::error::StopReplicationToReplicaError {
+                        kind: crate::error::StopReplicationToReplicaErrorKind::InternalServiceError(
+                            body,
+                        ),
+                        meta: generic,
+                    },
+                    Err(e) => crate::error::StopReplicationToReplicaError::unhandled(e),
+                },
+                "InvalidParameterException" => match serde_json::from_value(body) {
+                    Ok(body) => crate::error::StopReplicationToReplicaError {
+                        kind:
+                            crate::error::StopReplicationToReplicaErrorKind::InvalidParameterError(
+                                body,
+                            ),
+                        meta: generic,
+                    },
+                    Err(e) => crate::error::StopReplicationToReplicaError::unhandled(e),
+                },
+                "InvalidRequestException" => match serde_json::from_value(body) {
+                    Ok(body) => crate::error::StopReplicationToReplicaError {
+                        kind: crate::error::StopReplicationToReplicaErrorKind::InvalidRequestError(
+                            body,
+                        ),
+                        meta: generic,
+                    },
+                    Err(e) => crate::error::StopReplicationToReplicaError::unhandled(e),
+                },
+                "ResourceNotFoundException" => match serde_json::from_value(body) {
+                    Ok(body) => crate::error::StopReplicationToReplicaError {
+                        kind:
+                            crate::error::StopReplicationToReplicaErrorKind::ResourceNotFoundError(
+                                body,
+                            ),
+                        meta: generic,
+                    },
+                    Err(e) => crate::error::StopReplicationToReplicaError::unhandled(e),
+                },
+                _ => crate::error::StopReplicationToReplicaError::generic(generic),
+            });
+        }
+        #[allow(unused_mut)]
+        let mut builder = crate::output::stop_replication_to_replica_output::Builder::default();
+        builder = crate::json_deser::stop_replication_to_replica_deser_operation(
+            response.body().as_ref(),
+            builder,
+        )
+        .map_err(crate::error::StopReplicationToReplicaError::unhandled)?;
+        Ok(builder.build())
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for StopReplicationToReplica {
+    type Output = Result<
+        crate::output::StopReplicationToReplicaOutput,
+        crate::error::StopReplicationToReplicaError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         self.parse_response(response)
     }
@@ -2220,11 +2494,39 @@ impl smithy_http::response::ParseStrictResponse for UpdateSecretVersionStage {
     }
 }
 
-/// <p>Validates the JSON text of the resource-based policy document attached to the
-/// specified secret. The JSON request string input and response output displays formatted code
+/// <p>Validates that the resource policy does not grant a wide range of IAM principals access to
+/// your secret. The JSON request string input and response output displays formatted code
 /// with white space and line breaks for better readability. Submit your input as a single line
-/// JSON string. A resource-based
-/// policy is optional.</p>
+/// JSON string. A resource-based policy is optional for secrets.</p>
+/// <p>The API performs three checks when validating the secret:</p>
+/// <ul>
+/// <li>
+/// <p>Sends a call to <a href="https://aws.amazon.com/blogs/security/protect-sensitive-data-in-the-cloud-with-automated-reasoning-zelkova/">Zelkova</a>, an automated reasoning engine, to ensure your Resource Policy does not
+/// allow broad access to your secret.</p>
+/// </li>
+/// <li>
+/// <p>Checks for correct syntax in a policy.</p>
+/// </li>
+/// <li>
+/// <p>Verifies the policy does not lock out a caller.</p>
+/// </li>
+/// </ul>
+/// <p>
+/// <b>Minimum Permissions</b>
+/// </p>
+/// <p>You must have the permissions required to access the following APIs:</p>
+/// <ul>
+/// <li>
+/// <p>
+/// <code>secretsmanager:PutResourcePolicy</code>
+/// </p>
+/// </li>
+/// <li>
+/// <p>
+/// <code>secretsmanager:ValidateResourcePolicy</code>
+/// </p>
+/// </li>
+/// </ul>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct ValidateResourcePolicy {
     _private: (),

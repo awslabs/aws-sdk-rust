@@ -19,7 +19,8 @@ pub mod cancel_journal_kinesis_stream_input {
             self.ledger_name = Some(inp);
             self
         }
-        /// <p>The unique ID that QLDB assigns to each QLDB journal stream.</p>
+        /// <p>The UUID (represented in Base62-encoded text) of the QLDB journal stream to be
+        /// canceled.</p>
         pub fn stream_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.stream_id = Some(inp.into());
             self
@@ -40,6 +41,11 @@ pub mod cancel_journal_kinesis_stream_input {
         }
     }
 }
+#[doc(hidden)]
+pub type CancelJournalKinesisStreamInputOperationOutputAlias =
+    crate::operation::CancelJournalKinesisStream;
+#[doc(hidden)]
+pub type CancelJournalKinesisStreamInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl CancelJournalKinesisStreamInput {
     /// Consumes the builder and constructs an Operation<[`CancelJournalKinesisStream`](crate::operation::CancelJournalKinesisStream)>
     #[allow(clippy::let_and_return)]
@@ -188,7 +194,36 @@ pub mod create_ledger_input {
             self.tags = inp;
             self
         }
-        /// <p>The permissions mode to assign to the ledger that you want to create.</p>
+        /// <p>The permissions mode to assign to the ledger that you want to create. This parameter can
+        /// have one of the following values:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>ALLOW_ALL</code>: A legacy permissions mode that enables access control with
+        /// API-level granularity for ledgers.</p>
+        /// <p>This mode allows users who have the <code>SendCommand</code> API permission for
+        /// this ledger to run all PartiQL commands (hence, <code>ALLOW_ALL</code>) on any tables
+        /// in the specified ledger. This mode disregards any table-level or command-level IAM
+        /// permissions policies that you create for the ledger.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>STANDARD</code>: (<i>Recommended</i>) A permissions mode that
+        /// enables access control with finer granularity for ledgers, tables, and PartiQL
+        /// commands.</p>
+        /// <p>By default, this mode denies all user requests to run any PartiQL commands on any
+        /// tables in this ledger. To allow PartiQL commands to run, you must create IAM
+        /// permissions policies for specific table resources and PartiQL actions, in addition to
+        /// the <code>SendCommand</code> API permission for the ledger. For information, see
+        /// <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/getting-started-standard-mode.html">Getting
+        /// started with the standard permissions mode</a> in the <i>Amazon QLDB
+        /// Developer Guide</i>.</p>
+        /// </li>
+        /// </ul>
+        /// <note>
+        /// <p>We strongly recommend using the <code>STANDARD</code> permissions mode to maximize
+        /// the security of your ledger data.</p>
+        /// </note>
         pub fn permissions_mode(mut self, inp: crate::model::PermissionsMode) -> Self {
             self.permissions_mode = Some(inp);
             self
@@ -203,9 +238,7 @@ pub mod create_ledger_input {
         /// <p>The flag that prevents a ledger from being deleted by any user. If not provided on
         /// ledger creation, this feature is enabled (<code>true</code>) by default.</p>
         /// <p>If deletion protection is enabled, you must first disable it before you can delete the
-        /// ledger using the QLDB API or the AWS Command Line Interface (AWS CLI). You can disable it by calling the
-        /// <code>UpdateLedger</code> operation to set the flag to <code>false</code>. The QLDB
-        /// console disables deletion protection for you when you use it to delete a ledger.</p>
+        /// ledger. You can disable it by calling the <code>UpdateLedger</code> operation to set the flag to <code>false</code>.</p>
         pub fn deletion_protection(mut self, inp: bool) -> Self {
             self.deletion_protection = Some(inp);
             self
@@ -227,6 +260,10 @@ pub mod create_ledger_input {
         }
     }
 }
+#[doc(hidden)]
+pub type CreateLedgerInputOperationOutputAlias = crate::operation::CreateLedger;
+#[doc(hidden)]
+pub type CreateLedgerInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl CreateLedgerInput {
     /// Consumes the builder and constructs an Operation<[`CreateLedger`](crate::operation::CreateLedger)>
     #[allow(clippy::let_and_return)]
@@ -349,6 +386,10 @@ pub mod delete_ledger_input {
         }
     }
 }
+#[doc(hidden)]
+pub type DeleteLedgerInputOperationOutputAlias = crate::operation::DeleteLedger;
+#[doc(hidden)]
+pub type DeleteLedgerInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl DeleteLedgerInput {
     /// Consumes the builder and constructs an Operation<[`DeleteLedger`](crate::operation::DeleteLedger)>
     #[allow(clippy::let_and_return)]
@@ -464,7 +505,8 @@ pub mod describe_journal_kinesis_stream_input {
             self.ledger_name = Some(inp);
             self
         }
-        /// <p>The unique ID that QLDB assigns to each QLDB journal stream.</p>
+        /// <p>The UUID (represented in Base62-encoded text) of the QLDB journal stream to
+        /// describe.</p>
         pub fn stream_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.stream_id = Some(inp.into());
             self
@@ -487,6 +529,11 @@ pub mod describe_journal_kinesis_stream_input {
         }
     }
 }
+#[doc(hidden)]
+pub type DescribeJournalKinesisStreamInputOperationOutputAlias =
+    crate::operation::DescribeJournalKinesisStream;
+#[doc(hidden)]
+pub type DescribeJournalKinesisStreamInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl DescribeJournalKinesisStreamInput {
     /// Consumes the builder and constructs an Operation<[`DescribeJournalKinesisStream`](crate::operation::DescribeJournalKinesisStream)>
     #[allow(clippy::let_and_return)]
@@ -603,7 +650,8 @@ pub mod describe_journal_s3_export_input {
             self.name = Some(inp);
             self
         }
-        /// <p>The unique ID of the journal export job that you want to describe.</p>
+        /// <p>The UUID (represented in Base62-encoded text) of the journal export job to
+        /// describe.</p>
         pub fn export_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.export_id = Some(inp.into());
             self
@@ -624,6 +672,11 @@ pub mod describe_journal_s3_export_input {
         }
     }
 }
+#[doc(hidden)]
+pub type DescribeJournalS3ExportInputOperationOutputAlias =
+    crate::operation::DescribeJournalS3Export;
+#[doc(hidden)]
+pub type DescribeJournalS3ExportInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl DescribeJournalS3ExportInput {
     /// Consumes the builder and constructs an Operation<[`DescribeJournalS3Export`](crate::operation::DescribeJournalS3Export)>
     #[allow(clippy::let_and_return)]
@@ -749,6 +802,10 @@ pub mod describe_ledger_input {
         }
     }
 }
+#[doc(hidden)]
+pub type DescribeLedgerInputOperationOutputAlias = crate::operation::DescribeLedger;
+#[doc(hidden)]
+pub type DescribeLedgerInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl DescribeLedgerInput {
     /// Consumes the builder and constructs an Operation<[`DescribeLedger`](crate::operation::DescribeLedger)>
     #[allow(clippy::let_and_return)]
@@ -868,12 +925,10 @@ pub mod export_journal_to_s3_input {
             self.name = Some(inp);
             self
         }
-        /// <p>The inclusive start date and time for the range of journal contents that you want to
-        /// export.</p>
+        /// <p>The inclusive start date and time for the range of journal contents to export.</p>
         /// <p>The <code>InclusiveStartTime</code> must be in <code>ISO 8601</code> date and time
         /// format and in Universal Coordinated Time (UTC). For example:
-        /// <code>2019-06-13T21:36:34Z</code>
-        /// </p>
+        /// <code>2019-06-13T21:36:34Z</code>.</p>
         /// <p>The <code>InclusiveStartTime</code> must be before <code>ExclusiveEndTime</code>.</p>
         /// <p>If you provide an <code>InclusiveStartTime</code> that is before the ledger's
         /// <code>CreationDateTime</code>, Amazon QLDB defaults it to the ledger's
@@ -889,12 +944,10 @@ pub mod export_journal_to_s3_input {
             self.inclusive_start_time = inp;
             self
         }
-        /// <p>The exclusive end date and time for the range of journal contents that you want to
-        /// export.</p>
+        /// <p>The exclusive end date and time for the range of journal contents to export.</p>
         /// <p>The <code>ExclusiveEndTime</code> must be in <code>ISO 8601</code> date and time format
         /// and in Universal Coordinated Time (UTC). For example:
-        /// <code>2019-06-13T21:36:34Z</code>
-        /// </p>
+        /// <code>2019-06-13T21:36:34Z</code>.</p>
         /// <p>The <code>ExclusiveEndTime</code> must be less than or equal to the current UTC date and
         /// time.</p>
         pub fn exclusive_end_time(mut self, inp: smithy_types::Instant) -> Self {
@@ -955,6 +1008,10 @@ pub mod export_journal_to_s3_input {
         }
     }
 }
+#[doc(hidden)]
+pub type ExportJournalToS3InputOperationOutputAlias = crate::operation::ExportJournalToS3;
+#[doc(hidden)]
+pub type ExportJournalToS3InputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl ExportJournalToS3Input {
     /// Consumes the builder and constructs an Operation<[`ExportJournalToS3`](crate::operation::ExportJournalToS3)>
     #[allow(clippy::let_and_return)]
@@ -1076,8 +1133,7 @@ pub mod get_block_input {
         }
         /// <p>The location of the block that you want to request. An address is an Amazon Ion
         /// structure that has two fields: <code>strandId</code> and <code>sequenceNo</code>.</p>
-        /// <p>For example: <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:14}</code>
-        /// </p>
+        /// <p>For example: <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:14}</code>.</p>
         pub fn block_address(mut self, inp: crate::model::ValueHolder) -> Self {
             self.block_address = Some(inp);
             self
@@ -1092,8 +1148,7 @@ pub mod get_block_input {
         /// <p>The latest block location covered by the digest for which to request a proof. An address
         /// is an Amazon Ion structure that has two fields: <code>strandId</code> and
         /// <code>sequenceNo</code>.</p>
-        /// <p>For example: <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:49}</code>
-        /// </p>
+        /// <p>For example: <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:49}</code>.</p>
         pub fn digest_tip_address(mut self, inp: crate::model::ValueHolder) -> Self {
             self.digest_tip_address = Some(inp);
             self
@@ -1117,6 +1172,10 @@ pub mod get_block_input {
         }
     }
 }
+#[doc(hidden)]
+pub type GetBlockInputOperationOutputAlias = crate::operation::GetBlock;
+#[doc(hidden)]
+pub type GetBlockInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl GetBlockInput {
     /// Consumes the builder and constructs an Operation<[`GetBlock`](crate::operation::GetBlock)>
     #[allow(clippy::let_and_return)]
@@ -1239,6 +1298,10 @@ pub mod get_digest_input {
         }
     }
 }
+#[doc(hidden)]
+pub type GetDigestInputOperationOutputAlias = crate::operation::GetDigest;
+#[doc(hidden)]
+pub type GetDigestInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl GetDigestInput {
     /// Consumes the builder and constructs an Operation<[`GetDigest`](crate::operation::GetDigest)>
     #[allow(clippy::let_and_return)]
@@ -1353,8 +1416,7 @@ pub mod get_revision_input {
         }
         /// <p>The block location of the document revision to be verified. An address is an Amazon Ion
         /// structure that has two fields: <code>strandId</code> and <code>sequenceNo</code>.</p>
-        /// <p>For example: <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:14}</code>
-        /// </p>
+        /// <p>For example: <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:14}</code>.</p>
         pub fn block_address(mut self, inp: crate::model::ValueHolder) -> Self {
             self.block_address = Some(inp);
             self
@@ -1366,7 +1428,7 @@ pub mod get_revision_input {
             self.block_address = inp;
             self
         }
-        /// <p>The unique ID of the document to be verified.</p>
+        /// <p>The UUID (represented in Base62-encoded text) of the document to be verified.</p>
         pub fn document_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.document_id = Some(inp.into());
             self
@@ -1378,8 +1440,7 @@ pub mod get_revision_input {
         /// <p>The latest block location covered by the digest for which to request a proof. An address
         /// is an Amazon Ion structure that has two fields: <code>strandId</code> and
         /// <code>sequenceNo</code>.</p>
-        /// <p>For example: <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:49}</code>
-        /// </p>
+        /// <p>For example: <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:49}</code>.</p>
         pub fn digest_tip_address(mut self, inp: crate::model::ValueHolder) -> Self {
             self.digest_tip_address = Some(inp);
             self
@@ -1404,6 +1465,10 @@ pub mod get_revision_input {
         }
     }
 }
+#[doc(hidden)]
+pub type GetRevisionInputOperationOutputAlias = crate::operation::GetRevision;
+#[doc(hidden)]
+pub type GetRevisionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl GetRevisionInput {
     /// Consumes the builder and constructs an Operation<[`GetRevision`](crate::operation::GetRevision)>
     #[allow(clippy::let_and_return)]
@@ -1558,6 +1623,11 @@ pub mod list_journal_kinesis_streams_for_ledger_input {
         }
     }
 }
+#[doc(hidden)]
+pub type ListJournalKinesisStreamsForLedgerInputOperationOutputAlias =
+    crate::operation::ListJournalKinesisStreamsForLedger;
+#[doc(hidden)]
+pub type ListJournalKinesisStreamsForLedgerInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl ListJournalKinesisStreamsForLedgerInput {
     /// Consumes the builder and constructs an Operation<[`ListJournalKinesisStreamsForLedger`](crate::operation::ListJournalKinesisStreamsForLedger)>
     #[allow(clippy::let_and_return)]
@@ -1708,6 +1778,10 @@ pub mod list_journal_s3_exports_input {
         }
     }
 }
+#[doc(hidden)]
+pub type ListJournalS3ExportsInputOperationOutputAlias = crate::operation::ListJournalS3Exports;
+#[doc(hidden)]
+pub type ListJournalS3ExportsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl ListJournalS3ExportsInput {
     /// Consumes the builder and constructs an Operation<[`ListJournalS3Exports`](crate::operation::ListJournalS3Exports)>
     #[allow(clippy::let_and_return)]
@@ -1867,6 +1941,11 @@ pub mod list_journal_s3_exports_for_ledger_input {
         }
     }
 }
+#[doc(hidden)]
+pub type ListJournalS3ExportsForLedgerInputOperationOutputAlias =
+    crate::operation::ListJournalS3ExportsForLedger;
+#[doc(hidden)]
+pub type ListJournalS3ExportsForLedgerInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl ListJournalS3ExportsForLedgerInput {
     /// Consumes the builder and constructs an Operation<[`ListJournalS3ExportsForLedger`](crate::operation::ListJournalS3ExportsForLedger)>
     #[allow(clippy::let_and_return)]
@@ -2015,6 +2094,10 @@ pub mod list_ledgers_input {
         }
     }
 }
+#[doc(hidden)]
+pub type ListLedgersInputOperationOutputAlias = crate::operation::ListLedgers;
+#[doc(hidden)]
+pub type ListLedgersInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl ListLedgersInput {
     /// Consumes the builder and constructs an Operation<[`ListLedgers`](crate::operation::ListLedgers)>
     #[allow(clippy::let_and_return)]
@@ -2122,7 +2205,7 @@ pub mod list_tags_for_resource_input {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) for which you want to list the tags. For example:</p>
+        /// <p>The Amazon Resource Name (ARN) for which to list the tags. For example:</p>
         /// <p>
         /// <code>arn:aws:qldb:us-east-1:123456789012:ledger/exampleLedger</code>
         /// </p>
@@ -2145,6 +2228,10 @@ pub mod list_tags_for_resource_input {
         }
     }
 }
+#[doc(hidden)]
+pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
+#[doc(hidden)]
+pub type ListTagsForResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(clippy::let_and_return)]
@@ -2304,8 +2391,7 @@ pub mod stream_journal_to_kinesis_input {
         }
         /// <p>The inclusive start date and time from which to start streaming journal data. This
         /// parameter must be in <code>ISO 8601</code> date and time format and in Universal
-        /// Coordinated Time (UTC). For example: <code>2019-06-13T21:36:34Z</code>
-        /// </p>
+        /// Coordinated Time (UTC). For example: <code>2019-06-13T21:36:34Z</code>.</p>
         /// <p>The <code>InclusiveStartTime</code> cannot be in the future and must be before
         /// <code>ExclusiveEndTime</code>.</p>
         /// <p>If you provide an <code>InclusiveStartTime</code> that is before the ledger's
@@ -2326,8 +2412,7 @@ pub mod stream_journal_to_kinesis_input {
         /// this parameter, the stream runs indefinitely until you cancel it.</p>
         /// <p>The <code>ExclusiveEndTime</code> must be in <code>ISO 8601</code> date and time format
         /// and in Universal Coordinated Time (UTC). For example:
-        /// <code>2019-06-13T21:36:34Z</code>
-        /// </p>
+        /// <code>2019-06-13T21:36:34Z</code>.</p>
         pub fn exclusive_end_time(mut self, inp: smithy_types::Instant) -> Self {
             self.exclusive_end_time = Some(inp);
             self
@@ -2382,6 +2467,10 @@ pub mod stream_journal_to_kinesis_input {
         }
     }
 }
+#[doc(hidden)]
+pub type StreamJournalToKinesisInputOperationOutputAlias = crate::operation::StreamJournalToKinesis;
+#[doc(hidden)]
+pub type StreamJournalToKinesisInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl StreamJournalToKinesisInput {
     /// Consumes the builder and constructs an Operation<[`StreamJournalToKinesis`](crate::operation::StreamJournalToKinesis)>
     #[allow(clippy::let_and_return)]
@@ -2541,6 +2630,10 @@ pub mod tag_resource_input {
         }
     }
 }
+#[doc(hidden)]
+pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
+#[doc(hidden)]
+pub type TagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(clippy::let_and_return)]
@@ -2647,8 +2740,7 @@ pub mod untag_resource_input {
         pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) from which you want to remove the tags. For
-        /// example:</p>
+        /// <p>The Amazon Resource Name (ARN) from which to remove the tags. For example:</p>
         /// <p>
         /// <code>arn:aws:qldb:us-east-1:123456789012:ledger/exampleLedger</code>
         /// </p>
@@ -2684,6 +2776,10 @@ pub mod untag_resource_input {
         }
     }
 }
+#[doc(hidden)]
+pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
+#[doc(hidden)]
+pub type UntagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(clippy::let_and_return)]
@@ -2811,9 +2907,7 @@ pub mod update_ledger_input {
         /// <p>The flag that prevents a ledger from being deleted by any user. If not provided on
         /// ledger creation, this feature is enabled (<code>true</code>) by default.</p>
         /// <p>If deletion protection is enabled, you must first disable it before you can delete the
-        /// ledger using the QLDB API or the AWS Command Line Interface (AWS CLI). You can disable it by calling the
-        /// <code>UpdateLedger</code> operation to set the flag to <code>false</code>. The QLDB
-        /// console disables deletion protection for you when you use it to delete a ledger.</p>
+        /// ledger. You can disable it by calling the <code>UpdateLedger</code> operation to set the flag to <code>false</code>.</p>
         pub fn deletion_protection(mut self, inp: bool) -> Self {
             self.deletion_protection = Some(inp);
             self
@@ -2833,6 +2927,10 @@ pub mod update_ledger_input {
         }
     }
 }
+#[doc(hidden)]
+pub type UpdateLedgerInputOperationOutputAlias = crate::operation::UpdateLedger;
+#[doc(hidden)]
+pub type UpdateLedgerInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl UpdateLedgerInput {
     /// Consumes the builder and constructs an Operation<[`UpdateLedger`](crate::operation::UpdateLedger)>
     #[allow(clippy::let_and_return)]
@@ -2932,6 +3030,231 @@ impl UpdateLedgerInput {
     }
 }
 
+/// See [`UpdateLedgerPermissionsModeInput`](crate::input::UpdateLedgerPermissionsModeInput)
+pub mod update_ledger_permissions_mode_input {
+    /// A builder for [`UpdateLedgerPermissionsModeInput`](crate::input::UpdateLedgerPermissionsModeInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) permissions_mode: std::option::Option<crate::model::PermissionsMode>,
+    }
+    impl Builder {
+        /// <p>The name of the ledger.</p>
+        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.name = Some(inp.into());
+            self
+        }
+        pub fn set_name(mut self, inp: std::string::String) -> Self {
+            self.name = Some(inp);
+            self
+        }
+        /// <p>The permissions mode to assign to the ledger. This parameter can have one of the
+        /// following values:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>ALLOW_ALL</code>: A legacy permissions mode that enables access control with
+        /// API-level granularity for ledgers.</p>
+        /// <p>This mode allows users who have the <code>SendCommand</code> API permission for
+        /// this ledger to run all PartiQL commands (hence, <code>ALLOW_ALL</code>) on any tables
+        /// in the specified ledger. This mode disregards any table-level or command-level IAM
+        /// permissions policies that you create for the ledger.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>STANDARD</code>: (<i>Recommended</i>) A permissions mode that
+        /// enables access control with finer granularity for ledgers, tables, and PartiQL
+        /// commands.</p>
+        /// <p>By default, this mode denies all user requests to run any PartiQL commands on any
+        /// tables in this ledger. To allow PartiQL commands to run, you must create IAM
+        /// permissions policies for specific table resources and PartiQL actions, in addition to
+        /// the <code>SendCommand</code> API permission for the ledger. For information, see
+        /// <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/getting-started-standard-mode.html">Getting
+        /// started with the standard permissions mode</a> in the <i>Amazon QLDB
+        /// Developer Guide</i>.</p>
+        /// </li>
+        /// </ul>
+        /// <note>
+        /// <p>We strongly recommend using the <code>STANDARD</code> permissions mode to maximize
+        /// the security of your ledger data.</p>
+        /// </note>
+        pub fn permissions_mode(mut self, inp: crate::model::PermissionsMode) -> Self {
+            self.permissions_mode = Some(inp);
+            self
+        }
+        pub fn set_permissions_mode(
+            mut self,
+            inp: std::option::Option<crate::model::PermissionsMode>,
+        ) -> Self {
+            self.permissions_mode = inp;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateLedgerPermissionsModeInput`](crate::input::UpdateLedgerPermissionsModeInput)
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::UpdateLedgerPermissionsModeInput,
+            smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::UpdateLedgerPermissionsModeInput {
+                name: self.name.unwrap_or_default(),
+                permissions_mode: self.permissions_mode,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type UpdateLedgerPermissionsModeInputOperationOutputAlias =
+    crate::operation::UpdateLedgerPermissionsMode;
+#[doc(hidden)]
+pub type UpdateLedgerPermissionsModeInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl UpdateLedgerPermissionsModeInput {
+    /// Consumes the builder and constructs an Operation<[`UpdateLedgerPermissionsMode`](crate::operation::UpdateLedgerPermissionsMode)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::UpdateLedgerPermissionsMode,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = self.request_builder_base()?;
+            let body =
+                crate::operation_ser::serialize_operation_update_ledger_permissions_mode(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
+            let request = Self::assemble(request, body);
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+            request.config_mut().insert(signing_config);
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::UpdateLedgerPermissionsMode::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "UpdateLedgerPermissionsMode",
+                "qldb",
+            ));
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
+    fn uri_base(&self, output: &mut String) {
+        write!(
+            output,
+            "/ledgers/{Name}/permissions-mode",
+            Name = smithy_http::label::fmt_string(&self.name, false)
+        )
+        .expect("formatting should succeed")
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn update_http_builder(
+        &self,
+        builder: http::request::Builder,
+    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let mut uri = String::new();
+        self.uri_base(&mut uri);
+        Ok(builder.method("PATCH").uri(uri))
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
+        &self,
+    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let builder = http::request::Builder::new();
+        let builder = builder.header("Content-Type", "application/json");
+        self.update_http_builder(builder)
+    }
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`UpdateLedgerPermissionsModeInput`](crate::input::UpdateLedgerPermissionsModeInput)
+    pub fn builder() -> crate::input::update_ledger_permissions_mode_input::Builder {
+        crate::input::update_ledger_permissions_mode_input::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateLedgerPermissionsModeInput {
+    /// <p>The name of the ledger.</p>
+    pub name: std::string::String,
+    /// <p>The permissions mode to assign to the ledger. This parameter can have one of the
+    /// following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>ALLOW_ALL</code>: A legacy permissions mode that enables access control with
+    /// API-level granularity for ledgers.</p>
+    /// <p>This mode allows users who have the <code>SendCommand</code> API permission for
+    /// this ledger to run all PartiQL commands (hence, <code>ALLOW_ALL</code>) on any tables
+    /// in the specified ledger. This mode disregards any table-level or command-level IAM
+    /// permissions policies that you create for the ledger.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>STANDARD</code>: (<i>Recommended</i>) A permissions mode that
+    /// enables access control with finer granularity for ledgers, tables, and PartiQL
+    /// commands.</p>
+    /// <p>By default, this mode denies all user requests to run any PartiQL commands on any
+    /// tables in this ledger. To allow PartiQL commands to run, you must create IAM
+    /// permissions policies for specific table resources and PartiQL actions, in addition to
+    /// the <code>SendCommand</code> API permission for the ledger. For information, see
+    /// <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/getting-started-standard-mode.html">Getting
+    /// started with the standard permissions mode</a> in the <i>Amazon QLDB
+    /// Developer Guide</i>.</p>
+    /// </li>
+    /// </ul>
+    /// <note>
+    /// <p>We strongly recommend using the <code>STANDARD</code> permissions mode to maximize
+    /// the security of your ledger data.</p>
+    /// </note>
+    pub permissions_mode: std::option::Option<crate::model::PermissionsMode>,
+}
+impl std::fmt::Debug for UpdateLedgerPermissionsModeInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateLedgerPermissionsModeInput");
+        formatter.field("name", &self.name);
+        formatter.field("permissions_mode", &self.permissions_mode);
+        formatter.finish()
+    }
+}
+
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateLedgerInput {
@@ -2940,9 +3263,7 @@ pub struct UpdateLedgerInput {
     /// <p>The flag that prevents a ledger from being deleted by any user. If not provided on
     /// ledger creation, this feature is enabled (<code>true</code>) by default.</p>
     /// <p>If deletion protection is enabled, you must first disable it before you can delete the
-    /// ledger using the QLDB API or the AWS Command Line Interface (AWS CLI). You can disable it by calling the
-    /// <code>UpdateLedger</code> operation to set the flag to <code>false</code>. The QLDB
-    /// console disables deletion protection for you when you use it to delete a ledger.</p>
+    /// ledger. You can disable it by calling the <code>UpdateLedger</code> operation to set the flag to <code>false</code>.</p>
     pub deletion_protection: std::option::Option<bool>,
 }
 impl std::fmt::Debug for UpdateLedgerInput {
@@ -2957,13 +3278,12 @@ impl std::fmt::Debug for UpdateLedgerInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
-    /// <p>The Amazon Resource Name (ARN) from which you want to remove the tags. For
-    /// example:</p>
+    /// <p>The Amazon Resource Name (ARN) from which to remove the tags. For example:</p>
     /// <p>
     /// <code>arn:aws:qldb:us-east-1:123456789012:ledger/exampleLedger</code>
     /// </p>
     pub resource_arn: std::string::String,
-    /// <p>The list of tag keys that you want to remove.</p>
+    /// <p>The list of tag keys to remove.</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl std::fmt::Debug for UntagResourceInput {
@@ -3014,8 +3334,7 @@ pub struct StreamJournalToKinesisInput {
     >,
     /// <p>The inclusive start date and time from which to start streaming journal data. This
     /// parameter must be in <code>ISO 8601</code> date and time format and in Universal
-    /// Coordinated Time (UTC). For example: <code>2019-06-13T21:36:34Z</code>
-    /// </p>
+    /// Coordinated Time (UTC). For example: <code>2019-06-13T21:36:34Z</code>.</p>
     /// <p>The <code>InclusiveStartTime</code> cannot be in the future and must be before
     /// <code>ExclusiveEndTime</code>.</p>
     /// <p>If you provide an <code>InclusiveStartTime</code> that is before the ledger's
@@ -3026,8 +3345,7 @@ pub struct StreamJournalToKinesisInput {
     /// this parameter, the stream runs indefinitely until you cancel it.</p>
     /// <p>The <code>ExclusiveEndTime</code> must be in <code>ISO 8601</code> date and time format
     /// and in Universal Coordinated Time (UTC). For example:
-    /// <code>2019-06-13T21:36:34Z</code>
-    /// </p>
+    /// <code>2019-06-13T21:36:34Z</code>.</p>
     pub exclusive_end_time: std::option::Option<smithy_types::Instant>,
     /// <p>The configuration settings of the Kinesis Data Streams destination for your stream request.</p>
     pub kinesis_configuration: std::option::Option<crate::model::KinesisConfiguration>,
@@ -3056,7 +3374,7 @@ impl std::fmt::Debug for StreamJournalToKinesisInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
-    /// <p>The Amazon Resource Name (ARN) for which you want to list the tags. For example:</p>
+    /// <p>The Amazon Resource Name (ARN) for which to list the tags. For example:</p>
     /// <p>
     /// <code>arn:aws:qldb:us-east-1:123456789012:ledger/exampleLedger</code>
     /// </p>
@@ -3168,16 +3486,14 @@ pub struct GetRevisionInput {
     pub name: std::string::String,
     /// <p>The block location of the document revision to be verified. An address is an Amazon Ion
     /// structure that has two fields: <code>strandId</code> and <code>sequenceNo</code>.</p>
-    /// <p>For example: <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:14}</code>
-    /// </p>
+    /// <p>For example: <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:14}</code>.</p>
     pub block_address: std::option::Option<crate::model::ValueHolder>,
-    /// <p>The unique ID of the document to be verified.</p>
+    /// <p>The UUID (represented in Base62-encoded text) of the document to be verified.</p>
     pub document_id: std::option::Option<std::string::String>,
     /// <p>The latest block location covered by the digest for which to request a proof. An address
     /// is an Amazon Ion structure that has two fields: <code>strandId</code> and
     /// <code>sequenceNo</code>.</p>
-    /// <p>For example: <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:49}</code>
-    /// </p>
+    /// <p>For example: <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:49}</code>.</p>
     pub digest_tip_address: std::option::Option<crate::model::ValueHolder>,
 }
 impl std::fmt::Debug for GetRevisionInput {
@@ -3212,14 +3528,12 @@ pub struct GetBlockInput {
     pub name: std::string::String,
     /// <p>The location of the block that you want to request. An address is an Amazon Ion
     /// structure that has two fields: <code>strandId</code> and <code>sequenceNo</code>.</p>
-    /// <p>For example: <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:14}</code>
-    /// </p>
+    /// <p>For example: <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:14}</code>.</p>
     pub block_address: std::option::Option<crate::model::ValueHolder>,
     /// <p>The latest block location covered by the digest for which to request a proof. An address
     /// is an Amazon Ion structure that has two fields: <code>strandId</code> and
     /// <code>sequenceNo</code>.</p>
-    /// <p>For example: <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:49}</code>
-    /// </p>
+    /// <p>For example: <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:49}</code>.</p>
     pub digest_tip_address: std::option::Option<crate::model::ValueHolder>,
 }
 impl std::fmt::Debug for GetBlockInput {
@@ -3237,23 +3551,19 @@ impl std::fmt::Debug for GetBlockInput {
 pub struct ExportJournalToS3Input {
     /// <p>The name of the ledger.</p>
     pub name: std::string::String,
-    /// <p>The inclusive start date and time for the range of journal contents that you want to
-    /// export.</p>
+    /// <p>The inclusive start date and time for the range of journal contents to export.</p>
     /// <p>The <code>InclusiveStartTime</code> must be in <code>ISO 8601</code> date and time
     /// format and in Universal Coordinated Time (UTC). For example:
-    /// <code>2019-06-13T21:36:34Z</code>
-    /// </p>
+    /// <code>2019-06-13T21:36:34Z</code>.</p>
     /// <p>The <code>InclusiveStartTime</code> must be before <code>ExclusiveEndTime</code>.</p>
     /// <p>If you provide an <code>InclusiveStartTime</code> that is before the ledger's
     /// <code>CreationDateTime</code>, Amazon QLDB defaults it to the ledger's
     /// <code>CreationDateTime</code>.</p>
     pub inclusive_start_time: std::option::Option<smithy_types::Instant>,
-    /// <p>The exclusive end date and time for the range of journal contents that you want to
-    /// export.</p>
+    /// <p>The exclusive end date and time for the range of journal contents to export.</p>
     /// <p>The <code>ExclusiveEndTime</code> must be in <code>ISO 8601</code> date and time format
     /// and in Universal Coordinated Time (UTC). For example:
-    /// <code>2019-06-13T21:36:34Z</code>
-    /// </p>
+    /// <code>2019-06-13T21:36:34Z</code>.</p>
     /// <p>The <code>ExclusiveEndTime</code> must be less than or equal to the current UTC date and
     /// time.</p>
     pub exclusive_end_time: std::option::Option<smithy_types::Instant>,
@@ -3304,7 +3614,8 @@ impl std::fmt::Debug for DescribeLedgerInput {
 pub struct DescribeJournalS3ExportInput {
     /// <p>The name of the ledger.</p>
     pub name: std::string::String,
-    /// <p>The unique ID of the journal export job that you want to describe.</p>
+    /// <p>The UUID (represented in Base62-encoded text) of the journal export job to
+    /// describe.</p>
     pub export_id: std::string::String,
 }
 impl std::fmt::Debug for DescribeJournalS3ExportInput {
@@ -3321,7 +3632,8 @@ impl std::fmt::Debug for DescribeJournalS3ExportInput {
 pub struct DescribeJournalKinesisStreamInput {
     /// <p>The name of the ledger.</p>
     pub ledger_name: std::string::String,
-    /// <p>The unique ID that QLDB assigns to each QLDB journal stream.</p>
+    /// <p>The UUID (represented in Base62-encoded text) of the QLDB journal stream to
+    /// describe.</p>
     pub stream_id: std::string::String,
 }
 impl std::fmt::Debug for DescribeJournalKinesisStreamInput {
@@ -3360,14 +3672,41 @@ pub struct CreateLedgerInput {
     pub tags: std::option::Option<
         std::collections::HashMap<std::string::String, std::option::Option<std::string::String>>,
     >,
-    /// <p>The permissions mode to assign to the ledger that you want to create.</p>
+    /// <p>The permissions mode to assign to the ledger that you want to create. This parameter can
+    /// have one of the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>ALLOW_ALL</code>: A legacy permissions mode that enables access control with
+    /// API-level granularity for ledgers.</p>
+    /// <p>This mode allows users who have the <code>SendCommand</code> API permission for
+    /// this ledger to run all PartiQL commands (hence, <code>ALLOW_ALL</code>) on any tables
+    /// in the specified ledger. This mode disregards any table-level or command-level IAM
+    /// permissions policies that you create for the ledger.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>STANDARD</code>: (<i>Recommended</i>) A permissions mode that
+    /// enables access control with finer granularity for ledgers, tables, and PartiQL
+    /// commands.</p>
+    /// <p>By default, this mode denies all user requests to run any PartiQL commands on any
+    /// tables in this ledger. To allow PartiQL commands to run, you must create IAM
+    /// permissions policies for specific table resources and PartiQL actions, in addition to
+    /// the <code>SendCommand</code> API permission for the ledger. For information, see
+    /// <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/getting-started-standard-mode.html">Getting
+    /// started with the standard permissions mode</a> in the <i>Amazon QLDB
+    /// Developer Guide</i>.</p>
+    /// </li>
+    /// </ul>
+    /// <note>
+    /// <p>We strongly recommend using the <code>STANDARD</code> permissions mode to maximize
+    /// the security of your ledger data.</p>
+    /// </note>
     pub permissions_mode: std::option::Option<crate::model::PermissionsMode>,
     /// <p>The flag that prevents a ledger from being deleted by any user. If not provided on
     /// ledger creation, this feature is enabled (<code>true</code>) by default.</p>
     /// <p>If deletion protection is enabled, you must first disable it before you can delete the
-    /// ledger using the QLDB API or the AWS Command Line Interface (AWS CLI). You can disable it by calling the
-    /// <code>UpdateLedger</code> operation to set the flag to <code>false</code>. The QLDB
-    /// console disables deletion protection for you when you use it to delete a ledger.</p>
+    /// ledger. You can disable it by calling the <code>UpdateLedger</code> operation to set the flag to <code>false</code>.</p>
     pub deletion_protection: std::option::Option<bool>,
 }
 impl std::fmt::Debug for CreateLedgerInput {
@@ -3386,7 +3725,8 @@ impl std::fmt::Debug for CreateLedgerInput {
 pub struct CancelJournalKinesisStreamInput {
     /// <p>The name of the ledger.</p>
     pub ledger_name: std::string::String,
-    /// <p>The unique ID that QLDB assigns to each QLDB journal stream.</p>
+    /// <p>The UUID (represented in Base62-encoded text) of the QLDB journal stream to be
+    /// canceled.</p>
     pub stream_id: std::string::String,
 }
 impl std::fmt::Debug for CancelJournalKinesisStreamInput {

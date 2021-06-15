@@ -5264,7 +5264,7 @@ pub fn serialize_structure_maintenance_window_lambda_parameters(
     if let Some(var_1273) = &input.payload {
         object
             .key("Payload")
-            .string_unchecked(&smithy_http::base64::encode(var_1273));
+            .string_unchecked(&smithy_types::base64::encode(var_1273));
     }
 }
 

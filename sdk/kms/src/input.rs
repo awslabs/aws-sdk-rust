@@ -42,6 +42,10 @@ pub mod cancel_key_deletion_input {
         }
     }
 }
+#[doc(hidden)]
+pub type CancelKeyDeletionInputOperationOutputAlias = crate::operation::CancelKeyDeletion;
+#[doc(hidden)]
+pub type CancelKeyDeletionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl CancelKeyDeletionInput {
     /// Consumes the builder and constructs an Operation<[`CancelKeyDeletion`](crate::operation::CancelKeyDeletion)>
     #[allow(clippy::let_and_return)]
@@ -159,6 +163,10 @@ pub mod connect_custom_key_store_input {
         }
     }
 }
+#[doc(hidden)]
+pub type ConnectCustomKeyStoreInputOperationOutputAlias = crate::operation::ConnectCustomKeyStore;
+#[doc(hidden)]
+pub type ConnectCustomKeyStoreInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl ConnectCustomKeyStoreInput {
     /// Consumes the builder and constructs an Operation<[`ConnectCustomKeyStore`](crate::operation::ConnectCustomKeyStore)>
     #[allow(clippy::let_and_return)]
@@ -304,6 +312,10 @@ pub mod create_alias_input {
         }
     }
 }
+#[doc(hidden)]
+pub type CreateAliasInputOperationOutputAlias = crate::operation::CreateAlias;
+#[doc(hidden)]
+pub type CreateAliasInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl CreateAliasInput {
     /// Consumes the builder and constructs an Operation<[`CreateAlias`](crate::operation::CreateAlias)>
     #[allow(clippy::let_and_return)]
@@ -469,6 +481,10 @@ pub mod create_custom_key_store_input {
         }
     }
 }
+#[doc(hidden)]
+pub type CreateCustomKeyStoreInputOperationOutputAlias = crate::operation::CreateCustomKeyStore;
+#[doc(hidden)]
+pub type CreateCustomKeyStoreInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl CreateCustomKeyStoreInput {
     /// Consumes the builder and constructs an Operation<[`CreateCustomKeyStore`](crate::operation::CreateCustomKeyStore)>
     #[allow(clippy::let_and_return)]
@@ -706,6 +722,10 @@ pub mod create_grant_input {
         }
     }
 }
+#[doc(hidden)]
+pub type CreateGrantInputOperationOutputAlias = crate::operation::CreateGrant;
+#[doc(hidden)]
+pub type CreateGrantInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl CreateGrantInput {
     /// Consumes the builder and constructs an Operation<[`CreateGrant`](crate::operation::CreateGrant)>
     #[allow(clippy::let_and_return)]
@@ -1062,6 +1082,10 @@ pub mod create_key_input {
         }
     }
 }
+#[doc(hidden)]
+pub type CreateKeyInputOperationOutputAlias = crate::operation::CreateKey;
+#[doc(hidden)]
+pub type CreateKeyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl CreateKeyInput {
     /// Consumes the builder and constructs an Operation<[`CreateKey`](crate::operation::CreateKey)>
     #[allow(clippy::let_and_return)]
@@ -1263,6 +1287,10 @@ pub mod decrypt_input {
         }
     }
 }
+#[doc(hidden)]
+pub type DecryptInputOperationOutputAlias = crate::operation::Decrypt;
+#[doc(hidden)]
+pub type DecryptInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl DecryptInput {
     /// Consumes the builder and constructs an Operation<[`Decrypt`](crate::operation::Decrypt)>
     #[allow(clippy::let_and_return)]
@@ -1367,6 +1395,10 @@ pub mod delete_alias_input {
         }
     }
 }
+#[doc(hidden)]
+pub type DeleteAliasInputOperationOutputAlias = crate::operation::DeleteAlias;
+#[doc(hidden)]
+pub type DeleteAliasInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl DeleteAliasInput {
     /// Consumes the builder and constructs an Operation<[`DeleteAlias`](crate::operation::DeleteAlias)>
     #[allow(clippy::let_and_return)]
@@ -1480,6 +1512,10 @@ pub mod delete_custom_key_store_input {
         }
     }
 }
+#[doc(hidden)]
+pub type DeleteCustomKeyStoreInputOperationOutputAlias = crate::operation::DeleteCustomKeyStore;
+#[doc(hidden)]
+pub type DeleteCustomKeyStoreInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl DeleteCustomKeyStoreInput {
     /// Consumes the builder and constructs an Operation<[`DeleteCustomKeyStore`](crate::operation::DeleteCustomKeyStore)>
     #[allow(clippy::let_and_return)]
@@ -1607,6 +1643,11 @@ pub mod delete_imported_key_material_input {
         }
     }
 }
+#[doc(hidden)]
+pub type DeleteImportedKeyMaterialInputOperationOutputAlias =
+    crate::operation::DeleteImportedKeyMaterial;
+#[doc(hidden)]
+pub type DeleteImportedKeyMaterialInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl DeleteImportedKeyMaterialInput {
     /// Consumes the builder and constructs an Operation<[`DeleteImportedKeyMaterial`](crate::operation::DeleteImportedKeyMaterial)>
     #[allow(clippy::let_and_return)]
@@ -1773,6 +1814,11 @@ pub mod describe_custom_key_stores_input {
         }
     }
 }
+#[doc(hidden)]
+pub type DescribeCustomKeyStoresInputOperationOutputAlias =
+    crate::operation::DescribeCustomKeyStores;
+#[doc(hidden)]
+pub type DescribeCustomKeyStoresInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl DescribeCustomKeyStoresInput {
     /// Consumes the builder and constructs an Operation<[`DescribeCustomKeyStores`](crate::operation::DescribeCustomKeyStores)>
     #[allow(clippy::let_and_return)]
@@ -1925,6 +1971,10 @@ pub mod describe_key_input {
         }
     }
 }
+#[doc(hidden)]
+pub type DescribeKeyInputOperationOutputAlias = crate::operation::DescribeKey;
+#[doc(hidden)]
+pub type DescribeKeyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl DescribeKeyInput {
     /// Consumes the builder and constructs an Operation<[`DescribeKey`](crate::operation::DescribeKey)>
     #[allow(clippy::let_and_return)]
@@ -2047,6 +2097,10 @@ pub mod disable_key_input {
         }
     }
 }
+#[doc(hidden)]
+pub type DisableKeyInputOperationOutputAlias = crate::operation::DisableKey;
+#[doc(hidden)]
+pub type DisableKeyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl DisableKeyInput {
     /// Consumes the builder and constructs an Operation<[`DisableKey`](crate::operation::DisableKey)>
     #[allow(clippy::let_and_return)]
@@ -2173,6 +2227,10 @@ pub mod disable_key_rotation_input {
         }
     }
 }
+#[doc(hidden)]
+pub type DisableKeyRotationInputOperationOutputAlias = crate::operation::DisableKeyRotation;
+#[doc(hidden)]
+pub type DisableKeyRotationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl DisableKeyRotationInput {
     /// Consumes the builder and constructs an Operation<[`DisableKeyRotation`](crate::operation::DisableKeyRotation)>
     #[allow(clippy::let_and_return)]
@@ -2289,6 +2347,11 @@ pub mod disconnect_custom_key_store_input {
         }
     }
 }
+#[doc(hidden)]
+pub type DisconnectCustomKeyStoreInputOperationOutputAlias =
+    crate::operation::DisconnectCustomKeyStore;
+#[doc(hidden)]
+pub type DisconnectCustomKeyStoreInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl DisconnectCustomKeyStoreInput {
     /// Consumes the builder and constructs an Operation<[`DisconnectCustomKeyStore`](crate::operation::DisconnectCustomKeyStore)>
     #[allow(clippy::let_and_return)]
@@ -2414,6 +2477,10 @@ pub mod enable_key_input {
         }
     }
 }
+#[doc(hidden)]
+pub type EnableKeyInputOperationOutputAlias = crate::operation::EnableKey;
+#[doc(hidden)]
+pub type EnableKeyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl EnableKeyInput {
     /// Consumes the builder and constructs an Operation<[`EnableKey`](crate::operation::EnableKey)>
     #[allow(clippy::let_and_return)]
@@ -2535,6 +2602,10 @@ pub mod enable_key_rotation_input {
         }
     }
 }
+#[doc(hidden)]
+pub type EnableKeyRotationInputOperationOutputAlias = crate::operation::EnableKeyRotation;
+#[doc(hidden)]
+pub type EnableKeyRotationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl EnableKeyRotationInput {
     /// Consumes the builder and constructs an Operation<[`EnableKeyRotation`](crate::operation::EnableKeyRotation)>
     #[allow(clippy::let_and_return)]
@@ -2735,6 +2806,10 @@ pub mod encrypt_input {
         }
     }
 }
+#[doc(hidden)]
+pub type EncryptInputOperationOutputAlias = crate::operation::Encrypt;
+#[doc(hidden)]
+pub type EncryptInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl EncryptInput {
     /// Consumes the builder and constructs an Operation<[`Encrypt`](crate::operation::Encrypt)>
     #[allow(clippy::let_and_return)]
@@ -2927,6 +3002,10 @@ pub mod generate_data_key_input {
         }
     }
 }
+#[doc(hidden)]
+pub type GenerateDataKeyInputOperationOutputAlias = crate::operation::GenerateDataKey;
+#[doc(hidden)]
+pub type GenerateDataKeyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl GenerateDataKeyInput {
     /// Consumes the builder and constructs an Operation<[`GenerateDataKey`](crate::operation::GenerateDataKey)>
     #[allow(clippy::let_and_return)]
@@ -3115,6 +3194,10 @@ pub mod generate_data_key_pair_input {
         }
     }
 }
+#[doc(hidden)]
+pub type GenerateDataKeyPairInputOperationOutputAlias = crate::operation::GenerateDataKeyPair;
+#[doc(hidden)]
+pub type GenerateDataKeyPairInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl GenerateDataKeyPairInput {
     /// Consumes the builder and constructs an Operation<[`GenerateDataKeyPair`](crate::operation::GenerateDataKeyPair)>
     #[allow(clippy::let_and_return)]
@@ -3306,6 +3389,12 @@ pub mod generate_data_key_pair_without_plaintext_input {
         }
     }
 }
+#[doc(hidden)]
+pub type GenerateDataKeyPairWithoutPlaintextInputOperationOutputAlias =
+    crate::operation::GenerateDataKeyPairWithoutPlaintext;
+#[doc(hidden)]
+pub type GenerateDataKeyPairWithoutPlaintextInputOperationRetryAlias =
+    aws_http::AwsErrorRetryPolicy;
 impl GenerateDataKeyPairWithoutPlaintextInput {
     /// Consumes the builder and constructs an Operation<[`GenerateDataKeyPairWithoutPlaintext`](crate::operation::GenerateDataKeyPairWithoutPlaintext)>
     #[allow(clippy::let_and_return)]
@@ -3512,6 +3601,11 @@ pub mod generate_data_key_without_plaintext_input {
         }
     }
 }
+#[doc(hidden)]
+pub type GenerateDataKeyWithoutPlaintextInputOperationOutputAlias =
+    crate::operation::GenerateDataKeyWithoutPlaintext;
+#[doc(hidden)]
+pub type GenerateDataKeyWithoutPlaintextInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl GenerateDataKeyWithoutPlaintextInput {
     /// Consumes the builder and constructs an Operation<[`GenerateDataKeyWithoutPlaintext`](crate::operation::GenerateDataKeyWithoutPlaintext)>
     #[allow(clippy::let_and_return)]
@@ -3645,6 +3739,10 @@ pub mod generate_random_input {
         }
     }
 }
+#[doc(hidden)]
+pub type GenerateRandomInputOperationOutputAlias = crate::operation::GenerateRandom;
+#[doc(hidden)]
+pub type GenerateRandomInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl GenerateRandomInput {
     /// Consumes the builder and constructs an Operation<[`GenerateRandom`](crate::operation::GenerateRandom)>
     #[allow(clippy::let_and_return)]
@@ -3781,6 +3879,10 @@ pub mod get_key_policy_input {
         }
     }
 }
+#[doc(hidden)]
+pub type GetKeyPolicyInputOperationOutputAlias = crate::operation::GetKeyPolicy;
+#[doc(hidden)]
+pub type GetKeyPolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl GetKeyPolicyInput {
     /// Consumes the builder and constructs an Operation<[`GetKeyPolicy`](crate::operation::GetKeyPolicy)>
     #[allow(clippy::let_and_return)]
@@ -3905,6 +4007,10 @@ pub mod get_key_rotation_status_input {
         }
     }
 }
+#[doc(hidden)]
+pub type GetKeyRotationStatusInputOperationOutputAlias = crate::operation::GetKeyRotationStatus;
+#[doc(hidden)]
+pub type GetKeyRotationStatusInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl GetKeyRotationStatusInput {
     /// Consumes the builder and constructs an Operation<[`GetKeyRotationStatus`](crate::operation::GetKeyRotationStatus)>
     #[allow(clippy::let_and_return)]
@@ -4062,6 +4168,10 @@ pub mod get_parameters_for_import_input {
         }
     }
 }
+#[doc(hidden)]
+pub type GetParametersForImportInputOperationOutputAlias = crate::operation::GetParametersForImport;
+#[doc(hidden)]
+pub type GetParametersForImportInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl GetParametersForImportInput {
     /// Consumes the builder and constructs an Operation<[`GetParametersForImport`](crate::operation::GetParametersForImport)>
     #[allow(clippy::let_and_return)]
@@ -4210,6 +4320,10 @@ pub mod get_public_key_input {
         }
     }
 }
+#[doc(hidden)]
+pub type GetPublicKeyInputOperationOutputAlias = crate::operation::GetPublicKey;
+#[doc(hidden)]
+pub type GetPublicKeyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl GetPublicKeyInput {
     /// Consumes the builder and constructs an Operation<[`GetPublicKey`](crate::operation::GetPublicKey)>
     #[allow(clippy::let_and_return)]
@@ -4395,6 +4509,10 @@ pub mod import_key_material_input {
         }
     }
 }
+#[doc(hidden)]
+pub type ImportKeyMaterialInputOperationOutputAlias = crate::operation::ImportKeyMaterial;
+#[doc(hidden)]
+pub type ImportKeyMaterialInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl ImportKeyMaterialInput {
     /// Consumes the builder and constructs an Operation<[`ImportKeyMaterial`](crate::operation::ImportKeyMaterial)>
     #[allow(clippy::let_and_return)]
@@ -4551,6 +4669,10 @@ pub mod list_aliases_input {
         }
     }
 }
+#[doc(hidden)]
+pub type ListAliasesInputOperationOutputAlias = crate::operation::ListAliases;
+#[doc(hidden)]
+pub type ListAliasesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl ListAliasesInput {
     /// Consumes the builder and constructs an Operation<[`ListAliases`](crate::operation::ListAliases)>
     #[allow(clippy::let_and_return)]
@@ -4641,6 +4763,8 @@ pub mod list_grants_input {
         pub(crate) limit: std::option::Option<i32>,
         pub(crate) marker: std::option::Option<std::string::String>,
         pub(crate) key_id: std::option::Option<std::string::String>,
+        pub(crate) grant_id: std::option::Option<std::string::String>,
+        pub(crate) grantee_principal: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>Use this parameter to specify the maximum number of items to return. When this
@@ -4667,7 +4791,8 @@ pub mod list_grants_input {
             self.marker = inp;
             self
         }
-        /// <p>A unique identifier for the customer master key (CMK).</p>
+        /// <p>Returns only grants for the specified customer master key (CMK). This parameter is
+        /// required.</p>
         /// <p>Specify the key ID or the Amazon Resource Name (ARN) of the CMK. To specify a CMK in a
         /// different AWS account, you must use the key ARN.</p>
         /// <p>For example:</p>
@@ -4690,6 +4815,29 @@ pub mod list_grants_input {
             self.key_id = inp;
             self
         }
+        /// <p>Returns only the grant with the specified grant ID. The grant ID uniquely identifies the
+        /// grant. </p>
+        pub fn grant_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.grant_id = Some(inp.into());
+            self
+        }
+        pub fn set_grant_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
+            self.grant_id = inp;
+            self
+        }
+        /// <p>Returns only grants where the specified principal is the grantee principal for the
+        /// grant.</p>
+        pub fn grantee_principal(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.grantee_principal = Some(inp.into());
+            self
+        }
+        pub fn set_grantee_principal(
+            mut self,
+            inp: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.grantee_principal = inp;
+            self
+        }
         /// Consumes the builder and constructs a [`ListGrantsInput`](crate::input::ListGrantsInput)
         pub fn build(
             self,
@@ -4698,10 +4846,16 @@ pub mod list_grants_input {
                 limit: self.limit,
                 marker: self.marker,
                 key_id: self.key_id,
+                grant_id: self.grant_id,
+                grantee_principal: self.grantee_principal,
             })
         }
     }
 }
+#[doc(hidden)]
+pub type ListGrantsInputOperationOutputAlias = crate::operation::ListGrants;
+#[doc(hidden)]
+pub type ListGrantsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl ListGrantsInput {
     /// Consumes the builder and constructs an Operation<[`ListGrants`](crate::operation::ListGrants)>
     #[allow(clippy::let_and_return)]
@@ -4854,6 +5008,10 @@ pub mod list_key_policies_input {
         }
     }
 }
+#[doc(hidden)]
+pub type ListKeyPoliciesInputOperationOutputAlias = crate::operation::ListKeyPolicies;
+#[doc(hidden)]
+pub type ListKeyPoliciesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl ListKeyPoliciesInput {
     /// Consumes the builder and constructs an Operation<[`ListKeyPolicies`](crate::operation::ListKeyPolicies)>
     #[allow(clippy::let_and_return)]
@@ -4982,6 +5140,10 @@ pub mod list_keys_input {
         }
     }
 }
+#[doc(hidden)]
+pub type ListKeysInputOperationOutputAlias = crate::operation::ListKeys;
+#[doc(hidden)]
+pub type ListKeysInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl ListKeysInput {
     /// Consumes the builder and constructs an Operation<[`ListKeys`](crate::operation::ListKeys)>
     #[allow(clippy::let_and_return)]
@@ -5133,6 +5295,10 @@ pub mod list_resource_tags_input {
         }
     }
 }
+#[doc(hidden)]
+pub type ListResourceTagsInputOperationOutputAlias = crate::operation::ListResourceTags;
+#[doc(hidden)]
+pub type ListResourceTagsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl ListResourceTagsInput {
     /// Consumes the builder and constructs an Operation<[`ListResourceTags`](crate::operation::ListResourceTags)>
     #[allow(clippy::let_and_return)]
@@ -5283,6 +5449,10 @@ pub mod list_retirable_grants_input {
         }
     }
 }
+#[doc(hidden)]
+pub type ListRetirableGrantsInputOperationOutputAlias = crate::operation::ListRetirableGrants;
+#[doc(hidden)]
+pub type ListRetirableGrantsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl ListRetirableGrantsInput {
     /// Consumes the builder and constructs an Operation<[`ListRetirableGrants`](crate::operation::ListRetirableGrants)>
     #[allow(clippy::let_and_return)]
@@ -5469,6 +5639,10 @@ pub mod put_key_policy_input {
         }
     }
 }
+#[doc(hidden)]
+pub type PutKeyPolicyInputOperationOutputAlias = crate::operation::PutKeyPolicy;
+#[doc(hidden)]
+pub type PutKeyPolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl PutKeyPolicyInput {
     /// Consumes the builder and constructs an Operation<[`PutKeyPolicy`](crate::operation::PutKeyPolicy)>
     #[allow(clippy::let_and_return)]
@@ -5760,6 +5934,10 @@ pub mod re_encrypt_input {
         }
     }
 }
+#[doc(hidden)]
+pub type ReEncryptInputOperationOutputAlias = crate::operation::ReEncrypt;
+#[doc(hidden)]
+pub type ReEncryptInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl ReEncryptInput {
     /// Consumes the builder and constructs an Operation<[`ReEncrypt`](crate::operation::ReEncrypt)>
     #[allow(clippy::let_and_return)]
@@ -5898,6 +6076,10 @@ pub mod retire_grant_input {
         }
     }
 }
+#[doc(hidden)]
+pub type RetireGrantInputOperationOutputAlias = crate::operation::RetireGrant;
+#[doc(hidden)]
+pub type RetireGrantInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl RetireGrantInput {
     /// Consumes the builder and constructs an Operation<[`RetireGrant`](crate::operation::RetireGrant)>
     #[allow(clippy::let_and_return)]
@@ -6032,6 +6214,10 @@ pub mod revoke_grant_input {
         }
     }
 }
+#[doc(hidden)]
+pub type RevokeGrantInputOperationOutputAlias = crate::operation::RevokeGrant;
+#[doc(hidden)]
+pub type RevokeGrantInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl RevokeGrantInput {
     /// Consumes the builder and constructs an Operation<[`RevokeGrant`](crate::operation::RevokeGrant)>
     #[allow(clippy::let_and_return)]
@@ -6169,6 +6355,10 @@ pub mod schedule_key_deletion_input {
         }
     }
 }
+#[doc(hidden)]
+pub type ScheduleKeyDeletionInputOperationOutputAlias = crate::operation::ScheduleKeyDeletion;
+#[doc(hidden)]
+pub type ScheduleKeyDeletionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl ScheduleKeyDeletionInput {
     /// Consumes the builder and constructs an Operation<[`ScheduleKeyDeletion`](crate::operation::ScheduleKeyDeletion)>
     #[allow(clippy::let_and_return)]
@@ -6363,6 +6553,10 @@ pub mod sign_input {
         }
     }
 }
+#[doc(hidden)]
+pub type SignInputOperationOutputAlias = crate::operation::Sign;
+#[doc(hidden)]
+pub type SignInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl SignInput {
     /// Consumes the builder and constructs an Operation<[`Sign`](crate::operation::Sign)>
     #[allow(clippy::let_and_return)]
@@ -6493,6 +6687,10 @@ pub mod tag_resource_input {
         }
     }
 }
+#[doc(hidden)]
+pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
+#[doc(hidden)]
+pub type TagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(clippy::let_and_return)]
@@ -6630,6 +6828,10 @@ pub mod untag_resource_input {
         }
     }
 }
+#[doc(hidden)]
+pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
+#[doc(hidden)]
+pub type UntagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(clippy::let_and_return)]
@@ -6774,6 +6976,10 @@ pub mod update_alias_input {
         }
     }
 }
+#[doc(hidden)]
+pub type UpdateAliasInputOperationOutputAlias = crate::operation::UpdateAlias;
+#[doc(hidden)]
+pub type UpdateAliasInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl UpdateAliasInput {
     /// Consumes the builder and constructs an Operation<[`UpdateAlias`](crate::operation::UpdateAlias)>
     #[allow(clippy::let_and_return)]
@@ -6940,6 +7146,10 @@ pub mod update_custom_key_store_input {
         }
     }
 }
+#[doc(hidden)]
+pub type UpdateCustomKeyStoreInputOperationOutputAlias = crate::operation::UpdateCustomKeyStore;
+#[doc(hidden)]
+pub type UpdateCustomKeyStoreInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl UpdateCustomKeyStoreInput {
     /// Consumes the builder and constructs an Operation<[`UpdateCustomKeyStore`](crate::operation::UpdateCustomKeyStore)>
     #[allow(clippy::let_and_return)]
@@ -7077,6 +7287,10 @@ pub mod update_key_description_input {
         }
     }
 }
+#[doc(hidden)]
+pub type UpdateKeyDescriptionInputOperationOutputAlias = crate::operation::UpdateKeyDescription;
+#[doc(hidden)]
+pub type UpdateKeyDescriptionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl UpdateKeyDescriptionInput {
     /// Consumes the builder and constructs an Operation<[`UpdateKeyDescription`](crate::operation::UpdateKeyDescription)>
     #[allow(clippy::let_and_return)]
@@ -7290,6 +7504,10 @@ pub mod verify_input {
         }
     }
 }
+#[doc(hidden)]
+pub type VerifyInputOperationOutputAlias = crate::operation::Verify;
+#[doc(hidden)]
+pub type VerifyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl VerifyInput {
     /// Consumes the builder and constructs an Operation<[`Verify`](crate::operation::Verify)>
     #[allow(clippy::let_and_return)]
@@ -8085,7 +8303,8 @@ pub struct ListGrantsInput {
     /// truncated results. Set it to the value of <code>NextMarker</code> from the truncated response
     /// you just received.</p>
     pub marker: std::option::Option<std::string::String>,
-    /// <p>A unique identifier for the customer master key (CMK).</p>
+    /// <p>Returns only grants for the specified customer master key (CMK). This parameter is
+    /// required.</p>
     /// <p>Specify the key ID or the Amazon Resource Name (ARN) of the CMK. To specify a CMK in a
     /// different AWS account, you must use the key ARN.</p>
     /// <p>For example:</p>
@@ -8101,6 +8320,12 @@ pub struct ListGrantsInput {
     /// </ul>
     /// <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
     pub key_id: std::option::Option<std::string::String>,
+    /// <p>Returns only the grant with the specified grant ID. The grant ID uniquely identifies the
+    /// grant. </p>
+    pub grant_id: std::option::Option<std::string::String>,
+    /// <p>Returns only grants where the specified principal is the grantee principal for the
+    /// grant.</p>
+    pub grantee_principal: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ListGrantsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8108,6 +8333,8 @@ impl std::fmt::Debug for ListGrantsInput {
         formatter.field("limit", &self.limit);
         formatter.field("marker", &self.marker);
         formatter.field("key_id", &self.key_id);
+        formatter.field("grant_id", &self.grant_id);
+        formatter.field("grantee_principal", &self.grantee_principal);
         formatter.finish()
     }
 }

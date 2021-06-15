@@ -119,6 +119,26 @@ pub fn serialize_operation_put_secret_value(
     Ok(smithy_http::body::SdkBody::from(out))
 }
 
+pub fn serialize_operation_remove_regions_from_replication(
+    input: &crate::input::RemoveRegionsFromReplicationInput,
+) -> Result<smithy_http::body::SdkBody, serde_json::error::Error> {
+    let mut out = String::new();
+    let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::json_ser::serialize_structure_remove_regions_from_replication_input(&mut object, input);
+    object.finish();
+    Ok(smithy_http::body::SdkBody::from(out))
+}
+
+pub fn serialize_operation_replicate_secret_to_regions(
+    input: &crate::input::ReplicateSecretToRegionsInput,
+) -> Result<smithy_http::body::SdkBody, serde_json::error::Error> {
+    let mut out = String::new();
+    let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::json_ser::serialize_structure_replicate_secret_to_regions_input(&mut object, input);
+    object.finish();
+    Ok(smithy_http::body::SdkBody::from(out))
+}
+
 pub fn serialize_operation_restore_secret(
     input: &crate::input::RestoreSecretInput,
 ) -> Result<smithy_http::body::SdkBody, serde_json::error::Error> {
@@ -135,6 +155,16 @@ pub fn serialize_operation_rotate_secret(
     let mut out = String::new();
     let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::json_ser::serialize_structure_rotate_secret_input(&mut object, input);
+    object.finish();
+    Ok(smithy_http::body::SdkBody::from(out))
+}
+
+pub fn serialize_operation_stop_replication_to_replica(
+    input: &crate::input::StopReplicationToReplicaInput,
+) -> Result<smithy_http::body::SdkBody, serde_json::error::Error> {
+    let mut out = String::new();
+    let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::json_ser::serialize_structure_stop_replication_to_replica_input(&mut object, input);
     object.finish();
     Ok(smithy_http::body::SdkBody::from(out))
 }

@@ -6,8 +6,7 @@
 
 use serde::de::{Error, Unexpected};
 use serde::{Deserialize, Deserializer, Serialize, Serializer};
-use smithy_http::base64;
-use smithy_types::Blob;
+use smithy_types::{base64, Blob};
 
 pub struct BlobSer<'a>(pub &'a Blob);
 

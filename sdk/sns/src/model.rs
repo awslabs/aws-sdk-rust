@@ -66,9 +66,9 @@ impl Tag {
 /// <p>Name, type, and value must not be empty or null. In addition, the message body should
 /// not be empty or null. All parts of the message attribute, including name, type, and
 /// value, are included in the message size restriction, which is currently 256 KB (262,144
-/// bytes). For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/SNSMessageAttributes.html">Amazon SNS message
-/// attributes</a> and <a href="https://docs.aws.amazon.com/sns/latest/dg/sms_publish-to-phone.html">Publishing to a mobile phone</a>
-/// in the <i>Amazon SNS Developer Guide.</i>
+/// bytes). For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/SNSMessageAttributes.html">Amazon SNS message attributes</a> and
+/// <a href="https://docs.aws.amazon.com/sns/latest/dg/sms_publish-to-phone.html">Publishing
+/// to a mobile phone</a> in the <i>Amazon SNS Developer Guide.</i>
 /// </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -306,6 +306,142 @@ impl Subscription {
     }
 }
 
+/// <p>A verified or pending destination phone number in the SMS sandbox.</p>
+/// <p>When you start using Amazon SNS to send SMS messages, your AWS account is in the
+/// <i>SMS sandbox</i>. The SMS sandbox provides a safe environment for
+/// you to try Amazon SNS features without risking your reputation as an SMS sender. While your
+/// account is in the SMS sandbox, you can use all of the features of Amazon SNS. However, you can send
+/// SMS messages only to verified destination phone numbers. For more information, including how to
+/// move out of the sandbox to send messages without restrictions,
+/// see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">SMS sandbox</a> in
+/// the <i>Amazon SNS Developer Guide</i>.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct SMSSandboxPhoneNumber {
+    /// <p>The destination phone number.</p>
+    pub phone_number: std::option::Option<std::string::String>,
+    /// <p>The destination phone number's verification status.</p>
+    pub status: std::option::Option<crate::model::SmsSandboxPhoneNumberVerificationStatus>,
+}
+impl std::fmt::Debug for SMSSandboxPhoneNumber {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("SMSSandboxPhoneNumber");
+        formatter.field("phone_number", &self.phone_number);
+        formatter.field("status", &self.status);
+        formatter.finish()
+    }
+}
+/// See [`SMSSandboxPhoneNumber`](crate::model::SMSSandboxPhoneNumber)
+pub mod sms_sandbox_phone_number {
+    /// A builder for [`SMSSandboxPhoneNumber`](crate::model::SMSSandboxPhoneNumber)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) phone_number: std::option::Option<std::string::String>,
+        pub(crate) status:
+            std::option::Option<crate::model::SmsSandboxPhoneNumberVerificationStatus>,
+    }
+    impl Builder {
+        /// <p>The destination phone number.</p>
+        pub fn phone_number(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.phone_number = Some(inp.into());
+            self
+        }
+        pub fn set_phone_number(mut self, inp: std::option::Option<std::string::String>) -> Self {
+            self.phone_number = inp;
+            self
+        }
+        /// <p>The destination phone number's verification status.</p>
+        pub fn status(
+            mut self,
+            inp: crate::model::SmsSandboxPhoneNumberVerificationStatus,
+        ) -> Self {
+            self.status = Some(inp);
+            self
+        }
+        pub fn set_status(
+            mut self,
+            inp: std::option::Option<crate::model::SmsSandboxPhoneNumberVerificationStatus>,
+        ) -> Self {
+            self.status = inp;
+            self
+        }
+        /// Consumes the builder and constructs a [`SMSSandboxPhoneNumber`](crate::model::SMSSandboxPhoneNumber)
+        pub fn build(self) -> crate::model::SMSSandboxPhoneNumber {
+            crate::model::SMSSandboxPhoneNumber {
+                phone_number: self.phone_number,
+                status: self.status,
+            }
+        }
+    }
+}
+impl SMSSandboxPhoneNumber {
+    /// Creates a new builder-style object to manufacture [`SMSSandboxPhoneNumber`](crate::model::SMSSandboxPhoneNumber)
+    pub fn builder() -> crate::model::sms_sandbox_phone_number::Builder {
+        crate::model::sms_sandbox_phone_number::Builder::default()
+    }
+}
+
+/// Enum listing out all supported destination phone number verification statuses. The following enum values are
+/// supported.
+/// 1. PENDING : The destination phone number is pending verification.
+/// 2. VERIFIED : The destination phone number is verified.
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum SmsSandboxPhoneNumberVerificationStatus {
+    Pending,
+    Verified,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for SmsSandboxPhoneNumberVerificationStatus {
+    fn from(s: &str) -> Self {
+        match s {
+            "Pending" => SmsSandboxPhoneNumberVerificationStatus::Pending,
+            "Verified" => SmsSandboxPhoneNumberVerificationStatus::Verified,
+            other => SmsSandboxPhoneNumberVerificationStatus::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for SmsSandboxPhoneNumberVerificationStatus {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> Result<Self, Self::Err> {
+        Ok(SmsSandboxPhoneNumberVerificationStatus::from(s))
+    }
+}
+impl SmsSandboxPhoneNumberVerificationStatus {
+    pub fn as_str(&self) -> &str {
+        match self {
+            SmsSandboxPhoneNumberVerificationStatus::Pending => "Pending",
+            SmsSandboxPhoneNumberVerificationStatus::Verified => "Verified",
+            SmsSandboxPhoneNumberVerificationStatus::Unknown(s) => s.as_ref(),
+        }
+    }
+}
+impl AsRef<str> for SmsSandboxPhoneNumberVerificationStatus {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+impl<'de> serde::Deserialize<'de> for SmsSandboxPhoneNumberVerificationStatus {
+    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+    where
+        D: serde::Deserializer<'de>,
+    {
+        let data = <&str>::deserialize(deserializer)?;
+        Ok(Self::from(data))
+    }
+}
+
 /// <p>Platform application object.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -383,6 +519,257 @@ impl PlatformApplication {
     }
 }
 
+/// <p>A list of phone numbers and their metadata.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct PhoneNumberInformation {
+    /// <p>The date and time when the phone number was created.</p>
+    pub created_at: std::option::Option<smithy_types::Instant>,
+    /// <p>The phone number.</p>
+    pub phone_number: std::option::Option<std::string::String>,
+    /// <p>The status of the phone number.</p>
+    pub status: std::option::Option<std::string::String>,
+    /// <p>The two-character code for the country or region, in ISO 3166-1 alpha-2 format.</p>
+    pub iso2_country_code: std::option::Option<std::string::String>,
+    /// <p>The list of supported routes.</p>
+    pub route_type: std::option::Option<crate::model::RouteType>,
+    /// <p>The capabilities of each phone number.</p>
+    pub number_capabilities: std::option::Option<std::vec::Vec<crate::model::NumberCapability>>,
+}
+impl std::fmt::Debug for PhoneNumberInformation {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("PhoneNumberInformation");
+        formatter.field("created_at", &self.created_at);
+        formatter.field("phone_number", &self.phone_number);
+        formatter.field("status", &self.status);
+        formatter.field("iso2_country_code", &self.iso2_country_code);
+        formatter.field("route_type", &self.route_type);
+        formatter.field("number_capabilities", &self.number_capabilities);
+        formatter.finish()
+    }
+}
+/// See [`PhoneNumberInformation`](crate::model::PhoneNumberInformation)
+pub mod phone_number_information {
+    /// A builder for [`PhoneNumberInformation`](crate::model::PhoneNumberInformation)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) created_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) phone_number: std::option::Option<std::string::String>,
+        pub(crate) status: std::option::Option<std::string::String>,
+        pub(crate) iso2_country_code: std::option::Option<std::string::String>,
+        pub(crate) route_type: std::option::Option<crate::model::RouteType>,
+        pub(crate) number_capabilities:
+            std::option::Option<std::vec::Vec<crate::model::NumberCapability>>,
+    }
+    impl Builder {
+        /// <p>The date and time when the phone number was created.</p>
+        pub fn created_at(mut self, inp: smithy_types::Instant) -> Self {
+            self.created_at = Some(inp);
+            self
+        }
+        pub fn set_created_at(mut self, inp: std::option::Option<smithy_types::Instant>) -> Self {
+            self.created_at = inp;
+            self
+        }
+        /// <p>The phone number.</p>
+        pub fn phone_number(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.phone_number = Some(inp.into());
+            self
+        }
+        pub fn set_phone_number(mut self, inp: std::option::Option<std::string::String>) -> Self {
+            self.phone_number = inp;
+            self
+        }
+        /// <p>The status of the phone number.</p>
+        pub fn status(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.status = Some(inp.into());
+            self
+        }
+        pub fn set_status(mut self, inp: std::option::Option<std::string::String>) -> Self {
+            self.status = inp;
+            self
+        }
+        /// <p>The two-character code for the country or region, in ISO 3166-1 alpha-2 format.</p>
+        pub fn iso2_country_code(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.iso2_country_code = Some(inp.into());
+            self
+        }
+        pub fn set_iso2_country_code(
+            mut self,
+            inp: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.iso2_country_code = inp;
+            self
+        }
+        /// <p>The list of supported routes.</p>
+        pub fn route_type(mut self, inp: crate::model::RouteType) -> Self {
+            self.route_type = Some(inp);
+            self
+        }
+        pub fn set_route_type(mut self, inp: std::option::Option<crate::model::RouteType>) -> Self {
+            self.route_type = inp;
+            self
+        }
+        pub fn number_capabilities(
+            mut self,
+            inp: impl Into<crate::model::NumberCapability>,
+        ) -> Self {
+            let mut v = self.number_capabilities.unwrap_or_default();
+            v.push(inp.into());
+            self.number_capabilities = Some(v);
+            self
+        }
+        pub fn set_number_capabilities(
+            mut self,
+            inp: std::option::Option<std::vec::Vec<crate::model::NumberCapability>>,
+        ) -> Self {
+            self.number_capabilities = inp;
+            self
+        }
+        /// Consumes the builder and constructs a [`PhoneNumberInformation`](crate::model::PhoneNumberInformation)
+        pub fn build(self) -> crate::model::PhoneNumberInformation {
+            crate::model::PhoneNumberInformation {
+                created_at: self.created_at,
+                phone_number: self.phone_number,
+                status: self.status,
+                iso2_country_code: self.iso2_country_code,
+                route_type: self.route_type,
+                number_capabilities: self.number_capabilities,
+            }
+        }
+    }
+}
+impl PhoneNumberInformation {
+    /// Creates a new builder-style object to manufacture [`PhoneNumberInformation`](crate::model::PhoneNumberInformation)
+    pub fn builder() -> crate::model::phone_number_information::Builder {
+        crate::model::phone_number_information::Builder::default()
+    }
+}
+
+/// Enum listing out all supported number capabilities.
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum NumberCapability {
+    Mms,
+    Sms,
+    Voice,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for NumberCapability {
+    fn from(s: &str) -> Self {
+        match s {
+            "MMS" => NumberCapability::Mms,
+            "SMS" => NumberCapability::Sms,
+            "VOICE" => NumberCapability::Voice,
+            other => NumberCapability::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for NumberCapability {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> Result<Self, Self::Err> {
+        Ok(NumberCapability::from(s))
+    }
+}
+impl NumberCapability {
+    pub fn as_str(&self) -> &str {
+        match self {
+            NumberCapability::Mms => "MMS",
+            NumberCapability::Sms => "SMS",
+            NumberCapability::Voice => "VOICE",
+            NumberCapability::Unknown(s) => s.as_ref(),
+        }
+    }
+}
+impl AsRef<str> for NumberCapability {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+impl<'de> serde::Deserialize<'de> for NumberCapability {
+    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+    where
+        D: serde::Deserializer<'de>,
+    {
+        let data = <&str>::deserialize(deserializer)?;
+        Ok(Self::from(data))
+    }
+}
+
+/// Enum listing out all supported route types. The following enum values are supported.
+/// 1. Transactional : Non-marketing traffic
+/// 2. Promotional : Marketing
+/// 3. Premium : Premium routes for OTP delivery to the carriers
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum RouteType {
+    Premium,
+    Promotional,
+    Transactional,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for RouteType {
+    fn from(s: &str) -> Self {
+        match s {
+            "Premium" => RouteType::Premium,
+            "Promotional" => RouteType::Promotional,
+            "Transactional" => RouteType::Transactional,
+            other => RouteType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for RouteType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> Result<Self, Self::Err> {
+        Ok(RouteType::from(s))
+    }
+}
+impl RouteType {
+    pub fn as_str(&self) -> &str {
+        match self {
+            RouteType::Premium => "Premium",
+            RouteType::Promotional => "Promotional",
+            RouteType::Transactional => "Transactional",
+            RouteType::Unknown(s) => s.as_ref(),
+        }
+    }
+}
+impl AsRef<str> for RouteType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+impl<'de> serde::Deserialize<'de> for RouteType {
+    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+    where
+        D: serde::Deserializer<'de>,
+    {
+        let data = <&str>::deserialize(deserializer)?;
+        Ok(Self::from(data))
+    }
+}
+
 /// <p>Endpoint for mobile app and device.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -454,5 +841,95 @@ impl Endpoint {
     /// Creates a new builder-style object to manufacture [`Endpoint`](crate::model::Endpoint)
     pub fn builder() -> crate::model::endpoint::Builder {
         crate::model::endpoint::Builder::default()
+    }
+}
+
+/// Supported language code for sending OTP message
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum LanguageCodeString {
+    DeDe,
+    EnGb,
+    EnUs,
+    Es419,
+    EsEs,
+    FrCa,
+    FrFr,
+    ItIt,
+    JpJp,
+    KrKr,
+    PtBr,
+    ZhCn,
+    ZhTw,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for LanguageCodeString {
+    fn from(s: &str) -> Self {
+        match s {
+            "de-DE" => LanguageCodeString::DeDe,
+            "en-GB" => LanguageCodeString::EnGb,
+            "en-US" => LanguageCodeString::EnUs,
+            "es-419" => LanguageCodeString::Es419,
+            "es-ES" => LanguageCodeString::EsEs,
+            "fr-CA" => LanguageCodeString::FrCa,
+            "fr-FR" => LanguageCodeString::FrFr,
+            "it-IT" => LanguageCodeString::ItIt,
+            "ja-JP" => LanguageCodeString::JpJp,
+            "kr-KR" => LanguageCodeString::KrKr,
+            "pt-BR" => LanguageCodeString::PtBr,
+            "zh-CN" => LanguageCodeString::ZhCn,
+            "zh-TW" => LanguageCodeString::ZhTw,
+            other => LanguageCodeString::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for LanguageCodeString {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> Result<Self, Self::Err> {
+        Ok(LanguageCodeString::from(s))
+    }
+}
+impl LanguageCodeString {
+    pub fn as_str(&self) -> &str {
+        match self {
+            LanguageCodeString::DeDe => "de-DE",
+            LanguageCodeString::EnGb => "en-GB",
+            LanguageCodeString::EnUs => "en-US",
+            LanguageCodeString::Es419 => "es-419",
+            LanguageCodeString::EsEs => "es-ES",
+            LanguageCodeString::FrCa => "fr-CA",
+            LanguageCodeString::FrFr => "fr-FR",
+            LanguageCodeString::ItIt => "it-IT",
+            LanguageCodeString::JpJp => "ja-JP",
+            LanguageCodeString::KrKr => "kr-KR",
+            LanguageCodeString::PtBr => "pt-BR",
+            LanguageCodeString::ZhCn => "zh-CN",
+            LanguageCodeString::ZhTw => "zh-TW",
+            LanguageCodeString::Unknown(s) => s.as_ref(),
+        }
+    }
+}
+impl AsRef<str> for LanguageCodeString {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+impl<'de> serde::Deserialize<'de> for LanguageCodeString {
+    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+    where
+        D: serde::Deserializer<'de>,
+    {
+        let data = <&str>::deserialize(deserializer)?;
+        Ok(Self::from(data))
     }
 }

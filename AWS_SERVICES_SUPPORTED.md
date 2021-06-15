@@ -24,6 +24,12 @@ The alpha SDK for Rust currently supports the checked services below. If you wan
 - [x] [Amazon Sts](https://github.com/awslabs/aws-sdk-rust/issues/17)
 - [x] Amazon Medialive
 - [x] Amazon Mediapackage
+- [x] [Amazon Cloud Formation](https://github.com/awslabs/aws-sdk-rust/issues/25)
+- [x] Amazon Sagemaker
+- [x] Amazon Sagemaker-A2I-Runtime
+- [x] Amazon Runtime.Sagemaker
+- [x] [Amazon Ec2](https://github.com/awslabs/aws-sdk-rust/issues/18)
+- [x] [Amazon SES v2](https://github.com/awslabs/aws-sdk-rust/issues/27)
 
 ------
 - [ ] Amazon Access Analyzer
@@ -51,7 +57,6 @@ The alpha SDK for Rust currently supports the checked services below. If you wan
 - [ ] Amazon Chime
 - [ ] Amazon Cloud9
 - [ ] Amazon Cloud Directory
-- [ ] [Amazon Cloud Formation](https://github.com/awslabs/aws-sdk-rust/issues/25)
 - [ ] Amazon Cloud Front
 - [ ] Amazon Cloudhsm
 - [ ] Amazon Cloudhsmv2
@@ -94,7 +99,6 @@ The alpha SDK for Rust currently supports the checked services below. If you wan
 - [ ] Amazon Docdb
 - [ ] Amazon DS
 - [ ] Amazon Ebs
-- [ ] [Amazon Ec2](https://github.com/awslabs/aws-sdk-rust/issues/18)
 - [ ] Amazon Ec2-Instance-Connect
 - [ ] [Amazon ECR](https://github.com/awslabs/aws-sdk-rust/issues/34)
 - [ ] Amazon Eks
@@ -198,11 +202,8 @@ The alpha SDK for Rust currently supports the checked services below. If you wan
 - [ ] Amazon Route53Domains
 - [ ] Amazon Route53Resolver
 - [ ] Amazon Runtime.Lex
-- [ ] Amazon Runtime.Sagemaker
 - [ ] Amazon S3Control
 - [ ] Amazon S3Outposts
-- [ ] Amazon Sagemaker
-- [ ] Amazon Sagemaker-A2I-Runtime
 - [ ] Amazon Savingsplans
 - [ ] Amazon Schemas
 - [ ] Amazon Securityhub
@@ -211,7 +212,6 @@ The alpha SDK for Rust currently supports the checked services below. If you wan
 - [ ] Amazon Servicecatalog-Appregistry
 - [ ] Amazon Service Discovery
 - [ ] Amazon Service-Quotas
-- [ ] [Amazon SES v2](https://github.com/awslabs/aws-sdk-rust/issues/27)
 - [ ] Amazon Shield
 - [ ] Amazon Signer
 - [ ] Amazon SMS

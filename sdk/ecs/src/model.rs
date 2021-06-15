@@ -718,6 +718,7 @@ impl Tag {
 pub enum StabilityStatus {
     Stabilizing,
     SteadyState,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for StabilityStatus {
@@ -840,6 +841,7 @@ impl Scale {
 )]
 pub enum ScaleUnit {
     Percent,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for ScaleUnit {
@@ -1339,6 +1341,7 @@ impl AwsVpcConfiguration {
 pub enum AssignPublicIp {
     Disabled,
     Enabled,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for AssignPublicIp {
@@ -1534,6 +1537,7 @@ pub enum LaunchType {
     Ec2,
     External,
     Fargate,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for LaunchType {
@@ -2324,6 +2328,7 @@ impl Service {
 pub enum PropagateTags {
     Service,
     TaskDefinition,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for PropagateTags {
@@ -2478,6 +2483,7 @@ pub enum DeploymentControllerType {
     CodeDeploy,
     Ecs,
     External,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for DeploymentControllerType {
@@ -2535,6 +2541,7 @@ impl<'de> serde::Deserialize<'de> for DeploymentControllerType {
 pub enum SchedulingStrategy {
     Daemon,
     Replica,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for SchedulingStrategy {
@@ -2684,6 +2691,7 @@ pub enum PlacementStrategyType {
     Binpack,
     Random,
     Spread,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for PlacementStrategyType {
@@ -2827,6 +2835,7 @@ impl PlacementConstraint {
 pub enum PlacementConstraintType {
     DistinctInstance,
     MemberOf,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for PlacementConstraintType {
@@ -3361,6 +3370,7 @@ pub enum DeploymentRolloutState {
     Completed,
     Failed,
     InProgress,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for DeploymentRolloutState {
@@ -3760,7 +3770,8 @@ pub struct ContainerInstance {
     #[serde(rename = "containerInstanceArn")]
     #[serde(default)]
     pub container_instance_arn: std::option::Option<std::string::String>,
-    /// <p>The EC2 instance ID of the container instance.</p>
+    /// <p>The ID of the container instance. For Amazon EC2 instances, this value is the Amazon EC2
+    /// instance ID. For external instances, this value is the AWS Systems Manager managed instance ID.</p>
     #[serde(rename = "ec2InstanceId")]
     #[serde(default)]
     pub ec2_instance_id: std::option::Option<std::string::String>,
@@ -3964,7 +3975,8 @@ pub mod container_instance {
             self.container_instance_arn = inp;
             self
         }
-        /// <p>The EC2 instance ID of the container instance.</p>
+        /// <p>The ID of the container instance. For Amazon EC2 instances, this value is the Amazon EC2
+        /// instance ID. For external instances, this value is the AWS Systems Manager managed instance ID.</p>
         pub fn ec2_instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.ec2_instance_id = Some(inp.into());
             self
@@ -4506,6 +4518,7 @@ impl Attribute {
 )]
 pub enum TargetType {
     ContainerInstance,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for TargetType {
@@ -4563,6 +4576,7 @@ pub enum AgentUpdateStatus {
     Staging,
     Updated,
     Updating,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for AgentUpdateStatus {
@@ -4857,6 +4871,7 @@ pub enum ContainerInstanceStatus {
     Draining,
     Registering,
     RegistrationFailed,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for ContainerInstanceStatus {
@@ -5476,6 +5491,7 @@ impl ClusterSetting {
 )]
 pub enum ClusterSettingName {
     ContainerInsights,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for ClusterSettingName {
@@ -5868,6 +5884,7 @@ pub enum ExecuteCommandLogging {
     Default,
     None,
     Override,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for ExecuteCommandLogging {
@@ -6173,6 +6190,7 @@ pub enum CapacityProviderUpdateStatus {
     UpdateComplete,
     UpdateFailed,
     UpdateInProgress,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for CapacityProviderUpdateStatus {
@@ -6358,6 +6376,7 @@ impl AutoScalingGroupProvider {
 pub enum ManagedTerminationProtection {
     Disabled,
     Enabled,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for ManagedTerminationProtection {
@@ -6551,6 +6570,7 @@ impl ManagedScaling {
 pub enum ManagedScalingStatus {
     Disabled,
     Enabled,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for ManagedScalingStatus {
@@ -6606,6 +6626,7 @@ impl<'de> serde::Deserialize<'de> for ManagedScalingStatus {
 pub enum CapacityProviderStatus {
     Active,
     Inactive,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for CapacityProviderStatus {
@@ -6863,6 +6884,7 @@ impl ManagedAgentStateChange {
 )]
 pub enum ManagedAgentName {
     ExecuteCommandAgent,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for ManagedAgentName {
@@ -7236,6 +7258,7 @@ impl NetworkBinding {
 pub enum TransportProtocol {
     Tcp,
     Udp,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for TransportProtocol {
@@ -8244,6 +8267,7 @@ pub enum TaskStopCode {
     EssentialContainerExited,
     TaskFailedToStart,
     UserInitiated,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for TaskStopCode {
@@ -8839,6 +8863,7 @@ impl ResourceRequirement {
 pub enum ResourceType {
     Gpu,
     InferenceAccelerator,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for ResourceType {
@@ -8977,6 +9002,7 @@ impl EnvironmentFile {
 )]
 pub enum EnvironmentFileType {
     S3,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for EnvironmentFileType {
@@ -9086,7 +9112,7 @@ impl InferenceAccelerator {
     }
 }
 
-/// **NOTE:** `HealthStatus::Unknown` has been renamed to `::UnknownValue`. `HealthStatus::Unknown` refers to additional values that may have been added since this enum was generated.
+/// **NOTE:** `HealthStatus::Unknown` has been renamed to `::UnknownValue`.
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -9100,8 +9126,9 @@ impl InferenceAccelerator {
 pub enum HealthStatus {
     Healthy,
     Unhealthy,
-    /// **NOTE:** `::Unknown` has been renamed to `::UnknownValue`. `::Unknown` refers to additional values that may have been added since this enum was generated.
+    /// **NOTE:** `::Unknown` has been renamed to `::UnknownValue`.
     UnknownValue,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for HealthStatus {
@@ -9702,6 +9729,7 @@ impl NetworkInterface {
 pub enum Connectivity {
     Connected,
     Disconnected,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for Connectivity {
@@ -10701,6 +10729,7 @@ impl ProxyConfiguration {
 )]
 pub enum ProxyConfigurationType {
     Appmesh,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for ProxyConfigurationType {
@@ -10755,6 +10784,7 @@ pub enum IpcMode {
     Host,
     None,
     Task,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for IpcMode {
@@ -10812,6 +10842,7 @@ impl<'de> serde::Deserialize<'de> for IpcMode {
 pub enum PidMode {
     Host,
     Task,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for PidMode {
@@ -10868,6 +10899,7 @@ pub enum Compatibility {
     Ec2,
     External,
     Fargate,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for Compatibility {
@@ -11003,6 +11035,7 @@ impl TaskDefinitionPlacementConstraint {
 )]
 pub enum TaskDefinitionPlacementConstraintType {
     MemberOf,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for TaskDefinitionPlacementConstraintType {
@@ -11056,6 +11089,7 @@ impl<'de> serde::Deserialize<'de> for TaskDefinitionPlacementConstraintType {
 pub enum TaskDefinitionStatus {
     Active,
     Inactive,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for TaskDefinitionStatus {
@@ -11710,6 +11744,7 @@ impl EFSAuthorizationConfig {
 pub enum EfsAuthorizationConfigIam {
     Disabled,
     Enabled,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for EfsAuthorizationConfigIam {
@@ -11765,6 +11800,7 @@ impl<'de> serde::Deserialize<'de> for EfsAuthorizationConfigIam {
 pub enum EfsTransitEncryption {
     Disabled,
     Enabled,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for EfsTransitEncryption {
@@ -11998,6 +12034,7 @@ impl DockerVolumeConfiguration {
 pub enum Scope {
     Shared,
     Task,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for Scope {
@@ -12122,6 +12159,7 @@ pub enum NetworkMode {
     Bridge,
     Host,
     None,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for NetworkMode {
@@ -13779,6 +13817,7 @@ impl FirelensConfiguration {
 pub enum FirelensConfigurationType {
     Fluentbit,
     Fluentd,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for FirelensConfigurationType {
@@ -14404,6 +14443,7 @@ pub enum LogDriver {
     JsonFile,
     Splunk,
     Syslog,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for LogDriver {
@@ -14572,6 +14612,7 @@ pub enum UlimitName {
     Rttime,
     Sigpending,
     Stack,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for UlimitName {
@@ -14864,6 +14905,7 @@ pub enum ContainerCondition {
     Healthy,
     Start,
     Success,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for ContainerCondition {
@@ -15345,6 +15387,7 @@ pub enum DeviceCgroupPermission {
     Mknod,
     Read,
     Write,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for DeviceCgroupPermission {
@@ -15981,6 +16024,7 @@ impl PlatformDevice {
 )]
 pub enum PlatformDeviceType {
     Gpu,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for PlatformDeviceType {
@@ -16120,6 +16164,7 @@ pub enum SettingName {
     ContainerInstanceLongArnFormat,
     ServiceLongArnFormat,
     TaskLongArnFormat,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for SettingName {
@@ -16182,6 +16227,7 @@ pub enum DesiredStatus {
     Pending,
     Running,
     Stopped,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for DesiredStatus {
@@ -16239,6 +16285,7 @@ impl<'de> serde::Deserialize<'de> for DesiredStatus {
 pub enum SortOrder {
     Asc,
     Desc,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for SortOrder {
@@ -16295,6 +16342,7 @@ pub enum TaskDefinitionFamilyStatus {
     Active,
     All,
     Inactive,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for TaskDefinitionFamilyStatus {
@@ -16436,6 +16484,7 @@ impl Session {
 )]
 pub enum TaskSetField {
     Tags,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for TaskSetField {
@@ -16488,6 +16537,7 @@ impl<'de> serde::Deserialize<'de> for TaskSetField {
 )]
 pub enum TaskField {
     Tags,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for TaskField {
@@ -16540,6 +16590,7 @@ impl<'de> serde::Deserialize<'de> for TaskField {
 )]
 pub enum TaskDefinitionField {
     Tags,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for TaskDefinitionField {
@@ -16592,6 +16643,7 @@ impl<'de> serde::Deserialize<'de> for TaskDefinitionField {
 )]
 pub enum ServiceField {
     Tags,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for ServiceField {
@@ -16644,6 +16696,7 @@ impl<'de> serde::Deserialize<'de> for ServiceField {
 )]
 pub enum ContainerInstanceField {
     Tags,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for ContainerInstanceField {
@@ -16700,6 +16753,7 @@ pub enum ClusterField {
     Settings,
     Statistics,
     Tags,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for ClusterField {
@@ -16760,6 +16814,7 @@ impl<'de> serde::Deserialize<'de> for ClusterField {
 )]
 pub enum CapacityProviderField {
     Tags,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for CapacityProviderField {

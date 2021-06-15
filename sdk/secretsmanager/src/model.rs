@@ -3,20 +3,20 @@
 #[non_exhaustive]
 #[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
 pub struct ValidationErrorsEntry {
-    /// <p>Displays error messages if validation encounters problems during validation of the resource policy.</p>
-    #[serde(rename = "ErrorMessage")]
-    #[serde(default)]
-    pub error_message: std::option::Option<std::string::String>,
     /// <p>Checks the name of the policy.</p>
     #[serde(rename = "CheckName")]
     #[serde(default)]
     pub check_name: std::option::Option<std::string::String>,
+    /// <p>Displays error messages if validation encounters problems during validation of the resource policy.</p>
+    #[serde(rename = "ErrorMessage")]
+    #[serde(default)]
+    pub error_message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ValidationErrorsEntry {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ValidationErrorsEntry");
-        formatter.field("error_message", &self.error_message);
         formatter.field("check_name", &self.check_name);
+        formatter.field("error_message", &self.error_message);
         formatter.finish()
     }
 }
@@ -26,19 +26,10 @@ pub mod validation_errors_entry {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) error_message: std::option::Option<std::string::String>,
         pub(crate) check_name: std::option::Option<std::string::String>,
+        pub(crate) error_message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Displays error messages if validation encounters problems during validation of the resource policy.</p>
-        pub fn error_message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.error_message = Some(inp.into());
-            self
-        }
-        pub fn set_error_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.error_message = inp;
-            self
-        }
         /// <p>Checks the name of the policy.</p>
         pub fn check_name(mut self, inp: impl Into<std::string::String>) -> Self {
             self.check_name = Some(inp.into());
@@ -48,11 +39,20 @@ pub mod validation_errors_entry {
             self.check_name = inp;
             self
         }
+        /// <p>Displays error messages if validation encounters problems during validation of the resource policy.</p>
+        pub fn error_message(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.error_message = Some(inp.into());
+            self
+        }
+        pub fn set_error_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
+            self.error_message = inp;
+            self
+        }
         /// Consumes the builder and constructs a [`ValidationErrorsEntry`](crate::model::ValidationErrorsEntry)
         pub fn build(self) -> crate::model::ValidationErrorsEntry {
             crate::model::ValidationErrorsEntry {
-                error_message: self.error_message,
                 check_name: self.check_name,
+                error_message: self.error_message,
             }
         }
     }
@@ -68,20 +68,20 @@ impl ValidationErrorsEntry {
 #[non_exhaustive]
 #[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
 pub struct Tag {
-    /// <p>The string value associated with the key of the tag.</p>
-    #[serde(rename = "Value")]
-    #[serde(default)]
-    pub value: std::option::Option<std::string::String>,
     /// <p>The key identifier, or name, of the tag.</p>
     #[serde(rename = "Key")]
     #[serde(default)]
     pub key: std::option::Option<std::string::String>,
+    /// <p>The string value associated with the key of the tag.</p>
+    #[serde(rename = "Value")]
+    #[serde(default)]
+    pub value: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for Tag {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Tag");
-        formatter.field("value", &self.value);
         formatter.field("key", &self.key);
+        formatter.field("value", &self.value);
         formatter.finish()
     }
 }
@@ -91,19 +91,10 @@ pub mod tag {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) value: std::option::Option<std::string::String>,
         pub(crate) key: std::option::Option<std::string::String>,
+        pub(crate) value: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The string value associated with the key of the tag.</p>
-        pub fn value(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.value = Some(inp.into());
-            self
-        }
-        pub fn set_value(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.value = inp;
-            self
-        }
         /// <p>The key identifier, or name, of the tag.</p>
         pub fn key(mut self, inp: impl Into<std::string::String>) -> Self {
             self.key = Some(inp.into());
@@ -113,11 +104,20 @@ pub mod tag {
             self.key = inp;
             self
         }
+        /// <p>The string value associated with the key of the tag.</p>
+        pub fn value(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.value = Some(inp.into());
+            self
+        }
+        pub fn set_value(mut self, inp: std::option::Option<std::string::String>) -> Self {
+            self.value = inp;
+            self
+        }
         /// Consumes the builder and constructs a [`Tag`](crate::model::Tag)
         pub fn build(self) -> crate::model::Tag {
             crate::model::Tag {
-                value: self.value,
                 key: self.key,
+                value: self.value,
             }
         }
     }
@@ -188,26 +188,264 @@ impl RotationRulesType {
     }
 }
 
+/// <p>A replication object consisting of a <code>RegionReplicationStatus</code> object and includes a Region, KMSKeyId, status, and status message.</p>
+#[non_exhaustive]
+#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+pub struct ReplicationStatusType {
+    /// <p>The Region where replication occurs.</p>
+    #[serde(rename = "Region")]
+    #[serde(default)]
+    pub region: std::option::Option<std::string::String>,
+    /// <p>Can be an <code>ARN</code>, <code>Key ID</code>, or <code>Alias</code>. </p>
+    #[serde(rename = "KmsKeyId")]
+    #[serde(default)]
+    pub kms_key_id: std::option::Option<std::string::String>,
+    /// <p>The status can be <code>InProgress</code>, <code>Failed</code>, or <code>InSync</code>.</p>
+    #[serde(rename = "Status")]
+    #[serde(default)]
+    pub status: std::option::Option<crate::model::StatusType>,
+    /// <p>Status message such as "<i>Secret with this name already exists in this
+    /// region</i>".</p>
+    #[serde(rename = "StatusMessage")]
+    #[serde(default)]
+    pub status_message: std::option::Option<std::string::String>,
+    /// <p>The date that you last accessed the secret in the Region. </p>
+    #[serde(rename = "LastAccessedDate")]
+    #[serde(
+        deserialize_with = "crate::serde_util::stdoptionoptionsmithytypesinstant_epoch_seconds_deser"
+    )]
+    #[serde(default)]
+    pub last_accessed_date: std::option::Option<smithy_types::Instant>,
+}
+impl std::fmt::Debug for ReplicationStatusType {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ReplicationStatusType");
+        formatter.field("region", &self.region);
+        formatter.field("kms_key_id", &self.kms_key_id);
+        formatter.field("status", &self.status);
+        formatter.field("status_message", &self.status_message);
+        formatter.field("last_accessed_date", &self.last_accessed_date);
+        formatter.finish()
+    }
+}
+/// See [`ReplicationStatusType`](crate::model::ReplicationStatusType)
+pub mod replication_status_type {
+    /// A builder for [`ReplicationStatusType`](crate::model::ReplicationStatusType)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) region: std::option::Option<std::string::String>,
+        pub(crate) kms_key_id: std::option::Option<std::string::String>,
+        pub(crate) status: std::option::Option<crate::model::StatusType>,
+        pub(crate) status_message: std::option::Option<std::string::String>,
+        pub(crate) last_accessed_date: std::option::Option<smithy_types::Instant>,
+    }
+    impl Builder {
+        /// <p>The Region where replication occurs.</p>
+        pub fn region(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.region = Some(inp.into());
+            self
+        }
+        pub fn set_region(mut self, inp: std::option::Option<std::string::String>) -> Self {
+            self.region = inp;
+            self
+        }
+        /// <p>Can be an <code>ARN</code>, <code>Key ID</code>, or <code>Alias</code>. </p>
+        pub fn kms_key_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.kms_key_id = Some(inp.into());
+            self
+        }
+        pub fn set_kms_key_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
+            self.kms_key_id = inp;
+            self
+        }
+        /// <p>The status can be <code>InProgress</code>, <code>Failed</code>, or <code>InSync</code>.</p>
+        pub fn status(mut self, inp: crate::model::StatusType) -> Self {
+            self.status = Some(inp);
+            self
+        }
+        pub fn set_status(mut self, inp: std::option::Option<crate::model::StatusType>) -> Self {
+            self.status = inp;
+            self
+        }
+        /// <p>Status message such as "<i>Secret with this name already exists in this
+        /// region</i>".</p>
+        pub fn status_message(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.status_message = Some(inp.into());
+            self
+        }
+        pub fn set_status_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
+            self.status_message = inp;
+            self
+        }
+        /// <p>The date that you last accessed the secret in the Region. </p>
+        pub fn last_accessed_date(mut self, inp: smithy_types::Instant) -> Self {
+            self.last_accessed_date = Some(inp);
+            self
+        }
+        pub fn set_last_accessed_date(
+            mut self,
+            inp: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.last_accessed_date = inp;
+            self
+        }
+        /// Consumes the builder and constructs a [`ReplicationStatusType`](crate::model::ReplicationStatusType)
+        pub fn build(self) -> crate::model::ReplicationStatusType {
+            crate::model::ReplicationStatusType {
+                region: self.region,
+                kms_key_id: self.kms_key_id,
+                status: self.status,
+                status_message: self.status_message,
+                last_accessed_date: self.last_accessed_date,
+            }
+        }
+    }
+}
+impl ReplicationStatusType {
+    /// Creates a new builder-style object to manufacture [`ReplicationStatusType`](crate::model::ReplicationStatusType)
+    pub fn builder() -> crate::model::replication_status_type::Builder {
+        crate::model::replication_status_type::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum StatusType {
+    Failed,
+    InProgress,
+    InSync,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for StatusType {
+    fn from(s: &str) -> Self {
+        match s {
+            "Failed" => StatusType::Failed,
+            "InProgress" => StatusType::InProgress,
+            "InSync" => StatusType::InSync,
+            other => StatusType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for StatusType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> Result<Self, Self::Err> {
+        Ok(StatusType::from(s))
+    }
+}
+impl StatusType {
+    pub fn as_str(&self) -> &str {
+        match self {
+            StatusType::Failed => "Failed",
+            StatusType::InProgress => "InProgress",
+            StatusType::InSync => "InSync",
+            StatusType::Unknown(s) => s.as_ref(),
+        }
+    }
+}
+impl AsRef<str> for StatusType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+impl<'de> serde::Deserialize<'de> for StatusType {
+    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+    where
+        D: serde::Deserializer<'de>,
+    {
+        let data = <&str>::deserialize(deserializer)?;
+        Ok(Self::from(data))
+    }
+}
+
+/// <p>(Optional) Custom type consisting of a <code>Region</code> (required) and the <code>KmsKeyId</code> which can be an <code>ARN</code>, <code>Key ID</code>, or <code>Alias</code>.</p>
+#[non_exhaustive]
+#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+pub struct ReplicaRegionType {
+    /// <p>Describes a single instance of Region objects.</p>
+    #[serde(rename = "Region")]
+    #[serde(default)]
+    pub region: std::option::Option<std::string::String>,
+    /// <p>Can be an <code>ARN</code>, <code>Key ID</code>, or <code>Alias</code>. </p>
+    #[serde(rename = "KmsKeyId")]
+    #[serde(default)]
+    pub kms_key_id: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for ReplicaRegionType {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ReplicaRegionType");
+        formatter.field("region", &self.region);
+        formatter.field("kms_key_id", &self.kms_key_id);
+        formatter.finish()
+    }
+}
+/// See [`ReplicaRegionType`](crate::model::ReplicaRegionType)
+pub mod replica_region_type {
+    /// A builder for [`ReplicaRegionType`](crate::model::ReplicaRegionType)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) region: std::option::Option<std::string::String>,
+        pub(crate) kms_key_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Describes a single instance of Region objects.</p>
+        pub fn region(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.region = Some(inp.into());
+            self
+        }
+        pub fn set_region(mut self, inp: std::option::Option<std::string::String>) -> Self {
+            self.region = inp;
+            self
+        }
+        /// <p>Can be an <code>ARN</code>, <code>Key ID</code>, or <code>Alias</code>. </p>
+        pub fn kms_key_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.kms_key_id = Some(inp.into());
+            self
+        }
+        pub fn set_kms_key_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
+            self.kms_key_id = inp;
+            self
+        }
+        /// Consumes the builder and constructs a [`ReplicaRegionType`](crate::model::ReplicaRegionType)
+        pub fn build(self) -> crate::model::ReplicaRegionType {
+            crate::model::ReplicaRegionType {
+                region: self.region,
+                kms_key_id: self.kms_key_id,
+            }
+        }
+    }
+}
+impl ReplicaRegionType {
+    /// Creates a new builder-style object to manufacture [`ReplicaRegionType`](crate::model::ReplicaRegionType)
+    pub fn builder() -> crate::model::replica_region_type::Builder {
+        crate::model::replica_region_type::Builder::default()
+    }
+}
+
 /// <p>A structure that contains information about one version of a secret.</p>
 #[non_exhaustive]
 #[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
 pub struct SecretVersionsListEntry {
+    /// <p>The unique version identifier of this version of the secret.</p>
+    #[serde(rename = "VersionId")]
+    #[serde(default)]
+    pub version_id: std::option::Option<std::string::String>,
     /// <p>An array of staging labels that are currently associated with this version of the
     /// secret.</p>
     #[serde(rename = "VersionStages")]
     #[serde(default)]
     pub version_stages: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The date and time this version of the secret was created.</p>
-    #[serde(rename = "CreatedDate")]
-    #[serde(
-        deserialize_with = "crate::serde_util::stdoptionoptionsmithytypesinstant_epoch_seconds_deser"
-    )]
-    #[serde(default)]
-    pub created_date: std::option::Option<smithy_types::Instant>,
-    /// <p>The unique version identifier of this version of the secret.</p>
-    #[serde(rename = "VersionId")]
-    #[serde(default)]
-    pub version_id: std::option::Option<std::string::String>,
     /// <p>The date that this version of the secret was last accessed. Note that the resolution of
     /// this field is at the date level and does not include the time.</p>
     #[serde(rename = "LastAccessedDate")]
@@ -216,14 +454,21 @@ pub struct SecretVersionsListEntry {
     )]
     #[serde(default)]
     pub last_accessed_date: std::option::Option<smithy_types::Instant>,
+    /// <p>The date and time this version of the secret was created.</p>
+    #[serde(rename = "CreatedDate")]
+    #[serde(
+        deserialize_with = "crate::serde_util::stdoptionoptionsmithytypesinstant_epoch_seconds_deser"
+    )]
+    #[serde(default)]
+    pub created_date: std::option::Option<smithy_types::Instant>,
 }
 impl std::fmt::Debug for SecretVersionsListEntry {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SecretVersionsListEntry");
-        formatter.field("version_stages", &self.version_stages);
-        formatter.field("created_date", &self.created_date);
         formatter.field("version_id", &self.version_id);
+        formatter.field("version_stages", &self.version_stages);
         formatter.field("last_accessed_date", &self.last_accessed_date);
+        formatter.field("created_date", &self.created_date);
         formatter.finish()
     }
 }
@@ -233,12 +478,21 @@ pub mod secret_versions_list_entry {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) version_stages: std::option::Option<std::vec::Vec<std::string::String>>,
-        pub(crate) created_date: std::option::Option<smithy_types::Instant>,
         pub(crate) version_id: std::option::Option<std::string::String>,
+        pub(crate) version_stages: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) last_accessed_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_date: std::option::Option<smithy_types::Instant>,
     }
     impl Builder {
+        /// <p>The unique version identifier of this version of the secret.</p>
+        pub fn version_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.version_id = Some(inp.into());
+            self
+        }
+        pub fn set_version_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
+            self.version_id = inp;
+            self
+        }
         pub fn version_stages(mut self, inp: impl Into<std::string::String>) -> Self {
             let mut v = self.version_stages.unwrap_or_default();
             v.push(inp.into());
@@ -250,24 +504,6 @@ pub mod secret_versions_list_entry {
             inp: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
             self.version_stages = inp;
-            self
-        }
-        /// <p>The date and time this version of the secret was created.</p>
-        pub fn created_date(mut self, inp: smithy_types::Instant) -> Self {
-            self.created_date = Some(inp);
-            self
-        }
-        pub fn set_created_date(mut self, inp: std::option::Option<smithy_types::Instant>) -> Self {
-            self.created_date = inp;
-            self
-        }
-        /// <p>The unique version identifier of this version of the secret.</p>
-        pub fn version_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.version_id = Some(inp.into());
-            self
-        }
-        pub fn set_version_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.version_id = inp;
             self
         }
         /// <p>The date that this version of the secret was last accessed. Note that the resolution of
@@ -283,13 +519,22 @@ pub mod secret_versions_list_entry {
             self.last_accessed_date = inp;
             self
         }
+        /// <p>The date and time this version of the secret was created.</p>
+        pub fn created_date(mut self, inp: smithy_types::Instant) -> Self {
+            self.created_date = Some(inp);
+            self
+        }
+        pub fn set_created_date(mut self, inp: std::option::Option<smithy_types::Instant>) -> Self {
+            self.created_date = inp;
+            self
+        }
         /// Consumes the builder and constructs a [`SecretVersionsListEntry`](crate::model::SecretVersionsListEntry)
         pub fn build(self) -> crate::model::SecretVersionsListEntry {
             crate::model::SecretVersionsListEntry {
-                version_stages: self.version_stages,
-                created_date: self.created_date,
                 version_id: self.version_id,
+                version_stages: self.version_stages,
                 last_accessed_date: self.last_accessed_date,
+                created_date: self.created_date,
             }
         }
     }
@@ -307,13 +552,19 @@ impl SecretVersionsListEntry {
 #[non_exhaustive]
 #[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
 pub struct SecretListEntry {
-    /// <p>The last date and time that the rotation process for this secret was invoked.</p>
-    #[serde(rename = "LastRotatedDate")]
-    #[serde(
-        deserialize_with = "crate::serde_util::stdoptionoptionsmithytypesinstant_epoch_seconds_deser"
-    )]
+    /// <p>The Amazon Resource Name (ARN) of the secret.</p>
+    /// <p>For more information about ARNs in Secrets Manager, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-resources">Policy Resources</a> in the
+    /// <i>AWS Secrets Manager User Guide</i>.</p>
+    #[serde(rename = "ARN")]
     #[serde(default)]
-    pub last_rotated_date: std::option::Option<smithy_types::Instant>,
+    pub arn: std::option::Option<std::string::String>,
+    /// <p>The friendly name of the secret. You can use forward slashes in the name to represent a
+    /// path hierarchy. For example, <code>/prod/databases/dbserver1</code> could represent the secret
+    /// for a server named <code>dbserver1</code> in the folder <code>databases</code> in the folder
+    /// <code>prod</code>. </p>
+    #[serde(rename = "Name")]
+    #[serde(default)]
+    pub name: std::option::Option<std::string::String>,
     /// <p>The user-provided description of the secret.</p>
     #[serde(rename = "Description")]
     #[serde(default)]
@@ -325,6 +576,55 @@ pub struct SecretListEntry {
     #[serde(rename = "KmsKeyId")]
     #[serde(default)]
     pub kms_key_id: std::option::Option<std::string::String>,
+    /// <p>Indicates whether automatic, scheduled rotation is enabled for this secret.</p>
+    #[serde(rename = "RotationEnabled")]
+    #[serde(default)]
+    pub rotation_enabled: std::option::Option<bool>,
+    /// <p>The ARN of an AWS Lambda function invoked by Secrets Manager to rotate and expire the
+    /// secret either automatically per the schedule or manually by a call to <a>RotateSecret</a>.</p>
+    #[serde(rename = "RotationLambdaARN")]
+    #[serde(default)]
+    pub rotation_lambda_arn: std::option::Option<std::string::String>,
+    /// <p>A structure that defines the rotation configuration for the secret.</p>
+    #[serde(rename = "RotationRules")]
+    #[serde(default)]
+    pub rotation_rules: std::option::Option<crate::model::RotationRulesType>,
+    /// <p>The most recent date and time that the Secrets Manager rotation process was successfully completed. This value is null if the secret hasn't ever rotated.</p>
+    #[serde(rename = "LastRotatedDate")]
+    #[serde(
+        deserialize_with = "crate::serde_util::stdoptionoptionsmithytypesinstant_epoch_seconds_deser"
+    )]
+    #[serde(default)]
+    pub last_rotated_date: std::option::Option<smithy_types::Instant>,
+    /// <p>The last date and time that this secret was modified in any way.</p>
+    #[serde(rename = "LastChangedDate")]
+    #[serde(
+        deserialize_with = "crate::serde_util::stdoptionoptionsmithytypesinstant_epoch_seconds_deser"
+    )]
+    #[serde(default)]
+    pub last_changed_date: std::option::Option<smithy_types::Instant>,
+    /// <p>The last date that this secret was accessed. This value is truncated to midnight of the
+    /// date and therefore shows only the date, not the time.</p>
+    #[serde(rename = "LastAccessedDate")]
+    #[serde(
+        deserialize_with = "crate::serde_util::stdoptionoptionsmithytypesinstant_epoch_seconds_deser"
+    )]
+    #[serde(default)]
+    pub last_accessed_date: std::option::Option<smithy_types::Instant>,
+    /// <p>The date and time the deletion of the secret occurred. Not present on active secrets. The
+    /// secret can be recovered until the number of days in the recovery window has passed, as
+    /// specified in the <code>RecoveryWindowInDays</code> parameter of the <a>DeleteSecret</a> operation.</p>
+    #[serde(rename = "DeletedDate")]
+    #[serde(
+        deserialize_with = "crate::serde_util::stdoptionoptionsmithytypesinstant_epoch_seconds_deser"
+    )]
+    #[serde(default)]
+    pub deleted_date: std::option::Option<smithy_types::Instant>,
+    /// <p>The list of user-defined tags associated with the secret. To add tags to a
+    /// secret, use <a>TagResource</a>. To remove tags, use <a>UntagResource</a>.</p>
+    #[serde(rename = "Tags")]
+    #[serde(default)]
+    pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>A list of all of the currently assigned <code>SecretVersionStage</code> staging labels and
     /// the <code>SecretVersionId</code> attached to each one. Staging labels are used to keep
     /// track of the different versions during the rotation process.</p>
@@ -337,6 +637,10 @@ pub struct SecretListEntry {
     pub secret_versions_to_stages: std::option::Option<
         std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
     >,
+    /// <p>Returns the name of the service that created the secret.</p>
+    #[serde(rename = "OwningService")]
+    #[serde(default)]
+    pub owning_service: std::option::Option<std::string::String>,
     /// <p>The date and time when a secret was created.</p>
     #[serde(rename = "CreatedDate")]
     #[serde(
@@ -344,84 +648,30 @@ pub struct SecretListEntry {
     )]
     #[serde(default)]
     pub created_date: std::option::Option<smithy_types::Instant>,
-    /// <p>The date and time the deletion of the secret occurred. Not present on active secrets. The
-    /// secret can be recovered until the number of days in the recovery window has passed, as
-    /// specified in the <code>RecoveryWindowInDays</code> parameter of the <a>DeleteSecret</a> operation.</p>
-    #[serde(rename = "DeletedDate")]
-    #[serde(
-        deserialize_with = "crate::serde_util::stdoptionoptionsmithytypesinstant_epoch_seconds_deser"
-    )]
+    /// <p>The Region where Secrets Manager originated the secret.</p>
+    #[serde(rename = "PrimaryRegion")]
     #[serde(default)]
-    pub deleted_date: std::option::Option<smithy_types::Instant>,
-    /// <p>The Amazon Resource Name (ARN) of the secret.</p>
-    /// <p>For more information about ARNs in Secrets Manager, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-resources">Policy Resources</a> in the
-    /// <i>AWS Secrets Manager User Guide</i>.</p>
-    #[serde(rename = "ARN")]
-    #[serde(default)]
-    pub arn: std::option::Option<std::string::String>,
-    /// <p>Returns the name of the service that created the secret.</p>
-    #[serde(rename = "OwningService")]
-    #[serde(default)]
-    pub owning_service: std::option::Option<std::string::String>,
-    /// <p>The ARN of an AWS Lambda function invoked by Secrets Manager to rotate and expire the
-    /// secret either automatically per the schedule or manually by a call to <a>RotateSecret</a>.</p>
-    #[serde(rename = "RotationLambdaARN")]
-    #[serde(default)]
-    pub rotation_lambda_arn: std::option::Option<std::string::String>,
-    /// <p>The list of user-defined tags associated with the secret. To add tags to a
-    /// secret, use <a>TagResource</a>. To remove tags, use <a>UntagResource</a>.</p>
-    #[serde(rename = "Tags")]
-    #[serde(default)]
-    pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-    /// <p>Indicates whether automatic, scheduled rotation is enabled for this secret.</p>
-    #[serde(rename = "RotationEnabled")]
-    #[serde(default)]
-    pub rotation_enabled: std::option::Option<bool>,
-    /// <p>The last date that this secret was accessed. This value is truncated to midnight of the
-    /// date and therefore shows only the date, not the time.</p>
-    #[serde(rename = "LastAccessedDate")]
-    #[serde(
-        deserialize_with = "crate::serde_util::stdoptionoptionsmithytypesinstant_epoch_seconds_deser"
-    )]
-    #[serde(default)]
-    pub last_accessed_date: std::option::Option<smithy_types::Instant>,
-    /// <p>The last date and time that this secret was modified in any way.</p>
-    #[serde(rename = "LastChangedDate")]
-    #[serde(
-        deserialize_with = "crate::serde_util::stdoptionoptionsmithytypesinstant_epoch_seconds_deser"
-    )]
-    #[serde(default)]
-    pub last_changed_date: std::option::Option<smithy_types::Instant>,
-    /// <p>A structure that defines the rotation configuration for the secret.</p>
-    #[serde(rename = "RotationRules")]
-    #[serde(default)]
-    pub rotation_rules: std::option::Option<crate::model::RotationRulesType>,
-    /// <p>The friendly name of the secret. You can use forward slashes in the name to represent a
-    /// path hierarchy. For example, <code>/prod/databases/dbserver1</code> could represent the secret
-    /// for a server named <code>dbserver1</code> in the folder <code>databases</code> in the folder
-    /// <code>prod</code>. </p>
-    #[serde(rename = "Name")]
-    #[serde(default)]
-    pub name: std::option::Option<std::string::String>,
+    pub primary_region: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for SecretListEntry {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SecretListEntry");
-        formatter.field("last_rotated_date", &self.last_rotated_date);
+        formatter.field("arn", &self.arn);
+        formatter.field("name", &self.name);
         formatter.field("description", &self.description);
         formatter.field("kms_key_id", &self.kms_key_id);
-        formatter.field("secret_versions_to_stages", &self.secret_versions_to_stages);
-        formatter.field("created_date", &self.created_date);
-        formatter.field("deleted_date", &self.deleted_date);
-        formatter.field("arn", &self.arn);
-        formatter.field("owning_service", &self.owning_service);
-        formatter.field("rotation_lambda_arn", &self.rotation_lambda_arn);
-        formatter.field("tags", &self.tags);
         formatter.field("rotation_enabled", &self.rotation_enabled);
-        formatter.field("last_accessed_date", &self.last_accessed_date);
-        formatter.field("last_changed_date", &self.last_changed_date);
+        formatter.field("rotation_lambda_arn", &self.rotation_lambda_arn);
         formatter.field("rotation_rules", &self.rotation_rules);
-        formatter.field("name", &self.name);
+        formatter.field("last_rotated_date", &self.last_rotated_date);
+        formatter.field("last_changed_date", &self.last_changed_date);
+        formatter.field("last_accessed_date", &self.last_accessed_date);
+        formatter.field("deleted_date", &self.deleted_date);
+        formatter.field("tags", &self.tags);
+        formatter.field("secret_versions_to_stages", &self.secret_versions_to_stages);
+        formatter.field("owning_service", &self.owning_service);
+        formatter.field("created_date", &self.created_date);
+        formatter.field("primary_region", &self.primary_region);
         formatter.finish()
     }
 }
@@ -431,35 +681,47 @@ pub mod secret_list_entry {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) last_rotated_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) arn: std::option::Option<std::string::String>,
+        pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) kms_key_id: std::option::Option<std::string::String>,
+        pub(crate) rotation_enabled: std::option::Option<bool>,
+        pub(crate) rotation_lambda_arn: std::option::Option<std::string::String>,
+        pub(crate) rotation_rules: std::option::Option<crate::model::RotationRulesType>,
+        pub(crate) last_rotated_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) last_changed_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) last_accessed_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) deleted_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         pub(crate) secret_versions_to_stages: std::option::Option<
             std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
         >,
-        pub(crate) created_date: std::option::Option<smithy_types::Instant>,
-        pub(crate) deleted_date: std::option::Option<smithy_types::Instant>,
-        pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) owning_service: std::option::Option<std::string::String>,
-        pub(crate) rotation_lambda_arn: std::option::Option<std::string::String>,
-        pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        pub(crate) rotation_enabled: std::option::Option<bool>,
-        pub(crate) last_accessed_date: std::option::Option<smithy_types::Instant>,
-        pub(crate) last_changed_date: std::option::Option<smithy_types::Instant>,
-        pub(crate) rotation_rules: std::option::Option<crate::model::RotationRulesType>,
-        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) created_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) primary_region: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The last date and time that the rotation process for this secret was invoked.</p>
-        pub fn last_rotated_date(mut self, inp: smithy_types::Instant) -> Self {
-            self.last_rotated_date = Some(inp);
+        /// <p>The Amazon Resource Name (ARN) of the secret.</p>
+        /// <p>For more information about ARNs in Secrets Manager, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-resources">Policy Resources</a> in the
+        /// <i>AWS Secrets Manager User Guide</i>.</p>
+        pub fn arn(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.arn = Some(inp.into());
             self
         }
-        pub fn set_last_rotated_date(
-            mut self,
-            inp: std::option::Option<smithy_types::Instant>,
-        ) -> Self {
-            self.last_rotated_date = inp;
+        pub fn set_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
+            self.arn = inp;
+            self
+        }
+        /// <p>The friendly name of the secret. You can use forward slashes in the name to represent a
+        /// path hierarchy. For example, <code>/prod/databases/dbserver1</code> could represent the secret
+        /// for a server named <code>dbserver1</code> in the folder <code>databases</code> in the folder
+        /// <code>prod</code>. </p>
+        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.name = Some(inp.into());
+            self
+        }
+        pub fn set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
+            self.name = inp;
             self
         }
         /// <p>The user-provided description of the secret.</p>
@@ -483,6 +745,101 @@ pub mod secret_list_entry {
             self.kms_key_id = inp;
             self
         }
+        /// <p>Indicates whether automatic, scheduled rotation is enabled for this secret.</p>
+        pub fn rotation_enabled(mut self, inp: bool) -> Self {
+            self.rotation_enabled = Some(inp);
+            self
+        }
+        pub fn set_rotation_enabled(mut self, inp: std::option::Option<bool>) -> Self {
+            self.rotation_enabled = inp;
+            self
+        }
+        /// <p>The ARN of an AWS Lambda function invoked by Secrets Manager to rotate and expire the
+        /// secret either automatically per the schedule or manually by a call to <a>RotateSecret</a>.</p>
+        pub fn rotation_lambda_arn(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.rotation_lambda_arn = Some(inp.into());
+            self
+        }
+        pub fn set_rotation_lambda_arn(
+            mut self,
+            inp: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.rotation_lambda_arn = inp;
+            self
+        }
+        /// <p>A structure that defines the rotation configuration for the secret.</p>
+        pub fn rotation_rules(mut self, inp: crate::model::RotationRulesType) -> Self {
+            self.rotation_rules = Some(inp);
+            self
+        }
+        pub fn set_rotation_rules(
+            mut self,
+            inp: std::option::Option<crate::model::RotationRulesType>,
+        ) -> Self {
+            self.rotation_rules = inp;
+            self
+        }
+        /// <p>The most recent date and time that the Secrets Manager rotation process was successfully completed. This value is null if the secret hasn't ever rotated.</p>
+        pub fn last_rotated_date(mut self, inp: smithy_types::Instant) -> Self {
+            self.last_rotated_date = Some(inp);
+            self
+        }
+        pub fn set_last_rotated_date(
+            mut self,
+            inp: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.last_rotated_date = inp;
+            self
+        }
+        /// <p>The last date and time that this secret was modified in any way.</p>
+        pub fn last_changed_date(mut self, inp: smithy_types::Instant) -> Self {
+            self.last_changed_date = Some(inp);
+            self
+        }
+        pub fn set_last_changed_date(
+            mut self,
+            inp: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.last_changed_date = inp;
+            self
+        }
+        /// <p>The last date that this secret was accessed. This value is truncated to midnight of the
+        /// date and therefore shows only the date, not the time.</p>
+        pub fn last_accessed_date(mut self, inp: smithy_types::Instant) -> Self {
+            self.last_accessed_date = Some(inp);
+            self
+        }
+        pub fn set_last_accessed_date(
+            mut self,
+            inp: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.last_accessed_date = inp;
+            self
+        }
+        /// <p>The date and time the deletion of the secret occurred. Not present on active secrets. The
+        /// secret can be recovered until the number of days in the recovery window has passed, as
+        /// specified in the <code>RecoveryWindowInDays</code> parameter of the <a>DeleteSecret</a> operation.</p>
+        pub fn deleted_date(mut self, inp: smithy_types::Instant) -> Self {
+            self.deleted_date = Some(inp);
+            self
+        }
+        pub fn set_deleted_date(mut self, inp: std::option::Option<smithy_types::Instant>) -> Self {
+            self.deleted_date = inp;
+            self
+        }
+        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
+            let mut v = self.tags.unwrap_or_default();
+            v.push(inp.into());
+            self.tags = Some(v);
+            self
+        }
+        pub fn set_tags(
+            mut self,
+            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.tags = inp;
+            self
+        }
         pub fn secret_versions_to_stages(
             mut self,
             k: impl Into<std::string::String>,
@@ -502,37 +859,6 @@ pub mod secret_list_entry {
             self.secret_versions_to_stages = inp;
             self
         }
-        /// <p>The date and time when a secret was created.</p>
-        pub fn created_date(mut self, inp: smithy_types::Instant) -> Self {
-            self.created_date = Some(inp);
-            self
-        }
-        pub fn set_created_date(mut self, inp: std::option::Option<smithy_types::Instant>) -> Self {
-            self.created_date = inp;
-            self
-        }
-        /// <p>The date and time the deletion of the secret occurred. Not present on active secrets. The
-        /// secret can be recovered until the number of days in the recovery window has passed, as
-        /// specified in the <code>RecoveryWindowInDays</code> parameter of the <a>DeleteSecret</a> operation.</p>
-        pub fn deleted_date(mut self, inp: smithy_types::Instant) -> Self {
-            self.deleted_date = Some(inp);
-            self
-        }
-        pub fn set_deleted_date(mut self, inp: std::option::Option<smithy_types::Instant>) -> Self {
-            self.deleted_date = inp;
-            self
-        }
-        /// <p>The Amazon Resource Name (ARN) of the secret.</p>
-        /// <p>For more information about ARNs in Secrets Manager, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-resources">Policy Resources</a> in the
-        /// <i>AWS Secrets Manager User Guide</i>.</p>
-        pub fn arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.arn = Some(inp.into());
-            self
-        }
-        pub fn set_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.arn = inp;
-            self
-        }
         /// <p>Returns the name of the service that created the secret.</p>
         pub fn owning_service(mut self, inp: impl Into<std::string::String>) -> Self {
             self.owning_service = Some(inp.into());
@@ -542,108 +868,43 @@ pub mod secret_list_entry {
             self.owning_service = inp;
             self
         }
-        /// <p>The ARN of an AWS Lambda function invoked by Secrets Manager to rotate and expire the
-        /// secret either automatically per the schedule or manually by a call to <a>RotateSecret</a>.</p>
-        pub fn rotation_lambda_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.rotation_lambda_arn = Some(inp.into());
+        /// <p>The date and time when a secret was created.</p>
+        pub fn created_date(mut self, inp: smithy_types::Instant) -> Self {
+            self.created_date = Some(inp);
             self
         }
-        pub fn set_rotation_lambda_arn(
-            mut self,
-            inp: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.rotation_lambda_arn = inp;
+        pub fn set_created_date(mut self, inp: std::option::Option<smithy_types::Instant>) -> Self {
+            self.created_date = inp;
             self
         }
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            let mut v = self.tags.unwrap_or_default();
-            v.push(inp.into());
-            self.tags = Some(v);
+        /// <p>The Region where Secrets Manager originated the secret.</p>
+        pub fn primary_region(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.primary_region = Some(inp.into());
             self
         }
-        pub fn set_tags(
-            mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = inp;
-            self
-        }
-        /// <p>Indicates whether automatic, scheduled rotation is enabled for this secret.</p>
-        pub fn rotation_enabled(mut self, inp: bool) -> Self {
-            self.rotation_enabled = Some(inp);
-            self
-        }
-        pub fn set_rotation_enabled(mut self, inp: std::option::Option<bool>) -> Self {
-            self.rotation_enabled = inp;
-            self
-        }
-        /// <p>The last date that this secret was accessed. This value is truncated to midnight of the
-        /// date and therefore shows only the date, not the time.</p>
-        pub fn last_accessed_date(mut self, inp: smithy_types::Instant) -> Self {
-            self.last_accessed_date = Some(inp);
-            self
-        }
-        pub fn set_last_accessed_date(
-            mut self,
-            inp: std::option::Option<smithy_types::Instant>,
-        ) -> Self {
-            self.last_accessed_date = inp;
-            self
-        }
-        /// <p>The last date and time that this secret was modified in any way.</p>
-        pub fn last_changed_date(mut self, inp: smithy_types::Instant) -> Self {
-            self.last_changed_date = Some(inp);
-            self
-        }
-        pub fn set_last_changed_date(
-            mut self,
-            inp: std::option::Option<smithy_types::Instant>,
-        ) -> Self {
-            self.last_changed_date = inp;
-            self
-        }
-        /// <p>A structure that defines the rotation configuration for the secret.</p>
-        pub fn rotation_rules(mut self, inp: crate::model::RotationRulesType) -> Self {
-            self.rotation_rules = Some(inp);
-            self
-        }
-        pub fn set_rotation_rules(
-            mut self,
-            inp: std::option::Option<crate::model::RotationRulesType>,
-        ) -> Self {
-            self.rotation_rules = inp;
-            self
-        }
-        /// <p>The friendly name of the secret. You can use forward slashes in the name to represent a
-        /// path hierarchy. For example, <code>/prod/databases/dbserver1</code> could represent the secret
-        /// for a server named <code>dbserver1</code> in the folder <code>databases</code> in the folder
-        /// <code>prod</code>. </p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.name = Some(inp.into());
-            self
-        }
-        pub fn set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.name = inp;
+        pub fn set_primary_region(mut self, inp: std::option::Option<std::string::String>) -> Self {
+            self.primary_region = inp;
             self
         }
         /// Consumes the builder and constructs a [`SecretListEntry`](crate::model::SecretListEntry)
         pub fn build(self) -> crate::model::SecretListEntry {
             crate::model::SecretListEntry {
-                last_rotated_date: self.last_rotated_date,
+                arn: self.arn,
+                name: self.name,
                 description: self.description,
                 kms_key_id: self.kms_key_id,
-                secret_versions_to_stages: self.secret_versions_to_stages,
-                created_date: self.created_date,
-                deleted_date: self.deleted_date,
-                arn: self.arn,
-                owning_service: self.owning_service,
-                rotation_lambda_arn: self.rotation_lambda_arn,
-                tags: self.tags,
                 rotation_enabled: self.rotation_enabled,
-                last_accessed_date: self.last_accessed_date,
-                last_changed_date: self.last_changed_date,
+                rotation_lambda_arn: self.rotation_lambda_arn,
                 rotation_rules: self.rotation_rules,
-                name: self.name,
+                last_rotated_date: self.last_rotated_date,
+                last_changed_date: self.last_changed_date,
+                last_accessed_date: self.last_accessed_date,
+                deleted_date: self.deleted_date,
+                tags: self.tags,
+                secret_versions_to_stages: self.secret_versions_to_stages,
+                owning_service: self.owning_service,
+                created_date: self.created_date,
+                primary_region: self.primary_region,
             }
         }
     }
@@ -655,7 +916,63 @@ impl SecretListEntry {
     }
 }
 
-/// <p>Allows you to filter your list of secrets.</p>
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum SortOrderType {
+    Asc,
+    Desc,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for SortOrderType {
+    fn from(s: &str) -> Self {
+        match s {
+            "asc" => SortOrderType::Asc,
+            "desc" => SortOrderType::Desc,
+            other => SortOrderType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for SortOrderType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> Result<Self, Self::Err> {
+        Ok(SortOrderType::from(s))
+    }
+}
+impl SortOrderType {
+    pub fn as_str(&self) -> &str {
+        match self {
+            SortOrderType::Asc => "asc",
+            SortOrderType::Desc => "desc",
+            SortOrderType::Unknown(s) => s.as_ref(),
+        }
+    }
+}
+impl AsRef<str> for SortOrderType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+impl<'de> serde::Deserialize<'de> for SortOrderType {
+    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+    where
+        D: serde::Deserializer<'de>,
+    {
+        let data = <&str>::deserialize(deserializer)?;
+        Ok(Self::from(data))
+    }
+}
+
+/// <p>Allows you to add filters when you use the search function in Secrets Manager.</p>
 #[non_exhaustive]
 #[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
 pub struct Filter {
@@ -664,6 +981,7 @@ pub struct Filter {
     #[serde(default)]
     pub key: std::option::Option<crate::model::FilterNameStringType>,
     /// <p>Filters your list of secrets by a specific value.</p>
+    /// <p>You can prefix your search value with an exclamation mark (<code>!</code>) in order to perform negation filters. </p>
     #[serde(rename = "Values")]
     #[serde(default)]
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -737,79 +1055,55 @@ impl Filter {
     std::fmt::Debug,
     std::hash::Hash,
 )]
-pub struct FilterNameStringType(String);
-impl FilterNameStringType {
-    pub fn as_str(&self) -> &str {
-        &self.0
-    }
-    pub fn values() -> &'static [&'static str] {
-        &["all", "description", "name", "tag-key", "tag-value"]
-    }
-}
-impl<T> std::convert::From<T> for FilterNameStringType
-where
-    T: std::convert::AsRef<str>,
-{
-    fn from(s: T) -> Self {
-        FilterNameStringType(s.as_ref().to_owned())
-    }
-}
-impl<'de> serde::Deserialize<'de> for FilterNameStringType {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
-    }
-}
-
-#[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
-pub enum SortOrderType {
-    Asc,
-    Desc,
+pub enum FilterNameStringType {
+    All,
+    Description,
+    Name,
+    PrimaryRegion,
+    TagKey,
+    TagValue,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
-impl std::convert::From<&str> for SortOrderType {
+impl std::convert::From<&str> for FilterNameStringType {
     fn from(s: &str) -> Self {
         match s {
-            "asc" => SortOrderType::Asc,
-            "desc" => SortOrderType::Desc,
-            other => SortOrderType::Unknown(other.to_owned()),
+            "all" => FilterNameStringType::All,
+            "description" => FilterNameStringType::Description,
+            "name" => FilterNameStringType::Name,
+            "primary-region" => FilterNameStringType::PrimaryRegion,
+            "tag-key" => FilterNameStringType::TagKey,
+            "tag-value" => FilterNameStringType::TagValue,
+            other => FilterNameStringType::Unknown(other.to_owned()),
         }
     }
 }
-impl std::str::FromStr for SortOrderType {
+impl std::str::FromStr for FilterNameStringType {
     type Err = std::convert::Infallible;
 
     fn from_str(s: &str) -> Result<Self, Self::Err> {
-        Ok(SortOrderType::from(s))
+        Ok(FilterNameStringType::from(s))
     }
 }
-impl SortOrderType {
+impl FilterNameStringType {
     pub fn as_str(&self) -> &str {
         match self {
-            SortOrderType::Asc => "asc",
-            SortOrderType::Desc => "desc",
-            SortOrderType::Unknown(s) => s.as_ref(),
+            FilterNameStringType::All => "all",
+            FilterNameStringType::Description => "description",
+            FilterNameStringType::Name => "name",
+            FilterNameStringType::PrimaryRegion => "primary-region",
+            FilterNameStringType::TagKey => "tag-key",
+            FilterNameStringType::TagValue => "tag-value",
+            FilterNameStringType::Unknown(s) => s.as_ref(),
         }
     }
 }
-impl AsRef<str> for SortOrderType {
+impl AsRef<str> for FilterNameStringType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }
 }
-impl<'de> serde::Deserialize<'de> for SortOrderType {
+impl<'de> serde::Deserialize<'de> for FilterNameStringType {
     fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
     where
         D: serde::Deserializer<'de>,

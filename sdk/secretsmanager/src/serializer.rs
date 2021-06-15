@@ -40,6 +40,85 @@ pub struct CreateSecretInputBody<'a> {
     /// automatically adds a hyphen and six random characters at the end of the ARN.</p>
     /// </note>
     pub name: &'a std::option::Option<std::string::String>,
+    /// <p>(Optional) If you include <code>SecretString</code> or <code>SecretBinary</code>, then an
+    /// initial version is created as part of the secret, and this parameter specifies a unique
+    /// identifier for the new version. </p>
+    /// <note>
+    /// <p>If you use the AWS CLI or one of the AWS SDK to call this operation, then you can
+    /// leave this parameter empty. The CLI or SDK generates a random UUID for you and includes it
+    /// as the value for this parameter in the request. If you don't use the SDK and instead
+    /// generate a raw HTTP request to the Secrets Manager service endpoint, then you must generate a
+    /// <code>ClientRequestToken</code> yourself for the new version and include the value in the
+    /// request.</p>
+    /// </note>
+    /// <p>This value helps ensure idempotency. Secrets Manager uses this value to prevent the accidental
+    /// creation of duplicate versions if there are failures and retries during a rotation. We
+    /// recommend that you generate a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type</a> value to
+    /// ensure uniqueness of your versions within the specified secret. </p>
+    /// <ul>
+    /// <li>
+    /// <p>If the <code>ClientRequestToken</code> value isn't already associated with a version
+    /// of the secret then a new version of the secret is created. </p>
+    /// </li>
+    /// <li>
+    /// <p>If a version with this value already exists and the version <code>SecretString</code>
+    /// and <code>SecretBinary</code> values are the same as those in the request, then the
+    /// request is ignored.</p>
+    /// </li>
+    /// <li>
+    /// <p>If a version with this value already exists and that version's
+    /// <code>SecretString</code> and <code>SecretBinary</code> values are different from those
+    /// in the request, then the request fails because you cannot modify an existing version.
+    /// Instead, use <a>PutSecretValue</a> to create a new version.</p>
+    /// </li>
+    /// </ul>
+    /// <p>This value becomes the <code>VersionId</code> of the new version.</p>
+    pub client_request_token: &'a std::option::Option<std::string::String>,
+    /// <p>(Optional) Specifies a user-provided description of the secret.</p>
+    pub description: &'a std::option::Option<std::string::String>,
+    /// <p>(Optional) Specifies the ARN, Key ID, or alias of the AWS KMS customer master key (CMK) to
+    /// be used to encrypt the <code>SecretString</code> or <code>SecretBinary</code> values in the
+    /// versions stored in this secret.</p>
+    /// <p>You can specify any of the supported ways to identify a AWS KMS key ID. If you need to
+    /// reference a CMK in a different account, you can use only the key ARN or the alias ARN.</p>
+    /// <p>If you don't specify this value, then Secrets Manager defaults to using the AWS account's
+    /// default CMK (the one named <code>aws/secretsmanager</code>). If a AWS KMS CMK with that name doesn't yet
+    /// exist, then Secrets Manager creates it for you automatically the first time it needs to encrypt a
+    /// version's <code>SecretString</code> or <code>SecretBinary</code> fields.</p>
+    /// <important>
+    /// <p>You can use the account default CMK to encrypt and decrypt only if you call this
+    /// operation using credentials from the same account that owns the secret. If the secret
+    /// resides in a different account, then you must create a custom CMK and specify the ARN in
+    /// this field. </p>
+    /// </important>
+    pub kms_key_id: &'a std::option::Option<std::string::String>,
+    /// <p>(Optional) Specifies binary data that you want to encrypt and store in the new version of
+    /// the secret. To use this parameter in the command-line tools, we recommend that you store your
+    /// binary data in a file and then use the appropriate technique for your tool to pass the
+    /// contents of the file as a parameter.</p>
+    /// <p>Either <code>SecretString</code> or <code>SecretBinary</code> must have a value, but not
+    /// both. They cannot both be empty.</p>
+    /// <p>This parameter is not available using the Secrets Manager console. It can be accessed only by
+    /// using the AWS CLI or one of the AWS SDKs.</p>
+    pub secret_binary: &'a std::option::Option<smithy_types::Blob>,
+    /// <p>(Optional) Specifies text data that you want to encrypt and store in this new version of
+    /// the secret.</p>
+    /// <p>Either <code>SecretString</code> or <code>SecretBinary</code> must have a value, but not
+    /// both. They cannot both be empty.</p>
+    /// <p>If you create a secret by using the Secrets Manager console then Secrets Manager puts the protected
+    /// secret text in only the <code>SecretString</code> parameter. The Secrets Manager console stores the
+    /// information as a JSON structure of key/value pairs that the Lambda rotation function knows how
+    /// to parse.</p>
+    /// <p>For storing multiple values, we recommend that you use a JSON text string argument and
+    /// specify key/value pairs. For information on how to format a JSON parameter for the various
+    /// command line tool environments, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using JSON for
+    /// Parameters</a> in the <i>AWS CLI User Guide</i>. For example:</p>
+    /// <p>
+    /// <code>{"username":"bob","password":"abc123xyz456"}</code>
+    /// </p>
+    /// <p>If your command-line tool or SDK requires quotation marks around the parameter, you should
+    /// use single quotes to avoid confusion with the double quotes required in the JSON text. </p>
+    pub secret_string: &'a std::option::Option<std::string::String>,
     /// <p>(Optional) Specifies a list of user-defined tags that are attached to the secret. Each tag
     /// is a "Key" and "Value" pair of strings. This operation only appends tags to the existing list
     /// of tags. To remove tags, you must use <a>UntagResource</a>.</p>
@@ -93,96 +172,29 @@ pub struct CreateSecretInputBody<'a> {
     /// </li>
     /// </ul>
     pub tags: &'a std::option::Option<std::vec::Vec<crate::model::Tag>>,
-    /// <p>(Optional) Specifies the ARN, Key ID, or alias of the AWS KMS customer master key (CMK) to
-    /// be used to encrypt the <code>SecretString</code> or <code>SecretBinary</code> values in the
-    /// versions stored in this secret.</p>
-    /// <p>You can specify any of the supported ways to identify a AWS KMS key ID. If you need to
-    /// reference a CMK in a different account, you can use only the key ARN or the alias ARN.</p>
-    /// <p>If you don't specify this value, then Secrets Manager defaults to using the AWS account's
-    /// default CMK (the one named <code>aws/secretsmanager</code>). If a AWS KMS CMK with that name doesn't yet
-    /// exist, then Secrets Manager creates it for you automatically the first time it needs to encrypt a
-    /// version's <code>SecretString</code> or <code>SecretBinary</code> fields.</p>
-    /// <important>
-    /// <p>You can use the account default CMK to encrypt and decrypt only if you call this
-    /// operation using credentials from the same account that owns the secret. If the secret
-    /// resides in a different account, then you must create a custom CMK and specify the ARN in
-    /// this field. </p>
-    /// </important>
-    pub kms_key_id: &'a std::option::Option<std::string::String>,
-    /// <p>(Optional) Specifies a user-provided description of the secret.</p>
-    pub description: &'a std::option::Option<std::string::String>,
-    /// <p>(Optional) Specifies text data that you want to encrypt and store in this new version of
-    /// the secret.</p>
-    /// <p>Either <code>SecretString</code> or <code>SecretBinary</code> must have a value, but not
-    /// both. They cannot both be empty.</p>
-    /// <p>If you create a secret by using the Secrets Manager console then Secrets Manager puts the protected
-    /// secret text in only the <code>SecretString</code> parameter. The Secrets Manager console stores the
-    /// information as a JSON structure of key/value pairs that the Lambda rotation function knows how
-    /// to parse.</p>
-    /// <p>For storing multiple values, we recommend that you use a JSON text string argument and
-    /// specify key/value pairs. For information on how to format a JSON parameter for the various
-    /// command line tool environments, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using JSON for
-    /// Parameters</a> in the <i>AWS CLI User Guide</i>. For example:</p>
-    /// <p>
-    /// <code>{"username":"bob","password":"abc123xyz456"}</code>
-    /// </p>
-    /// <p>If your command-line tool or SDK requires quotation marks around the parameter, you should
-    /// use single quotes to avoid confusion with the double quotes required in the JSON text. </p>
-    pub secret_string: &'a std::option::Option<std::string::String>,
-    /// <p>(Optional) Specifies binary data that you want to encrypt and store in the new version of
-    /// the secret. To use this parameter in the command-line tools, we recommend that you store your
-    /// binary data in a file and then use the appropriate technique for your tool to pass the
-    /// contents of the file as a parameter.</p>
-    /// <p>Either <code>SecretString</code> or <code>SecretBinary</code> must have a value, but not
-    /// both. They cannot both be empty.</p>
-    /// <p>This parameter is not available using the Secrets Manager console. It can be accessed only by
-    /// using the AWS CLI or one of the AWS SDKs.</p>
-    pub secret_binary: &'a std::option::Option<smithy_types::Blob>,
-    /// <p>(Optional) If you include <code>SecretString</code> or <code>SecretBinary</code>, then an
-    /// initial version is created as part of the secret, and this parameter specifies a unique
-    /// identifier for the new version. </p>
-    /// <note>
-    /// <p>If you use the AWS CLI or one of the AWS SDK to call this operation, then you can
-    /// leave this parameter empty. The CLI or SDK generates a random UUID for you and includes it
-    /// as the value for this parameter in the request. If you don't use the SDK and instead
-    /// generate a raw HTTP request to the Secrets Manager service endpoint, then you must generate a
-    /// <code>ClientRequestToken</code> yourself for the new version and include the value in the
-    /// request.</p>
-    /// </note>
-    /// <p>This value helps ensure idempotency. Secrets Manager uses this value to prevent the accidental
-    /// creation of duplicate versions if there are failures and retries during a rotation. We
-    /// recommend that you generate a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type</a> value to
-    /// ensure uniqueness of your versions within the specified secret. </p>
-    /// <ul>
-    /// <li>
-    /// <p>If the <code>ClientRequestToken</code> value isn't already associated with a version
-    /// of the secret then a new version of the secret is created. </p>
-    /// </li>
-    /// <li>
-    /// <p>If a version with this value already exists and the version <code>SecretString</code>
-    /// and <code>SecretBinary</code> values are the same as those in the request, then the
-    /// request is ignored.</p>
-    /// </li>
-    /// <li>
-    /// <p>If a version with this value already exists and that version's
-    /// <code>SecretString</code> and <code>SecretBinary</code> values are different from those
-    /// in the request then the request fails because you cannot modify an existing version.
-    /// Instead, use <a>PutSecretValue</a> to create a new version.</p>
-    /// </li>
-    /// </ul>
-    /// <p>This value becomes the <code>VersionId</code> of the new version.</p>
-    pub client_request_token: &'a std::option::Option<std::string::String>,
+    /// <p>(Optional) Add a list of regions to replicate secrets. Secrets Manager replicates the KMSKeyID objects to the list of regions specified in
+    /// the parameter.</p>
+    pub add_replica_regions:
+        &'a std::option::Option<std::vec::Vec<crate::model::ReplicaRegionType>>,
+    /// <p>(Optional) If set, the replication overwrites a secret with the same name in the
+    /// destination region.</p>
+    pub force_overwrite_replica_secret: &'a bool,
 }
 impl<'a> std::fmt::Debug for CreateSecretInputBody<'a> {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateSecretInputBody");
         formatter.field("name", &self.name);
-        formatter.field("tags", &self.tags);
-        formatter.field("kms_key_id", &self.kms_key_id);
-        formatter.field("description", &self.description);
-        formatter.field("secret_string", &"*** Sensitive Data Redacted ***");
-        formatter.field("secret_binary", &"*** Sensitive Data Redacted ***");
         formatter.field("client_request_token", &self.client_request_token);
+        formatter.field("description", &self.description);
+        formatter.field("kms_key_id", &self.kms_key_id);
+        formatter.field("secret_binary", &"*** Sensitive Data Redacted ***");
+        formatter.field("secret_string", &"*** Sensitive Data Redacted ***");
+        formatter.field("tags", &self.tags);
+        formatter.field("add_replica_regions", &self.add_replica_regions);
+        formatter.field(
+            "force_overwrite_replica_secret",
+            &self.force_overwrite_replica_secret,
+        );
         formatter.finish()
     }
 }
@@ -219,28 +231,8 @@ impl<'a> std::fmt::Debug for DeleteResourcePolicyInputBody<'a> {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteSecretInputBody<'a> {
-    /// <p>(Optional) Specifies that the secret is to be deleted without any recovery window. You
-    /// can't use both this parameter and the <code>RecoveryWindowInDays</code> parameter in the same
-    /// API call.</p>
-    /// <p>An asynchronous background process performs the actual deletion, so there can be a short
-    /// delay before the operation completes. If you write code to delete and then immediately
-    /// recreate a secret with the same name, ensure that your code includes appropriate back off and
-    /// retry logic.</p>
-    /// <important>
-    /// <p>Use this parameter with caution. This parameter causes the operation to skip the normal
-    /// waiting period before the permanent deletion that AWS would normally impose with the
-    /// <code>RecoveryWindowInDays</code> parameter. If you delete a secret with the
-    /// <code>ForceDeleteWithouRecovery</code> parameter, then you have no opportunity to recover
-    /// the secret. It is permanently lost.</p>
-    /// </important>
-    pub force_delete_without_recovery: &'a std::option::Option<bool>,
-    /// <p>(Optional) Specifies the number of days that Secrets Manager waits before it can delete the secret.
-    /// You can't use both this parameter and the <code>ForceDeleteWithoutRecovery</code> parameter in
-    /// the same API call.</p>
-    /// <p>This value can range from 7 to 30 days. The default value is 30.</p>
-    pub recovery_window_in_days: &'a std::option::Option<i64>,
-    /// <p>Specifies the secret that you want to delete. You can specify either the Amazon Resource
-    /// Name (ARN) or the friendly name of the secret.</p>
+    /// <p>Specifies the secret to delete. You can specify either the Amazon Resource Name (ARN) or
+    /// the friendly name of the secret.</p>
     /// <note>
     /// <p>If you specify an ARN, we generally recommend that you specify a complete ARN. You can
     /// specify a partial ARN too—for example, if you don’t include the final hyphen and six random
@@ -256,16 +248,41 @@ pub struct DeleteSecretInputBody<'a> {
     /// you receive either a <i>ResourceNotFoundException</i> or an <i>AccessDeniedException</i> error, depending on your permissions.</p>
     /// </note>
     pub secret_id: &'a std::option::Option<std::string::String>,
+    /// <p>(Optional) Specifies the number of days that Secrets Manager waits before Secrets Manager can delete the
+    /// secret. You can't use both this parameter and the <code>ForceDeleteWithoutRecovery</code>
+    /// parameter in the same API call.</p>
+    /// <p>This value can range from 7 to 30 days with a default value of 30.</p>
+    pub recovery_window_in_days: &'a std::option::Option<i64>,
+    /// <p>(Optional) Specifies that the secret is to be deleted without any recovery window. You
+    /// can't use both this parameter and the <code>RecoveryWindowInDays</code> parameter in the same
+    /// API call.</p>
+    /// <p>An asynchronous background process performs the actual deletion, so there can be a short
+    /// delay before the operation completes. If you write code to delete and then immediately
+    /// recreate a secret with the same name, ensure that your code includes appropriate back off and
+    /// retry logic.</p>
+    /// <important>
+    /// <p>Use this parameter with caution. This parameter causes the operation to skip the normal
+    /// waiting period before the permanent deletion that AWS would normally impose with the
+    /// <code>RecoveryWindowInDays</code> parameter. If you delete a secret with the
+    /// <code>ForceDeleteWithouRecovery</code> parameter, then you have no opportunity to recover
+    /// the secret. You lose the secret permanently.</p>
+    /// </important>
+    /// <important>
+    /// <p>If you use this parameter and include a previously deleted or nonexistent secret, the
+    /// operation does not return the error <code>ResourceNotFoundException</code> in order to
+    /// correctly handle retries.</p>
+    /// </important>
+    pub force_delete_without_recovery: &'a std::option::Option<bool>,
 }
 impl<'a> std::fmt::Debug for DeleteSecretInputBody<'a> {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteSecretInputBody");
+        formatter.field("secret_id", &self.secret_id);
+        formatter.field("recovery_window_in_days", &self.recovery_window_in_days);
         formatter.field(
             "force_delete_without_recovery",
             &self.force_delete_without_recovery,
         );
-        formatter.field("recovery_window_in_days", &self.recovery_window_in_days);
-        formatter.field("secret_id", &self.secret_id);
         formatter.finish()
     }
 }
@@ -302,22 +319,15 @@ impl<'a> std::fmt::Debug for DescribeSecretInputBody<'a> {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRandomPasswordInputBody<'a> {
-    /// <p>Specifies that the generated password should not include digits. The default if you do not
-    /// include this switch parameter is that digits can be included.</p>
-    pub exclude_numbers: &'a std::option::Option<bool>,
-    /// <p>A string that includes characters that should not be included in the generated password.
-    /// The default is that all characters from the included sets can be used.</p>
-    pub exclude_characters: &'a std::option::Option<std::string::String>,
     /// <p>The desired length of the generated password. The default value if you do not include this
     /// parameter is 32 characters.</p>
     pub password_length: &'a std::option::Option<i64>,
-    /// <p>A boolean value that specifies whether the generated password must include at least one of
-    /// every allowed character type. The default value is <code>True</code> and the operation
-    /// requires at least one of every character type.</p>
-    pub require_each_included_type: &'a std::option::Option<bool>,
-    /// <p>Specifies that the generated password can include the space character. The default if you
-    /// do not include this switch parameter is that the space character is not included.</p>
-    pub include_space: &'a std::option::Option<bool>,
+    /// <p>A string that includes characters that should not be included in the generated password.
+    /// The default is that all characters from the included sets can be used.</p>
+    pub exclude_characters: &'a std::option::Option<std::string::String>,
+    /// <p>Specifies that the generated password should not include digits. The default if you do not
+    /// include this switch parameter is that digits can be included.</p>
+    pub exclude_numbers: &'a std::option::Option<bool>,
     /// <p>Specifies that the generated password should not include punctuation characters. The
     /// default if you do not include this switch parameter is that punctuation characters can be
     /// included.</p>
@@ -329,27 +339,34 @@ pub struct GetRandomPasswordInputBody<'a> {
     /// ~</code>
     /// </p>
     pub exclude_punctuation: &'a std::option::Option<bool>,
-    /// <p>Specifies that the generated password should not include lowercase letters. The default if
-    /// you do not include this switch parameter is that lowercase letters can be included.</p>
-    pub exclude_lowercase: &'a std::option::Option<bool>,
     /// <p>Specifies that the generated password should not include uppercase letters. The default if
     /// you do not include this switch parameter is that uppercase letters can be included.</p>
     pub exclude_uppercase: &'a std::option::Option<bool>,
+    /// <p>Specifies that the generated password should not include lowercase letters. The default if
+    /// you do not include this switch parameter is that lowercase letters can be included.</p>
+    pub exclude_lowercase: &'a std::option::Option<bool>,
+    /// <p>Specifies that the generated password can include the space character. The default if you
+    /// do not include this switch parameter is that the space character is not included.</p>
+    pub include_space: &'a std::option::Option<bool>,
+    /// <p>A boolean value that specifies whether the generated password must include at least one of
+    /// every allowed character type. The default value is <code>True</code> and the operation
+    /// requires at least one of every character type.</p>
+    pub require_each_included_type: &'a std::option::Option<bool>,
 }
 impl<'a> std::fmt::Debug for GetRandomPasswordInputBody<'a> {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetRandomPasswordInputBody");
-        formatter.field("exclude_numbers", &self.exclude_numbers);
-        formatter.field("exclude_characters", &self.exclude_characters);
         formatter.field("password_length", &self.password_length);
+        formatter.field("exclude_characters", &self.exclude_characters);
+        formatter.field("exclude_numbers", &self.exclude_numbers);
+        formatter.field("exclude_punctuation", &self.exclude_punctuation);
+        formatter.field("exclude_uppercase", &self.exclude_uppercase);
+        formatter.field("exclude_lowercase", &self.exclude_lowercase);
+        formatter.field("include_space", &self.include_space);
         formatter.field(
             "require_each_included_type",
             &self.require_each_included_type,
         );
-        formatter.field("include_space", &self.include_space);
-        formatter.field("exclude_punctuation", &self.exclude_punctuation);
-        formatter.field("exclude_lowercase", &self.exclude_lowercase);
-        formatter.field("exclude_uppercase", &self.exclude_uppercase);
         formatter.finish()
     }
 }
@@ -403,29 +420,29 @@ pub struct GetSecretValueInputBody<'a> {
     /// you receive either a <i>ResourceNotFoundException</i> or an <i>AccessDeniedException</i> error, depending on your permissions.</p>
     /// </note>
     pub secret_id: &'a std::option::Option<std::string::String>,
-    /// <p>Specifies the secret version that you want to retrieve by the staging label attached to
-    /// the version.</p>
-    /// <p>Staging labels are used to keep track of different versions during the rotation process.
-    /// If you use this parameter then don't specify <code>VersionId</code>. If you don't
-    /// specify either a <code>VersionStage</code> or <code>VersionId</code>, then the default is to
-    /// perform the operation on the version with the <code>VersionStage</code> value of
-    /// <code>AWSCURRENT</code>.</p>
-    pub version_stage: &'a std::option::Option<std::string::String>,
     /// <p>Specifies the unique identifier of the version of the secret that you want to retrieve. If
-    /// you specify this parameter then don't specify <code>VersionStage</code>. If you
-    /// don't specify either a <code>VersionStage</code> or <code>VersionId</code> then the
-    /// default is to perform the operation on the version with the <code>VersionStage</code> value of
-    /// <code>AWSCURRENT</code>.</p>
+    /// you specify both this parameter and <code>VersionStage</code>,  the two parameters must refer
+    /// to the same secret version. If you don't specify either a <code>VersionStage</code> or
+    /// <code>VersionId</code> then the default is to perform the operation on the version with the
+    /// <code>VersionStage</code> value of <code>AWSCURRENT</code>.</p>
     /// <p>This value is typically a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type</a> value with
     /// 32 hexadecimal digits.</p>
     pub version_id: &'a std::option::Option<std::string::String>,
+    /// <p>Specifies the secret version that you want to retrieve by the staging label attached to
+    /// the version.</p>
+    /// <p>Staging labels are used to keep track of different versions during the rotation process.
+    /// If you specify both this parameter and <code>VersionId</code>,  the two parameters must refer
+    /// to the same secret version . If you don't specify either a <code>VersionStage</code> or
+    /// <code>VersionId</code>, then the default is to perform the operation on the version with the
+    /// <code>VersionStage</code> value of <code>AWSCURRENT</code>.</p>
+    pub version_stage: &'a std::option::Option<std::string::String>,
 }
 impl<'a> std::fmt::Debug for GetSecretValueInputBody<'a> {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetSecretValueInputBody");
         formatter.field("secret_id", &self.secret_id);
-        formatter.field("version_stage", &self.version_stage);
         formatter.field("version_id", &self.version_id);
+        formatter.field("version_stage", &self.version_stage);
         formatter.finish()
     }
 }
@@ -442,8 +459,6 @@ pub struct ListSecretsInputBody<'a> {
     /// even when there are more results available. You should check <code>NextToken</code> after every
     /// operation to ensure that you receive all of the results.</p>
     pub max_results: &'a std::option::Option<i32>,
-    /// <p>Lists secrets in the requested order. </p>
-    pub sort_order: &'a std::option::Option<crate::model::SortOrderType>,
     /// <p>(Optional) Use this parameter in a request if you receive a
     /// <code>NextToken</code> response in a previous request indicating there's more
     /// output available. In a subsequent call, set it to the value of the previous call
@@ -451,14 +466,16 @@ pub struct ListSecretsInputBody<'a> {
     pub next_token: &'a std::option::Option<std::string::String>,
     /// <p>Lists the secret request filters.</p>
     pub filters: &'a std::option::Option<std::vec::Vec<crate::model::Filter>>,
+    /// <p>Lists secrets in the requested order. </p>
+    pub sort_order: &'a std::option::Option<crate::model::SortOrderType>,
 }
 impl<'a> std::fmt::Debug for ListSecretsInputBody<'a> {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListSecretsInputBody");
         formatter.field("max_results", &self.max_results);
-        formatter.field("sort_order", &self.sort_order);
         formatter.field("next_token", &self.next_token);
         formatter.field("filters", &self.filters);
+        formatter.field("sort_order", &self.sort_order);
         formatter.finish()
     }
 }
@@ -466,15 +483,6 @@ impl<'a> std::fmt::Debug for ListSecretsInputBody<'a> {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSecretVersionIdsInputBody<'a> {
-    /// <p>(Optional) Limits the number of results you want to include in
-    /// the response. If you don't include this parameter, it defaults to a value that's
-    /// specific to the operation. If additional items exist beyond the maximum you specify, the
-    /// <code>NextToken</code> response element is present and has a value (isn't null). Include
-    /// that value as the <code>NextToken</code> request parameter in the next call to the operation to
-    /// get the next part of the results. Note that Secrets Manager might return fewer results than the maximum
-    /// even when there are more results available. You should check <code>NextToken</code> after every
-    /// operation to ensure that you receive all of the results.</p>
-    pub max_results: &'a std::option::Option<i32>,
     /// <p>The identifier for the secret containing the versions you want to list. You can specify
     /// either the Amazon Resource Name (ARN) or the friendly name of the secret.</p>
     /// <note>
@@ -492,6 +500,15 @@ pub struct ListSecretVersionIdsInputBody<'a> {
     /// you receive either a <i>ResourceNotFoundException</i> or an <i>AccessDeniedException</i> error, depending on your permissions.</p>
     /// </note>
     pub secret_id: &'a std::option::Option<std::string::String>,
+    /// <p>(Optional) Limits the number of results you want to include in
+    /// the response. If you don't include this parameter, it defaults to a value that's
+    /// specific to the operation. If additional items exist beyond the maximum you specify, the
+    /// <code>NextToken</code> response element is present and has a value (isn't null). Include
+    /// that value as the <code>NextToken</code> request parameter in the next call to the operation to
+    /// get the next part of the results. Note that Secrets Manager might return fewer results than the maximum
+    /// even when there are more results available. You should check <code>NextToken</code> after every
+    /// operation to ensure that you receive all of the results.</p>
+    pub max_results: &'a std::option::Option<i32>,
     /// <p>(Optional) Use this parameter in a request if you receive a
     /// <code>NextToken</code> response in a previous request indicating there's more
     /// output available. In a subsequent call, set it to the value of the previous call
@@ -505,8 +522,8 @@ pub struct ListSecretVersionIdsInputBody<'a> {
 impl<'a> std::fmt::Debug for ListSecretVersionIdsInputBody<'a> {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListSecretVersionIdsInputBody");
-        formatter.field("max_results", &self.max_results);
         formatter.field("secret_id", &self.secret_id);
+        formatter.field("max_results", &self.max_results);
         formatter.field("next_token", &self.next_token);
         formatter.field("include_deprecated", &self.include_deprecated);
         formatter.finish()
@@ -516,15 +533,7 @@ impl<'a> std::fmt::Debug for ListSecretVersionIdsInputBody<'a> {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutResourcePolicyInputBody<'a> {
-    /// <p>A JSON-formatted string that's constructed according to the grammar and syntax for an
-    /// AWS resource-based policy. The policy in the string identifies who can access or manage this
-    /// secret and its versions. For information on how to format a JSON parameter for the various
-    /// command line tool environments, see <a href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
-    /// JSON for Parameters</a> in the <i>AWS CLI User Guide</i>.</p>
-    pub resource_policy: &'a std::option::Option<std::string::String>,
-    /// <p>Makes an optional API call to Zelkova to validate the Resource Policy to prevent broad access to your secret.</p>
-    pub block_public_policy: &'a std::option::Option<bool>,
-    /// <p>Specifies the secret that you want to attach the resource-based policy to. You can specify
+    /// <p>Specifies the secret that you want to attach the resource-based policy. You can specify
     /// either the ARN or the friendly name of the secret.</p>
     /// <note>
     /// <p>If you specify an ARN, we generally recommend that you specify a complete ARN. You can
@@ -541,13 +550,22 @@ pub struct PutResourcePolicyInputBody<'a> {
     /// you receive either a <i>ResourceNotFoundException</i> or an <i>AccessDeniedException</i> error, depending on your permissions.</p>
     /// </note>
     pub secret_id: &'a std::option::Option<std::string::String>,
+    /// <p>A JSON-formatted string constructed according to the grammar and syntax for an AWS
+    /// resource-based policy. The policy in the string identifies who can access or manage this
+    /// secret and its versions. For information on how to format a JSON parameter for the various
+    /// command line tool environments, see <a href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
+    /// JSON for Parameters</a> in the <i>AWS CLI User Guide</i>.</p>
+    pub resource_policy: &'a std::option::Option<std::string::String>,
+    /// <p>(Optional) If you set the parameter, <code>BlockPublicPolicy</code> to true, then you
+    /// block resource-based policies that allow broad access to the secret.</p>
+    pub block_public_policy: &'a std::option::Option<bool>,
 }
 impl<'a> std::fmt::Debug for PutResourcePolicyInputBody<'a> {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutResourcePolicyInputBody");
+        formatter.field("secret_id", &self.secret_id);
         formatter.field("resource_policy", &self.resource_policy);
         formatter.field("block_public_policy", &self.block_public_policy);
-        formatter.field("secret_id", &self.secret_id);
         formatter.finish()
     }
 }
@@ -555,6 +573,24 @@ impl<'a> std::fmt::Debug for PutResourcePolicyInputBody<'a> {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutSecretValueInputBody<'a> {
+    /// <p>Specifies the secret to which you want to add a new version. You can specify either the
+    /// Amazon Resource Name (ARN) or the friendly name of the secret. The secret must already
+    /// exist.</p>
+    /// <note>
+    /// <p>If you specify an ARN, we generally recommend that you specify a complete ARN. You can
+    /// specify a partial ARN too—for example, if you don’t include the final hyphen and six random
+    /// characters that Secrets Manager adds at the end of the ARN when you created the secret. A partial ARN
+    /// match can work as long as it uniquely matches only one secret. However, if your secret has a
+    /// name that ends in a hyphen followed by six characters (before Secrets Manager adds the hyphen and six
+    /// characters to the ARN) and you try to use that as a partial ARN, then those characters cause
+    /// Secrets Manager to assume that you’re specifying a complete ARN. This confusion can cause unexpected
+    /// results. To avoid this situation, we recommend that you don’t create secret names ending
+    /// with a hyphen followed by six characters.</p>
+    /// <p>If you specify an incomplete ARN without the random suffix, and instead provide the
+    /// 'friendly name', you <i>must</i> not include the random suffix. If you do include the random suffix added by Secrets Manager,
+    /// you receive either a <i>ResourceNotFoundException</i> or an <i>AccessDeniedException</i> error, depending on your permissions.</p>
+    /// </note>
+    pub secret_id: &'a std::option::Option<std::string::String>,
     /// <p>(Optional) Specifies a unique identifier for the new version of the secret. </p>
     /// <note>
     /// <p>If you use the AWS CLI or one of the AWS SDK to call this operation, then you can
@@ -586,24 +622,14 @@ pub struct PutSecretValueInputBody<'a> {
     /// </ul>
     /// <p>This value becomes the <code>VersionId</code> of the new version.</p>
     pub client_request_token: &'a std::option::Option<std::string::String>,
-    /// <p>Specifies the secret to which you want to add a new version. You can specify either the
-    /// Amazon Resource Name (ARN) or the friendly name of the secret. The secret must already
-    /// exist.</p>
-    /// <note>
-    /// <p>If you specify an ARN, we generally recommend that you specify a complete ARN. You can
-    /// specify a partial ARN too—for example, if you don’t include the final hyphen and six random
-    /// characters that Secrets Manager adds at the end of the ARN when you created the secret. A partial ARN
-    /// match can work as long as it uniquely matches only one secret. However, if your secret has a
-    /// name that ends in a hyphen followed by six characters (before Secrets Manager adds the hyphen and six
-    /// characters to the ARN) and you try to use that as a partial ARN, then those characters cause
-    /// Secrets Manager to assume that you’re specifying a complete ARN. This confusion can cause unexpected
-    /// results. To avoid this situation, we recommend that you don’t create secret names ending
-    /// with a hyphen followed by six characters.</p>
-    /// <p>If you specify an incomplete ARN without the random suffix, and instead provide the
-    /// 'friendly name', you <i>must</i> not include the random suffix. If you do include the random suffix added by Secrets Manager,
-    /// you receive either a <i>ResourceNotFoundException</i> or an <i>AccessDeniedException</i> error, depending on your permissions.</p>
-    /// </note>
-    pub secret_id: &'a std::option::Option<std::string::String>,
+    /// <p>(Optional) Specifies binary data that you want to encrypt and store in the new version of
+    /// the secret. To use this parameter in the command-line tools, we recommend that you store your
+    /// binary data in a file and then use the appropriate technique for your tool to pass the
+    /// contents of the file as a parameter. Either <code>SecretBinary</code> or
+    /// <code>SecretString</code> must have a value, but not both. They cannot both be empty.</p>
+    /// <p>This parameter is not accessible if the secret using the Secrets Manager console.</p>
+    /// <p></p>
+    pub secret_binary: &'a std::option::Option<smithy_types::Blob>,
     /// <p>(Optional) Specifies text data that you want to encrypt and store in this new version of
     /// the secret. Either <code>SecretString</code> or <code>SecretBinary</code> must have a value,
     /// but not both. They cannot both be empty.</p>
@@ -622,14 +648,6 @@ pub struct PutSecretValueInputBody<'a> {
     /// <p>If your command-line tool or SDK requires quotation marks around the parameter, you should
     /// use single quotes to avoid confusion with the double quotes required in the JSON text.</p>
     pub secret_string: &'a std::option::Option<std::string::String>,
-    /// <p>(Optional) Specifies binary data that you want to encrypt and store in the new version of
-    /// the secret. To use this parameter in the command-line tools, we recommend that you store your
-    /// binary data in a file and then use the appropriate technique for your tool to pass the
-    /// contents of the file as a parameter. Either <code>SecretBinary</code> or
-    /// <code>SecretString</code> must have a value, but not both. They cannot both be empty.</p>
-    /// <p>This parameter is not accessible if the secret using the Secrets Manager console.</p>
-    /// <p></p>
-    pub secret_binary: &'a std::option::Option<smithy_types::Blob>,
     /// <p>(Optional) Specifies a list of staging labels that are attached to this version of the
     /// secret. These staging labels are used to track the versions through the rotation process by
     /// the Lambda rotation function.</p>
@@ -643,11 +661,53 @@ pub struct PutSecretValueInputBody<'a> {
 impl<'a> std::fmt::Debug for PutSecretValueInputBody<'a> {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutSecretValueInputBody");
-        formatter.field("client_request_token", &self.client_request_token);
         formatter.field("secret_id", &self.secret_id);
-        formatter.field("secret_string", &"*** Sensitive Data Redacted ***");
+        formatter.field("client_request_token", &self.client_request_token);
         formatter.field("secret_binary", &"*** Sensitive Data Redacted ***");
+        formatter.field("secret_string", &"*** Sensitive Data Redacted ***");
         formatter.field("version_stages", &self.version_stages);
+        formatter.finish()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct RemoveRegionsFromReplicationInputBody<'a> {
+    /// <p>Remove a secret by <code>SecretId</code> from replica Regions.</p>
+    pub secret_id: &'a std::option::Option<std::string::String>,
+    /// <p>Remove replication from specific Regions.</p>
+    pub remove_replica_regions: &'a std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl<'a> std::fmt::Debug for RemoveRegionsFromReplicationInputBody<'a> {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("RemoveRegionsFromReplicationInputBody");
+        formatter.field("secret_id", &self.secret_id);
+        formatter.field("remove_replica_regions", &self.remove_replica_regions);
+        formatter.finish()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ReplicateSecretToRegionsInputBody<'a> {
+    /// <p>Use the <code>Secret Id</code> to replicate a secret to regions.</p>
+    pub secret_id: &'a std::option::Option<std::string::String>,
+    /// <p>Add Regions to replicate the secret.</p>
+    pub add_replica_regions:
+        &'a std::option::Option<std::vec::Vec<crate::model::ReplicaRegionType>>,
+    /// <p>(Optional) If set, Secrets Manager replication overwrites a secret with the same name in the
+    /// destination region.</p>
+    pub force_overwrite_replica_secret: &'a bool,
+}
+impl<'a> std::fmt::Debug for ReplicateSecretToRegionsInputBody<'a> {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ReplicateSecretToRegionsInputBody");
+        formatter.field("secret_id", &self.secret_id);
+        formatter.field("add_replica_regions", &self.add_replica_regions);
+        formatter.field(
+            "force_overwrite_replica_secret",
+            &self.force_overwrite_replica_secret,
+        );
         formatter.finish()
     }
 }
@@ -716,18 +776,32 @@ pub struct RotateSecretInputBody<'a> {
     /// there are failures and retries during the function's processing. This value becomes the
     /// <code>VersionId</code> of the new version.</p>
     pub client_request_token: &'a std::option::Option<std::string::String>,
-    /// <p>A structure that defines the rotation configuration for this secret.</p>
-    pub rotation_rules: &'a std::option::Option<crate::model::RotationRulesType>,
     /// <p>(Optional) Specifies the ARN of the Lambda function that can rotate the secret.</p>
     pub rotation_lambda_arn: &'a std::option::Option<std::string::String>,
+    /// <p>A structure that defines the rotation configuration for this secret.</p>
+    pub rotation_rules: &'a std::option::Option<crate::model::RotationRulesType>,
 }
 impl<'a> std::fmt::Debug for RotateSecretInputBody<'a> {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RotateSecretInputBody");
         formatter.field("secret_id", &self.secret_id);
         formatter.field("client_request_token", &self.client_request_token);
-        formatter.field("rotation_rules", &self.rotation_rules);
         formatter.field("rotation_lambda_arn", &self.rotation_lambda_arn);
+        formatter.field("rotation_rules", &self.rotation_rules);
+        formatter.finish()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct StopReplicationToReplicaInputBody<'a> {
+    /// <p>Response to <code>StopReplicationToReplica</code> of a secret, based on the <code>SecretId</code>.</p>
+    pub secret_id: &'a std::option::Option<std::string::String>,
+}
+impl<'a> std::fmt::Debug for StopReplicationToReplicaInputBody<'a> {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("StopReplicationToReplicaInputBody");
+        formatter.field("secret_id", &self.secret_id);
         formatter.finish()
     }
 }
@@ -756,8 +830,8 @@ pub struct TagResourceInputBody<'a> {
     /// and a <code>Value</code>.</p>
     /// <p>This parameter to the API requires a JSON text string argument. For information on how to
     /// format a JSON parameter for the various command line tool environments, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using JSON for Parameters</a> in the <i>AWS CLI User Guide</i>. For the
-    /// AWS CLI, you can also use the syntax: <code>--Tags
-    /// Key="Key1",Value="Value1",Key="Key2",Value="Value2"[,…]</code>
+    /// AWS CLI, you can also use the syntax: <code>--Tags Key="Key1",Value="Value1"
+    /// Key="Key2",Value="Value2"[,…]</code>
     /// </p>
     pub tags: &'a std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
@@ -773,11 +847,6 @@ impl<'a> std::fmt::Debug for TagResourceInputBody<'a> {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInputBody<'a> {
-    /// <p>A list of tag key names to remove from the secret. You don't specify the value. Both the
-    /// key and its associated value are removed.</p>
-    /// <p>This parameter to the API requires a JSON text string argument. For information on how to
-    /// format a JSON parameter for the various command line tool environments, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using JSON for Parameters</a> in the <i>AWS CLI User Guide</i>.</p>
-    pub tag_keys: &'a std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The identifier for the secret that you want to remove tags from. You can specify either
     /// the Amazon Resource Name (ARN) or the friendly name of the secret.</p>
     /// <note>
@@ -795,12 +864,17 @@ pub struct UntagResourceInputBody<'a> {
     /// you receive either a <i>ResourceNotFoundException</i> or an <i>AccessDeniedException</i> error, depending on your permissions.</p>
     /// </note>
     pub secret_id: &'a std::option::Option<std::string::String>,
+    /// <p>A list of tag key names to remove from the secret. You don't specify the value. Both the
+    /// key and its associated value are removed.</p>
+    /// <p>This parameter to the API requires a JSON text string argument. For information on how to
+    /// format a JSON parameter for the various command line tool environments, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using JSON for Parameters</a> in the <i>AWS CLI User Guide</i>.</p>
+    pub tag_keys: &'a std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl<'a> std::fmt::Debug for UntagResourceInputBody<'a> {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UntagResourceInputBody");
-        formatter.field("tag_keys", &self.tag_keys);
         formatter.field("secret_id", &self.secret_id);
+        formatter.field("tag_keys", &self.tag_keys);
         formatter.finish()
     }
 }
@@ -808,39 +882,6 @@ impl<'a> std::fmt::Debug for UntagResourceInputBody<'a> {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateSecretInputBody<'a> {
-    /// <p>(Optional) Specifies updated text data that you want to encrypt and store in this new
-    /// version of the secret. Either <code>SecretBinary</code> or <code>SecretString</code> must have
-    /// a value, but not both. They cannot both be empty.</p>
-    /// <p>If you create this secret by using the Secrets Manager console then Secrets Manager puts the
-    /// protected secret text in only the <code>SecretString</code> parameter. The Secrets Manager console
-    /// stores the information as a JSON structure of key/value pairs that the default Lambda rotation
-    /// function knows how to parse.</p>
-    /// <p>For storing multiple values, we recommend that you use a JSON text string argument and
-    /// specify key/value pairs. For information on how to format a JSON parameter for the various
-    /// command line tool environments, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using JSON for
-    /// Parameters</a> in the <i>AWS CLI User Guide</i>. For example:</p>
-    /// <p>
-    /// <code>[{"username":"bob"},{"password":"abc123xyz456"}]</code>
-    /// </p>
-    /// <p>If your command-line tool or SDK requires quotation marks around the parameter, you should
-    /// use single quotes to avoid confusion with the double quotes required in the JSON text. You can
-    /// also 'escape' the double quote character in the embedded JSON text by prefacing each with a
-    /// backslash. For example, the following string is surrounded by double-quotes. All of the
-    /// embedded double quotes are escaped:</p>
-    /// <p>
-    /// <code>"[{\"username\":\"bob\"},{\"password\":\"abc123xyz456\"}]"</code>
-    /// </p>
-    pub secret_string: &'a std::option::Option<std::string::String>,
-    /// <p>(Optional) Specifies an updated ARN or alias of the AWS KMS customer master key (CMK) to be
-    /// used to encrypt the protected text in new versions of this secret.</p>
-    /// <important>
-    /// <p>You can only use the account's default CMK to encrypt and decrypt if you call this
-    /// operation using credentials from the same account that owns the secret. If the secret is in
-    /// a different account, then you must create a custom CMK and provide the ARN of that CMK in
-    /// this field. The user making the call must have permissions to both the secret and the CMK in
-    /// their respective accounts.</p>
-    /// </important>
-    pub kms_key_id: &'a std::option::Option<std::string::String>,
     /// <p>Specifies the secret that you want to modify or to which you want to add a new version.
     /// You can specify either the Amazon Resource Name (ARN) or the friendly name of the
     /// secret.</p>
@@ -859,8 +900,6 @@ pub struct UpdateSecretInputBody<'a> {
     /// you receive either a <i>ResourceNotFoundException</i> or an <i>AccessDeniedException</i> error, depending on your permissions.</p>
     /// </note>
     pub secret_id: &'a std::option::Option<std::string::String>,
-    /// <p>(Optional) Specifies an updated user-provided description of the secret.</p>
-    pub description: &'a std::option::Option<std::string::String>,
     /// <p>(Optional) If you want to add a new version to the secret, this parameter specifies a
     /// unique identifier for the new version that helps ensure idempotency. </p>
     /// <p>If you use the AWS CLI or one of the AWS SDK to call this operation, then you can
@@ -892,6 +931,18 @@ pub struct UpdateSecretInputBody<'a> {
     /// </ul>
     /// <p>This value becomes the <code>VersionId</code> of the new version.</p>
     pub client_request_token: &'a std::option::Option<std::string::String>,
+    /// <p>(Optional) Specifies an updated user-provided description of the secret.</p>
+    pub description: &'a std::option::Option<std::string::String>,
+    /// <p>(Optional) Specifies an updated ARN or alias of the AWS KMS customer master key (CMK) to be
+    /// used to encrypt the protected text in new versions of this secret.</p>
+    /// <important>
+    /// <p>You can only use the account's default CMK to encrypt and decrypt if you call this
+    /// operation using credentials from the same account that owns the secret. If the secret is in
+    /// a different account, then you must create a custom CMK and provide the ARN of that CMK in
+    /// this field. The user making the call must have permissions to both the secret and the CMK in
+    /// their respective accounts.</p>
+    /// </important>
+    pub kms_key_id: &'a std::option::Option<std::string::String>,
     /// <p>(Optional) Specifies updated binary data that you want to encrypt and store in the new
     /// version of the secret. To use this parameter in the command-line tools, we recommend that you
     /// store your binary data in a file and then use the appropriate technique for your tool to pass
@@ -899,16 +950,39 @@ pub struct UpdateSecretInputBody<'a> {
     /// <code>SecretString</code> must have a value, but not both. They cannot both be empty.</p>
     /// <p>This parameter is not accessible using the Secrets Manager console.</p>
     pub secret_binary: &'a std::option::Option<smithy_types::Blob>,
+    /// <p>(Optional) Specifies updated text data that you want to encrypt and store in this new
+    /// version of the secret. Either <code>SecretBinary</code> or <code>SecretString</code> must have
+    /// a value, but not both. They cannot both be empty.</p>
+    /// <p>If you create this secret by using the Secrets Manager console then Secrets Manager puts the
+    /// protected secret text in only the <code>SecretString</code> parameter. The Secrets Manager console
+    /// stores the information as a JSON structure of key/value pairs that the default Lambda rotation
+    /// function knows how to parse.</p>
+    /// <p>For storing multiple values, we recommend that you use a JSON text string argument and
+    /// specify key/value pairs. For information on how to format a JSON parameter for the various
+    /// command line tool environments, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using JSON for
+    /// Parameters</a> in the <i>AWS CLI User Guide</i>. For example:</p>
+    /// <p>
+    /// <code>[{"username":"bob"},{"password":"abc123xyz456"}]</code>
+    /// </p>
+    /// <p>If your command-line tool or SDK requires quotation marks around the parameter, you should
+    /// use single quotes to avoid confusion with the double quotes required in the JSON text. You can
+    /// also 'escape' the double quote character in the embedded JSON text by prefacing each with a
+    /// backslash. For example, the following string is surrounded by double-quotes. All of the
+    /// embedded double quotes are escaped:</p>
+    /// <p>
+    /// <code>"[{\"username\":\"bob\"},{\"password\":\"abc123xyz456\"}]"</code>
+    /// </p>
+    pub secret_string: &'a std::option::Option<std::string::String>,
 }
 impl<'a> std::fmt::Debug for UpdateSecretInputBody<'a> {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateSecretInputBody");
-        formatter.field("secret_string", &"*** Sensitive Data Redacted ***");
-        formatter.field("kms_key_id", &self.kms_key_id);
         formatter.field("secret_id", &self.secret_id);
-        formatter.field("description", &self.description);
         formatter.field("client_request_token", &self.client_request_token);
+        formatter.field("description", &self.description);
+        formatter.field("kms_key_id", &self.kms_key_id);
         formatter.field("secret_binary", &"*** Sensitive Data Redacted ***");
+        formatter.field("secret_string", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
@@ -916,11 +990,6 @@ impl<'a> std::fmt::Debug for UpdateSecretInputBody<'a> {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateSecretVersionStageInputBody<'a> {
-    /// <p>(Optional) The secret version ID that you want to add the staging label. If you want to
-    /// remove a label from a version, then do not specify this parameter.</p>
-    /// <p>If the staging label is already attached to a different version of the secret, then you
-    /// must also specify the <code>RemoveFromVersionId</code> parameter. </p>
-    pub move_to_version_id: &'a std::option::Option<std::string::String>,
     /// <p>Specifies the secret with the version with the list of staging labels you want to modify.
     /// You can specify either the Amazon Resource Name (ARN) or the friendly name of the
     /// secret.</p>
@@ -939,22 +1008,27 @@ pub struct UpdateSecretVersionStageInputBody<'a> {
     /// you receive either a <i>ResourceNotFoundException</i> or an <i>AccessDeniedException</i> error, depending on your permissions.</p>
     /// </note>
     pub secret_id: &'a std::option::Option<std::string::String>,
+    /// <p>The staging label to add to this version.</p>
+    pub version_stage: &'a std::option::Option<std::string::String>,
     /// <p>Specifies the secret version ID of the version that the staging label is to be removed
     /// from. If the staging label you are trying to attach to one version is already attached to a
     /// different version, then you must include this parameter and specify the version that the label
     /// is to be removed from. If the label is attached and you either do not specify this parameter,
     /// or the version ID does not match, then the operation fails.</p>
     pub remove_from_version_id: &'a std::option::Option<std::string::String>,
-    /// <p>The staging label to add to this version.</p>
-    pub version_stage: &'a std::option::Option<std::string::String>,
+    /// <p>(Optional) The secret version ID that you want to add the staging label. If you want to
+    /// remove a label from a version, then do not specify this parameter.</p>
+    /// <p>If the staging label is already attached to a different version of the secret, then you
+    /// must also specify the <code>RemoveFromVersionId</code> parameter. </p>
+    pub move_to_version_id: &'a std::option::Option<std::string::String>,
 }
 impl<'a> std::fmt::Debug for UpdateSecretVersionStageInputBody<'a> {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateSecretVersionStageInputBody");
-        formatter.field("move_to_version_id", &self.move_to_version_id);
         formatter.field("secret_id", &self.secret_id);
-        formatter.field("remove_from_version_id", &self.remove_from_version_id);
         formatter.field("version_stage", &self.version_stage);
+        formatter.field("remove_from_version_id", &self.remove_from_version_id);
+        formatter.field("move_to_version_id", &self.move_to_version_id);
         formatter.finish()
     }
 }
@@ -962,10 +1036,9 @@ impl<'a> std::fmt::Debug for UpdateSecretVersionStageInputBody<'a> {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ValidateResourcePolicyInputBody<'a> {
-    /// <p>Identifies the Resource Policy attached to the secret.</p>
-    pub resource_policy: &'a std::option::Option<std::string::String>,
-    /// <p> The identifier for the secret that you want to validate a resource policy. You can specify either
-    /// the Amazon Resource Name (ARN) or the friendly name of the secret.</p>
+    /// <p> (Optional) The identifier of the secret with the resource-based policy you want to
+    /// validate. You can specify either the Amazon Resource Name (ARN) or the friendly name of the
+    /// secret.</p>
     /// <note>
     /// <p>If you specify an ARN, we generally recommend that you specify a complete ARN. You can
     /// specify a partial ARN too—for example, if you don’t include the final hyphen and six random
@@ -981,12 +1054,18 @@ pub struct ValidateResourcePolicyInputBody<'a> {
     /// you receive either a <i>ResourceNotFoundException</i> or an <i>AccessDeniedException</i> error, depending on your permissions.</p>
     /// </note>
     pub secret_id: &'a std::option::Option<std::string::String>,
+    /// <p>A JSON-formatted string constructed according to the grammar and syntax for an AWS
+    /// resource-based policy. The policy in the string identifies who can access or manage this
+    /// secret and its versions. For information on how to format a JSON parameter for the various
+    /// command line tool environments, see <a href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
+    /// JSON for Parameters</a> in the <i>AWS CLI User Guide</i>.publi</p>
+    pub resource_policy: &'a std::option::Option<std::string::String>,
 }
 impl<'a> std::fmt::Debug for ValidateResourcePolicyInputBody<'a> {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ValidateResourcePolicyInputBody");
-        formatter.field("resource_policy", &self.resource_policy);
         formatter.field("secret_id", &self.secret_id);
+        formatter.field("resource_policy", &self.resource_policy);
         formatter.finish()
     }
 }
@@ -998,6 +1077,10 @@ pub struct CancelRotateSecretOutputBody {
     #[serde(rename = "ARN")]
     #[serde(default)]
     pub arn: std::option::Option<std::string::String>,
+    /// <p>The friendly name of the secret for which rotation was canceled.</p>
+    #[serde(rename = "Name")]
+    #[serde(default)]
+    pub name: std::option::Option<std::string::String>,
     /// <p>The unique identifier of the version of the secret created during the rotation. This
     /// version might not be complete, and should be evaluated for possible deletion. At the very
     /// least, you should remove the <code>VersionStage</code> value <code>AWSPENDING</code> to enable this
@@ -1006,17 +1089,13 @@ pub struct CancelRotateSecretOutputBody {
     #[serde(rename = "VersionId")]
     #[serde(default)]
     pub version_id: std::option::Option<std::string::String>,
-    /// <p>The friendly name of the secret for which rotation was canceled.</p>
-    #[serde(rename = "Name")]
-    #[serde(default)]
-    pub name: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for CancelRotateSecretOutputBody {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CancelRotateSecretOutputBody");
         formatter.field("arn", &self.arn);
-        formatter.field("version_id", &self.version_id);
         formatter.field("name", &self.name);
+        formatter.field("version_id", &self.version_id);
         formatter.finish()
     }
 }
@@ -1024,15 +1103,6 @@ impl std::fmt::Debug for CancelRotateSecretOutputBody {
 #[non_exhaustive]
 #[derive(std::default::Default, serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateSecretOutputBody {
-    /// <p>The unique identifier associated with the version of the secret you just
-    /// created.</p>
-    #[serde(rename = "VersionId")]
-    #[serde(default)]
-    pub version_id: std::option::Option<std::string::String>,
-    /// <p>The friendly name of the secret that you just created.</p>
-    #[serde(rename = "Name")]
-    #[serde(default)]
-    pub name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the secret that you just created.</p>
     /// <note>
     /// <p>Secrets Manager automatically adds several random characters to the name at the end of the ARN when
@@ -1044,13 +1114,26 @@ pub struct CreateSecretOutputBody {
     #[serde(rename = "ARN")]
     #[serde(default)]
     pub arn: std::option::Option<std::string::String>,
+    /// <p>The friendly name of the secret that you just created.</p>
+    #[serde(rename = "Name")]
+    #[serde(default)]
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The unique identifier associated with the version of the secret you just created.</p>
+    #[serde(rename = "VersionId")]
+    #[serde(default)]
+    pub version_id: std::option::Option<std::string::String>,
+    /// <p>Describes a list of replication status objects as <code>InProgress</code>, <code>Failed</code> or <code>InSync</code>.</p>
+    #[serde(rename = "ReplicationStatus")]
+    #[serde(default)]
+    pub replication_status: std::option::Option<std::vec::Vec<crate::model::ReplicationStatusType>>,
 }
 impl std::fmt::Debug for CreateSecretOutputBody {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateSecretOutputBody");
-        formatter.field("version_id", &self.version_id);
-        formatter.field("name", &self.name);
         formatter.field("arn", &self.arn);
+        formatter.field("name", &self.name);
+        formatter.field("version_id", &self.version_id);
+        formatter.field("replication_status", &self.replication_status);
         formatter.finish()
     }
 }
@@ -1083,7 +1166,7 @@ pub struct DeleteSecretOutputBody {
     #[serde(rename = "ARN")]
     #[serde(default)]
     pub arn: std::option::Option<std::string::String>,
-    /// <p>The friendly name of the secret that is now scheduled for deletion.</p>
+    /// <p>The friendly name of the secret currently scheduled for deletion.</p>
     #[serde(rename = "Name")]
     #[serde(default)]
     pub name: std::option::Option<std::string::String>,
@@ -1110,14 +1193,14 @@ impl std::fmt::Debug for DeleteSecretOutputBody {
 #[non_exhaustive]
 #[derive(std::default::Default, serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeSecretOutputBody {
-    /// <p>The most recent date and time that the Secrets Manager rotation process was successfully
-    /// completed. This value is null if the secret has never rotated.</p>
-    #[serde(rename = "LastRotatedDate")]
-    #[serde(
-        deserialize_with = "crate::serde_util::stdoptionoptionsmithytypesinstant_epoch_seconds_deser"
-    )]
+    /// <p>The ARN of the secret.</p>
+    #[serde(rename = "ARN")]
     #[serde(default)]
-    pub last_rotated_date: std::option::Option<smithy_types::Instant>,
+    pub arn: std::option::Option<std::string::String>,
+    /// <p>The user-provided friendly name of the secret.</p>
+    #[serde(rename = "Name")]
+    #[serde(default)]
+    pub name: std::option::Option<std::string::String>,
     /// <p>The user-provided description of the secret.</p>
     #[serde(rename = "Description")]
     #[serde(default)]
@@ -1129,6 +1212,62 @@ pub struct DescribeSecretOutputBody {
     #[serde(rename = "KmsKeyId")]
     #[serde(default)]
     pub kms_key_id: std::option::Option<std::string::String>,
+    /// <p>Specifies whether automatic rotation is enabled for this secret.</p>
+    /// <p>To enable rotation, use <a>RotateSecret</a> with
+    /// <code>AutomaticallyRotateAfterDays</code> set to a value greater than 0. To disable
+    /// rotation, use <a>CancelRotateSecret</a>.</p>
+    #[serde(rename = "RotationEnabled")]
+    #[serde(default)]
+    pub rotation_enabled: std::option::Option<bool>,
+    /// <p>The ARN of a Lambda function that's invoked by Secrets Manager to rotate the
+    /// secret either automatically per the schedule or manually by a call to
+    /// <code>RotateSecret</code>.</p>
+    #[serde(rename = "RotationLambdaARN")]
+    #[serde(default)]
+    pub rotation_lambda_arn: std::option::Option<std::string::String>,
+    /// <p>A structure with the rotation configuration for this secret.</p>
+    #[serde(rename = "RotationRules")]
+    #[serde(default)]
+    pub rotation_rules: std::option::Option<crate::model::RotationRulesType>,
+    /// <p>The last date and time that the rotation process for this secret was invoked.</p>
+    /// <p>The most recent date and time that the Secrets Manager rotation process successfully
+    /// completed. If the secret doesn't rotate, Secrets Manager returns a null value.</p>
+    #[serde(rename = "LastRotatedDate")]
+    #[serde(
+        deserialize_with = "crate::serde_util::stdoptionoptionsmithytypesinstant_epoch_seconds_deser"
+    )]
+    #[serde(default)]
+    pub last_rotated_date: std::option::Option<smithy_types::Instant>,
+    /// <p>The last date and time that this secret was modified in any way.</p>
+    #[serde(rename = "LastChangedDate")]
+    #[serde(
+        deserialize_with = "crate::serde_util::stdoptionoptionsmithytypesinstant_epoch_seconds_deser"
+    )]
+    #[serde(default)]
+    pub last_changed_date: std::option::Option<smithy_types::Instant>,
+    /// <p>The last date that this secret was accessed. This value is truncated to midnight of the
+    /// date and therefore shows only the date, not the time.</p>
+    #[serde(rename = "LastAccessedDate")]
+    #[serde(
+        deserialize_with = "crate::serde_util::stdoptionoptionsmithytypesinstant_epoch_seconds_deser"
+    )]
+    #[serde(default)]
+    pub last_accessed_date: std::option::Option<smithy_types::Instant>,
+    /// <p>This value exists if the secret is scheduled for deletion. Some time after the specified
+    /// date and time, Secrets Manager deletes the secret and all of its versions.</p>
+    /// <p>If a secret is scheduled for deletion, then its details, including the encrypted secret
+    /// information, is not accessible. To cancel a scheduled deletion and restore access, use <a>RestoreSecret</a>.</p>
+    #[serde(rename = "DeletedDate")]
+    #[serde(
+        deserialize_with = "crate::serde_util::stdoptionoptionsmithytypesinstant_epoch_seconds_deser"
+    )]
+    #[serde(default)]
+    pub deleted_date: std::option::Option<smithy_types::Instant>,
+    /// <p>The list of user-defined tags that are associated with the secret. To add tags to a
+    /// secret, use <a>TagResource</a>. To remove tags, use <a>UntagResource</a>.</p>
+    #[serde(rename = "Tags")]
+    #[serde(default)]
+    pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>A list of all of the currently assigned <code>VersionStage</code> staging labels and the
     /// <code>VersionId</code> that each is attached to. Staging labels are used to keep track of
     /// the different versions during the rotation process.</p>
@@ -1141,91 +1280,47 @@ pub struct DescribeSecretOutputBody {
     pub version_ids_to_stages: std::option::Option<
         std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
     >,
-    /// <p>The last date and time that this secret was modified in any way.</p>
-    #[serde(rename = "LastChangedDate")]
-    #[serde(
-        deserialize_with = "crate::serde_util::stdoptionoptionsmithytypesinstant_epoch_seconds_deser"
-    )]
+    /// <p>Returns the name of the service that created this secret.</p>
+    #[serde(rename = "OwningService")]
     #[serde(default)]
-    pub last_changed_date: std::option::Option<smithy_types::Instant>,
-    /// <p>A structure that contains the rotation configuration for this secret.</p>
-    #[serde(rename = "RotationRules")]
-    #[serde(default)]
-    pub rotation_rules: std::option::Option<crate::model::RotationRulesType>,
-    /// <p>The user-provided friendly name of the secret.</p>
-    #[serde(rename = "Name")]
-    #[serde(default)]
-    pub name: std::option::Option<std::string::String>,
-    /// <p>Specifies whether automatic rotation is enabled for this secret.</p>
-    /// <p>To enable rotation, use <a>RotateSecret</a> with
-    /// <code>AutomaticallyRotateAfterDays</code> set to a value greater than 0. To disable
-    /// rotation, use <a>CancelRotateSecret</a>.</p>
-    #[serde(rename = "RotationEnabled")]
-    #[serde(default)]
-    pub rotation_enabled: std::option::Option<bool>,
-    /// <p>The last date that this secret was accessed. This value is truncated to midnight of the
-    /// date and therefore shows only the date, not the time.</p>
-    #[serde(rename = "LastAccessedDate")]
-    #[serde(
-        deserialize_with = "crate::serde_util::stdoptionoptionsmithytypesinstant_epoch_seconds_deser"
-    )]
-    #[serde(default)]
-    pub last_accessed_date: std::option::Option<smithy_types::Instant>,
-    /// <p>The date that the secret was created.</p>
+    pub owning_service: std::option::Option<std::string::String>,
+    /// <p>The date you created the secret.</p>
     #[serde(rename = "CreatedDate")]
     #[serde(
         deserialize_with = "crate::serde_util::stdoptionoptionsmithytypesinstant_epoch_seconds_deser"
     )]
     #[serde(default)]
     pub created_date: std::option::Option<smithy_types::Instant>,
-    /// <p>This value exists if the secret is scheduled for deletion. Some time after the specified
-    /// date and time, Secrets Manager deletes the secret and all of its versions.</p>
-    /// <p>If a secret is scheduled for deletion, then its details, including the encrypted secret
-    /// information, is not accessible. To cancel a scheduled deletion and restore access, use <a>RestoreSecret</a>.</p>
-    #[serde(rename = "DeletedDate")]
-    #[serde(
-        deserialize_with = "crate::serde_util::stdoptionoptionsmithytypesinstant_epoch_seconds_deser"
-    )]
+    /// <p>Specifies the primary region for secret replication. </p>
+    #[serde(rename = "PrimaryRegion")]
     #[serde(default)]
-    pub deleted_date: std::option::Option<smithy_types::Instant>,
-    /// <p>The ARN of the secret.</p>
-    #[serde(rename = "ARN")]
+    pub primary_region: std::option::Option<std::string::String>,
+    /// <p>Describes a list of replication status objects as <code>InProgress</code>, <code>Failed</code> or <code>InSync</code>.<code>P</code>
+    /// </p>
+    #[serde(rename = "ReplicationStatus")]
     #[serde(default)]
-    pub arn: std::option::Option<std::string::String>,
-    /// <p>Returns the name of the service that created this secret.</p>
-    #[serde(rename = "OwningService")]
-    #[serde(default)]
-    pub owning_service: std::option::Option<std::string::String>,
-    /// <p>The ARN of a Lambda function that's invoked by Secrets Manager to rotate the
-    /// secret either automatically per the schedule or manually by a call to
-    /// <code>RotateSecret</code>.</p>
-    #[serde(rename = "RotationLambdaARN")]
-    #[serde(default)]
-    pub rotation_lambda_arn: std::option::Option<std::string::String>,
-    /// <p>The list of user-defined tags that are associated with the secret. To add tags to a
-    /// secret, use <a>TagResource</a>. To remove tags, use <a>UntagResource</a>.</p>
-    #[serde(rename = "Tags")]
-    #[serde(default)]
-    pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    pub replication_status: std::option::Option<std::vec::Vec<crate::model::ReplicationStatusType>>,
 }
 impl std::fmt::Debug for DescribeSecretOutputBody {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeSecretOutputBody");
-        formatter.field("last_rotated_date", &self.last_rotated_date);
+        formatter.field("arn", &self.arn);
+        formatter.field("name", &self.name);
         formatter.field("description", &self.description);
         formatter.field("kms_key_id", &self.kms_key_id);
-        formatter.field("version_ids_to_stages", &self.version_ids_to_stages);
-        formatter.field("last_changed_date", &self.last_changed_date);
-        formatter.field("rotation_rules", &self.rotation_rules);
-        formatter.field("name", &self.name);
         formatter.field("rotation_enabled", &self.rotation_enabled);
-        formatter.field("last_accessed_date", &self.last_accessed_date);
-        formatter.field("created_date", &self.created_date);
-        formatter.field("deleted_date", &self.deleted_date);
-        formatter.field("arn", &self.arn);
-        formatter.field("owning_service", &self.owning_service);
         formatter.field("rotation_lambda_arn", &self.rotation_lambda_arn);
+        formatter.field("rotation_rules", &self.rotation_rules);
+        formatter.field("last_rotated_date", &self.last_rotated_date);
+        formatter.field("last_changed_date", &self.last_changed_date);
+        formatter.field("last_accessed_date", &self.last_accessed_date);
+        formatter.field("deleted_date", &self.deleted_date);
         formatter.field("tags", &self.tags);
+        formatter.field("version_ids_to_stages", &self.version_ids_to_stages);
+        formatter.field("owning_service", &self.owning_service);
+        formatter.field("created_date", &self.created_date);
+        formatter.field("primary_region", &self.primary_region);
+        formatter.field("replication_status", &self.replication_status);
         formatter.finish()
     }
 }
@@ -1249,6 +1344,14 @@ impl std::fmt::Debug for GetRandomPasswordOutputBody {
 #[non_exhaustive]
 #[derive(std::default::Default, serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetResourcePolicyOutputBody {
+    /// <p>The ARN of the secret that the resource-based policy was retrieved for.</p>
+    #[serde(rename = "ARN")]
+    #[serde(default)]
+    pub arn: std::option::Option<std::string::String>,
+    /// <p>The friendly name of the secret that the resource-based policy was retrieved for.</p>
+    #[serde(rename = "Name")]
+    #[serde(default)]
+    pub name: std::option::Option<std::string::String>,
     /// <p>A JSON-formatted string that describes the permissions that are associated with the
     /// attached secret. These permissions are combined with any permissions that are associated with
     /// the user or role that attempts to access this secret. The combined permissions specify who can
@@ -1257,21 +1360,13 @@ pub struct GetResourcePolicyOutputBody {
     #[serde(rename = "ResourcePolicy")]
     #[serde(default)]
     pub resource_policy: std::option::Option<std::string::String>,
-    /// <p>The friendly name of the secret that the resource-based policy was retrieved for.</p>
-    #[serde(rename = "Name")]
-    #[serde(default)]
-    pub name: std::option::Option<std::string::String>,
-    /// <p>The ARN of the secret that the resource-based policy was retrieved for.</p>
-    #[serde(rename = "ARN")]
-    #[serde(default)]
-    pub arn: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for GetResourcePolicyOutputBody {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetResourcePolicyOutputBody");
-        formatter.field("resource_policy", &self.resource_policy);
-        formatter.field("name", &self.name);
         formatter.field("arn", &self.arn);
+        formatter.field("name", &self.name);
+        formatter.field("resource_policy", &self.resource_policy);
         formatter.finish()
     }
 }
@@ -1279,17 +1374,30 @@ impl std::fmt::Debug for GetResourcePolicyOutputBody {
 #[non_exhaustive]
 #[derive(std::default::Default, serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSecretValueOutputBody {
+    /// <p>The ARN of the secret.</p>
+    #[serde(rename = "ARN")]
+    #[serde(default)]
+    pub arn: std::option::Option<std::string::String>,
+    /// <p>The friendly name of the secret.</p>
+    #[serde(rename = "Name")]
+    #[serde(default)]
+    pub name: std::option::Option<std::string::String>,
     /// <p>The unique identifier of this version of the secret.</p>
     #[serde(rename = "VersionId")]
     #[serde(default)]
     pub version_id: std::option::Option<std::string::String>,
-    /// <p>The date and time that this version of the secret was created.</p>
-    #[serde(rename = "CreatedDate")]
-    #[serde(
-        deserialize_with = "crate::serde_util::stdoptionoptionsmithytypesinstant_epoch_seconds_deser"
-    )]
+    /// <p>The decrypted part of the protected secret information that was originally provided as
+    /// binary data in the form of a byte array. The response parameter represents the binary data as
+    /// a <a href="https://tools.ietf.org/html/rfc4648#section-4">base64-encoded</a>
+    /// string.</p>
+    /// <p>This parameter is not used if the secret is created by the Secrets Manager console.</p>
+    /// <p>If you store custom information in this field of the secret, then you must code your
+    /// Lambda rotation function to parse and interpret whatever you store in the
+    /// <code>SecretString</code> or <code>SecretBinary</code> fields.</p>
+    #[serde(rename = "SecretBinary")]
+    #[serde(deserialize_with = "crate::serde_util::stdoptionoptionsmithytypesblob_deser")]
     #[serde(default)]
-    pub created_date: std::option::Option<smithy_types::Instant>,
+    pub secret_binary: std::option::Option<smithy_types::Blob>,
     /// <p>The decrypted part of the protected secret information that was originally provided as a
     /// string.</p>
     /// <p>If you create this secret by using the Secrets Manager console then only the
@@ -1303,42 +1411,29 @@ pub struct GetSecretValueOutputBody {
     #[serde(rename = "SecretString")]
     #[serde(default)]
     pub secret_string: std::option::Option<std::string::String>,
-    /// <p>The decrypted part of the protected secret information that was originally provided as
-    /// binary data in the form of a byte array. The response parameter represents the binary data as
-    /// a <a href="https://tools.ietf.org/html/rfc4648#section-4">base64-encoded</a>
-    /// string.</p>
-    /// <p>This parameter is not used if the secret is created by the Secrets Manager console.</p>
-    /// <p>If you store custom information in this field of the secret, then you must code your
-    /// Lambda rotation function to parse and interpret whatever you store in the
-    /// <code>SecretString</code> or <code>SecretBinary</code> fields.</p>
-    #[serde(rename = "SecretBinary")]
-    #[serde(deserialize_with = "crate::serde_util::stdoptionoptionsmithytypesblob_deser")]
-    #[serde(default)]
-    pub secret_binary: std::option::Option<smithy_types::Blob>,
     /// <p>A list of all of the staging labels currently attached to this version of the
     /// secret.</p>
     #[serde(rename = "VersionStages")]
     #[serde(default)]
     pub version_stages: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The friendly name of the secret.</p>
-    #[serde(rename = "Name")]
+    /// <p>The date and time that this version of the secret was created.</p>
+    #[serde(rename = "CreatedDate")]
+    #[serde(
+        deserialize_with = "crate::serde_util::stdoptionoptionsmithytypesinstant_epoch_seconds_deser"
+    )]
     #[serde(default)]
-    pub name: std::option::Option<std::string::String>,
-    /// <p>The ARN of the secret.</p>
-    #[serde(rename = "ARN")]
-    #[serde(default)]
-    pub arn: std::option::Option<std::string::String>,
+    pub created_date: std::option::Option<smithy_types::Instant>,
 }
 impl std::fmt::Debug for GetSecretValueOutputBody {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetSecretValueOutputBody");
-        formatter.field("version_id", &self.version_id);
-        formatter.field("created_date", &self.created_date);
-        formatter.field("secret_string", &"*** Sensitive Data Redacted ***");
-        formatter.field("secret_binary", &"*** Sensitive Data Redacted ***");
-        formatter.field("version_stages", &self.version_stages);
-        formatter.field("name", &self.name);
         formatter.field("arn", &self.arn);
+        formatter.field("name", &self.name);
+        formatter.field("version_id", &self.version_id);
+        formatter.field("secret_binary", &"*** Sensitive Data Redacted ***");
+        formatter.field("secret_string", &"*** Sensitive Data Redacted ***");
+        formatter.field("version_stages", &self.version_stages);
+        formatter.field("created_date", &self.created_date);
         formatter.finish()
     }
 }
@@ -1373,6 +1468,10 @@ impl std::fmt::Debug for ListSecretsOutputBody {
 #[non_exhaustive]
 #[derive(std::default::Default, serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSecretVersionIdsOutputBody {
+    /// <p>The list of the currently available versions of the specified secret.</p>
+    #[serde(rename = "Versions")]
+    #[serde(default)]
+    pub versions: std::option::Option<std::vec::Vec<crate::model::SecretVersionsListEntry>>,
     /// <p>If present in the response, this value indicates that
     /// there's more output available than included in the current response. This can
     /// occur even when the response includes no values at all, such as when you ask for a filtered view
@@ -1383,10 +1482,6 @@ pub struct ListSecretVersionIdsOutputBody {
     #[serde(rename = "NextToken")]
     #[serde(default)]
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The list of the currently available versions of the specified secret.</p>
-    #[serde(rename = "Versions")]
-    #[serde(default)]
-    pub versions: std::option::Option<std::vec::Vec<crate::model::SecretVersionsListEntry>>,
     /// <p>The Amazon Resource Name (ARN) for the secret.</p>
     /// <note>
     /// <p>Secrets Manager automatically adds several random characters to the name at the end of the ARN when
@@ -1406,8 +1501,8 @@ pub struct ListSecretVersionIdsOutputBody {
 impl std::fmt::Debug for ListSecretVersionIdsOutputBody {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListSecretVersionIdsOutputBody");
-        formatter.field("next_token", &self.next_token);
         formatter.field("versions", &self.versions);
+        formatter.field("next_token", &self.next_token);
         formatter.field("arn", &self.arn);
         formatter.field("name", &self.name);
         formatter.finish()
@@ -1421,7 +1516,7 @@ pub struct PutResourcePolicyOutputBody {
     #[serde(rename = "ARN")]
     #[serde(default)]
     pub arn: std::option::Option<std::string::String>,
-    /// <p>The friendly name of the secret that the retrieved by the resource-based policy.</p>
+    /// <p>The friendly name of the secret retrieved by the resource-based policy.</p>
     #[serde(rename = "Name")]
     #[serde(default)]
     pub name: std::option::Option<std::string::String>,
@@ -1442,12 +1537,6 @@ pub struct PutSecretValueOutputBody {
     #[serde(rename = "ARN")]
     #[serde(default)]
     pub arn: std::option::Option<std::string::String>,
-    /// <p>The list of staging labels that are currently attached to this version of the secret.
-    /// Staging labels are used to track a version as it progresses through the secret rotation
-    /// process.</p>
-    #[serde(rename = "VersionStages")]
-    #[serde(default)]
-    pub version_stages: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The friendly name of the secret for which you just created or updated a version.</p>
     #[serde(rename = "Name")]
     #[serde(default)]
@@ -1456,14 +1545,63 @@ pub struct PutSecretValueOutputBody {
     #[serde(rename = "VersionId")]
     #[serde(default)]
     pub version_id: std::option::Option<std::string::String>,
+    /// <p>The list of staging labels that are currently attached to this version of the secret.
+    /// Staging labels are used to track a version as it progresses through the secret rotation
+    /// process.</p>
+    #[serde(rename = "VersionStages")]
+    #[serde(default)]
+    pub version_stages: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl std::fmt::Debug for PutSecretValueOutputBody {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutSecretValueOutputBody");
         formatter.field("arn", &self.arn);
-        formatter.field("version_stages", &self.version_stages);
         formatter.field("name", &self.name);
         formatter.field("version_id", &self.version_id);
+        formatter.field("version_stages", &self.version_stages);
+        formatter.finish()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::default::Default, serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+pub struct RemoveRegionsFromReplicationOutputBody {
+    /// <p>The secret <code>ARN</code> removed from replication regions.</p>
+    #[serde(rename = "ARN")]
+    #[serde(default)]
+    pub arn: std::option::Option<std::string::String>,
+    /// <p>Describes the remaining replication status after you remove regions from the replication list.</p>
+    #[serde(rename = "ReplicationStatus")]
+    #[serde(default)]
+    pub replication_status: std::option::Option<std::vec::Vec<crate::model::ReplicationStatusType>>,
+}
+impl std::fmt::Debug for RemoveRegionsFromReplicationOutputBody {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("RemoveRegionsFromReplicationOutputBody");
+        formatter.field("arn", &self.arn);
+        formatter.field("replication_status", &self.replication_status);
+        formatter.finish()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::default::Default, serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+pub struct ReplicateSecretToRegionsOutputBody {
+    /// <p>Replicate a secret based on the <code>ReplicaRegionType</code>> consisting of a
+    /// Region(required) and a KMSKeyId (optional) which can be the ARN, KeyID, or Alias. </p>
+    #[serde(rename = "ARN")]
+    #[serde(default)]
+    pub arn: std::option::Option<std::string::String>,
+    /// <p>Describes the secret replication status as <code>PENDING</code>, <code>SUCCESS</code> or <code>FAIL</code>.</p>
+    #[serde(rename = "ReplicationStatus")]
+    #[serde(default)]
+    pub replication_status: std::option::Option<std::vec::Vec<crate::model::ReplicationStatusType>>,
+}
+impl std::fmt::Debug for ReplicateSecretToRegionsOutputBody {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ReplicateSecretToRegionsOutputBody");
+        formatter.field("arn", &self.arn);
+        formatter.field("replication_status", &self.replication_status);
         formatter.finish()
     }
 }
@@ -1518,16 +1656,23 @@ impl std::fmt::Debug for RotateSecretOutputBody {
 
 #[non_exhaustive]
 #[derive(std::default::Default, serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+pub struct StopReplicationToReplicaOutputBody {
+    /// <p>Response <code>StopReplicationToReplica</code> of a secret, based on the <code>ARN,</code>.</p>
+    #[serde(rename = "ARN")]
+    #[serde(default)]
+    pub arn: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for StopReplicationToReplicaOutputBody {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("StopReplicationToReplicaOutputBody");
+        formatter.field("arn", &self.arn);
+        formatter.finish()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::default::Default, serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateSecretOutputBody {
-    /// <p>The friendly name of the secret that was updated.</p>
-    #[serde(rename = "Name")]
-    #[serde(default)]
-    pub name: std::option::Option<std::string::String>,
-    /// <p>If a new version of the secret was created by this operation, then <code>VersionId</code>
-    /// contains the unique identifier of the new version.</p>
-    #[serde(rename = "VersionId")]
-    #[serde(default)]
-    pub version_id: std::option::Option<std::string::String>,
     /// <p>The ARN of the secret that was updated.</p>
     /// <note>
     /// <p>Secrets Manager automatically adds several random characters to the name at the end of the ARN when
@@ -1539,13 +1684,22 @@ pub struct UpdateSecretOutputBody {
     #[serde(rename = "ARN")]
     #[serde(default)]
     pub arn: std::option::Option<std::string::String>,
+    /// <p>The friendly name of the secret that was updated.</p>
+    #[serde(rename = "Name")]
+    #[serde(default)]
+    pub name: std::option::Option<std::string::String>,
+    /// <p>If a new version of the secret was created by this operation, then <code>VersionId</code>
+    /// contains the unique identifier of the new version.</p>
+    #[serde(rename = "VersionId")]
+    #[serde(default)]
+    pub version_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for UpdateSecretOutputBody {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateSecretOutputBody");
+        formatter.field("arn", &self.arn);
         formatter.field("name", &self.name);
         formatter.field("version_id", &self.version_id);
-        formatter.field("arn", &self.arn);
         formatter.finish()
     }
 }
@@ -1574,20 +1728,20 @@ impl std::fmt::Debug for UpdateSecretVersionStageOutputBody {
 #[non_exhaustive]
 #[derive(std::default::Default, serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
 pub struct ValidateResourcePolicyOutputBody {
-    /// <p>Returns an error message if your policy doesn't pass validatation.</p>
-    #[serde(rename = "ValidationErrors")]
-    #[serde(default)]
-    pub validation_errors: std::option::Option<std::vec::Vec<crate::model::ValidationErrorsEntry>>,
     /// <p>Returns a message stating that your Reource Policy passed validation. </p>
     #[serde(rename = "PolicyValidationPassed")]
     #[serde(default)]
     pub policy_validation_passed: bool,
+    /// <p>Returns an error message if your policy doesn't pass validatation.</p>
+    #[serde(rename = "ValidationErrors")]
+    #[serde(default)]
+    pub validation_errors: std::option::Option<std::vec::Vec<crate::model::ValidationErrorsEntry>>,
 }
 impl std::fmt::Debug for ValidateResourcePolicyOutputBody {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ValidateResourcePolicyOutputBody");
-        formatter.field("validation_errors", &self.validation_errors);
         formatter.field("policy_validation_passed", &self.policy_validation_passed);
+        formatter.field("validation_errors", &self.validation_errors);
         formatter.finish()
     }
 }

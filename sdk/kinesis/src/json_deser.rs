@@ -11,8 +11,8 @@ pub fn describe_limits_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-    builder = builder.set_open_shard_count(parsed_body.open_shard_count);
     builder = builder.set_shard_limit(parsed_body.shard_limit);
+    builder = builder.set_open_shard_count(parsed_body.open_shard_count);
     Ok(builder)
 }
 
@@ -76,9 +76,9 @@ pub fn disable_enhanced_monitoring_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-    builder = builder.set_desired_shard_level_metrics(parsed_body.desired_shard_level_metrics);
     builder = builder.set_stream_name(parsed_body.stream_name);
     builder = builder.set_current_shard_level_metrics(parsed_body.current_shard_level_metrics);
+    builder = builder.set_desired_shard_level_metrics(parsed_body.desired_shard_level_metrics);
     Ok(builder)
 }
 
@@ -94,9 +94,9 @@ pub fn enable_enhanced_monitoring_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-    builder = builder.set_desired_shard_level_metrics(parsed_body.desired_shard_level_metrics);
     builder = builder.set_stream_name(parsed_body.stream_name);
     builder = builder.set_current_shard_level_metrics(parsed_body.current_shard_level_metrics);
+    builder = builder.set_desired_shard_level_metrics(parsed_body.desired_shard_level_metrics);
     Ok(builder)
 }
 
@@ -112,8 +112,8 @@ pub fn get_records_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-    builder = builder.set_next_shard_iterator(parsed_body.next_shard_iterator);
     builder = builder.set_records(parsed_body.records);
+    builder = builder.set_next_shard_iterator(parsed_body.next_shard_iterator);
     builder = builder.set_millis_behind_latest(parsed_body.millis_behind_latest);
     builder = builder.set_child_shards(parsed_body.child_shards);
     Ok(builder)
@@ -147,8 +147,8 @@ pub fn list_shards_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-    builder = builder.set_next_token(parsed_body.next_token);
     builder = builder.set_shards(parsed_body.shards);
+    builder = builder.set_next_token(parsed_body.next_token);
     Ok(builder)
 }
 
@@ -233,9 +233,9 @@ pub fn put_records_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
+    builder = builder.set_failed_record_count(parsed_body.failed_record_count);
     builder = builder.set_records(parsed_body.records);
     builder = builder.set_encryption_type(parsed_body.encryption_type);
-    builder = builder.set_failed_record_count(parsed_body.failed_record_count);
     Ok(builder)
 }
 
@@ -268,7 +268,7 @@ pub fn update_shard_count_deser_operation(
         serde_json::from_slice(inp)?
     };
     builder = builder.set_stream_name(parsed_body.stream_name);
-    builder = builder.set_target_shard_count(parsed_body.target_shard_count);
     builder = builder.set_current_shard_count(parsed_body.current_shard_count);
+    builder = builder.set_target_shard_count(parsed_body.target_shard_count);
     Ok(builder)
 }

@@ -16,8 +16,11 @@ pub fn parse_abort_multipart_upload_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::no_such_upload::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::no_such_upload(response.body().as_ref(), output)
-                    .map_err(crate::error::AbortMultipartUploadError::unhandled)?;
+                output = crate::xml_deser::deser_structure_no_such_upload_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::AbortMultipartUploadError::unhandled)?;
                 output.build()
             }),
         },
@@ -134,7 +137,7 @@ pub fn parse_copy_object_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::object_not_in_active_tier_error::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::object_not_in_active_tier_error(
+                output = crate::xml_deser::deser_structure_object_not_in_active_tier_error_xml_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -234,9 +237,11 @@ pub fn parse_create_bucket_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::bucket_already_owned_by_you::Builder::default();
                 let _ = response;
-                output =
-                    crate::xml_deser::bucket_already_owned_by_you(response.body().as_ref(), output)
-                        .map_err(crate::error::CreateBucketError::unhandled)?;
+                output = crate::xml_deser::deser_structure_bucket_already_owned_by_you_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateBucketError::unhandled)?;
                 output.build()
             }),
         },
@@ -246,8 +251,11 @@ pub fn parse_create_bucket_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::bucket_already_exists::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::bucket_already_exists(response.body().as_ref(), output)
-                    .map_err(crate::error::CreateBucketError::unhandled)?;
+                output = crate::xml_deser::deser_structure_bucket_already_exists_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateBucketError::unhandled)?;
                 output.build()
             }),
         },
@@ -1618,8 +1626,11 @@ pub fn parse_get_object_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::no_such_key::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::no_such_key(response.body().as_ref(), output)
-                    .map_err(crate::error::GetObjectError::unhandled)?;
+                output = crate::xml_deser::deser_structure_no_such_key_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetObjectError::unhandled)?;
                 output.build()
             }),
         },
@@ -1629,8 +1640,11 @@ pub fn parse_get_object_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::invalid_object_state::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::invalid_object_state(response.body().as_ref(), output)
-                    .map_err(crate::error::GetObjectError::unhandled)?;
+                output = crate::xml_deser::deser_structure_invalid_object_state_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetObjectError::unhandled)?;
                 output.build()
             }),
         },
@@ -1655,8 +1669,11 @@ pub fn parse_get_object_acl_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::no_such_key::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::no_such_key(response.body().as_ref(), output)
-                    .map_err(crate::error::GetObjectAclError::unhandled)?;
+                output = crate::xml_deser::deser_structure_no_such_key_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetObjectAclError::unhandled)?;
                 output.build()
             }),
         },
@@ -1875,8 +1892,11 @@ pub fn parse_head_bucket_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::not_found::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::not_found(response.body().as_ref(), output)
-                    .map_err(crate::error::HeadBucketError::unhandled)?;
+                output = crate::xml_deser::deser_structure_not_found_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::HeadBucketError::unhandled)?;
                 output.build()
             }),
         },
@@ -1913,8 +1933,11 @@ pub fn parse_head_object_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::not_found::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::not_found(response.body().as_ref(), output)
-                    .map_err(crate::error::HeadObjectError::unhandled)?;
+                output = crate::xml_deser::deser_structure_not_found_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::HeadObjectError::unhandled)?;
                 output.build()
             }),
         },
@@ -2356,8 +2379,11 @@ pub fn parse_list_objects_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::no_such_bucket::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::no_such_bucket(response.body().as_ref(), output)
-                    .map_err(crate::error::ListObjectsError::unhandled)?;
+                output = crate::xml_deser::deser_structure_no_such_bucket_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ListObjectsError::unhandled)?;
                 output.build()
             }),
         },
@@ -2396,8 +2422,11 @@ pub fn parse_list_objects_v2_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::no_such_bucket::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::no_such_bucket(response.body().as_ref(), output)
-                    .map_err(crate::error::ListObjectsV2Error::unhandled)?;
+                output = crate::xml_deser::deser_structure_no_such_bucket_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ListObjectsV2Error::unhandled)?;
                 output.build()
             }),
         },
@@ -3032,8 +3061,11 @@ pub fn parse_put_object_acl_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::no_such_key::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::no_such_key(response.body().as_ref(), output)
-                    .map_err(crate::error::PutObjectAclError::unhandled)?;
+                output = crate::xml_deser::deser_structure_no_such_key_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::PutObjectAclError::unhandled)?;
                 output.build()
             }),
         },
@@ -3223,21 +3255,19 @@ pub fn parse_restore_object_error(
         None => return Err(crate::error::RestoreObjectError::unhandled(generic)),
     };
     Err(match error_code {
-        "ObjectAlreadyInActiveTierError" => crate::error::RestoreObjectError {
-            meta: generic,
-            kind: crate::error::RestoreObjectErrorKind::ObjectAlreadyInActiveTierError({
-                #[allow(unused_mut)]
-                let mut output =
-                    crate::error::object_already_in_active_tier_error::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::object_already_in_active_tier_error(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::RestoreObjectError::unhandled)?;
-                output.build()
-            }),
-        },
+        "ObjectAlreadyInActiveTierError" => {
+            crate::error::RestoreObjectError {
+                meta: generic,
+                kind: crate::error::RestoreObjectErrorKind::ObjectAlreadyInActiveTierError({
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::object_already_in_active_tier_error::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_object_already_in_active_tier_error_xml_err(response.body().as_ref(), output).map_err(crate::error::RestoreObjectError::unhandled)?;
+                    output.build()
+                }),
+            }
+        }
         _ => crate::error::RestoreObjectError::generic(generic),
     })
 }

@@ -921,6 +921,9 @@ impl From<smithy_http::result::SdkError<crate::error::ListGrantsError>> for Erro
                 crate::error::ListGrantsErrorKind::InvalidArnError(inner) => {
                     Error::InvalidArnError(inner)
                 }
+                crate::error::ListGrantsErrorKind::InvalidGrantIdError(inner) => {
+                    Error::InvalidGrantIdError(inner)
+                }
                 crate::error::ListGrantsErrorKind::InvalidMarkerError(inner) => {
                     Error::InvalidMarkerError(inner)
                 }

@@ -54,7 +54,7 @@ pub fn serialize_structure_message_attribute_value(
     #[allow(unused_mut)]
     let mut scope_12 = writer.prefix("BinaryValue");
     if let Some(var_13) = &input.binary_value {
-        scope_12.string(&smithy_http::base64::encode(var_13));
+        scope_12.string(&smithy_types::base64::encode(var_13));
     }
     #[allow(unused_mut)]
     let mut scope_14 = writer.prefix("StringListValue");
@@ -74,7 +74,7 @@ pub fn serialize_structure_message_attribute_value(
         for item_21 in var_20 {
             #[allow(unused_mut)]
             let mut entry_23 = list_22.entry();
-            entry_23.string(&smithy_http::base64::encode(item_21));
+            entry_23.string(&smithy_types::base64::encode(item_21));
         }
         list_22.finish();
     }
@@ -98,7 +98,7 @@ pub fn serialize_structure_message_system_attribute_value(
     #[allow(unused_mut)]
     let mut scope_28 = writer.prefix("BinaryValue");
     if let Some(var_29) = &input.binary_value {
-        scope_28.string(&smithy_http::base64::encode(var_29));
+        scope_28.string(&smithy_types::base64::encode(var_29));
     }
     #[allow(unused_mut)]
     let mut scope_30 = writer.prefix("StringListValue");
@@ -118,7 +118,7 @@ pub fn serialize_structure_message_system_attribute_value(
         for item_37 in var_36 {
             #[allow(unused_mut)]
             let mut entry_39 = list_38.entry();
-            entry_39.string(&smithy_http::base64::encode(item_37));
+            entry_39.string(&smithy_types::base64::encode(item_37));
         }
         list_38.finish();
     }

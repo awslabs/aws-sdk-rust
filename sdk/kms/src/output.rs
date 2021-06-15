@@ -2490,8 +2490,7 @@ pub struct CreateGrantOutput {
     /// <i>AWS Key Management Service Developer Guide</i>.</p>
     pub grant_token: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the grant.</p>
-    /// <p>You can use the <code>GrantId</code> in a subsequent <a>RetireGrant</a> or
-    /// <a>RevokeGrant</a> operation.</p>
+    /// <p>You can use the <code>GrantId</code> in a <a>ListGrants</a>, <a>RetireGrant</a>, or <a>RevokeGrant</a> operation.</p>
     pub grant_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for CreateGrantOutput {
@@ -2524,8 +2523,7 @@ pub mod create_grant_output {
             self
         }
         /// <p>The unique identifier for the grant.</p>
-        /// <p>You can use the <code>GrantId</code> in a subsequent <a>RetireGrant</a> or
-        /// <a>RevokeGrant</a> operation.</p>
+        /// <p>You can use the <code>GrantId</code> in a <a>ListGrants</a>, <a>RetireGrant</a>, or <a>RevokeGrant</a> operation.</p>
         pub fn grant_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.grant_id = Some(inp.into());
             self

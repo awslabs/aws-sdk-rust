@@ -17,6 +17,7 @@ pub enum Error {
     KMSOptInRequired(crate::error::KMSOptInRequired),
     KMSThrottlingError(crate::error::KMSThrottlingError),
     NotFoundError(crate::error::NotFoundError),
+    OptedOutError(crate::error::OptedOutError),
     PlatformApplicationDisabledError(crate::error::PlatformApplicationDisabledError),
     ResourceNotFoundError(crate::error::ResourceNotFoundError),
     StaleTagError(crate::error::StaleTagError),
@@ -25,6 +26,9 @@ pub enum Error {
     TagPolicyError(crate::error::TagPolicyError),
     ThrottledError(crate::error::ThrottledError),
     TopicLimitExceededError(crate::error::TopicLimitExceededError),
+    UserErrorError(crate::error::UserErrorError),
+    ValidationError(crate::error::ValidationError),
+    VerificationError(crate::error::VerificationError),
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for Error {
@@ -45,6 +49,7 @@ impl std::fmt::Display for Error {
             Error::KMSOptInRequired(inner) => inner.fmt(f),
             Error::KMSThrottlingError(inner) => inner.fmt(f),
             Error::NotFoundError(inner) => inner.fmt(f),
+            Error::OptedOutError(inner) => inner.fmt(f),
             Error::PlatformApplicationDisabledError(inner) => inner.fmt(f),
             Error::ResourceNotFoundError(inner) => inner.fmt(f),
             Error::StaleTagError(inner) => inner.fmt(f),
@@ -53,6 +58,9 @@ impl std::fmt::Display for Error {
             Error::TagPolicyError(inner) => inner.fmt(f),
             Error::ThrottledError(inner) => inner.fmt(f),
             Error::TopicLimitExceededError(inner) => inner.fmt(f),
+            Error::UserErrorError(inner) => inner.fmt(f),
+            Error::ValidationError(inner) => inner.fmt(f),
+            Error::VerificationError(inner) => inner.fmt(f),
             Error::Unhandled(inner) => inner.fmt(f),
         }
     }
@@ -184,6 +192,38 @@ impl From<smithy_http::result::SdkError<crate::error::CreatePlatformEndpointErro
         }
     }
 }
+impl From<smithy_http::result::SdkError<crate::error::CreateSMSSandboxPhoneNumberError>> for Error {
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::CreateSMSSandboxPhoneNumberError>,
+    ) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::CreateSMSSandboxPhoneNumberErrorKind::AuthorizationErrorError(
+                    inner,
+                ) => Error::AuthorizationErrorError(inner),
+                crate::error::CreateSMSSandboxPhoneNumberErrorKind::InternalErrorError(inner) => {
+                    Error::InternalErrorError(inner)
+                }
+                crate::error::CreateSMSSandboxPhoneNumberErrorKind::InvalidParameterError(
+                    inner,
+                ) => Error::InvalidParameterError(inner),
+                crate::error::CreateSMSSandboxPhoneNumberErrorKind::OptedOutError(inner) => {
+                    Error::OptedOutError(inner)
+                }
+                crate::error::CreateSMSSandboxPhoneNumberErrorKind::ThrottledError(inner) => {
+                    Error::ThrottledError(inner)
+                }
+                crate::error::CreateSMSSandboxPhoneNumberErrorKind::UserErrorError(inner) => {
+                    Error::UserErrorError(inner)
+                }
+                crate::error::CreateSMSSandboxPhoneNumberErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl From<smithy_http::result::SdkError<crate::error::CreateTopicError>> for Error {
     fn from(err: smithy_http::result::SdkError<crate::error::CreateTopicError>) -> Self {
         match err {
@@ -256,6 +296,38 @@ impl From<smithy_http::result::SdkError<crate::error::DeletePlatformApplicationE
                     Error::InvalidParameterError(inner)
                 }
                 crate::error::DeletePlatformApplicationErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl From<smithy_http::result::SdkError<crate::error::DeleteSMSSandboxPhoneNumberError>> for Error {
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::DeleteSMSSandboxPhoneNumberError>,
+    ) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::DeleteSMSSandboxPhoneNumberErrorKind::AuthorizationErrorError(
+                    inner,
+                ) => Error::AuthorizationErrorError(inner),
+                crate::error::DeleteSMSSandboxPhoneNumberErrorKind::InternalErrorError(inner) => {
+                    Error::InternalErrorError(inner)
+                }
+                crate::error::DeleteSMSSandboxPhoneNumberErrorKind::InvalidParameterError(
+                    inner,
+                ) => Error::InvalidParameterError(inner),
+                crate::error::DeleteSMSSandboxPhoneNumberErrorKind::ResourceNotFoundError(
+                    inner,
+                ) => Error::ResourceNotFoundError(inner),
+                crate::error::DeleteSMSSandboxPhoneNumberErrorKind::ThrottledError(inner) => {
+                    Error::ThrottledError(inner)
+                }
+                crate::error::DeleteSMSSandboxPhoneNumberErrorKind::UserErrorError(inner) => {
+                    Error::UserErrorError(inner)
+                }
+                crate::error::DeleteSMSSandboxPhoneNumberErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
             },
@@ -360,6 +432,29 @@ impl From<smithy_http::result::SdkError<crate::error::GetSMSAttributesError>> fo
         }
     }
 }
+impl From<smithy_http::result::SdkError<crate::error::GetSMSSandboxAccountStatusError>> for Error {
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::GetSMSSandboxAccountStatusError>,
+    ) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::GetSMSSandboxAccountStatusErrorKind::AuthorizationErrorError(
+                    inner,
+                ) => Error::AuthorizationErrorError(inner),
+                crate::error::GetSMSSandboxAccountStatusErrorKind::InternalErrorError(inner) => {
+                    Error::InternalErrorError(inner)
+                }
+                crate::error::GetSMSSandboxAccountStatusErrorKind::ThrottledError(inner) => {
+                    Error::ThrottledError(inner)
+                }
+                crate::error::GetSMSSandboxAccountStatusErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl From<smithy_http::result::SdkError<crate::error::GetSubscriptionAttributesError>> for Error {
     fn from(
         err: smithy_http::result::SdkError<crate::error::GetSubscriptionAttributesError>,
@@ -431,6 +526,33 @@ impl From<smithy_http::result::SdkError<crate::error::ListEndpointsByPlatformApp
         }
     }
 }
+impl From<smithy_http::result::SdkError<crate::error::ListOriginationNumbersError>> for Error {
+    fn from(err: smithy_http::result::SdkError<crate::error::ListOriginationNumbersError>) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::ListOriginationNumbersErrorKind::AuthorizationErrorError(inner) => {
+                    Error::AuthorizationErrorError(inner)
+                }
+                crate::error::ListOriginationNumbersErrorKind::InternalErrorError(inner) => {
+                    Error::InternalErrorError(inner)
+                }
+                crate::error::ListOriginationNumbersErrorKind::InvalidParameterError(inner) => {
+                    Error::InvalidParameterError(inner)
+                }
+                crate::error::ListOriginationNumbersErrorKind::ThrottledError(inner) => {
+                    Error::ThrottledError(inner)
+                }
+                crate::error::ListOriginationNumbersErrorKind::ValidationError(inner) => {
+                    Error::ValidationError(inner)
+                }
+                crate::error::ListOriginationNumbersErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl From<smithy_http::result::SdkError<crate::error::ListPhoneNumbersOptedOutError>> for Error {
     fn from(
         err: smithy_http::result::SdkError<crate::error::ListPhoneNumbersOptedOutError>,
@@ -473,6 +595,35 @@ impl From<smithy_http::result::SdkError<crate::error::ListPlatformApplicationsEr
                     Error::InvalidParameterError(inner)
                 }
                 crate::error::ListPlatformApplicationsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl From<smithy_http::result::SdkError<crate::error::ListSMSSandboxPhoneNumbersError>> for Error {
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::ListSMSSandboxPhoneNumbersError>,
+    ) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::ListSMSSandboxPhoneNumbersErrorKind::AuthorizationErrorError(
+                    inner,
+                ) => Error::AuthorizationErrorError(inner),
+                crate::error::ListSMSSandboxPhoneNumbersErrorKind::InternalErrorError(inner) => {
+                    Error::InternalErrorError(inner)
+                }
+                crate::error::ListSMSSandboxPhoneNumbersErrorKind::InvalidParameterError(inner) => {
+                    Error::InvalidParameterError(inner)
+                }
+                crate::error::ListSMSSandboxPhoneNumbersErrorKind::ResourceNotFoundError(inner) => {
+                    Error::ResourceNotFoundError(inner)
+                }
+                crate::error::ListSMSSandboxPhoneNumbersErrorKind::ThrottledError(inner) => {
+                    Error::ThrottledError(inner)
+                }
+                crate::error::ListSMSSandboxPhoneNumbersErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
             },
@@ -894,6 +1045,38 @@ impl From<smithy_http::result::SdkError<crate::error::UntagResourceError>> for E
                     Error::TagPolicyError(inner)
                 }
                 crate::error::UntagResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl From<smithy_http::result::SdkError<crate::error::VerifySMSSandboxPhoneNumberError>> for Error {
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::VerifySMSSandboxPhoneNumberError>,
+    ) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::VerifySMSSandboxPhoneNumberErrorKind::AuthorizationErrorError(
+                    inner,
+                ) => Error::AuthorizationErrorError(inner),
+                crate::error::VerifySMSSandboxPhoneNumberErrorKind::InternalErrorError(inner) => {
+                    Error::InternalErrorError(inner)
+                }
+                crate::error::VerifySMSSandboxPhoneNumberErrorKind::InvalidParameterError(
+                    inner,
+                ) => Error::InvalidParameterError(inner),
+                crate::error::VerifySMSSandboxPhoneNumberErrorKind::ResourceNotFoundError(
+                    inner,
+                ) => Error::ResourceNotFoundError(inner),
+                crate::error::VerifySMSSandboxPhoneNumberErrorKind::ThrottledError(inner) => {
+                    Error::ThrottledError(inner)
+                }
+                crate::error::VerifySMSSandboxPhoneNumberErrorKind::VerificationError(inner) => {
+                    Error::VerificationError(inner)
+                }
+                crate::error::VerifySMSSandboxPhoneNumberErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
             },
             _ => Error::Unhandled(err.into()),
         }

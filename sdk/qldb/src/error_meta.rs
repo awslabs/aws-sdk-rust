@@ -349,4 +349,24 @@ impl From<smithy_http::result::SdkError<crate::error::UpdateLedgerError>> for Er
         }
     }
 }
+impl From<smithy_http::result::SdkError<crate::error::UpdateLedgerPermissionsModeError>> for Error {
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::UpdateLedgerPermissionsModeError>,
+    ) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::UpdateLedgerPermissionsModeErrorKind::InvalidParameterError(
+                    inner,
+                ) => Error::InvalidParameterError(inner),
+                crate::error::UpdateLedgerPermissionsModeErrorKind::ResourceNotFoundError(
+                    inner,
+                ) => Error::ResourceNotFoundError(inner),
+                crate::error::UpdateLedgerPermissionsModeErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl std::error::Error for Error {}

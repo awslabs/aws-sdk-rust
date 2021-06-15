@@ -3,6 +3,9 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
+use std::error::Error;
+use std::fmt;
+
 const NANOS_PER_SECOND: u32 = 1_000_000_000;
 
 #[non_exhaustive]
@@ -10,6 +13,18 @@ const NANOS_PER_SECOND: u32 = 1_000_000_000;
 pub enum DateParseError {
     Invalid(&'static str),
     IntParseError,
+}
+
+impl Error for DateParseError {}
+
+impl fmt::Display for DateParseError {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        use DateParseError::*;
+        match self {
+            Invalid(msg) => write!(f, "invalid date: {}", msg),
+            IntParseError => write!(f, "failed to parse int"),
+        }
+    }
 }
 
 pub mod http_date {
@@ -35,7 +50,7 @@ pub mod http_date {
     /// - If subsecond nanos are 0, no fractional seconds are added
     /// - If subsecond nanos are nonzero, 3 digits of fractional seconds are added
     pub fn format(instant: &Instant) -> String {
-        let structured = instant.to_chrono();
+        let structured = instant.to_chrono_internal();
         let weekday = match structured.weekday() {
             Weekday::Mon => "Mon",
             Weekday::Tue => "Tue",
@@ -238,10 +253,10 @@ pub mod http_date {
 }
 
 #[cfg(test)]
-mod test {
+mod test_http_date {
     use proptest::prelude::*;
 
-    use crate::instant::format::{http_date, iso_8601, DateParseError};
+    use crate::instant::format::{http_date, rfc3339, DateParseError};
     use crate::Instant;
 
     #[test]
@@ -353,21 +368,21 @@ mod test {
     fn valid_iso_date() {
         let date = "1985-04-12T23:20:50.52Z";
         let expected = Instant::from_secs_and_nanos(482196050, 520000000);
-        assert_eq!(iso_8601::parse(date), Ok(expected));
+        assert_eq!(rfc3339::parse(date), Ok(expected));
     }
 
     #[test]
     fn iso_date_no_fractional() {
         let date = "1985-04-12T23:20:50Z";
         let expected = Instant::from_secs_and_nanos(482196050, 0);
-        assert_eq!(iso_8601::parse(date), Ok(expected));
+        assert_eq!(rfc3339::parse(date), Ok(expected));
     }
 
     #[test]
     fn read_iso_date_comma_split() {
         let date = "1985-04-12T23:20:50Z,1985-04-12T23:20:51Z";
-        let (e1, date) = iso_8601::read(date).expect("should succeed");
-        let (e2, date2) = iso_8601::read(&date[1..]).expect("should succeed");
+        let (e1, date) = rfc3339::read(date).expect("should succeed");
+        let (e2, date2) = rfc3339::read(&date[1..]).expect("should succeed");
         assert_eq!(date2, "");
         assert_eq!(date, ",1985-04-12T23:20:51Z");
         let expected = Instant::from_secs_and_nanos(482196050, 0);
@@ -386,11 +401,12 @@ mod test {
     }
 }
 
-pub mod iso_8601 {
+pub mod rfc3339 {
     use chrono::format;
 
     use crate::instant::format::DateParseError;
     use crate::Instant;
+    use chrono::{Datelike, Timelike};
 
     // OK: 1985-04-12T23:20:50.52Z
     // OK: 1985-04-12T23:20:50Z
@@ -402,7 +418,7 @@ pub mod iso_8601 {
         let format = format::StrftimeItems::new("%Y-%m-%dT%H:%M:%S%.fZ");
         // TODO: it may be helpful for debugging to keep these errors around
         chrono::format::parse(&mut date, s, format)
-            .map_err(|_| DateParseError::Invalid("invalid iso8601 date"))?;
+            .map_err(|_| DateParseError::Invalid("invalid rfc3339 date"))?;
         let utc_date = date
             .to_naive_datetime_with_offset(0)
             .map_err(|_| DateParseError::Invalid("invalid date"))?;
@@ -412,10 +428,137 @@ pub mod iso_8601 {
         ))
     }
 
-    /// Read 1 ISO8601 date from &str and return the remaining str
+    /// Read 1 RFC-3339 date from &str and return the remaining str
     pub fn read(s: &str) -> Result<(Instant, &str), DateParseError> {
         let delim = s.find('Z').map(|idx| idx + 1).unwrap_or_else(|| s.len());
         let (head, rest) = s.split_at(delim);
         Ok((parse(head)?, &rest))
+    }
+
+    /// Format an [Instant] in the RFC-3339 date format
+    pub fn format(instant: &Instant) -> String {
+        use std::fmt::Write;
+        let (year, month, day, hour, minute, second, nanos) = {
+            let s = instant.to_chrono_internal();
+            (
+                s.year(),
+                s.month(),
+                s.day(),
+                s.time().hour(),
+                s.time().minute(),
+                s.time().second(),
+                s.timestamp_subsec_nanos(),
+            )
+        };
+
+        // This is stated in the assumptions for RFC-3339. ISO-8601 allows for years
+        // between -99,999 and 99,999 inclusive, but RFC-3339 is bound between 0 and 9,999.
+        assert!(
+            (0..=9_999).contains(&year),
+            "years must be between 0 and 9,999 in RFC-3339"
+        );
+
+        let mut out = String::with_capacity(33);
+        write!(
+            out,
+            "{:04}-{:02}-{:02}T{:02}:{:02}:{:02}",
+            year, month, day, hour, minute, second
+        )
+        .unwrap();
+        format_nanos(&mut out, nanos);
+        out.push('Z');
+        out
+    }
+
+    /// Formats sub-second nanos for RFC-3339 (including the '.').
+    /// Expects to be called with a number of `nanos` between 0 and 999_999_999 inclusive.
+    fn format_nanos(into: &mut String, nanos: u32) {
+        debug_assert!(nanos < 1_000_000_000);
+        if nanos > 0 {
+            into.push('.');
+            let (mut remaining, mut place) = (nanos, 100_000_000);
+            while remaining > 0 {
+                let digit = (remaining / place) % 10;
+                into.push(char::from(b'0' + (digit as u8)));
+                remaining -= digit * place;
+                place /= 10;
+            }
+        }
+    }
+}
+
+#[cfg(test)]
+mod test {
+    use super::rfc3339::format;
+    use crate::Instant;
+    use proptest::proptest;
+
+    #[test]
+    fn no_nanos() {
+        assert_eq!(
+            "1970-01-01T00:00:00Z",
+            format(&Instant::from_epoch_seconds(0))
+        );
+        assert_eq!(
+            "2021-06-09T23:17:26Z",
+            format(&Instant::from_epoch_seconds(1623280646))
+        );
+        assert_eq!(
+            "1969-12-31T18:22:50Z",
+            format(&Instant::from_epoch_seconds(-20230))
+        );
+    }
+
+    #[test]
+    fn with_nanos() {
+        assert_eq!(
+            "1970-01-01T00:00:00.987Z",
+            format(&Instant::from_secs_and_nanos(0, 987_000_000))
+        );
+        assert_eq!(
+            "1970-01-01T00:00:00.1Z",
+            format(&Instant::from_secs_and_nanos(0, 100_000_000))
+        );
+        assert_eq!(
+            "1970-01-01T00:00:00.01Z",
+            format(&Instant::from_secs_and_nanos(0, 10_000_000))
+        );
+        assert_eq!(
+            "1970-01-01T00:00:00.001Z",
+            format(&Instant::from_secs_and_nanos(0, 1_000_000))
+        );
+        assert_eq!(
+            "1970-01-01T00:00:00.987654Z",
+            format(&Instant::from_secs_and_nanos(0, 987_654_000))
+        );
+        assert_eq!(
+            "1970-01-01T00:00:00.987654321Z",
+            format(&Instant::from_secs_and_nanos(0, 987_654_321))
+        );
+        assert_eq!(
+            "1970-01-01T00:00:00.000000001Z",
+            format(&Instant::from_secs_and_nanos(0, 000_000_001))
+        );
+        assert_eq!(
+            "1970-01-01T00:00:00.101Z",
+            format(&Instant::from_secs_and_nanos(0, 101_000_000))
+        );
+    }
+
+    proptest! {
+        // Sanity test against chrono
+        #[test]
+        #[cfg(feature = "chrono-conversions")]
+        fn proptest_rfc3339(
+            seconds in 0..253_402_300_799i64, // 0 to 9999-12-31T23:59:59
+            nanos in 0..1_000_000_000u32
+        ) {
+            use chrono::DateTime;
+
+            let instant = Instant::from_secs_and_nanos(seconds, nanos);
+            let formatted = format(&instant);
+            let parsed: Instant = DateTime::parse_from_rfc3339(&formatted).unwrap().into();
+            assert_eq!(instant, parsed);
+        }
     }
 }

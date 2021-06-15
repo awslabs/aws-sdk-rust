@@ -644,7 +644,8 @@ pub struct DBInstance {
     pub engine: std::option::Option<std::string::String>,
     /// <p>Specifies the current state of this database.</p>
     /// <p>For information about DB instance statuses, see
-    /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.DBInstance.Status.html">DB Instance Status</a> in the <i>Amazon RDS User Guide.</i>
+    /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/accessing-monitoring.html#Overview.DBInstance.Status">Viewing DB instance status</a>
+    /// in the <i>Amazon RDS User Guide.</i>
     /// </p>
     pub db_instance_status: std::option::Option<std::string::String>,
     /// <p>Contains the master username for the DB instance.</p>
@@ -1099,7 +1100,8 @@ pub mod db_instance {
         }
         /// <p>Specifies the current state of this database.</p>
         /// <p>For information about DB instance statuses, see
-        /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.DBInstance.Status.html">DB Instance Status</a> in the <i>Amazon RDS User Guide.</i>
+        /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/accessing-monitoring.html#Overview.DBInstance.Status">Viewing DB instance status</a>
+        /// in the <i>Amazon RDS User Guide.</i>
         /// </p>
         pub fn db_instance_status(mut self, inp: impl Into<std::string::String>) -> Self {
             self.db_instance_status = Some(inp.into());
@@ -2657,6 +2659,7 @@ impl OptionGroupMembership {
 pub enum ReplicaMode {
     Mounted,
     OpenReadOnly,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for ReplicaMode {
@@ -4900,7 +4903,7 @@ impl ClusterPendingModifiedValues {
     }
 }
 
-/// **NOTE:** `WriteForwardingStatus::Unknown` has been renamed to `::UnknownValue`. `WriteForwardingStatus::Unknown` refers to additional values that may have been added since this enum was generated.
+/// **NOTE:** `WriteForwardingStatus::Unknown` has been renamed to `::UnknownValue`.
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -4916,8 +4919,9 @@ pub enum WriteForwardingStatus {
     Disabling,
     Enabled,
     Enabling,
-    /// **NOTE:** `::Unknown` has been renamed to `::UnknownValue`. `::Unknown` refers to additional values that may have been added since this enum was generated.
+    /// **NOTE:** `::Unknown` has been renamed to `::UnknownValue`.
     UnknownValue,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for WriteForwardingStatus {
@@ -4981,6 +4985,7 @@ pub enum ActivityStreamStatus {
     Starting,
     Stopped,
     Stopping,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for ActivityStreamStatus {
@@ -5040,6 +5045,7 @@ impl<'de> serde::Deserialize<'de> for ActivityStreamStatus {
 pub enum ActivityStreamMode {
     Async,
     Sync,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for ActivityStreamMode {
@@ -6216,6 +6222,7 @@ impl Parameter {
 pub enum ApplyMethod {
     Immediate,
     PendingReboot,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for ApplyMethod {
@@ -6844,6 +6851,7 @@ pub enum FailoverStatus {
     Cancelling,
     FailingOver,
     Pending,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for FailoverStatus {
@@ -7275,6 +7283,7 @@ pub enum TargetHealthReason {
     InvalidReplicationState,
     PendingProxyCapacity,
     Unreachable,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for TargetHealthReason {
@@ -7337,6 +7346,7 @@ pub enum TargetState {
     Available,
     Registering,
     Unavailable,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for TargetState {
@@ -7381,7 +7391,7 @@ impl<'de> serde::Deserialize<'de> for TargetState {
     }
 }
 
-/// **NOTE:** `TargetRole::Unknown` has been renamed to `::UnknownValue`. `TargetRole::Unknown` refers to additional values that may have been added since this enum was generated.
+/// **NOTE:** `TargetRole::Unknown` has been renamed to `::UnknownValue`.
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -7395,8 +7405,9 @@ impl<'de> serde::Deserialize<'de> for TargetState {
 pub enum TargetRole {
     ReadOnly,
     ReadWrite,
-    /// **NOTE:** `::Unknown` has been renamed to `::UnknownValue`. `::Unknown` refers to additional values that may have been added since this enum was generated.
+    /// **NOTE:** `::Unknown` has been renamed to `::UnknownValue`.
     UnknownValue,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for TargetRole {
@@ -7455,6 +7466,7 @@ pub enum TargetType {
     RdsInstance,
     RdsServerlessEndpoint,
     TrackedCluster,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for TargetType {
@@ -9921,6 +9933,7 @@ impl DBProxyEndpoint {
 pub enum DbProxyEndpointTargetRole {
     ReadOnly,
     ReadWrite,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for DbProxyEndpointTargetRole {
@@ -9980,6 +9993,7 @@ pub enum DbProxyEndpointStatus {
     IncompatibleNetwork,
     InsufficientResourceLimits,
     Modifying,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for DbProxyEndpointStatus {
@@ -10432,6 +10446,7 @@ impl UserAuthConfigInfo {
 pub enum IamAuthMode {
     Disabled,
     Required,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for IamAuthMode {
@@ -10486,6 +10501,7 @@ impl<'de> serde::Deserialize<'de> for IamAuthMode {
 )]
 pub enum AuthScheme {
     Secrets,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for AuthScheme {
@@ -10546,6 +10562,7 @@ pub enum DbProxyStatus {
     Reactivating,
     Suspended,
     Suspending,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for DbProxyStatus {
@@ -13930,6 +13947,7 @@ pub enum SourceType {
     DbParameterGroup,
     DbSecurityGroup,
     DbSnapshot,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for SourceType {
@@ -16331,6 +16349,7 @@ impl AccountQuota {
 pub enum EngineFamily {
     Mysql,
     Postgresql,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for EngineFamily {

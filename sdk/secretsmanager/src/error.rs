@@ -192,6 +192,7 @@ pub struct DeleteResourcePolicyError {
 #[derive(std::fmt::Debug)]
 pub enum DeleteResourcePolicyErrorKind {
     InternalServiceError(crate::error::InternalServiceError),
+    InvalidParameterError(crate::error::InvalidParameterError),
     InvalidRequestError(crate::error::InvalidRequestError),
     ResourceNotFoundError(crate::error::ResourceNotFoundError),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
@@ -201,6 +202,7 @@ impl std::fmt::Display for DeleteResourcePolicyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
             DeleteResourcePolicyErrorKind::InternalServiceError(_inner) => _inner.fmt(f),
+            DeleteResourcePolicyErrorKind::InvalidParameterError(_inner) => _inner.fmt(f),
             DeleteResourcePolicyErrorKind::InvalidRequestError(_inner) => _inner.fmt(f),
             DeleteResourcePolicyErrorKind::ResourceNotFoundError(_inner) => _inner.fmt(f),
             DeleteResourcePolicyErrorKind::Unhandled(_inner) => _inner.fmt(f),
@@ -256,6 +258,7 @@ impl std::error::Error for DeleteResourcePolicyError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             DeleteResourcePolicyErrorKind::InternalServiceError(_inner) => Some(_inner),
+            DeleteResourcePolicyErrorKind::InvalidParameterError(_inner) => Some(_inner),
             DeleteResourcePolicyErrorKind::InvalidRequestError(_inner) => Some(_inner),
             DeleteResourcePolicyErrorKind::ResourceNotFoundError(_inner) => Some(_inner),
             DeleteResourcePolicyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
@@ -1021,6 +1024,174 @@ impl std::error::Error for PutSecretValueError {
 
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
+pub struct RemoveRegionsFromReplicationError {
+    pub kind: RemoveRegionsFromReplicationErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum RemoveRegionsFromReplicationErrorKind {
+    InternalServiceError(crate::error::InternalServiceError),
+    InvalidParameterError(crate::error::InvalidParameterError),
+    InvalidRequestError(crate::error::InvalidRequestError),
+    ResourceNotFoundError(crate::error::ResourceNotFoundError),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for RemoveRegionsFromReplicationError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            RemoveRegionsFromReplicationErrorKind::InternalServiceError(_inner) => _inner.fmt(f),
+            RemoveRegionsFromReplicationErrorKind::InvalidParameterError(_inner) => _inner.fmt(f),
+            RemoveRegionsFromReplicationErrorKind::InvalidRequestError(_inner) => _inner.fmt(f),
+            RemoveRegionsFromReplicationErrorKind::ResourceNotFoundError(_inner) => _inner.fmt(f),
+            RemoveRegionsFromReplicationErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for RemoveRegionsFromReplicationError {
+    fn code(&self) -> Option<&str> {
+        RemoveRegionsFromReplicationError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl RemoveRegionsFromReplicationError {
+    pub fn new(kind: RemoveRegionsFromReplicationErrorKind, meta: smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: RemoveRegionsFromReplicationErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: RemoveRegionsFromReplicationErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
+    // by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+}
+impl std::error::Error for RemoveRegionsFromReplicationError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            RemoveRegionsFromReplicationErrorKind::InternalServiceError(_inner) => Some(_inner),
+            RemoveRegionsFromReplicationErrorKind::InvalidParameterError(_inner) => Some(_inner),
+            RemoveRegionsFromReplicationErrorKind::InvalidRequestError(_inner) => Some(_inner),
+            RemoveRegionsFromReplicationErrorKind::ResourceNotFoundError(_inner) => Some(_inner),
+            RemoveRegionsFromReplicationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ReplicateSecretToRegionsError {
+    pub kind: ReplicateSecretToRegionsErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ReplicateSecretToRegionsErrorKind {
+    InternalServiceError(crate::error::InternalServiceError),
+    InvalidParameterError(crate::error::InvalidParameterError),
+    InvalidRequestError(crate::error::InvalidRequestError),
+    ResourceNotFoundError(crate::error::ResourceNotFoundError),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for ReplicateSecretToRegionsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ReplicateSecretToRegionsErrorKind::InternalServiceError(_inner) => _inner.fmt(f),
+            ReplicateSecretToRegionsErrorKind::InvalidParameterError(_inner) => _inner.fmt(f),
+            ReplicateSecretToRegionsErrorKind::InvalidRequestError(_inner) => _inner.fmt(f),
+            ReplicateSecretToRegionsErrorKind::ResourceNotFoundError(_inner) => _inner.fmt(f),
+            ReplicateSecretToRegionsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for ReplicateSecretToRegionsError {
+    fn code(&self) -> Option<&str> {
+        ReplicateSecretToRegionsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ReplicateSecretToRegionsError {
+    pub fn new(kind: ReplicateSecretToRegionsErrorKind, meta: smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ReplicateSecretToRegionsErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ReplicateSecretToRegionsErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
+    // by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+}
+impl std::error::Error for ReplicateSecretToRegionsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ReplicateSecretToRegionsErrorKind::InternalServiceError(_inner) => Some(_inner),
+            ReplicateSecretToRegionsErrorKind::InvalidParameterError(_inner) => Some(_inner),
+            ReplicateSecretToRegionsErrorKind::InvalidRequestError(_inner) => Some(_inner),
+            ReplicateSecretToRegionsErrorKind::ResourceNotFoundError(_inner) => Some(_inner),
+            ReplicateSecretToRegionsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
 pub struct RestoreSecretError {
     pub kind: RestoreSecretErrorKind,
     pub(crate) meta: smithy_types::Error,
@@ -1183,6 +1354,90 @@ impl std::error::Error for RotateSecretError {
             RotateSecretErrorKind::InvalidRequestError(_inner) => Some(_inner),
             RotateSecretErrorKind::ResourceNotFoundError(_inner) => Some(_inner),
             RotateSecretErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct StopReplicationToReplicaError {
+    pub kind: StopReplicationToReplicaErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum StopReplicationToReplicaErrorKind {
+    InternalServiceError(crate::error::InternalServiceError),
+    InvalidParameterError(crate::error::InvalidParameterError),
+    InvalidRequestError(crate::error::InvalidRequestError),
+    ResourceNotFoundError(crate::error::ResourceNotFoundError),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for StopReplicationToReplicaError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            StopReplicationToReplicaErrorKind::InternalServiceError(_inner) => _inner.fmt(f),
+            StopReplicationToReplicaErrorKind::InvalidParameterError(_inner) => _inner.fmt(f),
+            StopReplicationToReplicaErrorKind::InvalidRequestError(_inner) => _inner.fmt(f),
+            StopReplicationToReplicaErrorKind::ResourceNotFoundError(_inner) => _inner.fmt(f),
+            StopReplicationToReplicaErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for StopReplicationToReplicaError {
+    fn code(&self) -> Option<&str> {
+        StopReplicationToReplicaError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl StopReplicationToReplicaError {
+    pub fn new(kind: StopReplicationToReplicaErrorKind, meta: smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: StopReplicationToReplicaErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: StopReplicationToReplicaErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
+    // by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+}
+impl std::error::Error for StopReplicationToReplicaError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            StopReplicationToReplicaErrorKind::InternalServiceError(_inner) => Some(_inner),
+            StopReplicationToReplicaErrorKind::InvalidParameterError(_inner) => Some(_inner),
+            StopReplicationToReplicaErrorKind::InvalidRequestError(_inner) => Some(_inner),
+            StopReplicationToReplicaErrorKind::ResourceNotFoundError(_inner) => Some(_inner),
+            StopReplicationToReplicaErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -1690,7 +1945,7 @@ impl ResourceNotFoundError {
     }
 }
 
-/// <p>The policy document that you provided isn't valid.</p>
+/// <p>You provided a resource-based policy with syntax errors.</p>
 #[non_exhaustive]
 #[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
 pub struct MalformedPolicyDocumentError {
@@ -2203,7 +2458,7 @@ impl EncryptionFailure {
     }
 }
 
-/// <p>The resource policy did not prevent broad access to the secret.</p>
+/// <p>The BlockPublicPolicy parameter is set to true and the resource policy did not prevent broad access to the secret.</p>
 #[non_exhaustive]
 #[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
 pub struct PublicPolicyError {

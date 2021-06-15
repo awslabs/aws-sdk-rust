@@ -1266,7 +1266,8 @@ pub struct ListGrantsInputBody<'a> {
     /// truncated results. Set it to the value of <code>NextMarker</code> from the truncated response
     /// you just received.</p>
     pub marker: &'a std::option::Option<std::string::String>,
-    /// <p>A unique identifier for the customer master key (CMK).</p>
+    /// <p>Returns only grants for the specified customer master key (CMK). This parameter is
+    /// required.</p>
     /// <p>Specify the key ID or the Amazon Resource Name (ARN) of the CMK. To specify a CMK in a
     /// different AWS account, you must use the key ARN.</p>
     /// <p>For example:</p>
@@ -1282,6 +1283,12 @@ pub struct ListGrantsInputBody<'a> {
     /// </ul>
     /// <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
     pub key_id: &'a std::option::Option<std::string::String>,
+    /// <p>Returns only the grant with the specified grant ID. The grant ID uniquely identifies the
+    /// grant. </p>
+    pub grant_id: &'a std::option::Option<std::string::String>,
+    /// <p>Returns only grants where the specified principal is the grantee principal for the
+    /// grant.</p>
+    pub grantee_principal: &'a std::option::Option<std::string::String>,
 }
 impl<'a> std::fmt::Debug for ListGrantsInputBody<'a> {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1289,6 +1296,8 @@ impl<'a> std::fmt::Debug for ListGrantsInputBody<'a> {
         formatter.field("limit", &self.limit);
         formatter.field("marker", &self.marker);
         formatter.field("key_id", &self.key_id);
+        formatter.field("grant_id", &self.grant_id);
+        formatter.field("grantee_principal", &self.grantee_principal);
         formatter.finish()
     }
 }
@@ -2044,8 +2053,7 @@ pub struct CreateGrantOutputBody {
     #[serde(default)]
     pub grant_token: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the grant.</p>
-    /// <p>You can use the <code>GrantId</code> in a subsequent <a>RetireGrant</a> or
-    /// <a>RevokeGrant</a> operation.</p>
+    /// <p>You can use the <code>GrantId</code> in a <a>ListGrants</a>, <a>RetireGrant</a>, or <a>RevokeGrant</a> operation.</p>
     #[serde(rename = "GrantId")]
     #[serde(default)]
     pub grant_id: std::option::Option<std::string::String>,

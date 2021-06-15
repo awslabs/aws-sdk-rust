@@ -10,6 +10,7 @@ use aws_types::SigningService;
 use http::header::HeaderName;
 use smithy_http::body::SdkBody;
 use std::error::Error;
+use std::fmt;
 use std::time::SystemTime;
 
 #[derive(Eq, PartialEq, Clone, Copy)]
@@ -84,6 +85,13 @@ pub struct SigV4Signer {
     // and holding an instance of the signer, so prevent people from constructing a SigV4Signer without
     // going through the constructor.
     _private: (),
+}
+
+impl fmt::Debug for SigV4Signer {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        let mut formatter = f.debug_struct("SigV4Signer");
+        formatter.finish()
+    }
 }
 
 pub type SigningError = Box<dyn Error + Send + Sync>;

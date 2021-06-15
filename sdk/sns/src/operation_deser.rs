@@ -16,7 +16,7 @@ pub fn parse_add_permission_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::authorization_error_error::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::authorization_error_exception(
+                output = crate::xml_deser::deser_structure_authorization_error_error_xml_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -30,9 +30,11 @@ pub fn parse_add_permission_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::internal_error_error::Builder::default();
                 let _ = response;
-                output =
-                    crate::xml_deser::internal_error_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::AddPermissionError::unhandled)?;
+                output = crate::xml_deser::deser_structure_internal_error_error_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::AddPermissionError::unhandled)?;
                 output.build()
             }),
         },
@@ -42,9 +44,11 @@ pub fn parse_add_permission_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::invalid_parameter_error::Builder::default();
                 let _ = response;
-                output =
-                    crate::xml_deser::invalid_parameter_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::AddPermissionError::unhandled)?;
+                output = crate::xml_deser::deser_structure_invalid_parameter_error_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::AddPermissionError::unhandled)?;
                 output.build()
             }),
         },
@@ -54,8 +58,11 @@ pub fn parse_add_permission_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::not_found_error::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::AddPermissionError::unhandled)?;
+                output = crate::xml_deser::deser_structure_not_found_error_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::AddPermissionError::unhandled)?;
                 output.build()
             }),
         },
@@ -99,7 +106,7 @@ pub fn parse_check_if_phone_number_is_opted_out_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::authorization_error_error::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::authorization_error_exception(
+                output = crate::xml_deser::deser_structure_authorization_error_error_xml_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -113,9 +120,11 @@ pub fn parse_check_if_phone_number_is_opted_out_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::internal_error_error::Builder::default();
                 let _ = response;
-                output =
-                    crate::xml_deser::internal_error_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::CheckIfPhoneNumberIsOptedOutError::unhandled)?;
+                output = crate::xml_deser::deser_structure_internal_error_error_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CheckIfPhoneNumberIsOptedOutError::unhandled)?;
                 output.build()
             }),
         },
@@ -125,9 +134,11 @@ pub fn parse_check_if_phone_number_is_opted_out_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::invalid_parameter_error::Builder::default();
                 let _ = response;
-                output =
-                    crate::xml_deser::invalid_parameter_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::CheckIfPhoneNumberIsOptedOutError::unhandled)?;
+                output = crate::xml_deser::deser_structure_invalid_parameter_error_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CheckIfPhoneNumberIsOptedOutError::unhandled)?;
                 output.build()
             }),
         },
@@ -137,8 +148,11 @@ pub fn parse_check_if_phone_number_is_opted_out_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::throttled_error::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::throttled_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::CheckIfPhoneNumberIsOptedOutError::unhandled)?;
+                output = crate::xml_deser::deser_structure_throttled_error_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CheckIfPhoneNumberIsOptedOutError::unhandled)?;
                 output.build()
             }),
         },
@@ -184,7 +198,7 @@ pub fn parse_confirm_subscription_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::authorization_error_error::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::authorization_error_exception(
+                output = crate::xml_deser::deser_structure_authorization_error_error_xml_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -192,30 +206,30 @@ pub fn parse_confirm_subscription_error(
                 output.build()
             }),
         },
-        "FilterPolicyLimitExceededException" => crate::error::ConfirmSubscriptionError {
-            meta: generic,
-            kind: crate::error::ConfirmSubscriptionErrorKind::FilterPolicyLimitExceededError({
-                #[allow(unused_mut)]
-                let mut output =
-                    crate::error::filter_policy_limit_exceeded_error::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::filter_policy_limit_exceeded_exception(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::ConfirmSubscriptionError::unhandled)?;
-                output.build()
-            }),
-        },
+        "FilterPolicyLimitExceededException" => {
+            crate::error::ConfirmSubscriptionError {
+                meta: generic,
+                kind: crate::error::ConfirmSubscriptionErrorKind::FilterPolicyLimitExceededError({
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::filter_policy_limit_exceeded_error::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_filter_policy_limit_exceeded_error_xml_err(response.body().as_ref(), output).map_err(crate::error::ConfirmSubscriptionError::unhandled)?;
+                    output.build()
+                }),
+            }
+        }
         "InternalErrorException" => crate::error::ConfirmSubscriptionError {
             meta: generic,
             kind: crate::error::ConfirmSubscriptionErrorKind::InternalErrorError({
                 #[allow(unused_mut)]
                 let mut output = crate::error::internal_error_error::Builder::default();
                 let _ = response;
-                output =
-                    crate::xml_deser::internal_error_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::ConfirmSubscriptionError::unhandled)?;
+                output = crate::xml_deser::deser_structure_internal_error_error_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ConfirmSubscriptionError::unhandled)?;
                 output.build()
             }),
         },
@@ -225,9 +239,11 @@ pub fn parse_confirm_subscription_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::invalid_parameter_error::Builder::default();
                 let _ = response;
-                output =
-                    crate::xml_deser::invalid_parameter_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::ConfirmSubscriptionError::unhandled)?;
+                output = crate::xml_deser::deser_structure_invalid_parameter_error_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ConfirmSubscriptionError::unhandled)?;
                 output.build()
             }),
         },
@@ -237,19 +253,7 @@ pub fn parse_confirm_subscription_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::not_found_error::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::ConfirmSubscriptionError::unhandled)?;
-                output.build()
-            }),
-        },
-        "SubscriptionLimitExceededException" => crate::error::ConfirmSubscriptionError {
-            meta: generic,
-            kind: crate::error::ConfirmSubscriptionErrorKind::SubscriptionLimitExceededError({
-                #[allow(unused_mut)]
-                let mut output =
-                    crate::error::subscription_limit_exceeded_error::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::subscription_limit_exceeded_exception(
+                output = crate::xml_deser::deser_structure_not_found_error_xml_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -257,6 +261,19 @@ pub fn parse_confirm_subscription_error(
                 output.build()
             }),
         },
+        "SubscriptionLimitExceededException" => {
+            crate::error::ConfirmSubscriptionError {
+                meta: generic,
+                kind: crate::error::ConfirmSubscriptionErrorKind::SubscriptionLimitExceededError({
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::subscription_limit_exceeded_error::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_subscription_limit_exceeded_error_xml_err(response.body().as_ref(), output).map_err(crate::error::ConfirmSubscriptionError::unhandled)?;
+                    output.build()
+                }),
+            }
+        }
         _ => crate::error::ConfirmSubscriptionError::generic(generic),
     })
 }
@@ -302,7 +319,7 @@ pub fn parse_create_platform_application_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::authorization_error_error::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::authorization_error_exception(
+                output = crate::xml_deser::deser_structure_authorization_error_error_xml_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -316,9 +333,11 @@ pub fn parse_create_platform_application_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::internal_error_error::Builder::default();
                 let _ = response;
-                output =
-                    crate::xml_deser::internal_error_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::CreatePlatformApplicationError::unhandled)?;
+                output = crate::xml_deser::deser_structure_internal_error_error_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreatePlatformApplicationError::unhandled)?;
                 output.build()
             }),
         },
@@ -328,9 +347,11 @@ pub fn parse_create_platform_application_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::invalid_parameter_error::Builder::default();
                 let _ = response;
-                output =
-                    crate::xml_deser::invalid_parameter_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::CreatePlatformApplicationError::unhandled)?;
+                output = crate::xml_deser::deser_structure_invalid_parameter_error_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreatePlatformApplicationError::unhandled)?;
                 output.build()
             }),
         },
@@ -380,7 +401,7 @@ pub fn parse_create_platform_endpoint_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::authorization_error_error::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::authorization_error_exception(
+                output = crate::xml_deser::deser_structure_authorization_error_error_xml_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -394,9 +415,11 @@ pub fn parse_create_platform_endpoint_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::internal_error_error::Builder::default();
                 let _ = response;
-                output =
-                    crate::xml_deser::internal_error_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::CreatePlatformEndpointError::unhandled)?;
+                output = crate::xml_deser::deser_structure_internal_error_error_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreatePlatformEndpointError::unhandled)?;
                 output.build()
             }),
         },
@@ -406,9 +429,11 @@ pub fn parse_create_platform_endpoint_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::invalid_parameter_error::Builder::default();
                 let _ = response;
-                output =
-                    crate::xml_deser::invalid_parameter_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::CreatePlatformEndpointError::unhandled)?;
+                output = crate::xml_deser::deser_structure_invalid_parameter_error_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreatePlatformEndpointError::unhandled)?;
                 output.build()
             }),
         },
@@ -418,8 +443,11 @@ pub fn parse_create_platform_endpoint_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::not_found_error::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::CreatePlatformEndpointError::unhandled)?;
+                output = crate::xml_deser::deser_structure_not_found_error_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreatePlatformEndpointError::unhandled)?;
                 output.build()
             }),
         },
@@ -446,6 +474,127 @@ pub fn parse_create_platform_endpoint_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_create_sms_sandbox_phone_number_error(
+    response: &http::Response<bytes::Bytes>,
+) -> Result<
+    crate::output::CreateSMSSandboxPhoneNumberOutput,
+    crate::error::CreateSMSSandboxPhoneNumberError,
+> {
+    let generic = crate::xml_deser::parse_generic_error(&response)
+        .map_err(crate::error::CreateSMSSandboxPhoneNumberError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::CreateSMSSandboxPhoneNumberError::unhandled(
+                generic,
+            ))
+        }
+    };
+    Err(match error_code {
+        "AuthorizationErrorException" => crate::error::CreateSMSSandboxPhoneNumberError {
+            meta: generic,
+            kind: crate::error::CreateSMSSandboxPhoneNumberErrorKind::AuthorizationErrorError({
+                #[allow(unused_mut)]
+                let mut output = crate::error::authorization_error_error::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_authorization_error_error_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateSMSSandboxPhoneNumberError::unhandled)?;
+                output.build()
+            }),
+        },
+        "InternalErrorException" => crate::error::CreateSMSSandboxPhoneNumberError {
+            meta: generic,
+            kind: crate::error::CreateSMSSandboxPhoneNumberErrorKind::InternalErrorError({
+                #[allow(unused_mut)]
+                let mut output = crate::error::internal_error_error::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_internal_error_error_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateSMSSandboxPhoneNumberError::unhandled)?;
+                output.build()
+            }),
+        },
+        "InvalidParameterException" => crate::error::CreateSMSSandboxPhoneNumberError {
+            meta: generic,
+            kind: crate::error::CreateSMSSandboxPhoneNumberErrorKind::InvalidParameterError({
+                #[allow(unused_mut)]
+                let mut output = crate::error::invalid_parameter_error::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_invalid_parameter_error_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateSMSSandboxPhoneNumberError::unhandled)?;
+                output.build()
+            }),
+        },
+        "OptedOutException" => crate::error::CreateSMSSandboxPhoneNumberError {
+            meta: generic,
+            kind: crate::error::CreateSMSSandboxPhoneNumberErrorKind::OptedOutError({
+                #[allow(unused_mut)]
+                let mut output = crate::error::opted_out_error::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_opted_out_error_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateSMSSandboxPhoneNumberError::unhandled)?;
+                output.build()
+            }),
+        },
+        "ThrottledException" => crate::error::CreateSMSSandboxPhoneNumberError {
+            meta: generic,
+            kind: crate::error::CreateSMSSandboxPhoneNumberErrorKind::ThrottledError({
+                #[allow(unused_mut)]
+                let mut output = crate::error::throttled_error::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_throttled_error_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateSMSSandboxPhoneNumberError::unhandled)?;
+                output.build()
+            }),
+        },
+        "UserErrorException" => crate::error::CreateSMSSandboxPhoneNumberError {
+            meta: generic,
+            kind: crate::error::CreateSMSSandboxPhoneNumberErrorKind::UserErrorError({
+                #[allow(unused_mut)]
+                let mut output = crate::error::user_error_error::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_user_error_error_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateSMSSandboxPhoneNumberError::unhandled)?;
+                output.build()
+            }),
+        },
+        _ => crate::error::CreateSMSSandboxPhoneNumberError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_create_sms_sandbox_phone_number_response(
+    response: &http::Response<bytes::Bytes>,
+) -> Result<
+    crate::output::CreateSMSSandboxPhoneNumberOutput,
+    crate::error::CreateSMSSandboxPhoneNumberError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::create_sms_sandbox_phone_number_output::Builder::default();
+        let _ = response;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_topic_error(
     response: &http::Response<bytes::Bytes>,
 ) -> Result<crate::output::CreateTopicOutput, crate::error::CreateTopicError> {
@@ -462,7 +611,7 @@ pub fn parse_create_topic_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::authorization_error_error::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::authorization_error_exception(
+                output = crate::xml_deser::deser_structure_authorization_error_error_xml_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -476,9 +625,11 @@ pub fn parse_create_topic_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::concurrent_access_error::Builder::default();
                 let _ = response;
-                output =
-                    crate::xml_deser::concurrent_access_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::CreateTopicError::unhandled)?;
+                output = crate::xml_deser::deser_structure_concurrent_access_error_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateTopicError::unhandled)?;
                 output.build()
             }),
         },
@@ -488,9 +639,11 @@ pub fn parse_create_topic_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::internal_error_error::Builder::default();
                 let _ = response;
-                output =
-                    crate::xml_deser::internal_error_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::CreateTopicError::unhandled)?;
+                output = crate::xml_deser::deser_structure_internal_error_error_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateTopicError::unhandled)?;
                 output.build()
             }),
         },
@@ -500,9 +653,11 @@ pub fn parse_create_topic_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::invalid_parameter_error::Builder::default();
                 let _ = response;
-                output =
-                    crate::xml_deser::invalid_parameter_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::CreateTopicError::unhandled)?;
+                output = crate::xml_deser::deser_structure_invalid_parameter_error_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateTopicError::unhandled)?;
                 output.build()
             }),
         },
@@ -512,9 +667,11 @@ pub fn parse_create_topic_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::invalid_security_error::Builder::default();
                 let _ = response;
-                output =
-                    crate::xml_deser::invalid_security_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::CreateTopicError::unhandled)?;
+                output = crate::xml_deser::deser_structure_invalid_security_error_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateTopicError::unhandled)?;
                 output.build()
             }),
         },
@@ -524,8 +681,11 @@ pub fn parse_create_topic_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::stale_tag_error::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::stale_tag_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::CreateTopicError::unhandled)?;
+                output = crate::xml_deser::deser_structure_stale_tag_error_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateTopicError::unhandled)?;
                 output.build()
             }),
         },
@@ -535,7 +695,7 @@ pub fn parse_create_topic_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::tag_limit_exceeded_error::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::tag_limit_exceeded_exception(
+                output = crate::xml_deser::deser_structure_tag_limit_exceeded_error_xml_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -549,8 +709,11 @@ pub fn parse_create_topic_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::tag_policy_error::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::tag_policy_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::CreateTopicError::unhandled)?;
+                output = crate::xml_deser::deser_structure_tag_policy_error_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateTopicError::unhandled)?;
                 output.build()
             }),
         },
@@ -560,7 +723,7 @@ pub fn parse_create_topic_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::topic_limit_exceeded_error::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::topic_limit_exceeded_exception(
+                output = crate::xml_deser::deser_structure_topic_limit_exceeded_error_xml_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -603,7 +766,7 @@ pub fn parse_delete_endpoint_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::authorization_error_error::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::authorization_error_exception(
+                output = crate::xml_deser::deser_structure_authorization_error_error_xml_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -617,9 +780,11 @@ pub fn parse_delete_endpoint_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::internal_error_error::Builder::default();
                 let _ = response;
-                output =
-                    crate::xml_deser::internal_error_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::DeleteEndpointError::unhandled)?;
+                output = crate::xml_deser::deser_structure_internal_error_error_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteEndpointError::unhandled)?;
                 output.build()
             }),
         },
@@ -629,9 +794,11 @@ pub fn parse_delete_endpoint_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::invalid_parameter_error::Builder::default();
                 let _ = response;
-                output =
-                    crate::xml_deser::invalid_parameter_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::DeleteEndpointError::unhandled)?;
+                output = crate::xml_deser::deser_structure_invalid_parameter_error_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteEndpointError::unhandled)?;
                 output.build()
             }),
         },
@@ -675,7 +842,7 @@ pub fn parse_delete_platform_application_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::authorization_error_error::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::authorization_error_exception(
+                output = crate::xml_deser::deser_structure_authorization_error_error_xml_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -689,9 +856,11 @@ pub fn parse_delete_platform_application_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::internal_error_error::Builder::default();
                 let _ = response;
-                output =
-                    crate::xml_deser::internal_error_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::DeletePlatformApplicationError::unhandled)?;
+                output = crate::xml_deser::deser_structure_internal_error_error_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeletePlatformApplicationError::unhandled)?;
                 output.build()
             }),
         },
@@ -701,9 +870,11 @@ pub fn parse_delete_platform_application_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::invalid_parameter_error::Builder::default();
                 let _ = response;
-                output =
-                    crate::xml_deser::invalid_parameter_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::DeletePlatformApplicationError::unhandled)?;
+                output = crate::xml_deser::deser_structure_invalid_parameter_error_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeletePlatformApplicationError::unhandled)?;
                 output.build()
             }),
         },
@@ -727,6 +898,127 @@ pub fn parse_delete_platform_application_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_delete_sms_sandbox_phone_number_error(
+    response: &http::Response<bytes::Bytes>,
+) -> Result<
+    crate::output::DeleteSMSSandboxPhoneNumberOutput,
+    crate::error::DeleteSMSSandboxPhoneNumberError,
+> {
+    let generic = crate::xml_deser::parse_generic_error(&response)
+        .map_err(crate::error::DeleteSMSSandboxPhoneNumberError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::DeleteSMSSandboxPhoneNumberError::unhandled(
+                generic,
+            ))
+        }
+    };
+    Err(match error_code {
+        "AuthorizationErrorException" => crate::error::DeleteSMSSandboxPhoneNumberError {
+            meta: generic,
+            kind: crate::error::DeleteSMSSandboxPhoneNumberErrorKind::AuthorizationErrorError({
+                #[allow(unused_mut)]
+                let mut output = crate::error::authorization_error_error::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_authorization_error_error_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteSMSSandboxPhoneNumberError::unhandled)?;
+                output.build()
+            }),
+        },
+        "InternalErrorException" => crate::error::DeleteSMSSandboxPhoneNumberError {
+            meta: generic,
+            kind: crate::error::DeleteSMSSandboxPhoneNumberErrorKind::InternalErrorError({
+                #[allow(unused_mut)]
+                let mut output = crate::error::internal_error_error::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_internal_error_error_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteSMSSandboxPhoneNumberError::unhandled)?;
+                output.build()
+            }),
+        },
+        "InvalidParameterException" => crate::error::DeleteSMSSandboxPhoneNumberError {
+            meta: generic,
+            kind: crate::error::DeleteSMSSandboxPhoneNumberErrorKind::InvalidParameterError({
+                #[allow(unused_mut)]
+                let mut output = crate::error::invalid_parameter_error::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_invalid_parameter_error_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteSMSSandboxPhoneNumberError::unhandled)?;
+                output.build()
+            }),
+        },
+        "ResourceNotFoundException" => crate::error::DeleteSMSSandboxPhoneNumberError {
+            meta: generic,
+            kind: crate::error::DeleteSMSSandboxPhoneNumberErrorKind::ResourceNotFoundError({
+                #[allow(unused_mut)]
+                let mut output = crate::error::resource_not_found_error::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_resource_not_found_error_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteSMSSandboxPhoneNumberError::unhandled)?;
+                output.build()
+            }),
+        },
+        "ThrottledException" => crate::error::DeleteSMSSandboxPhoneNumberError {
+            meta: generic,
+            kind: crate::error::DeleteSMSSandboxPhoneNumberErrorKind::ThrottledError({
+                #[allow(unused_mut)]
+                let mut output = crate::error::throttled_error::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_throttled_error_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteSMSSandboxPhoneNumberError::unhandled)?;
+                output.build()
+            }),
+        },
+        "UserErrorException" => crate::error::DeleteSMSSandboxPhoneNumberError {
+            meta: generic,
+            kind: crate::error::DeleteSMSSandboxPhoneNumberErrorKind::UserErrorError({
+                #[allow(unused_mut)]
+                let mut output = crate::error::user_error_error::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_user_error_error_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteSMSSandboxPhoneNumberError::unhandled)?;
+                output.build()
+            }),
+        },
+        _ => crate::error::DeleteSMSSandboxPhoneNumberError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_delete_sms_sandbox_phone_number_response(
+    response: &http::Response<bytes::Bytes>,
+) -> Result<
+    crate::output::DeleteSMSSandboxPhoneNumberOutput,
+    crate::error::DeleteSMSSandboxPhoneNumberError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::delete_sms_sandbox_phone_number_output::Builder::default();
+        let _ = response;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_topic_error(
     response: &http::Response<bytes::Bytes>,
 ) -> Result<crate::output::DeleteTopicOutput, crate::error::DeleteTopicError> {
@@ -743,7 +1035,7 @@ pub fn parse_delete_topic_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::authorization_error_error::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::authorization_error_exception(
+                output = crate::xml_deser::deser_structure_authorization_error_error_xml_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -757,9 +1049,11 @@ pub fn parse_delete_topic_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::concurrent_access_error::Builder::default();
                 let _ = response;
-                output =
-                    crate::xml_deser::concurrent_access_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::DeleteTopicError::unhandled)?;
+                output = crate::xml_deser::deser_structure_concurrent_access_error_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteTopicError::unhandled)?;
                 output.build()
             }),
         },
@@ -769,9 +1063,11 @@ pub fn parse_delete_topic_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::internal_error_error::Builder::default();
                 let _ = response;
-                output =
-                    crate::xml_deser::internal_error_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::DeleteTopicError::unhandled)?;
+                output = crate::xml_deser::deser_structure_internal_error_error_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteTopicError::unhandled)?;
                 output.build()
             }),
         },
@@ -781,9 +1077,11 @@ pub fn parse_delete_topic_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::invalid_parameter_error::Builder::default();
                 let _ = response;
-                output =
-                    crate::xml_deser::invalid_parameter_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::DeleteTopicError::unhandled)?;
+                output = crate::xml_deser::deser_structure_invalid_parameter_error_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteTopicError::unhandled)?;
                 output.build()
             }),
         },
@@ -793,8 +1091,11 @@ pub fn parse_delete_topic_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::not_found_error::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::DeleteTopicError::unhandled)?;
+                output = crate::xml_deser::deser_structure_not_found_error_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteTopicError::unhandled)?;
                 output.build()
             }),
         },
@@ -804,8 +1105,11 @@ pub fn parse_delete_topic_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::stale_tag_error::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::stale_tag_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::DeleteTopicError::unhandled)?;
+                output = crate::xml_deser::deser_structure_stale_tag_error_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteTopicError::unhandled)?;
                 output.build()
             }),
         },
@@ -815,8 +1119,11 @@ pub fn parse_delete_topic_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::tag_policy_error::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::tag_policy_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::DeleteTopicError::unhandled)?;
+                output = crate::xml_deser::deser_structure_tag_policy_error_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteTopicError::unhandled)?;
                 output.build()
             }),
         },
@@ -853,7 +1160,7 @@ pub fn parse_get_endpoint_attributes_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::authorization_error_error::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::authorization_error_exception(
+                output = crate::xml_deser::deser_structure_authorization_error_error_xml_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -867,9 +1174,11 @@ pub fn parse_get_endpoint_attributes_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::internal_error_error::Builder::default();
                 let _ = response;
-                output =
-                    crate::xml_deser::internal_error_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::GetEndpointAttributesError::unhandled)?;
+                output = crate::xml_deser::deser_structure_internal_error_error_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetEndpointAttributesError::unhandled)?;
                 output.build()
             }),
         },
@@ -879,9 +1188,11 @@ pub fn parse_get_endpoint_attributes_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::invalid_parameter_error::Builder::default();
                 let _ = response;
-                output =
-                    crate::xml_deser::invalid_parameter_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::GetEndpointAttributesError::unhandled)?;
+                output = crate::xml_deser::deser_structure_invalid_parameter_error_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetEndpointAttributesError::unhandled)?;
                 output.build()
             }),
         },
@@ -891,8 +1202,11 @@ pub fn parse_get_endpoint_attributes_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::not_found_error::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::GetEndpointAttributesError::unhandled)?;
+                output = crate::xml_deser::deser_structure_not_found_error_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetEndpointAttributesError::unhandled)?;
                 output.build()
             }),
         },
@@ -933,31 +1247,33 @@ pub fn parse_get_platform_application_attributes_error(
         }
     };
     Err(match error_code {
-        "AuthorizationErrorException" => crate::error::GetPlatformApplicationAttributesError {
-            meta: generic,
-            kind: crate::error::GetPlatformApplicationAttributesErrorKind::AuthorizationErrorError(
-                {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::authorization_error_error::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::authorization_error_exception(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::GetPlatformApplicationAttributesError::unhandled)?;
-                    output.build()
-                },
-            ),
-        },
+        "AuthorizationErrorException" => {
+            crate::error::GetPlatformApplicationAttributesError {
+                meta: generic,
+                kind:
+                    crate::error::GetPlatformApplicationAttributesErrorKind::AuthorizationErrorError(
+                        {
+                            #[allow(unused_mut)]
+                            let mut output =
+                                crate::error::authorization_error_error::Builder::default();
+                            let _ = response;
+                            output = crate::xml_deser::deser_structure_authorization_error_error_xml_err(response.body().as_ref(), output).map_err(crate::error::GetPlatformApplicationAttributesError::unhandled)?;
+                            output.build()
+                        },
+                    ),
+            }
+        }
         "InternalErrorException" => crate::error::GetPlatformApplicationAttributesError {
             meta: generic,
             kind: crate::error::GetPlatformApplicationAttributesErrorKind::InternalErrorError({
                 #[allow(unused_mut)]
                 let mut output = crate::error::internal_error_error::Builder::default();
                 let _ = response;
-                output =
-                    crate::xml_deser::internal_error_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::GetPlatformApplicationAttributesError::unhandled)?;
+                output = crate::xml_deser::deser_structure_internal_error_error_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetPlatformApplicationAttributesError::unhandled)?;
                 output.build()
             }),
         },
@@ -967,9 +1283,11 @@ pub fn parse_get_platform_application_attributes_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::invalid_parameter_error::Builder::default();
                 let _ = response;
-                output =
-                    crate::xml_deser::invalid_parameter_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::GetPlatformApplicationAttributesError::unhandled)?;
+                output = crate::xml_deser::deser_structure_invalid_parameter_error_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetPlatformApplicationAttributesError::unhandled)?;
                 output.build()
             }),
         },
@@ -979,8 +1297,11 @@ pub fn parse_get_platform_application_attributes_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::not_found_error::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::GetPlatformApplicationAttributesError::unhandled)?;
+                output = crate::xml_deser::deser_structure_not_found_error_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetPlatformApplicationAttributesError::unhandled)?;
                 output.build()
             }),
         },
@@ -1026,7 +1347,7 @@ pub fn parse_get_sms_attributes_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::authorization_error_error::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::authorization_error_exception(
+                output = crate::xml_deser::deser_structure_authorization_error_error_xml_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -1040,9 +1361,11 @@ pub fn parse_get_sms_attributes_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::internal_error_error::Builder::default();
                 let _ = response;
-                output =
-                    crate::xml_deser::internal_error_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::GetSMSAttributesError::unhandled)?;
+                output = crate::xml_deser::deser_structure_internal_error_error_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetSMSAttributesError::unhandled)?;
                 output.build()
             }),
         },
@@ -1052,9 +1375,11 @@ pub fn parse_get_sms_attributes_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::invalid_parameter_error::Builder::default();
                 let _ = response;
-                output =
-                    crate::xml_deser::invalid_parameter_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::GetSMSAttributesError::unhandled)?;
+                output = crate::xml_deser::deser_structure_invalid_parameter_error_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetSMSAttributesError::unhandled)?;
                 output.build()
             }),
         },
@@ -1064,8 +1389,11 @@ pub fn parse_get_sms_attributes_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::throttled_error::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::throttled_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::GetSMSAttributesError::unhandled)?;
+                output = crate::xml_deser::deser_structure_throttled_error_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetSMSAttributesError::unhandled)?;
                 output.build()
             }),
         },
@@ -1084,6 +1412,90 @@ pub fn parse_get_sms_attributes_response(
         output =
             crate::xml_deser::deser_operation_get_sms_attributes(response.body().as_ref(), output)
                 .map_err(crate::error::GetSMSAttributesError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_get_sms_sandbox_account_status_error(
+    response: &http::Response<bytes::Bytes>,
+) -> Result<
+    crate::output::GetSMSSandboxAccountStatusOutput,
+    crate::error::GetSMSSandboxAccountStatusError,
+> {
+    let generic = crate::xml_deser::parse_generic_error(&response)
+        .map_err(crate::error::GetSMSSandboxAccountStatusError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::GetSMSSandboxAccountStatusError::unhandled(
+                generic,
+            ))
+        }
+    };
+    Err(match error_code {
+        "AuthorizationErrorException" => crate::error::GetSMSSandboxAccountStatusError {
+            meta: generic,
+            kind: crate::error::GetSMSSandboxAccountStatusErrorKind::AuthorizationErrorError({
+                #[allow(unused_mut)]
+                let mut output = crate::error::authorization_error_error::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_authorization_error_error_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetSMSSandboxAccountStatusError::unhandled)?;
+                output.build()
+            }),
+        },
+        "InternalErrorException" => crate::error::GetSMSSandboxAccountStatusError {
+            meta: generic,
+            kind: crate::error::GetSMSSandboxAccountStatusErrorKind::InternalErrorError({
+                #[allow(unused_mut)]
+                let mut output = crate::error::internal_error_error::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_internal_error_error_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetSMSSandboxAccountStatusError::unhandled)?;
+                output.build()
+            }),
+        },
+        "ThrottledException" => crate::error::GetSMSSandboxAccountStatusError {
+            meta: generic,
+            kind: crate::error::GetSMSSandboxAccountStatusErrorKind::ThrottledError({
+                #[allow(unused_mut)]
+                let mut output = crate::error::throttled_error::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_throttled_error_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetSMSSandboxAccountStatusError::unhandled)?;
+                output.build()
+            }),
+        },
+        _ => crate::error::GetSMSSandboxAccountStatusError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_get_sms_sandbox_account_status_response(
+    response: &http::Response<bytes::Bytes>,
+) -> Result<
+    crate::output::GetSMSSandboxAccountStatusOutput,
+    crate::error::GetSMSSandboxAccountStatusError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::get_sms_sandbox_account_status_output::Builder::default();
+        let _ = response;
+        output = crate::xml_deser::deser_operation_get_sms_sandbox_account_status(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::GetSMSSandboxAccountStatusError::unhandled)?;
         output.build()
     })
 }
@@ -1112,7 +1524,7 @@ pub fn parse_get_subscription_attributes_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::authorization_error_error::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::authorization_error_exception(
+                output = crate::xml_deser::deser_structure_authorization_error_error_xml_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -1126,9 +1538,11 @@ pub fn parse_get_subscription_attributes_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::internal_error_error::Builder::default();
                 let _ = response;
-                output =
-                    crate::xml_deser::internal_error_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::GetSubscriptionAttributesError::unhandled)?;
+                output = crate::xml_deser::deser_structure_internal_error_error_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetSubscriptionAttributesError::unhandled)?;
                 output.build()
             }),
         },
@@ -1138,9 +1552,11 @@ pub fn parse_get_subscription_attributes_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::invalid_parameter_error::Builder::default();
                 let _ = response;
-                output =
-                    crate::xml_deser::invalid_parameter_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::GetSubscriptionAttributesError::unhandled)?;
+                output = crate::xml_deser::deser_structure_invalid_parameter_error_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetSubscriptionAttributesError::unhandled)?;
                 output.build()
             }),
         },
@@ -1150,8 +1566,11 @@ pub fn parse_get_subscription_attributes_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::not_found_error::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::GetSubscriptionAttributesError::unhandled)?;
+                output = crate::xml_deser::deser_structure_not_found_error_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetSubscriptionAttributesError::unhandled)?;
                 output.build()
             }),
         },
@@ -1196,7 +1615,7 @@ pub fn parse_get_topic_attributes_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::authorization_error_error::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::authorization_error_exception(
+                output = crate::xml_deser::deser_structure_authorization_error_error_xml_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -1210,9 +1629,11 @@ pub fn parse_get_topic_attributes_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::internal_error_error::Builder::default();
                 let _ = response;
-                output =
-                    crate::xml_deser::internal_error_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::GetTopicAttributesError::unhandled)?;
+                output = crate::xml_deser::deser_structure_internal_error_error_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetTopicAttributesError::unhandled)?;
                 output.build()
             }),
         },
@@ -1222,9 +1643,11 @@ pub fn parse_get_topic_attributes_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::invalid_parameter_error::Builder::default();
                 let _ = response;
-                output =
-                    crate::xml_deser::invalid_parameter_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::GetTopicAttributesError::unhandled)?;
+                output = crate::xml_deser::deser_structure_invalid_parameter_error_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetTopicAttributesError::unhandled)?;
                 output.build()
             }),
         },
@@ -1234,9 +1657,11 @@ pub fn parse_get_topic_attributes_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::invalid_security_error::Builder::default();
                 let _ = response;
-                output =
-                    crate::xml_deser::invalid_security_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::GetTopicAttributesError::unhandled)?;
+                output = crate::xml_deser::deser_structure_invalid_security_error_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetTopicAttributesError::unhandled)?;
                 output.build()
             }),
         },
@@ -1246,8 +1671,11 @@ pub fn parse_get_topic_attributes_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::not_found_error::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::GetTopicAttributesError::unhandled)?;
+                output = crate::xml_deser::deser_structure_not_found_error_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetTopicAttributesError::unhandled)?;
                 output.build()
             }),
         },
@@ -1297,13 +1725,14 @@ pub fn parse_list_endpoints_by_platform_application_error(
                         let mut output =
                             crate::error::authorization_error_error::Builder::default();
                         let _ = response;
-                        output = crate::xml_deser::authorization_error_exception(
-                            response.body().as_ref(),
-                            output,
-                        )
-                        .map_err(
-                            crate::error::ListEndpointsByPlatformApplicationError::unhandled,
-                        )?;
+                        output =
+                            crate::xml_deser::deser_structure_authorization_error_error_xml_err(
+                                response.body().as_ref(),
+                                output,
+                            )
+                            .map_err(
+                                crate::error::ListEndpointsByPlatformApplicationError::unhandled,
+                            )?;
                         output.build()
                     },
                 ),
@@ -1314,38 +1743,41 @@ pub fn parse_list_endpoints_by_platform_application_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::internal_error_error::Builder::default();
                 let _ = response;
-                output =
-                    crate::xml_deser::internal_error_exception(response.body().as_ref(), output)
-                        .map_err(
-                            crate::error::ListEndpointsByPlatformApplicationError::unhandled,
-                        )?;
+                output = crate::xml_deser::deser_structure_internal_error_error_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ListEndpointsByPlatformApplicationError::unhandled)?;
                 output.build()
             }),
         },
-        "InvalidParameterException" => crate::error::ListEndpointsByPlatformApplicationError {
-            meta: generic,
-            kind: crate::error::ListEndpointsByPlatformApplicationErrorKind::InvalidParameterError(
-                {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_parameter_error::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::invalid_parameter_exception(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListEndpointsByPlatformApplicationError::unhandled)?;
-                    output.build()
-                },
-            ),
-        },
+        "InvalidParameterException" => {
+            crate::error::ListEndpointsByPlatformApplicationError {
+                meta: generic,
+                kind:
+                    crate::error::ListEndpointsByPlatformApplicationErrorKind::InvalidParameterError(
+                        {
+                            #[allow(unused_mut)]
+                            let mut output =
+                                crate::error::invalid_parameter_error::Builder::default();
+                            let _ = response;
+                            output = crate::xml_deser::deser_structure_invalid_parameter_error_xml_err(response.body().as_ref(), output).map_err(crate::error::ListEndpointsByPlatformApplicationError::unhandled)?;
+                            output.build()
+                        },
+                    ),
+            }
+        }
         "NotFoundException" => crate::error::ListEndpointsByPlatformApplicationError {
             meta: generic,
             kind: crate::error::ListEndpointsByPlatformApplicationErrorKind::NotFoundError({
                 #[allow(unused_mut)]
                 let mut output = crate::error::not_found_error::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::ListEndpointsByPlatformApplicationError::unhandled)?;
+                output = crate::xml_deser::deser_structure_not_found_error_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ListEndpointsByPlatformApplicationError::unhandled)?;
                 output.build()
             }),
         },
@@ -1375,6 +1807,114 @@ pub fn parse_list_endpoints_by_platform_application_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_origination_numbers_error(
+    response: &http::Response<bytes::Bytes>,
+) -> Result<crate::output::ListOriginationNumbersOutput, crate::error::ListOriginationNumbersError>
+{
+    let generic = crate::xml_deser::parse_generic_error(&response)
+        .map_err(crate::error::ListOriginationNumbersError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::ListOriginationNumbersError::unhandled(
+                generic,
+            ))
+        }
+    };
+    Err(match error_code {
+        "AuthorizationErrorException" => crate::error::ListOriginationNumbersError {
+            meta: generic,
+            kind: crate::error::ListOriginationNumbersErrorKind::AuthorizationErrorError({
+                #[allow(unused_mut)]
+                let mut output = crate::error::authorization_error_error::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_authorization_error_error_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ListOriginationNumbersError::unhandled)?;
+                output.build()
+            }),
+        },
+        "InternalErrorException" => crate::error::ListOriginationNumbersError {
+            meta: generic,
+            kind: crate::error::ListOriginationNumbersErrorKind::InternalErrorError({
+                #[allow(unused_mut)]
+                let mut output = crate::error::internal_error_error::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_internal_error_error_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ListOriginationNumbersError::unhandled)?;
+                output.build()
+            }),
+        },
+        "InvalidParameterException" => crate::error::ListOriginationNumbersError {
+            meta: generic,
+            kind: crate::error::ListOriginationNumbersErrorKind::InvalidParameterError({
+                #[allow(unused_mut)]
+                let mut output = crate::error::invalid_parameter_error::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_invalid_parameter_error_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ListOriginationNumbersError::unhandled)?;
+                output.build()
+            }),
+        },
+        "ThrottledException" => crate::error::ListOriginationNumbersError {
+            meta: generic,
+            kind: crate::error::ListOriginationNumbersErrorKind::ThrottledError({
+                #[allow(unused_mut)]
+                let mut output = crate::error::throttled_error::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_throttled_error_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ListOriginationNumbersError::unhandled)?;
+                output.build()
+            }),
+        },
+        "ValidationException" => crate::error::ListOriginationNumbersError {
+            meta: generic,
+            kind: crate::error::ListOriginationNumbersErrorKind::ValidationError({
+                #[allow(unused_mut)]
+                let mut output = crate::error::validation_error::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_validation_error_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ListOriginationNumbersError::unhandled)?;
+                output.build()
+            }),
+        },
+        _ => crate::error::ListOriginationNumbersError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_origination_numbers_response(
+    response: &http::Response<bytes::Bytes>,
+) -> Result<crate::output::ListOriginationNumbersOutput, crate::error::ListOriginationNumbersError>
+{
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::list_origination_numbers_output::Builder::default();
+        let _ = response;
+        output = crate::xml_deser::deser_operation_list_origination_numbers(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ListOriginationNumbersError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_phone_numbers_opted_out_error(
     response: &http::Response<bytes::Bytes>,
 ) -> Result<
@@ -1398,7 +1938,7 @@ pub fn parse_list_phone_numbers_opted_out_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::authorization_error_error::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::authorization_error_exception(
+                output = crate::xml_deser::deser_structure_authorization_error_error_xml_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -1412,9 +1952,11 @@ pub fn parse_list_phone_numbers_opted_out_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::internal_error_error::Builder::default();
                 let _ = response;
-                output =
-                    crate::xml_deser::internal_error_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::ListPhoneNumbersOptedOutError::unhandled)?;
+                output = crate::xml_deser::deser_structure_internal_error_error_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ListPhoneNumbersOptedOutError::unhandled)?;
                 output.build()
             }),
         },
@@ -1424,9 +1966,11 @@ pub fn parse_list_phone_numbers_opted_out_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::invalid_parameter_error::Builder::default();
                 let _ = response;
-                output =
-                    crate::xml_deser::invalid_parameter_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::ListPhoneNumbersOptedOutError::unhandled)?;
+                output = crate::xml_deser::deser_structure_invalid_parameter_error_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ListPhoneNumbersOptedOutError::unhandled)?;
                 output.build()
             }),
         },
@@ -1436,8 +1980,11 @@ pub fn parse_list_phone_numbers_opted_out_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::throttled_error::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::throttled_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::ListPhoneNumbersOptedOutError::unhandled)?;
+                output = crate::xml_deser::deser_structure_throttled_error_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ListPhoneNumbersOptedOutError::unhandled)?;
                 output.build()
             }),
         },
@@ -1489,7 +2036,7 @@ pub fn parse_list_platform_applications_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::authorization_error_error::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::authorization_error_exception(
+                output = crate::xml_deser::deser_structure_authorization_error_error_xml_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -1503,9 +2050,11 @@ pub fn parse_list_platform_applications_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::internal_error_error::Builder::default();
                 let _ = response;
-                output =
-                    crate::xml_deser::internal_error_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::ListPlatformApplicationsError::unhandled)?;
+                output = crate::xml_deser::deser_structure_internal_error_error_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ListPlatformApplicationsError::unhandled)?;
                 output.build()
             }),
         },
@@ -1515,9 +2064,11 @@ pub fn parse_list_platform_applications_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::invalid_parameter_error::Builder::default();
                 let _ = response;
-                output =
-                    crate::xml_deser::invalid_parameter_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::ListPlatformApplicationsError::unhandled)?;
+                output = crate::xml_deser::deser_structure_invalid_parameter_error_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ListPlatformApplicationsError::unhandled)?;
                 output.build()
             }),
         },
@@ -1546,6 +2097,118 @@ pub fn parse_list_platform_applications_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_sms_sandbox_phone_numbers_error(
+    response: &http::Response<bytes::Bytes>,
+) -> Result<
+    crate::output::ListSMSSandboxPhoneNumbersOutput,
+    crate::error::ListSMSSandboxPhoneNumbersError,
+> {
+    let generic = crate::xml_deser::parse_generic_error(&response)
+        .map_err(crate::error::ListSMSSandboxPhoneNumbersError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::ListSMSSandboxPhoneNumbersError::unhandled(
+                generic,
+            ))
+        }
+    };
+    Err(match error_code {
+        "AuthorizationErrorException" => crate::error::ListSMSSandboxPhoneNumbersError {
+            meta: generic,
+            kind: crate::error::ListSMSSandboxPhoneNumbersErrorKind::AuthorizationErrorError({
+                #[allow(unused_mut)]
+                let mut output = crate::error::authorization_error_error::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_authorization_error_error_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ListSMSSandboxPhoneNumbersError::unhandled)?;
+                output.build()
+            }),
+        },
+        "InternalErrorException" => crate::error::ListSMSSandboxPhoneNumbersError {
+            meta: generic,
+            kind: crate::error::ListSMSSandboxPhoneNumbersErrorKind::InternalErrorError({
+                #[allow(unused_mut)]
+                let mut output = crate::error::internal_error_error::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_internal_error_error_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ListSMSSandboxPhoneNumbersError::unhandled)?;
+                output.build()
+            }),
+        },
+        "InvalidParameterException" => crate::error::ListSMSSandboxPhoneNumbersError {
+            meta: generic,
+            kind: crate::error::ListSMSSandboxPhoneNumbersErrorKind::InvalidParameterError({
+                #[allow(unused_mut)]
+                let mut output = crate::error::invalid_parameter_error::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_invalid_parameter_error_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ListSMSSandboxPhoneNumbersError::unhandled)?;
+                output.build()
+            }),
+        },
+        "ResourceNotFoundException" => crate::error::ListSMSSandboxPhoneNumbersError {
+            meta: generic,
+            kind: crate::error::ListSMSSandboxPhoneNumbersErrorKind::ResourceNotFoundError({
+                #[allow(unused_mut)]
+                let mut output = crate::error::resource_not_found_error::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_resource_not_found_error_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ListSMSSandboxPhoneNumbersError::unhandled)?;
+                output.build()
+            }),
+        },
+        "ThrottledException" => crate::error::ListSMSSandboxPhoneNumbersError {
+            meta: generic,
+            kind: crate::error::ListSMSSandboxPhoneNumbersErrorKind::ThrottledError({
+                #[allow(unused_mut)]
+                let mut output = crate::error::throttled_error::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_throttled_error_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ListSMSSandboxPhoneNumbersError::unhandled)?;
+                output.build()
+            }),
+        },
+        _ => crate::error::ListSMSSandboxPhoneNumbersError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_sms_sandbox_phone_numbers_response(
+    response: &http::Response<bytes::Bytes>,
+) -> Result<
+    crate::output::ListSMSSandboxPhoneNumbersOutput,
+    crate::error::ListSMSSandboxPhoneNumbersError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::list_sms_sandbox_phone_numbers_output::Builder::default();
+        let _ = response;
+        output = crate::xml_deser::deser_operation_list_sms_sandbox_phone_numbers(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ListSMSSandboxPhoneNumbersError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_subscriptions_error(
     response: &http::Response<bytes::Bytes>,
 ) -> Result<crate::output::ListSubscriptionsOutput, crate::error::ListSubscriptionsError> {
@@ -1562,7 +2225,7 @@ pub fn parse_list_subscriptions_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::authorization_error_error::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::authorization_error_exception(
+                output = crate::xml_deser::deser_structure_authorization_error_error_xml_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -1576,9 +2239,11 @@ pub fn parse_list_subscriptions_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::internal_error_error::Builder::default();
                 let _ = response;
-                output =
-                    crate::xml_deser::internal_error_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::ListSubscriptionsError::unhandled)?;
+                output = crate::xml_deser::deser_structure_internal_error_error_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ListSubscriptionsError::unhandled)?;
                 output.build()
             }),
         },
@@ -1588,9 +2253,11 @@ pub fn parse_list_subscriptions_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::invalid_parameter_error::Builder::default();
                 let _ = response;
-                output =
-                    crate::xml_deser::invalid_parameter_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::ListSubscriptionsError::unhandled)?;
+                output = crate::xml_deser::deser_structure_invalid_parameter_error_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ListSubscriptionsError::unhandled)?;
                 output.build()
             }),
         },
@@ -1637,7 +2304,7 @@ pub fn parse_list_subscriptions_by_topic_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::authorization_error_error::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::authorization_error_exception(
+                output = crate::xml_deser::deser_structure_authorization_error_error_xml_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -1651,9 +2318,11 @@ pub fn parse_list_subscriptions_by_topic_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::internal_error_error::Builder::default();
                 let _ = response;
-                output =
-                    crate::xml_deser::internal_error_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::ListSubscriptionsByTopicError::unhandled)?;
+                output = crate::xml_deser::deser_structure_internal_error_error_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ListSubscriptionsByTopicError::unhandled)?;
                 output.build()
             }),
         },
@@ -1663,9 +2332,11 @@ pub fn parse_list_subscriptions_by_topic_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::invalid_parameter_error::Builder::default();
                 let _ = response;
-                output =
-                    crate::xml_deser::invalid_parameter_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::ListSubscriptionsByTopicError::unhandled)?;
+                output = crate::xml_deser::deser_structure_invalid_parameter_error_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ListSubscriptionsByTopicError::unhandled)?;
                 output.build()
             }),
         },
@@ -1675,8 +2346,11 @@ pub fn parse_list_subscriptions_by_topic_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::not_found_error::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::ListSubscriptionsByTopicError::unhandled)?;
+                output = crate::xml_deser::deser_structure_not_found_error_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ListSubscriptionsByTopicError::unhandled)?;
                 output.build()
             }),
         },
@@ -1721,7 +2395,7 @@ pub fn parse_list_tags_for_resource_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::authorization_error_error::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::authorization_error_exception(
+                output = crate::xml_deser::deser_structure_authorization_error_error_xml_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -1735,9 +2409,11 @@ pub fn parse_list_tags_for_resource_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::concurrent_access_error::Builder::default();
                 let _ = response;
-                output =
-                    crate::xml_deser::concurrent_access_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::ListTagsForResourceError::unhandled)?;
+                output = crate::xml_deser::deser_structure_concurrent_access_error_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ListTagsForResourceError::unhandled)?;
                 output.build()
             }),
         },
@@ -1747,9 +2423,11 @@ pub fn parse_list_tags_for_resource_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::invalid_parameter_error::Builder::default();
                 let _ = response;
-                output =
-                    crate::xml_deser::invalid_parameter_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::ListTagsForResourceError::unhandled)?;
+                output = crate::xml_deser::deser_structure_invalid_parameter_error_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ListTagsForResourceError::unhandled)?;
                 output.build()
             }),
         },
@@ -1759,7 +2437,7 @@ pub fn parse_list_tags_for_resource_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::resource_not_found_error::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::resource_not_found_exception(
+                output = crate::xml_deser::deser_structure_resource_not_found_error_xml_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -1773,8 +2451,11 @@ pub fn parse_list_tags_for_resource_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::tag_policy_error::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::tag_policy_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::ListTagsForResourceError::unhandled)?;
+                output = crate::xml_deser::deser_structure_tag_policy_error_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ListTagsForResourceError::unhandled)?;
                 output.build()
             }),
         },
@@ -1816,7 +2497,7 @@ pub fn parse_list_topics_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::authorization_error_error::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::authorization_error_exception(
+                output = crate::xml_deser::deser_structure_authorization_error_error_xml_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -1830,9 +2511,11 @@ pub fn parse_list_topics_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::internal_error_error::Builder::default();
                 let _ = response;
-                output =
-                    crate::xml_deser::internal_error_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::ListTopicsError::unhandled)?;
+                output = crate::xml_deser::deser_structure_internal_error_error_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ListTopicsError::unhandled)?;
                 output.build()
             }),
         },
@@ -1842,9 +2525,11 @@ pub fn parse_list_topics_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::invalid_parameter_error::Builder::default();
                 let _ = response;
-                output =
-                    crate::xml_deser::invalid_parameter_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::ListTopicsError::unhandled)?;
+                output = crate::xml_deser::deser_structure_invalid_parameter_error_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ListTopicsError::unhandled)?;
                 output.build()
             }),
         },
@@ -1883,7 +2568,7 @@ pub fn parse_opt_in_phone_number_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::authorization_error_error::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::authorization_error_exception(
+                output = crate::xml_deser::deser_structure_authorization_error_error_xml_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -1897,9 +2582,11 @@ pub fn parse_opt_in_phone_number_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::internal_error_error::Builder::default();
                 let _ = response;
-                output =
-                    crate::xml_deser::internal_error_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::OptInPhoneNumberError::unhandled)?;
+                output = crate::xml_deser::deser_structure_internal_error_error_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::OptInPhoneNumberError::unhandled)?;
                 output.build()
             }),
         },
@@ -1909,9 +2596,11 @@ pub fn parse_opt_in_phone_number_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::invalid_parameter_error::Builder::default();
                 let _ = response;
-                output =
-                    crate::xml_deser::invalid_parameter_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::OptInPhoneNumberError::unhandled)?;
+                output = crate::xml_deser::deser_structure_invalid_parameter_error_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::OptInPhoneNumberError::unhandled)?;
                 output.build()
             }),
         },
@@ -1921,8 +2610,11 @@ pub fn parse_opt_in_phone_number_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::throttled_error::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::throttled_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::OptInPhoneNumberError::unhandled)?;
+                output = crate::xml_deser::deser_structure_throttled_error_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::OptInPhoneNumberError::unhandled)?;
                 output.build()
             }),
         },
@@ -1959,7 +2651,7 @@ pub fn parse_publish_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::authorization_error_error::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::authorization_error_exception(
+                output = crate::xml_deser::deser_structure_authorization_error_error_xml_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -1973,9 +2665,11 @@ pub fn parse_publish_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::endpoint_disabled_error::Builder::default();
                 let _ = response;
-                output =
-                    crate::xml_deser::endpoint_disabled_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::PublishError::unhandled)?;
+                output = crate::xml_deser::deser_structure_endpoint_disabled_error_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::PublishError::unhandled)?;
                 output.build()
             }),
         },
@@ -1985,9 +2679,11 @@ pub fn parse_publish_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::internal_error_error::Builder::default();
                 let _ = response;
-                output =
-                    crate::xml_deser::internal_error_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::PublishError::unhandled)?;
+                output = crate::xml_deser::deser_structure_internal_error_error_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::PublishError::unhandled)?;
                 output.build()
             }),
         },
@@ -1997,9 +2693,11 @@ pub fn parse_publish_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::invalid_parameter_error::Builder::default();
                 let _ = response;
-                output =
-                    crate::xml_deser::invalid_parameter_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::PublishError::unhandled)?;
+                output = crate::xml_deser::deser_structure_invalid_parameter_error_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::PublishError::unhandled)?;
                 output.build()
             }),
         },
@@ -2009,7 +2707,7 @@ pub fn parse_publish_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::invalid_parameter_value_error::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::invalid_parameter_value_exception(
+                output = crate::xml_deser::deser_structure_invalid_parameter_value_error_xml_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -2023,9 +2721,11 @@ pub fn parse_publish_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::invalid_security_error::Builder::default();
                 let _ = response;
-                output =
-                    crate::xml_deser::invalid_security_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::PublishError::unhandled)?;
+                output = crate::xml_deser::deser_structure_invalid_security_error_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::PublishError::unhandled)?;
                 output.build()
             }),
         },
@@ -2035,9 +2735,11 @@ pub fn parse_publish_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::kms_access_denied_error::Builder::default();
                 let _ = response;
-                output =
-                    crate::xml_deser::kms_access_denied_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::PublishError::unhandled)?;
+                output = crate::xml_deser::deser_structure_kms_access_denied_error_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::PublishError::unhandled)?;
                 output.build()
             }),
         },
@@ -2047,8 +2749,11 @@ pub fn parse_publish_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::kms_disabled_error::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::kms_disabled_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::PublishError::unhandled)?;
+                output = crate::xml_deser::deser_structure_kms_disabled_error_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::PublishError::unhandled)?;
                 output.build()
             }),
         },
@@ -2058,9 +2763,11 @@ pub fn parse_publish_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::kms_invalid_state_error::Builder::default();
                 let _ = response;
-                output =
-                    crate::xml_deser::kms_invalid_state_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::PublishError::unhandled)?;
+                output = crate::xml_deser::deser_structure_kms_invalid_state_error_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::PublishError::unhandled)?;
                 output.build()
             }),
         },
@@ -2070,9 +2777,11 @@ pub fn parse_publish_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::kms_not_found_error::Builder::default();
                 let _ = response;
-                output =
-                    crate::xml_deser::kms_not_found_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::PublishError::unhandled)?;
+                output = crate::xml_deser::deser_structure_kms_not_found_error_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::PublishError::unhandled)?;
                 output.build()
             }),
         },
@@ -2082,8 +2791,11 @@ pub fn parse_publish_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::kms_opt_in_required::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::kms_opt_in_required(response.body().as_ref(), output)
-                    .map_err(crate::error::PublishError::unhandled)?;
+                output = crate::xml_deser::deser_structure_kms_opt_in_required_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::PublishError::unhandled)?;
                 output.build()
             }),
         },
@@ -2093,9 +2805,11 @@ pub fn parse_publish_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::kms_throttling_error::Builder::default();
                 let _ = response;
-                output =
-                    crate::xml_deser::kms_throttling_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::PublishError::unhandled)?;
+                output = crate::xml_deser::deser_structure_kms_throttling_error_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::PublishError::unhandled)?;
                 output.build()
             }),
         },
@@ -2105,19 +2819,7 @@ pub fn parse_publish_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::not_found_error::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::PublishError::unhandled)?;
-                output.build()
-            }),
-        },
-        "PlatformApplicationDisabledException" => crate::error::PublishError {
-            meta: generic,
-            kind: crate::error::PublishErrorKind::PlatformApplicationDisabledError({
-                #[allow(unused_mut)]
-                let mut output =
-                    crate::error::platform_application_disabled_error::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::platform_application_disabled_exception(
+                output = crate::xml_deser::deser_structure_not_found_error_xml_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -2125,6 +2827,19 @@ pub fn parse_publish_error(
                 output.build()
             }),
         },
+        "PlatformApplicationDisabledException" => {
+            crate::error::PublishError {
+                meta: generic,
+                kind: crate::error::PublishErrorKind::PlatformApplicationDisabledError({
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::platform_application_disabled_error::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_platform_application_disabled_error_xml_err(response.body().as_ref(), output).map_err(crate::error::PublishError::unhandled)?;
+                    output.build()
+                }),
+            }
+        }
         _ => crate::error::PublishError::generic(generic),
     })
 }
@@ -2160,7 +2875,7 @@ pub fn parse_remove_permission_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::authorization_error_error::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::authorization_error_exception(
+                output = crate::xml_deser::deser_structure_authorization_error_error_xml_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -2174,9 +2889,11 @@ pub fn parse_remove_permission_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::internal_error_error::Builder::default();
                 let _ = response;
-                output =
-                    crate::xml_deser::internal_error_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::RemovePermissionError::unhandled)?;
+                output = crate::xml_deser::deser_structure_internal_error_error_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::RemovePermissionError::unhandled)?;
                 output.build()
             }),
         },
@@ -2186,9 +2903,11 @@ pub fn parse_remove_permission_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::invalid_parameter_error::Builder::default();
                 let _ = response;
-                output =
-                    crate::xml_deser::invalid_parameter_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::RemovePermissionError::unhandled)?;
+                output = crate::xml_deser::deser_structure_invalid_parameter_error_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::RemovePermissionError::unhandled)?;
                 output.build()
             }),
         },
@@ -2198,8 +2917,11 @@ pub fn parse_remove_permission_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::not_found_error::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::RemovePermissionError::unhandled)?;
+                output = crate::xml_deser::deser_structure_not_found_error_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::RemovePermissionError::unhandled)?;
                 output.build()
             }),
         },
@@ -2236,7 +2958,7 @@ pub fn parse_set_endpoint_attributes_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::authorization_error_error::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::authorization_error_exception(
+                output = crate::xml_deser::deser_structure_authorization_error_error_xml_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -2250,9 +2972,11 @@ pub fn parse_set_endpoint_attributes_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::internal_error_error::Builder::default();
                 let _ = response;
-                output =
-                    crate::xml_deser::internal_error_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::SetEndpointAttributesError::unhandled)?;
+                output = crate::xml_deser::deser_structure_internal_error_error_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::SetEndpointAttributesError::unhandled)?;
                 output.build()
             }),
         },
@@ -2262,9 +2986,11 @@ pub fn parse_set_endpoint_attributes_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::invalid_parameter_error::Builder::default();
                 let _ = response;
-                output =
-                    crate::xml_deser::invalid_parameter_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::SetEndpointAttributesError::unhandled)?;
+                output = crate::xml_deser::deser_structure_invalid_parameter_error_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::SetEndpointAttributesError::unhandled)?;
                 output.build()
             }),
         },
@@ -2274,8 +3000,11 @@ pub fn parse_set_endpoint_attributes_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::not_found_error::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::SetEndpointAttributesError::unhandled)?;
+                output = crate::xml_deser::deser_structure_not_found_error_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::SetEndpointAttributesError::unhandled)?;
                 output.build()
             }),
         },
@@ -2311,31 +3040,33 @@ pub fn parse_set_platform_application_attributes_error(
         }
     };
     Err(match error_code {
-        "AuthorizationErrorException" => crate::error::SetPlatformApplicationAttributesError {
-            meta: generic,
-            kind: crate::error::SetPlatformApplicationAttributesErrorKind::AuthorizationErrorError(
-                {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::authorization_error_error::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::authorization_error_exception(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::SetPlatformApplicationAttributesError::unhandled)?;
-                    output.build()
-                },
-            ),
-        },
+        "AuthorizationErrorException" => {
+            crate::error::SetPlatformApplicationAttributesError {
+                meta: generic,
+                kind:
+                    crate::error::SetPlatformApplicationAttributesErrorKind::AuthorizationErrorError(
+                        {
+                            #[allow(unused_mut)]
+                            let mut output =
+                                crate::error::authorization_error_error::Builder::default();
+                            let _ = response;
+                            output = crate::xml_deser::deser_structure_authorization_error_error_xml_err(response.body().as_ref(), output).map_err(crate::error::SetPlatformApplicationAttributesError::unhandled)?;
+                            output.build()
+                        },
+                    ),
+            }
+        }
         "InternalErrorException" => crate::error::SetPlatformApplicationAttributesError {
             meta: generic,
             kind: crate::error::SetPlatformApplicationAttributesErrorKind::InternalErrorError({
                 #[allow(unused_mut)]
                 let mut output = crate::error::internal_error_error::Builder::default();
                 let _ = response;
-                output =
-                    crate::xml_deser::internal_error_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::SetPlatformApplicationAttributesError::unhandled)?;
+                output = crate::xml_deser::deser_structure_internal_error_error_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::SetPlatformApplicationAttributesError::unhandled)?;
                 output.build()
             }),
         },
@@ -2345,9 +3076,11 @@ pub fn parse_set_platform_application_attributes_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::invalid_parameter_error::Builder::default();
                 let _ = response;
-                output =
-                    crate::xml_deser::invalid_parameter_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::SetPlatformApplicationAttributesError::unhandled)?;
+                output = crate::xml_deser::deser_structure_invalid_parameter_error_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::SetPlatformApplicationAttributesError::unhandled)?;
                 output.build()
             }),
         },
@@ -2357,8 +3090,11 @@ pub fn parse_set_platform_application_attributes_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::not_found_error::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::SetPlatformApplicationAttributesError::unhandled)?;
+                output = crate::xml_deser::deser_structure_not_found_error_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::SetPlatformApplicationAttributesError::unhandled)?;
                 output.build()
             }),
         },
@@ -2399,7 +3135,7 @@ pub fn parse_set_sms_attributes_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::authorization_error_error::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::authorization_error_exception(
+                output = crate::xml_deser::deser_structure_authorization_error_error_xml_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -2413,9 +3149,11 @@ pub fn parse_set_sms_attributes_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::internal_error_error::Builder::default();
                 let _ = response;
-                output =
-                    crate::xml_deser::internal_error_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::SetSMSAttributesError::unhandled)?;
+                output = crate::xml_deser::deser_structure_internal_error_error_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::SetSMSAttributesError::unhandled)?;
                 output.build()
             }),
         },
@@ -2425,9 +3163,11 @@ pub fn parse_set_sms_attributes_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::invalid_parameter_error::Builder::default();
                 let _ = response;
-                output =
-                    crate::xml_deser::invalid_parameter_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::SetSMSAttributesError::unhandled)?;
+                output = crate::xml_deser::deser_structure_invalid_parameter_error_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::SetSMSAttributesError::unhandled)?;
                 output.build()
             }),
         },
@@ -2437,8 +3177,11 @@ pub fn parse_set_sms_attributes_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::throttled_error::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::throttled_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::SetSMSAttributesError::unhandled)?;
+                output = crate::xml_deser::deser_structure_throttled_error_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::SetSMSAttributesError::unhandled)?;
                 output.build()
             }),
         },
@@ -2482,7 +3225,7 @@ pub fn parse_set_subscription_attributes_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::authorization_error_error::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::authorization_error_exception(
+                output = crate::xml_deser::deser_structure_authorization_error_error_xml_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -2498,11 +3241,7 @@ pub fn parse_set_subscription_attributes_error(
                     let mut output =
                         crate::error::filter_policy_limit_exceeded_error::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::filter_policy_limit_exceeded_exception(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::SetSubscriptionAttributesError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_filter_policy_limit_exceeded_error_xml_err(response.body().as_ref(), output).map_err(crate::error::SetSubscriptionAttributesError::unhandled)?;
                     output.build()
                 },
             ),
@@ -2513,9 +3252,11 @@ pub fn parse_set_subscription_attributes_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::internal_error_error::Builder::default();
                 let _ = response;
-                output =
-                    crate::xml_deser::internal_error_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::SetSubscriptionAttributesError::unhandled)?;
+                output = crate::xml_deser::deser_structure_internal_error_error_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::SetSubscriptionAttributesError::unhandled)?;
                 output.build()
             }),
         },
@@ -2525,9 +3266,11 @@ pub fn parse_set_subscription_attributes_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::invalid_parameter_error::Builder::default();
                 let _ = response;
-                output =
-                    crate::xml_deser::invalid_parameter_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::SetSubscriptionAttributesError::unhandled)?;
+                output = crate::xml_deser::deser_structure_invalid_parameter_error_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::SetSubscriptionAttributesError::unhandled)?;
                 output.build()
             }),
         },
@@ -2537,8 +3280,11 @@ pub fn parse_set_subscription_attributes_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::not_found_error::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::SetSubscriptionAttributesError::unhandled)?;
+                output = crate::xml_deser::deser_structure_not_found_error_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::SetSubscriptionAttributesError::unhandled)?;
                 output.build()
             }),
         },
@@ -2578,7 +3324,7 @@ pub fn parse_set_topic_attributes_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::authorization_error_error::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::authorization_error_exception(
+                output = crate::xml_deser::deser_structure_authorization_error_error_xml_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -2592,9 +3338,11 @@ pub fn parse_set_topic_attributes_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::internal_error_error::Builder::default();
                 let _ = response;
-                output =
-                    crate::xml_deser::internal_error_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::SetTopicAttributesError::unhandled)?;
+                output = crate::xml_deser::deser_structure_internal_error_error_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::SetTopicAttributesError::unhandled)?;
                 output.build()
             }),
         },
@@ -2604,9 +3352,11 @@ pub fn parse_set_topic_attributes_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::invalid_parameter_error::Builder::default();
                 let _ = response;
-                output =
-                    crate::xml_deser::invalid_parameter_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::SetTopicAttributesError::unhandled)?;
+                output = crate::xml_deser::deser_structure_invalid_parameter_error_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::SetTopicAttributesError::unhandled)?;
                 output.build()
             }),
         },
@@ -2616,9 +3366,11 @@ pub fn parse_set_topic_attributes_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::invalid_security_error::Builder::default();
                 let _ = response;
-                output =
-                    crate::xml_deser::invalid_security_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::SetTopicAttributesError::unhandled)?;
+                output = crate::xml_deser::deser_structure_invalid_security_error_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::SetTopicAttributesError::unhandled)?;
                 output.build()
             }),
         },
@@ -2628,8 +3380,11 @@ pub fn parse_set_topic_attributes_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::not_found_error::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::SetTopicAttributesError::unhandled)?;
+                output = crate::xml_deser::deser_structure_not_found_error_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::SetTopicAttributesError::unhandled)?;
                 output.build()
             }),
         },
@@ -2666,7 +3421,7 @@ pub fn parse_subscribe_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::authorization_error_error::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::authorization_error_exception(
+                output = crate::xml_deser::deser_structure_authorization_error_error_xml_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -2674,30 +3429,30 @@ pub fn parse_subscribe_error(
                 output.build()
             }),
         },
-        "FilterPolicyLimitExceededException" => crate::error::SubscribeError {
-            meta: generic,
-            kind: crate::error::SubscribeErrorKind::FilterPolicyLimitExceededError({
-                #[allow(unused_mut)]
-                let mut output =
-                    crate::error::filter_policy_limit_exceeded_error::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::filter_policy_limit_exceeded_exception(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::SubscribeError::unhandled)?;
-                output.build()
-            }),
-        },
+        "FilterPolicyLimitExceededException" => {
+            crate::error::SubscribeError {
+                meta: generic,
+                kind: crate::error::SubscribeErrorKind::FilterPolicyLimitExceededError({
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::filter_policy_limit_exceeded_error::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_filter_policy_limit_exceeded_error_xml_err(response.body().as_ref(), output).map_err(crate::error::SubscribeError::unhandled)?;
+                    output.build()
+                }),
+            }
+        }
         "InternalErrorException" => crate::error::SubscribeError {
             meta: generic,
             kind: crate::error::SubscribeErrorKind::InternalErrorError({
                 #[allow(unused_mut)]
                 let mut output = crate::error::internal_error_error::Builder::default();
                 let _ = response;
-                output =
-                    crate::xml_deser::internal_error_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::SubscribeError::unhandled)?;
+                output = crate::xml_deser::deser_structure_internal_error_error_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::SubscribeError::unhandled)?;
                 output.build()
             }),
         },
@@ -2707,9 +3462,11 @@ pub fn parse_subscribe_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::invalid_parameter_error::Builder::default();
                 let _ = response;
-                output =
-                    crate::xml_deser::invalid_parameter_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::SubscribeError::unhandled)?;
+                output = crate::xml_deser::deser_structure_invalid_parameter_error_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::SubscribeError::unhandled)?;
                 output.build()
             }),
         },
@@ -2719,9 +3476,11 @@ pub fn parse_subscribe_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::invalid_security_error::Builder::default();
                 let _ = response;
-                output =
-                    crate::xml_deser::invalid_security_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::SubscribeError::unhandled)?;
+                output = crate::xml_deser::deser_structure_invalid_security_error_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::SubscribeError::unhandled)?;
                 output.build()
             }),
         },
@@ -2731,19 +3490,7 @@ pub fn parse_subscribe_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::not_found_error::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::SubscribeError::unhandled)?;
-                output.build()
-            }),
-        },
-        "SubscriptionLimitExceededException" => crate::error::SubscribeError {
-            meta: generic,
-            kind: crate::error::SubscribeErrorKind::SubscriptionLimitExceededError({
-                #[allow(unused_mut)]
-                let mut output =
-                    crate::error::subscription_limit_exceeded_error::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::subscription_limit_exceeded_exception(
+                output = crate::xml_deser::deser_structure_not_found_error_xml_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -2751,6 +3498,19 @@ pub fn parse_subscribe_error(
                 output.build()
             }),
         },
+        "SubscriptionLimitExceededException" => {
+            crate::error::SubscribeError {
+                meta: generic,
+                kind: crate::error::SubscribeErrorKind::SubscriptionLimitExceededError({
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::subscription_limit_exceeded_error::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_subscription_limit_exceeded_error_xml_err(response.body().as_ref(), output).map_err(crate::error::SubscribeError::unhandled)?;
+                    output.build()
+                }),
+            }
+        }
         _ => crate::error::SubscribeError::generic(generic),
     })
 }
@@ -2786,7 +3546,7 @@ pub fn parse_tag_resource_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::authorization_error_error::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::authorization_error_exception(
+                output = crate::xml_deser::deser_structure_authorization_error_error_xml_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -2800,9 +3560,11 @@ pub fn parse_tag_resource_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::concurrent_access_error::Builder::default();
                 let _ = response;
-                output =
-                    crate::xml_deser::concurrent_access_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::TagResourceError::unhandled)?;
+                output = crate::xml_deser::deser_structure_concurrent_access_error_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::TagResourceError::unhandled)?;
                 output.build()
             }),
         },
@@ -2812,9 +3574,11 @@ pub fn parse_tag_resource_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::invalid_parameter_error::Builder::default();
                 let _ = response;
-                output =
-                    crate::xml_deser::invalid_parameter_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::TagResourceError::unhandled)?;
+                output = crate::xml_deser::deser_structure_invalid_parameter_error_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::TagResourceError::unhandled)?;
                 output.build()
             }),
         },
@@ -2824,7 +3588,7 @@ pub fn parse_tag_resource_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::resource_not_found_error::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::resource_not_found_exception(
+                output = crate::xml_deser::deser_structure_resource_not_found_error_xml_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -2838,8 +3602,11 @@ pub fn parse_tag_resource_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::stale_tag_error::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::stale_tag_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::TagResourceError::unhandled)?;
+                output = crate::xml_deser::deser_structure_stale_tag_error_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::TagResourceError::unhandled)?;
                 output.build()
             }),
         },
@@ -2849,7 +3616,7 @@ pub fn parse_tag_resource_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::tag_limit_exceeded_error::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::tag_limit_exceeded_exception(
+                output = crate::xml_deser::deser_structure_tag_limit_exceeded_error_xml_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -2863,8 +3630,11 @@ pub fn parse_tag_resource_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::tag_policy_error::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::tag_policy_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::TagResourceError::unhandled)?;
+                output = crate::xml_deser::deser_structure_tag_policy_error_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::TagResourceError::unhandled)?;
                 output.build()
             }),
         },
@@ -2901,7 +3671,7 @@ pub fn parse_unsubscribe_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::authorization_error_error::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::authorization_error_exception(
+                output = crate::xml_deser::deser_structure_authorization_error_error_xml_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -2915,9 +3685,11 @@ pub fn parse_unsubscribe_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::internal_error_error::Builder::default();
                 let _ = response;
-                output =
-                    crate::xml_deser::internal_error_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::UnsubscribeError::unhandled)?;
+                output = crate::xml_deser::deser_structure_internal_error_error_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UnsubscribeError::unhandled)?;
                 output.build()
             }),
         },
@@ -2927,9 +3699,11 @@ pub fn parse_unsubscribe_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::invalid_parameter_error::Builder::default();
                 let _ = response;
-                output =
-                    crate::xml_deser::invalid_parameter_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::UnsubscribeError::unhandled)?;
+                output = crate::xml_deser::deser_structure_invalid_parameter_error_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UnsubscribeError::unhandled)?;
                 output.build()
             }),
         },
@@ -2939,9 +3713,11 @@ pub fn parse_unsubscribe_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::invalid_security_error::Builder::default();
                 let _ = response;
-                output =
-                    crate::xml_deser::invalid_security_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::UnsubscribeError::unhandled)?;
+                output = crate::xml_deser::deser_structure_invalid_security_error_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UnsubscribeError::unhandled)?;
                 output.build()
             }),
         },
@@ -2951,8 +3727,11 @@ pub fn parse_unsubscribe_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::not_found_error::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::UnsubscribeError::unhandled)?;
+                output = crate::xml_deser::deser_structure_not_found_error_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UnsubscribeError::unhandled)?;
                 output.build()
             }),
         },
@@ -2989,7 +3768,7 @@ pub fn parse_untag_resource_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::authorization_error_error::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::authorization_error_exception(
+                output = crate::xml_deser::deser_structure_authorization_error_error_xml_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -3003,9 +3782,11 @@ pub fn parse_untag_resource_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::concurrent_access_error::Builder::default();
                 let _ = response;
-                output =
-                    crate::xml_deser::concurrent_access_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::UntagResourceError::unhandled)?;
+                output = crate::xml_deser::deser_structure_concurrent_access_error_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UntagResourceError::unhandled)?;
                 output.build()
             }),
         },
@@ -3015,9 +3796,11 @@ pub fn parse_untag_resource_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::invalid_parameter_error::Builder::default();
                 let _ = response;
-                output =
-                    crate::xml_deser::invalid_parameter_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::UntagResourceError::unhandled)?;
+                output = crate::xml_deser::deser_structure_invalid_parameter_error_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UntagResourceError::unhandled)?;
                 output.build()
             }),
         },
@@ -3027,7 +3810,7 @@ pub fn parse_untag_resource_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::resource_not_found_error::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::resource_not_found_exception(
+                output = crate::xml_deser::deser_structure_resource_not_found_error_xml_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -3041,8 +3824,11 @@ pub fn parse_untag_resource_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::stale_tag_error::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::stale_tag_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::UntagResourceError::unhandled)?;
+                output = crate::xml_deser::deser_structure_stale_tag_error_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UntagResourceError::unhandled)?;
                 output.build()
             }),
         },
@@ -3052,7 +3838,7 @@ pub fn parse_untag_resource_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::tag_limit_exceeded_error::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::tag_limit_exceeded_exception(
+                output = crate::xml_deser::deser_structure_tag_limit_exceeded_error_xml_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -3066,8 +3852,11 @@ pub fn parse_untag_resource_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::tag_policy_error::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::tag_policy_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::UntagResourceError::unhandled)?;
+                output = crate::xml_deser::deser_structure_tag_policy_error_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UntagResourceError::unhandled)?;
                 output.build()
             }),
         },
@@ -3082,6 +3871,127 @@ pub fn parse_untag_resource_response(
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::untag_resource_output::Builder::default();
+        let _ = response;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_verify_sms_sandbox_phone_number_error(
+    response: &http::Response<bytes::Bytes>,
+) -> Result<
+    crate::output::VerifySMSSandboxPhoneNumberOutput,
+    crate::error::VerifySMSSandboxPhoneNumberError,
+> {
+    let generic = crate::xml_deser::parse_generic_error(&response)
+        .map_err(crate::error::VerifySMSSandboxPhoneNumberError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::VerifySMSSandboxPhoneNumberError::unhandled(
+                generic,
+            ))
+        }
+    };
+    Err(match error_code {
+        "AuthorizationErrorException" => crate::error::VerifySMSSandboxPhoneNumberError {
+            meta: generic,
+            kind: crate::error::VerifySMSSandboxPhoneNumberErrorKind::AuthorizationErrorError({
+                #[allow(unused_mut)]
+                let mut output = crate::error::authorization_error_error::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_authorization_error_error_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::VerifySMSSandboxPhoneNumberError::unhandled)?;
+                output.build()
+            }),
+        },
+        "InternalErrorException" => crate::error::VerifySMSSandboxPhoneNumberError {
+            meta: generic,
+            kind: crate::error::VerifySMSSandboxPhoneNumberErrorKind::InternalErrorError({
+                #[allow(unused_mut)]
+                let mut output = crate::error::internal_error_error::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_internal_error_error_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::VerifySMSSandboxPhoneNumberError::unhandled)?;
+                output.build()
+            }),
+        },
+        "InvalidParameterException" => crate::error::VerifySMSSandboxPhoneNumberError {
+            meta: generic,
+            kind: crate::error::VerifySMSSandboxPhoneNumberErrorKind::InvalidParameterError({
+                #[allow(unused_mut)]
+                let mut output = crate::error::invalid_parameter_error::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_invalid_parameter_error_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::VerifySMSSandboxPhoneNumberError::unhandled)?;
+                output.build()
+            }),
+        },
+        "ResourceNotFoundException" => crate::error::VerifySMSSandboxPhoneNumberError {
+            meta: generic,
+            kind: crate::error::VerifySMSSandboxPhoneNumberErrorKind::ResourceNotFoundError({
+                #[allow(unused_mut)]
+                let mut output = crate::error::resource_not_found_error::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_resource_not_found_error_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::VerifySMSSandboxPhoneNumberError::unhandled)?;
+                output.build()
+            }),
+        },
+        "ThrottledException" => crate::error::VerifySMSSandboxPhoneNumberError {
+            meta: generic,
+            kind: crate::error::VerifySMSSandboxPhoneNumberErrorKind::ThrottledError({
+                #[allow(unused_mut)]
+                let mut output = crate::error::throttled_error::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_throttled_error_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::VerifySMSSandboxPhoneNumberError::unhandled)?;
+                output.build()
+            }),
+        },
+        "VerificationException" => crate::error::VerifySMSSandboxPhoneNumberError {
+            meta: generic,
+            kind: crate::error::VerifySMSSandboxPhoneNumberErrorKind::VerificationError({
+                #[allow(unused_mut)]
+                let mut output = crate::error::verification_error::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_verification_error_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::VerifySMSSandboxPhoneNumberError::unhandled)?;
+                output.build()
+            }),
+        },
+        _ => crate::error::VerifySMSSandboxPhoneNumberError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_verify_sms_sandbox_phone_number_response(
+    response: &http::Response<bytes::Bytes>,
+) -> Result<
+    crate::output::VerifySMSSandboxPhoneNumberOutput,
+    crate::error::VerifySMSSandboxPhoneNumberError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::verify_sms_sandbox_phone_number_output::Builder::default();
         let _ = response;
         output.build()
     })

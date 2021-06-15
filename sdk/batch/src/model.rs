@@ -93,6 +93,7 @@ impl ComputeEnvironmentOrder {
 pub enum JqState {
     Disabled,
     Enabled,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for JqState {
@@ -301,6 +302,7 @@ impl ComputeResourceUpdate {
 pub enum CeState {
     Disabled,
     Enabled,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for CeState {
@@ -603,6 +605,7 @@ impl EvaluateOnExit {
 pub enum RetryAction {
     Exit,
     Retry,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for RetryAction {
@@ -1337,6 +1340,7 @@ pub enum ResourceType {
     Gpu,
     Memory,
     Vcpu,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for ResourceType {
@@ -1529,6 +1533,7 @@ impl JobDependency {
 pub enum ArrayJobDependency {
     NToN,
     Sequential,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for ArrayJobDependency {
@@ -1633,6 +1638,7 @@ impl ArrayProperties {
 pub enum PlatformCapability {
     Ec2,
     Fargate,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for PlatformCapability {
@@ -2596,6 +2602,7 @@ impl NetworkConfiguration {
 pub enum AssignPublicIp {
     Disabled,
     Enabled,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for AssignPublicIp {
@@ -2962,6 +2969,7 @@ pub enum LogDriver {
     JsonFile,
     Splunk,
     Syslog,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for LogDriver {
@@ -3459,6 +3467,7 @@ pub enum DeviceCgroupPermission {
     Mknod,
     Read,
     Write,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for DeviceCgroupPermission {
@@ -4023,6 +4032,7 @@ impl EFSAuthorizationConfig {
 pub enum EfsAuthorizationConfigIam {
     Disabled,
     Enabled,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for EfsAuthorizationConfigIam {
@@ -4078,6 +4088,7 @@ impl<'de> serde::Deserialize<'de> for EfsAuthorizationConfigIam {
 pub enum EfsTransitEncryption {
     Disabled,
     Enabled,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for EfsTransitEncryption {
@@ -4198,6 +4209,7 @@ impl Host {
 pub enum JobDefinitionType {
     Container,
     Multinode,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for JobDefinitionType {
@@ -4707,6 +4719,7 @@ pub enum JobStatus {
     Starting,
     Submitted,
     Succeeded,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for JobStatus {
@@ -6591,6 +6604,7 @@ pub enum JqStatus {
     Invalid,
     Updating,
     Valid,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for JqStatus {
@@ -8059,6 +8073,7 @@ pub enum CrAllocationStrategy {
     BestFit,
     BestFitProgressive,
     SpotCapacityOptimized,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for CrAllocationStrategy {
@@ -8118,6 +8133,7 @@ pub enum CrType {
     Fargate,
     FargateSpot,
     Spot,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for CrType {
@@ -8181,6 +8197,7 @@ pub enum CeStatus {
     Invalid,
     Updating,
     Valid,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for CeStatus {
@@ -8244,6 +8261,7 @@ impl<'de> serde::Deserialize<'de> for CeStatus {
 pub enum CeType {
     Managed,
     Unmanaged,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for CeType {

@@ -16,9 +16,11 @@ pub fn parse_activate_key_signing_key_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::concurrent_modification::Builder::default();
                 let _ = response;
-                output =
-                    crate::xml_deser::concurrent_modification(response.body().as_ref(), output)
-                        .map_err(crate::error::ActivateKeySigningKeyError::unhandled)?;
+                output = crate::xml_deser::deser_structure_concurrent_modification_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ActivateKeySigningKeyError::unhandled)?;
                 output.build()
             }),
         },
@@ -28,7 +30,7 @@ pub fn parse_activate_key_signing_key_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::invalid_key_signing_key_status::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::invalid_key_signing_key_status(
+                output = crate::xml_deser::deser_structure_invalid_key_signing_key_status_xml_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -42,8 +44,11 @@ pub fn parse_activate_key_signing_key_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::invalid_kms_arn::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::invalid_kms_arn(response.body().as_ref(), output)
-                    .map_err(crate::error::ActivateKeySigningKeyError::unhandled)?;
+                output = crate::xml_deser::deser_structure_invalid_kms_arn_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ActivateKeySigningKeyError::unhandled)?;
                 output.build()
             }),
         },
@@ -53,8 +58,11 @@ pub fn parse_activate_key_signing_key_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::invalid_signing_status::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::invalid_signing_status(response.body().as_ref(), output)
-                    .map_err(crate::error::ActivateKeySigningKeyError::unhandled)?;
+                output = crate::xml_deser::deser_structure_invalid_signing_status_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ActivateKeySigningKeyError::unhandled)?;
                 output.build()
             }),
         },
@@ -64,9 +72,11 @@ pub fn parse_activate_key_signing_key_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::no_such_key_signing_key::Builder::default();
                 let _ = response;
-                output =
-                    crate::xml_deser::no_such_key_signing_key(response.body().as_ref(), output)
-                        .map_err(crate::error::ActivateKeySigningKeyError::unhandled)?;
+                output = crate::xml_deser::deser_structure_no_such_key_signing_key_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ActivateKeySigningKeyError::unhandled)?;
                 output.build()
             }),
         },
@@ -115,9 +125,11 @@ pub fn parse_associate_vpc_with_hosted_zone_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::conflicting_domain_exists::Builder::default();
                 let _ = response;
-                output =
-                    crate::xml_deser::conflicting_domain_exists(response.body().as_ref(), output)
-                        .map_err(crate::error::AssociateVPCWithHostedZoneError::unhandled)?;
+                output = crate::xml_deser::deser_structure_conflicting_domain_exists_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::AssociateVPCWithHostedZoneError::unhandled)?;
                 output.build()
             }),
         },
@@ -127,8 +139,11 @@ pub fn parse_associate_vpc_with_hosted_zone_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::invalid_input::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::invalid_input(response.body().as_ref(), output)
-                    .map_err(crate::error::AssociateVPCWithHostedZoneError::unhandled)?;
+                output = crate::xml_deser::deser_structure_invalid_input_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::AssociateVPCWithHostedZoneError::unhandled)?;
                 output.build()
             }),
         },
@@ -138,8 +153,11 @@ pub fn parse_associate_vpc_with_hosted_zone_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::invalid_vpc_id::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::invalid_vpc_id(response.body().as_ref(), output)
-                    .map_err(crate::error::AssociateVPCWithHostedZoneError::unhandled)?;
+                output = crate::xml_deser::deser_structure_invalid_vpc_id_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::AssociateVPCWithHostedZoneError::unhandled)?;
                 output.build()
             }),
         },
@@ -149,8 +167,11 @@ pub fn parse_associate_vpc_with_hosted_zone_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::limits_exceeded::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::limits_exceeded(response.body().as_ref(), output)
-                    .map_err(crate::error::AssociateVPCWithHostedZoneError::unhandled)?;
+                output = crate::xml_deser::deser_structure_limits_exceeded_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::AssociateVPCWithHostedZoneError::unhandled)?;
                 output.build()
             }),
         },
@@ -160,8 +181,11 @@ pub fn parse_associate_vpc_with_hosted_zone_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::no_such_hosted_zone::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::no_such_hosted_zone(response.body().as_ref(), output)
-                    .map_err(crate::error::AssociateVPCWithHostedZoneError::unhandled)?;
+                output = crate::xml_deser::deser_structure_no_such_hosted_zone_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::AssociateVPCWithHostedZoneError::unhandled)?;
                 output.build()
             }),
         },
@@ -171,9 +195,11 @@ pub fn parse_associate_vpc_with_hosted_zone_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::not_authorized_error::Builder::default();
                 let _ = response;
-                output =
-                    crate::xml_deser::not_authorized_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::AssociateVPCWithHostedZoneError::unhandled)?;
+                output = crate::xml_deser::deser_structure_not_authorized_error_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::AssociateVPCWithHostedZoneError::unhandled)?;
                 output.build()
             }),
         },
@@ -183,9 +209,11 @@ pub fn parse_associate_vpc_with_hosted_zone_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::prior_request_not_complete::Builder::default();
                 let _ = response;
-                output =
-                    crate::xml_deser::prior_request_not_complete(response.body().as_ref(), output)
-                        .map_err(crate::error::AssociateVPCWithHostedZoneError::unhandled)?;
+                output = crate::xml_deser::deser_structure_prior_request_not_complete_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::AssociateVPCWithHostedZoneError::unhandled)?;
                 output.build()
             }),
         },
@@ -195,9 +223,11 @@ pub fn parse_associate_vpc_with_hosted_zone_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::public_zone_vpc_association::Builder::default();
                 let _ = response;
-                output =
-                    crate::xml_deser::public_zone_vpc_association(response.body().as_ref(), output)
-                        .map_err(crate::error::AssociateVPCWithHostedZoneError::unhandled)?;
+                output = crate::xml_deser::deser_structure_public_zone_vpc_association_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::AssociateVPCWithHostedZoneError::unhandled)?;
                 output.build()
             }),
         },
@@ -249,8 +279,11 @@ pub fn parse_change_resource_record_sets_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::invalid_change_batch::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::invalid_change_batch(response.body().as_ref(), output)
-                    .map_err(crate::error::ChangeResourceRecordSetsError::unhandled)?;
+                output = crate::xml_deser::deser_structure_invalid_change_batch_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ChangeResourceRecordSetsError::unhandled)?;
                 output.build()
             }),
         },
@@ -260,8 +293,11 @@ pub fn parse_change_resource_record_sets_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::invalid_input::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::invalid_input(response.body().as_ref(), output)
-                    .map_err(crate::error::ChangeResourceRecordSetsError::unhandled)?;
+                output = crate::xml_deser::deser_structure_invalid_input_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ChangeResourceRecordSetsError::unhandled)?;
                 output.build()
             }),
         },
@@ -271,8 +307,11 @@ pub fn parse_change_resource_record_sets_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::no_such_health_check::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::no_such_health_check(response.body().as_ref(), output)
-                    .map_err(crate::error::ChangeResourceRecordSetsError::unhandled)?;
+                output = crate::xml_deser::deser_structure_no_such_health_check_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ChangeResourceRecordSetsError::unhandled)?;
                 output.build()
             }),
         },
@@ -282,8 +321,11 @@ pub fn parse_change_resource_record_sets_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::no_such_hosted_zone::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::no_such_hosted_zone(response.body().as_ref(), output)
-                    .map_err(crate::error::ChangeResourceRecordSetsError::unhandled)?;
+                output = crate::xml_deser::deser_structure_no_such_hosted_zone_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ChangeResourceRecordSetsError::unhandled)?;
                 output.build()
             }),
         },
@@ -293,9 +335,11 @@ pub fn parse_change_resource_record_sets_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::prior_request_not_complete::Builder::default();
                 let _ = response;
-                output =
-                    crate::xml_deser::prior_request_not_complete(response.body().as_ref(), output)
-                        .map_err(crate::error::ChangeResourceRecordSetsError::unhandled)?;
+                output = crate::xml_deser::deser_structure_prior_request_not_complete_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ChangeResourceRecordSetsError::unhandled)?;
                 output.build()
             }),
         },
@@ -340,8 +384,11 @@ pub fn parse_change_tags_for_resource_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::invalid_input::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::invalid_input(response.body().as_ref(), output)
-                    .map_err(crate::error::ChangeTagsForResourceError::unhandled)?;
+                output = crate::xml_deser::deser_structure_invalid_input_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ChangeTagsForResourceError::unhandled)?;
                 output.build()
             }),
         },
@@ -351,8 +398,11 @@ pub fn parse_change_tags_for_resource_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::no_such_health_check::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::no_such_health_check(response.body().as_ref(), output)
-                    .map_err(crate::error::ChangeTagsForResourceError::unhandled)?;
+                output = crate::xml_deser::deser_structure_no_such_health_check_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ChangeTagsForResourceError::unhandled)?;
                 output.build()
             }),
         },
@@ -362,8 +412,11 @@ pub fn parse_change_tags_for_resource_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::no_such_hosted_zone::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::no_such_hosted_zone(response.body().as_ref(), output)
-                    .map_err(crate::error::ChangeTagsForResourceError::unhandled)?;
+                output = crate::xml_deser::deser_structure_no_such_hosted_zone_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ChangeTagsForResourceError::unhandled)?;
                 output.build()
             }),
         },
@@ -373,9 +426,11 @@ pub fn parse_change_tags_for_resource_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::prior_request_not_complete::Builder::default();
                 let _ = response;
-                output =
-                    crate::xml_deser::prior_request_not_complete(response.body().as_ref(), output)
-                        .map_err(crate::error::ChangeTagsForResourceError::unhandled)?;
+                output = crate::xml_deser::deser_structure_prior_request_not_complete_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ChangeTagsForResourceError::unhandled)?;
                 output.build()
             }),
         },
@@ -385,8 +440,11 @@ pub fn parse_change_tags_for_resource_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::throttling_error::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::throttling_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::ChangeTagsForResourceError::unhandled)?;
+                output = crate::xml_deser::deser_structure_throttling_error_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ChangeTagsForResourceError::unhandled)?;
                 output.build()
             }),
         },
@@ -423,9 +481,11 @@ pub fn parse_create_health_check_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::health_check_already_exists::Builder::default();
                 let _ = response;
-                output =
-                    crate::xml_deser::health_check_already_exists(response.body().as_ref(), output)
-                        .map_err(crate::error::CreateHealthCheckError::unhandled)?;
+                output = crate::xml_deser::deser_structure_health_check_already_exists_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateHealthCheckError::unhandled)?;
                 output.build()
             }),
         },
@@ -435,8 +495,11 @@ pub fn parse_create_health_check_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::invalid_input::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::invalid_input(response.body().as_ref(), output)
-                    .map_err(crate::error::CreateHealthCheckError::unhandled)?;
+                output = crate::xml_deser::deser_structure_invalid_input_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateHealthCheckError::unhandled)?;
                 output.build()
             }),
         },
@@ -446,8 +509,11 @@ pub fn parse_create_health_check_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::too_many_health_checks::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::too_many_health_checks(response.body().as_ref(), output)
-                    .map_err(crate::error::CreateHealthCheckError::unhandled)?;
+                output = crate::xml_deser::deser_structure_too_many_health_checks_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateHealthCheckError::unhandled)?;
                 output.build()
             }),
         },
@@ -495,9 +561,11 @@ pub fn parse_create_hosted_zone_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::conflicting_domain_exists::Builder::default();
                 let _ = response;
-                output =
-                    crate::xml_deser::conflicting_domain_exists(response.body().as_ref(), output)
-                        .map_err(crate::error::CreateHostedZoneError::unhandled)?;
+                output = crate::xml_deser::deser_structure_conflicting_domain_exists_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateHostedZoneError::unhandled)?;
                 output.build()
             }),
         },
@@ -507,7 +575,7 @@ pub fn parse_create_hosted_zone_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::delegation_set_not_available::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::delegation_set_not_available(
+                output = crate::xml_deser::deser_structure_delegation_set_not_available_xml_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -521,9 +589,11 @@ pub fn parse_create_hosted_zone_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::delegation_set_not_reusable::Builder::default();
                 let _ = response;
-                output =
-                    crate::xml_deser::delegation_set_not_reusable(response.body().as_ref(), output)
-                        .map_err(crate::error::CreateHostedZoneError::unhandled)?;
+                output = crate::xml_deser::deser_structure_delegation_set_not_reusable_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateHostedZoneError::unhandled)?;
                 output.build()
             }),
         },
@@ -533,9 +603,11 @@ pub fn parse_create_hosted_zone_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::hosted_zone_already_exists::Builder::default();
                 let _ = response;
-                output =
-                    crate::xml_deser::hosted_zone_already_exists(response.body().as_ref(), output)
-                        .map_err(crate::error::CreateHostedZoneError::unhandled)?;
+                output = crate::xml_deser::deser_structure_hosted_zone_already_exists_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateHostedZoneError::unhandled)?;
                 output.build()
             }),
         },
@@ -545,8 +617,11 @@ pub fn parse_create_hosted_zone_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::invalid_domain_name::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::invalid_domain_name(response.body().as_ref(), output)
-                    .map_err(crate::error::CreateHostedZoneError::unhandled)?;
+                output = crate::xml_deser::deser_structure_invalid_domain_name_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateHostedZoneError::unhandled)?;
                 output.build()
             }),
         },
@@ -556,8 +631,11 @@ pub fn parse_create_hosted_zone_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::invalid_input::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::invalid_input(response.body().as_ref(), output)
-                    .map_err(crate::error::CreateHostedZoneError::unhandled)?;
+                output = crate::xml_deser::deser_structure_invalid_input_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateHostedZoneError::unhandled)?;
                 output.build()
             }),
         },
@@ -567,8 +645,11 @@ pub fn parse_create_hosted_zone_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::invalid_vpc_id::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::invalid_vpc_id(response.body().as_ref(), output)
-                    .map_err(crate::error::CreateHostedZoneError::unhandled)?;
+                output = crate::xml_deser::deser_structure_invalid_vpc_id_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateHostedZoneError::unhandled)?;
                 output.build()
             }),
         },
@@ -578,8 +659,11 @@ pub fn parse_create_hosted_zone_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::no_such_delegation_set::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::no_such_delegation_set(response.body().as_ref(), output)
-                    .map_err(crate::error::CreateHostedZoneError::unhandled)?;
+                output = crate::xml_deser::deser_structure_no_such_delegation_set_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateHostedZoneError::unhandled)?;
                 output.build()
             }),
         },
@@ -589,8 +673,11 @@ pub fn parse_create_hosted_zone_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::too_many_hosted_zones::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::too_many_hosted_zones(response.body().as_ref(), output)
-                    .map_err(crate::error::CreateHostedZoneError::unhandled)?;
+                output = crate::xml_deser::deser_structure_too_many_hosted_zones_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateHostedZoneError::unhandled)?;
                 output.build()
             }),
         },
@@ -638,9 +725,11 @@ pub fn parse_create_key_signing_key_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::concurrent_modification::Builder::default();
                 let _ = response;
-                output =
-                    crate::xml_deser::concurrent_modification(response.body().as_ref(), output)
-                        .map_err(crate::error::CreateKeySigningKeyError::unhandled)?;
+                output = crate::xml_deser::deser_structure_concurrent_modification_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateKeySigningKeyError::unhandled)?;
                 output.build()
             }),
         },
@@ -650,8 +739,11 @@ pub fn parse_create_key_signing_key_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::invalid_argument::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::invalid_argument(response.body().as_ref(), output)
-                    .map_err(crate::error::CreateKeySigningKeyError::unhandled)?;
+                output = crate::xml_deser::deser_structure_invalid_argument_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateKeySigningKeyError::unhandled)?;
                 output.build()
             }),
         },
@@ -661,8 +753,11 @@ pub fn parse_create_key_signing_key_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::invalid_input::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::invalid_input(response.body().as_ref(), output)
-                    .map_err(crate::error::CreateKeySigningKeyError::unhandled)?;
+                output = crate::xml_deser::deser_structure_invalid_input_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateKeySigningKeyError::unhandled)?;
                 output.build()
             }),
         },
@@ -672,7 +767,7 @@ pub fn parse_create_key_signing_key_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::invalid_key_signing_key_name::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::invalid_key_signing_key_name(
+                output = crate::xml_deser::deser_structure_invalid_key_signing_key_name_xml_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -686,7 +781,7 @@ pub fn parse_create_key_signing_key_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::invalid_key_signing_key_status::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::invalid_key_signing_key_status(
+                output = crate::xml_deser::deser_structure_invalid_key_signing_key_status_xml_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -700,8 +795,11 @@ pub fn parse_create_key_signing_key_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::invalid_kms_arn::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::invalid_kms_arn(response.body().as_ref(), output)
-                    .map_err(crate::error::CreateKeySigningKeyError::unhandled)?;
+                output = crate::xml_deser::deser_structure_invalid_kms_arn_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateKeySigningKeyError::unhandled)?;
                 output.build()
             }),
         },
@@ -711,8 +809,11 @@ pub fn parse_create_key_signing_key_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::invalid_signing_status::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::invalid_signing_status(response.body().as_ref(), output)
-                    .map_err(crate::error::CreateKeySigningKeyError::unhandled)?;
+                output = crate::xml_deser::deser_structure_invalid_signing_status_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateKeySigningKeyError::unhandled)?;
                 output.build()
             }),
         },
@@ -722,7 +823,7 @@ pub fn parse_create_key_signing_key_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::key_signing_key_already_exists::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::key_signing_key_already_exists(
+                output = crate::xml_deser::deser_structure_key_signing_key_already_exists_xml_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -736,8 +837,11 @@ pub fn parse_create_key_signing_key_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::no_such_hosted_zone::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::no_such_hosted_zone(response.body().as_ref(), output)
-                    .map_err(crate::error::CreateKeySigningKeyError::unhandled)?;
+                output = crate::xml_deser::deser_structure_no_such_hosted_zone_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateKeySigningKeyError::unhandled)?;
                 output.build()
             }),
         },
@@ -747,9 +851,11 @@ pub fn parse_create_key_signing_key_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::too_many_key_signing_keys::Builder::default();
                 let _ = response;
-                output =
-                    crate::xml_deser::too_many_key_signing_keys(response.body().as_ref(), output)
-                        .map_err(crate::error::CreateKeySigningKeyError::unhandled)?;
+                output = crate::xml_deser::deser_structure_too_many_key_signing_keys_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateKeySigningKeyError::unhandled)?;
                 output.build()
             }),
         },
@@ -803,37 +909,37 @@ pub fn parse_create_query_logging_config_error(
         "ConcurrentModification" => crate::error::CreateQueryLoggingConfigError { meta: generic, kind: crate::error::CreateQueryLoggingConfigErrorKind::ConcurrentModification({
             #[allow(unused_mut)]let mut output = crate::error::concurrent_modification::Builder::default();
             let _ = response;
-            output = crate::xml_deser::concurrent_modification(response.body().as_ref(), output).map_err(crate::error::CreateQueryLoggingConfigError::unhandled)?;
+            output = crate::xml_deser::deser_structure_concurrent_modification_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateQueryLoggingConfigError::unhandled)?;
             output.build()
         })},
         "InsufficientCloudWatchLogsResourcePolicy" => crate::error::CreateQueryLoggingConfigError { meta: generic, kind: crate::error::CreateQueryLoggingConfigErrorKind::InsufficientCloudWatchLogsResourcePolicy({
             #[allow(unused_mut)]let mut output = crate::error::insufficient_cloud_watch_logs_resource_policy::Builder::default();
             let _ = response;
-            output = crate::xml_deser::insufficient_cloud_watch_logs_resource_policy(response.body().as_ref(), output).map_err(crate::error::CreateQueryLoggingConfigError::unhandled)?;
+            output = crate::xml_deser::deser_structure_insufficient_cloud_watch_logs_resource_policy_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateQueryLoggingConfigError::unhandled)?;
             output.build()
         })},
         "InvalidInput" => crate::error::CreateQueryLoggingConfigError { meta: generic, kind: crate::error::CreateQueryLoggingConfigErrorKind::InvalidInput({
             #[allow(unused_mut)]let mut output = crate::error::invalid_input::Builder::default();
             let _ = response;
-            output = crate::xml_deser::invalid_input(response.body().as_ref(), output).map_err(crate::error::CreateQueryLoggingConfigError::unhandled)?;
+            output = crate::xml_deser::deser_structure_invalid_input_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateQueryLoggingConfigError::unhandled)?;
             output.build()
         })},
         "NoSuchCloudWatchLogsLogGroup" => crate::error::CreateQueryLoggingConfigError { meta: generic, kind: crate::error::CreateQueryLoggingConfigErrorKind::NoSuchCloudWatchLogsLogGroup({
             #[allow(unused_mut)]let mut output = crate::error::no_such_cloud_watch_logs_log_group::Builder::default();
             let _ = response;
-            output = crate::xml_deser::no_such_cloud_watch_logs_log_group(response.body().as_ref(), output).map_err(crate::error::CreateQueryLoggingConfigError::unhandled)?;
+            output = crate::xml_deser::deser_structure_no_such_cloud_watch_logs_log_group_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateQueryLoggingConfigError::unhandled)?;
             output.build()
         })},
         "NoSuchHostedZone" => crate::error::CreateQueryLoggingConfigError { meta: generic, kind: crate::error::CreateQueryLoggingConfigErrorKind::NoSuchHostedZone({
             #[allow(unused_mut)]let mut output = crate::error::no_such_hosted_zone::Builder::default();
             let _ = response;
-            output = crate::xml_deser::no_such_hosted_zone(response.body().as_ref(), output).map_err(crate::error::CreateQueryLoggingConfigError::unhandled)?;
+            output = crate::xml_deser::deser_structure_no_such_hosted_zone_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateQueryLoggingConfigError::unhandled)?;
             output.build()
         })},
         "QueryLoggingConfigAlreadyExists" => crate::error::CreateQueryLoggingConfigError { meta: generic, kind: crate::error::CreateQueryLoggingConfigErrorKind::QueryLoggingConfigAlreadyExists({
             #[allow(unused_mut)]let mut output = crate::error::query_logging_config_already_exists::Builder::default();
             let _ = response;
-            output = crate::xml_deser::query_logging_config_already_exists(response.body().as_ref(), output).map_err(crate::error::CreateQueryLoggingConfigError::unhandled)?;
+            output = crate::xml_deser::deser_structure_query_logging_config_already_exists_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateQueryLoggingConfigError::unhandled)?;
             output.build()
         })},
         _ => crate::error::CreateQueryLoggingConfigError::generic(generic)
@@ -888,47 +994,45 @@ pub fn parse_create_reusable_delegation_set_error(
         }
     };
     Err(match error_code {
-        "DelegationSetAlreadyCreated" => crate::error::CreateReusableDelegationSetError {
-            meta: generic,
-            kind: crate::error::CreateReusableDelegationSetErrorKind::DelegationSetAlreadyCreated(
-                {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::delegation_set_already_created::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::delegation_set_already_created(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreateReusableDelegationSetError::unhandled)?;
-                    output.build()
-                },
-            ),
-        },
-        "DelegationSetAlreadyReusable" => crate::error::CreateReusableDelegationSetError {
-            meta: generic,
-            kind: crate::error::CreateReusableDelegationSetErrorKind::DelegationSetAlreadyReusable(
-                {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::delegation_set_already_reusable::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::delegation_set_already_reusable(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreateReusableDelegationSetError::unhandled)?;
-                    output.build()
-                },
-            ),
-        },
+        "DelegationSetAlreadyCreated" => {
+            crate::error::CreateReusableDelegationSetError {
+                meta: generic,
+                kind:
+                    crate::error::CreateReusableDelegationSetErrorKind::DelegationSetAlreadyCreated(
+                        {
+                            #[allow(unused_mut)]
+                            let mut output =
+                                crate::error::delegation_set_already_created::Builder::default();
+                            let _ = response;
+                            output = crate::xml_deser::deser_structure_delegation_set_already_created_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateReusableDelegationSetError::unhandled)?;
+                            output.build()
+                        },
+                    ),
+            }
+        }
+        "DelegationSetAlreadyReusable" => {
+            crate::error::CreateReusableDelegationSetError {
+                meta: generic,
+                kind:
+                    crate::error::CreateReusableDelegationSetErrorKind::DelegationSetAlreadyReusable(
+                        {
+                            #[allow(unused_mut)]
+                            let mut output =
+                                crate::error::delegation_set_already_reusable::Builder::default();
+                            let _ = response;
+                            output = crate::xml_deser::deser_structure_delegation_set_already_reusable_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateReusableDelegationSetError::unhandled)?;
+                            output.build()
+                        },
+                    ),
+            }
+        }
         "DelegationSetNotAvailable" => crate::error::CreateReusableDelegationSetError {
             meta: generic,
             kind: crate::error::CreateReusableDelegationSetErrorKind::DelegationSetNotAvailable({
                 #[allow(unused_mut)]
                 let mut output = crate::error::delegation_set_not_available::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::delegation_set_not_available(
+                output = crate::xml_deser::deser_structure_delegation_set_not_available_xml_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -942,8 +1046,11 @@ pub fn parse_create_reusable_delegation_set_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::hosted_zone_not_found::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::hosted_zone_not_found(response.body().as_ref(), output)
-                    .map_err(crate::error::CreateReusableDelegationSetError::unhandled)?;
+                output = crate::xml_deser::deser_structure_hosted_zone_not_found_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateReusableDelegationSetError::unhandled)?;
                 output.build()
             }),
         },
@@ -953,8 +1060,11 @@ pub fn parse_create_reusable_delegation_set_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::invalid_argument::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::invalid_argument(response.body().as_ref(), output)
-                    .map_err(crate::error::CreateReusableDelegationSetError::unhandled)?;
+                output = crate::xml_deser::deser_structure_invalid_argument_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateReusableDelegationSetError::unhandled)?;
                 output.build()
             }),
         },
@@ -964,8 +1074,11 @@ pub fn parse_create_reusable_delegation_set_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::invalid_input::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::invalid_input(response.body().as_ref(), output)
-                    .map_err(crate::error::CreateReusableDelegationSetError::unhandled)?;
+                output = crate::xml_deser::deser_structure_invalid_input_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateReusableDelegationSetError::unhandled)?;
                 output.build()
             }),
         },
@@ -975,8 +1088,11 @@ pub fn parse_create_reusable_delegation_set_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::limits_exceeded::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::limits_exceeded(response.body().as_ref(), output)
-                    .map_err(crate::error::CreateReusableDelegationSetError::unhandled)?;
+                output = crate::xml_deser::deser_structure_limits_exceeded_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateReusableDelegationSetError::unhandled)?;
                 output.build()
             }),
         },
@@ -1031,8 +1147,11 @@ pub fn parse_create_traffic_policy_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::invalid_input::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::invalid_input(response.body().as_ref(), output)
-                    .map_err(crate::error::CreateTrafficPolicyError::unhandled)?;
+                output = crate::xml_deser::deser_structure_invalid_input_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateTrafficPolicyError::unhandled)?;
                 output.build()
             }),
         },
@@ -1042,7 +1161,7 @@ pub fn parse_create_traffic_policy_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::invalid_traffic_policy_document::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::invalid_traffic_policy_document(
+                output = crate::xml_deser::deser_structure_invalid_traffic_policy_document_xml_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -1056,9 +1175,11 @@ pub fn parse_create_traffic_policy_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::too_many_traffic_policies::Builder::default();
                 let _ = response;
-                output =
-                    crate::xml_deser::too_many_traffic_policies(response.body().as_ref(), output)
-                        .map_err(crate::error::CreateTrafficPolicyError::unhandled)?;
+                output = crate::xml_deser::deser_structure_too_many_traffic_policies_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateTrafficPolicyError::unhandled)?;
                 output.build()
             }),
         },
@@ -1068,7 +1189,7 @@ pub fn parse_create_traffic_policy_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::traffic_policy_already_exists::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::traffic_policy_already_exists(
+                output = crate::xml_deser::deser_structure_traffic_policy_already_exists_xml_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -1126,31 +1247,31 @@ pub fn parse_create_traffic_policy_instance_error(
         "InvalidInput" => crate::error::CreateTrafficPolicyInstanceError { meta: generic, kind: crate::error::CreateTrafficPolicyInstanceErrorKind::InvalidInput({
             #[allow(unused_mut)]let mut output = crate::error::invalid_input::Builder::default();
             let _ = response;
-            output = crate::xml_deser::invalid_input(response.body().as_ref(), output).map_err(crate::error::CreateTrafficPolicyInstanceError::unhandled)?;
+            output = crate::xml_deser::deser_structure_invalid_input_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateTrafficPolicyInstanceError::unhandled)?;
             output.build()
         })},
         "NoSuchHostedZone" => crate::error::CreateTrafficPolicyInstanceError { meta: generic, kind: crate::error::CreateTrafficPolicyInstanceErrorKind::NoSuchHostedZone({
             #[allow(unused_mut)]let mut output = crate::error::no_such_hosted_zone::Builder::default();
             let _ = response;
-            output = crate::xml_deser::no_such_hosted_zone(response.body().as_ref(), output).map_err(crate::error::CreateTrafficPolicyInstanceError::unhandled)?;
+            output = crate::xml_deser::deser_structure_no_such_hosted_zone_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateTrafficPolicyInstanceError::unhandled)?;
             output.build()
         })},
         "NoSuchTrafficPolicy" => crate::error::CreateTrafficPolicyInstanceError { meta: generic, kind: crate::error::CreateTrafficPolicyInstanceErrorKind::NoSuchTrafficPolicy({
             #[allow(unused_mut)]let mut output = crate::error::no_such_traffic_policy::Builder::default();
             let _ = response;
-            output = crate::xml_deser::no_such_traffic_policy(response.body().as_ref(), output).map_err(crate::error::CreateTrafficPolicyInstanceError::unhandled)?;
+            output = crate::xml_deser::deser_structure_no_such_traffic_policy_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateTrafficPolicyInstanceError::unhandled)?;
             output.build()
         })},
         "TooManyTrafficPolicyInstances" => crate::error::CreateTrafficPolicyInstanceError { meta: generic, kind: crate::error::CreateTrafficPolicyInstanceErrorKind::TooManyTrafficPolicyInstances({
             #[allow(unused_mut)]let mut output = crate::error::too_many_traffic_policy_instances::Builder::default();
             let _ = response;
-            output = crate::xml_deser::too_many_traffic_policy_instances(response.body().as_ref(), output).map_err(crate::error::CreateTrafficPolicyInstanceError::unhandled)?;
+            output = crate::xml_deser::deser_structure_too_many_traffic_policy_instances_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateTrafficPolicyInstanceError::unhandled)?;
             output.build()
         })},
         "TrafficPolicyInstanceAlreadyExists" => crate::error::CreateTrafficPolicyInstanceError { meta: generic, kind: crate::error::CreateTrafficPolicyInstanceErrorKind::TrafficPolicyInstanceAlreadyExists({
             #[allow(unused_mut)]let mut output = crate::error::traffic_policy_instance_already_exists::Builder::default();
             let _ = response;
-            output = crate::xml_deser::traffic_policy_instance_already_exists(response.body().as_ref(), output).map_err(crate::error::CreateTrafficPolicyInstanceError::unhandled)?;
+            output = crate::xml_deser::deser_structure_traffic_policy_instance_already_exists_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateTrafficPolicyInstanceError::unhandled)?;
             output.build()
         })},
         _ => crate::error::CreateTrafficPolicyInstanceError::generic(generic)
@@ -1208,31 +1329,31 @@ pub fn parse_create_traffic_policy_version_error(
         "ConcurrentModification" => crate::error::CreateTrafficPolicyVersionError { meta: generic, kind: crate::error::CreateTrafficPolicyVersionErrorKind::ConcurrentModification({
             #[allow(unused_mut)]let mut output = crate::error::concurrent_modification::Builder::default();
             let _ = response;
-            output = crate::xml_deser::concurrent_modification(response.body().as_ref(), output).map_err(crate::error::CreateTrafficPolicyVersionError::unhandled)?;
+            output = crate::xml_deser::deser_structure_concurrent_modification_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateTrafficPolicyVersionError::unhandled)?;
             output.build()
         })},
         "InvalidInput" => crate::error::CreateTrafficPolicyVersionError { meta: generic, kind: crate::error::CreateTrafficPolicyVersionErrorKind::InvalidInput({
             #[allow(unused_mut)]let mut output = crate::error::invalid_input::Builder::default();
             let _ = response;
-            output = crate::xml_deser::invalid_input(response.body().as_ref(), output).map_err(crate::error::CreateTrafficPolicyVersionError::unhandled)?;
+            output = crate::xml_deser::deser_structure_invalid_input_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateTrafficPolicyVersionError::unhandled)?;
             output.build()
         })},
         "InvalidTrafficPolicyDocument" => crate::error::CreateTrafficPolicyVersionError { meta: generic, kind: crate::error::CreateTrafficPolicyVersionErrorKind::InvalidTrafficPolicyDocument({
             #[allow(unused_mut)]let mut output = crate::error::invalid_traffic_policy_document::Builder::default();
             let _ = response;
-            output = crate::xml_deser::invalid_traffic_policy_document(response.body().as_ref(), output).map_err(crate::error::CreateTrafficPolicyVersionError::unhandled)?;
+            output = crate::xml_deser::deser_structure_invalid_traffic_policy_document_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateTrafficPolicyVersionError::unhandled)?;
             output.build()
         })},
         "NoSuchTrafficPolicy" => crate::error::CreateTrafficPolicyVersionError { meta: generic, kind: crate::error::CreateTrafficPolicyVersionErrorKind::NoSuchTrafficPolicy({
             #[allow(unused_mut)]let mut output = crate::error::no_such_traffic_policy::Builder::default();
             let _ = response;
-            output = crate::xml_deser::no_such_traffic_policy(response.body().as_ref(), output).map_err(crate::error::CreateTrafficPolicyVersionError::unhandled)?;
+            output = crate::xml_deser::deser_structure_no_such_traffic_policy_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateTrafficPolicyVersionError::unhandled)?;
             output.build()
         })},
         "TooManyTrafficPolicyVersionsForCurrentPolicy" => crate::error::CreateTrafficPolicyVersionError { meta: generic, kind: crate::error::CreateTrafficPolicyVersionErrorKind::TooManyTrafficPolicyVersionsForCurrentPolicy({
             #[allow(unused_mut)]let mut output = crate::error::too_many_traffic_policy_versions_for_current_policy::Builder::default();
             let _ = response;
-            output = crate::xml_deser::too_many_traffic_policy_versions_for_current_policy(response.body().as_ref(), output).map_err(crate::error::CreateTrafficPolicyVersionError::unhandled)?;
+            output = crate::xml_deser::deser_structure_too_many_traffic_policy_versions_for_current_policy_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateTrafficPolicyVersionError::unhandled)?;
             output.build()
         })},
         _ => crate::error::CreateTrafficPolicyVersionError::generic(generic)
@@ -1288,31 +1409,31 @@ pub fn parse_create_vpc_association_authorization_error(
         "ConcurrentModification" => crate::error::CreateVPCAssociationAuthorizationError { meta: generic, kind: crate::error::CreateVPCAssociationAuthorizationErrorKind::ConcurrentModification({
             #[allow(unused_mut)]let mut output = crate::error::concurrent_modification::Builder::default();
             let _ = response;
-            output = crate::xml_deser::concurrent_modification(response.body().as_ref(), output).map_err(crate::error::CreateVPCAssociationAuthorizationError::unhandled)?;
+            output = crate::xml_deser::deser_structure_concurrent_modification_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateVPCAssociationAuthorizationError::unhandled)?;
             output.build()
         })},
         "InvalidInput" => crate::error::CreateVPCAssociationAuthorizationError { meta: generic, kind: crate::error::CreateVPCAssociationAuthorizationErrorKind::InvalidInput({
             #[allow(unused_mut)]let mut output = crate::error::invalid_input::Builder::default();
             let _ = response;
-            output = crate::xml_deser::invalid_input(response.body().as_ref(), output).map_err(crate::error::CreateVPCAssociationAuthorizationError::unhandled)?;
+            output = crate::xml_deser::deser_structure_invalid_input_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateVPCAssociationAuthorizationError::unhandled)?;
             output.build()
         })},
         "InvalidVPCId" => crate::error::CreateVPCAssociationAuthorizationError { meta: generic, kind: crate::error::CreateVPCAssociationAuthorizationErrorKind::InvalidVPCId({
             #[allow(unused_mut)]let mut output = crate::error::invalid_vpc_id::Builder::default();
             let _ = response;
-            output = crate::xml_deser::invalid_vpc_id(response.body().as_ref(), output).map_err(crate::error::CreateVPCAssociationAuthorizationError::unhandled)?;
+            output = crate::xml_deser::deser_structure_invalid_vpc_id_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateVPCAssociationAuthorizationError::unhandled)?;
             output.build()
         })},
         "NoSuchHostedZone" => crate::error::CreateVPCAssociationAuthorizationError { meta: generic, kind: crate::error::CreateVPCAssociationAuthorizationErrorKind::NoSuchHostedZone({
             #[allow(unused_mut)]let mut output = crate::error::no_such_hosted_zone::Builder::default();
             let _ = response;
-            output = crate::xml_deser::no_such_hosted_zone(response.body().as_ref(), output).map_err(crate::error::CreateVPCAssociationAuthorizationError::unhandled)?;
+            output = crate::xml_deser::deser_structure_no_such_hosted_zone_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateVPCAssociationAuthorizationError::unhandled)?;
             output.build()
         })},
         "TooManyVPCAssociationAuthorizations" => crate::error::CreateVPCAssociationAuthorizationError { meta: generic, kind: crate::error::CreateVPCAssociationAuthorizationErrorKind::TooManyVPCAssociationAuthorizations({
             #[allow(unused_mut)]let mut output = crate::error::too_many_vpc_association_authorizations::Builder::default();
             let _ = response;
-            output = crate::xml_deser::too_many_vpc_association_authorizations(response.body().as_ref(), output).map_err(crate::error::CreateVPCAssociationAuthorizationError::unhandled)?;
+            output = crate::xml_deser::deser_structure_too_many_vpc_association_authorizations_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateVPCAssociationAuthorizationError::unhandled)?;
             output.build()
         })},
         _ => crate::error::CreateVPCAssociationAuthorizationError::generic(generic)
@@ -1362,9 +1483,11 @@ pub fn parse_deactivate_key_signing_key_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::concurrent_modification::Builder::default();
                 let _ = response;
-                output =
-                    crate::xml_deser::concurrent_modification(response.body().as_ref(), output)
-                        .map_err(crate::error::DeactivateKeySigningKeyError::unhandled)?;
+                output = crate::xml_deser::deser_structure_concurrent_modification_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeactivateKeySigningKeyError::unhandled)?;
                 output.build()
             }),
         },
@@ -1374,7 +1497,7 @@ pub fn parse_deactivate_key_signing_key_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::invalid_key_signing_key_status::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::invalid_key_signing_key_status(
+                output = crate::xml_deser::deser_structure_invalid_key_signing_key_status_xml_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -1388,19 +1511,7 @@ pub fn parse_deactivate_key_signing_key_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::invalid_signing_status::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::invalid_signing_status(response.body().as_ref(), output)
-                    .map_err(crate::error::DeactivateKeySigningKeyError::unhandled)?;
-                output.build()
-            }),
-        },
-        "KeySigningKeyInParentDSRecord" => crate::error::DeactivateKeySigningKeyError {
-            meta: generic,
-            kind: crate::error::DeactivateKeySigningKeyErrorKind::KeySigningKeyInParentDSRecord({
-                #[allow(unused_mut)]
-                let mut output =
-                    crate::error::key_signing_key_in_parent_ds_record::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::key_signing_key_in_parent_ds_record(
+                output = crate::xml_deser::deser_structure_invalid_signing_status_xml_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -1408,14 +1519,32 @@ pub fn parse_deactivate_key_signing_key_error(
                 output.build()
             }),
         },
+        "KeySigningKeyInParentDSRecord" => {
+            crate::error::DeactivateKeySigningKeyError {
+                meta: generic,
+                kind: crate::error::DeactivateKeySigningKeyErrorKind::KeySigningKeyInParentDSRecord(
+                    {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::key_signing_key_in_parent_ds_record::Builder::default();
+                        let _ = response;
+                        output = crate::xml_deser::deser_structure_key_signing_key_in_parent_ds_record_xml_err(response.body().as_ref(), output).map_err(crate::error::DeactivateKeySigningKeyError::unhandled)?;
+                        output.build()
+                    },
+                ),
+            }
+        }
         "KeySigningKeyInUse" => crate::error::DeactivateKeySigningKeyError {
             meta: generic,
             kind: crate::error::DeactivateKeySigningKeyErrorKind::KeySigningKeyInUse({
                 #[allow(unused_mut)]
                 let mut output = crate::error::key_signing_key_in_use::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::key_signing_key_in_use(response.body().as_ref(), output)
-                    .map_err(crate::error::DeactivateKeySigningKeyError::unhandled)?;
+                output = crate::xml_deser::deser_structure_key_signing_key_in_use_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeactivateKeySigningKeyError::unhandled)?;
                 output.build()
             }),
         },
@@ -1425,9 +1554,11 @@ pub fn parse_deactivate_key_signing_key_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::no_such_key_signing_key::Builder::default();
                 let _ = response;
-                output =
-                    crate::xml_deser::no_such_key_signing_key(response.body().as_ref(), output)
-                        .map_err(crate::error::DeactivateKeySigningKeyError::unhandled)?;
+                output = crate::xml_deser::deser_structure_no_such_key_signing_key_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeactivateKeySigningKeyError::unhandled)?;
                 output.build()
             }),
         },
@@ -1470,8 +1601,11 @@ pub fn parse_delete_health_check_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::health_check_in_use::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::health_check_in_use(response.body().as_ref(), output)
-                    .map_err(crate::error::DeleteHealthCheckError::unhandled)?;
+                output = crate::xml_deser::deser_structure_health_check_in_use_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteHealthCheckError::unhandled)?;
                 output.build()
             }),
         },
@@ -1481,8 +1615,11 @@ pub fn parse_delete_health_check_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::invalid_input::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::invalid_input(response.body().as_ref(), output)
-                    .map_err(crate::error::DeleteHealthCheckError::unhandled)?;
+                output = crate::xml_deser::deser_structure_invalid_input_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteHealthCheckError::unhandled)?;
                 output.build()
             }),
         },
@@ -1492,8 +1629,11 @@ pub fn parse_delete_health_check_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::no_such_health_check::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::no_such_health_check(response.body().as_ref(), output)
-                    .map_err(crate::error::DeleteHealthCheckError::unhandled)?;
+                output = crate::xml_deser::deser_structure_no_such_health_check_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteHealthCheckError::unhandled)?;
                 output.build()
             }),
         },
@@ -1530,8 +1670,11 @@ pub fn parse_delete_hosted_zone_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::hosted_zone_not_empty::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::hosted_zone_not_empty(response.body().as_ref(), output)
-                    .map_err(crate::error::DeleteHostedZoneError::unhandled)?;
+                output = crate::xml_deser::deser_structure_hosted_zone_not_empty_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteHostedZoneError::unhandled)?;
                 output.build()
             }),
         },
@@ -1541,8 +1684,11 @@ pub fn parse_delete_hosted_zone_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::invalid_domain_name::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::invalid_domain_name(response.body().as_ref(), output)
-                    .map_err(crate::error::DeleteHostedZoneError::unhandled)?;
+                output = crate::xml_deser::deser_structure_invalid_domain_name_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteHostedZoneError::unhandled)?;
                 output.build()
             }),
         },
@@ -1552,8 +1698,11 @@ pub fn parse_delete_hosted_zone_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::invalid_input::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::invalid_input(response.body().as_ref(), output)
-                    .map_err(crate::error::DeleteHostedZoneError::unhandled)?;
+                output = crate::xml_deser::deser_structure_invalid_input_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteHostedZoneError::unhandled)?;
                 output.build()
             }),
         },
@@ -1563,8 +1712,11 @@ pub fn parse_delete_hosted_zone_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::no_such_hosted_zone::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::no_such_hosted_zone(response.body().as_ref(), output)
-                    .map_err(crate::error::DeleteHostedZoneError::unhandled)?;
+                output = crate::xml_deser::deser_structure_no_such_hosted_zone_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteHostedZoneError::unhandled)?;
                 output.build()
             }),
         },
@@ -1574,9 +1726,11 @@ pub fn parse_delete_hosted_zone_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::prior_request_not_complete::Builder::default();
                 let _ = response;
-                output =
-                    crate::xml_deser::prior_request_not_complete(response.body().as_ref(), output)
-                        .map_err(crate::error::DeleteHostedZoneError::unhandled)?;
+                output = crate::xml_deser::deser_structure_prior_request_not_complete_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteHostedZoneError::unhandled)?;
                 output.build()
             }),
         },
@@ -1616,9 +1770,11 @@ pub fn parse_delete_key_signing_key_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::concurrent_modification::Builder::default();
                 let _ = response;
-                output =
-                    crate::xml_deser::concurrent_modification(response.body().as_ref(), output)
-                        .map_err(crate::error::DeleteKeySigningKeyError::unhandled)?;
+                output = crate::xml_deser::deser_structure_concurrent_modification_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteKeySigningKeyError::unhandled)?;
                 output.build()
             }),
         },
@@ -1628,7 +1784,7 @@ pub fn parse_delete_key_signing_key_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::invalid_key_signing_key_status::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::invalid_key_signing_key_status(
+                output = crate::xml_deser::deser_structure_invalid_key_signing_key_status_xml_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -1642,8 +1798,11 @@ pub fn parse_delete_key_signing_key_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::invalid_kms_arn::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::invalid_kms_arn(response.body().as_ref(), output)
-                    .map_err(crate::error::DeleteKeySigningKeyError::unhandled)?;
+                output = crate::xml_deser::deser_structure_invalid_kms_arn_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteKeySigningKeyError::unhandled)?;
                 output.build()
             }),
         },
@@ -1653,8 +1812,11 @@ pub fn parse_delete_key_signing_key_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::invalid_signing_status::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::invalid_signing_status(response.body().as_ref(), output)
-                    .map_err(crate::error::DeleteKeySigningKeyError::unhandled)?;
+                output = crate::xml_deser::deser_structure_invalid_signing_status_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteKeySigningKeyError::unhandled)?;
                 output.build()
             }),
         },
@@ -1664,9 +1826,11 @@ pub fn parse_delete_key_signing_key_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::no_such_key_signing_key::Builder::default();
                 let _ = response;
-                output =
-                    crate::xml_deser::no_such_key_signing_key(response.body().as_ref(), output)
-                        .map_err(crate::error::DeleteKeySigningKeyError::unhandled)?;
+                output = crate::xml_deser::deser_structure_no_such_key_signing_key_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteKeySigningKeyError::unhandled)?;
                 output.build()
             }),
         },
@@ -1715,9 +1879,11 @@ pub fn parse_delete_query_logging_config_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::concurrent_modification::Builder::default();
                 let _ = response;
-                output =
-                    crate::xml_deser::concurrent_modification(response.body().as_ref(), output)
-                        .map_err(crate::error::DeleteQueryLoggingConfigError::unhandled)?;
+                output = crate::xml_deser::deser_structure_concurrent_modification_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteQueryLoggingConfigError::unhandled)?;
                 output.build()
             }),
         },
@@ -1727,8 +1893,11 @@ pub fn parse_delete_query_logging_config_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::invalid_input::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::invalid_input(response.body().as_ref(), output)
-                    .map_err(crate::error::DeleteQueryLoggingConfigError::unhandled)?;
+                output = crate::xml_deser::deser_structure_invalid_input_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteQueryLoggingConfigError::unhandled)?;
                 output.build()
             }),
         },
@@ -1738,7 +1907,7 @@ pub fn parse_delete_query_logging_config_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::no_such_query_logging_config::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::no_such_query_logging_config(
+                output = crate::xml_deser::deser_structure_no_such_query_logging_config_xml_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -1789,8 +1958,11 @@ pub fn parse_delete_reusable_delegation_set_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::delegation_set_in_use::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::delegation_set_in_use(response.body().as_ref(), output)
-                    .map_err(crate::error::DeleteReusableDelegationSetError::unhandled)?;
+                output = crate::xml_deser::deser_structure_delegation_set_in_use_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteReusableDelegationSetError::unhandled)?;
                 output.build()
             }),
         },
@@ -1800,9 +1972,11 @@ pub fn parse_delete_reusable_delegation_set_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::delegation_set_not_reusable::Builder::default();
                 let _ = response;
-                output =
-                    crate::xml_deser::delegation_set_not_reusable(response.body().as_ref(), output)
-                        .map_err(crate::error::DeleteReusableDelegationSetError::unhandled)?;
+                output = crate::xml_deser::deser_structure_delegation_set_not_reusable_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteReusableDelegationSetError::unhandled)?;
                 output.build()
             }),
         },
@@ -1812,8 +1986,11 @@ pub fn parse_delete_reusable_delegation_set_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::invalid_input::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::invalid_input(response.body().as_ref(), output)
-                    .map_err(crate::error::DeleteReusableDelegationSetError::unhandled)?;
+                output = crate::xml_deser::deser_structure_invalid_input_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteReusableDelegationSetError::unhandled)?;
                 output.build()
             }),
         },
@@ -1823,8 +2000,11 @@ pub fn parse_delete_reusable_delegation_set_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::no_such_delegation_set::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::no_such_delegation_set(response.body().as_ref(), output)
-                    .map_err(crate::error::DeleteReusableDelegationSetError::unhandled)?;
+                output = crate::xml_deser::deser_structure_no_such_delegation_set_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteReusableDelegationSetError::unhandled)?;
                 output.build()
             }),
         },
@@ -1864,9 +2044,11 @@ pub fn parse_delete_traffic_policy_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::concurrent_modification::Builder::default();
                 let _ = response;
-                output =
-                    crate::xml_deser::concurrent_modification(response.body().as_ref(), output)
-                        .map_err(crate::error::DeleteTrafficPolicyError::unhandled)?;
+                output = crate::xml_deser::deser_structure_concurrent_modification_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteTrafficPolicyError::unhandled)?;
                 output.build()
             }),
         },
@@ -1876,8 +2058,11 @@ pub fn parse_delete_traffic_policy_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::invalid_input::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::invalid_input(response.body().as_ref(), output)
-                    .map_err(crate::error::DeleteTrafficPolicyError::unhandled)?;
+                output = crate::xml_deser::deser_structure_invalid_input_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteTrafficPolicyError::unhandled)?;
                 output.build()
             }),
         },
@@ -1887,8 +2072,11 @@ pub fn parse_delete_traffic_policy_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::no_such_traffic_policy::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::no_such_traffic_policy(response.body().as_ref(), output)
-                    .map_err(crate::error::DeleteTrafficPolicyError::unhandled)?;
+                output = crate::xml_deser::deser_structure_no_such_traffic_policy_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteTrafficPolicyError::unhandled)?;
                 output.build()
             }),
         },
@@ -1898,8 +2086,11 @@ pub fn parse_delete_traffic_policy_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::traffic_policy_in_use::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::traffic_policy_in_use(response.body().as_ref(), output)
-                    .map_err(crate::error::DeleteTrafficPolicyError::unhandled)?;
+                output = crate::xml_deser::deser_structure_traffic_policy_in_use_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteTrafficPolicyError::unhandled)?;
                 output.build()
             }),
         },
@@ -1943,37 +2134,41 @@ pub fn parse_delete_traffic_policy_instance_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::invalid_input::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::invalid_input(response.body().as_ref(), output)
-                    .map_err(crate::error::DeleteTrafficPolicyInstanceError::unhandled)?;
+                output = crate::xml_deser::deser_structure_invalid_input_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteTrafficPolicyInstanceError::unhandled)?;
                 output.build()
             }),
         },
-        "NoSuchTrafficPolicyInstance" => crate::error::DeleteTrafficPolicyInstanceError {
-            meta: generic,
-            kind: crate::error::DeleteTrafficPolicyInstanceErrorKind::NoSuchTrafficPolicyInstance(
-                {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::no_such_traffic_policy_instance::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::no_such_traffic_policy_instance(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DeleteTrafficPolicyInstanceError::unhandled)?;
-                    output.build()
-                },
-            ),
-        },
+        "NoSuchTrafficPolicyInstance" => {
+            crate::error::DeleteTrafficPolicyInstanceError {
+                meta: generic,
+                kind:
+                    crate::error::DeleteTrafficPolicyInstanceErrorKind::NoSuchTrafficPolicyInstance(
+                        {
+                            #[allow(unused_mut)]
+                            let mut output =
+                                crate::error::no_such_traffic_policy_instance::Builder::default();
+                            let _ = response;
+                            output = crate::xml_deser::deser_structure_no_such_traffic_policy_instance_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteTrafficPolicyInstanceError::unhandled)?;
+                            output.build()
+                        },
+                    ),
+            }
+        }
         "PriorRequestNotComplete" => crate::error::DeleteTrafficPolicyInstanceError {
             meta: generic,
             kind: crate::error::DeleteTrafficPolicyInstanceErrorKind::PriorRequestNotComplete({
                 #[allow(unused_mut)]
                 let mut output = crate::error::prior_request_not_complete::Builder::default();
                 let _ = response;
-                output =
-                    crate::xml_deser::prior_request_not_complete(response.body().as_ref(), output)
-                        .map_err(crate::error::DeleteTrafficPolicyInstanceError::unhandled)?;
+                output = crate::xml_deser::deser_structure_prior_request_not_complete_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteTrafficPolicyInstanceError::unhandled)?;
                 output.build()
             }),
         },
@@ -2015,31 +2210,31 @@ pub fn parse_delete_vpc_association_authorization_error(
         "ConcurrentModification" => crate::error::DeleteVPCAssociationAuthorizationError { meta: generic, kind: crate::error::DeleteVPCAssociationAuthorizationErrorKind::ConcurrentModification({
             #[allow(unused_mut)]let mut output = crate::error::concurrent_modification::Builder::default();
             let _ = response;
-            output = crate::xml_deser::concurrent_modification(response.body().as_ref(), output).map_err(crate::error::DeleteVPCAssociationAuthorizationError::unhandled)?;
+            output = crate::xml_deser::deser_structure_concurrent_modification_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteVPCAssociationAuthorizationError::unhandled)?;
             output.build()
         })},
         "InvalidInput" => crate::error::DeleteVPCAssociationAuthorizationError { meta: generic, kind: crate::error::DeleteVPCAssociationAuthorizationErrorKind::InvalidInput({
             #[allow(unused_mut)]let mut output = crate::error::invalid_input::Builder::default();
             let _ = response;
-            output = crate::xml_deser::invalid_input(response.body().as_ref(), output).map_err(crate::error::DeleteVPCAssociationAuthorizationError::unhandled)?;
+            output = crate::xml_deser::deser_structure_invalid_input_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteVPCAssociationAuthorizationError::unhandled)?;
             output.build()
         })},
         "InvalidVPCId" => crate::error::DeleteVPCAssociationAuthorizationError { meta: generic, kind: crate::error::DeleteVPCAssociationAuthorizationErrorKind::InvalidVPCId({
             #[allow(unused_mut)]let mut output = crate::error::invalid_vpc_id::Builder::default();
             let _ = response;
-            output = crate::xml_deser::invalid_vpc_id(response.body().as_ref(), output).map_err(crate::error::DeleteVPCAssociationAuthorizationError::unhandled)?;
+            output = crate::xml_deser::deser_structure_invalid_vpc_id_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteVPCAssociationAuthorizationError::unhandled)?;
             output.build()
         })},
         "NoSuchHostedZone" => crate::error::DeleteVPCAssociationAuthorizationError { meta: generic, kind: crate::error::DeleteVPCAssociationAuthorizationErrorKind::NoSuchHostedZone({
             #[allow(unused_mut)]let mut output = crate::error::no_such_hosted_zone::Builder::default();
             let _ = response;
-            output = crate::xml_deser::no_such_hosted_zone(response.body().as_ref(), output).map_err(crate::error::DeleteVPCAssociationAuthorizationError::unhandled)?;
+            output = crate::xml_deser::deser_structure_no_such_hosted_zone_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteVPCAssociationAuthorizationError::unhandled)?;
             output.build()
         })},
         "VPCAssociationAuthorizationNotFound" => crate::error::DeleteVPCAssociationAuthorizationError { meta: generic, kind: crate::error::DeleteVPCAssociationAuthorizationErrorKind::VPCAssociationAuthorizationNotFound({
             #[allow(unused_mut)]let mut output = crate::error::vpc_association_authorization_not_found::Builder::default();
             let _ = response;
-            output = crate::xml_deser::vpc_association_authorization_not_found(response.body().as_ref(), output).map_err(crate::error::DeleteVPCAssociationAuthorizationError::unhandled)?;
+            output = crate::xml_deser::deser_structure_vpc_association_authorization_not_found_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteVPCAssociationAuthorizationError::unhandled)?;
             output.build()
         })},
         _ => crate::error::DeleteVPCAssociationAuthorizationError::generic(generic)
@@ -2084,9 +2279,11 @@ pub fn parse_disable_hosted_zone_dnssec_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::concurrent_modification::Builder::default();
                 let _ = response;
-                output =
-                    crate::xml_deser::concurrent_modification(response.body().as_ref(), output)
-                        .map_err(crate::error::DisableHostedZoneDNSSECError::unhandled)?;
+                output = crate::xml_deser::deser_structure_concurrent_modification_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DisableHostedZoneDNSSECError::unhandled)?;
                 output.build()
             }),
         },
@@ -2096,8 +2293,11 @@ pub fn parse_disable_hosted_zone_dnssec_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::dnssec_not_found::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::dnssec_not_found(response.body().as_ref(), output)
-                    .map_err(crate::error::DisableHostedZoneDNSSECError::unhandled)?;
+                output = crate::xml_deser::deser_structure_dnssec_not_found_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DisableHostedZoneDNSSECError::unhandled)?;
                 output.build()
             }),
         },
@@ -2107,8 +2307,11 @@ pub fn parse_disable_hosted_zone_dnssec_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::invalid_argument::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::invalid_argument(response.body().as_ref(), output)
-                    .map_err(crate::error::DisableHostedZoneDNSSECError::unhandled)?;
+                output = crate::xml_deser::deser_structure_invalid_argument_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DisableHostedZoneDNSSECError::unhandled)?;
                 output.build()
             }),
         },
@@ -2118,7 +2321,7 @@ pub fn parse_disable_hosted_zone_dnssec_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::invalid_key_signing_key_status::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::invalid_key_signing_key_status(
+                output = crate::xml_deser::deser_structure_invalid_key_signing_key_status_xml_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -2132,19 +2335,7 @@ pub fn parse_disable_hosted_zone_dnssec_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::invalid_kms_arn::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::invalid_kms_arn(response.body().as_ref(), output)
-                    .map_err(crate::error::DisableHostedZoneDNSSECError::unhandled)?;
-                output.build()
-            }),
-        },
-        "KeySigningKeyInParentDSRecord" => crate::error::DisableHostedZoneDNSSECError {
-            meta: generic,
-            kind: crate::error::DisableHostedZoneDNSSECErrorKind::KeySigningKeyInParentDSRecord({
-                #[allow(unused_mut)]
-                let mut output =
-                    crate::error::key_signing_key_in_parent_ds_record::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::key_signing_key_in_parent_ds_record(
+                output = crate::xml_deser::deser_structure_invalid_kms_arn_xml_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -2152,14 +2343,32 @@ pub fn parse_disable_hosted_zone_dnssec_error(
                 output.build()
             }),
         },
+        "KeySigningKeyInParentDSRecord" => {
+            crate::error::DisableHostedZoneDNSSECError {
+                meta: generic,
+                kind: crate::error::DisableHostedZoneDNSSECErrorKind::KeySigningKeyInParentDSRecord(
+                    {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::key_signing_key_in_parent_ds_record::Builder::default();
+                        let _ = response;
+                        output = crate::xml_deser::deser_structure_key_signing_key_in_parent_ds_record_xml_err(response.body().as_ref(), output).map_err(crate::error::DisableHostedZoneDNSSECError::unhandled)?;
+                        output.build()
+                    },
+                ),
+            }
+        }
         "NoSuchHostedZone" => crate::error::DisableHostedZoneDNSSECError {
             meta: generic,
             kind: crate::error::DisableHostedZoneDNSSECErrorKind::NoSuchHostedZone({
                 #[allow(unused_mut)]
                 let mut output = crate::error::no_such_hosted_zone::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::no_such_hosted_zone(response.body().as_ref(), output)
-                    .map_err(crate::error::DisableHostedZoneDNSSECError::unhandled)?;
+                output = crate::xml_deser::deser_structure_no_such_hosted_zone_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DisableHostedZoneDNSSECError::unhandled)?;
                 output.build()
             }),
         },
@@ -2209,8 +2418,11 @@ pub fn parse_disassociate_vpc_from_hosted_zone_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::invalid_input::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::invalid_input(response.body().as_ref(), output)
-                    .map_err(crate::error::DisassociateVPCFromHostedZoneError::unhandled)?;
+                output = crate::xml_deser::deser_structure_invalid_input_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DisassociateVPCFromHostedZoneError::unhandled)?;
                 output.build()
             }),
         },
@@ -2220,8 +2432,11 @@ pub fn parse_disassociate_vpc_from_hosted_zone_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::invalid_vpc_id::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::invalid_vpc_id(response.body().as_ref(), output)
-                    .map_err(crate::error::DisassociateVPCFromHostedZoneError::unhandled)?;
+                output = crate::xml_deser::deser_structure_invalid_vpc_id_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DisassociateVPCFromHostedZoneError::unhandled)?;
                 output.build()
             }),
         },
@@ -2231,8 +2446,11 @@ pub fn parse_disassociate_vpc_from_hosted_zone_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::last_vpc_association::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::last_vpc_association(response.body().as_ref(), output)
-                    .map_err(crate::error::DisassociateVPCFromHostedZoneError::unhandled)?;
+                output = crate::xml_deser::deser_structure_last_vpc_association_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DisassociateVPCFromHostedZoneError::unhandled)?;
                 output.build()
             }),
         },
@@ -2242,8 +2460,11 @@ pub fn parse_disassociate_vpc_from_hosted_zone_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::no_such_hosted_zone::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::no_such_hosted_zone(response.body().as_ref(), output)
-                    .map_err(crate::error::DisassociateVPCFromHostedZoneError::unhandled)?;
+                output = crate::xml_deser::deser_structure_no_such_hosted_zone_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DisassociateVPCFromHostedZoneError::unhandled)?;
                 output.build()
             }),
         },
@@ -2253,9 +2474,11 @@ pub fn parse_disassociate_vpc_from_hosted_zone_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::vpc_association_not_found::Builder::default();
                 let _ = response;
-                output =
-                    crate::xml_deser::vpc_association_not_found(response.body().as_ref(), output)
-                        .map_err(crate::error::DisassociateVPCFromHostedZoneError::unhandled)?;
+                output = crate::xml_deser::deser_structure_vpc_association_not_found_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DisassociateVPCFromHostedZoneError::unhandled)?;
                 output.build()
             }),
         },
@@ -2306,9 +2529,11 @@ pub fn parse_enable_hosted_zone_dnssec_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::concurrent_modification::Builder::default();
                 let _ = response;
-                output =
-                    crate::xml_deser::concurrent_modification(response.body().as_ref(), output)
-                        .map_err(crate::error::EnableHostedZoneDNSSECError::unhandled)?;
+                output = crate::xml_deser::deser_structure_concurrent_modification_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::EnableHostedZoneDNSSECError::unhandled)?;
                 output.build()
             }),
         },
@@ -2318,8 +2543,11 @@ pub fn parse_enable_hosted_zone_dnssec_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::dnssec_not_found::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::dnssec_not_found(response.body().as_ref(), output)
-                    .map_err(crate::error::EnableHostedZoneDNSSECError::unhandled)?;
+                output = crate::xml_deser::deser_structure_dnssec_not_found_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::EnableHostedZoneDNSSECError::unhandled)?;
                 output.build()
             }),
         },
@@ -2329,7 +2557,7 @@ pub fn parse_enable_hosted_zone_dnssec_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::hosted_zone_partially_delegated::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::hosted_zone_partially_delegated(
+                output = crate::xml_deser::deser_structure_hosted_zone_partially_delegated_xml_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -2343,8 +2571,11 @@ pub fn parse_enable_hosted_zone_dnssec_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::invalid_argument::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::invalid_argument(response.body().as_ref(), output)
-                    .map_err(crate::error::EnableHostedZoneDNSSECError::unhandled)?;
+                output = crate::xml_deser::deser_structure_invalid_argument_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::EnableHostedZoneDNSSECError::unhandled)?;
                 output.build()
             }),
         },
@@ -2354,7 +2585,7 @@ pub fn parse_enable_hosted_zone_dnssec_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::invalid_key_signing_key_status::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::invalid_key_signing_key_status(
+                output = crate::xml_deser::deser_structure_invalid_key_signing_key_status_xml_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -2368,8 +2599,11 @@ pub fn parse_enable_hosted_zone_dnssec_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::invalid_kms_arn::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::invalid_kms_arn(response.body().as_ref(), output)
-                    .map_err(crate::error::EnableHostedZoneDNSSECError::unhandled)?;
+                output = crate::xml_deser::deser_structure_invalid_kms_arn_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::EnableHostedZoneDNSSECError::unhandled)?;
                 output.build()
             }),
         },
@@ -2380,11 +2614,7 @@ pub fn parse_enable_hosted_zone_dnssec_error(
                     {
                         #[allow(unused_mut)]let mut output = crate::error::key_signing_key_with_active_status_not_found::Builder::default();
                         let _ = response;
-                        output = crate::xml_deser::key_signing_key_with_active_status_not_found(
-                            response.body().as_ref(),
-                            output,
-                        )
-                        .map_err(crate::error::EnableHostedZoneDNSSECError::unhandled)?;
+                        output = crate::xml_deser::deser_structure_key_signing_key_with_active_status_not_found_xml_err(response.body().as_ref(), output).map_err(crate::error::EnableHostedZoneDNSSECError::unhandled)?;
                         output.build()
                     },
                 ),
@@ -2395,8 +2625,11 @@ pub fn parse_enable_hosted_zone_dnssec_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::no_such_hosted_zone::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::no_such_hosted_zone(response.body().as_ref(), output)
-                    .map_err(crate::error::EnableHostedZoneDNSSECError::unhandled)?;
+                output = crate::xml_deser::deser_structure_no_such_hosted_zone_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::EnableHostedZoneDNSSECError::unhandled)?;
                 output.build()
             }),
         },
@@ -2439,8 +2672,11 @@ pub fn parse_get_account_limit_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::invalid_input::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::invalid_input(response.body().as_ref(), output)
-                    .map_err(crate::error::GetAccountLimitError::unhandled)?;
+                output = crate::xml_deser::deser_structure_invalid_input_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetAccountLimitError::unhandled)?;
                 output.build()
             }),
         },
@@ -2480,8 +2716,11 @@ pub fn parse_get_change_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::invalid_input::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::invalid_input(response.body().as_ref(), output)
-                    .map_err(crate::error::GetChangeError::unhandled)?;
+                output = crate::xml_deser::deser_structure_invalid_input_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetChangeError::unhandled)?;
                 output.build()
             }),
         },
@@ -2491,8 +2730,11 @@ pub fn parse_get_change_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::no_such_change::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::no_such_change(response.body().as_ref(), output)
-                    .map_err(crate::error::GetChangeError::unhandled)?;
+                output = crate::xml_deser::deser_structure_no_such_change_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetChangeError::unhandled)?;
                 output.build()
             }),
         },
@@ -2557,8 +2799,11 @@ pub fn parse_get_dnssec_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::invalid_argument::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::invalid_argument(response.body().as_ref(), output)
-                    .map_err(crate::error::GetDNSSECError::unhandled)?;
+                output = crate::xml_deser::deser_structure_invalid_argument_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetDNSSECError::unhandled)?;
                 output.build()
             }),
         },
@@ -2568,8 +2813,11 @@ pub fn parse_get_dnssec_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::no_such_hosted_zone::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::no_such_hosted_zone(response.body().as_ref(), output)
-                    .map_err(crate::error::GetDNSSECError::unhandled)?;
+                output = crate::xml_deser::deser_structure_no_such_hosted_zone_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetDNSSECError::unhandled)?;
                 output.build()
             }),
         },
@@ -2608,8 +2856,11 @@ pub fn parse_get_geo_location_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::invalid_input::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::invalid_input(response.body().as_ref(), output)
-                    .map_err(crate::error::GetGeoLocationError::unhandled)?;
+                output = crate::xml_deser::deser_structure_invalid_input_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetGeoLocationError::unhandled)?;
                 output.build()
             }),
         },
@@ -2619,8 +2870,11 @@ pub fn parse_get_geo_location_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::no_such_geo_location::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::no_such_geo_location(response.body().as_ref(), output)
-                    .map_err(crate::error::GetGeoLocationError::unhandled)?;
+                output = crate::xml_deser::deser_structure_no_such_geo_location_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetGeoLocationError::unhandled)?;
                 output.build()
             }),
         },
@@ -2660,8 +2914,11 @@ pub fn parse_get_health_check_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::incompatible_version::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::incompatible_version(response.body().as_ref(), output)
-                    .map_err(crate::error::GetHealthCheckError::unhandled)?;
+                output = crate::xml_deser::deser_structure_incompatible_version_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetHealthCheckError::unhandled)?;
                 output.build()
             }),
         },
@@ -2671,8 +2928,11 @@ pub fn parse_get_health_check_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::invalid_input::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::invalid_input(response.body().as_ref(), output)
-                    .map_err(crate::error::GetHealthCheckError::unhandled)?;
+                output = crate::xml_deser::deser_structure_invalid_input_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetHealthCheckError::unhandled)?;
                 output.build()
             }),
         },
@@ -2682,8 +2942,11 @@ pub fn parse_get_health_check_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::no_such_health_check::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::no_such_health_check(response.body().as_ref(), output)
-                    .map_err(crate::error::GetHealthCheckError::unhandled)?;
+                output = crate::xml_deser::deser_structure_no_such_health_check_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetHealthCheckError::unhandled)?;
                 output.build()
             }),
         },
@@ -2752,8 +3015,11 @@ pub fn parse_get_health_check_last_failure_reason_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::invalid_input::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::invalid_input(response.body().as_ref(), output)
-                    .map_err(crate::error::GetHealthCheckLastFailureReasonError::unhandled)?;
+                output = crate::xml_deser::deser_structure_invalid_input_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetHealthCheckLastFailureReasonError::unhandled)?;
                 output.build()
             }),
         },
@@ -2763,8 +3029,11 @@ pub fn parse_get_health_check_last_failure_reason_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::no_such_health_check::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::no_such_health_check(response.body().as_ref(), output)
-                    .map_err(crate::error::GetHealthCheckLastFailureReasonError::unhandled)?;
+                output = crate::xml_deser::deser_structure_no_such_health_check_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetHealthCheckLastFailureReasonError::unhandled)?;
                 output.build()
             }),
         },
@@ -2810,8 +3079,11 @@ pub fn parse_get_health_check_status_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::invalid_input::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::invalid_input(response.body().as_ref(), output)
-                    .map_err(crate::error::GetHealthCheckStatusError::unhandled)?;
+                output = crate::xml_deser::deser_structure_invalid_input_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetHealthCheckStatusError::unhandled)?;
                 output.build()
             }),
         },
@@ -2821,8 +3093,11 @@ pub fn parse_get_health_check_status_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::no_such_health_check::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::no_such_health_check(response.body().as_ref(), output)
-                    .map_err(crate::error::GetHealthCheckStatusError::unhandled)?;
+                output = crate::xml_deser::deser_structure_no_such_health_check_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetHealthCheckStatusError::unhandled)?;
                 output.build()
             }),
         },
@@ -2864,8 +3139,11 @@ pub fn parse_get_hosted_zone_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::invalid_input::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::invalid_input(response.body().as_ref(), output)
-                    .map_err(crate::error::GetHostedZoneError::unhandled)?;
+                output = crate::xml_deser::deser_structure_invalid_input_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetHostedZoneError::unhandled)?;
                 output.build()
             }),
         },
@@ -2875,8 +3153,11 @@ pub fn parse_get_hosted_zone_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::no_such_hosted_zone::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::no_such_hosted_zone(response.body().as_ref(), output)
-                    .map_err(crate::error::GetHostedZoneError::unhandled)?;
+                output = crate::xml_deser::deser_structure_no_such_hosted_zone_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetHostedZoneError::unhandled)?;
                 output.build()
             }),
         },
@@ -2916,8 +3197,11 @@ pub fn parse_get_hosted_zone_count_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::invalid_input::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::invalid_input(response.body().as_ref(), output)
-                    .map_err(crate::error::GetHostedZoneCountError::unhandled)?;
+                output = crate::xml_deser::deser_structure_invalid_input_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetHostedZoneCountError::unhandled)?;
                 output.build()
             }),
         },
@@ -2959,9 +3243,11 @@ pub fn parse_get_hosted_zone_limit_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::hosted_zone_not_private::Builder::default();
                 let _ = response;
-                output =
-                    crate::xml_deser::hosted_zone_not_private(response.body().as_ref(), output)
-                        .map_err(crate::error::GetHostedZoneLimitError::unhandled)?;
+                output = crate::xml_deser::deser_structure_hosted_zone_not_private_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetHostedZoneLimitError::unhandled)?;
                 output.build()
             }),
         },
@@ -2971,8 +3257,11 @@ pub fn parse_get_hosted_zone_limit_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::invalid_input::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::invalid_input(response.body().as_ref(), output)
-                    .map_err(crate::error::GetHostedZoneLimitError::unhandled)?;
+                output = crate::xml_deser::deser_structure_invalid_input_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetHostedZoneLimitError::unhandled)?;
                 output.build()
             }),
         },
@@ -2982,8 +3271,11 @@ pub fn parse_get_hosted_zone_limit_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::no_such_hosted_zone::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::no_such_hosted_zone(response.body().as_ref(), output)
-                    .map_err(crate::error::GetHostedZoneLimitError::unhandled)?;
+                output = crate::xml_deser::deser_structure_no_such_hosted_zone_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetHostedZoneLimitError::unhandled)?;
                 output.build()
             }),
         },
@@ -3025,8 +3317,11 @@ pub fn parse_get_query_logging_config_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::invalid_input::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::invalid_input(response.body().as_ref(), output)
-                    .map_err(crate::error::GetQueryLoggingConfigError::unhandled)?;
+                output = crate::xml_deser::deser_structure_invalid_input_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetQueryLoggingConfigError::unhandled)?;
                 output.build()
             }),
         },
@@ -3036,7 +3331,7 @@ pub fn parse_get_query_logging_config_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::no_such_query_logging_config::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::no_such_query_logging_config(
+                output = crate::xml_deser::deser_structure_no_such_query_logging_config_xml_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -3089,9 +3384,11 @@ pub fn parse_get_reusable_delegation_set_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::delegation_set_not_reusable::Builder::default();
                 let _ = response;
-                output =
-                    crate::xml_deser::delegation_set_not_reusable(response.body().as_ref(), output)
-                        .map_err(crate::error::GetReusableDelegationSetError::unhandled)?;
+                output = crate::xml_deser::deser_structure_delegation_set_not_reusable_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetReusableDelegationSetError::unhandled)?;
                 output.build()
             }),
         },
@@ -3101,8 +3398,11 @@ pub fn parse_get_reusable_delegation_set_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::invalid_input::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::invalid_input(response.body().as_ref(), output)
-                    .map_err(crate::error::GetReusableDelegationSetError::unhandled)?;
+                output = crate::xml_deser::deser_structure_invalid_input_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetReusableDelegationSetError::unhandled)?;
                 output.build()
             }),
         },
@@ -3112,8 +3412,11 @@ pub fn parse_get_reusable_delegation_set_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::no_such_delegation_set::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::no_such_delegation_set(response.body().as_ref(), output)
-                    .map_err(crate::error::GetReusableDelegationSetError::unhandled)?;
+                output = crate::xml_deser::deser_structure_no_such_delegation_set_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetReusableDelegationSetError::unhandled)?;
                 output.build()
             }),
         },
@@ -3165,8 +3468,11 @@ pub fn parse_get_reusable_delegation_set_limit_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::invalid_input::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::invalid_input(response.body().as_ref(), output)
-                    .map_err(crate::error::GetReusableDelegationSetLimitError::unhandled)?;
+                output = crate::xml_deser::deser_structure_invalid_input_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetReusableDelegationSetLimitError::unhandled)?;
                 output.build()
             }),
         },
@@ -3176,8 +3482,11 @@ pub fn parse_get_reusable_delegation_set_limit_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::no_such_delegation_set::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::no_such_delegation_set(response.body().as_ref(), output)
-                    .map_err(crate::error::GetReusableDelegationSetLimitError::unhandled)?;
+                output = crate::xml_deser::deser_structure_no_such_delegation_set_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetReusableDelegationSetLimitError::unhandled)?;
                 output.build()
             }),
         },
@@ -3223,8 +3532,11 @@ pub fn parse_get_traffic_policy_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::invalid_input::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::invalid_input(response.body().as_ref(), output)
-                    .map_err(crate::error::GetTrafficPolicyError::unhandled)?;
+                output = crate::xml_deser::deser_structure_invalid_input_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetTrafficPolicyError::unhandled)?;
                 output.build()
             }),
         },
@@ -3234,8 +3546,11 @@ pub fn parse_get_traffic_policy_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::no_such_traffic_policy::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::no_such_traffic_policy(response.body().as_ref(), output)
-                    .map_err(crate::error::GetTrafficPolicyError::unhandled)?;
+                output = crate::xml_deser::deser_structure_no_such_traffic_policy_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetTrafficPolicyError::unhandled)?;
                 output.build()
             }),
         },
@@ -3282,8 +3597,11 @@ pub fn parse_get_traffic_policy_instance_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::invalid_input::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::invalid_input(response.body().as_ref(), output)
-                    .map_err(crate::error::GetTrafficPolicyInstanceError::unhandled)?;
+                output = crate::xml_deser::deser_structure_invalid_input_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetTrafficPolicyInstanceError::unhandled)?;
                 output.build()
             }),
         },
@@ -3293,7 +3611,7 @@ pub fn parse_get_traffic_policy_instance_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::no_such_traffic_policy_instance::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::no_such_traffic_policy_instance(
+                output = crate::xml_deser::deser_structure_no_such_traffic_policy_instance_xml_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -3377,8 +3695,11 @@ pub fn parse_list_geo_locations_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::invalid_input::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::invalid_input(response.body().as_ref(), output)
-                    .map_err(crate::error::ListGeoLocationsError::unhandled)?;
+                output = crate::xml_deser::deser_structure_invalid_input_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ListGeoLocationsError::unhandled)?;
                 output.build()
             }),
         },
@@ -3418,8 +3739,11 @@ pub fn parse_list_health_checks_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::incompatible_version::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::incompatible_version(response.body().as_ref(), output)
-                    .map_err(crate::error::ListHealthChecksError::unhandled)?;
+                output = crate::xml_deser::deser_structure_incompatible_version_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ListHealthChecksError::unhandled)?;
                 output.build()
             }),
         },
@@ -3429,8 +3753,11 @@ pub fn parse_list_health_checks_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::invalid_input::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::invalid_input(response.body().as_ref(), output)
-                    .map_err(crate::error::ListHealthChecksError::unhandled)?;
+                output = crate::xml_deser::deser_structure_invalid_input_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ListHealthChecksError::unhandled)?;
                 output.build()
             }),
         },
@@ -3470,9 +3797,11 @@ pub fn parse_list_hosted_zones_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::delegation_set_not_reusable::Builder::default();
                 let _ = response;
-                output =
-                    crate::xml_deser::delegation_set_not_reusable(response.body().as_ref(), output)
-                        .map_err(crate::error::ListHostedZonesError::unhandled)?;
+                output = crate::xml_deser::deser_structure_delegation_set_not_reusable_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ListHostedZonesError::unhandled)?;
                 output.build()
             }),
         },
@@ -3482,8 +3811,11 @@ pub fn parse_list_hosted_zones_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::invalid_input::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::invalid_input(response.body().as_ref(), output)
-                    .map_err(crate::error::ListHostedZonesError::unhandled)?;
+                output = crate::xml_deser::deser_structure_invalid_input_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ListHostedZonesError::unhandled)?;
                 output.build()
             }),
         },
@@ -3493,8 +3825,11 @@ pub fn parse_list_hosted_zones_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::no_such_delegation_set::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::no_such_delegation_set(response.body().as_ref(), output)
-                    .map_err(crate::error::ListHostedZonesError::unhandled)?;
+                output = crate::xml_deser::deser_structure_no_such_delegation_set_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ListHostedZonesError::unhandled)?;
                 output.build()
             }),
         },
@@ -3534,8 +3869,11 @@ pub fn parse_list_hosted_zones_by_name_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::invalid_domain_name::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::invalid_domain_name(response.body().as_ref(), output)
-                    .map_err(crate::error::ListHostedZonesByNameError::unhandled)?;
+                output = crate::xml_deser::deser_structure_invalid_domain_name_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ListHostedZonesByNameError::unhandled)?;
                 output.build()
             }),
         },
@@ -3545,8 +3883,11 @@ pub fn parse_list_hosted_zones_by_name_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::invalid_input::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::invalid_input(response.body().as_ref(), output)
-                    .map_err(crate::error::ListHostedZonesByNameError::unhandled)?;
+                output = crate::xml_deser::deser_structure_invalid_input_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ListHostedZonesByNameError::unhandled)?;
                 output.build()
             }),
         },
@@ -3588,8 +3929,11 @@ pub fn parse_list_hosted_zones_by_vpc_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::invalid_input::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::invalid_input(response.body().as_ref(), output)
-                    .map_err(crate::error::ListHostedZonesByVPCError::unhandled)?;
+                output = crate::xml_deser::deser_structure_invalid_input_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ListHostedZonesByVPCError::unhandled)?;
                 output.build()
             }),
         },
@@ -3599,9 +3943,11 @@ pub fn parse_list_hosted_zones_by_vpc_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::invalid_pagination_token::Builder::default();
                 let _ = response;
-                output =
-                    crate::xml_deser::invalid_pagination_token(response.body().as_ref(), output)
-                        .map_err(crate::error::ListHostedZonesByVPCError::unhandled)?;
+                output = crate::xml_deser::deser_structure_invalid_pagination_token_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ListHostedZonesByVPCError::unhandled)?;
                 output.build()
             }),
         },
@@ -3648,8 +3994,11 @@ pub fn parse_list_query_logging_configs_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::invalid_input::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::invalid_input(response.body().as_ref(), output)
-                    .map_err(crate::error::ListQueryLoggingConfigsError::unhandled)?;
+                output = crate::xml_deser::deser_structure_invalid_input_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ListQueryLoggingConfigsError::unhandled)?;
                 output.build()
             }),
         },
@@ -3659,9 +4008,11 @@ pub fn parse_list_query_logging_configs_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::invalid_pagination_token::Builder::default();
                 let _ = response;
-                output =
-                    crate::xml_deser::invalid_pagination_token(response.body().as_ref(), output)
-                        .map_err(crate::error::ListQueryLoggingConfigsError::unhandled)?;
+                output = crate::xml_deser::deser_structure_invalid_pagination_token_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ListQueryLoggingConfigsError::unhandled)?;
                 output.build()
             }),
         },
@@ -3671,8 +4022,11 @@ pub fn parse_list_query_logging_configs_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::no_such_hosted_zone::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::no_such_hosted_zone(response.body().as_ref(), output)
-                    .map_err(crate::error::ListQueryLoggingConfigsError::unhandled)?;
+                output = crate::xml_deser::deser_structure_no_such_hosted_zone_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ListQueryLoggingConfigsError::unhandled)?;
                 output.build()
             }),
         },
@@ -3720,8 +4074,11 @@ pub fn parse_list_resource_record_sets_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::invalid_input::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::invalid_input(response.body().as_ref(), output)
-                    .map_err(crate::error::ListResourceRecordSetsError::unhandled)?;
+                output = crate::xml_deser::deser_structure_invalid_input_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ListResourceRecordSetsError::unhandled)?;
                 output.build()
             }),
         },
@@ -3731,8 +4088,11 @@ pub fn parse_list_resource_record_sets_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::no_such_hosted_zone::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::no_such_hosted_zone(response.body().as_ref(), output)
-                    .map_err(crate::error::ListResourceRecordSetsError::unhandled)?;
+                output = crate::xml_deser::deser_structure_no_such_hosted_zone_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ListResourceRecordSetsError::unhandled)?;
                 output.build()
             }),
         },
@@ -3782,8 +4142,11 @@ pub fn parse_list_reusable_delegation_sets_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::invalid_input::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::invalid_input(response.body().as_ref(), output)
-                    .map_err(crate::error::ListReusableDelegationSetsError::unhandled)?;
+                output = crate::xml_deser::deser_structure_invalid_input_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ListReusableDelegationSetsError::unhandled)?;
                 output.build()
             }),
         },
@@ -3828,8 +4191,11 @@ pub fn parse_list_tags_for_resource_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::invalid_input::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::invalid_input(response.body().as_ref(), output)
-                    .map_err(crate::error::ListTagsForResourceError::unhandled)?;
+                output = crate::xml_deser::deser_structure_invalid_input_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ListTagsForResourceError::unhandled)?;
                 output.build()
             }),
         },
@@ -3839,8 +4205,11 @@ pub fn parse_list_tags_for_resource_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::no_such_health_check::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::no_such_health_check(response.body().as_ref(), output)
-                    .map_err(crate::error::ListTagsForResourceError::unhandled)?;
+                output = crate::xml_deser::deser_structure_no_such_health_check_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ListTagsForResourceError::unhandled)?;
                 output.build()
             }),
         },
@@ -3850,8 +4219,11 @@ pub fn parse_list_tags_for_resource_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::no_such_hosted_zone::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::no_such_hosted_zone(response.body().as_ref(), output)
-                    .map_err(crate::error::ListTagsForResourceError::unhandled)?;
+                output = crate::xml_deser::deser_structure_no_such_hosted_zone_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ListTagsForResourceError::unhandled)?;
                 output.build()
             }),
         },
@@ -3861,9 +4233,11 @@ pub fn parse_list_tags_for_resource_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::prior_request_not_complete::Builder::default();
                 let _ = response;
-                output =
-                    crate::xml_deser::prior_request_not_complete(response.body().as_ref(), output)
-                        .map_err(crate::error::ListTagsForResourceError::unhandled)?;
+                output = crate::xml_deser::deser_structure_prior_request_not_complete_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ListTagsForResourceError::unhandled)?;
                 output.build()
             }),
         },
@@ -3873,8 +4247,11 @@ pub fn parse_list_tags_for_resource_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::throttling_error::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::throttling_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::ListTagsForResourceError::unhandled)?;
+                output = crate::xml_deser::deser_structure_throttling_error_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ListTagsForResourceError::unhandled)?;
                 output.build()
             }),
         },
@@ -3916,8 +4293,11 @@ pub fn parse_list_tags_for_resources_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::invalid_input::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::invalid_input(response.body().as_ref(), output)
-                    .map_err(crate::error::ListTagsForResourcesError::unhandled)?;
+                output = crate::xml_deser::deser_structure_invalid_input_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ListTagsForResourcesError::unhandled)?;
                 output.build()
             }),
         },
@@ -3927,8 +4307,11 @@ pub fn parse_list_tags_for_resources_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::no_such_health_check::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::no_such_health_check(response.body().as_ref(), output)
-                    .map_err(crate::error::ListTagsForResourcesError::unhandled)?;
+                output = crate::xml_deser::deser_structure_no_such_health_check_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ListTagsForResourcesError::unhandled)?;
                 output.build()
             }),
         },
@@ -3938,8 +4321,11 @@ pub fn parse_list_tags_for_resources_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::no_such_hosted_zone::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::no_such_hosted_zone(response.body().as_ref(), output)
-                    .map_err(crate::error::ListTagsForResourcesError::unhandled)?;
+                output = crate::xml_deser::deser_structure_no_such_hosted_zone_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ListTagsForResourcesError::unhandled)?;
                 output.build()
             }),
         },
@@ -3949,9 +4335,11 @@ pub fn parse_list_tags_for_resources_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::prior_request_not_complete::Builder::default();
                 let _ = response;
-                output =
-                    crate::xml_deser::prior_request_not_complete(response.body().as_ref(), output)
-                        .map_err(crate::error::ListTagsForResourcesError::unhandled)?;
+                output = crate::xml_deser::deser_structure_prior_request_not_complete_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ListTagsForResourcesError::unhandled)?;
                 output.build()
             }),
         },
@@ -3961,8 +4349,11 @@ pub fn parse_list_tags_for_resources_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::throttling_error::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::throttling_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::ListTagsForResourcesError::unhandled)?;
+                output = crate::xml_deser::deser_structure_throttling_error_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ListTagsForResourcesError::unhandled)?;
                 output.build()
             }),
         },
@@ -4004,8 +4395,11 @@ pub fn parse_list_traffic_policies_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::invalid_input::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::invalid_input(response.body().as_ref(), output)
-                    .map_err(crate::error::ListTrafficPoliciesError::unhandled)?;
+                output = crate::xml_deser::deser_structure_invalid_input_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ListTrafficPoliciesError::unhandled)?;
                 output.build()
             }),
         },
@@ -4054,8 +4448,11 @@ pub fn parse_list_traffic_policy_instances_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::invalid_input::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::invalid_input(response.body().as_ref(), output)
-                    .map_err(crate::error::ListTrafficPolicyInstancesError::unhandled)?;
+                output = crate::xml_deser::deser_structure_invalid_input_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ListTrafficPolicyInstancesError::unhandled)?;
                 output.build()
             }),
         },
@@ -4065,7 +4462,7 @@ pub fn parse_list_traffic_policy_instances_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::no_such_traffic_policy_instance::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::no_such_traffic_policy_instance(
+                output = crate::xml_deser::deser_structure_no_such_traffic_policy_instance_xml_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -4118,19 +4515,19 @@ pub fn parse_list_traffic_policy_instances_by_hosted_zone_error(
         "InvalidInput" => crate::error::ListTrafficPolicyInstancesByHostedZoneError { meta: generic, kind: crate::error::ListTrafficPolicyInstancesByHostedZoneErrorKind::InvalidInput({
             #[allow(unused_mut)]let mut output = crate::error::invalid_input::Builder::default();
             let _ = response;
-            output = crate::xml_deser::invalid_input(response.body().as_ref(), output).map_err(crate::error::ListTrafficPolicyInstancesByHostedZoneError::unhandled)?;
+            output = crate::xml_deser::deser_structure_invalid_input_xml_err(response.body().as_ref(), output).map_err(crate::error::ListTrafficPolicyInstancesByHostedZoneError::unhandled)?;
             output.build()
         })},
         "NoSuchHostedZone" => crate::error::ListTrafficPolicyInstancesByHostedZoneError { meta: generic, kind: crate::error::ListTrafficPolicyInstancesByHostedZoneErrorKind::NoSuchHostedZone({
             #[allow(unused_mut)]let mut output = crate::error::no_such_hosted_zone::Builder::default();
             let _ = response;
-            output = crate::xml_deser::no_such_hosted_zone(response.body().as_ref(), output).map_err(crate::error::ListTrafficPolicyInstancesByHostedZoneError::unhandled)?;
+            output = crate::xml_deser::deser_structure_no_such_hosted_zone_xml_err(response.body().as_ref(), output).map_err(crate::error::ListTrafficPolicyInstancesByHostedZoneError::unhandled)?;
             output.build()
         })},
         "NoSuchTrafficPolicyInstance" => crate::error::ListTrafficPolicyInstancesByHostedZoneError { meta: generic, kind: crate::error::ListTrafficPolicyInstancesByHostedZoneErrorKind::NoSuchTrafficPolicyInstance({
             #[allow(unused_mut)]let mut output = crate::error::no_such_traffic_policy_instance::Builder::default();
             let _ = response;
-            output = crate::xml_deser::no_such_traffic_policy_instance(response.body().as_ref(), output).map_err(crate::error::ListTrafficPolicyInstancesByHostedZoneError::unhandled)?;
+            output = crate::xml_deser::deser_structure_no_such_traffic_policy_instance_xml_err(response.body().as_ref(), output).map_err(crate::error::ListTrafficPolicyInstancesByHostedZoneError::unhandled)?;
             output.build()
         })},
         _ => crate::error::ListTrafficPolicyInstancesByHostedZoneError::generic(generic)
@@ -4177,19 +4574,19 @@ pub fn parse_list_traffic_policy_instances_by_policy_error(
         "InvalidInput" => crate::error::ListTrafficPolicyInstancesByPolicyError { meta: generic, kind: crate::error::ListTrafficPolicyInstancesByPolicyErrorKind::InvalidInput({
             #[allow(unused_mut)]let mut output = crate::error::invalid_input::Builder::default();
             let _ = response;
-            output = crate::xml_deser::invalid_input(response.body().as_ref(), output).map_err(crate::error::ListTrafficPolicyInstancesByPolicyError::unhandled)?;
+            output = crate::xml_deser::deser_structure_invalid_input_xml_err(response.body().as_ref(), output).map_err(crate::error::ListTrafficPolicyInstancesByPolicyError::unhandled)?;
             output.build()
         })},
         "NoSuchTrafficPolicy" => crate::error::ListTrafficPolicyInstancesByPolicyError { meta: generic, kind: crate::error::ListTrafficPolicyInstancesByPolicyErrorKind::NoSuchTrafficPolicy({
             #[allow(unused_mut)]let mut output = crate::error::no_such_traffic_policy::Builder::default();
             let _ = response;
-            output = crate::xml_deser::no_such_traffic_policy(response.body().as_ref(), output).map_err(crate::error::ListTrafficPolicyInstancesByPolicyError::unhandled)?;
+            output = crate::xml_deser::deser_structure_no_such_traffic_policy_xml_err(response.body().as_ref(), output).map_err(crate::error::ListTrafficPolicyInstancesByPolicyError::unhandled)?;
             output.build()
         })},
         "NoSuchTrafficPolicyInstance" => crate::error::ListTrafficPolicyInstancesByPolicyError { meta: generic, kind: crate::error::ListTrafficPolicyInstancesByPolicyErrorKind::NoSuchTrafficPolicyInstance({
             #[allow(unused_mut)]let mut output = crate::error::no_such_traffic_policy_instance::Builder::default();
             let _ = response;
-            output = crate::xml_deser::no_such_traffic_policy_instance(response.body().as_ref(), output).map_err(crate::error::ListTrafficPolicyInstancesByPolicyError::unhandled)?;
+            output = crate::xml_deser::deser_structure_no_such_traffic_policy_instance_xml_err(response.body().as_ref(), output).map_err(crate::error::ListTrafficPolicyInstancesByPolicyError::unhandled)?;
             output.build()
         })},
         _ => crate::error::ListTrafficPolicyInstancesByPolicyError::generic(generic)
@@ -4241,8 +4638,11 @@ pub fn parse_list_traffic_policy_versions_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::invalid_input::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::invalid_input(response.body().as_ref(), output)
-                    .map_err(crate::error::ListTrafficPolicyVersionsError::unhandled)?;
+                output = crate::xml_deser::deser_structure_invalid_input_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ListTrafficPolicyVersionsError::unhandled)?;
                 output.build()
             }),
         },
@@ -4252,8 +4652,11 @@ pub fn parse_list_traffic_policy_versions_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::no_such_traffic_policy::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::no_such_traffic_policy(response.body().as_ref(), output)
-                    .map_err(crate::error::ListTrafficPolicyVersionsError::unhandled)?;
+                output = crate::xml_deser::deser_structure_no_such_traffic_policy_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ListTrafficPolicyVersionsError::unhandled)?;
                 output.build()
             }),
         },
@@ -4303,8 +4706,11 @@ pub fn parse_list_vpc_association_authorizations_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::invalid_input::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::invalid_input(response.body().as_ref(), output)
-                    .map_err(crate::error::ListVPCAssociationAuthorizationsError::unhandled)?;
+                output = crate::xml_deser::deser_structure_invalid_input_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ListVPCAssociationAuthorizationsError::unhandled)?;
                 output.build()
             }),
         },
@@ -4315,7 +4721,7 @@ pub fn parse_list_vpc_association_authorizations_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_pagination_token::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::invalid_pagination_token(
+                    output = crate::xml_deser::deser_structure_invalid_pagination_token_xml_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -4330,8 +4736,11 @@ pub fn parse_list_vpc_association_authorizations_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::no_such_hosted_zone::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::no_such_hosted_zone(response.body().as_ref(), output)
-                    .map_err(crate::error::ListVPCAssociationAuthorizationsError::unhandled)?;
+                output = crate::xml_deser::deser_structure_no_such_hosted_zone_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ListVPCAssociationAuthorizationsError::unhandled)?;
                 output.build()
             }),
         },
@@ -4377,8 +4786,11 @@ pub fn parse_test_dns_answer_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::invalid_input::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::invalid_input(response.body().as_ref(), output)
-                    .map_err(crate::error::TestDNSAnswerError::unhandled)?;
+                output = crate::xml_deser::deser_structure_invalid_input_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::TestDNSAnswerError::unhandled)?;
                 output.build()
             }),
         },
@@ -4388,8 +4800,11 @@ pub fn parse_test_dns_answer_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::no_such_hosted_zone::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::no_such_hosted_zone(response.body().as_ref(), output)
-                    .map_err(crate::error::TestDNSAnswerError::unhandled)?;
+                output = crate::xml_deser::deser_structure_no_such_hosted_zone_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::TestDNSAnswerError::unhandled)?;
                 output.build()
             }),
         },
@@ -4429,7 +4844,7 @@ pub fn parse_update_health_check_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::health_check_version_mismatch::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::health_check_version_mismatch(
+                output = crate::xml_deser::deser_structure_health_check_version_mismatch_xml_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -4443,8 +4858,11 @@ pub fn parse_update_health_check_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::invalid_input::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::invalid_input(response.body().as_ref(), output)
-                    .map_err(crate::error::UpdateHealthCheckError::unhandled)?;
+                output = crate::xml_deser::deser_structure_invalid_input_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UpdateHealthCheckError::unhandled)?;
                 output.build()
             }),
         },
@@ -4454,8 +4872,11 @@ pub fn parse_update_health_check_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::no_such_health_check::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::no_such_health_check(response.body().as_ref(), output)
-                    .map_err(crate::error::UpdateHealthCheckError::unhandled)?;
+                output = crate::xml_deser::deser_structure_no_such_health_check_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UpdateHealthCheckError::unhandled)?;
                 output.build()
             }),
         },
@@ -4500,8 +4921,11 @@ pub fn parse_update_hosted_zone_comment_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::invalid_input::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::invalid_input(response.body().as_ref(), output)
-                    .map_err(crate::error::UpdateHostedZoneCommentError::unhandled)?;
+                output = crate::xml_deser::deser_structure_invalid_input_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UpdateHostedZoneCommentError::unhandled)?;
                 output.build()
             }),
         },
@@ -4511,8 +4935,11 @@ pub fn parse_update_hosted_zone_comment_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::no_such_hosted_zone::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::no_such_hosted_zone(response.body().as_ref(), output)
-                    .map_err(crate::error::UpdateHostedZoneCommentError::unhandled)?;
+                output = crate::xml_deser::deser_structure_no_such_hosted_zone_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UpdateHostedZoneCommentError::unhandled)?;
                 output.build()
             }),
         },
@@ -4562,9 +4989,11 @@ pub fn parse_update_traffic_policy_comment_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::concurrent_modification::Builder::default();
                 let _ = response;
-                output =
-                    crate::xml_deser::concurrent_modification(response.body().as_ref(), output)
-                        .map_err(crate::error::UpdateTrafficPolicyCommentError::unhandled)?;
+                output = crate::xml_deser::deser_structure_concurrent_modification_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UpdateTrafficPolicyCommentError::unhandled)?;
                 output.build()
             }),
         },
@@ -4574,8 +5003,11 @@ pub fn parse_update_traffic_policy_comment_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::invalid_input::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::invalid_input(response.body().as_ref(), output)
-                    .map_err(crate::error::UpdateTrafficPolicyCommentError::unhandled)?;
+                output = crate::xml_deser::deser_structure_invalid_input_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UpdateTrafficPolicyCommentError::unhandled)?;
                 output.build()
             }),
         },
@@ -4585,8 +5017,11 @@ pub fn parse_update_traffic_policy_comment_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::no_such_traffic_policy::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::no_such_traffic_policy(response.body().as_ref(), output)
-                    .map_err(crate::error::UpdateTrafficPolicyCommentError::unhandled)?;
+                output = crate::xml_deser::deser_structure_no_such_traffic_policy_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UpdateTrafficPolicyCommentError::unhandled)?;
                 output.build()
             }),
         },
@@ -4638,8 +5073,11 @@ pub fn parse_update_traffic_policy_instance_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::conflicting_types::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::conflicting_types(response.body().as_ref(), output)
-                    .map_err(crate::error::UpdateTrafficPolicyInstanceError::unhandled)?;
+                output = crate::xml_deser::deser_structure_conflicting_types_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UpdateTrafficPolicyInstanceError::unhandled)?;
                 output.build()
             }),
         },
@@ -4649,8 +5087,11 @@ pub fn parse_update_traffic_policy_instance_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::invalid_input::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::invalid_input(response.body().as_ref(), output)
-                    .map_err(crate::error::UpdateTrafficPolicyInstanceError::unhandled)?;
+                output = crate::xml_deser::deser_structure_invalid_input_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UpdateTrafficPolicyInstanceError::unhandled)?;
                 output.build()
             }),
         },
@@ -4660,37 +5101,41 @@ pub fn parse_update_traffic_policy_instance_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::no_such_traffic_policy::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::no_such_traffic_policy(response.body().as_ref(), output)
-                    .map_err(crate::error::UpdateTrafficPolicyInstanceError::unhandled)?;
+                output = crate::xml_deser::deser_structure_no_such_traffic_policy_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UpdateTrafficPolicyInstanceError::unhandled)?;
                 output.build()
             }),
         },
-        "NoSuchTrafficPolicyInstance" => crate::error::UpdateTrafficPolicyInstanceError {
-            meta: generic,
-            kind: crate::error::UpdateTrafficPolicyInstanceErrorKind::NoSuchTrafficPolicyInstance(
-                {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::no_such_traffic_policy_instance::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::no_such_traffic_policy_instance(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::UpdateTrafficPolicyInstanceError::unhandled)?;
-                    output.build()
-                },
-            ),
-        },
+        "NoSuchTrafficPolicyInstance" => {
+            crate::error::UpdateTrafficPolicyInstanceError {
+                meta: generic,
+                kind:
+                    crate::error::UpdateTrafficPolicyInstanceErrorKind::NoSuchTrafficPolicyInstance(
+                        {
+                            #[allow(unused_mut)]
+                            let mut output =
+                                crate::error::no_such_traffic_policy_instance::Builder::default();
+                            let _ = response;
+                            output = crate::xml_deser::deser_structure_no_such_traffic_policy_instance_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateTrafficPolicyInstanceError::unhandled)?;
+                            output.build()
+                        },
+                    ),
+            }
+        }
         "PriorRequestNotComplete" => crate::error::UpdateTrafficPolicyInstanceError {
             meta: generic,
             kind: crate::error::UpdateTrafficPolicyInstanceErrorKind::PriorRequestNotComplete({
                 #[allow(unused_mut)]
                 let mut output = crate::error::prior_request_not_complete::Builder::default();
                 let _ = response;
-                output =
-                    crate::xml_deser::prior_request_not_complete(response.body().as_ref(), output)
-                        .map_err(crate::error::UpdateTrafficPolicyInstanceError::unhandled)?;
+                output = crate::xml_deser::deser_structure_prior_request_not_complete_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UpdateTrafficPolicyInstanceError::unhandled)?;
                 output.build()
             }),
         },

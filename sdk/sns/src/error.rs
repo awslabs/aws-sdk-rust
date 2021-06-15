@@ -424,6 +424,96 @@ impl std::error::Error for CreatePlatformEndpointError {
 
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
+pub struct CreateSMSSandboxPhoneNumberError {
+    pub kind: CreateSMSSandboxPhoneNumberErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum CreateSMSSandboxPhoneNumberErrorKind {
+    AuthorizationErrorError(crate::error::AuthorizationErrorError),
+    InternalErrorError(crate::error::InternalErrorError),
+    InvalidParameterError(crate::error::InvalidParameterError),
+    OptedOutError(crate::error::OptedOutError),
+    ThrottledError(crate::error::ThrottledError),
+    UserErrorError(crate::error::UserErrorError),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for CreateSMSSandboxPhoneNumberError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            CreateSMSSandboxPhoneNumberErrorKind::AuthorizationErrorError(_inner) => _inner.fmt(f),
+            CreateSMSSandboxPhoneNumberErrorKind::InternalErrorError(_inner) => _inner.fmt(f),
+            CreateSMSSandboxPhoneNumberErrorKind::InvalidParameterError(_inner) => _inner.fmt(f),
+            CreateSMSSandboxPhoneNumberErrorKind::OptedOutError(_inner) => _inner.fmt(f),
+            CreateSMSSandboxPhoneNumberErrorKind::ThrottledError(_inner) => _inner.fmt(f),
+            CreateSMSSandboxPhoneNumberErrorKind::UserErrorError(_inner) => _inner.fmt(f),
+            CreateSMSSandboxPhoneNumberErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for CreateSMSSandboxPhoneNumberError {
+    fn code(&self) -> Option<&str> {
+        CreateSMSSandboxPhoneNumberError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl CreateSMSSandboxPhoneNumberError {
+    pub fn new(kind: CreateSMSSandboxPhoneNumberErrorKind, meta: smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: CreateSMSSandboxPhoneNumberErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: CreateSMSSandboxPhoneNumberErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
+    // by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+}
+impl std::error::Error for CreateSMSSandboxPhoneNumberError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            CreateSMSSandboxPhoneNumberErrorKind::AuthorizationErrorError(_inner) => Some(_inner),
+            CreateSMSSandboxPhoneNumberErrorKind::InternalErrorError(_inner) => Some(_inner),
+            CreateSMSSandboxPhoneNumberErrorKind::InvalidParameterError(_inner) => Some(_inner),
+            CreateSMSSandboxPhoneNumberErrorKind::OptedOutError(_inner) => Some(_inner),
+            CreateSMSSandboxPhoneNumberErrorKind::ThrottledError(_inner) => Some(_inner),
+            CreateSMSSandboxPhoneNumberErrorKind::UserErrorError(_inner) => Some(_inner),
+            CreateSMSSandboxPhoneNumberErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
 pub struct CreateTopicError {
     pub kind: CreateTopicErrorKind,
     pub(crate) meta: smithy_types::Error,
@@ -679,6 +769,96 @@ impl std::error::Error for DeletePlatformApplicationError {
             DeletePlatformApplicationErrorKind::InternalErrorError(_inner) => Some(_inner),
             DeletePlatformApplicationErrorKind::InvalidParameterError(_inner) => Some(_inner),
             DeletePlatformApplicationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DeleteSMSSandboxPhoneNumberError {
+    pub kind: DeleteSMSSandboxPhoneNumberErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DeleteSMSSandboxPhoneNumberErrorKind {
+    AuthorizationErrorError(crate::error::AuthorizationErrorError),
+    InternalErrorError(crate::error::InternalErrorError),
+    InvalidParameterError(crate::error::InvalidParameterError),
+    ResourceNotFoundError(crate::error::ResourceNotFoundError),
+    ThrottledError(crate::error::ThrottledError),
+    UserErrorError(crate::error::UserErrorError),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DeleteSMSSandboxPhoneNumberError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DeleteSMSSandboxPhoneNumberErrorKind::AuthorizationErrorError(_inner) => _inner.fmt(f),
+            DeleteSMSSandboxPhoneNumberErrorKind::InternalErrorError(_inner) => _inner.fmt(f),
+            DeleteSMSSandboxPhoneNumberErrorKind::InvalidParameterError(_inner) => _inner.fmt(f),
+            DeleteSMSSandboxPhoneNumberErrorKind::ResourceNotFoundError(_inner) => _inner.fmt(f),
+            DeleteSMSSandboxPhoneNumberErrorKind::ThrottledError(_inner) => _inner.fmt(f),
+            DeleteSMSSandboxPhoneNumberErrorKind::UserErrorError(_inner) => _inner.fmt(f),
+            DeleteSMSSandboxPhoneNumberErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for DeleteSMSSandboxPhoneNumberError {
+    fn code(&self) -> Option<&str> {
+        DeleteSMSSandboxPhoneNumberError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DeleteSMSSandboxPhoneNumberError {
+    pub fn new(kind: DeleteSMSSandboxPhoneNumberErrorKind, meta: smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DeleteSMSSandboxPhoneNumberErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DeleteSMSSandboxPhoneNumberErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
+    // by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+}
+impl std::error::Error for DeleteSMSSandboxPhoneNumberError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DeleteSMSSandboxPhoneNumberErrorKind::AuthorizationErrorError(_inner) => Some(_inner),
+            DeleteSMSSandboxPhoneNumberErrorKind::InternalErrorError(_inner) => Some(_inner),
+            DeleteSMSSandboxPhoneNumberErrorKind::InvalidParameterError(_inner) => Some(_inner),
+            DeleteSMSSandboxPhoneNumberErrorKind::ResourceNotFoundError(_inner) => Some(_inner),
+            DeleteSMSSandboxPhoneNumberErrorKind::ThrottledError(_inner) => Some(_inner),
+            DeleteSMSSandboxPhoneNumberErrorKind::UserErrorError(_inner) => Some(_inner),
+            DeleteSMSSandboxPhoneNumberErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -1038,6 +1218,87 @@ impl std::error::Error for GetSMSAttributesError {
 
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
+pub struct GetSMSSandboxAccountStatusError {
+    pub kind: GetSMSSandboxAccountStatusErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum GetSMSSandboxAccountStatusErrorKind {
+    AuthorizationErrorError(crate::error::AuthorizationErrorError),
+    InternalErrorError(crate::error::InternalErrorError),
+    ThrottledError(crate::error::ThrottledError),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for GetSMSSandboxAccountStatusError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            GetSMSSandboxAccountStatusErrorKind::AuthorizationErrorError(_inner) => _inner.fmt(f),
+            GetSMSSandboxAccountStatusErrorKind::InternalErrorError(_inner) => _inner.fmt(f),
+            GetSMSSandboxAccountStatusErrorKind::ThrottledError(_inner) => _inner.fmt(f),
+            GetSMSSandboxAccountStatusErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for GetSMSSandboxAccountStatusError {
+    fn code(&self) -> Option<&str> {
+        GetSMSSandboxAccountStatusError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl GetSMSSandboxAccountStatusError {
+    pub fn new(kind: GetSMSSandboxAccountStatusErrorKind, meta: smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: GetSMSSandboxAccountStatusErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: GetSMSSandboxAccountStatusErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
+    // by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+}
+impl std::error::Error for GetSMSSandboxAccountStatusError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            GetSMSSandboxAccountStatusErrorKind::AuthorizationErrorError(_inner) => Some(_inner),
+            GetSMSSandboxAccountStatusErrorKind::InternalErrorError(_inner) => Some(_inner),
+            GetSMSSandboxAccountStatusErrorKind::ThrottledError(_inner) => Some(_inner),
+            GetSMSSandboxAccountStatusErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
 pub struct GetSubscriptionAttributesError {
     pub kind: GetSubscriptionAttributesErrorKind,
     pub(crate) meta: smithy_types::Error,
@@ -1306,6 +1567,93 @@ impl std::error::Error for ListEndpointsByPlatformApplicationError {
 
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
+pub struct ListOriginationNumbersError {
+    pub kind: ListOriginationNumbersErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListOriginationNumbersErrorKind {
+    AuthorizationErrorError(crate::error::AuthorizationErrorError),
+    InternalErrorError(crate::error::InternalErrorError),
+    InvalidParameterError(crate::error::InvalidParameterError),
+    ThrottledError(crate::error::ThrottledError),
+    ValidationError(crate::error::ValidationError),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for ListOriginationNumbersError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListOriginationNumbersErrorKind::AuthorizationErrorError(_inner) => _inner.fmt(f),
+            ListOriginationNumbersErrorKind::InternalErrorError(_inner) => _inner.fmt(f),
+            ListOriginationNumbersErrorKind::InvalidParameterError(_inner) => _inner.fmt(f),
+            ListOriginationNumbersErrorKind::ThrottledError(_inner) => _inner.fmt(f),
+            ListOriginationNumbersErrorKind::ValidationError(_inner) => _inner.fmt(f),
+            ListOriginationNumbersErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for ListOriginationNumbersError {
+    fn code(&self) -> Option<&str> {
+        ListOriginationNumbersError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListOriginationNumbersError {
+    pub fn new(kind: ListOriginationNumbersErrorKind, meta: smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListOriginationNumbersErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListOriginationNumbersErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
+    // by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+}
+impl std::error::Error for ListOriginationNumbersError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListOriginationNumbersErrorKind::AuthorizationErrorError(_inner) => Some(_inner),
+            ListOriginationNumbersErrorKind::InternalErrorError(_inner) => Some(_inner),
+            ListOriginationNumbersErrorKind::InvalidParameterError(_inner) => Some(_inner),
+            ListOriginationNumbersErrorKind::ThrottledError(_inner) => Some(_inner),
+            ListOriginationNumbersErrorKind::ValidationError(_inner) => Some(_inner),
+            ListOriginationNumbersErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
 pub struct ListPhoneNumbersOptedOutError {
     pub kind: ListPhoneNumbersOptedOutErrorKind,
     pub(crate) meta: smithy_types::Error,
@@ -1465,6 +1813,93 @@ impl std::error::Error for ListPlatformApplicationsError {
             ListPlatformApplicationsErrorKind::InternalErrorError(_inner) => Some(_inner),
             ListPlatformApplicationsErrorKind::InvalidParameterError(_inner) => Some(_inner),
             ListPlatformApplicationsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListSMSSandboxPhoneNumbersError {
+    pub kind: ListSMSSandboxPhoneNumbersErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListSMSSandboxPhoneNumbersErrorKind {
+    AuthorizationErrorError(crate::error::AuthorizationErrorError),
+    InternalErrorError(crate::error::InternalErrorError),
+    InvalidParameterError(crate::error::InvalidParameterError),
+    ResourceNotFoundError(crate::error::ResourceNotFoundError),
+    ThrottledError(crate::error::ThrottledError),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for ListSMSSandboxPhoneNumbersError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListSMSSandboxPhoneNumbersErrorKind::AuthorizationErrorError(_inner) => _inner.fmt(f),
+            ListSMSSandboxPhoneNumbersErrorKind::InternalErrorError(_inner) => _inner.fmt(f),
+            ListSMSSandboxPhoneNumbersErrorKind::InvalidParameterError(_inner) => _inner.fmt(f),
+            ListSMSSandboxPhoneNumbersErrorKind::ResourceNotFoundError(_inner) => _inner.fmt(f),
+            ListSMSSandboxPhoneNumbersErrorKind::ThrottledError(_inner) => _inner.fmt(f),
+            ListSMSSandboxPhoneNumbersErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for ListSMSSandboxPhoneNumbersError {
+    fn code(&self) -> Option<&str> {
+        ListSMSSandboxPhoneNumbersError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListSMSSandboxPhoneNumbersError {
+    pub fn new(kind: ListSMSSandboxPhoneNumbersErrorKind, meta: smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListSMSSandboxPhoneNumbersErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListSMSSandboxPhoneNumbersErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
+    // by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+}
+impl std::error::Error for ListSMSSandboxPhoneNumbersError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListSMSSandboxPhoneNumbersErrorKind::AuthorizationErrorError(_inner) => Some(_inner),
+            ListSMSSandboxPhoneNumbersErrorKind::InternalErrorError(_inner) => Some(_inner),
+            ListSMSSandboxPhoneNumbersErrorKind::InvalidParameterError(_inner) => Some(_inner),
+            ListSMSSandboxPhoneNumbersErrorKind::ResourceNotFoundError(_inner) => Some(_inner),
+            ListSMSSandboxPhoneNumbersErrorKind::ThrottledError(_inner) => Some(_inner),
+            ListSMSSandboxPhoneNumbersErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -2888,42 +3323,135 @@ impl std::error::Error for UntagResourceError {
     }
 }
 
-/// <p>The request doesn't comply with the IAM tag policy. Correct your request and then
-/// retry it.</p>
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct VerifySMSSandboxPhoneNumberError {
+    pub kind: VerifySMSSandboxPhoneNumberErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum VerifySMSSandboxPhoneNumberErrorKind {
+    AuthorizationErrorError(crate::error::AuthorizationErrorError),
+    InternalErrorError(crate::error::InternalErrorError),
+    InvalidParameterError(crate::error::InvalidParameterError),
+    ResourceNotFoundError(crate::error::ResourceNotFoundError),
+    ThrottledError(crate::error::ThrottledError),
+    VerificationError(crate::error::VerificationError),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for VerifySMSSandboxPhoneNumberError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            VerifySMSSandboxPhoneNumberErrorKind::AuthorizationErrorError(_inner) => _inner.fmt(f),
+            VerifySMSSandboxPhoneNumberErrorKind::InternalErrorError(_inner) => _inner.fmt(f),
+            VerifySMSSandboxPhoneNumberErrorKind::InvalidParameterError(_inner) => _inner.fmt(f),
+            VerifySMSSandboxPhoneNumberErrorKind::ResourceNotFoundError(_inner) => _inner.fmt(f),
+            VerifySMSSandboxPhoneNumberErrorKind::ThrottledError(_inner) => _inner.fmt(f),
+            VerifySMSSandboxPhoneNumberErrorKind::VerificationError(_inner) => _inner.fmt(f),
+            VerifySMSSandboxPhoneNumberErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for VerifySMSSandboxPhoneNumberError {
+    fn code(&self) -> Option<&str> {
+        VerifySMSSandboxPhoneNumberError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl VerifySMSSandboxPhoneNumberError {
+    pub fn new(kind: VerifySMSSandboxPhoneNumberErrorKind, meta: smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: VerifySMSSandboxPhoneNumberErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: VerifySMSSandboxPhoneNumberErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
+    // by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+}
+impl std::error::Error for VerifySMSSandboxPhoneNumberError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            VerifySMSSandboxPhoneNumberErrorKind::AuthorizationErrorError(_inner) => Some(_inner),
+            VerifySMSSandboxPhoneNumberErrorKind::InternalErrorError(_inner) => Some(_inner),
+            VerifySMSSandboxPhoneNumberErrorKind::InvalidParameterError(_inner) => Some(_inner),
+            VerifySMSSandboxPhoneNumberErrorKind::ResourceNotFoundError(_inner) => Some(_inner),
+            VerifySMSSandboxPhoneNumberErrorKind::ThrottledError(_inner) => Some(_inner),
+            VerifySMSSandboxPhoneNumberErrorKind::VerificationError(_inner) => Some(_inner),
+            VerifySMSSandboxPhoneNumberErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// <p>Indicates that the one-time password (OTP) used for verification is invalid.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct TagPolicyError {
+pub struct VerificationError {
     pub message: std::option::Option<std::string::String>,
+    /// <p>The status of the verification error.</p>
+    pub status: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for TagPolicyError {
+impl std::fmt::Debug for VerificationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagPolicyError");
+        let mut formatter = f.debug_struct("VerificationError");
         formatter.field("message", &self.message);
+        formatter.field("status", &self.status);
         formatter.finish()
     }
 }
-impl TagPolicyError {
+impl VerificationError {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for TagPolicyError {
+impl std::fmt::Display for VerificationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "TagPolicyError [TagPolicyException]")?;
+        write!(f, "VerificationError [VerificationException]")?;
         if let Some(inner_1) = &self.message {
             write!(f, ": {}", inner_1)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for TagPolicyError {}
-/// See [`TagPolicyError`](crate::error::TagPolicyError)
-pub mod tag_policy_error {
-    /// A builder for [`TagPolicyError`](crate::error::TagPolicyError)
+impl std::error::Error for VerificationError {}
+/// See [`VerificationError`](crate::error::VerificationError)
+pub mod verification_error {
+    /// A builder for [`VerificationError`](crate::error::VerificationError)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
+        pub(crate) status: std::option::Option<std::string::String>,
     }
     impl Builder {
         pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
@@ -2934,58 +3462,71 @@ pub mod tag_policy_error {
             self.message = inp;
             self
         }
-        /// Consumes the builder and constructs a [`TagPolicyError`](crate::error::TagPolicyError)
-        pub fn build(self) -> crate::error::TagPolicyError {
-            crate::error::TagPolicyError {
+        /// <p>The status of the verification error.</p>
+        pub fn status(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.status = Some(inp.into());
+            self
+        }
+        pub fn set_status(mut self, inp: std::option::Option<std::string::String>) -> Self {
+            self.status = inp;
+            self
+        }
+        /// Consumes the builder and constructs a [`VerificationError`](crate::error::VerificationError)
+        pub fn build(self) -> crate::error::VerificationError {
+            crate::error::VerificationError {
                 message: self.message,
+                status: self.status,
             }
         }
     }
 }
-impl TagPolicyError {
-    /// Creates a new builder-style object to manufacture [`TagPolicyError`](crate::error::TagPolicyError)
-    pub fn builder() -> crate::error::tag_policy_error::Builder {
-        crate::error::tag_policy_error::Builder::default()
+impl VerificationError {
+    /// Creates a new builder-style object to manufacture [`VerificationError`](crate::error::VerificationError)
+    pub fn builder() -> crate::error::verification_error::Builder {
+        crate::error::verification_error::Builder::default()
     }
 }
 
-/// <p>Can't add more than 50 tags to a topic.</p>
+/// <p>Indicates that the rate at which requests have been submitted for this action exceeds
+/// the limit for your account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct TagLimitExceededError {
+pub struct ThrottledError {
+    /// <p>Throttled request.</p>
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for TagLimitExceededError {
+impl std::fmt::Debug for ThrottledError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagLimitExceededError");
+        let mut formatter = f.debug_struct("ThrottledError");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl TagLimitExceededError {
+impl ThrottledError {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for TagLimitExceededError {
+impl std::fmt::Display for ThrottledError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "TagLimitExceededError [TagLimitExceededException]")?;
+        write!(f, "ThrottledError [ThrottledException]")?;
         if let Some(inner_2) = &self.message {
             write!(f, ": {}", inner_2)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for TagLimitExceededError {}
-/// See [`TagLimitExceededError`](crate::error::TagLimitExceededError)
-pub mod tag_limit_exceeded_error {
-    /// A builder for [`TagLimitExceededError`](crate::error::TagLimitExceededError)
+impl std::error::Error for ThrottledError {}
+/// See [`ThrottledError`](crate::error::ThrottledError)
+pub mod throttled_error {
+    /// A builder for [`ThrottledError`](crate::error::ThrottledError)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// <p>Throttled request.</p>
         pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
             self.message = Some(inp.into());
             self
@@ -2994,83 +3535,23 @@ pub mod tag_limit_exceeded_error {
             self.message = inp;
             self
         }
-        /// Consumes the builder and constructs a [`TagLimitExceededError`](crate::error::TagLimitExceededError)
-        pub fn build(self) -> crate::error::TagLimitExceededError {
-            crate::error::TagLimitExceededError {
+        /// Consumes the builder and constructs a [`ThrottledError`](crate::error::ThrottledError)
+        pub fn build(self) -> crate::error::ThrottledError {
+            crate::error::ThrottledError {
                 message: self.message,
             }
         }
     }
 }
-impl TagLimitExceededError {
-    /// Creates a new builder-style object to manufacture [`TagLimitExceededError`](crate::error::TagLimitExceededError)
-    pub fn builder() -> crate::error::tag_limit_exceeded_error::Builder {
-        crate::error::tag_limit_exceeded_error::Builder::default()
+impl ThrottledError {
+    /// Creates a new builder-style object to manufacture [`ThrottledError`](crate::error::ThrottledError)
+    pub fn builder() -> crate::error::throttled_error::Builder {
+        crate::error::throttled_error::Builder::default()
     }
 }
 
-/// <p>A tag has been added to a resource with the same ARN as a deleted resource.
-/// Wait a short while and then retry the operation.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct StaleTagError {
-    pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for StaleTagError {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StaleTagError");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
-impl StaleTagError {
-    pub fn message(&self) -> Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for StaleTagError {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "StaleTagError [StaleTagException]")?;
-        if let Some(inner_3) = &self.message {
-            write!(f, ": {}", inner_3)?;
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for StaleTagError {}
-/// See [`StaleTagError`](crate::error::StaleTagError)
-pub mod stale_tag_error {
-    /// A builder for [`StaleTagError`](crate::error::StaleTagError)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
-            self
-        }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
-            self
-        }
-        /// Consumes the builder and constructs a [`StaleTagError`](crate::error::StaleTagError)
-        pub fn build(self) -> crate::error::StaleTagError {
-            crate::error::StaleTagError {
-                message: self.message,
-            }
-        }
-    }
-}
-impl StaleTagError {
-    /// Creates a new builder-style object to manufacture [`StaleTagError`](crate::error::StaleTagError)
-    pub fn builder() -> crate::error::stale_tag_error::Builder {
-        crate::error::stale_tag_error::Builder::default()
-    }
-}
-
-/// <p>Can't tag resource. Verify that the topic exists.</p>
+/// <p>Can’t perform the action on the specified resource. Make sure that the resource
+/// exists.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceNotFoundError {
@@ -3091,8 +3572,8 @@ impl ResourceNotFoundError {
 impl std::fmt::Display for ResourceNotFoundError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ResourceNotFoundError [ResourceNotFoundException]")?;
-        if let Some(inner_4) = &self.message {
-            write!(f, ": {}", inner_4)?;
+        if let Some(inner_3) = &self.message {
+            write!(f, ": {}", inner_3)?;
         }
         Ok(())
     }
@@ -3152,8 +3633,8 @@ impl InvalidParameterError {
 impl std::fmt::Display for InvalidParameterError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidParameterError [InvalidParameterException]")?;
-        if let Some(inner_5) = &self.message {
-            write!(f, ": {}", inner_5)?;
+        if let Some(inner_4) = &self.message {
+            write!(f, ": {}", inner_4)?;
         }
         Ok(())
     }
@@ -3191,38 +3672,37 @@ impl InvalidParameterError {
     }
 }
 
-/// <p>Can't perform multiple operations on a tag simultaneously. Perform the operations
-/// sequentially.</p>
+/// <p>Indicates an internal service error.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ConcurrentAccessError {
+pub struct InternalErrorError {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for ConcurrentAccessError {
+impl std::fmt::Debug for InternalErrorError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConcurrentAccessError");
+        let mut formatter = f.debug_struct("InternalErrorError");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl ConcurrentAccessError {
+impl InternalErrorError {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for ConcurrentAccessError {
+impl std::fmt::Display for InternalErrorError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "ConcurrentAccessError [ConcurrentAccessException]")?;
-        if let Some(inner_6) = &self.message {
-            write!(f, ": {}", inner_6)?;
+        write!(f, "InternalErrorError [InternalErrorException]")?;
+        if let Some(inner_5) = &self.message {
+            write!(f, ": {}", inner_5)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for ConcurrentAccessError {}
-/// See [`ConcurrentAccessError`](crate::error::ConcurrentAccessError)
-pub mod concurrent_access_error {
-    /// A builder for [`ConcurrentAccessError`](crate::error::ConcurrentAccessError)
+impl std::error::Error for InternalErrorError {}
+/// See [`InternalErrorError`](crate::error::InternalErrorError)
+pub mod internal_error_error {
+    /// A builder for [`InternalErrorError`](crate::error::InternalErrorError)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -3237,18 +3717,18 @@ pub mod concurrent_access_error {
             self.message = inp;
             self
         }
-        /// Consumes the builder and constructs a [`ConcurrentAccessError`](crate::error::ConcurrentAccessError)
-        pub fn build(self) -> crate::error::ConcurrentAccessError {
-            crate::error::ConcurrentAccessError {
+        /// Consumes the builder and constructs a [`InternalErrorError`](crate::error::InternalErrorError)
+        pub fn build(self) -> crate::error::InternalErrorError {
+            crate::error::InternalErrorError {
                 message: self.message,
             }
         }
     }
 }
-impl ConcurrentAccessError {
-    /// Creates a new builder-style object to manufacture [`ConcurrentAccessError`](crate::error::ConcurrentAccessError)
-    pub fn builder() -> crate::error::concurrent_access_error::Builder {
-        crate::error::concurrent_access_error::Builder::default()
+impl InternalErrorError {
+    /// Creates a new builder-style object to manufacture [`InternalErrorError`](crate::error::InternalErrorError)
+    pub fn builder() -> crate::error::internal_error_error::Builder {
+        crate::error::internal_error_error::Builder::default()
     }
 }
 
@@ -3273,8 +3753,8 @@ impl AuthorizationErrorError {
 impl std::fmt::Display for AuthorizationErrorError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "AuthorizationErrorError [AuthorizationErrorException]")?;
-        if let Some(inner_7) = &self.message {
-            write!(f, ": {}", inner_7)?;
+        if let Some(inner_6) = &self.message {
+            write!(f, ": {}", inner_6)?;
         }
         Ok(())
     }
@@ -3312,6 +3792,249 @@ impl AuthorizationErrorError {
     }
 }
 
+/// <p>The request doesn't comply with the IAM tag policy. Correct your request and then
+/// retry it.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct TagPolicyError {
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for TagPolicyError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("TagPolicyError");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl TagPolicyError {
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for TagPolicyError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "TagPolicyError [TagPolicyException]")?;
+        if let Some(inner_7) = &self.message {
+            write!(f, ": {}", inner_7)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for TagPolicyError {}
+/// See [`TagPolicyError`](crate::error::TagPolicyError)
+pub mod tag_policy_error {
+    /// A builder for [`TagPolicyError`](crate::error::TagPolicyError)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.message = Some(inp.into());
+            self
+        }
+        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
+            self.message = inp;
+            self
+        }
+        /// Consumes the builder and constructs a [`TagPolicyError`](crate::error::TagPolicyError)
+        pub fn build(self) -> crate::error::TagPolicyError {
+            crate::error::TagPolicyError {
+                message: self.message,
+            }
+        }
+    }
+}
+impl TagPolicyError {
+    /// Creates a new builder-style object to manufacture [`TagPolicyError`](crate::error::TagPolicyError)
+    pub fn builder() -> crate::error::tag_policy_error::Builder {
+        crate::error::tag_policy_error::Builder::default()
+    }
+}
+
+/// <p>Can't add more than 50 tags to a topic.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct TagLimitExceededError {
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for TagLimitExceededError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("TagLimitExceededError");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl TagLimitExceededError {
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for TagLimitExceededError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "TagLimitExceededError [TagLimitExceededException]")?;
+        if let Some(inner_8) = &self.message {
+            write!(f, ": {}", inner_8)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for TagLimitExceededError {}
+/// See [`TagLimitExceededError`](crate::error::TagLimitExceededError)
+pub mod tag_limit_exceeded_error {
+    /// A builder for [`TagLimitExceededError`](crate::error::TagLimitExceededError)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.message = Some(inp.into());
+            self
+        }
+        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
+            self.message = inp;
+            self
+        }
+        /// Consumes the builder and constructs a [`TagLimitExceededError`](crate::error::TagLimitExceededError)
+        pub fn build(self) -> crate::error::TagLimitExceededError {
+            crate::error::TagLimitExceededError {
+                message: self.message,
+            }
+        }
+    }
+}
+impl TagLimitExceededError {
+    /// Creates a new builder-style object to manufacture [`TagLimitExceededError`](crate::error::TagLimitExceededError)
+    pub fn builder() -> crate::error::tag_limit_exceeded_error::Builder {
+        crate::error::tag_limit_exceeded_error::Builder::default()
+    }
+}
+
+/// <p>A tag has been added to a resource with the same ARN as a deleted resource. Wait a
+/// short while and then retry the operation.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct StaleTagError {
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for StaleTagError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("StaleTagError");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl StaleTagError {
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for StaleTagError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "StaleTagError [StaleTagException]")?;
+        if let Some(inner_9) = &self.message {
+            write!(f, ": {}", inner_9)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for StaleTagError {}
+/// See [`StaleTagError`](crate::error::StaleTagError)
+pub mod stale_tag_error {
+    /// A builder for [`StaleTagError`](crate::error::StaleTagError)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.message = Some(inp.into());
+            self
+        }
+        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
+            self.message = inp;
+            self
+        }
+        /// Consumes the builder and constructs a [`StaleTagError`](crate::error::StaleTagError)
+        pub fn build(self) -> crate::error::StaleTagError {
+            crate::error::StaleTagError {
+                message: self.message,
+            }
+        }
+    }
+}
+impl StaleTagError {
+    /// Creates a new builder-style object to manufacture [`StaleTagError`](crate::error::StaleTagError)
+    pub fn builder() -> crate::error::stale_tag_error::Builder {
+        crate::error::stale_tag_error::Builder::default()
+    }
+}
+
+/// <p>Can't perform multiple operations on a tag simultaneously. Perform the operations
+/// sequentially.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ConcurrentAccessError {
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for ConcurrentAccessError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ConcurrentAccessError");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl ConcurrentAccessError {
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for ConcurrentAccessError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "ConcurrentAccessError [ConcurrentAccessException]")?;
+        if let Some(inner_10) = &self.message {
+            write!(f, ": {}", inner_10)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for ConcurrentAccessError {}
+/// See [`ConcurrentAccessError`](crate::error::ConcurrentAccessError)
+pub mod concurrent_access_error {
+    /// A builder for [`ConcurrentAccessError`](crate::error::ConcurrentAccessError)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.message = Some(inp.into());
+            self
+        }
+        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
+            self.message = inp;
+            self
+        }
+        /// Consumes the builder and constructs a [`ConcurrentAccessError`](crate::error::ConcurrentAccessError)
+        pub fn build(self) -> crate::error::ConcurrentAccessError {
+            crate::error::ConcurrentAccessError {
+                message: self.message,
+            }
+        }
+    }
+}
+impl ConcurrentAccessError {
+    /// Creates a new builder-style object to manufacture [`ConcurrentAccessError`](crate::error::ConcurrentAccessError)
+    pub fn builder() -> crate::error::concurrent_access_error::Builder {
+        crate::error::concurrent_access_error::Builder::default()
+    }
+}
+
 /// <p>Indicates that the requested resource does not exist.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -3333,8 +4056,8 @@ impl NotFoundError {
 impl std::fmt::Display for NotFoundError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "NotFoundError [NotFoundException]")?;
-        if let Some(inner_8) = &self.message {
-            write!(f, ": {}", inner_8)?;
+        if let Some(inner_11) = &self.message {
+            write!(f, ": {}", inner_11)?;
         }
         Ok(())
     }
@@ -3394,8 +4117,8 @@ impl InvalidSecurityError {
 impl std::fmt::Display for InvalidSecurityError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidSecurityError [InvalidSecurityException]")?;
-        if let Some(inner_9) = &self.message {
-            write!(f, ": {}", inner_9)?;
+        if let Some(inner_12) = &self.message {
+            write!(f, ": {}", inner_12)?;
         }
         Ok(())
     }
@@ -3433,66 +4156,6 @@ impl InvalidSecurityError {
     }
 }
 
-/// <p>Indicates an internal service error.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct InternalErrorError {
-    pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InternalErrorError {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InternalErrorError");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
-impl InternalErrorError {
-    pub fn message(&self) -> Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for InternalErrorError {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "InternalErrorError [InternalErrorException]")?;
-        if let Some(inner_10) = &self.message {
-            write!(f, ": {}", inner_10)?;
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for InternalErrorError {}
-/// See [`InternalErrorError`](crate::error::InternalErrorError)
-pub mod internal_error_error {
-    /// A builder for [`InternalErrorError`](crate::error::InternalErrorError)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
-            self
-        }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
-            self
-        }
-        /// Consumes the builder and constructs a [`InternalErrorError`](crate::error::InternalErrorError)
-        pub fn build(self) -> crate::error::InternalErrorError {
-            crate::error::InternalErrorError {
-                message: self.message,
-            }
-        }
-    }
-}
-impl InternalErrorError {
-    /// Creates a new builder-style object to manufacture [`InternalErrorError`](crate::error::InternalErrorError)
-    pub fn builder() -> crate::error::internal_error_error::Builder {
-        crate::error::internal_error_error::Builder::default()
-    }
-}
-
 /// <p>Indicates that the customer already owns the maximum allowed number of
 /// subscriptions.</p>
 #[non_exhaustive]
@@ -3518,8 +4181,8 @@ impl std::fmt::Display for SubscriptionLimitExceededError {
             f,
             "SubscriptionLimitExceededError [SubscriptionLimitExceededException]"
         )?;
-        if let Some(inner_11) = &self.message {
-            write!(f, ": {}", inner_11)?;
+        if let Some(inner_13) = &self.message {
+            write!(f, ": {}", inner_13)?;
         }
         Ok(())
     }
@@ -3583,8 +4246,8 @@ impl std::fmt::Display for FilterPolicyLimitExceededError {
             f,
             "FilterPolicyLimitExceededError [FilterPolicyLimitExceededException]"
         )?;
-        if let Some(inner_12) = &self.message {
-            write!(f, ": {}", inner_12)?;
+        if let Some(inner_14) = &self.message {
+            write!(f, ": {}", inner_14)?;
         }
         Ok(())
     }
@@ -3622,69 +4285,6 @@ impl FilterPolicyLimitExceededError {
     }
 }
 
-/// <p>Indicates that the rate at which requests have been submitted for this action exceeds
-/// the limit for your account.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ThrottledError {
-    /// <p>Throttled request.</p>
-    pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ThrottledError {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ThrottledError");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
-impl ThrottledError {
-    pub fn message(&self) -> Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for ThrottledError {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "ThrottledError [ThrottledException]")?;
-        if let Some(inner_13) = &self.message {
-            write!(f, ": {}", inner_13)?;
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for ThrottledError {}
-/// See [`ThrottledError`](crate::error::ThrottledError)
-pub mod throttled_error {
-    /// A builder for [`ThrottledError`](crate::error::ThrottledError)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        /// <p>Throttled request.</p>
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
-            self
-        }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
-            self
-        }
-        /// Consumes the builder and constructs a [`ThrottledError`](crate::error::ThrottledError)
-        pub fn build(self) -> crate::error::ThrottledError {
-            crate::error::ThrottledError {
-                message: self.message,
-            }
-        }
-    }
-}
-impl ThrottledError {
-    /// Creates a new builder-style object to manufacture [`ThrottledError`](crate::error::ThrottledError)
-    pub fn builder() -> crate::error::throttled_error::Builder {
-        crate::error::throttled_error::Builder::default()
-    }
-}
-
 /// <p>Exception error indicating platform application disabled.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -3710,8 +4310,8 @@ impl std::fmt::Display for PlatformApplicationDisabledError {
             f,
             "PlatformApplicationDisabledError [PlatformApplicationDisabledException]"
         )?;
-        if let Some(inner_14) = &self.message {
-            write!(f, ": {}", inner_14)?;
+        if let Some(inner_15) = &self.message {
+            write!(f, ": {}", inner_15)?;
         }
         Ok(())
     }
@@ -3774,8 +4374,8 @@ impl KMSThrottlingError {
 impl std::fmt::Display for KMSThrottlingError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "KMSThrottlingError [KMSThrottlingException]")?;
-        if let Some(inner_15) = &self.message {
-            write!(f, ": {}", inner_15)?;
+        if let Some(inner_16) = &self.message {
+            write!(f, ": {}", inner_16)?;
         }
         Ok(())
     }
@@ -3834,8 +4434,8 @@ impl KMSOptInRequired {
 impl std::fmt::Display for KMSOptInRequired {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "KMSOptInRequired")?;
-        if let Some(inner_16) = &self.message {
-            write!(f, ": {}", inner_16)?;
+        if let Some(inner_17) = &self.message {
+            write!(f, ": {}", inner_17)?;
         }
         Ok(())
     }
@@ -3895,8 +4495,8 @@ impl KMSNotFoundError {
 impl std::fmt::Display for KMSNotFoundError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "KMSNotFoundError [KMSNotFoundException]")?;
-        if let Some(inner_17) = &self.message {
-            write!(f, ": {}", inner_17)?;
+        if let Some(inner_18) = &self.message {
+            write!(f, ": {}", inner_18)?;
         }
         Ok(())
     }
@@ -3958,8 +4558,8 @@ impl KMSInvalidStateError {
 impl std::fmt::Display for KMSInvalidStateError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "KMSInvalidStateError [KMSInvalidStateException]")?;
-        if let Some(inner_18) = &self.message {
-            write!(f, ": {}", inner_18)?;
+        if let Some(inner_19) = &self.message {
+            write!(f, ": {}", inner_19)?;
         }
         Ok(())
     }
@@ -4019,8 +4619,8 @@ impl KMSDisabledError {
 impl std::fmt::Display for KMSDisabledError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "KMSDisabledError [KMSDisabledException]")?;
-        if let Some(inner_19) = &self.message {
-            write!(f, ": {}", inner_19)?;
+        if let Some(inner_20) = &self.message {
+            write!(f, ": {}", inner_20)?;
         }
         Ok(())
     }
@@ -4080,8 +4680,8 @@ impl KMSAccessDeniedError {
 impl std::fmt::Display for KMSAccessDeniedError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "KMSAccessDeniedError [KMSAccessDeniedException]")?;
-        if let Some(inner_20) = &self.message {
-            write!(f, ": {}", inner_20)?;
+        if let Some(inner_21) = &self.message {
+            write!(f, ": {}", inner_21)?;
         }
         Ok(())
     }
@@ -4145,8 +4745,8 @@ impl std::fmt::Display for InvalidParameterValueError {
             f,
             "InvalidParameterValueError [InvalidParameterValueException]"
         )?;
-        if let Some(inner_21) = &self.message {
-            write!(f, ": {}", inner_21)?;
+        if let Some(inner_22) = &self.message {
+            write!(f, ": {}", inner_22)?;
         }
         Ok(())
     }
@@ -4207,8 +4807,8 @@ impl EndpointDisabledError {
 impl std::fmt::Display for EndpointDisabledError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "EndpointDisabledError [EndpointDisabledException]")?;
-        if let Some(inner_22) = &self.message {
-            write!(f, ": {}", inner_22)?;
+        if let Some(inner_23) = &self.message {
+            write!(f, ": {}", inner_23)?;
         }
         Ok(())
     }
@@ -4247,6 +4847,127 @@ impl EndpointDisabledError {
     }
 }
 
+/// <p>Indicates that a parameter in the request is invalid.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ValidationError {
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for ValidationError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ValidationError");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl ValidationError {
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for ValidationError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "ValidationError [ValidationException]")?;
+        if let Some(inner_24) = &self.message {
+            write!(f, ": {}", inner_24)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for ValidationError {}
+/// See [`ValidationError`](crate::error::ValidationError)
+pub mod validation_error {
+    /// A builder for [`ValidationError`](crate::error::ValidationError)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.message = Some(inp.into());
+            self
+        }
+        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
+            self.message = inp;
+            self
+        }
+        /// Consumes the builder and constructs a [`ValidationError`](crate::error::ValidationError)
+        pub fn build(self) -> crate::error::ValidationError {
+            crate::error::ValidationError {
+                message: self.message,
+            }
+        }
+    }
+}
+impl ValidationError {
+    /// Creates a new builder-style object to manufacture [`ValidationError`](crate::error::ValidationError)
+    pub fn builder() -> crate::error::validation_error::Builder {
+        crate::error::validation_error::Builder::default()
+    }
+}
+
+/// <p>Indicates that a request parameter does not comply with the associated
+/// constraints.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UserErrorError {
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for UserErrorError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UserErrorError");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl UserErrorError {
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for UserErrorError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "UserErrorError [UserErrorException]")?;
+        if let Some(inner_25) = &self.message {
+            write!(f, ": {}", inner_25)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for UserErrorError {}
+/// See [`UserErrorError`](crate::error::UserErrorError)
+pub mod user_error_error {
+    /// A builder for [`UserErrorError`](crate::error::UserErrorError)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.message = Some(inp.into());
+            self
+        }
+        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
+            self.message = inp;
+            self
+        }
+        /// Consumes the builder and constructs a [`UserErrorError`](crate::error::UserErrorError)
+        pub fn build(self) -> crate::error::UserErrorError {
+            crate::error::UserErrorError {
+                message: self.message,
+            }
+        }
+    }
+}
+impl UserErrorError {
+    /// Creates a new builder-style object to manufacture [`UserErrorError`](crate::error::UserErrorError)
+    pub fn builder() -> crate::error::user_error_error::Builder {
+        crate::error::user_error_error::Builder::default()
+    }
+}
+
 /// <p>Indicates that the customer already owns the maximum allowed number of topics.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -4268,8 +4989,8 @@ impl TopicLimitExceededError {
 impl std::fmt::Display for TopicLimitExceededError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TopicLimitExceededError [TopicLimitExceededException]")?;
-        if let Some(inner_23) = &self.message {
-            write!(f, ": {}", inner_23)?;
+        if let Some(inner_26) = &self.message {
+            write!(f, ": {}", inner_26)?;
         }
         Ok(())
     }
@@ -4304,5 +5025,66 @@ impl TopicLimitExceededError {
     /// Creates a new builder-style object to manufacture [`TopicLimitExceededError`](crate::error::TopicLimitExceededError)
     pub fn builder() -> crate::error::topic_limit_exceeded_error::Builder {
         crate::error::topic_limit_exceeded_error::Builder::default()
+    }
+}
+
+/// <p>Indicates that the specified phone number opted out of receiving SMS messages from
+/// your AWS account. You can't send SMS messages to phone numbers that opt out.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct OptedOutError {
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for OptedOutError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("OptedOutError");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl OptedOutError {
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for OptedOutError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "OptedOutError [OptedOutException]")?;
+        if let Some(inner_27) = &self.message {
+            write!(f, ": {}", inner_27)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for OptedOutError {}
+/// See [`OptedOutError`](crate::error::OptedOutError)
+pub mod opted_out_error {
+    /// A builder for [`OptedOutError`](crate::error::OptedOutError)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.message = Some(inp.into());
+            self
+        }
+        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
+            self.message = inp;
+            self
+        }
+        /// Consumes the builder and constructs a [`OptedOutError`](crate::error::OptedOutError)
+        pub fn build(self) -> crate::error::OptedOutError {
+            crate::error::OptedOutError {
+                message: self.message,
+            }
+        }
+    }
+}
+impl OptedOutError {
+    /// Creates a new builder-style object to manufacture [`OptedOutError`](crate::error::OptedOutError)
+    pub fn builder() -> crate::error::opted_out_error::Builder {
+        crate::error::opted_out_error::Builder::default()
     }
 }

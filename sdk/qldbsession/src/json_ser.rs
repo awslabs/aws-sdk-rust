@@ -76,7 +76,7 @@ pub fn serialize_structure_commit_transaction_request(
     if let Some(var_18) = &input.commit_digest {
         object
             .key("CommitDigest")
-            .string_unchecked(&smithy_http::base64::encode(var_18));
+            .string_unchecked(&smithy_types::base64::encode(var_18));
     }
 }
 
@@ -129,7 +129,7 @@ pub fn serialize_structure_value_holder(
     if let Some(var_27) = &input.ion_binary {
         object
             .key("IonBinary")
-            .string_unchecked(&smithy_http::base64::encode(var_27));
+            .string_unchecked(&smithy_types::base64::encode(var_27));
     }
     if let Some(var_28) = &input.ion_text {
         object.key("IonText").string(var_28);

@@ -1,0 +1,13 @@
+[package]
+name = "sagemaker-list-training-jobs"
+version = "0.1.0"
+authors = ["Alistair McLean <mclean@amazon.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+env_logger = "0.8.2"
+sagemaker = {package = "aws-sdk-sagemaker", path = "../../sagemaker"}
+tokio = { version = "1", features = ["full"] }
+chrono = "0.4.19"

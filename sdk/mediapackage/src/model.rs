@@ -12,6 +12,7 @@
 pub enum Origination {
     Allow,
     Deny,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for Origination {
@@ -255,6 +256,7 @@ pub enum StreamOrder {
     Original,
     VideoBitrateAscending,
     VideoBitrateDescending,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for StreamOrder {
@@ -602,6 +604,7 @@ impl EncryptionContractConfiguration {
 )]
 pub enum PresetSpeke20Video {
     PresetVideo1,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for PresetSpeke20Video {
@@ -654,6 +657,7 @@ impl<'de> serde::Deserialize<'de> for PresetSpeke20Video {
 )]
 pub enum PresetSpeke20Audio {
     PresetAudio1,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for PresetSpeke20Audio {
@@ -1002,6 +1006,7 @@ pub enum PlaylistType {
     Event,
     None,
     Vod,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for PlaylistType {
@@ -1194,6 +1199,7 @@ impl HlsEncryption {
 pub enum EncryptionMethod {
     Aes128,
     SampleAes,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for EncryptionMethod {
@@ -1259,6 +1265,7 @@ pub enum AdsOnDeliveryRestrictions {
     None,
     Restricted,
     Unrestricted,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for AdsOnDeliveryRestrictions {
@@ -1324,6 +1331,7 @@ pub enum AdTriggersElement {
     ProviderOverlayPlacementOpportunity,
     ProviderPlacementOpportunity,
     SpliceInsert,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for AdTriggersElement {
@@ -1405,6 +1413,7 @@ pub enum AdMarkers {
     None,
     Passthrough,
     Scte35Enhanced,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for AdMarkers {
@@ -1799,6 +1808,7 @@ pub enum UtcTiming {
     HttpHead,
     HttpIso,
     None,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for UtcTiming {
@@ -1857,6 +1867,7 @@ pub enum SegmentTemplateFormat {
     NumberWithDuration,
     NumberWithTimeline,
     TimeWithTimeline,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for SegmentTemplateFormat {
@@ -1914,6 +1925,7 @@ impl<'de> serde::Deserialize<'de> for SegmentTemplateFormat {
 pub enum Profile {
     Hbbtv15,
     None,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for Profile {
@@ -1968,6 +1980,7 @@ impl<'de> serde::Deserialize<'de> for Profile {
 )]
 pub enum PeriodTriggersElement {
     Ads,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for PeriodTriggersElement {
@@ -2021,6 +2034,7 @@ impl<'de> serde::Deserialize<'de> for PeriodTriggersElement {
 pub enum ManifestLayout {
     Compact,
     Full,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for ManifestLayout {
@@ -3810,6 +3824,7 @@ pub enum Status {
     Failed,
     InProgress,
     Succeeded,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for Status {

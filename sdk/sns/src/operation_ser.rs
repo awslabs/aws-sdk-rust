@@ -155,6 +155,27 @@ pub fn serialize_operation_create_platform_endpoint(
     Ok(smithy_http::body::SdkBody::from(out))
 }
 
+pub fn serialize_operation_create_sms_sandbox_phone_number(
+    input: &crate::input::CreateSMSSandboxPhoneNumberInput,
+) -> Result<smithy_http::body::SdkBody, serde_json::error::Error> {
+    let mut out = String::new();
+    #[allow(unused_mut)]
+    let mut writer =
+        smithy_query::QueryWriter::new(&mut out, "CreateSMSSandboxPhoneNumber", "2010-03-31");
+    #[allow(unused_mut)]
+    let mut scope_45 = writer.prefix("PhoneNumber");
+    if let Some(var_46) = &input.phone_number {
+        scope_45.string(var_46);
+    }
+    #[allow(unused_mut)]
+    let mut scope_47 = writer.prefix("LanguageCode");
+    if let Some(var_48) = &input.language_code {
+        scope_47.string(var_48.as_str());
+    }
+    writer.finish();
+    Ok(smithy_http::body::SdkBody::from(out))
+}
+
 pub fn serialize_operation_create_topic(
     input: &crate::input::CreateTopicInput,
 ) -> Result<smithy_http::body::SdkBody, serde_json::error::Error> {
@@ -162,33 +183,33 @@ pub fn serialize_operation_create_topic(
     #[allow(unused_mut)]
     let mut writer = smithy_query::QueryWriter::new(&mut out, "CreateTopic", "2010-03-31");
     #[allow(unused_mut)]
-    let mut scope_45 = writer.prefix("Name");
-    if let Some(var_46) = &input.name {
-        scope_45.string(var_46);
+    let mut scope_49 = writer.prefix("Name");
+    if let Some(var_50) = &input.name {
+        scope_49.string(var_50);
     }
     #[allow(unused_mut)]
-    let mut scope_47 = writer.prefix("Attributes");
-    if let Some(var_48) = &input.attributes {
-        let mut map_49 = scope_47.start_map(false, "key", "value");
-        for (key_50, value_51) in var_48 {
+    let mut scope_51 = writer.prefix("Attributes");
+    if let Some(var_52) = &input.attributes {
+        let mut map_53 = scope_51.start_map(false, "key", "value");
+        for (key_54, value_55) in var_52 {
             #[allow(unused_mut)]
-            let mut entry_52 = map_49.entry(key_50);
+            let mut entry_56 = map_53.entry(key_54);
             {
-                entry_52.string(value_51);
+                entry_56.string(value_55);
             }
         }
-        map_49.finish();
+        map_53.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_53 = writer.prefix("Tags");
-    if let Some(var_54) = &input.tags {
-        let mut list_56 = scope_53.start_list(false, None);
-        for item_55 in var_54 {
+    let mut scope_57 = writer.prefix("Tags");
+    if let Some(var_58) = &input.tags {
+        let mut list_60 = scope_57.start_list(false, None);
+        for item_59 in var_58 {
             #[allow(unused_mut)]
-            let mut entry_57 = list_56.entry();
-            crate::query_ser::serialize_structure_tag(entry_57, item_55);
+            let mut entry_61 = list_60.entry();
+            crate::query_ser::serialize_structure_tag(entry_61, item_59);
         }
-        list_56.finish();
+        list_60.finish();
     }
     writer.finish();
     Ok(smithy_http::body::SdkBody::from(out))
@@ -201,9 +222,9 @@ pub fn serialize_operation_delete_endpoint(
     #[allow(unused_mut)]
     let mut writer = smithy_query::QueryWriter::new(&mut out, "DeleteEndpoint", "2010-03-31");
     #[allow(unused_mut)]
-    let mut scope_58 = writer.prefix("EndpointArn");
-    if let Some(var_59) = &input.endpoint_arn {
-        scope_58.string(var_59);
+    let mut scope_62 = writer.prefix("EndpointArn");
+    if let Some(var_63) = &input.endpoint_arn {
+        scope_62.string(var_63);
     }
     writer.finish();
     Ok(smithy_http::body::SdkBody::from(out))
@@ -217,9 +238,25 @@ pub fn serialize_operation_delete_platform_application(
     let mut writer =
         smithy_query::QueryWriter::new(&mut out, "DeletePlatformApplication", "2010-03-31");
     #[allow(unused_mut)]
-    let mut scope_60 = writer.prefix("PlatformApplicationArn");
-    if let Some(var_61) = &input.platform_application_arn {
-        scope_60.string(var_61);
+    let mut scope_64 = writer.prefix("PlatformApplicationArn");
+    if let Some(var_65) = &input.platform_application_arn {
+        scope_64.string(var_65);
+    }
+    writer.finish();
+    Ok(smithy_http::body::SdkBody::from(out))
+}
+
+pub fn serialize_operation_delete_sms_sandbox_phone_number(
+    input: &crate::input::DeleteSMSSandboxPhoneNumberInput,
+) -> Result<smithy_http::body::SdkBody, serde_json::error::Error> {
+    let mut out = String::new();
+    #[allow(unused_mut)]
+    let mut writer =
+        smithy_query::QueryWriter::new(&mut out, "DeleteSMSSandboxPhoneNumber", "2010-03-31");
+    #[allow(unused_mut)]
+    let mut scope_66 = writer.prefix("PhoneNumber");
+    if let Some(var_67) = &input.phone_number {
+        scope_66.string(var_67);
     }
     writer.finish();
     Ok(smithy_http::body::SdkBody::from(out))
@@ -232,9 +269,9 @@ pub fn serialize_operation_delete_topic(
     #[allow(unused_mut)]
     let mut writer = smithy_query::QueryWriter::new(&mut out, "DeleteTopic", "2010-03-31");
     #[allow(unused_mut)]
-    let mut scope_62 = writer.prefix("TopicArn");
-    if let Some(var_63) = &input.topic_arn {
-        scope_62.string(var_63);
+    let mut scope_68 = writer.prefix("TopicArn");
+    if let Some(var_69) = &input.topic_arn {
+        scope_68.string(var_69);
     }
     writer.finish();
     Ok(smithy_http::body::SdkBody::from(out))
@@ -248,9 +285,9 @@ pub fn serialize_operation_get_endpoint_attributes(
     let mut writer =
         smithy_query::QueryWriter::new(&mut out, "GetEndpointAttributes", "2010-03-31");
     #[allow(unused_mut)]
-    let mut scope_64 = writer.prefix("EndpointArn");
-    if let Some(var_65) = &input.endpoint_arn {
-        scope_64.string(var_65);
+    let mut scope_70 = writer.prefix("EndpointArn");
+    if let Some(var_71) = &input.endpoint_arn {
+        scope_70.string(var_71);
     }
     writer.finish();
     Ok(smithy_http::body::SdkBody::from(out))
@@ -264,9 +301,9 @@ pub fn serialize_operation_get_platform_application_attributes(
     let mut writer =
         smithy_query::QueryWriter::new(&mut out, "GetPlatformApplicationAttributes", "2010-03-31");
     #[allow(unused_mut)]
-    let mut scope_66 = writer.prefix("PlatformApplicationArn");
-    if let Some(var_67) = &input.platform_application_arn {
-        scope_66.string(var_67);
+    let mut scope_72 = writer.prefix("PlatformApplicationArn");
+    if let Some(var_73) = &input.platform_application_arn {
+        scope_72.string(var_73);
     }
     writer.finish();
     Ok(smithy_http::body::SdkBody::from(out))
@@ -279,16 +316,28 @@ pub fn serialize_operation_get_sms_attributes(
     #[allow(unused_mut)]
     let mut writer = smithy_query::QueryWriter::new(&mut out, "GetSMSAttributes", "2010-03-31");
     #[allow(unused_mut)]
-    let mut scope_68 = writer.prefix("attributes");
-    if let Some(var_69) = &input.attributes {
-        let mut list_71 = scope_68.start_list(false, None);
-        for item_70 in var_69 {
+    let mut scope_74 = writer.prefix("attributes");
+    if let Some(var_75) = &input.attributes {
+        let mut list_77 = scope_74.start_list(false, None);
+        for item_76 in var_75 {
             #[allow(unused_mut)]
-            let mut entry_72 = list_71.entry();
-            entry_72.string(item_70);
+            let mut entry_78 = list_77.entry();
+            entry_78.string(item_76);
         }
-        list_71.finish();
+        list_77.finish();
     }
+    writer.finish();
+    Ok(smithy_http::body::SdkBody::from(out))
+}
+
+pub fn serialize_operation_get_sms_sandbox_account_status(
+    input: &crate::input::GetSMSSandboxAccountStatusInput,
+) -> Result<smithy_http::body::SdkBody, serde_json::error::Error> {
+    let _ = input;
+    let mut out = String::new();
+    #[allow(unused_mut)]
+    let mut writer =
+        smithy_query::QueryWriter::new(&mut out, "GetSMSSandboxAccountStatus", "2010-03-31");
     writer.finish();
     Ok(smithy_http::body::SdkBody::from(out))
 }
@@ -301,9 +350,9 @@ pub fn serialize_operation_get_subscription_attributes(
     let mut writer =
         smithy_query::QueryWriter::new(&mut out, "GetSubscriptionAttributes", "2010-03-31");
     #[allow(unused_mut)]
-    let mut scope_73 = writer.prefix("SubscriptionArn");
-    if let Some(var_74) = &input.subscription_arn {
-        scope_73.string(var_74);
+    let mut scope_79 = writer.prefix("SubscriptionArn");
+    if let Some(var_80) = &input.subscription_arn {
+        scope_79.string(var_80);
     }
     writer.finish();
     Ok(smithy_http::body::SdkBody::from(out))
@@ -316,9 +365,9 @@ pub fn serialize_operation_get_topic_attributes(
     #[allow(unused_mut)]
     let mut writer = smithy_query::QueryWriter::new(&mut out, "GetTopicAttributes", "2010-03-31");
     #[allow(unused_mut)]
-    let mut scope_75 = writer.prefix("TopicArn");
-    if let Some(var_76) = &input.topic_arn {
-        scope_75.string(var_76);
+    let mut scope_81 = writer.prefix("TopicArn");
+    if let Some(var_82) = &input.topic_arn {
+        scope_81.string(var_82);
     }
     writer.finish();
     Ok(smithy_http::body::SdkBody::from(out))
@@ -335,14 +384,38 @@ pub fn serialize_operation_list_endpoints_by_platform_application(
         "2010-03-31",
     );
     #[allow(unused_mut)]
-    let mut scope_77 = writer.prefix("PlatformApplicationArn");
-    if let Some(var_78) = &input.platform_application_arn {
-        scope_77.string(var_78);
+    let mut scope_83 = writer.prefix("PlatformApplicationArn");
+    if let Some(var_84) = &input.platform_application_arn {
+        scope_83.string(var_84);
     }
     #[allow(unused_mut)]
-    let mut scope_79 = writer.prefix("NextToken");
-    if let Some(var_80) = &input.next_token {
-        scope_79.string(var_80);
+    let mut scope_85 = writer.prefix("NextToken");
+    if let Some(var_86) = &input.next_token {
+        scope_85.string(var_86);
+    }
+    writer.finish();
+    Ok(smithy_http::body::SdkBody::from(out))
+}
+
+pub fn serialize_operation_list_origination_numbers(
+    input: &crate::input::ListOriginationNumbersInput,
+) -> Result<smithy_http::body::SdkBody, serde_json::error::Error> {
+    let mut out = String::new();
+    #[allow(unused_mut)]
+    let mut writer =
+        smithy_query::QueryWriter::new(&mut out, "ListOriginationNumbers", "2010-03-31");
+    #[allow(unused_mut)]
+    let mut scope_87 = writer.prefix("NextToken");
+    if let Some(var_88) = &input.next_token {
+        scope_87.string(var_88);
+    }
+    #[allow(unused_mut)]
+    let mut scope_89 = writer.prefix("MaxResults");
+    if let Some(var_90) = &input.max_results {
+        scope_89.number(
+            #[allow(clippy::useless_conversion)]
+            smithy_types::Number::NegInt((*var_90).into()),
+        );
     }
     writer.finish();
     Ok(smithy_http::body::SdkBody::from(out))
@@ -356,9 +429,9 @@ pub fn serialize_operation_list_phone_numbers_opted_out(
     let mut writer =
         smithy_query::QueryWriter::new(&mut out, "ListPhoneNumbersOptedOut", "2010-03-31");
     #[allow(unused_mut)]
-    let mut scope_81 = writer.prefix("nextToken");
-    if let Some(var_82) = &input.next_token {
-        scope_81.string(var_82);
+    let mut scope_91 = writer.prefix("nextToken");
+    if let Some(var_92) = &input.next_token {
+        scope_91.string(var_92);
     }
     writer.finish();
     Ok(smithy_http::body::SdkBody::from(out))
@@ -372,9 +445,33 @@ pub fn serialize_operation_list_platform_applications(
     let mut writer =
         smithy_query::QueryWriter::new(&mut out, "ListPlatformApplications", "2010-03-31");
     #[allow(unused_mut)]
-    let mut scope_83 = writer.prefix("NextToken");
-    if let Some(var_84) = &input.next_token {
-        scope_83.string(var_84);
+    let mut scope_93 = writer.prefix("NextToken");
+    if let Some(var_94) = &input.next_token {
+        scope_93.string(var_94);
+    }
+    writer.finish();
+    Ok(smithy_http::body::SdkBody::from(out))
+}
+
+pub fn serialize_operation_list_sms_sandbox_phone_numbers(
+    input: &crate::input::ListSMSSandboxPhoneNumbersInput,
+) -> Result<smithy_http::body::SdkBody, serde_json::error::Error> {
+    let mut out = String::new();
+    #[allow(unused_mut)]
+    let mut writer =
+        smithy_query::QueryWriter::new(&mut out, "ListSMSSandboxPhoneNumbers", "2010-03-31");
+    #[allow(unused_mut)]
+    let mut scope_95 = writer.prefix("NextToken");
+    if let Some(var_96) = &input.next_token {
+        scope_95.string(var_96);
+    }
+    #[allow(unused_mut)]
+    let mut scope_97 = writer.prefix("MaxResults");
+    if let Some(var_98) = &input.max_results {
+        scope_97.number(
+            #[allow(clippy::useless_conversion)]
+            smithy_types::Number::NegInt((*var_98).into()),
+        );
     }
     writer.finish();
     Ok(smithy_http::body::SdkBody::from(out))
@@ -387,9 +484,9 @@ pub fn serialize_operation_list_subscriptions(
     #[allow(unused_mut)]
     let mut writer = smithy_query::QueryWriter::new(&mut out, "ListSubscriptions", "2010-03-31");
     #[allow(unused_mut)]
-    let mut scope_85 = writer.prefix("NextToken");
-    if let Some(var_86) = &input.next_token {
-        scope_85.string(var_86);
+    let mut scope_99 = writer.prefix("NextToken");
+    if let Some(var_100) = &input.next_token {
+        scope_99.string(var_100);
     }
     writer.finish();
     Ok(smithy_http::body::SdkBody::from(out))
@@ -403,14 +500,14 @@ pub fn serialize_operation_list_subscriptions_by_topic(
     let mut writer =
         smithy_query::QueryWriter::new(&mut out, "ListSubscriptionsByTopic", "2010-03-31");
     #[allow(unused_mut)]
-    let mut scope_87 = writer.prefix("TopicArn");
-    if let Some(var_88) = &input.topic_arn {
-        scope_87.string(var_88);
+    let mut scope_101 = writer.prefix("TopicArn");
+    if let Some(var_102) = &input.topic_arn {
+        scope_101.string(var_102);
     }
     #[allow(unused_mut)]
-    let mut scope_89 = writer.prefix("NextToken");
-    if let Some(var_90) = &input.next_token {
-        scope_89.string(var_90);
+    let mut scope_103 = writer.prefix("NextToken");
+    if let Some(var_104) = &input.next_token {
+        scope_103.string(var_104);
     }
     writer.finish();
     Ok(smithy_http::body::SdkBody::from(out))
@@ -423,9 +520,9 @@ pub fn serialize_operation_list_tags_for_resource(
     #[allow(unused_mut)]
     let mut writer = smithy_query::QueryWriter::new(&mut out, "ListTagsForResource", "2010-03-31");
     #[allow(unused_mut)]
-    let mut scope_91 = writer.prefix("ResourceArn");
-    if let Some(var_92) = &input.resource_arn {
-        scope_91.string(var_92);
+    let mut scope_105 = writer.prefix("ResourceArn");
+    if let Some(var_106) = &input.resource_arn {
+        scope_105.string(var_106);
     }
     writer.finish();
     Ok(smithy_http::body::SdkBody::from(out))
@@ -438,9 +535,9 @@ pub fn serialize_operation_list_topics(
     #[allow(unused_mut)]
     let mut writer = smithy_query::QueryWriter::new(&mut out, "ListTopics", "2010-03-31");
     #[allow(unused_mut)]
-    let mut scope_93 = writer.prefix("NextToken");
-    if let Some(var_94) = &input.next_token {
-        scope_93.string(var_94);
+    let mut scope_107 = writer.prefix("NextToken");
+    if let Some(var_108) = &input.next_token {
+        scope_107.string(var_108);
     }
     writer.finish();
     Ok(smithy_http::body::SdkBody::from(out))
@@ -453,9 +550,9 @@ pub fn serialize_operation_opt_in_phone_number(
     #[allow(unused_mut)]
     let mut writer = smithy_query::QueryWriter::new(&mut out, "OptInPhoneNumber", "2010-03-31");
     #[allow(unused_mut)]
-    let mut scope_95 = writer.prefix("phoneNumber");
-    if let Some(var_96) = &input.phone_number {
-        scope_95.string(var_96);
+    let mut scope_109 = writer.prefix("phoneNumber");
+    if let Some(var_110) = &input.phone_number {
+        scope_109.string(var_110);
     }
     writer.finish();
     Ok(smithy_http::body::SdkBody::from(out))
@@ -468,57 +565,57 @@ pub fn serialize_operation_publish(
     #[allow(unused_mut)]
     let mut writer = smithy_query::QueryWriter::new(&mut out, "Publish", "2010-03-31");
     #[allow(unused_mut)]
-    let mut scope_97 = writer.prefix("TopicArn");
-    if let Some(var_98) = &input.topic_arn {
-        scope_97.string(var_98);
+    let mut scope_111 = writer.prefix("TopicArn");
+    if let Some(var_112) = &input.topic_arn {
+        scope_111.string(var_112);
     }
     #[allow(unused_mut)]
-    let mut scope_99 = writer.prefix("TargetArn");
-    if let Some(var_100) = &input.target_arn {
-        scope_99.string(var_100);
+    let mut scope_113 = writer.prefix("TargetArn");
+    if let Some(var_114) = &input.target_arn {
+        scope_113.string(var_114);
     }
     #[allow(unused_mut)]
-    let mut scope_101 = writer.prefix("PhoneNumber");
-    if let Some(var_102) = &input.phone_number {
-        scope_101.string(var_102);
-    }
-    #[allow(unused_mut)]
-    let mut scope_103 = writer.prefix("Message");
-    if let Some(var_104) = &input.message {
-        scope_103.string(var_104);
-    }
-    #[allow(unused_mut)]
-    let mut scope_105 = writer.prefix("Subject");
-    if let Some(var_106) = &input.subject {
-        scope_105.string(var_106);
-    }
-    #[allow(unused_mut)]
-    let mut scope_107 = writer.prefix("MessageStructure");
-    if let Some(var_108) = &input.message_structure {
-        scope_107.string(var_108);
-    }
-    #[allow(unused_mut)]
-    let mut scope_109 = writer.prefix("MessageAttributes");
-    if let Some(var_110) = &input.message_attributes {
-        let mut map_111 = scope_109.start_map(false, "Name", "Value");
-        for (key_112, value_113) in var_110 {
-            #[allow(unused_mut)]
-            let mut entry_114 = map_111.entry(key_112);
-            {
-                crate::query_ser::serialize_structure_message_attribute_value(entry_114, value_113);
-            }
-        }
-        map_111.finish();
-    }
-    #[allow(unused_mut)]
-    let mut scope_115 = writer.prefix("MessageDeduplicationId");
-    if let Some(var_116) = &input.message_deduplication_id {
+    let mut scope_115 = writer.prefix("PhoneNumber");
+    if let Some(var_116) = &input.phone_number {
         scope_115.string(var_116);
     }
     #[allow(unused_mut)]
-    let mut scope_117 = writer.prefix("MessageGroupId");
-    if let Some(var_118) = &input.message_group_id {
+    let mut scope_117 = writer.prefix("Message");
+    if let Some(var_118) = &input.message {
         scope_117.string(var_118);
+    }
+    #[allow(unused_mut)]
+    let mut scope_119 = writer.prefix("Subject");
+    if let Some(var_120) = &input.subject {
+        scope_119.string(var_120);
+    }
+    #[allow(unused_mut)]
+    let mut scope_121 = writer.prefix("MessageStructure");
+    if let Some(var_122) = &input.message_structure {
+        scope_121.string(var_122);
+    }
+    #[allow(unused_mut)]
+    let mut scope_123 = writer.prefix("MessageAttributes");
+    if let Some(var_124) = &input.message_attributes {
+        let mut map_125 = scope_123.start_map(false, "Name", "Value");
+        for (key_126, value_127) in var_124 {
+            #[allow(unused_mut)]
+            let mut entry_128 = map_125.entry(key_126);
+            {
+                crate::query_ser::serialize_structure_message_attribute_value(entry_128, value_127);
+            }
+        }
+        map_125.finish();
+    }
+    #[allow(unused_mut)]
+    let mut scope_129 = writer.prefix("MessageDeduplicationId");
+    if let Some(var_130) = &input.message_deduplication_id {
+        scope_129.string(var_130);
+    }
+    #[allow(unused_mut)]
+    let mut scope_131 = writer.prefix("MessageGroupId");
+    if let Some(var_132) = &input.message_group_id {
+        scope_131.string(var_132);
     }
     writer.finish();
     Ok(smithy_http::body::SdkBody::from(out))
@@ -531,14 +628,14 @@ pub fn serialize_operation_remove_permission(
     #[allow(unused_mut)]
     let mut writer = smithy_query::QueryWriter::new(&mut out, "RemovePermission", "2010-03-31");
     #[allow(unused_mut)]
-    let mut scope_119 = writer.prefix("TopicArn");
-    if let Some(var_120) = &input.topic_arn {
-        scope_119.string(var_120);
+    let mut scope_133 = writer.prefix("TopicArn");
+    if let Some(var_134) = &input.topic_arn {
+        scope_133.string(var_134);
     }
     #[allow(unused_mut)]
-    let mut scope_121 = writer.prefix("Label");
-    if let Some(var_122) = &input.label {
-        scope_121.string(var_122);
+    let mut scope_135 = writer.prefix("Label");
+    if let Some(var_136) = &input.label {
+        scope_135.string(var_136);
     }
     writer.finish();
     Ok(smithy_http::body::SdkBody::from(out))
@@ -552,64 +649,12 @@ pub fn serialize_operation_set_endpoint_attributes(
     let mut writer =
         smithy_query::QueryWriter::new(&mut out, "SetEndpointAttributes", "2010-03-31");
     #[allow(unused_mut)]
-    let mut scope_123 = writer.prefix("EndpointArn");
-    if let Some(var_124) = &input.endpoint_arn {
-        scope_123.string(var_124);
+    let mut scope_137 = writer.prefix("EndpointArn");
+    if let Some(var_138) = &input.endpoint_arn {
+        scope_137.string(var_138);
     }
     #[allow(unused_mut)]
-    let mut scope_125 = writer.prefix("Attributes");
-    if let Some(var_126) = &input.attributes {
-        let mut map_127 = scope_125.start_map(false, "key", "value");
-        for (key_128, value_129) in var_126 {
-            #[allow(unused_mut)]
-            let mut entry_130 = map_127.entry(key_128);
-            {
-                entry_130.string(value_129);
-            }
-        }
-        map_127.finish();
-    }
-    writer.finish();
-    Ok(smithy_http::body::SdkBody::from(out))
-}
-
-pub fn serialize_operation_set_platform_application_attributes(
-    input: &crate::input::SetPlatformApplicationAttributesInput,
-) -> Result<smithy_http::body::SdkBody, serde_json::error::Error> {
-    let mut out = String::new();
-    #[allow(unused_mut)]
-    let mut writer =
-        smithy_query::QueryWriter::new(&mut out, "SetPlatformApplicationAttributes", "2010-03-31");
-    #[allow(unused_mut)]
-    let mut scope_131 = writer.prefix("PlatformApplicationArn");
-    if let Some(var_132) = &input.platform_application_arn {
-        scope_131.string(var_132);
-    }
-    #[allow(unused_mut)]
-    let mut scope_133 = writer.prefix("Attributes");
-    if let Some(var_134) = &input.attributes {
-        let mut map_135 = scope_133.start_map(false, "key", "value");
-        for (key_136, value_137) in var_134 {
-            #[allow(unused_mut)]
-            let mut entry_138 = map_135.entry(key_136);
-            {
-                entry_138.string(value_137);
-            }
-        }
-        map_135.finish();
-    }
-    writer.finish();
-    Ok(smithy_http::body::SdkBody::from(out))
-}
-
-pub fn serialize_operation_set_sms_attributes(
-    input: &crate::input::SetSMSAttributesInput,
-) -> Result<smithy_http::body::SdkBody, serde_json::error::Error> {
-    let mut out = String::new();
-    #[allow(unused_mut)]
-    let mut writer = smithy_query::QueryWriter::new(&mut out, "SetSMSAttributes", "2010-03-31");
-    #[allow(unused_mut)]
-    let mut scope_139 = writer.prefix("attributes");
+    let mut scope_139 = writer.prefix("Attributes");
     if let Some(var_140) = &input.attributes {
         let mut map_141 = scope_139.start_map(false, "key", "value");
         for (key_142, value_143) in var_140 {
@@ -625,6 +670,58 @@ pub fn serialize_operation_set_sms_attributes(
     Ok(smithy_http::body::SdkBody::from(out))
 }
 
+pub fn serialize_operation_set_platform_application_attributes(
+    input: &crate::input::SetPlatformApplicationAttributesInput,
+) -> Result<smithy_http::body::SdkBody, serde_json::error::Error> {
+    let mut out = String::new();
+    #[allow(unused_mut)]
+    let mut writer =
+        smithy_query::QueryWriter::new(&mut out, "SetPlatformApplicationAttributes", "2010-03-31");
+    #[allow(unused_mut)]
+    let mut scope_145 = writer.prefix("PlatformApplicationArn");
+    if let Some(var_146) = &input.platform_application_arn {
+        scope_145.string(var_146);
+    }
+    #[allow(unused_mut)]
+    let mut scope_147 = writer.prefix("Attributes");
+    if let Some(var_148) = &input.attributes {
+        let mut map_149 = scope_147.start_map(false, "key", "value");
+        for (key_150, value_151) in var_148 {
+            #[allow(unused_mut)]
+            let mut entry_152 = map_149.entry(key_150);
+            {
+                entry_152.string(value_151);
+            }
+        }
+        map_149.finish();
+    }
+    writer.finish();
+    Ok(smithy_http::body::SdkBody::from(out))
+}
+
+pub fn serialize_operation_set_sms_attributes(
+    input: &crate::input::SetSMSAttributesInput,
+) -> Result<smithy_http::body::SdkBody, serde_json::error::Error> {
+    let mut out = String::new();
+    #[allow(unused_mut)]
+    let mut writer = smithy_query::QueryWriter::new(&mut out, "SetSMSAttributes", "2010-03-31");
+    #[allow(unused_mut)]
+    let mut scope_153 = writer.prefix("attributes");
+    if let Some(var_154) = &input.attributes {
+        let mut map_155 = scope_153.start_map(false, "key", "value");
+        for (key_156, value_157) in var_154 {
+            #[allow(unused_mut)]
+            let mut entry_158 = map_155.entry(key_156);
+            {
+                entry_158.string(value_157);
+            }
+        }
+        map_155.finish();
+    }
+    writer.finish();
+    Ok(smithy_http::body::SdkBody::from(out))
+}
+
 pub fn serialize_operation_set_subscription_attributes(
     input: &crate::input::SetSubscriptionAttributesInput,
 ) -> Result<smithy_http::body::SdkBody, serde_json::error::Error> {
@@ -633,19 +730,19 @@ pub fn serialize_operation_set_subscription_attributes(
     let mut writer =
         smithy_query::QueryWriter::new(&mut out, "SetSubscriptionAttributes", "2010-03-31");
     #[allow(unused_mut)]
-    let mut scope_145 = writer.prefix("SubscriptionArn");
-    if let Some(var_146) = &input.subscription_arn {
-        scope_145.string(var_146);
+    let mut scope_159 = writer.prefix("SubscriptionArn");
+    if let Some(var_160) = &input.subscription_arn {
+        scope_159.string(var_160);
     }
     #[allow(unused_mut)]
-    let mut scope_147 = writer.prefix("AttributeName");
-    if let Some(var_148) = &input.attribute_name {
-        scope_147.string(var_148);
+    let mut scope_161 = writer.prefix("AttributeName");
+    if let Some(var_162) = &input.attribute_name {
+        scope_161.string(var_162);
     }
     #[allow(unused_mut)]
-    let mut scope_149 = writer.prefix("AttributeValue");
-    if let Some(var_150) = &input.attribute_value {
-        scope_149.string(var_150);
+    let mut scope_163 = writer.prefix("AttributeValue");
+    if let Some(var_164) = &input.attribute_value {
+        scope_163.string(var_164);
     }
     writer.finish();
     Ok(smithy_http::body::SdkBody::from(out))
@@ -658,19 +755,19 @@ pub fn serialize_operation_set_topic_attributes(
     #[allow(unused_mut)]
     let mut writer = smithy_query::QueryWriter::new(&mut out, "SetTopicAttributes", "2010-03-31");
     #[allow(unused_mut)]
-    let mut scope_151 = writer.prefix("TopicArn");
-    if let Some(var_152) = &input.topic_arn {
-        scope_151.string(var_152);
+    let mut scope_165 = writer.prefix("TopicArn");
+    if let Some(var_166) = &input.topic_arn {
+        scope_165.string(var_166);
     }
     #[allow(unused_mut)]
-    let mut scope_153 = writer.prefix("AttributeName");
-    if let Some(var_154) = &input.attribute_name {
-        scope_153.string(var_154);
+    let mut scope_167 = writer.prefix("AttributeName");
+    if let Some(var_168) = &input.attribute_name {
+        scope_167.string(var_168);
     }
     #[allow(unused_mut)]
-    let mut scope_155 = writer.prefix("AttributeValue");
-    if let Some(var_156) = &input.attribute_value {
-        scope_155.string(var_156);
+    let mut scope_169 = writer.prefix("AttributeValue");
+    if let Some(var_170) = &input.attribute_value {
+        scope_169.string(var_170);
     }
     writer.finish();
     Ok(smithy_http::body::SdkBody::from(out))
@@ -683,37 +780,37 @@ pub fn serialize_operation_subscribe(
     #[allow(unused_mut)]
     let mut writer = smithy_query::QueryWriter::new(&mut out, "Subscribe", "2010-03-31");
     #[allow(unused_mut)]
-    let mut scope_157 = writer.prefix("TopicArn");
-    if let Some(var_158) = &input.topic_arn {
-        scope_157.string(var_158);
+    let mut scope_171 = writer.prefix("TopicArn");
+    if let Some(var_172) = &input.topic_arn {
+        scope_171.string(var_172);
     }
     #[allow(unused_mut)]
-    let mut scope_159 = writer.prefix("Protocol");
-    if let Some(var_160) = &input.protocol {
-        scope_159.string(var_160);
+    let mut scope_173 = writer.prefix("Protocol");
+    if let Some(var_174) = &input.protocol {
+        scope_173.string(var_174);
     }
     #[allow(unused_mut)]
-    let mut scope_161 = writer.prefix("Endpoint");
-    if let Some(var_162) = &input.endpoint {
-        scope_161.string(var_162);
+    let mut scope_175 = writer.prefix("Endpoint");
+    if let Some(var_176) = &input.endpoint {
+        scope_175.string(var_176);
     }
     #[allow(unused_mut)]
-    let mut scope_163 = writer.prefix("Attributes");
-    if let Some(var_164) = &input.attributes {
-        let mut map_165 = scope_163.start_map(false, "key", "value");
-        for (key_166, value_167) in var_164 {
+    let mut scope_177 = writer.prefix("Attributes");
+    if let Some(var_178) = &input.attributes {
+        let mut map_179 = scope_177.start_map(false, "key", "value");
+        for (key_180, value_181) in var_178 {
             #[allow(unused_mut)]
-            let mut entry_168 = map_165.entry(key_166);
+            let mut entry_182 = map_179.entry(key_180);
             {
-                entry_168.string(value_167);
+                entry_182.string(value_181);
             }
         }
-        map_165.finish();
+        map_179.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_169 = writer.prefix("ReturnSubscriptionArn");
+    let mut scope_183 = writer.prefix("ReturnSubscriptionArn");
     if input.return_subscription_arn {
-        scope_169.boolean(input.return_subscription_arn);
+        scope_183.boolean(input.return_subscription_arn);
     }
     writer.finish();
     Ok(smithy_http::body::SdkBody::from(out))
@@ -726,20 +823,20 @@ pub fn serialize_operation_tag_resource(
     #[allow(unused_mut)]
     let mut writer = smithy_query::QueryWriter::new(&mut out, "TagResource", "2010-03-31");
     #[allow(unused_mut)]
-    let mut scope_170 = writer.prefix("ResourceArn");
-    if let Some(var_171) = &input.resource_arn {
-        scope_170.string(var_171);
+    let mut scope_184 = writer.prefix("ResourceArn");
+    if let Some(var_185) = &input.resource_arn {
+        scope_184.string(var_185);
     }
     #[allow(unused_mut)]
-    let mut scope_172 = writer.prefix("Tags");
-    if let Some(var_173) = &input.tags {
-        let mut list_175 = scope_172.start_list(false, None);
-        for item_174 in var_173 {
+    let mut scope_186 = writer.prefix("Tags");
+    if let Some(var_187) = &input.tags {
+        let mut list_189 = scope_186.start_list(false, None);
+        for item_188 in var_187 {
             #[allow(unused_mut)]
-            let mut entry_176 = list_175.entry();
-            crate::query_ser::serialize_structure_tag(entry_176, item_174);
+            let mut entry_190 = list_189.entry();
+            crate::query_ser::serialize_structure_tag(entry_190, item_188);
         }
-        list_175.finish();
+        list_189.finish();
     }
     writer.finish();
     Ok(smithy_http::body::SdkBody::from(out))
@@ -752,9 +849,9 @@ pub fn serialize_operation_unsubscribe(
     #[allow(unused_mut)]
     let mut writer = smithy_query::QueryWriter::new(&mut out, "Unsubscribe", "2010-03-31");
     #[allow(unused_mut)]
-    let mut scope_177 = writer.prefix("SubscriptionArn");
-    if let Some(var_178) = &input.subscription_arn {
-        scope_177.string(var_178);
+    let mut scope_191 = writer.prefix("SubscriptionArn");
+    if let Some(var_192) = &input.subscription_arn {
+        scope_191.string(var_192);
     }
     writer.finish();
     Ok(smithy_http::body::SdkBody::from(out))
@@ -767,20 +864,41 @@ pub fn serialize_operation_untag_resource(
     #[allow(unused_mut)]
     let mut writer = smithy_query::QueryWriter::new(&mut out, "UntagResource", "2010-03-31");
     #[allow(unused_mut)]
-    let mut scope_179 = writer.prefix("ResourceArn");
-    if let Some(var_180) = &input.resource_arn {
-        scope_179.string(var_180);
+    let mut scope_193 = writer.prefix("ResourceArn");
+    if let Some(var_194) = &input.resource_arn {
+        scope_193.string(var_194);
     }
     #[allow(unused_mut)]
-    let mut scope_181 = writer.prefix("TagKeys");
-    if let Some(var_182) = &input.tag_keys {
-        let mut list_184 = scope_181.start_list(false, None);
-        for item_183 in var_182 {
+    let mut scope_195 = writer.prefix("TagKeys");
+    if let Some(var_196) = &input.tag_keys {
+        let mut list_198 = scope_195.start_list(false, None);
+        for item_197 in var_196 {
             #[allow(unused_mut)]
-            let mut entry_185 = list_184.entry();
-            entry_185.string(item_183);
+            let mut entry_199 = list_198.entry();
+            entry_199.string(item_197);
         }
-        list_184.finish();
+        list_198.finish();
+    }
+    writer.finish();
+    Ok(smithy_http::body::SdkBody::from(out))
+}
+
+pub fn serialize_operation_verify_sms_sandbox_phone_number(
+    input: &crate::input::VerifySMSSandboxPhoneNumberInput,
+) -> Result<smithy_http::body::SdkBody, serde_json::error::Error> {
+    let mut out = String::new();
+    #[allow(unused_mut)]
+    let mut writer =
+        smithy_query::QueryWriter::new(&mut out, "VerifySMSSandboxPhoneNumber", "2010-03-31");
+    #[allow(unused_mut)]
+    let mut scope_200 = writer.prefix("PhoneNumber");
+    if let Some(var_201) = &input.phone_number {
+        scope_200.string(var_201);
+    }
+    #[allow(unused_mut)]
+    let mut scope_202 = writer.prefix("OneTimePassword");
+    if let Some(var_203) = &input.one_time_password {
+        scope_202.string(var_203);
     }
     writer.finish();
     Ok(smithy_http::body::SdkBody::from(out))

@@ -1319,8 +1319,8 @@ impl smithy_http::response::ParseStrictResponse for DescribeClusters {
     }
 }
 
-/// <p>Describes Amazon Elastic Container Service container instances. Returns metadata about registered and
-/// remaining resources on each container instance requested.</p>
+/// <p>Describes one or more container instances. Returns metadata about each container
+/// instance requested.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeContainerInstances {
     _private: (),

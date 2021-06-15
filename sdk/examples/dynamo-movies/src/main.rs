@@ -35,8 +35,7 @@ async fn main() {
     let conf = dynamodb::Config::builder()
         .region(Region::new("us-east-1"))
         .build();
-    let conn = aws_hyper::conn::Standard::https();
-    let client = dynamodb::Client::from_conf_conn(conf, conn);
+    let client = dynamodb::Client::from_conf(conf);
     let raw_client = aws_hyper::Client::https();
 
     let table_exists = client

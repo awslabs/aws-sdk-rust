@@ -6,7 +6,7 @@ pub fn parse_generic_error(
 }
 
 #[allow(unused_mut)]
-pub fn authorization_error_exception(
+pub fn deser_structure_authorization_error_error_xml_err(
     inp: &[u8],
     mut builder: crate::error::authorization_error_error::Builder,
 ) -> Result<crate::error::authorization_error_error::Builder, smithy_xml::decode::XmlError> {
@@ -36,7 +36,7 @@ pub fn authorization_error_exception(
 }
 
 #[allow(unused_mut)]
-pub fn internal_error_exception(
+pub fn deser_structure_internal_error_error_xml_err(
     inp: &[u8],
     mut builder: crate::error::internal_error_error::Builder,
 ) -> Result<crate::error::internal_error_error::Builder, smithy_xml::decode::XmlError> {
@@ -66,7 +66,7 @@ pub fn internal_error_exception(
 }
 
 #[allow(unused_mut)]
-pub fn invalid_parameter_exception(
+pub fn deser_structure_invalid_parameter_error_xml_err(
     inp: &[u8],
     mut builder: crate::error::invalid_parameter_error::Builder,
 ) -> Result<crate::error::invalid_parameter_error::Builder, smithy_xml::decode::XmlError> {
@@ -96,7 +96,7 @@ pub fn invalid_parameter_exception(
 }
 
 #[allow(unused_mut)]
-pub fn not_found_exception(
+pub fn deser_structure_not_found_error_xml_err(
     inp: &[u8],
     mut builder: crate::error::not_found_error::Builder,
 ) -> Result<crate::error::not_found_error::Builder, smithy_xml::decode::XmlError> {
@@ -126,7 +126,7 @@ pub fn not_found_exception(
 }
 
 #[allow(unused_mut)]
-pub fn throttled_exception(
+pub fn deser_structure_throttled_error_xml_err(
     inp: &[u8],
     mut builder: crate::error::throttled_error::Builder,
 ) -> Result<crate::error::throttled_error::Builder, smithy_xml::decode::XmlError> {
@@ -211,7 +211,7 @@ pub fn deser_operation_check_if_phone_number_is_opted_out(
 }
 
 #[allow(unused_mut)]
-pub fn filter_policy_limit_exceeded_exception(
+pub fn deser_structure_filter_policy_limit_exceeded_error_xml_err(
     inp: &[u8],
     mut builder: crate::error::filter_policy_limit_exceeded_error::Builder,
 ) -> Result<crate::error::filter_policy_limit_exceeded_error::Builder, smithy_xml::decode::XmlError>
@@ -242,7 +242,7 @@ pub fn filter_policy_limit_exceeded_exception(
 }
 
 #[allow(unused_mut)]
-pub fn subscription_limit_exceeded_exception(
+pub fn deser_structure_subscription_limit_exceeded_error_xml_err(
     inp: &[u8],
     mut builder: crate::error::subscription_limit_exceeded_error::Builder,
 ) -> Result<crate::error::subscription_limit_exceeded_error::Builder, smithy_xml::decode::XmlError>
@@ -427,17 +427,17 @@ pub fn deser_operation_create_platform_endpoint(
 }
 
 #[allow(unused_mut)]
-pub fn concurrent_access_exception(
+pub fn deser_structure_opted_out_error_xml_err(
     inp: &[u8],
-    mut builder: crate::error::concurrent_access_error::Builder,
-) -> Result<crate::error::concurrent_access_error::Builder, smithy_xml::decode::XmlError> {
+    mut builder: crate::error::opted_out_error::Builder,
+) -> Result<crate::error::opted_out_error::Builder, smithy_xml::decode::XmlError> {
     use std::convert::TryFrom;
     let mut document = smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
     let mut error_decoder = crate::rest_xml_wrapped_errors::error_scope(&mut document)?;
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
-            s if s.matches("message") /* message com.amazonaws.sns#ConcurrentAccessException$message */ =>  {
+            s if s.matches("message") /* message com.amazonaws.sns#OptedOutException$message */ =>  {
                 let var_12 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -457,17 +457,17 @@ pub fn concurrent_access_exception(
 }
 
 #[allow(unused_mut)]
-pub fn invalid_security_exception(
+pub fn deser_structure_user_error_error_xml_err(
     inp: &[u8],
-    mut builder: crate::error::invalid_security_error::Builder,
-) -> Result<crate::error::invalid_security_error::Builder, smithy_xml::decode::XmlError> {
+    mut builder: crate::error::user_error_error::Builder,
+) -> Result<crate::error::user_error_error::Builder, smithy_xml::decode::XmlError> {
     use std::convert::TryFrom;
     let mut document = smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
     let mut error_decoder = crate::rest_xml_wrapped_errors::error_scope(&mut document)?;
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
-            s if s.matches("message") /* message com.amazonaws.sns#InvalidSecurityException$message */ =>  {
+            s if s.matches("message") /* message com.amazonaws.sns#UserErrorException$message */ =>  {
                 let var_13 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -487,17 +487,17 @@ pub fn invalid_security_exception(
 }
 
 #[allow(unused_mut)]
-pub fn stale_tag_exception(
+pub fn deser_structure_concurrent_access_error_xml_err(
     inp: &[u8],
-    mut builder: crate::error::stale_tag_error::Builder,
-) -> Result<crate::error::stale_tag_error::Builder, smithy_xml::decode::XmlError> {
+    mut builder: crate::error::concurrent_access_error::Builder,
+) -> Result<crate::error::concurrent_access_error::Builder, smithy_xml::decode::XmlError> {
     use std::convert::TryFrom;
     let mut document = smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
     let mut error_decoder = crate::rest_xml_wrapped_errors::error_scope(&mut document)?;
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
-            s if s.matches("message") /* message com.amazonaws.sns#StaleTagException$message */ =>  {
+            s if s.matches("message") /* message com.amazonaws.sns#ConcurrentAccessException$message */ =>  {
                 let var_14 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -517,17 +517,17 @@ pub fn stale_tag_exception(
 }
 
 #[allow(unused_mut)]
-pub fn tag_limit_exceeded_exception(
+pub fn deser_structure_invalid_security_error_xml_err(
     inp: &[u8],
-    mut builder: crate::error::tag_limit_exceeded_error::Builder,
-) -> Result<crate::error::tag_limit_exceeded_error::Builder, smithy_xml::decode::XmlError> {
+    mut builder: crate::error::invalid_security_error::Builder,
+) -> Result<crate::error::invalid_security_error::Builder, smithy_xml::decode::XmlError> {
     use std::convert::TryFrom;
     let mut document = smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
     let mut error_decoder = crate::rest_xml_wrapped_errors::error_scope(&mut document)?;
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
-            s if s.matches("message") /* message com.amazonaws.sns#TagLimitExceededException$message */ =>  {
+            s if s.matches("message") /* message com.amazonaws.sns#InvalidSecurityException$message */ =>  {
                 let var_15 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -547,17 +547,17 @@ pub fn tag_limit_exceeded_exception(
 }
 
 #[allow(unused_mut)]
-pub fn tag_policy_exception(
+pub fn deser_structure_stale_tag_error_xml_err(
     inp: &[u8],
-    mut builder: crate::error::tag_policy_error::Builder,
-) -> Result<crate::error::tag_policy_error::Builder, smithy_xml::decode::XmlError> {
+    mut builder: crate::error::stale_tag_error::Builder,
+) -> Result<crate::error::stale_tag_error::Builder, smithy_xml::decode::XmlError> {
     use std::convert::TryFrom;
     let mut document = smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
     let mut error_decoder = crate::rest_xml_wrapped_errors::error_scope(&mut document)?;
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
-            s if s.matches("message") /* message com.amazonaws.sns#TagPolicyException$message */ =>  {
+            s if s.matches("message") /* message com.amazonaws.sns#StaleTagException$message */ =>  {
                 let var_16 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -577,17 +577,17 @@ pub fn tag_policy_exception(
 }
 
 #[allow(unused_mut)]
-pub fn topic_limit_exceeded_exception(
+pub fn deser_structure_tag_limit_exceeded_error_xml_err(
     inp: &[u8],
-    mut builder: crate::error::topic_limit_exceeded_error::Builder,
-) -> Result<crate::error::topic_limit_exceeded_error::Builder, smithy_xml::decode::XmlError> {
+    mut builder: crate::error::tag_limit_exceeded_error::Builder,
+) -> Result<crate::error::tag_limit_exceeded_error::Builder, smithy_xml::decode::XmlError> {
     use std::convert::TryFrom;
     let mut document = smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
     let mut error_decoder = crate::rest_xml_wrapped_errors::error_scope(&mut document)?;
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
-            s if s.matches("message") /* message com.amazonaws.sns#TopicLimitExceededException$message */ =>  {
+            s if s.matches("message") /* message com.amazonaws.sns#TagLimitExceededException$message */ =>  {
                 let var_17 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -598,6 +598,66 @@ pub fn topic_limit_exceeded_exception(
                     )
                 ;
                 builder = builder.set_message(var_17);
+            }
+            ,
+            _ => {}
+        }
+    }
+    Ok(builder)
+}
+
+#[allow(unused_mut)]
+pub fn deser_structure_tag_policy_error_xml_err(
+    inp: &[u8],
+    mut builder: crate::error::tag_policy_error::Builder,
+) -> Result<crate::error::tag_policy_error::Builder, smithy_xml::decode::XmlError> {
+    use std::convert::TryFrom;
+    let mut document = smithy_xml::decode::Document::try_from(inp)?;
+    #[allow(unused_mut)]
+    let mut error_decoder = crate::rest_xml_wrapped_errors::error_scope(&mut document)?;
+    while let Some(mut tag) = error_decoder.next_tag() {
+        match tag.start_el() {
+            s if s.matches("message") /* message com.amazonaws.sns#TagPolicyException$message */ =>  {
+                let var_18 =
+                    Some(
+                        Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
+                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_message(var_18);
+            }
+            ,
+            _ => {}
+        }
+    }
+    Ok(builder)
+}
+
+#[allow(unused_mut)]
+pub fn deser_structure_topic_limit_exceeded_error_xml_err(
+    inp: &[u8],
+    mut builder: crate::error::topic_limit_exceeded_error::Builder,
+) -> Result<crate::error::topic_limit_exceeded_error::Builder, smithy_xml::decode::XmlError> {
+    use std::convert::TryFrom;
+    let mut document = smithy_xml::decode::Document::try_from(inp)?;
+    #[allow(unused_mut)]
+    let mut error_decoder = crate::rest_xml_wrapped_errors::error_scope(&mut document)?;
+    while let Some(mut tag) = error_decoder.next_tag() {
+        match tag.start_el() {
+            s if s.matches("message") /* message com.amazonaws.sns#TopicLimitExceededException$message */ =>  {
+                let var_19 =
+                    Some(
+                        Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
+                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_message(var_19);
             }
             ,
             _ => {}
@@ -634,7 +694,7 @@ pub fn deser_operation_create_topic(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("TopicArn") /* TopicArn com.amazonaws.sns#CreateTopicOutput$TopicArn */ =>  {
-                let var_18 =
+                let var_20 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -643,7 +703,7 @@ pub fn deser_operation_create_topic(
                         ?
                     )
                 ;
-                builder = builder.set_topic_arn(var_18);
+                builder = builder.set_topic_arn(var_20);
             }
             ,
             _ => {}
@@ -654,6 +714,36 @@ pub fn deser_operation_create_topic(
             "expected CreateTopicResult tag",
         ));
     };
+    Ok(builder)
+}
+
+#[allow(unused_mut)]
+pub fn deser_structure_resource_not_found_error_xml_err(
+    inp: &[u8],
+    mut builder: crate::error::resource_not_found_error::Builder,
+) -> Result<crate::error::resource_not_found_error::Builder, smithy_xml::decode::XmlError> {
+    use std::convert::TryFrom;
+    let mut document = smithy_xml::decode::Document::try_from(inp)?;
+    #[allow(unused_mut)]
+    let mut error_decoder = crate::rest_xml_wrapped_errors::error_scope(&mut document)?;
+    while let Some(mut tag) = error_decoder.next_tag() {
+        match tag.start_el() {
+            s if s.matches("message") /* message com.amazonaws.sns#ResourceNotFoundException$message */ =>  {
+                let var_21 =
+                    Some(
+                        Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
+                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_message(var_21);
+            }
+            ,
+            _ => {}
+        }
+    }
     Ok(builder)
 }
 
@@ -685,13 +775,13 @@ pub fn deser_operation_get_endpoint_attributes(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("Attributes") /* Attributes com.amazonaws.sns#GetEndpointAttributesOutput$Attributes */ =>  {
-                let var_19 =
+                let var_22 =
                     Some(
-                        crate::xml_deser::deserialize_map_string_to_string(&mut tag)
+                        crate::xml_deser::deser_map_map_string_to_string(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_attributes(var_19);
+                builder = builder.set_attributes(var_22);
             }
             ,
             _ => {}
@@ -736,13 +826,13 @@ pub fn deser_operation_get_platform_application_attributes(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("Attributes") /* Attributes com.amazonaws.sns#GetPlatformApplicationAttributesOutput$Attributes */ =>  {
-                let var_20 =
+                let var_23 =
                     Some(
-                        crate::xml_deser::deserialize_map_string_to_string(&mut tag)
+                        crate::xml_deser::deser_map_map_string_to_string(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_attributes(var_20);
+                builder = builder.set_attributes(var_23);
             }
             ,
             _ => {}
@@ -784,13 +874,13 @@ pub fn deser_operation_get_sms_attributes(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("attributes") /* attributes com.amazonaws.sns#GetSMSAttributesOutput$attributes */ =>  {
-                let var_21 =
+                let var_24 =
                     Some(
-                        crate::xml_deser::deserialize_map_string_to_string(&mut tag)
+                        crate::xml_deser::deser_map_map_string_to_string(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_attributes(var_21);
+                builder = builder.set_attributes(var_24);
             }
             ,
             _ => {}
@@ -799,6 +889,61 @@ pub fn deser_operation_get_sms_attributes(
     } else {
         return Err(smithy_xml::decode::XmlError::custom(
             "expected GetSMSAttributesResult tag",
+        ));
+    };
+    Ok(builder)
+}
+
+#[allow(unused_mut)]
+pub fn deser_operation_get_sms_sandbox_account_status(
+    inp: &[u8],
+    mut builder: crate::output::get_sms_sandbox_account_status_output::Builder,
+) -> Result<
+    crate::output::get_sms_sandbox_account_status_output::Builder,
+    smithy_xml::decode::XmlError,
+> {
+    use std::convert::TryFrom;
+    let mut doc = smithy_xml::decode::Document::try_from(inp)?;
+
+    #[allow(unused_mut)]
+    let mut decoder = doc.root_element()?;
+    let start_el = decoder.start_el();
+    if !(start_el.matches("GetSMSSandboxAccountStatusResponse")) {
+        return Err(smithy_xml::decode::XmlError::custom(format!(
+            "invalid root, expected GetSMSSandboxAccountStatusResponse got {:?}",
+            start_el
+        )));
+    }
+    if let Some(mut result_tag) = decoder.next_tag() {
+        let start_el = result_tag.start_el();
+        if !(start_el.matches("GetSMSSandboxAccountStatusResult")) {
+            return Err(smithy_xml::decode::XmlError::custom(format!(
+                "invalid result, expected GetSMSSandboxAccountStatusResult got {:?}",
+                start_el
+            )));
+        }
+        while let Some(mut tag) = result_tag.next_tag() {
+            match tag.start_el() {
+            s if s.matches("IsInSandbox") /* IsInSandbox com.amazonaws.sns#GetSMSSandboxAccountStatusOutput$IsInSandbox */ =>  {
+                let var_25 =
+                     {
+                        use std::str::FromStr;
+                        bool::from_str(
+                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                        )
+                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.sns#boolean`)"))
+                    }
+                    ?
+                ;
+                builder = builder.set_is_in_sandbox(var_25);
+            }
+            ,
+            _ => {}
+        }
+        }
+    } else {
+        return Err(smithy_xml::decode::XmlError::custom(
+            "expected GetSMSSandboxAccountStatusResult tag",
         ));
     };
     Ok(builder)
@@ -833,13 +978,13 @@ pub fn deser_operation_get_subscription_attributes(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("Attributes") /* Attributes com.amazonaws.sns#GetSubscriptionAttributesOutput$Attributes */ =>  {
-                let var_22 =
+                let var_26 =
                     Some(
-                        crate::xml_deser::deserialize_subscription_attributes_map(&mut tag)
+                        crate::xml_deser::deser_map_subscription_attributes_map(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_attributes(var_22);
+                builder = builder.set_attributes(var_26);
             }
             ,
             _ => {}
@@ -881,13 +1026,13 @@ pub fn deser_operation_get_topic_attributes(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("Attributes") /* Attributes com.amazonaws.sns#GetTopicAttributesOutput$Attributes */ =>  {
-                let var_23 =
+                let var_27 =
                     Some(
-                        crate::xml_deser::deserialize_topic_attributes_map(&mut tag)
+                        crate::xml_deser::deser_map_topic_attributes_map(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_attributes(var_23);
+                builder = builder.set_attributes(var_27);
             }
             ,
             _ => {}
@@ -932,17 +1077,17 @@ pub fn deser_operation_list_endpoints_by_platform_application(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("Endpoints") /* Endpoints com.amazonaws.sns#ListEndpointsByPlatformApplicationOutput$Endpoints */ =>  {
-                let var_24 =
+                let var_28 =
                     Some(
-                        crate::xml_deser::deserialize_list_of_endpoints(&mut tag)
+                        crate::xml_deser::deser_list_list_of_endpoints(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_endpoints(var_24);
+                builder = builder.set_endpoints(var_28);
             }
             ,
             s if s.matches("NextToken") /* NextToken com.amazonaws.sns#ListEndpointsByPlatformApplicationOutput$NextToken */ =>  {
-                let var_25 =
+                let var_29 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -951,7 +1096,7 @@ pub fn deser_operation_list_endpoints_by_platform_application(
                         ?
                     )
                 ;
-                builder = builder.set_next_token(var_25);
+                builder = builder.set_next_token(var_29);
             }
             ,
             _ => {}
@@ -960,6 +1105,97 @@ pub fn deser_operation_list_endpoints_by_platform_application(
     } else {
         return Err(smithy_xml::decode::XmlError::custom(
             "expected ListEndpointsByPlatformApplicationResult tag",
+        ));
+    };
+    Ok(builder)
+}
+
+#[allow(unused_mut)]
+pub fn deser_structure_validation_error_xml_err(
+    inp: &[u8],
+    mut builder: crate::error::validation_error::Builder,
+) -> Result<crate::error::validation_error::Builder, smithy_xml::decode::XmlError> {
+    use std::convert::TryFrom;
+    let mut document = smithy_xml::decode::Document::try_from(inp)?;
+    #[allow(unused_mut)]
+    let mut error_decoder = crate::rest_xml_wrapped_errors::error_scope(&mut document)?;
+    while let Some(mut tag) = error_decoder.next_tag() {
+        match tag.start_el() {
+            s if s.matches("Message") /* Message com.amazonaws.sns#ValidationException$Message */ =>  {
+                let var_30 =
+                    Some(
+                        Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
+                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_message(var_30);
+            }
+            ,
+            _ => {}
+        }
+    }
+    Ok(builder)
+}
+
+#[allow(unused_mut)]
+pub fn deser_operation_list_origination_numbers(
+    inp: &[u8],
+    mut builder: crate::output::list_origination_numbers_output::Builder,
+) -> Result<crate::output::list_origination_numbers_output::Builder, smithy_xml::decode::XmlError> {
+    use std::convert::TryFrom;
+    let mut doc = smithy_xml::decode::Document::try_from(inp)?;
+
+    #[allow(unused_mut)]
+    let mut decoder = doc.root_element()?;
+    let start_el = decoder.start_el();
+    if !(start_el.matches("ListOriginationNumbersResponse")) {
+        return Err(smithy_xml::decode::XmlError::custom(format!(
+            "invalid root, expected ListOriginationNumbersResponse got {:?}",
+            start_el
+        )));
+    }
+    if let Some(mut result_tag) = decoder.next_tag() {
+        let start_el = result_tag.start_el();
+        if !(start_el.matches("ListOriginationNumbersResult")) {
+            return Err(smithy_xml::decode::XmlError::custom(format!(
+                "invalid result, expected ListOriginationNumbersResult got {:?}",
+                start_el
+            )));
+        }
+        while let Some(mut tag) = result_tag.next_tag() {
+            match tag.start_el() {
+            s if s.matches("NextToken") /* NextToken com.amazonaws.sns#ListOriginationNumbersOutput$NextToken */ =>  {
+                let var_31 =
+                    Some(
+                        Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
+                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_next_token(var_31);
+            }
+            ,
+            s if s.matches("PhoneNumbers") /* PhoneNumbers com.amazonaws.sns#ListOriginationNumbersOutput$PhoneNumbers */ =>  {
+                let var_32 =
+                    Some(
+                        crate::xml_deser::deser_list_phone_number_information_list(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_phone_numbers(var_32);
+            }
+            ,
+            _ => {}
+        }
+        }
+    } else {
+        return Err(smithy_xml::decode::XmlError::custom(
+            "expected ListOriginationNumbersResult tag",
         ));
     };
     Ok(builder)
@@ -994,17 +1230,17 @@ pub fn deser_operation_list_phone_numbers_opted_out(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("phoneNumbers") /* phoneNumbers com.amazonaws.sns#ListPhoneNumbersOptedOutOutput$phoneNumbers */ =>  {
-                let var_26 =
+                let var_33 =
                     Some(
-                        crate::xml_deser::deserialize_phone_number_list(&mut tag)
+                        crate::xml_deser::deser_list_phone_number_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_phone_numbers(var_26);
+                builder = builder.set_phone_numbers(var_33);
             }
             ,
             s if s.matches("nextToken") /* nextToken com.amazonaws.sns#ListPhoneNumbersOptedOutOutput$nextToken */ =>  {
-                let var_27 =
+                let var_34 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -1013,7 +1249,7 @@ pub fn deser_operation_list_phone_numbers_opted_out(
                         ?
                     )
                 ;
-                builder = builder.set_next_token(var_27);
+                builder = builder.set_next_token(var_34);
             }
             ,
             _ => {}
@@ -1056,17 +1292,17 @@ pub fn deser_operation_list_platform_applications(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("PlatformApplications") /* PlatformApplications com.amazonaws.sns#ListPlatformApplicationsOutput$PlatformApplications */ =>  {
-                let var_28 =
+                let var_35 =
                     Some(
-                        crate::xml_deser::deserialize_list_of_platform_applications(&mut tag)
+                        crate::xml_deser::deser_list_list_of_platform_applications(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_platform_applications(var_28);
+                builder = builder.set_platform_applications(var_35);
             }
             ,
             s if s.matches("NextToken") /* NextToken com.amazonaws.sns#ListPlatformApplicationsOutput$NextToken */ =>  {
-                let var_29 =
+                let var_36 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -1075,7 +1311,7 @@ pub fn deser_operation_list_platform_applications(
                         ?
                     )
                 ;
-                builder = builder.set_next_token(var_29);
+                builder = builder.set_next_token(var_36);
             }
             ,
             _ => {}
@@ -1084,6 +1320,70 @@ pub fn deser_operation_list_platform_applications(
     } else {
         return Err(smithy_xml::decode::XmlError::custom(
             "expected ListPlatformApplicationsResult tag",
+        ));
+    };
+    Ok(builder)
+}
+
+#[allow(unused_mut)]
+pub fn deser_operation_list_sms_sandbox_phone_numbers(
+    inp: &[u8],
+    mut builder: crate::output::list_sms_sandbox_phone_numbers_output::Builder,
+) -> Result<
+    crate::output::list_sms_sandbox_phone_numbers_output::Builder,
+    smithy_xml::decode::XmlError,
+> {
+    use std::convert::TryFrom;
+    let mut doc = smithy_xml::decode::Document::try_from(inp)?;
+
+    #[allow(unused_mut)]
+    let mut decoder = doc.root_element()?;
+    let start_el = decoder.start_el();
+    if !(start_el.matches("ListSMSSandboxPhoneNumbersResponse")) {
+        return Err(smithy_xml::decode::XmlError::custom(format!(
+            "invalid root, expected ListSMSSandboxPhoneNumbersResponse got {:?}",
+            start_el
+        )));
+    }
+    if let Some(mut result_tag) = decoder.next_tag() {
+        let start_el = result_tag.start_el();
+        if !(start_el.matches("ListSMSSandboxPhoneNumbersResult")) {
+            return Err(smithy_xml::decode::XmlError::custom(format!(
+                "invalid result, expected ListSMSSandboxPhoneNumbersResult got {:?}",
+                start_el
+            )));
+        }
+        while let Some(mut tag) = result_tag.next_tag() {
+            match tag.start_el() {
+            s if s.matches("PhoneNumbers") /* PhoneNumbers com.amazonaws.sns#ListSMSSandboxPhoneNumbersOutput$PhoneNumbers */ =>  {
+                let var_37 =
+                    Some(
+                        crate::xml_deser::deser_list_sms_sandbox_phone_number_list(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_phone_numbers(var_37);
+            }
+            ,
+            s if s.matches("NextToken") /* NextToken com.amazonaws.sns#ListSMSSandboxPhoneNumbersOutput$NextToken */ =>  {
+                let var_38 =
+                    Some(
+                        Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
+                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_next_token(var_38);
+            }
+            ,
+            _ => {}
+        }
+        }
+    } else {
+        return Err(smithy_xml::decode::XmlError::custom(
+            "expected ListSMSSandboxPhoneNumbersResult tag",
         ));
     };
     Ok(builder)
@@ -1117,17 +1417,17 @@ pub fn deser_operation_list_subscriptions(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("Subscriptions") /* Subscriptions com.amazonaws.sns#ListSubscriptionsOutput$Subscriptions */ =>  {
-                let var_30 =
+                let var_39 =
                     Some(
-                        crate::xml_deser::deserialize_subscriptions_list(&mut tag)
+                        crate::xml_deser::deser_list_subscriptions_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_subscriptions(var_30);
+                builder = builder.set_subscriptions(var_39);
             }
             ,
             s if s.matches("NextToken") /* NextToken com.amazonaws.sns#ListSubscriptionsOutput$NextToken */ =>  {
-                let var_31 =
+                let var_40 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -1136,7 +1436,7 @@ pub fn deser_operation_list_subscriptions(
                         ?
                     )
                 ;
-                builder = builder.set_next_token(var_31);
+                builder = builder.set_next_token(var_40);
             }
             ,
             _ => {}
@@ -1179,17 +1479,17 @@ pub fn deser_operation_list_subscriptions_by_topic(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("Subscriptions") /* Subscriptions com.amazonaws.sns#ListSubscriptionsByTopicOutput$Subscriptions */ =>  {
-                let var_32 =
+                let var_41 =
                     Some(
-                        crate::xml_deser::deserialize_subscriptions_list(&mut tag)
+                        crate::xml_deser::deser_list_subscriptions_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_subscriptions(var_32);
+                builder = builder.set_subscriptions(var_41);
             }
             ,
             s if s.matches("NextToken") /* NextToken com.amazonaws.sns#ListSubscriptionsByTopicOutput$NextToken */ =>  {
-                let var_33 =
+                let var_42 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -1198,7 +1498,7 @@ pub fn deser_operation_list_subscriptions_by_topic(
                         ?
                     )
                 ;
-                builder = builder.set_next_token(var_33);
+                builder = builder.set_next_token(var_42);
             }
             ,
             _ => {}
@@ -1209,36 +1509,6 @@ pub fn deser_operation_list_subscriptions_by_topic(
             "expected ListSubscriptionsByTopicResult tag",
         ));
     };
-    Ok(builder)
-}
-
-#[allow(unused_mut)]
-pub fn resource_not_found_exception(
-    inp: &[u8],
-    mut builder: crate::error::resource_not_found_error::Builder,
-) -> Result<crate::error::resource_not_found_error::Builder, smithy_xml::decode::XmlError> {
-    use std::convert::TryFrom;
-    let mut document = smithy_xml::decode::Document::try_from(inp)?;
-    #[allow(unused_mut)]
-    let mut error_decoder = crate::rest_xml_wrapped_errors::error_scope(&mut document)?;
-    while let Some(mut tag) = error_decoder.next_tag() {
-        match tag.start_el() {
-            s if s.matches("message") /* message com.amazonaws.sns#ResourceNotFoundException$message */ =>  {
-                let var_34 =
-                    Some(
-                        Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_message(var_34);
-            }
-            ,
-            _ => {}
-        }
-    }
     Ok(builder)
 }
 
@@ -1270,13 +1540,13 @@ pub fn deser_operation_list_tags_for_resource(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("Tags") /* Tags com.amazonaws.sns#ListTagsForResourceOutput$Tags */ =>  {
-                let var_35 =
+                let var_43 =
                     Some(
-                        crate::xml_deser::deserialize_tag_list(&mut tag)
+                        crate::xml_deser::deser_list_tag_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_tags(var_35);
+                builder = builder.set_tags(var_43);
             }
             ,
             _ => {}
@@ -1318,17 +1588,17 @@ pub fn deser_operation_list_topics(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("Topics") /* Topics com.amazonaws.sns#ListTopicsOutput$Topics */ =>  {
-                let var_36 =
+                let var_44 =
                     Some(
-                        crate::xml_deser::deserialize_topics_list(&mut tag)
+                        crate::xml_deser::deser_list_topics_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_topics(var_36);
+                builder = builder.set_topics(var_44);
             }
             ,
             s if s.matches("NextToken") /* NextToken com.amazonaws.sns#ListTopicsOutput$NextToken */ =>  {
-                let var_37 =
+                let var_45 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -1337,7 +1607,7 @@ pub fn deser_operation_list_topics(
                         ?
                     )
                 ;
-                builder = builder.set_next_token(var_37);
+                builder = builder.set_next_token(var_45);
             }
             ,
             _ => {}
@@ -1352,7 +1622,7 @@ pub fn deser_operation_list_topics(
 }
 
 #[allow(unused_mut)]
-pub fn endpoint_disabled_exception(
+pub fn deser_structure_endpoint_disabled_error_xml_err(
     inp: &[u8],
     mut builder: crate::error::endpoint_disabled_error::Builder,
 ) -> Result<crate::error::endpoint_disabled_error::Builder, smithy_xml::decode::XmlError> {
@@ -1363,7 +1633,7 @@ pub fn endpoint_disabled_exception(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("message") /* message com.amazonaws.sns#EndpointDisabledException$message */ =>  {
-                let var_38 =
+                let var_46 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -1372,7 +1642,7 @@ pub fn endpoint_disabled_exception(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_38);
+                builder = builder.set_message(var_46);
             }
             ,
             _ => {}
@@ -1382,7 +1652,7 @@ pub fn endpoint_disabled_exception(
 }
 
 #[allow(unused_mut)]
-pub fn invalid_parameter_value_exception(
+pub fn deser_structure_invalid_parameter_value_error_xml_err(
     inp: &[u8],
     mut builder: crate::error::invalid_parameter_value_error::Builder,
 ) -> Result<crate::error::invalid_parameter_value_error::Builder, smithy_xml::decode::XmlError> {
@@ -1393,7 +1663,7 @@ pub fn invalid_parameter_value_exception(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("message") /* message com.amazonaws.sns#InvalidParameterValueException$message */ =>  {
-                let var_39 =
+                let var_47 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -1402,7 +1672,7 @@ pub fn invalid_parameter_value_exception(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_39);
+                builder = builder.set_message(var_47);
             }
             ,
             _ => {}
@@ -1412,7 +1682,7 @@ pub fn invalid_parameter_value_exception(
 }
 
 #[allow(unused_mut)]
-pub fn kms_access_denied_exception(
+pub fn deser_structure_kms_access_denied_error_xml_err(
     inp: &[u8],
     mut builder: crate::error::kms_access_denied_error::Builder,
 ) -> Result<crate::error::kms_access_denied_error::Builder, smithy_xml::decode::XmlError> {
@@ -1423,7 +1693,7 @@ pub fn kms_access_denied_exception(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("message") /* message com.amazonaws.sns#KMSAccessDeniedException$message */ =>  {
-                let var_40 =
+                let var_48 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -1432,7 +1702,7 @@ pub fn kms_access_denied_exception(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_40);
+                builder = builder.set_message(var_48);
             }
             ,
             _ => {}
@@ -1442,7 +1712,7 @@ pub fn kms_access_denied_exception(
 }
 
 #[allow(unused_mut)]
-pub fn kms_disabled_exception(
+pub fn deser_structure_kms_disabled_error_xml_err(
     inp: &[u8],
     mut builder: crate::error::kms_disabled_error::Builder,
 ) -> Result<crate::error::kms_disabled_error::Builder, smithy_xml::decode::XmlError> {
@@ -1453,7 +1723,7 @@ pub fn kms_disabled_exception(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("message") /* message com.amazonaws.sns#KMSDisabledException$message */ =>  {
-                let var_41 =
+                let var_49 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -1462,7 +1732,7 @@ pub fn kms_disabled_exception(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_41);
+                builder = builder.set_message(var_49);
             }
             ,
             _ => {}
@@ -1472,7 +1742,7 @@ pub fn kms_disabled_exception(
 }
 
 #[allow(unused_mut)]
-pub fn kms_invalid_state_exception(
+pub fn deser_structure_kms_invalid_state_error_xml_err(
     inp: &[u8],
     mut builder: crate::error::kms_invalid_state_error::Builder,
 ) -> Result<crate::error::kms_invalid_state_error::Builder, smithy_xml::decode::XmlError> {
@@ -1483,7 +1753,7 @@ pub fn kms_invalid_state_exception(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("message") /* message com.amazonaws.sns#KMSInvalidStateException$message */ =>  {
-                let var_42 =
+                let var_50 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -1492,7 +1762,7 @@ pub fn kms_invalid_state_exception(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_42);
+                builder = builder.set_message(var_50);
             }
             ,
             _ => {}
@@ -1502,7 +1772,7 @@ pub fn kms_invalid_state_exception(
 }
 
 #[allow(unused_mut)]
-pub fn kms_not_found_exception(
+pub fn deser_structure_kms_not_found_error_xml_err(
     inp: &[u8],
     mut builder: crate::error::kms_not_found_error::Builder,
 ) -> Result<crate::error::kms_not_found_error::Builder, smithy_xml::decode::XmlError> {
@@ -1513,7 +1783,7 @@ pub fn kms_not_found_exception(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("message") /* message com.amazonaws.sns#KMSNotFoundException$message */ =>  {
-                let var_43 =
+                let var_51 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -1522,7 +1792,7 @@ pub fn kms_not_found_exception(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_43);
+                builder = builder.set_message(var_51);
             }
             ,
             _ => {}
@@ -1532,7 +1802,7 @@ pub fn kms_not_found_exception(
 }
 
 #[allow(unused_mut)]
-pub fn kms_opt_in_required(
+pub fn deser_structure_kms_opt_in_required_xml_err(
     inp: &[u8],
     mut builder: crate::error::kms_opt_in_required::Builder,
 ) -> Result<crate::error::kms_opt_in_required::Builder, smithy_xml::decode::XmlError> {
@@ -1543,7 +1813,7 @@ pub fn kms_opt_in_required(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("message") /* message com.amazonaws.sns#KMSOptInRequired$message */ =>  {
-                let var_44 =
+                let var_52 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -1552,7 +1822,7 @@ pub fn kms_opt_in_required(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_44);
+                builder = builder.set_message(var_52);
             }
             ,
             _ => {}
@@ -1562,7 +1832,7 @@ pub fn kms_opt_in_required(
 }
 
 #[allow(unused_mut)]
-pub fn kms_throttling_exception(
+pub fn deser_structure_kms_throttling_error_xml_err(
     inp: &[u8],
     mut builder: crate::error::kms_throttling_error::Builder,
 ) -> Result<crate::error::kms_throttling_error::Builder, smithy_xml::decode::XmlError> {
@@ -1573,7 +1843,7 @@ pub fn kms_throttling_exception(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("message") /* message com.amazonaws.sns#KMSThrottlingException$message */ =>  {
-                let var_45 =
+                let var_53 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -1582,7 +1852,7 @@ pub fn kms_throttling_exception(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_45);
+                builder = builder.set_message(var_53);
             }
             ,
             _ => {}
@@ -1592,7 +1862,7 @@ pub fn kms_throttling_exception(
 }
 
 #[allow(unused_mut)]
-pub fn platform_application_disabled_exception(
+pub fn deser_structure_platform_application_disabled_error_xml_err(
     inp: &[u8],
     mut builder: crate::error::platform_application_disabled_error::Builder,
 ) -> Result<crate::error::platform_application_disabled_error::Builder, smithy_xml::decode::XmlError>
@@ -1604,7 +1874,7 @@ pub fn platform_application_disabled_exception(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("message") /* message com.amazonaws.sns#PlatformApplicationDisabledException$message */ =>  {
-                let var_46 =
+                let var_54 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -1613,7 +1883,7 @@ pub fn platform_application_disabled_exception(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_46);
+                builder = builder.set_message(var_54);
             }
             ,
             _ => {}
@@ -1650,7 +1920,7 @@ pub fn deser_operation_publish(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("MessageId") /* MessageId com.amazonaws.sns#PublishOutput$MessageId */ =>  {
-                let var_47 =
+                let var_55 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -1659,11 +1929,11 @@ pub fn deser_operation_publish(
                         ?
                     )
                 ;
-                builder = builder.set_message_id(var_47);
+                builder = builder.set_message_id(var_55);
             }
             ,
             s if s.matches("SequenceNumber") /* SequenceNumber com.amazonaws.sns#PublishOutput$SequenceNumber */ =>  {
-                let var_48 =
+                let var_56 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -1672,7 +1942,7 @@ pub fn deser_operation_publish(
                         ?
                     )
                 ;
-                builder = builder.set_sequence_number(var_48);
+                builder = builder.set_sequence_number(var_56);
             }
             ,
             _ => {}
@@ -1714,7 +1984,7 @@ pub fn deser_operation_subscribe(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("SubscriptionArn") /* SubscriptionArn com.amazonaws.sns#SubscribeOutput$SubscriptionArn */ =>  {
-                let var_49 =
+                let var_57 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -1723,7 +1993,7 @@ pub fn deser_operation_subscribe(
                         ?
                     )
                 ;
-                builder = builder.set_subscription_arn(var_49);
+                builder = builder.set_subscription_arn(var_57);
             }
             ,
             _ => {}
@@ -1737,7 +2007,50 @@ pub fn deser_operation_subscribe(
     Ok(builder)
 }
 
-pub fn deserialize_map_string_to_string(
+#[allow(unused_mut)]
+pub fn deser_structure_verification_error_xml_err(
+    inp: &[u8],
+    mut builder: crate::error::verification_error::Builder,
+) -> Result<crate::error::verification_error::Builder, smithy_xml::decode::XmlError> {
+    use std::convert::TryFrom;
+    let mut document = smithy_xml::decode::Document::try_from(inp)?;
+    #[allow(unused_mut)]
+    let mut error_decoder = crate::rest_xml_wrapped_errors::error_scope(&mut document)?;
+    while let Some(mut tag) = error_decoder.next_tag() {
+        match tag.start_el() {
+            s if s.matches("Status") /* Status com.amazonaws.sns#VerificationException$Status */ =>  {
+                let var_58 =
+                    Some(
+                        Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
+                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_status(var_58);
+            }
+            ,
+            s if s.matches("Message") /* Message com.amazonaws.sns#VerificationException$Message */ =>  {
+                let var_59 =
+                    Some(
+                        Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
+                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_message(var_59);
+            }
+            ,
+            _ => {}
+        }
+    }
+    Ok(builder)
+}
+
+pub fn deser_map_map_string_to_string(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<
     std::collections::HashMap<std::string::String, std::string::String>,
@@ -1747,7 +2060,7 @@ pub fn deserialize_map_string_to_string(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("entry") => {
-                crate::xml_deser::map_string_to_string_entry(&mut tag, &mut out)?;
+                crate::xml_deser::deser_map_map_string_to_string_entry(&mut tag, &mut out)?;
             }
             _ => {}
         }
@@ -1755,7 +2068,7 @@ pub fn deserialize_map_string_to_string(
     Ok(out)
 }
 
-pub fn deserialize_subscription_attributes_map(
+pub fn deser_map_subscription_attributes_map(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<
     std::collections::HashMap<std::string::String, std::string::String>,
@@ -1765,7 +2078,7 @@ pub fn deserialize_subscription_attributes_map(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("entry") => {
-                crate::xml_deser::subscription_attributes_map_entry(&mut tag, &mut out)?;
+                crate::xml_deser::deser_map_subscription_attributes_map_entry(&mut tag, &mut out)?;
             }
             _ => {}
         }
@@ -1773,7 +2086,7 @@ pub fn deserialize_subscription_attributes_map(
     Ok(out)
 }
 
-pub fn deserialize_topic_attributes_map(
+pub fn deser_map_topic_attributes_map(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<
     std::collections::HashMap<std::string::String, std::string::String>,
@@ -1783,7 +2096,7 @@ pub fn deserialize_topic_attributes_map(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("entry") => {
-                crate::xml_deser::topic_attributes_map_entry(&mut tag, &mut out)?;
+                crate::xml_deser::deser_map_topic_attributes_map_entry(&mut tag, &mut out)?;
             }
             _ => {}
         }
@@ -1791,7 +2104,7 @@ pub fn deserialize_topic_attributes_map(
     Ok(out)
 }
 
-pub fn deserialize_list_of_endpoints(
+pub fn deser_list_list_of_endpoints(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::Endpoint>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -1799,7 +2112,7 @@ pub fn deserialize_list_of_endpoints(
         match tag.start_el() {
             s if s.matches("member") /* member com.amazonaws.sns#ListOfEndpoints$member */ =>  {
                 out.push(
-                    crate::xml_deser::endpoint_inner(&mut tag)
+                    crate::xml_deser::deser_structure_endpoint(&mut tag)
                     ?
                 );
             }
@@ -1810,7 +2123,26 @@ pub fn deserialize_list_of_endpoints(
     Ok(out)
 }
 
-pub fn deserialize_phone_number_list(
+pub fn deser_list_phone_number_information_list(
+    decoder: &mut smithy_xml::decode::ScopedDecoder,
+) -> Result<std::vec::Vec<crate::model::PhoneNumberInformation>, smithy_xml::decode::XmlError> {
+    let mut out = std::vec::Vec::new();
+    while let Some(mut tag) = decoder.next_tag() {
+        match tag.start_el() {
+            s if s.matches("member") /* member com.amazonaws.sns#PhoneNumberInformationList$member */ =>  {
+                out.push(
+                    crate::xml_deser::deser_structure_phone_number_information(&mut tag)
+                    ?
+                );
+            }
+            ,
+            _ => {}
+        }
+    }
+    Ok(out)
+}
+
+pub fn deser_list_phone_number_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<std::string::String>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -1832,7 +2164,7 @@ pub fn deserialize_phone_number_list(
     Ok(out)
 }
 
-pub fn deserialize_list_of_platform_applications(
+pub fn deser_list_list_of_platform_applications(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::PlatformApplication>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -1840,7 +2172,7 @@ pub fn deserialize_list_of_platform_applications(
         match tag.start_el() {
             s if s.matches("member") /* member com.amazonaws.sns#ListOfPlatformApplications$member */ =>  {
                 out.push(
-                    crate::xml_deser::platform_application_inner(&mut tag)
+                    crate::xml_deser::deser_structure_platform_application(&mut tag)
                     ?
                 );
             }
@@ -1851,7 +2183,26 @@ pub fn deserialize_list_of_platform_applications(
     Ok(out)
 }
 
-pub fn deserialize_subscriptions_list(
+pub fn deser_list_sms_sandbox_phone_number_list(
+    decoder: &mut smithy_xml::decode::ScopedDecoder,
+) -> Result<std::vec::Vec<crate::model::SMSSandboxPhoneNumber>, smithy_xml::decode::XmlError> {
+    let mut out = std::vec::Vec::new();
+    while let Some(mut tag) = decoder.next_tag() {
+        match tag.start_el() {
+            s if s.matches("member") /* member com.amazonaws.sns#SMSSandboxPhoneNumberList$member */ =>  {
+                out.push(
+                    crate::xml_deser::deser_structure_sms_sandbox_phone_number(&mut tag)
+                    ?
+                );
+            }
+            ,
+            _ => {}
+        }
+    }
+    Ok(out)
+}
+
+pub fn deser_list_subscriptions_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::Subscription>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -1859,7 +2210,7 @@ pub fn deserialize_subscriptions_list(
         match tag.start_el() {
             s if s.matches("member") /* member com.amazonaws.sns#SubscriptionsList$member */ =>  {
                 out.push(
-                    crate::xml_deser::subscription_inner(&mut tag)
+                    crate::xml_deser::deser_structure_subscription(&mut tag)
                     ?
                 );
             }
@@ -1870,7 +2221,7 @@ pub fn deserialize_subscriptions_list(
     Ok(out)
 }
 
-pub fn deserialize_tag_list(
+pub fn deser_list_tag_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::Tag>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -1878,7 +2229,7 @@ pub fn deserialize_tag_list(
         match tag.start_el() {
             s if s.matches("member") /* member com.amazonaws.sns#TagList$member */ =>  {
                 out.push(
-                    crate::xml_deser::tag_inner(&mut tag)
+                    crate::xml_deser::deser_structure_tag(&mut tag)
                     ?
                 );
             }
@@ -1889,7 +2240,7 @@ pub fn deserialize_tag_list(
     Ok(out)
 }
 
-pub fn deserialize_topics_list(
+pub fn deser_list_topics_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::Topic>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -1897,7 +2248,7 @@ pub fn deserialize_topics_list(
         match tag.start_el() {
             s if s.matches("member") /* member com.amazonaws.sns#TopicsList$member */ =>  {
                 out.push(
-                    crate::xml_deser::topic_inner(&mut tag)
+                    crate::xml_deser::deser_structure_topic(&mut tag)
                     ?
                 );
             }
@@ -1908,7 +2259,7 @@ pub fn deserialize_topics_list(
     Ok(out)
 }
 
-pub fn map_string_to_string_entry(
+pub fn deser_map_map_string_to_string_entry(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
     out: &mut std::collections::HashMap<std::string::String, std::string::String>,
 ) -> Result<(), smithy_xml::decode::XmlError> {
@@ -1945,7 +2296,7 @@ pub fn map_string_to_string_entry(
     Ok(())
 }
 
-pub fn subscription_attributes_map_entry(
+pub fn deser_map_subscription_attributes_map_entry(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
     out: &mut std::collections::HashMap<std::string::String, std::string::String>,
 ) -> Result<(), smithy_xml::decode::XmlError> {
@@ -1982,7 +2333,7 @@ pub fn subscription_attributes_map_entry(
     Ok(())
 }
 
-pub fn topic_attributes_map_entry(
+pub fn deser_map_topic_attributes_map_entry(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
     out: &mut std::collections::HashMap<std::string::String, std::string::String>,
 ) -> Result<(), smithy_xml::decode::XmlError> {
@@ -2019,7 +2370,7 @@ pub fn topic_attributes_map_entry(
     Ok(())
 }
 
-pub fn endpoint_inner(
+pub fn deser_structure_endpoint(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::Endpoint, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -2027,169 +2378,6 @@ pub fn endpoint_inner(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("EndpointArn") /* EndpointArn com.amazonaws.sns#Endpoint$EndpointArn */ =>  {
-                let var_50 =
-                    Some(
-                        Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_endpoint_arn(var_50);
-            }
-            ,
-            s if s.matches("Attributes") /* Attributes com.amazonaws.sns#Endpoint$Attributes */ =>  {
-                let var_51 =
-                    Some(
-                        crate::xml_deser::deserialize_map_string_to_string(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_attributes(var_51);
-            }
-            ,
-            _ => {}
-        }
-    }
-    Ok(builder.build())
-}
-
-pub fn platform_application_inner(
-    decoder: &mut smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::PlatformApplication, smithy_xml::decode::XmlError> {
-    #[allow(unused_mut)]
-    let mut builder = crate::model::PlatformApplication::builder();
-    while let Some(mut tag) = decoder.next_tag() {
-        match tag.start_el() {
-            s if s.matches("PlatformApplicationArn") /* PlatformApplicationArn com.amazonaws.sns#PlatformApplication$PlatformApplicationArn */ =>  {
-                let var_52 =
-                    Some(
-                        Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_platform_application_arn(var_52);
-            }
-            ,
-            s if s.matches("Attributes") /* Attributes com.amazonaws.sns#PlatformApplication$Attributes */ =>  {
-                let var_53 =
-                    Some(
-                        crate::xml_deser::deserialize_map_string_to_string(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_attributes(var_53);
-            }
-            ,
-            _ => {}
-        }
-    }
-    Ok(builder.build())
-}
-
-pub fn subscription_inner(
-    decoder: &mut smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::Subscription, smithy_xml::decode::XmlError> {
-    #[allow(unused_mut)]
-    let mut builder = crate::model::Subscription::builder();
-    while let Some(mut tag) = decoder.next_tag() {
-        match tag.start_el() {
-            s if s.matches("SubscriptionArn") /* SubscriptionArn com.amazonaws.sns#Subscription$SubscriptionArn */ =>  {
-                let var_54 =
-                    Some(
-                        Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_subscription_arn(var_54);
-            }
-            ,
-            s if s.matches("Owner") /* Owner com.amazonaws.sns#Subscription$Owner */ =>  {
-                let var_55 =
-                    Some(
-                        Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_owner(var_55);
-            }
-            ,
-            s if s.matches("Protocol") /* Protocol com.amazonaws.sns#Subscription$Protocol */ =>  {
-                let var_56 =
-                    Some(
-                        Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_protocol(var_56);
-            }
-            ,
-            s if s.matches("Endpoint") /* Endpoint com.amazonaws.sns#Subscription$Endpoint */ =>  {
-                let var_57 =
-                    Some(
-                        Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_endpoint(var_57);
-            }
-            ,
-            s if s.matches("TopicArn") /* TopicArn com.amazonaws.sns#Subscription$TopicArn */ =>  {
-                let var_58 =
-                    Some(
-                        Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_topic_arn(var_58);
-            }
-            ,
-            _ => {}
-        }
-    }
-    Ok(builder.build())
-}
-
-pub fn tag_inner(
-    decoder: &mut smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::Tag, smithy_xml::decode::XmlError> {
-    #[allow(unused_mut)]
-    let mut builder = crate::model::Tag::builder();
-    while let Some(mut tag) = decoder.next_tag() {
-        match tag.start_el() {
-            s if s.matches("Key") /* Key com.amazonaws.sns#Tag$Key */ =>  {
-                let var_59 =
-                    Some(
-                        Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_key(var_59);
-            }
-            ,
-            s if s.matches("Value") /* Value com.amazonaws.sns#Tag$Value */ =>  {
                 let var_60 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -2199,7 +2387,17 @@ pub fn tag_inner(
                         ?
                     )
                 ;
-                builder = builder.set_value(var_60);
+                builder = builder.set_endpoint_arn(var_60);
+            }
+            ,
+            s if s.matches("Attributes") /* Attributes com.amazonaws.sns#Endpoint$Attributes */ =>  {
+                let var_61 =
+                    Some(
+                        crate::xml_deser::deser_map_map_string_to_string(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_attributes(var_61);
             }
             ,
             _ => {}
@@ -2208,15 +2406,29 @@ pub fn tag_inner(
     Ok(builder.build())
 }
 
-pub fn topic_inner(
+pub fn deser_structure_phone_number_information(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::Topic, smithy_xml::decode::XmlError> {
+) -> Result<crate::model::PhoneNumberInformation, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
-    let mut builder = crate::model::Topic::builder();
+    let mut builder = crate::model::PhoneNumberInformation::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
-            s if s.matches("TopicArn") /* TopicArn com.amazonaws.sns#Topic$TopicArn */ =>  {
-                let var_61 =
+            s if s.matches("CreatedAt") /* CreatedAt com.amazonaws.sns#PhoneNumberInformation$CreatedAt */ =>  {
+                let var_62 =
+                    Some(
+                        smithy_types::Instant::from_str(
+                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            , smithy_types::instant::Format::DateTime
+                        )
+                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.sns#Timestamp`)"))
+                        ?
+                    )
+                ;
+                builder = builder.set_created_at(var_62);
+            }
+            ,
+            s if s.matches("PhoneNumber") /* PhoneNumber com.amazonaws.sns#PhoneNumberInformation$PhoneNumber */ =>  {
+                let var_63 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -2225,11 +2437,303 @@ pub fn topic_inner(
                         ?
                     )
                 ;
-                builder = builder.set_topic_arn(var_61);
+                builder = builder.set_phone_number(var_63);
+            }
+            ,
+            s if s.matches("Status") /* Status com.amazonaws.sns#PhoneNumberInformation$Status */ =>  {
+                let var_64 =
+                    Some(
+                        Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
+                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_status(var_64);
+            }
+            ,
+            s if s.matches("Iso2CountryCode") /* Iso2CountryCode com.amazonaws.sns#PhoneNumberInformation$Iso2CountryCode */ =>  {
+                let var_65 =
+                    Some(
+                        Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
+                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_iso2_country_code(var_65);
+            }
+            ,
+            s if s.matches("RouteType") /* RouteType com.amazonaws.sns#PhoneNumberInformation$RouteType */ =>  {
+                let var_66 =
+                    Some(
+                        Result::<crate::model::RouteType, smithy_xml::decode::XmlError>::Ok(
+                            crate::model::RouteType::from(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_route_type(var_66);
+            }
+            ,
+            s if s.matches("NumberCapabilities") /* NumberCapabilities com.amazonaws.sns#PhoneNumberInformation$NumberCapabilities */ =>  {
+                let var_67 =
+                    Some(
+                        crate::xml_deser::deser_list_number_capability_list(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_number_capabilities(var_67);
             }
             ,
             _ => {}
         }
     }
     Ok(builder.build())
+}
+
+pub fn deser_structure_platform_application(
+    decoder: &mut smithy_xml::decode::ScopedDecoder,
+) -> Result<crate::model::PlatformApplication, smithy_xml::decode::XmlError> {
+    #[allow(unused_mut)]
+    let mut builder = crate::model::PlatformApplication::builder();
+    while let Some(mut tag) = decoder.next_tag() {
+        match tag.start_el() {
+            s if s.matches("PlatformApplicationArn") /* PlatformApplicationArn com.amazonaws.sns#PlatformApplication$PlatformApplicationArn */ =>  {
+                let var_68 =
+                    Some(
+                        Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
+                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_platform_application_arn(var_68);
+            }
+            ,
+            s if s.matches("Attributes") /* Attributes com.amazonaws.sns#PlatformApplication$Attributes */ =>  {
+                let var_69 =
+                    Some(
+                        crate::xml_deser::deser_map_map_string_to_string(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_attributes(var_69);
+            }
+            ,
+            _ => {}
+        }
+    }
+    Ok(builder.build())
+}
+
+pub fn deser_structure_sms_sandbox_phone_number(
+    decoder: &mut smithy_xml::decode::ScopedDecoder,
+) -> Result<crate::model::SMSSandboxPhoneNumber, smithy_xml::decode::XmlError> {
+    #[allow(unused_mut)]
+    let mut builder = crate::model::SMSSandboxPhoneNumber::builder();
+    while let Some(mut tag) = decoder.next_tag() {
+        match tag.start_el() {
+            s if s.matches("PhoneNumber") /* PhoneNumber com.amazonaws.sns#SMSSandboxPhoneNumber$PhoneNumber */ =>  {
+                let var_70 =
+                    Some(
+                        Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
+                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_phone_number(var_70);
+            }
+            ,
+            s if s.matches("Status") /* Status com.amazonaws.sns#SMSSandboxPhoneNumber$Status */ =>  {
+                let var_71 =
+                    Some(
+                        Result::<crate::model::SmsSandboxPhoneNumberVerificationStatus, smithy_xml::decode::XmlError>::Ok(
+                            crate::model::SmsSandboxPhoneNumberVerificationStatus::from(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_status(var_71);
+            }
+            ,
+            _ => {}
+        }
+    }
+    Ok(builder.build())
+}
+
+pub fn deser_structure_subscription(
+    decoder: &mut smithy_xml::decode::ScopedDecoder,
+) -> Result<crate::model::Subscription, smithy_xml::decode::XmlError> {
+    #[allow(unused_mut)]
+    let mut builder = crate::model::Subscription::builder();
+    while let Some(mut tag) = decoder.next_tag() {
+        match tag.start_el() {
+            s if s.matches("SubscriptionArn") /* SubscriptionArn com.amazonaws.sns#Subscription$SubscriptionArn */ =>  {
+                let var_72 =
+                    Some(
+                        Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
+                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_subscription_arn(var_72);
+            }
+            ,
+            s if s.matches("Owner") /* Owner com.amazonaws.sns#Subscription$Owner */ =>  {
+                let var_73 =
+                    Some(
+                        Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
+                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_owner(var_73);
+            }
+            ,
+            s if s.matches("Protocol") /* Protocol com.amazonaws.sns#Subscription$Protocol */ =>  {
+                let var_74 =
+                    Some(
+                        Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
+                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_protocol(var_74);
+            }
+            ,
+            s if s.matches("Endpoint") /* Endpoint com.amazonaws.sns#Subscription$Endpoint */ =>  {
+                let var_75 =
+                    Some(
+                        Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
+                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_endpoint(var_75);
+            }
+            ,
+            s if s.matches("TopicArn") /* TopicArn com.amazonaws.sns#Subscription$TopicArn */ =>  {
+                let var_76 =
+                    Some(
+                        Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
+                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_topic_arn(var_76);
+            }
+            ,
+            _ => {}
+        }
+    }
+    Ok(builder.build())
+}
+
+pub fn deser_structure_tag(
+    decoder: &mut smithy_xml::decode::ScopedDecoder,
+) -> Result<crate::model::Tag, smithy_xml::decode::XmlError> {
+    #[allow(unused_mut)]
+    let mut builder = crate::model::Tag::builder();
+    while let Some(mut tag) = decoder.next_tag() {
+        match tag.start_el() {
+            s if s.matches("Key") /* Key com.amazonaws.sns#Tag$Key */ =>  {
+                let var_77 =
+                    Some(
+                        Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
+                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_key(var_77);
+            }
+            ,
+            s if s.matches("Value") /* Value com.amazonaws.sns#Tag$Value */ =>  {
+                let var_78 =
+                    Some(
+                        Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
+                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_value(var_78);
+            }
+            ,
+            _ => {}
+        }
+    }
+    Ok(builder.build())
+}
+
+pub fn deser_structure_topic(
+    decoder: &mut smithy_xml::decode::ScopedDecoder,
+) -> Result<crate::model::Topic, smithy_xml::decode::XmlError> {
+    #[allow(unused_mut)]
+    let mut builder = crate::model::Topic::builder();
+    while let Some(mut tag) = decoder.next_tag() {
+        match tag.start_el() {
+            s if s.matches("TopicArn") /* TopicArn com.amazonaws.sns#Topic$TopicArn */ =>  {
+                let var_79 =
+                    Some(
+                        Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
+                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_topic_arn(var_79);
+            }
+            ,
+            _ => {}
+        }
+    }
+    Ok(builder.build())
+}
+
+pub fn deser_list_number_capability_list(
+    decoder: &mut smithy_xml::decode::ScopedDecoder,
+) -> Result<std::vec::Vec<crate::model::NumberCapability>, smithy_xml::decode::XmlError> {
+    let mut out = std::vec::Vec::new();
+    while let Some(mut tag) = decoder.next_tag() {
+        match tag.start_el() {
+            s if s.matches("member") /* member com.amazonaws.sns#NumberCapabilityList$member */ =>  {
+                out.push(
+                    Result::<crate::model::NumberCapability, smithy_xml::decode::XmlError>::Ok(
+                        crate::model::NumberCapability::from(
+                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                        )
+                    )
+                    ?
+                );
+            }
+            ,
+            _ => {}
+        }
+    }
+    Ok(out)
 }
