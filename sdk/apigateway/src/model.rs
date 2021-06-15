@@ -14,6 +14,7 @@ pub enum VpcLinkStatus {
     Deleting,
     Failed,
     Pending,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for VpcLinkStatus {
@@ -175,6 +176,7 @@ pub enum Op {
     Remove,
     Replace,
     Test,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for Op {
@@ -323,6 +325,7 @@ pub enum QuotaPeriodType {
     Day,
     Month,
     Week,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for QuotaPeriodType {
@@ -929,6 +932,7 @@ pub enum UnauthorizedCacheControlHeaderStrategy {
     FailWith403,
     SucceedWithoutResponseHeader,
     SucceedWithResponseHeader,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for UnauthorizedCacheControlHeaderStrategy {
@@ -998,6 +1002,7 @@ pub enum CacheClusterStatus {
     DeleteInProgress,
     FlushInProgress,
     NotAvailable,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for CacheClusterStatus {
@@ -1066,6 +1071,7 @@ pub enum CacheClusterSize {
     Size28Point4Gb,
     Size58Point2Gb,
     Size6Point1Gb,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for CacheClusterSize {
@@ -1208,6 +1214,7 @@ pub enum EndpointType {
     Edge,
     Private,
     Regional,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for EndpointType {
@@ -1265,6 +1272,7 @@ impl<'de> serde::Deserialize<'de> for EndpointType {
 pub enum ApiKeySourceType {
     Authorizer,
     Header,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for ApiKeySourceType {
@@ -2647,6 +2655,7 @@ impl IntegrationResponse {
 pub enum ContentHandlingStrategy {
     ConvertToBinary,
     ConvertToText,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for ContentHandlingStrategy {
@@ -2702,6 +2711,7 @@ impl<'de> serde::Deserialize<'de> for ContentHandlingStrategy {
 pub enum ConnectionType {
     Internet,
     VpcLink,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for ConnectionType {
@@ -2761,6 +2771,7 @@ pub enum IntegrationType {
     Http,
     HttpProxy,
     Mock,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for IntegrationType {
@@ -2988,6 +2999,7 @@ pub enum GatewayResponseType {
     Throttled,
     Unauthorized,
     UnsupportedMediaType,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for GatewayResponseType {
@@ -3182,6 +3194,7 @@ impl MutualTlsAuthentication {
 pub enum SecurityPolicy {
     Tls10,
     Tls12,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for SecurityPolicy {
@@ -3238,6 +3251,7 @@ pub enum DomainNameStatus {
     Available,
     Pending,
     Updating,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for DomainNameStatus {
@@ -3421,6 +3435,7 @@ pub enum DocumentationPartType {
     Response,
     ResponseBody,
     ResponseHeader,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for DocumentationPartType {
@@ -3566,6 +3581,7 @@ pub enum AuthorizerType {
     CognitoUserPools,
     Request,
     Token,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for AuthorizerType {
@@ -3623,6 +3639,7 @@ impl<'de> serde::Deserialize<'de> for AuthorizerType {
 pub enum PutMode {
     Merge,
     Overwrite,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for PutMode {
@@ -3677,6 +3694,7 @@ impl<'de> serde::Deserialize<'de> for PutMode {
 )]
 pub enum ApiKeysFormat {
     Csv,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for ApiKeysFormat {
@@ -6303,6 +6321,7 @@ impl DocumentationPart {
 pub enum LocationStatusType {
     Documented,
     Undocumented,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for LocationStatusType {

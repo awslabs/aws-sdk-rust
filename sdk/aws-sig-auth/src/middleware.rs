@@ -26,7 +26,7 @@ use std::time::SystemTime;
 /// The following fields MAY be present in the property bag:
 /// - [`SystemTime`](SystemTime): The timestamp to use when signing the request. If this field is not present
 ///   [`SystemTime::now`](SystemTime::now) will be used.
-#[derive(Clone)]
+#[derive(Clone, Debug)]
 pub struct SigV4SigningStage {
     signer: SigV4Signer,
 }

@@ -15,6 +15,7 @@ pub enum ThrottleReason {
     FunctionInvocationRateLimitExceeded,
     ReservedFunctionConcurrentInvocationLimitExceeded,
     ReservedFunctionInvocationRateLimitExceeded,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for ThrottleReason {
@@ -485,6 +486,7 @@ impl ImageConfig {
 pub enum PackageType {
     Image,
     Zip,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for PackageType {
@@ -616,6 +618,7 @@ pub enum LastUpdateStatusReasonCode {
     InvalidSecurityGroup,
     InvalidSubnet,
     SubnetOutOfIpAddresses,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for LastUpdateStatusReasonCode {
@@ -692,6 +695,7 @@ pub enum LastUpdateStatus {
     Failed,
     InProgress,
     Successful,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for LastUpdateStatus {
@@ -760,6 +764,7 @@ pub enum StateReasonCode {
     InvalidSubnet,
     Restoring,
     SubnetOutOfIpAddresses,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for StateReasonCode {
@@ -839,6 +844,7 @@ pub enum State {
     Failed,
     Inactive,
     Pending,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for State {
@@ -1052,6 +1058,7 @@ impl TracingConfigResponse {
 pub enum TracingMode {
     Active,
     PassThrough,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for TracingMode {
@@ -1415,6 +1422,7 @@ pub enum Runtime {
     Python38,
     Ruby25,
     Ruby27,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for Runtime {
@@ -1696,6 +1704,7 @@ impl VpcConfig {
 )]
 pub enum FunctionResponseType {
     ReportBatchItemFailures,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for FunctionResponseType {
@@ -1817,6 +1826,7 @@ impl SelfManagedEventSource {
 )]
 pub enum EndPointType {
     KafkaBootstrapServers,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for EndPointType {
@@ -1985,6 +1995,7 @@ pub enum SourceAccessType {
     SaslScram512Auth,
     VpcSecurityGroup,
     VpcSubnet,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for SourceAccessType {
@@ -2047,6 +2058,7 @@ pub enum EventSourcePosition {
     AtTimestamp,
     Latest,
     TrimHorizon,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for EventSourcePosition {
@@ -2313,6 +2325,7 @@ impl CodeSigningPolicies {
 pub enum CodeSigningPolicy {
     Enforce,
     Warn,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for CodeSigningPolicy {
@@ -2489,6 +2502,7 @@ pub enum ProvisionedConcurrencyStatusEnum {
     Failed,
     InProgress,
     Ready,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for ProvisionedConcurrencyStatusEnum {
@@ -3762,6 +3776,7 @@ impl LayersListItem {
 )]
 pub enum FunctionVersion {
     All,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for FunctionVersion {
@@ -4599,6 +4614,7 @@ impl AliasConfiguration {
 pub enum LogType {
     None,
     Tail,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for LogType {
@@ -4655,6 +4671,7 @@ pub enum InvocationType {
     DryRun,
     Event,
     RequestResponse,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for InvocationType {

@@ -41,6 +41,10 @@ pub mod activate_key_signing_key_input {
         }
     }
 }
+#[doc(hidden)]
+pub type ActivateKeySigningKeyInputOperationOutputAlias = crate::operation::ActivateKeySigningKey;
+#[doc(hidden)]
+pub type ActivateKeySigningKeyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl ActivateKeySigningKeyInput {
     /// Consumes the builder and constructs an Operation<[`ActivateKeySigningKey`](crate::operation::ActivateKeySigningKey)>
     #[allow(clippy::let_and_return)]
@@ -191,6 +195,11 @@ pub mod associate_vpc_with_hosted_zone_input {
         }
     }
 }
+#[doc(hidden)]
+pub type AssociateVPCWithHostedZoneInputOperationOutputAlias =
+    crate::operation::AssociateVPCWithHostedZone;
+#[doc(hidden)]
+pub type AssociateVPCWithHostedZoneInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl AssociateVPCWithHostedZoneInput {
     /// Consumes the builder and constructs an Operation<[`AssociateVPCWithHostedZone`](crate::operation::AssociateVPCWithHostedZone)>
     #[allow(clippy::let_and_return)]
@@ -334,6 +343,11 @@ pub mod change_resource_record_sets_input {
         }
     }
 }
+#[doc(hidden)]
+pub type ChangeResourceRecordSetsInputOperationOutputAlias =
+    crate::operation::ChangeResourceRecordSets;
+#[doc(hidden)]
+pub type ChangeResourceRecordSetsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl ChangeResourceRecordSetsInput {
     /// Consumes the builder and constructs an Operation<[`ChangeResourceRecordSets`](crate::operation::ChangeResourceRecordSets)>
     #[allow(clippy::let_and_return)]
@@ -521,6 +535,10 @@ pub mod change_tags_for_resource_input {
         }
     }
 }
+#[doc(hidden)]
+pub type ChangeTagsForResourceInputOperationOutputAlias = crate::operation::ChangeTagsForResource;
+#[doc(hidden)]
+pub type ChangeTagsForResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl ChangeTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ChangeTagsForResource`](crate::operation::ChangeTagsForResource)>
     #[allow(clippy::let_and_return)]
@@ -687,6 +705,10 @@ pub mod create_health_check_input {
         }
     }
 }
+#[doc(hidden)]
+pub type CreateHealthCheckInputOperationOutputAlias = crate::operation::CreateHealthCheck;
+#[doc(hidden)]
+pub type CreateHealthCheckInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl CreateHealthCheckInput {
     /// Consumes the builder and constructs an Operation<[`CreateHealthCheck`](crate::operation::CreateHealthCheck)>
     #[allow(clippy::let_and_return)]
@@ -885,6 +907,10 @@ pub mod create_hosted_zone_input {
         }
     }
 }
+#[doc(hidden)]
+pub type CreateHostedZoneInputOperationOutputAlias = crate::operation::CreateHostedZone;
+#[doc(hidden)]
+pub type CreateHostedZoneInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl CreateHostedZoneInput {
     /// Consumes the builder and constructs an Operation<[`CreateHostedZone`](crate::operation::CreateHostedZone)>
     #[allow(clippy::let_and_return)]
@@ -1050,7 +1076,7 @@ pub mod create_key_signing_key_input {
         /// <ul>
         /// <li>
         /// <p>
-        /// <code>"Service": "api-service.dnssec.route53.aws.internal"</code>
+        /// <code>"Service": "dnssec.route53.aws.amazonaws.com"</code>
         /// </p>
         /// </li>
         /// </ul>
@@ -1103,6 +1129,10 @@ pub mod create_key_signing_key_input {
         }
     }
 }
+#[doc(hidden)]
+pub type CreateKeySigningKeyInputOperationOutputAlias = crate::operation::CreateKeySigningKey;
+#[doc(hidden)]
+pub type CreateKeySigningKeyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl CreateKeySigningKeyInput {
     /// Consumes the builder and constructs an Operation<[`CreateKeySigningKey`](crate::operation::CreateKeySigningKey)>
     #[allow(clippy::let_and_return)]
@@ -1250,6 +1280,11 @@ pub mod create_query_logging_config_input {
         }
     }
 }
+#[doc(hidden)]
+pub type CreateQueryLoggingConfigInputOperationOutputAlias =
+    crate::operation::CreateQueryLoggingConfig;
+#[doc(hidden)]
+pub type CreateQueryLoggingConfigInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl CreateQueryLoggingConfigInput {
     /// Consumes the builder and constructs an Operation<[`CreateQueryLoggingConfig`](crate::operation::CreateQueryLoggingConfig)>
     #[allow(clippy::let_and_return)]
@@ -1394,6 +1429,11 @@ pub mod create_reusable_delegation_set_input {
         }
     }
 }
+#[doc(hidden)]
+pub type CreateReusableDelegationSetInputOperationOutputAlias =
+    crate::operation::CreateReusableDelegationSet;
+#[doc(hidden)]
+pub type CreateReusableDelegationSetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl CreateReusableDelegationSetInput {
     /// Consumes the builder and constructs an Operation<[`CreateReusableDelegationSet`](crate::operation::CreateReusableDelegationSet)>
     #[allow(clippy::let_and_return)]
@@ -1541,6 +1581,10 @@ pub mod create_traffic_policy_input {
         }
     }
 }
+#[doc(hidden)]
+pub type CreateTrafficPolicyInputOperationOutputAlias = crate::operation::CreateTrafficPolicy;
+#[doc(hidden)]
+pub type CreateTrafficPolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl CreateTrafficPolicyInput {
     /// Consumes the builder and constructs an Operation<[`CreateTrafficPolicy`](crate::operation::CreateTrafficPolicy)>
     #[allow(clippy::let_and_return)]
@@ -1714,6 +1758,11 @@ pub mod create_traffic_policy_instance_input {
         }
     }
 }
+#[doc(hidden)]
+pub type CreateTrafficPolicyInstanceInputOperationOutputAlias =
+    crate::operation::CreateTrafficPolicyInstance;
+#[doc(hidden)]
+pub type CreateTrafficPolicyInstanceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl CreateTrafficPolicyInstanceInput {
     /// Consumes the builder and constructs an Operation<[`CreateTrafficPolicyInstance`](crate::operation::CreateTrafficPolicyInstance)>
     #[allow(clippy::let_and_return)]
@@ -1862,6 +1911,11 @@ pub mod create_traffic_policy_version_input {
         }
     }
 }
+#[doc(hidden)]
+pub type CreateTrafficPolicyVersionInputOperationOutputAlias =
+    crate::operation::CreateTrafficPolicyVersion;
+#[doc(hidden)]
+pub type CreateTrafficPolicyVersionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl CreateTrafficPolicyVersionInput {
     /// Consumes the builder and constructs an Operation<[`CreateTrafficPolicyVersion`](crate::operation::CreateTrafficPolicyVersion)>
     #[allow(clippy::let_and_return)]
@@ -2005,6 +2059,11 @@ pub mod create_vpc_association_authorization_input {
         }
     }
 }
+#[doc(hidden)]
+pub type CreateVPCAssociationAuthorizationInputOperationOutputAlias =
+    crate::operation::CreateVPCAssociationAuthorization;
+#[doc(hidden)]
+pub type CreateVPCAssociationAuthorizationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl CreateVPCAssociationAuthorizationInput {
     /// Consumes the builder and constructs an Operation<[`CreateVPCAssociationAuthorization`](crate::operation::CreateVPCAssociationAuthorization)>
     #[allow(clippy::let_and_return)]
@@ -2147,6 +2206,11 @@ pub mod deactivate_key_signing_key_input {
         }
     }
 }
+#[doc(hidden)]
+pub type DeactivateKeySigningKeyInputOperationOutputAlias =
+    crate::operation::DeactivateKeySigningKey;
+#[doc(hidden)]
+pub type DeactivateKeySigningKeyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl DeactivateKeySigningKeyInput {
     /// Consumes the builder and constructs an Operation<[`DeactivateKeySigningKey`](crate::operation::DeactivateKeySigningKey)>
     #[allow(clippy::let_and_return)]
@@ -2273,6 +2337,10 @@ pub mod delete_health_check_input {
         }
     }
 }
+#[doc(hidden)]
+pub type DeleteHealthCheckInputOperationOutputAlias = crate::operation::DeleteHealthCheck;
+#[doc(hidden)]
+pub type DeleteHealthCheckInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl DeleteHealthCheckInput {
     /// Consumes the builder and constructs an Operation<[`DeleteHealthCheck`](crate::operation::DeleteHealthCheck)>
     #[allow(clippy::let_and_return)]
@@ -2398,6 +2466,10 @@ pub mod delete_hosted_zone_input {
         }
     }
 }
+#[doc(hidden)]
+pub type DeleteHostedZoneInputOperationOutputAlias = crate::operation::DeleteHostedZone;
+#[doc(hidden)]
+pub type DeleteHostedZoneInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl DeleteHostedZoneInput {
     /// Consumes the builder and constructs an Operation<[`DeleteHostedZone`](crate::operation::DeleteHostedZone)>
     #[allow(clippy::let_and_return)]
@@ -2534,6 +2606,10 @@ pub mod delete_key_signing_key_input {
         }
     }
 }
+#[doc(hidden)]
+pub type DeleteKeySigningKeyInputOperationOutputAlias = crate::operation::DeleteKeySigningKey;
+#[doc(hidden)]
+pub type DeleteKeySigningKeyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl DeleteKeySigningKeyInput {
     /// Consumes the builder and constructs an Operation<[`DeleteKeySigningKey`](crate::operation::DeleteKeySigningKey)>
     #[allow(clippy::let_and_return)]
@@ -2660,6 +2736,11 @@ pub mod delete_query_logging_config_input {
         }
     }
 }
+#[doc(hidden)]
+pub type DeleteQueryLoggingConfigInputOperationOutputAlias =
+    crate::operation::DeleteQueryLoggingConfig;
+#[doc(hidden)]
+pub type DeleteQueryLoggingConfigInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl DeleteQueryLoggingConfigInput {
     /// Consumes the builder and constructs an Operation<[`DeleteQueryLoggingConfig`](crate::operation::DeleteQueryLoggingConfig)>
     #[allow(clippy::let_and_return)]
@@ -2787,6 +2868,11 @@ pub mod delete_reusable_delegation_set_input {
         }
     }
 }
+#[doc(hidden)]
+pub type DeleteReusableDelegationSetInputOperationOutputAlias =
+    crate::operation::DeleteReusableDelegationSet;
+#[doc(hidden)]
+pub type DeleteReusableDelegationSetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl DeleteReusableDelegationSetInput {
     /// Consumes the builder and constructs an Operation<[`DeleteReusableDelegationSet`](crate::operation::DeleteReusableDelegationSet)>
     #[allow(clippy::let_and_return)]
@@ -2923,6 +3009,10 @@ pub mod delete_traffic_policy_input {
         }
     }
 }
+#[doc(hidden)]
+pub type DeleteTrafficPolicyInputOperationOutputAlias = crate::operation::DeleteTrafficPolicy;
+#[doc(hidden)]
+pub type DeleteTrafficPolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl DeleteTrafficPolicyInput {
     /// Consumes the builder and constructs an Operation<[`DeleteTrafficPolicy`](crate::operation::DeleteTrafficPolicy)>
     #[allow(clippy::let_and_return)]
@@ -3055,6 +3145,11 @@ pub mod delete_traffic_policy_instance_input {
         }
     }
 }
+#[doc(hidden)]
+pub type DeleteTrafficPolicyInstanceInputOperationOutputAlias =
+    crate::operation::DeleteTrafficPolicyInstance;
+#[doc(hidden)]
+pub type DeleteTrafficPolicyInstanceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl DeleteTrafficPolicyInstanceInput {
     /// Consumes the builder and constructs an Operation<[`DeleteTrafficPolicyInstance`](crate::operation::DeleteTrafficPolicyInstance)>
     #[allow(clippy::let_and_return)]
@@ -3195,6 +3290,11 @@ pub mod delete_vpc_association_authorization_input {
         }
     }
 }
+#[doc(hidden)]
+pub type DeleteVPCAssociationAuthorizationInputOperationOutputAlias =
+    crate::operation::DeleteVPCAssociationAuthorization;
+#[doc(hidden)]
+pub type DeleteVPCAssociationAuthorizationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl DeleteVPCAssociationAuthorizationInput {
     /// Consumes the builder and constructs an Operation<[`DeleteVPCAssociationAuthorization`](crate::operation::DeleteVPCAssociationAuthorization)>
     #[allow(clippy::let_and_return)]
@@ -3326,6 +3426,11 @@ pub mod disable_hosted_zone_dnssec_input {
         }
     }
 }
+#[doc(hidden)]
+pub type DisableHostedZoneDNSSECInputOperationOutputAlias =
+    crate::operation::DisableHostedZoneDNSSEC;
+#[doc(hidden)]
+pub type DisableHostedZoneDNSSECInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl DisableHostedZoneDNSSECInput {
     /// Consumes the builder and constructs an Operation<[`DisableHostedZoneDNSSEC`](crate::operation::DisableHostedZoneDNSSEC)>
     #[allow(clippy::let_and_return)]
@@ -3477,6 +3582,11 @@ pub mod disassociate_vpc_from_hosted_zone_input {
         }
     }
 }
+#[doc(hidden)]
+pub type DisassociateVPCFromHostedZoneInputOperationOutputAlias =
+    crate::operation::DisassociateVPCFromHostedZone;
+#[doc(hidden)]
+pub type DisassociateVPCFromHostedZoneInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl DisassociateVPCFromHostedZoneInput {
     /// Consumes the builder and constructs an Operation<[`DisassociateVPCFromHostedZone`](crate::operation::DisassociateVPCFromHostedZone)>
     #[allow(clippy::let_and_return)]
@@ -3606,6 +3716,10 @@ pub mod enable_hosted_zone_dnssec_input {
         }
     }
 }
+#[doc(hidden)]
+pub type EnableHostedZoneDNSSECInputOperationOutputAlias = crate::operation::EnableHostedZoneDNSSEC;
+#[doc(hidden)]
+pub type EnableHostedZoneDNSSECInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl EnableHostedZoneDNSSECInput {
     /// Consumes the builder and constructs an Operation<[`EnableHostedZoneDNSSEC`](crate::operation::EnableHostedZoneDNSSEC)>
     #[allow(clippy::let_and_return)]
@@ -3765,6 +3879,10 @@ pub mod get_account_limit_input {
         }
     }
 }
+#[doc(hidden)]
+pub type GetAccountLimitInputOperationOutputAlias = crate::operation::GetAccountLimit;
+#[doc(hidden)]
+pub type GetAccountLimitInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl GetAccountLimitInput {
     /// Consumes the builder and constructs an Operation<[`GetAccountLimit`](crate::operation::GetAccountLimit)>
     #[allow(clippy::let_and_return)]
@@ -3890,6 +4008,10 @@ pub mod get_change_input {
         }
     }
 }
+#[doc(hidden)]
+pub type GetChangeInputOperationOutputAlias = crate::operation::GetChange;
+#[doc(hidden)]
+pub type GetChangeInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl GetChangeInput {
     /// Consumes the builder and constructs an Operation<[`GetChange`](crate::operation::GetChange)>
     #[allow(clippy::let_and_return)]
@@ -4000,6 +4122,10 @@ pub mod get_checker_ip_ranges_input {
         }
     }
 }
+#[doc(hidden)]
+pub type GetCheckerIpRangesInputOperationOutputAlias = crate::operation::GetCheckerIpRanges;
+#[doc(hidden)]
+pub type GetCheckerIpRangesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl GetCheckerIpRangesInput {
     /// Consumes the builder and constructs an Operation<[`GetCheckerIpRanges`](crate::operation::GetCheckerIpRanges)>
     #[allow(clippy::let_and_return)]
@@ -4119,6 +4245,10 @@ pub mod get_dnssec_input {
         }
     }
 }
+#[doc(hidden)]
+pub type GetDNSSECInputOperationOutputAlias = crate::operation::GetDNSSEC;
+#[doc(hidden)]
+pub type GetDNSSECInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl GetDNSSECInput {
     /// Consumes the builder and constructs an Operation<[`GetDNSSEC`](crate::operation::GetDNSSEC)>
     #[allow(clippy::let_and_return)]
@@ -4297,6 +4427,10 @@ pub mod get_geo_location_input {
         }
     }
 }
+#[doc(hidden)]
+pub type GetGeoLocationInputOperationOutputAlias = crate::operation::GetGeoLocation;
+#[doc(hidden)]
+pub type GetGeoLocationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl GetGeoLocationInput {
     /// Consumes the builder and constructs an Operation<[`GetGeoLocation`](crate::operation::GetGeoLocation)>
     #[allow(clippy::let_and_return)]
@@ -4430,6 +4564,10 @@ pub mod get_health_check_input {
         }
     }
 }
+#[doc(hidden)]
+pub type GetHealthCheckInputOperationOutputAlias = crate::operation::GetHealthCheck;
+#[doc(hidden)]
+pub type GetHealthCheckInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl GetHealthCheckInput {
     /// Consumes the builder and constructs an Operation<[`GetHealthCheck`](crate::operation::GetHealthCheck)>
     #[allow(clippy::let_and_return)]
@@ -4542,6 +4680,10 @@ pub mod get_health_check_count_input {
         }
     }
 }
+#[doc(hidden)]
+pub type GetHealthCheckCountInputOperationOutputAlias = crate::operation::GetHealthCheckCount;
+#[doc(hidden)]
+pub type GetHealthCheckCountInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl GetHealthCheckCountInput {
     /// Consumes the builder and constructs an Operation<[`GetHealthCheckCount`](crate::operation::GetHealthCheckCount)>
     #[allow(clippy::let_and_return)]
@@ -4669,6 +4811,11 @@ pub mod get_health_check_last_failure_reason_input {
         }
     }
 }
+#[doc(hidden)]
+pub type GetHealthCheckLastFailureReasonInputOperationOutputAlias =
+    crate::operation::GetHealthCheckLastFailureReason;
+#[doc(hidden)]
+pub type GetHealthCheckLastFailureReasonInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl GetHealthCheckLastFailureReasonInput {
     /// Consumes the builder and constructs an Operation<[`GetHealthCheckLastFailureReason`](crate::operation::GetHealthCheckLastFailureReason)>
     #[allow(clippy::let_and_return)]
@@ -4799,6 +4946,10 @@ pub mod get_health_check_status_input {
         }
     }
 }
+#[doc(hidden)]
+pub type GetHealthCheckStatusInputOperationOutputAlias = crate::operation::GetHealthCheckStatus;
+#[doc(hidden)]
+pub type GetHealthCheckStatusInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl GetHealthCheckStatusInput {
     /// Consumes the builder and constructs an Operation<[`GetHealthCheckStatus`](crate::operation::GetHealthCheckStatus)>
     #[allow(clippy::let_and_return)]
@@ -4923,6 +5074,10 @@ pub mod get_hosted_zone_input {
         }
     }
 }
+#[doc(hidden)]
+pub type GetHostedZoneInputOperationOutputAlias = crate::operation::GetHostedZone;
+#[doc(hidden)]
+pub type GetHostedZoneInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl GetHostedZoneInput {
     /// Consumes the builder and constructs an Operation<[`GetHostedZone`](crate::operation::GetHostedZone)>
     #[allow(clippy::let_and_return)]
@@ -5035,6 +5190,10 @@ pub mod get_hosted_zone_count_input {
         }
     }
 }
+#[doc(hidden)]
+pub type GetHostedZoneCountInputOperationOutputAlias = crate::operation::GetHostedZoneCount;
+#[doc(hidden)]
+pub type GetHostedZoneCountInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl GetHostedZoneCountInput {
     /// Consumes the builder and constructs an Operation<[`GetHostedZoneCount`](crate::operation::GetHostedZoneCount)>
     #[allow(clippy::let_and_return)]
@@ -5186,6 +5345,10 @@ pub mod get_hosted_zone_limit_input {
         }
     }
 }
+#[doc(hidden)]
+pub type GetHostedZoneLimitInputOperationOutputAlias = crate::operation::GetHostedZoneLimit;
+#[doc(hidden)]
+pub type GetHostedZoneLimitInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl GetHostedZoneLimitInput {
     /// Consumes the builder and constructs an Operation<[`GetHostedZoneLimit`](crate::operation::GetHostedZoneLimit)>
     #[allow(clippy::let_and_return)]
@@ -5312,6 +5475,10 @@ pub mod get_query_logging_config_input {
         }
     }
 }
+#[doc(hidden)]
+pub type GetQueryLoggingConfigInputOperationOutputAlias = crate::operation::GetQueryLoggingConfig;
+#[doc(hidden)]
+pub type GetQueryLoggingConfigInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl GetQueryLoggingConfigInput {
     /// Consumes the builder and constructs an Operation<[`GetQueryLoggingConfig`](crate::operation::GetQueryLoggingConfig)>
     #[allow(clippy::let_and_return)]
@@ -5437,6 +5604,11 @@ pub mod get_reusable_delegation_set_input {
         }
     }
 }
+#[doc(hidden)]
+pub type GetReusableDelegationSetInputOperationOutputAlias =
+    crate::operation::GetReusableDelegationSet;
+#[doc(hidden)]
+pub type GetReusableDelegationSetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl GetReusableDelegationSetInput {
     /// Consumes the builder and constructs an Operation<[`GetReusableDelegationSet`](crate::operation::GetReusableDelegationSet)>
     #[allow(clippy::let_and_return)]
@@ -5584,6 +5756,11 @@ pub mod get_reusable_delegation_set_limit_input {
         }
     }
 }
+#[doc(hidden)]
+pub type GetReusableDelegationSetLimitInputOperationOutputAlias =
+    crate::operation::GetReusableDelegationSetLimit;
+#[doc(hidden)]
+pub type GetReusableDelegationSetLimitInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl GetReusableDelegationSetLimitInput {
     /// Consumes the builder and constructs an Operation<[`GetReusableDelegationSetLimit`](crate::operation::GetReusableDelegationSetLimit)>
     #[allow(clippy::let_and_return)]
@@ -5721,6 +5898,10 @@ pub mod get_traffic_policy_input {
         }
     }
 }
+#[doc(hidden)]
+pub type GetTrafficPolicyInputOperationOutputAlias = crate::operation::GetTrafficPolicy;
+#[doc(hidden)]
+pub type GetTrafficPolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl GetTrafficPolicyInput {
     /// Consumes the builder and constructs an Operation<[`GetTrafficPolicy`](crate::operation::GetTrafficPolicy)>
     #[allow(clippy::let_and_return)]
@@ -5847,6 +6028,11 @@ pub mod get_traffic_policy_instance_input {
         }
     }
 }
+#[doc(hidden)]
+pub type GetTrafficPolicyInstanceInputOperationOutputAlias =
+    crate::operation::GetTrafficPolicyInstance;
+#[doc(hidden)]
+pub type GetTrafficPolicyInstanceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl GetTrafficPolicyInstanceInput {
     /// Consumes the builder and constructs an Operation<[`GetTrafficPolicyInstance`](crate::operation::GetTrafficPolicyInstance)>
     #[allow(clippy::let_and_return)]
@@ -5961,6 +6147,11 @@ pub mod get_traffic_policy_instance_count_input {
         }
     }
 }
+#[doc(hidden)]
+pub type GetTrafficPolicyInstanceCountInputOperationOutputAlias =
+    crate::operation::GetTrafficPolicyInstanceCount;
+#[doc(hidden)]
+pub type GetTrafficPolicyInstanceCountInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl GetTrafficPolicyInstanceCountInput {
     /// Consumes the builder and constructs an Operation<[`GetTrafficPolicyInstanceCount`](crate::operation::GetTrafficPolicyInstanceCount)>
     #[allow(clippy::let_and_return)]
@@ -6134,6 +6325,10 @@ pub mod list_geo_locations_input {
         }
     }
 }
+#[doc(hidden)]
+pub type ListGeoLocationsInputOperationOutputAlias = crate::operation::ListGeoLocations;
+#[doc(hidden)]
+pub type ListGeoLocationsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl ListGeoLocationsInput {
     /// Consumes the builder and constructs an Operation<[`ListGeoLocations`](crate::operation::ListGeoLocations)>
     #[allow(clippy::let_and_return)]
@@ -6295,6 +6490,10 @@ pub mod list_health_checks_input {
         }
     }
 }
+#[doc(hidden)]
+pub type ListHealthChecksInputOperationOutputAlias = crate::operation::ListHealthChecks;
+#[doc(hidden)]
+pub type ListHealthChecksInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl ListHealthChecksInput {
     /// Consumes the builder and constructs an Operation<[`ListHealthChecks`](crate::operation::ListHealthChecks)>
     #[allow(clippy::let_and_return)]
@@ -6457,6 +6656,10 @@ pub mod list_hosted_zones_input {
         }
     }
 }
+#[doc(hidden)]
+pub type ListHostedZonesInputOperationOutputAlias = crate::operation::ListHostedZones;
+#[doc(hidden)]
+pub type ListHostedZonesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl ListHostedZonesInput {
     /// Consumes the builder and constructs an Operation<[`ListHostedZones`](crate::operation::ListHostedZones)>
     #[allow(clippy::let_and_return)]
@@ -6624,6 +6827,10 @@ pub mod list_hosted_zones_by_name_input {
         }
     }
 }
+#[doc(hidden)]
+pub type ListHostedZonesByNameInputOperationOutputAlias = crate::operation::ListHostedZonesByName;
+#[doc(hidden)]
+pub type ListHostedZonesByNameInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl ListHostedZonesByNameInput {
     /// Consumes the builder and constructs an Operation<[`ListHostedZonesByName`](crate::operation::ListHostedZonesByName)>
     #[allow(clippy::let_and_return)]
@@ -6795,6 +7002,10 @@ pub mod list_hosted_zones_by_vpc_input {
         }
     }
 }
+#[doc(hidden)]
+pub type ListHostedZonesByVPCInputOperationOutputAlias = crate::operation::ListHostedZonesByVPC;
+#[doc(hidden)]
+pub type ListHostedZonesByVPCInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl ListHostedZonesByVPCInput {
     /// Consumes the builder and constructs an Operation<[`ListHostedZonesByVPC`](crate::operation::ListHostedZonesByVPC)>
     #[allow(clippy::let_and_return)]
@@ -6964,6 +7175,11 @@ pub mod list_query_logging_configs_input {
         }
     }
 }
+#[doc(hidden)]
+pub type ListQueryLoggingConfigsInputOperationOutputAlias =
+    crate::operation::ListQueryLoggingConfigs;
+#[doc(hidden)]
+pub type ListQueryLoggingConfigsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl ListQueryLoggingConfigsInput {
     /// Consumes the builder and constructs an Operation<[`ListQueryLoggingConfigs`](crate::operation::ListQueryLoggingConfigs)>
     #[allow(clippy::let_and_return)]
@@ -7197,6 +7413,10 @@ pub mod list_resource_record_sets_input {
         }
     }
 }
+#[doc(hidden)]
+pub type ListResourceRecordSetsInputOperationOutputAlias = crate::operation::ListResourceRecordSets;
+#[doc(hidden)]
+pub type ListResourceRecordSetsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl ListResourceRecordSetsInput {
     /// Consumes the builder and constructs an Operation<[`ListResourceRecordSets`](crate::operation::ListResourceRecordSets)>
     #[allow(clippy::let_and_return)]
@@ -7354,6 +7574,11 @@ pub mod list_reusable_delegation_sets_input {
         }
     }
 }
+#[doc(hidden)]
+pub type ListReusableDelegationSetsInputOperationOutputAlias =
+    crate::operation::ListReusableDelegationSets;
+#[doc(hidden)]
+pub type ListReusableDelegationSetsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl ListReusableDelegationSetsInput {
     /// Consumes the builder and constructs an Operation<[`ListReusableDelegationSets`](crate::operation::ListReusableDelegationSets)>
     #[allow(clippy::let_and_return)]
@@ -7511,6 +7736,10 @@ pub mod list_tags_for_resource_input {
         }
     }
 }
+#[doc(hidden)]
+pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
+#[doc(hidden)]
+pub type ListTagsForResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(clippy::let_and_return)]
@@ -7667,6 +7896,10 @@ pub mod list_tags_for_resources_input {
         }
     }
 }
+#[doc(hidden)]
+pub type ListTagsForResourcesInputOperationOutputAlias = crate::operation::ListTagsForResources;
+#[doc(hidden)]
+pub type ListTagsForResourcesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl ListTagsForResourcesInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResources`](crate::operation::ListTagsForResources)>
     #[allow(clippy::let_and_return)]
@@ -7816,6 +8049,10 @@ pub mod list_traffic_policies_input {
         }
     }
 }
+#[doc(hidden)]
+pub type ListTrafficPoliciesInputOperationOutputAlias = crate::operation::ListTrafficPolicies;
+#[doc(hidden)]
+pub type ListTrafficPoliciesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl ListTrafficPoliciesInput {
     /// Consumes the builder and constructs an Operation<[`ListTrafficPolicies`](crate::operation::ListTrafficPolicies)>
     #[allow(clippy::let_and_return)]
@@ -8010,6 +8247,11 @@ pub mod list_traffic_policy_instances_input {
         }
     }
 }
+#[doc(hidden)]
+pub type ListTrafficPolicyInstancesInputOperationOutputAlias =
+    crate::operation::ListTrafficPolicyInstances;
+#[doc(hidden)]
+pub type ListTrafficPolicyInstancesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl ListTrafficPolicyInstancesInput {
     /// Consumes the builder and constructs an Operation<[`ListTrafficPolicyInstances`](crate::operation::ListTrafficPolicyInstances)>
     #[allow(clippy::let_and_return)]
@@ -8207,6 +8449,12 @@ pub mod list_traffic_policy_instances_by_hosted_zone_input {
         }
     }
 }
+#[doc(hidden)]
+pub type ListTrafficPolicyInstancesByHostedZoneInputOperationOutputAlias =
+    crate::operation::ListTrafficPolicyInstancesByHostedZone;
+#[doc(hidden)]
+pub type ListTrafficPolicyInstancesByHostedZoneInputOperationRetryAlias =
+    aws_http::AwsErrorRetryPolicy;
 impl ListTrafficPolicyInstancesByHostedZoneInput {
     /// Consumes the builder and constructs an Operation<[`ListTrafficPolicyInstancesByHostedZone`](crate::operation::ListTrafficPolicyInstancesByHostedZone)>
     #[allow(clippy::let_and_return)]
@@ -8438,6 +8686,11 @@ pub mod list_traffic_policy_instances_by_policy_input {
         }
     }
 }
+#[doc(hidden)]
+pub type ListTrafficPolicyInstancesByPolicyInputOperationOutputAlias =
+    crate::operation::ListTrafficPolicyInstancesByPolicy;
+#[doc(hidden)]
+pub type ListTrafficPolicyInstancesByPolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl ListTrafficPolicyInstancesByPolicyInput {
     /// Consumes the builder and constructs an Operation<[`ListTrafficPolicyInstancesByPolicy`](crate::operation::ListTrafficPolicyInstancesByPolicy)>
     #[allow(clippy::let_and_return)]
@@ -8622,6 +8875,11 @@ pub mod list_traffic_policy_versions_input {
         }
     }
 }
+#[doc(hidden)]
+pub type ListTrafficPolicyVersionsInputOperationOutputAlias =
+    crate::operation::ListTrafficPolicyVersions;
+#[doc(hidden)]
+pub type ListTrafficPolicyVersionsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl ListTrafficPolicyVersionsInput {
     /// Consumes the builder and constructs an Operation<[`ListTrafficPolicyVersions`](crate::operation::ListTrafficPolicyVersions)>
     #[allow(clippy::let_and_return)]
@@ -8790,6 +9048,11 @@ pub mod list_vpc_association_authorizations_input {
         }
     }
 }
+#[doc(hidden)]
+pub type ListVPCAssociationAuthorizationsInputOperationOutputAlias =
+    crate::operation::ListVPCAssociationAuthorizations;
+#[doc(hidden)]
+pub type ListVPCAssociationAuthorizationsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl ListVPCAssociationAuthorizationsInput {
     /// Consumes the builder and constructs an Operation<[`ListVPCAssociationAuthorizations`](crate::operation::ListVPCAssociationAuthorizations)>
     #[allow(clippy::let_and_return)]
@@ -9002,6 +9265,10 @@ pub mod test_dns_answer_input {
         }
     }
 }
+#[doc(hidden)]
+pub type TestDNSAnswerInputOperationOutputAlias = crate::operation::TestDNSAnswer;
+#[doc(hidden)]
+pub type TestDNSAnswerInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl TestDNSAnswerInput {
     /// Consumes the builder and constructs an Operation<[`TestDNSAnswer`](crate::operation::TestDNSAnswer)>
     #[allow(clippy::let_and_return)]
@@ -9556,6 +9823,10 @@ pub mod update_health_check_input {
         }
     }
 }
+#[doc(hidden)]
+pub type UpdateHealthCheckInputOperationOutputAlias = crate::operation::UpdateHealthCheck;
+#[doc(hidden)]
+pub type UpdateHealthCheckInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl UpdateHealthCheckInput {
     /// Consumes the builder and constructs an Operation<[`UpdateHealthCheck`](crate::operation::UpdateHealthCheck)>
     #[allow(clippy::let_and_return)]
@@ -9696,6 +9967,11 @@ pub mod update_hosted_zone_comment_input {
         }
     }
 }
+#[doc(hidden)]
+pub type UpdateHostedZoneCommentInputOperationOutputAlias =
+    crate::operation::UpdateHostedZoneComment;
+#[doc(hidden)]
+pub type UpdateHostedZoneCommentInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl UpdateHostedZoneCommentInput {
     /// Consumes the builder and constructs an Operation<[`UpdateHostedZoneComment`](crate::operation::UpdateHostedZoneComment)>
     #[allow(clippy::let_and_return)]
@@ -9846,6 +10122,11 @@ pub mod update_traffic_policy_comment_input {
         }
     }
 }
+#[doc(hidden)]
+pub type UpdateTrafficPolicyCommentInputOperationOutputAlias =
+    crate::operation::UpdateTrafficPolicyComment;
+#[doc(hidden)]
+pub type UpdateTrafficPolicyCommentInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl UpdateTrafficPolicyCommentInput {
     /// Consumes the builder and constructs an Operation<[`UpdateTrafficPolicyComment`](crate::operation::UpdateTrafficPolicyComment)>
     #[allow(clippy::let_and_return)]
@@ -10014,6 +10295,11 @@ pub mod update_traffic_policy_instance_input {
         }
     }
 }
+#[doc(hidden)]
+pub type UpdateTrafficPolicyInstanceInputOperationOutputAlias =
+    crate::operation::UpdateTrafficPolicyInstance;
+#[doc(hidden)]
+pub type UpdateTrafficPolicyInstanceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl UpdateTrafficPolicyInstanceInput {
     /// Consumes the builder and constructs an Operation<[`UpdateTrafficPolicyInstance`](crate::operation::UpdateTrafficPolicyInstance)>
     #[allow(clippy::let_and_return)]
@@ -11816,7 +12102,7 @@ pub struct CreateKeySigningKeyInput {
     /// <ul>
     /// <li>
     /// <p>
-    /// <code>"Service": "api-service.dnssec.route53.aws.internal"</code>
+    /// <code>"Service": "dnssec.route53.aws.amazonaws.com"</code>
     /// </p>
     /// </li>
     /// </ul>

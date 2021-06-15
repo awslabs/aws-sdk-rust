@@ -1520,6 +1520,84 @@ impl std::error::Error for UpdateLedgerError {
     }
 }
 
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct UpdateLedgerPermissionsModeError {
+    pub kind: UpdateLedgerPermissionsModeErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum UpdateLedgerPermissionsModeErrorKind {
+    InvalidParameterError(crate::error::InvalidParameterError),
+    ResourceNotFoundError(crate::error::ResourceNotFoundError),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for UpdateLedgerPermissionsModeError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            UpdateLedgerPermissionsModeErrorKind::InvalidParameterError(_inner) => _inner.fmt(f),
+            UpdateLedgerPermissionsModeErrorKind::ResourceNotFoundError(_inner) => _inner.fmt(f),
+            UpdateLedgerPermissionsModeErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for UpdateLedgerPermissionsModeError {
+    fn code(&self) -> Option<&str> {
+        UpdateLedgerPermissionsModeError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl UpdateLedgerPermissionsModeError {
+    pub fn new(kind: UpdateLedgerPermissionsModeErrorKind, meta: smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: UpdateLedgerPermissionsModeErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: UpdateLedgerPermissionsModeErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
+    // by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+}
+impl std::error::Error for UpdateLedgerPermissionsModeError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            UpdateLedgerPermissionsModeErrorKind::InvalidParameterError(_inner) => Some(_inner),
+            UpdateLedgerPermissionsModeErrorKind::ResourceNotFoundError(_inner) => Some(_inner),
+            UpdateLedgerPermissionsModeErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// <p>The specified resource doesn't exist.</p>
 #[non_exhaustive]
 #[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]

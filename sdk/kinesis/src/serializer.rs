@@ -3,18 +3,18 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AddTagsToStreamInputBody<'a> {
+    /// <p>The name of the stream.</p>
+    pub stream_name: &'a std::option::Option<std::string::String>,
     /// <p>A set of up to 10 key-value pairs to use to create the tags.</p>
     pub tags: &'a std::option::Option<
         std::collections::HashMap<std::string::String, std::string::String>,
     >,
-    /// <p>The name of the stream.</p>
-    pub stream_name: &'a std::option::Option<std::string::String>,
 }
 impl<'a> std::fmt::Debug for AddTagsToStreamInputBody<'a> {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AddTagsToStreamInputBody");
-        formatter.field("tags", &self.tags);
         formatter.field("stream_name", &self.stream_name);
+        formatter.field("tags", &self.tags);
         formatter.finish()
     }
 }
@@ -46,17 +46,17 @@ impl<'a> std::fmt::Debug for CreateStreamInputBody<'a> {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DecreaseStreamRetentionPeriodInputBody<'a> {
+    /// <p>The name of the stream to modify.</p>
+    pub stream_name: &'a std::option::Option<std::string::String>,
     /// <p>The new retention period of the stream, in hours. Must be less than the current
     /// retention period.</p>
     pub retention_period_hours: &'a std::option::Option<i32>,
-    /// <p>The name of the stream to modify.</p>
-    pub stream_name: &'a std::option::Option<std::string::String>,
 }
 impl<'a> std::fmt::Debug for DecreaseStreamRetentionPeriodInputBody<'a> {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DecreaseStreamRetentionPeriodInputBody");
-        formatter.field("retention_period_hours", &self.retention_period_hours);
         formatter.field("stream_name", &self.stream_name);
+        formatter.field("retention_period_hours", &self.retention_period_hours);
         formatter.finish()
     }
 }
@@ -112,18 +112,18 @@ impl<'a> std::fmt::Debug for DeregisterStreamConsumerInputBody<'a> {
 pub struct DescribeStreamInputBody<'a> {
     /// <p>The name of the stream to describe.</p>
     pub stream_name: &'a std::option::Option<std::string::String>,
-    /// <p>The shard ID of the shard to start with.</p>
-    pub exclusive_start_shard_id: &'a std::option::Option<std::string::String>,
     /// <p>The maximum number of shards to return in a single call. The default value is 100.
     /// If you specify a value greater than 100, at most 100 shards are returned.</p>
     pub limit: &'a std::option::Option<i32>,
+    /// <p>The shard ID of the shard to start with.</p>
+    pub exclusive_start_shard_id: &'a std::option::Option<std::string::String>,
 }
 impl<'a> std::fmt::Debug for DescribeStreamInputBody<'a> {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeStreamInputBody");
         formatter.field("stream_name", &self.stream_name);
-        formatter.field("exclusive_start_shard_id", &self.exclusive_start_shard_id);
         formatter.field("limit", &self.limit);
+        formatter.field("exclusive_start_shard_id", &self.exclusive_start_shard_id);
         formatter.finish()
     }
 }
@@ -167,6 +167,9 @@ impl<'a> std::fmt::Debug for DescribeStreamSummaryInputBody<'a> {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisableEnhancedMonitoringInputBody<'a> {
+    /// <p>The name of the Kinesis data stream for which to disable enhanced
+    /// monitoring.</p>
+    pub stream_name: &'a std::option::Option<std::string::String>,
     /// <p>List of shard-level metrics to disable.</p>
     /// <p>The following are the valid shard-level metrics. The value "<code>ALL</code>"
     /// disables every metric.</p>
@@ -216,15 +219,12 @@ pub struct DisableEnhancedMonitoringInputBody<'a> {
     /// Kinesis Data Streams Service with Amazon CloudWatch</a> in the <i>Amazon
     /// Kinesis Data Streams Developer Guide</i>.</p>
     pub shard_level_metrics: &'a std::option::Option<std::vec::Vec<crate::model::MetricsName>>,
-    /// <p>The name of the Kinesis data stream for which to disable enhanced
-    /// monitoring.</p>
-    pub stream_name: &'a std::option::Option<std::string::String>,
 }
 impl<'a> std::fmt::Debug for DisableEnhancedMonitoringInputBody<'a> {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DisableEnhancedMonitoringInputBody");
-        formatter.field("shard_level_metrics", &self.shard_level_metrics);
         formatter.field("stream_name", &self.stream_name);
+        formatter.field("shard_level_metrics", &self.shard_level_metrics);
         formatter.finish()
     }
 }
@@ -320,6 +320,10 @@ impl<'a> std::fmt::Debug for GetRecordsInputBody<'a> {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetShardIteratorInputBody<'a> {
+    /// <p>The name of the Amazon Kinesis data stream.</p>
+    pub stream_name: &'a std::option::Option<std::string::String>,
+    /// <p>The shard ID of the Kinesis Data Streams shard to get the iterator for.</p>
+    pub shard_id: &'a std::option::Option<std::string::String>,
     /// <p>Determines how the shard iterator is used to start reading data records from the
     /// shard.</p>
     /// <p>The following are the valid Amazon Kinesis shard iterator types:</p>
@@ -348,8 +352,6 @@ pub struct GetShardIteratorInputBody<'a> {
     /// </li>
     /// </ul>
     pub shard_iterator_type: &'a std::option::Option<crate::model::ShardIteratorType>,
-    /// <p>The shard ID of the Kinesis Data Streams shard to get the iterator for.</p>
-    pub shard_id: &'a std::option::Option<std::string::String>,
     /// <p>The sequence number of the data record in the shard from which to start reading.
     /// Used with shard iterator type AT_SEQUENCE_NUMBER and AFTER_SEQUENCE_NUMBER.</p>
     pub starting_sequence_number: &'a std::option::Option<std::string::String>,
@@ -361,17 +363,15 @@ pub struct GetShardIteratorInputBody<'a> {
     /// the current trim horizon, the iterator returned is for the oldest untrimmed data record
     /// (TRIM_HORIZON).</p>
     pub timestamp: &'a std::option::Option<smithy_types::Instant>,
-    /// <p>The name of the Amazon Kinesis data stream.</p>
-    pub stream_name: &'a std::option::Option<std::string::String>,
 }
 impl<'a> std::fmt::Debug for GetShardIteratorInputBody<'a> {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetShardIteratorInputBody");
-        formatter.field("shard_iterator_type", &self.shard_iterator_type);
+        formatter.field("stream_name", &self.stream_name);
         formatter.field("shard_id", &self.shard_id);
+        formatter.field("shard_iterator_type", &self.shard_iterator_type);
         formatter.field("starting_sequence_number", &self.starting_sequence_number);
         formatter.field("timestamp", &self.timestamp);
-        formatter.field("stream_name", &self.stream_name);
         formatter.finish()
     }
 }
@@ -380,17 +380,17 @@ impl<'a> std::fmt::Debug for GetShardIteratorInputBody<'a> {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IncreaseStreamRetentionPeriodInputBody<'a> {
+    /// <p>The name of the stream to modify.</p>
+    pub stream_name: &'a std::option::Option<std::string::String>,
     /// <p>The new retention period of the stream, in hours. Must be more than the current
     /// retention period.</p>
     pub retention_period_hours: &'a std::option::Option<i32>,
-    /// <p>The name of the stream to modify.</p>
-    pub stream_name: &'a std::option::Option<std::string::String>,
 }
 impl<'a> std::fmt::Debug for IncreaseStreamRetentionPeriodInputBody<'a> {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("IncreaseStreamRetentionPeriodInputBody");
-        formatter.field("retention_period_hours", &self.retention_period_hours);
         formatter.field("stream_name", &self.stream_name);
+        formatter.field("retention_period_hours", &self.retention_period_hours);
         formatter.finish()
     }
 }
@@ -398,21 +398,10 @@ impl<'a> std::fmt::Debug for IncreaseStreamRetentionPeriodInputBody<'a> {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListShardsInputBody<'a> {
-    /// <p>The maximum number of shards to return in a single call to <code>ListShards</code>.
-    /// The minimum value you can specify for this parameter is 1, and the maximum is 10,000,
-    /// which is also the default.</p>
-    /// <p>When the number of shards to be listed is greater than the value of
-    /// <code>MaxResults</code>, the response contains a <code>NextToken</code> value that
-    /// you can use in a subsequent call to <code>ListShards</code> to list the next set of
-    /// shards.</p>
-    pub max_results: &'a std::option::Option<i32>,
-    /// <p>Specify this input parameter to distinguish data streams that have the same name.
-    /// For example, if you create a data stream and then delete it, and you later create
-    /// another data stream with the same name, you can use this input parameter to specify
-    /// which of the two streams you want to list the shards for.</p>
+    /// <p>The name of the data stream whose shards you want to list. </p>
     /// <p>You cannot specify this parameter if you specify the <code>NextToken</code>
     /// parameter.</p>
-    pub stream_creation_timestamp: &'a std::option::Option<smithy_types::Instant>,
+    pub stream_name: &'a std::option::Option<std::string::String>,
     /// <p>When the number of shards in the data stream is greater than the default value for
     /// the <code>MaxResults</code> parameter, or if you explicitly specify a value for
     /// <code>MaxResults</code> that is less than the number of shards in the data stream,
@@ -443,21 +432,32 @@ pub struct ListShardsInputBody<'a> {
     /// stream.</p>
     /// <p>You cannot specify this parameter if you specify <code>NextToken</code>.</p>
     pub exclusive_start_shard_id: &'a std::option::Option<std::string::String>,
-    pub shard_filter: &'a std::option::Option<crate::model::ShardFilter>,
-    /// <p>The name of the data stream whose shards you want to list. </p>
+    /// <p>The maximum number of shards to return in a single call to <code>ListShards</code>.
+    /// The minimum value you can specify for this parameter is 1, and the maximum is 10,000,
+    /// which is also the default.</p>
+    /// <p>When the number of shards to be listed is greater than the value of
+    /// <code>MaxResults</code>, the response contains a <code>NextToken</code> value that
+    /// you can use in a subsequent call to <code>ListShards</code> to list the next set of
+    /// shards.</p>
+    pub max_results: &'a std::option::Option<i32>,
+    /// <p>Specify this input parameter to distinguish data streams that have the same name.
+    /// For example, if you create a data stream and then delete it, and you later create
+    /// another data stream with the same name, you can use this input parameter to specify
+    /// which of the two streams you want to list the shards for.</p>
     /// <p>You cannot specify this parameter if you specify the <code>NextToken</code>
     /// parameter.</p>
-    pub stream_name: &'a std::option::Option<std::string::String>,
+    pub stream_creation_timestamp: &'a std::option::Option<smithy_types::Instant>,
+    pub shard_filter: &'a std::option::Option<crate::model::ShardFilter>,
 }
 impl<'a> std::fmt::Debug for ListShardsInputBody<'a> {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListShardsInputBody");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("stream_creation_timestamp", &self.stream_creation_timestamp);
+        formatter.field("stream_name", &self.stream_name);
         formatter.field("next_token", &self.next_token);
         formatter.field("exclusive_start_shard_id", &self.exclusive_start_shard_id);
+        formatter.field("max_results", &self.max_results);
+        formatter.field("stream_creation_timestamp", &self.stream_creation_timestamp);
         formatter.field("shard_filter", &self.shard_filter);
-        formatter.field("stream_name", &self.stream_name);
         formatter.finish()
     }
 }
@@ -465,6 +465,9 @@ impl<'a> std::fmt::Debug for ListShardsInputBody<'a> {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListStreamConsumersInputBody<'a> {
+    /// <p>The ARN of the Kinesis data stream for which you want to list the registered
+    /// consumers. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kinesis-streams">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+    pub stream_arn: &'a std::option::Option<std::string::String>,
     /// <p>When the number of consumers that are registered with the data stream is greater than
     /// the default value for the <code>MaxResults</code> parameter, or if you explicitly
     /// specify a value for <code>MaxResults</code> that is less than the number of consumers
@@ -489,26 +492,23 @@ pub struct ListStreamConsumersInputBody<'a> {
     /// <code>ExpiredNextTokenException</code>.</p>
     /// </important>
     pub next_token: &'a std::option::Option<std::string::String>,
+    /// <p>The maximum number of consumers that you want a single call of
+    /// <code>ListStreamConsumers</code> to return.</p>
+    pub max_results: &'a std::option::Option<i32>,
     /// <p>Specify this input parameter to distinguish data streams that have the same name. For
     /// example, if you create a data stream and then delete it, and you later create another
     /// data stream with the same name, you can use this input parameter to specify which of the
     /// two streams you want to list the consumers for. </p>
     /// <p>You can't specify this parameter if you specify the NextToken parameter. </p>
     pub stream_creation_timestamp: &'a std::option::Option<smithy_types::Instant>,
-    /// <p>The ARN of the Kinesis data stream for which you want to list the registered
-    /// consumers. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kinesis-streams">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
-    pub stream_arn: &'a std::option::Option<std::string::String>,
-    /// <p>The maximum number of consumers that you want a single call of
-    /// <code>ListStreamConsumers</code> to return.</p>
-    pub max_results: &'a std::option::Option<i32>,
 }
 impl<'a> std::fmt::Debug for ListStreamConsumersInputBody<'a> {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListStreamConsumersInputBody");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("stream_creation_timestamp", &self.stream_creation_timestamp);
         formatter.field("stream_arn", &self.stream_arn);
+        formatter.field("next_token", &self.next_token);
         formatter.field("max_results", &self.max_results);
+        formatter.field("stream_creation_timestamp", &self.stream_creation_timestamp);
         formatter.finish()
     }
 }
@@ -538,24 +538,24 @@ impl<'a> std::fmt::Debug for ListStreamsInputBody<'a> {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForStreamInputBody<'a> {
+    /// <p>The name of the stream.</p>
+    pub stream_name: &'a std::option::Option<std::string::String>,
+    /// <p>The key to use as the starting point for the list of tags. If this parameter is
+    /// set, <code>ListTagsForStream</code> gets all tags that occur after
+    /// <code>ExclusiveStartTagKey</code>. </p>
+    pub exclusive_start_tag_key: &'a std::option::Option<std::string::String>,
     /// <p>The number of tags to return. If this number is less than the total number of tags
     /// associated with the stream, <code>HasMoreTags</code> is set to <code>true</code>. To
     /// list additional tags, set <code>ExclusiveStartTagKey</code> to the last key in the
     /// response.</p>
     pub limit: &'a std::option::Option<i32>,
-    /// <p>The key to use as the starting point for the list of tags. If this parameter is
-    /// set, <code>ListTagsForStream</code> gets all tags that occur after
-    /// <code>ExclusiveStartTagKey</code>. </p>
-    pub exclusive_start_tag_key: &'a std::option::Option<std::string::String>,
-    /// <p>The name of the stream.</p>
-    pub stream_name: &'a std::option::Option<std::string::String>,
 }
 impl<'a> std::fmt::Debug for ListTagsForStreamInputBody<'a> {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsForStreamInputBody");
-        formatter.field("limit", &self.limit);
-        formatter.field("exclusive_start_tag_key", &self.exclusive_start_tag_key);
         formatter.field("stream_name", &self.stream_name);
+        formatter.field("exclusive_start_tag_key", &self.exclusive_start_tag_key);
+        formatter.field("limit", &self.limit);
         formatter.finish()
     }
 }
@@ -564,20 +564,20 @@ impl<'a> std::fmt::Debug for ListTagsForStreamInputBody<'a> {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MergeShardsInputBody<'a> {
-    /// <p>The shard ID of the adjacent shard for the merge.</p>
-    pub adjacent_shard_to_merge: &'a std::option::Option<std::string::String>,
     /// <p>The name of the stream for the merge.</p>
     pub stream_name: &'a std::option::Option<std::string::String>,
     /// <p>The shard ID of the shard to combine with the adjacent shard for the
     /// merge.</p>
     pub shard_to_merge: &'a std::option::Option<std::string::String>,
+    /// <p>The shard ID of the adjacent shard for the merge.</p>
+    pub adjacent_shard_to_merge: &'a std::option::Option<std::string::String>,
 }
 impl<'a> std::fmt::Debug for MergeShardsInputBody<'a> {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("MergeShardsInputBody");
-        formatter.field("adjacent_shard_to_merge", &self.adjacent_shard_to_merge);
         formatter.field("stream_name", &self.stream_name);
         formatter.field("shard_to_merge", &self.shard_to_merge);
+        formatter.field("adjacent_shard_to_merge", &self.adjacent_shard_to_merge);
         formatter.finish()
     }
 }
@@ -588,6 +588,19 @@ impl<'a> std::fmt::Debug for MergeShardsInputBody<'a> {
 pub struct PutRecordInputBody<'a> {
     /// <p>The name of the stream to put the data record into.</p>
     pub stream_name: &'a std::option::Option<std::string::String>,
+    /// <p>The data blob to put into the record, which is base64-encoded when the blob is
+    /// serialized. When the data blob (the payload before base64-encoding) is added to the
+    /// partition key size, the total size must not exceed the maximum record size (1
+    /// MiB).</p>
+    pub data: &'a std::option::Option<smithy_types::Blob>,
+    /// <p>Determines which shard in the stream the data record is assigned to. Partition keys
+    /// are Unicode strings with a maximum length limit of 256 characters for each key. Amazon
+    /// Kinesis Data Streams uses the partition key as input to a hash function that maps the
+    /// partition key and associated data to a specific shard. Specifically, an MD5 hash
+    /// function is used to map partition keys to 128-bit integer values and to map associated
+    /// data records to shards. As a result of this hashing mechanism, all data records with the
+    /// same partition key map to the same shard within the stream.</p>
+    pub partition_key: &'a std::option::Option<std::string::String>,
     /// <p>The hash value used to explicitly determine the shard the data record is assigned
     /// to by overriding the partition key hash.</p>
     pub explicit_hash_key: &'a std::option::Option<std::string::String>,
@@ -597,31 +610,18 @@ pub struct PutRecordInputBody<'a> {
     /// (as returned in the result when putting record <i>n-1</i>). If this
     /// parameter is not set, records are coarsely ordered based on arrival time.</p>
     pub sequence_number_for_ordering: &'a std::option::Option<std::string::String>,
-    /// <p>Determines which shard in the stream the data record is assigned to. Partition keys
-    /// are Unicode strings with a maximum length limit of 256 characters for each key. Amazon
-    /// Kinesis Data Streams uses the partition key as input to a hash function that maps the
-    /// partition key and associated data to a specific shard. Specifically, an MD5 hash
-    /// function is used to map partition keys to 128-bit integer values and to map associated
-    /// data records to shards. As a result of this hashing mechanism, all data records with the
-    /// same partition key map to the same shard within the stream.</p>
-    pub partition_key: &'a std::option::Option<std::string::String>,
-    /// <p>The data blob to put into the record, which is base64-encoded when the blob is
-    /// serialized. When the data blob (the payload before base64-encoding) is added to the
-    /// partition key size, the total size must not exceed the maximum record size (1
-    /// MiB).</p>
-    pub data: &'a std::option::Option<smithy_types::Blob>,
 }
 impl<'a> std::fmt::Debug for PutRecordInputBody<'a> {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutRecordInputBody");
         formatter.field("stream_name", &self.stream_name);
+        formatter.field("data", &self.data);
+        formatter.field("partition_key", &self.partition_key);
         formatter.field("explicit_hash_key", &self.explicit_hash_key);
         formatter.field(
             "sequence_number_for_ordering",
             &self.sequence_number_for_ordering,
         );
-        formatter.field("partition_key", &self.partition_key);
-        formatter.field("data", &self.data);
         formatter.finish()
     }
 }
@@ -647,18 +647,18 @@ impl<'a> std::fmt::Debug for PutRecordsInputBody<'a> {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegisterStreamConsumerInputBody<'a> {
-    /// <p>For a given Kinesis data stream, each consumer must have a unique name. However,
-    /// consumer names don't have to be unique across data streams.</p>
-    pub consumer_name: &'a std::option::Option<std::string::String>,
     /// <p>The ARN of the Kinesis data stream that you want to register the consumer with. For
     /// more info, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kinesis-streams">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
     pub stream_arn: &'a std::option::Option<std::string::String>,
+    /// <p>For a given Kinesis data stream, each consumer must have a unique name. However,
+    /// consumer names don't have to be unique across data streams.</p>
+    pub consumer_name: &'a std::option::Option<std::string::String>,
 }
 impl<'a> std::fmt::Debug for RegisterStreamConsumerInputBody<'a> {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RegisterStreamConsumerInputBody");
-        formatter.field("consumer_name", &self.consumer_name);
         formatter.field("stream_arn", &self.stream_arn);
+        formatter.field("consumer_name", &self.consumer_name);
         formatter.finish()
     }
 }
@@ -667,16 +667,16 @@ impl<'a> std::fmt::Debug for RegisterStreamConsumerInputBody<'a> {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RemoveTagsFromStreamInputBody<'a> {
-    /// <p>A list of tag keys. Each corresponding tag is removed from the stream.</p>
-    pub tag_keys: &'a std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The name of the stream.</p>
     pub stream_name: &'a std::option::Option<std::string::String>,
+    /// <p>A list of tag keys. Each corresponding tag is removed from the stream.</p>
+    pub tag_keys: &'a std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl<'a> std::fmt::Debug for RemoveTagsFromStreamInputBody<'a> {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RemoveTagsFromStreamInputBody");
-        formatter.field("tag_keys", &self.tag_keys);
         formatter.field("stream_name", &self.stream_name);
+        formatter.field("tag_keys", &self.tag_keys);
         formatter.finish()
     }
 }
@@ -685,6 +685,8 @@ impl<'a> std::fmt::Debug for RemoveTagsFromStreamInputBody<'a> {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SplitShardInputBody<'a> {
+    /// <p>The name of the stream for the shard split.</p>
+    pub stream_name: &'a std::option::Option<std::string::String>,
     /// <p>The shard ID of the shard to split.</p>
     pub shard_to_split: &'a std::option::Option<std::string::String>,
     /// <p>A hash key value for the starting hash key of one of the child shards created by
@@ -695,15 +697,13 @@ pub struct SplitShardInputBody<'a> {
     /// child shards. All the lower hash key values in the range are distributed to the other
     /// child shard.</p>
     pub new_starting_hash_key: &'a std::option::Option<std::string::String>,
-    /// <p>The name of the stream for the shard split.</p>
-    pub stream_name: &'a std::option::Option<std::string::String>,
 }
 impl<'a> std::fmt::Debug for SplitShardInputBody<'a> {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SplitShardInputBody");
+        formatter.field("stream_name", &self.stream_name);
         formatter.field("shard_to_split", &self.shard_to_split);
         formatter.field("new_starting_hash_key", &self.new_starting_hash_key);
-        formatter.field("stream_name", &self.stream_name);
         formatter.finish()
     }
 }
@@ -811,8 +811,6 @@ impl<'a> std::fmt::Debug for StopStreamEncryptionInputBody<'a> {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateShardCountInputBody<'a> {
-    /// <p>The scaling type. Uniform scaling creates shards of equal size.</p>
-    pub scaling_type: &'a std::option::Option<crate::model::ScalingType>,
     /// <p>The name of the stream.</p>
     pub stream_name: &'a std::option::Option<std::string::String>,
     /// <p>The new number of shards. This value has the following default limits. By default,
@@ -836,13 +834,15 @@ pub struct UpdateShardCountInputBody<'a> {
     /// </li>
     /// </ul>
     pub target_shard_count: &'a std::option::Option<i32>,
+    /// <p>The scaling type. Uniform scaling creates shards of equal size.</p>
+    pub scaling_type: &'a std::option::Option<crate::model::ScalingType>,
 }
 impl<'a> std::fmt::Debug for UpdateShardCountInputBody<'a> {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateShardCountInputBody");
-        formatter.field("scaling_type", &self.scaling_type);
         formatter.field("stream_name", &self.stream_name);
         formatter.field("target_shard_count", &self.target_shard_count);
+        formatter.field("scaling_type", &self.scaling_type);
         formatter.finish()
     }
 }
@@ -850,20 +850,20 @@ impl<'a> std::fmt::Debug for UpdateShardCountInputBody<'a> {
 #[non_exhaustive]
 #[derive(std::default::Default, serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeLimitsOutputBody {
-    /// <p>The number of open shards.</p>
-    #[serde(rename = "OpenShardCount")]
-    #[serde(default)]
-    pub open_shard_count: std::option::Option<i32>,
     /// <p>The maximum number of shards.</p>
     #[serde(rename = "ShardLimit")]
     #[serde(default)]
     pub shard_limit: std::option::Option<i32>,
+    /// <p>The number of open shards.</p>
+    #[serde(rename = "OpenShardCount")]
+    #[serde(default)]
+    pub open_shard_count: std::option::Option<i32>,
 }
 impl std::fmt::Debug for DescribeLimitsOutputBody {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeLimitsOutputBody");
-        formatter.field("open_shard_count", &self.open_shard_count);
         formatter.field("shard_limit", &self.shard_limit);
+        formatter.field("open_shard_count", &self.open_shard_count);
         formatter.finish()
     }
 }
@@ -927,11 +927,6 @@ impl std::fmt::Debug for DescribeStreamSummaryOutputBody {
 #[non_exhaustive]
 #[derive(std::default::Default, serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisableEnhancedMonitoringOutputBody {
-    /// <p>Represents the list of all the metrics that would be in the enhanced state after
-    /// the operation.</p>
-    #[serde(rename = "DesiredShardLevelMetrics")]
-    #[serde(default)]
-    pub desired_shard_level_metrics: std::option::Option<std::vec::Vec<crate::model::MetricsName>>,
     /// <p>The name of the Kinesis data stream.</p>
     #[serde(rename = "StreamName")]
     #[serde(default)]
@@ -941,18 +936,23 @@ pub struct DisableEnhancedMonitoringOutputBody {
     #[serde(rename = "CurrentShardLevelMetrics")]
     #[serde(default)]
     pub current_shard_level_metrics: std::option::Option<std::vec::Vec<crate::model::MetricsName>>,
+    /// <p>Represents the list of all the metrics that would be in the enhanced state after
+    /// the operation.</p>
+    #[serde(rename = "DesiredShardLevelMetrics")]
+    #[serde(default)]
+    pub desired_shard_level_metrics: std::option::Option<std::vec::Vec<crate::model::MetricsName>>,
 }
 impl std::fmt::Debug for DisableEnhancedMonitoringOutputBody {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DisableEnhancedMonitoringOutputBody");
-        formatter.field(
-            "desired_shard_level_metrics",
-            &self.desired_shard_level_metrics,
-        );
         formatter.field("stream_name", &self.stream_name);
         formatter.field(
             "current_shard_level_metrics",
             &self.current_shard_level_metrics,
+        );
+        formatter.field(
+            "desired_shard_level_metrics",
+            &self.desired_shard_level_metrics,
         );
         formatter.finish()
     }
@@ -962,11 +962,6 @@ impl std::fmt::Debug for DisableEnhancedMonitoringOutputBody {
 #[non_exhaustive]
 #[derive(std::default::Default, serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
 pub struct EnableEnhancedMonitoringOutputBody {
-    /// <p>Represents the list of all the metrics that would be in the enhanced state after
-    /// the operation.</p>
-    #[serde(rename = "DesiredShardLevelMetrics")]
-    #[serde(default)]
-    pub desired_shard_level_metrics: std::option::Option<std::vec::Vec<crate::model::MetricsName>>,
     /// <p>The name of the Kinesis data stream.</p>
     #[serde(rename = "StreamName")]
     #[serde(default)]
@@ -976,18 +971,23 @@ pub struct EnableEnhancedMonitoringOutputBody {
     #[serde(rename = "CurrentShardLevelMetrics")]
     #[serde(default)]
     pub current_shard_level_metrics: std::option::Option<std::vec::Vec<crate::model::MetricsName>>,
+    /// <p>Represents the list of all the metrics that would be in the enhanced state after
+    /// the operation.</p>
+    #[serde(rename = "DesiredShardLevelMetrics")]
+    #[serde(default)]
+    pub desired_shard_level_metrics: std::option::Option<std::vec::Vec<crate::model::MetricsName>>,
 }
 impl std::fmt::Debug for EnableEnhancedMonitoringOutputBody {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("EnableEnhancedMonitoringOutputBody");
-        formatter.field(
-            "desired_shard_level_metrics",
-            &self.desired_shard_level_metrics,
-        );
         formatter.field("stream_name", &self.stream_name);
         formatter.field(
             "current_shard_level_metrics",
             &self.current_shard_level_metrics,
+        );
+        formatter.field(
+            "desired_shard_level_metrics",
+            &self.desired_shard_level_metrics,
         );
         formatter.finish()
     }
@@ -997,16 +997,16 @@ impl std::fmt::Debug for EnableEnhancedMonitoringOutputBody {
 #[non_exhaustive]
 #[derive(std::default::Default, serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRecordsOutputBody {
+    /// <p>The data records retrieved from the shard.</p>
+    #[serde(rename = "Records")]
+    #[serde(default)]
+    pub records: std::option::Option<std::vec::Vec<crate::model::Record>>,
     /// <p>The next position in the shard from which to start sequentially reading data
     /// records. If set to <code>null</code>, the shard has been closed and the requested
     /// iterator does not return any more data. </p>
     #[serde(rename = "NextShardIterator")]
     #[serde(default)]
     pub next_shard_iterator: std::option::Option<std::string::String>,
-    /// <p>The data records retrieved from the shard.</p>
-    #[serde(rename = "Records")]
-    #[serde(default)]
-    pub records: std::option::Option<std::vec::Vec<crate::model::Record>>,
     /// <p>The number of milliseconds the <a>GetRecords</a> response is from the
     /// tip of the stream, indicating how far behind current time the consumer is. A value of
     /// zero indicates that record processing is caught up, and there are no new records to
@@ -1021,8 +1021,8 @@ pub struct GetRecordsOutputBody {
 impl std::fmt::Debug for GetRecordsOutputBody {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetRecordsOutputBody");
-        formatter.field("next_shard_iterator", &self.next_shard_iterator);
         formatter.field("records", &self.records);
+        formatter.field("next_shard_iterator", &self.next_shard_iterator);
         formatter.field("millis_behind_latest", &self.millis_behind_latest);
         formatter.field("child_shards", &self.child_shards);
         formatter.finish()
@@ -1051,6 +1051,13 @@ impl std::fmt::Debug for GetShardIteratorOutputBody {
 #[non_exhaustive]
 #[derive(std::default::Default, serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListShardsOutputBody {
+    /// <p>An array of JSON objects. Each object represents one shard and specifies the IDs of
+    /// the shard, the shard's parent, and the shard that's adjacent to the shard's parent. Each
+    /// object also contains the starting and ending hash keys and the starting and ending
+    /// sequence numbers for the shard.</p>
+    #[serde(rename = "Shards")]
+    #[serde(default)]
+    pub shards: std::option::Option<std::vec::Vec<crate::model::Shard>>,
     /// <p>When the number of shards in the data stream is greater than the default value for
     /// the <code>MaxResults</code> parameter, or if you explicitly specify a value for
     /// <code>MaxResults</code> that is less than the number of shards in the data stream,
@@ -1068,19 +1075,12 @@ pub struct ListShardsOutputBody {
     #[serde(rename = "NextToken")]
     #[serde(default)]
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>An array of JSON objects. Each object represents one shard and specifies the IDs of
-    /// the shard, the shard's parent, and the shard that's adjacent to the shard's parent. Each
-    /// object also contains the starting and ending hash keys and the starting and ending
-    /// sequence numbers for the shard.</p>
-    #[serde(rename = "Shards")]
-    #[serde(default)]
-    pub shards: std::option::Option<std::vec::Vec<crate::model::Shard>>,
 }
 impl std::fmt::Debug for ListShardsOutputBody {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListShardsOutputBody");
-        formatter.field("next_token", &self.next_token);
         formatter.field("shards", &self.shards);
+        formatter.field("next_token", &self.next_token);
         formatter.finish()
     }
 }
@@ -1214,6 +1214,11 @@ impl std::fmt::Debug for PutRecordOutputBody {
 #[non_exhaustive]
 #[derive(std::default::Default, serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutRecordsOutputBody {
+    /// <p>The number of unsuccessfully processed records in a <code>PutRecords</code>
+    /// request.</p>
+    #[serde(rename = "FailedRecordCount")]
+    #[serde(default)]
+    pub failed_record_count: std::option::Option<i32>,
     /// <p>An array of successfully and unsuccessfully processed record results, correlated
     /// with the request by natural ordering. A record that is successfully added to a stream
     /// includes <code>SequenceNumber</code> and <code>ShardId</code> in the result. A record
@@ -1238,18 +1243,13 @@ pub struct PutRecordsOutputBody {
     #[serde(rename = "EncryptionType")]
     #[serde(default)]
     pub encryption_type: std::option::Option<crate::model::EncryptionType>,
-    /// <p>The number of unsuccessfully processed records in a <code>PutRecords</code>
-    /// request.</p>
-    #[serde(rename = "FailedRecordCount")]
-    #[serde(default)]
-    pub failed_record_count: std::option::Option<i32>,
 }
 impl std::fmt::Debug for PutRecordsOutputBody {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutRecordsOutputBody");
+        formatter.field("failed_record_count", &self.failed_record_count);
         formatter.field("records", &self.records);
         formatter.field("encryption_type", &self.encryption_type);
-        formatter.field("failed_record_count", &self.failed_record_count);
         formatter.finish()
     }
 }
@@ -1278,21 +1278,21 @@ pub struct UpdateShardCountOutputBody {
     #[serde(rename = "StreamName")]
     #[serde(default)]
     pub stream_name: std::option::Option<std::string::String>,
-    /// <p>The updated number of shards.</p>
-    #[serde(rename = "TargetShardCount")]
-    #[serde(default)]
-    pub target_shard_count: std::option::Option<i32>,
     /// <p>The current number of shards.</p>
     #[serde(rename = "CurrentShardCount")]
     #[serde(default)]
     pub current_shard_count: std::option::Option<i32>,
+    /// <p>The updated number of shards.</p>
+    #[serde(rename = "TargetShardCount")]
+    #[serde(default)]
+    pub target_shard_count: std::option::Option<i32>,
 }
 impl std::fmt::Debug for UpdateShardCountOutputBody {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateShardCountOutputBody");
         formatter.field("stream_name", &self.stream_name);
-        formatter.field("target_shard_count", &self.target_shard_count);
         formatter.field("current_shard_count", &self.current_shard_count);
+        formatter.field("target_shard_count", &self.target_shard_count);
         formatter.finish()
     }
 }

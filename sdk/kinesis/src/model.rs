@@ -11,6 +11,7 @@
 )]
 pub enum ScalingType {
     UniformScaling,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for ScalingType {
@@ -64,6 +65,7 @@ impl<'de> serde::Deserialize<'de> for ScalingType {
 pub enum EncryptionType {
     Kms,
     None,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for EncryptionType {
@@ -242,6 +244,7 @@ pub enum ConsumerStatus {
     Active,
     Creating,
     Deleting,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for ConsumerStatus {
@@ -294,16 +297,20 @@ impl<'de> serde::Deserialize<'de> for ConsumerStatus {
 #[non_exhaustive]
 #[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutRecordsResultEntry {
+    /// <p>The sequence number for an individual record result.</p>
+    #[serde(rename = "SequenceNumber")]
+    #[serde(default)]
+    pub sequence_number: std::option::Option<std::string::String>,
+    /// <p>The shard ID for an individual record result.</p>
+    #[serde(rename = "ShardId")]
+    #[serde(default)]
+    pub shard_id: std::option::Option<std::string::String>,
     /// <p>The error code for an individual record result. <code>ErrorCodes</code> can be
     /// either <code>ProvisionedThroughputExceededException</code> or
     /// <code>InternalFailure</code>.</p>
     #[serde(rename = "ErrorCode")]
     #[serde(default)]
     pub error_code: std::option::Option<std::string::String>,
-    /// <p>The shard ID for an individual record result.</p>
-    #[serde(rename = "ShardId")]
-    #[serde(default)]
-    pub shard_id: std::option::Option<std::string::String>,
     /// <p>The error message for an individual record result. An <code>ErrorCode</code> value
     /// of <code>ProvisionedThroughputExceededException</code> has an error message that
     /// includes the account ID, stream name, and shard ID. An <code>ErrorCode</code> value of
@@ -312,18 +319,14 @@ pub struct PutRecordsResultEntry {
     #[serde(rename = "ErrorMessage")]
     #[serde(default)]
     pub error_message: std::option::Option<std::string::String>,
-    /// <p>The sequence number for an individual record result.</p>
-    #[serde(rename = "SequenceNumber")]
-    #[serde(default)]
-    pub sequence_number: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for PutRecordsResultEntry {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutRecordsResultEntry");
-        formatter.field("error_code", &self.error_code);
-        formatter.field("shard_id", &self.shard_id);
-        formatter.field("error_message", &self.error_message);
         formatter.field("sequence_number", &self.sequence_number);
+        formatter.field("shard_id", &self.shard_id);
+        formatter.field("error_code", &self.error_code);
+        formatter.field("error_message", &self.error_message);
         formatter.finish()
     }
 }
@@ -333,21 +336,22 @@ pub mod put_records_result_entry {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) error_code: std::option::Option<std::string::String>,
-        pub(crate) shard_id: std::option::Option<std::string::String>,
-        pub(crate) error_message: std::option::Option<std::string::String>,
         pub(crate) sequence_number: std::option::Option<std::string::String>,
+        pub(crate) shard_id: std::option::Option<std::string::String>,
+        pub(crate) error_code: std::option::Option<std::string::String>,
+        pub(crate) error_message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The error code for an individual record result. <code>ErrorCodes</code> can be
-        /// either <code>ProvisionedThroughputExceededException</code> or
-        /// <code>InternalFailure</code>.</p>
-        pub fn error_code(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.error_code = Some(inp.into());
+        /// <p>The sequence number for an individual record result.</p>
+        pub fn sequence_number(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.sequence_number = Some(inp.into());
             self
         }
-        pub fn set_error_code(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.error_code = inp;
+        pub fn set_sequence_number(
+            mut self,
+            inp: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.sequence_number = inp;
             self
         }
         /// <p>The shard ID for an individual record result.</p>
@@ -357,6 +361,17 @@ pub mod put_records_result_entry {
         }
         pub fn set_shard_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
             self.shard_id = inp;
+            self
+        }
+        /// <p>The error code for an individual record result. <code>ErrorCodes</code> can be
+        /// either <code>ProvisionedThroughputExceededException</code> or
+        /// <code>InternalFailure</code>.</p>
+        pub fn error_code(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.error_code = Some(inp.into());
+            self
+        }
+        pub fn set_error_code(mut self, inp: std::option::Option<std::string::String>) -> Self {
+            self.error_code = inp;
             self
         }
         /// <p>The error message for an individual record result. An <code>ErrorCode</code> value
@@ -372,25 +387,13 @@ pub mod put_records_result_entry {
             self.error_message = inp;
             self
         }
-        /// <p>The sequence number for an individual record result.</p>
-        pub fn sequence_number(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.sequence_number = Some(inp.into());
-            self
-        }
-        pub fn set_sequence_number(
-            mut self,
-            inp: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.sequence_number = inp;
-            self
-        }
         /// Consumes the builder and constructs a [`PutRecordsResultEntry`](crate::model::PutRecordsResultEntry)
         pub fn build(self) -> crate::model::PutRecordsResultEntry {
             crate::model::PutRecordsResultEntry {
-                error_code: self.error_code,
-                shard_id: self.shard_id,
-                error_message: self.error_message,
                 sequence_number: self.sequence_number,
+                shard_id: self.shard_id,
+                error_code: self.error_code,
+                error_message: self.error_message,
             }
         }
     }
@@ -414,6 +417,11 @@ pub struct PutRecordsRequestEntry {
     #[serde(deserialize_with = "crate::serde_util::stdoptionoptionsmithytypesblob_deser")]
     #[serde(default)]
     pub data: std::option::Option<smithy_types::Blob>,
+    /// <p>The hash value used to determine explicitly the shard that the data record is
+    /// assigned to by overriding the partition key hash.</p>
+    #[serde(rename = "ExplicitHashKey")]
+    #[serde(default)]
+    pub explicit_hash_key: std::option::Option<std::string::String>,
     /// <p>Determines which shard in the stream the data record is assigned to. Partition keys
     /// are Unicode strings with a maximum length limit of 256 characters for each key. Amazon
     /// Kinesis Data Streams uses the partition key as input to a hash function that maps the
@@ -424,18 +432,13 @@ pub struct PutRecordsRequestEntry {
     #[serde(rename = "PartitionKey")]
     #[serde(default)]
     pub partition_key: std::option::Option<std::string::String>,
-    /// <p>The hash value used to determine explicitly the shard that the data record is
-    /// assigned to by overriding the partition key hash.</p>
-    #[serde(rename = "ExplicitHashKey")]
-    #[serde(default)]
-    pub explicit_hash_key: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for PutRecordsRequestEntry {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutRecordsRequestEntry");
         formatter.field("data", &self.data);
-        formatter.field("partition_key", &self.partition_key);
         formatter.field("explicit_hash_key", &self.explicit_hash_key);
+        formatter.field("partition_key", &self.partition_key);
         formatter.finish()
     }
 }
@@ -446,8 +449,8 @@ pub mod put_records_request_entry {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) data: std::option::Option<smithy_types::Blob>,
-        pub(crate) partition_key: std::option::Option<std::string::String>,
         pub(crate) explicit_hash_key: std::option::Option<std::string::String>,
+        pub(crate) partition_key: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The data blob to put into the record, which is base64-encoded when the blob is
@@ -460,6 +463,19 @@ pub mod put_records_request_entry {
         }
         pub fn set_data(mut self, inp: std::option::Option<smithy_types::Blob>) -> Self {
             self.data = inp;
+            self
+        }
+        /// <p>The hash value used to determine explicitly the shard that the data record is
+        /// assigned to by overriding the partition key hash.</p>
+        pub fn explicit_hash_key(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.explicit_hash_key = Some(inp.into());
+            self
+        }
+        pub fn set_explicit_hash_key(
+            mut self,
+            inp: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.explicit_hash_key = inp;
             self
         }
         /// <p>Determines which shard in the stream the data record is assigned to. Partition keys
@@ -477,25 +493,12 @@ pub mod put_records_request_entry {
             self.partition_key = inp;
             self
         }
-        /// <p>The hash value used to determine explicitly the shard that the data record is
-        /// assigned to by overriding the partition key hash.</p>
-        pub fn explicit_hash_key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.explicit_hash_key = Some(inp.into());
-            self
-        }
-        pub fn set_explicit_hash_key(
-            mut self,
-            inp: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.explicit_hash_key = inp;
-            self
-        }
         /// Consumes the builder and constructs a [`PutRecordsRequestEntry`](crate::model::PutRecordsRequestEntry)
         pub fn build(self) -> crate::model::PutRecordsRequestEntry {
             crate::model::PutRecordsRequestEntry {
                 data: self.data,
-                partition_key: self.partition_key,
                 explicit_hash_key: self.explicit_hash_key,
+                partition_key: self.partition_key,
             }
         }
     }
@@ -511,23 +514,23 @@ impl PutRecordsRequestEntry {
 #[non_exhaustive]
 #[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
 pub struct Tag {
+    /// <p>A unique identifier for the tag. Maximum length: 128 characters. Valid characters:
+    /// Unicode letters, digits, white space, _ . / = + - % @</p>
+    #[serde(rename = "Key")]
+    #[serde(default)]
+    pub key: std::option::Option<std::string::String>,
     /// <p>An optional string, typically used to describe or define the tag. Maximum length:
     /// 256 characters. Valid characters: Unicode letters, digits, white space, _ . / = + - %
     /// @</p>
     #[serde(rename = "Value")]
     #[serde(default)]
     pub value: std::option::Option<std::string::String>,
-    /// <p>A unique identifier for the tag. Maximum length: 128 characters. Valid characters:
-    /// Unicode letters, digits, white space, _ . / = + - % @</p>
-    #[serde(rename = "Key")]
-    #[serde(default)]
-    pub key: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for Tag {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Tag");
-        formatter.field("value", &self.value);
         formatter.field("key", &self.key);
+        formatter.field("value", &self.value);
         formatter.finish()
     }
 }
@@ -537,10 +540,20 @@ pub mod tag {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) value: std::option::Option<std::string::String>,
         pub(crate) key: std::option::Option<std::string::String>,
+        pub(crate) value: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// <p>A unique identifier for the tag. Maximum length: 128 characters. Valid characters:
+        /// Unicode letters, digits, white space, _ . / = + - % @</p>
+        pub fn key(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.key = Some(inp.into());
+            self
+        }
+        pub fn set_key(mut self, inp: std::option::Option<std::string::String>) -> Self {
+            self.key = inp;
+            self
+        }
         /// <p>An optional string, typically used to describe or define the tag. Maximum length:
         /// 256 characters. Valid characters: Unicode letters, digits, white space, _ . / = + - %
         /// @</p>
@@ -552,21 +565,11 @@ pub mod tag {
             self.value = inp;
             self
         }
-        /// <p>A unique identifier for the tag. Maximum length: 128 characters. Valid characters:
-        /// Unicode letters, digits, white space, _ . / = + - % @</p>
-        pub fn key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.key = Some(inp.into());
-            self
-        }
-        pub fn set_key(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.key = inp;
-            self
-        }
         /// Consumes the builder and constructs a [`Tag`](crate::model::Tag)
         pub fn build(self) -> crate::model::Tag {
             crate::model::Tag {
-                value: self.value,
                 key: self.key,
+                value: self.value,
             }
         }
     }
@@ -582,36 +585,36 @@ impl Tag {
 #[non_exhaustive]
 #[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
 pub struct Shard {
-    /// <p>The range of possible sequence numbers for the shard.</p>
-    #[serde(rename = "SequenceNumberRange")]
-    #[serde(default)]
-    pub sequence_number_range: std::option::Option<crate::model::SequenceNumberRange>,
     /// <p>The unique identifier of the shard within the stream.</p>
     #[serde(rename = "ShardId")]
     #[serde(default)]
     pub shard_id: std::option::Option<std::string::String>,
+    /// <p>The shard ID of the shard's parent.</p>
+    #[serde(rename = "ParentShardId")]
+    #[serde(default)]
+    pub parent_shard_id: std::option::Option<std::string::String>,
+    /// <p>The shard ID of the shard adjacent to the shard's parent.</p>
+    #[serde(rename = "AdjacentParentShardId")]
+    #[serde(default)]
+    pub adjacent_parent_shard_id: std::option::Option<std::string::String>,
     /// <p>The range of possible hash key values for the shard, which is a set of ordered
     /// contiguous positive integers.</p>
     #[serde(rename = "HashKeyRange")]
     #[serde(default)]
     pub hash_key_range: std::option::Option<crate::model::HashKeyRange>,
-    /// <p>The shard ID of the shard adjacent to the shard's parent.</p>
-    #[serde(rename = "AdjacentParentShardId")]
+    /// <p>The range of possible sequence numbers for the shard.</p>
+    #[serde(rename = "SequenceNumberRange")]
     #[serde(default)]
-    pub adjacent_parent_shard_id: std::option::Option<std::string::String>,
-    /// <p>The shard ID of the shard's parent.</p>
-    #[serde(rename = "ParentShardId")]
-    #[serde(default)]
-    pub parent_shard_id: std::option::Option<std::string::String>,
+    pub sequence_number_range: std::option::Option<crate::model::SequenceNumberRange>,
 }
 impl std::fmt::Debug for Shard {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Shard");
-        formatter.field("sequence_number_range", &self.sequence_number_range);
         formatter.field("shard_id", &self.shard_id);
-        formatter.field("hash_key_range", &self.hash_key_range);
-        formatter.field("adjacent_parent_shard_id", &self.adjacent_parent_shard_id);
         formatter.field("parent_shard_id", &self.parent_shard_id);
+        formatter.field("adjacent_parent_shard_id", &self.adjacent_parent_shard_id);
+        formatter.field("hash_key_range", &self.hash_key_range);
+        formatter.field("sequence_number_range", &self.sequence_number_range);
         formatter.finish()
     }
 }
@@ -621,25 +624,13 @@ pub mod shard {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) sequence_number_range: std::option::Option<crate::model::SequenceNumberRange>,
         pub(crate) shard_id: std::option::Option<std::string::String>,
-        pub(crate) hash_key_range: std::option::Option<crate::model::HashKeyRange>,
-        pub(crate) adjacent_parent_shard_id: std::option::Option<std::string::String>,
         pub(crate) parent_shard_id: std::option::Option<std::string::String>,
+        pub(crate) adjacent_parent_shard_id: std::option::Option<std::string::String>,
+        pub(crate) hash_key_range: std::option::Option<crate::model::HashKeyRange>,
+        pub(crate) sequence_number_range: std::option::Option<crate::model::SequenceNumberRange>,
     }
     impl Builder {
-        /// <p>The range of possible sequence numbers for the shard.</p>
-        pub fn sequence_number_range(mut self, inp: crate::model::SequenceNumberRange) -> Self {
-            self.sequence_number_range = Some(inp);
-            self
-        }
-        pub fn set_sequence_number_range(
-            mut self,
-            inp: std::option::Option<crate::model::SequenceNumberRange>,
-        ) -> Self {
-            self.sequence_number_range = inp;
-            self
-        }
         /// <p>The unique identifier of the shard within the stream.</p>
         pub fn shard_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.shard_id = Some(inp.into());
@@ -647,6 +638,30 @@ pub mod shard {
         }
         pub fn set_shard_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
             self.shard_id = inp;
+            self
+        }
+        /// <p>The shard ID of the shard's parent.</p>
+        pub fn parent_shard_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.parent_shard_id = Some(inp.into());
+            self
+        }
+        pub fn set_parent_shard_id(
+            mut self,
+            inp: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.parent_shard_id = inp;
+            self
+        }
+        /// <p>The shard ID of the shard adjacent to the shard's parent.</p>
+        pub fn adjacent_parent_shard_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.adjacent_parent_shard_id = Some(inp.into());
+            self
+        }
+        pub fn set_adjacent_parent_shard_id(
+            mut self,
+            inp: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.adjacent_parent_shard_id = inp;
             self
         }
         /// <p>The range of possible hash key values for the shard, which is a set of ordered
@@ -662,38 +677,26 @@ pub mod shard {
             self.hash_key_range = inp;
             self
         }
-        /// <p>The shard ID of the shard adjacent to the shard's parent.</p>
-        pub fn adjacent_parent_shard_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.adjacent_parent_shard_id = Some(inp.into());
+        /// <p>The range of possible sequence numbers for the shard.</p>
+        pub fn sequence_number_range(mut self, inp: crate::model::SequenceNumberRange) -> Self {
+            self.sequence_number_range = Some(inp);
             self
         }
-        pub fn set_adjacent_parent_shard_id(
+        pub fn set_sequence_number_range(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            inp: std::option::Option<crate::model::SequenceNumberRange>,
         ) -> Self {
-            self.adjacent_parent_shard_id = inp;
-            self
-        }
-        /// <p>The shard ID of the shard's parent.</p>
-        pub fn parent_shard_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.parent_shard_id = Some(inp.into());
-            self
-        }
-        pub fn set_parent_shard_id(
-            mut self,
-            inp: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.parent_shard_id = inp;
+            self.sequence_number_range = inp;
             self
         }
         /// Consumes the builder and constructs a [`Shard`](crate::model::Shard)
         pub fn build(self) -> crate::model::Shard {
             crate::model::Shard {
-                sequence_number_range: self.sequence_number_range,
                 shard_id: self.shard_id,
-                hash_key_range: self.hash_key_range,
-                adjacent_parent_shard_id: self.adjacent_parent_shard_id,
                 parent_shard_id: self.parent_shard_id,
+                adjacent_parent_shard_id: self.adjacent_parent_shard_id,
+                hash_key_range: self.hash_key_range,
+                sequence_number_range: self.sequence_number_range,
             }
         }
     }
@@ -702,78 +705,6 @@ impl Shard {
     /// Creates a new builder-style object to manufacture [`Shard`](crate::model::Shard)
     pub fn builder() -> crate::model::shard::Builder {
         crate::model::shard::Builder::default()
-    }
-}
-
-/// <p>The range of possible hash key values for the shard, which is a set of ordered
-/// contiguous positive integers.</p>
-#[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct HashKeyRange {
-    /// <p>The starting hash key of the hash key range.</p>
-    #[serde(rename = "StartingHashKey")]
-    #[serde(default)]
-    pub starting_hash_key: std::option::Option<std::string::String>,
-    /// <p>The ending hash key of the hash key range.</p>
-    #[serde(rename = "EndingHashKey")]
-    #[serde(default)]
-    pub ending_hash_key: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for HashKeyRange {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HashKeyRange");
-        formatter.field("starting_hash_key", &self.starting_hash_key);
-        formatter.field("ending_hash_key", &self.ending_hash_key);
-        formatter.finish()
-    }
-}
-/// See [`HashKeyRange`](crate::model::HashKeyRange)
-pub mod hash_key_range {
-    /// A builder for [`HashKeyRange`](crate::model::HashKeyRange)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) starting_hash_key: std::option::Option<std::string::String>,
-        pub(crate) ending_hash_key: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        /// <p>The starting hash key of the hash key range.</p>
-        pub fn starting_hash_key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.starting_hash_key = Some(inp.into());
-            self
-        }
-        pub fn set_starting_hash_key(
-            mut self,
-            inp: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.starting_hash_key = inp;
-            self
-        }
-        /// <p>The ending hash key of the hash key range.</p>
-        pub fn ending_hash_key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.ending_hash_key = Some(inp.into());
-            self
-        }
-        pub fn set_ending_hash_key(
-            mut self,
-            inp: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.ending_hash_key = inp;
-            self
-        }
-        /// Consumes the builder and constructs a [`HashKeyRange`](crate::model::HashKeyRange)
-        pub fn build(self) -> crate::model::HashKeyRange {
-            crate::model::HashKeyRange {
-                starting_hash_key: self.starting_hash_key,
-                ending_hash_key: self.ending_hash_key,
-            }
-        }
-    }
-}
-impl HashKeyRange {
-    /// Creates a new builder-style object to manufacture [`HashKeyRange`](crate::model::HashKeyRange)
-    pub fn builder() -> crate::model::hash_key_range::Builder {
-        crate::model::hash_key_range::Builder::default()
     }
 }
 
@@ -850,9 +781,84 @@ impl SequenceNumberRange {
     }
 }
 
+/// <p>The range of possible hash key values for the shard, which is a set of ordered
+/// contiguous positive integers.</p>
+#[non_exhaustive]
+#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+pub struct HashKeyRange {
+    /// <p>The starting hash key of the hash key range.</p>
+    #[serde(rename = "StartingHashKey")]
+    #[serde(default)]
+    pub starting_hash_key: std::option::Option<std::string::String>,
+    /// <p>The ending hash key of the hash key range.</p>
+    #[serde(rename = "EndingHashKey")]
+    #[serde(default)]
+    pub ending_hash_key: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for HashKeyRange {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("HashKeyRange");
+        formatter.field("starting_hash_key", &self.starting_hash_key);
+        formatter.field("ending_hash_key", &self.ending_hash_key);
+        formatter.finish()
+    }
+}
+/// See [`HashKeyRange`](crate::model::HashKeyRange)
+pub mod hash_key_range {
+    /// A builder for [`HashKeyRange`](crate::model::HashKeyRange)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) starting_hash_key: std::option::Option<std::string::String>,
+        pub(crate) ending_hash_key: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The starting hash key of the hash key range.</p>
+        pub fn starting_hash_key(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.starting_hash_key = Some(inp.into());
+            self
+        }
+        pub fn set_starting_hash_key(
+            mut self,
+            inp: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.starting_hash_key = inp;
+            self
+        }
+        /// <p>The ending hash key of the hash key range.</p>
+        pub fn ending_hash_key(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.ending_hash_key = Some(inp.into());
+            self
+        }
+        pub fn set_ending_hash_key(
+            mut self,
+            inp: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.ending_hash_key = inp;
+            self
+        }
+        /// Consumes the builder and constructs a [`HashKeyRange`](crate::model::HashKeyRange)
+        pub fn build(self) -> crate::model::HashKeyRange {
+            crate::model::HashKeyRange {
+                starting_hash_key: self.starting_hash_key,
+                ending_hash_key: self.ending_hash_key,
+            }
+        }
+    }
+}
+impl HashKeyRange {
+    /// Creates a new builder-style object to manufacture [`HashKeyRange`](crate::model::HashKeyRange)
+    pub fn builder() -> crate::model::hash_key_range::Builder {
+        crate::model::hash_key_range::Builder::default()
+    }
+}
+
 #[non_exhaustive]
 #[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
 pub struct ShardFilter {
+    #[serde(rename = "Type")]
+    #[serde(default)]
+    pub r#type: std::option::Option<crate::model::ShardFilterType>,
     #[serde(rename = "ShardId")]
     #[serde(default)]
     pub shard_id: std::option::Option<std::string::String>,
@@ -862,16 +868,13 @@ pub struct ShardFilter {
     )]
     #[serde(default)]
     pub timestamp: std::option::Option<smithy_types::Instant>,
-    #[serde(rename = "Type")]
-    #[serde(default)]
-    pub r#type: std::option::Option<crate::model::ShardFilterType>,
 }
 impl std::fmt::Debug for ShardFilter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ShardFilter");
+        formatter.field("r#type", &self.r#type);
         formatter.field("shard_id", &self.shard_id);
         formatter.field("timestamp", &self.timestamp);
-        formatter.field("r#type", &self.r#type);
         formatter.finish()
     }
 }
@@ -881,11 +884,19 @@ pub mod shard_filter {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
+        pub(crate) r#type: std::option::Option<crate::model::ShardFilterType>,
         pub(crate) shard_id: std::option::Option<std::string::String>,
         pub(crate) timestamp: std::option::Option<smithy_types::Instant>,
-        pub(crate) r#type: std::option::Option<crate::model::ShardFilterType>,
     }
     impl Builder {
+        pub fn r#type(mut self, inp: crate::model::ShardFilterType) -> Self {
+            self.r#type = Some(inp);
+            self
+        }
+        pub fn set_type(mut self, inp: std::option::Option<crate::model::ShardFilterType>) -> Self {
+            self.r#type = inp;
+            self
+        }
         pub fn shard_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.shard_id = Some(inp.into());
             self
@@ -902,20 +913,12 @@ pub mod shard_filter {
             self.timestamp = inp;
             self
         }
-        pub fn r#type(mut self, inp: crate::model::ShardFilterType) -> Self {
-            self.r#type = Some(inp);
-            self
-        }
-        pub fn set_type(mut self, inp: std::option::Option<crate::model::ShardFilterType>) -> Self {
-            self.r#type = inp;
-            self
-        }
         /// Consumes the builder and constructs a [`ShardFilter`](crate::model::ShardFilter)
         pub fn build(self) -> crate::model::ShardFilter {
             crate::model::ShardFilter {
+                r#type: self.r#type,
                 shard_id: self.shard_id,
                 timestamp: self.timestamp,
-                r#type: self.r#type,
             }
         }
     }
@@ -944,6 +947,7 @@ pub enum ShardFilterType {
     AtTrimHorizon,
     FromTimestamp,
     FromTrimHorizon,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for ShardFilterType {
@@ -1010,6 +1014,7 @@ pub enum ShardIteratorType {
     AtTimestamp,
     Latest,
     TrimHorizon,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for ShardIteratorType {
@@ -1061,12 +1066,12 @@ impl<'de> serde::Deserialize<'de> for ShardIteratorType {
 #[non_exhaustive]
 #[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
 pub struct ChildShard {
-    #[serde(rename = "ParentShards")]
-    #[serde(default)]
-    pub parent_shards: std::option::Option<std::vec::Vec<std::string::String>>,
     #[serde(rename = "ShardId")]
     #[serde(default)]
     pub shard_id: std::option::Option<std::string::String>,
+    #[serde(rename = "ParentShards")]
+    #[serde(default)]
+    pub parent_shards: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The range of possible hash key values for the shard, which is a set of ordered
     /// contiguous positive integers.</p>
     #[serde(rename = "HashKeyRange")]
@@ -1076,8 +1081,8 @@ pub struct ChildShard {
 impl std::fmt::Debug for ChildShard {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ChildShard");
-        formatter.field("parent_shards", &self.parent_shards);
         formatter.field("shard_id", &self.shard_id);
+        formatter.field("parent_shards", &self.parent_shards);
         formatter.field("hash_key_range", &self.hash_key_range);
         formatter.finish()
     }
@@ -1088,11 +1093,19 @@ pub mod child_shard {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) parent_shards: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) shard_id: std::option::Option<std::string::String>,
+        pub(crate) parent_shards: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) hash_key_range: std::option::Option<crate::model::HashKeyRange>,
     }
     impl Builder {
+        pub fn shard_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.shard_id = Some(inp.into());
+            self
+        }
+        pub fn set_shard_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
+            self.shard_id = inp;
+            self
+        }
         pub fn parent_shards(mut self, inp: impl Into<std::string::String>) -> Self {
             let mut v = self.parent_shards.unwrap_or_default();
             v.push(inp.into());
@@ -1104,14 +1117,6 @@ pub mod child_shard {
             inp: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
             self.parent_shards = inp;
-            self
-        }
-        pub fn shard_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.shard_id = Some(inp.into());
-            self
-        }
-        pub fn set_shard_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.shard_id = inp;
             self
         }
         /// <p>The range of possible hash key values for the shard, which is a set of ordered
@@ -1130,8 +1135,8 @@ pub mod child_shard {
         /// Consumes the builder and constructs a [`ChildShard`](crate::model::ChildShard)
         pub fn build(self) -> crate::model::ChildShard {
             crate::model::ChildShard {
-                parent_shards: self.parent_shards,
                 shard_id: self.shard_id,
+                parent_shards: self.parent_shards,
                 hash_key_range: self.hash_key_range,
             }
         }
@@ -1153,6 +1158,25 @@ pub struct Record {
     #[serde(rename = "SequenceNumber")]
     #[serde(default)]
     pub sequence_number: std::option::Option<std::string::String>,
+    /// <p>The approximate time that the record was inserted into the stream.</p>
+    #[serde(rename = "ApproximateArrivalTimestamp")]
+    #[serde(
+        deserialize_with = "crate::serde_util::stdoptionoptionsmithytypesinstant_epoch_seconds_deser"
+    )]
+    #[serde(default)]
+    pub approximate_arrival_timestamp: std::option::Option<smithy_types::Instant>,
+    /// <p>The data blob. The data in the blob is both opaque and immutable to Kinesis Data
+    /// Streams, which does not inspect, interpret, or change the data in the blob in any way.
+    /// When the data blob (the payload before base64-encoding) is added to the partition key
+    /// size, the total size must not exceed the maximum record size (1 MiB).</p>
+    #[serde(rename = "Data")]
+    #[serde(deserialize_with = "crate::serde_util::stdoptionoptionsmithytypesblob_deser")]
+    #[serde(default)]
+    pub data: std::option::Option<smithy_types::Blob>,
+    /// <p>Identifies which shard in the stream the data record is assigned to.</p>
+    #[serde(rename = "PartitionKey")]
+    #[serde(default)]
+    pub partition_key: std::option::Option<std::string::String>,
     /// <p>The encryption type used on the record. This parameter can be one of the following
     /// values:</p>
     /// <ul>
@@ -1169,37 +1193,18 @@ pub struct Record {
     #[serde(rename = "EncryptionType")]
     #[serde(default)]
     pub encryption_type: std::option::Option<crate::model::EncryptionType>,
-    /// <p>The data blob. The data in the blob is both opaque and immutable to Kinesis Data
-    /// Streams, which does not inspect, interpret, or change the data in the blob in any way.
-    /// When the data blob (the payload before base64-encoding) is added to the partition key
-    /// size, the total size must not exceed the maximum record size (1 MiB).</p>
-    #[serde(rename = "Data")]
-    #[serde(deserialize_with = "crate::serde_util::stdoptionoptionsmithytypesblob_deser")]
-    #[serde(default)]
-    pub data: std::option::Option<smithy_types::Blob>,
-    /// <p>The approximate time that the record was inserted into the stream.</p>
-    #[serde(rename = "ApproximateArrivalTimestamp")]
-    #[serde(
-        deserialize_with = "crate::serde_util::stdoptionoptionsmithytypesinstant_epoch_seconds_deser"
-    )]
-    #[serde(default)]
-    pub approximate_arrival_timestamp: std::option::Option<smithy_types::Instant>,
-    /// <p>Identifies which shard in the stream the data record is assigned to.</p>
-    #[serde(rename = "PartitionKey")]
-    #[serde(default)]
-    pub partition_key: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for Record {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Record");
         formatter.field("sequence_number", &self.sequence_number);
-        formatter.field("encryption_type", &self.encryption_type);
-        formatter.field("data", &self.data);
         formatter.field(
             "approximate_arrival_timestamp",
             &self.approximate_arrival_timestamp,
         );
+        formatter.field("data", &self.data);
         formatter.field("partition_key", &self.partition_key);
+        formatter.field("encryption_type", &self.encryption_type);
         formatter.finish()
     }
 }
@@ -1210,10 +1215,10 @@ pub mod record {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sequence_number: std::option::Option<std::string::String>,
-        pub(crate) encryption_type: std::option::Option<crate::model::EncryptionType>,
-        pub(crate) data: std::option::Option<smithy_types::Blob>,
         pub(crate) approximate_arrival_timestamp: std::option::Option<smithy_types::Instant>,
+        pub(crate) data: std::option::Option<smithy_types::Blob>,
         pub(crate) partition_key: std::option::Option<std::string::String>,
+        pub(crate) encryption_type: std::option::Option<crate::model::EncryptionType>,
     }
     impl Builder {
         /// <p>The unique identifier of the record within its shard.</p>
@@ -1226,6 +1231,39 @@ pub mod record {
             inp: std::option::Option<std::string::String>,
         ) -> Self {
             self.sequence_number = inp;
+            self
+        }
+        /// <p>The approximate time that the record was inserted into the stream.</p>
+        pub fn approximate_arrival_timestamp(mut self, inp: smithy_types::Instant) -> Self {
+            self.approximate_arrival_timestamp = Some(inp);
+            self
+        }
+        pub fn set_approximate_arrival_timestamp(
+            mut self,
+            inp: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.approximate_arrival_timestamp = inp;
+            self
+        }
+        /// <p>The data blob. The data in the blob is both opaque and immutable to Kinesis Data
+        /// Streams, which does not inspect, interpret, or change the data in the blob in any way.
+        /// When the data blob (the payload before base64-encoding) is added to the partition key
+        /// size, the total size must not exceed the maximum record size (1 MiB).</p>
+        pub fn data(mut self, inp: smithy_types::Blob) -> Self {
+            self.data = Some(inp);
+            self
+        }
+        pub fn set_data(mut self, inp: std::option::Option<smithy_types::Blob>) -> Self {
+            self.data = inp;
+            self
+        }
+        /// <p>Identifies which shard in the stream the data record is assigned to.</p>
+        pub fn partition_key(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.partition_key = Some(inp.into());
+            self
+        }
+        pub fn set_partition_key(mut self, inp: std::option::Option<std::string::String>) -> Self {
+            self.partition_key = inp;
             self
         }
         /// <p>The encryption type used on the record. This parameter can be one of the following
@@ -1252,47 +1290,14 @@ pub mod record {
             self.encryption_type = inp;
             self
         }
-        /// <p>The data blob. The data in the blob is both opaque and immutable to Kinesis Data
-        /// Streams, which does not inspect, interpret, or change the data in the blob in any way.
-        /// When the data blob (the payload before base64-encoding) is added to the partition key
-        /// size, the total size must not exceed the maximum record size (1 MiB).</p>
-        pub fn data(mut self, inp: smithy_types::Blob) -> Self {
-            self.data = Some(inp);
-            self
-        }
-        pub fn set_data(mut self, inp: std::option::Option<smithy_types::Blob>) -> Self {
-            self.data = inp;
-            self
-        }
-        /// <p>The approximate time that the record was inserted into the stream.</p>
-        pub fn approximate_arrival_timestamp(mut self, inp: smithy_types::Instant) -> Self {
-            self.approximate_arrival_timestamp = Some(inp);
-            self
-        }
-        pub fn set_approximate_arrival_timestamp(
-            mut self,
-            inp: std::option::Option<smithy_types::Instant>,
-        ) -> Self {
-            self.approximate_arrival_timestamp = inp;
-            self
-        }
-        /// <p>Identifies which shard in the stream the data record is assigned to.</p>
-        pub fn partition_key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.partition_key = Some(inp.into());
-            self
-        }
-        pub fn set_partition_key(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.partition_key = inp;
-            self
-        }
         /// Consumes the builder and constructs a [`Record`](crate::model::Record)
         pub fn build(self) -> crate::model::Record {
             crate::model::Record {
                 sequence_number: self.sequence_number,
-                encryption_type: self.encryption_type,
-                data: self.data,
                 approximate_arrival_timestamp: self.approximate_arrival_timestamp,
+                data: self.data,
                 partition_key: self.partition_key,
+                encryption_type: self.encryption_type,
             }
         }
     }
@@ -1323,6 +1328,7 @@ pub enum MetricsName {
     OutgoingRecords,
     ReadProvisionedThroughputExceeded,
     WriteProvisionedThroughputExceeded,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for MetricsName {
@@ -1382,6 +1388,76 @@ impl<'de> serde::Deserialize<'de> for MetricsName {
 #[non_exhaustive]
 #[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
 pub struct StreamDescriptionSummary {
+    /// <p>The name of the stream being described.</p>
+    #[serde(rename = "StreamName")]
+    #[serde(default)]
+    pub stream_name: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) for the stream being described.</p>
+    #[serde(rename = "StreamARN")]
+    #[serde(default)]
+    pub stream_arn: std::option::Option<std::string::String>,
+    /// <p>The current status of the stream being described. The stream status is one of the
+    /// following states:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>CREATING</code> - The stream is being created. Kinesis Data Streams
+    /// immediately returns and sets <code>StreamStatus</code> to
+    /// <code>CREATING</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>DELETING</code> - The stream is being deleted. The specified stream is in
+    /// the <code>DELETING</code> state until Kinesis Data Streams completes the
+    /// deletion.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ACTIVE</code> - The stream exists and is ready for read and write
+    /// operations or deletion. You should perform read and write operations only on an
+    /// <code>ACTIVE</code> stream.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>UPDATING</code> - Shards in the stream are being merged or split. Read and
+    /// write operations continue to work while the stream is in the
+    /// <code>UPDATING</code> state.</p>
+    /// </li>
+    /// </ul>
+    #[serde(rename = "StreamStatus")]
+    #[serde(default)]
+    pub stream_status: std::option::Option<crate::model::StreamStatus>,
+    /// <p>The current retention period, in hours.</p>
+    #[serde(rename = "RetentionPeriodHours")]
+    #[serde(default)]
+    pub retention_period_hours: std::option::Option<i32>,
+    /// <p>The approximate time that the stream was created.</p>
+    #[serde(rename = "StreamCreationTimestamp")]
+    #[serde(
+        deserialize_with = "crate::serde_util::stdoptionoptionsmithytypesinstant_epoch_seconds_deser"
+    )]
+    #[serde(default)]
+    pub stream_creation_timestamp: std::option::Option<smithy_types::Instant>,
+    /// <p>Represents the current enhanced monitoring settings of the stream.</p>
+    #[serde(rename = "EnhancedMonitoring")]
+    #[serde(default)]
+    pub enhanced_monitoring: std::option::Option<std::vec::Vec<crate::model::EnhancedMetrics>>,
+    /// <p>The encryption type used. This value is one of the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>KMS</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>NONE</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    #[serde(rename = "EncryptionType")]
+    #[serde(default)]
+    pub encryption_type: std::option::Option<crate::model::EncryptionType>,
     /// <p>The GUID for the customer-managed AWS KMS key to use for encryption. This value can
     /// be a globally unique identifier, a fully specified ARN to either an alias or a key, or
     /// an alias name prefixed by "alias/".You can also use a master key owned by Kinesis Data
@@ -1415,98 +1491,28 @@ pub struct StreamDescriptionSummary {
     #[serde(rename = "KeyId")]
     #[serde(default)]
     pub key_id: std::option::Option<std::string::String>,
-    /// <p>The current status of the stream being described. The stream status is one of the
-    /// following states:</p>
-    /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>CREATING</code> - The stream is being created. Kinesis Data Streams
-    /// immediately returns and sets <code>StreamStatus</code> to
-    /// <code>CREATING</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>DELETING</code> - The stream is being deleted. The specified stream is in
-    /// the <code>DELETING</code> state until Kinesis Data Streams completes the
-    /// deletion.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ACTIVE</code> - The stream exists and is ready for read and write
-    /// operations or deletion. You should perform read and write operations only on an
-    /// <code>ACTIVE</code> stream.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>UPDATING</code> - Shards in the stream are being merged or split. Read and
-    /// write operations continue to work while the stream is in the
-    /// <code>UPDATING</code> state.</p>
-    /// </li>
-    /// </ul>
-    #[serde(rename = "StreamStatus")]
-    #[serde(default)]
-    pub stream_status: std::option::Option<crate::model::StreamStatus>,
-    /// <p>The Amazon Resource Name (ARN) for the stream being described.</p>
-    #[serde(rename = "StreamARN")]
-    #[serde(default)]
-    pub stream_arn: std::option::Option<std::string::String>,
-    /// <p>The number of enhanced fan-out consumers registered with the stream.</p>
-    #[serde(rename = "ConsumerCount")]
-    #[serde(default)]
-    pub consumer_count: std::option::Option<i32>,
     /// <p>The number of open shards in the stream.</p>
     #[serde(rename = "OpenShardCount")]
     #[serde(default)]
     pub open_shard_count: std::option::Option<i32>,
-    /// <p>The approximate time that the stream was created.</p>
-    #[serde(rename = "StreamCreationTimestamp")]
-    #[serde(
-        deserialize_with = "crate::serde_util::stdoptionoptionsmithytypesinstant_epoch_seconds_deser"
-    )]
+    /// <p>The number of enhanced fan-out consumers registered with the stream.</p>
+    #[serde(rename = "ConsumerCount")]
     #[serde(default)]
-    pub stream_creation_timestamp: std::option::Option<smithy_types::Instant>,
-    /// <p>The encryption type used. This value is one of the following:</p>
-    /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>KMS</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>NONE</code>
-    /// </p>
-    /// </li>
-    /// </ul>
-    #[serde(rename = "EncryptionType")]
-    #[serde(default)]
-    pub encryption_type: std::option::Option<crate::model::EncryptionType>,
-    /// <p>The name of the stream being described.</p>
-    #[serde(rename = "StreamName")]
-    #[serde(default)]
-    pub stream_name: std::option::Option<std::string::String>,
-    /// <p>The current retention period, in hours.</p>
-    #[serde(rename = "RetentionPeriodHours")]
-    #[serde(default)]
-    pub retention_period_hours: std::option::Option<i32>,
-    /// <p>Represents the current enhanced monitoring settings of the stream.</p>
-    #[serde(rename = "EnhancedMonitoring")]
-    #[serde(default)]
-    pub enhanced_monitoring: std::option::Option<std::vec::Vec<crate::model::EnhancedMetrics>>,
+    pub consumer_count: std::option::Option<i32>,
 }
 impl std::fmt::Debug for StreamDescriptionSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StreamDescriptionSummary");
-        formatter.field("key_id", &self.key_id);
-        formatter.field("stream_status", &self.stream_status);
-        formatter.field("stream_arn", &self.stream_arn);
-        formatter.field("consumer_count", &self.consumer_count);
-        formatter.field("open_shard_count", &self.open_shard_count);
-        formatter.field("stream_creation_timestamp", &self.stream_creation_timestamp);
-        formatter.field("encryption_type", &self.encryption_type);
         formatter.field("stream_name", &self.stream_name);
+        formatter.field("stream_arn", &self.stream_arn);
+        formatter.field("stream_status", &self.stream_status);
         formatter.field("retention_period_hours", &self.retention_period_hours);
+        formatter.field("stream_creation_timestamp", &self.stream_creation_timestamp);
         formatter.field("enhanced_monitoring", &self.enhanced_monitoring);
+        formatter.field("encryption_type", &self.encryption_type);
+        formatter.field("key_id", &self.key_id);
+        formatter.field("open_shard_count", &self.open_shard_count);
+        formatter.field("consumer_count", &self.consumer_count);
         formatter.finish()
     }
 }
@@ -1516,55 +1522,35 @@ pub mod stream_description_summary {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) key_id: std::option::Option<std::string::String>,
-        pub(crate) stream_status: std::option::Option<crate::model::StreamStatus>,
-        pub(crate) stream_arn: std::option::Option<std::string::String>,
-        pub(crate) consumer_count: std::option::Option<i32>,
-        pub(crate) open_shard_count: std::option::Option<i32>,
-        pub(crate) stream_creation_timestamp: std::option::Option<smithy_types::Instant>,
-        pub(crate) encryption_type: std::option::Option<crate::model::EncryptionType>,
         pub(crate) stream_name: std::option::Option<std::string::String>,
+        pub(crate) stream_arn: std::option::Option<std::string::String>,
+        pub(crate) stream_status: std::option::Option<crate::model::StreamStatus>,
         pub(crate) retention_period_hours: std::option::Option<i32>,
+        pub(crate) stream_creation_timestamp: std::option::Option<smithy_types::Instant>,
         pub(crate) enhanced_monitoring:
             std::option::Option<std::vec::Vec<crate::model::EnhancedMetrics>>,
+        pub(crate) encryption_type: std::option::Option<crate::model::EncryptionType>,
+        pub(crate) key_id: std::option::Option<std::string::String>,
+        pub(crate) open_shard_count: std::option::Option<i32>,
+        pub(crate) consumer_count: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The GUID for the customer-managed AWS KMS key to use for encryption. This value can
-        /// be a globally unique identifier, a fully specified ARN to either an alias or a key, or
-        /// an alias name prefixed by "alias/".You can also use a master key owned by Kinesis Data
-        /// Streams by specifying the alias <code>aws/kinesis</code>.</p>
-        /// <ul>
-        /// <li>
-        /// <p>Key ARN example:
-        /// <code>arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Alias ARN example: <code>
-        /// arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Globally unique key ID example:
-        /// <code>12345678-1234-1234-1234-123456789012</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Alias name example: <code>alias/MyAliasName</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Master key owned by Kinesis Data Streams:
-        /// <code>alias/aws/kinesis</code>
-        /// </p>
-        /// </li>
-        /// </ul>
-        pub fn key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.key_id = Some(inp.into());
+        /// <p>The name of the stream being described.</p>
+        pub fn stream_name(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.stream_name = Some(inp.into());
             self
         }
-        pub fn set_key_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.key_id = inp;
+        pub fn set_stream_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
+            self.stream_name = inp;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) for the stream being described.</p>
+        pub fn stream_arn(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.stream_arn = Some(inp.into());
+            self
+        }
+        pub fn set_stream_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
+            self.stream_arn = inp;
             self
         }
         /// <p>The current status of the stream being described. The stream status is one of the
@@ -1606,31 +1592,13 @@ pub mod stream_description_summary {
             self.stream_status = inp;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) for the stream being described.</p>
-        pub fn stream_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.stream_arn = Some(inp.into());
+        /// <p>The current retention period, in hours.</p>
+        pub fn retention_period_hours(mut self, inp: i32) -> Self {
+            self.retention_period_hours = Some(inp);
             self
         }
-        pub fn set_stream_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.stream_arn = inp;
-            self
-        }
-        /// <p>The number of enhanced fan-out consumers registered with the stream.</p>
-        pub fn consumer_count(mut self, inp: i32) -> Self {
-            self.consumer_count = Some(inp);
-            self
-        }
-        pub fn set_consumer_count(mut self, inp: std::option::Option<i32>) -> Self {
-            self.consumer_count = inp;
-            self
-        }
-        /// <p>The number of open shards in the stream.</p>
-        pub fn open_shard_count(mut self, inp: i32) -> Self {
-            self.open_shard_count = Some(inp);
-            self
-        }
-        pub fn set_open_shard_count(mut self, inp: std::option::Option<i32>) -> Self {
-            self.open_shard_count = inp;
+        pub fn set_retention_period_hours(mut self, inp: std::option::Option<i32>) -> Self {
+            self.retention_period_hours = inp;
             self
         }
         /// <p>The approximate time that the stream was created.</p>
@@ -1643,6 +1611,22 @@ pub mod stream_description_summary {
             inp: std::option::Option<smithy_types::Instant>,
         ) -> Self {
             self.stream_creation_timestamp = inp;
+            self
+        }
+        pub fn enhanced_monitoring(
+            mut self,
+            inp: impl Into<crate::model::EnhancedMetrics>,
+        ) -> Self {
+            let mut v = self.enhanced_monitoring.unwrap_or_default();
+            v.push(inp.into());
+            self.enhanced_monitoring = Some(v);
+            self
+        }
+        pub fn set_enhanced_monitoring(
+            mut self,
+            inp: std::option::Option<std::vec::Vec<crate::model::EnhancedMetrics>>,
+        ) -> Self {
+            self.enhanced_monitoring = inp;
             self
         }
         /// <p>The encryption type used. This value is one of the following:</p>
@@ -1669,53 +1653,75 @@ pub mod stream_description_summary {
             self.encryption_type = inp;
             self
         }
-        /// <p>The name of the stream being described.</p>
-        pub fn stream_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.stream_name = Some(inp.into());
+        /// <p>The GUID for the customer-managed AWS KMS key to use for encryption. This value can
+        /// be a globally unique identifier, a fully specified ARN to either an alias or a key, or
+        /// an alias name prefixed by "alias/".You can also use a master key owned by Kinesis Data
+        /// Streams by specifying the alias <code>aws/kinesis</code>.</p>
+        /// <ul>
+        /// <li>
+        /// <p>Key ARN example:
+        /// <code>arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>Alias ARN example: <code>
+        /// arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>Globally unique key ID example:
+        /// <code>12345678-1234-1234-1234-123456789012</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>Alias name example: <code>alias/MyAliasName</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>Master key owned by Kinesis Data Streams:
+        /// <code>alias/aws/kinesis</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        pub fn key_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.key_id = Some(inp.into());
             self
         }
-        pub fn set_stream_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.stream_name = inp;
+        pub fn set_key_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
+            self.key_id = inp;
             self
         }
-        /// <p>The current retention period, in hours.</p>
-        pub fn retention_period_hours(mut self, inp: i32) -> Self {
-            self.retention_period_hours = Some(inp);
+        /// <p>The number of open shards in the stream.</p>
+        pub fn open_shard_count(mut self, inp: i32) -> Self {
+            self.open_shard_count = Some(inp);
             self
         }
-        pub fn set_retention_period_hours(mut self, inp: std::option::Option<i32>) -> Self {
-            self.retention_period_hours = inp;
+        pub fn set_open_shard_count(mut self, inp: std::option::Option<i32>) -> Self {
+            self.open_shard_count = inp;
             self
         }
-        pub fn enhanced_monitoring(
-            mut self,
-            inp: impl Into<crate::model::EnhancedMetrics>,
-        ) -> Self {
-            let mut v = self.enhanced_monitoring.unwrap_or_default();
-            v.push(inp.into());
-            self.enhanced_monitoring = Some(v);
+        /// <p>The number of enhanced fan-out consumers registered with the stream.</p>
+        pub fn consumer_count(mut self, inp: i32) -> Self {
+            self.consumer_count = Some(inp);
             self
         }
-        pub fn set_enhanced_monitoring(
-            mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::EnhancedMetrics>>,
-        ) -> Self {
-            self.enhanced_monitoring = inp;
+        pub fn set_consumer_count(mut self, inp: std::option::Option<i32>) -> Self {
+            self.consumer_count = inp;
             self
         }
         /// Consumes the builder and constructs a [`StreamDescriptionSummary`](crate::model::StreamDescriptionSummary)
         pub fn build(self) -> crate::model::StreamDescriptionSummary {
             crate::model::StreamDescriptionSummary {
-                key_id: self.key_id,
-                stream_status: self.stream_status,
-                stream_arn: self.stream_arn,
-                consumer_count: self.consumer_count,
-                open_shard_count: self.open_shard_count,
-                stream_creation_timestamp: self.stream_creation_timestamp,
-                encryption_type: self.encryption_type,
                 stream_name: self.stream_name,
+                stream_arn: self.stream_arn,
+                stream_status: self.stream_status,
                 retention_period_hours: self.retention_period_hours,
+                stream_creation_timestamp: self.stream_creation_timestamp,
                 enhanced_monitoring: self.enhanced_monitoring,
+                encryption_type: self.encryption_type,
+                key_id: self.key_id,
+                open_shard_count: self.open_shard_count,
+                consumer_count: self.consumer_count,
             }
         }
     }
@@ -1843,6 +1849,7 @@ pub enum StreamStatus {
     Creating,
     Deleting,
     Updating,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for StreamStatus {
@@ -1894,10 +1901,6 @@ impl<'de> serde::Deserialize<'de> for StreamStatus {
 #[non_exhaustive]
 #[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConsumerDescription {
-    /// <p>The ARN of the stream with which you registered the consumer.</p>
-    #[serde(rename = "StreamARN")]
-    #[serde(default)]
-    pub stream_arn: std::option::Option<std::string::String>,
     /// <p>The name of the consumer is something you choose when you register the
     /// consumer.</p>
     #[serde(rename = "ConsumerName")]
@@ -1923,11 +1926,14 @@ pub struct ConsumerDescription {
     )]
     #[serde(default)]
     pub consumer_creation_timestamp: std::option::Option<smithy_types::Instant>,
+    /// <p>The ARN of the stream with which you registered the consumer.</p>
+    #[serde(rename = "StreamARN")]
+    #[serde(default)]
+    pub stream_arn: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ConsumerDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ConsumerDescription");
-        formatter.field("stream_arn", &self.stream_arn);
         formatter.field("consumer_name", &self.consumer_name);
         formatter.field("consumer_arn", &self.consumer_arn);
         formatter.field("consumer_status", &self.consumer_status);
@@ -1935,6 +1941,7 @@ impl std::fmt::Debug for ConsumerDescription {
             "consumer_creation_timestamp",
             &self.consumer_creation_timestamp,
         );
+        formatter.field("stream_arn", &self.stream_arn);
         formatter.finish()
     }
 }
@@ -1944,22 +1951,13 @@ pub mod consumer_description {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) stream_arn: std::option::Option<std::string::String>,
         pub(crate) consumer_name: std::option::Option<std::string::String>,
         pub(crate) consumer_arn: std::option::Option<std::string::String>,
         pub(crate) consumer_status: std::option::Option<crate::model::ConsumerStatus>,
         pub(crate) consumer_creation_timestamp: std::option::Option<smithy_types::Instant>,
+        pub(crate) stream_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ARN of the stream with which you registered the consumer.</p>
-        pub fn stream_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.stream_arn = Some(inp.into());
-            self
-        }
-        pub fn set_stream_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.stream_arn = inp;
-            self
-        }
         /// <p>The name of the consumer is something you choose when you register the
         /// consumer.</p>
         pub fn consumer_name(mut self, inp: impl Into<std::string::String>) -> Self {
@@ -2008,14 +2006,23 @@ pub mod consumer_description {
             self.consumer_creation_timestamp = inp;
             self
         }
+        /// <p>The ARN of the stream with which you registered the consumer.</p>
+        pub fn stream_arn(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.stream_arn = Some(inp.into());
+            self
+        }
+        pub fn set_stream_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
+            self.stream_arn = inp;
+            self
+        }
         /// Consumes the builder and constructs a [`ConsumerDescription`](crate::model::ConsumerDescription)
         pub fn build(self) -> crate::model::ConsumerDescription {
             crate::model::ConsumerDescription {
-                stream_arn: self.stream_arn,
                 consumer_name: self.consumer_name,
                 consumer_arn: self.consumer_arn,
                 consumer_status: self.consumer_status,
                 consumer_creation_timestamp: self.consumer_creation_timestamp,
+                stream_arn: self.stream_arn,
             }
         }
     }
@@ -2031,6 +2038,70 @@ impl ConsumerDescription {
 #[non_exhaustive]
 #[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
 pub struct StreamDescription {
+    /// <p>The name of the stream being described.</p>
+    #[serde(rename = "StreamName")]
+    #[serde(default)]
+    pub stream_name: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) for the stream being described.</p>
+    #[serde(rename = "StreamARN")]
+    #[serde(default)]
+    pub stream_arn: std::option::Option<std::string::String>,
+    /// <p>The current status of the stream being described. The stream status is one of the
+    /// following states:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>CREATING</code> - The stream is being created. Kinesis Data Streams
+    /// immediately returns and sets <code>StreamStatus</code> to
+    /// <code>CREATING</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>DELETING</code> - The stream is being deleted. The specified stream is in
+    /// the <code>DELETING</code> state until Kinesis Data Streams completes the
+    /// deletion.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ACTIVE</code> - The stream exists and is ready for read and write
+    /// operations or deletion. You should perform read and write operations only on an
+    /// <code>ACTIVE</code> stream.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>UPDATING</code> - Shards in the stream are being merged or split. Read and
+    /// write operations continue to work while the stream is in the
+    /// <code>UPDATING</code> state.</p>
+    /// </li>
+    /// </ul>
+    #[serde(rename = "StreamStatus")]
+    #[serde(default)]
+    pub stream_status: std::option::Option<crate::model::StreamStatus>,
+    /// <p>The shards that comprise the stream.</p>
+    #[serde(rename = "Shards")]
+    #[serde(default)]
+    pub shards: std::option::Option<std::vec::Vec<crate::model::Shard>>,
+    /// <p>If set to <code>true</code>, more shards in the stream are available to
+    /// describe.</p>
+    #[serde(rename = "HasMoreShards")]
+    #[serde(default)]
+    pub has_more_shards: std::option::Option<bool>,
+    /// <p>The current retention period, in hours. Minimum value of 24. Maximum value of
+    /// 168.</p>
+    #[serde(rename = "RetentionPeriodHours")]
+    #[serde(default)]
+    pub retention_period_hours: std::option::Option<i32>,
+    /// <p>The approximate time that the stream was created.</p>
+    #[serde(rename = "StreamCreationTimestamp")]
+    #[serde(
+        deserialize_with = "crate::serde_util::stdoptionoptionsmithytypesinstant_epoch_seconds_deser"
+    )]
+    #[serde(default)]
+    pub stream_creation_timestamp: std::option::Option<smithy_types::Instant>,
+    /// <p>Represents the current enhanced monitoring settings of the stream.</p>
+    #[serde(rename = "EnhancedMonitoring")]
+    #[serde(default)]
+    pub enhanced_monitoring: std::option::Option<std::vec::Vec<crate::model::EnhancedMetrics>>,
     /// <p>The server-side encryption type used on the stream. This parameter can be one of
     /// the following values:</p>
     /// <ul>
@@ -2047,32 +2118,6 @@ pub struct StreamDescription {
     #[serde(rename = "EncryptionType")]
     #[serde(default)]
     pub encryption_type: std::option::Option<crate::model::EncryptionType>,
-    /// <p>Represents the current enhanced monitoring settings of the stream.</p>
-    #[serde(rename = "EnhancedMonitoring")]
-    #[serde(default)]
-    pub enhanced_monitoring: std::option::Option<std::vec::Vec<crate::model::EnhancedMetrics>>,
-    /// <p>The name of the stream being described.</p>
-    #[serde(rename = "StreamName")]
-    #[serde(default)]
-    pub stream_name: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) for the stream being described.</p>
-    #[serde(rename = "StreamARN")]
-    #[serde(default)]
-    pub stream_arn: std::option::Option<std::string::String>,
-    /// <p>The shards that comprise the stream.</p>
-    #[serde(rename = "Shards")]
-    #[serde(default)]
-    pub shards: std::option::Option<std::vec::Vec<crate::model::Shard>>,
-    /// <p>The current retention period, in hours. Minimum value of 24. Maximum value of
-    /// 168.</p>
-    #[serde(rename = "RetentionPeriodHours")]
-    #[serde(default)]
-    pub retention_period_hours: std::option::Option<i32>,
-    /// <p>If set to <code>true</code>, more shards in the stream are available to
-    /// describe.</p>
-    #[serde(rename = "HasMoreShards")]
-    #[serde(default)]
-    pub has_more_shards: std::option::Option<bool>,
     /// <p>The GUID for the customer-managed AWS KMS key to use for encryption. This value can
     /// be a globally unique identifier, a fully specified ARN to either an alias or a key, or
     /// an alias name prefixed by "alias/".You can also use a master key owned by Kinesis Data
@@ -2106,58 +2151,20 @@ pub struct StreamDescription {
     #[serde(rename = "KeyId")]
     #[serde(default)]
     pub key_id: std::option::Option<std::string::String>,
-    /// <p>The current status of the stream being described. The stream status is one of the
-    /// following states:</p>
-    /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>CREATING</code> - The stream is being created. Kinesis Data Streams
-    /// immediately returns and sets <code>StreamStatus</code> to
-    /// <code>CREATING</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>DELETING</code> - The stream is being deleted. The specified stream is in
-    /// the <code>DELETING</code> state until Kinesis Data Streams completes the
-    /// deletion.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ACTIVE</code> - The stream exists and is ready for read and write
-    /// operations or deletion. You should perform read and write operations only on an
-    /// <code>ACTIVE</code> stream.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>UPDATING</code> - Shards in the stream are being merged or split. Read and
-    /// write operations continue to work while the stream is in the
-    /// <code>UPDATING</code> state.</p>
-    /// </li>
-    /// </ul>
-    #[serde(rename = "StreamStatus")]
-    #[serde(default)]
-    pub stream_status: std::option::Option<crate::model::StreamStatus>,
-    /// <p>The approximate time that the stream was created.</p>
-    #[serde(rename = "StreamCreationTimestamp")]
-    #[serde(
-        deserialize_with = "crate::serde_util::stdoptionoptionsmithytypesinstant_epoch_seconds_deser"
-    )]
-    #[serde(default)]
-    pub stream_creation_timestamp: std::option::Option<smithy_types::Instant>,
 }
 impl std::fmt::Debug for StreamDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StreamDescription");
-        formatter.field("encryption_type", &self.encryption_type);
-        formatter.field("enhanced_monitoring", &self.enhanced_monitoring);
         formatter.field("stream_name", &self.stream_name);
         formatter.field("stream_arn", &self.stream_arn);
-        formatter.field("shards", &self.shards);
-        formatter.field("retention_period_hours", &self.retention_period_hours);
-        formatter.field("has_more_shards", &self.has_more_shards);
-        formatter.field("key_id", &self.key_id);
         formatter.field("stream_status", &self.stream_status);
+        formatter.field("shards", &self.shards);
+        formatter.field("has_more_shards", &self.has_more_shards);
+        formatter.field("retention_period_hours", &self.retention_period_hours);
         formatter.field("stream_creation_timestamp", &self.stream_creation_timestamp);
+        formatter.field("enhanced_monitoring", &self.enhanced_monitoring);
+        formatter.field("encryption_type", &self.encryption_type);
+        formatter.field("key_id", &self.key_id);
         formatter.finish()
     }
 }
@@ -2167,59 +2174,19 @@ pub mod stream_description {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) encryption_type: std::option::Option<crate::model::EncryptionType>,
-        pub(crate) enhanced_monitoring:
-            std::option::Option<std::vec::Vec<crate::model::EnhancedMetrics>>,
         pub(crate) stream_name: std::option::Option<std::string::String>,
         pub(crate) stream_arn: std::option::Option<std::string::String>,
-        pub(crate) shards: std::option::Option<std::vec::Vec<crate::model::Shard>>,
-        pub(crate) retention_period_hours: std::option::Option<i32>,
-        pub(crate) has_more_shards: std::option::Option<bool>,
-        pub(crate) key_id: std::option::Option<std::string::String>,
         pub(crate) stream_status: std::option::Option<crate::model::StreamStatus>,
+        pub(crate) shards: std::option::Option<std::vec::Vec<crate::model::Shard>>,
+        pub(crate) has_more_shards: std::option::Option<bool>,
+        pub(crate) retention_period_hours: std::option::Option<i32>,
         pub(crate) stream_creation_timestamp: std::option::Option<smithy_types::Instant>,
+        pub(crate) enhanced_monitoring:
+            std::option::Option<std::vec::Vec<crate::model::EnhancedMetrics>>,
+        pub(crate) encryption_type: std::option::Option<crate::model::EncryptionType>,
+        pub(crate) key_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The server-side encryption type used on the stream. This parameter can be one of
-        /// the following values:</p>
-        /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>NONE</code>: Do not encrypt the records in the stream.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>KMS</code>: Use server-side encryption on the records in the stream
-        /// using a customer-managed AWS KMS key.</p>
-        /// </li>
-        /// </ul>
-        pub fn encryption_type(mut self, inp: crate::model::EncryptionType) -> Self {
-            self.encryption_type = Some(inp);
-            self
-        }
-        pub fn set_encryption_type(
-            mut self,
-            inp: std::option::Option<crate::model::EncryptionType>,
-        ) -> Self {
-            self.encryption_type = inp;
-            self
-        }
-        pub fn enhanced_monitoring(
-            mut self,
-            inp: impl Into<crate::model::EnhancedMetrics>,
-        ) -> Self {
-            let mut v = self.enhanced_monitoring.unwrap_or_default();
-            v.push(inp.into());
-            self.enhanced_monitoring = Some(v);
-            self
-        }
-        pub fn set_enhanced_monitoring(
-            mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::EnhancedMetrics>>,
-        ) -> Self {
-            self.enhanced_monitoring = inp;
-            self
-        }
         /// <p>The name of the stream being described.</p>
         pub fn stream_name(mut self, inp: impl Into<std::string::String>) -> Self {
             self.stream_name = Some(inp.into());
@@ -2236,77 +2203,6 @@ pub mod stream_description {
         }
         pub fn set_stream_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
             self.stream_arn = inp;
-            self
-        }
-        pub fn shards(mut self, inp: impl Into<crate::model::Shard>) -> Self {
-            let mut v = self.shards.unwrap_or_default();
-            v.push(inp.into());
-            self.shards = Some(v);
-            self
-        }
-        pub fn set_shards(
-            mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Shard>>,
-        ) -> Self {
-            self.shards = inp;
-            self
-        }
-        /// <p>The current retention period, in hours. Minimum value of 24. Maximum value of
-        /// 168.</p>
-        pub fn retention_period_hours(mut self, inp: i32) -> Self {
-            self.retention_period_hours = Some(inp);
-            self
-        }
-        pub fn set_retention_period_hours(mut self, inp: std::option::Option<i32>) -> Self {
-            self.retention_period_hours = inp;
-            self
-        }
-        /// <p>If set to <code>true</code>, more shards in the stream are available to
-        /// describe.</p>
-        pub fn has_more_shards(mut self, inp: bool) -> Self {
-            self.has_more_shards = Some(inp);
-            self
-        }
-        pub fn set_has_more_shards(mut self, inp: std::option::Option<bool>) -> Self {
-            self.has_more_shards = inp;
-            self
-        }
-        /// <p>The GUID for the customer-managed AWS KMS key to use for encryption. This value can
-        /// be a globally unique identifier, a fully specified ARN to either an alias or a key, or
-        /// an alias name prefixed by "alias/".You can also use a master key owned by Kinesis Data
-        /// Streams by specifying the alias <code>aws/kinesis</code>.</p>
-        /// <ul>
-        /// <li>
-        /// <p>Key ARN example:
-        /// <code>arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Alias ARN example:
-        /// <code>arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Globally unique key ID example:
-        /// <code>12345678-1234-1234-1234-123456789012</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Alias name example: <code>alias/MyAliasName</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Master key owned by Kinesis Data Streams:
-        /// <code>alias/aws/kinesis</code>
-        /// </p>
-        /// </li>
-        /// </ul>
-        pub fn key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.key_id = Some(inp.into());
-            self
-        }
-        pub fn set_key_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.key_id = inp;
             self
         }
         /// <p>The current status of the stream being described. The stream status is one of the
@@ -2348,6 +2244,39 @@ pub mod stream_description {
             self.stream_status = inp;
             self
         }
+        pub fn shards(mut self, inp: impl Into<crate::model::Shard>) -> Self {
+            let mut v = self.shards.unwrap_or_default();
+            v.push(inp.into());
+            self.shards = Some(v);
+            self
+        }
+        pub fn set_shards(
+            mut self,
+            inp: std::option::Option<std::vec::Vec<crate::model::Shard>>,
+        ) -> Self {
+            self.shards = inp;
+            self
+        }
+        /// <p>If set to <code>true</code>, more shards in the stream are available to
+        /// describe.</p>
+        pub fn has_more_shards(mut self, inp: bool) -> Self {
+            self.has_more_shards = Some(inp);
+            self
+        }
+        pub fn set_has_more_shards(mut self, inp: std::option::Option<bool>) -> Self {
+            self.has_more_shards = inp;
+            self
+        }
+        /// <p>The current retention period, in hours. Minimum value of 24. Maximum value of
+        /// 168.</p>
+        pub fn retention_period_hours(mut self, inp: i32) -> Self {
+            self.retention_period_hours = Some(inp);
+            self
+        }
+        pub fn set_retention_period_hours(mut self, inp: std::option::Option<i32>) -> Self {
+            self.retention_period_hours = inp;
+            self
+        }
         /// <p>The approximate time that the stream was created.</p>
         pub fn stream_creation_timestamp(mut self, inp: smithy_types::Instant) -> Self {
             self.stream_creation_timestamp = Some(inp);
@@ -2360,19 +2289,97 @@ pub mod stream_description {
             self.stream_creation_timestamp = inp;
             self
         }
+        pub fn enhanced_monitoring(
+            mut self,
+            inp: impl Into<crate::model::EnhancedMetrics>,
+        ) -> Self {
+            let mut v = self.enhanced_monitoring.unwrap_or_default();
+            v.push(inp.into());
+            self.enhanced_monitoring = Some(v);
+            self
+        }
+        pub fn set_enhanced_monitoring(
+            mut self,
+            inp: std::option::Option<std::vec::Vec<crate::model::EnhancedMetrics>>,
+        ) -> Self {
+            self.enhanced_monitoring = inp;
+            self
+        }
+        /// <p>The server-side encryption type used on the stream. This parameter can be one of
+        /// the following values:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>NONE</code>: Do not encrypt the records in the stream.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>KMS</code>: Use server-side encryption on the records in the stream
+        /// using a customer-managed AWS KMS key.</p>
+        /// </li>
+        /// </ul>
+        pub fn encryption_type(mut self, inp: crate::model::EncryptionType) -> Self {
+            self.encryption_type = Some(inp);
+            self
+        }
+        pub fn set_encryption_type(
+            mut self,
+            inp: std::option::Option<crate::model::EncryptionType>,
+        ) -> Self {
+            self.encryption_type = inp;
+            self
+        }
+        /// <p>The GUID for the customer-managed AWS KMS key to use for encryption. This value can
+        /// be a globally unique identifier, a fully specified ARN to either an alias or a key, or
+        /// an alias name prefixed by "alias/".You can also use a master key owned by Kinesis Data
+        /// Streams by specifying the alias <code>aws/kinesis</code>.</p>
+        /// <ul>
+        /// <li>
+        /// <p>Key ARN example:
+        /// <code>arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>Alias ARN example:
+        /// <code>arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>Globally unique key ID example:
+        /// <code>12345678-1234-1234-1234-123456789012</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>Alias name example: <code>alias/MyAliasName</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>Master key owned by Kinesis Data Streams:
+        /// <code>alias/aws/kinesis</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        pub fn key_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.key_id = Some(inp.into());
+            self
+        }
+        pub fn set_key_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
+            self.key_id = inp;
+            self
+        }
         /// Consumes the builder and constructs a [`StreamDescription`](crate::model::StreamDescription)
         pub fn build(self) -> crate::model::StreamDescription {
             crate::model::StreamDescription {
-                encryption_type: self.encryption_type,
-                enhanced_monitoring: self.enhanced_monitoring,
                 stream_name: self.stream_name,
                 stream_arn: self.stream_arn,
-                shards: self.shards,
-                retention_period_hours: self.retention_period_hours,
-                has_more_shards: self.has_more_shards,
-                key_id: self.key_id,
                 stream_status: self.stream_status,
+                shards: self.shards,
+                has_more_shards: self.has_more_shards,
+                retention_period_hours: self.retention_period_hours,
                 stream_creation_timestamp: self.stream_creation_timestamp,
+                enhanced_monitoring: self.enhanced_monitoring,
+                encryption_type: self.encryption_type,
+                key_id: self.key_id,
             }
         }
     }

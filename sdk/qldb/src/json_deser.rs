@@ -147,6 +147,7 @@ pub fn create_ledger_deser_operation(
     builder = builder.set_arn(parsed_body.arn);
     builder = builder.set_state(parsed_body.state);
     builder = builder.set_creation_date_time(parsed_body.creation_date_time);
+    builder = builder.set_permissions_mode(parsed_body.permissions_mode);
     builder = builder.set_deletion_protection(parsed_body.deletion_protection);
     Ok(builder)
 }
@@ -199,6 +200,7 @@ pub fn describe_ledger_deser_operation(
     builder = builder.set_arn(parsed_body.arn);
     builder = builder.set_state(parsed_body.state);
     builder = builder.set_creation_date_time(parsed_body.creation_date_time);
+    builder = builder.set_permissions_mode(parsed_body.permissions_mode);
     builder = builder.set_deletion_protection(parsed_body.deletion_protection);
     Ok(builder)
 }
@@ -390,5 +392,23 @@ pub fn update_ledger_deser_operation(
     builder = builder.set_state(parsed_body.state);
     builder = builder.set_creation_date_time(parsed_body.creation_date_time);
     builder = builder.set_deletion_protection(parsed_body.deletion_protection);
+    Ok(builder)
+}
+
+pub fn update_ledger_permissions_mode_deser_operation(
+    inp: &[u8],
+    mut builder: crate::output::update_ledger_permissions_mode_output::Builder,
+) -> Result<crate::output::update_ledger_permissions_mode_output::Builder, serde_json::Error> {
+    let parsed_body: crate::serializer::UpdateLedgerPermissionsModeOutputBody = if inp.is_empty() {
+        // To enable JSON parsing to succeed, replace an empty body
+        // with an empty JSON body. If a member was required, it will fail slightly later
+        // during the operation construction phase when a required field was missing.
+        serde_json::from_slice(b"{}")?
+    } else {
+        serde_json::from_slice(inp)?
+    };
+    builder = builder.set_name(parsed_body.name);
+    builder = builder.set_arn(parsed_body.arn);
+    builder = builder.set_permissions_mode(parsed_body.permissions_mode);
     Ok(builder)
 }

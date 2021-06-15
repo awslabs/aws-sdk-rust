@@ -6,7 +6,7 @@ pub fn parse_generic_error(
 }
 
 #[allow(unused_mut)]
-pub fn over_limit(
+pub fn deser_structure_over_limit_xml_err(
     inp: &[u8],
     mut builder: crate::error::over_limit::Builder,
 ) -> Result<crate::error::over_limit::Builder, smithy_xml::decode::XmlError> {
@@ -15,7 +15,7 @@ pub fn over_limit(
 }
 
 #[allow(unused_mut)]
-pub fn message_not_inflight(
+pub fn deser_structure_message_not_inflight_xml_err(
     inp: &[u8],
     mut builder: crate::error::message_not_inflight::Builder,
 ) -> Result<crate::error::message_not_inflight::Builder, smithy_xml::decode::XmlError> {
@@ -24,7 +24,7 @@ pub fn message_not_inflight(
 }
 
 #[allow(unused_mut)]
-pub fn receipt_handle_is_invalid(
+pub fn deser_structure_receipt_handle_is_invalid_xml_err(
     inp: &[u8],
     mut builder: crate::error::receipt_handle_is_invalid::Builder,
 ) -> Result<crate::error::receipt_handle_is_invalid::Builder, smithy_xml::decode::XmlError> {
@@ -33,7 +33,7 @@ pub fn receipt_handle_is_invalid(
 }
 
 #[allow(unused_mut)]
-pub fn batch_entry_ids_not_distinct(
+pub fn deser_structure_batch_entry_ids_not_distinct_xml_err(
     inp: &[u8],
     mut builder: crate::error::batch_entry_ids_not_distinct::Builder,
 ) -> Result<crate::error::batch_entry_ids_not_distinct::Builder, smithy_xml::decode::XmlError> {
@@ -42,7 +42,7 @@ pub fn batch_entry_ids_not_distinct(
 }
 
 #[allow(unused_mut)]
-pub fn empty_batch_request(
+pub fn deser_structure_empty_batch_request_xml_err(
     inp: &[u8],
     mut builder: crate::error::empty_batch_request::Builder,
 ) -> Result<crate::error::empty_batch_request::Builder, smithy_xml::decode::XmlError> {
@@ -51,7 +51,7 @@ pub fn empty_batch_request(
 }
 
 #[allow(unused_mut)]
-pub fn invalid_batch_entry_id(
+pub fn deser_structure_invalid_batch_entry_id_xml_err(
     inp: &[u8],
     mut builder: crate::error::invalid_batch_entry_id::Builder,
 ) -> Result<crate::error::invalid_batch_entry_id::Builder, smithy_xml::decode::XmlError> {
@@ -60,7 +60,7 @@ pub fn invalid_batch_entry_id(
 }
 
 #[allow(unused_mut)]
-pub fn too_many_entries_in_batch_request(
+pub fn deser_structure_too_many_entries_in_batch_request_xml_err(
     inp: &[u8],
     mut builder: crate::error::too_many_entries_in_batch_request::Builder,
 ) -> Result<crate::error::too_many_entries_in_batch_request::Builder, smithy_xml::decode::XmlError>
@@ -105,7 +105,7 @@ pub fn deser_operation_change_message_visibility_batch(
                         Result::<std::vec::Vec<crate::model::ChangeMessageVisibilityBatchResultEntry>, smithy_xml::decode::XmlError>::Ok({
                             let mut list_2 = builder.successful.take().unwrap_or_default();
                             list_2.push(
-                                crate::xml_deser::change_message_visibility_batch_result_entry_inner(&mut tag)
+                                crate::xml_deser::deser_structure_change_message_visibility_batch_result_entry(&mut tag)
                                 ?
                             );
                             list_2
@@ -122,7 +122,7 @@ pub fn deser_operation_change_message_visibility_batch(
                         Result::<std::vec::Vec<crate::model::BatchResultErrorEntry>, smithy_xml::decode::XmlError>::Ok({
                             let mut list_4 = builder.failed.take().unwrap_or_default();
                             list_4.push(
-                                crate::xml_deser::batch_result_error_entry_inner(&mut tag)
+                                crate::xml_deser::deser_structure_batch_result_error_entry(&mut tag)
                                 ?
                             );
                             list_4
@@ -145,7 +145,7 @@ pub fn deser_operation_change_message_visibility_batch(
 }
 
 #[allow(unused_mut)]
-pub fn queue_deleted_recently(
+pub fn deser_structure_queue_deleted_recently_xml_err(
     inp: &[u8],
     mut builder: crate::error::queue_deleted_recently::Builder,
 ) -> Result<crate::error::queue_deleted_recently::Builder, smithy_xml::decode::XmlError> {
@@ -154,7 +154,7 @@ pub fn queue_deleted_recently(
 }
 
 #[allow(unused_mut)]
-pub fn queue_name_exists(
+pub fn deser_structure_queue_name_exists_xml_err(
     inp: &[u8],
     mut builder: crate::error::queue_name_exists::Builder,
 ) -> Result<crate::error::queue_name_exists::Builder, smithy_xml::decode::XmlError> {
@@ -214,7 +214,7 @@ pub fn deser_operation_create_queue(
 }
 
 #[allow(unused_mut)]
-pub fn invalid_id_format(
+pub fn deser_structure_invalid_id_format_xml_err(
     inp: &[u8],
     mut builder: crate::error::invalid_id_format::Builder,
 ) -> Result<crate::error::invalid_id_format::Builder, smithy_xml::decode::XmlError> {
@@ -255,7 +255,7 @@ pub fn deser_operation_delete_message_batch(
                         Result::<std::vec::Vec<crate::model::DeleteMessageBatchResultEntry>, smithy_xml::decode::XmlError>::Ok({
                             let mut list_7 = builder.successful.take().unwrap_or_default();
                             list_7.push(
-                                crate::xml_deser::delete_message_batch_result_entry_inner(&mut tag)
+                                crate::xml_deser::deser_structure_delete_message_batch_result_entry(&mut tag)
                                 ?
                             );
                             list_7
@@ -272,7 +272,7 @@ pub fn deser_operation_delete_message_batch(
                         Result::<std::vec::Vec<crate::model::BatchResultErrorEntry>, smithy_xml::decode::XmlError>::Ok({
                             let mut list_9 = builder.failed.take().unwrap_or_default();
                             list_9.push(
-                                crate::xml_deser::batch_result_error_entry_inner(&mut tag)
+                                crate::xml_deser::deser_structure_batch_result_error_entry(&mut tag)
                                 ?
                             );
                             list_9
@@ -295,7 +295,7 @@ pub fn deser_operation_delete_message_batch(
 }
 
 #[allow(unused_mut)]
-pub fn invalid_attribute_name(
+pub fn deser_structure_invalid_attribute_name_xml_err(
     inp: &[u8],
     mut builder: crate::error::invalid_attribute_name::Builder,
 ) -> Result<crate::error::invalid_attribute_name::Builder, smithy_xml::decode::XmlError> {
@@ -335,7 +335,7 @@ pub fn deser_operation_get_queue_attributes(
                     Some(
                         Result::<std::collections::HashMap<crate::model::QueueAttributeName, std::string::String>, smithy_xml::decode::XmlError>::Ok({
                             let mut map_11 = builder.attributes.take().unwrap_or_default();
-                                        crate::xml_deser::queue_attribute_map_entry(&mut tag, &mut map_11)?;
+                                        crate::xml_deser::deser_map_queue_attribute_map_entry(&mut tag, &mut map_11)?;
                                         map_11
                         })
                         ?
@@ -356,7 +356,7 @@ pub fn deser_operation_get_queue_attributes(
 }
 
 #[allow(unused_mut)]
-pub fn queue_does_not_exist(
+pub fn deser_structure_queue_does_not_exist_xml_err(
     inp: &[u8],
     mut builder: crate::error::queue_does_not_exist::Builder,
 ) -> Result<crate::error::queue_does_not_exist::Builder, smithy_xml::decode::XmlError> {
@@ -592,7 +592,7 @@ pub fn deser_operation_list_queue_tags(
                     Some(
                         Result::<std::collections::HashMap<std::string::String, std::string::String>, smithy_xml::decode::XmlError>::Ok({
                             let mut map_20 = builder.tags.take().unwrap_or_default();
-                                        crate::xml_deser::tag_map_entry(&mut tag, &mut map_20)?;
+                                        crate::xml_deser::deser_map_tag_map_entry(&mut tag, &mut map_20)?;
                                         map_20
                         })
                         ?
@@ -613,7 +613,7 @@ pub fn deser_operation_list_queue_tags(
 }
 
 #[allow(unused_mut)]
-pub fn purge_queue_in_progress(
+pub fn deser_structure_purge_queue_in_progress_xml_err(
     inp: &[u8],
     mut builder: crate::error::purge_queue_in_progress::Builder,
 ) -> Result<crate::error::purge_queue_in_progress::Builder, smithy_xml::decode::XmlError> {
@@ -654,7 +654,7 @@ pub fn deser_operation_receive_message(
                         Result::<std::vec::Vec<crate::model::Message>, smithy_xml::decode::XmlError>::Ok({
                             let mut list_22 = builder.messages.take().unwrap_or_default();
                             list_22.push(
-                                crate::xml_deser::message_inner(&mut tag)
+                                crate::xml_deser::deser_structure_message(&mut tag)
                                 ?
                             );
                             list_22
@@ -677,7 +677,7 @@ pub fn deser_operation_receive_message(
 }
 
 #[allow(unused_mut)]
-pub fn invalid_message_contents(
+pub fn deser_structure_invalid_message_contents_xml_err(
     inp: &[u8],
     mut builder: crate::error::invalid_message_contents::Builder,
 ) -> Result<crate::error::invalid_message_contents::Builder, smithy_xml::decode::XmlError> {
@@ -686,7 +686,7 @@ pub fn invalid_message_contents(
 }
 
 #[allow(unused_mut)]
-pub fn unsupported_operation(
+pub fn deser_structure_unsupported_operation_xml_err(
     inp: &[u8],
     mut builder: crate::error::unsupported_operation::Builder,
 ) -> Result<crate::error::unsupported_operation::Builder, smithy_xml::decode::XmlError> {
@@ -798,7 +798,7 @@ pub fn deser_operation_send_message(
 }
 
 #[allow(unused_mut)]
-pub fn batch_request_too_long(
+pub fn deser_structure_batch_request_too_long_xml_err(
     inp: &[u8],
     mut builder: crate::error::batch_request_too_long::Builder,
 ) -> Result<crate::error::batch_request_too_long::Builder, smithy_xml::decode::XmlError> {
@@ -839,7 +839,7 @@ pub fn deser_operation_send_message_batch(
                         Result::<std::vec::Vec<crate::model::SendMessageBatchResultEntry>, smithy_xml::decode::XmlError>::Ok({
                             let mut list_29 = builder.successful.take().unwrap_or_default();
                             list_29.push(
-                                crate::xml_deser::send_message_batch_result_entry_inner(&mut tag)
+                                crate::xml_deser::deser_structure_send_message_batch_result_entry(&mut tag)
                                 ?
                             );
                             list_29
@@ -856,7 +856,7 @@ pub fn deser_operation_send_message_batch(
                         Result::<std::vec::Vec<crate::model::BatchResultErrorEntry>, smithy_xml::decode::XmlError>::Ok({
                             let mut list_31 = builder.failed.take().unwrap_or_default();
                             list_31.push(
-                                crate::xml_deser::batch_result_error_entry_inner(&mut tag)
+                                crate::xml_deser::deser_structure_batch_result_error_entry(&mut tag)
                                 ?
                             );
                             list_31
@@ -878,7 +878,7 @@ pub fn deser_operation_send_message_batch(
     Ok(builder)
 }
 
-pub fn change_message_visibility_batch_result_entry_inner(
+pub fn deser_structure_change_message_visibility_batch_result_entry(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::ChangeMessageVisibilityBatchResultEntry, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -904,7 +904,7 @@ pub fn change_message_visibility_batch_result_entry_inner(
     Ok(builder.build())
 }
 
-pub fn batch_result_error_entry_inner(
+pub fn deser_structure_batch_result_error_entry(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::BatchResultErrorEntry, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -970,7 +970,7 @@ pub fn batch_result_error_entry_inner(
     Ok(builder.build())
 }
 
-pub fn delete_message_batch_result_entry_inner(
+pub fn deser_structure_delete_message_batch_result_entry(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::DeleteMessageBatchResultEntry, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -996,7 +996,7 @@ pub fn delete_message_batch_result_entry_inner(
     Ok(builder.build())
 }
 
-pub fn queue_attribute_map_entry(
+pub fn deser_map_queue_attribute_map_entry(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
     out: &mut std::collections::HashMap<crate::model::QueueAttributeName, std::string::String>,
 ) -> Result<(), smithy_xml::decode::XmlError> {
@@ -1034,7 +1034,7 @@ pub fn queue_attribute_map_entry(
     Ok(())
 }
 
-pub fn tag_map_entry(
+pub fn deser_map_tag_map_entry(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
     out: &mut std::collections::HashMap<std::string::String, std::string::String>,
 ) -> Result<(), smithy_xml::decode::XmlError> {
@@ -1071,7 +1071,7 @@ pub fn tag_map_entry(
     Ok(())
 }
 
-pub fn message_inner(
+pub fn deser_structure_message(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::Message, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -1135,7 +1135,7 @@ pub fn message_inner(
                     Some(
                         Result::<std::collections::HashMap<crate::model::MessageSystemAttributeName, std::string::String>, smithy_xml::decode::XmlError>::Ok({
                             let mut map_43 = builder.attributes.take().unwrap_or_default();
-                                        crate::xml_deser::message_system_attribute_map_entry(&mut tag, &mut map_43)?;
+                                        crate::xml_deser::deser_map_message_system_attribute_map_entry(&mut tag, &mut map_43)?;
                                         map_43
                         })
                         ?
@@ -1162,7 +1162,7 @@ pub fn message_inner(
                     Some(
                         Result::<std::collections::HashMap<std::string::String, crate::model::MessageAttributeValue>, smithy_xml::decode::XmlError>::Ok({
                             let mut map_46 = builder.message_attributes.take().unwrap_or_default();
-                                        crate::xml_deser::message_body_attribute_map_entry(&mut tag, &mut map_46)?;
+                                        crate::xml_deser::deser_map_message_body_attribute_map_entry(&mut tag, &mut map_46)?;
                                         map_46
                         })
                         ?
@@ -1177,7 +1177,7 @@ pub fn message_inner(
     Ok(builder.build())
 }
 
-pub fn send_message_batch_result_entry_inner(
+pub fn deser_structure_send_message_batch_result_entry(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::SendMessageBatchResultEntry, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -1268,7 +1268,7 @@ pub fn send_message_batch_result_entry_inner(
     Ok(builder.build())
 }
 
-pub fn message_system_attribute_map_entry(
+pub fn deser_map_message_system_attribute_map_entry(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
     out: &mut std::collections::HashMap<
         crate::model::MessageSystemAttributeName,
@@ -1309,7 +1309,7 @@ pub fn message_system_attribute_map_entry(
     Ok(())
 }
 
-pub fn message_body_attribute_map_entry(
+pub fn deser_map_message_body_attribute_map_entry(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
     out: &mut std::collections::HashMap<std::string::String, crate::model::MessageAttributeValue>,
 ) -> Result<(), smithy_xml::decode::XmlError> {
@@ -1329,7 +1329,7 @@ pub fn message_body_attribute_map_entry(
             ,
             s if s.matches("Value") /* value com.amazonaws.sqs#MessageBodyAttributeMap$value */ =>  {
                 v = Some(
-                    crate::xml_deser::message_attribute_value_inner(&mut tag)
+                    crate::xml_deser::deser_structure_message_attribute_value(&mut tag)
                     ?
                 )
             }
@@ -1343,7 +1343,7 @@ pub fn message_body_attribute_map_entry(
     Ok(())
 }
 
-pub fn message_attribute_value_inner(
+pub fn deser_structure_message_attribute_value(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::MessageAttributeValue, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -1366,7 +1366,7 @@ pub fn message_attribute_value_inner(
             s if s.matches("BinaryValue") /* BinaryValue com.amazonaws.sqs#MessageAttributeValue$BinaryValue */ =>  {
                 let var_54 =
                     Some(
-                        smithy_http::base64::decode(
+                        smithy_types::base64::decode(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
                         )
                         .map_err(|err|smithy_xml::decode::XmlError::custom(format!("invalid base64: {:?}", err))).map(smithy_types::Blob::new)
@@ -1402,7 +1402,7 @@ pub fn message_attribute_value_inner(
                         Result::<std::vec::Vec<smithy_types::Blob>, smithy_xml::decode::XmlError>::Ok({
                             let mut list_58 = builder.binary_list_values.take().unwrap_or_default();
                             list_58.push(
-                                smithy_http::base64::decode(
+                                smithy_types::base64::decode(
                                     smithy_xml::decode::try_data(&mut tag)?.as_ref()
                                 )
                                 .map_err(|err|smithy_xml::decode::XmlError::custom(format!("invalid base64: {:?}", err))).map(smithy_types::Blob::new)

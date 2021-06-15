@@ -6,7 +6,7 @@ pub fn parse_generic_error(
 }
 
 #[allow(unused_mut)]
-pub fn invalid_input_exception(
+pub fn deser_structure_invalid_input_error_xml_err(
     inp: &[u8],
     mut builder: crate::error::invalid_input_error::Builder,
 ) -> Result<crate::error::invalid_input_error::Builder, smithy_xml::decode::XmlError> {
@@ -36,7 +36,7 @@ pub fn invalid_input_exception(
 }
 
 #[allow(unused_mut)]
-pub fn limit_exceeded_exception(
+pub fn deser_structure_limit_exceeded_error_xml_err(
     inp: &[u8],
     mut builder: crate::error::limit_exceeded_error::Builder,
 ) -> Result<crate::error::limit_exceeded_error::Builder, smithy_xml::decode::XmlError> {
@@ -66,7 +66,7 @@ pub fn limit_exceeded_exception(
 }
 
 #[allow(unused_mut)]
-pub fn no_such_entity_exception(
+pub fn deser_structure_no_such_entity_error_xml_err(
     inp: &[u8],
     mut builder: crate::error::no_such_entity_error::Builder,
 ) -> Result<crate::error::no_such_entity_error::Builder, smithy_xml::decode::XmlError> {
@@ -96,7 +96,7 @@ pub fn no_such_entity_exception(
 }
 
 #[allow(unused_mut)]
-pub fn service_failure_exception(
+pub fn deser_structure_service_failure_error_xml_err(
     inp: &[u8],
     mut builder: crate::error::service_failure_error::Builder,
 ) -> Result<crate::error::service_failure_error::Builder, smithy_xml::decode::XmlError> {
@@ -126,7 +126,7 @@ pub fn service_failure_exception(
 }
 
 #[allow(unused_mut)]
-pub fn entity_already_exists_exception(
+pub fn deser_structure_entity_already_exists_error_xml_err(
     inp: &[u8],
     mut builder: crate::error::entity_already_exists_error::Builder,
 ) -> Result<crate::error::entity_already_exists_error::Builder, smithy_xml::decode::XmlError> {
@@ -156,7 +156,7 @@ pub fn entity_already_exists_exception(
 }
 
 #[allow(unused_mut)]
-pub fn unmodifiable_entity_exception(
+pub fn deser_structure_unmodifiable_entity_error_xml_err(
     inp: &[u8],
     mut builder: crate::error::unmodifiable_entity_error::Builder,
 ) -> Result<crate::error::unmodifiable_entity_error::Builder, smithy_xml::decode::XmlError> {
@@ -186,7 +186,7 @@ pub fn unmodifiable_entity_exception(
 }
 
 #[allow(unused_mut)]
-pub fn policy_not_attachable_exception(
+pub fn deser_structure_policy_not_attachable_error_xml_err(
     inp: &[u8],
     mut builder: crate::error::policy_not_attachable_error::Builder,
 ) -> Result<crate::error::policy_not_attachable_error::Builder, smithy_xml::decode::XmlError> {
@@ -216,7 +216,7 @@ pub fn policy_not_attachable_exception(
 }
 
 #[allow(unused_mut)]
-pub fn entity_temporarily_unmodifiable_exception(
+pub fn deser_structure_entity_temporarily_unmodifiable_error_xml_err(
     inp: &[u8],
     mut builder: crate::error::entity_temporarily_unmodifiable_error::Builder,
 ) -> Result<
@@ -249,7 +249,7 @@ pub fn entity_temporarily_unmodifiable_exception(
 }
 
 #[allow(unused_mut)]
-pub fn invalid_user_type_exception(
+pub fn deser_structure_invalid_user_type_error_xml_err(
     inp: &[u8],
     mut builder: crate::error::invalid_user_type_error::Builder,
 ) -> Result<crate::error::invalid_user_type_error::Builder, smithy_xml::decode::XmlError> {
@@ -279,7 +279,7 @@ pub fn invalid_user_type_exception(
 }
 
 #[allow(unused_mut)]
-pub fn password_policy_violation_exception(
+pub fn deser_structure_password_policy_violation_error_xml_err(
     inp: &[u8],
     mut builder: crate::error::password_policy_violation_error::Builder,
 ) -> Result<crate::error::password_policy_violation_error::Builder, smithy_xml::decode::XmlError> {
@@ -338,7 +338,7 @@ pub fn deser_operation_create_access_key(
             s if s.matches("AccessKey") /* AccessKey com.amazonaws.iam#CreateAccessKeyOutput$AccessKey */ =>  {
                 let var_11 =
                     Some(
-                        crate::xml_deser::access_key_inner(&mut tag)
+                        crate::xml_deser::deser_structure_access_key(&mut tag)
                         ?
                     )
                 ;
@@ -386,7 +386,7 @@ pub fn deser_operation_create_group(
             s if s.matches("Group") /* Group com.amazonaws.iam#CreateGroupOutput$Group */ =>  {
                 let var_12 =
                     Some(
-                        crate::xml_deser::group_inner(&mut tag)
+                        crate::xml_deser::deser_structure_group(&mut tag)
                         ?
                     )
                 ;
@@ -405,7 +405,7 @@ pub fn deser_operation_create_group(
 }
 
 #[allow(unused_mut)]
-pub fn concurrent_modification_exception(
+pub fn deser_structure_concurrent_modification_error_xml_err(
     inp: &[u8],
     mut builder: crate::error::concurrent_modification_error::Builder,
 ) -> Result<crate::error::concurrent_modification_error::Builder, smithy_xml::decode::XmlError> {
@@ -464,7 +464,7 @@ pub fn deser_operation_create_instance_profile(
             s if s.matches("InstanceProfile") /* InstanceProfile com.amazonaws.iam#CreateInstanceProfileOutput$InstanceProfile */ =>  {
                 let var_14 =
                     Some(
-                        crate::xml_deser::instance_profile_inner(&mut tag)
+                        crate::xml_deser::deser_structure_instance_profile(&mut tag)
                         ?
                     )
                 ;
@@ -512,7 +512,7 @@ pub fn deser_operation_create_login_profile(
             s if s.matches("LoginProfile") /* LoginProfile com.amazonaws.iam#CreateLoginProfileOutput$LoginProfile */ =>  {
                 let var_15 =
                     Some(
-                        crate::xml_deser::login_profile_inner(&mut tag)
+                        crate::xml_deser::deser_structure_login_profile(&mut tag)
                         ?
                     )
                 ;
@@ -576,7 +576,7 @@ pub fn deser_operation_create_open_id_connect_provider(
             s if s.matches("Tags") /* Tags com.amazonaws.iam#CreateOpenIDConnectProviderOutput$Tags */ =>  {
                 let var_17 =
                     Some(
-                        crate::xml_deser::deserialize_tag_list_type(&mut tag)
+                        crate::xml_deser::deser_list_tag_list_type(&mut tag)
                         ?
                     )
                 ;
@@ -595,7 +595,7 @@ pub fn deser_operation_create_open_id_connect_provider(
 }
 
 #[allow(unused_mut)]
-pub fn malformed_policy_document_exception(
+pub fn deser_structure_malformed_policy_document_error_xml_err(
     inp: &[u8],
     mut builder: crate::error::malformed_policy_document_error::Builder,
 ) -> Result<crate::error::malformed_policy_document_error::Builder, smithy_xml::decode::XmlError> {
@@ -654,7 +654,7 @@ pub fn deser_operation_create_policy(
             s if s.matches("Policy") /* Policy com.amazonaws.iam#CreatePolicyOutput$Policy */ =>  {
                 let var_19 =
                     Some(
-                        crate::xml_deser::policy_inner(&mut tag)
+                        crate::xml_deser::deser_structure_policy(&mut tag)
                         ?
                     )
                 ;
@@ -702,7 +702,7 @@ pub fn deser_operation_create_policy_version(
             s if s.matches("PolicyVersion") /* PolicyVersion com.amazonaws.iam#CreatePolicyVersionOutput$PolicyVersion */ =>  {
                 let var_20 =
                     Some(
-                        crate::xml_deser::policy_version_inner(&mut tag)
+                        crate::xml_deser::deser_structure_policy_version(&mut tag)
                         ?
                     )
                 ;
@@ -750,7 +750,7 @@ pub fn deser_operation_create_role(
             s if s.matches("Role") /* Role com.amazonaws.iam#CreateRoleOutput$Role */ =>  {
                 let var_21 =
                     Some(
-                        crate::xml_deser::role_inner(&mut tag)
+                        crate::xml_deser::deser_structure_role(&mut tag)
                         ?
                     )
                 ;
@@ -811,7 +811,7 @@ pub fn deser_operation_create_saml_provider(
             s if s.matches("Tags") /* Tags com.amazonaws.iam#CreateSAMLProviderOutput$Tags */ =>  {
                 let var_23 =
                     Some(
-                        crate::xml_deser::deserialize_tag_list_type(&mut tag)
+                        crate::xml_deser::deser_list_tag_list_type(&mut tag)
                         ?
                     )
                 ;
@@ -860,7 +860,7 @@ pub fn deser_operation_create_service_linked_role(
             s if s.matches("Role") /* Role com.amazonaws.iam#CreateServiceLinkedRoleOutput$Role */ =>  {
                 let var_24 =
                     Some(
-                        crate::xml_deser::role_inner(&mut tag)
+                        crate::xml_deser::deser_structure_role(&mut tag)
                         ?
                     )
                 ;
@@ -879,7 +879,7 @@ pub fn deser_operation_create_service_linked_role(
 }
 
 #[allow(unused_mut)]
-pub fn service_not_supported_exception(
+pub fn deser_structure_service_not_supported_error_xml_err(
     inp: &[u8],
     mut builder: crate::error::service_not_supported_error::Builder,
 ) -> Result<crate::error::service_not_supported_error::Builder, smithy_xml::decode::XmlError> {
@@ -941,7 +941,7 @@ pub fn deser_operation_create_service_specific_credential(
             s if s.matches("ServiceSpecificCredential") /* ServiceSpecificCredential com.amazonaws.iam#CreateServiceSpecificCredentialOutput$ServiceSpecificCredential */ =>  {
                 let var_26 =
                     Some(
-                        crate::xml_deser::service_specific_credential_inner(&mut tag)
+                        crate::xml_deser::deser_structure_service_specific_credential(&mut tag)
                         ?
                     )
                 ;
@@ -989,7 +989,7 @@ pub fn deser_operation_create_user(
             s if s.matches("User") /* User com.amazonaws.iam#CreateUserOutput$User */ =>  {
                 let var_27 =
                     Some(
-                        crate::xml_deser::user_inner(&mut tag)
+                        crate::xml_deser::deser_structure_user(&mut tag)
                         ?
                     )
                 ;
@@ -1038,7 +1038,7 @@ pub fn deser_operation_create_virtual_mfa_device(
             s if s.matches("VirtualMFADevice") /* VirtualMFADevice com.amazonaws.iam#CreateVirtualMFADeviceOutput$VirtualMFADevice */ =>  {
                 let var_28 =
                     Some(
-                        crate::xml_deser::virtual_mfa_device_inner(&mut tag)
+                        crate::xml_deser::deser_structure_virtual_mfa_device(&mut tag)
                         ?
                     )
                 ;
@@ -1057,7 +1057,7 @@ pub fn deser_operation_create_virtual_mfa_device(
 }
 
 #[allow(unused_mut)]
-pub fn delete_conflict_exception(
+pub fn deser_structure_delete_conflict_error_xml_err(
     inp: &[u8],
     mut builder: crate::error::delete_conflict_error::Builder,
 ) -> Result<crate::error::delete_conflict_error::Builder, smithy_xml::decode::XmlError> {
@@ -1139,7 +1139,7 @@ pub fn deser_operation_delete_service_linked_role(
 }
 
 #[allow(unused_mut)]
-pub fn invalid_authentication_code_exception(
+pub fn deser_structure_invalid_authentication_code_error_xml_err(
     inp: &[u8],
     mut builder: crate::error::invalid_authentication_code_error::Builder,
 ) -> Result<crate::error::invalid_authentication_code_error::Builder, smithy_xml::decode::XmlError>
@@ -1236,7 +1236,7 @@ pub fn deser_operation_generate_credential_report(
 }
 
 #[allow(unused_mut)]
-pub fn report_generation_limit_exceeded_exception(
+pub fn deser_structure_report_generation_limit_exceeded_error_xml_err(
     inp: &[u8],
     mut builder: crate::error::report_generation_limit_exceeded_error::Builder,
 ) -> Result<
@@ -1419,7 +1419,7 @@ pub fn deser_operation_get_access_key_last_used(
             s if s.matches("AccessKeyLastUsed") /* AccessKeyLastUsed com.amazonaws.iam#GetAccessKeyLastUsedOutput$AccessKeyLastUsed */ =>  {
                 let var_38 =
                     Some(
-                        crate::xml_deser::access_key_last_used_inner(&mut tag)
+                        crate::xml_deser::deser_structure_access_key_last_used(&mut tag)
                         ?
                     )
                 ;
@@ -1470,7 +1470,7 @@ pub fn deser_operation_get_account_authorization_details(
             s if s.matches("UserDetailList") /* UserDetailList com.amazonaws.iam#GetAccountAuthorizationDetailsOutput$UserDetailList */ =>  {
                 let var_39 =
                     Some(
-                        crate::xml_deser::deserialize_user_detail_list_type(&mut tag)
+                        crate::xml_deser::deser_list_user_detail_list_type(&mut tag)
                         ?
                     )
                 ;
@@ -1480,7 +1480,7 @@ pub fn deser_operation_get_account_authorization_details(
             s if s.matches("GroupDetailList") /* GroupDetailList com.amazonaws.iam#GetAccountAuthorizationDetailsOutput$GroupDetailList */ =>  {
                 let var_40 =
                     Some(
-                        crate::xml_deser::deserialize_group_detail_list_type(&mut tag)
+                        crate::xml_deser::deser_list_group_detail_list_type(&mut tag)
                         ?
                     )
                 ;
@@ -1490,7 +1490,7 @@ pub fn deser_operation_get_account_authorization_details(
             s if s.matches("RoleDetailList") /* RoleDetailList com.amazonaws.iam#GetAccountAuthorizationDetailsOutput$RoleDetailList */ =>  {
                 let var_41 =
                     Some(
-                        crate::xml_deser::deserialize_role_detail_list_type(&mut tag)
+                        crate::xml_deser::deser_list_role_detail_list_type(&mut tag)
                         ?
                     )
                 ;
@@ -1500,7 +1500,7 @@ pub fn deser_operation_get_account_authorization_details(
             s if s.matches("Policies") /* Policies com.amazonaws.iam#GetAccountAuthorizationDetailsOutput$Policies */ =>  {
                 let var_42 =
                     Some(
-                        crate::xml_deser::deserialize_managed_policy_detail_list_type(&mut tag)
+                        crate::xml_deser::deser_list_managed_policy_detail_list_type(&mut tag)
                         ?
                     )
                 ;
@@ -1576,7 +1576,7 @@ pub fn deser_operation_get_account_password_policy(
             s if s.matches("PasswordPolicy") /* PasswordPolicy com.amazonaws.iam#GetAccountPasswordPolicyOutput$PasswordPolicy */ =>  {
                 let var_45 =
                     Some(
-                        crate::xml_deser::password_policy_inner(&mut tag)
+                        crate::xml_deser::deser_structure_password_policy(&mut tag)
                         ?
                     )
                 ;
@@ -1624,7 +1624,7 @@ pub fn deser_operation_get_account_summary(
             s if s.matches("SummaryMap") /* SummaryMap com.amazonaws.iam#GetAccountSummaryOutput$SummaryMap */ =>  {
                 let var_46 =
                     Some(
-                        crate::xml_deser::deserialize_summary_map_type(&mut tag)
+                        crate::xml_deser::deser_map_summary_map_type(&mut tag)
                         ?
                     )
                 ;
@@ -1675,7 +1675,7 @@ pub fn deser_operation_get_context_keys_for_custom_policy(
             s if s.matches("ContextKeyNames") /* ContextKeyNames com.amazonaws.iam#GetContextKeysForCustomPolicyOutput$ContextKeyNames */ =>  {
                 let var_47 =
                     Some(
-                        crate::xml_deser::deserialize_context_key_names_result_list_type(&mut tag)
+                        crate::xml_deser::deser_list_context_key_names_result_list_type(&mut tag)
                         ?
                     )
                 ;
@@ -1726,7 +1726,7 @@ pub fn deser_operation_get_context_keys_for_principal_policy(
             s if s.matches("ContextKeyNames") /* ContextKeyNames com.amazonaws.iam#GetContextKeysForPrincipalPolicyOutput$ContextKeyNames */ =>  {
                 let var_48 =
                     Some(
-                        crate::xml_deser::deserialize_context_key_names_result_list_type(&mut tag)
+                        crate::xml_deser::deser_list_context_key_names_result_list_type(&mut tag)
                         ?
                     )
                 ;
@@ -1745,7 +1745,7 @@ pub fn deser_operation_get_context_keys_for_principal_policy(
 }
 
 #[allow(unused_mut)]
-pub fn credential_report_expired_exception(
+pub fn deser_structure_credential_report_expired_error_xml_err(
     inp: &[u8],
     mut builder: crate::error::credential_report_expired_error::Builder,
 ) -> Result<crate::error::credential_report_expired_error::Builder, smithy_xml::decode::XmlError> {
@@ -1775,7 +1775,7 @@ pub fn credential_report_expired_exception(
 }
 
 #[allow(unused_mut)]
-pub fn credential_report_not_present_exception(
+pub fn deser_structure_credential_report_not_present_error_xml_err(
     inp: &[u8],
     mut builder: crate::error::credential_report_not_present_error::Builder,
 ) -> Result<crate::error::credential_report_not_present_error::Builder, smithy_xml::decode::XmlError>
@@ -1806,7 +1806,7 @@ pub fn credential_report_not_present_exception(
 }
 
 #[allow(unused_mut)]
-pub fn credential_report_not_ready_exception(
+pub fn deser_structure_credential_report_not_ready_error_xml_err(
     inp: &[u8],
     mut builder: crate::error::credential_report_not_ready_error::Builder,
 ) -> Result<crate::error::credential_report_not_ready_error::Builder, smithy_xml::decode::XmlError>
@@ -1866,7 +1866,7 @@ pub fn deser_operation_get_credential_report(
             s if s.matches("Content") /* Content com.amazonaws.iam#GetCredentialReportOutput$Content */ =>  {
                 let var_52 =
                     Some(
-                        smithy_http::base64::decode(
+                        smithy_types::base64::decode(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
                         )
                         .map_err(|err|smithy_xml::decode::XmlError::custom(format!("invalid base64: {:?}", err))).map(smithy_types::Blob::new)
@@ -1945,7 +1945,7 @@ pub fn deser_operation_get_group(
             s if s.matches("Group") /* Group com.amazonaws.iam#GetGroupOutput$Group */ =>  {
                 let var_55 =
                     Some(
-                        crate::xml_deser::group_inner(&mut tag)
+                        crate::xml_deser::deser_structure_group(&mut tag)
                         ?
                     )
                 ;
@@ -1955,7 +1955,7 @@ pub fn deser_operation_get_group(
             s if s.matches("Users") /* Users com.amazonaws.iam#GetGroupOutput$Users */ =>  {
                 let var_56 =
                     Some(
-                        crate::xml_deser::deserialize_user_list_type(&mut tag)
+                        crate::xml_deser::deser_list_user_list_type(&mut tag)
                         ?
                     )
                 ;
@@ -2107,7 +2107,7 @@ pub fn deser_operation_get_instance_profile(
             s if s.matches("InstanceProfile") /* InstanceProfile com.amazonaws.iam#GetInstanceProfileOutput$InstanceProfile */ =>  {
                 let var_62 =
                     Some(
-                        crate::xml_deser::instance_profile_inner(&mut tag)
+                        crate::xml_deser::deser_structure_instance_profile(&mut tag)
                         ?
                     )
                 ;
@@ -2155,7 +2155,7 @@ pub fn deser_operation_get_login_profile(
             s if s.matches("LoginProfile") /* LoginProfile com.amazonaws.iam#GetLoginProfileOutput$LoginProfile */ =>  {
                 let var_63 =
                     Some(
-                        crate::xml_deser::login_profile_inner(&mut tag)
+                        crate::xml_deser::deser_structure_login_profile(&mut tag)
                         ?
                     )
                 ;
@@ -2217,7 +2217,7 @@ pub fn deser_operation_get_open_id_connect_provider(
             s if s.matches("ClientIDList") /* ClientIDList com.amazonaws.iam#GetOpenIDConnectProviderOutput$ClientIDList */ =>  {
                 let var_65 =
                     Some(
-                        crate::xml_deser::deserialize_client_id_list_type(&mut tag)
+                        crate::xml_deser::deser_list_client_id_list_type(&mut tag)
                         ?
                     )
                 ;
@@ -2227,7 +2227,7 @@ pub fn deser_operation_get_open_id_connect_provider(
             s if s.matches("ThumbprintList") /* ThumbprintList com.amazonaws.iam#GetOpenIDConnectProviderOutput$ThumbprintList */ =>  {
                 let var_66 =
                     Some(
-                        crate::xml_deser::deserialize_thumbprint_list_type(&mut tag)
+                        crate::xml_deser::deser_list_thumbprint_list_type(&mut tag)
                         ?
                     )
                 ;
@@ -2251,7 +2251,7 @@ pub fn deser_operation_get_open_id_connect_provider(
             s if s.matches("Tags") /* Tags com.amazonaws.iam#GetOpenIDConnectProviderOutput$Tags */ =>  {
                 let var_68 =
                     Some(
-                        crate::xml_deser::deserialize_tag_list_type(&mut tag)
+                        crate::xml_deser::deser_list_tag_list_type(&mut tag)
                         ?
                     )
                 ;
@@ -2376,7 +2376,7 @@ pub fn deser_operation_get_organizations_access_report(
             s if s.matches("AccessDetails") /* AccessDetails com.amazonaws.iam#GetOrganizationsAccessReportOutput$AccessDetails */ =>  {
                 let var_74 =
                     Some(
-                        crate::xml_deser::deserialize_access_details(&mut tag)
+                        crate::xml_deser::deser_list_access_details(&mut tag)
                         ?
                     )
                 ;
@@ -2413,7 +2413,7 @@ pub fn deser_operation_get_organizations_access_report(
             s if s.matches("ErrorDetails") /* ErrorDetails com.amazonaws.iam#GetOrganizationsAccessReportOutput$ErrorDetails */ =>  {
                 let var_77 =
                     Some(
-                        crate::xml_deser::error_details_inner(&mut tag)
+                        crate::xml_deser::deser_structure_error_details(&mut tag)
                         ?
                     )
                 ;
@@ -2461,7 +2461,7 @@ pub fn deser_operation_get_policy(
             s if s.matches("Policy") /* Policy com.amazonaws.iam#GetPolicyOutput$Policy */ =>  {
                 let var_78 =
                     Some(
-                        crate::xml_deser::policy_inner(&mut tag)
+                        crate::xml_deser::deser_structure_policy(&mut tag)
                         ?
                     )
                 ;
@@ -2509,7 +2509,7 @@ pub fn deser_operation_get_policy_version(
             s if s.matches("PolicyVersion") /* PolicyVersion com.amazonaws.iam#GetPolicyVersionOutput$PolicyVersion */ =>  {
                 let var_79 =
                     Some(
-                        crate::xml_deser::policy_version_inner(&mut tag)
+                        crate::xml_deser::deser_structure_policy_version(&mut tag)
                         ?
                     )
                 ;
@@ -2557,7 +2557,7 @@ pub fn deser_operation_get_role(
             s if s.matches("Role") /* Role com.amazonaws.iam#GetRoleOutput$Role */ =>  {
                 let var_80 =
                     Some(
-                        crate::xml_deser::role_inner(&mut tag)
+                        crate::xml_deser::deser_structure_role(&mut tag)
                         ?
                     )
                 ;
@@ -2723,7 +2723,7 @@ pub fn deser_operation_get_saml_provider(
             s if s.matches("Tags") /* Tags com.amazonaws.iam#GetSAMLProviderOutput$Tags */ =>  {
                 let var_87 =
                     Some(
-                        crate::xml_deser::deserialize_tag_list_type(&mut tag)
+                        crate::xml_deser::deser_list_tag_list_type(&mut tag)
                         ?
                     )
                 ;
@@ -2771,7 +2771,7 @@ pub fn deser_operation_get_server_certificate(
             s if s.matches("ServerCertificate") /* ServerCertificate com.amazonaws.iam#GetServerCertificateOutput$ServerCertificate */ =>  {
                 let var_88 =
                     Some(
-                        crate::xml_deser::server_certificate_inner(&mut tag)
+                        crate::xml_deser::deser_structure_server_certificate(&mut tag)
                         ?
                     )
                 ;
@@ -2864,7 +2864,7 @@ pub fn deser_operation_get_service_last_accessed_details(
             s if s.matches("ServicesLastAccessed") /* ServicesLastAccessed com.amazonaws.iam#GetServiceLastAccessedDetailsOutput$ServicesLastAccessed */ =>  {
                 let var_92 =
                     Some(
-                        crate::xml_deser::deserialize_services_last_accessed(&mut tag)
+                        crate::xml_deser::deser_list_services_last_accessed(&mut tag)
                         ?
                     )
                 ;
@@ -2915,7 +2915,7 @@ pub fn deser_operation_get_service_last_accessed_details(
             s if s.matches("Error") /* Error com.amazonaws.iam#GetServiceLastAccessedDetailsOutput$Error */ =>  {
                 let var_96 =
                     Some(
-                        crate::xml_deser::error_details_inner(&mut tag)
+                        crate::xml_deser::deser_structure_error_details(&mut tag)
                         ?
                     )
                 ;
@@ -3008,7 +3008,7 @@ pub fn deser_operation_get_service_last_accessed_details_with_entities(
             s if s.matches("EntityDetailsList") /* EntityDetailsList com.amazonaws.iam#GetServiceLastAccessedDetailsWithEntitiesOutput$EntityDetailsList */ =>  {
                 let var_100 =
                     Some(
-                        crate::xml_deser::deserialize_entity_details_list_type(&mut tag)
+                        crate::xml_deser::deser_list_entity_details_list_type(&mut tag)
                         ?
                     )
                 ;
@@ -3045,7 +3045,7 @@ pub fn deser_operation_get_service_last_accessed_details_with_entities(
             s if s.matches("Error") /* Error com.amazonaws.iam#GetServiceLastAccessedDetailsWithEntitiesOutput$Error */ =>  {
                 let var_103 =
                     Some(
-                        crate::xml_deser::error_details_inner(&mut tag)
+                        crate::xml_deser::deser_structure_error_details(&mut tag)
                         ?
                     )
                 ;
@@ -3110,7 +3110,7 @@ pub fn deser_operation_get_service_linked_role_deletion_status(
             s if s.matches("Reason") /* Reason com.amazonaws.iam#GetServiceLinkedRoleDeletionStatusOutput$Reason */ =>  {
                 let var_105 =
                     Some(
-                        crate::xml_deser::deletion_task_failure_reason_type_inner(&mut tag)
+                        crate::xml_deser::deser_structure_deletion_task_failure_reason_type(&mut tag)
                         ?
                     )
                 ;
@@ -3129,7 +3129,7 @@ pub fn deser_operation_get_service_linked_role_deletion_status(
 }
 
 #[allow(unused_mut)]
-pub fn unrecognized_public_key_encoding_exception(
+pub fn deser_structure_unrecognized_public_key_encoding_error_xml_err(
     inp: &[u8],
     mut builder: crate::error::unrecognized_public_key_encoding_error::Builder,
 ) -> Result<
@@ -3191,7 +3191,7 @@ pub fn deser_operation_get_ssh_public_key(
             s if s.matches("SSHPublicKey") /* SSHPublicKey com.amazonaws.iam#GetSSHPublicKeyOutput$SSHPublicKey */ =>  {
                 let var_107 =
                     Some(
-                        crate::xml_deser::ssh_public_key_inner(&mut tag)
+                        crate::xml_deser::deser_structure_ssh_public_key(&mut tag)
                         ?
                     )
                 ;
@@ -3239,7 +3239,7 @@ pub fn deser_operation_get_user(
             s if s.matches("User") /* User com.amazonaws.iam#GetUserOutput$User */ =>  {
                 let var_108 =
                     Some(
-                        crate::xml_deser::user_inner(&mut tag)
+                        crate::xml_deser::deser_structure_user(&mut tag)
                         ?
                     )
                 ;
@@ -3364,7 +3364,7 @@ pub fn deser_operation_list_access_keys(
             s if s.matches("AccessKeyMetadata") /* AccessKeyMetadata com.amazonaws.iam#ListAccessKeysOutput$AccessKeyMetadata */ =>  {
                 let var_112 =
                     Some(
-                        crate::xml_deser::deserialize_access_key_metadata_list_type(&mut tag)
+                        crate::xml_deser::deser_list_access_key_metadata_list_type(&mut tag)
                         ?
                     )
                 ;
@@ -3439,7 +3439,7 @@ pub fn deser_operation_list_account_aliases(
             s if s.matches("AccountAliases") /* AccountAliases com.amazonaws.iam#ListAccountAliasesOutput$AccountAliases */ =>  {
                 let var_115 =
                     Some(
-                        crate::xml_deser::deserialize_account_alias_list_type(&mut tag)
+                        crate::xml_deser::deser_list_account_alias_list_type(&mut tag)
                         ?
                     )
                 ;
@@ -3515,7 +3515,7 @@ pub fn deser_operation_list_attached_group_policies(
             s if s.matches("AttachedPolicies") /* AttachedPolicies com.amazonaws.iam#ListAttachedGroupPoliciesOutput$AttachedPolicies */ =>  {
                 let var_118 =
                     Some(
-                        crate::xml_deser::deserialize_attached_policies_list_type(&mut tag)
+                        crate::xml_deser::deser_list_attached_policies_list_type(&mut tag)
                         ?
                     )
                 ;
@@ -3591,7 +3591,7 @@ pub fn deser_operation_list_attached_role_policies(
             s if s.matches("AttachedPolicies") /* AttachedPolicies com.amazonaws.iam#ListAttachedRolePoliciesOutput$AttachedPolicies */ =>  {
                 let var_121 =
                     Some(
-                        crate::xml_deser::deserialize_attached_policies_list_type(&mut tag)
+                        crate::xml_deser::deser_list_attached_policies_list_type(&mut tag)
                         ?
                     )
                 ;
@@ -3667,7 +3667,7 @@ pub fn deser_operation_list_attached_user_policies(
             s if s.matches("AttachedPolicies") /* AttachedPolicies com.amazonaws.iam#ListAttachedUserPoliciesOutput$AttachedPolicies */ =>  {
                 let var_124 =
                     Some(
-                        crate::xml_deser::deserialize_attached_policies_list_type(&mut tag)
+                        crate::xml_deser::deser_list_attached_policies_list_type(&mut tag)
                         ?
                     )
                 ;
@@ -3742,7 +3742,7 @@ pub fn deser_operation_list_entities_for_policy(
             s if s.matches("PolicyGroups") /* PolicyGroups com.amazonaws.iam#ListEntitiesForPolicyOutput$PolicyGroups */ =>  {
                 let var_127 =
                     Some(
-                        crate::xml_deser::deserialize_policy_group_list_type(&mut tag)
+                        crate::xml_deser::deser_list_policy_group_list_type(&mut tag)
                         ?
                     )
                 ;
@@ -3752,7 +3752,7 @@ pub fn deser_operation_list_entities_for_policy(
             s if s.matches("PolicyUsers") /* PolicyUsers com.amazonaws.iam#ListEntitiesForPolicyOutput$PolicyUsers */ =>  {
                 let var_128 =
                     Some(
-                        crate::xml_deser::deserialize_policy_user_list_type(&mut tag)
+                        crate::xml_deser::deser_list_policy_user_list_type(&mut tag)
                         ?
                     )
                 ;
@@ -3762,7 +3762,7 @@ pub fn deser_operation_list_entities_for_policy(
             s if s.matches("PolicyRoles") /* PolicyRoles com.amazonaws.iam#ListEntitiesForPolicyOutput$PolicyRoles */ =>  {
                 let var_129 =
                     Some(
-                        crate::xml_deser::deserialize_policy_role_list_type(&mut tag)
+                        crate::xml_deser::deser_list_policy_role_list_type(&mut tag)
                         ?
                     )
                 ;
@@ -3837,7 +3837,7 @@ pub fn deser_operation_list_group_policies(
             s if s.matches("PolicyNames") /* PolicyNames com.amazonaws.iam#ListGroupPoliciesOutput$PolicyNames */ =>  {
                 let var_132 =
                     Some(
-                        crate::xml_deser::deserialize_policy_name_list_type(&mut tag)
+                        crate::xml_deser::deser_list_policy_name_list_type(&mut tag)
                         ?
                     )
                 ;
@@ -3912,7 +3912,7 @@ pub fn deser_operation_list_groups(
             s if s.matches("Groups") /* Groups com.amazonaws.iam#ListGroupsOutput$Groups */ =>  {
                 let var_135 =
                     Some(
-                        crate::xml_deser::deserialize_group_list_type(&mut tag)
+                        crate::xml_deser::deser_list_group_list_type(&mut tag)
                         ?
                     )
                 ;
@@ -3987,7 +3987,7 @@ pub fn deser_operation_list_groups_for_user(
             s if s.matches("Groups") /* Groups com.amazonaws.iam#ListGroupsForUserOutput$Groups */ =>  {
                 let var_138 =
                     Some(
-                        crate::xml_deser::deserialize_group_list_type(&mut tag)
+                        crate::xml_deser::deser_list_group_list_type(&mut tag)
                         ?
                     )
                 ;
@@ -4062,7 +4062,7 @@ pub fn deser_operation_list_instance_profiles(
             s if s.matches("InstanceProfiles") /* InstanceProfiles com.amazonaws.iam#ListInstanceProfilesOutput$InstanceProfiles */ =>  {
                 let var_141 =
                     Some(
-                        crate::xml_deser::deserialize_instance_profile_list_type(&mut tag)
+                        crate::xml_deser::deser_list_instance_profile_list_type(&mut tag)
                         ?
                     )
                 ;
@@ -4140,7 +4140,7 @@ pub fn deser_operation_list_instance_profiles_for_role(
             s if s.matches("InstanceProfiles") /* InstanceProfiles com.amazonaws.iam#ListInstanceProfilesForRoleOutput$InstanceProfiles */ =>  {
                 let var_144 =
                     Some(
-                        crate::xml_deser::deserialize_instance_profile_list_type(&mut tag)
+                        crate::xml_deser::deser_list_instance_profile_list_type(&mut tag)
                         ?
                     )
                 ;
@@ -4216,7 +4216,7 @@ pub fn deser_operation_list_instance_profile_tags(
             s if s.matches("Tags") /* Tags com.amazonaws.iam#ListInstanceProfileTagsOutput$Tags */ =>  {
                 let var_147 =
                     Some(
-                        crate::xml_deser::deserialize_tag_list_type(&mut tag)
+                        crate::xml_deser::deser_list_tag_list_type(&mut tag)
                         ?
                     )
                 ;
@@ -4291,7 +4291,7 @@ pub fn deser_operation_list_mfa_devices(
             s if s.matches("MFADevices") /* MFADevices com.amazonaws.iam#ListMFADevicesOutput$MFADevices */ =>  {
                 let var_150 =
                     Some(
-                        crate::xml_deser::deserialize_mfa_device_list_type(&mut tag)
+                        crate::xml_deser::deser_list_mfa_device_list_type(&mut tag)
                         ?
                     )
                 ;
@@ -4366,7 +4366,7 @@ pub fn deser_operation_list_mfa_device_tags(
             s if s.matches("Tags") /* Tags com.amazonaws.iam#ListMFADeviceTagsOutput$Tags */ =>  {
                 let var_153 =
                     Some(
-                        crate::xml_deser::deserialize_tag_list_type(&mut tag)
+                        crate::xml_deser::deser_list_tag_list_type(&mut tag)
                         ?
                     )
                 ;
@@ -4444,7 +4444,7 @@ pub fn deser_operation_list_open_id_connect_providers(
             s if s.matches("OpenIDConnectProviderList") /* OpenIDConnectProviderList com.amazonaws.iam#ListOpenIDConnectProvidersOutput$OpenIDConnectProviderList */ =>  {
                 let var_156 =
                     Some(
-                        crate::xml_deser::deserialize_open_id_connect_provider_list_type(&mut tag)
+                        crate::xml_deser::deser_list_open_id_connect_provider_list_type(&mut tag)
                         ?
                     )
                 ;
@@ -4495,7 +4495,7 @@ pub fn deser_operation_list_open_id_connect_provider_tags(
             s if s.matches("Tags") /* Tags com.amazonaws.iam#ListOpenIDConnectProviderTagsOutput$Tags */ =>  {
                 let var_157 =
                     Some(
-                        crate::xml_deser::deserialize_tag_list_type(&mut tag)
+                        crate::xml_deser::deser_list_tag_list_type(&mut tag)
                         ?
                     )
                 ;
@@ -4570,7 +4570,7 @@ pub fn deser_operation_list_policies(
             s if s.matches("Policies") /* Policies com.amazonaws.iam#ListPoliciesOutput$Policies */ =>  {
                 let var_160 =
                     Some(
-                        crate::xml_deser::deserialize_policy_list_type(&mut tag)
+                        crate::xml_deser::deser_list_policy_list_type(&mut tag)
                         ?
                     )
                 ;
@@ -4648,7 +4648,7 @@ pub fn deser_operation_list_policies_granting_service_access(
             s if s.matches("PoliciesGrantingServiceAccess") /* PoliciesGrantingServiceAccess com.amazonaws.iam#ListPoliciesGrantingServiceAccessOutput$PoliciesGrantingServiceAccess */ =>  {
                 let var_163 =
                     Some(
-                        crate::xml_deser::deserialize_list_policy_granting_service_access_response_list_type(&mut tag)
+                        crate::xml_deser::deser_list_list_policy_granting_service_access_response_list_type(&mut tag)
                         ?
                     )
                 ;
@@ -4723,7 +4723,7 @@ pub fn deser_operation_list_policy_tags(
             s if s.matches("Tags") /* Tags com.amazonaws.iam#ListPolicyTagsOutput$Tags */ =>  {
                 let var_166 =
                     Some(
-                        crate::xml_deser::deserialize_tag_list_type(&mut tag)
+                        crate::xml_deser::deser_list_tag_list_type(&mut tag)
                         ?
                     )
                 ;
@@ -4798,7 +4798,7 @@ pub fn deser_operation_list_policy_versions(
             s if s.matches("Versions") /* Versions com.amazonaws.iam#ListPolicyVersionsOutput$Versions */ =>  {
                 let var_169 =
                     Some(
-                        crate::xml_deser::deserialize_policy_document_version_list_type(&mut tag)
+                        crate::xml_deser::deser_list_policy_document_version_list_type(&mut tag)
                         ?
                     )
                 ;
@@ -4873,7 +4873,7 @@ pub fn deser_operation_list_role_policies(
             s if s.matches("PolicyNames") /* PolicyNames com.amazonaws.iam#ListRolePoliciesOutput$PolicyNames */ =>  {
                 let var_172 =
                     Some(
-                        crate::xml_deser::deserialize_policy_name_list_type(&mut tag)
+                        crate::xml_deser::deser_list_policy_name_list_type(&mut tag)
                         ?
                     )
                 ;
@@ -4948,7 +4948,7 @@ pub fn deser_operation_list_roles(
             s if s.matches("Roles") /* Roles com.amazonaws.iam#ListRolesOutput$Roles */ =>  {
                 let var_175 =
                     Some(
-                        crate::xml_deser::deserialize_role_list_type(&mut tag)
+                        crate::xml_deser::deser_list_role_list_type(&mut tag)
                         ?
                     )
                 ;
@@ -5023,7 +5023,7 @@ pub fn deser_operation_list_role_tags(
             s if s.matches("Tags") /* Tags com.amazonaws.iam#ListRoleTagsOutput$Tags */ =>  {
                 let var_178 =
                     Some(
-                        crate::xml_deser::deserialize_tag_list_type(&mut tag)
+                        crate::xml_deser::deser_list_tag_list_type(&mut tag)
                         ?
                     )
                 ;
@@ -5098,7 +5098,7 @@ pub fn deser_operation_list_saml_providers(
             s if s.matches("SAMLProviderList") /* SAMLProviderList com.amazonaws.iam#ListSAMLProvidersOutput$SAMLProviderList */ =>  {
                 let var_181 =
                     Some(
-                        crate::xml_deser::deserialize_saml_provider_list_type(&mut tag)
+                        crate::xml_deser::deser_list_saml_provider_list_type(&mut tag)
                         ?
                     )
                 ;
@@ -5146,7 +5146,7 @@ pub fn deser_operation_list_saml_provider_tags(
             s if s.matches("Tags") /* Tags com.amazonaws.iam#ListSAMLProviderTagsOutput$Tags */ =>  {
                 let var_182 =
                     Some(
-                        crate::xml_deser::deserialize_tag_list_type(&mut tag)
+                        crate::xml_deser::deser_list_tag_list_type(&mut tag)
                         ?
                     )
                 ;
@@ -5221,7 +5221,7 @@ pub fn deser_operation_list_server_certificates(
             s if s.matches("ServerCertificateMetadataList") /* ServerCertificateMetadataList com.amazonaws.iam#ListServerCertificatesOutput$ServerCertificateMetadataList */ =>  {
                 let var_185 =
                     Some(
-                        crate::xml_deser::deserialize_server_certificate_metadata_list_type(&mut tag)
+                        crate::xml_deser::deser_list_server_certificate_metadata_list_type(&mut tag)
                         ?
                     )
                 ;
@@ -5297,7 +5297,7 @@ pub fn deser_operation_list_server_certificate_tags(
             s if s.matches("Tags") /* Tags com.amazonaws.iam#ListServerCertificateTagsOutput$Tags */ =>  {
                 let var_188 =
                     Some(
-                        crate::xml_deser::deserialize_tag_list_type(&mut tag)
+                        crate::xml_deser::deser_list_tag_list_type(&mut tag)
                         ?
                     )
                 ;
@@ -5375,7 +5375,7 @@ pub fn deser_operation_list_service_specific_credentials(
             s if s.matches("ServiceSpecificCredentials") /* ServiceSpecificCredentials com.amazonaws.iam#ListServiceSpecificCredentialsOutput$ServiceSpecificCredentials */ =>  {
                 let var_191 =
                     Some(
-                        crate::xml_deser::deserialize_service_specific_credentials_list_type(&mut tag)
+                        crate::xml_deser::deser_list_service_specific_credentials_list_type(&mut tag)
                         ?
                     )
                 ;
@@ -5424,7 +5424,7 @@ pub fn deser_operation_list_signing_certificates(
             s if s.matches("Certificates") /* Certificates com.amazonaws.iam#ListSigningCertificatesOutput$Certificates */ =>  {
                 let var_192 =
                     Some(
-                        crate::xml_deser::deserialize_certificate_list_type(&mut tag)
+                        crate::xml_deser::deser_list_certificate_list_type(&mut tag)
                         ?
                     )
                 ;
@@ -5499,7 +5499,7 @@ pub fn deser_operation_list_ssh_public_keys(
             s if s.matches("SSHPublicKeys") /* SSHPublicKeys com.amazonaws.iam#ListSSHPublicKeysOutput$SSHPublicKeys */ =>  {
                 let var_195 =
                     Some(
-                        crate::xml_deser::deserialize_ssh_public_key_list_type(&mut tag)
+                        crate::xml_deser::deser_list_ssh_public_key_list_type(&mut tag)
                         ?
                     )
                 ;
@@ -5574,7 +5574,7 @@ pub fn deser_operation_list_user_policies(
             s if s.matches("PolicyNames") /* PolicyNames com.amazonaws.iam#ListUserPoliciesOutput$PolicyNames */ =>  {
                 let var_198 =
                     Some(
-                        crate::xml_deser::deserialize_policy_name_list_type(&mut tag)
+                        crate::xml_deser::deser_list_policy_name_list_type(&mut tag)
                         ?
                     )
                 ;
@@ -5649,7 +5649,7 @@ pub fn deser_operation_list_users(
             s if s.matches("Users") /* Users com.amazonaws.iam#ListUsersOutput$Users */ =>  {
                 let var_201 =
                     Some(
-                        crate::xml_deser::deserialize_user_list_type(&mut tag)
+                        crate::xml_deser::deser_list_user_list_type(&mut tag)
                         ?
                     )
                 ;
@@ -5724,7 +5724,7 @@ pub fn deser_operation_list_user_tags(
             s if s.matches("Tags") /* Tags com.amazonaws.iam#ListUserTagsOutput$Tags */ =>  {
                 let var_204 =
                     Some(
-                        crate::xml_deser::deserialize_tag_list_type(&mut tag)
+                        crate::xml_deser::deser_list_tag_list_type(&mut tag)
                         ?
                     )
                 ;
@@ -5799,7 +5799,7 @@ pub fn deser_operation_list_virtual_mfa_devices(
             s if s.matches("VirtualMFADevices") /* VirtualMFADevices com.amazonaws.iam#ListVirtualMFADevicesOutput$VirtualMFADevices */ =>  {
                 let var_207 =
                     Some(
-                        crate::xml_deser::deserialize_virtual_mfa_device_list_type(&mut tag)
+                        crate::xml_deser::deser_list_virtual_mfa_device_list_type(&mut tag)
                         ?
                     )
                 ;
@@ -5877,7 +5877,7 @@ pub fn deser_operation_reset_service_specific_credential(
             s if s.matches("ServiceSpecificCredential") /* ServiceSpecificCredential com.amazonaws.iam#ResetServiceSpecificCredentialOutput$ServiceSpecificCredential */ =>  {
                 let var_210 =
                     Some(
-                        crate::xml_deser::service_specific_credential_inner(&mut tag)
+                        crate::xml_deser::deser_structure_service_specific_credential(&mut tag)
                         ?
                     )
                 ;
@@ -5896,7 +5896,7 @@ pub fn deser_operation_reset_service_specific_credential(
 }
 
 #[allow(unused_mut)]
-pub fn policy_evaluation_exception(
+pub fn deser_structure_policy_evaluation_error_xml_err(
     inp: &[u8],
     mut builder: crate::error::policy_evaluation_error::Builder,
 ) -> Result<crate::error::policy_evaluation_error::Builder, smithy_xml::decode::XmlError> {
@@ -5955,7 +5955,7 @@ pub fn deser_operation_simulate_custom_policy(
             s if s.matches("EvaluationResults") /* EvaluationResults com.amazonaws.iam#SimulateCustomPolicyOutput$EvaluationResults */ =>  {
                 let var_212 =
                     Some(
-                        crate::xml_deser::deserialize_evaluation_results_list_type(&mut tag)
+                        crate::xml_deser::deser_list_evaluation_results_list_type(&mut tag)
                         ?
                     )
                 ;
@@ -6031,7 +6031,7 @@ pub fn deser_operation_simulate_principal_policy(
             s if s.matches("EvaluationResults") /* EvaluationResults com.amazonaws.iam#SimulatePrincipalPolicyOutput$EvaluationResults */ =>  {
                 let var_215 =
                     Some(
-                        crate::xml_deser::deserialize_evaluation_results_list_type(&mut tag)
+                        crate::xml_deser::deser_list_evaluation_results_list_type(&mut tag)
                         ?
                     )
                 ;
@@ -6106,7 +6106,7 @@ pub fn deser_operation_update_role_description(
             s if s.matches("Role") /* Role com.amazonaws.iam#UpdateRoleDescriptionOutput$Role */ =>  {
                 let var_218 =
                     Some(
-                        crate::xml_deser::role_inner(&mut tag)
+                        crate::xml_deser::deser_structure_role(&mut tag)
                         ?
                     )
                 ;
@@ -6176,7 +6176,7 @@ pub fn deser_operation_update_saml_provider(
 }
 
 #[allow(unused_mut)]
-pub fn key_pair_mismatch_exception(
+pub fn deser_structure_key_pair_mismatch_error_xml_err(
     inp: &[u8],
     mut builder: crate::error::key_pair_mismatch_error::Builder,
 ) -> Result<crate::error::key_pair_mismatch_error::Builder, smithy_xml::decode::XmlError> {
@@ -6206,7 +6206,7 @@ pub fn key_pair_mismatch_exception(
 }
 
 #[allow(unused_mut)]
-pub fn malformed_certificate_exception(
+pub fn deser_structure_malformed_certificate_error_xml_err(
     inp: &[u8],
     mut builder: crate::error::malformed_certificate_error::Builder,
 ) -> Result<crate::error::malformed_certificate_error::Builder, smithy_xml::decode::XmlError> {
@@ -6266,7 +6266,7 @@ pub fn deser_operation_upload_server_certificate(
             s if s.matches("ServerCertificateMetadata") /* ServerCertificateMetadata com.amazonaws.iam#UploadServerCertificateOutput$ServerCertificateMetadata */ =>  {
                 let var_222 =
                     Some(
-                        crate::xml_deser::server_certificate_metadata_inner(&mut tag)
+                        crate::xml_deser::deser_structure_server_certificate_metadata(&mut tag)
                         ?
                     )
                 ;
@@ -6276,7 +6276,7 @@ pub fn deser_operation_upload_server_certificate(
             s if s.matches("Tags") /* Tags com.amazonaws.iam#UploadServerCertificateOutput$Tags */ =>  {
                 let var_223 =
                     Some(
-                        crate::xml_deser::deserialize_tag_list_type(&mut tag)
+                        crate::xml_deser::deser_list_tag_list_type(&mut tag)
                         ?
                     )
                 ;
@@ -6295,7 +6295,7 @@ pub fn deser_operation_upload_server_certificate(
 }
 
 #[allow(unused_mut)]
-pub fn duplicate_certificate_exception(
+pub fn deser_structure_duplicate_certificate_error_xml_err(
     inp: &[u8],
     mut builder: crate::error::duplicate_certificate_error::Builder,
 ) -> Result<crate::error::duplicate_certificate_error::Builder, smithy_xml::decode::XmlError> {
@@ -6325,7 +6325,7 @@ pub fn duplicate_certificate_exception(
 }
 
 #[allow(unused_mut)]
-pub fn invalid_certificate_exception(
+pub fn deser_structure_invalid_certificate_error_xml_err(
     inp: &[u8],
     mut builder: crate::error::invalid_certificate_error::Builder,
 ) -> Result<crate::error::invalid_certificate_error::Builder, smithy_xml::decode::XmlError> {
@@ -6385,7 +6385,7 @@ pub fn deser_operation_upload_signing_certificate(
             s if s.matches("Certificate") /* Certificate com.amazonaws.iam#UploadSigningCertificateOutput$Certificate */ =>  {
                 let var_226 =
                     Some(
-                        crate::xml_deser::signing_certificate_inner(&mut tag)
+                        crate::xml_deser::deser_structure_signing_certificate(&mut tag)
                         ?
                     )
                 ;
@@ -6404,7 +6404,7 @@ pub fn deser_operation_upload_signing_certificate(
 }
 
 #[allow(unused_mut)]
-pub fn duplicate_ssh_public_key_exception(
+pub fn deser_structure_duplicate_ssh_public_key_error_xml_err(
     inp: &[u8],
     mut builder: crate::error::duplicate_ssh_public_key_error::Builder,
 ) -> Result<crate::error::duplicate_ssh_public_key_error::Builder, smithy_xml::decode::XmlError> {
@@ -6434,7 +6434,7 @@ pub fn duplicate_ssh_public_key_exception(
 }
 
 #[allow(unused_mut)]
-pub fn invalid_public_key_exception(
+pub fn deser_structure_invalid_public_key_error_xml_err(
     inp: &[u8],
     mut builder: crate::error::invalid_public_key_error::Builder,
 ) -> Result<crate::error::invalid_public_key_error::Builder, smithy_xml::decode::XmlError> {
@@ -6493,7 +6493,7 @@ pub fn deser_operation_upload_ssh_public_key(
             s if s.matches("SSHPublicKey") /* SSHPublicKey com.amazonaws.iam#UploadSSHPublicKeyOutput$SSHPublicKey */ =>  {
                 let var_229 =
                     Some(
-                        crate::xml_deser::ssh_public_key_inner(&mut tag)
+                        crate::xml_deser::deser_structure_ssh_public_key(&mut tag)
                         ?
                     )
                 ;
@@ -6511,7 +6511,7 @@ pub fn deser_operation_upload_ssh_public_key(
     Ok(builder)
 }
 
-pub fn access_key_inner(
+pub fn deser_structure_access_key(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::AccessKey, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -6591,7 +6591,7 @@ pub fn access_key_inner(
     Ok(builder.build())
 }
 
-pub fn group_inner(
+pub fn deser_structure_group(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::Group, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -6670,7 +6670,7 @@ pub fn group_inner(
     Ok(builder.build())
 }
 
-pub fn instance_profile_inner(
+pub fn deser_structure_instance_profile(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::InstanceProfile, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -6746,7 +6746,7 @@ pub fn instance_profile_inner(
             s if s.matches("Roles") /* Roles com.amazonaws.iam#InstanceProfile$Roles */ =>  {
                 let var_245 =
                     Some(
-                        crate::xml_deser::deserialize_role_list_type(&mut tag)
+                        crate::xml_deser::deser_list_role_list_type(&mut tag)
                         ?
                     )
                 ;
@@ -6756,7 +6756,7 @@ pub fn instance_profile_inner(
             s if s.matches("Tags") /* Tags com.amazonaws.iam#InstanceProfile$Tags */ =>  {
                 let var_246 =
                     Some(
-                        crate::xml_deser::deserialize_tag_list_type(&mut tag)
+                        crate::xml_deser::deser_list_tag_list_type(&mut tag)
                         ?
                     )
                 ;
@@ -6769,7 +6769,7 @@ pub fn instance_profile_inner(
     Ok(builder.build())
 }
 
-pub fn login_profile_inner(
+pub fn deser_structure_login_profile(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::LoginProfile, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -6823,7 +6823,7 @@ pub fn login_profile_inner(
     Ok(builder.build())
 }
 
-pub fn deserialize_tag_list_type(
+pub fn deser_list_tag_list_type(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::Tag>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -6831,7 +6831,7 @@ pub fn deserialize_tag_list_type(
         match tag.start_el() {
             s if s.matches("member") /* member com.amazonaws.iam#tagListType$member */ =>  {
                 out.push(
-                    crate::xml_deser::tag_inner(&mut tag)
+                    crate::xml_deser::deser_structure_tag(&mut tag)
                     ?
                 );
             }
@@ -6842,7 +6842,7 @@ pub fn deserialize_tag_list_type(
     Ok(out)
 }
 
-pub fn policy_inner(
+pub fn deser_structure_policy(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::Policy, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -7004,7 +7004,7 @@ pub fn policy_inner(
             s if s.matches("Tags") /* Tags com.amazonaws.iam#Policy$Tags */ =>  {
                 let var_261 =
                     Some(
-                        crate::xml_deser::deserialize_tag_list_type(&mut tag)
+                        crate::xml_deser::deser_list_tag_list_type(&mut tag)
                         ?
                     )
                 ;
@@ -7017,7 +7017,7 @@ pub fn policy_inner(
     Ok(builder.build())
 }
 
-pub fn policy_version_inner(
+pub fn deser_structure_policy_version(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::PolicyVersion, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -7084,7 +7084,7 @@ pub fn policy_version_inner(
     Ok(builder.build())
 }
 
-pub fn role_inner(
+pub fn deser_structure_role(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::Role, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -7202,7 +7202,7 @@ pub fn role_inner(
             s if s.matches("PermissionsBoundary") /* PermissionsBoundary com.amazonaws.iam#Role$PermissionsBoundary */ =>  {
                 let var_274 =
                     Some(
-                        crate::xml_deser::attached_permissions_boundary_inner(&mut tag)
+                        crate::xml_deser::deser_structure_attached_permissions_boundary(&mut tag)
                         ?
                     )
                 ;
@@ -7212,7 +7212,7 @@ pub fn role_inner(
             s if s.matches("Tags") /* Tags com.amazonaws.iam#Role$Tags */ =>  {
                 let var_275 =
                     Some(
-                        crate::xml_deser::deserialize_tag_list_type(&mut tag)
+                        crate::xml_deser::deser_list_tag_list_type(&mut tag)
                         ?
                     )
                 ;
@@ -7222,7 +7222,7 @@ pub fn role_inner(
             s if s.matches("RoleLastUsed") /* RoleLastUsed com.amazonaws.iam#Role$RoleLastUsed */ =>  {
                 let var_276 =
                     Some(
-                        crate::xml_deser::role_last_used_inner(&mut tag)
+                        crate::xml_deser::deser_structure_role_last_used(&mut tag)
                         ?
                     )
                 ;
@@ -7235,7 +7235,7 @@ pub fn role_inner(
     Ok(builder.build())
 }
 
-pub fn service_specific_credential_inner(
+pub fn deser_structure_service_specific_credential(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::ServiceSpecificCredential, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -7341,7 +7341,7 @@ pub fn service_specific_credential_inner(
     Ok(builder.build())
 }
 
-pub fn user_inner(
+pub fn deser_structure_user(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::User, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -7431,7 +7431,7 @@ pub fn user_inner(
             s if s.matches("PermissionsBoundary") /* PermissionsBoundary com.amazonaws.iam#User$PermissionsBoundary */ =>  {
                 let var_290 =
                     Some(
-                        crate::xml_deser::attached_permissions_boundary_inner(&mut tag)
+                        crate::xml_deser::deser_structure_attached_permissions_boundary(&mut tag)
                         ?
                     )
                 ;
@@ -7441,7 +7441,7 @@ pub fn user_inner(
             s if s.matches("Tags") /* Tags com.amazonaws.iam#User$Tags */ =>  {
                 let var_291 =
                     Some(
-                        crate::xml_deser::deserialize_tag_list_type(&mut tag)
+                        crate::xml_deser::deser_list_tag_list_type(&mut tag)
                         ?
                     )
                 ;
@@ -7454,7 +7454,7 @@ pub fn user_inner(
     Ok(builder.build())
 }
 
-pub fn virtual_mfa_device_inner(
+pub fn deser_structure_virtual_mfa_device(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::VirtualMFADevice, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -7477,7 +7477,7 @@ pub fn virtual_mfa_device_inner(
             s if s.matches("Base32StringSeed") /* Base32StringSeed com.amazonaws.iam#VirtualMFADevice$Base32StringSeed */ =>  {
                 let var_293 =
                     Some(
-                        smithy_http::base64::decode(
+                        smithy_types::base64::decode(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
                         )
                         .map_err(|err|smithy_xml::decode::XmlError::custom(format!("invalid base64: {:?}", err))).map(smithy_types::Blob::new)
@@ -7490,7 +7490,7 @@ pub fn virtual_mfa_device_inner(
             s if s.matches("QRCodePNG") /* QRCodePNG com.amazonaws.iam#VirtualMFADevice$QRCodePNG */ =>  {
                 let var_294 =
                     Some(
-                        smithy_http::base64::decode(
+                        smithy_types::base64::decode(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
                         )
                         .map_err(|err|smithy_xml::decode::XmlError::custom(format!("invalid base64: {:?}", err))).map(smithy_types::Blob::new)
@@ -7503,7 +7503,7 @@ pub fn virtual_mfa_device_inner(
             s if s.matches("User") /* User com.amazonaws.iam#VirtualMFADevice$User */ =>  {
                 let var_295 =
                     Some(
-                        crate::xml_deser::user_inner(&mut tag)
+                        crate::xml_deser::deser_structure_user(&mut tag)
                         ?
                     )
                 ;
@@ -7527,7 +7527,7 @@ pub fn virtual_mfa_device_inner(
             s if s.matches("Tags") /* Tags com.amazonaws.iam#VirtualMFADevice$Tags */ =>  {
                 let var_297 =
                     Some(
-                        crate::xml_deser::deserialize_tag_list_type(&mut tag)
+                        crate::xml_deser::deser_list_tag_list_type(&mut tag)
                         ?
                     )
                 ;
@@ -7540,7 +7540,7 @@ pub fn virtual_mfa_device_inner(
     Ok(builder.build())
 }
 
-pub fn access_key_last_used_inner(
+pub fn deser_structure_access_key_last_used(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::AccessKeyLastUsed, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -7593,7 +7593,7 @@ pub fn access_key_last_used_inner(
     Ok(builder.build())
 }
 
-pub fn deserialize_user_detail_list_type(
+pub fn deser_list_user_detail_list_type(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::UserDetail>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -7601,7 +7601,7 @@ pub fn deserialize_user_detail_list_type(
         match tag.start_el() {
             s if s.matches("member") /* member com.amazonaws.iam#userDetailListType$member */ =>  {
                 out.push(
-                    crate::xml_deser::user_detail_inner(&mut tag)
+                    crate::xml_deser::deser_structure_user_detail(&mut tag)
                     ?
                 );
             }
@@ -7612,7 +7612,7 @@ pub fn deserialize_user_detail_list_type(
     Ok(out)
 }
 
-pub fn deserialize_group_detail_list_type(
+pub fn deser_list_group_detail_list_type(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::GroupDetail>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -7620,7 +7620,7 @@ pub fn deserialize_group_detail_list_type(
         match tag.start_el() {
             s if s.matches("member") /* member com.amazonaws.iam#groupDetailListType$member */ =>  {
                 out.push(
-                    crate::xml_deser::group_detail_inner(&mut tag)
+                    crate::xml_deser::deser_structure_group_detail(&mut tag)
                     ?
                 );
             }
@@ -7631,7 +7631,7 @@ pub fn deserialize_group_detail_list_type(
     Ok(out)
 }
 
-pub fn deserialize_role_detail_list_type(
+pub fn deser_list_role_detail_list_type(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::RoleDetail>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -7639,7 +7639,7 @@ pub fn deserialize_role_detail_list_type(
         match tag.start_el() {
             s if s.matches("member") /* member com.amazonaws.iam#roleDetailListType$member */ =>  {
                 out.push(
-                    crate::xml_deser::role_detail_inner(&mut tag)
+                    crate::xml_deser::deser_structure_role_detail(&mut tag)
                     ?
                 );
             }
@@ -7650,7 +7650,7 @@ pub fn deserialize_role_detail_list_type(
     Ok(out)
 }
 
-pub fn deserialize_managed_policy_detail_list_type(
+pub fn deser_list_managed_policy_detail_list_type(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::ManagedPolicyDetail>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -7658,7 +7658,7 @@ pub fn deserialize_managed_policy_detail_list_type(
         match tag.start_el() {
             s if s.matches("member") /* member com.amazonaws.iam#ManagedPolicyDetailListType$member */ =>  {
                 out.push(
-                    crate::xml_deser::managed_policy_detail_inner(&mut tag)
+                    crate::xml_deser::deser_structure_managed_policy_detail(&mut tag)
                     ?
                 );
             }
@@ -7669,7 +7669,7 @@ pub fn deserialize_managed_policy_detail_list_type(
     Ok(out)
 }
 
-pub fn password_policy_inner(
+pub fn deser_structure_password_policy(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::PasswordPolicy, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -7830,7 +7830,7 @@ pub fn password_policy_inner(
     Ok(builder.build())
 }
 
-pub fn deserialize_summary_map_type(
+pub fn deser_map_summary_map_type(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<
     std::collections::HashMap<crate::model::SummaryKeyType, i32>,
@@ -7840,7 +7840,7 @@ pub fn deserialize_summary_map_type(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("entry") => {
-                crate::xml_deser::summary_map_type_entry(&mut tag, &mut out)?;
+                crate::xml_deser::deser_map_summary_map_type_entry(&mut tag, &mut out)?;
             }
             _ => {}
         }
@@ -7848,7 +7848,7 @@ pub fn deserialize_summary_map_type(
     Ok(out)
 }
 
-pub fn deserialize_context_key_names_result_list_type(
+pub fn deser_list_context_key_names_result_list_type(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<std::string::String>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -7870,7 +7870,7 @@ pub fn deserialize_context_key_names_result_list_type(
     Ok(out)
 }
 
-pub fn deserialize_user_list_type(
+pub fn deser_list_user_list_type(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::User>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -7878,7 +7878,7 @@ pub fn deserialize_user_list_type(
         match tag.start_el() {
             s if s.matches("member") /* member com.amazonaws.iam#userListType$member */ =>  {
                 out.push(
-                    crate::xml_deser::user_inner(&mut tag)
+                    crate::xml_deser::deser_structure_user(&mut tag)
                     ?
                 );
             }
@@ -7889,7 +7889,7 @@ pub fn deserialize_user_list_type(
     Ok(out)
 }
 
-pub fn deserialize_client_id_list_type(
+pub fn deser_list_client_id_list_type(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<std::string::String>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -7911,7 +7911,7 @@ pub fn deserialize_client_id_list_type(
     Ok(out)
 }
 
-pub fn deserialize_thumbprint_list_type(
+pub fn deser_list_thumbprint_list_type(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<std::string::String>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -7933,7 +7933,7 @@ pub fn deserialize_thumbprint_list_type(
     Ok(out)
 }
 
-pub fn deserialize_access_details(
+pub fn deser_list_access_details(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::AccessDetail>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -7941,7 +7941,7 @@ pub fn deserialize_access_details(
         match tag.start_el() {
             s if s.matches("member") /* member com.amazonaws.iam#AccessDetails$member */ =>  {
                 out.push(
-                    crate::xml_deser::access_detail_inner(&mut tag)
+                    crate::xml_deser::deser_structure_access_detail(&mut tag)
                     ?
                 );
             }
@@ -7952,7 +7952,7 @@ pub fn deserialize_access_details(
     Ok(out)
 }
 
-pub fn error_details_inner(
+pub fn deser_structure_error_details(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::ErrorDetails, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -7991,7 +7991,7 @@ pub fn error_details_inner(
     Ok(builder.build())
 }
 
-pub fn server_certificate_inner(
+pub fn deser_structure_server_certificate(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::ServerCertificate, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -8001,7 +8001,7 @@ pub fn server_certificate_inner(
             s if s.matches("ServerCertificateMetadata") /* ServerCertificateMetadata com.amazonaws.iam#ServerCertificate$ServerCertificateMetadata */ =>  {
                 let var_313 =
                     Some(
-                        crate::xml_deser::server_certificate_metadata_inner(&mut tag)
+                        crate::xml_deser::deser_structure_server_certificate_metadata(&mut tag)
                         ?
                     )
                 ;
@@ -8037,7 +8037,7 @@ pub fn server_certificate_inner(
             s if s.matches("Tags") /* Tags com.amazonaws.iam#ServerCertificate$Tags */ =>  {
                 let var_316 =
                     Some(
-                        crate::xml_deser::deserialize_tag_list_type(&mut tag)
+                        crate::xml_deser::deser_list_tag_list_type(&mut tag)
                         ?
                     )
                 ;
@@ -8050,7 +8050,7 @@ pub fn server_certificate_inner(
     Ok(builder.build())
 }
 
-pub fn deserialize_services_last_accessed(
+pub fn deser_list_services_last_accessed(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::ServiceLastAccessed>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -8058,7 +8058,7 @@ pub fn deserialize_services_last_accessed(
         match tag.start_el() {
             s if s.matches("member") /* member com.amazonaws.iam#ServicesLastAccessed$member */ =>  {
                 out.push(
-                    crate::xml_deser::service_last_accessed_inner(&mut tag)
+                    crate::xml_deser::deser_structure_service_last_accessed(&mut tag)
                     ?
                 );
             }
@@ -8069,7 +8069,7 @@ pub fn deserialize_services_last_accessed(
     Ok(out)
 }
 
-pub fn deserialize_entity_details_list_type(
+pub fn deser_list_entity_details_list_type(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::EntityDetails>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -8077,7 +8077,7 @@ pub fn deserialize_entity_details_list_type(
         match tag.start_el() {
             s if s.matches("member") /* member com.amazonaws.iam#entityDetailsListType$member */ =>  {
                 out.push(
-                    crate::xml_deser::entity_details_inner(&mut tag)
+                    crate::xml_deser::deser_structure_entity_details(&mut tag)
                     ?
                 );
             }
@@ -8088,7 +8088,7 @@ pub fn deserialize_entity_details_list_type(
     Ok(out)
 }
 
-pub fn deletion_task_failure_reason_type_inner(
+pub fn deser_structure_deletion_task_failure_reason_type(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::DeletionTaskFailureReasonType, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -8111,7 +8111,7 @@ pub fn deletion_task_failure_reason_type_inner(
             s if s.matches("RoleUsageList") /* RoleUsageList com.amazonaws.iam#DeletionTaskFailureReasonType$RoleUsageList */ =>  {
                 let var_318 =
                     Some(
-                        crate::xml_deser::deserialize_role_usage_list_type(&mut tag)
+                        crate::xml_deser::deser_list_role_usage_list_type(&mut tag)
                         ?
                     )
                 ;
@@ -8124,7 +8124,7 @@ pub fn deletion_task_failure_reason_type_inner(
     Ok(builder.build())
 }
 
-pub fn ssh_public_key_inner(
+pub fn deser_structure_ssh_public_key(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::SSHPublicKey, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -8217,7 +8217,7 @@ pub fn ssh_public_key_inner(
     Ok(builder.build())
 }
 
-pub fn deserialize_access_key_metadata_list_type(
+pub fn deser_list_access_key_metadata_list_type(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::AccessKeyMetadata>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -8225,7 +8225,7 @@ pub fn deserialize_access_key_metadata_list_type(
         match tag.start_el() {
             s if s.matches("member") /* member com.amazonaws.iam#accessKeyMetadataListType$member */ =>  {
                 out.push(
-                    crate::xml_deser::access_key_metadata_inner(&mut tag)
+                    crate::xml_deser::deser_structure_access_key_metadata(&mut tag)
                     ?
                 );
             }
@@ -8236,7 +8236,7 @@ pub fn deserialize_access_key_metadata_list_type(
     Ok(out)
 }
 
-pub fn deserialize_account_alias_list_type(
+pub fn deser_list_account_alias_list_type(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<std::string::String>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -8258,7 +8258,7 @@ pub fn deserialize_account_alias_list_type(
     Ok(out)
 }
 
-pub fn deserialize_attached_policies_list_type(
+pub fn deser_list_attached_policies_list_type(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::AttachedPolicy>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -8266,7 +8266,7 @@ pub fn deserialize_attached_policies_list_type(
         match tag.start_el() {
             s if s.matches("member") /* member com.amazonaws.iam#attachedPoliciesListType$member */ =>  {
                 out.push(
-                    crate::xml_deser::attached_policy_inner(&mut tag)
+                    crate::xml_deser::deser_structure_attached_policy(&mut tag)
                     ?
                 );
             }
@@ -8277,7 +8277,7 @@ pub fn deserialize_attached_policies_list_type(
     Ok(out)
 }
 
-pub fn deserialize_policy_group_list_type(
+pub fn deser_list_policy_group_list_type(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::PolicyGroup>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -8285,7 +8285,7 @@ pub fn deserialize_policy_group_list_type(
         match tag.start_el() {
             s if s.matches("member") /* member com.amazonaws.iam#PolicyGroupListType$member */ =>  {
                 out.push(
-                    crate::xml_deser::policy_group_inner(&mut tag)
+                    crate::xml_deser::deser_structure_policy_group(&mut tag)
                     ?
                 );
             }
@@ -8296,7 +8296,7 @@ pub fn deserialize_policy_group_list_type(
     Ok(out)
 }
 
-pub fn deserialize_policy_user_list_type(
+pub fn deser_list_policy_user_list_type(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::PolicyUser>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -8304,7 +8304,7 @@ pub fn deserialize_policy_user_list_type(
         match tag.start_el() {
             s if s.matches("member") /* member com.amazonaws.iam#PolicyUserListType$member */ =>  {
                 out.push(
-                    crate::xml_deser::policy_user_inner(&mut tag)
+                    crate::xml_deser::deser_structure_policy_user(&mut tag)
                     ?
                 );
             }
@@ -8315,7 +8315,7 @@ pub fn deserialize_policy_user_list_type(
     Ok(out)
 }
 
-pub fn deserialize_policy_role_list_type(
+pub fn deser_list_policy_role_list_type(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::PolicyRole>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -8323,7 +8323,7 @@ pub fn deserialize_policy_role_list_type(
         match tag.start_el() {
             s if s.matches("member") /* member com.amazonaws.iam#PolicyRoleListType$member */ =>  {
                 out.push(
-                    crate::xml_deser::policy_role_inner(&mut tag)
+                    crate::xml_deser::deser_structure_policy_role(&mut tag)
                     ?
                 );
             }
@@ -8334,7 +8334,7 @@ pub fn deserialize_policy_role_list_type(
     Ok(out)
 }
 
-pub fn deserialize_policy_name_list_type(
+pub fn deser_list_policy_name_list_type(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<std::string::String>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -8356,7 +8356,7 @@ pub fn deserialize_policy_name_list_type(
     Ok(out)
 }
 
-pub fn deserialize_group_list_type(
+pub fn deser_list_group_list_type(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::Group>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -8364,7 +8364,7 @@ pub fn deserialize_group_list_type(
         match tag.start_el() {
             s if s.matches("member") /* member com.amazonaws.iam#groupListType$member */ =>  {
                 out.push(
-                    crate::xml_deser::group_inner(&mut tag)
+                    crate::xml_deser::deser_structure_group(&mut tag)
                     ?
                 );
             }
@@ -8375,7 +8375,7 @@ pub fn deserialize_group_list_type(
     Ok(out)
 }
 
-pub fn deserialize_instance_profile_list_type(
+pub fn deser_list_instance_profile_list_type(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::InstanceProfile>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -8383,7 +8383,7 @@ pub fn deserialize_instance_profile_list_type(
         match tag.start_el() {
             s if s.matches("member") /* member com.amazonaws.iam#instanceProfileListType$member */ =>  {
                 out.push(
-                    crate::xml_deser::instance_profile_inner(&mut tag)
+                    crate::xml_deser::deser_structure_instance_profile(&mut tag)
                     ?
                 );
             }
@@ -8394,7 +8394,7 @@ pub fn deserialize_instance_profile_list_type(
     Ok(out)
 }
 
-pub fn deserialize_mfa_device_list_type(
+pub fn deser_list_mfa_device_list_type(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::MFADevice>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -8402,7 +8402,7 @@ pub fn deserialize_mfa_device_list_type(
         match tag.start_el() {
             s if s.matches("member") /* member com.amazonaws.iam#mfaDeviceListType$member */ =>  {
                 out.push(
-                    crate::xml_deser::mfa_device_inner(&mut tag)
+                    crate::xml_deser::deser_structure_mfa_device(&mut tag)
                     ?
                 );
             }
@@ -8413,7 +8413,7 @@ pub fn deserialize_mfa_device_list_type(
     Ok(out)
 }
 
-pub fn deserialize_open_id_connect_provider_list_type(
+pub fn deser_list_open_id_connect_provider_list_type(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::OpenIDConnectProviderListEntry>, smithy_xml::decode::XmlError>
 {
@@ -8422,7 +8422,7 @@ pub fn deserialize_open_id_connect_provider_list_type(
         match tag.start_el() {
             s if s.matches("member") /* member com.amazonaws.iam#OpenIDConnectProviderListType$member */ =>  {
                 out.push(
-                    crate::xml_deser::open_id_connect_provider_list_entry_inner(&mut tag)
+                    crate::xml_deser::deser_structure_open_id_connect_provider_list_entry(&mut tag)
                     ?
                 );
             }
@@ -8433,7 +8433,7 @@ pub fn deserialize_open_id_connect_provider_list_type(
     Ok(out)
 }
 
-pub fn deserialize_policy_list_type(
+pub fn deser_list_policy_list_type(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::Policy>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -8441,7 +8441,7 @@ pub fn deserialize_policy_list_type(
         match tag.start_el() {
             s if s.matches("member") /* member com.amazonaws.iam#policyListType$member */ =>  {
                 out.push(
-                    crate::xml_deser::policy_inner(&mut tag)
+                    crate::xml_deser::deser_structure_policy(&mut tag)
                     ?
                 );
             }
@@ -8452,7 +8452,7 @@ pub fn deserialize_policy_list_type(
     Ok(out)
 }
 
-pub fn deserialize_list_policy_granting_service_access_response_list_type(
+pub fn deser_list_list_policy_granting_service_access_response_list_type(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<
     std::vec::Vec<crate::model::ListPoliciesGrantingServiceAccessEntry>,
@@ -8463,7 +8463,7 @@ pub fn deserialize_list_policy_granting_service_access_response_list_type(
         match tag.start_el() {
             s if s.matches("member") /* member com.amazonaws.iam#listPolicyGrantingServiceAccessResponseListType$member */ =>  {
                 out.push(
-                    crate::xml_deser::list_policies_granting_service_access_entry_inner(&mut tag)
+                    crate::xml_deser::deser_structure_list_policies_granting_service_access_entry(&mut tag)
                     ?
                 );
             }
@@ -8474,7 +8474,7 @@ pub fn deserialize_list_policy_granting_service_access_response_list_type(
     Ok(out)
 }
 
-pub fn deserialize_policy_document_version_list_type(
+pub fn deser_list_policy_document_version_list_type(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::PolicyVersion>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -8482,7 +8482,7 @@ pub fn deserialize_policy_document_version_list_type(
         match tag.start_el() {
             s if s.matches("member") /* member com.amazonaws.iam#policyDocumentVersionListType$member */ =>  {
                 out.push(
-                    crate::xml_deser::policy_version_inner(&mut tag)
+                    crate::xml_deser::deser_structure_policy_version(&mut tag)
                     ?
                 );
             }
@@ -8493,7 +8493,7 @@ pub fn deserialize_policy_document_version_list_type(
     Ok(out)
 }
 
-pub fn deserialize_role_list_type(
+pub fn deser_list_role_list_type(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::Role>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -8501,7 +8501,7 @@ pub fn deserialize_role_list_type(
         match tag.start_el() {
             s if s.matches("member") /* member com.amazonaws.iam#roleListType$member */ =>  {
                 out.push(
-                    crate::xml_deser::role_inner(&mut tag)
+                    crate::xml_deser::deser_structure_role(&mut tag)
                     ?
                 );
             }
@@ -8512,7 +8512,7 @@ pub fn deserialize_role_list_type(
     Ok(out)
 }
 
-pub fn deserialize_saml_provider_list_type(
+pub fn deser_list_saml_provider_list_type(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::SAMLProviderListEntry>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -8520,7 +8520,7 @@ pub fn deserialize_saml_provider_list_type(
         match tag.start_el() {
             s if s.matches("member") /* member com.amazonaws.iam#SAMLProviderListType$member */ =>  {
                 out.push(
-                    crate::xml_deser::saml_provider_list_entry_inner(&mut tag)
+                    crate::xml_deser::deser_structure_saml_provider_list_entry(&mut tag)
                     ?
                 );
             }
@@ -8531,7 +8531,7 @@ pub fn deserialize_saml_provider_list_type(
     Ok(out)
 }
 
-pub fn deserialize_server_certificate_metadata_list_type(
+pub fn deser_list_server_certificate_metadata_list_type(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::ServerCertificateMetadata>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -8539,7 +8539,7 @@ pub fn deserialize_server_certificate_metadata_list_type(
         match tag.start_el() {
             s if s.matches("member") /* member com.amazonaws.iam#serverCertificateMetadataListType$member */ =>  {
                 out.push(
-                    crate::xml_deser::server_certificate_metadata_inner(&mut tag)
+                    crate::xml_deser::deser_structure_server_certificate_metadata(&mut tag)
                     ?
                 );
             }
@@ -8550,7 +8550,7 @@ pub fn deserialize_server_certificate_metadata_list_type(
     Ok(out)
 }
 
-pub fn deserialize_service_specific_credentials_list_type(
+pub fn deser_list_service_specific_credentials_list_type(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<
     std::vec::Vec<crate::model::ServiceSpecificCredentialMetadata>,
@@ -8561,7 +8561,7 @@ pub fn deserialize_service_specific_credentials_list_type(
         match tag.start_el() {
             s if s.matches("member") /* member com.amazonaws.iam#ServiceSpecificCredentialsListType$member */ =>  {
                 out.push(
-                    crate::xml_deser::service_specific_credential_metadata_inner(&mut tag)
+                    crate::xml_deser::deser_structure_service_specific_credential_metadata(&mut tag)
                     ?
                 );
             }
@@ -8572,7 +8572,7 @@ pub fn deserialize_service_specific_credentials_list_type(
     Ok(out)
 }
 
-pub fn deserialize_certificate_list_type(
+pub fn deser_list_certificate_list_type(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::SigningCertificate>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -8580,7 +8580,7 @@ pub fn deserialize_certificate_list_type(
         match tag.start_el() {
             s if s.matches("member") /* member com.amazonaws.iam#certificateListType$member */ =>  {
                 out.push(
-                    crate::xml_deser::signing_certificate_inner(&mut tag)
+                    crate::xml_deser::deser_structure_signing_certificate(&mut tag)
                     ?
                 );
             }
@@ -8591,7 +8591,7 @@ pub fn deserialize_certificate_list_type(
     Ok(out)
 }
 
-pub fn deserialize_ssh_public_key_list_type(
+pub fn deser_list_ssh_public_key_list_type(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::SSHPublicKeyMetadata>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -8599,7 +8599,7 @@ pub fn deserialize_ssh_public_key_list_type(
         match tag.start_el() {
             s if s.matches("member") /* member com.amazonaws.iam#SSHPublicKeyListType$member */ =>  {
                 out.push(
-                    crate::xml_deser::ssh_public_key_metadata_inner(&mut tag)
+                    crate::xml_deser::deser_structure_ssh_public_key_metadata(&mut tag)
                     ?
                 );
             }
@@ -8610,7 +8610,7 @@ pub fn deserialize_ssh_public_key_list_type(
     Ok(out)
 }
 
-pub fn deserialize_virtual_mfa_device_list_type(
+pub fn deser_list_virtual_mfa_device_list_type(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::VirtualMFADevice>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -8618,7 +8618,7 @@ pub fn deserialize_virtual_mfa_device_list_type(
         match tag.start_el() {
             s if s.matches("member") /* member com.amazonaws.iam#virtualMFADeviceListType$member */ =>  {
                 out.push(
-                    crate::xml_deser::virtual_mfa_device_inner(&mut tag)
+                    crate::xml_deser::deser_structure_virtual_mfa_device(&mut tag)
                     ?
                 );
             }
@@ -8629,7 +8629,7 @@ pub fn deserialize_virtual_mfa_device_list_type(
     Ok(out)
 }
 
-pub fn deserialize_evaluation_results_list_type(
+pub fn deser_list_evaluation_results_list_type(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::EvaluationResult>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -8637,7 +8637,7 @@ pub fn deserialize_evaluation_results_list_type(
         match tag.start_el() {
             s if s.matches("member") /* member com.amazonaws.iam#EvaluationResultsListType$member */ =>  {
                 out.push(
-                    crate::xml_deser::evaluation_result_inner(&mut tag)
+                    crate::xml_deser::deser_structure_evaluation_result(&mut tag)
                     ?
                 );
             }
@@ -8648,7 +8648,7 @@ pub fn deserialize_evaluation_results_list_type(
     Ok(out)
 }
 
-pub fn server_certificate_metadata_inner(
+pub fn deser_structure_server_certificate_metadata(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::ServerCertificateMetadata, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -8741,7 +8741,7 @@ pub fn server_certificate_metadata_inner(
     Ok(builder.build())
 }
 
-pub fn signing_certificate_inner(
+pub fn deser_structure_signing_certificate(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::SigningCertificate, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -8821,7 +8821,7 @@ pub fn signing_certificate_inner(
     Ok(builder.build())
 }
 
-pub fn tag_inner(
+pub fn deser_structure_tag(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::Tag, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -8860,7 +8860,7 @@ pub fn tag_inner(
     Ok(builder.build())
 }
 
-pub fn attached_permissions_boundary_inner(
+pub fn deser_structure_attached_permissions_boundary(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::AttachedPermissionsBoundary, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -8900,7 +8900,7 @@ pub fn attached_permissions_boundary_inner(
     Ok(builder.build())
 }
 
-pub fn role_last_used_inner(
+pub fn deser_structure_role_last_used(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::RoleLastUsed, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -8940,7 +8940,7 @@ pub fn role_last_used_inner(
     Ok(builder.build())
 }
 
-pub fn user_detail_inner(
+pub fn deser_structure_user_detail(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::UserDetail, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -9016,7 +9016,7 @@ pub fn user_detail_inner(
             s if s.matches("UserPolicyList") /* UserPolicyList com.amazonaws.iam#UserDetail$UserPolicyList */ =>  {
                 let var_347 =
                     Some(
-                        crate::xml_deser::deserialize_policy_detail_list_type(&mut tag)
+                        crate::xml_deser::deser_list_policy_detail_list_type(&mut tag)
                         ?
                     )
                 ;
@@ -9026,7 +9026,7 @@ pub fn user_detail_inner(
             s if s.matches("GroupList") /* GroupList com.amazonaws.iam#UserDetail$GroupList */ =>  {
                 let var_348 =
                     Some(
-                        crate::xml_deser::deserialize_group_name_list_type(&mut tag)
+                        crate::xml_deser::deser_list_group_name_list_type(&mut tag)
                         ?
                     )
                 ;
@@ -9036,7 +9036,7 @@ pub fn user_detail_inner(
             s if s.matches("AttachedManagedPolicies") /* AttachedManagedPolicies com.amazonaws.iam#UserDetail$AttachedManagedPolicies */ =>  {
                 let var_349 =
                     Some(
-                        crate::xml_deser::deserialize_attached_policies_list_type(&mut tag)
+                        crate::xml_deser::deser_list_attached_policies_list_type(&mut tag)
                         ?
                     )
                 ;
@@ -9046,7 +9046,7 @@ pub fn user_detail_inner(
             s if s.matches("PermissionsBoundary") /* PermissionsBoundary com.amazonaws.iam#UserDetail$PermissionsBoundary */ =>  {
                 let var_350 =
                     Some(
-                        crate::xml_deser::attached_permissions_boundary_inner(&mut tag)
+                        crate::xml_deser::deser_structure_attached_permissions_boundary(&mut tag)
                         ?
                     )
                 ;
@@ -9056,7 +9056,7 @@ pub fn user_detail_inner(
             s if s.matches("Tags") /* Tags com.amazonaws.iam#UserDetail$Tags */ =>  {
                 let var_351 =
                     Some(
-                        crate::xml_deser::deserialize_tag_list_type(&mut tag)
+                        crate::xml_deser::deser_list_tag_list_type(&mut tag)
                         ?
                     )
                 ;
@@ -9069,7 +9069,7 @@ pub fn user_detail_inner(
     Ok(builder.build())
 }
 
-pub fn group_detail_inner(
+pub fn deser_structure_group_detail(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::GroupDetail, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -9145,7 +9145,7 @@ pub fn group_detail_inner(
             s if s.matches("GroupPolicyList") /* GroupPolicyList com.amazonaws.iam#GroupDetail$GroupPolicyList */ =>  {
                 let var_357 =
                     Some(
-                        crate::xml_deser::deserialize_policy_detail_list_type(&mut tag)
+                        crate::xml_deser::deser_list_policy_detail_list_type(&mut tag)
                         ?
                     )
                 ;
@@ -9155,7 +9155,7 @@ pub fn group_detail_inner(
             s if s.matches("AttachedManagedPolicies") /* AttachedManagedPolicies com.amazonaws.iam#GroupDetail$AttachedManagedPolicies */ =>  {
                 let var_358 =
                     Some(
-                        crate::xml_deser::deserialize_attached_policies_list_type(&mut tag)
+                        crate::xml_deser::deser_list_attached_policies_list_type(&mut tag)
                         ?
                     )
                 ;
@@ -9168,7 +9168,7 @@ pub fn group_detail_inner(
     Ok(builder.build())
 }
 
-pub fn role_detail_inner(
+pub fn deser_structure_role_detail(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::RoleDetail, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -9257,7 +9257,7 @@ pub fn role_detail_inner(
             s if s.matches("InstanceProfileList") /* InstanceProfileList com.amazonaws.iam#RoleDetail$InstanceProfileList */ =>  {
                 let var_365 =
                     Some(
-                        crate::xml_deser::deserialize_instance_profile_list_type(&mut tag)
+                        crate::xml_deser::deser_list_instance_profile_list_type(&mut tag)
                         ?
                     )
                 ;
@@ -9267,7 +9267,7 @@ pub fn role_detail_inner(
             s if s.matches("RolePolicyList") /* RolePolicyList com.amazonaws.iam#RoleDetail$RolePolicyList */ =>  {
                 let var_366 =
                     Some(
-                        crate::xml_deser::deserialize_policy_detail_list_type(&mut tag)
+                        crate::xml_deser::deser_list_policy_detail_list_type(&mut tag)
                         ?
                     )
                 ;
@@ -9277,7 +9277,7 @@ pub fn role_detail_inner(
             s if s.matches("AttachedManagedPolicies") /* AttachedManagedPolicies com.amazonaws.iam#RoleDetail$AttachedManagedPolicies */ =>  {
                 let var_367 =
                     Some(
-                        crate::xml_deser::deserialize_attached_policies_list_type(&mut tag)
+                        crate::xml_deser::deser_list_attached_policies_list_type(&mut tag)
                         ?
                     )
                 ;
@@ -9287,7 +9287,7 @@ pub fn role_detail_inner(
             s if s.matches("PermissionsBoundary") /* PermissionsBoundary com.amazonaws.iam#RoleDetail$PermissionsBoundary */ =>  {
                 let var_368 =
                     Some(
-                        crate::xml_deser::attached_permissions_boundary_inner(&mut tag)
+                        crate::xml_deser::deser_structure_attached_permissions_boundary(&mut tag)
                         ?
                     )
                 ;
@@ -9297,7 +9297,7 @@ pub fn role_detail_inner(
             s if s.matches("Tags") /* Tags com.amazonaws.iam#RoleDetail$Tags */ =>  {
                 let var_369 =
                     Some(
-                        crate::xml_deser::deserialize_tag_list_type(&mut tag)
+                        crate::xml_deser::deser_list_tag_list_type(&mut tag)
                         ?
                     )
                 ;
@@ -9307,7 +9307,7 @@ pub fn role_detail_inner(
             s if s.matches("RoleLastUsed") /* RoleLastUsed com.amazonaws.iam#RoleDetail$RoleLastUsed */ =>  {
                 let var_370 =
                     Some(
-                        crate::xml_deser::role_last_used_inner(&mut tag)
+                        crate::xml_deser::deser_structure_role_last_used(&mut tag)
                         ?
                     )
                 ;
@@ -9320,7 +9320,7 @@ pub fn role_detail_inner(
     Ok(builder.build())
 }
 
-pub fn managed_policy_detail_inner(
+pub fn deser_structure_managed_policy_detail(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::ManagedPolicyDetail, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -9482,7 +9482,7 @@ pub fn managed_policy_detail_inner(
             s if s.matches("PolicyVersionList") /* PolicyVersionList com.amazonaws.iam#ManagedPolicyDetail$PolicyVersionList */ =>  {
                 let var_382 =
                     Some(
-                        crate::xml_deser::deserialize_policy_document_version_list_type(&mut tag)
+                        crate::xml_deser::deser_list_policy_document_version_list_type(&mut tag)
                         ?
                     )
                 ;
@@ -9495,7 +9495,7 @@ pub fn managed_policy_detail_inner(
     Ok(builder.build())
 }
 
-pub fn summary_map_type_entry(
+pub fn deser_map_summary_map_type_entry(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
     out: &mut std::collections::HashMap<crate::model::SummaryKeyType, i32>,
 ) -> Result<(), smithy_xml::decode::XmlError> {
@@ -9536,7 +9536,7 @@ pub fn summary_map_type_entry(
     Ok(())
 }
 
-pub fn access_detail_inner(
+pub fn deser_structure_access_detail(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::AccessDetail, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -9631,7 +9631,7 @@ pub fn access_detail_inner(
     Ok(builder.build())
 }
 
-pub fn service_last_accessed_inner(
+pub fn deser_structure_service_last_accessed(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::ServiceLastAccessed, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -9723,7 +9723,7 @@ pub fn service_last_accessed_inner(
             s if s.matches("TrackedActionsLastAccessed") /* TrackedActionsLastAccessed com.amazonaws.iam#ServiceLastAccessed$TrackedActionsLastAccessed */ =>  {
                 let var_395 =
                     Some(
-                        crate::xml_deser::deserialize_tracked_actions_last_accessed(&mut tag)
+                        crate::xml_deser::deser_list_tracked_actions_last_accessed(&mut tag)
                         ?
                     )
                 ;
@@ -9736,7 +9736,7 @@ pub fn service_last_accessed_inner(
     Ok(builder.build())
 }
 
-pub fn entity_details_inner(
+pub fn deser_structure_entity_details(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::EntityDetails, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -9746,7 +9746,7 @@ pub fn entity_details_inner(
             s if s.matches("EntityInfo") /* EntityInfo com.amazonaws.iam#EntityDetails$EntityInfo */ =>  {
                 let var_396 =
                     Some(
-                        crate::xml_deser::entity_info_inner(&mut tag)
+                        crate::xml_deser::deser_structure_entity_info(&mut tag)
                         ?
                     )
                 ;
@@ -9773,7 +9773,7 @@ pub fn entity_details_inner(
     Ok(builder.build())
 }
 
-pub fn deserialize_role_usage_list_type(
+pub fn deser_list_role_usage_list_type(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::RoleUsageType>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -9781,7 +9781,7 @@ pub fn deserialize_role_usage_list_type(
         match tag.start_el() {
             s if s.matches("member") /* member com.amazonaws.iam#RoleUsageListType$member */ =>  {
                 out.push(
-                    crate::xml_deser::role_usage_type_inner(&mut tag)
+                    crate::xml_deser::deser_structure_role_usage_type(&mut tag)
                     ?
                 );
             }
@@ -9792,7 +9792,7 @@ pub fn deserialize_role_usage_list_type(
     Ok(out)
 }
 
-pub fn access_key_metadata_inner(
+pub fn deser_structure_access_key_metadata(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::AccessKeyMetadata, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -9859,7 +9859,7 @@ pub fn access_key_metadata_inner(
     Ok(builder.build())
 }
 
-pub fn attached_policy_inner(
+pub fn deser_structure_attached_policy(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::AttachedPolicy, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -9898,7 +9898,7 @@ pub fn attached_policy_inner(
     Ok(builder.build())
 }
 
-pub fn policy_group_inner(
+pub fn deser_structure_policy_group(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::PolicyGroup, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -9937,7 +9937,7 @@ pub fn policy_group_inner(
     Ok(builder.build())
 }
 
-pub fn policy_user_inner(
+pub fn deser_structure_policy_user(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::PolicyUser, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -9976,7 +9976,7 @@ pub fn policy_user_inner(
     Ok(builder.build())
 }
 
-pub fn policy_role_inner(
+pub fn deser_structure_policy_role(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::PolicyRole, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -10015,7 +10015,7 @@ pub fn policy_role_inner(
     Ok(builder.build())
 }
 
-pub fn mfa_device_inner(
+pub fn deser_structure_mfa_device(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::MFADevice, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -10068,7 +10068,7 @@ pub fn mfa_device_inner(
     Ok(builder.build())
 }
 
-pub fn open_id_connect_provider_list_entry_inner(
+pub fn deser_structure_open_id_connect_provider_list_entry(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::OpenIDConnectProviderListEntry, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -10094,7 +10094,7 @@ pub fn open_id_connect_provider_list_entry_inner(
     Ok(builder.build())
 }
 
-pub fn list_policies_granting_service_access_entry_inner(
+pub fn deser_structure_list_policies_granting_service_access_entry(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::ListPoliciesGrantingServiceAccessEntry, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -10117,7 +10117,7 @@ pub fn list_policies_granting_service_access_entry_inner(
             s if s.matches("Policies") /* Policies com.amazonaws.iam#ListPoliciesGrantingServiceAccessEntry$Policies */ =>  {
                 let var_415 =
                     Some(
-                        crate::xml_deser::deserialize_policy_granting_service_access_list_type(&mut tag)
+                        crate::xml_deser::deser_list_policy_granting_service_access_list_type(&mut tag)
                         ?
                     )
                 ;
@@ -10130,7 +10130,7 @@ pub fn list_policies_granting_service_access_entry_inner(
     Ok(builder.build())
 }
 
-pub fn saml_provider_list_entry_inner(
+pub fn deser_structure_saml_provider_list_entry(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::SAMLProviderListEntry, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -10184,7 +10184,7 @@ pub fn saml_provider_list_entry_inner(
     Ok(builder.build())
 }
 
-pub fn service_specific_credential_metadata_inner(
+pub fn deser_structure_service_specific_credential_metadata(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::ServiceSpecificCredentialMetadata, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -10277,7 +10277,7 @@ pub fn service_specific_credential_metadata_inner(
     Ok(builder.build())
 }
 
-pub fn ssh_public_key_metadata_inner(
+pub fn deser_structure_ssh_public_key_metadata(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::SSHPublicKeyMetadata, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -10344,7 +10344,7 @@ pub fn ssh_public_key_metadata_inner(
     Ok(builder.build())
 }
 
-pub fn evaluation_result_inner(
+pub fn deser_structure_evaluation_result(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::EvaluationResult, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -10394,7 +10394,7 @@ pub fn evaluation_result_inner(
             s if s.matches("MatchedStatements") /* MatchedStatements com.amazonaws.iam#EvaluationResult$MatchedStatements */ =>  {
                 let var_432 =
                     Some(
-                        crate::xml_deser::deserialize_statement_list_type(&mut tag)
+                        crate::xml_deser::deser_list_statement_list_type(&mut tag)
                         ?
                     )
                 ;
@@ -10404,7 +10404,7 @@ pub fn evaluation_result_inner(
             s if s.matches("MissingContextValues") /* MissingContextValues com.amazonaws.iam#EvaluationResult$MissingContextValues */ =>  {
                 let var_433 =
                     Some(
-                        crate::xml_deser::deserialize_context_key_names_result_list_type(&mut tag)
+                        crate::xml_deser::deser_list_context_key_names_result_list_type(&mut tag)
                         ?
                     )
                 ;
@@ -10414,7 +10414,7 @@ pub fn evaluation_result_inner(
             s if s.matches("OrganizationsDecisionDetail") /* OrganizationsDecisionDetail com.amazonaws.iam#EvaluationResult$OrganizationsDecisionDetail */ =>  {
                 let var_434 =
                     Some(
-                        crate::xml_deser::organizations_decision_detail_inner(&mut tag)
+                        crate::xml_deser::deser_structure_organizations_decision_detail(&mut tag)
                         ?
                     )
                 ;
@@ -10424,7 +10424,7 @@ pub fn evaluation_result_inner(
             s if s.matches("PermissionsBoundaryDecisionDetail") /* PermissionsBoundaryDecisionDetail com.amazonaws.iam#EvaluationResult$PermissionsBoundaryDecisionDetail */ =>  {
                 let var_435 =
                     Some(
-                        crate::xml_deser::permissions_boundary_decision_detail_inner(&mut tag)
+                        crate::xml_deser::deser_structure_permissions_boundary_decision_detail(&mut tag)
                         ?
                     )
                 ;
@@ -10434,7 +10434,7 @@ pub fn evaluation_result_inner(
             s if s.matches("EvalDecisionDetails") /* EvalDecisionDetails com.amazonaws.iam#EvaluationResult$EvalDecisionDetails */ =>  {
                 let var_436 =
                     Some(
-                        crate::xml_deser::deserialize_eval_decision_details_type(&mut tag)
+                        crate::xml_deser::deser_map_eval_decision_details_type(&mut tag)
                         ?
                     )
                 ;
@@ -10444,7 +10444,7 @@ pub fn evaluation_result_inner(
             s if s.matches("ResourceSpecificResults") /* ResourceSpecificResults com.amazonaws.iam#EvaluationResult$ResourceSpecificResults */ =>  {
                 let var_437 =
                     Some(
-                        crate::xml_deser::deserialize_resource_specific_result_list_type(&mut tag)
+                        crate::xml_deser::deser_list_resource_specific_result_list_type(&mut tag)
                         ?
                     )
                 ;
@@ -10457,7 +10457,7 @@ pub fn evaluation_result_inner(
     Ok(builder.build())
 }
 
-pub fn deserialize_policy_detail_list_type(
+pub fn deser_list_policy_detail_list_type(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::PolicyDetail>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -10465,7 +10465,7 @@ pub fn deserialize_policy_detail_list_type(
         match tag.start_el() {
             s if s.matches("member") /* member com.amazonaws.iam#policyDetailListType$member */ =>  {
                 out.push(
-                    crate::xml_deser::policy_detail_inner(&mut tag)
+                    crate::xml_deser::deser_structure_policy_detail(&mut tag)
                     ?
                 );
             }
@@ -10476,7 +10476,7 @@ pub fn deserialize_policy_detail_list_type(
     Ok(out)
 }
 
-pub fn deserialize_group_name_list_type(
+pub fn deser_list_group_name_list_type(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<std::string::String>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -10498,7 +10498,7 @@ pub fn deserialize_group_name_list_type(
     Ok(out)
 }
 
-pub fn deserialize_tracked_actions_last_accessed(
+pub fn deser_list_tracked_actions_last_accessed(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::TrackedActionLastAccessed>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -10506,7 +10506,7 @@ pub fn deserialize_tracked_actions_last_accessed(
         match tag.start_el() {
             s if s.matches("member") /* member com.amazonaws.iam#TrackedActionsLastAccessed$member */ =>  {
                 out.push(
-                    crate::xml_deser::tracked_action_last_accessed_inner(&mut tag)
+                    crate::xml_deser::deser_structure_tracked_action_last_accessed(&mut tag)
                     ?
                 );
             }
@@ -10517,7 +10517,7 @@ pub fn deserialize_tracked_actions_last_accessed(
     Ok(out)
 }
 
-pub fn entity_info_inner(
+pub fn deser_structure_entity_info(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::EntityInfo, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -10596,7 +10596,7 @@ pub fn entity_info_inner(
     Ok(builder.build())
 }
 
-pub fn role_usage_type_inner(
+pub fn deser_structure_role_usage_type(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::RoleUsageType, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -10619,7 +10619,7 @@ pub fn role_usage_type_inner(
             s if s.matches("Resources") /* Resources com.amazonaws.iam#RoleUsageType$Resources */ =>  {
                 let var_444 =
                     Some(
-                        crate::xml_deser::deserialize_arn_list_type(&mut tag)
+                        crate::xml_deser::deser_list_arn_list_type(&mut tag)
                         ?
                     )
                 ;
@@ -10632,7 +10632,7 @@ pub fn role_usage_type_inner(
     Ok(builder.build())
 }
 
-pub fn deserialize_policy_granting_service_access_list_type(
+pub fn deser_list_policy_granting_service_access_list_type(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::PolicyGrantingServiceAccess>, smithy_xml::decode::XmlError>
 {
@@ -10641,7 +10641,7 @@ pub fn deserialize_policy_granting_service_access_list_type(
         match tag.start_el() {
             s if s.matches("member") /* member com.amazonaws.iam#policyGrantingServiceAccessListType$member */ =>  {
                 out.push(
-                    crate::xml_deser::policy_granting_service_access_inner(&mut tag)
+                    crate::xml_deser::deser_structure_policy_granting_service_access(&mut tag)
                     ?
                 );
             }
@@ -10652,7 +10652,7 @@ pub fn deserialize_policy_granting_service_access_list_type(
     Ok(out)
 }
 
-pub fn deserialize_statement_list_type(
+pub fn deser_list_statement_list_type(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::Statement>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -10660,7 +10660,7 @@ pub fn deserialize_statement_list_type(
         match tag.start_el() {
             s if s.matches("member") /* member com.amazonaws.iam#StatementListType$member */ =>  {
                 out.push(
-                    crate::xml_deser::statement_inner(&mut tag)
+                    crate::xml_deser::deser_structure_statement(&mut tag)
                     ?
                 );
             }
@@ -10671,7 +10671,7 @@ pub fn deserialize_statement_list_type(
     Ok(out)
 }
 
-pub fn organizations_decision_detail_inner(
+pub fn deser_structure_organizations_decision_detail(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::OrganizationsDecisionDetail, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -10698,7 +10698,7 @@ pub fn organizations_decision_detail_inner(
     Ok(builder.build())
 }
 
-pub fn permissions_boundary_decision_detail_inner(
+pub fn deser_structure_permissions_boundary_decision_detail(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::PermissionsBoundaryDecisionDetail, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -10725,7 +10725,7 @@ pub fn permissions_boundary_decision_detail_inner(
     Ok(builder.build())
 }
 
-pub fn deserialize_eval_decision_details_type(
+pub fn deser_map_eval_decision_details_type(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<
     std::collections::HashMap<std::string::String, crate::model::PolicyEvaluationDecisionType>,
@@ -10735,7 +10735,7 @@ pub fn deserialize_eval_decision_details_type(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("entry") => {
-                crate::xml_deser::eval_decision_details_type_entry(&mut tag, &mut out)?;
+                crate::xml_deser::deser_map_eval_decision_details_type_entry(&mut tag, &mut out)?;
             }
             _ => {}
         }
@@ -10743,7 +10743,7 @@ pub fn deserialize_eval_decision_details_type(
     Ok(out)
 }
 
-pub fn deserialize_resource_specific_result_list_type(
+pub fn deser_list_resource_specific_result_list_type(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::ResourceSpecificResult>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -10751,7 +10751,7 @@ pub fn deserialize_resource_specific_result_list_type(
         match tag.start_el() {
             s if s.matches("member") /* member com.amazonaws.iam#ResourceSpecificResultListType$member */ =>  {
                 out.push(
-                    crate::xml_deser::resource_specific_result_inner(&mut tag)
+                    crate::xml_deser::deser_structure_resource_specific_result(&mut tag)
                     ?
                 );
             }
@@ -10762,7 +10762,7 @@ pub fn deserialize_resource_specific_result_list_type(
     Ok(out)
 }
 
-pub fn policy_detail_inner(
+pub fn deser_structure_policy_detail(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::PolicyDetail, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -10801,7 +10801,7 @@ pub fn policy_detail_inner(
     Ok(builder.build())
 }
 
-pub fn tracked_action_last_accessed_inner(
+pub fn deser_structure_tracked_action_last_accessed(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::TrackedActionLastAccessed, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -10867,7 +10867,7 @@ pub fn tracked_action_last_accessed_inner(
     Ok(builder.build())
 }
 
-pub fn deserialize_arn_list_type(
+pub fn deser_list_arn_list_type(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<std::string::String>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -10889,7 +10889,7 @@ pub fn deserialize_arn_list_type(
     Ok(out)
 }
 
-pub fn policy_granting_service_access_inner(
+pub fn deser_structure_policy_granting_service_access(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::PolicyGrantingServiceAccess, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -10969,7 +10969,7 @@ pub fn policy_granting_service_access_inner(
     Ok(builder.build())
 }
 
-pub fn statement_inner(
+pub fn deser_structure_statement(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::Statement, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -11006,7 +11006,7 @@ pub fn statement_inner(
             s if s.matches("StartPosition") /* StartPosition com.amazonaws.iam#Statement$StartPosition */ =>  {
                 let var_460 =
                     Some(
-                        crate::xml_deser::position_inner(&mut tag)
+                        crate::xml_deser::deser_structure_position(&mut tag)
                         ?
                     )
                 ;
@@ -11016,7 +11016,7 @@ pub fn statement_inner(
             s if s.matches("EndPosition") /* EndPosition com.amazonaws.iam#Statement$EndPosition */ =>  {
                 let var_461 =
                     Some(
-                        crate::xml_deser::position_inner(&mut tag)
+                        crate::xml_deser::deser_structure_position(&mut tag)
                         ?
                     )
                 ;
@@ -11029,7 +11029,7 @@ pub fn statement_inner(
     Ok(builder.build())
 }
 
-pub fn eval_decision_details_type_entry(
+pub fn deser_map_eval_decision_details_type_entry(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
     out: &mut std::collections::HashMap<
         std::string::String,
@@ -11070,7 +11070,7 @@ pub fn eval_decision_details_type_entry(
     Ok(())
 }
 
-pub fn resource_specific_result_inner(
+pub fn deser_structure_resource_specific_result(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::ResourceSpecificResult, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -11107,7 +11107,7 @@ pub fn resource_specific_result_inner(
             s if s.matches("MatchedStatements") /* MatchedStatements com.amazonaws.iam#ResourceSpecificResult$MatchedStatements */ =>  {
                 let var_464 =
                     Some(
-                        crate::xml_deser::deserialize_statement_list_type(&mut tag)
+                        crate::xml_deser::deser_list_statement_list_type(&mut tag)
                         ?
                     )
                 ;
@@ -11117,7 +11117,7 @@ pub fn resource_specific_result_inner(
             s if s.matches("MissingContextValues") /* MissingContextValues com.amazonaws.iam#ResourceSpecificResult$MissingContextValues */ =>  {
                 let var_465 =
                     Some(
-                        crate::xml_deser::deserialize_context_key_names_result_list_type(&mut tag)
+                        crate::xml_deser::deser_list_context_key_names_result_list_type(&mut tag)
                         ?
                     )
                 ;
@@ -11127,7 +11127,7 @@ pub fn resource_specific_result_inner(
             s if s.matches("EvalDecisionDetails") /* EvalDecisionDetails com.amazonaws.iam#ResourceSpecificResult$EvalDecisionDetails */ =>  {
                 let var_466 =
                     Some(
-                        crate::xml_deser::deserialize_eval_decision_details_type(&mut tag)
+                        crate::xml_deser::deser_map_eval_decision_details_type(&mut tag)
                         ?
                     )
                 ;
@@ -11137,7 +11137,7 @@ pub fn resource_specific_result_inner(
             s if s.matches("PermissionsBoundaryDecisionDetail") /* PermissionsBoundaryDecisionDetail com.amazonaws.iam#ResourceSpecificResult$PermissionsBoundaryDecisionDetail */ =>  {
                 let var_467 =
                     Some(
-                        crate::xml_deser::permissions_boundary_decision_detail_inner(&mut tag)
+                        crate::xml_deser::deser_structure_permissions_boundary_decision_detail(&mut tag)
                         ?
                     )
                 ;
@@ -11150,7 +11150,7 @@ pub fn resource_specific_result_inner(
     Ok(builder.build())
 }
 
-pub fn position_inner(
+pub fn deser_structure_position(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::Position, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]

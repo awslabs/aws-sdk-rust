@@ -87,10 +87,11 @@ impl smithy_http::response::ParseStrictResponse for ConfirmSubscription {
     }
 }
 
-/// <p>Creates a platform application object for one of the supported push notification services,
-/// such as APNS and GCM (Firebase Cloud Messaging), to which devices and mobile apps may register.
-/// You must specify <code>PlatformPrincipal</code> and <code>PlatformCredential</code> attributes
-/// when using the <code>CreatePlatformApplication</code> action.</p>
+/// <p>Creates a platform application object for one of the supported push notification
+/// services, such as APNS and GCM (Firebase Cloud Messaging), to which devices and mobile
+/// apps may register. You must specify <code>PlatformPrincipal</code> and
+/// <code>PlatformCredential</code> attributes when using the
+/// <code>CreatePlatformApplication</code> action.</p>
 /// <p>
 /// <code>PlatformPrincipal</code> and <code>PlatformCredential</code> are received from
 /// the notification service.</p>
@@ -194,10 +195,47 @@ impl smithy_http::response::ParseStrictResponse for CreatePlatformEndpoint {
     }
 }
 
+/// <p>Adds a destination phone number to an AWS account in the SMS sandbox and sends a
+/// one-time password (OTP) to that phone number.</p>
+/// <p>When you start using Amazon SNS to send SMS messages, your AWS account is in the
+/// <i>SMS sandbox</i>. The SMS sandbox provides a safe environment for
+/// you to try Amazon SNS features without risking your reputation as an SMS sender. While your
+/// account is in the SMS sandbox, you can use all of the features of Amazon SNS. However, you can send
+/// SMS messages only to verified destination phone numbers. For more information, including how to
+/// move out of the sandbox to send messages without restrictions,
+/// see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">SMS sandbox</a> in
+/// the <i>Amazon SNS Developer Guide</i>.</p>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct CreateSMSSandboxPhoneNumber {
+    _private: (),
+}
+impl CreateSMSSandboxPhoneNumber {
+    /// Creates a new builder-style object to manufacture [`CreateSMSSandboxPhoneNumberInput`](crate::input::CreateSMSSandboxPhoneNumberInput)
+    pub fn builder() -> crate::input::create_sms_sandbox_phone_number_input::Builder {
+        crate::input::create_sms_sandbox_phone_number_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for CreateSMSSandboxPhoneNumber {
+    type Output = Result<
+        crate::output::CreateSMSSandboxPhoneNumberOutput,
+        crate::error::CreateSMSSandboxPhoneNumberError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_create_sms_sandbox_phone_number_error(response)
+        } else {
+            crate::operation_deser::parse_create_sms_sandbox_phone_number_response(response)
+        }
+    }
+}
+
 /// <p>Creates a topic to which notifications can be published. Users can create at most
-/// 100,000 standard topics (at most 1,000 FIFO topics). For more information, see <a href="http://aws.amazon.com/sns/">https://aws.amazon.com/sns</a>. This action is idempotent, so if the requester
-/// already owns a topic with the specified name, that topic's ARN is returned without
-/// creating a new topic.</p>
+/// 100,000 standard topics (at most 1,000 FIFO topics). For more information, see <a href="http://aws.amazon.com/sns/">https://aws.amazon.com/sns</a>. This action is
+/// idempotent, so if the requester already owns a topic with the specified name, that
+/// topic's ARN is returned without creating a new topic.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct CreateTopic {
     _private: (),
@@ -278,6 +316,42 @@ impl smithy_http::response::ParseStrictResponse for DeletePlatformApplication {
             crate::operation_deser::parse_delete_platform_application_error(response)
         } else {
             crate::operation_deser::parse_delete_platform_application_response(response)
+        }
+    }
+}
+
+/// <p>Deletes an AWS account's verified or pending phone number from the SMS sandbox.</p>
+/// <p>When you start using Amazon SNS to send SMS messages, your AWS account is in the
+/// <i>SMS sandbox</i>. The SMS sandbox provides a safe environment for
+/// you to try Amazon SNS features without risking your reputation as an SMS sender. While your
+/// account is in the SMS sandbox, you can use all of the features of Amazon SNS. However, you can send
+/// SMS messages only to verified destination phone numbers. For more information, including how to
+/// move out of the sandbox to send messages without restrictions,
+/// see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">SMS sandbox</a> in
+/// the <i>Amazon SNS Developer Guide</i>.</p>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DeleteSMSSandboxPhoneNumber {
+    _private: (),
+}
+impl DeleteSMSSandboxPhoneNumber {
+    /// Creates a new builder-style object to manufacture [`DeleteSMSSandboxPhoneNumberInput`](crate::input::DeleteSMSSandboxPhoneNumberInput)
+    pub fn builder() -> crate::input::delete_sms_sandbox_phone_number_input::Builder {
+        crate::input::delete_sms_sandbox_phone_number_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for DeleteSMSSandboxPhoneNumber {
+    type Output = Result<
+        crate::output::DeleteSMSSandboxPhoneNumberOutput,
+        crate::error::DeleteSMSSandboxPhoneNumberError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_delete_sms_sandbox_phone_number_error(response)
+        } else {
+            crate::operation_deser::parse_delete_sms_sandbox_phone_number_response(response)
         }
     }
 }
@@ -397,6 +471,43 @@ impl smithy_http::response::ParseStrictResponse for GetSMSAttributes {
     }
 }
 
+/// <p>Retrieves the SMS sandbox status for the calling AWS account in the target AWS
+/// Region.</p>
+/// <p>When you start using Amazon SNS to send SMS messages, your AWS account is in the
+/// <i>SMS sandbox</i>. The SMS sandbox provides a safe environment for
+/// you to try Amazon SNS features without risking your reputation as an SMS sender. While your
+/// account is in the SMS sandbox, you can use all of the features of Amazon SNS. However, you can send
+/// SMS messages only to verified destination phone numbers. For more information, including how to
+/// move out of the sandbox to send messages without restrictions,
+/// see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">SMS sandbox</a> in
+/// the <i>Amazon SNS Developer Guide</i>.</p>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct GetSMSSandboxAccountStatus {
+    _private: (),
+}
+impl GetSMSSandboxAccountStatus {
+    /// Creates a new builder-style object to manufacture [`GetSMSSandboxAccountStatusInput`](crate::input::GetSMSSandboxAccountStatusInput)
+    pub fn builder() -> crate::input::get_sms_sandbox_account_status_input::Builder {
+        crate::input::get_sms_sandbox_account_status_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for GetSMSSandboxAccountStatus {
+    type Output = Result<
+        crate::output::GetSMSSandboxAccountStatusOutput,
+        crate::error::GetSMSSandboxAccountStatusError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_sms_sandbox_account_status_error(response)
+        } else {
+            crate::operation_deser::parse_get_sms_sandbox_account_status_response(response)
+        }
+    }
+}
+
 /// <p>Returns all of the properties of a subscription.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct GetSubscriptionAttributes {
@@ -489,6 +600,36 @@ impl smithy_http::response::ParseStrictResponse for ListEndpointsByPlatformAppli
     }
 }
 
+/// <p>Lists the calling AWS account's dedicated origination numbers and their metadata. For
+/// more information about origination numbers, see <a href="https://docs.aws.amazon.com/sns/latest/dg/channels-sms-originating-identities-origination-numbers.html">Origination numbers</a> in the <i>Amazon SNS Developer
+/// Guide</i>.</p>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ListOriginationNumbers {
+    _private: (),
+}
+impl ListOriginationNumbers {
+    /// Creates a new builder-style object to manufacture [`ListOriginationNumbersInput`](crate::input::ListOriginationNumbersInput)
+    pub fn builder() -> crate::input::list_origination_numbers_input::Builder {
+        crate::input::list_origination_numbers_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for ListOriginationNumbers {
+    type Output = Result<
+        crate::output::ListOriginationNumbersOutput,
+        crate::error::ListOriginationNumbersError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_origination_numbers_error(response)
+        } else {
+            crate::operation_deser::parse_list_origination_numbers_response(response)
+        }
+    }
+}
+
 /// <p>Returns a list of phone numbers that are opted out, meaning you cannot send SMS
 /// messages to them.</p>
 /// <p>The results for <code>ListPhoneNumbersOptedOut</code> are paginated, and each page
@@ -561,6 +702,43 @@ impl smithy_http::response::ParseStrictResponse for ListPlatformApplications {
     }
 }
 
+/// <p>Lists the calling AWS account's current verified and pending destination phone numbers
+/// in the SMS sandbox.</p>
+/// <p>When you start using Amazon SNS to send SMS messages, your AWS account is in the
+/// <i>SMS sandbox</i>. The SMS sandbox provides a safe environment for
+/// you to try Amazon SNS features without risking your reputation as an SMS sender. While your
+/// account is in the SMS sandbox, you can use all of the features of Amazon SNS. However, you can send
+/// SMS messages only to verified destination phone numbers. For more information, including how to
+/// move out of the sandbox to send messages without restrictions,
+/// see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">SMS sandbox</a> in
+/// the <i>Amazon SNS Developer Guide</i>.</p>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ListSMSSandboxPhoneNumbers {
+    _private: (),
+}
+impl ListSMSSandboxPhoneNumbers {
+    /// Creates a new builder-style object to manufacture [`ListSMSSandboxPhoneNumbersInput`](crate::input::ListSMSSandboxPhoneNumbersInput)
+    pub fn builder() -> crate::input::list_sms_sandbox_phone_numbers_input::Builder {
+        crate::input::list_sms_sandbox_phone_numbers_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for ListSMSSandboxPhoneNumbers {
+    type Output = Result<
+        crate::output::ListSMSSandboxPhoneNumbersOutput,
+        crate::error::ListSMSSandboxPhoneNumbersError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_sms_sandbox_phone_numbers_error(response)
+        } else {
+            crate::operation_deser::parse_list_sms_sandbox_phone_numbers_response(response)
+        }
+    }
+}
+
 /// <p>Returns a list of the requester's subscriptions. Each call returns a limited list of
 /// subscriptions, up to 100. If there are more subscriptions, a <code>NextToken</code> is
 /// also returned. Use the <code>NextToken</code> parameter in a new
@@ -623,8 +801,7 @@ impl smithy_http::response::ParseStrictResponse for ListSubscriptionsByTopic {
     }
 }
 
-/// <p>List all tags added to the specified Amazon SNS topic. For an overview, see
-/// <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-tags.html">Amazon SNS Tags</a> in the
+/// <p>List all tags added to the specified Amazon SNS topic. For an overview, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-tags.html">Amazon SNS Tags</a> in the
 /// <i>Amazon Simple Notification Service Developer Guide</i>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct ListTagsForResource {
@@ -724,7 +901,8 @@ impl smithy_http::response::ParseStrictResponse for OptInPhoneNumber {
 /// <p>For more information about formatting messages, see <a href="https://docs.aws.amazon.com/sns/latest/dg/mobile-push-send-custommessage.html">Send Custom
 /// Platform-Specific Payloads in Messages to Mobile Devices</a>. </p>
 /// <important>
-/// <p>You can publish messages only to topics and endpoints in the same AWS Region.</p>
+/// <p>You can publish messages only to topics and endpoints in the same AWS
+/// Region.</p>
 /// </important>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct Publish {
@@ -842,11 +1020,12 @@ impl smithy_http::response::ParseStrictResponse for SetPlatformApplicationAttrib
 /// daily SMS usage reports.</p>
 /// <p>You can override some of these settings for a single message when you use the
 /// <code>Publish</code> action with the <code>MessageAttributes.entry.N</code>
-/// parameter. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sms_publish-to-phone.html">Publishing to a mobile phone</a> in the
-/// <i>Amazon SNS Developer Guide</i>.</p>
+/// parameter. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sms_publish-to-phone.html">Publishing to a mobile phone</a>
+/// in the <i>Amazon SNS Developer Guide</i>.</p>
 /// <note>
-/// <p>To use this operation, you must grant the Amazon SNS service principal (<code>sns.amazonaws.com</code>)
-/// permission to perform the <code>s3:ListBucket</code> action. </p>
+/// <p>To use this operation, you must grant the Amazon SNS service principal
+/// (<code>sns.amazonaws.com</code>) permission to perform the
+/// <code>s3:ListBucket</code> action. </p>
 /// </note>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct SetSMSAttributes {
@@ -931,8 +1110,8 @@ impl smithy_http::response::ParseStrictResponse for SetTopicAttributes {
 /// <p>Subscribes an endpoint to an Amazon SNS topic. If the endpoint type is HTTP/S or email, or
 /// if the endpoint and the topic are not in the same AWS account, the endpoint owner must
 /// run the <code>ConfirmSubscription</code> action to confirm the subscription.</p>
-/// <p>You call the <code>ConfirmSubscription</code> action with the token from the subscription response.
-/// Confirmation tokens are valid for three days.</p>
+/// <p>You call the <code>ConfirmSubscription</code> action with the token from the
+/// subscription response. Confirmation tokens are valid for three days.</p>
 /// <p>This action is throttled at 100 transactions per second (TPS).</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct Subscribe {
@@ -958,8 +1137,7 @@ impl smithy_http::response::ParseStrictResponse for Subscribe {
     }
 }
 
-/// <p>Add tags to the specified Amazon SNS topic. For an overview, see
-/// <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-tags.html">Amazon SNS Tags</a> in the
+/// <p>Add tags to the specified Amazon SNS topic. For an overview, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-tags.html">Amazon SNS Tags</a> in the
 /// <i>Amazon SNS Developer Guide</i>.</p>
 /// <p>When you use topic tags, keep the following guidelines in mind:</p>
 /// <ul>
@@ -978,8 +1156,8 @@ impl smithy_http::response::ParseStrictResponse for Subscribe {
 /// existing tag.</p>
 /// </li>
 /// <li>
-/// <p>Tagging actions are limited to 10 TPS per AWS account, per AWS region. If your application
-/// requires a higher throughput, file a <a href="https://console.aws.amazon.com/support/home#/case/create?issueType=technical">technical support request</a>.</p>
+/// <p>Tagging actions are limited to 10 TPS per AWS account, per AWS region. If your
+/// application requires a higher throughput, file a <a href="https://console.aws.amazon.com/support/home#/case/create?issueType=technical">technical support request</a>.</p>
 /// </li>
 /// </ul>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
@@ -1037,8 +1215,7 @@ impl smithy_http::response::ParseStrictResponse for Unsubscribe {
     }
 }
 
-/// <p>Remove tags from the specified Amazon SNS topic. For an overview, see
-/// <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-tags.html">Amazon SNS Tags</a> in the
+/// <p>Remove tags from the specified Amazon SNS topic. For an overview, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-tags.html">Amazon SNS Tags</a> in the
 /// <i>Amazon SNS Developer Guide</i>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct UntagResource {
@@ -1060,6 +1237,43 @@ impl smithy_http::response::ParseStrictResponse for UntagResource {
             crate::operation_deser::parse_untag_resource_error(response)
         } else {
             crate::operation_deser::parse_untag_resource_response(response)
+        }
+    }
+}
+
+/// <p>Verifies a destination phone number with a one-time password (OTP) for the calling AWS
+/// account.</p>
+/// <p>When you start using Amazon SNS to send SMS messages, your AWS account is in the
+/// <i>SMS sandbox</i>. The SMS sandbox provides a safe environment for
+/// you to try Amazon SNS features without risking your reputation as an SMS sender. While your
+/// account is in the SMS sandbox, you can use all of the features of Amazon SNS. However, you can send
+/// SMS messages only to verified destination phone numbers. For more information, including how to
+/// move out of the sandbox to send messages without restrictions,
+/// see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">SMS sandbox</a> in
+/// the <i>Amazon SNS Developer Guide</i>.</p>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct VerifySMSSandboxPhoneNumber {
+    _private: (),
+}
+impl VerifySMSSandboxPhoneNumber {
+    /// Creates a new builder-style object to manufacture [`VerifySMSSandboxPhoneNumberInput`](crate::input::VerifySMSSandboxPhoneNumberInput)
+    pub fn builder() -> crate::input::verify_sms_sandbox_phone_number_input::Builder {
+        crate::input::verify_sms_sandbox_phone_number_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for VerifySMSSandboxPhoneNumber {
+    type Output = Result<
+        crate::output::VerifySMSSandboxPhoneNumberOutput,
+        crate::error::VerifySMSSandboxPhoneNumberError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_verify_sms_sandbox_phone_number_error(response)
+        } else {
+            crate::operation_deser::parse_verify_sms_sandbox_phone_number_response(response)
         }
     }
 }

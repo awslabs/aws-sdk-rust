@@ -1175,3 +1175,73 @@ pub fn parse_update_ledger_response(
         output.build()
     })
 }
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_update_ledger_permissions_mode_error(
+    response: &http::Response<bytes::Bytes>,
+) -> Result<
+    crate::output::UpdateLedgerPermissionsModeOutput,
+    crate::error::UpdateLedgerPermissionsModeError,
+> {
+    let generic = crate::json_deser::parse_generic_error(&response)
+        .map_err(crate::error::UpdateLedgerPermissionsModeError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::UpdateLedgerPermissionsModeError::unhandled(
+                generic,
+            ))
+        }
+    };
+    Err(match error_code {
+        "InvalidParameterException" => crate::error::UpdateLedgerPermissionsModeError {
+            meta: generic,
+            kind: crate::error::UpdateLedgerPermissionsModeErrorKind::InvalidParameterError({
+                #[allow(unused_mut)]
+                let mut output = crate::error::invalid_parameter_error::Builder::default();
+                let _ = response;
+                output = crate::json_deser::invalid_parameter_exception(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UpdateLedgerPermissionsModeError::unhandled)?;
+                output.build()
+            }),
+        },
+        "ResourceNotFoundException" => crate::error::UpdateLedgerPermissionsModeError {
+            meta: generic,
+            kind: crate::error::UpdateLedgerPermissionsModeErrorKind::ResourceNotFoundError({
+                #[allow(unused_mut)]
+                let mut output = crate::error::resource_not_found_error::Builder::default();
+                let _ = response;
+                output = crate::json_deser::resource_not_found_exception(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UpdateLedgerPermissionsModeError::unhandled)?;
+                output.build()
+            }),
+        },
+        _ => crate::error::UpdateLedgerPermissionsModeError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_update_ledger_permissions_mode_response(
+    response: &http::Response<bytes::Bytes>,
+) -> Result<
+    crate::output::UpdateLedgerPermissionsModeOutput,
+    crate::error::UpdateLedgerPermissionsModeError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::update_ledger_permissions_mode_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::update_ledger_permissions_mode_deser_operation(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::UpdateLedgerPermissionsModeError::unhandled)?;
+        output.build()
+    })
+}

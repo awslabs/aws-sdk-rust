@@ -5,12 +5,21 @@ pub mod add_tags_to_stream_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
+        pub(crate) stream_name: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
-        pub(crate) stream_name: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// <p>The name of the stream.</p>
+        pub fn stream_name(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.stream_name = Some(inp.into());
+            self
+        }
+        pub fn set_stream_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
+            self.stream_name = inp;
+            self
+        }
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -30,27 +39,22 @@ pub mod add_tags_to_stream_input {
             self.tags = inp;
             self
         }
-        /// <p>The name of the stream.</p>
-        pub fn stream_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.stream_name = Some(inp.into());
-            self
-        }
-        pub fn set_stream_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.stream_name = inp;
-            self
-        }
         /// Consumes the builder and constructs a [`AddTagsToStreamInput`](crate::input::AddTagsToStreamInput)
         pub fn build(
             self,
         ) -> Result<crate::input::AddTagsToStreamInput, smithy_http::operation::BuildError>
         {
             Ok(crate::input::AddTagsToStreamInput {
-                tags: self.tags,
                 stream_name: self.stream_name,
+                tags: self.tags,
             })
         }
     }
 }
+#[doc(hidden)]
+pub type AddTagsToStreamInputOperationOutputAlias = crate::operation::AddTagsToStream;
+#[doc(hidden)]
+pub type AddTagsToStreamInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl AddTagsToStreamInput {
     /// Consumes the builder and constructs an Operation<[`AddTagsToStream`](crate::operation::AddTagsToStream)>
     #[allow(clippy::let_and_return)]
@@ -179,6 +183,10 @@ pub mod create_stream_input {
         }
     }
 }
+#[doc(hidden)]
+pub type CreateStreamInputOperationOutputAlias = crate::operation::CreateStream;
+#[doc(hidden)]
+pub type CreateStreamInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl CreateStreamInput {
     /// Consumes the builder and constructs an Operation<[`CreateStream`](crate::operation::CreateStream)>
     #[allow(clippy::let_and_return)]
@@ -269,10 +277,19 @@ pub mod decrease_stream_retention_period_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) retention_period_hours: std::option::Option<i32>,
         pub(crate) stream_name: std::option::Option<std::string::String>,
+        pub(crate) retention_period_hours: std::option::Option<i32>,
     }
     impl Builder {
+        /// <p>The name of the stream to modify.</p>
+        pub fn stream_name(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.stream_name = Some(inp.into());
+            self
+        }
+        pub fn set_stream_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
+            self.stream_name = inp;
+            self
+        }
         /// <p>The new retention period of the stream, in hours. Must be less than the current
         /// retention period.</p>
         pub fn retention_period_hours(mut self, inp: i32) -> Self {
@@ -283,15 +300,6 @@ pub mod decrease_stream_retention_period_input {
             self.retention_period_hours = inp;
             self
         }
-        /// <p>The name of the stream to modify.</p>
-        pub fn stream_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.stream_name = Some(inp.into());
-            self
-        }
-        pub fn set_stream_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.stream_name = inp;
-            self
-        }
         /// Consumes the builder and constructs a [`DecreaseStreamRetentionPeriodInput`](crate::input::DecreaseStreamRetentionPeriodInput)
         pub fn build(
             self,
@@ -300,12 +308,17 @@ pub mod decrease_stream_retention_period_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DecreaseStreamRetentionPeriodInput {
-                retention_period_hours: self.retention_period_hours,
                 stream_name: self.stream_name,
+                retention_period_hours: self.retention_period_hours,
             })
         }
     }
 }
+#[doc(hidden)]
+pub type DecreaseStreamRetentionPeriodInputOperationOutputAlias =
+    crate::operation::DecreaseStreamRetentionPeriod;
+#[doc(hidden)]
+pub type DecreaseStreamRetentionPeriodInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl DecreaseStreamRetentionPeriodInput {
     /// Consumes the builder and constructs an Operation<[`DecreaseStreamRetentionPeriod`](crate::operation::DecreaseStreamRetentionPeriod)>
     #[allow(clippy::let_and_return)]
@@ -435,6 +448,10 @@ pub mod delete_stream_input {
         }
     }
 }
+#[doc(hidden)]
+pub type DeleteStreamInputOperationOutputAlias = crate::operation::DeleteStream;
+#[doc(hidden)]
+pub type DeleteStreamInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl DeleteStreamInput {
     /// Consumes the builder and constructs an Operation<[`DeleteStream`](crate::operation::DeleteStream)>
     #[allow(clippy::let_and_return)]
@@ -575,6 +592,11 @@ pub mod deregister_stream_consumer_input {
         }
     }
 }
+#[doc(hidden)]
+pub type DeregisterStreamConsumerInputOperationOutputAlias =
+    crate::operation::DeregisterStreamConsumer;
+#[doc(hidden)]
+pub type DeregisterStreamConsumerInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl DeregisterStreamConsumerInput {
     /// Consumes the builder and constructs an Operation<[`DeregisterStreamConsumer`](crate::operation::DeregisterStreamConsumer)>
     #[allow(clippy::let_and_return)]
@@ -674,6 +696,10 @@ pub mod describe_limits_input {
         }
     }
 }
+#[doc(hidden)]
+pub type DescribeLimitsInputOperationOutputAlias = crate::operation::DescribeLimits;
+#[doc(hidden)]
+pub type DescribeLimitsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl DescribeLimitsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeLimits`](crate::operation::DescribeLimits)>
     #[allow(clippy::let_and_return)]
@@ -762,8 +788,8 @@ pub mod describe_stream_input {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stream_name: std::option::Option<std::string::String>,
-        pub(crate) exclusive_start_shard_id: std::option::Option<std::string::String>,
         pub(crate) limit: std::option::Option<i32>,
+        pub(crate) exclusive_start_shard_id: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The name of the stream to describe.</p>
@@ -773,6 +799,16 @@ pub mod describe_stream_input {
         }
         pub fn set_stream_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
             self.stream_name = inp;
+            self
+        }
+        /// <p>The maximum number of shards to return in a single call. The default value is 100.
+        /// If you specify a value greater than 100, at most 100 shards are returned.</p>
+        pub fn limit(mut self, inp: i32) -> Self {
+            self.limit = Some(inp);
+            self
+        }
+        pub fn set_limit(mut self, inp: std::option::Option<i32>) -> Self {
+            self.limit = inp;
             self
         }
         /// <p>The shard ID of the shard to start with.</p>
@@ -787,28 +823,22 @@ pub mod describe_stream_input {
             self.exclusive_start_shard_id = inp;
             self
         }
-        /// <p>The maximum number of shards to return in a single call. The default value is 100.
-        /// If you specify a value greater than 100, at most 100 shards are returned.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.limit = Some(inp);
-            self
-        }
-        pub fn set_limit(mut self, inp: std::option::Option<i32>) -> Self {
-            self.limit = inp;
-            self
-        }
         /// Consumes the builder and constructs a [`DescribeStreamInput`](crate::input::DescribeStreamInput)
         pub fn build(
             self,
         ) -> Result<crate::input::DescribeStreamInput, smithy_http::operation::BuildError> {
             Ok(crate::input::DescribeStreamInput {
                 stream_name: self.stream_name,
-                exclusive_start_shard_id: self.exclusive_start_shard_id,
                 limit: self.limit,
+                exclusive_start_shard_id: self.exclusive_start_shard_id,
             })
         }
     }
 }
+#[doc(hidden)]
+pub type DescribeStreamInputOperationOutputAlias = crate::operation::DescribeStream;
+#[doc(hidden)]
+pub type DescribeStreamInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl DescribeStreamInput {
     /// Consumes the builder and constructs an Operation<[`DescribeStream`](crate::operation::DescribeStream)>
     #[allow(clippy::let_and_return)]
@@ -944,6 +974,10 @@ pub mod describe_stream_consumer_input {
         }
     }
 }
+#[doc(hidden)]
+pub type DescribeStreamConsumerInputOperationOutputAlias = crate::operation::DescribeStreamConsumer;
+#[doc(hidden)]
+pub type DescribeStreamConsumerInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl DescribeStreamConsumerInput {
     /// Consumes the builder and constructs an Operation<[`DescribeStreamConsumer`](crate::operation::DescribeStreamConsumer)>
     #[allow(clippy::let_and_return)]
@@ -1057,6 +1091,10 @@ pub mod describe_stream_summary_input {
         }
     }
 }
+#[doc(hidden)]
+pub type DescribeStreamSummaryInputOperationOutputAlias = crate::operation::DescribeStreamSummary;
+#[doc(hidden)]
+pub type DescribeStreamSummaryInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl DescribeStreamSummaryInput {
     /// Consumes the builder and constructs an Operation<[`DescribeStreamSummary`](crate::operation::DescribeStreamSummary)>
     #[allow(clippy::let_and_return)]
@@ -1147,11 +1185,21 @@ pub mod disable_enhanced_monitoring_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
+        pub(crate) stream_name: std::option::Option<std::string::String>,
         pub(crate) shard_level_metrics:
             std::option::Option<std::vec::Vec<crate::model::MetricsName>>,
-        pub(crate) stream_name: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// <p>The name of the Kinesis data stream for which to disable enhanced
+        /// monitoring.</p>
+        pub fn stream_name(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.stream_name = Some(inp.into());
+            self
+        }
+        pub fn set_stream_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
+            self.stream_name = inp;
+            self
+        }
         pub fn shard_level_metrics(mut self, inp: impl Into<crate::model::MetricsName>) -> Self {
             let mut v = self.shard_level_metrics.unwrap_or_default();
             v.push(inp.into());
@@ -1165,28 +1213,23 @@ pub mod disable_enhanced_monitoring_input {
             self.shard_level_metrics = inp;
             self
         }
-        /// <p>The name of the Kinesis data stream for which to disable enhanced
-        /// monitoring.</p>
-        pub fn stream_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.stream_name = Some(inp.into());
-            self
-        }
-        pub fn set_stream_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.stream_name = inp;
-            self
-        }
         /// Consumes the builder and constructs a [`DisableEnhancedMonitoringInput`](crate::input::DisableEnhancedMonitoringInput)
         pub fn build(
             self,
         ) -> Result<crate::input::DisableEnhancedMonitoringInput, smithy_http::operation::BuildError>
         {
             Ok(crate::input::DisableEnhancedMonitoringInput {
-                shard_level_metrics: self.shard_level_metrics,
                 stream_name: self.stream_name,
+                shard_level_metrics: self.shard_level_metrics,
             })
         }
     }
 }
+#[doc(hidden)]
+pub type DisableEnhancedMonitoringInputOperationOutputAlias =
+    crate::operation::DisableEnhancedMonitoring;
+#[doc(hidden)]
+pub type DisableEnhancedMonitoringInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl DisableEnhancedMonitoringInput {
     /// Consumes the builder and constructs an Operation<[`DisableEnhancedMonitoring`](crate::operation::DisableEnhancedMonitoring)>
     #[allow(clippy::let_and_return)]
@@ -1316,6 +1359,11 @@ pub mod enable_enhanced_monitoring_input {
         }
     }
 }
+#[doc(hidden)]
+pub type EnableEnhancedMonitoringInputOperationOutputAlias =
+    crate::operation::EnableEnhancedMonitoring;
+#[doc(hidden)]
+pub type EnableEnhancedMonitoringInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl EnableEnhancedMonitoringInput {
     /// Consumes the builder and constructs an Operation<[`EnableEnhancedMonitoring`](crate::operation::EnableEnhancedMonitoring)>
     #[allow(clippy::let_and_return)]
@@ -1443,6 +1491,10 @@ pub mod get_records_input {
         }
     }
 }
+#[doc(hidden)]
+pub type GetRecordsInputOperationOutputAlias = crate::operation::GetRecords;
+#[doc(hidden)]
+pub type GetRecordsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl GetRecordsInput {
     /// Consumes the builder and constructs an Operation<[`GetRecords`](crate::operation::GetRecords)>
     #[allow(clippy::let_and_return)]
@@ -1533,13 +1585,31 @@ pub mod get_shard_iterator_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) shard_iterator_type: std::option::Option<crate::model::ShardIteratorType>,
+        pub(crate) stream_name: std::option::Option<std::string::String>,
         pub(crate) shard_id: std::option::Option<std::string::String>,
+        pub(crate) shard_iterator_type: std::option::Option<crate::model::ShardIteratorType>,
         pub(crate) starting_sequence_number: std::option::Option<std::string::String>,
         pub(crate) timestamp: std::option::Option<smithy_types::Instant>,
-        pub(crate) stream_name: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// <p>The name of the Amazon Kinesis data stream.</p>
+        pub fn stream_name(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.stream_name = Some(inp.into());
+            self
+        }
+        pub fn set_stream_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
+            self.stream_name = inp;
+            self
+        }
+        /// <p>The shard ID of the Kinesis Data Streams shard to get the iterator for.</p>
+        pub fn shard_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.shard_id = Some(inp.into());
+            self
+        }
+        pub fn set_shard_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
+            self.shard_id = inp;
+            self
+        }
         /// <p>Determines how the shard iterator is used to start reading data records from the
         /// shard.</p>
         /// <p>The following are the valid Amazon Kinesis shard iterator types:</p>
@@ -1578,15 +1648,6 @@ pub mod get_shard_iterator_input {
             self.shard_iterator_type = inp;
             self
         }
-        /// <p>The shard ID of the Kinesis Data Streams shard to get the iterator for.</p>
-        pub fn shard_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.shard_id = Some(inp.into());
-            self
-        }
-        pub fn set_shard_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.shard_id = inp;
-            self
-        }
         /// <p>The sequence number of the data record in the shard from which to start reading.
         /// Used with shard iterator type AT_SEQUENCE_NUMBER and AFTER_SEQUENCE_NUMBER.</p>
         pub fn starting_sequence_number(mut self, inp: impl Into<std::string::String>) -> Self {
@@ -1615,30 +1676,25 @@ pub mod get_shard_iterator_input {
             self.timestamp = inp;
             self
         }
-        /// <p>The name of the Amazon Kinesis data stream.</p>
-        pub fn stream_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.stream_name = Some(inp.into());
-            self
-        }
-        pub fn set_stream_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.stream_name = inp;
-            self
-        }
         /// Consumes the builder and constructs a [`GetShardIteratorInput`](crate::input::GetShardIteratorInput)
         pub fn build(
             self,
         ) -> Result<crate::input::GetShardIteratorInput, smithy_http::operation::BuildError>
         {
             Ok(crate::input::GetShardIteratorInput {
-                shard_iterator_type: self.shard_iterator_type,
+                stream_name: self.stream_name,
                 shard_id: self.shard_id,
+                shard_iterator_type: self.shard_iterator_type,
                 starting_sequence_number: self.starting_sequence_number,
                 timestamp: self.timestamp,
-                stream_name: self.stream_name,
             })
         }
     }
 }
+#[doc(hidden)]
+pub type GetShardIteratorInputOperationOutputAlias = crate::operation::GetShardIterator;
+#[doc(hidden)]
+pub type GetShardIteratorInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl GetShardIteratorInput {
     /// Consumes the builder and constructs an Operation<[`GetShardIterator`](crate::operation::GetShardIterator)>
     #[allow(clippy::let_and_return)]
@@ -1729,10 +1785,19 @@ pub mod increase_stream_retention_period_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) retention_period_hours: std::option::Option<i32>,
         pub(crate) stream_name: std::option::Option<std::string::String>,
+        pub(crate) retention_period_hours: std::option::Option<i32>,
     }
     impl Builder {
+        /// <p>The name of the stream to modify.</p>
+        pub fn stream_name(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.stream_name = Some(inp.into());
+            self
+        }
+        pub fn set_stream_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
+            self.stream_name = inp;
+            self
+        }
         /// <p>The new retention period of the stream, in hours. Must be more than the current
         /// retention period.</p>
         pub fn retention_period_hours(mut self, inp: i32) -> Self {
@@ -1743,15 +1808,6 @@ pub mod increase_stream_retention_period_input {
             self.retention_period_hours = inp;
             self
         }
-        /// <p>The name of the stream to modify.</p>
-        pub fn stream_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.stream_name = Some(inp.into());
-            self
-        }
-        pub fn set_stream_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.stream_name = inp;
-            self
-        }
         /// Consumes the builder and constructs a [`IncreaseStreamRetentionPeriodInput`](crate::input::IncreaseStreamRetentionPeriodInput)
         pub fn build(
             self,
@@ -1760,12 +1816,17 @@ pub mod increase_stream_retention_period_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::IncreaseStreamRetentionPeriodInput {
-                retention_period_hours: self.retention_period_hours,
                 stream_name: self.stream_name,
+                retention_period_hours: self.retention_period_hours,
             })
         }
     }
 }
+#[doc(hidden)]
+pub type IncreaseStreamRetentionPeriodInputOperationOutputAlias =
+    crate::operation::IncreaseStreamRetentionPeriod;
+#[doc(hidden)]
+pub type IncreaseStreamRetentionPeriodInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl IncreaseStreamRetentionPeriodInput {
     /// Consumes the builder and constructs an Operation<[`IncreaseStreamRetentionPeriod`](crate::operation::IncreaseStreamRetentionPeriod)>
     #[allow(clippy::let_and_return)]
@@ -1860,44 +1921,23 @@ pub mod list_shards_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) max_results: std::option::Option<i32>,
-        pub(crate) stream_creation_timestamp: std::option::Option<smithy_types::Instant>,
+        pub(crate) stream_name: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) exclusive_start_shard_id: std::option::Option<std::string::String>,
+        pub(crate) max_results: std::option::Option<i32>,
+        pub(crate) stream_creation_timestamp: std::option::Option<smithy_types::Instant>,
         pub(crate) shard_filter: std::option::Option<crate::model::ShardFilter>,
-        pub(crate) stream_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The maximum number of shards to return in a single call to <code>ListShards</code>.
-        /// The minimum value you can specify for this parameter is 1, and the maximum is 10,000,
-        /// which is also the default.</p>
-        /// <p>When the number of shards to be listed is greater than the value of
-        /// <code>MaxResults</code>, the response contains a <code>NextToken</code> value that
-        /// you can use in a subsequent call to <code>ListShards</code> to list the next set of
-        /// shards.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.max_results = Some(inp);
-            self
-        }
-        pub fn set_max_results(mut self, inp: std::option::Option<i32>) -> Self {
-            self.max_results = inp;
-            self
-        }
-        /// <p>Specify this input parameter to distinguish data streams that have the same name.
-        /// For example, if you create a data stream and then delete it, and you later create
-        /// another data stream with the same name, you can use this input parameter to specify
-        /// which of the two streams you want to list the shards for.</p>
+        /// <p>The name of the data stream whose shards you want to list. </p>
         /// <p>You cannot specify this parameter if you specify the <code>NextToken</code>
         /// parameter.</p>
-        pub fn stream_creation_timestamp(mut self, inp: smithy_types::Instant) -> Self {
-            self.stream_creation_timestamp = Some(inp);
+        pub fn stream_name(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.stream_name = Some(inp.into());
             self
         }
-        pub fn set_stream_creation_timestamp(
-            mut self,
-            inp: std::option::Option<smithy_types::Instant>,
-        ) -> Self {
-            self.stream_creation_timestamp = inp;
+        pub fn set_stream_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
+            self.stream_name = inp;
             self
         }
         /// <p>When the number of shards in the data stream is greater than the default value for
@@ -1947,6 +1987,38 @@ pub mod list_shards_input {
             self.exclusive_start_shard_id = inp;
             self
         }
+        /// <p>The maximum number of shards to return in a single call to <code>ListShards</code>.
+        /// The minimum value you can specify for this parameter is 1, and the maximum is 10,000,
+        /// which is also the default.</p>
+        /// <p>When the number of shards to be listed is greater than the value of
+        /// <code>MaxResults</code>, the response contains a <code>NextToken</code> value that
+        /// you can use in a subsequent call to <code>ListShards</code> to list the next set of
+        /// shards.</p>
+        pub fn max_results(mut self, inp: i32) -> Self {
+            self.max_results = Some(inp);
+            self
+        }
+        pub fn set_max_results(mut self, inp: std::option::Option<i32>) -> Self {
+            self.max_results = inp;
+            self
+        }
+        /// <p>Specify this input parameter to distinguish data streams that have the same name.
+        /// For example, if you create a data stream and then delete it, and you later create
+        /// another data stream with the same name, you can use this input parameter to specify
+        /// which of the two streams you want to list the shards for.</p>
+        /// <p>You cannot specify this parameter if you specify the <code>NextToken</code>
+        /// parameter.</p>
+        pub fn stream_creation_timestamp(mut self, inp: smithy_types::Instant) -> Self {
+            self.stream_creation_timestamp = Some(inp);
+            self
+        }
+        pub fn set_stream_creation_timestamp(
+            mut self,
+            inp: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.stream_creation_timestamp = inp;
+            self
+        }
         pub fn shard_filter(mut self, inp: crate::model::ShardFilter) -> Self {
             self.shard_filter = Some(inp);
             self
@@ -1958,32 +2030,25 @@ pub mod list_shards_input {
             self.shard_filter = inp;
             self
         }
-        /// <p>The name of the data stream whose shards you want to list. </p>
-        /// <p>You cannot specify this parameter if you specify the <code>NextToken</code>
-        /// parameter.</p>
-        pub fn stream_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.stream_name = Some(inp.into());
-            self
-        }
-        pub fn set_stream_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.stream_name = inp;
-            self
-        }
         /// Consumes the builder and constructs a [`ListShardsInput`](crate::input::ListShardsInput)
         pub fn build(
             self,
         ) -> Result<crate::input::ListShardsInput, smithy_http::operation::BuildError> {
             Ok(crate::input::ListShardsInput {
-                max_results: self.max_results,
-                stream_creation_timestamp: self.stream_creation_timestamp,
+                stream_name: self.stream_name,
                 next_token: self.next_token,
                 exclusive_start_shard_id: self.exclusive_start_shard_id,
+                max_results: self.max_results,
+                stream_creation_timestamp: self.stream_creation_timestamp,
                 shard_filter: self.shard_filter,
-                stream_name: self.stream_name,
             })
         }
     }
 }
+#[doc(hidden)]
+pub type ListShardsInputOperationOutputAlias = crate::operation::ListShards;
+#[doc(hidden)]
+pub type ListShardsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl ListShardsInput {
     /// Consumes the builder and constructs an Operation<[`ListShards`](crate::operation::ListShards)>
     #[allow(clippy::let_and_return)]
@@ -2074,12 +2139,22 @@ pub mod list_stream_consumers_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) next_token: std::option::Option<std::string::String>,
-        pub(crate) stream_creation_timestamp: std::option::Option<smithy_types::Instant>,
         pub(crate) stream_arn: std::option::Option<std::string::String>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
+        pub(crate) stream_creation_timestamp: std::option::Option<smithy_types::Instant>,
     }
     impl Builder {
+        /// <p>The ARN of the Kinesis data stream for which you want to list the registered
+        /// consumers. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kinesis-streams">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+        pub fn stream_arn(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.stream_arn = Some(inp.into());
+            self
+        }
+        pub fn set_stream_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
+            self.stream_arn = inp;
+            self
+        }
         /// <p>When the number of consumers that are registered with the data stream is greater than
         /// the default value for the <code>MaxResults</code> parameter, or if you explicitly
         /// specify a value for <code>MaxResults</code> that is less than the number of consumers
@@ -2111,6 +2186,16 @@ pub mod list_stream_consumers_input {
             self.next_token = inp;
             self
         }
+        /// <p>The maximum number of consumers that you want a single call of
+        /// <code>ListStreamConsumers</code> to return.</p>
+        pub fn max_results(mut self, inp: i32) -> Self {
+            self.max_results = Some(inp);
+            self
+        }
+        pub fn set_max_results(mut self, inp: std::option::Option<i32>) -> Self {
+            self.max_results = inp;
+            self
+        }
         /// <p>Specify this input parameter to distinguish data streams that have the same name. For
         /// example, if you create a data stream and then delete it, and you later create another
         /// data stream with the same name, you can use this input parameter to specify which of the
@@ -2127,40 +2212,24 @@ pub mod list_stream_consumers_input {
             self.stream_creation_timestamp = inp;
             self
         }
-        /// <p>The ARN of the Kinesis data stream for which you want to list the registered
-        /// consumers. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kinesis-streams">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
-        pub fn stream_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.stream_arn = Some(inp.into());
-            self
-        }
-        pub fn set_stream_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.stream_arn = inp;
-            self
-        }
-        /// <p>The maximum number of consumers that you want a single call of
-        /// <code>ListStreamConsumers</code> to return.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.max_results = Some(inp);
-            self
-        }
-        pub fn set_max_results(mut self, inp: std::option::Option<i32>) -> Self {
-            self.max_results = inp;
-            self
-        }
         /// Consumes the builder and constructs a [`ListStreamConsumersInput`](crate::input::ListStreamConsumersInput)
         pub fn build(
             self,
         ) -> Result<crate::input::ListStreamConsumersInput, smithy_http::operation::BuildError>
         {
             Ok(crate::input::ListStreamConsumersInput {
-                next_token: self.next_token,
-                stream_creation_timestamp: self.stream_creation_timestamp,
                 stream_arn: self.stream_arn,
+                next_token: self.next_token,
                 max_results: self.max_results,
+                stream_creation_timestamp: self.stream_creation_timestamp,
             })
         }
     }
 }
+#[doc(hidden)]
+pub type ListStreamConsumersInputOperationOutputAlias = crate::operation::ListStreamConsumers;
+#[doc(hidden)]
+pub type ListStreamConsumersInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl ListStreamConsumersInput {
     /// Consumes the builder and constructs an Operation<[`ListStreamConsumers`](crate::operation::ListStreamConsumers)>
     #[allow(clippy::let_and_return)]
@@ -2287,6 +2356,10 @@ pub mod list_streams_input {
         }
     }
 }
+#[doc(hidden)]
+pub type ListStreamsInputOperationOutputAlias = crate::operation::ListStreams;
+#[doc(hidden)]
+pub type ListStreamsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl ListStreamsInput {
     /// Consumes the builder and constructs an Operation<[`ListStreams`](crate::operation::ListStreams)>
     #[allow(clippy::let_and_return)]
@@ -2377,21 +2450,18 @@ pub mod list_tags_for_stream_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) limit: std::option::Option<i32>,
-        pub(crate) exclusive_start_tag_key: std::option::Option<std::string::String>,
         pub(crate) stream_name: std::option::Option<std::string::String>,
+        pub(crate) exclusive_start_tag_key: std::option::Option<std::string::String>,
+        pub(crate) limit: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The number of tags to return. If this number is less than the total number of tags
-        /// associated with the stream, <code>HasMoreTags</code> is set to <code>true</code>. To
-        /// list additional tags, set <code>ExclusiveStartTagKey</code> to the last key in the
-        /// response.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.limit = Some(inp);
+        /// <p>The name of the stream.</p>
+        pub fn stream_name(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.stream_name = Some(inp.into());
             self
         }
-        pub fn set_limit(mut self, inp: std::option::Option<i32>) -> Self {
-            self.limit = inp;
+        pub fn set_stream_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
+            self.stream_name = inp;
             self
         }
         /// <p>The key to use as the starting point for the list of tags. If this parameter is
@@ -2408,13 +2478,16 @@ pub mod list_tags_for_stream_input {
             self.exclusive_start_tag_key = inp;
             self
         }
-        /// <p>The name of the stream.</p>
-        pub fn stream_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.stream_name = Some(inp.into());
+        /// <p>The number of tags to return. If this number is less than the total number of tags
+        /// associated with the stream, <code>HasMoreTags</code> is set to <code>true</code>. To
+        /// list additional tags, set <code>ExclusiveStartTagKey</code> to the last key in the
+        /// response.</p>
+        pub fn limit(mut self, inp: i32) -> Self {
+            self.limit = Some(inp);
             self
         }
-        pub fn set_stream_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.stream_name = inp;
+        pub fn set_limit(mut self, inp: std::option::Option<i32>) -> Self {
+            self.limit = inp;
             self
         }
         /// Consumes the builder and constructs a [`ListTagsForStreamInput`](crate::input::ListTagsForStreamInput)
@@ -2423,13 +2496,17 @@ pub mod list_tags_for_stream_input {
         ) -> Result<crate::input::ListTagsForStreamInput, smithy_http::operation::BuildError>
         {
             Ok(crate::input::ListTagsForStreamInput {
-                limit: self.limit,
-                exclusive_start_tag_key: self.exclusive_start_tag_key,
                 stream_name: self.stream_name,
+                exclusive_start_tag_key: self.exclusive_start_tag_key,
+                limit: self.limit,
             })
         }
     }
 }
+#[doc(hidden)]
+pub type ListTagsForStreamInputOperationOutputAlias = crate::operation::ListTagsForStream;
+#[doc(hidden)]
+pub type ListTagsForStreamInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl ListTagsForStreamInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForStream`](crate::operation::ListTagsForStream)>
     #[allow(clippy::let_and_return)]
@@ -2520,23 +2597,11 @@ pub mod merge_shards_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) adjacent_shard_to_merge: std::option::Option<std::string::String>,
         pub(crate) stream_name: std::option::Option<std::string::String>,
         pub(crate) shard_to_merge: std::option::Option<std::string::String>,
+        pub(crate) adjacent_shard_to_merge: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The shard ID of the adjacent shard for the merge.</p>
-        pub fn adjacent_shard_to_merge(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.adjacent_shard_to_merge = Some(inp.into());
-            self
-        }
-        pub fn set_adjacent_shard_to_merge(
-            mut self,
-            inp: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.adjacent_shard_to_merge = inp;
-            self
-        }
         /// <p>The name of the stream for the merge.</p>
         pub fn stream_name(mut self, inp: impl Into<std::string::String>) -> Self {
             self.stream_name = Some(inp.into());
@@ -2556,18 +2621,34 @@ pub mod merge_shards_input {
             self.shard_to_merge = inp;
             self
         }
+        /// <p>The shard ID of the adjacent shard for the merge.</p>
+        pub fn adjacent_shard_to_merge(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.adjacent_shard_to_merge = Some(inp.into());
+            self
+        }
+        pub fn set_adjacent_shard_to_merge(
+            mut self,
+            inp: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.adjacent_shard_to_merge = inp;
+            self
+        }
         /// Consumes the builder and constructs a [`MergeShardsInput`](crate::input::MergeShardsInput)
         pub fn build(
             self,
         ) -> Result<crate::input::MergeShardsInput, smithy_http::operation::BuildError> {
             Ok(crate::input::MergeShardsInput {
-                adjacent_shard_to_merge: self.adjacent_shard_to_merge,
                 stream_name: self.stream_name,
                 shard_to_merge: self.shard_to_merge,
+                adjacent_shard_to_merge: self.adjacent_shard_to_merge,
             })
         }
     }
 }
+#[doc(hidden)]
+pub type MergeShardsInputOperationOutputAlias = crate::operation::MergeShards;
+#[doc(hidden)]
+pub type MergeShardsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl MergeShardsInput {
     /// Consumes the builder and constructs an Operation<[`MergeShards`](crate::operation::MergeShards)>
     #[allow(clippy::let_and_return)]
@@ -2659,10 +2740,10 @@ pub mod put_record_input {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stream_name: std::option::Option<std::string::String>,
+        pub(crate) data: std::option::Option<smithy_types::Blob>,
+        pub(crate) partition_key: std::option::Option<std::string::String>,
         pub(crate) explicit_hash_key: std::option::Option<std::string::String>,
         pub(crate) sequence_number_for_ordering: std::option::Option<std::string::String>,
-        pub(crate) partition_key: std::option::Option<std::string::String>,
-        pub(crate) data: std::option::Option<smithy_types::Blob>,
     }
     impl Builder {
         /// <p>The name of the stream to put the data record into.</p>
@@ -2672,6 +2753,33 @@ pub mod put_record_input {
         }
         pub fn set_stream_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
             self.stream_name = inp;
+            self
+        }
+        /// <p>The data blob to put into the record, which is base64-encoded when the blob is
+        /// serialized. When the data blob (the payload before base64-encoding) is added to the
+        /// partition key size, the total size must not exceed the maximum record size (1
+        /// MiB).</p>
+        pub fn data(mut self, inp: smithy_types::Blob) -> Self {
+            self.data = Some(inp);
+            self
+        }
+        pub fn set_data(mut self, inp: std::option::Option<smithy_types::Blob>) -> Self {
+            self.data = inp;
+            self
+        }
+        /// <p>Determines which shard in the stream the data record is assigned to. Partition keys
+        /// are Unicode strings with a maximum length limit of 256 characters for each key. Amazon
+        /// Kinesis Data Streams uses the partition key as input to a hash function that maps the
+        /// partition key and associated data to a specific shard. Specifically, an MD5 hash
+        /// function is used to map partition keys to 128-bit integer values and to map associated
+        /// data records to shards. As a result of this hashing mechanism, all data records with the
+        /// same partition key map to the same shard within the stream.</p>
+        pub fn partition_key(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.partition_key = Some(inp.into());
+            self
+        }
+        pub fn set_partition_key(mut self, inp: std::option::Option<std::string::String>) -> Self {
+            self.partition_key = inp;
             self
         }
         /// <p>The hash value used to explicitly determine the shard the data record is assigned
@@ -2703,47 +2811,24 @@ pub mod put_record_input {
             self.sequence_number_for_ordering = inp;
             self
         }
-        /// <p>Determines which shard in the stream the data record is assigned to. Partition keys
-        /// are Unicode strings with a maximum length limit of 256 characters for each key. Amazon
-        /// Kinesis Data Streams uses the partition key as input to a hash function that maps the
-        /// partition key and associated data to a specific shard. Specifically, an MD5 hash
-        /// function is used to map partition keys to 128-bit integer values and to map associated
-        /// data records to shards. As a result of this hashing mechanism, all data records with the
-        /// same partition key map to the same shard within the stream.</p>
-        pub fn partition_key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.partition_key = Some(inp.into());
-            self
-        }
-        pub fn set_partition_key(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.partition_key = inp;
-            self
-        }
-        /// <p>The data blob to put into the record, which is base64-encoded when the blob is
-        /// serialized. When the data blob (the payload before base64-encoding) is added to the
-        /// partition key size, the total size must not exceed the maximum record size (1
-        /// MiB).</p>
-        pub fn data(mut self, inp: smithy_types::Blob) -> Self {
-            self.data = Some(inp);
-            self
-        }
-        pub fn set_data(mut self, inp: std::option::Option<smithy_types::Blob>) -> Self {
-            self.data = inp;
-            self
-        }
         /// Consumes the builder and constructs a [`PutRecordInput`](crate::input::PutRecordInput)
         pub fn build(
             self,
         ) -> Result<crate::input::PutRecordInput, smithy_http::operation::BuildError> {
             Ok(crate::input::PutRecordInput {
                 stream_name: self.stream_name,
+                data: self.data,
+                partition_key: self.partition_key,
                 explicit_hash_key: self.explicit_hash_key,
                 sequence_number_for_ordering: self.sequence_number_for_ordering,
-                partition_key: self.partition_key,
-                data: self.data,
             })
         }
     }
 }
+#[doc(hidden)]
+pub type PutRecordInputOperationOutputAlias = crate::operation::PutRecord;
+#[doc(hidden)]
+pub type PutRecordInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl PutRecordInput {
     /// Consumes the builder and constructs an Operation<[`PutRecord`](crate::operation::PutRecord)>
     #[allow(clippy::let_and_return)]
@@ -2870,6 +2955,10 @@ pub mod put_records_input {
         }
     }
 }
+#[doc(hidden)]
+pub type PutRecordsInputOperationOutputAlias = crate::operation::PutRecords;
+#[doc(hidden)]
+pub type PutRecordsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl PutRecordsInput {
     /// Consumes the builder and constructs an Operation<[`PutRecords`](crate::operation::PutRecords)>
     #[allow(clippy::let_and_return)]
@@ -2960,20 +3049,10 @@ pub mod register_stream_consumer_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) consumer_name: std::option::Option<std::string::String>,
         pub(crate) stream_arn: std::option::Option<std::string::String>,
+        pub(crate) consumer_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>For a given Kinesis data stream, each consumer must have a unique name. However,
-        /// consumer names don't have to be unique across data streams.</p>
-        pub fn consumer_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.consumer_name = Some(inp.into());
-            self
-        }
-        pub fn set_consumer_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.consumer_name = inp;
-            self
-        }
         /// <p>The ARN of the Kinesis data stream that you want to register the consumer with. For
         /// more info, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kinesis-streams">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
         pub fn stream_arn(mut self, inp: impl Into<std::string::String>) -> Self {
@@ -2984,18 +3063,32 @@ pub mod register_stream_consumer_input {
             self.stream_arn = inp;
             self
         }
+        /// <p>For a given Kinesis data stream, each consumer must have a unique name. However,
+        /// consumer names don't have to be unique across data streams.</p>
+        pub fn consumer_name(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.consumer_name = Some(inp.into());
+            self
+        }
+        pub fn set_consumer_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
+            self.consumer_name = inp;
+            self
+        }
         /// Consumes the builder and constructs a [`RegisterStreamConsumerInput`](crate::input::RegisterStreamConsumerInput)
         pub fn build(
             self,
         ) -> Result<crate::input::RegisterStreamConsumerInput, smithy_http::operation::BuildError>
         {
             Ok(crate::input::RegisterStreamConsumerInput {
-                consumer_name: self.consumer_name,
                 stream_arn: self.stream_arn,
+                consumer_name: self.consumer_name,
             })
         }
     }
 }
+#[doc(hidden)]
+pub type RegisterStreamConsumerInputOperationOutputAlias = crate::operation::RegisterStreamConsumer;
+#[doc(hidden)]
+pub type RegisterStreamConsumerInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl RegisterStreamConsumerInput {
     /// Consumes the builder and constructs an Operation<[`RegisterStreamConsumer`](crate::operation::RegisterStreamConsumer)>
     #[allow(clippy::let_and_return)]
@@ -3086,10 +3179,19 @@ pub mod remove_tags_from_stream_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) stream_name: std::option::Option<std::string::String>,
+        pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
+        /// <p>The name of the stream.</p>
+        pub fn stream_name(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.stream_name = Some(inp.into());
+            self
+        }
+        pub fn set_stream_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
+            self.stream_name = inp;
+            self
+        }
         pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
             let mut v = self.tag_keys.unwrap_or_default();
             v.push(inp.into());
@@ -3103,27 +3205,22 @@ pub mod remove_tags_from_stream_input {
             self.tag_keys = inp;
             self
         }
-        /// <p>The name of the stream.</p>
-        pub fn stream_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.stream_name = Some(inp.into());
-            self
-        }
-        pub fn set_stream_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.stream_name = inp;
-            self
-        }
         /// Consumes the builder and constructs a [`RemoveTagsFromStreamInput`](crate::input::RemoveTagsFromStreamInput)
         pub fn build(
             self,
         ) -> Result<crate::input::RemoveTagsFromStreamInput, smithy_http::operation::BuildError>
         {
             Ok(crate::input::RemoveTagsFromStreamInput {
-                tag_keys: self.tag_keys,
                 stream_name: self.stream_name,
+                tag_keys: self.tag_keys,
             })
         }
     }
 }
+#[doc(hidden)]
+pub type RemoveTagsFromStreamInputOperationOutputAlias = crate::operation::RemoveTagsFromStream;
+#[doc(hidden)]
+pub type RemoveTagsFromStreamInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl RemoveTagsFromStreamInput {
     /// Consumes the builder and constructs an Operation<[`RemoveTagsFromStream`](crate::operation::RemoveTagsFromStream)>
     #[allow(clippy::let_and_return)]
@@ -3214,11 +3311,20 @@ pub mod split_shard_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
+        pub(crate) stream_name: std::option::Option<std::string::String>,
         pub(crate) shard_to_split: std::option::Option<std::string::String>,
         pub(crate) new_starting_hash_key: std::option::Option<std::string::String>,
-        pub(crate) stream_name: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// <p>The name of the stream for the shard split.</p>
+        pub fn stream_name(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.stream_name = Some(inp.into());
+            self
+        }
+        pub fn set_stream_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
+            self.stream_name = inp;
+            self
+        }
         /// <p>The shard ID of the shard to split.</p>
         pub fn shard_to_split(mut self, inp: impl Into<std::string::String>) -> Self {
             self.shard_to_split = Some(inp.into());
@@ -3246,27 +3352,22 @@ pub mod split_shard_input {
             self.new_starting_hash_key = inp;
             self
         }
-        /// <p>The name of the stream for the shard split.</p>
-        pub fn stream_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.stream_name = Some(inp.into());
-            self
-        }
-        pub fn set_stream_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.stream_name = inp;
-            self
-        }
         /// Consumes the builder and constructs a [`SplitShardInput`](crate::input::SplitShardInput)
         pub fn build(
             self,
         ) -> Result<crate::input::SplitShardInput, smithy_http::operation::BuildError> {
             Ok(crate::input::SplitShardInput {
+                stream_name: self.stream_name,
                 shard_to_split: self.shard_to_split,
                 new_starting_hash_key: self.new_starting_hash_key,
-                stream_name: self.stream_name,
             })
         }
     }
 }
+#[doc(hidden)]
+pub type SplitShardInputOperationOutputAlias = crate::operation::SplitShard;
+#[doc(hidden)]
+pub type SplitShardInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl SplitShardInput {
     /// Consumes the builder and constructs an Operation<[`SplitShard`](crate::operation::SplitShard)>
     #[allow(clippy::let_and_return)]
@@ -3435,6 +3536,10 @@ pub mod start_stream_encryption_input {
         }
     }
 }
+#[doc(hidden)]
+pub type StartStreamEncryptionInputOperationOutputAlias = crate::operation::StartStreamEncryption;
+#[doc(hidden)]
+pub type StartStreamEncryptionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl StartStreamEncryptionInput {
     /// Consumes the builder and constructs an Operation<[`StartStreamEncryption`](crate::operation::StartStreamEncryption)>
     #[allow(clippy::let_and_return)]
@@ -3603,6 +3708,10 @@ pub mod stop_stream_encryption_input {
         }
     }
 }
+#[doc(hidden)]
+pub type StopStreamEncryptionInputOperationOutputAlias = crate::operation::StopStreamEncryption;
+#[doc(hidden)]
+pub type StopStreamEncryptionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl StopStreamEncryptionInput {
     /// Consumes the builder and constructs an Operation<[`StopStreamEncryption`](crate::operation::StopStreamEncryption)>
     #[allow(clippy::let_and_return)]
@@ -3693,23 +3802,11 @@ pub mod update_shard_count_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) scaling_type: std::option::Option<crate::model::ScalingType>,
         pub(crate) stream_name: std::option::Option<std::string::String>,
         pub(crate) target_shard_count: std::option::Option<i32>,
+        pub(crate) scaling_type: std::option::Option<crate::model::ScalingType>,
     }
     impl Builder {
-        /// <p>The scaling type. Uniform scaling creates shards of equal size.</p>
-        pub fn scaling_type(mut self, inp: crate::model::ScalingType) -> Self {
-            self.scaling_type = Some(inp);
-            self
-        }
-        pub fn set_scaling_type(
-            mut self,
-            inp: std::option::Option<crate::model::ScalingType>,
-        ) -> Self {
-            self.scaling_type = inp;
-            self
-        }
         /// <p>The name of the stream.</p>
         pub fn stream_name(mut self, inp: impl Into<std::string::String>) -> Self {
             self.stream_name = Some(inp.into());
@@ -3747,19 +3844,35 @@ pub mod update_shard_count_input {
             self.target_shard_count = inp;
             self
         }
+        /// <p>The scaling type. Uniform scaling creates shards of equal size.</p>
+        pub fn scaling_type(mut self, inp: crate::model::ScalingType) -> Self {
+            self.scaling_type = Some(inp);
+            self
+        }
+        pub fn set_scaling_type(
+            mut self,
+            inp: std::option::Option<crate::model::ScalingType>,
+        ) -> Self {
+            self.scaling_type = inp;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateShardCountInput`](crate::input::UpdateShardCountInput)
         pub fn build(
             self,
         ) -> Result<crate::input::UpdateShardCountInput, smithy_http::operation::BuildError>
         {
             Ok(crate::input::UpdateShardCountInput {
-                scaling_type: self.scaling_type,
                 stream_name: self.stream_name,
                 target_shard_count: self.target_shard_count,
+                scaling_type: self.scaling_type,
             })
         }
     }
 }
+#[doc(hidden)]
+pub type UpdateShardCountInputOperationOutputAlias = crate::operation::UpdateShardCount;
+#[doc(hidden)]
+pub type UpdateShardCountInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl UpdateShardCountInput {
     /// Consumes the builder and constructs an Operation<[`UpdateShardCount`](crate::operation::UpdateShardCount)>
     #[allow(clippy::let_and_return)]
@@ -3847,8 +3960,6 @@ impl UpdateShardCountInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateShardCountInput {
-    /// <p>The scaling type. Uniform scaling creates shards of equal size.</p>
-    pub scaling_type: std::option::Option<crate::model::ScalingType>,
     /// <p>The name of the stream.</p>
     pub stream_name: std::option::Option<std::string::String>,
     /// <p>The new number of shards. This value has the following default limits. By default,
@@ -3872,13 +3983,15 @@ pub struct UpdateShardCountInput {
     /// </li>
     /// </ul>
     pub target_shard_count: std::option::Option<i32>,
+    /// <p>The scaling type. Uniform scaling creates shards of equal size.</p>
+    pub scaling_type: std::option::Option<crate::model::ScalingType>,
 }
 impl std::fmt::Debug for UpdateShardCountInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateShardCountInput");
-        formatter.field("scaling_type", &self.scaling_type);
         formatter.field("stream_name", &self.stream_name);
         formatter.field("target_shard_count", &self.target_shard_count);
+        formatter.field("scaling_type", &self.scaling_type);
         formatter.finish()
     }
 }
@@ -3987,6 +4100,8 @@ impl std::fmt::Debug for StartStreamEncryptionInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SplitShardInput {
+    /// <p>The name of the stream for the shard split.</p>
+    pub stream_name: std::option::Option<std::string::String>,
     /// <p>The shard ID of the shard to split.</p>
     pub shard_to_split: std::option::Option<std::string::String>,
     /// <p>A hash key value for the starting hash key of one of the child shards created by
@@ -3997,15 +4112,13 @@ pub struct SplitShardInput {
     /// child shards. All the lower hash key values in the range are distributed to the other
     /// child shard.</p>
     pub new_starting_hash_key: std::option::Option<std::string::String>,
-    /// <p>The name of the stream for the shard split.</p>
-    pub stream_name: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for SplitShardInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SplitShardInput");
+        formatter.field("stream_name", &self.stream_name);
         formatter.field("shard_to_split", &self.shard_to_split);
         formatter.field("new_starting_hash_key", &self.new_starting_hash_key);
-        formatter.field("stream_name", &self.stream_name);
         formatter.finish()
     }
 }
@@ -4014,16 +4127,16 @@ impl std::fmt::Debug for SplitShardInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RemoveTagsFromStreamInput {
-    /// <p>A list of tag keys. Each corresponding tag is removed from the stream.</p>
-    pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The name of the stream.</p>
     pub stream_name: std::option::Option<std::string::String>,
+    /// <p>A list of tag keys. Each corresponding tag is removed from the stream.</p>
+    pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl std::fmt::Debug for RemoveTagsFromStreamInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RemoveTagsFromStreamInput");
-        formatter.field("tag_keys", &self.tag_keys);
         formatter.field("stream_name", &self.stream_name);
+        formatter.field("tag_keys", &self.tag_keys);
         formatter.finish()
     }
 }
@@ -4031,18 +4144,18 @@ impl std::fmt::Debug for RemoveTagsFromStreamInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegisterStreamConsumerInput {
-    /// <p>For a given Kinesis data stream, each consumer must have a unique name. However,
-    /// consumer names don't have to be unique across data streams.</p>
-    pub consumer_name: std::option::Option<std::string::String>,
     /// <p>The ARN of the Kinesis data stream that you want to register the consumer with. For
     /// more info, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kinesis-streams">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
     pub stream_arn: std::option::Option<std::string::String>,
+    /// <p>For a given Kinesis data stream, each consumer must have a unique name. However,
+    /// consumer names don't have to be unique across data streams.</p>
+    pub consumer_name: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for RegisterStreamConsumerInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RegisterStreamConsumerInput");
-        formatter.field("consumer_name", &self.consumer_name);
         formatter.field("stream_arn", &self.stream_arn);
+        formatter.field("consumer_name", &self.consumer_name);
         formatter.finish()
     }
 }
@@ -4071,6 +4184,19 @@ impl std::fmt::Debug for PutRecordsInput {
 pub struct PutRecordInput {
     /// <p>The name of the stream to put the data record into.</p>
     pub stream_name: std::option::Option<std::string::String>,
+    /// <p>The data blob to put into the record, which is base64-encoded when the blob is
+    /// serialized. When the data blob (the payload before base64-encoding) is added to the
+    /// partition key size, the total size must not exceed the maximum record size (1
+    /// MiB).</p>
+    pub data: std::option::Option<smithy_types::Blob>,
+    /// <p>Determines which shard in the stream the data record is assigned to. Partition keys
+    /// are Unicode strings with a maximum length limit of 256 characters for each key. Amazon
+    /// Kinesis Data Streams uses the partition key as input to a hash function that maps the
+    /// partition key and associated data to a specific shard. Specifically, an MD5 hash
+    /// function is used to map partition keys to 128-bit integer values and to map associated
+    /// data records to shards. As a result of this hashing mechanism, all data records with the
+    /// same partition key map to the same shard within the stream.</p>
+    pub partition_key: std::option::Option<std::string::String>,
     /// <p>The hash value used to explicitly determine the shard the data record is assigned
     /// to by overriding the partition key hash.</p>
     pub explicit_hash_key: std::option::Option<std::string::String>,
@@ -4080,31 +4206,18 @@ pub struct PutRecordInput {
     /// (as returned in the result when putting record <i>n-1</i>). If this
     /// parameter is not set, records are coarsely ordered based on arrival time.</p>
     pub sequence_number_for_ordering: std::option::Option<std::string::String>,
-    /// <p>Determines which shard in the stream the data record is assigned to. Partition keys
-    /// are Unicode strings with a maximum length limit of 256 characters for each key. Amazon
-    /// Kinesis Data Streams uses the partition key as input to a hash function that maps the
-    /// partition key and associated data to a specific shard. Specifically, an MD5 hash
-    /// function is used to map partition keys to 128-bit integer values and to map associated
-    /// data records to shards. As a result of this hashing mechanism, all data records with the
-    /// same partition key map to the same shard within the stream.</p>
-    pub partition_key: std::option::Option<std::string::String>,
-    /// <p>The data blob to put into the record, which is base64-encoded when the blob is
-    /// serialized. When the data blob (the payload before base64-encoding) is added to the
-    /// partition key size, the total size must not exceed the maximum record size (1
-    /// MiB).</p>
-    pub data: std::option::Option<smithy_types::Blob>,
 }
 impl std::fmt::Debug for PutRecordInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutRecordInput");
         formatter.field("stream_name", &self.stream_name);
+        formatter.field("data", &self.data);
+        formatter.field("partition_key", &self.partition_key);
         formatter.field("explicit_hash_key", &self.explicit_hash_key);
         formatter.field(
             "sequence_number_for_ordering",
             &self.sequence_number_for_ordering,
         );
-        formatter.field("partition_key", &self.partition_key);
-        formatter.field("data", &self.data);
         formatter.finish()
     }
 }
@@ -4113,20 +4226,20 @@ impl std::fmt::Debug for PutRecordInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MergeShardsInput {
-    /// <p>The shard ID of the adjacent shard for the merge.</p>
-    pub adjacent_shard_to_merge: std::option::Option<std::string::String>,
     /// <p>The name of the stream for the merge.</p>
     pub stream_name: std::option::Option<std::string::String>,
     /// <p>The shard ID of the shard to combine with the adjacent shard for the
     /// merge.</p>
     pub shard_to_merge: std::option::Option<std::string::String>,
+    /// <p>The shard ID of the adjacent shard for the merge.</p>
+    pub adjacent_shard_to_merge: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for MergeShardsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("MergeShardsInput");
-        formatter.field("adjacent_shard_to_merge", &self.adjacent_shard_to_merge);
         formatter.field("stream_name", &self.stream_name);
         formatter.field("shard_to_merge", &self.shard_to_merge);
+        formatter.field("adjacent_shard_to_merge", &self.adjacent_shard_to_merge);
         formatter.finish()
     }
 }
@@ -4135,24 +4248,24 @@ impl std::fmt::Debug for MergeShardsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForStreamInput {
+    /// <p>The name of the stream.</p>
+    pub stream_name: std::option::Option<std::string::String>,
+    /// <p>The key to use as the starting point for the list of tags. If this parameter is
+    /// set, <code>ListTagsForStream</code> gets all tags that occur after
+    /// <code>ExclusiveStartTagKey</code>. </p>
+    pub exclusive_start_tag_key: std::option::Option<std::string::String>,
     /// <p>The number of tags to return. If this number is less than the total number of tags
     /// associated with the stream, <code>HasMoreTags</code> is set to <code>true</code>. To
     /// list additional tags, set <code>ExclusiveStartTagKey</code> to the last key in the
     /// response.</p>
     pub limit: std::option::Option<i32>,
-    /// <p>The key to use as the starting point for the list of tags. If this parameter is
-    /// set, <code>ListTagsForStream</code> gets all tags that occur after
-    /// <code>ExclusiveStartTagKey</code>. </p>
-    pub exclusive_start_tag_key: std::option::Option<std::string::String>,
-    /// <p>The name of the stream.</p>
-    pub stream_name: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ListTagsForStreamInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsForStreamInput");
-        formatter.field("limit", &self.limit);
-        formatter.field("exclusive_start_tag_key", &self.exclusive_start_tag_key);
         formatter.field("stream_name", &self.stream_name);
+        formatter.field("exclusive_start_tag_key", &self.exclusive_start_tag_key);
+        formatter.field("limit", &self.limit);
         formatter.finish()
     }
 }
@@ -4181,6 +4294,9 @@ impl std::fmt::Debug for ListStreamsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListStreamConsumersInput {
+    /// <p>The ARN of the Kinesis data stream for which you want to list the registered
+    /// consumers. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kinesis-streams">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+    pub stream_arn: std::option::Option<std::string::String>,
     /// <p>When the number of consumers that are registered with the data stream is greater than
     /// the default value for the <code>MaxResults</code> parameter, or if you explicitly
     /// specify a value for <code>MaxResults</code> that is less than the number of consumers
@@ -4205,26 +4321,23 @@ pub struct ListStreamConsumersInput {
     /// <code>ExpiredNextTokenException</code>.</p>
     /// </important>
     pub next_token: std::option::Option<std::string::String>,
+    /// <p>The maximum number of consumers that you want a single call of
+    /// <code>ListStreamConsumers</code> to return.</p>
+    pub max_results: std::option::Option<i32>,
     /// <p>Specify this input parameter to distinguish data streams that have the same name. For
     /// example, if you create a data stream and then delete it, and you later create another
     /// data stream with the same name, you can use this input parameter to specify which of the
     /// two streams you want to list the consumers for. </p>
     /// <p>You can't specify this parameter if you specify the NextToken parameter. </p>
     pub stream_creation_timestamp: std::option::Option<smithy_types::Instant>,
-    /// <p>The ARN of the Kinesis data stream for which you want to list the registered
-    /// consumers. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kinesis-streams">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
-    pub stream_arn: std::option::Option<std::string::String>,
-    /// <p>The maximum number of consumers that you want a single call of
-    /// <code>ListStreamConsumers</code> to return.</p>
-    pub max_results: std::option::Option<i32>,
 }
 impl std::fmt::Debug for ListStreamConsumersInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListStreamConsumersInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("stream_creation_timestamp", &self.stream_creation_timestamp);
         formatter.field("stream_arn", &self.stream_arn);
+        formatter.field("next_token", &self.next_token);
         formatter.field("max_results", &self.max_results);
+        formatter.field("stream_creation_timestamp", &self.stream_creation_timestamp);
         formatter.finish()
     }
 }
@@ -4232,21 +4345,10 @@ impl std::fmt::Debug for ListStreamConsumersInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListShardsInput {
-    /// <p>The maximum number of shards to return in a single call to <code>ListShards</code>.
-    /// The minimum value you can specify for this parameter is 1, and the maximum is 10,000,
-    /// which is also the default.</p>
-    /// <p>When the number of shards to be listed is greater than the value of
-    /// <code>MaxResults</code>, the response contains a <code>NextToken</code> value that
-    /// you can use in a subsequent call to <code>ListShards</code> to list the next set of
-    /// shards.</p>
-    pub max_results: std::option::Option<i32>,
-    /// <p>Specify this input parameter to distinguish data streams that have the same name.
-    /// For example, if you create a data stream and then delete it, and you later create
-    /// another data stream with the same name, you can use this input parameter to specify
-    /// which of the two streams you want to list the shards for.</p>
+    /// <p>The name of the data stream whose shards you want to list. </p>
     /// <p>You cannot specify this parameter if you specify the <code>NextToken</code>
     /// parameter.</p>
-    pub stream_creation_timestamp: std::option::Option<smithy_types::Instant>,
+    pub stream_name: std::option::Option<std::string::String>,
     /// <p>When the number of shards in the data stream is greater than the default value for
     /// the <code>MaxResults</code> parameter, or if you explicitly specify a value for
     /// <code>MaxResults</code> that is less than the number of shards in the data stream,
@@ -4277,21 +4379,32 @@ pub struct ListShardsInput {
     /// stream.</p>
     /// <p>You cannot specify this parameter if you specify <code>NextToken</code>.</p>
     pub exclusive_start_shard_id: std::option::Option<std::string::String>,
-    pub shard_filter: std::option::Option<crate::model::ShardFilter>,
-    /// <p>The name of the data stream whose shards you want to list. </p>
+    /// <p>The maximum number of shards to return in a single call to <code>ListShards</code>.
+    /// The minimum value you can specify for this parameter is 1, and the maximum is 10,000,
+    /// which is also the default.</p>
+    /// <p>When the number of shards to be listed is greater than the value of
+    /// <code>MaxResults</code>, the response contains a <code>NextToken</code> value that
+    /// you can use in a subsequent call to <code>ListShards</code> to list the next set of
+    /// shards.</p>
+    pub max_results: std::option::Option<i32>,
+    /// <p>Specify this input parameter to distinguish data streams that have the same name.
+    /// For example, if you create a data stream and then delete it, and you later create
+    /// another data stream with the same name, you can use this input parameter to specify
+    /// which of the two streams you want to list the shards for.</p>
     /// <p>You cannot specify this parameter if you specify the <code>NextToken</code>
     /// parameter.</p>
-    pub stream_name: std::option::Option<std::string::String>,
+    pub stream_creation_timestamp: std::option::Option<smithy_types::Instant>,
+    pub shard_filter: std::option::Option<crate::model::ShardFilter>,
 }
 impl std::fmt::Debug for ListShardsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListShardsInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("stream_creation_timestamp", &self.stream_creation_timestamp);
+        formatter.field("stream_name", &self.stream_name);
         formatter.field("next_token", &self.next_token);
         formatter.field("exclusive_start_shard_id", &self.exclusive_start_shard_id);
+        formatter.field("max_results", &self.max_results);
+        formatter.field("stream_creation_timestamp", &self.stream_creation_timestamp);
         formatter.field("shard_filter", &self.shard_filter);
-        formatter.field("stream_name", &self.stream_name);
         formatter.finish()
     }
 }
@@ -4300,17 +4413,17 @@ impl std::fmt::Debug for ListShardsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IncreaseStreamRetentionPeriodInput {
+    /// <p>The name of the stream to modify.</p>
+    pub stream_name: std::option::Option<std::string::String>,
     /// <p>The new retention period of the stream, in hours. Must be more than the current
     /// retention period.</p>
     pub retention_period_hours: std::option::Option<i32>,
-    /// <p>The name of the stream to modify.</p>
-    pub stream_name: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for IncreaseStreamRetentionPeriodInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("IncreaseStreamRetentionPeriodInput");
-        formatter.field("retention_period_hours", &self.retention_period_hours);
         formatter.field("stream_name", &self.stream_name);
+        formatter.field("retention_period_hours", &self.retention_period_hours);
         formatter.finish()
     }
 }
@@ -4319,6 +4432,10 @@ impl std::fmt::Debug for IncreaseStreamRetentionPeriodInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetShardIteratorInput {
+    /// <p>The name of the Amazon Kinesis data stream.</p>
+    pub stream_name: std::option::Option<std::string::String>,
+    /// <p>The shard ID of the Kinesis Data Streams shard to get the iterator for.</p>
+    pub shard_id: std::option::Option<std::string::String>,
     /// <p>Determines how the shard iterator is used to start reading data records from the
     /// shard.</p>
     /// <p>The following are the valid Amazon Kinesis shard iterator types:</p>
@@ -4347,8 +4464,6 @@ pub struct GetShardIteratorInput {
     /// </li>
     /// </ul>
     pub shard_iterator_type: std::option::Option<crate::model::ShardIteratorType>,
-    /// <p>The shard ID of the Kinesis Data Streams shard to get the iterator for.</p>
-    pub shard_id: std::option::Option<std::string::String>,
     /// <p>The sequence number of the data record in the shard from which to start reading.
     /// Used with shard iterator type AT_SEQUENCE_NUMBER and AFTER_SEQUENCE_NUMBER.</p>
     pub starting_sequence_number: std::option::Option<std::string::String>,
@@ -4360,17 +4475,15 @@ pub struct GetShardIteratorInput {
     /// the current trim horizon, the iterator returned is for the oldest untrimmed data record
     /// (TRIM_HORIZON).</p>
     pub timestamp: std::option::Option<smithy_types::Instant>,
-    /// <p>The name of the Amazon Kinesis data stream.</p>
-    pub stream_name: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for GetShardIteratorInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetShardIteratorInput");
-        formatter.field("shard_iterator_type", &self.shard_iterator_type);
+        formatter.field("stream_name", &self.stream_name);
         formatter.field("shard_id", &self.shard_id);
+        formatter.field("shard_iterator_type", &self.shard_iterator_type);
         formatter.field("starting_sequence_number", &self.starting_sequence_number);
         formatter.field("timestamp", &self.timestamp);
-        formatter.field("stream_name", &self.stream_name);
         formatter.finish()
     }
 }
@@ -4466,6 +4579,9 @@ impl std::fmt::Debug for EnableEnhancedMonitoringInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisableEnhancedMonitoringInput {
+    /// <p>The name of the Kinesis data stream for which to disable enhanced
+    /// monitoring.</p>
+    pub stream_name: std::option::Option<std::string::String>,
     /// <p>List of shard-level metrics to disable.</p>
     /// <p>The following are the valid shard-level metrics. The value "<code>ALL</code>"
     /// disables every metric.</p>
@@ -4515,15 +4631,12 @@ pub struct DisableEnhancedMonitoringInput {
     /// Kinesis Data Streams Service with Amazon CloudWatch</a> in the <i>Amazon
     /// Kinesis Data Streams Developer Guide</i>.</p>
     pub shard_level_metrics: std::option::Option<std::vec::Vec<crate::model::MetricsName>>,
-    /// <p>The name of the Kinesis data stream for which to disable enhanced
-    /// monitoring.</p>
-    pub stream_name: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DisableEnhancedMonitoringInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DisableEnhancedMonitoringInput");
-        formatter.field("shard_level_metrics", &self.shard_level_metrics);
         formatter.field("stream_name", &self.stream_name);
+        formatter.field("shard_level_metrics", &self.shard_level_metrics);
         formatter.finish()
     }
 }
@@ -4569,18 +4682,18 @@ impl std::fmt::Debug for DescribeStreamConsumerInput {
 pub struct DescribeStreamInput {
     /// <p>The name of the stream to describe.</p>
     pub stream_name: std::option::Option<std::string::String>,
-    /// <p>The shard ID of the shard to start with.</p>
-    pub exclusive_start_shard_id: std::option::Option<std::string::String>,
     /// <p>The maximum number of shards to return in a single call. The default value is 100.
     /// If you specify a value greater than 100, at most 100 shards are returned.</p>
     pub limit: std::option::Option<i32>,
+    /// <p>The shard ID of the shard to start with.</p>
+    pub exclusive_start_shard_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DescribeStreamInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeStreamInput");
         formatter.field("stream_name", &self.stream_name);
-        formatter.field("exclusive_start_shard_id", &self.exclusive_start_shard_id);
         formatter.field("limit", &self.limit);
+        formatter.field("exclusive_start_shard_id", &self.exclusive_start_shard_id);
         formatter.finish()
     }
 }
@@ -4644,17 +4757,17 @@ impl std::fmt::Debug for DeleteStreamInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DecreaseStreamRetentionPeriodInput {
+    /// <p>The name of the stream to modify.</p>
+    pub stream_name: std::option::Option<std::string::String>,
     /// <p>The new retention period of the stream, in hours. Must be less than the current
     /// retention period.</p>
     pub retention_period_hours: std::option::Option<i32>,
-    /// <p>The name of the stream to modify.</p>
-    pub stream_name: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DecreaseStreamRetentionPeriodInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DecreaseStreamRetentionPeriodInput");
-        formatter.field("retention_period_hours", &self.retention_period_hours);
         formatter.field("stream_name", &self.stream_name);
+        formatter.field("retention_period_hours", &self.retention_period_hours);
         formatter.finish()
     }
 }
@@ -4686,17 +4799,17 @@ impl std::fmt::Debug for CreateStreamInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AddTagsToStreamInput {
+    /// <p>The name of the stream.</p>
+    pub stream_name: std::option::Option<std::string::String>,
     /// <p>A set of up to 10 key-value pairs to use to create the tags.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>The name of the stream.</p>
-    pub stream_name: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for AddTagsToStreamInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AddTagsToStreamInput");
-        formatter.field("tags", &self.tags);
         formatter.field("stream_name", &self.stream_name);
+        formatter.field("tags", &self.tags);
         formatter.finish()
     }
 }

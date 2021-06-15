@@ -12,8 +12,8 @@ pub fn cancel_rotate_secret_deser_operation(
         serde_json::from_slice(inp)?
     };
     builder = builder.set_arn(parsed_body.arn);
-    builder = builder.set_version_id(parsed_body.version_id);
     builder = builder.set_name(parsed_body.name);
+    builder = builder.set_version_id(parsed_body.version_id);
     Ok(builder)
 }
 
@@ -29,9 +29,10 @@ pub fn create_secret_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-    builder = builder.set_version_id(parsed_body.version_id);
-    builder = builder.set_name(parsed_body.name);
     builder = builder.set_arn(parsed_body.arn);
+    builder = builder.set_name(parsed_body.name);
+    builder = builder.set_version_id(parsed_body.version_id);
+    builder = builder.set_replication_status(parsed_body.replication_status);
     Ok(builder)
 }
 
@@ -82,21 +83,23 @@ pub fn describe_secret_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-    builder = builder.set_last_rotated_date(parsed_body.last_rotated_date);
+    builder = builder.set_arn(parsed_body.arn);
+    builder = builder.set_name(parsed_body.name);
     builder = builder.set_description(parsed_body.description);
     builder = builder.set_kms_key_id(parsed_body.kms_key_id);
-    builder = builder.set_version_ids_to_stages(parsed_body.version_ids_to_stages);
-    builder = builder.set_last_changed_date(parsed_body.last_changed_date);
-    builder = builder.set_rotation_rules(parsed_body.rotation_rules);
-    builder = builder.set_name(parsed_body.name);
     builder = builder.set_rotation_enabled(parsed_body.rotation_enabled);
-    builder = builder.set_last_accessed_date(parsed_body.last_accessed_date);
-    builder = builder.set_created_date(parsed_body.created_date);
-    builder = builder.set_deleted_date(parsed_body.deleted_date);
-    builder = builder.set_arn(parsed_body.arn);
-    builder = builder.set_owning_service(parsed_body.owning_service);
     builder = builder.set_rotation_lambda_arn(parsed_body.rotation_lambda_arn);
+    builder = builder.set_rotation_rules(parsed_body.rotation_rules);
+    builder = builder.set_last_rotated_date(parsed_body.last_rotated_date);
+    builder = builder.set_last_changed_date(parsed_body.last_changed_date);
+    builder = builder.set_last_accessed_date(parsed_body.last_accessed_date);
+    builder = builder.set_deleted_date(parsed_body.deleted_date);
     builder = builder.set_tags(parsed_body.tags);
+    builder = builder.set_version_ids_to_stages(parsed_body.version_ids_to_stages);
+    builder = builder.set_owning_service(parsed_body.owning_service);
+    builder = builder.set_created_date(parsed_body.created_date);
+    builder = builder.set_primary_region(parsed_body.primary_region);
+    builder = builder.set_replication_status(parsed_body.replication_status);
     Ok(builder)
 }
 
@@ -128,9 +131,9 @@ pub fn get_resource_policy_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-    builder = builder.set_resource_policy(parsed_body.resource_policy);
-    builder = builder.set_name(parsed_body.name);
     builder = builder.set_arn(parsed_body.arn);
+    builder = builder.set_name(parsed_body.name);
+    builder = builder.set_resource_policy(parsed_body.resource_policy);
     Ok(builder)
 }
 
@@ -146,13 +149,13 @@ pub fn get_secret_value_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-    builder = builder.set_version_id(parsed_body.version_id);
-    builder = builder.set_created_date(parsed_body.created_date);
-    builder = builder.set_secret_string(parsed_body.secret_string);
-    builder = builder.set_secret_binary(parsed_body.secret_binary);
-    builder = builder.set_version_stages(parsed_body.version_stages);
-    builder = builder.set_name(parsed_body.name);
     builder = builder.set_arn(parsed_body.arn);
+    builder = builder.set_name(parsed_body.name);
+    builder = builder.set_version_id(parsed_body.version_id);
+    builder = builder.set_secret_binary(parsed_body.secret_binary);
+    builder = builder.set_secret_string(parsed_body.secret_string);
+    builder = builder.set_version_stages(parsed_body.version_stages);
+    builder = builder.set_created_date(parsed_body.created_date);
     Ok(builder)
 }
 
@@ -185,8 +188,8 @@ pub fn list_secret_version_ids_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-    builder = builder.set_next_token(parsed_body.next_token);
     builder = builder.set_versions(parsed_body.versions);
+    builder = builder.set_next_token(parsed_body.next_token);
     builder = builder.set_arn(parsed_body.arn);
     builder = builder.set_name(parsed_body.name);
     Ok(builder)
@@ -222,9 +225,43 @@ pub fn put_secret_value_deser_operation(
         serde_json::from_slice(inp)?
     };
     builder = builder.set_arn(parsed_body.arn);
-    builder = builder.set_version_stages(parsed_body.version_stages);
     builder = builder.set_name(parsed_body.name);
     builder = builder.set_version_id(parsed_body.version_id);
+    builder = builder.set_version_stages(parsed_body.version_stages);
+    Ok(builder)
+}
+
+pub fn remove_regions_from_replication_deser_operation(
+    inp: &[u8],
+    mut builder: crate::output::remove_regions_from_replication_output::Builder,
+) -> Result<crate::output::remove_regions_from_replication_output::Builder, serde_json::Error> {
+    let parsed_body: crate::serializer::RemoveRegionsFromReplicationOutputBody = if inp.is_empty() {
+        // To enable JSON parsing to succeed, replace an empty body
+        // with an empty JSON body. If a member was required, it will fail slightly later
+        // during the operation construction phase when a required field was missing.
+        serde_json::from_slice(b"{}")?
+    } else {
+        serde_json::from_slice(inp)?
+    };
+    builder = builder.set_arn(parsed_body.arn);
+    builder = builder.set_replication_status(parsed_body.replication_status);
+    Ok(builder)
+}
+
+pub fn replicate_secret_to_regions_deser_operation(
+    inp: &[u8],
+    mut builder: crate::output::replicate_secret_to_regions_output::Builder,
+) -> Result<crate::output::replicate_secret_to_regions_output::Builder, serde_json::Error> {
+    let parsed_body: crate::serializer::ReplicateSecretToRegionsOutputBody = if inp.is_empty() {
+        // To enable JSON parsing to succeed, replace an empty body
+        // with an empty JSON body. If a member was required, it will fail slightly later
+        // during the operation construction phase when a required field was missing.
+        serde_json::from_slice(b"{}")?
+    } else {
+        serde_json::from_slice(inp)?
+    };
+    builder = builder.set_arn(parsed_body.arn);
+    builder = builder.set_replication_status(parsed_body.replication_status);
     Ok(builder)
 }
 
@@ -263,6 +300,22 @@ pub fn rotate_secret_deser_operation(
     Ok(builder)
 }
 
+pub fn stop_replication_to_replica_deser_operation(
+    inp: &[u8],
+    mut builder: crate::output::stop_replication_to_replica_output::Builder,
+) -> Result<crate::output::stop_replication_to_replica_output::Builder, serde_json::Error> {
+    let parsed_body: crate::serializer::StopReplicationToReplicaOutputBody = if inp.is_empty() {
+        // To enable JSON parsing to succeed, replace an empty body
+        // with an empty JSON body. If a member was required, it will fail slightly later
+        // during the operation construction phase when a required field was missing.
+        serde_json::from_slice(b"{}")?
+    } else {
+        serde_json::from_slice(inp)?
+    };
+    builder = builder.set_arn(parsed_body.arn);
+    Ok(builder)
+}
+
 pub fn update_secret_deser_operation(
     inp: &[u8],
     mut builder: crate::output::update_secret_output::Builder,
@@ -275,9 +328,9 @@ pub fn update_secret_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
+    builder = builder.set_arn(parsed_body.arn);
     builder = builder.set_name(parsed_body.name);
     builder = builder.set_version_id(parsed_body.version_id);
-    builder = builder.set_arn(parsed_body.arn);
     Ok(builder)
 }
 
@@ -310,7 +363,7 @@ pub fn validate_resource_policy_deser_operation(
     } else {
         serde_json::from_slice(inp)?
     };
-    builder = builder.set_validation_errors(parsed_body.validation_errors);
     builder = builder.set_policy_validation_passed(parsed_body.policy_validation_passed);
+    builder = builder.set_validation_errors(parsed_body.validation_errors);
     Ok(builder)
 }

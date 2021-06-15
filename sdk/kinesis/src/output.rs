@@ -4,17 +4,17 @@
 pub struct UpdateShardCountOutput {
     /// <p>The name of the stream.</p>
     pub stream_name: std::option::Option<std::string::String>,
-    /// <p>The updated number of shards.</p>
-    pub target_shard_count: std::option::Option<i32>,
     /// <p>The current number of shards.</p>
     pub current_shard_count: std::option::Option<i32>,
+    /// <p>The updated number of shards.</p>
+    pub target_shard_count: std::option::Option<i32>,
 }
 impl std::fmt::Debug for UpdateShardCountOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateShardCountOutput");
         formatter.field("stream_name", &self.stream_name);
-        formatter.field("target_shard_count", &self.target_shard_count);
         formatter.field("current_shard_count", &self.current_shard_count);
+        formatter.field("target_shard_count", &self.target_shard_count);
         formatter.finish()
     }
 }
@@ -25,8 +25,8 @@ pub mod update_shard_count_output {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stream_name: std::option::Option<std::string::String>,
-        pub(crate) target_shard_count: std::option::Option<i32>,
         pub(crate) current_shard_count: std::option::Option<i32>,
+        pub(crate) target_shard_count: std::option::Option<i32>,
     }
     impl Builder {
         /// <p>The name of the stream.</p>
@@ -38,15 +38,6 @@ pub mod update_shard_count_output {
             self.stream_name = inp;
             self
         }
-        /// <p>The updated number of shards.</p>
-        pub fn target_shard_count(mut self, inp: i32) -> Self {
-            self.target_shard_count = Some(inp);
-            self
-        }
-        pub fn set_target_shard_count(mut self, inp: std::option::Option<i32>) -> Self {
-            self.target_shard_count = inp;
-            self
-        }
         /// <p>The current number of shards.</p>
         pub fn current_shard_count(mut self, inp: i32) -> Self {
             self.current_shard_count = Some(inp);
@@ -56,12 +47,21 @@ pub mod update_shard_count_output {
             self.current_shard_count = inp;
             self
         }
+        /// <p>The updated number of shards.</p>
+        pub fn target_shard_count(mut self, inp: i32) -> Self {
+            self.target_shard_count = Some(inp);
+            self
+        }
+        pub fn set_target_shard_count(mut self, inp: std::option::Option<i32>) -> Self {
+            self.target_shard_count = inp;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateShardCountOutput`](crate::output::UpdateShardCountOutput)
         pub fn build(self) -> crate::output::UpdateShardCountOutput {
             crate::output::UpdateShardCountOutput {
                 stream_name: self.stream_name,
-                target_shard_count: self.target_shard_count,
                 current_shard_count: self.current_shard_count,
+                target_shard_count: self.target_shard_count,
             }
         }
     }
@@ -242,6 +242,9 @@ impl RegisterStreamConsumerOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutRecordsOutput {
+    /// <p>The number of unsuccessfully processed records in a <code>PutRecords</code>
+    /// request.</p>
+    pub failed_record_count: std::option::Option<i32>,
     /// <p>An array of successfully and unsuccessfully processed record results, correlated
     /// with the request by natural ordering. A record that is successfully added to a stream
     /// includes <code>SequenceNumber</code> and <code>ShardId</code> in the result. A record
@@ -262,16 +265,13 @@ pub struct PutRecordsOutput {
     /// </li>
     /// </ul>
     pub encryption_type: std::option::Option<crate::model::EncryptionType>,
-    /// <p>The number of unsuccessfully processed records in a <code>PutRecords</code>
-    /// request.</p>
-    pub failed_record_count: std::option::Option<i32>,
 }
 impl std::fmt::Debug for PutRecordsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutRecordsOutput");
+        formatter.field("failed_record_count", &self.failed_record_count);
         formatter.field("records", &self.records);
         formatter.field("encryption_type", &self.encryption_type);
-        formatter.field("failed_record_count", &self.failed_record_count);
         formatter.finish()
     }
 }
@@ -281,11 +281,21 @@ pub mod put_records_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
+        pub(crate) failed_record_count: std::option::Option<i32>,
         pub(crate) records: std::option::Option<std::vec::Vec<crate::model::PutRecordsResultEntry>>,
         pub(crate) encryption_type: std::option::Option<crate::model::EncryptionType>,
-        pub(crate) failed_record_count: std::option::Option<i32>,
     }
     impl Builder {
+        /// <p>The number of unsuccessfully processed records in a <code>PutRecords</code>
+        /// request.</p>
+        pub fn failed_record_count(mut self, inp: i32) -> Self {
+            self.failed_record_count = Some(inp);
+            self
+        }
+        pub fn set_failed_record_count(mut self, inp: std::option::Option<i32>) -> Self {
+            self.failed_record_count = inp;
+            self
+        }
         pub fn records(mut self, inp: impl Into<crate::model::PutRecordsResultEntry>) -> Self {
             let mut v = self.records.unwrap_or_default();
             v.push(inp.into());
@@ -323,22 +333,12 @@ pub mod put_records_output {
             self.encryption_type = inp;
             self
         }
-        /// <p>The number of unsuccessfully processed records in a <code>PutRecords</code>
-        /// request.</p>
-        pub fn failed_record_count(mut self, inp: i32) -> Self {
-            self.failed_record_count = Some(inp);
-            self
-        }
-        pub fn set_failed_record_count(mut self, inp: std::option::Option<i32>) -> Self {
-            self.failed_record_count = inp;
-            self
-        }
         /// Consumes the builder and constructs a [`PutRecordsOutput`](crate::output::PutRecordsOutput)
         pub fn build(self) -> crate::output::PutRecordsOutput {
             crate::output::PutRecordsOutput {
+                failed_record_count: self.failed_record_count,
                 records: self.records,
                 encryption_type: self.encryption_type,
-                failed_record_count: self.failed_record_count,
             }
         }
     }
@@ -718,6 +718,11 @@ impl ListStreamConsumersOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListShardsOutput {
+    /// <p>An array of JSON objects. Each object represents one shard and specifies the IDs of
+    /// the shard, the shard's parent, and the shard that's adjacent to the shard's parent. Each
+    /// object also contains the starting and ending hash keys and the starting and ending
+    /// sequence numbers for the shard.</p>
+    pub shards: std::option::Option<std::vec::Vec<crate::model::Shard>>,
     /// <p>When the number of shards in the data stream is greater than the default value for
     /// the <code>MaxResults</code> parameter, or if you explicitly specify a value for
     /// <code>MaxResults</code> that is less than the number of shards in the data stream,
@@ -733,17 +738,12 @@ pub struct ListShardsOutput {
     /// <code>ExpiredNextTokenException</code>.</p>
     /// </important>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>An array of JSON objects. Each object represents one shard and specifies the IDs of
-    /// the shard, the shard's parent, and the shard that's adjacent to the shard's parent. Each
-    /// object also contains the starting and ending hash keys and the starting and ending
-    /// sequence numbers for the shard.</p>
-    pub shards: std::option::Option<std::vec::Vec<crate::model::Shard>>,
 }
 impl std::fmt::Debug for ListShardsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListShardsOutput");
-        formatter.field("next_token", &self.next_token);
         formatter.field("shards", &self.shards);
+        formatter.field("next_token", &self.next_token);
         formatter.finish()
     }
 }
@@ -753,10 +753,23 @@ pub mod list_shards_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) shards: std::option::Option<std::vec::Vec<crate::model::Shard>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        pub fn shards(mut self, inp: impl Into<crate::model::Shard>) -> Self {
+            let mut v = self.shards.unwrap_or_default();
+            v.push(inp.into());
+            self.shards = Some(v);
+            self
+        }
+        pub fn set_shards(
+            mut self,
+            inp: std::option::Option<std::vec::Vec<crate::model::Shard>>,
+        ) -> Self {
+            self.shards = inp;
+            self
+        }
         /// <p>When the number of shards in the data stream is greater than the default value for
         /// the <code>MaxResults</code> parameter, or if you explicitly specify a value for
         /// <code>MaxResults</code> that is less than the number of shards in the data stream,
@@ -779,24 +792,11 @@ pub mod list_shards_output {
             self.next_token = inp;
             self
         }
-        pub fn shards(mut self, inp: impl Into<crate::model::Shard>) -> Self {
-            let mut v = self.shards.unwrap_or_default();
-            v.push(inp.into());
-            self.shards = Some(v);
-            self
-        }
-        pub fn set_shards(
-            mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Shard>>,
-        ) -> Self {
-            self.shards = inp;
-            self
-        }
         /// Consumes the builder and constructs a [`ListShardsOutput`](crate::output::ListShardsOutput)
         pub fn build(self) -> crate::output::ListShardsOutput {
             crate::output::ListShardsOutput {
-                next_token: self.next_token,
                 shards: self.shards,
+                next_token: self.next_token,
             }
         }
     }
@@ -892,12 +892,12 @@ impl GetShardIteratorOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRecordsOutput {
+    /// <p>The data records retrieved from the shard.</p>
+    pub records: std::option::Option<std::vec::Vec<crate::model::Record>>,
     /// <p>The next position in the shard from which to start sequentially reading data
     /// records. If set to <code>null</code>, the shard has been closed and the requested
     /// iterator does not return any more data. </p>
     pub next_shard_iterator: std::option::Option<std::string::String>,
-    /// <p>The data records retrieved from the shard.</p>
-    pub records: std::option::Option<std::vec::Vec<crate::model::Record>>,
     /// <p>The number of milliseconds the <a>GetRecords</a> response is from the
     /// tip of the stream, indicating how far behind current time the consumer is. A value of
     /// zero indicates that record processing is caught up, and there are no new records to
@@ -908,8 +908,8 @@ pub struct GetRecordsOutput {
 impl std::fmt::Debug for GetRecordsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetRecordsOutput");
-        formatter.field("next_shard_iterator", &self.next_shard_iterator);
         formatter.field("records", &self.records);
+        formatter.field("next_shard_iterator", &self.next_shard_iterator);
         formatter.field("millis_behind_latest", &self.millis_behind_latest);
         formatter.field("child_shards", &self.child_shards);
         formatter.finish()
@@ -921,12 +921,25 @@ pub mod get_records_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) next_shard_iterator: std::option::Option<std::string::String>,
         pub(crate) records: std::option::Option<std::vec::Vec<crate::model::Record>>,
+        pub(crate) next_shard_iterator: std::option::Option<std::string::String>,
         pub(crate) millis_behind_latest: std::option::Option<i64>,
         pub(crate) child_shards: std::option::Option<std::vec::Vec<crate::model::ChildShard>>,
     }
     impl Builder {
+        pub fn records(mut self, inp: impl Into<crate::model::Record>) -> Self {
+            let mut v = self.records.unwrap_or_default();
+            v.push(inp.into());
+            self.records = Some(v);
+            self
+        }
+        pub fn set_records(
+            mut self,
+            inp: std::option::Option<std::vec::Vec<crate::model::Record>>,
+        ) -> Self {
+            self.records = inp;
+            self
+        }
         /// <p>The next position in the shard from which to start sequentially reading data
         /// records. If set to <code>null</code>, the shard has been closed and the requested
         /// iterator does not return any more data. </p>
@@ -939,19 +952,6 @@ pub mod get_records_output {
             inp: std::option::Option<std::string::String>,
         ) -> Self {
             self.next_shard_iterator = inp;
-            self
-        }
-        pub fn records(mut self, inp: impl Into<crate::model::Record>) -> Self {
-            let mut v = self.records.unwrap_or_default();
-            v.push(inp.into());
-            self.records = Some(v);
-            self
-        }
-        pub fn set_records(
-            mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Record>>,
-        ) -> Self {
-            self.records = inp;
             self
         }
         /// <p>The number of milliseconds the <a>GetRecords</a> response is from the
@@ -982,8 +982,8 @@ pub mod get_records_output {
         /// Consumes the builder and constructs a [`GetRecordsOutput`](crate::output::GetRecordsOutput)
         pub fn build(self) -> crate::output::GetRecordsOutput {
             crate::output::GetRecordsOutput {
-                next_shard_iterator: self.next_shard_iterator,
                 records: self.records,
+                next_shard_iterator: self.next_shard_iterator,
                 millis_behind_latest: self.millis_behind_latest,
                 child_shards: self.child_shards,
             }
@@ -1001,26 +1001,26 @@ impl GetRecordsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EnableEnhancedMonitoringOutput {
-    /// <p>Represents the list of all the metrics that would be in the enhanced state after
-    /// the operation.</p>
-    pub desired_shard_level_metrics: std::option::Option<std::vec::Vec<crate::model::MetricsName>>,
     /// <p>The name of the Kinesis data stream.</p>
     pub stream_name: std::option::Option<std::string::String>,
     /// <p>Represents the current state of the metrics that are in the enhanced state before
     /// the operation.</p>
     pub current_shard_level_metrics: std::option::Option<std::vec::Vec<crate::model::MetricsName>>,
+    /// <p>Represents the list of all the metrics that would be in the enhanced state after
+    /// the operation.</p>
+    pub desired_shard_level_metrics: std::option::Option<std::vec::Vec<crate::model::MetricsName>>,
 }
 impl std::fmt::Debug for EnableEnhancedMonitoringOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("EnableEnhancedMonitoringOutput");
-        formatter.field(
-            "desired_shard_level_metrics",
-            &self.desired_shard_level_metrics,
-        );
         formatter.field("stream_name", &self.stream_name);
         formatter.field(
             "current_shard_level_metrics",
             &self.current_shard_level_metrics,
+        );
+        formatter.field(
+            "desired_shard_level_metrics",
+            &self.desired_shard_level_metrics,
         );
         formatter.finish()
     }
@@ -1031,29 +1031,13 @@ pub mod enable_enhanced_monitoring_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) desired_shard_level_metrics:
-            std::option::Option<std::vec::Vec<crate::model::MetricsName>>,
         pub(crate) stream_name: std::option::Option<std::string::String>,
         pub(crate) current_shard_level_metrics:
             std::option::Option<std::vec::Vec<crate::model::MetricsName>>,
+        pub(crate) desired_shard_level_metrics:
+            std::option::Option<std::vec::Vec<crate::model::MetricsName>>,
     }
     impl Builder {
-        pub fn desired_shard_level_metrics(
-            mut self,
-            inp: impl Into<crate::model::MetricsName>,
-        ) -> Self {
-            let mut v = self.desired_shard_level_metrics.unwrap_or_default();
-            v.push(inp.into());
-            self.desired_shard_level_metrics = Some(v);
-            self
-        }
-        pub fn set_desired_shard_level_metrics(
-            mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::MetricsName>>,
-        ) -> Self {
-            self.desired_shard_level_metrics = inp;
-            self
-        }
         /// <p>The name of the Kinesis data stream.</p>
         pub fn stream_name(mut self, inp: impl Into<std::string::String>) -> Self {
             self.stream_name = Some(inp.into());
@@ -1079,12 +1063,28 @@ pub mod enable_enhanced_monitoring_output {
             self.current_shard_level_metrics = inp;
             self
         }
+        pub fn desired_shard_level_metrics(
+            mut self,
+            inp: impl Into<crate::model::MetricsName>,
+        ) -> Self {
+            let mut v = self.desired_shard_level_metrics.unwrap_or_default();
+            v.push(inp.into());
+            self.desired_shard_level_metrics = Some(v);
+            self
+        }
+        pub fn set_desired_shard_level_metrics(
+            mut self,
+            inp: std::option::Option<std::vec::Vec<crate::model::MetricsName>>,
+        ) -> Self {
+            self.desired_shard_level_metrics = inp;
+            self
+        }
         /// Consumes the builder and constructs a [`EnableEnhancedMonitoringOutput`](crate::output::EnableEnhancedMonitoringOutput)
         pub fn build(self) -> crate::output::EnableEnhancedMonitoringOutput {
             crate::output::EnableEnhancedMonitoringOutput {
-                desired_shard_level_metrics: self.desired_shard_level_metrics,
                 stream_name: self.stream_name,
                 current_shard_level_metrics: self.current_shard_level_metrics,
+                desired_shard_level_metrics: self.desired_shard_level_metrics,
             }
         }
     }
@@ -1100,26 +1100,26 @@ impl EnableEnhancedMonitoringOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisableEnhancedMonitoringOutput {
-    /// <p>Represents the list of all the metrics that would be in the enhanced state after
-    /// the operation.</p>
-    pub desired_shard_level_metrics: std::option::Option<std::vec::Vec<crate::model::MetricsName>>,
     /// <p>The name of the Kinesis data stream.</p>
     pub stream_name: std::option::Option<std::string::String>,
     /// <p>Represents the current state of the metrics that are in the enhanced state before
     /// the operation.</p>
     pub current_shard_level_metrics: std::option::Option<std::vec::Vec<crate::model::MetricsName>>,
+    /// <p>Represents the list of all the metrics that would be in the enhanced state after
+    /// the operation.</p>
+    pub desired_shard_level_metrics: std::option::Option<std::vec::Vec<crate::model::MetricsName>>,
 }
 impl std::fmt::Debug for DisableEnhancedMonitoringOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DisableEnhancedMonitoringOutput");
-        formatter.field(
-            "desired_shard_level_metrics",
-            &self.desired_shard_level_metrics,
-        );
         formatter.field("stream_name", &self.stream_name);
         formatter.field(
             "current_shard_level_metrics",
             &self.current_shard_level_metrics,
+        );
+        formatter.field(
+            "desired_shard_level_metrics",
+            &self.desired_shard_level_metrics,
         );
         formatter.finish()
     }
@@ -1130,29 +1130,13 @@ pub mod disable_enhanced_monitoring_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) desired_shard_level_metrics:
-            std::option::Option<std::vec::Vec<crate::model::MetricsName>>,
         pub(crate) stream_name: std::option::Option<std::string::String>,
         pub(crate) current_shard_level_metrics:
             std::option::Option<std::vec::Vec<crate::model::MetricsName>>,
+        pub(crate) desired_shard_level_metrics:
+            std::option::Option<std::vec::Vec<crate::model::MetricsName>>,
     }
     impl Builder {
-        pub fn desired_shard_level_metrics(
-            mut self,
-            inp: impl Into<crate::model::MetricsName>,
-        ) -> Self {
-            let mut v = self.desired_shard_level_metrics.unwrap_or_default();
-            v.push(inp.into());
-            self.desired_shard_level_metrics = Some(v);
-            self
-        }
-        pub fn set_desired_shard_level_metrics(
-            mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::MetricsName>>,
-        ) -> Self {
-            self.desired_shard_level_metrics = inp;
-            self
-        }
         /// <p>The name of the Kinesis data stream.</p>
         pub fn stream_name(mut self, inp: impl Into<std::string::String>) -> Self {
             self.stream_name = Some(inp.into());
@@ -1178,12 +1162,28 @@ pub mod disable_enhanced_monitoring_output {
             self.current_shard_level_metrics = inp;
             self
         }
+        pub fn desired_shard_level_metrics(
+            mut self,
+            inp: impl Into<crate::model::MetricsName>,
+        ) -> Self {
+            let mut v = self.desired_shard_level_metrics.unwrap_or_default();
+            v.push(inp.into());
+            self.desired_shard_level_metrics = Some(v);
+            self
+        }
+        pub fn set_desired_shard_level_metrics(
+            mut self,
+            inp: std::option::Option<std::vec::Vec<crate::model::MetricsName>>,
+        ) -> Self {
+            self.desired_shard_level_metrics = inp;
+            self
+        }
         /// Consumes the builder and constructs a [`DisableEnhancedMonitoringOutput`](crate::output::DisableEnhancedMonitoringOutput)
         pub fn build(self) -> crate::output::DisableEnhancedMonitoringOutput {
             crate::output::DisableEnhancedMonitoringOutput {
-                desired_shard_level_metrics: self.desired_shard_level_metrics,
                 stream_name: self.stream_name,
                 current_shard_level_metrics: self.current_shard_level_metrics,
+                desired_shard_level_metrics: self.desired_shard_level_metrics,
             }
         }
     }
@@ -1359,16 +1359,16 @@ impl DescribeStreamOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeLimitsOutput {
-    /// <p>The number of open shards.</p>
-    pub open_shard_count: std::option::Option<i32>,
     /// <p>The maximum number of shards.</p>
     pub shard_limit: std::option::Option<i32>,
+    /// <p>The number of open shards.</p>
+    pub open_shard_count: std::option::Option<i32>,
 }
 impl std::fmt::Debug for DescribeLimitsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeLimitsOutput");
-        formatter.field("open_shard_count", &self.open_shard_count);
         formatter.field("shard_limit", &self.shard_limit);
+        formatter.field("open_shard_count", &self.open_shard_count);
         formatter.finish()
     }
 }
@@ -1378,19 +1378,10 @@ pub mod describe_limits_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) open_shard_count: std::option::Option<i32>,
         pub(crate) shard_limit: std::option::Option<i32>,
+        pub(crate) open_shard_count: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The number of open shards.</p>
-        pub fn open_shard_count(mut self, inp: i32) -> Self {
-            self.open_shard_count = Some(inp);
-            self
-        }
-        pub fn set_open_shard_count(mut self, inp: std::option::Option<i32>) -> Self {
-            self.open_shard_count = inp;
-            self
-        }
         /// <p>The maximum number of shards.</p>
         pub fn shard_limit(mut self, inp: i32) -> Self {
             self.shard_limit = Some(inp);
@@ -1400,11 +1391,20 @@ pub mod describe_limits_output {
             self.shard_limit = inp;
             self
         }
+        /// <p>The number of open shards.</p>
+        pub fn open_shard_count(mut self, inp: i32) -> Self {
+            self.open_shard_count = Some(inp);
+            self
+        }
+        pub fn set_open_shard_count(mut self, inp: std::option::Option<i32>) -> Self {
+            self.open_shard_count = inp;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeLimitsOutput`](crate::output::DescribeLimitsOutput)
         pub fn build(self) -> crate::output::DescribeLimitsOutput {
             crate::output::DescribeLimitsOutput {
-                open_shard_count: self.open_shard_count,
                 shard_limit: self.shard_limit,
+                open_shard_count: self.open_shard_count,
             }
         }
     }

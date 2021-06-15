@@ -41,6 +41,10 @@ pub mod cancel_job_input {
         }
     }
 }
+#[doc(hidden)]
+pub type CancelJobInputOperationOutputAlias = crate::operation::CancelJob;
+#[doc(hidden)]
+pub type CancelJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl CancelJobInput {
     /// Consumes the builder and constructs an Operation<[`CancelJob`](crate::operation::CancelJob)>
     #[allow(clippy::let_and_return)]
@@ -262,6 +266,11 @@ pub mod create_compute_environment_input {
         }
     }
 }
+#[doc(hidden)]
+pub type CreateComputeEnvironmentInputOperationOutputAlias =
+    crate::operation::CreateComputeEnvironment;
+#[doc(hidden)]
+pub type CreateComputeEnvironmentInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl CreateComputeEnvironmentInput {
     /// Consumes the builder and constructs an Operation<[`CreateComputeEnvironment`](crate::operation::CreateComputeEnvironment)>
     #[allow(clippy::let_and_return)]
@@ -456,6 +465,10 @@ pub mod create_job_queue_input {
         }
     }
 }
+#[doc(hidden)]
+pub type CreateJobQueueInputOperationOutputAlias = crate::operation::CreateJobQueue;
+#[doc(hidden)]
+pub type CreateJobQueueInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl CreateJobQueueInput {
     /// Consumes the builder and constructs an Operation<[`CreateJobQueue`](crate::operation::CreateJobQueue)>
     #[allow(clippy::let_and_return)]
@@ -581,6 +594,11 @@ pub mod delete_compute_environment_input {
         }
     }
 }
+#[doc(hidden)]
+pub type DeleteComputeEnvironmentInputOperationOutputAlias =
+    crate::operation::DeleteComputeEnvironment;
+#[doc(hidden)]
+pub type DeleteComputeEnvironmentInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl DeleteComputeEnvironmentInput {
     /// Consumes the builder and constructs an Operation<[`DeleteComputeEnvironment`](crate::operation::DeleteComputeEnvironment)>
     #[allow(clippy::let_and_return)]
@@ -703,6 +721,10 @@ pub mod delete_job_queue_input {
         }
     }
 }
+#[doc(hidden)]
+pub type DeleteJobQueueInputOperationOutputAlias = crate::operation::DeleteJobQueue;
+#[doc(hidden)]
+pub type DeleteJobQueueInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl DeleteJobQueueInput {
     /// Consumes the builder and constructs an Operation<[`DeleteJobQueue`](crate::operation::DeleteJobQueue)>
     #[allow(clippy::let_and_return)]
@@ -825,6 +847,11 @@ pub mod deregister_job_definition_input {
         }
     }
 }
+#[doc(hidden)]
+pub type DeregisterJobDefinitionInputOperationOutputAlias =
+    crate::operation::DeregisterJobDefinition;
+#[doc(hidden)]
+pub type DeregisterJobDefinitionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl DeregisterJobDefinitionInput {
     /// Consumes the builder and constructs an Operation<[`DeregisterJobDefinition`](crate::operation::DeregisterJobDefinition)>
     #[allow(clippy::let_and_return)]
@@ -989,6 +1016,11 @@ pub mod describe_compute_environments_input {
         }
     }
 }
+#[doc(hidden)]
+pub type DescribeComputeEnvironmentsInputOperationOutputAlias =
+    crate::operation::DescribeComputeEnvironments;
+#[doc(hidden)]
+pub type DescribeComputeEnvironmentsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl DescribeComputeEnvironmentsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeComputeEnvironments`](crate::operation::DescribeComputeEnvironments)>
     #[allow(clippy::let_and_return)]
@@ -1177,6 +1209,10 @@ pub mod describe_job_definitions_input {
         }
     }
 }
+#[doc(hidden)]
+pub type DescribeJobDefinitionsInputOperationOutputAlias = crate::operation::DescribeJobDefinitions;
+#[doc(hidden)]
+pub type DescribeJobDefinitionsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl DescribeJobDefinitionsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeJobDefinitions`](crate::operation::DescribeJobDefinitions)>
     #[allow(clippy::let_and_return)]
@@ -1338,6 +1374,10 @@ pub mod describe_job_queues_input {
         }
     }
 }
+#[doc(hidden)]
+pub type DescribeJobQueuesInputOperationOutputAlias = crate::operation::DescribeJobQueues;
+#[doc(hidden)]
+pub type DescribeJobQueuesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl DescribeJobQueuesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeJobQueues`](crate::operation::DescribeJobQueues)>
     #[allow(clippy::let_and_return)]
@@ -1462,6 +1502,10 @@ pub mod describe_jobs_input {
         }
     }
 }
+#[doc(hidden)]
+pub type DescribeJobsInputOperationOutputAlias = crate::operation::DescribeJobs;
+#[doc(hidden)]
+pub type DescribeJobsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl DescribeJobsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeJobs`](crate::operation::DescribeJobs)>
     #[allow(clippy::let_and_return)]
@@ -1657,6 +1701,10 @@ pub mod list_jobs_input {
         }
     }
 }
+#[doc(hidden)]
+pub type ListJobsInputOperationOutputAlias = crate::operation::ListJobs;
+#[doc(hidden)]
+pub type ListJobsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl ListJobsInput {
     /// Consumes the builder and constructs an Operation<[`ListJobs`](crate::operation::ListJobs)>
     #[allow(clippy::let_and_return)]
@@ -1776,6 +1824,10 @@ pub mod list_tags_for_resource_input {
         }
     }
 }
+#[doc(hidden)]
+pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
+#[doc(hidden)]
+pub type ListTagsForResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(clippy::let_and_return)]
@@ -2074,6 +2126,10 @@ pub mod register_job_definition_input {
         }
     }
 }
+#[doc(hidden)]
+pub type RegisterJobDefinitionInputOperationOutputAlias = crate::operation::RegisterJobDefinition;
+#[doc(hidden)]
+pub type RegisterJobDefinitionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl RegisterJobDefinitionInput {
     /// Consumes the builder and constructs an Operation<[`RegisterJobDefinition`](crate::operation::RegisterJobDefinition)>
     #[allow(clippy::let_and_return)]
@@ -2381,6 +2437,10 @@ pub mod submit_job_input {
         }
     }
 }
+#[doc(hidden)]
+pub type SubmitJobInputOperationOutputAlias = crate::operation::SubmitJob;
+#[doc(hidden)]
+pub type SubmitJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl SubmitJobInput {
     /// Consumes the builder and constructs an Operation<[`SubmitJob`](crate::operation::SubmitJob)>
     #[allow(clippy::let_and_return)]
@@ -2522,6 +2582,10 @@ pub mod tag_resource_input {
         }
     }
 }
+#[doc(hidden)]
+pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
+#[doc(hidden)]
+pub type TagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(clippy::let_and_return)]
@@ -2662,6 +2726,10 @@ pub mod terminate_job_input {
         }
     }
 }
+#[doc(hidden)]
+pub type TerminateJobInputOperationOutputAlias = crate::operation::TerminateJob;
+#[doc(hidden)]
+pub type TerminateJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl TerminateJobInput {
     /// Consumes the builder and constructs an Operation<[`TerminateJob`](crate::operation::TerminateJob)>
     #[allow(clippy::let_and_return)]
@@ -2800,6 +2868,10 @@ pub mod untag_resource_input {
         }
     }
 }
+#[doc(hidden)]
+pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
+#[doc(hidden)]
+pub type UntagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(clippy::let_and_return)]
@@ -2997,6 +3069,11 @@ pub mod update_compute_environment_input {
         }
     }
 }
+#[doc(hidden)]
+pub type UpdateComputeEnvironmentInputOperationOutputAlias =
+    crate::operation::UpdateComputeEnvironment;
+#[doc(hidden)]
+pub type UpdateComputeEnvironmentInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl UpdateComputeEnvironmentInput {
     /// Consumes the builder and constructs an Operation<[`UpdateComputeEnvironment`](crate::operation::UpdateComputeEnvironment)>
     #[allow(clippy::let_and_return)]
@@ -3167,6 +3244,10 @@ pub mod update_job_queue_input {
         }
     }
 }
+#[doc(hidden)]
+pub type UpdateJobQueueInputOperationOutputAlias = crate::operation::UpdateJobQueue;
+#[doc(hidden)]
+pub type UpdateJobQueueInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl UpdateJobQueueInput {
     /// Consumes the builder and constructs an Operation<[`UpdateJobQueue`](crate::operation::UpdateJobQueue)>
     #[allow(clippy::let_and_return)]

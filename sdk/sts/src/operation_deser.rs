@@ -16,9 +16,11 @@ pub fn parse_assume_role_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::expired_token_error::Builder::default();
                 let _ = response;
-                output =
-                    crate::xml_deser::expired_token_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::AssumeRoleError::unhandled)?;
+                output = crate::xml_deser::deser_structure_expired_token_error_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::AssumeRoleError::unhandled)?;
                 output.build()
             }),
         },
@@ -28,7 +30,7 @@ pub fn parse_assume_role_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::malformed_policy_document_error::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::malformed_policy_document_exception(
+                output = crate::xml_deser::deser_structure_malformed_policy_document_error_xml_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -42,7 +44,7 @@ pub fn parse_assume_role_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::packed_policy_too_large_error::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::packed_policy_too_large_exception(
+                output = crate::xml_deser::deser_structure_packed_policy_too_large_error_xml_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -56,9 +58,11 @@ pub fn parse_assume_role_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::region_disabled_error::Builder::default();
                 let _ = response;
-                output =
-                    crate::xml_deser::region_disabled_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::AssumeRoleError::unhandled)?;
+                output = crate::xml_deser::deser_structure_region_disabled_error_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::AssumeRoleError::unhandled)?;
                 output.build()
             }),
         },
@@ -97,9 +101,11 @@ pub fn parse_assume_role_with_saml_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::expired_token_error::Builder::default();
                 let _ = response;
-                output =
-                    crate::xml_deser::expired_token_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::AssumeRoleWithSAMLError::unhandled)?;
+                output = crate::xml_deser::deser_structure_expired_token_error_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::AssumeRoleWithSAMLError::unhandled)?;
                 output.build()
             }),
         },
@@ -109,7 +115,7 @@ pub fn parse_assume_role_with_saml_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::idp_rejected_claim_error::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::idp_rejected_claim_exception(
+                output = crate::xml_deser::deser_structure_idp_rejected_claim_error_xml_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -123,7 +129,7 @@ pub fn parse_assume_role_with_saml_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::invalid_identity_token_error::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::invalid_identity_token_exception(
+                output = crate::xml_deser::deser_structure_invalid_identity_token_error_xml_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -137,7 +143,7 @@ pub fn parse_assume_role_with_saml_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::malformed_policy_document_error::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::malformed_policy_document_exception(
+                output = crate::xml_deser::deser_structure_malformed_policy_document_error_xml_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -151,7 +157,7 @@ pub fn parse_assume_role_with_saml_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::packed_policy_too_large_error::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::packed_policy_too_large_exception(
+                output = crate::xml_deser::deser_structure_packed_policy_too_large_error_xml_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -165,9 +171,11 @@ pub fn parse_assume_role_with_saml_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::region_disabled_error::Builder::default();
                 let _ = response;
-                output =
-                    crate::xml_deser::region_disabled_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::AssumeRoleWithSAMLError::unhandled)?;
+                output = crate::xml_deser::deser_structure_region_disabled_error_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::AssumeRoleWithSAMLError::unhandled)?;
                 output.build()
             }),
         },
@@ -216,9 +224,11 @@ pub fn parse_assume_role_with_web_identity_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::expired_token_error::Builder::default();
                 let _ = response;
-                output =
-                    crate::xml_deser::expired_token_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::AssumeRoleWithWebIdentityError::unhandled)?;
+                output = crate::xml_deser::deser_structure_expired_token_error_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::AssumeRoleWithWebIdentityError::unhandled)?;
                 output.build()
             }),
         },
@@ -228,7 +238,7 @@ pub fn parse_assume_role_with_web_identity_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::idp_communication_error_error::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::idp_communication_error_exception(
+                output = crate::xml_deser::deser_structure_idp_communication_error_error_xml_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -242,7 +252,7 @@ pub fn parse_assume_role_with_web_identity_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::idp_rejected_claim_error::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::idp_rejected_claim_exception(
+                output = crate::xml_deser::deser_structure_idp_rejected_claim_error_xml_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -256,7 +266,7 @@ pub fn parse_assume_role_with_web_identity_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::invalid_identity_token_error::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::invalid_identity_token_exception(
+                output = crate::xml_deser::deser_structure_invalid_identity_token_error_xml_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -270,7 +280,7 @@ pub fn parse_assume_role_with_web_identity_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::malformed_policy_document_error::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::malformed_policy_document_exception(
+                output = crate::xml_deser::deser_structure_malformed_policy_document_error_xml_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -284,7 +294,7 @@ pub fn parse_assume_role_with_web_identity_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::packed_policy_too_large_error::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::packed_policy_too_large_exception(
+                output = crate::xml_deser::deser_structure_packed_policy_too_large_error_xml_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -298,9 +308,11 @@ pub fn parse_assume_role_with_web_identity_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::region_disabled_error::Builder::default();
                 let _ = response;
-                output =
-                    crate::xml_deser::region_disabled_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::AssumeRoleWithWebIdentityError::unhandled)?;
+                output = crate::xml_deser::deser_structure_region_disabled_error_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::AssumeRoleWithWebIdentityError::unhandled)?;
                 output.build()
             }),
         },
@@ -355,11 +367,7 @@ pub fn parse_decode_authorization_message_error(
                         let mut output =
                             crate::error::invalid_authorization_message_error::Builder::default();
                         let _ = response;
-                        output = crate::xml_deser::invalid_authorization_message_exception(
-                            response.body().as_ref(),
-                            output,
-                        )
-                        .map_err(crate::error::DecodeAuthorizationMessageError::unhandled)?;
+                        output = crate::xml_deser::deser_structure_invalid_authorization_message_error_xml_err(response.body().as_ref(), output).map_err(crate::error::DecodeAuthorizationMessageError::unhandled)?;
                         output.build()
                     },
                 ),
@@ -453,7 +461,7 @@ pub fn parse_get_federation_token_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::malformed_policy_document_error::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::malformed_policy_document_exception(
+                output = crate::xml_deser::deser_structure_malformed_policy_document_error_xml_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -467,7 +475,7 @@ pub fn parse_get_federation_token_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::packed_policy_too_large_error::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::packed_policy_too_large_exception(
+                output = crate::xml_deser::deser_structure_packed_policy_too_large_error_xml_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -481,9 +489,11 @@ pub fn parse_get_federation_token_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::region_disabled_error::Builder::default();
                 let _ = response;
-                output =
-                    crate::xml_deser::region_disabled_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::GetFederationTokenError::unhandled)?;
+                output = crate::xml_deser::deser_structure_region_disabled_error_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetFederationTokenError::unhandled)?;
                 output.build()
             }),
         },
@@ -525,9 +535,11 @@ pub fn parse_get_session_token_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::region_disabled_error::Builder::default();
                 let _ = response;
-                output =
-                    crate::xml_deser::region_disabled_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::GetSessionTokenError::unhandled)?;
+                output = crate::xml_deser::deser_structure_region_disabled_error_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetSessionTokenError::unhandled)?;
                 output.build()
             }),
         },

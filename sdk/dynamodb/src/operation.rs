@@ -3686,7 +3686,7 @@ impl smithy_http::response::ParseStrictResponse for TransactGetItems {
 /// <ul>
 /// <li>
 /// <p>
-/// <code>Put</code>     Initiates a <code>PutItem</code> operation to write a new
+/// <code>Put</code>     Initiates a <code>PutItem</code> operation to write a new
 /// item. This structure specifies the primary key of the item to be written, the
 /// name of the table to write it in, an optional condition expression that must be
 /// satisfied for the write to succeed, a list of the item's attributes, and a field
@@ -3695,7 +3695,7 @@ impl smithy_http::response::ParseStrictResponse for TransactGetItems {
 /// </li>
 /// <li>
 /// <p>
-/// <code>Update</code>     Initiates an <code>UpdateItem</code> operation to
+/// <code>Update</code>     Initiates an <code>UpdateItem</code> operation to
 /// update an existing item. This structure specifies the primary key of the item to
 /// be updated, the name of the table where it resides, an optional condition
 /// expression that must be satisfied for the update to succeed, an expression that
@@ -3704,7 +3704,7 @@ impl smithy_http::response::ParseStrictResponse for TransactGetItems {
 /// </li>
 /// <li>
 /// <p>
-/// <code>Delete</code>     Initiates a <code>DeleteItem</code> operation to
+/// <code>Delete</code>     Initiates a <code>DeleteItem</code> operation to
 /// delete an existing item. This structure specifies the primary key of the item to
 /// be deleted, the name of the table where it resides, an optional condition
 /// expression that must be satisfied for the deletion to succeed, and a field
@@ -3713,7 +3713,7 @@ impl smithy_http::response::ParseStrictResponse for TransactGetItems {
 /// </li>
 /// <li>
 /// <p>
-/// <code>ConditionCheck</code>     Applies a condition to an item that is not
+/// <code>ConditionCheck</code>     Applies a condition to an item that is not
 /// being modified by the transaction. This structure specifies the primary key of
 /// the item to be checked, the name of the table where it resides, a condition
 /// expression that must be satisfied for the transaction to succeed, and a field

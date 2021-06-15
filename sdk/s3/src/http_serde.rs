@@ -119,7 +119,7 @@ pub fn deser_payload_copy_object_copy_object_result(
 ) -> Result<std::option::Option<crate::model::CopyObjectResult>, crate::error::CopyObjectError> {
     (!body.is_empty())
         .then(|| {
-            crate::xml_deser::deser_payload_copy_object_result_copy_object_output(body)
+            crate::xml_deser::deser_member_copy_object_output_copy_object_result(body)
                 .map_err(crate::error::CopyObjectError::unhandled)
         })
         .transpose()
@@ -469,7 +469,7 @@ pub fn deser_payload_get_bucket_analytics_configuration_analytics_configuration(
     crate::error::GetBucketAnalyticsConfigurationError,
 > {
     (!body.is_empty()).then(||{
-        crate::xml_deser::deser_payload_analytics_configuration_get_bucket_analytics_configuration_output(body).map_err(crate::error::GetBucketAnalyticsConfigurationError::unhandled)
+        crate::xml_deser::deser_member_get_bucket_analytics_configuration_output_analytics_configuration(body).map_err(crate::error::GetBucketAnalyticsConfigurationError::unhandled)
     }).transpose()
 }
 
@@ -480,7 +480,7 @@ pub fn deser_payload_get_bucket_encryption_server_side_encryption_configuration(
     crate::error::GetBucketEncryptionError,
 > {
     (!body.is_empty()).then(||{
-        crate::xml_deser::deser_payload_server_side_encryption_configuration_get_bucket_encryption_output(body).map_err(crate::error::GetBucketEncryptionError::unhandled)
+        crate::xml_deser::deser_member_get_bucket_encryption_output_server_side_encryption_configuration(body).map_err(crate::error::GetBucketEncryptionError::unhandled)
     }).transpose()
 }
 
@@ -491,7 +491,7 @@ pub fn deser_payload_get_bucket_intelligent_tiering_configuration_intelligent_ti
     crate::error::GetBucketIntelligentTieringConfigurationError,
 > {
     (!body.is_empty()).then(||{
-        crate::xml_deser::deser_payload_intelligent_tiering_configuration_get_bucket_intelligent_tiering_configuration_output(body).map_err(crate::error::GetBucketIntelligentTieringConfigurationError::unhandled)
+        crate::xml_deser::deser_member_get_bucket_intelligent_tiering_configuration_output_intelligent_tiering_configuration(body).map_err(crate::error::GetBucketIntelligentTieringConfigurationError::unhandled)
     }).transpose()
 }
 
@@ -502,7 +502,7 @@ pub fn deser_payload_get_bucket_inventory_configuration_inventory_configuration(
     crate::error::GetBucketInventoryConfigurationError,
 > {
     (!body.is_empty()).then(||{
-        crate::xml_deser::deser_payload_inventory_configuration_get_bucket_inventory_configuration_output(body).map_err(crate::error::GetBucketInventoryConfigurationError::unhandled)
+        crate::xml_deser::deser_member_get_bucket_inventory_configuration_output_inventory_configuration(body).map_err(crate::error::GetBucketInventoryConfigurationError::unhandled)
     }).transpose()
 }
 
@@ -513,7 +513,7 @@ pub fn deser_payload_get_bucket_metrics_configuration_metrics_configuration(
     crate::error::GetBucketMetricsConfigurationError,
 > {
     (!body.is_empty()).then(||{
-        crate::xml_deser::deser_payload_metrics_configuration_get_bucket_metrics_configuration_output(body).map_err(crate::error::GetBucketMetricsConfigurationError::unhandled)
+        crate::xml_deser::deser_member_get_bucket_metrics_configuration_output_metrics_configuration(body).map_err(crate::error::GetBucketMetricsConfigurationError::unhandled)
     }).transpose()
 }
 
@@ -525,7 +525,7 @@ pub fn deser_payload_get_bucket_ownership_controls_ownership_controls(
 > {
     (!body.is_empty())
         .then(|| {
-            crate::xml_deser::deser_payload_ownership_controls_get_bucket_ownership_controls_output(
+            crate::xml_deser::deser_member_get_bucket_ownership_controls_output_ownership_controls(
                 body,
             )
             .map_err(crate::error::GetBucketOwnershipControlsError::unhandled)
@@ -551,7 +551,7 @@ pub fn deser_payload_get_bucket_policy_status_policy_status(
 {
     (!body.is_empty())
         .then(|| {
-            crate::xml_deser::deser_payload_policy_status_get_bucket_policy_status_output(body)
+            crate::xml_deser::deser_member_get_bucket_policy_status_output_policy_status(body)
                 .map_err(crate::error::GetBucketPolicyStatusError::unhandled)
         })
         .transpose()
@@ -565,7 +565,7 @@ pub fn deser_payload_get_bucket_replication_replication_configuration(
 > {
     (!body.is_empty())
         .then(|| {
-            crate::xml_deser::deser_payload_replication_configuration_get_bucket_replication_output(
+            crate::xml_deser::deser_member_get_bucket_replication_output_replication_configuration(
                 body,
             )
             .map_err(crate::error::GetBucketReplicationError::unhandled)
@@ -1039,10 +1039,8 @@ pub fn deser_payload_get_object_legal_hold_legal_hold(
 > {
     (!body.is_empty())
         .then(|| {
-            crate::xml_deser::deser_payload_object_lock_legal_hold_get_object_legal_hold_output(
-                body,
-            )
-            .map_err(crate::error::GetObjectLegalHoldError::unhandled)
+            crate::xml_deser::deser_member_get_object_legal_hold_output_legal_hold(body)
+                .map_err(crate::error::GetObjectLegalHoldError::unhandled)
         })
         .transpose()
 }
@@ -1054,7 +1052,7 @@ pub fn deser_payload_get_object_lock_configuration_object_lock_configuration(
     crate::error::GetObjectLockConfigurationError,
 > {
     (!body.is_empty()).then(||{
-        crate::xml_deser::deser_payload_object_lock_configuration_get_object_lock_configuration_output(body).map_err(crate::error::GetObjectLockConfigurationError::unhandled)
+        crate::xml_deser::deser_member_get_object_lock_configuration_output_object_lock_configuration(body).map_err(crate::error::GetObjectLockConfigurationError::unhandled)
     }).transpose()
 }
 
@@ -1066,7 +1064,7 @@ pub fn deser_payload_get_object_retention_retention(
 > {
     (!body.is_empty())
         .then(|| {
-            crate::xml_deser::deser_payload_object_lock_retention_get_object_retention_output(body)
+            crate::xml_deser::deser_member_get_object_retention_output_retention(body)
                 .map_err(crate::error::GetObjectRetentionError::unhandled)
         })
         .transpose()
@@ -1113,7 +1111,7 @@ pub fn deser_payload_get_public_access_block_public_access_block_configuration(
     crate::error::GetPublicAccessBlockError,
 > {
     (!body.is_empty()).then(||{
-        crate::xml_deser::deser_payload_public_access_block_configuration_get_public_access_block_output(body).map_err(crate::error::GetPublicAccessBlockError::unhandled)
+        crate::xml_deser::deser_member_get_public_access_block_output_public_access_block_configuration(body).map_err(crate::error::GetPublicAccessBlockError::unhandled)
     }).transpose()
 }
 
@@ -1937,7 +1935,7 @@ pub fn deser_payload_upload_part_copy_copy_part_result(
 ) -> Result<std::option::Option<crate::model::CopyPartResult>, crate::error::UploadPartCopyError> {
     (!body.is_empty())
         .then(|| {
-            crate::xml_deser::deser_payload_copy_part_result_upload_part_copy_output(body)
+            crate::xml_deser::deser_member_upload_part_copy_output_copy_part_result(body)
                 .map_err(crate::error::UploadPartCopyError::unhandled)
         })
         .transpose()

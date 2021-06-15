@@ -27,6 +27,7 @@ pub enum VoiceId {
     Enrique,
     Ewa,
     Filiz,
+    Gabrielle,
     Geraint,
     Giorgio,
     Gwyneth,
@@ -72,6 +73,7 @@ pub enum VoiceId {
     Vitoria,
     Zeina,
     Zhiyu,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for VoiceId {
@@ -94,6 +96,7 @@ impl std::convert::From<&str> for VoiceId {
             "Enrique" => VoiceId::Enrique,
             "Ewa" => VoiceId::Ewa,
             "Filiz" => VoiceId::Filiz,
+            "Gabrielle" => VoiceId::Gabrielle,
             "Geraint" => VoiceId::Geraint,
             "Giorgio" => VoiceId::Giorgio,
             "Gwyneth" => VoiceId::Gwyneth,
@@ -170,6 +173,7 @@ impl VoiceId {
             VoiceId::Enrique => "Enrique",
             VoiceId::Ewa => "Ewa",
             VoiceId::Filiz => "Filiz",
+            VoiceId::Gabrielle => "Gabrielle",
             VoiceId::Geraint => "Geraint",
             VoiceId::Giorgio => "Giorgio",
             VoiceId::Gwyneth => "Gwyneth",
@@ -247,6 +251,7 @@ impl<'de> serde::Deserialize<'de> for VoiceId {
 pub enum TextType {
     Ssml,
     Text,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for TextType {
@@ -304,6 +309,7 @@ pub enum SpeechMarkType {
     Ssml,
     Viseme,
     Word,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for SpeechMarkType {
@@ -365,6 +371,7 @@ pub enum OutputFormat {
     Mp3,
     OggVorbis,
     Pcm,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for OutputFormat {
@@ -451,6 +458,7 @@ pub enum LanguageCode {
     RuRu,
     SvSe,
     TrTr,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for LanguageCode {
@@ -560,6 +568,7 @@ impl<'de> serde::Deserialize<'de> for LanguageCode {
 pub enum Engine {
     Neural,
     Standard,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for Engine {
@@ -949,6 +958,7 @@ pub enum TaskStatus {
     Failed,
     InProgress,
     Scheduled,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for TaskStatus {
@@ -1458,6 +1468,7 @@ impl Voice {
 pub enum Gender {
     Female,
     Male,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for Gender {

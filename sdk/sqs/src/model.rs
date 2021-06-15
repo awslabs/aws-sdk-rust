@@ -30,6 +30,7 @@ pub enum QueueAttributeName {
     ReceiveMessageWaitTimeSeconds,
     RedrivePolicy,
     VisibilityTimeout,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for QueueAttributeName {
@@ -824,6 +825,7 @@ impl MessageSystemAttributeValue {
 )]
 pub enum MessageSystemAttributeNameForSends {
     AwsTraceHeader,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for MessageSystemAttributeNameForSends {
@@ -1211,6 +1213,7 @@ pub enum MessageSystemAttributeName {
     SenderId,
     SentTimestamp,
     SequenceNumber,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for MessageSystemAttributeName {

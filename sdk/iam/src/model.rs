@@ -143,6 +143,7 @@ impl SSHPublicKey {
 pub enum StatusType {
     Active,
     Inactive,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for StatusType {
@@ -924,6 +925,7 @@ impl AttachedPermissionsBoundary {
 )]
 pub enum PermissionsBoundaryAttachmentType {
     Policy,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for PermissionsBoundaryAttachmentType {
@@ -1490,6 +1492,7 @@ pub enum PolicyEvaluationDecisionType {
     Allowed,
     ExplicitDeny,
     ImplicitDeny,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for PolicyEvaluationDecisionType {
@@ -1724,6 +1727,7 @@ pub enum PolicySourceType {
     Role,
     User,
     UserManaged,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for PolicySourceType {
@@ -1943,6 +1947,7 @@ pub enum ContextKeyTypeEnum {
     NumericList,
     String,
     StringList,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for ContextKeyTypeEnum {
@@ -2018,6 +2023,7 @@ impl<'de> serde::Deserialize<'de> for ContextKeyTypeEnum {
 pub enum GlobalEndpointTokenVersion {
     V1Token,
     V2Token,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for GlobalEndpointTokenVersion {
@@ -2597,6 +2603,7 @@ pub enum AssignmentStatusType {
     Any,
     Assigned,
     Unassigned,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for AssignmentStatusType {
@@ -3294,6 +3301,7 @@ pub enum PolicyOwnerEntityType {
     Group,
     Role,
     User,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for PolicyOwnerEntityType {
@@ -3351,6 +3359,7 @@ impl<'de> serde::Deserialize<'de> for PolicyOwnerEntityType {
 pub enum PolicyType {
     Inline,
     Managed,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for PolicyType {
@@ -3661,6 +3670,7 @@ impl Policy {
 pub enum PolicyUsageType {
     PermissionsBoundary,
     PermissionsPolicy,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for PolicyUsageType {
@@ -3717,6 +3727,7 @@ pub enum PolicyScopeType {
     Aws,
     All,
     Local,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for PolicyScopeType {
@@ -4419,6 +4430,7 @@ pub enum EntityType {
     LocalManagedPolicy,
     Role,
     User,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for EntityType {
@@ -4642,6 +4654,7 @@ impl AccessKeyMetadata {
 pub enum EncodingType {
     Pem,
     Ssh,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for EncodingType {
@@ -4837,6 +4850,7 @@ pub enum DeletionTaskStatusType {
     InProgress,
     NotStarted,
     Succeeded,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for DeletionTaskStatusType {
@@ -5151,6 +5165,7 @@ pub enum JobStatusType {
     Completed,
     Failed,
     InProgress,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for JobStatusType {
@@ -5527,6 +5542,7 @@ impl TrackedActionLastAccessed {
 pub enum AccessAdvisorUsageGranularityType {
     ActionLevel,
     ServiceLevel,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for AccessAdvisorUsageGranularityType {
@@ -5860,6 +5876,7 @@ pub enum SortKeyType {
     LastAuthenticatedTimeDescending,
     ServiceNamespaceAscending,
     ServiceNamespaceDescending,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for SortKeyType {
@@ -5996,6 +6013,7 @@ impl LoginProfile {
 )]
 pub enum ReportFormatType {
     TextCsv,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for ReportFormatType {
@@ -6073,6 +6091,7 @@ pub enum SummaryKeyType {
     Users,
     UsersQuota,
     VersionsPerPolicyQuota,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for SummaryKeyType {
@@ -7508,6 +7527,7 @@ pub enum ReportStateType {
     Complete,
     Inprogress,
     Started,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for ReportStateType {

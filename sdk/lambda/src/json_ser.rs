@@ -558,7 +558,7 @@ pub fn serialize_structure_update_function_code_input(
     if let Some(var_138) = &input.zip_file {
         object
             .key("ZipFile")
-            .string_unchecked(&smithy_http::base64::encode(var_138));
+            .string_unchecked(&smithy_types::base64::encode(var_138));
     }
 }
 
@@ -766,7 +766,7 @@ pub fn serialize_structure_function_code(
     if let Some(var_188) = &input.zip_file {
         object
             .key("ZipFile")
-            .string_unchecked(&smithy_http::base64::encode(var_188));
+            .string_unchecked(&smithy_types::base64::encode(var_188));
     }
     if let Some(var_189) = &input.s3_bucket {
         object.key("S3Bucket").string(var_189);
@@ -894,7 +894,7 @@ pub fn serialize_structure_layer_version_content_input(
     if let Some(var_217) = &input.zip_file {
         object
             .key("ZipFile")
-            .string_unchecked(&smithy_http::base64::encode(var_217));
+            .string_unchecked(&smithy_types::base64::encode(var_217));
     }
 }
 

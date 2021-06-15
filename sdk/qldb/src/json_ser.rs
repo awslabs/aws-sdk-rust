@@ -148,20 +148,29 @@ pub fn serialize_structure_update_ledger_input(
     }
 }
 
+pub fn serialize_structure_update_ledger_permissions_mode_input(
+    object: &mut smithy_json::serialize::JsonObjectWriter,
+    input: &crate::input::UpdateLedgerPermissionsModeInput,
+) {
+    if let Some(var_40) = &input.permissions_mode {
+        object.key("PermissionsMode").string(var_40.as_str());
+    }
+}
+
 pub fn serialize_structure_s3_export_configuration(
     object: &mut smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::S3ExportConfiguration,
 ) {
-    if let Some(var_40) = &input.bucket {
-        object.key("Bucket").string(var_40);
+    if let Some(var_41) = &input.bucket {
+        object.key("Bucket").string(var_41);
     }
-    if let Some(var_41) = &input.prefix {
-        object.key("Prefix").string(var_41);
+    if let Some(var_42) = &input.prefix {
+        object.key("Prefix").string(var_42);
     }
-    if let Some(var_42) = &input.encryption_configuration {
-        let mut object_43 = object.key("EncryptionConfiguration").start_object();
-        crate::json_ser::serialize_structure_s3_encryption_configuration(&mut object_43, var_42);
-        object_43.finish();
+    if let Some(var_43) = &input.encryption_configuration {
+        let mut object_44 = object.key("EncryptionConfiguration").start_object();
+        crate::json_ser::serialize_structure_s3_encryption_configuration(&mut object_44, var_43);
+        object_44.finish();
     }
 }
 
@@ -169,8 +178,8 @@ pub fn serialize_structure_value_holder(
     object: &mut smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::ValueHolder,
 ) {
-    if let Some(var_44) = &input.ion_text {
-        object.key("IonText").string(var_44);
+    if let Some(var_45) = &input.ion_text {
+        object.key("IonText").string(var_45);
     }
 }
 
@@ -178,11 +187,11 @@ pub fn serialize_structure_kinesis_configuration(
     object: &mut smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::KinesisConfiguration,
 ) {
-    if let Some(var_45) = &input.stream_arn {
-        object.key("StreamArn").string(var_45);
+    if let Some(var_46) = &input.stream_arn {
+        object.key("StreamArn").string(var_46);
     }
-    if let Some(var_46) = &input.aggregation_enabled {
-        object.key("AggregationEnabled").boolean(*var_46);
+    if let Some(var_47) = &input.aggregation_enabled {
+        object.key("AggregationEnabled").boolean(*var_47);
     }
 }
 
@@ -190,10 +199,10 @@ pub fn serialize_structure_s3_encryption_configuration(
     object: &mut smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::S3EncryptionConfiguration,
 ) {
-    if let Some(var_47) = &input.object_encryption_type {
-        object.key("ObjectEncryptionType").string(var_47.as_str());
+    if let Some(var_48) = &input.object_encryption_type {
+        object.key("ObjectEncryptionType").string(var_48.as_str());
     }
-    if let Some(var_48) = &input.kms_key_arn {
-        object.key("KmsKeyArn").string(var_48);
+    if let Some(var_49) = &input.kms_key_arn {
+        object.key("KmsKeyArn").string(var_49);
     }
 }

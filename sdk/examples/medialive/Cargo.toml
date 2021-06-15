@@ -1,0 +1,13 @@
+[package]
+name = "medialive-code-examples"
+version = "0.1.0"
+authors = ["Alistair McLean <mclean@amazon.com>", "Doug Schwartz <dougsch@amazon.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+medialive = { package = "aws-sdk-medialive", path = "../../medialive" }
+tokio = { version = "1", features = ["full"] }
+# used only to enable basic logging:
+env_logger = "0.8.2"

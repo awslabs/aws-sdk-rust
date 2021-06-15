@@ -6,7 +6,7 @@ pub fn parse_generic_error(
 }
 
 #[allow(unused_mut)]
-pub fn expired_token_exception(
+pub fn deser_structure_expired_token_error_xml_err(
     inp: &[u8],
     mut builder: crate::error::expired_token_error::Builder,
 ) -> Result<crate::error::expired_token_error::Builder, smithy_xml::decode::XmlError> {
@@ -36,7 +36,7 @@ pub fn expired_token_exception(
 }
 
 #[allow(unused_mut)]
-pub fn malformed_policy_document_exception(
+pub fn deser_structure_malformed_policy_document_error_xml_err(
     inp: &[u8],
     mut builder: crate::error::malformed_policy_document_error::Builder,
 ) -> Result<crate::error::malformed_policy_document_error::Builder, smithy_xml::decode::XmlError> {
@@ -66,7 +66,7 @@ pub fn malformed_policy_document_exception(
 }
 
 #[allow(unused_mut)]
-pub fn packed_policy_too_large_exception(
+pub fn deser_structure_packed_policy_too_large_error_xml_err(
     inp: &[u8],
     mut builder: crate::error::packed_policy_too_large_error::Builder,
 ) -> Result<crate::error::packed_policy_too_large_error::Builder, smithy_xml::decode::XmlError> {
@@ -96,7 +96,7 @@ pub fn packed_policy_too_large_exception(
 }
 
 #[allow(unused_mut)]
-pub fn region_disabled_exception(
+pub fn deser_structure_region_disabled_error_xml_err(
     inp: &[u8],
     mut builder: crate::error::region_disabled_error::Builder,
 ) -> Result<crate::error::region_disabled_error::Builder, smithy_xml::decode::XmlError> {
@@ -155,7 +155,7 @@ pub fn deser_operation_assume_role(
             s if s.matches("Credentials") /* Credentials com.amazonaws.sts#AssumeRoleOutput$Credentials */ =>  {
                 let var_5 =
                     Some(
-                        crate::xml_deser::credentials_inner(&mut tag)
+                        crate::xml_deser::deser_structure_credentials(&mut tag)
                         ?
                     )
                 ;
@@ -165,7 +165,7 @@ pub fn deser_operation_assume_role(
             s if s.matches("AssumedRoleUser") /* AssumedRoleUser com.amazonaws.sts#AssumeRoleOutput$AssumedRoleUser */ =>  {
                 let var_6 =
                     Some(
-                        crate::xml_deser::assumed_role_user_inner(&mut tag)
+                        crate::xml_deser::deser_structure_assumed_role_user(&mut tag)
                         ?
                     )
                 ;
@@ -213,7 +213,7 @@ pub fn deser_operation_assume_role(
 }
 
 #[allow(unused_mut)]
-pub fn idp_rejected_claim_exception(
+pub fn deser_structure_idp_rejected_claim_error_xml_err(
     inp: &[u8],
     mut builder: crate::error::idp_rejected_claim_error::Builder,
 ) -> Result<crate::error::idp_rejected_claim_error::Builder, smithy_xml::decode::XmlError> {
@@ -243,7 +243,7 @@ pub fn idp_rejected_claim_exception(
 }
 
 #[allow(unused_mut)]
-pub fn invalid_identity_token_exception(
+pub fn deser_structure_invalid_identity_token_error_xml_err(
     inp: &[u8],
     mut builder: crate::error::invalid_identity_token_error::Builder,
 ) -> Result<crate::error::invalid_identity_token_error::Builder, smithy_xml::decode::XmlError> {
@@ -302,7 +302,7 @@ pub fn deser_operation_assume_role_with_saml(
             s if s.matches("Credentials") /* Credentials com.amazonaws.sts#AssumeRoleWithSAMLOutput$Credentials */ =>  {
                 let var_11 =
                     Some(
-                        crate::xml_deser::credentials_inner(&mut tag)
+                        crate::xml_deser::deser_structure_credentials(&mut tag)
                         ?
                     )
                 ;
@@ -312,7 +312,7 @@ pub fn deser_operation_assume_role_with_saml(
             s if s.matches("AssumedRoleUser") /* AssumedRoleUser com.amazonaws.sts#AssumeRoleWithSAMLOutput$AssumedRoleUser */ =>  {
                 let var_12 =
                     Some(
-                        crate::xml_deser::assumed_role_user_inner(&mut tag)
+                        crate::xml_deser::deser_structure_assumed_role_user(&mut tag)
                         ?
                     )
                 ;
@@ -425,7 +425,7 @@ pub fn deser_operation_assume_role_with_saml(
 }
 
 #[allow(unused_mut)]
-pub fn idp_communication_error_exception(
+pub fn deser_structure_idp_communication_error_error_xml_err(
     inp: &[u8],
     mut builder: crate::error::idp_communication_error_error::Builder,
 ) -> Result<crate::error::idp_communication_error_error::Builder, smithy_xml::decode::XmlError> {
@@ -487,7 +487,7 @@ pub fn deser_operation_assume_role_with_web_identity(
             s if s.matches("Credentials") /* Credentials com.amazonaws.sts#AssumeRoleWithWebIdentityOutput$Credentials */ =>  {
                 let var_21 =
                     Some(
-                        crate::xml_deser::credentials_inner(&mut tag)
+                        crate::xml_deser::deser_structure_credentials(&mut tag)
                         ?
                     )
                 ;
@@ -510,7 +510,7 @@ pub fn deser_operation_assume_role_with_web_identity(
             s if s.matches("AssumedRoleUser") /* AssumedRoleUser com.amazonaws.sts#AssumeRoleWithWebIdentityOutput$AssumedRoleUser */ =>  {
                 let var_23 =
                     Some(
-                        crate::xml_deser::assumed_role_user_inner(&mut tag)
+                        crate::xml_deser::deser_structure_assumed_role_user(&mut tag)
                         ?
                     )
                 ;
@@ -584,7 +584,7 @@ pub fn deser_operation_assume_role_with_web_identity(
 }
 
 #[allow(unused_mut)]
-pub fn invalid_authorization_message_exception(
+pub fn deser_structure_invalid_authorization_message_error_xml_err(
     inp: &[u8],
     mut builder: crate::error::invalid_authorization_message_error::Builder,
 ) -> Result<crate::error::invalid_authorization_message_error::Builder, smithy_xml::decode::XmlError>
@@ -824,7 +824,7 @@ pub fn deser_operation_get_federation_token(
             s if s.matches("Credentials") /* Credentials com.amazonaws.sts#GetFederationTokenOutput$Credentials */ =>  {
                 let var_34 =
                     Some(
-                        crate::xml_deser::credentials_inner(&mut tag)
+                        crate::xml_deser::deser_structure_credentials(&mut tag)
                         ?
                     )
                 ;
@@ -834,7 +834,7 @@ pub fn deser_operation_get_federation_token(
             s if s.matches("FederatedUser") /* FederatedUser com.amazonaws.sts#GetFederationTokenOutput$FederatedUser */ =>  {
                 let var_35 =
                     Some(
-                        crate::xml_deser::federated_user_inner(&mut tag)
+                        crate::xml_deser::deser_structure_federated_user(&mut tag)
                         ?
                     )
                 ;
@@ -898,7 +898,7 @@ pub fn deser_operation_get_session_token(
             s if s.matches("Credentials") /* Credentials com.amazonaws.sts#GetSessionTokenOutput$Credentials */ =>  {
                 let var_37 =
                     Some(
-                        crate::xml_deser::credentials_inner(&mut tag)
+                        crate::xml_deser::deser_structure_credentials(&mut tag)
                         ?
                     )
                 ;
@@ -916,7 +916,7 @@ pub fn deser_operation_get_session_token(
     Ok(builder)
 }
 
-pub fn credentials_inner(
+pub fn deser_structure_credentials(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::Credentials, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -982,7 +982,7 @@ pub fn credentials_inner(
     Ok(builder.build())
 }
 
-pub fn assumed_role_user_inner(
+pub fn deser_structure_assumed_role_user(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::AssumedRoleUser, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -1021,7 +1021,7 @@ pub fn assumed_role_user_inner(
     Ok(builder.build())
 }
 
-pub fn federated_user_inner(
+pub fn deser_structure_federated_user(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::FederatedUser, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]

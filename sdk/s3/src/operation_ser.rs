@@ -6,8 +6,10 @@ pub fn ser_payload_complete_multipart_upload_input(
         Some(t) => t,
         None => return Ok(smithy_http::body::SdkBody::from("")),
     };
-    #[allow(clippy::useless_conversion)]Ok(smithy_http::body::SdkBody::from(
-        crate::xml_ser::serialize_payload_completed_multipart_upload_complete_multipart_upload_input(&payload).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+    #[allow(clippy::useless_conversion)]
+    Ok(smithy_http::body::SdkBody::from(
+        crate::xml_ser::serialize_member_complete_multipart_upload_input_multipart_upload(&payload)
+            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?,
     ))
 }
 
@@ -20,7 +22,7 @@ pub fn ser_payload_create_bucket_input(
     };
     #[allow(clippy::useless_conversion)]
     Ok(smithy_http::body::SdkBody::from(
-        crate::xml_ser::serialize_payload_create_bucket_configuration_create_bucket_input(&payload)
+        crate::xml_ser::serialize_member_create_bucket_input_create_bucket_configuration(&payload)
             .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?,
     ))
 }
@@ -34,7 +36,7 @@ pub fn ser_payload_delete_objects_input(
     };
     #[allow(clippy::useless_conversion)]
     Ok(smithy_http::body::SdkBody::from(
-        crate::xml_ser::serialize_payload_delete_delete_objects_input(&payload)
+        crate::xml_ser::serialize_member_delete_objects_input_delete(&payload)
             .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?,
     ))
 }
@@ -47,7 +49,7 @@ pub fn ser_payload_put_bucket_accelerate_configuration_input(
         None => return Ok(smithy_http::body::SdkBody::from("")),
     };
     #[allow(clippy::useless_conversion)]Ok(smithy_http::body::SdkBody::from(
-        crate::xml_ser::serialize_payload_accelerate_configuration_put_bucket_accelerate_configuration_input(&payload).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+        crate::xml_ser::serialize_member_put_bucket_accelerate_configuration_input_accelerate_configuration(&payload).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
     ))
 }
 
@@ -60,7 +62,7 @@ pub fn ser_payload_put_bucket_acl_input(
     };
     #[allow(clippy::useless_conversion)]
     Ok(smithy_http::body::SdkBody::from(
-        crate::xml_ser::serialize_payload_access_control_policy_put_bucket_acl_input(&payload)
+        crate::xml_ser::serialize_member_put_bucket_acl_input_access_control_policy(&payload)
             .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?,
     ))
 }
@@ -73,7 +75,7 @@ pub fn ser_payload_put_bucket_analytics_configuration_input(
         None => return Ok(smithy_http::body::SdkBody::from("")),
     };
     #[allow(clippy::useless_conversion)]Ok(smithy_http::body::SdkBody::from(
-        crate::xml_ser::serialize_payload_analytics_configuration_put_bucket_analytics_configuration_input(&payload).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+        crate::xml_ser::serialize_member_put_bucket_analytics_configuration_input_analytics_configuration(&payload).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
     ))
 }
 
@@ -86,7 +88,7 @@ pub fn ser_payload_put_bucket_cors_input(
     };
     #[allow(clippy::useless_conversion)]
     Ok(smithy_http::body::SdkBody::from(
-        crate::xml_ser::serialize_payload_cors_configuration_put_bucket_cors_input(&payload)
+        crate::xml_ser::serialize_member_put_bucket_cors_input_cors_configuration(&payload)
             .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?,
     ))
 }
@@ -99,7 +101,7 @@ pub fn ser_payload_put_bucket_encryption_input(
         None => return Ok(smithy_http::body::SdkBody::from("")),
     };
     #[allow(clippy::useless_conversion)]Ok(smithy_http::body::SdkBody::from(
-        crate::xml_ser::serialize_payload_server_side_encryption_configuration_put_bucket_encryption_input(&payload).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+        crate::xml_ser::serialize_member_put_bucket_encryption_input_server_side_encryption_configuration(&payload).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
     ))
 }
 
@@ -111,7 +113,7 @@ pub fn ser_payload_put_bucket_intelligent_tiering_configuration_input(
         None => return Ok(smithy_http::body::SdkBody::from("")),
     };
     #[allow(clippy::useless_conversion)]Ok(smithy_http::body::SdkBody::from(
-        crate::xml_ser::serialize_payload_intelligent_tiering_configuration_put_bucket_intelligent_tiering_configuration_input(&payload).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+        crate::xml_ser::serialize_member_put_bucket_intelligent_tiering_configuration_input_intelligent_tiering_configuration(&payload).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
     ))
 }
 
@@ -123,7 +125,7 @@ pub fn ser_payload_put_bucket_inventory_configuration_input(
         None => return Ok(smithy_http::body::SdkBody::from("")),
     };
     #[allow(clippy::useless_conversion)]Ok(smithy_http::body::SdkBody::from(
-        crate::xml_ser::serialize_payload_inventory_configuration_put_bucket_inventory_configuration_input(&payload).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+        crate::xml_ser::serialize_member_put_bucket_inventory_configuration_input_inventory_configuration(&payload).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
     ))
 }
 
@@ -135,7 +137,7 @@ pub fn ser_payload_put_bucket_lifecycle_configuration_input(
         None => return Ok(smithy_http::body::SdkBody::from("")),
     };
     #[allow(clippy::useless_conversion)]Ok(smithy_http::body::SdkBody::from(
-        crate::xml_ser::serialize_payload_bucket_lifecycle_configuration_put_bucket_lifecycle_configuration_input(&payload).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+        crate::xml_ser::serialize_member_put_bucket_lifecycle_configuration_input_lifecycle_configuration(&payload).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
     ))
 }
 
@@ -148,7 +150,7 @@ pub fn ser_payload_put_bucket_logging_input(
     };
     #[allow(clippy::useless_conversion)]
     Ok(smithy_http::body::SdkBody::from(
-        crate::xml_ser::serialize_payload_bucket_logging_status_put_bucket_logging_input(&payload)
+        crate::xml_ser::serialize_member_put_bucket_logging_input_bucket_logging_status(&payload)
             .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?,
     ))
 }
@@ -161,7 +163,7 @@ pub fn ser_payload_put_bucket_metrics_configuration_input(
         None => return Ok(smithy_http::body::SdkBody::from("")),
     };
     #[allow(clippy::useless_conversion)]Ok(smithy_http::body::SdkBody::from(
-        crate::xml_ser::serialize_payload_metrics_configuration_put_bucket_metrics_configuration_input(&payload).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+        crate::xml_ser::serialize_member_put_bucket_metrics_configuration_input_metrics_configuration(&payload).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
     ))
 }
 
@@ -173,7 +175,7 @@ pub fn ser_payload_put_bucket_notification_configuration_input(
         None => return Ok(smithy_http::body::SdkBody::from("")),
     };
     #[allow(clippy::useless_conversion)]Ok(smithy_http::body::SdkBody::from(
-        crate::xml_ser::serialize_payload_notification_configuration_put_bucket_notification_configuration_input(&payload).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+        crate::xml_ser::serialize_member_put_bucket_notification_configuration_input_notification_configuration(&payload).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
     ))
 }
 
@@ -186,7 +188,7 @@ pub fn ser_payload_put_bucket_ownership_controls_input(
     };
     #[allow(clippy::useless_conversion)]
     Ok(smithy_http::body::SdkBody::from(
-        crate::xml_ser::serialize_payload_ownership_controls_put_bucket_ownership_controls_input(
+        crate::xml_ser::serialize_member_put_bucket_ownership_controls_input_ownership_controls(
             &payload,
         )
         .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?,
@@ -213,7 +215,7 @@ pub fn ser_payload_put_bucket_replication_input(
     };
     #[allow(clippy::useless_conversion)]
     Ok(smithy_http::body::SdkBody::from(
-        crate::xml_ser::serialize_payload_replication_configuration_put_bucket_replication_input(
+        crate::xml_ser::serialize_member_put_bucket_replication_input_replication_configuration(
             &payload,
         )
         .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?,
@@ -228,7 +230,7 @@ pub fn ser_payload_put_bucket_request_payment_input(
         None => return Ok(smithy_http::body::SdkBody::from("")),
     };
     #[allow(clippy::useless_conversion)]Ok(smithy_http::body::SdkBody::from(
-        crate::xml_ser::serialize_payload_request_payment_configuration_put_bucket_request_payment_input(&payload).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+        crate::xml_ser::serialize_member_put_bucket_request_payment_input_request_payment_configuration(&payload).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
     ))
 }
 
@@ -241,7 +243,7 @@ pub fn ser_payload_put_bucket_tagging_input(
     };
     #[allow(clippy::useless_conversion)]
     Ok(smithy_http::body::SdkBody::from(
-        crate::xml_ser::serialize_payload_tagging_put_bucket_tagging_input(&payload)
+        crate::xml_ser::serialize_member_put_bucket_tagging_input_tagging(&payload)
             .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?,
     ))
 }
@@ -255,7 +257,7 @@ pub fn ser_payload_put_bucket_versioning_input(
     };
     #[allow(clippy::useless_conversion)]
     Ok(smithy_http::body::SdkBody::from(
-        crate::xml_ser::serialize_payload_versioning_configuration_put_bucket_versioning_input(
+        crate::xml_ser::serialize_member_put_bucket_versioning_input_versioning_configuration(
             &payload,
         )
         .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?,
@@ -271,7 +273,7 @@ pub fn ser_payload_put_bucket_website_input(
     };
     #[allow(clippy::useless_conversion)]
     Ok(smithy_http::body::SdkBody::from(
-        crate::xml_ser::serialize_payload_website_configuration_put_bucket_website_input(&payload)
+        crate::xml_ser::serialize_member_put_bucket_website_input_website_configuration(&payload)
             .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?,
     ))
 }
@@ -292,7 +294,7 @@ pub fn ser_payload_put_object_acl_input(
     };
     #[allow(clippy::useless_conversion)]
     Ok(smithy_http::body::SdkBody::from(
-        crate::xml_ser::serialize_payload_access_control_policy_put_object_acl_input(&payload)
+        crate::xml_ser::serialize_member_put_object_acl_input_access_control_policy(&payload)
             .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?,
     ))
 }
@@ -306,10 +308,8 @@ pub fn ser_payload_put_object_legal_hold_input(
     };
     #[allow(clippy::useless_conversion)]
     Ok(smithy_http::body::SdkBody::from(
-        crate::xml_ser::serialize_payload_object_lock_legal_hold_put_object_legal_hold_input(
-            &payload,
-        )
-        .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?,
+        crate::xml_ser::serialize_member_put_object_legal_hold_input_legal_hold(&payload)
+            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?,
     ))
 }
 
@@ -321,7 +321,7 @@ pub fn ser_payload_put_object_lock_configuration_input(
         None => return Ok(smithy_http::body::SdkBody::from("")),
     };
     #[allow(clippy::useless_conversion)]Ok(smithy_http::body::SdkBody::from(
-        crate::xml_ser::serialize_payload_object_lock_configuration_put_object_lock_configuration_input(&payload).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+        crate::xml_ser::serialize_member_put_object_lock_configuration_input_object_lock_configuration(&payload).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
     ))
 }
 
@@ -334,10 +334,8 @@ pub fn ser_payload_put_object_retention_input(
     };
     #[allow(clippy::useless_conversion)]
     Ok(smithy_http::body::SdkBody::from(
-        crate::xml_ser::serialize_payload_object_lock_retention_put_object_retention_input(
-            &payload,
-        )
-        .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?,
+        crate::xml_ser::serialize_member_put_object_retention_input_retention(&payload)
+            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?,
     ))
 }
 
@@ -350,7 +348,7 @@ pub fn ser_payload_put_object_tagging_input(
     };
     #[allow(clippy::useless_conversion)]
     Ok(smithy_http::body::SdkBody::from(
-        crate::xml_ser::serialize_payload_tagging_put_object_tagging_input(&payload)
+        crate::xml_ser::serialize_member_put_object_tagging_input_tagging(&payload)
             .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?,
     ))
 }
@@ -363,7 +361,7 @@ pub fn ser_payload_put_public_access_block_input(
         None => return Ok(smithy_http::body::SdkBody::from("")),
     };
     #[allow(clippy::useless_conversion)]Ok(smithy_http::body::SdkBody::from(
-        crate::xml_ser::serialize_payload_public_access_block_configuration_put_public_access_block_input(&payload).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+        crate::xml_ser::serialize_member_put_public_access_block_input_public_access_block_configuration(&payload).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
     ))
 }
 
@@ -376,7 +374,7 @@ pub fn ser_payload_restore_object_input(
     };
     #[allow(clippy::useless_conversion)]
     Ok(smithy_http::body::SdkBody::from(
-        crate::xml_ser::serialize_payload_restore_request_restore_object_input(&payload)
+        crate::xml_ser::serialize_member_restore_object_input_restore_request(&payload)
             .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?,
     ))
 }

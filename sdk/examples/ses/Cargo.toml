@@ -1,0 +1,10 @@
+[package]
+name = "ses-code-examples"
+version = "0.1.0"
+authors = ["Russell Cohen <rcoh@amazon.com>"]
+edition = "2018"
+
+[dependencies]
+tokio = { version = "1", features = ["full"]}
+aws-sdk-sesv2 = { path = "../../sesv2" }
+tracing-subscriber = "0.2.18"

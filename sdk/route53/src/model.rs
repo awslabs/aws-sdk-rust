@@ -224,6 +224,7 @@ pub enum RrType {
     Spf,
     Srv,
     Txt,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for RrType {
@@ -1068,6 +1069,7 @@ pub enum Statistic {
     Minimum,
     SampleCount,
     Sum,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for Statistic {
@@ -1131,6 +1133,7 @@ pub enum ComparisonOperator {
     GreaterThanThreshold,
     LessThanOrEqualToThreshold,
     LessThanThreshold,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for ComparisonOperator {
@@ -1945,6 +1948,7 @@ pub enum InsufficientDataHealthStatus {
     Healthy,
     LastKnownStatus,
     Unhealthy,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for InsufficientDataHealthStatus {
@@ -2124,6 +2128,7 @@ pub enum CloudWatchRegion {
     UsIsobEast1,
     UsWest1,
     UsWest2,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for CloudWatchRegion {
@@ -2235,6 +2240,7 @@ pub enum HealthCheckRegion {
     UsEast1,
     UsWest1,
     UsWest2,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for HealthCheckRegion {
@@ -2307,6 +2313,7 @@ pub enum HealthCheckType {
     HttpsStrMatch,
     HttpStrMatch,
     Tcp,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for HealthCheckType {
@@ -2374,6 +2381,7 @@ pub enum ResettableElementName {
     FullyQualifiedDomainName,
     Regions,
     ResourcePath,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for ResettableElementName {
@@ -2518,6 +2526,7 @@ pub enum VpcRegion {
     UsIsobEast1,
     UsWest1,
     UsWest2,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for VpcRegion {
@@ -2948,6 +2957,7 @@ impl Tag {
 pub enum TagResourceType {
     Healthcheck,
     Hostedzone,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for TagResourceType {
@@ -5000,6 +5010,7 @@ impl ResourceRecord {
 pub enum ResourceRecordSetFailover {
     Primary,
     Secondary,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for ResourceRecordSetFailover {
@@ -5232,6 +5243,7 @@ pub enum ResourceRecordSetRegion {
     UsEast2,
     UsWest1,
     UsWest2,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for ResourceRecordSetRegion {
@@ -5753,6 +5765,7 @@ impl ReusableDelegationSetLimit {
 )]
 pub enum ReusableDelegationSetLimitType {
     MaxZonesByReusableDelegationSet,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for ReusableDelegationSetLimitType {
@@ -5898,6 +5911,7 @@ impl HostedZoneLimit {
 pub enum HostedZoneLimitType {
     MaxRrsetsByZone,
     MaxVpcsAssociatedByZone,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for HostedZoneLimitType {
@@ -6758,6 +6772,7 @@ impl ChangeInfo {
 pub enum ChangeStatus {
     Insync,
     Pending,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for ChangeStatus {
@@ -6938,6 +6953,7 @@ pub enum AccountLimitType {
     MaxReusableDelegationSetsByOwner,
     MaxTrafficPoliciesByOwner,
     MaxTrafficPolicyInstancesByOwner,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for AccountLimitType {
@@ -7185,6 +7201,7 @@ pub enum ChangeAction {
     Create,
     Delete,
     Upsert,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for ChangeAction {

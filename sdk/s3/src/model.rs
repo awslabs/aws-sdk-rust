@@ -18,6 +18,7 @@ pub enum StorageClass {
     ReducedRedundancy,
     Standard,
     StandardIa,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for StorageClass {
@@ -85,6 +86,7 @@ impl<'de> serde::Deserialize<'de> for StorageClass {
 pub enum ServerSideEncryption {
     Aes256,
     AwsKms,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for ServerSideEncryption {
@@ -141,6 +143,7 @@ impl<'de> serde::Deserialize<'de> for ServerSideEncryption {
 )]
 pub enum RequestCharged {
     Requester,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for RequestCharged {
@@ -196,6 +199,7 @@ pub enum ReplicationStatus {
     Failed,
     Pending,
     Replica,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for ReplicationStatus {
@@ -255,6 +259,7 @@ impl<'de> serde::Deserialize<'de> for ReplicationStatus {
 pub enum ObjectLockLegalHoldStatus {
     Off,
     On,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for ObjectLockLegalHoldStatus {
@@ -310,6 +315,7 @@ impl<'de> serde::Deserialize<'de> for ObjectLockLegalHoldStatus {
 pub enum ObjectLockMode {
     Compliance,
     Governance,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for ObjectLockMode {
@@ -432,6 +438,7 @@ impl CopyPartResult {
 )]
 pub enum RequestPayer {
     Requester,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for RequestPayer {
@@ -1083,6 +1090,7 @@ pub enum Permission {
     ReadAcp,
     Write,
     WriteAcp,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for Permission {
@@ -1308,6 +1316,7 @@ pub enum Type {
     AmazonCustomerByEmail,
     CanonicalUser,
     Group,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for Type {
@@ -1370,6 +1379,7 @@ pub enum ObjectCannedAcl {
     Private,
     PublicRead,
     PublicReadWrite,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for ObjectCannedAcl {
@@ -1883,6 +1893,7 @@ impl CSVOutput {
 pub enum QuoteFields {
     Always,
     Asneeded,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for QuoteFields {
@@ -1937,6 +1948,7 @@ impl<'de> serde::Deserialize<'de> for QuoteFields {
 )]
 pub enum ExpressionType {
     Sql,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for ExpressionType {
@@ -2161,6 +2173,7 @@ impl JSONInput {
 pub enum JsonType {
     Document,
     Lines,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for JsonType {
@@ -2217,6 +2230,7 @@ pub enum CompressionType {
     Bzip2,
     Gzip,
     None,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for CompressionType {
@@ -2489,6 +2503,7 @@ pub enum FileHeaderInfo {
     Ignore,
     None,
     Use,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for FileHeaderInfo {
@@ -2547,6 +2562,7 @@ pub enum Tier {
     Bulk,
     Expedited,
     Standard,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for Tier {
@@ -2603,6 +2619,7 @@ impl<'de> serde::Deserialize<'de> for Tier {
 )]
 pub enum RestoreRequestType {
     Select,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for RestoreRequestType {
@@ -2915,6 +2932,7 @@ impl ObjectLockRetention {
 pub enum ObjectLockRetentionMode {
     Compliance,
     Governance,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for ObjectLockRetentionMode {
@@ -3197,6 +3215,7 @@ impl DefaultRetention {
 )]
 pub enum ObjectLockEnabled {
     Enabled,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for ObjectLockEnabled {
@@ -3762,6 +3781,7 @@ impl Redirect {
 pub enum Protocol {
     Http,
     Https,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for Protocol {
@@ -4176,6 +4196,7 @@ impl VersioningConfiguration {
 pub enum BucketVersioningStatus {
     Enabled,
     Suspended,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for BucketVersioningStatus {
@@ -4231,6 +4252,7 @@ impl<'de> serde::Deserialize<'de> for BucketVersioningStatus {
 pub enum MfaDelete {
     Disabled,
     Enabled,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for MfaDelete {
@@ -4331,6 +4353,7 @@ impl RequestPaymentConfiguration {
 pub enum Payer {
     BucketOwner,
     Requester,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for Payer {
@@ -4778,6 +4801,7 @@ impl DeleteMarkerReplication {
 pub enum DeleteMarkerReplicationStatus {
     Disabled,
     Enabled,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for DeleteMarkerReplicationStatus {
@@ -5135,6 +5159,7 @@ impl ReplicationTimeValue {
 pub enum MetricsStatus {
     Disabled,
     Enabled,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for MetricsStatus {
@@ -5261,6 +5286,7 @@ impl ReplicationTime {
 pub enum ReplicationTimeStatus {
     Disabled,
     Enabled,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for ReplicationTimeStatus {
@@ -5421,6 +5447,7 @@ impl AccessControlTranslation {
 )]
 pub enum OwnerOverride {
     Destination,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for OwnerOverride {
@@ -5526,6 +5553,7 @@ impl ExistingObjectReplication {
 pub enum ExistingObjectReplicationStatus {
     Disabled,
     Enabled,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for ExistingObjectReplicationStatus {
@@ -5734,6 +5762,7 @@ impl ReplicaModifications {
 pub enum ReplicaModificationsStatus {
     Disabled,
     Enabled,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for ReplicaModificationsStatus {
@@ -5842,6 +5871,7 @@ impl SseKmsEncryptedObjects {
 pub enum SseKmsEncryptedObjectsStatus {
     Disabled,
     Enabled,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for SseKmsEncryptedObjectsStatus {
@@ -5897,6 +5927,7 @@ impl<'de> serde::Deserialize<'de> for SseKmsEncryptedObjectsStatus {
 pub enum ReplicationRuleStatus {
     Disabled,
     Enabled,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for ReplicationRuleStatus {
@@ -6208,6 +6239,7 @@ impl OwnershipControlsRule {
 pub enum ObjectOwnership {
     BucketOwnerPreferred,
     ObjectWriter,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for ObjectOwnership {
@@ -6646,6 +6678,7 @@ impl FilterRule {
 pub enum FilterRuleName {
     Prefix,
     Suffix,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for FilterRuleName {
@@ -7363,6 +7396,7 @@ pub enum BucketLogsPermission {
     FullControl,
     Read,
     Write,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for BucketLogsPermission {
@@ -7901,6 +7935,7 @@ pub enum TransitionStorageClass {
     IntelligentTiering,
     OnezoneIa,
     StandardIa,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for TransitionStorageClass {
@@ -8046,6 +8081,7 @@ impl Transition {
 pub enum ExpirationStatus {
     Disabled,
     Enabled,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for ExpirationStatus {
@@ -8527,6 +8563,7 @@ impl InventorySchedule {
 pub enum InventoryFrequency {
     Daily,
     Weekly,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for InventoryFrequency {
@@ -8580,6 +8617,7 @@ impl<'de> serde::Deserialize<'de> for InventoryFrequency {
     std::hash::Hash,
 )]
 pub enum InventoryOptionalField {
+    BucketKeyStatus,
     ETag,
     EncryptionStatus,
     IntelligentTieringAccessTier,
@@ -8591,11 +8629,13 @@ pub enum InventoryOptionalField {
     ReplicationStatus,
     Size,
     StorageClass,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for InventoryOptionalField {
     fn from(s: &str) -> Self {
         match s {
+            "BucketKeyStatus" => InventoryOptionalField::BucketKeyStatus,
             "ETag" => InventoryOptionalField::ETag,
             "EncryptionStatus" => InventoryOptionalField::EncryptionStatus,
             "IntelligentTieringAccessTier" => InventoryOptionalField::IntelligentTieringAccessTier,
@@ -8621,6 +8661,7 @@ impl std::str::FromStr for InventoryOptionalField {
 impl InventoryOptionalField {
     pub fn as_str(&self) -> &str {
         match self {
+            InventoryOptionalField::BucketKeyStatus => "BucketKeyStatus",
             InventoryOptionalField::ETag => "ETag",
             InventoryOptionalField::EncryptionStatus => "EncryptionStatus",
             InventoryOptionalField::IntelligentTieringAccessTier => "IntelligentTieringAccessTier",
@@ -8664,6 +8705,7 @@ impl<'de> serde::Deserialize<'de> for InventoryOptionalField {
 pub enum InventoryIncludedObjectVersions {
     All,
     Current,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for InventoryIncludedObjectVersions {
@@ -9089,6 +9131,7 @@ pub enum InventoryFormat {
     Csv,
     Orc,
     Parquet,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for InventoryFormat {
@@ -9325,6 +9368,7 @@ impl Tiering {
 pub enum IntelligentTieringAccessTier {
     ArchiveAccess,
     DeepArchiveAccess,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for IntelligentTieringAccessTier {
@@ -9380,6 +9424,7 @@ impl<'de> serde::Deserialize<'de> for IntelligentTieringAccessTier {
 pub enum IntelligentTieringStatus {
     Disabled,
     Enabled,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for IntelligentTieringStatus {
@@ -10413,6 +10458,7 @@ impl AnalyticsS3BucketDestination {
 )]
 pub enum AnalyticsS3ExportFileFormat {
     Csv,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for AnalyticsS3ExportFileFormat {
@@ -10465,6 +10511,7 @@ impl<'de> serde::Deserialize<'de> for AnalyticsS3ExportFileFormat {
 )]
 pub enum StorageClassAnalysisSchemaVersion {
     V1,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for StorageClassAnalysisSchemaVersion {
@@ -10633,6 +10680,7 @@ pub enum BucketCannedAcl {
     Private,
     PublicRead,
     PublicReadWrite,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for BucketCannedAcl {
@@ -10744,6 +10792,7 @@ impl AccelerateConfiguration {
 pub enum BucketAccelerateStatus {
     Enabled,
     Suspended,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for BucketAccelerateStatus {
@@ -10960,6 +11009,7 @@ impl Part {
 )]
 pub enum EncodingType {
     Url,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for EncodingType {
@@ -11323,6 +11373,7 @@ impl ObjectVersion {
 )]
 pub enum ObjectVersionStorageClass {
     Standard,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for ObjectVersionStorageClass {
@@ -11545,6 +11596,7 @@ pub enum ObjectStorageClass {
     ReducedRedundancy,
     Standard,
     StandardIa,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for ObjectStorageClass {
@@ -11797,6 +11849,7 @@ impl Bucket {
 pub enum ArchiveStatus {
     ArchiveAccess,
     DeepArchiveAccess,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for ArchiveStatus {
@@ -11852,6 +11905,7 @@ impl<'de> serde::Deserialize<'de> for ArchiveStatus {
 pub enum MfaDeleteStatus {
     Disabled,
     Enabled,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for MfaDeleteStatus {
@@ -11979,6 +12033,7 @@ pub enum BucketLocationConstraint {
     UsGovWest1,
     UsWest1,
     UsWest2,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for BucketLocationConstraint {
@@ -16259,6 +16314,7 @@ impl CopyObjectResult {
 pub enum TaggingDirective {
     Copy,
     Replace,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for TaggingDirective {
@@ -16314,6 +16370,7 @@ impl<'de> serde::Deserialize<'de> for TaggingDirective {
 pub enum MetadataDirective {
     Copy,
     Replace,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for MetadataDirective {

@@ -1,0 +1,37 @@
+[package]
+name = "smithy-client"
+version = "0.1.0"
+authors = ["Russell Cohen <rcoh@amazon.com>"]
+edition = "2018"
+license = "Apache-2.0"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[features]
+test-util = ["protocol-test-helpers"]
+default = ["test-util", "hyper", "rustls"]
+native-tls = ["hyper", "hyper-tls"]
+rustls = ["hyper", "hyper-rustls"]
+
+[dependencies]
+hyper = { version = "0.14.2", features = ["client", "http2"], optional = true }
+tower = { version = "0.4.6", features = ["util", "retry"] }
+hyper-tls = { version ="0.5.0", optional = true }
+hyper-rustls = { version = "0.22.1", optional = true, features = ["rustls-native-certs"] }
+http = "0.2.3"
+bytes = "1"
+http-body = "0.4.0"
+smithy-http = { path = "../smithy-http" }
+smithy-types = { path = "../smithy-types" }
+smithy-http-tower = { path = "../smithy-http-tower" }
+fastrand = "1.4.0"
+tokio = { version = "1", features = ["time"] }
+
+pin-project = "1"
+tracing = "0.1.25"
+
+protocol-test-helpers = { path = "../protocol-test-helpers", optional = true }
+
+[dev-dependencies]
+tokio = { version = "1", features = ["full", "test-util"] }
+tower-test = "0.4.0"

@@ -5,7 +5,6 @@
 
 #![cfg_attr(docsrs, feature(doc_cfg))]
 
-pub mod base64;
 pub mod body;
 pub mod byte_stream;
 pub mod endpoint;

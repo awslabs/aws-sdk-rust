@@ -398,7 +398,7 @@ pub struct CreateDocumentInputBody<'a> {
     /// <p>Specify a target type to define the kinds of resources the document can run on. For example,
     /// to run a document on EC2 instances, specify the following value: /AWS::EC2::Instance. If you
     /// specify a value of '/' the document can run on all types of resources. If you don't specify a
-    /// value, the document can't run on any resources. For a list of valid resource types, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS resource and property types
+    /// value, the document can't run on any resources. For a list of valid resource types, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS resource and property types
     /// reference</a> in the <i>AWS CloudFormation User Guide</i>. </p>
     pub target_type: &'a std::option::Option<std::string::String>,
     /// <p>Optional metadata that you assign to a resource. Tags enable you to categorize a resource in
@@ -2459,12 +2459,39 @@ impl<'a> std::fmt::Debug for GetPatchBaselineForPatchGroupInputBody<'a> {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetServiceSettingInputBody<'a> {
-    /// <p>The ID of the service setting to get. The setting ID can be
-    /// <code>/ssm/automation/customer-script-log-destination</code>,
-    /// <code>/ssm/automation/customer-script-log-group-name</code>,
-    /// <code>/ssm/parameter-store/default-parameter-tier</code>,
-    /// <code>/ssm/parameter-store/high-throughput-enabled</code>, or
-    /// <code>/ssm/managed-instance/activation-tier</code>.</p>
+    /// <p>The ID of the service setting to get. The setting ID can be one of the following.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>/ssm/automation/customer-script-log-destination</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>/ssm/automation/customer-script-log-group-name</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>/ssm/documents/console/public-sharing-permission</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>/ssm/parameter-store/default-parameter-tier</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>/ssm/parameter-store/high-throughput-enabled</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>/ssm/managed-instance/activation-tier</code>
+    /// </p>
+    /// </li>
+    /// </ul>
     pub setting_id: &'a std::option::Option<std::string::String>,
 }
 impl<'a> std::fmt::Debug for GetServiceSettingInputBody<'a> {
@@ -3224,7 +3251,7 @@ pub struct PutParameterInputBody<'a> {
     /// <p>When you create a <code>String</code> parameter and specify <code>aws:ec2:image</code>,
     /// Systems Manager validates the parameter value is in the required format, such as
     /// <code>ami-12345abcdeEXAMPLE</code>, and that the specified AMI is available in your AWS account.
-    /// For more information, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-ec2-aliases.html">Native
+    /// For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-ec2-aliases.html">Native
     /// parameter support for Amazon Machine Image IDs</a> in the
     /// <i>AWS Systems Manager User Guide</i>.</p>
     pub data_type: &'a std::option::Option<std::string::String>,
@@ -3528,13 +3555,39 @@ impl<'a> std::fmt::Debug for RemoveTagsFromResourceInputBody<'a> {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResetServiceSettingInputBody<'a> {
-    /// <p>The Amazon Resource Name (ARN) of the service setting to reset. The setting ID can be
-    /// <code>/ssm/automation/customer-script-log-destination</code>,
-    /// <code>/ssm/automation/customer-script-log-group-name</code>,
-    /// <code>/ssm/parameter-store/default-parameter-tier</code>,
-    /// <code>/ssm/parameter-store/high-throughput-enabled</code>, or
-    /// <code>/ssm/managed-instance/activation-tier</code>. For example,
-    /// <code>arn:aws:ssm:us-east-1:111122223333:servicesetting/ssm/parameter-store/high-throughput-enabled</code>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the service setting to reset. The setting ID can be one of the following.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>/ssm/automation/customer-script-log-destination</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>/ssm/automation/customer-script-log-group-name</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>/ssm/documents/console/public-sharing-permission</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>/ssm/parameter-store/default-parameter-tier</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>/ssm/parameter-store/high-throughput-enabled</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>/ssm/managed-instance/activation-tier</code>
+    /// </p>
+    /// </li>
+    /// </ul>
     pub setting_id: &'a std::option::Option<std::string::String>,
 }
 impl<'a> std::fmt::Debug for ResetServiceSettingInputBody<'a> {
@@ -4680,6 +4733,11 @@ pub struct UpdateServiceSettingInputBody<'a> {
     /// </li>
     /// <li>
     /// <p>
+    /// <code>/ssm/documents/console/public-sharing-permission</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
     /// <code>/ssm/parameter-store/default-parameter-tier</code>
     /// </p>
     /// </li>
@@ -4716,6 +4774,8 @@ pub struct UpdateServiceSettingInputBody<'a> {
     /// value can be CloudWatch.</p>
     /// <p>For the <code>/ssm/automation/customer-script-log-group-name</code> setting ID, the setting
     /// value can be the name of a CloudWatch Logs log group.</p>
+    /// <p>For the <code>/ssm/documents/console/public-sharing-permission</code> setting ID, the setting
+    /// value can be Enable or Disable.</p>
     pub setting_value: &'a std::option::Option<std::string::String>,
 }
 impl<'a> std::fmt::Debug for UpdateServiceSettingInputBody<'a> {

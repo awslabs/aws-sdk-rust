@@ -9,11 +9,68 @@
     std::fmt::Debug,
     std::hash::Hash,
 )]
+pub enum PermissionsMode {
+    AllowAll,
+    Standard,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for PermissionsMode {
+    fn from(s: &str) -> Self {
+        match s {
+            "ALLOW_ALL" => PermissionsMode::AllowAll,
+            "STANDARD" => PermissionsMode::Standard,
+            other => PermissionsMode::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for PermissionsMode {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> Result<Self, Self::Err> {
+        Ok(PermissionsMode::from(s))
+    }
+}
+impl PermissionsMode {
+    pub fn as_str(&self) -> &str {
+        match self {
+            PermissionsMode::AllowAll => "ALLOW_ALL",
+            PermissionsMode::Standard => "STANDARD",
+            PermissionsMode::Unknown(s) => s.as_ref(),
+        }
+    }
+}
+impl AsRef<str> for PermissionsMode {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+impl<'de> serde::Deserialize<'de> for PermissionsMode {
+    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+    where
+        D: serde::Deserializer<'de>,
+    {
+        let data = <&str>::deserialize(deserializer)?;
+        Ok(Self::from(data))
+    }
+}
+
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum LedgerState {
     Active,
     Creating,
     Deleted,
     Deleting,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for LedgerState {
@@ -60,18 +117,22 @@ impl<'de> serde::Deserialize<'de> for LedgerState {
     }
 }
 
-/// <p>The configuration settings of the Amazon Kinesis Data Streams destination for your Amazon QLDB journal
+/// <p>The configuration settings of the Amazon Kinesis Data Streams destination for an Amazon QLDB journal
 /// stream.</p>
 #[non_exhaustive]
 #[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
 pub struct KinesisConfiguration {
-    /// <p>The Amazon Resource Name (ARN) of the Kinesis data stream resource.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Kinesis Data Streams resource.</p>
     #[serde(rename = "StreamArn")]
     #[serde(default)]
     pub stream_arn: std::option::Option<std::string::String>,
-    /// <p>Enables QLDB to publish multiple data records in a single Kinesis Data Streams record. To learn more,
-    /// see <a href="https://docs.aws.amazon.com/streams/latest/dev/kinesis-kpl-concepts.html">KPL Key
-    /// Concepts</a> in the <i>Amazon Kinesis Data Streams Developer Guide</i>.</p>
+    /// <p>Enables QLDB to publish multiple data records in a single Kinesis Data Streams record, increasing the
+    /// number of records sent per API call.</p>
+    /// <p>
+    /// <i>This option is enabled by default.</i> Record aggregation has important
+    /// implications for processing records and requires de-aggregation in your stream consumer. To
+    /// learn more, see <a href="https://docs.aws.amazon.com/streams/latest/dev/kinesis-kpl-concepts.html">KPL Key Concepts</a> and <a href="https://docs.aws.amazon.com/streams/latest/dev/kinesis-kpl-consumer-deaggregation.html">Consumer De-aggregation</a> in the <i>Amazon Kinesis Data Streams Developer
+    /// Guide</i>.</p>
     #[serde(rename = "AggregationEnabled")]
     #[serde(default)]
     pub aggregation_enabled: std::option::Option<bool>,
@@ -94,7 +155,7 @@ pub mod kinesis_configuration {
         pub(crate) aggregation_enabled: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the Kinesis data stream resource.</p>
+        /// <p>The Amazon Resource Name (ARN) of the Kinesis Data Streams resource.</p>
         pub fn stream_arn(mut self, inp: impl Into<std::string::String>) -> Self {
             self.stream_arn = Some(inp.into());
             self
@@ -103,9 +164,13 @@ pub mod kinesis_configuration {
             self.stream_arn = inp;
             self
         }
-        /// <p>Enables QLDB to publish multiple data records in a single Kinesis Data Streams record. To learn more,
-        /// see <a href="https://docs.aws.amazon.com/streams/latest/dev/kinesis-kpl-concepts.html">KPL Key
-        /// Concepts</a> in the <i>Amazon Kinesis Data Streams Developer Guide</i>.</p>
+        /// <p>Enables QLDB to publish multiple data records in a single Kinesis Data Streams record, increasing the
+        /// number of records sent per API call.</p>
+        /// <p>
+        /// <i>This option is enabled by default.</i> Record aggregation has important
+        /// implications for processing records and requires de-aggregation in your stream consumer. To
+        /// learn more, see <a href="https://docs.aws.amazon.com/streams/latest/dev/kinesis-kpl-concepts.html">KPL Key Concepts</a> and <a href="https://docs.aws.amazon.com/streams/latest/dev/kinesis-kpl-consumer-deaggregation.html">Consumer De-aggregation</a> in the <i>Amazon Kinesis Data Streams Developer
+        /// Guide</i>.</p>
         pub fn aggregation_enabled(mut self, inp: bool) -> Self {
             self.aggregation_enabled = Some(inp);
             self
@@ -219,8 +284,8 @@ impl LedgerSummary {
     }
 }
 
-/// <p>The information about a journal export job, including the ledger name, export ID, when
-/// it was created, current status, and its start and end time export parameters.</p>
+/// <p>Information about a journal export job, including the ledger name, export ID, creation
+/// time, current status, and the parameters of the original export creation request.</p>
 #[non_exhaustive]
 #[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
 pub struct JournalS3ExportDescription {
@@ -228,7 +293,7 @@ pub struct JournalS3ExportDescription {
     #[serde(rename = "LedgerName")]
     #[serde(default)]
     pub ledger_name: std::option::Option<std::string::String>,
-    /// <p>The unique ID of the journal export job.</p>
+    /// <p>The UUID (represented in Base62-encoded text) of the journal export job.</p>
     #[serde(rename = "ExportId")]
     #[serde(default)]
     pub export_id: std::option::Option<std::string::String>,
@@ -320,7 +385,7 @@ pub mod journal_s3_export_description {
             self.ledger_name = inp;
             self
         }
-        /// <p>The unique ID of the journal export job.</p>
+        /// <p>The UUID (represented in Base62-encoded text) of the journal export job.</p>
         pub fn export_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.export_id = Some(inp.into());
             self
@@ -585,7 +650,7 @@ pub struct S3EncryptionConfiguration {
     #[serde(default)]
     pub object_encryption_type: std::option::Option<crate::model::S3ObjectEncryptionType>,
     /// <p>The Amazon Resource Name (ARN) for a symmetric customer master key (CMK) in AWS Key
-    /// Management Service (AWS KMS). Amazon QLDB does not support asymmetric CMKs.</p>
+    /// Management Service (AWS KMS). Amazon S3 does not support asymmetric CMKs.</p>
     /// <p>You must provide a <code>KmsKeyArn</code> if you specify <code>SSE_KMS</code> as the
     /// <code>ObjectEncryptionType</code>.</p>
     /// <p>
@@ -630,7 +695,7 @@ pub mod s3_encryption_configuration {
             self
         }
         /// <p>The Amazon Resource Name (ARN) for a symmetric customer master key (CMK) in AWS Key
-        /// Management Service (AWS KMS). Amazon QLDB does not support asymmetric CMKs.</p>
+        /// Management Service (AWS KMS). Amazon S3 does not support asymmetric CMKs.</p>
         /// <p>You must provide a <code>KmsKeyArn</code> if you specify <code>SSE_KMS</code> as the
         /// <code>ObjectEncryptionType</code>.</p>
         /// <p>
@@ -674,6 +739,7 @@ pub enum S3ObjectEncryptionType {
     NoEncryption,
     SseKms,
     SseS3,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for S3ObjectEncryptionType {
@@ -732,6 +798,7 @@ pub enum ExportStatus {
     Cancelled,
     Completed,
     InProgress,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for ExportStatus {
@@ -776,8 +843,8 @@ impl<'de> serde::Deserialize<'de> for ExportStatus {
     }
 }
 
-/// <p>The information about an Amazon QLDB journal stream, including the Amazon Resource Name
-/// (ARN), stream name, creation time, current status, and the parameters of your original
+/// <p>Information about an Amazon QLDB journal stream, including the Amazon Resource Name
+/// (ARN), stream name, creation time, current status, and the parameters of the original
 /// stream creation request.</p>
 #[non_exhaustive]
 #[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
@@ -815,7 +882,7 @@ pub struct JournalKinesisStreamDescription {
     #[serde(rename = "RoleArn")]
     #[serde(default)]
     pub role_arn: std::option::Option<std::string::String>,
-    /// <p>The unique ID that QLDB assigns to each QLDB journal stream.</p>
+    /// <p>The UUID (represented in Base62-encoded text) of the QLDB journal stream.</p>
     #[serde(rename = "StreamId")]
     #[serde(default)]
     pub stream_id: std::option::Option<std::string::String>,
@@ -827,7 +894,7 @@ pub struct JournalKinesisStreamDescription {
     #[serde(rename = "Status")]
     #[serde(default)]
     pub status: std::option::Option<crate::model::StreamStatus>,
-    /// <p>The configuration settings of the Amazon Kinesis Data Streams destination for your QLDB journal
+    /// <p>The configuration settings of the Amazon Kinesis Data Streams destination for a QLDB journal
     /// stream.</p>
     #[serde(rename = "KinesisConfiguration")]
     #[serde(default)]
@@ -937,7 +1004,7 @@ pub mod journal_kinesis_stream_description {
             self.role_arn = inp;
             self
         }
-        /// <p>The unique ID that QLDB assigns to each QLDB journal stream.</p>
+        /// <p>The UUID (represented in Base62-encoded text) of the QLDB journal stream.</p>
         pub fn stream_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.stream_id = Some(inp.into());
             self
@@ -964,7 +1031,7 @@ pub mod journal_kinesis_stream_description {
             self.status = inp;
             self
         }
-        /// <p>The configuration settings of the Amazon Kinesis Data Streams destination for your QLDB journal
+        /// <p>The configuration settings of the Amazon Kinesis Data Streams destination for a QLDB journal
         /// stream.</p>
         pub fn kinesis_configuration(mut self, inp: crate::model::KinesisConfiguration) -> Self {
             self.kinesis_configuration = Some(inp);
@@ -1038,6 +1105,7 @@ impl JournalKinesisStreamDescription {
 pub enum ErrorCause {
     IamPermissionRevoked,
     KinesisStreamNotFound,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for ErrorCause {
@@ -1096,6 +1164,7 @@ pub enum StreamStatus {
     Completed,
     Failed,
     Impaired,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for StreamStatus {
@@ -1190,57 +1259,5 @@ impl ValueHolder {
     /// Creates a new builder-style object to manufacture [`ValueHolder`](crate::model::ValueHolder)
     pub fn builder() -> crate::model::value_holder::Builder {
         crate::model::value_holder::Builder::default()
-    }
-}
-
-#[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
-pub enum PermissionsMode {
-    AllowAll,
-    Unknown(String),
-}
-impl std::convert::From<&str> for PermissionsMode {
-    fn from(s: &str) -> Self {
-        match s {
-            "ALLOW_ALL" => PermissionsMode::AllowAll,
-            other => PermissionsMode::Unknown(other.to_owned()),
-        }
-    }
-}
-impl std::str::FromStr for PermissionsMode {
-    type Err = std::convert::Infallible;
-
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
-        Ok(PermissionsMode::from(s))
-    }
-}
-impl PermissionsMode {
-    pub fn as_str(&self) -> &str {
-        match self {
-            PermissionsMode::AllowAll => "ALLOW_ALL",
-            PermissionsMode::Unknown(s) => s.as_ref(),
-        }
-    }
-}
-impl AsRef<str> for PermissionsMode {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for PermissionsMode {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }

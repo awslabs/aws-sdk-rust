@@ -3,6 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
+pub mod base64;
 pub mod instant;
 pub mod retry;
 
@@ -16,8 +17,10 @@ pub struct Blob {
 }
 
 impl Blob {
-    pub fn new<T: Into<Vec<u8>>>(inp: T) -> Self {
-        Blob { inner: inp.into() }
+    pub fn new<T: Into<Vec<u8>>>(input: T) -> Self {
+        Blob {
+            inner: input.into(),
+        }
     }
     pub fn into_inner(self) -> Vec<u8> {
         self.inner
@@ -55,6 +58,34 @@ pub enum Number {
     PosInt(u64),
     NegInt(i64),
     Float(f64),
+}
+
+macro_rules! to_num_fn {
+    ($name:ident, $typ:ident) => {
+        /// Converts to a `$typ`. This conversion may be lossy.
+        pub fn $name(&self) -> $typ {
+            match self {
+                Number::PosInt(val) => *val as $typ,
+                Number::NegInt(val) => *val as $typ,
+                Number::Float(val) => *val as $typ,
+            }
+        }
+    };
+}
+
+impl Number {
+    to_num_fn!(to_f32, f32);
+    to_num_fn!(to_f64, f64);
+
+    to_num_fn!(to_i8, i8);
+    to_num_fn!(to_i16, i16);
+    to_num_fn!(to_i32, i32);
+    to_num_fn!(to_i64, i64);
+
+    to_num_fn!(to_u8, u8);
+    to_num_fn!(to_u16, u16);
+    to_num_fn!(to_u32, u32);
+    to_num_fn!(to_u64, u64);
 }
 
 /* ANCHOR_END: document */

@@ -69,6 +69,10 @@ pub mod add_permission_input {
         }
     }
 }
+#[doc(hidden)]
+pub type AddPermissionInputOperationOutputAlias = crate::operation::AddPermission;
+#[doc(hidden)]
+pub type AddPermissionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl AddPermissionInput {
     /// Consumes the builder and constructs an Operation<[`AddPermission`](crate::operation::AddPermission)>
     #[allow(clippy::let_and_return)]
@@ -194,6 +198,11 @@ pub mod check_if_phone_number_is_opted_out_input {
         }
     }
 }
+#[doc(hidden)]
+pub type CheckIfPhoneNumberIsOptedOutInputOperationOutputAlias =
+    crate::operation::CheckIfPhoneNumberIsOptedOut;
+#[doc(hidden)]
+pub type CheckIfPhoneNumberIsOptedOutInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl CheckIfPhoneNumberIsOptedOutInput {
     /// Consumes the builder and constructs an Operation<[`CheckIfPhoneNumberIsOptedOut`](crate::operation::CheckIfPhoneNumberIsOptedOut)>
     #[allow(clippy::let_and_return)]
@@ -346,6 +355,10 @@ pub mod confirm_subscription_input {
         }
     }
 }
+#[doc(hidden)]
+pub type ConfirmSubscriptionInputOperationOutputAlias = crate::operation::ConfirmSubscription;
+#[doc(hidden)]
+pub type ConfirmSubscriptionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl ConfirmSubscriptionInput {
     /// Consumes the builder and constructs an Operation<[`ConfirmSubscription`](crate::operation::ConfirmSubscription)>
     #[allow(clippy::let_and_return)]
@@ -506,6 +519,11 @@ pub mod create_platform_application_input {
         }
     }
 }
+#[doc(hidden)]
+pub type CreatePlatformApplicationInputOperationOutputAlias =
+    crate::operation::CreatePlatformApplication;
+#[doc(hidden)]
+pub type CreatePlatformApplicationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl CreatePlatformApplicationInput {
     /// Consumes the builder and constructs an Operation<[`CreatePlatformApplication`](crate::operation::CreatePlatformApplication)>
     #[allow(clippy::let_and_return)]
@@ -686,6 +704,10 @@ pub mod create_platform_endpoint_input {
         }
     }
 }
+#[doc(hidden)]
+pub type CreatePlatformEndpointInputOperationOutputAlias = crate::operation::CreatePlatformEndpoint;
+#[doc(hidden)]
+pub type CreatePlatformEndpointInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl CreatePlatformEndpointInput {
     /// Consumes the builder and constructs an Operation<[`CreatePlatformEndpoint`](crate::operation::CreatePlatformEndpoint)>
     #[allow(clippy::let_and_return)]
@@ -780,6 +802,153 @@ impl CreatePlatformEndpointInput {
     }
 }
 
+/// See [`CreateSMSSandboxPhoneNumberInput`](crate::input::CreateSMSSandboxPhoneNumberInput)
+pub mod create_sms_sandbox_phone_number_input {
+    /// A builder for [`CreateSMSSandboxPhoneNumberInput`](crate::input::CreateSMSSandboxPhoneNumberInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) phone_number: std::option::Option<std::string::String>,
+        pub(crate) language_code: std::option::Option<crate::model::LanguageCodeString>,
+    }
+    impl Builder {
+        /// <p>The destination phone number to verify. On verification, Amazon SNS adds this phone number
+        /// to the list of verified phone numbers that you can send SMS messages to.</p>
+        pub fn phone_number(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.phone_number = Some(inp.into());
+            self
+        }
+        pub fn set_phone_number(mut self, inp: std::option::Option<std::string::String>) -> Self {
+            self.phone_number = inp;
+            self
+        }
+        /// <p>The language to use for sending the OTP. The default value is
+        /// <code>en-US</code>.</p>
+        pub fn language_code(mut self, inp: crate::model::LanguageCodeString) -> Self {
+            self.language_code = Some(inp);
+            self
+        }
+        pub fn set_language_code(
+            mut self,
+            inp: std::option::Option<crate::model::LanguageCodeString>,
+        ) -> Self {
+            self.language_code = inp;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateSMSSandboxPhoneNumberInput`](crate::input::CreateSMSSandboxPhoneNumberInput)
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::CreateSMSSandboxPhoneNumberInput,
+            smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::CreateSMSSandboxPhoneNumberInput {
+                phone_number: self.phone_number,
+                language_code: self.language_code,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type CreateSMSSandboxPhoneNumberInputOperationOutputAlias =
+    crate::operation::CreateSMSSandboxPhoneNumber;
+#[doc(hidden)]
+pub type CreateSMSSandboxPhoneNumberInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl CreateSMSSandboxPhoneNumberInput {
+    /// Consumes the builder and constructs an Operation<[`CreateSMSSandboxPhoneNumber`](crate::operation::CreateSMSSandboxPhoneNumber)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::CreateSMSSandboxPhoneNumber,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = self.request_builder_base()?;
+            let body =
+                crate::operation_ser::serialize_operation_create_sms_sandbox_phone_number(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
+            let request = Self::assemble(request, body);
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+            request.config_mut().insert(signing_config);
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::CreateSMSSandboxPhoneNumber::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "CreateSMSSandboxPhoneNumber",
+                "sns",
+            ));
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
+    fn uri_base(&self, output: &mut String) {
+        write!(output, "/").expect("formatting should succeed")
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn update_http_builder(
+        &self,
+        builder: http::request::Builder,
+    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let mut uri = String::new();
+        self.uri_base(&mut uri);
+        Ok(builder.method("POST").uri(uri))
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
+        &self,
+    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let builder = http::request::Builder::new();
+        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
+        self.update_http_builder(builder)
+    }
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`CreateSMSSandboxPhoneNumberInput`](crate::input::CreateSMSSandboxPhoneNumberInput)
+    pub fn builder() -> crate::input::create_sms_sandbox_phone_number_input::Builder {
+        crate::input::create_sms_sandbox_phone_number_input::Builder::default()
+    }
+}
+
 /// See [`CreateTopicInput`](crate::input::CreateTopicInput)
 pub mod create_topic_input {
     /// A builder for [`CreateTopicInput`](crate::input::CreateTopicInput)
@@ -797,7 +966,8 @@ pub mod create_topic_input {
         /// <p>Constraints: Topic names must be made up of only uppercase and lowercase ASCII
         /// letters, numbers, underscores, and hyphens, and must be between 1 and 256 characters
         /// long.</p>
-        /// <p>For a FIFO (first-in-first-out) topic, the name must end with the <code>.fifo</code> suffix. </p>
+        /// <p>For a FIFO (first-in-first-out) topic, the name must end with the <code>.fifo</code>
+        /// suffix. </p>
         pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
             self.name = Some(inp.into());
             self
@@ -850,6 +1020,10 @@ pub mod create_topic_input {
         }
     }
 }
+#[doc(hidden)]
+pub type CreateTopicInputOperationOutputAlias = crate::operation::CreateTopic;
+#[doc(hidden)]
+pub type CreateTopicInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl CreateTopicInput {
     /// Consumes the builder and constructs an Operation<[`CreateTopic`](crate::operation::CreateTopic)>
     #[allow(clippy::let_and_return)]
@@ -969,6 +1143,10 @@ pub mod delete_endpoint_input {
         }
     }
 }
+#[doc(hidden)]
+pub type DeleteEndpointInputOperationOutputAlias = crate::operation::DeleteEndpoint;
+#[doc(hidden)]
+pub type DeleteEndpointInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl DeleteEndpointInput {
     /// Consumes the builder and constructs an Operation<[`DeleteEndpoint`](crate::operation::DeleteEndpoint)>
     #[allow(clippy::let_and_return)]
@@ -1094,6 +1272,11 @@ pub mod delete_platform_application_input {
         }
     }
 }
+#[doc(hidden)]
+pub type DeletePlatformApplicationInputOperationOutputAlias =
+    crate::operation::DeletePlatformApplication;
+#[doc(hidden)]
+pub type DeletePlatformApplicationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl DeletePlatformApplicationInput {
     /// Consumes the builder and constructs an Operation<[`DeletePlatformApplication`](crate::operation::DeletePlatformApplication)>
     #[allow(clippy::let_and_return)]
@@ -1188,6 +1371,137 @@ impl DeletePlatformApplicationInput {
     }
 }
 
+/// See [`DeleteSMSSandboxPhoneNumberInput`](crate::input::DeleteSMSSandboxPhoneNumberInput)
+pub mod delete_sms_sandbox_phone_number_input {
+    /// A builder for [`DeleteSMSSandboxPhoneNumberInput`](crate::input::DeleteSMSSandboxPhoneNumberInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) phone_number: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The destination phone number to delete.</p>
+        pub fn phone_number(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.phone_number = Some(inp.into());
+            self
+        }
+        pub fn set_phone_number(mut self, inp: std::option::Option<std::string::String>) -> Self {
+            self.phone_number = inp;
+            self
+        }
+        /// Consumes the builder and constructs a [`DeleteSMSSandboxPhoneNumberInput`](crate::input::DeleteSMSSandboxPhoneNumberInput)
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::DeleteSMSSandboxPhoneNumberInput,
+            smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::DeleteSMSSandboxPhoneNumberInput {
+                phone_number: self.phone_number,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type DeleteSMSSandboxPhoneNumberInputOperationOutputAlias =
+    crate::operation::DeleteSMSSandboxPhoneNumber;
+#[doc(hidden)]
+pub type DeleteSMSSandboxPhoneNumberInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl DeleteSMSSandboxPhoneNumberInput {
+    /// Consumes the builder and constructs an Operation<[`DeleteSMSSandboxPhoneNumber`](crate::operation::DeleteSMSSandboxPhoneNumber)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::DeleteSMSSandboxPhoneNumber,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = self.request_builder_base()?;
+            let body =
+                crate::operation_ser::serialize_operation_delete_sms_sandbox_phone_number(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
+            let request = Self::assemble(request, body);
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+            request.config_mut().insert(signing_config);
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::DeleteSMSSandboxPhoneNumber::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "DeleteSMSSandboxPhoneNumber",
+                "sns",
+            ));
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
+    fn uri_base(&self, output: &mut String) {
+        write!(output, "/").expect("formatting should succeed")
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn update_http_builder(
+        &self,
+        builder: http::request::Builder,
+    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let mut uri = String::new();
+        self.uri_base(&mut uri);
+        Ok(builder.method("POST").uri(uri))
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
+        &self,
+    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let builder = http::request::Builder::new();
+        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
+        self.update_http_builder(builder)
+    }
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`DeleteSMSSandboxPhoneNumberInput`](crate::input::DeleteSMSSandboxPhoneNumberInput)
+    pub fn builder() -> crate::input::delete_sms_sandbox_phone_number_input::Builder {
+        crate::input::delete_sms_sandbox_phone_number_input::Builder::default()
+    }
+}
+
 /// See [`DeleteTopicInput`](crate::input::DeleteTopicInput)
 pub mod delete_topic_input {
     /// A builder for [`DeleteTopicInput`](crate::input::DeleteTopicInput)
@@ -1216,6 +1530,10 @@ pub mod delete_topic_input {
         }
     }
 }
+#[doc(hidden)]
+pub type DeleteTopicInputOperationOutputAlias = crate::operation::DeleteTopic;
+#[doc(hidden)]
+pub type DeleteTopicInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl DeleteTopicInput {
     /// Consumes the builder and constructs an Operation<[`DeleteTopic`](crate::operation::DeleteTopic)>
     #[allow(clippy::let_and_return)]
@@ -1336,6 +1654,10 @@ pub mod get_endpoint_attributes_input {
         }
     }
 }
+#[doc(hidden)]
+pub type GetEndpointAttributesInputOperationOutputAlias = crate::operation::GetEndpointAttributes;
+#[doc(hidden)]
+pub type GetEndpointAttributesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl GetEndpointAttributesInput {
     /// Consumes the builder and constructs an Operation<[`GetEndpointAttributes`](crate::operation::GetEndpointAttributes)>
     #[allow(clippy::let_and_return)]
@@ -1464,6 +1786,11 @@ pub mod get_platform_application_attributes_input {
         }
     }
 }
+#[doc(hidden)]
+pub type GetPlatformApplicationAttributesInputOperationOutputAlias =
+    crate::operation::GetPlatformApplicationAttributes;
+#[doc(hidden)]
+pub type GetPlatformApplicationAttributesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl GetPlatformApplicationAttributesInput {
     /// Consumes the builder and constructs an Operation<[`GetPlatformApplicationAttributes`](crate::operation::GetPlatformApplicationAttributes)>
     #[allow(clippy::let_and_return)]
@@ -1594,6 +1921,10 @@ pub mod get_sms_attributes_input {
         }
     }
 }
+#[doc(hidden)]
+pub type GetSMSAttributesInputOperationOutputAlias = crate::operation::GetSMSAttributes;
+#[doc(hidden)]
+pub type GetSMSAttributesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl GetSMSAttributesInput {
     /// Consumes the builder and constructs an Operation<[`GetSMSAttributes`](crate::operation::GetSMSAttributes)>
     #[allow(clippy::let_and_return)]
@@ -1688,6 +2019,122 @@ impl GetSMSAttributesInput {
     }
 }
 
+/// See [`GetSMSSandboxAccountStatusInput`](crate::input::GetSMSSandboxAccountStatusInput)
+pub mod get_sms_sandbox_account_status_input {
+    /// A builder for [`GetSMSSandboxAccountStatusInput`](crate::input::GetSMSSandboxAccountStatusInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`GetSMSSandboxAccountStatusInput`](crate::input::GetSMSSandboxAccountStatusInput)
+        pub fn build(
+            self,
+        ) -> Result<crate::input::GetSMSSandboxAccountStatusInput, smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::GetSMSSandboxAccountStatusInput {})
+        }
+    }
+}
+#[doc(hidden)]
+pub type GetSMSSandboxAccountStatusInputOperationOutputAlias =
+    crate::operation::GetSMSSandboxAccountStatus;
+#[doc(hidden)]
+pub type GetSMSSandboxAccountStatusInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl GetSMSSandboxAccountStatusInput {
+    /// Consumes the builder and constructs an Operation<[`GetSMSSandboxAccountStatus`](crate::operation::GetSMSSandboxAccountStatus)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::GetSMSSandboxAccountStatus,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = self.request_builder_base()?;
+            let body =
+                crate::operation_ser::serialize_operation_get_sms_sandbox_account_status(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
+            let request = Self::assemble(request, body);
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+            request.config_mut().insert(signing_config);
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::GetSMSSandboxAccountStatus::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "GetSMSSandboxAccountStatus",
+                "sns",
+            ));
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
+    fn uri_base(&self, output: &mut String) {
+        write!(output, "/").expect("formatting should succeed")
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn update_http_builder(
+        &self,
+        builder: http::request::Builder,
+    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let mut uri = String::new();
+        self.uri_base(&mut uri);
+        Ok(builder.method("POST").uri(uri))
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
+        &self,
+    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let builder = http::request::Builder::new();
+        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
+        self.update_http_builder(builder)
+    }
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`GetSMSSandboxAccountStatusInput`](crate::input::GetSMSSandboxAccountStatusInput)
+    pub fn builder() -> crate::input::get_sms_sandbox_account_status_input::Builder {
+        crate::input::get_sms_sandbox_account_status_input::Builder::default()
+    }
+}
+
 /// See [`GetSubscriptionAttributesInput`](crate::input::GetSubscriptionAttributesInput)
 pub mod get_subscription_attributes_input {
     /// A builder for [`GetSubscriptionAttributesInput`](crate::input::GetSubscriptionAttributesInput)
@@ -1720,6 +2167,11 @@ pub mod get_subscription_attributes_input {
         }
     }
 }
+#[doc(hidden)]
+pub type GetSubscriptionAttributesInputOperationOutputAlias =
+    crate::operation::GetSubscriptionAttributes;
+#[doc(hidden)]
+pub type GetSubscriptionAttributesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl GetSubscriptionAttributesInput {
     /// Consumes the builder and constructs an Operation<[`GetSubscriptionAttributes`](crate::operation::GetSubscriptionAttributes)>
     #[allow(clippy::let_and_return)]
@@ -1843,6 +2295,10 @@ pub mod get_topic_attributes_input {
         }
     }
 }
+#[doc(hidden)]
+pub type GetTopicAttributesInputOperationOutputAlias = crate::operation::GetTopicAttributes;
+#[doc(hidden)]
+pub type GetTopicAttributesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl GetTopicAttributesInput {
     /// Consumes the builder and constructs an Operation<[`GetTopicAttributes`](crate::operation::GetTopicAttributes)>
     #[allow(clippy::let_and_return)]
@@ -1983,6 +2439,11 @@ pub mod list_endpoints_by_platform_application_input {
         }
     }
 }
+#[doc(hidden)]
+pub type ListEndpointsByPlatformApplicationInputOperationOutputAlias =
+    crate::operation::ListEndpointsByPlatformApplication;
+#[doc(hidden)]
+pub type ListEndpointsByPlatformApplicationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl ListEndpointsByPlatformApplicationInput {
     /// Consumes the builder and constructs an Operation<[`ListEndpointsByPlatformApplication`](crate::operation::ListEndpointsByPlatformApplication)>
     #[allow(clippy::let_and_return)]
@@ -2080,6 +2541,144 @@ impl ListEndpointsByPlatformApplicationInput {
     }
 }
 
+/// See [`ListOriginationNumbersInput`](crate::input::ListOriginationNumbersInput)
+pub mod list_origination_numbers_input {
+    /// A builder for [`ListOriginationNumbersInput`](crate::input::ListOriginationNumbersInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) max_results: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>Token that the previous <code>ListOriginationNumbers</code> request returns.</p>
+        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(inp.into());
+            self
+        }
+        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
+            self.next_token = inp;
+            self
+        }
+        /// <p>The maximum number of origination numbers to return.</p>
+        pub fn max_results(mut self, inp: i32) -> Self {
+            self.max_results = Some(inp);
+            self
+        }
+        pub fn set_max_results(mut self, inp: std::option::Option<i32>) -> Self {
+            self.max_results = inp;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListOriginationNumbersInput`](crate::input::ListOriginationNumbersInput)
+        pub fn build(
+            self,
+        ) -> Result<crate::input::ListOriginationNumbersInput, smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::ListOriginationNumbersInput {
+                next_token: self.next_token,
+                max_results: self.max_results,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type ListOriginationNumbersInputOperationOutputAlias = crate::operation::ListOriginationNumbers;
+#[doc(hidden)]
+pub type ListOriginationNumbersInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl ListOriginationNumbersInput {
+    /// Consumes the builder and constructs an Operation<[`ListOriginationNumbers`](crate::operation::ListOriginationNumbers)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::ListOriginationNumbers,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = self.request_builder_base()?;
+            let body = crate::operation_ser::serialize_operation_list_origination_numbers(&self)
+                .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
+            let request = Self::assemble(request, body);
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+            request.config_mut().insert(signing_config);
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::ListOriginationNumbers::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "ListOriginationNumbers",
+                "sns",
+            ));
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
+    fn uri_base(&self, output: &mut String) {
+        write!(output, "/").expect("formatting should succeed")
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn update_http_builder(
+        &self,
+        builder: http::request::Builder,
+    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let mut uri = String::new();
+        self.uri_base(&mut uri);
+        Ok(builder.method("POST").uri(uri))
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
+        &self,
+    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let builder = http::request::Builder::new();
+        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
+        self.update_http_builder(builder)
+    }
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`ListOriginationNumbersInput`](crate::input::ListOriginationNumbersInput)
+    pub fn builder() -> crate::input::list_origination_numbers_input::Builder {
+        crate::input::list_origination_numbers_input::Builder::default()
+    }
+}
+
 /// See [`ListPhoneNumbersOptedOutInput`](crate::input::ListPhoneNumbersOptedOutInput)
 pub mod list_phone_numbers_opted_out_input {
     /// A builder for [`ListPhoneNumbersOptedOutInput`](crate::input::ListPhoneNumbersOptedOutInput)
@@ -2111,6 +2710,11 @@ pub mod list_phone_numbers_opted_out_input {
         }
     }
 }
+#[doc(hidden)]
+pub type ListPhoneNumbersOptedOutInputOperationOutputAlias =
+    crate::operation::ListPhoneNumbersOptedOut;
+#[doc(hidden)]
+pub type ListPhoneNumbersOptedOutInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl ListPhoneNumbersOptedOutInput {
     /// Consumes the builder and constructs an Operation<[`ListPhoneNumbersOptedOut`](crate::operation::ListPhoneNumbersOptedOut)>
     #[allow(clippy::let_and_return)]
@@ -2236,6 +2840,11 @@ pub mod list_platform_applications_input {
         }
     }
 }
+#[doc(hidden)]
+pub type ListPlatformApplicationsInputOperationOutputAlias =
+    crate::operation::ListPlatformApplications;
+#[doc(hidden)]
+pub type ListPlatformApplicationsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl ListPlatformApplicationsInput {
     /// Consumes the builder and constructs an Operation<[`ListPlatformApplications`](crate::operation::ListPlatformApplications)>
     #[allow(clippy::let_and_return)]
@@ -2330,6 +2939,147 @@ impl ListPlatformApplicationsInput {
     }
 }
 
+/// See [`ListSMSSandboxPhoneNumbersInput`](crate::input::ListSMSSandboxPhoneNumbersInput)
+pub mod list_sms_sandbox_phone_numbers_input {
+    /// A builder for [`ListSMSSandboxPhoneNumbersInput`](crate::input::ListSMSSandboxPhoneNumbersInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) max_results: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>Token that the previous <code>ListSMSSandboxPhoneNumbersInput</code> request
+        /// returns.</p>
+        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(inp.into());
+            self
+        }
+        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
+            self.next_token = inp;
+            self
+        }
+        /// <p>The maximum number of phone numbers to return.</p>
+        pub fn max_results(mut self, inp: i32) -> Self {
+            self.max_results = Some(inp);
+            self
+        }
+        pub fn set_max_results(mut self, inp: std::option::Option<i32>) -> Self {
+            self.max_results = inp;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListSMSSandboxPhoneNumbersInput`](crate::input::ListSMSSandboxPhoneNumbersInput)
+        pub fn build(
+            self,
+        ) -> Result<crate::input::ListSMSSandboxPhoneNumbersInput, smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::ListSMSSandboxPhoneNumbersInput {
+                next_token: self.next_token,
+                max_results: self.max_results,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type ListSMSSandboxPhoneNumbersInputOperationOutputAlias =
+    crate::operation::ListSMSSandboxPhoneNumbers;
+#[doc(hidden)]
+pub type ListSMSSandboxPhoneNumbersInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl ListSMSSandboxPhoneNumbersInput {
+    /// Consumes the builder and constructs an Operation<[`ListSMSSandboxPhoneNumbers`](crate::operation::ListSMSSandboxPhoneNumbers)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::ListSMSSandboxPhoneNumbers,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = self.request_builder_base()?;
+            let body =
+                crate::operation_ser::serialize_operation_list_sms_sandbox_phone_numbers(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
+            let request = Self::assemble(request, body);
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+            request.config_mut().insert(signing_config);
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::ListSMSSandboxPhoneNumbers::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "ListSMSSandboxPhoneNumbers",
+                "sns",
+            ));
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
+    fn uri_base(&self, output: &mut String) {
+        write!(output, "/").expect("formatting should succeed")
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn update_http_builder(
+        &self,
+        builder: http::request::Builder,
+    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let mut uri = String::new();
+        self.uri_base(&mut uri);
+        Ok(builder.method("POST").uri(uri))
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
+        &self,
+    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let builder = http::request::Builder::new();
+        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
+        self.update_http_builder(builder)
+    }
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`ListSMSSandboxPhoneNumbersInput`](crate::input::ListSMSSandboxPhoneNumbersInput)
+    pub fn builder() -> crate::input::list_sms_sandbox_phone_numbers_input::Builder {
+        crate::input::list_sms_sandbox_phone_numbers_input::Builder::default()
+    }
+}
+
 /// See [`ListSubscriptionsInput`](crate::input::ListSubscriptionsInput)
 pub mod list_subscriptions_input {
     /// A builder for [`ListSubscriptionsInput`](crate::input::ListSubscriptionsInput)
@@ -2359,6 +3109,10 @@ pub mod list_subscriptions_input {
         }
     }
 }
+#[doc(hidden)]
+pub type ListSubscriptionsInputOperationOutputAlias = crate::operation::ListSubscriptions;
+#[doc(hidden)]
+pub type ListSubscriptionsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl ListSubscriptionsInput {
     /// Consumes the builder and constructs an Operation<[`ListSubscriptions`](crate::operation::ListSubscriptions)>
     #[allow(clippy::let_and_return)]
@@ -2493,6 +3247,11 @@ pub mod list_subscriptions_by_topic_input {
         }
     }
 }
+#[doc(hidden)]
+pub type ListSubscriptionsByTopicInputOperationOutputAlias =
+    crate::operation::ListSubscriptionsByTopic;
+#[doc(hidden)]
+pub type ListSubscriptionsByTopicInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl ListSubscriptionsByTopicInput {
     /// Consumes the builder and constructs an Operation<[`ListSubscriptionsByTopic`](crate::operation::ListSubscriptionsByTopic)>
     #[allow(clippy::let_and_return)]
@@ -2616,6 +3375,10 @@ pub mod list_tags_for_resource_input {
         }
     }
 }
+#[doc(hidden)]
+pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
+#[doc(hidden)]
+pub type ListTagsForResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(clippy::let_and_return)]
@@ -2738,6 +3501,10 @@ pub mod list_topics_input {
         }
     }
 }
+#[doc(hidden)]
+pub type ListTopicsInputOperationOutputAlias = crate::operation::ListTopics;
+#[doc(hidden)]
+pub type ListTopicsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl ListTopicsInput {
     /// Consumes the builder and constructs an Operation<[`ListTopics`](crate::operation::ListTopics)>
     #[allow(clippy::let_and_return)]
@@ -2858,6 +3625,10 @@ pub mod opt_in_phone_number_input {
         }
     }
 }
+#[doc(hidden)]
+pub type OptInPhoneNumberInputOperationOutputAlias = crate::operation::OptInPhoneNumber;
+#[doc(hidden)]
+pub type OptInPhoneNumberInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl OptInPhoneNumberInput {
     /// Consumes the builder and constructs an Operation<[`OptInPhoneNumber`](crate::operation::OptInPhoneNumber)>
     #[allow(clippy::let_and_return)]
@@ -3136,14 +3907,18 @@ pub mod publish_input {
             self.message_attributes = inp;
             self
         }
-        /// <p>This parameter applies only to FIFO (first-in-first-out) topics.
-        /// The <code>MessageDeduplicationId</code> can contain up to 128 alphanumeric characters (a-z, A-Z, 0-9)
-        /// and punctuation <code>(!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~)</code>.</p>
-        /// <p>Every message must have a unique <code>MessageDeduplicationId</code>, which is a token used for deduplication of sent messages.
-        /// If a message with a particular <code>MessageDeduplicationId</code> is sent successfully, any message sent with the same <code>MessageDeduplicationId</code>
-        /// during the 5-minute deduplication interval is treated as a duplicate. </p>
-        /// <p>If the topic has <code>ContentBasedDeduplication</code> set, the system generates a <code>MessageDeduplicationId</code> based on the contents of the
-        /// message. Your <code>MessageDeduplicationId</code> overrides the generated one.</p>
+        /// <p>This parameter applies only to FIFO (first-in-first-out) topics. The
+        /// <code>MessageDeduplicationId</code> can contain up to 128 alphanumeric characters
+        /// (a-z, A-Z, 0-9) and punctuation
+        /// <code>(!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~)</code>.</p>
+        /// <p>Every message must have a unique <code>MessageDeduplicationId</code>, which is a token
+        /// used for deduplication of sent messages. If a message with a particular
+        /// <code>MessageDeduplicationId</code> is sent successfully, any message sent with the
+        /// same <code>MessageDeduplicationId</code> during the 5-minute deduplication interval is
+        /// treated as a duplicate. </p>
+        /// <p>If the topic has <code>ContentBasedDeduplication</code> set, the system generates a
+        /// <code>MessageDeduplicationId</code> based on the contents of the message. Your
+        /// <code>MessageDeduplicationId</code> overrides the generated one.</p>
         pub fn message_deduplication_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.message_deduplication_id = Some(inp.into());
             self
@@ -3155,11 +3930,13 @@ pub mod publish_input {
             self.message_deduplication_id = inp;
             self
         }
-        /// <p>This parameter applies only to FIFO (first-in-first-out) topics. The <code>MessageGroupId</code> can contain up to
-        /// 128 alphanumeric characters (a-z, A-Z, 0-9) and punctuation <code>(!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~)</code>.</p>
-        /// <p>The <code>MessageGroupId</code> is a tag that specifies that a message belongs to a specific message group. Messages that belong to the
-        /// same message group are processed in a FIFO manner (however, messages in different message groups might be processed out of order).
-        /// Every message must include a <code>MessageGroupId</code>.</p>
+        /// <p>This parameter applies only to FIFO (first-in-first-out) topics. The
+        /// <code>MessageGroupId</code> can contain up to 128 alphanumeric characters (a-z, A-Z,
+        /// 0-9) and punctuation <code>(!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~)</code>.</p>
+        /// <p>The <code>MessageGroupId</code> is a tag that specifies that a message belongs to a
+        /// specific message group. Messages that belong to the same message group are processed in
+        /// a FIFO manner (however, messages in different message groups might be processed out of
+        /// order). Every message must include a <code>MessageGroupId</code>.</p>
         pub fn message_group_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.message_group_id = Some(inp.into());
             self
@@ -3189,6 +3966,10 @@ pub mod publish_input {
         }
     }
 }
+#[doc(hidden)]
+pub type PublishInputOperationOutputAlias = crate::operation::Publish;
+#[doc(hidden)]
+pub type PublishInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl PublishInput {
     /// Consumes the builder and constructs an Operation<[`Publish`](crate::operation::Publish)>
     #[allow(clippy::let_and_return)]
@@ -3314,6 +4095,10 @@ pub mod remove_permission_input {
         }
     }
 }
+#[doc(hidden)]
+pub type RemovePermissionInputOperationOutputAlias = crate::operation::RemovePermission;
+#[doc(hidden)]
+pub type RemovePermissionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl RemovePermissionInput {
     /// Consumes the builder and constructs an Operation<[`RemovePermission`](crate::operation::RemovePermission)>
     #[allow(clippy::let_and_return)]
@@ -3459,6 +4244,10 @@ pub mod set_endpoint_attributes_input {
         }
     }
 }
+#[doc(hidden)]
+pub type SetEndpointAttributesInputOperationOutputAlias = crate::operation::SetEndpointAttributes;
+#[doc(hidden)]
+pub type SetEndpointAttributesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl SetEndpointAttributesInput {
     /// Consumes the builder and constructs an Operation<[`SetEndpointAttributes`](crate::operation::SetEndpointAttributes)>
     #[allow(clippy::let_and_return)]
@@ -3610,6 +4399,11 @@ pub mod set_platform_application_attributes_input {
         }
     }
 }
+#[doc(hidden)]
+pub type SetPlatformApplicationAttributesInputOperationOutputAlias =
+    crate::operation::SetPlatformApplicationAttributes;
+#[doc(hidden)]
+pub type SetPlatformApplicationAttributesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl SetPlatformApplicationAttributesInput {
     /// Consumes the builder and constructs an Operation<[`SetPlatformApplicationAttributes`](crate::operation::SetPlatformApplicationAttributes)>
     #[allow(clippy::let_and_return)]
@@ -3748,6 +4542,10 @@ pub mod set_sms_attributes_input {
         }
     }
 }
+#[doc(hidden)]
+pub type SetSMSAttributesInputOperationOutputAlias = crate::operation::SetSMSAttributes;
+#[doc(hidden)]
+pub type SetSMSAttributesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl SetSMSAttributesInput {
     /// Consumes the builder and constructs an Operation<[`SetSMSAttributes`](crate::operation::SetSMSAttributes)>
     #[allow(clippy::let_and_return)]
@@ -3866,24 +4664,26 @@ pub mod set_subscription_attributes_input {
             self
         }
         /// <p>A map of attributes with their corresponding values.</p>
-        /// <p>The following lists the names, descriptions, and values of the special request parameters that this action
-        /// uses:</p>
+        /// <p>The following lists the names, descriptions, and values of the special request
+        /// parameters that this action uses:</p>
         /// <ul>
         /// <li>
         /// <p>
-        /// <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries failed deliveries to HTTP/S
-        /// endpoints.</p>
+        /// <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries
+        /// failed deliveries to HTTP/S endpoints.</p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>FilterPolicy</code> – The simple JSON object that lets your subscriber receive only a subset
-        /// of messages, rather than receiving every message published to the topic.</p>
+        /// <code>FilterPolicy</code> – The simple JSON object that lets your
+        /// subscriber receive only a subset of messages, rather than receiving every
+        /// message published to the topic.</p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>RawMessageDelivery</code> – When set to <code>true</code>, enables raw message delivery to
-        /// Amazon SQS or HTTP/S endpoints. This eliminates the need for the endpoints to process JSON formatting, which is
-        /// otherwise created for Amazon SNS metadata.</p>
+        /// <code>RawMessageDelivery</code> – When set to <code>true</code>,
+        /// enables raw message delivery to Amazon SQS or HTTP/S endpoints. This eliminates the
+        /// need for the endpoints to process JSON formatting, which is otherwise created
+        /// for Amazon SNS metadata.</p>
         /// </li>
         /// <li>
         /// <p>
@@ -3944,6 +4744,11 @@ pub mod set_subscription_attributes_input {
         }
     }
 }
+#[doc(hidden)]
+pub type SetSubscriptionAttributesInputOperationOutputAlias =
+    crate::operation::SetSubscriptionAttributes;
+#[doc(hidden)]
+pub type SetSubscriptionAttributesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl SetSubscriptionAttributesInput {
     /// Consumes the builder and constructs an Operation<[`SetSubscriptionAttributes`](crate::operation::SetSubscriptionAttributes)>
     #[allow(clippy::let_and_return)]
@@ -4083,8 +4888,8 @@ pub mod set_topic_attributes_input {
         /// <ul>
         /// <li>
         /// <p>
-        /// <code>KmsMasterKeyId</code> – The ID of an AWS-managed customer master key (CMK)
-        /// for Amazon SNS or a custom CMK. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html#sse-key-terms">Key
+        /// <code>KmsMasterKeyId</code> – The ID of an AWS-managed customer master
+        /// key (CMK) for Amazon SNS or a custom CMK. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html#sse-key-terms">Key
         /// Terms</a>. For more examples, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">KeyId</a> in the <i>AWS Key Management Service API
         /// Reference</i>. </p>
         /// </li>
@@ -4094,7 +4899,7 @@ pub mod set_topic_attributes_input {
         /// <li>
         /// <p>
         /// <code>ContentBasedDeduplication</code> –  Enables content-based deduplication for
-        /// FIFO topics. </p>
+        /// FIFO topics.</p>
         /// <ul>
         /// <li>
         /// <p>By default, <code>ContentBasedDeduplication</code> is set to <code>false</code>.
@@ -4107,7 +4912,7 @@ pub mod set_topic_attributes_input {
         /// Amazon SNS uses a SHA-256 hash to generate the <code>MessageDeduplicationId</code> using
         /// the body of the message (but not the attributes of the message).</p>
         /// <p>(Optional) To override the generated value, you can specify a value
-        /// for the the <code>MessageDeduplicationId</code> parameter for the <code>Publish</code>
+        /// for the <code>MessageDeduplicationId</code> parameter for the <code>Publish</code>
         /// action.</p>
         /// </li>
         /// </ul>
@@ -4146,6 +4951,10 @@ pub mod set_topic_attributes_input {
         }
     }
 }
+#[doc(hidden)]
+pub type SetTopicAttributesInputOperationOutputAlias = crate::operation::SetTopicAttributes;
+#[doc(hidden)]
+pub type SetTopicAttributesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl SetTopicAttributesInput {
     /// Consumes the builder and constructs an Operation<[`SetTopicAttributes`](crate::operation::SetTopicAttributes)>
     #[allow(clippy::let_and_return)]
@@ -4268,11 +5077,13 @@ pub mod subscribe_input {
         /// <ul>
         /// <li>
         /// <p>
-        /// <code>http</code> – delivery of JSON-encoded message via HTTP POST</p>
+        /// <code>http</code> – delivery of JSON-encoded message via HTTP
+        /// POST</p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>https</code> – delivery of JSON-encoded message via HTTPS POST</p>
+        /// <code>https</code> – delivery of JSON-encoded message via HTTPS
+        /// POST</p>
         /// </li>
         /// <li>
         /// <p>
@@ -4280,7 +5091,8 @@ pub mod subscribe_input {
         /// </li>
         /// <li>
         /// <p>
-        /// <code>email-json</code> – delivery of JSON-encoded message via SMTP</p>
+        /// <code>email-json</code> – delivery of JSON-encoded message via
+        /// SMTP</p>
         /// </li>
         /// <li>
         /// <p>
@@ -4288,12 +5100,13 @@ pub mod subscribe_input {
         /// </li>
         /// <li>
         /// <p>
-        /// <code>sqs</code> – delivery of JSON-encoded message to an Amazon SQS queue</p>
+        /// <code>sqs</code> – delivery of JSON-encoded message to an Amazon SQS
+        /// queue</p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>application</code> – delivery of JSON-encoded message to an EndpointArn
-        /// for a mobile app and device</p>
+        /// <code>application</code> – delivery of JSON-encoded message to an
+        /// EndpointArn for a mobile app and device</p>
         /// </li>
         /// <li>
         /// <p>
@@ -4302,8 +5115,8 @@ pub mod subscribe_input {
         /// </li>
         /// <li>
         /// <p>
-        /// <code>firehose</code> – delivery of JSON-encoded message to an Amazon Kinesis
-        /// Data Firehose delivery stream.</p>
+        /// <code>firehose</code> – delivery of JSON-encoded message to an Amazon
+        /// Kinesis Data Firehose delivery stream.</p>
         /// </li>
         /// </ul>
         pub fn protocol(mut self, inp: impl Into<std::string::String>) -> Self {
@@ -4318,36 +5131,39 @@ pub mod subscribe_input {
         /// protocol:</p>
         /// <ul>
         /// <li>
-        /// <p>For the <code>http</code> protocol, the (public) endpoint is a URL beginning with
-        /// <code>http://</code>.</p>
+        /// <p>For the <code>http</code> protocol, the (public) endpoint is a URL beginning
+        /// with <code>http://</code>.</p>
         /// </li>
         /// <li>
-        /// <p>For the <code>https</code> protocol, the (public) endpoint is a URL beginning with
-        /// <code>https://</code>.</p>
+        /// <p>For the <code>https</code> protocol, the (public) endpoint is a URL beginning
+        /// with <code>https://</code>.</p>
         /// </li>
         /// <li>
         /// <p>For the <code>email</code> protocol, the endpoint is an email address.</p>
         /// </li>
         /// <li>
-        /// <p>For the <code>email-json</code> protocol, the endpoint is an email address.</p>
+        /// <p>For the <code>email-json</code> protocol, the endpoint is an email
+        /// address.</p>
         /// </li>
         /// <li>
-        /// <p>For the <code>sms</code> protocol, the endpoint is a phone number of an SMS-enabled
-        /// device.</p>
+        /// <p>For the <code>sms</code> protocol, the endpoint is a phone number of an
+        /// SMS-enabled device.</p>
         /// </li>
         /// <li>
-        /// <p>For the <code>sqs</code> protocol, the endpoint is the ARN of an Amazon SQS queue.</p>
+        /// <p>For the <code>sqs</code> protocol, the endpoint is the ARN of an Amazon SQS
+        /// queue.</p>
         /// </li>
         /// <li>
-        /// <p>For the <code>application</code> protocol, the endpoint is the EndpointArn of a mobile app and
-        /// device.</p>
+        /// <p>For the <code>application</code> protocol, the endpoint is the EndpointArn of
+        /// a mobile app and device.</p>
         /// </li>
         /// <li>
-        /// <p>For the <code>lambda</code> protocol, the endpoint is the ARN of an AWS Lambda function.</p>
+        /// <p>For the <code>lambda</code> protocol, the endpoint is the ARN of an AWS Lambda
+        /// function.</p>
         /// </li>
         /// <li>
-        /// <p>For the <code>firehose</code> protocol, the endpoint is the ARN of an Amazon Kinesis Data Firehose
-        /// delivery stream.</p>
+        /// <p>For the <code>firehose</code> protocol, the endpoint is the ARN of an Amazon
+        /// Kinesis Data Firehose delivery stream.</p>
         /// </li>
         /// </ul>
         pub fn endpoint(mut self, inp: impl Into<std::string::String>) -> Self {
@@ -4379,11 +5195,12 @@ pub mod subscribe_input {
         }
         /// <p>Sets whether the response from the <code>Subscribe</code> request includes the
         /// subscription ARN, even if the subscription is not yet confirmed.</p>
-        /// <p>If you set this parameter to <code>true</code>, the response includes the ARN in all cases, even
-        /// if the subscription is not yet confirmed. In addition to the ARN for confirmed subscriptions, the response
-        /// also includes the <code>pending subscription</code> ARN value for subscriptions that aren't yet confirmed. A
-        /// subscription becomes confirmed when the subscriber calls the <code>ConfirmSubscription</code> action with a
-        /// confirmation token.</p>
+        /// <p>If you set this parameter to <code>true</code>, the response includes the ARN in all
+        /// cases, even if the subscription is not yet confirmed. In addition to the ARN for
+        /// confirmed subscriptions, the response also includes the <code>pending
+        /// subscription</code> ARN value for subscriptions that aren't yet confirmed. A
+        /// subscription becomes confirmed when the subscriber calls the
+        /// <code>ConfirmSubscription</code> action with a confirmation token.</p>
         /// <p></p>
         /// <p>The default value is <code>false</code>.</p>
         pub fn return_subscription_arn(mut self, inp: bool) -> Self {
@@ -4408,6 +5225,10 @@ pub mod subscribe_input {
         }
     }
 }
+#[doc(hidden)]
+pub type SubscribeInputOperationOutputAlias = crate::operation::Subscribe;
+#[doc(hidden)]
+pub type SubscribeInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl SubscribeInput {
     /// Consumes the builder and constructs an Operation<[`Subscribe`](crate::operation::Subscribe)>
     #[allow(clippy::let_and_return)]
@@ -4540,6 +5361,10 @@ pub mod tag_resource_input {
         }
     }
 }
+#[doc(hidden)]
+pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
+#[doc(hidden)]
+pub type TagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(clippy::let_and_return)]
@@ -4662,6 +5487,10 @@ pub mod unsubscribe_input {
         }
     }
 }
+#[doc(hidden)]
+pub type UnsubscribeInputOperationOutputAlias = crate::operation::Unsubscribe;
+#[doc(hidden)]
+pub type UnsubscribeInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl UnsubscribeInput {
     /// Consumes the builder and constructs an Operation<[`Unsubscribe`](crate::operation::Unsubscribe)>
     #[allow(clippy::let_and_return)]
@@ -4796,6 +5625,10 @@ pub mod untag_resource_input {
         }
     }
 }
+#[doc(hidden)]
+pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
+#[doc(hidden)]
+pub type UntagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(clippy::let_and_return)]
@@ -4890,6 +5723,170 @@ impl UntagResourceInput {
     }
 }
 
+/// See [`VerifySMSSandboxPhoneNumberInput`](crate::input::VerifySMSSandboxPhoneNumberInput)
+pub mod verify_sms_sandbox_phone_number_input {
+    /// A builder for [`VerifySMSSandboxPhoneNumberInput`](crate::input::VerifySMSSandboxPhoneNumberInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) phone_number: std::option::Option<std::string::String>,
+        pub(crate) one_time_password: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The destination phone number to verify.</p>
+        pub fn phone_number(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.phone_number = Some(inp.into());
+            self
+        }
+        pub fn set_phone_number(mut self, inp: std::option::Option<std::string::String>) -> Self {
+            self.phone_number = inp;
+            self
+        }
+        /// <p>The OTP sent to the destination number from the
+        /// <code>CreateSMSSandBoxPhoneNumber</code> call.</p>
+        pub fn one_time_password(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.one_time_password = Some(inp.into());
+            self
+        }
+        pub fn set_one_time_password(
+            mut self,
+            inp: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.one_time_password = inp;
+            self
+        }
+        /// Consumes the builder and constructs a [`VerifySMSSandboxPhoneNumberInput`](crate::input::VerifySMSSandboxPhoneNumberInput)
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::VerifySMSSandboxPhoneNumberInput,
+            smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::VerifySMSSandboxPhoneNumberInput {
+                phone_number: self.phone_number,
+                one_time_password: self.one_time_password,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type VerifySMSSandboxPhoneNumberInputOperationOutputAlias =
+    crate::operation::VerifySMSSandboxPhoneNumber;
+#[doc(hidden)]
+pub type VerifySMSSandboxPhoneNumberInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl VerifySMSSandboxPhoneNumberInput {
+    /// Consumes the builder and constructs an Operation<[`VerifySMSSandboxPhoneNumber`](crate::operation::VerifySMSSandboxPhoneNumber)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> Result<
+        smithy_http::operation::Operation<
+            crate::operation::VerifySMSSandboxPhoneNumber,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = self.request_builder_base()?;
+            let body =
+                crate::operation_ser::serialize_operation_verify_sms_sandbox_phone_number(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
+            let request = Self::assemble(request, body);
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            request
+                .config_mut()
+                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ));
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+            request.config_mut().insert(signing_config);
+            request
+                .config_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.config_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+            if let Some(region) = &_config.region {
+                request.config_mut().insert(region.clone());
+            }
+            aws_auth::set_provider(
+                &mut request.config_mut(),
+                _config.credentials_provider.clone(),
+            );
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::VerifySMSSandboxPhoneNumber::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "VerifySMSSandboxPhoneNumber",
+                "sns",
+            ));
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
+    fn uri_base(&self, output: &mut String) {
+        write!(output, "/").expect("formatting should succeed")
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn update_http_builder(
+        &self,
+        builder: http::request::Builder,
+    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let mut uri = String::new();
+        self.uri_base(&mut uri);
+        Ok(builder.method("POST").uri(uri))
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
+        &self,
+    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let builder = http::request::Builder::new();
+        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
+        self.update_http_builder(builder)
+    }
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`VerifySMSSandboxPhoneNumberInput`](crate::input::VerifySMSSandboxPhoneNumberInput)
+    pub fn builder() -> crate::input::verify_sms_sandbox_phone_number_input::Builder {
+        crate::input::verify_sms_sandbox_phone_number_input::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct VerifySMSSandboxPhoneNumberInput {
+    /// <p>The destination phone number to verify.</p>
+    pub phone_number: std::option::Option<std::string::String>,
+    /// <p>The OTP sent to the destination number from the
+    /// <code>CreateSMSSandBoxPhoneNumber</code> call.</p>
+    pub one_time_password: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for VerifySMSSandboxPhoneNumberInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("VerifySMSSandboxPhoneNumberInput");
+        formatter.field("phone_number", &self.phone_number);
+        formatter.field("one_time_password", &self.one_time_password);
+        formatter.finish()
+    }
+}
+
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
@@ -4927,8 +5924,8 @@ impl std::fmt::Debug for UnsubscribeInput {
 pub struct TagResourceInput {
     /// <p>The ARN of the topic to which to add tags.</p>
     pub resource_arn: std::option::Option<std::string::String>,
-    /// <p>The tags to be added to the specified topic. A tag consists of a required key
-    /// and an optional value.</p>
+    /// <p>The tags to be added to the specified topic. A tag consists of a required key and an
+    /// optional value.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl std::fmt::Debug for TagResourceInput {
@@ -4950,11 +5947,13 @@ pub struct SubscribeInput {
     /// <ul>
     /// <li>
     /// <p>
-    /// <code>http</code> – delivery of JSON-encoded message via HTTP POST</p>
+    /// <code>http</code> – delivery of JSON-encoded message via HTTP
+    /// POST</p>
     /// </li>
     /// <li>
     /// <p>
-    /// <code>https</code> – delivery of JSON-encoded message via HTTPS POST</p>
+    /// <code>https</code> – delivery of JSON-encoded message via HTTPS
+    /// POST</p>
     /// </li>
     /// <li>
     /// <p>
@@ -4962,7 +5961,8 @@ pub struct SubscribeInput {
     /// </li>
     /// <li>
     /// <p>
-    /// <code>email-json</code> – delivery of JSON-encoded message via SMTP</p>
+    /// <code>email-json</code> – delivery of JSON-encoded message via
+    /// SMTP</p>
     /// </li>
     /// <li>
     /// <p>
@@ -4970,12 +5970,13 @@ pub struct SubscribeInput {
     /// </li>
     /// <li>
     /// <p>
-    /// <code>sqs</code> – delivery of JSON-encoded message to an Amazon SQS queue</p>
+    /// <code>sqs</code> – delivery of JSON-encoded message to an Amazon SQS
+    /// queue</p>
     /// </li>
     /// <li>
     /// <p>
-    /// <code>application</code> – delivery of JSON-encoded message to an EndpointArn
-    /// for a mobile app and device</p>
+    /// <code>application</code> – delivery of JSON-encoded message to an
+    /// EndpointArn for a mobile app and device</p>
     /// </li>
     /// <li>
     /// <p>
@@ -4984,8 +5985,8 @@ pub struct SubscribeInput {
     /// </li>
     /// <li>
     /// <p>
-    /// <code>firehose</code> – delivery of JSON-encoded message to an Amazon Kinesis
-    /// Data Firehose delivery stream.</p>
+    /// <code>firehose</code> – delivery of JSON-encoded message to an Amazon
+    /// Kinesis Data Firehose delivery stream.</p>
     /// </li>
     /// </ul>
     pub protocol: std::option::Option<std::string::String>,
@@ -4993,58 +5994,63 @@ pub struct SubscribeInput {
     /// protocol:</p>
     /// <ul>
     /// <li>
-    /// <p>For the <code>http</code> protocol, the (public) endpoint is a URL beginning with
-    /// <code>http://</code>.</p>
+    /// <p>For the <code>http</code> protocol, the (public) endpoint is a URL beginning
+    /// with <code>http://</code>.</p>
     /// </li>
     /// <li>
-    /// <p>For the <code>https</code> protocol, the (public) endpoint is a URL beginning with
-    /// <code>https://</code>.</p>
+    /// <p>For the <code>https</code> protocol, the (public) endpoint is a URL beginning
+    /// with <code>https://</code>.</p>
     /// </li>
     /// <li>
     /// <p>For the <code>email</code> protocol, the endpoint is an email address.</p>
     /// </li>
     /// <li>
-    /// <p>For the <code>email-json</code> protocol, the endpoint is an email address.</p>
+    /// <p>For the <code>email-json</code> protocol, the endpoint is an email
+    /// address.</p>
     /// </li>
     /// <li>
-    /// <p>For the <code>sms</code> protocol, the endpoint is a phone number of an SMS-enabled
-    /// device.</p>
+    /// <p>For the <code>sms</code> protocol, the endpoint is a phone number of an
+    /// SMS-enabled device.</p>
     /// </li>
     /// <li>
-    /// <p>For the <code>sqs</code> protocol, the endpoint is the ARN of an Amazon SQS queue.</p>
+    /// <p>For the <code>sqs</code> protocol, the endpoint is the ARN of an Amazon SQS
+    /// queue.</p>
     /// </li>
     /// <li>
-    /// <p>For the <code>application</code> protocol, the endpoint is the EndpointArn of a mobile app and
-    /// device.</p>
+    /// <p>For the <code>application</code> protocol, the endpoint is the EndpointArn of
+    /// a mobile app and device.</p>
     /// </li>
     /// <li>
-    /// <p>For the <code>lambda</code> protocol, the endpoint is the ARN of an AWS Lambda function.</p>
+    /// <p>For the <code>lambda</code> protocol, the endpoint is the ARN of an AWS Lambda
+    /// function.</p>
     /// </li>
     /// <li>
-    /// <p>For the <code>firehose</code> protocol, the endpoint is the ARN of an Amazon Kinesis Data Firehose
-    /// delivery stream.</p>
+    /// <p>For the <code>firehose</code> protocol, the endpoint is the ARN of an Amazon
+    /// Kinesis Data Firehose delivery stream.</p>
     /// </li>
     /// </ul>
     pub endpoint: std::option::Option<std::string::String>,
     /// <p>A map of attributes with their corresponding values.</p>
-    /// <p>The following lists the names, descriptions, and values of the special request parameters that the
-    /// <code>SetTopicAttributes</code> action uses:</p>
+    /// <p>The following lists the names, descriptions, and values of the special request
+    /// parameters that the <code>SetTopicAttributes</code> action uses:</p>
     /// <ul>
     /// <li>
     /// <p>
-    /// <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries failed deliveries to HTTP/S
-    /// endpoints.</p>
+    /// <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries
+    /// failed deliveries to HTTP/S endpoints.</p>
     /// </li>
     /// <li>
     /// <p>
-    /// <code>FilterPolicy</code> – The simple JSON object that lets your subscriber receive only a subset
-    /// of messages, rather than receiving every message published to the topic.</p>
+    /// <code>FilterPolicy</code> – The simple JSON object that lets your
+    /// subscriber receive only a subset of messages, rather than receiving every
+    /// message published to the topic.</p>
     /// </li>
     /// <li>
     /// <p>
-    /// <code>RawMessageDelivery</code> – When set to <code>true</code>, enables raw message delivery to
-    /// Amazon SQS or HTTP/S endpoints. This eliminates the need for the endpoints to process JSON formatting, which is
-    /// otherwise created for Amazon SNS metadata.</p>
+    /// <code>RawMessageDelivery</code> – When set to <code>true</code>,
+    /// enables raw message delivery to Amazon SQS or HTTP/S endpoints. This eliminates the
+    /// need for the endpoints to process JSON formatting, which is otherwise created
+    /// for Amazon SNS metadata.</p>
     /// </li>
     /// <li>
     /// <p>
@@ -5076,11 +6082,12 @@ pub struct SubscribeInput {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Sets whether the response from the <code>Subscribe</code> request includes the
     /// subscription ARN, even if the subscription is not yet confirmed.</p>
-    /// <p>If you set this parameter to <code>true</code>, the response includes the ARN in all cases, even
-    /// if the subscription is not yet confirmed. In addition to the ARN for confirmed subscriptions, the response
-    /// also includes the <code>pending subscription</code> ARN value for subscriptions that aren't yet confirmed. A
-    /// subscription becomes confirmed when the subscriber calls the <code>ConfirmSubscription</code> action with a
-    /// confirmation token.</p>
+    /// <p>If you set this parameter to <code>true</code>, the response includes the ARN in all
+    /// cases, even if the subscription is not yet confirmed. In addition to the ARN for
+    /// confirmed subscriptions, the response also includes the <code>pending
+    /// subscription</code> ARN value for subscriptions that aren't yet confirmed. A
+    /// subscription becomes confirmed when the subscriber calls the
+    /// <code>ConfirmSubscription</code> action with a confirmation token.</p>
     /// <p></p>
     /// <p>The default value is <code>false</code>.</p>
     pub return_subscription_arn: bool,
@@ -5128,8 +6135,8 @@ pub struct SetTopicAttributesInput {
     /// <ul>
     /// <li>
     /// <p>
-    /// <code>KmsMasterKeyId</code> – The ID of an AWS-managed customer master key (CMK)
-    /// for Amazon SNS or a custom CMK. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html#sse-key-terms">Key
+    /// <code>KmsMasterKeyId</code> – The ID of an AWS-managed customer master
+    /// key (CMK) for Amazon SNS or a custom CMK. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html#sse-key-terms">Key
     /// Terms</a>. For more examples, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">KeyId</a> in the <i>AWS Key Management Service API
     /// Reference</i>. </p>
     /// </li>
@@ -5139,7 +6146,7 @@ pub struct SetTopicAttributesInput {
     /// <li>
     /// <p>
     /// <code>ContentBasedDeduplication</code> –  Enables content-based deduplication for
-    /// FIFO topics. </p>
+    /// FIFO topics.</p>
     /// <ul>
     /// <li>
     /// <p>By default, <code>ContentBasedDeduplication</code> is set to <code>false</code>.
@@ -5152,7 +6159,7 @@ pub struct SetTopicAttributesInput {
     /// Amazon SNS uses a SHA-256 hash to generate the <code>MessageDeduplicationId</code> using
     /// the body of the message (but not the attributes of the message).</p>
     /// <p>(Optional) To override the generated value, you can specify a value
-    /// for the the <code>MessageDeduplicationId</code> parameter for the <code>Publish</code>
+    /// for the <code>MessageDeduplicationId</code> parameter for the <code>Publish</code>
     /// action.</p>
     /// </li>
     /// </ul>
@@ -5179,24 +6186,26 @@ pub struct SetSubscriptionAttributesInput {
     /// <p>The ARN of the subscription to modify.</p>
     pub subscription_arn: std::option::Option<std::string::String>,
     /// <p>A map of attributes with their corresponding values.</p>
-    /// <p>The following lists the names, descriptions, and values of the special request parameters that this action
-    /// uses:</p>
+    /// <p>The following lists the names, descriptions, and values of the special request
+    /// parameters that this action uses:</p>
     /// <ul>
     /// <li>
     /// <p>
-    /// <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries failed deliveries to HTTP/S
-    /// endpoints.</p>
+    /// <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries
+    /// failed deliveries to HTTP/S endpoints.</p>
     /// </li>
     /// <li>
     /// <p>
-    /// <code>FilterPolicy</code> – The simple JSON object that lets your subscriber receive only a subset
-    /// of messages, rather than receiving every message published to the topic.</p>
+    /// <code>FilterPolicy</code> – The simple JSON object that lets your
+    /// subscriber receive only a subset of messages, rather than receiving every
+    /// message published to the topic.</p>
     /// </li>
     /// <li>
     /// <p>
-    /// <code>RawMessageDelivery</code> – When set to <code>true</code>, enables raw message delivery to
-    /// Amazon SQS or HTTP/S endpoints. This eliminates the need for the endpoints to process JSON formatting, which is
-    /// otherwise created for Amazon SNS metadata.</p>
+    /// <code>RawMessageDelivery</code> – When set to <code>true</code>,
+    /// enables raw message delivery to Amazon SQS or HTTP/S endpoints. This eliminates the
+    /// need for the endpoints to process JSON formatting, which is otherwise created
+    /// for Amazon SNS metadata.</p>
     /// </li>
     /// <li>
     /// <p>
@@ -5584,20 +6593,26 @@ pub struct PublishInput {
     pub message_attributes: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::MessageAttributeValue>,
     >,
-    /// <p>This parameter applies only to FIFO (first-in-first-out) topics.
-    /// The <code>MessageDeduplicationId</code> can contain up to 128 alphanumeric characters (a-z, A-Z, 0-9)
-    /// and punctuation <code>(!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~)</code>.</p>
-    /// <p>Every message must have a unique <code>MessageDeduplicationId</code>, which is a token used for deduplication of sent messages.
-    /// If a message with a particular <code>MessageDeduplicationId</code> is sent successfully, any message sent with the same <code>MessageDeduplicationId</code>
-    /// during the 5-minute deduplication interval is treated as a duplicate. </p>
-    /// <p>If the topic has <code>ContentBasedDeduplication</code> set, the system generates a <code>MessageDeduplicationId</code> based on the contents of the
-    /// message. Your <code>MessageDeduplicationId</code> overrides the generated one.</p>
+    /// <p>This parameter applies only to FIFO (first-in-first-out) topics. The
+    /// <code>MessageDeduplicationId</code> can contain up to 128 alphanumeric characters
+    /// (a-z, A-Z, 0-9) and punctuation
+    /// <code>(!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~)</code>.</p>
+    /// <p>Every message must have a unique <code>MessageDeduplicationId</code>, which is a token
+    /// used for deduplication of sent messages. If a message with a particular
+    /// <code>MessageDeduplicationId</code> is sent successfully, any message sent with the
+    /// same <code>MessageDeduplicationId</code> during the 5-minute deduplication interval is
+    /// treated as a duplicate. </p>
+    /// <p>If the topic has <code>ContentBasedDeduplication</code> set, the system generates a
+    /// <code>MessageDeduplicationId</code> based on the contents of the message. Your
+    /// <code>MessageDeduplicationId</code> overrides the generated one.</p>
     pub message_deduplication_id: std::option::Option<std::string::String>,
-    /// <p>This parameter applies only to FIFO (first-in-first-out) topics. The <code>MessageGroupId</code> can contain up to
-    /// 128 alphanumeric characters (a-z, A-Z, 0-9) and punctuation <code>(!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~)</code>.</p>
-    /// <p>The <code>MessageGroupId</code> is a tag that specifies that a message belongs to a specific message group. Messages that belong to the
-    /// same message group are processed in a FIFO manner (however, messages in different message groups might be processed out of order).
-    /// Every message must include a <code>MessageGroupId</code>.</p>
+    /// <p>This parameter applies only to FIFO (first-in-first-out) topics. The
+    /// <code>MessageGroupId</code> can contain up to 128 alphanumeric characters (a-z, A-Z,
+    /// 0-9) and punctuation <code>(!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~)</code>.</p>
+    /// <p>The <code>MessageGroupId</code> is a tag that specifies that a message belongs to a
+    /// specific message group. Messages that belong to the same message group are processed in
+    /// a FIFO manner (however, messages in different message groups might be processed out of
+    /// order). Every message must include a <code>MessageGroupId</code>.</p>
     pub message_group_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for PublishInput {
@@ -5692,6 +6707,24 @@ impl std::fmt::Debug for ListSubscriptionsInput {
     }
 }
 
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListSMSSandboxPhoneNumbersInput {
+    /// <p>Token that the previous <code>ListSMSSandboxPhoneNumbersInput</code> request
+    /// returns.</p>
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p>The maximum number of phone numbers to return.</p>
+    pub max_results: std::option::Option<i32>,
+}
+impl std::fmt::Debug for ListSMSSandboxPhoneNumbersInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListSMSSandboxPhoneNumbersInput");
+        formatter.field("next_token", &self.next_token);
+        formatter.field("max_results", &self.max_results);
+        formatter.finish()
+    }
+}
+
 /// <p>Input for ListPlatformApplications action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -5721,6 +6754,23 @@ impl std::fmt::Debug for ListPhoneNumbersOptedOutInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListPhoneNumbersOptedOutInput");
         formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListOriginationNumbersInput {
+    /// <p>Token that the previous <code>ListOriginationNumbers</code> request returns.</p>
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p>The maximum number of origination numbers to return.</p>
+    pub max_results: std::option::Option<i32>,
+}
+impl std::fmt::Debug for ListOriginationNumbersInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListOriginationNumbersInput");
+        formatter.field("next_token", &self.next_token);
+        formatter.field("max_results", &self.max_results);
         formatter.finish()
     }
 }
@@ -5770,6 +6820,16 @@ impl std::fmt::Debug for GetSubscriptionAttributesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetSubscriptionAttributesInput");
         formatter.field("subscription_arn", &self.subscription_arn);
+        formatter.finish()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetSMSSandboxAccountStatusInput {}
+impl std::fmt::Debug for GetSMSSandboxAccountStatusInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetSMSSandboxAccountStatusInput");
         formatter.finish()
     }
 }
@@ -5836,6 +6896,20 @@ impl std::fmt::Debug for DeleteTopicInput {
     }
 }
 
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteSMSSandboxPhoneNumberInput {
+    /// <p>The destination phone number to delete.</p>
+    pub phone_number: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for DeleteSMSSandboxPhoneNumberInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteSMSSandboxPhoneNumberInput");
+        formatter.field("phone_number", &self.phone_number);
+        formatter.finish()
+    }
+}
+
 /// <p>Input for DeletePlatformApplication action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -5874,7 +6948,8 @@ pub struct CreateTopicInput {
     /// <p>Constraints: Topic names must be made up of only uppercase and lowercase ASCII
     /// letters, numbers, underscores, and hyphens, and must be between 1 and 256 characters
     /// long.</p>
-    /// <p>For a FIFO (first-in-first-out) topic, the name must end with the <code>.fifo</code> suffix. </p>
+    /// <p>For a FIFO (first-in-first-out) topic, the name must end with the <code>.fifo</code>
+    /// suffix. </p>
     pub name: std::option::Option<std::string::String>,
     /// <p>A map of attributes with their corresponding values.</p>
     /// <p>The following lists the names, descriptions, and values of the special request
@@ -5901,12 +6976,13 @@ pub struct CreateTopicInput {
     /// topic.</p>
     /// </li>
     /// </ul>
-    /// <p>The following attribute applies only to <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html">server-side-encryption</a>:</p>
+    /// <p>The following attribute applies only to <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html">server-side
+    /// encryption</a>:</p>
     /// <ul>
     /// <li>
     /// <p>
-    /// <code>KmsMasterKeyId</code> – The ID of an AWS-managed customer master key (CMK)
-    /// for Amazon SNS or a custom CMK. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html#sse-key-terms">Key
+    /// <code>KmsMasterKeyId</code> – The ID of an AWS managed customer master
+    /// key (CMK) for Amazon SNS or a custom CMK. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html#sse-key-terms">Key
     /// Terms</a>. For more examples, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">KeyId</a> in the <i>AWS Key Management Service API
     /// Reference</i>. </p>
     /// </li>
@@ -5916,12 +6992,12 @@ pub struct CreateTopicInput {
     /// <li>
     /// <p>
     /// <code>FifoTopic</code> – When this is set to <code>true</code>, a FIFO
-    /// topic is created.</p>  
+    /// topic is created.</p>
     /// </li>
     /// <li>
     /// <p>
     /// <code>ContentBasedDeduplication</code> –  Enables content-based deduplication for
-    /// FIFO topics. </p>
+    /// FIFO topics.</p>
     /// <ul>
     /// <li>
     /// <p>By default, <code>ContentBasedDeduplication</code> is set to <code>false</code>.
@@ -5934,7 +7010,7 @@ pub struct CreateTopicInput {
     /// Amazon SNS uses a SHA-256 hash to generate the <code>MessageDeduplicationId</code> using
     /// the body of the message (but not the attributes of the message).</p>
     /// <p>(Optional) To override the generated value, you can specify a value
-    /// for the the <code>MessageDeduplicationId</code> parameter for the <code>Publish</code>
+    /// for the <code>MessageDeduplicationId</code> parameter for the <code>Publish</code>
     /// action.</p>
     /// </li>
     /// </ul>
@@ -5944,7 +7020,9 @@ pub struct CreateTopicInput {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The list of tags to add to a new topic.</p>
     /// <note>
-    /// <p>To be able to tag a topic on creation, you must have the <code>sns:CreateTopic</code> and <code>sns:TagResource</code> permissions.</p>
+    /// <p>To be able to tag a topic on creation, you must have the
+    /// <code>sns:CreateTopic</code> and <code>sns:TagResource</code>
+    /// permissions.</p>
     /// </note>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
@@ -5954,6 +7032,25 @@ impl std::fmt::Debug for CreateTopicInput {
         formatter.field("name", &self.name);
         formatter.field("attributes", &self.attributes);
         formatter.field("tags", &self.tags);
+        formatter.finish()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateSMSSandboxPhoneNumberInput {
+    /// <p>The destination phone number to verify. On verification, Amazon SNS adds this phone number
+    /// to the list of verified phone numbers that you can send SMS messages to.</p>
+    pub phone_number: std::option::Option<std::string::String>,
+    /// <p>The language to use for sending the OTP. The default value is
+    /// <code>en-US</code>.</p>
+    pub language_code: std::option::Option<crate::model::LanguageCodeString>,
+}
+impl std::fmt::Debug for CreateSMSSandboxPhoneNumberInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateSMSSandboxPhoneNumberInput");
+        formatter.field("phone_number", &self.phone_number);
+        formatter.field("language_code", &self.language_code);
         formatter.finish()
     }
 }
@@ -6000,8 +7097,7 @@ pub struct CreatePlatformApplicationInput {
     /// <p>The following platforms are supported: ADM (Amazon Device Messaging), APNS (Apple Push
     /// Notification Service), APNS_SANDBOX, and GCM (Firebase Cloud Messaging).</p>
     pub platform: std::option::Option<std::string::String>,
-    /// <p>For a list of attributes, see <a href="https://docs.aws.amazon.com/sns/latest/api/API_SetPlatformApplicationAttributes.html">SetPlatformApplicationAttributes</a>
-    /// </p>
+    /// <p>For a list of attributes, see <a href="https://docs.aws.amazon.com/sns/latest/api/API_SetPlatformApplicationAttributes.html">SetPlatformApplicationAttributes</a>.</p>
     pub attributes:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }

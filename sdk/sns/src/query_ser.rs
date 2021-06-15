@@ -34,6 +34,6 @@ pub fn serialize_structure_message_attribute_value(
     #[allow(unused_mut)]
     let mut scope_9 = writer.prefix("BinaryValue");
     if let Some(var_10) = &input.binary_value {
-        scope_9.string(&smithy_http::base64::encode(var_10));
+        scope_9.string(&smithy_types::base64::encode(var_10));
     }
 }

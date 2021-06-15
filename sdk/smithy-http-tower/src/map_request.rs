@@ -19,6 +19,7 @@ pub struct MapRequestService<S, M> {
     mapper: M,
 }
 
+#[derive(Debug)]
 pub struct MapRequestLayer<M> {
     mapper: M,
 }

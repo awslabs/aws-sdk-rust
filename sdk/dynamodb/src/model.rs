@@ -406,6 +406,7 @@ pub enum ReplicaStatus {
     InaccessibleEncryptionCredentials,
     RegionDisabled,
     Updating,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for ReplicaStatus {
@@ -975,6 +976,7 @@ pub enum IndexStatus {
     Creating,
     Deleting,
     Updating,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for IndexStatus {
@@ -1039,6 +1041,7 @@ pub enum TableStatus {
     Deleting,
     InaccessibleEncryptionCredentials,
     Updating,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for TableStatus {
@@ -2739,6 +2742,7 @@ impl SSEDescription {
 pub enum SseType {
     Aes256,
     Kms,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for SseType {
@@ -2797,6 +2801,7 @@ pub enum SseStatus {
     Enabled,
     Enabling,
     Updating,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for SseStatus {
@@ -3497,6 +3502,7 @@ pub enum StreamViewType {
     NewAndOldImages,
     NewImage,
     OldImage,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for StreamViewType {
@@ -4071,6 +4077,7 @@ pub enum ProjectionType {
     All,
     Include,
     KeysOnly,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for ProjectionType {
@@ -4235,6 +4242,7 @@ impl KeySchemaElement {
 pub enum KeyType {
     Hash,
     Range,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for KeyType {
@@ -4552,6 +4560,7 @@ impl BillingModeSummary {
 pub enum BillingMode {
     PayPerRequest,
     Provisioned,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for BillingMode {
@@ -4704,6 +4713,7 @@ pub enum ScalarAttributeType {
     B,
     N,
     S,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for ScalarAttributeType {
@@ -6341,6 +6351,7 @@ impl Capacity {
 pub enum ReturnItemCollectionMetrics {
     None,
     Size,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for ReturnItemCollectionMetrics {
@@ -6413,6 +6424,7 @@ pub enum ReturnConsumedCapacity {
     Indexes,
     None,
     Total,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for ReturnConsumedCapacity {
@@ -6473,6 +6485,7 @@ pub enum ReturnValue {
     None,
     UpdatedNew,
     UpdatedOld,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for ReturnValue {
@@ -6534,6 +6547,7 @@ impl<'de> serde::Deserialize<'de> for ReturnValue {
 pub enum ConditionalOperator {
     And,
     Or,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for ConditionalOperator {
@@ -7092,6 +7106,7 @@ pub enum ComparisonOperator {
     NotContains,
     NotNull,
     Null,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for ComparisonOperator {
@@ -7417,6 +7432,7 @@ pub enum AttributeAction {
     Add,
     Delete,
     Put,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for AttributeAction {
@@ -8477,6 +8493,7 @@ pub enum GlobalTableStatus {
     Creating,
     Deleting,
     Updating,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for GlobalTableStatus {
@@ -8719,6 +8736,7 @@ pub enum ContributorInsightsStatus {
     Enabled,
     Enabling,
     Failed,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for ContributorInsightsStatus {
@@ -8780,6 +8798,7 @@ impl<'de> serde::Deserialize<'de> for ContributorInsightsStatus {
 pub enum ContributorInsightsAction {
     Disable,
     Enable,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for ContributorInsightsAction {
@@ -9065,6 +9084,7 @@ impl PointInTimeRecoveryDescription {
 pub enum PointInTimeRecoveryStatus {
     Disabled,
     Enabled,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for PointInTimeRecoveryStatus {
@@ -9120,6 +9140,7 @@ impl<'de> serde::Deserialize<'de> for PointInTimeRecoveryStatus {
 pub enum ContinuousBackupsStatus {
     Disabled,
     Enabled,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for ContinuousBackupsStatus {
@@ -9650,6 +9671,7 @@ impl Update {
 pub enum ReturnValuesOnConditionCheckFailure {
     AllOld,
     None,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for ReturnValuesOnConditionCheckFailure {
@@ -11028,6 +11050,7 @@ pub enum Select {
     AllProjectedAttributes,
     Count,
     SpecificAttributes,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for Select {
@@ -11518,6 +11541,7 @@ pub enum ExportStatus {
     Completed,
     Failed,
     InProgress,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for ExportStatus {
@@ -11916,6 +11940,7 @@ pub enum BackupType {
     AwsBackup,
     System,
     User,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for BackupType {
@@ -11974,6 +11999,7 @@ pub enum BackupStatus {
     Available,
     Creating,
     Deleted,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for BackupStatus {
@@ -12033,6 +12059,7 @@ pub enum BackupTypeFilter {
     AwsBackup,
     System,
     User,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for BackupTypeFilter {
@@ -12491,6 +12518,7 @@ impl ExportDescription {
 pub enum ExportFormat {
     DynamodbJson,
     Ion,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for ExportFormat {
@@ -12546,6 +12574,7 @@ impl<'de> serde::Deserialize<'de> for ExportFormat {
 pub enum S3SseAlgorithm {
     Aes256,
     Kms,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for S3SseAlgorithm {
@@ -12681,6 +12710,7 @@ pub enum DestinationStatus {
     Disabling,
     EnableFailed,
     Enabling,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for DestinationStatus {
@@ -12812,6 +12842,7 @@ pub enum TimeToLiveStatus {
     Disabling,
     Enabled,
     Enabling,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for TimeToLiveStatus {
@@ -14596,6 +14627,7 @@ pub enum BatchStatementErrorCodeEnum {
     ThrottlingError,
     TransactionConflict,
     ValidationError,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for BatchStatementErrorCodeEnum {

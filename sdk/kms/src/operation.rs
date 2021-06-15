@@ -3917,7 +3917,7 @@ impl smithy_http::response::ParseStrictResponse for ImportKeyMaterial {
 /// are predefined aliases that AWS has created but has not yet associated with a CMK. Aliases
 /// that AWS creates in your account, including predefined aliases, do not count against your
 /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html#aliases-limit">AWS KMS aliases
-/// quota</a>.</p>    
+/// quota</a>.</p>
 /// <p>
 /// <b>Cross-account use</b>: No. <code>ListAliases</code> does not
 /// return aliases in other AWS accounts.</p>
@@ -4024,7 +4024,9 @@ impl smithy_http::response::ParseStrictResponse for ListAliases {
     }
 }
 
-/// <p>Gets a list of all grants for the specified customer master key (CMK).</p>
+/// <p>Gets a list of all grants for the specified customer master key (CMK). </p>
+/// <p>You must specify the CMK in all requests. You can filter the grant list by grant ID
+/// or grantee principal.</p>
 /// <note>
 /// <p>The <code>GranteePrincipal</code> field in the <code>ListGrants</code> response usually contains the
 /// user or role designated as the grantee principal in the grant. However, when the grantee
@@ -4096,6 +4098,13 @@ impl ListGrants {
                 "InvalidArnException" => match serde_json::from_value(body) {
                     Ok(body) => crate::error::ListGrantsError {
                         kind: crate::error::ListGrantsErrorKind::InvalidArnError(body),
+                        meta: generic,
+                    },
+                    Err(e) => crate::error::ListGrantsError::unhandled(e),
+                },
+                "InvalidGrantIdException" => match serde_json::from_value(body) {
+                    Ok(body) => crate::error::ListGrantsError {
+                        kind: crate::error::ListGrantsErrorKind::InvalidGrantIdError(body),
                         meta: generic,
                     },
                     Err(e) => crate::error::ListGrantsError::unhandled(e),

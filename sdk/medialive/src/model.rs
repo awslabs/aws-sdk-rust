@@ -368,6 +368,7 @@ pub enum ReservationState {
     Canceled,
     Deleted,
     Expired,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for ReservationState {
@@ -615,6 +616,7 @@ pub enum ReservationVideoQuality {
     Enhanced,
     Premium,
     Standard,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for ReservationVideoQuality {
@@ -673,6 +675,7 @@ impl<'de> serde::Deserialize<'de> for ReservationVideoQuality {
 pub enum ReservationSpecialFeature {
     AdvancedAudio,
     AudioNormalization,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for ReservationSpecialFeature {
@@ -731,6 +734,7 @@ pub enum ReservationResourceType {
     Input,
     Multiplex,
     Output,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for ReservationResourceType {
@@ -793,6 +797,7 @@ pub enum ReservationResolution {
     Hd,
     Sd,
     Uhd,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for ReservationResolution {
@@ -853,6 +858,7 @@ impl<'de> serde::Deserialize<'de> for ReservationResolution {
 pub enum ReservationMaximumFramerate {
     Max30Fps,
     Max60Fps,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for ReservationMaximumFramerate {
@@ -910,6 +916,7 @@ pub enum ReservationMaximumBitrate {
     Max10Mbps,
     Max20Mbps,
     Max50Mbps,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for ReservationMaximumBitrate {
@@ -971,6 +978,7 @@ pub enum ReservationCodec {
     Hevc,
     Link,
     Mpeg2,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for ReservationCodec {
@@ -1033,6 +1041,7 @@ impl<'de> serde::Deserialize<'de> for ReservationCodec {
 pub enum ChannelClass {
     SinglePipeline,
     Standard,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for ChannelClass {
@@ -1088,6 +1097,7 @@ impl<'de> serde::Deserialize<'de> for ChannelClass {
 )]
 pub enum OfferingType {
     NoUpfront,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for OfferingType {
@@ -1141,6 +1151,7 @@ impl<'de> serde::Deserialize<'de> for OfferingType {
 )]
 pub enum OfferingDurationUnits {
     Months,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for OfferingDurationUnits {
@@ -2057,6 +2068,7 @@ pub enum PreferredChannelPipeline {
     CurrentlyActive,
     Pipeline0,
     Pipeline1,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for PreferredChannelPipeline {
@@ -2343,6 +2355,7 @@ pub enum MultiplexState {
     Running,
     Starting,
     Stopping,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for MultiplexState {
@@ -2832,6 +2845,7 @@ pub enum InputSecurityGroupState {
     Idle,
     InUse,
     Updating,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for InputSecurityGroupState {
@@ -3112,6 +3126,7 @@ impl InputDeviceUhdSettings {
 pub enum InputDeviceScanType {
     Interlaced,
     Progressive,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for InputDeviceScanType {
@@ -3168,6 +3183,7 @@ impl<'de> serde::Deserialize<'de> for InputDeviceScanType {
 pub enum InputDeviceState {
     Idle,
     Streaming,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for InputDeviceState {
@@ -3225,6 +3241,7 @@ pub enum InputDeviceConfiguredInput {
     Auto,
     Hdmi,
     Sdi,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for InputDeviceConfiguredInput {
@@ -3283,6 +3300,7 @@ impl<'de> serde::Deserialize<'de> for InputDeviceConfiguredInput {
 pub enum InputDeviceActiveInput {
     Hdmi,
     Sdi,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for InputDeviceActiveInput {
@@ -3338,6 +3356,7 @@ impl<'de> serde::Deserialize<'de> for InputDeviceActiveInput {
 )]
 pub enum InputDeviceType {
     Hd,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for InputDeviceType {
@@ -3512,6 +3531,7 @@ impl InputDeviceNetworkSettings {
 pub enum InputDeviceIpScheme {
     Dhcp,
     Static,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for InputDeviceIpScheme {
@@ -3741,6 +3761,7 @@ impl InputDeviceHdSettings {
 pub enum DeviceUpdateStatus {
     NotUpToDate,
     UpToDate,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for DeviceUpdateStatus {
@@ -3797,6 +3818,7 @@ impl<'de> serde::Deserialize<'de> for DeviceUpdateStatus {
 pub enum DeviceSettingsSyncState {
     Synced,
     Syncing,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for DeviceSettingsSyncState {
@@ -3853,6 +3875,7 @@ impl<'de> serde::Deserialize<'de> for DeviceSettingsSyncState {
 pub enum InputDeviceConnectionState {
     Connected,
     Disconnected,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for InputDeviceConnectionState {
@@ -4329,6 +4352,7 @@ pub enum InputType {
     RtpPush,
     UdpPush,
     UrlPull,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for InputType {
@@ -4402,6 +4426,7 @@ pub enum InputState {
     Deleted,
     Deleting,
     Detached,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for InputState {
@@ -4598,6 +4623,7 @@ impl MediaConnectFlow {
 pub enum InputSourceType {
     Dynamic,
     Static,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for InputSourceType {
@@ -4701,6 +4727,7 @@ impl InputDeviceSettings {
 pub enum InputClass {
     SinglePipeline,
     Standard,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for InputClass {
@@ -5646,6 +5673,7 @@ pub enum ChannelState {
     Stopping,
     UpdateFailed,
     Updating,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for ChannelState {
@@ -5866,6 +5894,7 @@ pub enum LogLevel {
     Error,
     Info,
     Warning,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for LogLevel {
@@ -6016,6 +6045,7 @@ pub enum InputResolution {
     Hd,
     Sd,
     Uhd,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for InputResolution {
@@ -6075,6 +6105,7 @@ pub enum InputMaximumBitrate {
     Max10Mbps,
     Max20Mbps,
     Max50Mbps,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for InputMaximumBitrate {
@@ -6134,6 +6165,7 @@ pub enum InputCodec {
     Avc,
     Hevc,
     Mpeg2,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for InputCodec {
@@ -6833,6 +6865,7 @@ impl VideoSelectorPid {
 pub enum VideoSelectorColorSpaceUsage {
     Fallback,
     Force,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for VideoSelectorColorSpaceUsage {
@@ -7017,6 +7050,7 @@ pub enum VideoSelectorColorSpace {
     Hlg2020,
     Rec601,
     Rec709,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for VideoSelectorColorSpace {
@@ -7079,6 +7113,7 @@ impl<'de> serde::Deserialize<'de> for VideoSelectorColorSpace {
 pub enum InputSourceEndBehavior {
     Continue,
     Loop,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for InputSourceEndBehavior {
@@ -7135,6 +7170,7 @@ impl<'de> serde::Deserialize<'de> for InputSourceEndBehavior {
 pub enum Smpte2038DataPreference {
     Ignore,
     Prefer,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for Smpte2038DataPreference {
@@ -7266,6 +7302,7 @@ impl NetworkInputSettings {
 pub enum NetworkInputServerValidation {
     CheckCryptographyAndValidateName,
     CheckCryptographyOnly,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for NetworkInputServerValidation {
@@ -7424,6 +7461,7 @@ pub enum InputFilter {
     Auto,
     Disabled,
     Forced,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for InputFilter {
@@ -7482,6 +7520,7 @@ impl<'de> serde::Deserialize<'de> for InputFilter {
 pub enum InputDenoiseFilter {
     Disabled,
     Enabled,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for InputDenoiseFilter {
@@ -7538,6 +7577,7 @@ impl<'de> serde::Deserialize<'de> for InputDenoiseFilter {
 pub enum InputDeblockFilter {
     Disabled,
     Enabled,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for InputDeblockFilter {
@@ -8164,6 +8204,7 @@ impl Scte20SourceSettings {
 pub enum Scte20Convert608To708 {
     Disabled,
     Upconvert,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for Scte20Convert608To708 {
@@ -8323,6 +8364,7 @@ impl EmbeddedSourceSettings {
 pub enum EmbeddedScte20Detection {
     Auto,
     Off,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for EmbeddedScte20Detection {
@@ -8379,6 +8421,7 @@ impl<'de> serde::Deserialize<'de> for EmbeddedScte20Detection {
 pub enum EmbeddedConvert608To708 {
     Disabled,
     Upconvert,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for EmbeddedConvert608To708 {
@@ -8953,6 +8996,7 @@ impl AudioLanguageSelection {
 pub enum AudioLanguageSelectionPolicy {
     Loose,
     Strict,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for AudioLanguageSelectionPolicy {
@@ -9122,6 +9166,7 @@ impl AutomaticInputFailoverSettings {
 pub enum InputPreference {
     EqualInputPreference,
     PrimaryInputPreferred,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for InputPreference {
@@ -9973,6 +10018,7 @@ impl VideoDescription {
 pub enum VideoDescriptionScalingBehavior {
     Default,
     StretchToOutput,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for VideoDescriptionScalingBehavior {
@@ -10030,6 +10076,7 @@ pub enum VideoDescriptionRespondToAfd {
     None,
     Passthrough,
     Respond,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for VideoDescriptionRespondToAfd {
@@ -10550,6 +10597,7 @@ impl Mpeg2Settings {
 pub enum Mpeg2TimecodeInsertionBehavior {
     Disabled,
     GopTimecode,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for Mpeg2TimecodeInsertionBehavior {
@@ -10606,6 +10654,7 @@ impl<'de> serde::Deserialize<'de> for Mpeg2TimecodeInsertionBehavior {
 pub enum Mpeg2SubGopLength {
     Dynamic,
     Fixed,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for Mpeg2SubGopLength {
@@ -10662,6 +10711,7 @@ impl<'de> serde::Deserialize<'de> for Mpeg2SubGopLength {
 pub enum Mpeg2ScanType {
     Interlaced,
     Progressive,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for Mpeg2ScanType {
@@ -10718,6 +10768,7 @@ impl<'de> serde::Deserialize<'de> for Mpeg2ScanType {
 pub enum Mpeg2GopSizeUnits {
     Frames,
     Seconds,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for Mpeg2GopSizeUnits {
@@ -10783,6 +10834,7 @@ pub enum FixedAfd {
     Afd1101,
     Afd1110,
     Afd1111,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for FixedAfd {
@@ -11008,6 +11060,7 @@ pub enum TemporalFilterStrength {
     Strength7,
     Strength8,
     Strength9,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for TemporalFilterStrength {
@@ -11095,6 +11148,7 @@ pub enum TemporalFilterPostFilterSharpening {
     Auto,
     Disabled,
     Enabled,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for TemporalFilterPostFilterSharpening {
@@ -11153,6 +11207,7 @@ impl<'de> serde::Deserialize<'de> for TemporalFilterPostFilterSharpening {
 pub enum Mpeg2DisplayRatio {
     Displayratio16X9,
     Displayratio4X3,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for Mpeg2DisplayRatio {
@@ -11209,6 +11264,7 @@ impl<'de> serde::Deserialize<'de> for Mpeg2DisplayRatio {
 pub enum Mpeg2ColorSpace {
     Auto,
     Passthrough,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for Mpeg2ColorSpace {
@@ -11265,6 +11321,7 @@ impl<'de> serde::Deserialize<'de> for Mpeg2ColorSpace {
 pub enum Mpeg2ColorMetadata {
     Ignore,
     Insert,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for Mpeg2ColorMetadata {
@@ -11322,6 +11379,7 @@ pub enum AfdSignaling {
     Auto,
     Fixed,
     None,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for AfdSignaling {
@@ -11383,6 +11441,7 @@ pub enum Mpeg2AdaptiveQuantization {
     Low,
     Medium,
     Off,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for Mpeg2AdaptiveQuantization {
@@ -12031,6 +12090,7 @@ impl H265Settings {
 pub enum H265TimecodeInsertionBehavior {
     Disabled,
     PicTimingSei,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for H265TimecodeInsertionBehavior {
@@ -12087,6 +12147,7 @@ impl<'de> serde::Deserialize<'de> for H265TimecodeInsertionBehavior {
 pub enum H265Tier {
     High,
     Main,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for H265Tier {
@@ -12143,6 +12204,7 @@ impl<'de> serde::Deserialize<'de> for H265Tier {
 pub enum H265SceneChangeDetect {
     Disabled,
     Enabled,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for H265SceneChangeDetect {
@@ -12199,6 +12261,7 @@ impl<'de> serde::Deserialize<'de> for H265SceneChangeDetect {
 pub enum H265ScanType {
     Interlaced,
     Progressive,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for H265ScanType {
@@ -12256,6 +12319,7 @@ pub enum H265RateControlMode {
     Cbr,
     Multiplex,
     Qvbr,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for H265RateControlMode {
@@ -12314,6 +12378,7 @@ impl<'de> serde::Deserialize<'de> for H265RateControlMode {
 pub enum H265Profile {
     Main,
     Main10Bit,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for H265Profile {
@@ -12371,6 +12436,7 @@ pub enum H265LookAheadRateControl {
     High,
     Low,
     Medium,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for H265LookAheadRateControl {
@@ -12441,6 +12507,7 @@ pub enum H265Level {
     H265Level61,
     H265Level62,
     H265LevelAuto,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for H265Level {
@@ -12521,6 +12588,7 @@ impl<'de> serde::Deserialize<'de> for H265Level {
 pub enum H265GopSizeUnits {
     Frames,
     Seconds,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for H265GopSizeUnits {
@@ -12577,6 +12645,7 @@ impl<'de> serde::Deserialize<'de> for H265GopSizeUnits {
 pub enum H265FlickerAq {
     Disabled,
     Enabled,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for H265FlickerAq {
@@ -12896,6 +12965,7 @@ impl ColorSpacePassthroughSettings {
 pub enum H265ColorMetadata {
     Ignore,
     Insert,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for H265ColorMetadata {
@@ -12952,6 +13022,7 @@ impl<'de> serde::Deserialize<'de> for H265ColorMetadata {
 pub enum H265AlternativeTransferFunction {
     Insert,
     Omit,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for H265AlternativeTransferFunction {
@@ -13006,17 +13077,20 @@ impl<'de> serde::Deserialize<'de> for H265AlternativeTransferFunction {
     std::hash::Hash,
 )]
 pub enum H265AdaptiveQuantization {
+    Auto,
     High,
     Higher,
     Low,
     Max,
     Medium,
     Off,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for H265AdaptiveQuantization {
     fn from(s: &str) -> Self {
         match s {
+            "AUTO" => H265AdaptiveQuantization::Auto,
             "HIGH" => H265AdaptiveQuantization::High,
             "HIGHER" => H265AdaptiveQuantization::Higher,
             "LOW" => H265AdaptiveQuantization::Low,
@@ -13037,6 +13111,7 @@ impl std::str::FromStr for H265AdaptiveQuantization {
 impl H265AdaptiveQuantization {
     pub fn as_str(&self) -> &str {
         match self {
+            H265AdaptiveQuantization::Auto => "AUTO",
             H265AdaptiveQuantization::High => "HIGH",
             H265AdaptiveQuantization::Higher => "HIGHER",
             H265AdaptiveQuantization::Low => "LOW",
@@ -13066,7 +13141,7 @@ impl<'de> serde::Deserialize<'de> for H265AdaptiveQuantization {
 #[non_exhaustive]
 #[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
 pub struct H264Settings {
-    /// Adaptive quantization. Allows intra-frame quantizers to vary to improve visual quality.
+    /// Enables or disables adaptive quantization, which is a technique MediaLive can apply to video on a frame-by-frame basis to produce more compression without losing quality. There are three types of adaptive quantization: flicker, spatial, and temporal. Set the field in one of these ways: Set to Auto. Recommended. For each type of AQ, MediaLive will determine if AQ is needed, and if so, the appropriate strength. Set a strength (a value other than Auto or Disable). This strength will apply to any of the AQ fields that you choose to enable. Set to Disabled to disable all types of adaptive quantization.
     #[serde(rename = "adaptiveQuantization")]
     #[serde(default)]
     pub adaptive_quantization: std::option::Option<crate::model::H264AdaptiveQuantization>,
@@ -13106,7 +13181,7 @@ pub struct H264Settings {
     #[serde(rename = "fixedAfd")]
     #[serde(default)]
     pub fixed_afd: std::option::Option<crate::model::FixedAfd>,
-    /// If set to enabled, adjust quantization within each frame to reduce flicker or 'pop' on I-frames.
+    /// Flicker AQ makes adjustments within each frame to reduce flicker or 'pop' on I-frames. The value to enter in this field depends on the value in the Adaptive quantization field: If you have set the Adaptive quantization field to Auto, MediaLive ignores any value in this field. MediaLive will determine if flicker AQ is appropriate and will apply the appropriate strength. If you have set the Adaptive quantization field to a strength, you can set this field to Enabled or Disabled. Enabled: MediaLive will apply flicker AQ using the specified strength. Disabled: MediaLive won't apply flicker AQ. If you have set the Adaptive quantization to Disabled, MediaLive ignores any value in this field and doesn't apply flicker AQ.
     #[serde(rename = "flickerAq")]
     #[serde(default)]
     pub flicker_aq: std::option::Option<crate::model::H264FlickerAq>,
@@ -13193,10 +13268,11 @@ pub struct H264Settings {
     #[serde(rename = "qualityLevel")]
     #[serde(default)]
     pub quality_level: std::option::Option<crate::model::H264QualityLevel>,
-    /// Controls the target quality for the video encode. Applies only when the rate control mode is QVBR. Set values for the QVBR quality level field and Max bitrate field that suit your most important viewing devices. Recommended values are:
+    /// Controls the target quality for the video encode. Applies only when the rate control mode is QVBR. You can set a target quality or you can let MediaLive determine the best quality. To set a target quality, enter values in the QVBR quality level field and the Max bitrate field. Enter values that suit your most important viewing devices. Recommended values are:
     /// - Primary screen: Quality level: 8 to 10. Max bitrate: 4M
     /// - PC or tablet: Quality level: 7. Max bitrate: 1.5M to 3M
     /// - Smartphone: Quality level: 6. Max bitrate: 1M to 1.5M
+    /// To let MediaLive decide, leave the QVBR quality level field empty, and in Max bitrate enter the maximum rate you want in the video. For more information, see the section called "Video - rate control mode" in the MediaLive user guide
     #[serde(rename = "qvbrQualityLevel")]
     #[serde(default)]
     pub qvbr_quality_level: i32,
@@ -13232,7 +13308,7 @@ pub struct H264Settings {
     #[serde(rename = "softness")]
     #[serde(default)]
     pub softness: i32,
-    /// If set to enabled, adjust quantization within each frame based on spatial variation of content complexity.
+    /// Spatial AQ makes adjustments within each frame based on spatial variation of content complexity. The value to enter in this field depends on the value in the Adaptive quantization field: If you have set the Adaptive quantization field to Auto, MediaLive ignores any value in this field. MediaLive will determine if spatial AQ is appropriate and will apply the appropriate strength. If you have set the Adaptive quantization field to a strength, you can set this field to Enabled or Disabled. Enabled: MediaLive will apply spatial AQ using the specified strength. Disabled: MediaLive won't apply spatial AQ. If you have set the Adaptive quantization to Disabled, MediaLive ignores any value in this field and doesn't apply spatial AQ.
     #[serde(rename = "spatialAq")]
     #[serde(default)]
     pub spatial_aq: std::option::Option<crate::model::H264SpatialAq>,
@@ -13244,7 +13320,7 @@ pub struct H264Settings {
     #[serde(rename = "syntax")]
     #[serde(default)]
     pub syntax: std::option::Option<crate::model::H264Syntax>,
-    /// If set to enabled, adjust quantization within each frame based on temporal variation of content complexity.
+    /// Temporal makes adjustments within each frame based on temporal variation of content complexity. The value to enter in this field depends on the value in the Adaptive quantization field: If you have set the Adaptive quantization field to Auto, MediaLive ignores any value in this field. MediaLive will determine if temporal AQ is appropriate and will apply the appropriate strength. If you have set the Adaptive quantization field to a strength, you can set this field to Enabled or Disabled. Enabled: MediaLive will apply temporal AQ using the specified strength. Disabled: MediaLive won't apply temporal AQ. If you have set the Adaptive quantization to Disabled, MediaLive ignores any value in this field and doesn't apply temporal AQ.
     #[serde(rename = "temporalAq")]
     #[serde(default)]
     pub temporal_aq: std::option::Option<crate::model::H264TemporalAq>,
@@ -13354,7 +13430,7 @@ pub mod h264_settings {
             std::option::Option<crate::model::H264TimecodeInsertionBehavior>,
     }
     impl Builder {
-        /// Adaptive quantization. Allows intra-frame quantizers to vary to improve visual quality.
+        /// Enables or disables adaptive quantization, which is a technique MediaLive can apply to video on a frame-by-frame basis to produce more compression without losing quality. There are three types of adaptive quantization: flicker, spatial, and temporal. Set the field in one of these ways: Set to Auto. Recommended. For each type of AQ, MediaLive will determine if AQ is needed, and if so, the appropriate strength. Set a strength (a value other than Auto or Disable). This strength will apply to any of the AQ fields that you choose to enable. Set to Disabled to disable all types of adaptive quantization.
         pub fn adaptive_quantization(
             mut self,
             inp: crate::model::H264AdaptiveQuantization,
@@ -13465,7 +13541,7 @@ pub mod h264_settings {
             self.fixed_afd = inp;
             self
         }
-        /// If set to enabled, adjust quantization within each frame to reduce flicker or 'pop' on I-frames.
+        /// Flicker AQ makes adjustments within each frame to reduce flicker or 'pop' on I-frames. The value to enter in this field depends on the value in the Adaptive quantization field: If you have set the Adaptive quantization field to Auto, MediaLive ignores any value in this field. MediaLive will determine if flicker AQ is appropriate and will apply the appropriate strength. If you have set the Adaptive quantization field to a strength, you can set this field to Enabled or Disabled. Enabled: MediaLive will apply flicker AQ using the specified strength. Disabled: MediaLive won't apply flicker AQ. If you have set the Adaptive quantization to Disabled, MediaLive ignores any value in this field and doesn't apply flicker AQ.
         pub fn flicker_aq(mut self, inp: crate::model::H264FlickerAq) -> Self {
             self.flicker_aq = Some(inp);
             self
@@ -13679,10 +13755,11 @@ pub mod h264_settings {
             self.quality_level = inp;
             self
         }
-        /// Controls the target quality for the video encode. Applies only when the rate control mode is QVBR. Set values for the QVBR quality level field and Max bitrate field that suit your most important viewing devices. Recommended values are:
+        /// Controls the target quality for the video encode. Applies only when the rate control mode is QVBR. You can set a target quality or you can let MediaLive determine the best quality. To set a target quality, enter values in the QVBR quality level field and the Max bitrate field. Enter values that suit your most important viewing devices. Recommended values are:
         /// - Primary screen: Quality level: 8 to 10. Max bitrate: 4M
         /// - PC or tablet: Quality level: 7. Max bitrate: 1.5M to 3M
         /// - Smartphone: Quality level: 6. Max bitrate: 1M to 1.5M
+        /// To let MediaLive decide, leave the QVBR quality level field empty, and in Max bitrate enter the maximum rate you want in the video. For more information, see the section called "Video - rate control mode" in the MediaLive user guide
         pub fn qvbr_quality_level(mut self, inp: i32) -> Self {
             self.qvbr_quality_level = Some(inp);
             self
@@ -13757,7 +13834,7 @@ pub mod h264_settings {
             self.softness = Some(inp);
             self
         }
-        /// If set to enabled, adjust quantization within each frame based on spatial variation of content complexity.
+        /// Spatial AQ makes adjustments within each frame based on spatial variation of content complexity. The value to enter in this field depends on the value in the Adaptive quantization field: If you have set the Adaptive quantization field to Auto, MediaLive ignores any value in this field. MediaLive will determine if spatial AQ is appropriate and will apply the appropriate strength. If you have set the Adaptive quantization field to a strength, you can set this field to Enabled or Disabled. Enabled: MediaLive will apply spatial AQ using the specified strength. Disabled: MediaLive won't apply spatial AQ. If you have set the Adaptive quantization to Disabled, MediaLive ignores any value in this field and doesn't apply spatial AQ.
         pub fn spatial_aq(mut self, inp: crate::model::H264SpatialAq) -> Self {
             self.spatial_aq = Some(inp);
             self
@@ -13790,7 +13867,7 @@ pub mod h264_settings {
             self.syntax = inp;
             self
         }
-        /// If set to enabled, adjust quantization within each frame based on temporal variation of content complexity.
+        /// Temporal makes adjustments within each frame based on temporal variation of content complexity. The value to enter in this field depends on the value in the Adaptive quantization field: If you have set the Adaptive quantization field to Auto, MediaLive ignores any value in this field. MediaLive will determine if temporal AQ is appropriate and will apply the appropriate strength. If you have set the Adaptive quantization field to a strength, you can set this field to Enabled or Disabled. Enabled: MediaLive will apply temporal AQ using the specified strength. Disabled: MediaLive won't apply temporal AQ. If you have set the Adaptive quantization to Disabled, MediaLive ignores any value in this field and doesn't apply temporal AQ.
         pub fn temporal_aq(mut self, inp: crate::model::H264TemporalAq) -> Self {
             self.temporal_aq = Some(inp);
             self
@@ -13888,6 +13965,7 @@ impl H264Settings {
 pub enum H264TimecodeInsertionBehavior {
     Disabled,
     PicTimingSei,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for H264TimecodeInsertionBehavior {
@@ -13944,6 +14022,7 @@ impl<'de> serde::Deserialize<'de> for H264TimecodeInsertionBehavior {
 pub enum H264TemporalAq {
     Disabled,
     Enabled,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for H264TemporalAq {
@@ -14000,6 +14079,7 @@ impl<'de> serde::Deserialize<'de> for H264TemporalAq {
 pub enum H264Syntax {
     Default,
     Rp2027,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for H264Syntax {
@@ -14056,6 +14136,7 @@ impl<'de> serde::Deserialize<'de> for H264Syntax {
 pub enum H264SubGopLength {
     Dynamic,
     Fixed,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for H264SubGopLength {
@@ -14112,6 +14193,7 @@ impl<'de> serde::Deserialize<'de> for H264SubGopLength {
 pub enum H264SpatialAq {
     Disabled,
     Enabled,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for H264SpatialAq {
@@ -14168,6 +14250,7 @@ impl<'de> serde::Deserialize<'de> for H264SpatialAq {
 pub enum H264SceneChangeDetect {
     Disabled,
     Enabled,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for H264SceneChangeDetect {
@@ -14224,6 +14307,7 @@ impl<'de> serde::Deserialize<'de> for H264SceneChangeDetect {
 pub enum H264ScanType {
     Interlaced,
     Progressive,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for H264ScanType {
@@ -14282,6 +14366,7 @@ pub enum H264RateControlMode {
     Multiplex,
     Qvbr,
     Vbr,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for H264RateControlMode {
@@ -14342,6 +14427,7 @@ impl<'de> serde::Deserialize<'de> for H264RateControlMode {
 pub enum H264QualityLevel {
     EnhancedQuality,
     StandardQuality,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for H264QualityLevel {
@@ -14402,6 +14488,7 @@ pub enum H264Profile {
     High422,
     High42210Bit,
     Main,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for H264Profile {
@@ -14466,6 +14553,7 @@ impl<'de> serde::Deserialize<'de> for H264Profile {
 pub enum H264ParControl {
     InitializeFromSource,
     Specified,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for H264ParControl {
@@ -14523,6 +14611,7 @@ pub enum H264LookAheadRateControl {
     High,
     Low,
     Medium,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for H264LookAheadRateControl {
@@ -14596,6 +14685,7 @@ pub enum H264Level {
     H264Level51,
     H264Level52,
     H264LevelAuto,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for H264Level {
@@ -14682,6 +14772,7 @@ impl<'de> serde::Deserialize<'de> for H264Level {
 pub enum H264GopSizeUnits {
     Frames,
     Seconds,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for H264GopSizeUnits {
@@ -14738,6 +14829,7 @@ impl<'de> serde::Deserialize<'de> for H264GopSizeUnits {
 pub enum H264GopBReference {
     Disabled,
     Enabled,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for H264GopBReference {
@@ -14794,6 +14886,7 @@ impl<'de> serde::Deserialize<'de> for H264GopBReference {
 pub enum H264FramerateControl {
     InitializeFromSource,
     Specified,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for H264FramerateControl {
@@ -14850,6 +14943,7 @@ impl<'de> serde::Deserialize<'de> for H264FramerateControl {
 pub enum H264ForceFieldPictures {
     Disabled,
     Enabled,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for H264ForceFieldPictures {
@@ -14906,6 +15000,7 @@ impl<'de> serde::Deserialize<'de> for H264ForceFieldPictures {
 pub enum H264FlickerAq {
     Disabled,
     Enabled,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for H264FlickerAq {
@@ -15018,6 +15113,7 @@ impl H264FilterSettings {
 pub enum H264EntropyEncoding {
     Cabac,
     Cavlc,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for H264EntropyEncoding {
@@ -15172,6 +15268,7 @@ impl H264ColorSpaceSettings {
 pub enum H264ColorMetadata {
     Ignore,
     Insert,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for H264ColorMetadata {
@@ -15226,17 +15323,20 @@ impl<'de> serde::Deserialize<'de> for H264ColorMetadata {
     std::hash::Hash,
 )]
 pub enum H264AdaptiveQuantization {
+    Auto,
     High,
     Higher,
     Low,
     Max,
     Medium,
     Off,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for H264AdaptiveQuantization {
     fn from(s: &str) -> Self {
         match s {
+            "AUTO" => H264AdaptiveQuantization::Auto,
             "HIGH" => H264AdaptiveQuantization::High,
             "HIGHER" => H264AdaptiveQuantization::Higher,
             "LOW" => H264AdaptiveQuantization::Low,
@@ -15257,6 +15357,7 @@ impl std::str::FromStr for H264AdaptiveQuantization {
 impl H264AdaptiveQuantization {
     pub fn as_str(&self) -> &str {
         match self {
+            H264AdaptiveQuantization::Auto => "AUTO",
             H264AdaptiveQuantization::High => "HIGH",
             H264AdaptiveQuantization::Higher => "HIGHER",
             H264AdaptiveQuantization::Low => "LOW",
@@ -15368,6 +15469,7 @@ impl FrameCaptureSettings {
 pub enum FrameCaptureIntervalUnit {
     Milliseconds,
     Seconds,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for FrameCaptureIntervalUnit {
@@ -15499,6 +15601,7 @@ pub enum TimecodeConfigSource {
     Embedded,
     Systemclock,
     Zerobased,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for TimecodeConfigSource {
@@ -16173,6 +16276,7 @@ impl FecOutputSettings {
 pub enum FecOutputIncludeFec {
     Column,
     ColumnAndRow,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for FecOutputIncludeFec {
@@ -17207,6 +17311,7 @@ impl M2tsSettings {
 pub enum M2tsTimedMetadataBehavior {
     NoPassthrough,
     Passthrough,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for M2tsTimedMetadataBehavior {
@@ -17263,6 +17368,7 @@ impl<'de> serde::Deserialize<'de> for M2tsTimedMetadataBehavior {
 pub enum M2tsSegmentationStyle {
     MaintainCadence,
     ResetCadence,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for M2tsSegmentationStyle {
@@ -17323,6 +17429,7 @@ pub enum M2tsSegmentationMarkers {
     PsiSegstart,
     RaiAdapt,
     RaiSegstart,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for M2tsSegmentationMarkers {
@@ -17387,6 +17494,7 @@ impl<'de> serde::Deserialize<'de> for M2tsSegmentationMarkers {
 pub enum M2tsScte35Control {
     None,
     Passthrough,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for M2tsScte35Control {
@@ -17443,6 +17551,7 @@ impl<'de> serde::Deserialize<'de> for M2tsScte35Control {
 pub enum M2tsRateMode {
     Cbr,
     Vbr,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for M2tsRateMode {
@@ -17499,6 +17608,7 @@ impl<'de> serde::Deserialize<'de> for M2tsRateMode {
 pub enum M2tsPcrControl {
     ConfiguredPcrPeriod,
     PcrEveryPesPacket,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for M2tsPcrControl {
@@ -17555,6 +17665,7 @@ impl<'de> serde::Deserialize<'de> for M2tsPcrControl {
 pub enum M2tsNielsenId3Behavior {
     NoPassthrough,
     Passthrough,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for M2tsNielsenId3Behavior {
@@ -17611,6 +17722,7 @@ impl<'de> serde::Deserialize<'de> for M2tsNielsenId3Behavior {
 pub enum M2tsKlv {
     None,
     Passthrough,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for M2tsKlv {
@@ -17667,6 +17779,7 @@ impl<'de> serde::Deserialize<'de> for M2tsKlv {
 pub enum M2tsEsRateInPes {
     Exclude,
     Include,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for M2tsEsRateInPes {
@@ -17723,6 +17836,7 @@ impl<'de> serde::Deserialize<'de> for M2tsEsRateInPes {
 pub enum M2tsEbpPlacement {
     VideoAndAudioPids,
     VideoPid,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for M2tsEbpPlacement {
@@ -17779,6 +17893,7 @@ impl<'de> serde::Deserialize<'de> for M2tsEbpPlacement {
 pub enum M2tsAudioInterval {
     VideoAndFixedIntervals,
     VideoInterval,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for M2tsAudioInterval {
@@ -17835,6 +17950,7 @@ impl<'de> serde::Deserialize<'de> for M2tsAudioInterval {
 pub enum M2tsEbifControl {
     None,
     Passthrough,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for M2tsEbifControl {
@@ -18045,6 +18161,7 @@ pub enum DvbSdtOutputSdt {
     SdtFollowIfPresent,
     SdtManual,
     SdtNone,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for DvbSdtOutputSdt {
@@ -18186,6 +18303,7 @@ impl DvbNitSettings {
 pub enum M2tsCcDescriptor {
     Disabled,
     Enabled,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for M2tsCcDescriptor {
@@ -18242,6 +18360,7 @@ impl<'de> serde::Deserialize<'de> for M2tsCcDescriptor {
 pub enum M2tsBufferModel {
     Multiplex,
     None,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for M2tsBufferModel {
@@ -18298,6 +18417,7 @@ impl<'de> serde::Deserialize<'de> for M2tsBufferModel {
 pub enum M2tsAudioStreamType {
     Atsc,
     Dvb,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for M2tsAudioStreamType {
@@ -18354,6 +18474,7 @@ impl<'de> serde::Deserialize<'de> for M2tsAudioStreamType {
 pub enum M2tsAudioBufferModel {
     Atsc,
     Dvb,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for M2tsAudioBufferModel {
@@ -18410,6 +18531,7 @@ impl<'de> serde::Deserialize<'de> for M2tsAudioBufferModel {
 pub enum M2tsAribCaptionsPidControl {
     Auto,
     UseConfigured,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for M2tsAribCaptionsPidControl {
@@ -18466,6 +18588,7 @@ impl<'de> serde::Deserialize<'de> for M2tsAribCaptionsPidControl {
 pub enum M2tsArib {
     Disabled,
     Enabled,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for M2tsArib {
@@ -18522,6 +18645,7 @@ impl<'de> serde::Deserialize<'de> for M2tsArib {
 pub enum M2tsAbsentInputAudioBehavior {
     Drop,
     EncodeSilence,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for M2tsAbsentInputAudioBehavior {
@@ -18681,6 +18805,7 @@ impl RtmpOutputSettings {
 pub enum RtmpOutputCertificateMode {
     SelfSigned,
     VerifyAuthenticity,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for RtmpOutputCertificateMode {
@@ -18860,6 +18985,7 @@ impl MsSmoothOutputSettings {
 pub enum MsSmoothH265PackagingType {
     Hev1,
     Hvc1,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for MsSmoothH265PackagingType {
@@ -19565,6 +19691,7 @@ impl M3u8Settings {
 pub enum M3u8TimedMetadataBehavior {
     NoPassthrough,
     Passthrough,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for M3u8TimedMetadataBehavior {
@@ -19621,6 +19748,7 @@ impl<'de> serde::Deserialize<'de> for M3u8TimedMetadataBehavior {
 pub enum M3u8Scte35Behavior {
     NoPassthrough,
     Passthrough,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for M3u8Scte35Behavior {
@@ -19677,6 +19805,7 @@ impl<'de> serde::Deserialize<'de> for M3u8Scte35Behavior {
 pub enum M3u8PcrControl {
     ConfiguredPcrPeriod,
     PcrEveryPesPacket,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for M3u8PcrControl {
@@ -19733,6 +19862,7 @@ impl<'de> serde::Deserialize<'de> for M3u8PcrControl {
 pub enum M3u8NielsenId3Behavior {
     NoPassthrough,
     Passthrough,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for M3u8NielsenId3Behavior {
@@ -19913,6 +20043,7 @@ impl Fmp4HlsSettings {
 pub enum Fmp4TimedMetadataBehavior {
     NoPassthrough,
     Passthrough,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for Fmp4TimedMetadataBehavior {
@@ -19969,6 +20100,7 @@ impl<'de> serde::Deserialize<'de> for Fmp4TimedMetadataBehavior {
 pub enum Fmp4NielsenId3Behavior {
     NoPassthrough,
     Passthrough,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for Fmp4NielsenId3Behavior {
@@ -20149,6 +20281,7 @@ impl AudioOnlyHlsSettings {
 pub enum AudioOnlyHlsSegmentType {
     Aac,
     Fmp4,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for AudioOnlyHlsSegmentType {
@@ -20207,6 +20340,7 @@ pub enum AudioOnlyHlsTrackType {
     AlternateAudioAutoSelectDefault,
     AlternateAudioNotAutoSelect,
     AudioOnlyVariantStream,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for AudioOnlyHlsTrackType {
@@ -20352,6 +20486,7 @@ impl InputLocation {
 pub enum HlsH265PackagingType {
     Hev1,
     Hvc1,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for HlsH265PackagingType {
@@ -20941,6 +21076,7 @@ pub enum UdpTimedMetadataId3Frame {
     None,
     Priv,
     Tdrl,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for UdpTimedMetadataId3Frame {
@@ -21000,6 +21136,7 @@ pub enum InputLossActionForUdpOut {
     DropProgram,
     DropTs,
     EmitProgram,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for InputLossActionForUdpOut {
@@ -21223,6 +21360,7 @@ impl RtmpGroupSettings {
 pub enum InputLossActionForRtmpOut {
     EmitOutput,
     PauseOutput,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for InputLossActionForRtmpOut {
@@ -21280,6 +21418,7 @@ pub enum RtmpCaptionData {
     All,
     Field1608,
     Field1AndField2608,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for RtmpCaptionData {
@@ -21338,6 +21477,7 @@ impl<'de> serde::Deserialize<'de> for RtmpCaptionData {
 pub enum RtmpCacheFullBehavior {
     DisconnectImmediately,
     WaitForServer,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for RtmpCacheFullBehavior {
@@ -21394,6 +21534,7 @@ impl<'de> serde::Deserialize<'de> for RtmpCacheFullBehavior {
 pub enum AuthenticationScheme {
     Akamai,
     Common,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for AuthenticationScheme {
@@ -21449,6 +21590,7 @@ impl<'de> serde::Deserialize<'de> for AuthenticationScheme {
 )]
 pub enum RtmpAdMarkers {
     OnCuePointScte35,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for RtmpAdMarkers {
@@ -21952,6 +22094,7 @@ impl MsSmoothGroupSettings {
 pub enum SmoothGroupTimestampOffsetMode {
     UseConfiguredOffset,
     UseEventStartDate,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for SmoothGroupTimestampOffsetMode {
@@ -22008,6 +22151,7 @@ impl<'de> serde::Deserialize<'de> for SmoothGroupTimestampOffsetMode {
 pub enum SmoothGroupStreamManifestBehavior {
     DoNotSend,
     Send,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for SmoothGroupStreamManifestBehavior {
@@ -22065,6 +22209,7 @@ pub enum SmoothGroupSparseTrackType {
     None,
     Scte35,
     Scte35WithoutSegmentation,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for SmoothGroupSparseTrackType {
@@ -22123,6 +22268,7 @@ impl<'de> serde::Deserialize<'de> for SmoothGroupSparseTrackType {
 pub enum SmoothGroupSegmentationMode {
     UseInputSegmentation,
     UseSegmentDuration,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for SmoothGroupSegmentationMode {
@@ -22179,6 +22325,7 @@ impl<'de> serde::Deserialize<'de> for SmoothGroupSegmentationMode {
 pub enum InputLossActionForMsSmoothOut {
     EmitOutput,
     PauseOutput,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for InputLossActionForMsSmoothOut {
@@ -22235,6 +22382,7 @@ impl<'de> serde::Deserialize<'de> for InputLossActionForMsSmoothOut {
 pub enum SmoothGroupEventStopBehavior {
     None,
     SendEos,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for SmoothGroupEventStopBehavior {
@@ -22292,6 +22440,7 @@ pub enum SmoothGroupEventIdMode {
     NoEventId,
     UseConfigured,
     UseTimestamp,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for SmoothGroupEventIdMode {
@@ -22350,6 +22499,7 @@ impl<'de> serde::Deserialize<'de> for SmoothGroupEventIdMode {
 pub enum SmoothGroupCertificateMode {
     SelfSigned,
     VerifyAuthenticity,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for SmoothGroupCertificateMode {
@@ -22406,6 +22556,7 @@ impl<'de> serde::Deserialize<'de> for SmoothGroupCertificateMode {
 pub enum SmoothGroupAudioOnlyTimecodeControl {
     Passthrough,
     UseConfiguredClock,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for SmoothGroupAudioOnlyTimecodeControl {
@@ -23385,6 +23536,7 @@ impl HlsGroupSettings {
 pub enum HlsTsFileMode {
     SegmentedFiles,
     SingleFile,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for HlsTsFileMode {
@@ -23442,6 +23594,7 @@ pub enum HlsTimedMetadataId3Frame {
     None,
     Priv,
     Tdrl,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for HlsTimedMetadataId3Frame {
@@ -23500,6 +23653,7 @@ impl<'de> serde::Deserialize<'de> for HlsTimedMetadataId3Frame {
 pub enum HlsStreamInfResolution {
     Exclude,
     Include,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for HlsStreamInfResolution {
@@ -23556,6 +23710,7 @@ impl<'de> serde::Deserialize<'de> for HlsStreamInfResolution {
 pub enum HlsSegmentationMode {
     UseInputSegmentation,
     UseSegmentDuration,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for HlsSegmentationMode {
@@ -23612,6 +23767,7 @@ impl<'de> serde::Deserialize<'de> for HlsSegmentationMode {
 pub enum HlsRedundantManifest {
     Disabled,
     Enabled,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for HlsRedundantManifest {
@@ -23668,6 +23824,7 @@ impl<'de> serde::Deserialize<'de> for HlsRedundantManifest {
 pub enum HlsProgramDateTime {
     Exclude,
     Include,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for HlsProgramDateTime {
@@ -23725,6 +23882,7 @@ pub enum HlsOutputSelection {
     ManifestsAndSegments,
     SegmentsOnly,
     VariantManifestsAndSegments,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for HlsOutputSelection {
@@ -23783,6 +23941,7 @@ impl<'de> serde::Deserialize<'de> for HlsOutputSelection {
 pub enum HlsMode {
     Live,
     Vod,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for HlsMode {
@@ -23839,6 +23998,7 @@ impl<'de> serde::Deserialize<'de> for HlsMode {
 pub enum HlsManifestDurationFormat {
     FloatingPoint,
     Integer,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for HlsManifestDurationFormat {
@@ -23895,6 +24055,7 @@ impl<'de> serde::Deserialize<'de> for HlsManifestDurationFormat {
 pub enum HlsManifestCompression {
     Gzip,
     None,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for HlsManifestCompression {
@@ -24074,6 +24235,7 @@ impl StaticKeySettings {
 pub enum HlsIvSource {
     Explicit,
     FollowsSegmentNumber,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for HlsIvSource {
@@ -24130,6 +24292,7 @@ impl<'de> serde::Deserialize<'de> for HlsIvSource {
 pub enum HlsIvInManifest {
     Exclude,
     Include,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for HlsIvInManifest {
@@ -24186,6 +24349,7 @@ impl<'de> serde::Deserialize<'de> for HlsIvInManifest {
 pub enum InputLossActionForHlsOut {
     EmitOutput,
     PauseOutput,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for InputLossActionForHlsOut {
@@ -24242,6 +24406,7 @@ impl<'de> serde::Deserialize<'de> for InputLossActionForHlsOut {
 pub enum HlsIncompleteSegmentBehavior {
     Auto,
     Suppress,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for HlsIncompleteSegmentBehavior {
@@ -24298,6 +24463,7 @@ impl<'de> serde::Deserialize<'de> for HlsIncompleteSegmentBehavior {
 pub enum IFrameOnlyPlaylistType {
     Disabled,
     Standard,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for IFrameOnlyPlaylistType {
@@ -24354,6 +24520,7 @@ impl<'de> serde::Deserialize<'de> for IFrameOnlyPlaylistType {
 pub enum HlsId3SegmentTaggingState {
     Disabled,
     Enabled,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for HlsId3SegmentTaggingState {
@@ -24658,6 +24825,7 @@ impl HlsWebdavSettings {
 pub enum HlsWebdavHttpTransferMode {
     Chunked,
     NonChunked,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for HlsWebdavHttpTransferMode {
@@ -24768,6 +24936,7 @@ pub enum S3CannedAcl {
     BucketOwnerFullControl,
     BucketOwnerRead,
     PublicRead,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for S3CannedAcl {
@@ -24947,6 +25116,7 @@ impl HlsMediaStoreSettings {
 )]
 pub enum HlsMediaStoreStorageClass {
     Temporal,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for HlsMediaStoreStorageClass {
@@ -25246,6 +25416,7 @@ impl HlsAkamaiSettings {
 pub enum HlsAkamaiHttpTransferMode {
     Chunked,
     NonChunked,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for HlsAkamaiHttpTransferMode {
@@ -25302,6 +25473,7 @@ impl<'de> serde::Deserialize<'de> for HlsAkamaiHttpTransferMode {
 pub enum HlsEncryptionType {
     Aes128,
     SampleAes,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for HlsEncryptionType {
@@ -25358,6 +25530,7 @@ impl<'de> serde::Deserialize<'de> for HlsEncryptionType {
 pub enum HlsDiscontinuityTags {
     Insert,
     NeverInsert,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for HlsDiscontinuityTags {
@@ -25414,6 +25587,7 @@ impl<'de> serde::Deserialize<'de> for HlsDiscontinuityTags {
 pub enum HlsDirectoryStructure {
     SingleDirectory,
     SubdirectoryPerStream,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for HlsDirectoryStructure {
@@ -25470,6 +25644,7 @@ impl<'de> serde::Deserialize<'de> for HlsDirectoryStructure {
 pub enum HlsCodecSpecification {
     Rfc4281,
     Rfc6381,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for HlsCodecSpecification {
@@ -25526,6 +25701,7 @@ impl<'de> serde::Deserialize<'de> for HlsCodecSpecification {
 pub enum HlsClientCache {
     Disabled,
     Enabled,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for HlsClientCache {
@@ -25583,6 +25759,7 @@ pub enum HlsCaptionLanguageSetting {
     Insert,
     None,
     Omit,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for HlsCaptionLanguageSetting {
@@ -25726,6 +25903,7 @@ pub enum HlsAdMarkers {
     Adobe,
     Elemental,
     ElementalScte35,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for HlsAdMarkers {
@@ -26236,6 +26414,7 @@ impl NielsenConfiguration {
 pub enum NielsenPcmToId3TaggingState {
     Disabled,
     Enabled,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for NielsenPcmToId3TaggingState {
@@ -26461,6 +26640,7 @@ impl HtmlMotionGraphicsSettings {
 pub enum MotionGraphicsInsertion {
     Disabled,
     Enabled,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for MotionGraphicsInsertion {
@@ -26687,6 +26867,7 @@ impl GlobalConfiguration {
 pub enum GlobalConfigurationLowFramerateInputs {
     Disabled,
     Enabled,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for GlobalConfigurationLowFramerateInputs {
@@ -26743,6 +26924,7 @@ impl<'de> serde::Deserialize<'de> for GlobalConfigurationLowFramerateInputs {
 pub enum GlobalConfigurationOutputTimingSource {
     InputClock,
     SystemClock,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for GlobalConfigurationOutputTimingSource {
@@ -26799,6 +26981,7 @@ impl<'de> serde::Deserialize<'de> for GlobalConfigurationOutputTimingSource {
 pub enum GlobalConfigurationOutputLockingMode {
     EpochLocking,
     PipelineLocking,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for GlobalConfigurationOutputLockingMode {
@@ -26977,6 +27160,7 @@ impl InputLossBehavior {
 pub enum InputLossImageType {
     Color,
     Slate,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for InputLossImageType {
@@ -27033,6 +27217,7 @@ impl<'de> serde::Deserialize<'de> for InputLossImageType {
 pub enum GlobalConfigurationInputEndAction {
     None,
     SwitchAndLoopInputs,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for GlobalConfigurationInputEndAction {
@@ -27151,6 +27336,7 @@ impl FeatureActivations {
 pub enum FeatureActivationsInputPrepareScheduleActions {
     Disabled,
     Enabled,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for FeatureActivationsInputPrepareScheduleActions {
@@ -27788,6 +27974,7 @@ impl TtmlDestinationSettings {
 pub enum TtmlDestinationStyleControl {
     Passthrough,
     UseConfigured,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for TtmlDestinationStyleControl {
@@ -28174,6 +28361,7 @@ impl EbuTtDDestinationSettings {
 pub enum EbuTtDDestinationStyleControl {
     Exclude,
     Include,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for EbuTtDDestinationStyleControl {
@@ -28230,6 +28418,7 @@ impl<'de> serde::Deserialize<'de> for EbuTtDDestinationStyleControl {
 pub enum EbuTtDFillLineGapControl {
     Disabled,
     Enabled,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for EbuTtDFillLineGapControl {
@@ -28618,6 +28807,7 @@ impl DvbSubDestinationSettings {
 pub enum DvbSubDestinationTeletextGridControl {
     Fixed,
     Scaled,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for DvbSubDestinationTeletextGridControl {
@@ -28675,6 +28865,7 @@ pub enum DvbSubDestinationShadowColor {
     Black,
     None,
     White,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for DvbSubDestinationShadowColor {
@@ -28737,6 +28928,7 @@ pub enum DvbSubDestinationOutlineColor {
     Red,
     White,
     Yellow,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for DvbSubDestinationOutlineColor {
@@ -28805,6 +28997,7 @@ pub enum DvbSubDestinationFontColor {
     Red,
     White,
     Yellow,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for DvbSubDestinationFontColor {
@@ -28870,6 +29063,7 @@ pub enum DvbSubDestinationBackgroundColor {
     Black,
     None,
     White,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for DvbSubDestinationBackgroundColor {
@@ -28929,6 +29123,7 @@ pub enum DvbSubDestinationAlignment {
     Centered,
     Left,
     Smart,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for DvbSubDestinationAlignment {
@@ -29314,6 +29509,7 @@ impl BurnInDestinationSettings {
 pub enum BurnInTeletextGridControl {
     Fixed,
     Scaled,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for BurnInTeletextGridControl {
@@ -29371,6 +29567,7 @@ pub enum BurnInShadowColor {
     Black,
     None,
     White,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for BurnInShadowColor {
@@ -29433,6 +29630,7 @@ pub enum BurnInOutlineColor {
     Red,
     White,
     Yellow,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for BurnInOutlineColor {
@@ -29501,6 +29699,7 @@ pub enum BurnInFontColor {
     Red,
     White,
     Yellow,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for BurnInFontColor {
@@ -29566,6 +29765,7 @@ pub enum BurnInBackgroundColor {
     Black,
     None,
     White,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for BurnInBackgroundColor {
@@ -29625,6 +29825,7 @@ pub enum BurnInAlignment {
     Centered,
     Left,
     Smart,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for BurnInAlignment {
@@ -29845,6 +30046,7 @@ impl BlackoutSlate {
 pub enum BlackoutSlateState {
     Disabled,
     Enabled,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for BlackoutSlateState {
@@ -29901,6 +30103,7 @@ impl<'de> serde::Deserialize<'de> for BlackoutSlateState {
 pub enum BlackoutSlateNetworkEndBlackout {
     Disabled,
     Enabled,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for BlackoutSlateNetworkEndBlackout {
@@ -30177,6 +30380,7 @@ impl Scte35TimeSignalApos {
 pub enum Scte35AposWebDeliveryAllowedBehavior {
     Follow,
     Ignore,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for Scte35AposWebDeliveryAllowedBehavior {
@@ -30233,6 +30437,7 @@ impl<'de> serde::Deserialize<'de> for Scte35AposWebDeliveryAllowedBehavior {
 pub enum Scte35AposNoRegionalBlackoutBehavior {
     Follow,
     Ignore,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for Scte35AposNoRegionalBlackoutBehavior {
@@ -30386,6 +30591,7 @@ impl Scte35SpliceInsert {
 pub enum Scte35SpliceInsertWebDeliveryAllowedBehavior {
     Follow,
     Ignore,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for Scte35SpliceInsertWebDeliveryAllowedBehavior {
@@ -30442,6 +30648,7 @@ impl<'de> serde::Deserialize<'de> for Scte35SpliceInsertWebDeliveryAllowedBehavi
 pub enum Scte35SpliceInsertNoRegionalBlackoutBehavior {
     Follow,
     Ignore,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for Scte35SpliceInsertNoRegionalBlackoutBehavior {
@@ -30569,6 +30776,7 @@ impl AvailBlanking {
 pub enum AvailBlankingState {
     Disabled,
     Enabled,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for AvailBlankingState {
@@ -31087,6 +31295,7 @@ impl InputChannelLevel {
 pub enum AudioDescriptionLanguageCodeControl {
     FollowInput,
     UseConfigured,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for AudioDescriptionLanguageCodeControl {
@@ -31376,6 +31585,7 @@ pub enum WavCodingMode {
     CodingMode20,
     CodingMode40,
     CodingMode80,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for WavCodingMode {
@@ -31550,6 +31760,7 @@ impl Mp2Settings {
 pub enum Mp2CodingMode {
     CodingMode10,
     CodingMode20,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for Mp2CodingMode {
@@ -31996,6 +32207,7 @@ pub enum Eac3SurroundMode {
     Disabled,
     Enabled,
     NotIndicated,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for Eac3SurroundMode {
@@ -32055,6 +32267,7 @@ pub enum Eac3SurroundExMode {
     Disabled,
     Enabled,
     NotIndicated,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for Eac3SurroundExMode {
@@ -32115,6 +32328,7 @@ pub enum Eac3StereoDownmix {
     LoRo,
     LtRt,
     NotIndicated,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for Eac3StereoDownmix {
@@ -32175,6 +32389,7 @@ impl<'de> serde::Deserialize<'de> for Eac3StereoDownmix {
 pub enum Eac3PhaseControl {
     NoShift,
     Shift90Degrees,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for Eac3PhaseControl {
@@ -32231,6 +32446,7 @@ impl<'de> serde::Deserialize<'de> for Eac3PhaseControl {
 pub enum Eac3PassthroughControl {
     NoPassthrough,
     WhenPossible,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for Eac3PassthroughControl {
@@ -32287,6 +32503,7 @@ impl<'de> serde::Deserialize<'de> for Eac3PassthroughControl {
 pub enum Eac3MetadataControl {
     FollowInput,
     UseConfigured,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for Eac3MetadataControl {
@@ -32343,6 +32560,7 @@ impl<'de> serde::Deserialize<'de> for Eac3MetadataControl {
 pub enum Eac3LfeFilter {
     Disabled,
     Enabled,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for Eac3LfeFilter {
@@ -32399,6 +32617,7 @@ impl<'de> serde::Deserialize<'de> for Eac3LfeFilter {
 pub enum Eac3LfeControl {
     Lfe,
     NoLfe,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for Eac3LfeControl {
@@ -32459,6 +32678,7 @@ pub enum Eac3DrcRf {
     MusicStandard,
     None,
     Speech,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for Eac3DrcRf {
@@ -32527,6 +32747,7 @@ pub enum Eac3DrcLine {
     MusicStandard,
     None,
     Speech,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for Eac3DrcLine {
@@ -32591,6 +32812,7 @@ impl<'de> serde::Deserialize<'de> for Eac3DrcLine {
 pub enum Eac3DcFilter {
     Disabled,
     Enabled,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for Eac3DcFilter {
@@ -32648,6 +32870,7 @@ pub enum Eac3CodingMode {
     CodingMode10,
     CodingMode20,
     CodingMode32,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for Eac3CodingMode {
@@ -32709,6 +32932,7 @@ pub enum Eac3BitstreamMode {
     Emergency,
     HearingImpaired,
     VisuallyImpaired,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for Eac3BitstreamMode {
@@ -32771,6 +32995,7 @@ impl<'de> serde::Deserialize<'de> for Eac3BitstreamMode {
 pub enum Eac3AttenuationControl {
     Attenuate3Db,
     None,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for Eac3AttenuationControl {
@@ -32987,6 +33212,7 @@ impl Ac3Settings {
 pub enum Ac3MetadataControl {
     FollowInput,
     UseConfigured,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for Ac3MetadataControl {
@@ -33043,6 +33269,7 @@ impl<'de> serde::Deserialize<'de> for Ac3MetadataControl {
 pub enum Ac3LfeFilter {
     Disabled,
     Enabled,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for Ac3LfeFilter {
@@ -33099,6 +33326,7 @@ impl<'de> serde::Deserialize<'de> for Ac3LfeFilter {
 pub enum Ac3DrcProfile {
     FilmStandard,
     None,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for Ac3DrcProfile {
@@ -33157,6 +33385,7 @@ pub enum Ac3CodingMode {
     CodingMode11,
     CodingMode20,
     CodingMode32Lfe,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for Ac3CodingMode {
@@ -33223,6 +33452,7 @@ pub enum Ac3BitstreamMode {
     MusicAndEffects,
     VisuallyImpaired,
     VoiceOver,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for Ac3BitstreamMode {
@@ -33487,6 +33717,7 @@ pub enum AacVbrQuality {
     Low,
     MediumHigh,
     MediumLow,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for AacVbrQuality {
@@ -33547,6 +33778,7 @@ impl<'de> serde::Deserialize<'de> for AacVbrQuality {
 pub enum AacSpec {
     Mpeg2,
     Mpeg4,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for AacSpec {
@@ -33603,6 +33835,7 @@ impl<'de> serde::Deserialize<'de> for AacSpec {
 pub enum AacRawFormat {
     LatmLoas,
     None,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for AacRawFormat {
@@ -33659,6 +33892,7 @@ impl<'de> serde::Deserialize<'de> for AacRawFormat {
 pub enum AacRateControlMode {
     Cbr,
     Vbr,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for AacRateControlMode {
@@ -33716,6 +33950,7 @@ pub enum AacProfile {
     Hev1,
     Hev2,
     Lc,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for AacProfile {
@@ -33774,6 +34009,7 @@ impl<'de> serde::Deserialize<'de> for AacProfile {
 pub enum AacInputType {
     BroadcasterMixedAd,
     Normal,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for AacInputType {
@@ -33833,6 +34069,7 @@ pub enum AacCodingMode {
     CodingMode11,
     CodingMode20,
     CodingMode51,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for AacCodingMode {
@@ -33895,6 +34132,7 @@ impl<'de> serde::Deserialize<'de> for AacCodingMode {
 pub enum AudioDescriptionAudioTypeControl {
     FollowInput,
     UseConfigured,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for AudioDescriptionAudioTypeControl {
@@ -33953,6 +34191,7 @@ pub enum AudioType {
     HearingImpaired,
     Undefined,
     VisualImpairedCommentary,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for AudioType {
@@ -34103,6 +34342,7 @@ impl AudioNormalizationSettings {
 )]
 pub enum AudioNormalizationAlgorithmControl {
     CorrectAudio,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for AudioNormalizationAlgorithmControl {
@@ -34157,6 +34397,7 @@ impl<'de> serde::Deserialize<'de> for AudioNormalizationAlgorithmControl {
 pub enum AudioNormalizationAlgorithm {
     Itu17701,
     Itu17702,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for AudioNormalizationAlgorithm {
@@ -34650,6 +34891,7 @@ pub enum CdiInputResolution {
     Hd,
     Sd,
     Uhd,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for CdiInputResolution {
@@ -35349,6 +35591,7 @@ impl TransferringInputDeviceSummary {
 pub enum InputDeviceTransferType {
     Incoming,
     Outgoing,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for InputDeviceTransferType {
@@ -36291,6 +36534,7 @@ impl FollowModeScheduleActionStartSettings {
 pub enum FollowPoint {
     End,
     Start,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for FollowPoint {
@@ -37407,6 +37651,7 @@ impl Scte35SegmentationDescriptor {
 pub enum Scte35SegmentationCancelIndicator {
     SegmentationEventCanceled,
     SegmentationEventNotCanceled,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for Scte35SegmentationCancelIndicator {
@@ -37589,6 +37834,7 @@ impl Scte35DeliveryRestrictions {
 pub enum Scte35WebDeliveryAllowedFlag {
     WebDeliveryAllowed,
     WebDeliveryNotAllowed,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for Scte35WebDeliveryAllowedFlag {
@@ -37645,6 +37891,7 @@ impl<'de> serde::Deserialize<'de> for Scte35WebDeliveryAllowedFlag {
 pub enum Scte35NoRegionalBlackoutFlag {
     NoRegionalBlackout,
     RegionalBlackout,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for Scte35NoRegionalBlackoutFlag {
@@ -37703,6 +37950,7 @@ pub enum Scte35DeviceRestrictions {
     RestrictGroup0,
     RestrictGroup1,
     RestrictGroup2,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for Scte35DeviceRestrictions {
@@ -37763,6 +38011,7 @@ impl<'de> serde::Deserialize<'de> for Scte35DeviceRestrictions {
 pub enum Scte35ArchiveAllowedFlag {
     ArchiveAllowed,
     ArchiveNotAllowed,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for Scte35ArchiveAllowedFlag {
@@ -38042,6 +38291,7 @@ impl PipelinePauseStateSettings {
 pub enum PipelineId {
     Pipeline0,
     Pipeline1,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for PipelineId {
@@ -38488,6 +38738,7 @@ impl StopTimecode {
 pub enum LastFrameClippingBehavior {
     ExcludeLastFrame,
     IncludeLastFrame,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for LastFrameClippingBehavior {
@@ -38593,6 +38844,7 @@ impl StartTimecode {
 pub enum InputTimecodeSource {
     Embedded,
     Zerobased,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for InputTimecodeSource {
@@ -38840,6 +39092,7 @@ impl HlsId3SegmentTaggingScheduleActionSettings {
 )]
 pub enum ContentType {
     ImageJpeg,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for ContentType {
@@ -38893,6 +39146,7 @@ impl<'de> serde::Deserialize<'de> for ContentType {
 )]
 pub enum AcceptHeader {
     ImageJpeg,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for AcceptHeader {

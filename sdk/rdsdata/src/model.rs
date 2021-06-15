@@ -508,6 +508,7 @@ impl ResultSetOptions {
 pub enum DecimalReturnType {
     DoubleOrLong,
     String,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for DecimalReturnType {
@@ -716,6 +717,7 @@ pub enum TypeHint {
     Time,
     Timestamp,
     Uuid,
+    /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for TypeHint {

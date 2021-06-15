@@ -3,17 +3,17 @@ pub fn serialize_structure_add_tags_to_stream_input(
     object: &mut smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::AddTagsToStreamInput,
 ) {
-    if let Some(var_1) = &input.tags {
-        let mut object_2 = object.key("Tags").start_object();
-        for (key_3, value_4) in var_1 {
+    if let Some(var_1) = &input.stream_name {
+        object.key("StreamName").string(var_1);
+    }
+    if let Some(var_2) = &input.tags {
+        let mut object_3 = object.key("Tags").start_object();
+        for (key_4, value_5) in var_2 {
             {
-                object_2.key(key_3).string(value_4);
+                object_3.key(key_4).string(value_5);
             }
         }
-        object_2.finish();
-    }
-    if let Some(var_5) = &input.stream_name {
-        object.key("StreamName").string(var_5);
+        object_3.finish();
     }
 }
 
@@ -36,14 +36,14 @@ pub fn serialize_structure_decrease_stream_retention_period_input(
     object: &mut smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DecreaseStreamRetentionPeriodInput,
 ) {
-    if let Some(var_8) = &input.retention_period_hours {
+    if let Some(var_8) = &input.stream_name {
+        object.key("StreamName").string(var_8);
+    }
+    if let Some(var_9) = &input.retention_period_hours {
         object.key("RetentionPeriodHours").number(
             #[allow(clippy::useless_conversion)]
-            smithy_types::Number::NegInt((*var_8).into()),
+            smithy_types::Number::NegInt((*var_9).into()),
         );
-    }
-    if let Some(var_9) = &input.stream_name {
-        object.key("StreamName").string(var_9);
     }
 }
 
@@ -81,14 +81,14 @@ pub fn serialize_structure_describe_stream_input(
     if let Some(var_15) = &input.stream_name {
         object.key("StreamName").string(var_15);
     }
-    if let Some(var_16) = &input.exclusive_start_shard_id {
-        object.key("ExclusiveStartShardId").string(var_16);
-    }
-    if let Some(var_17) = &input.limit {
+    if let Some(var_16) = &input.limit {
         object.key("Limit").number(
             #[allow(clippy::useless_conversion)]
-            smithy_types::Number::NegInt((*var_17).into()),
+            smithy_types::Number::NegInt((*var_16).into()),
         );
+    }
+    if let Some(var_17) = &input.exclusive_start_shard_id {
+        object.key("ExclusiveStartShardId").string(var_17);
     }
 }
 
@@ -120,17 +120,17 @@ pub fn serialize_structure_disable_enhanced_monitoring_input(
     object: &mut smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DisableEnhancedMonitoringInput,
 ) {
-    if let Some(var_22) = &input.shard_level_metrics {
-        let mut array_23 = object.key("ShardLevelMetrics").start_array();
-        for item_24 in var_22 {
+    if let Some(var_22) = &input.stream_name {
+        object.key("StreamName").string(var_22);
+    }
+    if let Some(var_23) = &input.shard_level_metrics {
+        let mut array_24 = object.key("ShardLevelMetrics").start_array();
+        for item_25 in var_23 {
             {
-                array_23.value().string(item_24.as_str());
+                array_24.value().string(item_25.as_str());
             }
         }
-        array_23.finish();
-    }
-    if let Some(var_25) = &input.stream_name {
-        object.key("StreamName").string(var_25);
+        array_24.finish();
     }
 }
 
@@ -171,22 +171,22 @@ pub fn serialize_structure_get_shard_iterator_input(
     object: &mut smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::GetShardIteratorInput,
 ) {
-    if let Some(var_32) = &input.shard_iterator_type {
-        object.key("ShardIteratorType").string(var_32.as_str());
+    if let Some(var_32) = &input.stream_name {
+        object.key("StreamName").string(var_32);
     }
     if let Some(var_33) = &input.shard_id {
         object.key("ShardId").string(var_33);
     }
-    if let Some(var_34) = &input.starting_sequence_number {
-        object.key("StartingSequenceNumber").string(var_34);
+    if let Some(var_34) = &input.shard_iterator_type {
+        object.key("ShardIteratorType").string(var_34.as_str());
     }
-    if let Some(var_35) = &input.timestamp {
+    if let Some(var_35) = &input.starting_sequence_number {
+        object.key("StartingSequenceNumber").string(var_35);
+    }
+    if let Some(var_36) = &input.timestamp {
         object
             .key("Timestamp")
-            .instant(var_35, smithy_types::instant::Format::EpochSeconds);
-    }
-    if let Some(var_36) = &input.stream_name {
-        object.key("StreamName").string(var_36);
+            .instant(var_36, smithy_types::instant::Format::EpochSeconds);
     }
 }
 
@@ -194,14 +194,14 @@ pub fn serialize_structure_increase_stream_retention_period_input(
     object: &mut smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::IncreaseStreamRetentionPeriodInput,
 ) {
-    if let Some(var_37) = &input.retention_period_hours {
+    if let Some(var_37) = &input.stream_name {
+        object.key("StreamName").string(var_37);
+    }
+    if let Some(var_38) = &input.retention_period_hours {
         object.key("RetentionPeriodHours").number(
             #[allow(clippy::useless_conversion)]
-            smithy_types::Number::NegInt((*var_37).into()),
+            smithy_types::Number::NegInt((*var_38).into()),
         );
-    }
-    if let Some(var_38) = &input.stream_name {
-        object.key("StreamName").string(var_38);
     }
 }
 
@@ -209,30 +209,30 @@ pub fn serialize_structure_list_shards_input(
     object: &mut smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListShardsInput,
 ) {
-    if let Some(var_39) = &input.max_results {
+    if let Some(var_39) = &input.stream_name {
+        object.key("StreamName").string(var_39);
+    }
+    if let Some(var_40) = &input.next_token {
+        object.key("NextToken").string(var_40);
+    }
+    if let Some(var_41) = &input.exclusive_start_shard_id {
+        object.key("ExclusiveStartShardId").string(var_41);
+    }
+    if let Some(var_42) = &input.max_results {
         object.key("MaxResults").number(
             #[allow(clippy::useless_conversion)]
-            smithy_types::Number::NegInt((*var_39).into()),
+            smithy_types::Number::NegInt((*var_42).into()),
         );
     }
-    if let Some(var_40) = &input.stream_creation_timestamp {
+    if let Some(var_43) = &input.stream_creation_timestamp {
         object
             .key("StreamCreationTimestamp")
-            .instant(var_40, smithy_types::instant::Format::EpochSeconds);
+            .instant(var_43, smithy_types::instant::Format::EpochSeconds);
     }
-    if let Some(var_41) = &input.next_token {
-        object.key("NextToken").string(var_41);
-    }
-    if let Some(var_42) = &input.exclusive_start_shard_id {
-        object.key("ExclusiveStartShardId").string(var_42);
-    }
-    if let Some(var_43) = &input.shard_filter {
-        let mut object_44 = object.key("ShardFilter").start_object();
-        crate::json_ser::serialize_structure_shard_filter(&mut object_44, var_43);
-        object_44.finish();
-    }
-    if let Some(var_45) = &input.stream_name {
-        object.key("StreamName").string(var_45);
+    if let Some(var_44) = &input.shard_filter {
+        let mut object_45 = object.key("ShardFilter").start_object();
+        crate::json_ser::serialize_structure_shard_filter(&mut object_45, var_44);
+        object_45.finish();
     }
 }
 
@@ -240,22 +240,22 @@ pub fn serialize_structure_list_stream_consumers_input(
     object: &mut smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListStreamConsumersInput,
 ) {
-    if let Some(var_46) = &input.next_token {
-        object.key("NextToken").string(var_46);
+    if let Some(var_46) = &input.stream_arn {
+        object.key("StreamARN").string(var_46);
     }
-    if let Some(var_47) = &input.stream_creation_timestamp {
-        object
-            .key("StreamCreationTimestamp")
-            .instant(var_47, smithy_types::instant::Format::EpochSeconds);
+    if let Some(var_47) = &input.next_token {
+        object.key("NextToken").string(var_47);
     }
-    if let Some(var_48) = &input.stream_arn {
-        object.key("StreamARN").string(var_48);
-    }
-    if let Some(var_49) = &input.max_results {
+    if let Some(var_48) = &input.max_results {
         object.key("MaxResults").number(
             #[allow(clippy::useless_conversion)]
-            smithy_types::Number::NegInt((*var_49).into()),
+            smithy_types::Number::NegInt((*var_48).into()),
         );
+    }
+    if let Some(var_49) = &input.stream_creation_timestamp {
+        object
+            .key("StreamCreationTimestamp")
+            .instant(var_49, smithy_types::instant::Format::EpochSeconds);
     }
 }
 
@@ -278,17 +278,17 @@ pub fn serialize_structure_list_tags_for_stream_input(
     object: &mut smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListTagsForStreamInput,
 ) {
-    if let Some(var_52) = &input.limit {
-        object.key("Limit").number(
-            #[allow(clippy::useless_conversion)]
-            smithy_types::Number::NegInt((*var_52).into()),
-        );
+    if let Some(var_52) = &input.stream_name {
+        object.key("StreamName").string(var_52);
     }
     if let Some(var_53) = &input.exclusive_start_tag_key {
         object.key("ExclusiveStartTagKey").string(var_53);
     }
-    if let Some(var_54) = &input.stream_name {
-        object.key("StreamName").string(var_54);
+    if let Some(var_54) = &input.limit {
+        object.key("Limit").number(
+            #[allow(clippy::useless_conversion)]
+            smithy_types::Number::NegInt((*var_54).into()),
+        );
     }
 }
 
@@ -296,14 +296,14 @@ pub fn serialize_structure_merge_shards_input(
     object: &mut smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::MergeShardsInput,
 ) {
-    if let Some(var_55) = &input.adjacent_shard_to_merge {
-        object.key("AdjacentShardToMerge").string(var_55);
+    if let Some(var_55) = &input.stream_name {
+        object.key("StreamName").string(var_55);
     }
-    if let Some(var_56) = &input.stream_name {
-        object.key("StreamName").string(var_56);
+    if let Some(var_56) = &input.shard_to_merge {
+        object.key("ShardToMerge").string(var_56);
     }
-    if let Some(var_57) = &input.shard_to_merge {
-        object.key("ShardToMerge").string(var_57);
+    if let Some(var_57) = &input.adjacent_shard_to_merge {
+        object.key("AdjacentShardToMerge").string(var_57);
     }
 }
 
@@ -314,19 +314,19 @@ pub fn serialize_structure_put_record_input(
     if let Some(var_58) = &input.stream_name {
         object.key("StreamName").string(var_58);
     }
-    if let Some(var_59) = &input.explicit_hash_key {
-        object.key("ExplicitHashKey").string(var_59);
-    }
-    if let Some(var_60) = &input.sequence_number_for_ordering {
-        object.key("SequenceNumberForOrdering").string(var_60);
-    }
-    if let Some(var_61) = &input.partition_key {
-        object.key("PartitionKey").string(var_61);
-    }
-    if let Some(var_62) = &input.data {
+    if let Some(var_59) = &input.data {
         object
             .key("Data")
-            .string_unchecked(&smithy_http::base64::encode(var_62));
+            .string_unchecked(&smithy_types::base64::encode(var_59));
+    }
+    if let Some(var_60) = &input.partition_key {
+        object.key("PartitionKey").string(var_60);
+    }
+    if let Some(var_61) = &input.explicit_hash_key {
+        object.key("ExplicitHashKey").string(var_61);
+    }
+    if let Some(var_62) = &input.sequence_number_for_ordering {
+        object.key("SequenceNumberForOrdering").string(var_62);
     }
 }
 
@@ -357,11 +357,11 @@ pub fn serialize_structure_register_stream_consumer_input(
     object: &mut smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::RegisterStreamConsumerInput,
 ) {
-    if let Some(var_68) = &input.consumer_name {
-        object.key("ConsumerName").string(var_68);
+    if let Some(var_68) = &input.stream_arn {
+        object.key("StreamARN").string(var_68);
     }
-    if let Some(var_69) = &input.stream_arn {
-        object.key("StreamARN").string(var_69);
+    if let Some(var_69) = &input.consumer_name {
+        object.key("ConsumerName").string(var_69);
     }
 }
 
@@ -369,17 +369,17 @@ pub fn serialize_structure_remove_tags_from_stream_input(
     object: &mut smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::RemoveTagsFromStreamInput,
 ) {
-    if let Some(var_70) = &input.tag_keys {
-        let mut array_71 = object.key("TagKeys").start_array();
-        for item_72 in var_70 {
+    if let Some(var_70) = &input.stream_name {
+        object.key("StreamName").string(var_70);
+    }
+    if let Some(var_71) = &input.tag_keys {
+        let mut array_72 = object.key("TagKeys").start_array();
+        for item_73 in var_71 {
             {
-                array_71.value().string(item_72);
+                array_72.value().string(item_73);
             }
         }
-        array_71.finish();
-    }
-    if let Some(var_73) = &input.stream_name {
-        object.key("StreamName").string(var_73);
+        array_72.finish();
     }
 }
 
@@ -387,14 +387,14 @@ pub fn serialize_structure_split_shard_input(
     object: &mut smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::SplitShardInput,
 ) {
-    if let Some(var_74) = &input.shard_to_split {
-        object.key("ShardToSplit").string(var_74);
+    if let Some(var_74) = &input.stream_name {
+        object.key("StreamName").string(var_74);
     }
-    if let Some(var_75) = &input.new_starting_hash_key {
-        object.key("NewStartingHashKey").string(var_75);
+    if let Some(var_75) = &input.shard_to_split {
+        object.key("ShardToSplit").string(var_75);
     }
-    if let Some(var_76) = &input.stream_name {
-        object.key("StreamName").string(var_76);
+    if let Some(var_76) = &input.new_starting_hash_key {
+        object.key("NewStartingHashKey").string(var_76);
     }
 }
 
@@ -432,17 +432,17 @@ pub fn serialize_structure_update_shard_count_input(
     object: &mut smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateShardCountInput,
 ) {
-    if let Some(var_83) = &input.scaling_type {
-        object.key("ScalingType").string(var_83.as_str());
+    if let Some(var_83) = &input.stream_name {
+        object.key("StreamName").string(var_83);
     }
-    if let Some(var_84) = &input.stream_name {
-        object.key("StreamName").string(var_84);
-    }
-    if let Some(var_85) = &input.target_shard_count {
+    if let Some(var_84) = &input.target_shard_count {
         object.key("TargetShardCount").number(
             #[allow(clippy::useless_conversion)]
-            smithy_types::Number::NegInt((*var_85).into()),
+            smithy_types::Number::NegInt((*var_84).into()),
         );
+    }
+    if let Some(var_85) = &input.scaling_type {
+        object.key("ScalingType").string(var_85.as_str());
     }
 }
 
@@ -450,16 +450,16 @@ pub fn serialize_structure_shard_filter(
     object: &mut smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::ShardFilter,
 ) {
-    if let Some(var_86) = &input.shard_id {
-        object.key("ShardId").string(var_86);
+    if let Some(var_86) = &input.r#type {
+        object.key("Type").string(var_86.as_str());
     }
-    if let Some(var_87) = &input.timestamp {
+    if let Some(var_87) = &input.shard_id {
+        object.key("ShardId").string(var_87);
+    }
+    if let Some(var_88) = &input.timestamp {
         object
             .key("Timestamp")
-            .instant(var_87, smithy_types::instant::Format::EpochSeconds);
-    }
-    if let Some(var_88) = &input.r#type {
-        object.key("Type").string(var_88.as_str());
+            .instant(var_88, smithy_types::instant::Format::EpochSeconds);
     }
 }
 
@@ -470,12 +470,12 @@ pub fn serialize_structure_put_records_request_entry(
     if let Some(var_89) = &input.data {
         object
             .key("Data")
-            .string_unchecked(&smithy_http::base64::encode(var_89));
+            .string_unchecked(&smithy_types::base64::encode(var_89));
     }
-    if let Some(var_90) = &input.partition_key {
-        object.key("PartitionKey").string(var_90);
+    if let Some(var_90) = &input.explicit_hash_key {
+        object.key("ExplicitHashKey").string(var_90);
     }
-    if let Some(var_91) = &input.explicit_hash_key {
-        object.key("ExplicitHashKey").string(var_91);
+    if let Some(var_91) = &input.partition_key {
+        object.key("PartitionKey").string(var_91);
     }
 }

@@ -30,7 +30,6 @@ tokio-util = { version = "0.6", optional = true}
 
 [dev-dependencies]
 proptest = "1"
-base64 = "0.13.0"
 tokio = {version = "1.6", features = ["macros", "rt", "fs", "io-util"]}
 tokio-stream = "0.1.5"
 tempfile = "3.2.0"

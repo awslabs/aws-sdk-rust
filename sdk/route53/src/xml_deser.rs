@@ -6,7 +6,7 @@ pub fn parse_generic_error(
 }
 
 #[allow(unused_mut)]
-pub fn concurrent_modification(
+pub fn deser_structure_concurrent_modification_xml_err(
     inp: &[u8],
     mut builder: crate::error::concurrent_modification::Builder,
 ) -> Result<crate::error::concurrent_modification::Builder, smithy_xml::decode::XmlError> {
@@ -36,7 +36,7 @@ pub fn concurrent_modification(
 }
 
 #[allow(unused_mut)]
-pub fn invalid_key_signing_key_status(
+pub fn deser_structure_invalid_key_signing_key_status_xml_err(
     inp: &[u8],
     mut builder: crate::error::invalid_key_signing_key_status::Builder,
 ) -> Result<crate::error::invalid_key_signing_key_status::Builder, smithy_xml::decode::XmlError> {
@@ -66,7 +66,7 @@ pub fn invalid_key_signing_key_status(
 }
 
 #[allow(unused_mut)]
-pub fn invalid_kms_arn(
+pub fn deser_structure_invalid_kms_arn_xml_err(
     inp: &[u8],
     mut builder: crate::error::invalid_kms_arn::Builder,
 ) -> Result<crate::error::invalid_kms_arn::Builder, smithy_xml::decode::XmlError> {
@@ -96,7 +96,7 @@ pub fn invalid_kms_arn(
 }
 
 #[allow(unused_mut)]
-pub fn invalid_signing_status(
+pub fn deser_structure_invalid_signing_status_xml_err(
     inp: &[u8],
     mut builder: crate::error::invalid_signing_status::Builder,
 ) -> Result<crate::error::invalid_signing_status::Builder, smithy_xml::decode::XmlError> {
@@ -126,7 +126,7 @@ pub fn invalid_signing_status(
 }
 
 #[allow(unused_mut)]
-pub fn no_such_key_signing_key(
+pub fn deser_structure_no_such_key_signing_key_xml_err(
     inp: &[u8],
     mut builder: crate::error::no_such_key_signing_key::Builder,
 ) -> Result<crate::error::no_such_key_signing_key::Builder, smithy_xml::decode::XmlError> {
@@ -177,7 +177,7 @@ pub fn deser_operation_activate_key_signing_key(
             s if s.matches("ChangeInfo") /* ChangeInfo com.amazonaws.route53#ActivateKeySigningKeyOutput$ChangeInfo */ =>  {
                 let var_6 =
                     Some(
-                        crate::xml_deser::change_info_inner(&mut tag)
+                        crate::xml_deser::deser_structure_change_info(&mut tag)
                         ?
                     )
                 ;
@@ -191,7 +191,7 @@ pub fn deser_operation_activate_key_signing_key(
 }
 
 #[allow(unused_mut)]
-pub fn conflicting_domain_exists(
+pub fn deser_structure_conflicting_domain_exists_xml_err(
     inp: &[u8],
     mut builder: crate::error::conflicting_domain_exists::Builder,
 ) -> Result<crate::error::conflicting_domain_exists::Builder, smithy_xml::decode::XmlError> {
@@ -221,7 +221,7 @@ pub fn conflicting_domain_exists(
 }
 
 #[allow(unused_mut)]
-pub fn invalid_input(
+pub fn deser_structure_invalid_input_xml_err(
     inp: &[u8],
     mut builder: crate::error::invalid_input::Builder,
 ) -> Result<crate::error::invalid_input::Builder, smithy_xml::decode::XmlError> {
@@ -251,7 +251,7 @@ pub fn invalid_input(
 }
 
 #[allow(unused_mut)]
-pub fn invalid_vpc_id(
+pub fn deser_structure_invalid_vpc_id_xml_err(
     inp: &[u8],
     mut builder: crate::error::invalid_vpc_id::Builder,
 ) -> Result<crate::error::invalid_vpc_id::Builder, smithy_xml::decode::XmlError> {
@@ -281,7 +281,7 @@ pub fn invalid_vpc_id(
 }
 
 #[allow(unused_mut)]
-pub fn limits_exceeded(
+pub fn deser_structure_limits_exceeded_xml_err(
     inp: &[u8],
     mut builder: crate::error::limits_exceeded::Builder,
 ) -> Result<crate::error::limits_exceeded::Builder, smithy_xml::decode::XmlError> {
@@ -311,7 +311,7 @@ pub fn limits_exceeded(
 }
 
 #[allow(unused_mut)]
-pub fn no_such_hosted_zone(
+pub fn deser_structure_no_such_hosted_zone_xml_err(
     inp: &[u8],
     mut builder: crate::error::no_such_hosted_zone::Builder,
 ) -> Result<crate::error::no_such_hosted_zone::Builder, smithy_xml::decode::XmlError> {
@@ -341,7 +341,7 @@ pub fn no_such_hosted_zone(
 }
 
 #[allow(unused_mut)]
-pub fn not_authorized_exception(
+pub fn deser_structure_not_authorized_error_xml_err(
     inp: &[u8],
     mut builder: crate::error::not_authorized_error::Builder,
 ) -> Result<crate::error::not_authorized_error::Builder, smithy_xml::decode::XmlError> {
@@ -371,7 +371,7 @@ pub fn not_authorized_exception(
 }
 
 #[allow(unused_mut)]
-pub fn prior_request_not_complete(
+pub fn deser_structure_prior_request_not_complete_xml_err(
     inp: &[u8],
     mut builder: crate::error::prior_request_not_complete::Builder,
 ) -> Result<crate::error::prior_request_not_complete::Builder, smithy_xml::decode::XmlError> {
@@ -401,7 +401,7 @@ pub fn prior_request_not_complete(
 }
 
 #[allow(unused_mut)]
-pub fn public_zone_vpc_association(
+pub fn deser_structure_public_zone_vpc_association_xml_err(
     inp: &[u8],
     mut builder: crate::error::public_zone_vpc_association::Builder,
 ) -> Result<crate::error::public_zone_vpc_association::Builder, smithy_xml::decode::XmlError> {
@@ -455,7 +455,7 @@ pub fn deser_operation_associate_vpc_with_hosted_zone(
             s if s.matches("ChangeInfo") /* ChangeInfo com.amazonaws.route53#AssociateVPCWithHostedZoneOutput$ChangeInfo */ =>  {
                 let var_15 =
                     Some(
-                        crate::xml_deser::change_info_inner(&mut tag)
+                        crate::xml_deser::deser_structure_change_info(&mut tag)
                         ?
                     )
                 ;
@@ -469,7 +469,7 @@ pub fn deser_operation_associate_vpc_with_hosted_zone(
 }
 
 #[allow(unused_mut)]
-pub fn invalid_change_batch(
+pub fn deser_structure_invalid_change_batch_xml_err(
     inp: &[u8],
     mut builder: crate::error::invalid_change_batch::Builder,
 ) -> Result<crate::error::invalid_change_batch::Builder, smithy_xml::decode::XmlError> {
@@ -482,7 +482,7 @@ pub fn invalid_change_batch(
             s if s.matches("messages") /* messages com.amazonaws.route53#InvalidChangeBatch$messages */ =>  {
                 let var_16 =
                     Some(
-                        crate::xml_deser::deserialize_error_messages(&mut tag)
+                        crate::xml_deser::deser_list_error_messages(&mut tag)
                         ?
                     )
                 ;
@@ -509,7 +509,7 @@ pub fn invalid_change_batch(
 }
 
 #[allow(unused_mut)]
-pub fn no_such_health_check(
+pub fn deser_structure_no_such_health_check_xml_err(
     inp: &[u8],
     mut builder: crate::error::no_such_health_check::Builder,
 ) -> Result<crate::error::no_such_health_check::Builder, smithy_xml::decode::XmlError> {
@@ -561,7 +561,7 @@ pub fn deser_operation_change_resource_record_sets(
             s if s.matches("ChangeInfo") /* ChangeInfo com.amazonaws.route53#ChangeResourceRecordSetsOutput$ChangeInfo */ =>  {
                 let var_19 =
                     Some(
-                        crate::xml_deser::change_info_inner(&mut tag)
+                        crate::xml_deser::deser_structure_change_info(&mut tag)
                         ?
                     )
                 ;
@@ -575,7 +575,7 @@ pub fn deser_operation_change_resource_record_sets(
 }
 
 #[allow(unused_mut)]
-pub fn throttling_exception(
+pub fn deser_structure_throttling_error_xml_err(
     inp: &[u8],
     mut builder: crate::error::throttling_error::Builder,
 ) -> Result<crate::error::throttling_error::Builder, smithy_xml::decode::XmlError> {
@@ -605,7 +605,7 @@ pub fn throttling_exception(
 }
 
 #[allow(unused_mut)]
-pub fn health_check_already_exists(
+pub fn deser_structure_health_check_already_exists_xml_err(
     inp: &[u8],
     mut builder: crate::error::health_check_already_exists::Builder,
 ) -> Result<crate::error::health_check_already_exists::Builder, smithy_xml::decode::XmlError> {
@@ -635,7 +635,7 @@ pub fn health_check_already_exists(
 }
 
 #[allow(unused_mut)]
-pub fn too_many_health_checks(
+pub fn deser_structure_too_many_health_checks_xml_err(
     inp: &[u8],
     mut builder: crate::error::too_many_health_checks::Builder,
 ) -> Result<crate::error::too_many_health_checks::Builder, smithy_xml::decode::XmlError> {
@@ -686,7 +686,7 @@ pub fn deser_operation_create_health_check(
             s if s.matches("HealthCheck") /* HealthCheck com.amazonaws.route53#CreateHealthCheckOutput$HealthCheck */ =>  {
                 let var_23 =
                     Some(
-                        crate::xml_deser::health_check_inner(&mut tag)
+                        crate::xml_deser::deser_structure_health_check(&mut tag)
                         ?
                     )
                 ;
@@ -700,7 +700,7 @@ pub fn deser_operation_create_health_check(
 }
 
 #[allow(unused_mut)]
-pub fn delegation_set_not_available(
+pub fn deser_structure_delegation_set_not_available_xml_err(
     inp: &[u8],
     mut builder: crate::error::delegation_set_not_available::Builder,
 ) -> Result<crate::error::delegation_set_not_available::Builder, smithy_xml::decode::XmlError> {
@@ -730,7 +730,7 @@ pub fn delegation_set_not_available(
 }
 
 #[allow(unused_mut)]
-pub fn delegation_set_not_reusable(
+pub fn deser_structure_delegation_set_not_reusable_xml_err(
     inp: &[u8],
     mut builder: crate::error::delegation_set_not_reusable::Builder,
 ) -> Result<crate::error::delegation_set_not_reusable::Builder, smithy_xml::decode::XmlError> {
@@ -760,7 +760,7 @@ pub fn delegation_set_not_reusable(
 }
 
 #[allow(unused_mut)]
-pub fn hosted_zone_already_exists(
+pub fn deser_structure_hosted_zone_already_exists_xml_err(
     inp: &[u8],
     mut builder: crate::error::hosted_zone_already_exists::Builder,
 ) -> Result<crate::error::hosted_zone_already_exists::Builder, smithy_xml::decode::XmlError> {
@@ -790,7 +790,7 @@ pub fn hosted_zone_already_exists(
 }
 
 #[allow(unused_mut)]
-pub fn invalid_domain_name(
+pub fn deser_structure_invalid_domain_name_xml_err(
     inp: &[u8],
     mut builder: crate::error::invalid_domain_name::Builder,
 ) -> Result<crate::error::invalid_domain_name::Builder, smithy_xml::decode::XmlError> {
@@ -820,7 +820,7 @@ pub fn invalid_domain_name(
 }
 
 #[allow(unused_mut)]
-pub fn no_such_delegation_set(
+pub fn deser_structure_no_such_delegation_set_xml_err(
     inp: &[u8],
     mut builder: crate::error::no_such_delegation_set::Builder,
 ) -> Result<crate::error::no_such_delegation_set::Builder, smithy_xml::decode::XmlError> {
@@ -850,7 +850,7 @@ pub fn no_such_delegation_set(
 }
 
 #[allow(unused_mut)]
-pub fn too_many_hosted_zones(
+pub fn deser_structure_too_many_hosted_zones_xml_err(
     inp: &[u8],
     mut builder: crate::error::too_many_hosted_zones::Builder,
 ) -> Result<crate::error::too_many_hosted_zones::Builder, smithy_xml::decode::XmlError> {
@@ -901,7 +901,7 @@ pub fn deser_operation_create_hosted_zone(
             s if s.matches("HostedZone") /* HostedZone com.amazonaws.route53#CreateHostedZoneOutput$HostedZone */ =>  {
                 let var_30 =
                     Some(
-                        crate::xml_deser::hosted_zone_inner(&mut tag)
+                        crate::xml_deser::deser_structure_hosted_zone(&mut tag)
                         ?
                     )
                 ;
@@ -911,7 +911,7 @@ pub fn deser_operation_create_hosted_zone(
             s if s.matches("ChangeInfo") /* ChangeInfo com.amazonaws.route53#CreateHostedZoneOutput$ChangeInfo */ =>  {
                 let var_31 =
                     Some(
-                        crate::xml_deser::change_info_inner(&mut tag)
+                        crate::xml_deser::deser_structure_change_info(&mut tag)
                         ?
                     )
                 ;
@@ -921,7 +921,7 @@ pub fn deser_operation_create_hosted_zone(
             s if s.matches("DelegationSet") /* DelegationSet com.amazonaws.route53#CreateHostedZoneOutput$DelegationSet */ =>  {
                 let var_32 =
                     Some(
-                        crate::xml_deser::delegation_set_inner(&mut tag)
+                        crate::xml_deser::deser_structure_delegation_set(&mut tag)
                         ?
                     )
                 ;
@@ -931,7 +931,7 @@ pub fn deser_operation_create_hosted_zone(
             s if s.matches("VPC") /* VPC com.amazonaws.route53#CreateHostedZoneOutput$VPC */ =>  {
                 let var_33 =
                     Some(
-                        crate::xml_deser::vpc_inner(&mut tag)
+                        crate::xml_deser::deser_structure_vpc(&mut tag)
                         ?
                     )
                 ;
@@ -945,7 +945,7 @@ pub fn deser_operation_create_hosted_zone(
 }
 
 #[allow(unused_mut)]
-pub fn invalid_argument(
+pub fn deser_structure_invalid_argument_xml_err(
     inp: &[u8],
     mut builder: crate::error::invalid_argument::Builder,
 ) -> Result<crate::error::invalid_argument::Builder, smithy_xml::decode::XmlError> {
@@ -975,7 +975,7 @@ pub fn invalid_argument(
 }
 
 #[allow(unused_mut)]
-pub fn invalid_key_signing_key_name(
+pub fn deser_structure_invalid_key_signing_key_name_xml_err(
     inp: &[u8],
     mut builder: crate::error::invalid_key_signing_key_name::Builder,
 ) -> Result<crate::error::invalid_key_signing_key_name::Builder, smithy_xml::decode::XmlError> {
@@ -1005,7 +1005,7 @@ pub fn invalid_key_signing_key_name(
 }
 
 #[allow(unused_mut)]
-pub fn key_signing_key_already_exists(
+pub fn deser_structure_key_signing_key_already_exists_xml_err(
     inp: &[u8],
     mut builder: crate::error::key_signing_key_already_exists::Builder,
 ) -> Result<crate::error::key_signing_key_already_exists::Builder, smithy_xml::decode::XmlError> {
@@ -1035,7 +1035,7 @@ pub fn key_signing_key_already_exists(
 }
 
 #[allow(unused_mut)]
-pub fn too_many_key_signing_keys(
+pub fn deser_structure_too_many_key_signing_keys_xml_err(
     inp: &[u8],
     mut builder: crate::error::too_many_key_signing_keys::Builder,
 ) -> Result<crate::error::too_many_key_signing_keys::Builder, smithy_xml::decode::XmlError> {
@@ -1086,7 +1086,7 @@ pub fn deser_operation_create_key_signing_key(
             s if s.matches("ChangeInfo") /* ChangeInfo com.amazonaws.route53#CreateKeySigningKeyOutput$ChangeInfo */ =>  {
                 let var_38 =
                     Some(
-                        crate::xml_deser::change_info_inner(&mut tag)
+                        crate::xml_deser::deser_structure_change_info(&mut tag)
                         ?
                     )
                 ;
@@ -1096,7 +1096,7 @@ pub fn deser_operation_create_key_signing_key(
             s if s.matches("KeySigningKey") /* KeySigningKey com.amazonaws.route53#CreateKeySigningKeyOutput$KeySigningKey */ =>  {
                 let var_39 =
                     Some(
-                        crate::xml_deser::key_signing_key_inner(&mut tag)
+                        crate::xml_deser::deser_structure_key_signing_key(&mut tag)
                         ?
                     )
                 ;
@@ -1110,7 +1110,7 @@ pub fn deser_operation_create_key_signing_key(
 }
 
 #[allow(unused_mut)]
-pub fn insufficient_cloud_watch_logs_resource_policy(
+pub fn deser_structure_insufficient_cloud_watch_logs_resource_policy_xml_err(
     inp: &[u8],
     mut builder: crate::error::insufficient_cloud_watch_logs_resource_policy::Builder,
 ) -> Result<
@@ -1143,7 +1143,7 @@ pub fn insufficient_cloud_watch_logs_resource_policy(
 }
 
 #[allow(unused_mut)]
-pub fn no_such_cloud_watch_logs_log_group(
+pub fn deser_structure_no_such_cloud_watch_logs_log_group_xml_err(
     inp: &[u8],
     mut builder: crate::error::no_such_cloud_watch_logs_log_group::Builder,
 ) -> Result<crate::error::no_such_cloud_watch_logs_log_group::Builder, smithy_xml::decode::XmlError>
@@ -1174,7 +1174,7 @@ pub fn no_such_cloud_watch_logs_log_group(
 }
 
 #[allow(unused_mut)]
-pub fn query_logging_config_already_exists(
+pub fn deser_structure_query_logging_config_already_exists_xml_err(
     inp: &[u8],
     mut builder: crate::error::query_logging_config_already_exists::Builder,
 ) -> Result<crate::error::query_logging_config_already_exists::Builder, smithy_xml::decode::XmlError>
@@ -1227,7 +1227,7 @@ pub fn deser_operation_create_query_logging_config(
             s if s.matches("QueryLoggingConfig") /* QueryLoggingConfig com.amazonaws.route53#CreateQueryLoggingConfigOutput$QueryLoggingConfig */ =>  {
                 let var_43 =
                     Some(
-                        crate::xml_deser::query_logging_config_inner(&mut tag)
+                        crate::xml_deser::deser_structure_query_logging_config(&mut tag)
                         ?
                     )
                 ;
@@ -1241,7 +1241,7 @@ pub fn deser_operation_create_query_logging_config(
 }
 
 #[allow(unused_mut)]
-pub fn delegation_set_already_created(
+pub fn deser_structure_delegation_set_already_created_xml_err(
     inp: &[u8],
     mut builder: crate::error::delegation_set_already_created::Builder,
 ) -> Result<crate::error::delegation_set_already_created::Builder, smithy_xml::decode::XmlError> {
@@ -1271,7 +1271,7 @@ pub fn delegation_set_already_created(
 }
 
 #[allow(unused_mut)]
-pub fn delegation_set_already_reusable(
+pub fn deser_structure_delegation_set_already_reusable_xml_err(
     inp: &[u8],
     mut builder: crate::error::delegation_set_already_reusable::Builder,
 ) -> Result<crate::error::delegation_set_already_reusable::Builder, smithy_xml::decode::XmlError> {
@@ -1301,7 +1301,7 @@ pub fn delegation_set_already_reusable(
 }
 
 #[allow(unused_mut)]
-pub fn hosted_zone_not_found(
+pub fn deser_structure_hosted_zone_not_found_xml_err(
     inp: &[u8],
     mut builder: crate::error::hosted_zone_not_found::Builder,
 ) -> Result<crate::error::hosted_zone_not_found::Builder, smithy_xml::decode::XmlError> {
@@ -1355,7 +1355,7 @@ pub fn deser_operation_create_reusable_delegation_set(
             s if s.matches("DelegationSet") /* DelegationSet com.amazonaws.route53#CreateReusableDelegationSetOutput$DelegationSet */ =>  {
                 let var_47 =
                     Some(
-                        crate::xml_deser::delegation_set_inner(&mut tag)
+                        crate::xml_deser::deser_structure_delegation_set(&mut tag)
                         ?
                     )
                 ;
@@ -1369,7 +1369,7 @@ pub fn deser_operation_create_reusable_delegation_set(
 }
 
 #[allow(unused_mut)]
-pub fn invalid_traffic_policy_document(
+pub fn deser_structure_invalid_traffic_policy_document_xml_err(
     inp: &[u8],
     mut builder: crate::error::invalid_traffic_policy_document::Builder,
 ) -> Result<crate::error::invalid_traffic_policy_document::Builder, smithy_xml::decode::XmlError> {
@@ -1399,7 +1399,7 @@ pub fn invalid_traffic_policy_document(
 }
 
 #[allow(unused_mut)]
-pub fn too_many_traffic_policies(
+pub fn deser_structure_too_many_traffic_policies_xml_err(
     inp: &[u8],
     mut builder: crate::error::too_many_traffic_policies::Builder,
 ) -> Result<crate::error::too_many_traffic_policies::Builder, smithy_xml::decode::XmlError> {
@@ -1429,7 +1429,7 @@ pub fn too_many_traffic_policies(
 }
 
 #[allow(unused_mut)]
-pub fn traffic_policy_already_exists(
+pub fn deser_structure_traffic_policy_already_exists_xml_err(
     inp: &[u8],
     mut builder: crate::error::traffic_policy_already_exists::Builder,
 ) -> Result<crate::error::traffic_policy_already_exists::Builder, smithy_xml::decode::XmlError> {
@@ -1480,7 +1480,7 @@ pub fn deser_operation_create_traffic_policy(
             s if s.matches("TrafficPolicy") /* TrafficPolicy com.amazonaws.route53#CreateTrafficPolicyOutput$TrafficPolicy */ =>  {
                 let var_51 =
                     Some(
-                        crate::xml_deser::traffic_policy_inner(&mut tag)
+                        crate::xml_deser::deser_structure_traffic_policy(&mut tag)
                         ?
                     )
                 ;
@@ -1494,7 +1494,7 @@ pub fn deser_operation_create_traffic_policy(
 }
 
 #[allow(unused_mut)]
-pub fn no_such_traffic_policy(
+pub fn deser_structure_no_such_traffic_policy_xml_err(
     inp: &[u8],
     mut builder: crate::error::no_such_traffic_policy::Builder,
 ) -> Result<crate::error::no_such_traffic_policy::Builder, smithy_xml::decode::XmlError> {
@@ -1524,7 +1524,7 @@ pub fn no_such_traffic_policy(
 }
 
 #[allow(unused_mut)]
-pub fn too_many_traffic_policy_instances(
+pub fn deser_structure_too_many_traffic_policy_instances_xml_err(
     inp: &[u8],
     mut builder: crate::error::too_many_traffic_policy_instances::Builder,
 ) -> Result<crate::error::too_many_traffic_policy_instances::Builder, smithy_xml::decode::XmlError>
@@ -1555,7 +1555,7 @@ pub fn too_many_traffic_policy_instances(
 }
 
 #[allow(unused_mut)]
-pub fn traffic_policy_instance_already_exists(
+pub fn deser_structure_traffic_policy_instance_already_exists_xml_err(
     inp: &[u8],
     mut builder: crate::error::traffic_policy_instance_already_exists::Builder,
 ) -> Result<
@@ -1612,7 +1612,7 @@ pub fn deser_operation_create_traffic_policy_instance(
             s if s.matches("TrafficPolicyInstance") /* TrafficPolicyInstance com.amazonaws.route53#CreateTrafficPolicyInstanceOutput$TrafficPolicyInstance */ =>  {
                 let var_55 =
                     Some(
-                        crate::xml_deser::traffic_policy_instance_inner(&mut tag)
+                        crate::xml_deser::deser_structure_traffic_policy_instance(&mut tag)
                         ?
                     )
                 ;
@@ -1626,7 +1626,7 @@ pub fn deser_operation_create_traffic_policy_instance(
 }
 
 #[allow(unused_mut)]
-pub fn too_many_traffic_policy_versions_for_current_policy(
+pub fn deser_structure_too_many_traffic_policy_versions_for_current_policy_xml_err(
     inp: &[u8],
     mut builder: crate::error::too_many_traffic_policy_versions_for_current_policy::Builder,
 ) -> Result<
@@ -1683,7 +1683,7 @@ pub fn deser_operation_create_traffic_policy_version(
             s if s.matches("TrafficPolicy") /* TrafficPolicy com.amazonaws.route53#CreateTrafficPolicyVersionOutput$TrafficPolicy */ =>  {
                 let var_57 =
                     Some(
-                        crate::xml_deser::traffic_policy_inner(&mut tag)
+                        crate::xml_deser::deser_structure_traffic_policy(&mut tag)
                         ?
                     )
                 ;
@@ -1697,7 +1697,7 @@ pub fn deser_operation_create_traffic_policy_version(
 }
 
 #[allow(unused_mut)]
-pub fn too_many_vpc_association_authorizations(
+pub fn deser_structure_too_many_vpc_association_authorizations_xml_err(
     inp: &[u8],
     mut builder: crate::error::too_many_vpc_association_authorizations::Builder,
 ) -> Result<
@@ -1767,7 +1767,7 @@ pub fn deser_operation_create_vpc_association_authorization(
             s if s.matches("VPC") /* VPC com.amazonaws.route53#CreateVPCAssociationAuthorizationOutput$VPC */ =>  {
                 let var_60 =
                     Some(
-                        crate::xml_deser::vpc_inner(&mut tag)
+                        crate::xml_deser::deser_structure_vpc(&mut tag)
                         ?
                     )
                 ;
@@ -1781,7 +1781,7 @@ pub fn deser_operation_create_vpc_association_authorization(
 }
 
 #[allow(unused_mut)]
-pub fn key_signing_key_in_parent_ds_record(
+pub fn deser_structure_key_signing_key_in_parent_ds_record_xml_err(
     inp: &[u8],
     mut builder: crate::error::key_signing_key_in_parent_ds_record::Builder,
 ) -> Result<crate::error::key_signing_key_in_parent_ds_record::Builder, smithy_xml::decode::XmlError>
@@ -1812,7 +1812,7 @@ pub fn key_signing_key_in_parent_ds_record(
 }
 
 #[allow(unused_mut)]
-pub fn key_signing_key_in_use(
+pub fn deser_structure_key_signing_key_in_use_xml_err(
     inp: &[u8],
     mut builder: crate::error::key_signing_key_in_use::Builder,
 ) -> Result<crate::error::key_signing_key_in_use::Builder, smithy_xml::decode::XmlError> {
@@ -1864,7 +1864,7 @@ pub fn deser_operation_deactivate_key_signing_key(
             s if s.matches("ChangeInfo") /* ChangeInfo com.amazonaws.route53#DeactivateKeySigningKeyOutput$ChangeInfo */ =>  {
                 let var_63 =
                     Some(
-                        crate::xml_deser::change_info_inner(&mut tag)
+                        crate::xml_deser::deser_structure_change_info(&mut tag)
                         ?
                     )
                 ;
@@ -1878,7 +1878,7 @@ pub fn deser_operation_deactivate_key_signing_key(
 }
 
 #[allow(unused_mut)]
-pub fn health_check_in_use(
+pub fn deser_structure_health_check_in_use_xml_err(
     inp: &[u8],
     mut builder: crate::error::health_check_in_use::Builder,
 ) -> Result<crate::error::health_check_in_use::Builder, smithy_xml::decode::XmlError> {
@@ -1908,7 +1908,7 @@ pub fn health_check_in_use(
 }
 
 #[allow(unused_mut)]
-pub fn hosted_zone_not_empty(
+pub fn deser_structure_hosted_zone_not_empty_xml_err(
     inp: &[u8],
     mut builder: crate::error::hosted_zone_not_empty::Builder,
 ) -> Result<crate::error::hosted_zone_not_empty::Builder, smithy_xml::decode::XmlError> {
@@ -1959,7 +1959,7 @@ pub fn deser_operation_delete_hosted_zone(
             s if s.matches("ChangeInfo") /* ChangeInfo com.amazonaws.route53#DeleteHostedZoneOutput$ChangeInfo */ =>  {
                 let var_66 =
                     Some(
-                        crate::xml_deser::change_info_inner(&mut tag)
+                        crate::xml_deser::deser_structure_change_info(&mut tag)
                         ?
                     )
                 ;
@@ -1994,7 +1994,7 @@ pub fn deser_operation_delete_key_signing_key(
             s if s.matches("ChangeInfo") /* ChangeInfo com.amazonaws.route53#DeleteKeySigningKeyOutput$ChangeInfo */ =>  {
                 let var_67 =
                     Some(
-                        crate::xml_deser::change_info_inner(&mut tag)
+                        crate::xml_deser::deser_structure_change_info(&mut tag)
                         ?
                     )
                 ;
@@ -2008,7 +2008,7 @@ pub fn deser_operation_delete_key_signing_key(
 }
 
 #[allow(unused_mut)]
-pub fn no_such_query_logging_config(
+pub fn deser_structure_no_such_query_logging_config_xml_err(
     inp: &[u8],
     mut builder: crate::error::no_such_query_logging_config::Builder,
 ) -> Result<crate::error::no_such_query_logging_config::Builder, smithy_xml::decode::XmlError> {
@@ -2038,7 +2038,7 @@ pub fn no_such_query_logging_config(
 }
 
 #[allow(unused_mut)]
-pub fn delegation_set_in_use(
+pub fn deser_structure_delegation_set_in_use_xml_err(
     inp: &[u8],
     mut builder: crate::error::delegation_set_in_use::Builder,
 ) -> Result<crate::error::delegation_set_in_use::Builder, smithy_xml::decode::XmlError> {
@@ -2068,7 +2068,7 @@ pub fn delegation_set_in_use(
 }
 
 #[allow(unused_mut)]
-pub fn traffic_policy_in_use(
+pub fn deser_structure_traffic_policy_in_use_xml_err(
     inp: &[u8],
     mut builder: crate::error::traffic_policy_in_use::Builder,
 ) -> Result<crate::error::traffic_policy_in_use::Builder, smithy_xml::decode::XmlError> {
@@ -2098,7 +2098,7 @@ pub fn traffic_policy_in_use(
 }
 
 #[allow(unused_mut)]
-pub fn no_such_traffic_policy_instance(
+pub fn deser_structure_no_such_traffic_policy_instance_xml_err(
     inp: &[u8],
     mut builder: crate::error::no_such_traffic_policy_instance::Builder,
 ) -> Result<crate::error::no_such_traffic_policy_instance::Builder, smithy_xml::decode::XmlError> {
@@ -2128,7 +2128,7 @@ pub fn no_such_traffic_policy_instance(
 }
 
 #[allow(unused_mut)]
-pub fn vpc_association_authorization_not_found(
+pub fn deser_structure_vpc_association_authorization_not_found_xml_err(
     inp: &[u8],
     mut builder: crate::error::vpc_association_authorization_not_found::Builder,
 ) -> Result<
@@ -2161,7 +2161,7 @@ pub fn vpc_association_authorization_not_found(
 }
 
 #[allow(unused_mut)]
-pub fn dnssec_not_found(
+pub fn deser_structure_dnssec_not_found_xml_err(
     inp: &[u8],
     mut builder: crate::error::dnssec_not_found::Builder,
 ) -> Result<crate::error::dnssec_not_found::Builder, smithy_xml::decode::XmlError> {
@@ -2213,7 +2213,7 @@ pub fn deser_operation_disable_hosted_zone_dnssec(
             s if s.matches("ChangeInfo") /* ChangeInfo com.amazonaws.route53#DisableHostedZoneDNSSECOutput$ChangeInfo */ =>  {
                 let var_74 =
                     Some(
-                        crate::xml_deser::change_info_inner(&mut tag)
+                        crate::xml_deser::deser_structure_change_info(&mut tag)
                         ?
                     )
                 ;
@@ -2227,7 +2227,7 @@ pub fn deser_operation_disable_hosted_zone_dnssec(
 }
 
 #[allow(unused_mut)]
-pub fn last_vpc_association(
+pub fn deser_structure_last_vpc_association_xml_err(
     inp: &[u8],
     mut builder: crate::error::last_vpc_association::Builder,
 ) -> Result<crate::error::last_vpc_association::Builder, smithy_xml::decode::XmlError> {
@@ -2257,7 +2257,7 @@ pub fn last_vpc_association(
 }
 
 #[allow(unused_mut)]
-pub fn vpc_association_not_found(
+pub fn deser_structure_vpc_association_not_found_xml_err(
     inp: &[u8],
     mut builder: crate::error::vpc_association_not_found::Builder,
 ) -> Result<crate::error::vpc_association_not_found::Builder, smithy_xml::decode::XmlError> {
@@ -2311,7 +2311,7 @@ pub fn deser_operation_disassociate_vpc_from_hosted_zone(
             s if s.matches("ChangeInfo") /* ChangeInfo com.amazonaws.route53#DisassociateVPCFromHostedZoneOutput$ChangeInfo */ =>  {
                 let var_77 =
                     Some(
-                        crate::xml_deser::change_info_inner(&mut tag)
+                        crate::xml_deser::deser_structure_change_info(&mut tag)
                         ?
                     )
                 ;
@@ -2325,7 +2325,7 @@ pub fn deser_operation_disassociate_vpc_from_hosted_zone(
 }
 
 #[allow(unused_mut)]
-pub fn hosted_zone_partially_delegated(
+pub fn deser_structure_hosted_zone_partially_delegated_xml_err(
     inp: &[u8],
     mut builder: crate::error::hosted_zone_partially_delegated::Builder,
 ) -> Result<crate::error::hosted_zone_partially_delegated::Builder, smithy_xml::decode::XmlError> {
@@ -2355,7 +2355,7 @@ pub fn hosted_zone_partially_delegated(
 }
 
 #[allow(unused_mut)]
-pub fn key_signing_key_with_active_status_not_found(
+pub fn deser_structure_key_signing_key_with_active_status_not_found_xml_err(
     inp: &[u8],
     mut builder: crate::error::key_signing_key_with_active_status_not_found::Builder,
 ) -> Result<
@@ -2410,7 +2410,7 @@ pub fn deser_operation_enable_hosted_zone_dnssec(
             s if s.matches("ChangeInfo") /* ChangeInfo com.amazonaws.route53#EnableHostedZoneDNSSECOutput$ChangeInfo */ =>  {
                 let var_80 =
                     Some(
-                        crate::xml_deser::change_info_inner(&mut tag)
+                        crate::xml_deser::deser_structure_change_info(&mut tag)
                         ?
                     )
                 ;
@@ -2445,7 +2445,7 @@ pub fn deser_operation_get_account_limit(
             s if s.matches("Limit") /* Limit com.amazonaws.route53#GetAccountLimitOutput$Limit */ =>  {
                 let var_81 =
                     Some(
-                        crate::xml_deser::account_limit_inner(&mut tag)
+                        crate::xml_deser::deser_structure_account_limit(&mut tag)
                         ?
                     )
                 ;
@@ -2473,7 +2473,7 @@ pub fn deser_operation_get_account_limit(
 }
 
 #[allow(unused_mut)]
-pub fn no_such_change(
+pub fn deser_structure_no_such_change_xml_err(
     inp: &[u8],
     mut builder: crate::error::no_such_change::Builder,
 ) -> Result<crate::error::no_such_change::Builder, smithy_xml::decode::XmlError> {
@@ -2524,7 +2524,7 @@ pub fn deser_operation_get_change(
             s if s.matches("ChangeInfo") /* ChangeInfo com.amazonaws.route53#GetChangeOutput$ChangeInfo */ =>  {
                 let var_84 =
                     Some(
-                        crate::xml_deser::change_info_inner(&mut tag)
+                        crate::xml_deser::deser_structure_change_info(&mut tag)
                         ?
                     )
                 ;
@@ -2559,7 +2559,7 @@ pub fn deser_operation_get_checker_ip_ranges(
             s if s.matches("CheckerIpRanges") /* CheckerIpRanges com.amazonaws.route53#GetCheckerIpRangesOutput$CheckerIpRanges */ =>  {
                 let var_85 =
                     Some(
-                        crate::xml_deser::deserialize_checker_ip_ranges(&mut tag)
+                        crate::xml_deser::deser_list_checker_ip_ranges(&mut tag)
                         ?
                     )
                 ;
@@ -2594,7 +2594,7 @@ pub fn deser_operation_get_dnssec(
             s if s.matches("Status") /* Status com.amazonaws.route53#GetDNSSECOutput$Status */ =>  {
                 let var_86 =
                     Some(
-                        crate::xml_deser::dnssec_status_inner(&mut tag)
+                        crate::xml_deser::deser_structure_dnssec_status(&mut tag)
                         ?
                     )
                 ;
@@ -2604,7 +2604,7 @@ pub fn deser_operation_get_dnssec(
             s if s.matches("KeySigningKeys") /* KeySigningKeys com.amazonaws.route53#GetDNSSECOutput$KeySigningKeys */ =>  {
                 let var_87 =
                     Some(
-                        crate::xml_deser::deserialize_key_signing_keys(&mut tag)
+                        crate::xml_deser::deser_list_key_signing_keys(&mut tag)
                         ?
                     )
                 ;
@@ -2618,7 +2618,7 @@ pub fn deser_operation_get_dnssec(
 }
 
 #[allow(unused_mut)]
-pub fn no_such_geo_location(
+pub fn deser_structure_no_such_geo_location_xml_err(
     inp: &[u8],
     mut builder: crate::error::no_such_geo_location::Builder,
 ) -> Result<crate::error::no_such_geo_location::Builder, smithy_xml::decode::XmlError> {
@@ -2669,7 +2669,7 @@ pub fn deser_operation_get_geo_location(
             s if s.matches("GeoLocationDetails") /* GeoLocationDetails com.amazonaws.route53#GetGeoLocationOutput$GeoLocationDetails */ =>  {
                 let var_89 =
                     Some(
-                        crate::xml_deser::geo_location_details_inner(&mut tag)
+                        crate::xml_deser::deser_structure_geo_location_details(&mut tag)
                         ?
                     )
                 ;
@@ -2683,7 +2683,7 @@ pub fn deser_operation_get_geo_location(
 }
 
 #[allow(unused_mut)]
-pub fn incompatible_version(
+pub fn deser_structure_incompatible_version_xml_err(
     inp: &[u8],
     mut builder: crate::error::incompatible_version::Builder,
 ) -> Result<crate::error::incompatible_version::Builder, smithy_xml::decode::XmlError> {
@@ -2734,7 +2734,7 @@ pub fn deser_operation_get_health_check(
             s if s.matches("HealthCheck") /* HealthCheck com.amazonaws.route53#GetHealthCheckOutput$HealthCheck */ =>  {
                 let var_91 =
                     Some(
-                        crate::xml_deser::health_check_inner(&mut tag)
+                        crate::xml_deser::deser_structure_health_check(&mut tag)
                         ?
                     )
                 ;
@@ -2813,7 +2813,7 @@ pub fn deser_operation_get_health_check_last_failure_reason(
             s if s.matches("HealthCheckObservations") /* HealthCheckObservations com.amazonaws.route53#GetHealthCheckLastFailureReasonOutput$HealthCheckObservations */ =>  {
                 let var_93 =
                     Some(
-                        crate::xml_deser::deserialize_health_check_observations(&mut tag)
+                        crate::xml_deser::deser_list_health_check_observations(&mut tag)
                         ?
                     )
                 ;
@@ -2848,7 +2848,7 @@ pub fn deser_operation_get_health_check_status(
             s if s.matches("HealthCheckObservations") /* HealthCheckObservations com.amazonaws.route53#GetHealthCheckStatusOutput$HealthCheckObservations */ =>  {
                 let var_94 =
                     Some(
-                        crate::xml_deser::deserialize_health_check_observations(&mut tag)
+                        crate::xml_deser::deser_list_health_check_observations(&mut tag)
                         ?
                     )
                 ;
@@ -2883,7 +2883,7 @@ pub fn deser_operation_get_hosted_zone(
             s if s.matches("HostedZone") /* HostedZone com.amazonaws.route53#GetHostedZoneOutput$HostedZone */ =>  {
                 let var_95 =
                     Some(
-                        crate::xml_deser::hosted_zone_inner(&mut tag)
+                        crate::xml_deser::deser_structure_hosted_zone(&mut tag)
                         ?
                     )
                 ;
@@ -2893,7 +2893,7 @@ pub fn deser_operation_get_hosted_zone(
             s if s.matches("VPCs") /* VPCs com.amazonaws.route53#GetHostedZoneOutput$VPCs */ =>  {
                 let var_96 =
                     Some(
-                        crate::xml_deser::deserialize_vp_cs(&mut tag)
+                        crate::xml_deser::deser_list_vp_cs(&mut tag)
                         ?
                     )
                 ;
@@ -2903,7 +2903,7 @@ pub fn deser_operation_get_hosted_zone(
             s if s.matches("DelegationSet") /* DelegationSet com.amazonaws.route53#GetHostedZoneOutput$DelegationSet */ =>  {
                 let var_97 =
                     Some(
-                        crate::xml_deser::delegation_set_inner(&mut tag)
+                        crate::xml_deser::deser_structure_delegation_set(&mut tag)
                         ?
                     )
                 ;
@@ -2958,7 +2958,7 @@ pub fn deser_operation_get_hosted_zone_count(
 }
 
 #[allow(unused_mut)]
-pub fn hosted_zone_not_private(
+pub fn deser_structure_hosted_zone_not_private_xml_err(
     inp: &[u8],
     mut builder: crate::error::hosted_zone_not_private::Builder,
 ) -> Result<crate::error::hosted_zone_not_private::Builder, smithy_xml::decode::XmlError> {
@@ -3009,7 +3009,7 @@ pub fn deser_operation_get_hosted_zone_limit(
             s if s.matches("Limit") /* Limit com.amazonaws.route53#GetHostedZoneLimitOutput$Limit */ =>  {
                 let var_100 =
                     Some(
-                        crate::xml_deser::hosted_zone_limit_inner(&mut tag)
+                        crate::xml_deser::deser_structure_hosted_zone_limit(&mut tag)
                         ?
                     )
                 ;
@@ -3058,7 +3058,7 @@ pub fn deser_operation_get_query_logging_config(
             s if s.matches("QueryLoggingConfig") /* QueryLoggingConfig com.amazonaws.route53#GetQueryLoggingConfigOutput$QueryLoggingConfig */ =>  {
                 let var_102 =
                     Some(
-                        crate::xml_deser::query_logging_config_inner(&mut tag)
+                        crate::xml_deser::deser_structure_query_logging_config(&mut tag)
                         ?
                     )
                 ;
@@ -3094,7 +3094,7 @@ pub fn deser_operation_get_reusable_delegation_set(
             s if s.matches("DelegationSet") /* DelegationSet com.amazonaws.route53#GetReusableDelegationSetOutput$DelegationSet */ =>  {
                 let var_103 =
                     Some(
-                        crate::xml_deser::delegation_set_inner(&mut tag)
+                        crate::xml_deser::deser_structure_delegation_set(&mut tag)
                         ?
                     )
                 ;
@@ -3132,7 +3132,7 @@ pub fn deser_operation_get_reusable_delegation_set_limit(
             s if s.matches("Limit") /* Limit com.amazonaws.route53#GetReusableDelegationSetLimitOutput$Limit */ =>  {
                 let var_104 =
                     Some(
-                        crate::xml_deser::reusable_delegation_set_limit_inner(&mut tag)
+                        crate::xml_deser::deser_structure_reusable_delegation_set_limit(&mut tag)
                         ?
                     )
                 ;
@@ -3181,7 +3181,7 @@ pub fn deser_operation_get_traffic_policy(
             s if s.matches("TrafficPolicy") /* TrafficPolicy com.amazonaws.route53#GetTrafficPolicyOutput$TrafficPolicy */ =>  {
                 let var_106 =
                     Some(
-                        crate::xml_deser::traffic_policy_inner(&mut tag)
+                        crate::xml_deser::deser_structure_traffic_policy(&mut tag)
                         ?
                     )
                 ;
@@ -3217,7 +3217,7 @@ pub fn deser_operation_get_traffic_policy_instance(
             s if s.matches("TrafficPolicyInstance") /* TrafficPolicyInstance com.amazonaws.route53#GetTrafficPolicyInstanceOutput$TrafficPolicyInstance */ =>  {
                 let var_107 =
                     Some(
-                        crate::xml_deser::traffic_policy_instance_inner(&mut tag)
+                        crate::xml_deser::deser_structure_traffic_policy_instance(&mut tag)
                         ?
                     )
                 ;
@@ -3322,7 +3322,7 @@ pub fn deser_operation_list_geo_locations(
             s if s.matches("GeoLocationDetailsList") /* GeoLocationDetailsList com.amazonaws.route53#ListGeoLocationsOutput$GeoLocationDetailsList */ =>  {
                 let var_111 =
                     Some(
-                        crate::xml_deser::deserialize_geo_location_details_list(&mut tag)
+                        crate::xml_deser::deser_list_geo_location_details_list(&mut tag)
                         ?
                     )
                 ;
@@ -3400,7 +3400,7 @@ pub fn deser_operation_list_health_checks(
             s if s.matches("HealthChecks") /* HealthChecks com.amazonaws.route53#ListHealthChecksOutput$HealthChecks */ =>  {
                 let var_115 =
                     Some(
-                        crate::xml_deser::deserialize_health_checks(&mut tag)
+                        crate::xml_deser::deser_list_health_checks(&mut tag)
                         ?
                     )
                 ;
@@ -3491,7 +3491,7 @@ pub fn deser_operation_list_hosted_zones(
             s if s.matches("HostedZones") /* HostedZones com.amazonaws.route53#ListHostedZonesOutput$HostedZones */ =>  {
                 let var_120 =
                     Some(
-                        crate::xml_deser::deserialize_hosted_zones(&mut tag)
+                        crate::xml_deser::deser_list_hosted_zones(&mut tag)
                         ?
                     )
                 ;
@@ -3596,7 +3596,7 @@ pub fn deser_operation_list_hosted_zones_by_name(
             s if s.matches("HostedZones") /* HostedZones com.amazonaws.route53#ListHostedZonesByNameOutput$HostedZones */ =>  {
                 let var_126 =
                     Some(
-                        crate::xml_deser::deserialize_hosted_zones(&mut tag)
+                        crate::xml_deser::deser_list_hosted_zones(&mut tag)
                         ?
                     )
                 ;
@@ -3679,7 +3679,7 @@ pub fn deser_operation_list_hosted_zones_by_name(
 }
 
 #[allow(unused_mut)]
-pub fn invalid_pagination_token(
+pub fn deser_structure_invalid_pagination_token_xml_err(
     inp: &[u8],
     mut builder: crate::error::invalid_pagination_token::Builder,
 ) -> Result<crate::error::invalid_pagination_token::Builder, smithy_xml::decode::XmlError> {
@@ -3743,7 +3743,7 @@ pub fn deser_operation_list_hosted_zones_by_vpc(
             s if s.matches("HostedZoneSummaries") /* HostedZoneSummaries com.amazonaws.route53#ListHostedZonesByVPCOutput$HostedZoneSummaries */ =>  {
                 let var_134 =
                     Some(
-                        crate::xml_deser::deserialize_hosted_zone_summaries(&mut tag)
+                        crate::xml_deser::deser_list_hosted_zone_summaries(&mut tag)
                         ?
                     )
                 ;
@@ -3808,7 +3808,7 @@ pub fn deser_operation_list_query_logging_configs(
             s if s.matches("QueryLoggingConfigs") /* QueryLoggingConfigs com.amazonaws.route53#ListQueryLoggingConfigsOutput$QueryLoggingConfigs */ =>  {
                 let var_137 =
                     Some(
-                        crate::xml_deser::deserialize_query_logging_configs(&mut tag)
+                        crate::xml_deser::deser_list_query_logging_configs(&mut tag)
                         ?
                     )
                 ;
@@ -3898,7 +3898,7 @@ pub fn deser_operation_list_resource_record_sets(
             s if s.matches("ResourceRecordSets") /* ResourceRecordSets com.amazonaws.route53#ListResourceRecordSetsOutput$ResourceRecordSets */ =>  {
                 let var_142 =
                     Some(
-                        crate::xml_deser::deserialize_resource_record_sets(&mut tag)
+                        crate::xml_deser::deser_list_resource_record_sets(&mut tag)
                         ?
                     )
                 ;
@@ -4008,7 +4008,7 @@ pub fn deser_operation_list_reusable_delegation_sets(
             s if s.matches("DelegationSets") /* DelegationSets com.amazonaws.route53#ListReusableDelegationSetsOutput$DelegationSets */ =>  {
                 let var_148 =
                     Some(
-                        crate::xml_deser::deserialize_delegation_sets(&mut tag)
+                        crate::xml_deser::deser_list_delegation_sets(&mut tag)
                         ?
                     )
                 ;
@@ -4043,7 +4043,7 @@ pub fn deser_operation_list_tags_for_resource(
             s if s.matches("ResourceTagSet") /* ResourceTagSet com.amazonaws.route53#ListTagsForResourceOutput$ResourceTagSet */ =>  {
                 let var_149 =
                     Some(
-                        crate::xml_deser::resource_tag_set_inner(&mut tag)
+                        crate::xml_deser::deser_structure_resource_tag_set(&mut tag)
                         ?
                     )
                 ;
@@ -4078,7 +4078,7 @@ pub fn deser_operation_list_tags_for_resources(
             s if s.matches("ResourceTagSets") /* ResourceTagSets com.amazonaws.route53#ListTagsForResourcesOutput$ResourceTagSets */ =>  {
                 let var_150 =
                     Some(
-                        crate::xml_deser::deserialize_resource_tag_set_list(&mut tag)
+                        crate::xml_deser::deser_list_resource_tag_set_list(&mut tag)
                         ?
                     )
                 ;
@@ -4126,7 +4126,7 @@ pub fn deser_operation_list_traffic_policies(
             s if s.matches("TrafficPolicySummaries") /* TrafficPolicySummaries com.amazonaws.route53#ListTrafficPoliciesOutput$TrafficPolicySummaries */ =>  {
                 let var_152 =
                     Some(
-                        crate::xml_deser::deserialize_traffic_policy_summaries(&mut tag)
+                        crate::xml_deser::deser_list_traffic_policy_summaries(&mut tag)
                         ?
                     )
                 ;
@@ -4207,7 +4207,7 @@ pub fn deser_operation_list_traffic_policy_instances(
             s if s.matches("TrafficPolicyInstances") /* TrafficPolicyInstances com.amazonaws.route53#ListTrafficPolicyInstancesOutput$TrafficPolicyInstances */ =>  {
                 let var_156 =
                     Some(
-                        crate::xml_deser::deserialize_traffic_policy_instances(&mut tag)
+                        crate::xml_deser::deser_list_traffic_policy_instances(&mut tag)
                         ?
                     )
                 ;
@@ -4315,7 +4315,7 @@ pub fn deser_operation_list_traffic_policy_instances_by_hosted_zone(
             s if s.matches("TrafficPolicyInstances") /* TrafficPolicyInstances com.amazonaws.route53#ListTrafficPolicyInstancesByHostedZoneOutput$TrafficPolicyInstances */ =>  {
                 let var_162 =
                     Some(
-                        crate::xml_deser::deserialize_traffic_policy_instances(&mut tag)
+                        crate::xml_deser::deser_list_traffic_policy_instances(&mut tag)
                         ?
                     )
                 ;
@@ -4410,7 +4410,7 @@ pub fn deser_operation_list_traffic_policy_instances_by_policy(
             s if s.matches("TrafficPolicyInstances") /* TrafficPolicyInstances com.amazonaws.route53#ListTrafficPolicyInstancesByPolicyOutput$TrafficPolicyInstances */ =>  {
                 let var_167 =
                     Some(
-                        crate::xml_deser::deserialize_traffic_policy_instances(&mut tag)
+                        crate::xml_deser::deser_list_traffic_policy_instances(&mut tag)
                         ?
                     )
                 ;
@@ -4503,7 +4503,7 @@ pub fn deser_operation_list_traffic_policy_versions(
             s if s.matches("TrafficPolicies") /* TrafficPolicies com.amazonaws.route53#ListTrafficPolicyVersionsOutput$TrafficPolicies */ =>  {
                 let var_172 =
                     Some(
-                        crate::xml_deser::deserialize_traffic_policies(&mut tag)
+                        crate::xml_deser::deser_list_traffic_policies(&mut tag)
                         ?
                     )
                 ;
@@ -4584,7 +4584,7 @@ pub fn deser_operation_list_vpc_association_authorizations(
             s if s.matches("VPCs") /* VPCs com.amazonaws.route53#ListVPCAssociationAuthorizationsOutput$VPCs */ =>  {
                 let var_176 =
                     Some(
-                        crate::xml_deser::deserialize_vp_cs(&mut tag)
+                        crate::xml_deser::deser_list_vp_cs(&mut tag)
                         ?
                     )
                 ;
@@ -4671,7 +4671,7 @@ pub fn deser_operation_test_dns_answer(
             s if s.matches("RecordData") /* RecordData com.amazonaws.route53#TestDNSAnswerOutput$RecordData */ =>  {
                 let var_181 =
                     Some(
-                        crate::xml_deser::deserialize_record_data(&mut tag)
+                        crate::xml_deser::deser_list_record_data(&mut tag)
                         ?
                     )
                 ;
@@ -4725,7 +4725,7 @@ pub fn deser_operation_test_dns_answer(
 }
 
 #[allow(unused_mut)]
-pub fn health_check_version_mismatch(
+pub fn deser_structure_health_check_version_mismatch_xml_err(
     inp: &[u8],
     mut builder: crate::error::health_check_version_mismatch::Builder,
 ) -> Result<crate::error::health_check_version_mismatch::Builder, smithy_xml::decode::XmlError> {
@@ -4776,7 +4776,7 @@ pub fn deser_operation_update_health_check(
             s if s.matches("HealthCheck") /* HealthCheck com.amazonaws.route53#UpdateHealthCheckOutput$HealthCheck */ =>  {
                 let var_186 =
                     Some(
-                        crate::xml_deser::health_check_inner(&mut tag)
+                        crate::xml_deser::deser_structure_health_check(&mut tag)
                         ?
                     )
                 ;
@@ -4812,7 +4812,7 @@ pub fn deser_operation_update_hosted_zone_comment(
             s if s.matches("HostedZone") /* HostedZone com.amazonaws.route53#UpdateHostedZoneCommentOutput$HostedZone */ =>  {
                 let var_187 =
                     Some(
-                        crate::xml_deser::hosted_zone_inner(&mut tag)
+                        crate::xml_deser::deser_structure_hosted_zone(&mut tag)
                         ?
                     )
                 ;
@@ -4850,7 +4850,7 @@ pub fn deser_operation_update_traffic_policy_comment(
             s if s.matches("TrafficPolicy") /* TrafficPolicy com.amazonaws.route53#UpdateTrafficPolicyCommentOutput$TrafficPolicy */ =>  {
                 let var_188 =
                     Some(
-                        crate::xml_deser::traffic_policy_inner(&mut tag)
+                        crate::xml_deser::deser_structure_traffic_policy(&mut tag)
                         ?
                     )
                 ;
@@ -4864,7 +4864,7 @@ pub fn deser_operation_update_traffic_policy_comment(
 }
 
 #[allow(unused_mut)]
-pub fn conflicting_types(
+pub fn deser_structure_conflicting_types_xml_err(
     inp: &[u8],
     mut builder: crate::error::conflicting_types::Builder,
 ) -> Result<crate::error::conflicting_types::Builder, smithy_xml::decode::XmlError> {
@@ -4918,7 +4918,7 @@ pub fn deser_operation_update_traffic_policy_instance(
             s if s.matches("TrafficPolicyInstance") /* TrafficPolicyInstance com.amazonaws.route53#UpdateTrafficPolicyInstanceOutput$TrafficPolicyInstance */ =>  {
                 let var_190 =
                     Some(
-                        crate::xml_deser::traffic_policy_instance_inner(&mut tag)
+                        crate::xml_deser::deser_structure_traffic_policy_instance(&mut tag)
                         ?
                     )
                 ;
@@ -4931,7 +4931,7 @@ pub fn deser_operation_update_traffic_policy_instance(
     Ok(builder)
 }
 
-pub fn change_info_inner(
+pub fn deser_structure_change_info(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::ChangeInfo, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -4998,7 +4998,7 @@ pub fn change_info_inner(
     Ok(builder.build())
 }
 
-pub fn deserialize_error_messages(
+pub fn deser_list_error_messages(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<std::string::String>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -5020,7 +5020,7 @@ pub fn deserialize_error_messages(
     Ok(out)
 }
 
-pub fn health_check_inner(
+pub fn deser_structure_health_check(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::HealthCheck, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -5056,7 +5056,7 @@ pub fn health_check_inner(
             s if s.matches("LinkedService") /* LinkedService com.amazonaws.route53#HealthCheck$LinkedService */ =>  {
                 let var_197 =
                     Some(
-                        crate::xml_deser::linked_service_inner(&mut tag)
+                        crate::xml_deser::deser_structure_linked_service(&mut tag)
                         ?
                     )
                 ;
@@ -5066,7 +5066,7 @@ pub fn health_check_inner(
             s if s.matches("HealthCheckConfig") /* HealthCheckConfig com.amazonaws.route53#HealthCheck$HealthCheckConfig */ =>  {
                 let var_198 =
                     Some(
-                        crate::xml_deser::health_check_config_inner(&mut tag)
+                        crate::xml_deser::deser_structure_health_check_config(&mut tag)
                         ?
                     )
                 ;
@@ -5092,7 +5092,7 @@ pub fn health_check_inner(
             s if s.matches("CloudWatchAlarmConfiguration") /* CloudWatchAlarmConfiguration com.amazonaws.route53#HealthCheck$CloudWatchAlarmConfiguration */ =>  {
                 let var_200 =
                     Some(
-                        crate::xml_deser::cloud_watch_alarm_configuration_inner(&mut tag)
+                        crate::xml_deser::deser_structure_cloud_watch_alarm_configuration(&mut tag)
                         ?
                     )
                 ;
@@ -5105,7 +5105,7 @@ pub fn health_check_inner(
     Ok(builder.build())
 }
 
-pub fn hosted_zone_inner(
+pub fn deser_structure_hosted_zone(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::HostedZone, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -5154,7 +5154,7 @@ pub fn hosted_zone_inner(
             s if s.matches("Config") /* Config com.amazonaws.route53#HostedZone$Config */ =>  {
                 let var_204 =
                     Some(
-                        crate::xml_deser::hosted_zone_config_inner(&mut tag)
+                        crate::xml_deser::deser_structure_hosted_zone_config(&mut tag)
                         ?
                     )
                 ;
@@ -5180,7 +5180,7 @@ pub fn hosted_zone_inner(
             s if s.matches("LinkedService") /* LinkedService com.amazonaws.route53#HostedZone$LinkedService */ =>  {
                 let var_206 =
                     Some(
-                        crate::xml_deser::linked_service_inner(&mut tag)
+                        crate::xml_deser::deser_structure_linked_service(&mut tag)
                         ?
                     )
                 ;
@@ -5193,7 +5193,7 @@ pub fn hosted_zone_inner(
     Ok(builder.build())
 }
 
-pub fn delegation_set_inner(
+pub fn deser_structure_delegation_set(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::DelegationSet, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -5229,7 +5229,7 @@ pub fn delegation_set_inner(
             s if s.matches("NameServers") /* NameServers com.amazonaws.route53#DelegationSet$NameServers */ =>  {
                 let var_209 =
                     Some(
-                        crate::xml_deser::deserialize_delegation_set_name_servers(&mut tag)
+                        crate::xml_deser::deser_list_delegation_set_name_servers(&mut tag)
                         ?
                     )
                 ;
@@ -5242,7 +5242,7 @@ pub fn delegation_set_inner(
     Ok(builder.build())
 }
 
-pub fn vpc_inner(
+pub fn deser_structure_vpc(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::VPC, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -5282,7 +5282,7 @@ pub fn vpc_inner(
     Ok(builder.build())
 }
 
-pub fn key_signing_key_inner(
+pub fn deser_structure_key_signing_key(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::KeySigningKey, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -5509,7 +5509,7 @@ pub fn key_signing_key_inner(
     Ok(builder.build())
 }
 
-pub fn query_logging_config_inner(
+pub fn deser_structure_query_logging_config(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::QueryLoggingConfig, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -5561,7 +5561,7 @@ pub fn query_logging_config_inner(
     Ok(builder.build())
 }
 
-pub fn traffic_policy_inner(
+pub fn deser_structure_traffic_policy(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::TrafficPolicy, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -5656,7 +5656,7 @@ pub fn traffic_policy_inner(
     Ok(builder.build())
 }
 
-pub fn traffic_policy_instance_inner(
+pub fn deser_structure_traffic_policy_instance(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::TrafficPolicyInstance, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -5793,7 +5793,7 @@ pub fn traffic_policy_instance_inner(
     Ok(builder.build())
 }
 
-pub fn account_limit_inner(
+pub fn deser_structure_account_limit(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::AccountLimit, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -5834,7 +5834,7 @@ pub fn account_limit_inner(
     Ok(builder.build())
 }
 
-pub fn deserialize_checker_ip_ranges(
+pub fn deser_list_checker_ip_ranges(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<std::string::String>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -5856,7 +5856,7 @@ pub fn deserialize_checker_ip_ranges(
     Ok(out)
 }
 
-pub fn dnssec_status_inner(
+pub fn deser_structure_dnssec_status(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::DNSSECStatus, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -5895,7 +5895,7 @@ pub fn dnssec_status_inner(
     Ok(builder.build())
 }
 
-pub fn deserialize_key_signing_keys(
+pub fn deser_list_key_signing_keys(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::KeySigningKey>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -5903,7 +5903,7 @@ pub fn deserialize_key_signing_keys(
         match tag.start_el() {
             s if s.matches("member") /* member com.amazonaws.route53#KeySigningKeys$member */ =>  {
                 out.push(
-                    crate::xml_deser::key_signing_key_inner(&mut tag)
+                    crate::xml_deser::deser_structure_key_signing_key(&mut tag)
                     ?
                 );
             }
@@ -5914,7 +5914,7 @@ pub fn deserialize_key_signing_keys(
     Ok(out)
 }
 
-pub fn geo_location_details_inner(
+pub fn deser_structure_geo_location_details(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::GeoLocationDetails, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -6005,7 +6005,7 @@ pub fn geo_location_details_inner(
     Ok(builder.build())
 }
 
-pub fn deserialize_health_check_observations(
+pub fn deser_list_health_check_observations(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::HealthCheckObservation>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -6013,7 +6013,7 @@ pub fn deserialize_health_check_observations(
         match tag.start_el() {
             s if s.matches("HealthCheckObservation") /* member com.amazonaws.route53#HealthCheckObservations$member */ =>  {
                 out.push(
-                    crate::xml_deser::health_check_observation_inner(&mut tag)
+                    crate::xml_deser::deser_structure_health_check_observation(&mut tag)
                     ?
                 );
             }
@@ -6024,7 +6024,7 @@ pub fn deserialize_health_check_observations(
     Ok(out)
 }
 
-pub fn deserialize_vp_cs(
+pub fn deser_list_vp_cs(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::VPC>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -6032,7 +6032,7 @@ pub fn deserialize_vp_cs(
         match tag.start_el() {
             s if s.matches("VPC") /* member com.amazonaws.route53#VPCs$member */ =>  {
                 out.push(
-                    crate::xml_deser::vpc_inner(&mut tag)
+                    crate::xml_deser::deser_structure_vpc(&mut tag)
                     ?
                 );
             }
@@ -6043,7 +6043,7 @@ pub fn deserialize_vp_cs(
     Ok(out)
 }
 
-pub fn hosted_zone_limit_inner(
+pub fn deser_structure_hosted_zone_limit(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::HostedZoneLimit, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -6084,7 +6084,7 @@ pub fn hosted_zone_limit_inner(
     Ok(builder.build())
 }
 
-pub fn reusable_delegation_set_limit_inner(
+pub fn deser_structure_reusable_delegation_set_limit(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::ReusableDelegationSetLimit, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -6125,7 +6125,7 @@ pub fn reusable_delegation_set_limit_inner(
     Ok(builder.build())
 }
 
-pub fn deserialize_geo_location_details_list(
+pub fn deser_list_geo_location_details_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::GeoLocationDetails>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -6133,7 +6133,7 @@ pub fn deserialize_geo_location_details_list(
         match tag.start_el() {
             s if s.matches("GeoLocationDetails") /* member com.amazonaws.route53#GeoLocationDetailsList$member */ =>  {
                 out.push(
-                    crate::xml_deser::geo_location_details_inner(&mut tag)
+                    crate::xml_deser::deser_structure_geo_location_details(&mut tag)
                     ?
                 );
             }
@@ -6144,7 +6144,7 @@ pub fn deserialize_geo_location_details_list(
     Ok(out)
 }
 
-pub fn deserialize_health_checks(
+pub fn deser_list_health_checks(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::HealthCheck>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -6152,7 +6152,7 @@ pub fn deserialize_health_checks(
         match tag.start_el() {
             s if s.matches("HealthCheck") /* member com.amazonaws.route53#HealthChecks$member */ =>  {
                 out.push(
-                    crate::xml_deser::health_check_inner(&mut tag)
+                    crate::xml_deser::deser_structure_health_check(&mut tag)
                     ?
                 );
             }
@@ -6163,7 +6163,7 @@ pub fn deserialize_health_checks(
     Ok(out)
 }
 
-pub fn deserialize_hosted_zones(
+pub fn deser_list_hosted_zones(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::HostedZone>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -6171,7 +6171,7 @@ pub fn deserialize_hosted_zones(
         match tag.start_el() {
             s if s.matches("HostedZone") /* member com.amazonaws.route53#HostedZones$member */ =>  {
                 out.push(
-                    crate::xml_deser::hosted_zone_inner(&mut tag)
+                    crate::xml_deser::deser_structure_hosted_zone(&mut tag)
                     ?
                 );
             }
@@ -6182,7 +6182,7 @@ pub fn deserialize_hosted_zones(
     Ok(out)
 }
 
-pub fn deserialize_hosted_zone_summaries(
+pub fn deser_list_hosted_zone_summaries(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::HostedZoneSummary>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -6190,7 +6190,7 @@ pub fn deserialize_hosted_zone_summaries(
         match tag.start_el() {
             s if s.matches("HostedZoneSummary") /* member com.amazonaws.route53#HostedZoneSummaries$member */ =>  {
                 out.push(
-                    crate::xml_deser::hosted_zone_summary_inner(&mut tag)
+                    crate::xml_deser::deser_structure_hosted_zone_summary(&mut tag)
                     ?
                 );
             }
@@ -6201,7 +6201,7 @@ pub fn deserialize_hosted_zone_summaries(
     Ok(out)
 }
 
-pub fn deserialize_query_logging_configs(
+pub fn deser_list_query_logging_configs(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::QueryLoggingConfig>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -6209,7 +6209,7 @@ pub fn deserialize_query_logging_configs(
         match tag.start_el() {
             s if s.matches("QueryLoggingConfig") /* member com.amazonaws.route53#QueryLoggingConfigs$member */ =>  {
                 out.push(
-                    crate::xml_deser::query_logging_config_inner(&mut tag)
+                    crate::xml_deser::deser_structure_query_logging_config(&mut tag)
                     ?
                 );
             }
@@ -6220,7 +6220,7 @@ pub fn deserialize_query_logging_configs(
     Ok(out)
 }
 
-pub fn deserialize_resource_record_sets(
+pub fn deser_list_resource_record_sets(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::ResourceRecordSet>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -6228,7 +6228,7 @@ pub fn deserialize_resource_record_sets(
         match tag.start_el() {
             s if s.matches("ResourceRecordSet") /* member com.amazonaws.route53#ResourceRecordSets$member */ =>  {
                 out.push(
-                    crate::xml_deser::resource_record_set_inner(&mut tag)
+                    crate::xml_deser::deser_structure_resource_record_set(&mut tag)
                     ?
                 );
             }
@@ -6239,7 +6239,7 @@ pub fn deserialize_resource_record_sets(
     Ok(out)
 }
 
-pub fn deserialize_delegation_sets(
+pub fn deser_list_delegation_sets(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::DelegationSet>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -6247,7 +6247,7 @@ pub fn deserialize_delegation_sets(
         match tag.start_el() {
             s if s.matches("DelegationSet") /* member com.amazonaws.route53#DelegationSets$member */ =>  {
                 out.push(
-                    crate::xml_deser::delegation_set_inner(&mut tag)
+                    crate::xml_deser::deser_structure_delegation_set(&mut tag)
                     ?
                 );
             }
@@ -6258,7 +6258,7 @@ pub fn deserialize_delegation_sets(
     Ok(out)
 }
 
-pub fn resource_tag_set_inner(
+pub fn deser_structure_resource_tag_set(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::ResourceTagSet, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -6295,7 +6295,7 @@ pub fn resource_tag_set_inner(
             s if s.matches("Tags") /* Tags com.amazonaws.route53#ResourceTagSet$Tags */ =>  {
                 let var_262 =
                     Some(
-                        crate::xml_deser::deserialize_tag_list(&mut tag)
+                        crate::xml_deser::deser_list_tag_list(&mut tag)
                         ?
                     )
                 ;
@@ -6308,7 +6308,7 @@ pub fn resource_tag_set_inner(
     Ok(builder.build())
 }
 
-pub fn deserialize_resource_tag_set_list(
+pub fn deser_list_resource_tag_set_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::ResourceTagSet>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -6316,7 +6316,7 @@ pub fn deserialize_resource_tag_set_list(
         match tag.start_el() {
             s if s.matches("ResourceTagSet") /* member com.amazonaws.route53#ResourceTagSetList$member */ =>  {
                 out.push(
-                    crate::xml_deser::resource_tag_set_inner(&mut tag)
+                    crate::xml_deser::deser_structure_resource_tag_set(&mut tag)
                     ?
                 );
             }
@@ -6327,7 +6327,7 @@ pub fn deserialize_resource_tag_set_list(
     Ok(out)
 }
 
-pub fn deserialize_traffic_policy_summaries(
+pub fn deser_list_traffic_policy_summaries(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::TrafficPolicySummary>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -6335,7 +6335,7 @@ pub fn deserialize_traffic_policy_summaries(
         match tag.start_el() {
             s if s.matches("TrafficPolicySummary") /* member com.amazonaws.route53#TrafficPolicySummaries$member */ =>  {
                 out.push(
-                    crate::xml_deser::traffic_policy_summary_inner(&mut tag)
+                    crate::xml_deser::deser_structure_traffic_policy_summary(&mut tag)
                     ?
                 );
             }
@@ -6346,7 +6346,7 @@ pub fn deserialize_traffic_policy_summaries(
     Ok(out)
 }
 
-pub fn deserialize_traffic_policy_instances(
+pub fn deser_list_traffic_policy_instances(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::TrafficPolicyInstance>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -6354,7 +6354,7 @@ pub fn deserialize_traffic_policy_instances(
         match tag.start_el() {
             s if s.matches("TrafficPolicyInstance") /* member com.amazonaws.route53#TrafficPolicyInstances$member */ =>  {
                 out.push(
-                    crate::xml_deser::traffic_policy_instance_inner(&mut tag)
+                    crate::xml_deser::deser_structure_traffic_policy_instance(&mut tag)
                     ?
                 );
             }
@@ -6365,7 +6365,7 @@ pub fn deserialize_traffic_policy_instances(
     Ok(out)
 }
 
-pub fn deserialize_traffic_policies(
+pub fn deser_list_traffic_policies(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::TrafficPolicy>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -6373,7 +6373,7 @@ pub fn deserialize_traffic_policies(
         match tag.start_el() {
             s if s.matches("TrafficPolicy") /* member com.amazonaws.route53#TrafficPolicies$member */ =>  {
                 out.push(
-                    crate::xml_deser::traffic_policy_inner(&mut tag)
+                    crate::xml_deser::deser_structure_traffic_policy(&mut tag)
                     ?
                 );
             }
@@ -6384,7 +6384,7 @@ pub fn deserialize_traffic_policies(
     Ok(out)
 }
 
-pub fn deserialize_record_data(
+pub fn deser_list_record_data(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<std::string::String>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -6406,7 +6406,7 @@ pub fn deserialize_record_data(
     Ok(out)
 }
 
-pub fn linked_service_inner(
+pub fn deser_structure_linked_service(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::LinkedService, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -6445,7 +6445,7 @@ pub fn linked_service_inner(
     Ok(builder.build())
 }
 
-pub fn health_check_config_inner(
+pub fn deser_structure_health_check_config(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::HealthCheckConfig, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -6633,7 +6633,7 @@ pub fn health_check_config_inner(
             s if s.matches("ChildHealthChecks") /* ChildHealthChecks com.amazonaws.route53#HealthCheckConfig$ChildHealthChecks */ =>  {
                 let var_277 =
                     Some(
-                        crate::xml_deser::deserialize_child_health_check_list(&mut tag)
+                        crate::xml_deser::deser_list_child_health_check_list(&mut tag)
                         ?
                     )
                 ;
@@ -6659,7 +6659,7 @@ pub fn health_check_config_inner(
             s if s.matches("Regions") /* Regions com.amazonaws.route53#HealthCheckConfig$Regions */ =>  {
                 let var_279 =
                     Some(
-                        crate::xml_deser::deserialize_health_check_region_list(&mut tag)
+                        crate::xml_deser::deser_list_health_check_region_list(&mut tag)
                         ?
                     )
                 ;
@@ -6669,7 +6669,7 @@ pub fn health_check_config_inner(
             s if s.matches("AlarmIdentifier") /* AlarmIdentifier com.amazonaws.route53#HealthCheckConfig$AlarmIdentifier */ =>  {
                 let var_280 =
                     Some(
-                        crate::xml_deser::alarm_identifier_inner(&mut tag)
+                        crate::xml_deser::deser_structure_alarm_identifier(&mut tag)
                         ?
                     )
                 ;
@@ -6696,7 +6696,7 @@ pub fn health_check_config_inner(
     Ok(builder.build())
 }
 
-pub fn cloud_watch_alarm_configuration_inner(
+pub fn deser_structure_cloud_watch_alarm_configuration(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::CloudWatchAlarmConfiguration, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -6808,7 +6808,7 @@ pub fn cloud_watch_alarm_configuration_inner(
             s if s.matches("Dimensions") /* Dimensions com.amazonaws.route53#CloudWatchAlarmConfiguration$Dimensions */ =>  {
                 let var_289 =
                     Some(
-                        crate::xml_deser::deserialize_dimension_list(&mut tag)
+                        crate::xml_deser::deser_list_dimension_list(&mut tag)
                         ?
                     )
                 ;
@@ -6821,7 +6821,7 @@ pub fn cloud_watch_alarm_configuration_inner(
     Ok(builder.build())
 }
 
-pub fn hosted_zone_config_inner(
+pub fn deser_structure_hosted_zone_config(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::HostedZoneConfig, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -6861,7 +6861,7 @@ pub fn hosted_zone_config_inner(
     Ok(builder.build())
 }
 
-pub fn deserialize_delegation_set_name_servers(
+pub fn deser_list_delegation_set_name_servers(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<std::string::String>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -6883,7 +6883,7 @@ pub fn deserialize_delegation_set_name_servers(
     Ok(out)
 }
 
-pub fn health_check_observation_inner(
+pub fn deser_structure_health_check_observation(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::HealthCheckObservation, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -6920,7 +6920,7 @@ pub fn health_check_observation_inner(
             s if s.matches("StatusReport") /* StatusReport com.amazonaws.route53#HealthCheckObservation$StatusReport */ =>  {
                 let var_294 =
                     Some(
-                        crate::xml_deser::status_report_inner(&mut tag)
+                        crate::xml_deser::deser_structure_status_report(&mut tag)
                         ?
                     )
                 ;
@@ -6933,7 +6933,7 @@ pub fn health_check_observation_inner(
     Ok(builder.build())
 }
 
-pub fn hosted_zone_summary_inner(
+pub fn deser_structure_hosted_zone_summary(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::HostedZoneSummary, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -6969,7 +6969,7 @@ pub fn hosted_zone_summary_inner(
             s if s.matches("Owner") /* Owner com.amazonaws.route53#HostedZoneSummary$Owner */ =>  {
                 let var_297 =
                     Some(
-                        crate::xml_deser::hosted_zone_owner_inner(&mut tag)
+                        crate::xml_deser::deser_structure_hosted_zone_owner(&mut tag)
                         ?
                     )
                 ;
@@ -6982,7 +6982,7 @@ pub fn hosted_zone_summary_inner(
     Ok(builder.build())
 }
 
-pub fn resource_record_set_inner(
+pub fn deser_structure_resource_record_set(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::ResourceRecordSet, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -7062,7 +7062,7 @@ pub fn resource_record_set_inner(
             s if s.matches("GeoLocation") /* GeoLocation com.amazonaws.route53#ResourceRecordSet$GeoLocation */ =>  {
                 let var_303 =
                     Some(
-                        crate::xml_deser::geo_location_inner(&mut tag)
+                        crate::xml_deser::deser_structure_geo_location(&mut tag)
                         ?
                     )
                 ;
@@ -7118,7 +7118,7 @@ pub fn resource_record_set_inner(
             s if s.matches("ResourceRecords") /* ResourceRecords com.amazonaws.route53#ResourceRecordSet$ResourceRecords */ =>  {
                 let var_307 =
                     Some(
-                        crate::xml_deser::deserialize_resource_records(&mut tag)
+                        crate::xml_deser::deser_list_resource_records(&mut tag)
                         ?
                     )
                 ;
@@ -7128,7 +7128,7 @@ pub fn resource_record_set_inner(
             s if s.matches("AliasTarget") /* AliasTarget com.amazonaws.route53#ResourceRecordSet$AliasTarget */ =>  {
                 let var_308 =
                     Some(
-                        crate::xml_deser::alias_target_inner(&mut tag)
+                        crate::xml_deser::deser_structure_alias_target(&mut tag)
                         ?
                     )
                 ;
@@ -7167,7 +7167,7 @@ pub fn resource_record_set_inner(
     Ok(builder.build())
 }
 
-pub fn deserialize_tag_list(
+pub fn deser_list_tag_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::Tag>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -7175,7 +7175,7 @@ pub fn deserialize_tag_list(
         match tag.start_el() {
             s if s.matches("Tag") /* member com.amazonaws.route53#TagList$member */ =>  {
                 out.push(
-                    crate::xml_deser::tag_inner(&mut tag)
+                    crate::xml_deser::deser_structure_tag(&mut tag)
                     ?
                 );
             }
@@ -7186,7 +7186,7 @@ pub fn deserialize_tag_list(
     Ok(out)
 }
 
-pub fn traffic_policy_summary_inner(
+pub fn deser_structure_traffic_policy_summary(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::TrafficPolicySummary, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -7271,7 +7271,7 @@ pub fn traffic_policy_summary_inner(
     Ok(builder.build())
 }
 
-pub fn deserialize_child_health_check_list(
+pub fn deser_list_child_health_check_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<std::string::String>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -7293,7 +7293,7 @@ pub fn deserialize_child_health_check_list(
     Ok(out)
 }
 
-pub fn deserialize_health_check_region_list(
+pub fn deser_list_health_check_region_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::HealthCheckRegion>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -7316,7 +7316,7 @@ pub fn deserialize_health_check_region_list(
     Ok(out)
 }
 
-pub fn alarm_identifier_inner(
+pub fn deser_structure_alarm_identifier(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::AlarmIdentifier, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -7356,7 +7356,7 @@ pub fn alarm_identifier_inner(
     Ok(builder.build())
 }
 
-pub fn deserialize_dimension_list(
+pub fn deser_list_dimension_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::Dimension>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -7364,7 +7364,7 @@ pub fn deserialize_dimension_list(
         match tag.start_el() {
             s if s.matches("Dimension") /* member com.amazonaws.route53#DimensionList$member */ =>  {
                 out.push(
-                    crate::xml_deser::dimension_inner(&mut tag)
+                    crate::xml_deser::deser_structure_dimension(&mut tag)
                     ?
                 );
             }
@@ -7375,7 +7375,7 @@ pub fn deserialize_dimension_list(
     Ok(out)
 }
 
-pub fn status_report_inner(
+pub fn deser_structure_status_report(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::StatusReport, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -7415,7 +7415,7 @@ pub fn status_report_inner(
     Ok(builder.build())
 }
 
-pub fn hosted_zone_owner_inner(
+pub fn deser_structure_hosted_zone_owner(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::HostedZoneOwner, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -7454,7 +7454,7 @@ pub fn hosted_zone_owner_inner(
     Ok(builder.build())
 }
 
-pub fn geo_location_inner(
+pub fn deser_structure_geo_location(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::GeoLocation, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -7506,7 +7506,7 @@ pub fn geo_location_inner(
     Ok(builder.build())
 }
 
-pub fn deserialize_resource_records(
+pub fn deser_list_resource_records(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::ResourceRecord>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -7514,7 +7514,7 @@ pub fn deserialize_resource_records(
         match tag.start_el() {
             s if s.matches("ResourceRecord") /* member com.amazonaws.route53#ResourceRecords$member */ =>  {
                 out.push(
-                    crate::xml_deser::resource_record_inner(&mut tag)
+                    crate::xml_deser::deser_structure_resource_record(&mut tag)
                     ?
                 );
             }
@@ -7525,7 +7525,7 @@ pub fn deserialize_resource_records(
     Ok(out)
 }
 
-pub fn alias_target_inner(
+pub fn deser_structure_alias_target(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::AliasTarget, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -7578,7 +7578,7 @@ pub fn alias_target_inner(
     Ok(builder.build())
 }
 
-pub fn tag_inner(
+pub fn deser_structure_tag(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::Tag, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -7617,7 +7617,7 @@ pub fn tag_inner(
     Ok(builder.build())
 }
 
-pub fn dimension_inner(
+pub fn deser_structure_dimension(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::Dimension, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -7656,7 +7656,7 @@ pub fn dimension_inner(
     Ok(builder.build())
 }
 
-pub fn resource_record_inner(
+pub fn deser_structure_resource_record(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::ResourceRecord, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]

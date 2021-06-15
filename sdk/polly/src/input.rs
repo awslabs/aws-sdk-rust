@@ -28,6 +28,10 @@ pub mod delete_lexicon_input {
         }
     }
 }
+#[doc(hidden)]
+pub type DeleteLexiconInputOperationOutputAlias = crate::operation::DeleteLexicon;
+#[doc(hidden)]
+pub type DeleteLexiconInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl DeleteLexiconInput {
     /// Consumes the builder and constructs an Operation<[`DeleteLexicon`](crate::operation::DeleteLexicon)>
     #[allow(clippy::let_and_return)]
@@ -198,6 +202,10 @@ pub mod describe_voices_input {
         }
     }
 }
+#[doc(hidden)]
+pub type DescribeVoicesInputOperationOutputAlias = crate::operation::DescribeVoices;
+#[doc(hidden)]
+pub type DescribeVoicesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl DescribeVoicesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeVoices`](crate::operation::DescribeVoices)>
     #[allow(clippy::let_and_return)]
@@ -336,6 +344,10 @@ pub mod get_lexicon_input {
         }
     }
 }
+#[doc(hidden)]
+pub type GetLexiconInputOperationOutputAlias = crate::operation::GetLexicon;
+#[doc(hidden)]
+pub type GetLexiconInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl GetLexiconInput {
     /// Consumes the builder and constructs an Operation<[`GetLexicon`](crate::operation::GetLexicon)>
     #[allow(clippy::let_and_return)]
@@ -458,6 +470,10 @@ pub mod get_speech_synthesis_task_input {
         }
     }
 }
+#[doc(hidden)]
+pub type GetSpeechSynthesisTaskInputOperationOutputAlias = crate::operation::GetSpeechSynthesisTask;
+#[doc(hidden)]
+pub type GetSpeechSynthesisTaskInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl GetSpeechSynthesisTaskInput {
     /// Consumes the builder and constructs an Operation<[`GetSpeechSynthesisTask`](crate::operation::GetSpeechSynthesisTask)>
     #[allow(clippy::let_and_return)]
@@ -583,6 +599,10 @@ pub mod list_lexicons_input {
         }
     }
 }
+#[doc(hidden)]
+pub type ListLexiconsInputOperationOutputAlias = crate::operation::ListLexicons;
+#[doc(hidden)]
+pub type ListLexiconsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl ListLexiconsInput {
     /// Consumes the builder and constructs an Operation<[`ListLexicons`](crate::operation::ListLexicons)>
     #[allow(clippy::let_and_return)]
@@ -733,6 +753,11 @@ pub mod list_speech_synthesis_tasks_input {
         }
     }
 }
+#[doc(hidden)]
+pub type ListSpeechSynthesisTasksInputOperationOutputAlias =
+    crate::operation::ListSpeechSynthesisTasks;
+#[doc(hidden)]
+pub type ListSpeechSynthesisTasksInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl ListSpeechSynthesisTasksInput {
     /// Consumes the builder and constructs an Operation<[`ListSpeechSynthesisTasks`](crate::operation::ListSpeechSynthesisTasks)>
     #[allow(clippy::let_and_return)]
@@ -877,6 +902,10 @@ pub mod put_lexicon_input {
         }
     }
 }
+#[doc(hidden)]
+pub type PutLexiconInputOperationOutputAlias = crate::operation::PutLexicon;
+#[doc(hidden)]
+pub type PutLexiconInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl PutLexiconInput {
     /// Consumes the builder and constructs an Operation<[`PutLexicon`](crate::operation::PutLexicon)>
     #[allow(clippy::let_and_return)]
@@ -1160,6 +1189,11 @@ pub mod start_speech_synthesis_task_input {
         }
     }
 }
+#[doc(hidden)]
+pub type StartSpeechSynthesisTaskInputOperationOutputAlias =
+    crate::operation::StartSpeechSynthesisTask;
+#[doc(hidden)]
+pub type StartSpeechSynthesisTaskInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl StartSpeechSynthesisTaskInput {
     /// Consumes the builder and constructs an Operation<[`StartSpeechSynthesisTask`](crate::operation::StartSpeechSynthesisTask)>
     #[allow(clippy::let_and_return)]
@@ -1420,6 +1454,10 @@ pub mod synthesize_speech_input {
         }
     }
 }
+#[doc(hidden)]
+pub type SynthesizeSpeechInputOperationOutputAlias = crate::operation::SynthesizeSpeech;
+#[doc(hidden)]
+pub type SynthesizeSpeechInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl SynthesizeSpeechInput {
     /// Consumes the builder and constructs an Operation<[`SynthesizeSpeech`](crate::operation::SynthesizeSpeech)>
     #[allow(clippy::let_and_return)]

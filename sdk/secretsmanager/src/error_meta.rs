@@ -103,6 +103,9 @@ impl From<smithy_http::result::SdkError<crate::error::DeleteResourcePolicyError>
                 crate::error::DeleteResourcePolicyErrorKind::InternalServiceError(inner) => {
                     Error::InternalServiceError(inner)
                 }
+                crate::error::DeleteResourcePolicyErrorKind::InvalidParameterError(inner) => {
+                    Error::InvalidParameterError(inner)
+                }
                 crate::error::DeleteResourcePolicyErrorKind::InvalidRequestError(inner) => {
                     Error::InvalidRequestError(inner)
                 }
@@ -323,6 +326,60 @@ impl From<smithy_http::result::SdkError<crate::error::PutSecretValueError>> for 
         }
     }
 }
+impl From<smithy_http::result::SdkError<crate::error::RemoveRegionsFromReplicationError>>
+    for Error
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::RemoveRegionsFromReplicationError>,
+    ) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::RemoveRegionsFromReplicationErrorKind::InternalServiceError(
+                    inner,
+                ) => Error::InternalServiceError(inner),
+                crate::error::RemoveRegionsFromReplicationErrorKind::InvalidParameterError(
+                    inner,
+                ) => Error::InvalidParameterError(inner),
+                crate::error::RemoveRegionsFromReplicationErrorKind::InvalidRequestError(inner) => {
+                    Error::InvalidRequestError(inner)
+                }
+                crate::error::RemoveRegionsFromReplicationErrorKind::ResourceNotFoundError(
+                    inner,
+                ) => Error::ResourceNotFoundError(inner),
+                crate::error::RemoveRegionsFromReplicationErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl From<smithy_http::result::SdkError<crate::error::ReplicateSecretToRegionsError>> for Error {
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::ReplicateSecretToRegionsError>,
+    ) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::ReplicateSecretToRegionsErrorKind::InternalServiceError(inner) => {
+                    Error::InternalServiceError(inner)
+                }
+                crate::error::ReplicateSecretToRegionsErrorKind::InvalidParameterError(inner) => {
+                    Error::InvalidParameterError(inner)
+                }
+                crate::error::ReplicateSecretToRegionsErrorKind::InvalidRequestError(inner) => {
+                    Error::InvalidRequestError(inner)
+                }
+                crate::error::ReplicateSecretToRegionsErrorKind::ResourceNotFoundError(inner) => {
+                    Error::ResourceNotFoundError(inner)
+                }
+                crate::error::ReplicateSecretToRegionsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl From<smithy_http::result::SdkError<crate::error::RestoreSecretError>> for Error {
     fn from(err: smithy_http::result::SdkError<crate::error::RestoreSecretError>) -> Self {
         match err {
@@ -362,6 +419,32 @@ impl From<smithy_http::result::SdkError<crate::error::RotateSecretError>> for Er
                     Error::ResourceNotFoundError(inner)
                 }
                 crate::error::RotateSecretErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl From<smithy_http::result::SdkError<crate::error::StopReplicationToReplicaError>> for Error {
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::StopReplicationToReplicaError>,
+    ) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::StopReplicationToReplicaErrorKind::InternalServiceError(inner) => {
+                    Error::InternalServiceError(inner)
+                }
+                crate::error::StopReplicationToReplicaErrorKind::InvalidParameterError(inner) => {
+                    Error::InvalidParameterError(inner)
+                }
+                crate::error::StopReplicationToReplicaErrorKind::InvalidRequestError(inner) => {
+                    Error::InvalidRequestError(inner)
+                }
+                crate::error::StopReplicationToReplicaErrorKind::ResourceNotFoundError(inner) => {
+                    Error::ResourceNotFoundError(inner)
+                }
+                crate::error::StopReplicationToReplicaErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
             },
             _ => Error::Unhandled(err.into()),
         }
