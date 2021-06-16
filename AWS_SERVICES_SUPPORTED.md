@@ -235,7 +235,7 @@ The alpha SDK for Rust currently supports the checked services below. If you wan
 - [ ] Amazon Translate
 - [ ] Amazon Waf
 - [ ] Amazon Waf-Regional
-- [ ] Amazon Wafv2
+- [ ] [Amazon Wafv2](https://github.com/awslabs/aws-sdk-rust/issues/118)
 - [ ] Amazon Workdocs
 - [ ] Amazon Worklink
 - [ ] Amazon Workmail
