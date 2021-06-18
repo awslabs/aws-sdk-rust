@@ -67,4 +67,7 @@ running your program, as follows:
 For example:
 
 `RUST_LOG='smithy_http_tower::dispatch=trace,smithy_http::middleware=trace' cargo run`
+
+The SDK redacts sensitive information such as auth headers in these trace logs,
+but please look through them before posting just to be sure.
 -->
