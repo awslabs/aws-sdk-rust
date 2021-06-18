@@ -54,4 +54,20 @@ I tried this code:
 I expected to see this happen: <explanation>
 
 Instead, this happened: <explanation>
+
+It's also helpful to enable trace logging and include the
+log messages as these will show the actual HTTP requests and
+responses. You can enable this by initializing `tracing-subscriber`
+if you haven't already (e.g., `tracing_subscriber::fmt::init();`),
+and then setting the environment variable `RUST_LOG` before
+running your program, as follows:
+
+`RUST_LOG='smithy_http_tower::dispatch=trace,smithy_http::middleware=trace'`
+
+For example:
+
+`RUST_LOG='smithy_http_tower::dispatch=trace,smithy_http::middleware=trace' cargo run`
+
+The SDK redacts sensitive information such as auth headers in these trace logs,
+but please look through them before posting just to be sure.
 -->
